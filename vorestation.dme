@@ -1744,6 +1744,7 @@
 #include "code\game\turfs\flooring\flooring_decals_vr.dm"
 #include "code\game\turfs\flooring\flooring_decals_yw.dm"
 #include "code\game\turfs\flooring\flooring_premade.dm"
+#include "code\game\turfs\flooring\flooring_premade_ch.dm"
 #include "code\game\turfs\flooring\flooring_vr.dm"
 #include "code\game\turfs\flooring\seasonal.dm"
 #include "code\game\turfs\flooring\shuttle_vr.dm"
