@@ -3316,7 +3316,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "gY" = (
 /obj/structure/table/woodentable,
@@ -12126,7 +12126,7 @@
 	icon_state = "markerpurple-on";
 	picked_color = "Fuchsia"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "yh" = (
 /obj/structure/disposalpipe/segment{
@@ -16802,7 +16802,7 @@
 /obj/structure/bed/chair/sofa/black{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "HN" = (
 /obj/structure/catwalk,
@@ -17338,7 +17338,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "IO" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
@@ -17856,7 +17856,7 @@
 	icon_state = "markerindigo-on";
 	picked_color = "Teal"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Kb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -17918,7 +17918,7 @@
 	icon_state = "markerpurple-on";
 	picked_color = "Fuchsia"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Kg" = (
 /turf/simulated/floor/carpet/bcarpet,
@@ -17933,7 +17933,7 @@
 	icon_state = "markerindigo-on";
 	picked_color = "Teal"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Ki" = (
 /obj/structure/table/alien{
@@ -17944,7 +17944,7 @@
 	icon_state = "markerpurple-on";
 	picked_color = "Fuchsia"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Kj" = (
 /obj/structure/table/alien/blue{
@@ -17959,7 +17959,7 @@
 	icon_state = "markerindigo-on";
 	picked_color = "Teal"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Kk" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -18210,7 +18210,7 @@
 	pixel_x = -9;
 	pixel_y = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "KM" = (
 /turf/simulated/floor/wood,
@@ -18236,7 +18236,7 @@
 	desc = "Horny.";
 	name = "dance stage"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "KQ" = (
 /obj/random/cash,
@@ -18244,7 +18244,7 @@
 	desc = "Horny.";
 	name = "dance stage"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "KR" = (
 /obj/structure/table/alien/blue{
@@ -18252,7 +18252,7 @@
 	name = "dance stage"
 	},
 /obj/item/clothing/under/swimsuit/stripper/stripper_pink,
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "KS" = (
 /obj/machinery/light{
@@ -18279,7 +18279,7 @@
 	desc = "Horny.";
 	name = "dance stage"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "KU" = (
 /turf/simulated/wall,
@@ -18295,7 +18295,7 @@
 	pixel_x = 9;
 	pixel_y = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "KW" = (
 /obj/effect/floor_decal/borderfloorblack{
@@ -18580,7 +18580,7 @@
 	pixel_x = -9;
 	pixel_y = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Lz" = (
 /obj/structure/table/alien{
@@ -18592,7 +18592,7 @@
 	picked_color = "Fuchsia";
 	pixel_y = -3
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "LA" = (
 /obj/item/weapon/storage/laundry_basket,
@@ -18631,7 +18631,7 @@
 	name = "Station Intercom (General)";
 	pixel_x = 21
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "LF" = (
 /obj/machinery/camera/network/exterior{
@@ -18653,7 +18653,7 @@
 	pixel_x = -9;
 	pixel_y = -6
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "LI" = (
 /obj/structure/railing{
@@ -18681,7 +18681,7 @@
 	pixel_x = 9;
 	pixel_y = -6
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "LK" = (
 /obj/structure/marker_beacon{
@@ -18705,7 +18705,7 @@
 	picked_color = "Teal";
 	pixel_y = -3
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "LM" = (
 /obj/structure/window/reinforced{
@@ -18730,7 +18730,7 @@
 	pixel_x = 9;
 	pixel_y = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "LO" = (
 /obj/effect/floor_decal/steeldecal/monofloor{
@@ -19123,7 +19123,7 @@
 /obj/effect/landmark/start{
 	name = "Assistant"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "MC" = (
 /obj/machinery/camera/network/exterior{
@@ -19148,7 +19148,7 @@
 	pixel_x = -9;
 	pixel_y = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "ME" = (
 /obj/machinery/botany/extractor,
@@ -19172,13 +19172,13 @@
 	pixel_x = 9;
 	pixel_y = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "MG" = (
 /obj/structure/bed/chair/sofa/right/black{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "MH" = (
 /obj/structure/bed/chair/sofa/right/black{
@@ -19462,7 +19462,7 @@
 /obj/effect/landmark/start{
 	name = "Assistant"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Nj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -19478,7 +19478,7 @@
 	pixel_x = -9;
 	pixel_y = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Nk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -19495,7 +19495,7 @@
 	pixel_x = 9;
 	pixel_y = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Nl" = (
 /obj/machinery/camera/network/exterior{
@@ -19513,7 +19513,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Nn" = (
 /obj/machinery/washing_machine,
@@ -19911,7 +19911,7 @@
 	pixel_y = 4
 	},
 /obj/random/cash/big,
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "NZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -19928,13 +19928,13 @@
 	pixel_x = 9;
 	pixel_y = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Oa" = (
 /obj/structure/bed/chair/sofa/black{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Ob" = (
 /obj/machinery/button/windowtint{
@@ -19947,7 +19947,7 @@
 /obj/machinery/light_switch{
 	pixel_x = 24
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Oc" = (
 /obj/structure/table/marble,
@@ -20294,7 +20294,7 @@
 	name = "Station Intercom (General)";
 	pixel_x = -21
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "OU" = (
 /obj/structure/cable/cyan{
@@ -20405,7 +20405,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Pc" = (
 /obj/machinery/light/no_nightshift{
@@ -20457,7 +20457,7 @@
 /obj/effect/landmark/start{
 	name = "Assistant"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Pf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -20820,7 +20820,7 @@
 	pixel_x = -24;
 	pixel_y = 8
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "PS" = (
 /obj/structure/cable/blue{
@@ -20862,7 +20862,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "PU" = (
 /obj/structure/cable/yellow{
@@ -20894,7 +20894,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "PV" = (
 /obj/structure/bed/chair/sofa/left/black{
@@ -20903,7 +20903,7 @@
 /obj/effect/landmark/start{
 	name = "Assistant"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "PW" = (
 /turf/simulated/wall/r_wall,
@@ -20913,7 +20913,7 @@
 	dir = 8;
 	pixel_x = 22
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "PY" = (
 /obj/effect/floor_decal/corner_techfloor_grid{
@@ -21384,7 +21384,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Ra" = (
 /obj/structure/cable/yellow{
@@ -21393,10 +21393,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Rb" = (
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "Rc" = (
 /obj/machinery/disposal/wall{
@@ -21619,7 +21619,7 @@
 /area/tcommsat/entrance)
 "RD" = (
 /obj/structure/bed/chair/comfy/black,
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "RE" = (
 /obj/structure/cable/yellow{
@@ -21631,7 +21631,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "RF" = (
 /obj/item/weapon/storage/laundry_basket,
@@ -21642,7 +21642,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "RH" = (
 /obj/structure/bed/chair/comfy/black,
@@ -21652,7 +21652,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "RI" = (
 /obj/machinery/door/firedoor/glass,
@@ -22128,7 +22128,7 @@
 /obj/machinery/light_switch{
 	pixel_x = -24
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "SE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -22185,7 +22185,7 @@
 	layer = 4;
 	pixel_x = -32
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "SI" = (
 /obj/machinery/atmospherics/tvalve/mirrored{
@@ -22210,7 +22210,7 @@
 	c_tag = "CIV -Club South";
 	dir = 1
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "SK" = (
 /obj/effect/floor_decal/borderfloorblack{
@@ -22226,7 +22226,7 @@
 /area/surface/outside/plains/outpost)
 "SL" = (
 /obj/structure/disposalpipe/junction/yjunction,
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "SM" = (
 /obj/machinery/camera/network/exterior{
@@ -22244,7 +22244,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "SO" = (
 /obj/structure/bed/chair/comfy/black{
@@ -22253,7 +22253,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "SP" = (
 /obj/structure/table/darkglass,
@@ -22273,7 +22273,7 @@
 /obj/machinery/light/floortube{
 	dir = 8
 	},
-/turf/simulated/floor/carpet/deco,
+/turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "SR" = (
 /obj/structure/disposalpipe/junction{

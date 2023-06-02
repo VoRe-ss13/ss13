@@ -289,7 +289,7 @@ THOR_TURF_CREATE(/turf/simulated/floor)
 	transition_messages = list(
 		"The sky is dark, and rain falls down upon you."
 	)
-	
+
 	outdoor_sounds_type = /datum/looping_sound/weather/rain
 	indoor_sounds_type = /datum/looping_sound/weather/rain/indoors
 
@@ -339,9 +339,9 @@ THOR_TURF_CREATE(/turf/simulated/floor)
 		WEATHER_STORM = 5,
 		WEATHER_RAIN = 50
 		)
-		
-	outdoor_sounds_type = /datum/looping_sound/weather/rain/heavy
-	indoor_sounds_type = /datum/looping_sound/weather/rain/indoors/heavy
+
+	outdoor_sounds_type = /datum/looping_sound/weather/storm
+	indoor_sounds_type = /datum/looping_sound/weather/storm/indoors
 
 /datum/weather/thor/storm/process_effects()
 	..()

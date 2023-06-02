@@ -12596,7 +12596,6 @@
 /obj/item/weapon/reagent_containers/glass/bucket,
 /obj/item/weapon/reagent_containers/glass/bucket,
 /obj/item/weapon/reagent_containers/glass/bucket,
-/obj/item/weapon/watertank,
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
 "qor" = (
