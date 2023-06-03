@@ -16533,6 +16533,18 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/dark,
 /area/security/security_hallway)
+"hxh" = (
+/obj/structure/cable/blue{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/medical/reception)
 "hxl" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -29343,18 +29355,6 @@
 /obj/effect/floor_decal/rust/steel_decals_rusted1,
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/garage)
-"nua" = (
-/obj/structure/cable/blue{
-	icon_state = "1-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/medical/reception)
 "nug" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -34153,6 +34153,10 @@
 	},
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/purple/border,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
 "pMK" = (
@@ -90467,7 +90471,7 @@ uYv
 uYv
 lTl
 sCa
-nua
+hxh
 qKV
 oQb
 ycJ

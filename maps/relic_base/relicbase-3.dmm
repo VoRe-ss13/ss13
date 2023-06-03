@@ -5862,6 +5862,14 @@
 	outdoors = 1
 	},
 /area/crew_quarters/heads/sc/sd)
+"lO" = (
+/obj/effect/floor_decal/steeldecal/monofloor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outpost/main/landing/three)
 "lP" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/carpet/bcarpet,
@@ -16562,7 +16570,7 @@
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/crew_quarters/cafeteria)
 "Hn" = (
 /turf/simulated/wall,
 /area/surface/outpost/main/dorms/dorm_3/upstairs)
@@ -16582,7 +16590,7 @@
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/crew_quarters/cafeteria)
 "Hq" = (
 /obj/machinery/light/no_nightshift{
 	dir = 4
@@ -65386,9 +65394,9 @@ EG
 EG
 EG
 EG
-EG
-EG
-EG
+yF
+yF
+yF
 EG
 EG
 EG
@@ -65643,9 +65651,9 @@ gK
 hO
 hO
 hO
-hO
-hO
-hO
+lO
+lO
+lO
 hO
 hO
 hO

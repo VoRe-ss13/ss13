@@ -50,6 +50,7 @@
 	//#include "relicbase-7.dmm" //Explo carrier //shadowrealmed for now -- Ocelot
 	#include "relicbase-8.dmm" //CC
 	#include "relicbase-9.dmm" //Transit
+	#include "relicbase-10.dmm" //Catacombs
 
 
 //	#include "southern_cross-casino.dmm" //CHOMPedit: Disabled to save resources and loaded in during events - Jack

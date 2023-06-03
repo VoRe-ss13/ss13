@@ -483,7 +483,7 @@
 
 /area/surface/outpost/main/dorms/dorm_10
 	name = "\improper Apartment Ten"
-	
+
 /area/surface/outpost/main/dorms/dorm_1/upstairs
 	name = "\improper Apartment One Upper Level"
 
@@ -593,7 +593,7 @@
 
 /area/surface/outpost/civilian/sauna
 	name = "\improper Sauna"
-	
+
 /area/surface/outpost/civilian/sauna/cryosauna
 	name = "\improper Cryosauna"
 
@@ -1275,6 +1275,13 @@ z
 /area/medical/first_aid_station/thirddeck
 	name = "\improper Center Thirddeck First-Aid Station"
 	icon_state = "medbay2"
+
+//CHOMPStation Edit -- Relic Base/Forbearance Catacombs Area ~ Serdy
+
+/area/maintenance/underground/catacombs
+	name = "Catacombs"
+	icon_state = "asmaint"
+	flags = RAD_SHIELDED
 
 //CHOMPStation Edit End
 
