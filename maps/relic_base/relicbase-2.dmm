@@ -29343,6 +29343,18 @@
 /obj/effect/floor_decal/rust/steel_decals_rusted1,
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/garage)
+"nua" = (
+/obj/structure/cable/blue{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/medical/reception)
 "nug" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -34840,9 +34852,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/debriefing)
 "pZJ" = (
-/obj/machinery/power/smes/buildable{
-	RCon_tag = "Substation - Cargo"
-	},
 /obj/structure/cable/green{
 	icon_state = "0-2"
 	},
@@ -34850,6 +34859,9 @@
 	d2 = 2;
 	dir = 1;
 	icon_state = "0-2"
+	},
+/obj/machinery/power/smes/buildable{
+	RCon_tag = "Substation - Cargo"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/substation/firstdeck/cargo)
@@ -40529,14 +40541,14 @@
 	name = "Medbay Doors Control";
 	pixel_y = 35
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/structure/cable/blue{
+	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+	dir = 10
 	},
-/obj/structure/cable/blue{
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/reception)
@@ -90455,7 +90467,7 @@ uYv
 uYv
 lTl
 sCa
-wGI
+nua
 qKV
 oQb
 ycJ
