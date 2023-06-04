@@ -253,7 +253,7 @@
 	z = Z_LEVEL_CATACOMBS
 	name = "Catacombs"
 	base_turf = /turf/simulated/mineral/floor/cave
-
+	transit_chance = 10
 
 /*
  KSC 9/29/20 = No longer relevant code as we have nonencludian portals to jump between outpost,caves and wilderness
