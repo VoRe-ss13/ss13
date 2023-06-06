@@ -249,7 +249,7 @@
 	name = "Transit"
 	flags = MAP_LEVEL_ADMIN|MAP_LEVEL_SEALED|MAP_LEVEL_PLAYER|MAP_LEVEL_CONTACT
 
-/datum/map_z_level/relicbase/catacombs
+/datum/map_z_level/relicbase/station/catacombs
 	z = Z_LEVEL_CATACOMBS
 	name = "Catacombs"
 	base_turf = /turf/simulated/mineral/floor/cave

@@ -148,7 +148,9 @@
 	name = "Depths"
 	icon_state = "unexplored_deep"
 
-
+/area/surface/underground/in_da_walls
+	name = "Unknown Area (Maintenance)"
+	icon_state = "unexplored_deep"
 
 //Surface Outposts
 
