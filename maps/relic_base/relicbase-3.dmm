@@ -6512,6 +6512,9 @@
 /obj/effect/floor_decal/borderfloorblack/corner2{
 	dir = 10
 	},
+/obj/effect/floor_decal/corner/orange/bordercorner2{
+	dir = 10
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/brig)
 "ni" = (
@@ -8029,6 +8032,9 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/borderfloorblack/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/orange/bordercorner2{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -11645,6 +11651,9 @@
 /obj/item/weapon/stock_parts/micro_laser/high,
 /obj/item/weapon/stock_parts/micro_laser/high,
 /obj/item/weapon/stock_parts/micro_laser/high,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/tiled,
 /area/tcommsat/entrance)
 "xi" = (
@@ -12882,6 +12891,9 @@
 	},
 /obj/effect/floor_decal/corner/green/bordercorner2{
 	dir = 8
+	},
+/obj/effect/floor_decal/corner/green/bordercorner2{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
@@ -17014,6 +17026,13 @@
 	outdoors = 1
 	},
 /area/surface/outside/plains/outpost)
+"Ik" = (
+/obj/machinery/porta_turret/stationary{
+	uid = "telecom"
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled,
+/area/tcommsat/entrance)
 "Il" = (
 /obj/structure/cable/cyan{
 	d2 = 4;
@@ -22009,6 +22028,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/tcommsat/entrance)
@@ -42308,7 +42330,7 @@ St
 Tn
 TO
 Sb
-So
+Ik
 CL
 yF
 yF

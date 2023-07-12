@@ -3738,10 +3738,6 @@
 /obj/machinery/light/small/readylight{
 	light_color = "#7F0000"
 	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -22
-	},
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
@@ -3917,16 +3913,17 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "ebF" = (
-/obj/effect/floor_decal/rust,
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24
 	},
 /obj/structure/cable/green{
+	d2 = 8;
 	dir = 1;
 	icon_state = "0-8"
 	},
+/obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -3940,10 +3937,12 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "ecl" = (
-/obj/effect/floor_decal/rust,
 /obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -4476,9 +4475,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/rust,
-/obj/machinery/station_map{
-	pixel_x = 32
-	},
 /turf/simulated/floor/tiled/steel_dirty,
 /area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -4948,6 +4944,9 @@
 	},
 /obj/machinery/camera/network/civilian{
 	c_tag = "CIV - Tram Platform North"
+	},
+/obj/machinery/station_map{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/hallway/primary/seconddeck/dockhallway{
@@ -9887,12 +9886,14 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "lKa" = (
-/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
 /obj/machinery/station_map{
-	pixel_x = -32
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/steel_dirty,
-/area/hallway/primary/seconddeck/dockhallway{
+/area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "lMA" = (
@@ -10080,17 +10081,15 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "mnJ" = (
-/obj/effect/floor_decal/rust,
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24
 	},
-/obj/structure/cable/green{
-	dir = 4;
-	icon_state = "0-8"
-	},
 /obj/item/weapon/cell/device/weapon,
+/obj/structure/cable/green{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -69857,7 +69856,7 @@ rlb
 rlb
 rlb
 aal
-bBM
+lKa
 bYu
 bBM
 bBM
@@ -70654,7 +70653,7 @@ htn
 ioq
 iYV
 cfS
-lKa
+jLw
 jTn
 aaq
 kbU
