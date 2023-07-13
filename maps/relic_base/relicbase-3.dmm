@@ -1994,6 +1994,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ai/ai_upload_foyer)
+"eh" = (
+/obj/machinery/porta_turret/stationary{
+	uid = "telecom"
+	},
+/obj/machinery/light,
+/turf/simulated/floor/tiled,
+/area/tcommsat/entrance)
 "ei" = (
 /obj/structure/marker_beacon{
 	icon_state = "markerburgundy-on";
@@ -14501,7 +14508,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable/yellow{
 	icon_state = "32-1"
 	},
 /turf/simulated/open,
@@ -17026,13 +17033,6 @@
 	outdoors = 1
 	},
 /area/surface/outside/plains/outpost)
-"Ik" = (
-/obj/machinery/porta_turret/stationary{
-	uid = "telecom"
-	},
-/obj/machinery/light,
-/turf/simulated/floor/tiled,
-/area/tcommsat/entrance)
 "Il" = (
 /obj/structure/cable/cyan{
 	d2 = 4;
@@ -42330,7 +42330,7 @@ St
 Tn
 TO
 Sb
-Ik
+eh
 CL
 yF
 yF
