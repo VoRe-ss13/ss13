@@ -259,15 +259,15 @@
 	animal_types = list(
 		/mob/living/simple_mob/vore/aggressive/frog = 1,
 		/mob/living/simple_mob/animal/sif/glitterfly = 7,
-		/mob/living/simple_mob/otie = 3,
-		/mob/living/simple_mob/otie/feral = 1,
+		/mob/living/simple_mob/vore/otie = 3,
+		/mob/living/simple_mob/vore/otie/feral = 1,
 		/mob/living/simple_mob/vore/fennec = 4,
 		/mob/living/simple_mob/animal/passive/lizard = 4,
 		/mob/living/simple_mob/animal/passive/armadillo = 2,
 		/mob/living/simple_mob/animal/passive/opossum = 2,
 		/mob/living/simple_mob/animal/passive/mouse/jerboa = 1,
-		/mob/living/simple_mob/animal/wolf/direwolf = 1,
+		/mob/living/simple_mob/vore/wolf/direwolf = 1,
 		/mob/living/simple_mob/vore/aggressive/rat = 1,
 		/mob/living/simple_mob/vore/horse/big = 2,
-		/mob/living/simple_mob/otie/zorgoia/feral = 0.2
+		/mob/living/simple_mob/vore/otie/zorgoia/feral = 0.2
 		)
