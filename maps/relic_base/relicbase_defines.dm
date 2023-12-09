@@ -1,15 +1,15 @@
 // To be filled out when more progress on the new map occurs.
 
-#define Z_LEVEL_UNDERGROUND				1
-#define Z_LEVEL_SURFACE					2
-#define Z_LEVEL_UPPER_FLOORS			3
-#define Z_LEVEL_UNDERMINES				4
-#define Z_LEVEL_SURFACE_WILDS			5
-#define Z_LEVEL_SURFACE_OCEAN			6
-#define Z_LEVEL_CENTCOM					7
-#define Z_LEVEL_TRANSIT					8
-#define Z_LEVEL_MISC 					9
-#define Z_LEVEL_CATACOMBS				10
+#define Z_LEVEL_CATACOMBS				1
+#define Z_LEVEL_UNDERGROUND				2
+#define Z_LEVEL_SURFACE					3
+#define Z_LEVEL_UPPER_FLOORS			4
+#define Z_LEVEL_UNDERMINES				5
+#define Z_LEVEL_SURFACE_WILDS			6
+#define Z_LEVEL_SURFACE_OCEAN			7
+#define Z_LEVEL_CENTCOM					8
+#define Z_LEVEL_TRANSIT					9
+#define Z_LEVEL_MISC 					10
 #define Z_LEVEL_FUELDEPOT				11
 #define Z_LEVEL_GATEWAY					12
 
