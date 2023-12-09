@@ -186,6 +186,7 @@
 	vore_pounce_maxhealth = 100
 	vore_stomach_name = "Gut"
 	vore_stomach_flavor = "A black-and-purple veined gut, pulsing warmly around you. Loud gurgles sound around you as the gut squishes inwards and attempts to crush you - Rykka seems intent on digesting you, like the meat you are."
+*/ //ChompEDIT END
 
 /mob/living/simple_mob/vore/wolf/direwolf/andrews
 	name = "andrewsarchus"
@@ -198,4 +199,3 @@
 	icon_rest = "andrews_rest"
 
 	mount_offset_y = 17
-*/ //ChompEDIT END

@@ -1230,11 +1230,6 @@
 /obj/item/ammo_magazine/ammo_box/b12g/pellet,
 /obj/item/ammo_magazine/ammo_box/b12g/pellet,
 /obj/item/ammo_magazine/ammo_box/b12g/pellet,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
-/obj/item/ammo_magazine/m9mmp90,
 /obj/machinery/door/window/brigdoor/westleft{
 	dir = 4;
 	name = "Ammo"
@@ -15454,7 +15449,7 @@
 	})
 "uip" = (
 /obj/effect/floor_decal/rust,
-/mob/living/simple_mob/otie/red/chubby,
+/mob/living/simple_mob/vore/otie/red/chubby,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves

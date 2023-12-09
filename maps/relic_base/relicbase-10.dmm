@@ -343,7 +343,7 @@
 /area/maintenance/underground/catacombs)
 "ck" = (
 /obj/effect/floor_decal/rust,
-/mob/living/simple_mob/otie/red{
+/mob/living/simple_mob/vore/otie/red{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	faction = "corrupt"
 	},
@@ -866,7 +866,7 @@
 "gt" = (
 /obj/effect/floor_decal/rust,
 /obj/random/mouseremains,
-/mob/living/simple_mob/otie/red{
+/mob/living/simple_mob/vore/otie/red{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	faction = "corrupt"
 	},
@@ -1003,7 +1003,7 @@
 /area/maintenance/underground/catacombs)
 "hy" = (
 /obj/effect/floor_decal/rust,
-/mob/living/simple_mob/otie/zorgoia/feral{
+/mob/living/simple_mob/vore/otie/zorgoia/feral{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	faction = "corrupt";
 	health = 350;
@@ -1304,7 +1304,7 @@
 /area/maintenance/underground/catacombs)
 "jH" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_mob/otie/feral{
+/mob/living/simple_mob/vore/otie/feral{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	faction = "corrupt"
 	},
@@ -1510,7 +1510,7 @@
 	light_color = "#7F0000"
 	},
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_mob/otie/feral/chubby{
+/mob/living/simple_mob/vore/otie/feral/chubby{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	attacktext = list("pounced on");
 	faction = "corrupt";
@@ -2047,7 +2047,7 @@
 /area/maintenance/underground/catacombs)
 "qD" = (
 /obj/effect/floor_decal/rust,
-/mob/living/simple_mob/otie/feral/chubby{
+/mob/living/simple_mob/vore/otie/feral/chubby{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	attacktext = list("pounced on");
 	faction = "corrupt";
@@ -2398,7 +2398,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_mob/otie/feral{
+/mob/living/simple_mob/vore/otie/feral{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	faction = "corrupt"
 	},
@@ -3635,7 +3635,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
 "DO" = (
-/mob/living/simple_mob/otie/red{
+/mob/living/simple_mob/vore/otie/red{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	faction = "corrupt"
 	},
@@ -3825,7 +3825,7 @@
 "Fl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_mob/otie/feral{
+/mob/living/simple_mob/vore/otie/feral{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	faction = "corrupt"
 	},
@@ -4219,7 +4219,7 @@
 /area/maintenance/underground/catacombs)
 "Ig" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_mob/otie/feral/chubby{
+/mob/living/simple_mob/vore/otie/feral/chubby{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	attacktext = list("pounced on");
 	faction = "corrupt";
@@ -4462,7 +4462,7 @@
 "Ko" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_mob/otie/red{
+/mob/living/simple_mob/vore/otie/red{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	faction = "corrupt"
 	},
@@ -4479,7 +4479,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_mob/otie/feral/chubby{
+/mob/living/simple_mob/vore/otie/feral/chubby{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	attacktext = list("pounced on");
 	faction = "corrupt";
@@ -5079,7 +5079,7 @@
 /area/maintenance/underground/catacombs)
 "PM" = (
 /obj/structure/catwalk,
-/mob/living/simple_mob/animal/wolf/direwolf/dog{
+/mob/living/simple_mob/vore/wolf/direwolf/dog{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	color = "#212121";
 	desc = "The biggest (emphasis on biggest) and goodest dog around.";
@@ -5158,7 +5158,7 @@
 /area/maintenance/underground/catacombs)
 "Qo" = (
 /obj/effect/floor_decal/rust,
-/mob/living/simple_mob/otie/zorgoia/feral{
+/mob/living/simple_mob/vore/otie/zorgoia/feral{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	faction = "corrupt";
 	name = "zorgoia";
@@ -5173,7 +5173,7 @@
 "Qs" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
-/mob/living/simple_mob/otie/feral/chubby{
+/mob/living/simple_mob/vore/otie/feral/chubby{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	attacktext = list("pounced on");
 	faction = "corrupt";
@@ -5714,7 +5714,7 @@
 "UC" = (
 /obj/effect/floor_decal/rust,
 /obj/random/powercell,
-/mob/living/simple_mob/otie/feral/chubby{
+/mob/living/simple_mob/vore/otie/feral/chubby{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	attacktext = list("pounced on");
 	faction = "corrupt";
@@ -5789,7 +5789,7 @@
 "Vc" = (
 /obj/effect/floor_decal/rust,
 /obj/random/junk,
-/mob/living/simple_mob/otie/zorgoia/feral{
+/mob/living/simple_mob/vore/otie/zorgoia/feral{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	faction = "corrupt";
 	name = "zorgoia";
@@ -5901,7 +5901,7 @@
 "We" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_mob/otie/feral/chubby{
+/mob/living/simple_mob/vore/otie/feral/chubby{
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
 	attacktext = list("pounced on");
 	faction = "corrupt";
