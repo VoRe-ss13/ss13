@@ -182,9 +182,12 @@
   - bugfix: Purge message archive not working in some cases
   - bugfix: emotesubtle colour in vchat themes
   - bugfix: fixes interference with vore filter on examine
+<<<<<<< HEAD
 2024-01-19:
   Upstream:
   - bugfix: fixes runtimes in the laundry basket which led to duplication of the off-hand
   - rscadd: "/\U0001F191"
   - rscadd: '[issue link stripped]'
   - rscadd: Added tanktop and yellow jacket to loadout
+=======
+>>>>>>> deda7c2ba8 (Automatic Changelog Generation (#7582))
