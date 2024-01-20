@@ -1,4 +1,4 @@
-/world/TgsNew(datum/tgs_event_handler/event_handler, minimum_required_security_level = TGS_SECURITY_ULTRASAFE)
+/world/TgsNew(datum/tgs_event_handler/event_handler, minimum_required_security_level = TGS_SECURITY_TRUSTED) //Fops edit, needs to be trusted for certain features to work.
 	var/current_api = TGS_READ_GLOBAL(tgs)
 	if(current_api)
 		TGS_ERROR_LOG("API datum already set (\ref[current_api] ([current_api]))! Was TgsNew() called more than once?")
