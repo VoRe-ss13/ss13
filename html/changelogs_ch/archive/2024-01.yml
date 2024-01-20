@@ -162,15 +162,11 @@
   TheCaramelion:
   - rscadd: Quiet portal and airlock that won't announce leaving over Common.
   - maptweak: Photocopier changed to paper shredder in the mail room
-<<<<<<< HEAD
   - rscadd: Added modern labcoat to the labcoat selection
-=======
->>>>>>> afb4a56f7d (Automatic Changelog Generation (#7566))
   Upstream:
   - code_imp: Custom indexeddb store. Tgui related settings like themes might reset.
   - bugfix: '"Hotkey Toggle" button now respecting the set theme.'
   - bugfix: Typo in sprite_accessories.dm
-<<<<<<< HEAD
   - qol: Adds adjustable visual limits for displayed messages
   - qol: Adds the option to modify the combining time and skipped messages in between
   - qol: Adds the currently stored message count to the export tab
@@ -194,10 +190,6 @@
   - rscadd: "/\U0001F191"
   - rscadd: '[issue link stripped]'
   - rscadd: Added tanktop and yellow jacket to loadout
-<<<<<<< HEAD
-=======
->>>>>>> afb4a56f7d (Automatic Changelog Generation (#7566))
-=======
   - qol: Microwaves are now OOC escapable
   - balance: Nerfs foam durasteel greatsword
   - bugfix: Fixes memory leak with codexes
@@ -221,4 +213,3 @@
       typo in Detach.
   - rscadd: 'Downstream: Needs manual changes as we somehow never took over the naming
       on those steps. DO NOT MERGE right away!'
->>>>>>> 13ab478ef5 (Automatic Changelog Generation (#7592))
