@@ -12,7 +12,7 @@ set -f # disable pathname expansion
 set -C # noclobber
 
 readonly BASE_BRANCH_NAME="upstream-merge-"
-readonly BASE_PULL_URL="https://api.github.com/repos/VOREStation/VOREStation/pulls"
+readonly BASE_PULL_URL="https://api.github.com/repos/CHOMPStation2/CHOMPStation2/pulls"
 
 # Ensure the current directory is a git directory
 if [ ! -d .git ]; then
@@ -41,7 +41,7 @@ containsElement () {
 
 # Make sure we have our upstream remote
 if ! git remote | grep upstream > /dev/null; then
-   git remote add upstream https://github.com/VOREStation/VOREStation.git
+   git remote add upstream https://github.com/CHOMPStation2/CHOMPStation2.git
 fi
 
 #curl -v \
