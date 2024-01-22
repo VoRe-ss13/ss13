@@ -30,8 +30,13 @@ jobs:
           python -m pip install pyyaml
           sudo apt-get install  dos2unix
       - name: "Checkout"
+<<<<<<< HEAD
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         uses: actions/checkout@v3
+=======
+        #if: steps.value_holder.outputs.ACTIONS_ENABLED
+        uses: actions/checkout@v4
+>>>>>>> 98f29363f1 (Bump actions/checkout from 3 to 4 (#7609))
         with:
           fetch-depth: 25
           persist-credentials: false
