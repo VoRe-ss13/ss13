@@ -167,4 +167,4 @@
 	retaliate = TRUE
 	violent_breakthrough = TRUE
 	can_breakthrough = TRUE
-	list/faction_friends = list("otie", "angrydrones", "goia", "mimic", "mouse", "corrupt") //this is probably really lazy but this is just so mobs dont beat eachother up
+	faction_friends = list("otie", "angrydrones", "goia", "mimic", "mouse", "corrupt") //this is probably really lazy but this is just so mobs dont beat eachother up
