@@ -2,7 +2,9 @@
 	var/discord_whitelist = FALSE
 
 /hook/startup/proc/read_tc_config()
-	if(!t)	continue
+	var/list/Lines = file2list("config/config.txt")
+	for(var/t in Lines)
+		if(!t)	continue
 
 		t = trim(t)
 		if (length(t) == 0)
@@ -16,7 +18,7 @@
 
 		if (pos)
 			name = lowertext(copytext(t, 1, pos))
-			value = copytext(t, pos + 1)
+			//value = copytext(t, pos + 1)
 		else
 			name = lowertext(t)
 
