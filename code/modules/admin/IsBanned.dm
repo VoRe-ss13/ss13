@@ -39,6 +39,24 @@
 			log_misc("Ban database connection failure. Key [ckeytext] not checked")
 			return
 
+		//Fops Edit Begin
+		if(config.discord_whitelist)
+			var/DBQuery/query = SSdbcore.NewQuery("SELECT ckey FROM whitelist") //Not optimal but keys in the DB aren't stored in ckey format so we have to check all of them through the ckey function.
+			query.Execute()
+
+			is_whitelisted = FALSE
+
+			while(query.NextRow())
+				if(ckey(query[1])==ckeytext)
+					is_whitelisted = TRUE
+					break
+
+			qdel(query)
+
+			if(!is_whitelisted)
+				return list("reason"="Not whitelisted", "desc"="You aren't in the whitelist for the server! If you're in the VoRe furs discord, simply add yourself using the bot. If you did this already, make sure you input the correct information.")
+
+		//Fops Edit End
 		var/failedcid = 1
 		var/failedip = 1
 
@@ -57,7 +75,6 @@
 				failedcid = 1
 
 		var/DBQuery/query = SSdbcore.NewQuery("SELECT ckey, ip, computerid, a_ckey, reason, expiration_time, duration, bantime, bantype FROM erro_ban WHERE (ckey = :t_ckey [ipquery] [cidquery]) AND (bantype = 'PERMABAN'  OR (bantype = 'TEMPBAN' AND expiration_time > Now())) AND isnull(unbanned)", list("t_ckey" = ckeytext)) //CHOMPEdit TGSQL
-
 		query.Execute()
 
 		while(query.NextRow())
