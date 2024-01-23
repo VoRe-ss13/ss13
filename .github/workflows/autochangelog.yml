@@ -21,6 +21,7 @@ jobs:
       cancel-in-progress: false
     if: github.event.pull_request.merged == true && ( contains(github.event.pull_request.body, ':cl:') || contains(github.event.pull_request.body, '🆑') )
     steps:
+<<<<<<< HEAD
       - name: Clone
         uses: /actions/checkout@v3
       - name: Branch or checkout
@@ -89,3 +90,14 @@ jobs:
           pr_label: "Infrastructure"
           pr_allow_empty: false
           github_token: ${{ secrets.GITHUB_TOKEN }}
+=======
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Run auto changelog
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const { processAutoChangelog } = await import('${{ github.workspace }}/tools/pull_request_hooks/autoChangelog.js')
+          await processAutoChangelog({ github, context })
+        github-token: ${{ secrets.COMFY_ORANGE_PAT || secrets.GITHUB_TOKEN }}
+>>>>>>> 98f29363f1 (Bump actions/checkout from 3 to 4 (#7609))
