@@ -47,7 +47,7 @@
 			var/is_whitelisted = FALSE
 
 			while(query.NextRow())
-				if(ckey(query[1])==ckeytext)
+				if(ckey(query.item[1])==ckeytext)
 					is_whitelisted = TRUE
 					break
 
