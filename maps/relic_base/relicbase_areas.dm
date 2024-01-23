@@ -1804,7 +1804,7 @@ z
 	flags = RAD_SHIELDED
 
 /area/shuttle/shuttle3/start
-	name = "\improper Expedition Hangar One"
+	name = "\improper Landing Pad Four"
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/reinforced
 
@@ -1814,6 +1814,11 @@ z
 
 /area/shuttle/shuttle3/stationhangar3
 	name = "\improper Landing Pad Three"
+	icon_state = "shuttlered"
+	base_turf = /turf/simulated/floor/reinforced
+
+/area/shuttle/shuttle3/expedition
+	name = "\improper Expedition Hangar One"
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/floor/reinforced
 

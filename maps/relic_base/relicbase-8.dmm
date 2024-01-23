@@ -4319,7 +4319,7 @@
 	name = "Exploration Carrier Hangar One"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/shuttle3/start)
+/area/shuttle/shuttle3)
 "mR" = (
 /obj/structure/closet/secure_closet/medical_wall/pills{
 	pixel_x = -32
@@ -4698,7 +4698,7 @@
 /area/expoutpost/hangarone)
 "nQ" = (
 /turf/simulated/floor/reinforced,
-/area/shuttle/shuttle3/start)
+/area/shuttle/shuttle3)
 "nR" = (
 /obj/structure/cable/blue{
 	d1 = 2;
