@@ -19,13 +19,8 @@ jobs:
           if [ -n "$ENABLER_SECRET" ]; then SECRET_EXISTS=true ; fi
           echo "ACTIONS_ENABLED=$SECRET_EXISTS" >> $GITHUB_OUTPUT
       - name: "Setup python"
-<<<<<<< HEAD
-        if: steps.value_holder.outputs.ACTIONS_ENABLED
-        uses: actions/setup-python@v1
-=======
         #if: steps.value_holder.outputs.ACTIONS_ENABLED
         uses: actions/setup-python@v5
->>>>>>> e2084ea5a3 (Bump actions/setup-python from 1 to 5 (#7608))
         with:
           python-version: '3.x'
       - name: "Install deps"
@@ -35,13 +30,8 @@ jobs:
           python -m pip install pyyaml
           sudo apt-get install  dos2unix
       - name: "Checkout"
-<<<<<<< HEAD
-        if: steps.value_holder.outputs.ACTIONS_ENABLED
-        uses: actions/checkout@v3
-=======
         #if: steps.value_holder.outputs.ACTIONS_ENABLED
         uses: actions/checkout@v4
->>>>>>> 98f29363f1 (Bump actions/checkout from 3 to 4 (#7609))
         with:
           fetch-depth: 25
           persist-credentials: false
