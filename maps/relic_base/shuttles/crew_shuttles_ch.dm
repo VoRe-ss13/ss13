@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(shuttdisp_list)
 	name = "Shuttle 3"
 	warmup_time = 0
 	shuttle_area = /area/shuttle/shuttle3/start
-	current_location = "exphangar_1"
+	current_location = "hangar_3"
 	docking_controller_tag = "shuttle3_shuttle"
 	web_master_type = /datum/shuttle_web_master/shuttle3
 
