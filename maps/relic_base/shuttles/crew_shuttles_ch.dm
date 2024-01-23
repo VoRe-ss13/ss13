@@ -19,7 +19,7 @@ GLOBAL_LIST_EMPTY(shuttdisp_list)
 
 /datum/shuttle_web_master/shuttle3
 	destination_class = /datum/shuttle_destination/shuttle3
-	starting_destination = /datum/shuttle_destination/shuttle3/root
+	starting_destination = /datum/shuttle_destination/shuttle3/stationhangar3
 
 /datum/shuttle_destination/shuttle3/root
 	name = "Exporation Hangar One"
