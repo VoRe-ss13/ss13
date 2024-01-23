@@ -24224,6 +24224,8 @@
 	dir = 4
 	},
 /obj/effect/shuttle_landmark{
+	base_area = /area/surface/outpost/main/landing;
+	base_turf = /turf/simulated/floor/reinforced;
 	docking_controller = "hangar_3";
 	landmark_tag = "hangar_3";
 	name = "Hangar 4"

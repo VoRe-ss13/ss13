@@ -4312,14 +4312,14 @@
 /area/expoutpost/hangarone)
 "mP" = (
 /obj/effect/shuttle_landmark{
-	base_area = /area/expoutpost/hangarone;
+	base_area = null;
 	base_turf = /turf/simulated/floor/reinforced;
 	docking_controller = "exphangar_1";
 	landmark_tag = "exphangar_1";
 	name = "Exploration Carrier Hangar One"
 	},
 /turf/simulated/floor/reinforced,
-/area/shuttle/shuttle3)
+/area/shuttle/shuttle3/expedition)
 "mR" = (
 /obj/structure/closet/secure_closet/medical_wall/pills{
 	pixel_x = -32
@@ -4698,7 +4698,7 @@
 /area/expoutpost/hangarone)
 "nQ" = (
 /turf/simulated/floor/reinforced,
-/area/shuttle/shuttle3)
+/area/shuttle/shuttle3/expedition)
 "nR" = (
 /obj/structure/cable/blue{
 	d1 = 2;
