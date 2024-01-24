@@ -24,7 +24,7 @@
 	attack_sharp = TRUE
 	attack_edge = 1
 	attacktext = list("slashed")
-	armor = list(melee = 90, bullet = 90, laser = 90, energy = 90, bomb = 90, bio = 100, rad = 100)			//matches stats of suit they drop. Basically tank. Rat tank. Ratank.
+	armor = list(melee = 70, bullet = 70, laser = 70, energy = 30, bomb = 80, bio = 100, rad = 40)			//matches stats of suit they drop. Basically tank. Rat tank. Ratank.
 
 	corpse = /obj/effect/landmark/mobcorpse/altevian
 	loot_list = list(/obj/item/weapon/melee/energy/sword/altevian = 100)
