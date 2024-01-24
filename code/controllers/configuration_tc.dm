@@ -14,7 +14,7 @@
 
 		var/pos = findtext(t, " ")
 		var/name = null
-		var/value = null
+		//var/value = null
 
 		if (pos)
 			name = lowertext(copytext(t, 1, pos))
