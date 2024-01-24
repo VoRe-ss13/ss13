@@ -230,3 +230,15 @@
 		"The bubbling of the carnivorous, little predator's belly cuts off the sounds outside, the greedy walls working in and giving you a fresh coat of enzymes.",
 		"The %pred traces their claws over your form and sings an incantation, and you feel your strength wane as the walls work in with renewed vigor.",
 		"The motion of the %pred's trotting sloshes and sways you from side to side, occasionally coating you in more hot fluids! Eating away your stamina with irragular flexes to allow them to keep eating you away." ,)
+
+
+//Projectile//
+/obj/item/projectile/energy/inversion
+	name = "inversion blast"
+	icon = 'icons/obj/projectiles_impact.dmi'
+	icon_state = "impact_invert"
+	damage = 15
+	armor_penetration = 60
+	damage_type = BURN
+	check_armour = "laser"
+	color = "#ffffff"
