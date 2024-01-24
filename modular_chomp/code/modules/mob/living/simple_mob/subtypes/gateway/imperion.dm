@@ -494,7 +494,7 @@
 	armor_penetration = 35
 	damage_type = BURN
 	check_armour = "laser"
-	speed = 7.0
+	speed = 4.4
 
 	flash_strength = 0
 
@@ -517,7 +517,7 @@
 	armor_penetration = 100
 	damage_type = BURN
 	check_armour = "laser"
-	speed = 4.5
+	speed = 4.4
 
 	flash_strength = 0
 
@@ -541,7 +541,7 @@
 	damage_type = BURN
 	check_armour = "energy"
 	agony = 50
-	speed = 10.0
+	speed = 8.2
 
 	flash_strength = 0
 
