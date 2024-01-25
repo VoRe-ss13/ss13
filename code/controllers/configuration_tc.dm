@@ -1,5 +1,6 @@
 /datum/configuration
 	var/discord_whitelist = FALSE
+	var/vote_autotransfer_hard = 2
 
 /hook/startup/proc/read_tc_config()
 	var/list/Lines = file2list("config/config.txt")
@@ -14,11 +15,11 @@
 
 		var/pos = findtext(t, " ")
 		var/name = null
-		//var/value = null
+		var/value = null
 
 		if (pos)
 			name = lowertext(copytext(t, 1, pos))
-			//value = copytext(t, pos + 1)
+			value = copytext(t, pos + 1)
 		else
 			name = lowertext(t)
 
@@ -28,3 +29,6 @@
 		switch (name)
 			if("discord_whitelist")
 				config.discord_whitelist = TRUE
+			if("vote_autotransfer_hard")
+				config.vote_autotransfer_hard = text2num(value)
+
