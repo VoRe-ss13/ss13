@@ -1,12 +1,9 @@
-/mob/living/simple_mob/mechanical/combat_drone
-	projectiletype = /obj/item/projectile/energy/mob/drone
-
 /mob/living/simple_mob/mechanical/combat_drone/lesser/aerostat
 	desc = "A Vir System Authority automated combat drone with an aged apperance."
 	movement_cooldown = 10
 	say_list_type = /datum/say_list/malf_drone/drone_aerostat
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/kiting/threatening/drone_aerostat
-
+	
 /datum/say_list/malf_drone/drone_aerostat
 	speak = list("ALERT.","Hostile-ile-ile entities dee-twhoooo-wected.","Threat parameterszzzz- szzet.","Bring sub-sub-sub-systems uuuup to combat alert alpha-a-a.")
 	emote_see = list("beeps menacingly","whirrs threateningly","scans its immediate vicinity")
@@ -24,24 +21,3 @@
 /datum/ai_holder/simple_mob/ranged/kiting/threatening/drone_aerostat
 	threaten_delay = 10 SECOND
 	threaten_timeout = 30 SECONDS
-
-/mob/living/simple_mob/mechanical/combat_drone
-	maxHealth = 25
-	health = 25
-
-/mob/living/simple_mob/mechanical/mining_drone
-	maxHealth = 25
-	health = 25
-
-//Are this things close enough to drones?
-/mob/living/simple_mob/mechanical/viscerator
-	maxHealth = 7
-	health = 7
-
-/obj/item/shield_projector/rectangle/automatic/drone
-	shield_health = 75
-	max_shield_health = 75
-	shield_regen_delay = 10 SECONDS
-	shield_regen_amount = 10
-	size_x = 1
-	size_y = 1
