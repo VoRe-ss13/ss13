@@ -90,6 +90,10 @@ var/global/datum/controller/subsystem/ticker/ticker
 
 	// Time to start the game!
 	if(pregame_timeleft <= 0)
+		//Fops edit Start
+		if(length(GLOB.clients) == 0) //Don't start round unless at least 1 user is present
+			return
+		//Fops edit End
 		current_state = GAME_STATE_SETTING_UP
 		Master.SetRunLevel(RUNLEVEL_SETUP)
 		if(start_immediately)
