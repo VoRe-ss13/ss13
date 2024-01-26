@@ -11,8 +11,8 @@
 	icon_state = "imperion"
 	icon_living = "imperion"
 	desc = "A strange precursor mecha"
-	maxHealth = 300
-	health = 300
+	maxHealth = 400
+	health = 400
 	movement_cooldown = -1
 	unsuitable_atoms_damage = 0
 	projectiletype = /obj/item/projectile/energy/gaussrifle
@@ -464,8 +464,8 @@
 	return ..()
 
 /obj/item/shield_projector/rectangle/automatic/imperion
-	shield_health = 250
-	max_shield_health = 250
+	shield_health = 500
+	max_shield_health = 500
 	shield_regen_delay = 60 SECONDS
 	shield_regen_amount = 50
 	size_x = 2
@@ -490,11 +490,11 @@
 /obj/item/projectile/energy/imperionspear
 	name = "energy spear"
 	icon_state = "arcane_barrage"
-	damage = 16
+	damage = 35
 	armor_penetration = 35
 	damage_type = BURN
 	check_armour = "laser"
-	speed = 7.0
+	speed = 4.4
 
 	flash_strength = 0
 
@@ -517,7 +517,7 @@
 	armor_penetration = 100
 	damage_type = BURN
 	check_armour = "laser"
-	speed = 4.5
+	speed = 4.4
 
 	flash_strength = 0
 
@@ -536,19 +536,19 @@
 /obj/item/projectile/energy/imperiontesla
 	name = "energy sphere"
 	icon_state = "tesla_projectile"
-	damage = 25
+	damage = 50
 	armor_penetration = 50
 	damage_type = BURN
 	check_armour = "energy"
 	agony = 50
-	speed = 10.0
+	speed = 8.2
 
 	flash_strength = 0
 
 /obj/item/projectile/energy/homing_bolt/missile
 	name = "homing rocket"
 	icon_state = "atrocket"
-	damage = 20
+	damage = 40
 	damage_type = BURN
 	check_armour = "bullet"
 
