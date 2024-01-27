@@ -2,24 +2,16 @@
 name: Auto Changelog
 on:
   pull_request_target:
-    types: closed
+    types:
+      - closed
     branches:
       - master
-
-env:
-  BASENAME: "chompstation"
-
+permissions:
+  contents: write
 jobs:
-  autochangelog:
-    name: Autochangelog
-    runs-on: ubuntu-20.04
-    permissions:
-      contents: write # to push to branch
-      pull-requests: write # to create pull requests (repo-sync/pull-request)
-    concurrency: 
-      group: autochangelog_group
-      cancel-in-progress: false
-    if: github.event.pull_request.merged == true && ( contains(github.event.pull_request.body, ':cl:') || contains(github.event.pull_request.body, '🆑') )
+  auto_changelog:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
     - name: Checkout
       uses: actions/checkout@v4
