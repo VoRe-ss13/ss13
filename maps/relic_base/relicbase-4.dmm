@@ -56,6 +56,9 @@
 	outdoors = 1
 	},
 /area/surface/outpost/main/landing)
+"ah" = (
+/turf/simulated/wall/bay/green,
+/area/surface/outpost/main/dorms/dorm_8/upstairs)
 "ai" = (
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/porta_turret/ai_defense,
@@ -530,6 +533,7 @@
 /obj/structure/curtain/open/shower/medical,
 /obj/effect/floor_decal/techfloor/hole/right,
 /obj/effect/floor_decal/techfloor/hole,
+/obj/random/soap,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/dorms/dorm_7/upstairs)
 "bi" = (
@@ -1098,12 +1102,11 @@
 	pixel_x = -3;
 	pixel_y = 2
 	},
-/obj/structure/window/reinforced{
-	dir = 4;
-	health = 1e+006
-	},
 /obj/machinery/status_display{
 	pixel_y = 32
+	},
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/simulated/floor/bluegrid,
 /area/ai/ai_upload)
@@ -2728,8 +2731,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
-	dir = 4;
-	health = 1e+006
+	dir = 4
 	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/shuttle3/start)
@@ -2747,6 +2749,11 @@
 /obj/machinery/cryopod,
 /turf/simulated/floor/tiled/dark,
 /area/security/prison)
+"fB" = (
+/obj/item/weapon/gun/projectile/revolver/slab,
+/obj/structure/safe,
+/turf/simulated/shuttle/wall/voidcraft,
+/area/surface/outpost/wall)
 "fD" = (
 /obj/structure/closet/crate,
 /obj/machinery/camera/network/exploration{
@@ -3182,6 +3189,13 @@
 "gG" = (
 /turf/simulated/wall/r_wall,
 /area/security/prison)
+"gH" = (
+/obj/effect/floor_decal/shuttles{
+	dir = 8;
+	pixel_y = -16
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outside/plains/outpost)
 "gI" = (
 /obj/machinery/shuttle_sensor{
 	dir = 5;
@@ -5294,6 +5308,9 @@
 	dir = 4;
 	pixel_x = -22
 	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/brig)
 "kO" = (
@@ -5307,8 +5324,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 1
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/brig)
@@ -5859,6 +5876,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/main)
+"lM" = (
+/obj/effect/floor_decal/shuttles/right{
+	dir = 8;
+	pixel_y = 16
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outside/plains/outpost)
 "lN" = (
 /obj/machinery/camera/network/exterior{
 	c_tag = "EXT - Command West 2";
@@ -6084,7 +6108,6 @@
 /obj/effect/floor_decal/corner/orange/border{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 1
 	},
@@ -6094,6 +6117,7 @@
 /obj/effect/floor_decal/corner/orange/bordercorner2{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
 /area/security/brig)
 "mj" = (
@@ -6522,6 +6546,9 @@
 /obj/effect/floor_decal/corner/orange/bordercorner2{
 	dir = 10
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/brig)
 "ni" = (
@@ -6547,9 +6574,6 @@
 	},
 /area/surface/outside/plains/outpost)
 "nl" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
 	},
@@ -6560,6 +6584,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
 /area/security/brig)
 "nm" = (
@@ -6573,8 +6598,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
-	dir = 4;
-	health = 1e+006
+	dir = 4
 	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/shuttle3/start)
@@ -6839,6 +6863,7 @@
 /obj/structure/curtain/open/shower/medical,
 /obj/effect/floor_decal/techfloor/hole/right,
 /obj/effect/floor_decal/techfloor/hole,
+/obj/random/soap,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/dorms/dorm_10/upstairs)
 "nI" = (
@@ -7861,6 +7886,7 @@
 /obj/structure/curtain/open/shower/medical,
 /obj/effect/floor_decal/techfloor/hole/right,
 /obj/effect/floor_decal/techfloor/hole,
+/obj/random/soap,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/dorms/dorm_8/upstairs)
 "px" = (
@@ -9421,6 +9447,7 @@
 /obj/structure/curtain/open/shower/medical,
 /obj/effect/floor_decal/techfloor/hole/right,
 /obj/effect/floor_decal/techfloor/hole,
+/obj/random/soap,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/dorms/dorm_4/upstairs)
 "sC" = (
@@ -9588,6 +9615,7 @@
 /obj/structure/curtain/open/shower/medical,
 /obj/effect/floor_decal/techfloor/hole/right,
 /obj/effect/floor_decal/techfloor/hole,
+/obj/random/soap,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/dorms/dorm_6/upstairs)
 "sZ" = (
@@ -9680,6 +9708,7 @@
 /obj/structure/curtain/open/shower/medical,
 /obj/effect/floor_decal/techfloor/hole/right,
 /obj/effect/floor_decal/techfloor/hole,
+/obj/random/soap,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/dorms/dorm_1/upstairs)
 "tk" = (
@@ -9852,6 +9881,7 @@
 /obj/structure/curtain/open/shower/medical,
 /obj/effect/floor_decal/techfloor/hole/right,
 /obj/effect/floor_decal/techfloor/hole,
+/obj/random/soap,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/dorms/dorm_9/upstairs)
 "tD" = (
@@ -10016,12 +10046,11 @@
 /area/surface/outpost/main/dorms/dorm_3/upstairs)
 "tT" = (
 /obj/structure/closet/l3closet/security,
-/obj/structure/window/reinforced{
-	dir = 4;
-	health = 1e+006
-	},
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/white/border,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/security_lockerroom)
 "tV" = (
@@ -12001,10 +12030,6 @@
 /obj/item/weapon/tank/jetpack/oxygen,
 /obj/item/clothing/mask/gas,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = null
-	},
-/obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/item/clothing/suit/space/void/captain,
@@ -12014,6 +12039,9 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/heads/sc/sd)
@@ -12547,6 +12575,14 @@
 	outdoors = 1
 	},
 /area/library_conference_room)
+"yY" = (
+/obj/effect/floor_decal/shuttles{
+	dir = 4;
+	pixel_y = 16
+	},
+/obj/effect/zone_divider,
+/turf/simulated/floor/reinforced,
+/area/surface/outside/plains/outpost)
 "yZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -12639,6 +12675,7 @@
 /obj/item/weapon/gun/energy/pummeler{
 	name = "yeet cannon"
 	},
+/obj/item/weapon/gun/energy/imperial,
 /turf/simulated/floor/bmarble,
 /area/security/nuke_storage)
 "zi" = (
@@ -14508,9 +14545,8 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/cable/green{
-	dir = 4;
-	icon_state = "32-4"
+/obj/structure/cable/orange{
+	icon_state = "32-1"
 	},
 /turf/simulated/open,
 /area/surface/outpost/main/landing)
@@ -15514,6 +15550,7 @@
 /obj/structure/curtain/open/shower/medical,
 /obj/effect/floor_decal/techfloor/hole/right,
 /obj/effect/floor_decal/techfloor/hole,
+/obj/random/soap,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/dorms/dorm_3/upstairs)
 "Fe" = (
@@ -16094,7 +16131,7 @@
 	},
 /area/medical/medical_lockerroom)
 "Gn" = (
-/turf/simulated/wall,
+/turf/simulated/wall/bay/orange,
 /area/surface/outpost/main/dorms/dorm_7/upstairs)
 "Go" = (
 /obj/machinery/door/airlock/medical{
@@ -16592,7 +16629,7 @@
 	},
 /area/crew_quarters/cafeteria)
 "Hn" = (
-/turf/simulated/wall,
+/turf/simulated/wall/bay/white,
 /area/surface/outpost/main/dorms/dorm_3/upstairs)
 "Ho" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
@@ -17761,6 +17798,7 @@
 /obj/structure/curtain/open/shower/medical,
 /obj/effect/floor_decal/techfloor/hole/right,
 /obj/effect/floor_decal/techfloor/hole,
+/obj/random/soap,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/dorms/dorm_5/upstairs)
 "JL" = (
@@ -17998,10 +18036,10 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/railing,
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/structure/railing,
 /turf/simulated/open{
 	outdoors = 1
 	},
@@ -18143,7 +18181,7 @@
 	},
 /area/quartermaster/storage)
 "KB" = (
-/turf/simulated/wall,
+/turf/simulated/wall/bay/black,
 /area/surface/outpost/main/dorms/dorm_10/upstairs)
 "KC" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -18627,6 +18665,21 @@
 	outdoors = 1
 	},
 /area/crew_quarters/cafeteria)
+"LC" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Medical Solars";
+	req_one_access = list(11)
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "medlockdown";
+	name = "Medical Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/medical/medical_lockerroom)
 "LD" = (
 /obj/structure/cable/yellow{
 	d2 = 4;
@@ -18963,7 +19016,7 @@
 	},
 /area/tcommsat/chamber)
 "Mi" = (
-/turf/simulated/wall,
+/turf/simulated/wall/bay/blue,
 /area/surface/outpost/main/dorms/dorm_9/upstairs)
 "Mj" = (
 /obj/structure/sign/warning/server_room,
@@ -19559,6 +19612,7 @@
 /obj/structure/curtain/open/shower/medical,
 /obj/effect/floor_decal/techfloor/hole/right,
 /obj/effect/floor_decal/techfloor/hole,
+/obj/random/soap,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/dorms/dorm_2/upstairs)
 "Nq" = (
@@ -21772,7 +21826,7 @@
 	},
 /area/surface/outside/plains/outpost)
 "RU" = (
-/turf/simulated/wall,
+/turf/simulated/wall/bay/blue,
 /area/surface/outpost/main/dorms/dorm_2/upstairs)
 "RV" = (
 /obj/structure/cable/yellow{
@@ -23842,6 +23896,14 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/storage)
+"Wk" = (
+/obj/effect/floor_decal/shuttles/right{
+	dir = 4;
+	pixel_y = -16
+	},
+/obj/effect/zone_divider,
+/turf/simulated/floor/reinforced,
+/area/surface/outside/plains/outpost)
 "Wl" = (
 /turf/simulated/wall/r_wall{
 	cached_rad_resistance = 150
@@ -24079,7 +24141,7 @@
 	},
 /area/surface/outside/plains/outpost)
 "WN" = (
-/turf/simulated/wall,
+/turf/simulated/wall/bay/purple,
 /area/surface/outpost/main/dorms/dorm_1/upstairs)
 "WO" = (
 /obj/structure/cable/cyan{
@@ -24093,7 +24155,7 @@
 	},
 /area/tcommsat/powercontrol)
 "WP" = (
-/turf/simulated/wall,
+/turf/simulated/wall/bay/brown,
 /area/surface/outpost/main/dorms/dorm_4/upstairs)
 "WQ" = (
 /obj/effect/floor_decal/industrial/loading{
@@ -24650,7 +24712,7 @@
 	},
 /area/surface/outpost/civilian/pool)
 "Ye" = (
-/turf/simulated/wall,
+/turf/simulated/wall/bay/purple,
 /area/surface/outpost/main/dorms/dorm_6/upstairs)
 "Yf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
@@ -25049,7 +25111,7 @@
 	},
 /area/surface/outpost/civilian/pool)
 "YY" = (
-/turf/simulated/wall,
+/turf/simulated/wall/bay/red,
 /area/surface/outpost/main/dorms/dorm_5/upstairs)
 "YZ" = (
 /obj/item/weapon/beach_ball,
@@ -25877,7 +25939,7 @@ Fl
 Fl
 Fl
 Fl
-Fl
+fB
 Fl
 Fl
 Fl
@@ -46692,9 +46754,9 @@ ZK
 ZK
 ZK
 ZK
+gH
 ZK
-ZK
-ZK
+lM
 ZK
 ZK
 ZO
@@ -50033,9 +50095,9 @@ wR
 wR
 wR
 wR
+Wk
 wR
-wR
-wR
+yY
 wR
 wR
 QD
@@ -56750,15 +56812,15 @@ yF
 yF
 yF
 yF
-ZI
-ZI
-ZI
-ZI
-ZI
+ah
+ah
+ah
+ah
+ah
 tX
 tX
-ZI
-ZI
+ah
+ah
 yF
 yF
 yF
@@ -57007,7 +57069,7 @@ yF
 yF
 yF
 yF
-ZI
+ah
 QA
 VL
 fj
@@ -57015,7 +57077,7 @@ Dr
 Fs
 Fs
 Nn
-ZI
+ah
 yF
 yF
 yF
@@ -57521,15 +57583,15 @@ yF
 yF
 yF
 yF
-ZI
-ZI
-Pr
-ZI
-ZI
+ah
 ZI
 Pr
-ZI
-ZI
+ah
+ah
+ah
+Pr
+ah
+ah
 yF
 yF
 yF
@@ -57778,10 +57840,10 @@ yF
 yF
 yF
 yF
-ZI
+ah
 pw
 es
-ZI
+ah
 VX
 KI
 cO
@@ -58035,15 +58097,15 @@ yF
 yF
 yF
 yF
-ZI
+ah
 zj
 PP
-ZI
+ah
 BC
 Uc
 gF
 zS
-ZI
+ah
 yF
 yF
 yF
@@ -58292,15 +58354,15 @@ id
 id
 id
 id
-ZI
-ZI
-ZI
-ZI
-ZI
-ZI
-ZI
-ZI
-ZI
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
 id
 id
 id
@@ -60053,12 +60115,12 @@ yF
 yF
 yF
 yF
-yF
-yF
-yF
-yF
-yF
-Xu
+Cw
+EG
+EG
+EG
+EG
+se
 xD
 xD
 RV
@@ -60306,16 +60368,16 @@ uy
 uy
 yF
 yF
-yF
-yF
-EG
-EG
-Cw
 EG
 EG
 EG
-EG
-se
+OY
+xD
+xD
+xD
+xD
+xD
+xD
 xD
 xD
 xD
@@ -60562,9 +60624,9 @@ uy
 uy
 uh
 EG
-EG
-EG
 OY
+xD
+xD
 xD
 xD
 xD
@@ -65969,7 +66031,7 @@ xD
 xD
 Nq
 xD
-Ns
+LC
 Qf
 Rk
 RZ
@@ -76503,7 +76565,7 @@ dl
 Td
 jF
 PI
-nm
+Td
 UJ
 QN
 uu
@@ -77017,7 +77079,7 @@ dl
 fx
 Lf
 PI
-nm
+Td
 UJ
 QN
 EX
