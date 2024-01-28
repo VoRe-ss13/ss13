@@ -1777,6 +1777,15 @@
 /area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"bEb" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_one_access = null
+	},
+/obj/effect/floor_decal/rust,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralstarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "bEo" = (
 /obj/machinery/atmospherics/unary/freezer{
 	dir = 8;
@@ -3913,10 +3922,9 @@
 	name = "north bump";
 	pixel_y = 24
 	},
-/obj/structure/cable/green{
-	d2 = 8;
-	dir = 1;
-	icon_state = "0-8"
+/obj/structure/cable/yellow{
+	d2 = 0;
+	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
@@ -5245,6 +5253,15 @@
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
+"fwr" = (
+/obj/effect/zone_divider,
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_one_access = null
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "fwG" = (
@@ -8431,6 +8448,12 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"jdA" = (
+/obj/random/trash_pile,
+/turf/simulated/floor/outdoors/rocks/caves{
+	outdoors = -1
+	},
+/area/surface/underground/in_da_walls)
 "jfb" = (
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard{
@@ -10057,6 +10080,7 @@
 /obj/item/weapon/gun/projectile/serdy_pistols/tp23,
 /obj/item/weapon/gun/projectile/serdy_pistols/tp23,
 /obj/item/weapon/gun/projectile/serdy_pistols/glock71,
+/obj/item/weapon/gun/projectile/automatic/serdy/spas35,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -11086,6 +11110,10 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"nBu" = (
+/obj/effect/floor_decal/rust,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "nEe" = (
 /obj/structure/girder/displaced,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -15533,10 +15561,11 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/structure/cable/green{
+/obj/structure/closet/firecloset/full,
+/obj/structure/cable/yellow{
+	d2 = 0;
 	icon_state = "0-4"
 	},
-/obj/structure/closet/firecloset/full,
 /turf/simulated/floor/tiled/white,
 /area/rnd/research/firstdeck/hallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -15580,7 +15609,8 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/structure/cable/green{
+/obj/structure/cable/yellow{
+	d2 = 0;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/white,
@@ -15888,6 +15918,11 @@
 	dir = 4;
 	name = "Station Intercom (General)";
 	pixel_x = 21
+	},
+/obj/structure/cable{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
@@ -18231,6 +18266,12 @@
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"xTn" = (
+/obj/effect/zone_divider,
+/turf/simulated/floor/outdoors/rocks/caves{
+	outdoors = -1
+	},
+/area/surface/underground/in_da_walls)
 "xTy" = (
 /obj/random/trash,
 /obj/effect/floor_decal/rust,
@@ -38603,7 +38644,7 @@ rlb
 rlb
 rlb
 rlb
-rlb
+jdA
 wOE
 whL
 mEj
@@ -38844,16 +38885,14 @@ rlb
 rlb
 rlb
 rlb
-rlb
-tWC
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
+crS
+xTn
+crS
+crS
+crS
+crS
+crS
+crS
 rlb
 rlb
 rlb
@@ -38861,6 +38900,8 @@ rlb
 rlb
 rlb
 rlb
+jdA
+crS
 wOE
 whL
 whL
@@ -39099,25 +39140,25 @@ rlb
 rlb
 rlb
 rlb
+crS
+crS
+crS
+xTn
+crS
+jdA
 rlb
 rlb
-rlb
-tWC
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
+crS
+crS
+crS
+crS
+crS
+crS
+crS
+crS
+crS
+crS
+crS
 wOE
 whL
 jFe
@@ -39353,10 +39394,10 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
-rlb
-rlb
+crS
+crS
+crS
+crS
 rlb
 rlb
 tWC
@@ -39369,13 +39410,13 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-wOE
+crS
+crS
+crS
+crS
+crS
+crS
+gae
 whL
 whL
 whL
@@ -39535,8 +39576,8 @@ dKV
 dKV
 dKV
 dKV
-dKV
-dKV
+cXC
+xNp
 dKV
 dKV
 dKV
@@ -39606,13 +39647,13 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
+jdA
+crS
+crS
+crS
+crS
+crS
+crS
 rlb
 rlb
 rlb
@@ -39627,12 +39668,12 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-wOE
+crS
+crS
+crS
+crS
+crS
+gae
 whL
 whL
 whL
@@ -39792,8 +39833,8 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
+crS
+crS
 rlb
 rlb
 rlb
@@ -39862,12 +39903,12 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
-rlb
-rlb
-rlb
-rlb
+jdA
+crS
+crS
+crS
+crS
+crS
 rlb
 rlb
 rlb
@@ -39887,9 +39928,9 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
-wOE
+crS
+crS
+uwR
 whL
 iwU
 whL
@@ -40050,7 +40091,7 @@ rlb
 rlb
 rlb
 rlb
-rlb
+crS
 rlb
 rlb
 rlb
@@ -40119,9 +40160,9 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
-rlb
+crS
+crS
+crS
 lJk
 lJk
 lJk
@@ -40144,9 +40185,9 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
-wOE
+jdA
+crS
+gae
 whL
 whL
 whL
@@ -40307,7 +40348,7 @@ rlb
 rlb
 rlb
 rlb
-rlb
+crS
 rlb
 rlb
 rlb
@@ -40376,9 +40417,9 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
-rlb
+crS
+crS
+crS
 lJk
 jsH
 fCf
@@ -40402,7 +40443,7 @@ rlb
 rlb
 rlb
 rlb
-rlb
+crS
 wOE
 whL
 whL
@@ -40564,7 +40605,7 @@ rlb
 rlb
 rlb
 rlb
-rlb
+crS
 rlb
 rlb
 rlb
@@ -40633,9 +40674,9 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
-rlb
+crS
+crS
+jdA
 lJk
 fXY
 dvs
@@ -40659,7 +40700,7 @@ rlb
 rlb
 rlb
 rlb
-rlb
+jdA
 wOE
 whL
 whL
@@ -40821,7 +40862,7 @@ rlb
 rlb
 rlb
 rlb
-rlb
+crS
 rlb
 rlb
 rlb
@@ -40890,8 +40931,8 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
+crS
+crS
 rlb
 lJk
 ttR
@@ -41078,8 +41119,8 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
+crS
+crS
 ajN
 eNO
 ajN
@@ -41147,7 +41188,7 @@ rlb
 rlb
 rlb
 rlb
-rlb
+crS
 rlb
 rlb
 lJk
@@ -41404,8 +41445,8 @@ rlb
 rlb
 ick
 ick
-rlb
-rlb
+crS
+crS
 rlb
 lJk
 mzR
@@ -41661,7 +41702,7 @@ rlb
 rlb
 ykN
 ykN
-rlb
+crS
 rlb
 rlb
 lJk
@@ -44914,9 +44955,9 @@ dKV
 dKV
 dKV
 dKV
-dKV
 cXC
-dKV
+xNp
+cXC
 dKV
 dKV
 dKV
@@ -67827,7 +67868,7 @@ tWC
 tWC
 tWC
 tdj
-tdj
+fwr
 tdj
 tWC
 tWC
@@ -68083,9 +68124,9 @@ rlb
 rlb
 rlb
 rlb
-rlb
-rlb
-rlb
+lJk
+nBu
+lJk
 rlb
 rlb
 rlb
@@ -68341,8 +68382,8 @@ bot
 bot
 tJc
 tJc
-rlb
-rlb
+nBu
+lJk
 rlb
 rlb
 rlb
@@ -68598,8 +68639,8 @@ kbU
 kbU
 htr
 tJc
-rlb
-rlb
+nBu
+lJk
 rlb
 rlb
 rlb
@@ -68854,9 +68895,9 @@ kbU
 kbU
 kbU
 hJq
-tJc
-rlb
-rlb
+bEb
+nBu
+lJk
 rlb
 rlb
 rlb
@@ -69112,8 +69153,8 @@ bot
 jRc
 hJq
 tJc
-rlb
-rlb
+nBu
+lJk
 rlb
 rlb
 rlb
@@ -69369,8 +69410,8 @@ bot
 kbU
 hJq
 tJc
-rlb
-rlb
+lJk
+lJk
 rlb
 rlb
 rlb
