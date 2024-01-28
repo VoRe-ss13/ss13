@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscadd: "Goodies for alternative titles"
+  - balance: "Rebalanced some of the goodie lists"
