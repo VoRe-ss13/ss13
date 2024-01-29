@@ -423,11 +423,6 @@
 	layer = 2.6
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006;
-	req_access = list(5)
-	},
-/obj/structure/window/reinforced{
 	dir = 8
 	},
 /obj/structure/window/reinforced{
@@ -462,6 +457,9 @@
 /obj/item/weapon/gun/projectile/colt/detective,
 /obj/item/weapon/gun/projectile/colt/detective,
 /obj/item/weapon/gun/projectile/colt/detective,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -516,11 +514,6 @@
 	layer = 2.6
 	},
 /obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006;
-	req_access = list(5)
-	},
-/obj/structure/window/reinforced{
 	dir = 4
 	},
 /obj/structure/window/reinforced{
@@ -539,6 +532,9 @@
 /obj/item/clothing/suit/armor/pcarrier/medium/nt,
 /obj/item/clothing/suit/armor/pcarrier/medium/nt,
 /obj/item/clothing/suit/armor/pcarrier/medium/nt,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -770,11 +766,6 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/window/reinforced{
-	dir = 1;
-	health = 1e+006;
-	req_access = list(5)
-	},
 /obj/machinery/door/window/brigdoor/southleft{
 	dir = 4;
 	name = "Modular Armor"
@@ -791,6 +782,9 @@
 /obj/item/clothing/accessory/armor/armorplate/merc,
 /obj/item/clothing/accessory/armor/armorplate/merc,
 /obj/item/clothing/accessory/armor/armorplate/merc,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -1077,6 +1071,8 @@
 /obj/item/weapon/cell/device/weapon,
 /obj/item/weapon/cell/device/weapon,
 /obj/item/weapon/cell/device/weapon,
+/obj/item/weapon/cell/vepr,
+/obj/item/weapon/cell/vepr,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -2651,6 +2647,11 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"cGM" = (
+/obj/machinery/portable_atmospherics/powered/pump,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/dark,
+/area/engineering/storage)
 "cHz" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/railing{
@@ -5416,7 +5417,6 @@
 	})
 "fFF" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/shieldgen,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
 "fGZ" = (
@@ -6471,6 +6471,9 @@
 	id = "xenobio6station";
 	name = "Containment Blast Doors";
 	opacity = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
@@ -7527,9 +7530,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/space_heater,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/light/small,
+/obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
 "hZf" = (
@@ -8135,13 +8138,16 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "iJS" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	req_one_access = null
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/portable_atmospherics/powered/scrubber,
+/turf/simulated/floor/tiled/dark,
+/area/engineering/storage)
 "iKd" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/crate,
@@ -10916,6 +10922,9 @@
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -11005,6 +11014,9 @@
 	id = "xenobio5station";
 	name = "Containment Blast Doors";
 	opacity = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
@@ -11268,6 +11280,9 @@
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -11317,6 +11332,9 @@
 	id = "xenobio5station";
 	name = "Containment Blast Doors";
 	opacity = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
@@ -11640,6 +11658,9 @@
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -11762,6 +11783,9 @@
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -11844,6 +11868,13 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"oxx" = (
+/obj/structure/catwalk,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/outpost/civilian/sauna/cryosauna)
 "oyQ" = (
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
@@ -12112,6 +12143,9 @@
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -12167,6 +12201,9 @@
 	id = "xenobio4station";
 	name = "Containment Blast Doors";
 	opacity = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
@@ -12400,6 +12437,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/space_heater,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
 "ptv" = (
@@ -12415,6 +12454,9 @@
 	id = "xenobio8station";
 	name = "Containment Blast Doors";
 	opacity = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
@@ -12571,6 +12613,9 @@
 	id = "xenobio3station";
 	name = "Containment Blast Doors";
 	opacity = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
@@ -12803,6 +12848,9 @@
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -12879,6 +12927,9 @@
 	id = "xenobio3station";
 	name = "Containment Blast Doors";
 	opacity = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
@@ -13191,6 +13242,9 @@
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -13332,6 +13386,9 @@
 	id = "xenobio2station";
 	name = "Containment Blast Doors";
 	opacity = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
@@ -13518,6 +13575,9 @@
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -13550,6 +13610,9 @@
 	id = "xenobio2station";
 	name = "Containment Blast Doors";
 	opacity = 0
+	},
+/obj/structure/window/reinforced{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
@@ -13770,6 +13833,9 @@
 	opacity = 0
 	},
 /obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -13983,6 +14049,9 @@
 	name = "Containment Blast Doors";
 	opacity = 0
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -14162,6 +14231,9 @@
 	opacity = 0
 	},
 /obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -15484,7 +15556,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "tVC" = (
 /obj/structure/closet/crate,
@@ -15955,7 +16027,7 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/power/thermoregulator,
+/obj/machinery/portable_atmospherics/powered/pump,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
 "uFJ" = (
@@ -16649,7 +16721,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "vGf" = (
 /obj/machinery/light/small/readylight{
@@ -17158,14 +17230,14 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "wvh" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "wvj" = (
 /obj/effect/floor_decal/rust,
@@ -17492,7 +17564,7 @@
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 1
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "wLb" = (
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -17506,7 +17578,7 @@
 	pressure_checks_default = 0;
 	use_power = 1
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "wLj" = (
 /obj/effect/floor_decal/rust,
@@ -17550,7 +17622,7 @@
 	pump_direction = 0;
 	use_power = 1
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "wOB" = (
 /obj/random/powercell,
@@ -17568,7 +17640,7 @@
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 4
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "wPV" = (
 /obj/effect/zone_divider,
@@ -17956,7 +18028,7 @@
 	})
 "xmy" = (
 /obj/structure/closet/secure_closet/personal,
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "xmH" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner{
@@ -17965,7 +18037,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 5
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "xmM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
@@ -17974,20 +18046,20 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "xmQ" = (
 /obj/effect/floor_decal/spline/fancy/wood/corner{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/black,
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "xmU" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/black{
 	dir = 1
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "xmY" = (
 /obj/structure/catwalk,
@@ -18445,7 +18517,7 @@
 	pixel_y = -4
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "xPx" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -18464,19 +18536,19 @@
 	pixel_x = -32;
 	pixel_y = -21
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "xPY" = (
 /obj/structure/bed/chair/sofa/black{
 	dir = 1
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "xQg" = (
 /obj/structure/bed/chair/sofa/left/black{
 	dir = 1
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "xQj" = (
 /obj/machinery/seed_extractor,
@@ -18494,7 +18566,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 5
 	},
-/turf/simulated/floor/wood/cryosauna,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "xRA" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -36536,9 +36608,9 @@ rlb
 rlb
 rlb
 lJk
-dCM
-dCM
-was
+lll
+lll
+yjd
 pcR
 nPZ
 odS
@@ -36793,9 +36865,9 @@ lJk
 lJk
 lJk
 lJk
-dCM
-dCM
-iJS
+lll
+lll
+qHZ
 nGN
 nQX
 oif
@@ -37046,13 +37118,13 @@ rlb
 rlb
 rlb
 lJk
-dCM
-dCM
-dCM
-dCM
-dCM
-dCM
-was
+lll
+lll
+lll
+lll
+lll
+lll
+yjd
 tdi
 lll
 gqL
@@ -37303,14 +37375,14 @@ rlb
 lJk
 rlb
 lJk
-dCM
-dCM
-dCM
-dCM
-dCM
-dCM
-was
-was
+lll
+lll
+lll
+lll
+lll
+lll
+yjd
+yjd
 qHZ
 was
 lJk
@@ -39103,8 +39175,8 @@ wOE
 xRA
 xRA
 xTw
-fFF
 xRA
+fFF
 kYw
 fiu
 wOE
@@ -39363,7 +39435,7 @@ kYw
 kYw
 kYw
 kYw
-xKt
+iJS
 wOE
 rlb
 lll
@@ -40391,7 +40463,7 @@ kYw
 kYw
 kYw
 kYw
-kYw
+cGM
 wOE
 rlb
 lll
@@ -56100,7 +56172,7 @@ vGF
 xmM
 xPY
 psk
-wxT
+oxx
 oJK
 vWD
 rlb

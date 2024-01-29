@@ -295,7 +295,7 @@
 /obj/machinery/camera/network/civilian{
 	c_tag = "CIV - Church Northwest"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "ahR" = (
 /obj/structure/cable/blue{
@@ -505,7 +505,7 @@
 /area/surface/outside/plains/outpost)
 "amv" = (
 /obj/effect/zone_divider,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_6)
 "amw" = (
 /mob/living/simple_mob/animal/passive/armadillo/torta,
@@ -523,7 +523,7 @@
 /obj/machinery/computer/skills{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "ang" = (
 /obj/structure/cable/heavyduty{
@@ -1886,7 +1886,7 @@
 /obj/structure/bed/chair{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "bdY" = (
 /obj/effect/floor_decal/borderfloorblack{
@@ -2377,7 +2377,7 @@
 /obj/machinery/newscaster{
 	pixel_y = -30
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_1)
 "bpX" = (
 /obj/machinery/sleeper{
@@ -2469,7 +2469,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_5)
 "bst" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -2872,7 +2872,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_4)
 "bEC" = (
 /obj/machinery/camera/network/exterior{
@@ -3033,6 +3033,11 @@
 	dir = 1;
 	req_access = list(58);
 	req_one_access = list(19)
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id = "Warden_Shutters";
+	name = "Warden Shutters"
 	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/sc/hos)
@@ -3485,6 +3490,9 @@
 	},
 /turf/simulated/floor/wood,
 /area/chapel/main)
+"bVr" = (
+/turf/simulated/floor/wood/alt/panel,
+/area/surface/outpost/main/dorms/dorm_9)
 "bVD" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/clipboard,
@@ -3495,7 +3503,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "bVW" = (
 /obj/machinery/light/no_nightshift,
@@ -3519,7 +3527,7 @@
 /obj/machinery/firealarm{
 	pixel_y = -32
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "bXs" = (
 /obj/structure/bed/chair/comfy/brown,
@@ -3809,6 +3817,14 @@
 /obj/machinery/button/remote/blast_door{
 	id = "security_lockdown";
 	name = "Brig Lockdown";
+	pixel_x = 6;
+	pixel_y = 24;
+	req_access = list(2)
+	},
+/obj/machinery/button/remote/blast_door{
+	id = "Warden_Shutters";
+	name = "Privacy Shutters";
+	pixel_x = -6;
 	pixel_y = 24;
 	req_access = list(2)
 	},
@@ -4112,20 +4128,13 @@
 	density = 0;
 	dir = 4
 	},
-/obj/structure/boxingrope{
-	density = 0
-	},
-/obj/structure/boxingrope{
-	density = 0;
-	dir = 6;
-	layer = 4.1
-	},
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 10
 	},
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 5
 	},
+/obj/structure/boxingropeenter,
 /turf/simulated/floor/tiled/white,
 /area/surface/outpost/main/gym)
 "clg" = (
@@ -4786,7 +4795,7 @@
 	pixel_z = 8
 	},
 /turf/simulated/floor/outdoors/dirt,
-/area/surface/outside/path/plains)
+/area/engineering/external_lights)
 "cwm" = (
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
@@ -4827,6 +4836,9 @@
 /obj/random/soap,
 /turf/simulated/floor/tiled/dark,
 /area/holodeck_control)
+"cxg" = (
+/turf/simulated/floor/wood/alt/panel,
+/area/surface/outpost/main/dorms/dorm_6)
 "cxn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -4946,10 +4958,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/substation/civilian)
 "cAi" = (
-/obj/machinery/door/airlock/glass_security{
-	name = "Warden's Office";
-	req_access = list(3)
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -4959,6 +4967,10 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/security{
+	name = "Warden's Office";
+	req_access = list(3)
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/warden)
@@ -5382,7 +5394,7 @@
 	pixel_x = 21;
 	pixel_y = -31
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "cGZ" = (
 /obj/machinery/computer/ship/sensors,
@@ -5728,7 +5740,7 @@
 /turf/simulated/floor/tiled/steel_dirty{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/surface/outside/path/plains)
 "cOJ" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 10
@@ -5888,6 +5900,11 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/machinery/door/blast/shutters{
+	dir = 8;
+	id = "Warden_Shutters";
+	name = "Warden Shutters"
+	},
 /turf/simulated/floor/plating,
 /area/security/warden)
 "cSp" = (
@@ -6038,7 +6055,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_10)
 "cVO" = (
 /obj/structure/cable/green{
@@ -6068,7 +6085,7 @@
 	name = "Station Intercom (General)";
 	pixel_x = 21
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "cWm" = (
 /obj/structure/table/wooden_reinforced,
@@ -6720,7 +6737,7 @@
 /obj/machinery/newscaster{
 	pixel_y = -30
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "dlZ" = (
 /obj/effect/floor_decal/rust,
@@ -7055,6 +7072,9 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/ai_monitored/storage/eva)
+"dth" = (
+/turf/simulated/floor/wood/alt/panel,
+/area/surface/outpost/main/dorms/dorm_5)
 "dtG" = (
 /obj/item/weapon/storage/briefcase/inflatable{
 	pixel_x = 3;
@@ -7352,7 +7372,7 @@
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "dzp" = (
 /obj/machinery/door/firedoor/border_only,
@@ -7360,6 +7380,11 @@
 /obj/machinery/door/window/brigdoor/eastleft{
 	name = "Warden's Desk";
 	req_access = list(3)
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 8;
+	id = "Warden_Shutters";
+	name = "Warden Shutters"
 	},
 /turf/simulated/floor/plating,
 /area/security/warden)
@@ -7837,7 +7862,7 @@
 	name = "north bump";
 	pixel_y = 24
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "dHc" = (
 /turf/simulated/floor/outdoors/grass/heavy,
@@ -8213,7 +8238,7 @@
 /area/security/security_hallway)
 "dPg" = (
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_5)
 "dPi" = (
 /obj/effect/zone_divider,
@@ -8320,13 +8345,14 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id = "Warden_Shutters";
+	name = "Warden Shutters"
+	},
 /turf/simulated/floor/plating,
 /area/security/warden)
 "dRn" = (
-/obj/machinery/door/airlock/glass_security{
-	name = "Warden's Office";
-	req_access = list(3)
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -8336,6 +8362,10 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/security{
+	name = "Warden's Office";
+	req_access = list(3)
+	},
 /turf/simulated/floor/bmarble,
 /area/security/warden)
 "dRo" = (
@@ -8355,7 +8385,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_9)
 "dRI" = (
 /obj/machinery/door/firedoor/border_only,
@@ -8411,7 +8441,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_7)
 "dTB" = (
 /obj/structure/dispenser/oxygen,
@@ -9187,7 +9217,7 @@
 /area/surface/outpost/main/dorms/dorm_7)
 "elH" = (
 /obj/machinery/photocopier,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "elK" = (
 /obj/effect/floor_decal/borderfloorblack{
@@ -9521,7 +9551,7 @@
 /obj/machinery/newscaster{
 	pixel_y = -30
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_4)
 "era" = (
 /obj/machinery/light/no_nightshift{
@@ -9539,7 +9569,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_8)
 "erg" = (
 /obj/structure/table/rack,
@@ -10102,7 +10132,7 @@
 	d2 = 0;
 	icon_state = "16-0"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "eDw" = (
 /obj/structure/cable/green{
@@ -10564,7 +10594,7 @@
 /obj/machinery/newscaster{
 	pixel_y = -30
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_2)
 "eOR" = (
 /obj/machinery/door/firedoor/border_only,
@@ -10635,7 +10665,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "eQc" = (
 /obj/machinery/door/firedoor,
@@ -11586,7 +11616,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "fhz" = (
 /obj/machinery/light/bigfloorlamp{
@@ -11838,7 +11868,7 @@
 	c_tag = "CIV - Church Southeast";
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "fnx" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
@@ -11898,7 +11928,7 @@
 /area/surface/outside/path/plains)
 "foN" = (
 /obj/structure/table/wooden_reinforced,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_5)
 "foO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -12747,7 +12777,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "fKT" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -13007,7 +13037,7 @@
 /obj/machinery/newscaster{
 	pixel_y = 30
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_8)
 "fRU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -13100,7 +13130,7 @@
 /obj/machinery/newscaster{
 	pixel_y = 30
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_10)
 "fTR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -13233,7 +13263,7 @@
 /obj/machinery/newscaster{
 	pixel_y = -30
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_5)
 "fXP" = (
 /obj/structure/cable/green{
@@ -14004,12 +14034,13 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_3)
 "gnD" = (
-/obj/effect/floor_decal/corner/black{
-	dir = 5
-	},
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/red/border/shifted,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/gym)
 "gov" = (
@@ -14923,7 +14954,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_8)
 "gLq" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -15127,6 +15158,9 @@
 /obj/machinery/light/no_nightshift{
 	dir = 1
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/lobby)
 "gQm" = (
@@ -15276,9 +15310,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/lobby)
-"gUe" = (
-/turf/simulated/floor/wood,
-/area/lawoffice)
 "gUy" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5
@@ -15518,7 +15549,7 @@
 	dir = 8;
 	pixel_x = 22
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "gYq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -15724,7 +15755,7 @@
 /obj/machinery/newscaster{
 	pixel_y = 30
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_7)
 "hcg" = (
 /obj/machinery/light/bigfloorlamp{
@@ -15805,7 +15836,7 @@
 /area/assembly/robotics)
 "hdc" = (
 /obj/structure/table/wooden_reinforced,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_2)
 "hdm" = (
 /obj/machinery/door/firedoor/border_only,
@@ -16360,6 +16391,9 @@
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
 	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/lobby)
 "hra" = (
@@ -16636,7 +16670,7 @@
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "hxf" = (
 /obj/machinery/flasher/portable,
@@ -17012,7 +17046,7 @@
 /obj/structure/flora/pottedplant/thinbush{
 	pixel_y = 10
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "hEH" = (
 /obj/structure/closet/secure_closet/miner,
@@ -17484,6 +17518,9 @@
 	dir = 10
 	},
 /obj/item/device/retail_scanner/security,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/lobby)
 "hPT" = (
@@ -17738,7 +17775,7 @@
 /obj/machinery/disposal/wall{
 	pixel_y = 33
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "hXh" = (
 /obj/effect/floor_decal/steeldecal/monofloor{
@@ -18073,7 +18110,7 @@
 /area/security/detectives_office)
 "icu" = (
 /obj/structure/table/wooden_reinforced,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_7)
 "icz" = (
 /obj/structure/railing/grey,
@@ -18150,7 +18187,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_6)
 "ieO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -18337,7 +18374,7 @@
 /area/surface/outside/plains/outpost)
 "ijo" = (
 /obj/structure/table/wooden_reinforced,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_10)
 "ikc" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -18398,7 +18435,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna)
 "imA" = (
 /obj/structure/disposalpipe/segment{
@@ -19085,7 +19122,7 @@
 	pixel_x = -5;
 	pixel_y = -1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "iAW" = (
 /obj/machinery/scale,
@@ -19320,7 +19357,7 @@
 /obj/structure/bed/chair{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "iGn" = (
 /obj/effect/floor_decal/stairs/dark_stairs{
@@ -19371,7 +19408,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 6
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "iHN" = (
 /obj/machinery/vending/fitness,
@@ -19455,7 +19492,7 @@
 /obj/machinery/light/floortube{
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "iKb" = (
 /obj/machinery/door/firedoor/border_only,
@@ -19586,7 +19623,7 @@
 /obj/effect/landmark/start{
 	name = "Internal Affairs Agent"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "iMI" = (
 /obj/machinery/fitness/heavy/lifter,
@@ -20084,6 +20121,16 @@
 /area/surface/outside/plains/outpost{
 	outdoors = -1
 	})
+"iYg" = (
+/obj/effect/floor_decal/spline/plain{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/blue/border/shifted,
+/turf/simulated/floor/tiled/techfloor,
+/area/surface/outpost/main/gym)
 "iYv" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
@@ -20411,6 +20458,9 @@
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/dorms/dorm_3)
+"jgK" = (
+/turf/simulated/floor/wood/alt/panel,
+/area/surface/outpost/main/dorms/dorm_4)
 "jgT" = (
 /mob/living/simple_mob/animal/passive/cat,
 /turf/simulated/floor/outdoors/grass/heavy,
@@ -20573,7 +20623,7 @@
 	layer = 4;
 	pixel_x = -32
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "jnM" = (
 /obj/effect/floor_decal/borderfloorblack,
@@ -20866,7 +20916,7 @@
 /area/rnd/research_restroom_sc)
 "jwv" = (
 /obj/structure/table/wooden_reinforced,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_1)
 "jwI" = (
 /obj/effect/floor_decal/corner_oldtile/gray/diagonal,
@@ -21054,7 +21104,7 @@
 	dir = 2;
 	name = "Confession Booth"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "jBA" = (
 /obj/machinery/camera/network/exterior{
@@ -21187,7 +21237,7 @@
 /area/surface/outpost/mining_main)
 "jDK" = (
 /obj/structure/table/wooden_reinforced,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_3)
 "jEb" = (
 /obj/machinery/light/no_nightshift{
@@ -21359,7 +21409,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "jJW" = (
 /obj/machinery/light/no_nightshift{
@@ -21384,6 +21434,16 @@
 	},
 /turf/simulated/floor/bmarble,
 /area/security/lobby)
+"jKW" = (
+/obj/effect/floor_decal/spline/plain{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/black/border{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/white/border/shifted,
+/turf/simulated/floor/tiled/techfloor,
+/area/surface/outpost/main/gym)
 "jKZ" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/medical{
@@ -22201,7 +22261,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/black{
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "kcM" = (
 /obj/structure/sign/warning/server_room,
@@ -22917,7 +22977,7 @@
 /obj/machinery/disposal/wall{
 	pixel_y = 33
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "ksD" = (
 /obj/effect/floor_decal/borderfloorblack/corner2{
@@ -23899,7 +23959,7 @@
 /area/surface/outpost/main/dorms/dorm_8)
 "kRA" = (
 /obj/machinery/papershredder,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "kRO" = (
 /turf/simulated/floor/tiled,
@@ -24752,7 +24812,7 @@
 /area/crew_quarters/heads/sc/hop)
 "lln" = (
 /obj/structure/filingcabinet/chestdrawer,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "llu" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -25038,11 +25098,11 @@
 /obj/structure/bed/chair/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_7)
 "lqO" = (
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_1)
 "lra" = (
 /obj/effect/floor_decal/shuttles/right,
@@ -25132,7 +25192,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_1)
 "lsT" = (
 /obj/effect/floor_decal/rust,
@@ -25323,7 +25383,7 @@
 /obj/machinery/newscaster{
 	pixel_y = -30
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_6)
 "lyk" = (
 /obj/machinery/vending/coffee{
@@ -25485,7 +25545,7 @@
 	dir = 4
 	},
 /obj/item/device/radio/beacon,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "lBW" = (
 /obj/structure/cable/heavyduty{
@@ -25773,18 +25833,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_9)
-"lKM" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/wingrille_spawn/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "medlockdown";
-	name = "Medical Lockdown";
-	opacity = 0
-	},
-/turf/simulated/floor/plating,
-/area/surface/outside/plains/outpost)
 "lLE" = (
 /obj/structure/disposalpipe/junction/yjunction{
 	dir = 2
@@ -25995,7 +26043,7 @@
 /area/medical/medbay)
 "lPm" = (
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_6)
 "lPo" = (
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -26072,7 +26120,7 @@
 /area/surface/outpost/mining_main)
 "lQU" = (
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_2)
 "lQZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -26157,7 +26205,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "lSL" = (
 /obj/machinery/door/firedoor/border_only,
@@ -26189,6 +26237,14 @@
 	},
 /obj/machinery/alarm{
 	pixel_y = 23
+	},
+/obj/item/device/sleevemate,
+/obj/item/weapon/reagent_containers/spray/cleaner{
+	pixel_x = -2;
+	pixel_y = -2
+	},
+/obj/item/weapon/reagent_containers/spray/cleaner{
+	pixel_x = -5
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/chemistry)
@@ -26502,7 +26558,7 @@
 /obj/structure/bed/chair/office/dark{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "mco" = (
 /obj/machinery/computer/card{
@@ -26563,7 +26619,7 @@
 /area/crew_quarters/heads/sc/chief)
 "meb" = (
 /obj/structure/table/wooden_reinforced,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_6)
 "meB" = (
 /obj/effect/floor_decal/corner/black/diagonal,
@@ -26640,7 +26696,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_1)
 "mhW" = (
 /obj/structure/cable/green{
@@ -26727,7 +26783,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "mjB" = (
 /obj/structure/window/reinforced{
@@ -26936,6 +26992,9 @@
 /obj/effect/zone_divider,
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/surface/outside/path/plains)
+"mnr" = (
+/turf/simulated/floor/wood/alt/panel,
+/area/surface/outpost/main/dorms/dorm_1)
 "mnw" = (
 /obj/structure/tank{
 	icon_state = "0,1"
@@ -27080,7 +27139,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_5)
 "mru" = (
 /obj/machinery/light/small{
@@ -27629,7 +27688,7 @@
 /obj/structure/table/wooden_reinforced,
 /obj/item/weapon/storage/fancy/candle_box,
 /obj/machinery/light/floortube,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "mDW" = (
 /obj/effect/wingrille_spawn/reinforced/polarized{
@@ -27852,14 +27911,14 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/medical/psych)
 "mIz" = (
-/obj/structure/boxingropeenter{
-	dir = 8
-	},
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 10
 	},
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 5
+	},
+/obj/structure/boxingrope{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/surface/outpost/main/gym)
@@ -28574,7 +28633,7 @@
 	dir = 8
 	},
 /obj/structure/table/bench/wooden,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "mXl" = (
 /obj/machinery/door/firedoor/border_only,
@@ -29216,6 +29275,9 @@
 	},
 /turf/simulated/floor/tiled/milspec,
 /area/surface/outpost/civilian/emergency_storage)
+"nlY" = (
+/turf/simulated/floor/wood/alt/panel,
+/area/surface/outpost/main/dorms/dorm_8)
 "nme" = (
 /obj/structure/railing/grey{
 	dir = 4
@@ -29602,6 +29664,11 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/cable/green{
 	icon_state = "1-4"
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 4;
+	id = "Warden_Shutters";
+	name = "Warden Shutters"
 	},
 /turf/simulated/floor/plating,
 /area/security/warden)
@@ -30459,7 +30526,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_10)
 "nRL" = (
 /obj/random/snack,
@@ -30916,7 +30983,7 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "ofI" = (
 /obj/structure/sign/directions/janitor{
@@ -31435,7 +31502,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_10)
 "oyJ" = (
 /obj/structure/table/glass,
@@ -31541,7 +31608,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "oCQ" = (
 /obj/effect/zone_divider,
@@ -31670,7 +31737,7 @@
 /obj/effect/landmark{
 	name = "blobstart"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "oGv" = (
 /obj/structure/table/rack{
@@ -31684,7 +31751,7 @@
 /obj/item/weapon/storage/briefcase{
 	pixel_x = 3
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "oGw" = (
 /obj/item/stack/cable_coil/random,
@@ -32015,19 +32082,11 @@
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "oNK" = (
-/obj/structure/table/reinforced,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 1
-	},
-/obj/item/weapon/reagent_containers/spray/cleaner{
-	pixel_x = -5
-	},
-/obj/item/weapon/reagent_containers/spray/cleaner{
-	pixel_x = -2;
-	pixel_y = -2
 	},
 /obj/structure/noticeboard{
 	pixel_y = 28
@@ -32035,7 +32094,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/item/device/sleevemate,
+/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/reception)
 "oNP" = (
@@ -32129,15 +32188,18 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/foyer)
 "oPG" = (
-/obj/machinery/light/bigfloorlamp{
-	active_power_usage = 0;
-	light_color = "#FBFFBA";
-	light_on = 1;
-	on = 1;
-	use_power = 0
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
 	},
-/turf/simulated/floor/outdoors/grass/heavy,
-/area/surface/outside/path/plains)
+/obj/machinery/door/blast/shutters{
+	id = "Warden_Shutters";
+	name = "Warden Shutters"
+	},
+/turf/simulated/floor/plating,
+/area/security/warden)
 "oPZ" = (
 /obj/structure/prop/statue/stump_plaque{
 	desc = "A wooden stump adorned with a little plaque. It reads, 'Remember the fallen. Chigusa Dam, Magmoor IV, NTSS Nostromo' Countless dogtags have been nailed to the stump. Seems NT does have at least a little respect for the fallen, given they didn't rip these up.";
@@ -32319,7 +32381,7 @@
 /obj/machinery/light_switch{
 	pixel_x = 30
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "oRZ" = (
 /turf/simulated/floor/tiled/techfloor,
@@ -32641,7 +32703,7 @@
 /obj/machinery/newscaster{
 	pixel_y = 30
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_9)
 "pak" = (
 /turf/simulated/floor/water,
@@ -32899,7 +32961,7 @@
 	name = "Confession Booth (Chaplain)";
 	req_access = list(22)
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "pgL" = (
 /obj/structure/table/wooden_reinforced,
@@ -33295,7 +33357,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "pse" = (
 /obj/structure/cable/heavyduty{
@@ -33346,7 +33408,7 @@
 /area/crew_quarters/bar)
 "psu" = (
 /obj/structure/table/wooden_reinforced,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_9)
 "psP" = (
 /obj/structure/flora/tree/jungle_small,
@@ -33788,7 +33850,7 @@
 	pressure_checks_default = 0;
 	use_power = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "pzW" = (
 /obj/machinery/light{
@@ -34095,7 +34157,7 @@
 /area/surface/outpost/main/gym)
 "pHp" = (
 /obj/structure/table/wooden_reinforced,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_8)
 "pHN" = (
 /obj/effect/floor_decal/rust,
@@ -34502,7 +34564,7 @@
 /area/crew_quarters/heads/sc/chief)
 "pQL" = (
 /obj/structure/table/wooden_reinforced,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_4)
 "pQZ" = (
 /turf/simulated/wall,
@@ -34648,7 +34710,7 @@
 /obj/structure/table/reinforced,
 /obj/item/device/flashlight/lamp,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "pUj" = (
 /obj/item/device/radio/intercom{
@@ -35686,6 +35748,15 @@
 /obj/machinery/camera/network/medbay{
 	c_tag = "MED - CMO"
 	},
+/obj/structure/filingcabinet/chestdrawer{
+	name = "Medical Forms";
+	pixel_x = 9
+	},
+/obj/structure/filingcabinet/medical{
+	desc = "A large cabinet with hard copy medical records.";
+	name = "Medical Records";
+	pixel_x = -5
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/crew_quarters/heads/sc/cmo)
 "qkp" = (
@@ -36014,7 +36085,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_6)
 "qtf" = (
 /obj/structure/bed/chair/comfy/brown{
@@ -36937,6 +37008,9 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/shuttle)
+"qTF" = (
+/turf/simulated/floor/wood/alt/panel,
+/area/surface/outpost/main/dorms/dorm_7)
 "qTL" = (
 /obj/machinery/camera/network/security{
 	c_tag = "SEC - Exterior North 2";
@@ -37468,11 +37542,11 @@
 /area/shuttle/needle)
 "rfV" = (
 /obj/effect/zone_divider,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_2)
 "rgC" = (
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_3)
 "rgJ" = (
 /obj/machinery/light/bigfloorlamp{
@@ -37794,6 +37868,9 @@
 /obj/machinery/mech_recharger,
 /turf/simulated/floor/tiled/techmaint,
 /area/assembly/chargebay)
+"rmY" = (
+/turf/simulated/floor/wood/alt/panel,
+/area/surface/outpost/main/dorms/dorm_2)
 "rnq" = (
 /obj/effect/floor_decal/corner/blue/diagonal,
 /obj/effect/floor_decal/corner/blue/diagonal{
@@ -38152,10 +38229,8 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "rsi" = (
-/turf/simulated/floor/tiled/steel_dirty{
-	outdoors = 1
-	},
-/area/rnd/research_foyer)
+/turf/simulated/floor/wood/alt/parquet,
+/area/surface/outpost/civilian/sauna)
 "rsw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -38288,7 +38363,7 @@
 	name = "Station Intercom (General)";
 	pixel_x = 21
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "rvI" = (
 /obj/item/pizzabox/old,
@@ -38365,7 +38440,7 @@
 	layer = 4;
 	pixel_y = 32
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "rwS" = (
 /obj/structure/cable/heavyduty{
@@ -38635,7 +38710,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "rEY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -39372,6 +39447,7 @@
 /area/medical/medbay_emt_bay)
 "rVo" = (
 /obj/machinery/light,
+/obj/machinery/organ_printer/flesh/full,
 /turf/simulated/floor/tiled/freezer,
 /area/medical/surgery_storage)
 "rVw" = (
@@ -39698,7 +39774,7 @@
 	opacity = 0
 	},
 /turf/simulated/floor/plating,
-/area/engineering/external_lights)
+/area/medical/reception)
 "sfP" = (
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/paleblue/border,
@@ -39969,7 +40045,7 @@
 	name = "Station Intercom (General)";
 	pixel_y = 21
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "slM" = (
 /obj/effect/floor_decal/borderfloorblack/corner2{
@@ -40548,7 +40624,7 @@
 /area/engineering/locker_room)
 "syk" = (
 /obj/machinery/bookbinder,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "syw" = (
 /obj/machinery/light/no_nightshift{
@@ -40746,12 +40822,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/hallway/engineer_hallway)
 "sCa" = (
-/obj/machinery/button/remote/airlock{
-	desc = "A remote control switch for the medbay foyer.";
-	id = "MedbayFoyer";
-	name = "Medbay Doors Control";
-	pixel_y = 35
-	},
 /obj/structure/cable/blue{
 	icon_state = "2-8"
 	},
@@ -41064,6 +41134,9 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/prep)
+"sKR" = (
+/turf/simulated/floor/wood/alt/panel,
+/area/surface/outpost/main/dorms/dorm_3)
 "sMm" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
@@ -41601,7 +41674,7 @@
 	c_tag = "CIV - Sauna Entry";
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna)
 "sVG" = (
 /obj/effect/floor_decal/corner/black/diagonal,
@@ -42403,7 +42476,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_9)
 "tqM" = (
 /obj/effect/floor_decal/borderfloorblack,
@@ -42488,7 +42561,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_4)
 "ttD" = (
 /obj/machinery/door/firedoor/border_only,
@@ -42893,23 +42966,16 @@
 /turf/simulated/floor/water,
 /area/surface/outside/plains/outpost)
 "tzk" = (
-/obj/structure/boxingrope{
-	density = 0;
-	dir = 1
-	},
-/obj/structure/boxingrope{
-	density = 0;
-	dir = 8
-	},
-/obj/structure/boxingrope{
-	density = 0;
-	dir = 9
-	},
 /obj/effect/floor_decal/corner/paleblue{
 	dir = 10
 	},
 /obj/effect/floor_decal/stairs{
 	dir = 1
+	},
+/obj/structure/boxingropeenter,
+/obj/structure/boxingrope{
+	density = 0;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/gym)
@@ -43169,7 +43235,7 @@
 /obj/structure/bookcase{
 	name = "bookcase (Non-Fiction)"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "tEy" = (
 /obj/effect/floor_decal/borderfloorblack{
@@ -43198,7 +43264,7 @@
 /obj/effect/landmark/start{
 	name = "Assistant"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna)
 "tED" = (
 /obj/structure/flora/ausbushes/lavendergrass,
@@ -43793,7 +43859,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "tRv" = (
 /obj/machinery/space_heater,
@@ -44152,7 +44218,7 @@
 	dir = 4
 	},
 /obj/structure/table/bench/wooden,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "ubi" = (
 /obj/machinery/door/firedoor,
@@ -44234,7 +44300,7 @@
 	c_tag = "CIV - Library East";
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "ufq" = (
 /obj/structure/disposalpipe/segment,
@@ -44245,6 +44311,12 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/button/remote/airlock{
+	desc = "A remote control switch for the medbay foyer.";
+	dir = 4;
+	id = "MedbayFoyer";
+	name = "Medbay Doors Control"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/reception)
 "ufr" = (
@@ -44306,7 +44378,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_2)
 "ugC" = (
 /obj/structure/table/glass,
@@ -44630,7 +44702,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "upc" = (
 /turf/simulated/open{
@@ -44699,7 +44771,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost)
+/area/medical/reception)
 "urQ" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -44909,14 +44981,14 @@
 /area/medical/cryo)
 "uwS" = (
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_4)
 "uxd" = (
 /obj/structure/bed/chair/wood{
 	dir = 4
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_3)
 "uxf" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -45491,7 +45563,12 @@
 	},
 /obj/structure/filingcabinet/medical{
 	desc = "A large cabinet with hard copy medical records.";
-	name = "Medical Records"
+	name = "Medical Records";
+	pixel_x = -10
+	},
+/obj/structure/filingcabinet/chestdrawer{
+	name = "Medical Forms";
+	pixel_x = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/reception)
@@ -45533,9 +45610,7 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_2)
 "uGQ" = (
-/turf/simulated/floor/wood{
-	outdoors = 1
-	},
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "uGZ" = (
 /obj/structure/cable{
@@ -45787,7 +45862,7 @@
 /area/surface/outpost/mining_main)
 "uJP" = (
 /obj/structure/table/wooden_reinforced,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "uJW" = (
 /obj/structure/tank{
@@ -46144,7 +46219,7 @@
 	name = "Station Intercom (General)";
 	pixel_x = -21
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "uRW" = (
 /obj/effect/floor_decal/borderfloorblack{
@@ -46765,7 +46840,7 @@
 /obj/structure/cable/green{
 	icon_state = "0-4"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "vdq" = (
 /obj/effect/floor_decal/borderfloorblack{
@@ -46849,7 +46924,13 @@
 /obj/structure/cable/blue{
 	icon_state = "0-4"
 	},
-/obj/structure/filingcabinet/medical,
+/obj/structure/filingcabinet/medical{
+	pixel_x = -8
+	},
+/obj/structure/filingcabinet/chestdrawer{
+	name = "Medical Forms";
+	pixel_x = 6
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/cryo)
 "veg" = (
@@ -46961,15 +47042,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/mininglockerroom)
 "vgV" = (
-/obj/machinery/light/bigfloorlamp{
-	active_power_usage = 0;
-	light_color = "#FBFFBA";
-	light_on = 1;
-	on = 1;
-	use_power = 0
-	},
-/turf/simulated/floor/outdoors/dirt,
-/area/surface/outside/path/plains)
+/turf/simulated/floor/wood/alt/panel,
+/area/surface/outpost/civilian/sauna)
 "vhp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -47322,7 +47396,7 @@
 	icon_state = "heater_1";
 	use_power = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "vnL" = (
 /obj/structure/disposalpipe/segment{
@@ -47337,7 +47411,7 @@
 /area/quartermaster/foyer)
 "vnO" = (
 /obj/structure/closet/secure_closet/personal,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "vnQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -47594,7 +47668,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_2)
 "vrk" = (
 /obj/machinery/shower{
@@ -48028,7 +48102,7 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_8)
 "vBp" = (
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "vBx" = (
 /obj/machinery/light_construct/small{
@@ -48317,7 +48391,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_9)
 "vGC" = (
 /turf/simulated/floor/tiled/white,
@@ -48546,7 +48620,7 @@
 /area/crew_quarters/bar)
 "vNR" = (
 /obj/effect/zone_divider,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_8)
 "vOu" = (
 /obj/machinery/light/no_nightshift{
@@ -48641,6 +48715,12 @@
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/surface/outside/plains/outpost)
+"vRZ" = (
+/obj/effect/floor_decal/stairs/wood_stairs{
+	dir = 8
+	},
+/turf/simulated/floor/wood/alt/panel,
+/area/chapel/main)
 "vSA" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/structure/disposalpipe/segment{
@@ -48803,7 +48883,7 @@
 	layer = 4;
 	pixel_x = 32
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "vUD" = (
 /obj/structure/cable/heavyduty{
@@ -49198,7 +49278,7 @@
 	pixel_x = 5;
 	pixel_y = 6
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "wbZ" = (
 /obj/machinery/door/firedoor/border_only,
@@ -50407,7 +50487,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_8)
 "wCL" = (
 /obj/structure/closet/coffin,
@@ -50473,7 +50553,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_7)
 "wEn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -50625,7 +50705,7 @@
 /obj/machinery/light/no_nightshift{
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "wGI" = (
 /turf/simulated/floor/tiled/techfloor,
@@ -50791,7 +50871,7 @@
 /obj/machinery/newscaster{
 	pixel_y = -30
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_3)
 "wLF" = (
 /obj/structure/cable/green{
@@ -50846,7 +50926,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/cryo)
 "wNt" = (
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "wNG" = (
 /turf/simulated/wall/r_wall,
@@ -51228,7 +51308,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "wZn" = (
 /obj/structure/mirror{
@@ -51745,7 +51825,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "xiv" = (
 /turf/simulated/wall/r_wall,
@@ -51881,7 +51961,7 @@
 /area/surface/outpost/main/dorms/dorm_3)
 "xle" = (
 /obj/machinery/light/no_nightshift,
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "xlv" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -52482,7 +52562,7 @@
 	layer = 4;
 	pixel_x = 32
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "xuG" = (
 /obj/structure/flora/ausbushes/grassybush{
@@ -52919,7 +52999,7 @@
 	pump_direction = 0;
 	use_power = 1
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "xAQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -53115,6 +53195,9 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/foyer)
+"xEF" = (
+/turf/simulated/floor/wood/alt/panel,
+/area/surface/outpost/main/dorms/dorm_10)
 "xEG" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -53494,7 +53577,7 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "xKL" = (
 /obj/machinery/body_scanconsole{
@@ -53535,7 +53618,7 @@
 	dir = 4;
 	layer = 3
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "xLE" = (
 /obj/machinery/door/firedoor/border_only,
@@ -53859,7 +53942,7 @@
 /obj/structure/bed/chair/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_3)
 "xRn" = (
 /obj/effect/floor_decal/corner/black/diagonal,
@@ -54352,7 +54435,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "yaF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -54400,13 +54483,13 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "ybI" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/parquet,
 /area/surface/outpost/civilian/sauna)
 "ybO" = (
 /obj/structure/cable/pink{
@@ -54558,7 +54641,7 @@
 /obj/machinery/light/floortube{
 	dir = 8
 	},
-/turf/simulated/floor/wood,
+/turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "yek" = (
 /turf/simulated/floor/wood,
@@ -77450,13 +77533,13 @@ uVH
 hrk
 rLe
 xfA
-tpC
+vRZ
 fJM
 mPB
 qia
 lNd
 rAC
-tpC
+vRZ
 xfA
 ppX
 ybp
@@ -77918,7 +78001,7 @@ ybp
 neZ
 nBs
 jML
-oPG
+qiD
 xke
 rLe
 qMb
@@ -77978,8 +78061,8 @@ yeV
 yeV
 lru
 tAX
-wvo
-wvo
+cxg
+cxg
 tAX
 tAX
 vVR
@@ -78235,7 +78318,7 @@ tRN
 yeV
 sQm
 gkU
-wvo
+cxg
 qsR
 tAX
 sZF
@@ -78492,7 +78575,7 @@ yeV
 yeV
 sQm
 cLe
-wvo
+cxg
 meb
 vVR
 cfy
@@ -78749,7 +78832,7 @@ vDy
 yeV
 sQm
 vWs
-wvo
+cxg
 iep
 tAX
 xwR
@@ -79006,8 +79089,8 @@ yeV
 yeV
 ujd
 xRM
-wvo
-wvo
+cxg
+cxg
 xQA
 vuP
 aFg
@@ -79263,7 +79346,7 @@ yeV
 yeV
 ujd
 iSx
-wvo
+cxg
 lPm
 tAX
 mQx
@@ -80034,8 +80117,8 @@ yeV
 yeV
 lru
 tFH
-oiE
-oiE
+dth
+dth
 tFH
 tFH
 muY
@@ -80291,7 +80374,7 @@ yeV
 ygB
 eUh
 kFJ
-oiE
+dth
 mqR
 tFH
 bfR
@@ -80548,7 +80631,7 @@ yeV
 yeV
 eUh
 oJK
-oiE
+dth
 foN
 muY
 tRE
@@ -80805,7 +80888,7 @@ yeV
 yeV
 eUh
 nme
-oiE
+dth
 bsn
 tFH
 aVO
@@ -81062,8 +81145,8 @@ yeV
 yeV
 ujd
 gDK
-oiE
-oiE
+dth
+dth
 mJj
 fnf
 tXv
@@ -81319,7 +81402,7 @@ yeV
 yeV
 dSr
 gOm
-oiE
+dth
 dPg
 tFH
 sTu
@@ -81576,7 +81659,7 @@ yeV
 yeV
 oua
 tFH
-oiE
+dth
 fXg
 tFH
 tFH
@@ -82082,7 +82165,7 @@ xkW
 xkW
 xkW
 fTI
-yek
+xEF
 xkW
 qiD
 yeV
@@ -82090,8 +82173,8 @@ yeV
 yeV
 lru
 xtu
-xqs
-xqs
+jgK
+jgK
 xtu
 xtu
 mXl
@@ -82339,7 +82422,7 @@ dhN
 aYn
 xkW
 oxT
-yek
+xEF
 chi
 hZu
 yeV
@@ -82347,7 +82430,7 @@ yeV
 yeV
 eUh
 ehU
-xqs
+jgK
 ttA
 xtu
 bLn
@@ -82595,8 +82678,8 @@ oJk
 uiX
 emP
 dCR
-yek
-yek
+xEF
+xEF
 ryp
 yeV
 yeV
@@ -82604,7 +82687,7 @@ ygB
 yeV
 eUh
 iri
-xqs
+jgK
 pQL
 mXl
 uQn
@@ -82853,7 +82936,7 @@ yek
 liR
 xkW
 cVG
-yek
+xEF
 mbV
 jBn
 yeV
@@ -82861,7 +82944,7 @@ yeV
 yeV
 eUh
 jNd
-xqs
+jgK
 bEA
 xtu
 wob
@@ -83110,7 +83193,7 @@ yek
 jQf
 mdI
 ijo
-yek
+xEF
 vAp
 jBn
 yeV
@@ -83118,8 +83201,8 @@ ygB
 yeV
 ujd
 oKw
-xqs
-xqs
+jgK
+jgK
 tjZ
 mce
 uei
@@ -83367,7 +83450,7 @@ yek
 klm
 xkW
 nRr
-yek
+xEF
 rqj
 jBn
 yeV
@@ -83375,7 +83458,7 @@ yeV
 yeV
 dSr
 teY
-xqs
+jgK
 uwS
 xtu
 jBd
@@ -83623,8 +83706,8 @@ xkW
 mdI
 xkW
 xkW
-yek
-yek
+xEF
+xEF
 xkW
 iSS
 yeV
@@ -83632,7 +83715,7 @@ yeV
 yeV
 oua
 xtu
-xqs
+jgK
 eqN
 xtu
 xtu
@@ -84138,7 +84221,7 @@ wvj
 wvj
 wvj
 oZR
-vRB
+bVr
 wvj
 qiD
 yeV
@@ -84146,8 +84229,8 @@ yeV
 yeV
 lru
 tKz
-xrn
-xrn
+sKR
+sKR
 tKz
 tKz
 rry
@@ -84321,7 +84404,7 @@ ceP
 ckF
 iSB
 nyZ
-dQY
+oPG
 eoe
 fZx
 fmH
@@ -84395,7 +84478,7 @@ fOz
 vsr
 wvj
 tqG
-vRB
+bVr
 etT
 hZu
 yeV
@@ -84403,7 +84486,7 @@ yeV
 yeV
 eUh
 edX
-xrn
+sKR
 uxd
 tKz
 xkZ
@@ -84578,7 +84661,7 @@ cfp
 ckF
 cRk
 nzv
-dQY
+oPG
 eoD
 tAb
 fnm
@@ -84651,8 +84734,8 @@ fTz
 pBn
 cpZ
 sJH
-vRB
-vRB
+bVr
+bVr
 ltD
 yeV
 yeV
@@ -84660,7 +84743,7 @@ yeV
 ygB
 eUh
 uqn
-xrn
+sKR
 jDK
 rry
 swU
@@ -84909,7 +84992,7 @@ vRB
 eSZ
 wvj
 vGq
-vRB
+bVr
 vwB
 rLe
 ygB
@@ -84917,7 +85000,7 @@ yeV
 yeV
 eUh
 tle
-xrn
+sKR
 xRi
 tKz
 cbo
@@ -85166,7 +85249,7 @@ vRB
 gkm
 wLl
 psu
-vRB
+bVr
 iMz
 rLe
 yeV
@@ -85174,8 +85257,8 @@ yeV
 yeV
 ujd
 nJv
-xrn
-xrn
+sKR
+sKR
 uUh
 gYQ
 lFI
@@ -85349,7 +85432,7 @@ ckF
 cyw
 ckF
 ckF
-dQY
+oPG
 epY
 eSV
 fsU
@@ -85423,7 +85506,7 @@ vRB
 qEB
 wvj
 dRy
-vRB
+bVr
 shb
 rLe
 yeV
@@ -85431,7 +85514,7 @@ yeV
 yeV
 dSr
 cnU
-xrn
+sKR
 rgC
 tKz
 iSw
@@ -85679,8 +85762,8 @@ wvj
 wLl
 wvj
 wvj
-vRB
-vRB
+bVr
+bVr
 wvj
 iSS
 yeV
@@ -85688,7 +85771,7 @@ ygB
 yeV
 oua
 tKz
-xrn
+sKR
 wLE
 tKz
 tKz
@@ -86194,7 +86277,7 @@ xAa
 xAa
 xAa
 fRI
-wLd
+nlY
 xAa
 qiD
 yeV
@@ -86202,8 +86285,8 @@ yeV
 yeV
 lru
 vai
-pFY
-pFY
+rmY
+rmY
 vai
 vai
 rIU
@@ -86451,7 +86534,7 @@ kAl
 nBk
 xAa
 ere
-wLd
+nlY
 qeN
 hZu
 yeV
@@ -86459,7 +86542,7 @@ ygB
 yeV
 eUh
 kiJ
-pFY
+rmY
 vri
 vai
 lZD
@@ -86707,8 +86790,8 @@ jxZ
 pRH
 kFB
 oLz
-wLd
-wLd
+nlY
+nlY
 rUH
 yeV
 yeV
@@ -86716,7 +86799,7 @@ yeV
 ygB
 eUh
 vmW
-pFY
+rmY
 hdc
 rIU
 nbu
@@ -86965,7 +87048,7 @@ wLd
 iaq
 xAa
 gKW
-wLd
+nlY
 tSc
 rLe
 yeV
@@ -86973,7 +87056,7 @@ yeV
 yeV
 eUh
 pyU
-pFY
+rmY
 ugv
 vai
 uGB
@@ -87222,7 +87305,7 @@ wLd
 muv
 luD
 pHp
-wLd
+nlY
 vTI
 rLe
 yeV
@@ -87230,8 +87313,8 @@ ygB
 yeV
 ujd
 gDP
-pFY
-pFY
+rmY
+rmY
 sqc
 clg
 oEK
@@ -87479,7 +87562,7 @@ wLd
 sNo
 xAa
 wCs
-wLd
+nlY
 hdH
 rLe
 yeV
@@ -87487,7 +87570,7 @@ yeV
 yeV
 dSr
 tYq
-pFY
+rmY
 lQU
 vai
 cbG
@@ -88250,7 +88333,7 @@ wDj
 wDj
 wDj
 hce
-wvX
+qTF
 wDj
 qiD
 yeV
@@ -88258,8 +88341,8 @@ yeV
 yeV
 pKL
 plr
-xZE
-xZE
+mnr
+mnr
 plr
 plr
 ajd
@@ -88507,7 +88590,7 @@ ggr
 elG
 wDj
 wEi
-wvX
+qTF
 lTT
 hZu
 yeV
@@ -88515,7 +88598,7 @@ ygB
 yeV
 pKL
 obx
-xZE
+mnr
 lsQ
 plr
 wIP
@@ -88763,8 +88846,8 @@ kiP
 wLF
 efm
 vGX
-wvX
-wvX
+qTF
+qTF
 lTz
 yeV
 yeV
@@ -88772,7 +88855,7 @@ yeV
 yeV
 pKL
 qdG
-xZE
+mnr
 jwv
 ajd
 xER
@@ -89021,7 +89104,7 @@ wvX
 gkH
 wDj
 dTe
-wvX
+qTF
 vla
 rLe
 ygB
@@ -89029,7 +89112,7 @@ yeV
 ygB
 pKL
 mzJ
-xZE
+mnr
 mhw
 plr
 nXC
@@ -89278,7 +89361,7 @@ wvX
 sbg
 ebc
 icu
-wvX
+qTF
 jTq
 rLe
 yeV
@@ -89286,8 +89369,8 @@ yeV
 yeV
 nfu
 aGD
-xZE
-xZE
+mnr
+mnr
 hYR
 svJ
 nhy
@@ -89535,7 +89618,7 @@ wvX
 ioo
 wDj
 lqv
-wvX
+qTF
 stJ
 rLe
 yeV
@@ -89543,7 +89626,7 @@ yeV
 yeV
 pKL
 wTN
-xZE
+mnr
 lqO
 plr
 oDm
@@ -89747,11 +89830,11 @@ mCZ
 mCZ
 mCZ
 mCZ
-hiU
+jXz
 sfG
-lKM
-lKM
-lKM
+sfG
+sfG
+sfG
 qSY
 qSY
 gWO
@@ -89791,8 +89874,8 @@ wDj
 ebc
 wDj
 wDj
-wvX
-wvX
+qTF
+qTF
 wDj
 kKs
 yeV
@@ -89800,7 +89883,7 @@ ygB
 yeV
 sRF
 plr
-xZE
+mnr
 bpo
 plr
 plr
@@ -91361,7 +91444,7 @@ vrr
 vrr
 vrr
 rqG
-gnD
+jKW
 wDm
 xsB
 rLe
@@ -91618,7 +91701,7 @@ vrr
 vrr
 vrr
 rqG
-gnD
+iYg
 wDm
 qIR
 rLe
@@ -92091,7 +92174,7 @@ lic
 lic
 lic
 fhv
-uOr
+rsi
 tcX
 yeV
 yeV
@@ -92355,9 +92438,9 @@ eSQ
 nkU
 mSd
 vOJ
-gUe
-gUe
-gUe
+uGQ
+uGQ
+uGQ
 rDV
 bXj
 hiU
@@ -92612,8 +92695,8 @@ eSQ
 nkU
 uGQ
 jLc
-gUe
-gUe
+uGQ
+uGQ
 pTX
 ybD
 bVD
@@ -92869,7 +92952,7 @@ yeV
 nkU
 uKX
 vOJ
-gUe
+uGQ
 iMG
 iAR
 xKH
@@ -93376,7 +93459,7 @@ sde
 tXP
 skE
 cib
-uOr
+vgV
 sVC
 bzp
 yeV
@@ -93633,7 +93716,7 @@ rHE
 gKu
 uOr
 xoK
-uOr
+vgV
 imm
 bzp
 yeV
@@ -94657,7 +94740,7 @@ ylD
 rLe
 jXF
 wst
-vgV
+sPH
 cnG
 fXZ
 fXZ
@@ -94914,13 +94997,13 @@ rLe
 rLe
 jXF
 wid
-pDm
-dhl
+fnL
+fnL
 soG
 wfM
 etn
-aUl
-pDm
+fnL
+fnL
 hWp
 yeV
 yeV
@@ -95170,7 +95253,7 @@ rLe
 rLe
 rLe
 jXF
-rsi
+yeV
 fnL
 tAi
 lFa
@@ -95178,7 +95261,7 @@ lFa
 lFa
 vcR
 fnL
-rsi
+yeV
 yeV
 yeV
 yeV
@@ -95693,7 +95776,7 @@ oWC
 cHF
 rHY
 cOh
-rLe
+xke
 aRw
 yeV
 yeV
@@ -101211,7 +101294,7 @@ rLe
 fgv
 ybp
 adQ
-uCa
+qiD
 ybp
 uCa
 uCa
@@ -101230,7 +101313,7 @@ uCa
 uCa
 uCa
 uCa
-uCa
+qiD
 ybp
 ybp
 uCa
@@ -101242,7 +101325,7 @@ uCa
 uCa
 uCa
 uCa
-uCa
+qiD
 ybp
 uCa
 ybp
@@ -102280,7 +102363,7 @@ ybp
 ybp
 rLe
 qaK
-rLe
+qiD
 rLe
 ybp
 ybp
@@ -102506,7 +102589,7 @@ uCa
 uCa
 uCa
 uCa
-uCa
+qiD
 uCa
 uCa
 uCa
@@ -102522,7 +102605,7 @@ ybp
 uCa
 fAn
 ybp
-uCa
+qiD
 uCa
 uCa
 uCa
@@ -102811,7 +102894,7 @@ ybp
 ajP
 uww
 rLe
-rLe
+qiD
 sct
 rLe
 hra
@@ -103622,7 +103705,7 @@ fgv
 pLD
 pLD
 fgv
-rLe
+qiD
 rLe
 rLe
 rLe
