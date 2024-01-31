@@ -3,7 +3,11 @@
 	set name = "Modify Robot Module"
 	set desc = "Allows to add or remove modules to/from robots."
 	set category = "Admin"
+<<<<<<< HEAD
 	if(!check_rights(R_ADMIN, R_FUN, R_VAREDIT))
+=======
+	if(!check_rights(R_ADMIN|R_FUN|R_VAREDIT))
+>>>>>>> 512c558ba0 ([MIRROR] fix some more font tags, syncing stylesheets (#7659))
 		return
 
 	if(!istype(target) || !target.module)
