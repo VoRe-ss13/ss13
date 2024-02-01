@@ -1,0 +1,47 @@
+2024-02-01:
+  VoRe-bot:
+  - bugfix: Old laser4 moved to modular_chomp to prevent conflict issues, and references
+      to this sound file altered accordingly
+  - bugfix: Corrected a misplaced chompedit that removed code necessary for cyborgs
+      to navigate in space.
+  - bugfix: fucky filename fix maybe finally
+  - rscadd: 'Added new illegal item for handheld Item TF: Mind Binder'
+  - rscadd: Sentient items digested in a belly with recycling now become the recycled
+      matter
+  - refactor: Gentle phasing flicker duration from 3s to 1s
+  - refactor: Gentle phasing defaults on.
+  - refactor: Gentle phasing stun reduced from 3s to 1s
+  - rscadd: Goodies for alternative titles
+  - balance: Rebalanced some of the goodie lists
+  - balance: Surgery speed has been massively buffed.
+  - rscadd: Cinnamon seeds added to the seed storages in garden and xenobotany
+  - rscadd: Added emergency shutters that were missing on the south part of deck 1
+  - rscdel: Removed two shutter doors in the dorms corridor that were cutting off
+      certain areas from a scrubber or a pump when closed due to an alarm
+  - qol: Moved a space heater that was blocking a trash pile
+  - bugfix: Fixed the airlock on the Ninja shuttle so the airlock helper doesn't panic
+      when loading up the round. Also moved the button so that it doesn't get left
+      behind when the shuttle jumps (not that it gets used)
+  - balance: Removed the random EVA 'slipping' chance. This contributed nothing besides
+      making spacewalks without magboots incredibly annoying.
+  - balance: The 'thunk' proc (walking onto a gravity tile from zero gravity) now
+      only stuns you for 1 tick (around one second or less) and no longer weakens
+      you. This'll cause you to drop what you're holding but otherwise it's only a
+      brief, mild disruption for not using magboots or walk intenting onto a tile
+      with gravity.
+  - bugfix: removed a sound file for a quick fix
+  - bugfix: '"Transfer to Shell" AI verb'
+  - rscadd: Added new standalone exploration vendors for each of the roles with standardized
+      equipment. Not mapped in as of this update, but available for gamemasters to
+      use.
+  - rscadd: Added tinyfans to the 25x25 'Diner' shelter.
+  - qol: Significantly reduced use delays on all pouches.
+  - balance: Fultons per pack have been reduced from 5 uses to 3 uses.
+  - balance: Mech shoes can now hold knives.
+  - balance: Flares and glowsticks are now one size smaller. Flare boxes now contain
+      14 flares instead of 4.
+  - balance: Flare pouches can now hold 14 flares.
+  - balance: Removed guaranteed stun and weaken statuses from the 'magnetic' weapon
+      parent type.
+  - balance: Regular synthetics are now immune to welders.
+  - bugfix: Fixed missing icon for mech shoes.
