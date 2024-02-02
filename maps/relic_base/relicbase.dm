@@ -41,16 +41,16 @@
 	#include "overmap/sectors.dm"
 	#include "events/wildlife_encounter.dm"
 
-	#include "relicbase-1.dmm" //Underground
-	#include "relicbase-2.dmm" //Ground level
-	#include "relicbase-3.dmm" //Upper level
-	#include "relicbase-4.dmm" //Mines
-	#include "relicbase-5.dmm" //Wilderness
-	#include "relicbase-6.dmm" //Ocean/Plains
-	//#include "relicbase-7.dmm" //Explo carrier //shadowrealmed for now -- Ocelot
-	#include "relicbase-8.dmm" //CC
-	#include "relicbase-9.dmm" //Transit
-	#include "relicbase-10.dmm" //Catacombs
+	#include "relicbase-1.dmm" //Catacombs
+	#include "relicbase-2.dmm" //Underground
+	#include "relicbase-3.dmm" //Ground level
+	#include "relicbase-4.dmm" //Upper level
+	#include "relicbase-5.dmm" //Mines
+	#include "relicbase-6.dmm" //Wilderness
+	#include "relicbase-7.dmm" //Ocean/Plains
+	#include "relicbase-8.dmm" //Explo carrier
+	#include "relicbase-9.dmm" //CC
+	#include "relicbase-10.dmm" //Transit
 
 
 //	#include "southern_cross-casino.dmm" //CHOMPedit: Disabled to save resources and loaded in during events - Jack
