@@ -45,3 +45,9 @@
       parent type.
   - balance: Regular synthetics are now immune to welders.
   - bugfix: Fixed missing icon for mech shoes.
+2024-02-02:
+  VoRe-bot:
+  - rscadd: New vault and maintence
+  - rscadd: A New gateway
+  - rscadd: Strange random bits to xenobio
+  - bugfix: teshari rigsuits sprites work for the precursor, and aegis rigsuits
