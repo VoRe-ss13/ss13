@@ -51,3 +51,18 @@
   - rscadd: A New gateway
   - rscadd: Strange random bits to xenobio
   - bugfix: teshari rigsuits sprites work for the precursor, and aegis rigsuits
+2024-02-03:
+  Upstream:
+  - rscadd: Added Vertical Nom, submit to prey and dominate prey verbs to borgs
+  VoRe-bot:
+  - qol: girders now refund a stack of 2 steel sheets
+  - rscadd: Mind Binder can now target gargoyles in their stone form
+  - rscadd: Renaming a plushie also updates the name of the one turned into it
+  - bugfix: Auto resleever can now properly be used after being destroyed as an item
+  - bugfix: Using the Mind Binder on a scooped mob now targets the mob in the holder,
+      not the holder item
+  - qol: Digesting as an item now lets you use the belly digested respawn timer
+  - bugfix: walls in a gateway being the wrong type
+  - bugfix: Missing sprites for a mob
+  - bugfix: Adds a default set of sprites for a gun
+  - bugfix: adds a missing wire
