@@ -6,6 +6,7 @@ SUBSYSTEM_DEF(lighting)
 	var/static/list/sources_queue = list() // List of lighting sources queued for update.
 	var/static/list/corners_queue = list() // List of lighting corners queued for update.
 	var/static/list/objects_queue = list() // List of lighting objects queued for update.
+	var/static/list/sunlight_queue = list() //TORCHEdit // List of lighting objects that are affected by sunlight
 
 /datum/controller/subsystem/lighting/stat_entry(msg)
 	msg = "L:[length(sources_queue)]|C:[length(corners_queue)]|O:[length(objects_queue)]"
@@ -111,6 +112,13 @@ SUBSYSTEM_DEF(lighting)
 	if (i)
 		queue.Cut(1, i + 1)
 
+//TORCHEdit Begin
+/datum/controller/subsystem/lighting/proc/update_sunlight()
+
+	for(var/datum/lighting_object/O in sunlight_queue)
+		objects_queue += O
+		O.needs_update = TRUE
+//TORCHEdit End
 
 /datum/controller/subsystem/lighting/Recover()
 	subsystem_initialized = SSlighting.subsystem_initialized

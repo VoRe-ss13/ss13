@@ -108,6 +108,7 @@ SUBSYSTEM_DEF(planets)
 
 	var/new_color = P.sun["color"]
 	P.sun_holder.update_color(new_color)
+	SSlighting.update_sunlight() //TORCHEdit
 
 /datum/controller/subsystem/planets/proc/updateTemp(var/datum/planet/P)
 	//Set new temperatures
