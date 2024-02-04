@@ -66,6 +66,8 @@
 	levelupdate()
 	if(climbable)
 		verbs += /turf/simulated/proc/climb_wall
+	if(outdoors)	//Torchstation edit temporary
+		SSplanets.addTurf(src)
 
 /turf/simulated/examine(mob/user)
 	. = ..()
