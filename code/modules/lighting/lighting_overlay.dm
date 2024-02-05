@@ -115,24 +115,24 @@
 
 	//Torchedit Begin
 	if(sunlight_affected)
-			set_luminosity = TRUE
-			var/brightness = sun.our_brightness * 0.6 * 0.115
-			var/list/color = hex2rgb(sun.our_color)
-			var/red = color[1] / 255.0
-			var/green = color[2] / 255.0
-			var/blue = color[3] / 255.0
-			rr += brightness * red
-			rg += brightness * green
-			rb += brightness * blue
-			gr += brightness * red
-			gg += brightness * green
-			gb += brightness * blue
-			br += brightness * red
-			bg += brightness * green
-			bb += brightness * blue
-			ar += brightness * red
-			ag += brightness * green
-			ab += brightness * blue
+		set_luminosity = TRUE
+		var/brightness = sun.our_brightness * 0.6 * 0.115
+		var/list/color = hex2rgb(sun.our_color)
+		var/red = color[1] / 255.0
+		var/green = color[2] / 255.0
+		var/blue = color[3] / 255.0
+		rr += brightness * red
+		rg += brightness * green
+		rb += brightness * blue
+		gr += brightness * red
+		gg += brightness * green
+		gb += brightness * blue
+		br += brightness * red
+		bg += brightness * green
+		bb += brightness * blue
+		ar += brightness * red
+		ag += brightness * green
+		ab += brightness * blue
 
 	//Torchedit End
 	if((rr & gr & br & ar) && (rg + gg + bg + ag + rb + gb + bb + ab == 8))
