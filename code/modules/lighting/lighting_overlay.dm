@@ -36,6 +36,8 @@
 	needs_update = TRUE
 	SSlighting.objects_queue += src
 
+	check_sunlight()
+
 /datum/lighting_object/Destroy(force)
 	if (!force)
 		return QDEL_HINT_LETMELIVE
@@ -46,6 +48,27 @@
 		affected_turf.underlays -= current_underlay
 	affected_turf = null
 	return ..()
+
+/datum/lighting_object/proc/check_sunlight()
+	if(affected_turf.check_for_sun() && !affected_turf.is_outdoors())
+		var/datum/sun_holder/sun = SSplanets.z_to_planet[affected_turf.z].sun_holder
+		var/outside_near = FALSE
+		outer_loop:
+			for(var/dir in cardinal)
+				var/steps = 1
+				var/turf/cur_turf = get_step(affected_turf,dir)
+				while(cur_turf && !cur_turf.density && steps < 11)
+					if(cur_turf.is_outdoors())
+						outside_near = TRUE
+						break outer_loop
+					steps += 1
+					cur_turf = get_step(cur_turf,dir)
+		if(outside_near)
+			sunlight_affected = TRUE
+			SSlighting.sunlight_queue += src
+		else if(sunlight_affected)
+			sunlight_affected = FALSE
+			SSlighting.sunlight_queue -= src
 
 /datum/lighting_object/proc/update()
 
@@ -91,25 +114,9 @@
 	#endif
 
 	//Torchedit Begin
-	if(affected_turf.check_for_sun())
-		var/datum/sun_holder/sun = SSplanets.z_to_planet[affected_turf.z].sun_holder
-		var/outside_near = FALSE
-		outer_loop:
-			for(var/dir in cardinal)
-				var/steps = 1
-				var/turf/cur_turf = get_step(affected_turf,dir)
-				while(cur_turf && !cur_turf.density && steps < 11)
-					if(cur_turf.is_outdoors())
-						outside_near = TRUE
-						break outer_loop
-					steps += 1
-					cur_turf = get_step(cur_turf,dir)
-
-		if(outside_near)
-			sunlight_affected = TRUE
-			SSlighting.sunlight_queue += src
+	if(sunlight_affected)
 			set_luminosity = TRUE
-			var/brightness = sun.our_brightness * 0.6 * 0.1
+			var/brightness = sun.our_brightness * 0.6 * 0.115
 			var/list/color = hex2rgb(sun.our_color)
 			var/red = color[1] / 255.0
 			var/green = color[2] / 255.0
@@ -126,10 +133,6 @@
 			ar += brightness * red
 			ag += brightness * green
 			ab += brightness * blue
-		else if(sunlight_affected)
-			sunlight_affected = FALSE
-			SSlighting.sunlight_queue -= src
-
 
 	//Torchedit End
 	if((rr & gr & br & ar) && (rg + gg + bg + ag + rb + gb + bb + ab == 8))
