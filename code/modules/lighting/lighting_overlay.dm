@@ -51,7 +51,6 @@
 
 /datum/lighting_object/proc/check_sunlight()
 	if(affected_turf.check_for_sun() && !affected_turf.is_outdoors())
-		var/datum/sun_holder/sun = SSplanets.z_to_planet[affected_turf.z].sun_holder
 		var/outside_near = FALSE
 		outer_loop:
 			for(var/dir in cardinal)
@@ -116,6 +115,7 @@
 	//Torchedit Begin
 	if(sunlight_affected)
 		set_luminosity = TRUE
+		var/datum/sun_holder/sun = SSplanets.z_to_planet[affected_turf.z].sun_holder
 		var/brightness = sun.our_brightness * 0.6 * 0.115
 		var/list/color = hex2rgb(sun.our_color)
 		var/red = color[1] / 255.0
