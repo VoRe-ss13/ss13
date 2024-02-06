@@ -141,11 +141,11 @@
 	var/radius = ONE_OVER_SQRT_2 * SUNLIGHT_RADIUS + 1
 		for(var/dir in cornerdirs)
 			var/steps = 1
-			var/turf/cur_turf = get_step(holder,dir)
+			var/turf/cur_turf = get_step(src,dir)
 
 			while(steps < radius)
 				if(cur_turf)
-					SEND_SIGNAL(T, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf)
+					SEND_SIGNAL(cur_turf, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf)
 				steps += 1
 				cur_turf = get_step(cur_turf,dir)
 	//TORCHEdit end
