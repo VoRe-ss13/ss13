@@ -42,6 +42,8 @@
 	var/old_outdoors = outdoors
 	var/old_dangerous_objects = dangerous_objects
 	var/old_dynamic_lumcount = dynamic_lumcount
+	var/oldtype = src.type	//TORCHEdit
+	var/old_density = src.density //TORCHEdit
 
 	var/turf/Ab = GetAbove(src)
 	if(Ab)
@@ -62,8 +64,15 @@
 	cut_overlays(TRUE)
 	RemoveElement(/datum/element/turf_z_transparency)
 
+	var/turf/new_turf  //TORCHEdit
 	if(ispath(N, /turf/simulated/floor))
 		var/turf/simulated/W = new N( locate(src.x, src.y, src.z) )
+		//TORCHEdit Begin
+		var/datum/component/sunlight_handler/shandler = GetComponent(/datum/component/sunlight_handler)
+		if(shandler)
+			var/datum/component/sunlight_handler/new_shandler = W.AddComponent(/datum/component/sunlight_handler)
+			new_shandler.InheritComponent(shandler)
+		//TORCHEdit End
 		if(old_fire)
 			fire = old_fire
 
@@ -82,12 +91,19 @@
 		W.levelupdate()
 		W.update_icon(1)
 		W.post_change()
+		new_turf = W //TORCHEdit
 		. = W
 
 	else
 
 		var/turf/W = new N( locate(src.x, src.y, src.z) )
 
+		//TORCHEdit Begin
+		var/datum/component/sunlight_handler/shandler = GetComponent(/datum/component/sunlight_handler)
+		if(shandler)
+			var/datum/component/sunlight_handler/new_shandler = W.AddComponent(/datum/component/sunlight_handler)
+			new_shandler.InheritComponent(shandler)
+		//TORCHEdit End
 		if(old_fire)
 			old_fire.RemoveFire()
 
@@ -103,8 +119,24 @@
 		W.levelupdate()
 		W.update_icon(1)
 		W.post_change()
+		new_turf = W //TORCHEdit
 		. =  W
 
+	//TORCHEdit begin
+	//SEND_SIGNAL(src, COMSIG_TURF_UPDATE, oldtype, old_density, W)
+	//Sends signals in a cross pattern to all tiles that may have their sunlight var affected including this tile.
+	for(var/i = - SUNLIGHT_RADIUS, i <= SUNLIGHT_RADIUS, i++)
+		var/turf/T = locate(src.x + i, src.y, src.z)
+		if(T)
+			SEND_SIGNAL(T, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf)
+
+	for(var/i = - SUNLIGHT_RADIUS, i <= SUNLIGHT_RADIUS, i++)
+		if(i == 0) //Don't send the signal to ourselves twice.
+			return
+		var/turf/T = locate(src.x, src.y + i, src.z)
+		if(T)
+			SEND_SIGNAL(T, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf)
+	//TORCHEdit end
 	dangerous_objects = old_dangerous_objects
 
 	lighting_corner_NE = old_lighting_corner_NE

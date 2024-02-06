@@ -5,7 +5,6 @@
 	///whether we are already in the SSlighting.objects_queue list
 	var/needs_update = FALSE
 
-	var/sunlight_affected = FALSE //Torchstation edit
 
 	///the turf that our light is applied to
 	var/turf/affected_turf
@@ -36,8 +35,6 @@
 	needs_update = TRUE
 	SSlighting.objects_queue += src
 
-	check_sunlight()
-
 /datum/lighting_object/Destroy(force)
 	if (!force)
 		return QDEL_HINT_LETMELIVE
@@ -48,26 +45,6 @@
 		affected_turf.underlays -= current_underlay
 	affected_turf = null
 	return ..()
-
-/datum/lighting_object/proc/check_sunlight()
-	if(affected_turf.check_for_sun() && !affected_turf.is_outdoors())
-		var/outside_near = FALSE
-		outer_loop:
-			for(var/dir in cardinal)
-				var/steps = 1
-				var/turf/cur_turf = get_step(affected_turf,dir)
-				while(cur_turf && !cur_turf.density && steps < 11)
-					if(cur_turf.is_outdoors())
-						outside_near = TRUE
-						break outer_loop
-					steps += 1
-					cur_turf = get_step(cur_turf,dir)
-		if(outside_near)
-			sunlight_affected = TRUE
-			SSlighting.sunlight_queue += src
-		else if(sunlight_affected)
-			sunlight_affected = FALSE
-			SSlighting.sunlight_queue -= src
 
 /datum/lighting_object/proc/update()
 
@@ -112,29 +89,6 @@
 	var/set_luminosity = max > 1e-6
 	#endif
 
-	//Torchedit Begin
-	if(sunlight_affected)
-		set_luminosity = TRUE
-		var/datum/sun_holder/sun = SSplanets.z_to_planet[affected_turf.z].sun_holder
-		var/brightness = sun.our_brightness * 0.6 * 0.115
-		var/list/color = hex2rgb(sun.our_color)
-		var/red = color[1] / 255.0
-		var/green = color[2] / 255.0
-		var/blue = color[3] / 255.0
-		rr += brightness * red
-		rg += brightness * green
-		rb += brightness * blue
-		gr += brightness * red
-		gg += brightness * green
-		gb += brightness * blue
-		br += brightness * red
-		bg += brightness * green
-		bb += brightness * blue
-		ar += brightness * red
-		ag += brightness * green
-		ab += brightness * blue
-
-	//Torchedit End
 	if((rr & gr & br & ar) && (rg + gg + bg + ag + rb + gb + bb + ab == 8))
 		//anything that passes the first case is very likely to pass the second, and addition is a little faster in this case
 		affected_turf.underlays -= current_underlay

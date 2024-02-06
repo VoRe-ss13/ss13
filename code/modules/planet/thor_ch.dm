@@ -55,7 +55,7 @@ var/datum/planet/thor/planet_thor = null
 
 	switch(sun_position)
 		if(0 to 0.20) // Night
-			low_brightness = 0
+			low_brightness = 0.1
 			low_color = "#0A0028"
 
 			high_brightness = 0.3
@@ -63,7 +63,7 @@ var/datum/planet/thor/planet_thor = null
 			min = 0
 
 		if(0.20 to 0.30) // Twilight
-			low_brightness = 0.3
+			low_brightness = 0.35
 			low_color = "#310D54"
 
 			high_brightness = 0.5
@@ -74,15 +74,15 @@ var/datum/planet/thor/planet_thor = null
 			low_brightness = 0.5
 			low_color = "#19277F"
 
-			high_brightness = 2
+			high_brightness = 0.6
 			high_color = "#2437B5"
 			min = 0.50
 
 		if(0.40 to 1.00) // Noon
-			low_brightness = 5.0
+			low_brightness = 0.6
 			low_color = "#487EBF"
 
-			high_brightness = 10.0
+			high_brightness = 0.7
 			high_color = "#2B95FF"
 			min = 0.70
 

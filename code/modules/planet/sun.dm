@@ -39,7 +39,7 @@
 	if(sun in T.vis_contents)
 		warning("Was asked to add fake sun to [T.x], [T.y], [T.z] despite already having us in it's vis contents")
 		return
-	sun.apply_to_turf(T)
+	//sun.apply_to_turf(T) TORCHEdit. Done with this BS
 
 /datum/sun_holder/proc/remove_from_turf(turf/T)
 	if(!(sun in T.vis_contents))
@@ -71,7 +71,8 @@
 /atom/movable/sun_visuals
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "white"
-	plane = PLANE_O_LIGHTING_VISUAL
+	plane = PLANE_LIGHTING //TORCHEdit
+	blend_mode = 2 //TORCHEdit
 	mouse_opacity = 0
 	alpha = 0
 	color = "#FFFFFF"
@@ -180,7 +181,8 @@
 /atom/movable/sun_visuals_overlap
 	icon = 'icons/effects/effects.dmi'
 	icon_state = null
-	plane = PLANE_O_LIGHTING_VISUAL
+	plane = PLANE_LIGHTING //TORCHEdit
+	blend_mode = 2 //TORCHEdit
 	mouse_opacity = 0
 	alpha = 0
 	color = "#FFFFFF"

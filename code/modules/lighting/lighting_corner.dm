@@ -5,6 +5,7 @@
 /datum/lighting_corner
 	var/list/datum/light_source/affecting // Light sources affecting us.
 
+	var/sunlight = SUNLIGHT_NONE // TORCHEdit
 	var/x = 0
 	var/y = 0
 
@@ -75,7 +76,7 @@
 			master.lighting_corner_SE = src
 
 /datum/lighting_corner/proc/self_destruct_if_idle()
-	if (!LAZYLEN(affecting))
+	if (!LAZYLEN(affecting) && !sunlight) //TORCHEdit
 		qdel(src, force = TRUE)
 
 /datum/lighting_corner/proc/vis_update()
