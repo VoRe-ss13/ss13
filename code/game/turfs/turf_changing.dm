@@ -136,6 +136,18 @@
 		var/turf/T = locate(src.x, src.y + i, src.z)
 		if(T)
 			SEND_SIGNAL(T, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf)
+
+	//Also need to send signals diagonally too now.
+	var/radius = ONE_OVER_SQRT_2 * SUNLIGHT_RADIUS + 1
+		for(var/dir in cornerdirs)
+			var/steps = 1
+			var/turf/cur_turf = get_step(holder,dir)
+
+			while(steps < radius)
+				if(cur_turf)
+					SEND_SIGNAL(T, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf)
+				steps += 1
+				cur_turf = get_step(cur_turf,dir)
 	//TORCHEdit end
 	dangerous_objects = old_dangerous_objects
 
