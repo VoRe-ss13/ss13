@@ -99,3 +99,14 @@
   - bugfix: space cleaner reagent missing in selection
   - bugfix: a runtime on robot liquid generation if no powercell is installed
   - balance: simple mobs are no longer vore belly stripable
+2024-02-08:
+  Upstream:
+  - rscadd: Added new 18th century outfit as requested by eldzen
+  - rscadd: ports fox ears from skyrat
+  - bugfix: fixes bonnie alt and bonnie alt long (i forgot to upload all their sprites
+      when i ported them oops)
+  VoRe-bot:
+  - bugfix: strip preference should now save properly
+  - rscadd: Two new markings, though they're just variants of each other to have support
+      for both plantigrade and digitigrade characters in case a plantigrade character
+      is using the model's torso/groin.
