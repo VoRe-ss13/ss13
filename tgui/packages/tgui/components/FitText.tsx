@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 import { Component, createRef, RefObject } from 'inferno';
+=======
+import {
+  Component,
+  createRef,
+  HTMLAttributes,
+  PropsWithChildren,
+  RefObject,
+} from 'react';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 
 const DEFAULT_ACCEPTABLE_DIFFERENCE = 5;
 
@@ -80,10 +90,19 @@ export class FitText extends Component<Props, State> {
       <span
         ref={this.ref}
         style={{
+<<<<<<< HEAD
           'font-size': `${this.state.fontSize}px`,
           ...(typeof this.props.native?.style === 'object' &&
             this.props.native.style),
         }}>
+=======
+          fontSize: `${this.state.fontSize}px`,
+          ...(typeof this.props.native?.style === 'object'
+            ? this.props.native.style
+            : {}),
+        }}
+      >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
         {this.props.children}
       </span>
     );

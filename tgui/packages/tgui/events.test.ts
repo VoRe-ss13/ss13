@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 import { KeyEvent, addScrollableNode, canStealFocus, removeScrollableNode, setupGlobalEvents } from './events';
+=======
+import {
+  addScrollableNode,
+  canStealFocus,
+  KeyEvent,
+  removeScrollableNode,
+  setupGlobalEvents,
+} from './events';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 
 describe('focusEvents', () => {
   afterEach(() => {

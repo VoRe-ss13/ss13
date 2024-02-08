@@ -59,6 +59,7 @@ export class Section extends Component<SectionProps> {
     }
   }
 
+<<<<<<< HEAD
   render() {
     const {
       className,
@@ -109,6 +110,38 @@ export class Section extends Component<SectionProps> {
             {children}
           </div>
           {/* Vorestation Edit End */}
+=======
+  return (
+    <div
+      className={classes([
+        'Section',
+        fill && 'Section--fill',
+        fitted && 'Section--fitted',
+        scrollable && 'Section--scrollable',
+        scrollableHorizontal && 'Section--scrollableHorizontal',
+        flexGrow && 'Section--flex', // VOREStation Addition
+        className,
+        computeBoxClassName(rest),
+      ])}
+      {...computeBoxProps(rest)}
+    >
+      {hasTitle && (
+        <div className="Section__title">
+          <span className="Section__titleText">{title}</span>
+          <div className="Section__buttons">{buttons}</div>
+        </div>
+      )}
+      <div className="Section__rest">
+        <div
+          onScroll={onScroll as any}
+          className={classes([
+            'Section__content',
+            !!stretchContents && 'Section__content--stretchContents', // VOREStation Addition
+            !!noTopPadding && 'Section__content--noTopPadding', // VOREStation Addition
+          ])}
+        >
+          {children}
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
         </div>
       </div>
     );

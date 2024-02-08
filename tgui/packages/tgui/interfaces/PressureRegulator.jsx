@@ -42,7 +42,8 @@ export const PressureRegulator = (props) => {
               selected={on}
               onClick={() => act('toggle_valve')}
             />
-          }>
+          }
+        >
           <LabeledList>
             <LabeledList.Item
               label="Pressure Regulation"
@@ -88,8 +89,14 @@ export const PressureRegulator = (props) => {
                     content="SET"
                     onClick={() => act('set_press', { press: 'set' })}
                   />
+<<<<<<< HEAD
                 </Fragment>
               }>
+=======
+                </>
+              }
+            >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
               {pressure_set / 100} kPa
             </LabeledList.Item>
             <LabeledList.Item
@@ -111,8 +118,14 @@ export const PressureRegulator = (props) => {
                     content="SET"
                     onClick={() => act('set_flow_rate', { press: 'set' })}
                   />
+<<<<<<< HEAD
                 </Fragment>
               }>
+=======
+                </>
+              }
+            >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
               {set_flow_rate / 10} L/s
             </LabeledList.Item>
           </LabeledList>

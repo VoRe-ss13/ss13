@@ -4,7 +4,22 @@
  * @license MIT
  */
 
+<<<<<<< HEAD
 import { addChatPage, changeChatPage, loadChat, removeChatPage, moveChatPageLeft, moveChatPageRight, toggleAcceptedType, updateChatPage, updateMessageCount, changeScrollTracking } from './actions';
+=======
+import {
+  addChatPage,
+  changeChatPage,
+  changeScrollTracking,
+  loadChat,
+  moveChatPageLeft,
+  moveChatPageRight,
+  removeChatPage,
+  toggleAcceptedType,
+  updateChatPage,
+  updateMessageCount,
+} from './actions';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 import { canPageAcceptType, createMainPage } from './model';
 
 const mainPage = createMainPage();

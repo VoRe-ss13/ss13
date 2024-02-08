@@ -38,8 +38,14 @@ export const NtosFileManager = (props) => {
                   content="Close"
                   onClick={() => act('PRG_closefile')}
                 />
+<<<<<<< HEAD
               </Fragment>
             }>
+=======
+              </>
+            }
+          >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
             {/* This dangerouslySetInnerHTML is only ever passed data that has passed through pencode2html
              * It should be safe enough to support pencode in this way.
              */}

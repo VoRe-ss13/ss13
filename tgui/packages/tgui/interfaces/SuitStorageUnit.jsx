@@ -1,6 +1,15 @@
 import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
-import { Box, Button, Icon, LabeledList, Knob, NoticeBox, Section, Flex } from '../components';
+import {
+  Box,
+  Button,
+  Icon,
+  LabeledList,
+  Knob,
+  NoticeBox,
+  Section,
+  Flex,
+} from '../components';
 import { Window } from '../layouts';
 
 export const SuitStorageUnit = (props) => {
@@ -48,8 +57,14 @@ const SuitStorageUnitContent = (props) => {
               onClick={() => act('door')}
             />
           )}
+<<<<<<< HEAD
         </Fragment>
       }>
+=======
+        </>
+      }
+    >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
       {!!(occupied && safeties) && (
         <NoticeBox>
           Biological entity detected in suit chamber. Please remove before
@@ -175,7 +190,7 @@ const SuitStorageUnitPanel = (props) => {
               inline
               icon="caret-square-right"
               style={{
-                'border': '4px solid #777',
+                border: '4px solid #777',
                 'border-style': 'outset',
               }}
               onClick={() => act('togglesafeties')}

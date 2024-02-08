@@ -31,6 +31,7 @@ type DropdownUniqueProps = {
 
 export type DropdownProps = BoxProps & DropdownUniqueProps;
 
+<<<<<<< HEAD
 const DEFAULT_OPTIONS = {
   placement: 'left-start',
   modifiers: [
@@ -51,6 +52,36 @@ const NULL_RECT: DOMRect = {
   y: 0,
   toJSON: () => null,
 } as const;
+=======
+  /** Update the selected value when clicking the left/right buttons */
+  const updateSelected = useCallback(
+    (direction: 'previous' | 'next') => {
+      if (options.length < 1 || disabled) {
+        return;
+      }
+      const startIndex = 0;
+      const endIndex = options.length - 1;
+
+      let selectedIndex = options.findIndex(
+        (option) => getOptionValue(option) === selected,
+      );
+
+      if (selectedIndex < 0) {
+        selectedIndex = direction === 'next' ? endIndex : startIndex;
+      }
+
+      let newIndex = selectedIndex;
+      if (direction === 'next') {
+        newIndex = selectedIndex === endIndex ? startIndex : selectedIndex++;
+      } else {
+        newIndex = selectedIndex === startIndex ? endIndex : selectedIndex--;
+      }
+
+      onSelected?.(getOptionValue(options[newIndex]));
+    },
+    [disabled, onSelected, options, selected],
+  );
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 
 type DropdownState = {
   selected?: string;
@@ -165,6 +196,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
 
       return (
         <div
+<<<<<<< HEAD
           key={value}
           className={classes([
             'Dropdown__menuentry',
@@ -309,6 +341,41 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
         <Stack.Item width={width}>
           <Box
             width={'100%'}
+=======
+          className="Layout Dropdown__menu"
+          style={{ minWidth: menuWidth }}
+          ref={innerRef}
+        >
+          {options.length === 0 && (
+            <div className="Dropdown__menuentry">No options</div>
+          )}
+
+          {options.map((option, index) => {
+            const value = getOptionValue(option);
+
+            return (
+              <div
+                className={classes([
+                  'Dropdown__menuentry',
+                  selected === value && 'selected',
+                ])}
+                key={index}
+                onClick={() => {
+                  setOpen(false);
+                  onSelected?.(value);
+                }}
+              >
+                {typeof option === 'string' ? option : option.displayText}
+              </div>
+            );
+          })}
+        </div>
+      }
+    >
+      <div>
+        <div className="Dropdown" style={{ width: unit(width) }}>
+          <div
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
             className={classes([
               'Dropdown__control',
               'Button',
@@ -320,12 +387,19 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
               if (disabled && !this.state.open) {
                 return;
               }
+<<<<<<< HEAD
               this.setOpen(!this.state.open);
               if (onClick) {
                 onClick(event);
               }
             }}
             {...rest}>
+=======
+              setOpen(!open);
+              onClick?.(event);
+            }}
+          >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
             {icon && (
               <Icon
                 name={icon}
@@ -338,8 +412,14 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
               className="Dropdown__selected-text"
               style={{
                 overflow: clipSelectedText ? 'hidden' : 'visible',
+<<<<<<< HEAD
               }}>
               {displayText || this.state.selected}
+=======
+              }}
+            >
+              {displayText || selected}
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
             </span>
             {nochevron || (
               <span className="Dropdown__arrow-button">

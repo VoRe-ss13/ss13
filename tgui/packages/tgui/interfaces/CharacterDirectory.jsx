@@ -38,7 +38,7 @@ export const CharacterDirectory = (props) => {
 
   const [overwritePrefs, setOverwritePrefs] = useLocalState(
     'overwritePrefs',
-    false
+    false,
   );
 
   return (
@@ -59,8 +59,14 @@ export const CharacterDirectory = (props) => {
                     content={overwritePrefs ? 'On' : 'Off'}
                     onClick={() => setOverwritePrefs(!overwritePrefs)}
                   />
+<<<<<<< HEAD
                 </Fragment>
               }>
+=======
+                </>
+              }
+            >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
               <LabeledList>
                 <LabeledList.Item label="Visibility">
                   <Button
@@ -149,7 +155,8 @@ const ViewCharacter = (props) => {
           content="Back"
           onClick={() => setOverlay(null)}
         />
-      }>
+      }
+    >
       <Section level={2} title="Species">
         <Box>{overlay.species}</Box>
       </Section>
@@ -203,7 +210,8 @@ const CharacterDirectoryList = (props) => {
       title="Directory"
       buttons={
         <Button icon="sync" content="Refresh" onClick={() => act('refresh')} />
-      }>
+      }
+    >
       <Table>
         <Table.Row bold>
           <SortButton id="name">Name</SortButton>
@@ -268,7 +276,8 @@ const SortButton = (props) => {
             setSortId(id);
             setSortOrder(true);
           }
-        }}>
+        }}
+      >
         {children}
         {sortId === id && (
           <Icon name={sortOrder ? 'sort-up' : 'sort-down'} ml="0.25rem;" />

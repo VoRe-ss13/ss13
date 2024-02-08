@@ -1,4 +1,20 @@
+<<<<<<< HEAD
 import { Button, Icon, Input, NoticeBox, Section, Stack, Table, Tooltip } from '../components';
+=======
+import { createSearch, decodeHtmlEntities } from 'common/string';
+
+import { useBackend, useLocalState } from '../backend';
+import {
+  Button,
+  Icon,
+  Input,
+  NoticeBox,
+  Section,
+  Stack,
+  Table,
+  Tooltip,
+} from '../components';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 import { TableCell, TableRow } from '../components/Table';
 import { createSearch, decodeHtmlEntities } from 'common/string';
 import { useBackend, useLocalState } from '../backend';
@@ -32,7 +48,7 @@ export const CheckboxInput = (props) => {
 
   const [searchQuery, setSearchQuery] = useLocalState<string>(
     'searchQuery',
-    ''
+    '',
   );
   const search = createSearch(searchQuery, (item: string) => item);
   const toDisplay = items.filter(search);
@@ -70,7 +86,8 @@ export const CheckboxInput = (props) => {
                           !selections.includes(item)
                         }
                         fluid
-                        onClick={() => selectItem(item)}>
+                        onClick={() => selectItem(item)}
+                      >
                         {item}
                       </Button.Checkbox>
                     </TableCell>

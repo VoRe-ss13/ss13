@@ -1,7 +1,15 @@
 import { round } from 'common/math';
 import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
-import { Box, Button, Flex, Icon, LabeledList, ProgressBar, Section } from '../components';
+import {
+  Box,
+  Button,
+  Flex,
+  Icon,
+  LabeledList,
+  ProgressBar,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 
 const stats = [
@@ -92,8 +100,14 @@ const SleeperOccupant = (props) => {
             onClick={() => act('ejectify')}
           />
           <Button content={stasis} onClick={() => act('changestasis')} />
+<<<<<<< HEAD
         </Fragment>
       }>
+=======
+        </>
+      }
+    >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
       <LabeledList>
         <LabeledList.Item label="Name">{occupant.name}</LabeledList.Item>
         <LabeledList.Item label="Health">
@@ -105,7 +119,8 @@ const SleeperOccupant = (props) => {
               good: [0.5, Infinity],
               average: [0, 0.5],
               bad: [-Infinity, 0],
-            }}>
+            }}
+          >
             {round(occupant.health, 0)}
           </ProgressBar>
         </LabeledList.Item>
@@ -117,7 +132,8 @@ const SleeperOccupant = (props) => {
             min="0"
             max={occupant.maxTemp}
             value={occupant.bodyTemperature / occupant.maxTemp}
-            color={tempColors[occupant.temperatureSuitability + 3]}>
+            color={tempColors[occupant.temperatureSuitability + 3]}
+          >
             {round(occupant.btCelsius, 0)}&deg;C,
             {round(occupant.btFaren, 0)}&deg;F
           </ProgressBar>
@@ -133,7 +149,8 @@ const SleeperOccupant = (props) => {
                   bad: [-Infinity, 0.6],
                   average: [0.6, 0.9],
                   good: [0.6, Infinity],
-                }}>
+                }}
+              >
                 {occupant.bloodPercent}%, {occupant.bloodLevel}cl
               </ProgressBar>
             </LabeledList.Item>
@@ -160,7 +177,8 @@ const SleeperDamage = (props) => {
               min="0"
               max="100"
               value={occupant[d[1]] / 100}
-              ranges={damageRange}>
+              ranges={damageRange}
+            >
               {round(occupant[d[1]], 0)}
             </ProgressBar>
           </LabeledList.Item>
@@ -193,8 +211,14 @@ const SleeperDialysisPump = (props) => {
             content="Eject"
             onClick={() => act('removebeaker')}
           />
+<<<<<<< HEAD
         </Fragment>
       }>
+=======
+        </>
+      }
+    >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
       {isBeakerLoaded ? (
         <LabeledList>
           <LabeledList.Item label="Remaining Space">
@@ -206,7 +230,8 @@ const SleeperDialysisPump = (props) => {
                 good: [0.5, Infinity],
                 average: [0.25, 0.5],
                 bad: [-Infinity, 0.25],
-              }}>
+              }}
+            >
               {beakerFreeSpace}u
             </ProgressBar>
           </LabeledList.Item>
@@ -250,14 +275,16 @@ const SleeperChemicals = (props) => {
               level="3"
               mx="0"
               lineHeight="18px"
-              buttons={odWarning}>
+              buttons={odWarning}
+            >
               <Flex align="flex-start">
                 <ProgressBar
                   min="0"
                   max={maxchem}
                   value={chem.occ_amount / maxchem}
                   color={barColor}
-                  mr="0.5rem">
+                  mr="0.5rem"
+                >
                   {chem.pretty_amount}/{maxchem}u
                 </ProgressBar>
                 {amounts.map((a, i) => (

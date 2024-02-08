@@ -6,7 +6,18 @@
 
 import { storage } from 'common/storage';
 import { setClientTheme } from '../themes';
+<<<<<<< HEAD
 import { loadSettings, updateSettings, addHighlightSetting, removeHighlightSetting, updateHighlightSetting } from './actions';
+=======
+import {
+  addHighlightSetting,
+  loadSettings,
+  removeHighlightSetting,
+  updateHighlightSetting,
+  updateSettings,
+} from './actions';
+import { FONTS_DISABLED } from './constants';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 import { selectSettings } from './selectors';
 import { FONTS_DISABLED } from './constants';
 

@@ -21,7 +21,8 @@ export const DroneConsole = (props) => {
               content={fabPower ? 'Enabled' : 'Disabled'}
               onClick={() => act('toggle_fab')}
             />
-          }>
+          }
+        >
           {!fabricator ? (
             <Box color="bad">
               Fabricator not detected.
@@ -68,8 +69,14 @@ export const DroneConsole = (props) => {
                         content="Shutdown"
                         onClick={() => act('shutdown', { ref: drone.ref })}
                       />
+<<<<<<< HEAD
                     </Fragment>
                   }>
+=======
+                    </>
+                  }
+                >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
                   <LabeledList>
                     <LabeledList.Item label="Location">
                       {drone.loc}

@@ -26,10 +26,12 @@ export const XenoarchSuspension = (props) => {
             <Button
               icon={locked ? 'lock' : 'lock-open'}
               selected={!locked}
-              onClick={() => act('lock')}>
+              onClick={() => act('lock')}
+            >
               {locked ? 'Locked' : 'Unlocked'}
             </Button>
-          }>
+          }
+        >
           {(locked && (
             <Box color="bad">
               This interface is locked. Swipe an ID card to unlock it.
@@ -56,7 +58,8 @@ export const XenoarchSuspension = (props) => {
                 mt={1}
                 icon="meteor"
                 selected={suspension_field}
-                onClick={() => act('toggle_field')}>
+                onClick={() => act('toggle_field')}
+              >
                 {suspension_field
                   ? 'Disengage Suspension Field'
                   : 'Engage Suspension Field'}

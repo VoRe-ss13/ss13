@@ -274,6 +274,7 @@ export const Box: SFC<BoxProps> = (props: BoxProps) => {
   if (typeof children === 'function') {
     return children(computeBoxProps(props));
   }
+<<<<<<< HEAD
   const computedClassName =
     typeof className === 'string'
       ? className + ' ' + computeBoxClassName(rest)
@@ -288,6 +289,17 @@ export const Box: SFC<BoxProps> = (props: BoxProps) => {
     ChildFlags.UnknownChildren,
     computedProps,
     undefined
+=======
+
+  // Render the component
+  return createElement(
+    typeof as === 'string' ? as : 'div',
+    {
+      ...computedProps,
+      className: computedClassName,
+    },
+    children,
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
   );
 };
 

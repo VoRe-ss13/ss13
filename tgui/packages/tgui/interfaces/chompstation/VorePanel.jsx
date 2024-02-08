@@ -1,54 +1,74 @@
+<<<<<<< HEAD
 import { capitalize } from 'common/string';
 import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../../backend';
 import { Box, Button, Flex, Collapsible, Icon, LabeledList, NoticeBox, Section, Tabs, Divider, Stack } from '../../components';
 import { Window } from '../../layouts';
+=======
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 import { classes } from 'common/react';
+import { capitalize } from 'common/string';
+
+import { useBackend, useLocalState } from '../../backend';
+import {
+  Box,
+  Button,
+  Collapsible,
+  Divider,
+  Flex,
+  Icon,
+  LabeledList,
+  NoticeBox,
+  Section,
+  Stack,
+  Tabs,
+} from '../../components';
 import { NumberInput } from '../../components';
+import { Window } from '../../layouts';
 
 const stats = [null, 'average', 'bad'];
 
 const digestModeToColor = {
-  'Default': null,
-  'Hold': null,
-  'Digest': 'red',
-  'Absorb': 'purple',
-  'Unabsorb': 'purple',
-  'Drain': 'orange',
-  'Selective': 'orange',
-  'Shrink': 'teal',
-  'Grow': 'teal',
+  Default: null,
+  Hold: null,
+  Digest: 'red',
+  Absorb: 'purple',
+  Unabsorb: 'purple',
+  Drain: 'orange',
+  Selective: 'orange',
+  Shrink: 'teal',
+  Grow: 'teal',
   'Size Steal': 'teal',
-  'Heal': 'green',
+  Heal: 'green',
   'Encase In Egg': 'blue',
 };
 
 const reagentToColor = {
-  'Water': null,
-  'Milk': null,
-  'Cream': null,
-  'Honey': 'teal',
+  Water: null,
+  Milk: null,
+  Cream: null,
+  Honey: 'teal',
   'Cherry Jelly': 'teal',
   'Digestive acid': 'red',
   'Diluted digestive acid': 'red',
   'Space cleaner': null,
-  'Lube': null,
-  'Biomass': 'teal',
+  Lube: null,
+  Biomass: 'teal',
   'Concentrated Radium': 'orange',
-  'Tricordrazine': 'green',
+  Tricordrazine: 'green',
 };
 
 const digestModeToPreyMode = {
-  'Hold': 'being held.',
-  'Digest': 'being digested.',
-  'Absorb': 'being absorbed.',
-  'Unabsorb': 'being unabsorbed.',
-  'Drain': 'being drained.',
-  'Selective': 'being processed.',
-  'Shrink': 'being shrunken.',
-  'Grow': 'being grown.',
+  Hold: 'being held.',
+  Digest: 'being digested.',
+  Absorb: 'being absorbed.',
+  Unabsorb: 'being unabsorbed.',
+  Drain: 'being drained.',
+  Selective: 'being processed.',
+  Shrink: 'being shrunken.',
+  Grow: 'being grown.',
   'Size Steal': 'having your size stolen.',
-  'Heal': 'being healed.',
+  Heal: 'being healed.',
   'Encase In Egg': 'being encased in an egg.',
 };
 
@@ -338,13 +358,15 @@ const VoreBellySelectionAndCustomization = (props) => {
                 key={belly.name}
                 selected={belly.selected}
                 textColor={digestModeToColor[belly.digest_mode]}
-                onClick={() => act('bellypick', { bellypick: belly.ref })}>
+                onClick={() => act('bellypick', { bellypick: belly.ref })}
+              >
                 <Box
                   inline
                   textColor={
                     (belly.selected && digestModeToColor[belly.digest_mode]) ||
                     null
-                  }>
+                  }
+                >
                   {belly.name} ({belly.contents})
                 </Box>
               </Tabs.Tab>
@@ -454,8 +476,14 @@ const VoreSelectedBellyControls = (props) => {
               tooltip="Move this belly tab down."
               onClick={() => act('move_belly', { dir: 1 })}
             />
+<<<<<<< HEAD
           </Fragment>
         }>
+=======
+          </>
+        }
+      >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
         <Button
           onClick={() => act('set_attribute', { attribute: 'b_name' })}
           content={belly_name}
@@ -512,7 +540,8 @@ const VoreSelectedBellyDescriptions = (props) => {
             onClick={() => act('set_attribute', { attribute: 'b_desc' })}
             icon="pen"
           />
-        }>
+        }
+      >
         {desc}
       </LabeledList.Item>
       <LabeledList.Item
@@ -524,7 +553,8 @@ const VoreSelectedBellyDescriptions = (props) => {
             }
             icon="pen"
           />
-        }>
+        }
+      >
         {absorbed_desc}
       </LabeledList.Item>
       <LabeledList.Item label="Vore Verb">
@@ -1610,7 +1640,8 @@ const VoreSelectedBellyVisuals = (props) => {
             selected={belly_fullscreen === '' || belly_fullscreen === null}
             onClick={() =>
               act('set_attribute', { attribute: 'b_fullscreen', val: null })
-            }>
+            }
+          >
             Disabled
           </Button>
           {Object.keys(possible_fullscreens).map((key) => (
@@ -1622,7 +1653,8 @@ const VoreSelectedBellyVisuals = (props) => {
                 selected={key === belly_fullscreen}
                 onClick={() =>
                   act('set_attribute', { attribute: 'b_fullscreen', val: key })
-                }>
+                }
+              >
                 <Box
                   className={classes(['vore240x240', key])}
                   style={{
@@ -1660,7 +1692,8 @@ const VoreSelectedBellyInteractions = (props) => {
           selected={escapable}
           content={escapable ? 'Interactions On' : 'Interactions Off'}
         />
-      }>
+      }
+    >
       {escapable ? (
         <LabeledList>
           <LabeledList.Item label="Escape Chance">
@@ -1770,7 +1803,8 @@ const VoreSelectedBellyInteractions = (props) => {
                 : 'Auto-Transfer Disabled'
             }
           />
-        }>
+        }
+      >
         {autotransfer_enabled ? (
           <LabeledList>
             <LabeledList.Item label="Auto-Transfer Time">
@@ -1920,7 +1954,7 @@ const VoreSelectedBellyInteractions = (props) => {
             <LabeledList.Item label="Auto-Transfer Secondary Whitelist (Items)">
               {(autotransfer.autotransfer_secondary_whitelist_items.length &&
                 autotransfer.autotransfer_secondary_whitelist_items.join(
-                  ', '
+                  ', ',
                 )) ||
                 'Everything'}
               <Button
@@ -1950,7 +1984,7 @@ const VoreSelectedBellyInteractions = (props) => {
             <LabeledList.Item label="Auto-Transfer Secondary Blacklist (Items)">
               {(autotransfer.autotransfer_secondary_blacklist_items.length &&
                 autotransfer.autotransfer_secondary_blacklist_items.join(
-                  ', '
+                  ', ',
                 )) ||
                 'Nothing'}
               <Button
@@ -1984,7 +2018,8 @@ const VoreContentsPanel = (props) => {
           textAlign="center"
           fluid
           mb={1}
-          onClick={() => act('pick_from_outside', { 'pickall': true })}>
+          onClick={() => act('pick_from_outside', { pickall: true })}
+        >
           All
         </Button>
       )) ||
@@ -2005,11 +2040,12 @@ const VoreContentsPanel = (props) => {
                   act(
                     thing.outside ? 'pick_from_outside' : 'pick_from_inside',
                     {
-                      'pick': thing.ref,
-                      'belly': belly,
-                    }
+                      pick: thing.ref,
+                      belly: belly,
+                    },
                   )
-                }>
+                }
+              >
                 <img
                   src={'data:image/jpeg;base64, ' + thing.icon}
                   width="64px"
@@ -2037,11 +2073,12 @@ const VoreContentsPanel = (props) => {
                   act(
                     thing.outside ? 'pick_from_outside' : 'pick_from_inside',
                     {
-                      'pick': thing.ref,
-                      'belly': belly,
-                    }
+                      pick: thing.ref,
+                      belly: belly,
+                    },
                   )
-                }>
+                }
+              >
                 Interact
               </Button>
             </LabeledList.Item>
@@ -2108,7 +2145,8 @@ const VoreSelectedBellyLiquidOptions = (props) => {
           }
           content={show_liq ? 'Liquids On' : 'Liquids Off'}
         />
-      }>
+      }
+    >
       {show_liq ? (
         <LabeledList>
           <LabeledList.Item label="Generate Liquids">
@@ -2423,7 +2461,8 @@ const VoreSelectedBellyLiquidMessages = (props) => {
           }
           content={show_liq_fullness ? 'Messages On' : 'Messages Off'}
         />
-      }>
+      }
+    >
       {show_liq_fullness ? (
         <LabeledList>
           <LabeledList.Item label="0 to 20%">
@@ -3100,10 +3139,12 @@ const VoreUserPreferences = (props) => {
                 : '')
             }
             backgroundColor={show_pictures && overflow ? 'orange' : ''}
-            onClick={() => act('show_pictures')}>
+            onClick={() => act('show_pictures')}
+          >
             Contents Preference: {show_pictures ? 'Show Pictures' : 'Show List'}
           </Button>
-        }>
+        }
+      >
         <Flex spacing={1} wrap="wrap" justify="center">
           <Flex.Item basis="33%">
             <VoreUserPreferenceItem
@@ -3182,7 +3223,8 @@ const VoreUserPreferences = (props) => {
               tooltipPosition="top"
             />
           </Box>
-        }>
+        }
+      >
         {devourable ? (
           <Flex spacing={1} wrap="wrap" justify="center">
             <Flex.Item basis="33%">
@@ -3263,7 +3305,8 @@ const VoreUserPreferences = (props) => {
               tooltipPosition="top"
             />
           </Box>
-        }>
+        }
+      >
         {can_be_drop_prey || can_be_drop_pred ? (
           <Flex spacing={1} wrap="wrap" justify="center">
             <Flex.Item basis="33%">
@@ -3320,7 +3363,8 @@ const VoreUserPreferences = (props) => {
               tooltipPosition="top"
             />
           </Box>
-        }>
+        }
+      >
         <Flex spacing={1} wrap="wrap" justify="center">
           {latejoin_vore ? (
             <>
@@ -3343,7 +3387,8 @@ const VoreUserPreferences = (props) => {
                     act('adjust_no_latejoin_vore_warning_time', {
                       new_pred_time: value,
                     })
-                  }>
+                  }
+                >
                   T
                 </NumberInput>
               </Flex.Item>
@@ -3384,7 +3429,8 @@ const VoreUserPreferences = (props) => {
                     act('adjust_no_latejoin_prey_warning_time', {
                       new_prey_time: value,
                     })
-                  }>
+                  }
+                >
                   T
                 </NumberInput>
               </Flex.Item>
@@ -3513,7 +3559,8 @@ const FeatureColorInput = (props) => {
     <Button
       onClick={() => {
         act('set_attribute', { attribute: action_name, val: value_of });
-      }}>
+      }}
+    >
       <Stack align="center" fill>
         <Stack.Item>
           <Box
@@ -3541,7 +3588,8 @@ const LiquidColorInput = (props) => {
     <Button
       onClick={() => {
         act('liq_set_attribute', { liq_attribute: action_name, val: value_of });
-      }}>
+      }}
+    >
       <Stack align="center" fill>
         <Stack.Item>
           <Box

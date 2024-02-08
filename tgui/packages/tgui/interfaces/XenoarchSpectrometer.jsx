@@ -1,6 +1,14 @@
 import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, ProgressBar, Section, NoticeBox, Slider } from '../components';
+import {
+  Box,
+  Button,
+  LabeledList,
+  ProgressBar,
+  Section,
+  NoticeBox,
+  Slider,
+} from '../components';
 import { Window } from '../layouts';
 import { decodeHtmlEntities } from 'common/string';
 
@@ -40,17 +48,25 @@ export const XenoarchSpectrometer = (props) => {
               <Button
                 icon="signal"
                 selected={scanning}
-                onClick={() => act('scanItem')}>
+                onClick={() => act('scanItem')}
+              >
                 {scanning ? 'HALT SCAN' : 'Begin Scan'}
               </Button>
               <Button
                 icon="eject"
                 disabled={!scanned_item}
-                onClick={() => act('ejectItem')}>
+                onClick={() => act('ejectItem')}
+              >
                 Eject Item
               </Button>
+<<<<<<< HEAD
             </Fragment>
           }>
+=======
+            </>
+          }
+        >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
           <LabeledList>
             <LabeledList.Item label="Item">
               {scanned_item || <Box color="bad">No item inserted.</Box>}
@@ -88,7 +104,8 @@ export const XenoarchSpectrometer = (props) => {
           title="MASER"
           buttons={
             <NoticeBox info>Match wavelengths to progress the scan.</NoticeBox>
-          }>
+          }
+        >
           <LabeledList>
             <LabeledList.Item label="MASER Efficiency">
               <ProgressBar
@@ -123,7 +140,8 @@ export const XenoarchSpectrometer = (props) => {
                 value={scanner_rpm}
                 minValue={0}
                 maxValue={1000}
-                color="good">
+                color="good"
+              >
                 {scanner_rpm} RPM
               </ProgressBar>
             </LabeledList.Item>
@@ -136,7 +154,8 @@ export const XenoarchSpectrometer = (props) => {
                   bad: [1000, Infinity],
                   average: [250, 1000],
                   good: [0, 250],
-                }}>
+                }}
+              >
                 {scanner_temperature} K
               </ProgressBar>
             </LabeledList.Item>
@@ -148,12 +167,14 @@ export const XenoarchSpectrometer = (props) => {
             <Button
               selected={rad_shield_on}
               icon="radiation"
-              onClick={() => act('toggle_rad_shield')}>
+              onClick={() => act('toggle_rad_shield')}
+            >
               {rad_shield_on
                 ? 'Disable Radiation Shielding'
                 : 'Enable Radiation Shielding'}
             </Button>
-          }>
+          }
+        >
           <LabeledList>
             <LabeledList.Item label="Ambient Radiation">
               <ProgressBar
@@ -164,7 +185,8 @@ export const XenoarchSpectrometer = (props) => {
                   bad: [65, Infinity],
                   average: [15, 65],
                   good: [0, 15],
-                }}>
+                }}
+              >
                 {radiation} mSv
               </ProgressBar>
             </LabeledList.Item>
@@ -181,7 +203,8 @@ export const XenoarchSpectrometer = (props) => {
                   good: [65, Infinity],
                   average: [15, 65],
                   bad: [0, 15],
-                }}>
+                }}
+              >
                 {unused_coolant_per * 10} u
               </ProgressBar>
             </LabeledList.Item>

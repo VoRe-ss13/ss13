@@ -88,8 +88,14 @@ export const IconStack = (props: IconStackProps) => {
   const { className, children, ...rest } = props;
   return (
     <span
+<<<<<<< HEAD
       class={classes(['IconStack', className, computeBoxClassName(rest)])}
       {...computeBoxProps(rest)}>
+=======
+      className={classes(['IconStack', className, computeBoxClassName(rest)])}
+      {...computeBoxProps(rest)}
+    >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
       {children}
     </span>
   );

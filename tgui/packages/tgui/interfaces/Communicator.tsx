@@ -3,7 +3,21 @@ import { BooleanLike } from 'common/react';
 import { decodeHtmlEntities, toTitleCase } from 'common/string';
 import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../backend';
+<<<<<<< HEAD
 import { Box, ByondUi, Button, Flex, Icon, LabeledList, Input, Section, Table } from '../components';
+=======
+import {
+  Box,
+  Button,
+  ByondUi,
+  Flex,
+  Icon,
+  Input,
+  LabeledList,
+  Section,
+  Table,
+} from '../components';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 import { Window } from '../layouts';
 import { CrewManifestContent } from './CrewManifest';
 
@@ -70,7 +84,8 @@ export const Communicator = (props) => {
               mb={1}
               style={{
                 'overflow-y': 'auto',
-              }}>
+              }}
+            >
               {TabToTemplate[currentTab] || <TemplateError />}
             </Box>
             <CommunicatorFooter
@@ -139,11 +154,12 @@ const VideoComm = (props) => {
     return (
       <Box
         style={{
-          'position': 'absolute',
-          'right': '5px',
-          'bottom': '50px',
+          position: 'absolute',
+          right: '5px',
+          bottom: '50px',
           'z-index': 1,
-        }}>
+        }}
+      >
         <Section p={0} m={0}>
           <Flex justify="space-between" spacing={1}>
             <Flex.Item grow={1}>
@@ -331,12 +347,13 @@ const HomeTab = (props) => {
           <Button
             style={{
               'border-radius': '10%',
-              'border': '1px solid #000',
+              border: '1px solid #000',
             }}
             width="64px"
             height="64px"
             position="relative"
-            onClick={() => act('switch_tab', { switch_tab: app.number })}>
+            onClick={() => act('switch_tab', { switch_tab: app.number })}
+          >
             <Icon
               spin={hasNotifications(app.module)}
               color={hasNotifications(app.module) ? 'bad' : null}
@@ -425,7 +442,8 @@ const PhoneTab = (props) => {
               {voice_mobs.map((mob) => (
                 <LabeledList.Item
                   label={decodeHtmlEntities(mob.name)}
-                  key={mob.ref}>
+                  key={mob.ref}
+                >
                   <Button
                     icon="times"
                     color="bad"
@@ -487,7 +505,8 @@ const PhoneTab = (props) => {
               {requestsReceived.map((request) => (
                 <LabeledList.Item
                   label={decodeHtmlEntities(request.name)}
-                  key={request.address}>
+                  key={request.address}
+                >
                   <Box>{decodeHtmlEntities(request.address)}</Box>
                   <Box>
                     <Button
@@ -512,13 +531,14 @@ const PhoneTab = (props) => {
               {invitesSent.map((invite) => (
                 <LabeledList.Item
                   label={decodeHtmlEntities(invite.name)}
-                  key={invite.address}>
+                  key={invite.address}
+                >
                   <Box>{decodeHtmlEntities(invite.address)}</Box>
                   <Box>
                     <Button
                       icon="pen"
                       onClick={() => {
-                        act('copy', { 'copy': invite.address });
+                        act('copy', { copy: invite.address });
                       }}
                       content="Copy"
                     />
@@ -577,7 +597,7 @@ const NumberPad = (props) => {
         <Table.Cell>{buttonArray[i + 1]}</Table.Cell>
         <Table.Cell>{buttonArray[i + 2]}</Table.Cell>
         <Table.Cell>{buttonArray[i + 3]}</Table.Cell>
-      </Table.Row>
+      </Table.Row>,
     );
   }
 
@@ -592,7 +612,8 @@ const NumberPad = (props) => {
               width="100%"
               height="64px"
               position="relative"
-              onClick={() => act('dial', { dial: targetAddress })}>
+              onClick={() => act('dial', { dial: targetAddress })}
+            >
               <Icon
                 name="phone"
                 position="absolute"
@@ -612,7 +633,8 @@ const NumberPad = (props) => {
               onClick={() => {
                 act('message', { message: targetAddress });
                 act('switch_tab', { switch_tab: MESSTAB });
-              }}>
+              }}
+            >
               <Icon
                 name="comment-alt"
                 position="absolute"
@@ -629,7 +651,8 @@ const NumberPad = (props) => {
               width="100%"
               height="64px"
               position="relative"
-              onClick={() => act('hang_up')}>
+              onClick={() => act('hang_up')}
+            >
               <Icon
                 name="times"
                 position="absolute"
@@ -668,7 +691,8 @@ const ContactsTab = (props) => {
                 color="label"
                 style={{
                   'word-break': 'break-all',
-                }}>
+                }}
+              >
                 {decodeHtmlEntities(device.name)}
               </Table.Cell>
               <Table.Cell>
@@ -677,7 +701,7 @@ const ContactsTab = (props) => {
                   <Button
                     icon="pen"
                     onClick={() => {
-                      act('copy', { 'copy': device.address });
+                      act('copy', { copy: device.address });
                       act('switch_tab', { switch_tab: PHONTAB });
                     }}
                     content="Copy"
@@ -685,8 +709,8 @@ const ContactsTab = (props) => {
                   <Button
                     icon="phone"
                     onClick={() => {
-                      act('dial', { 'dial': device.address });
-                      act('copy', { 'copy': device.address });
+                      act('dial', { dial: device.address });
+                      act('copy', { copy: device.address });
                       act('switch_tab', { switch_tab: PHONTAB });
                     }}
                     content="Call"
@@ -694,8 +718,8 @@ const ContactsTab = (props) => {
                   <Button
                     icon="comment-alt"
                     onClick={() => {
-                      act('copy', { 'copy': device.address });
-                      act('copy_name', { 'copy_name': device.name });
+                      act('copy', { copy: device.address });
+                      act('copy_name', { copy_name: device.name });
                       act('switch_tab', { switch_tab: MESSSUBTAB });
                     }}
                     content="Msg"
@@ -738,7 +762,8 @@ const MessagingTab = (props) => {
                 color="label"
                 style={{
                   'word-break': 'break-all',
-                }}>
+                }}
+              >
                 {decodeHtmlEntities(device.name)}:
               </Table.Cell>
               <Table.Cell>
@@ -814,7 +839,7 @@ const MessagingThreadTab = (props) => {
 
   const [clipboardMode, setClipboardMode] = useLocalState(
     'clipboardMode',
-    false
+    false,
   );
 
   if (clipboardMode) {
@@ -827,11 +852,12 @@ const MessagingThreadTab = (props) => {
               'white-space': 'nowrap',
               'overflow-x': 'hidden',
             }}
-            width="90%">
+            width="90%"
+          >
             {enforceLengthLimit(
               'Conversation with ',
               decodeHtmlEntities(targetAddressName),
-              30
+              30,
             )}
           </Box>
         }
@@ -845,12 +871,14 @@ const MessagingThreadTab = (props) => {
           />
         }
         height="100%"
-        stretchContents>
+        stretchContents
+      >
         <Section
           style={{
-            'height': '95%',
+            height: '95%',
             'overflow-y': 'auto',
-          }}>
+          }}
+        >
           {imList.map(
             (im, i) =>
               (im.to_address === targetAddress ||
@@ -861,15 +889,16 @@ const MessagingThreadTab = (props) => {
                     IsIMOurs(im, targetAddress)
                       ? 'ClassicMessage_Sent'
                       : 'ClassicMessage_Received'
-                  }>
+                  }
+                >
                   {IsIMOurs(im, targetAddress) ? 'You' : 'Them'}: {im.im}
                 </Box>
-              )
+              ),
           )}
         </Section>
         <Button
           icon="comment"
-          onClick={() => act('message', { 'message': targetAddress })}
+          onClick={() => act('message', { message: targetAddress })}
           content="Message"
         />
       </Section>
@@ -885,11 +914,12 @@ const MessagingThreadTab = (props) => {
             'white-space': 'nowrap',
             'overflow-x': 'hidden',
           }}
-          width="100%">
+          width="100%"
+        >
           {enforceLengthLimit(
             'Conversation with ',
             decodeHtmlEntities(targetAddressName),
-            30
+            30,
           )}
         </Box>
       }
@@ -903,12 +933,14 @@ const MessagingThreadTab = (props) => {
         />
       }
       height="100%"
-      stretchContents>
+      stretchContents
+    >
       <Section
         style={{
-          'height': '95%',
+          height: '95%',
           'overflow-y': 'auto',
-        }}>
+        }}
+      >
         {imList.map(
           (im, i, filterArr) =>
             (im.to_address === targetAddress ||
@@ -916,25 +948,27 @@ const MessagingThreadTab = (props) => {
               <Box
                 textAlign={IsIMOurs(im, targetAddress) ? 'right' : 'left'}
                 mb={1}
-                key={i}>
+                key={i}
+              >
                 <Box
                   maxWidth="75%"
                   className={findClassMessage(
                     im,
                     targetAddress,
                     i - 1,
-                    filterArr
+                    filterArr,
                   )}
-                  inline>
+                  inline
+                >
                   {decodeHtmlEntities(im.im)}
                 </Box>
               </Box>
-            )
+            ),
         )}
       </Section>
       <Button
         icon="comment"
-        onClick={() => act('message', { 'message': targetAddress })}
+        onClick={() => act('message', { message: targetAddress })}
         content="Message"
       />
     </Section>
@@ -998,7 +1032,8 @@ const NewsTargetFeed = (props) => {
           icon="chevron-up"
           onClick={() => act('newsfeed', { newsfeed: null })}
         />
-      }>
+      }
+    >
       {target_feed.messages.map((message) => (
         <Section key={message.ref}>
           - {decodeHtmlEntities(message.body)}
@@ -1090,7 +1125,8 @@ const NoteTab = (props) => {
       stretchContents
       buttons={
         <Button icon="pen" onClick={() => act('edit')} content="Edit Notes" />
-      }>
+      }
+    >
       <Section
         color="average"
         width="100%"
@@ -1098,7 +1134,8 @@ const NoteTab = (props) => {
         style={{
           'word-break': 'break-all',
           'overflow-y': 'auto',
-        }}>
+        }}
+      >
         {note}
       </Section>
     </Section>
@@ -1163,7 +1200,7 @@ const WeatherTab = (props) => {
             (i: AirContent) =>
               i.val !== '0' ||
               i.entry === 'Pressure' ||
-              i.entry === 'Temperature'
+              i.entry === 'Temperature',
           )(aircontents).map((item: AirContent) => (
             <LabeledList.Item
               key={item.entry}
@@ -1173,8 +1210,9 @@ const WeatherTab = (props) => {
                 item.bad_low,
                 item.poor_low,
                 item.poor_high,
-                item.bad_high
-              )}>
+                item.bad_high,
+              )}
+            >
               {item.val}
               {decodeHtmlEntities(item.units)}
             </LabeledList.Item>

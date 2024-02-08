@@ -1,6 +1,18 @@
+<<<<<<< HEAD
 import { createPopper } from '@popperjs/core';
 import { ArgumentsOf } from 'common/types';
 import { Component, findDOMfromVNode, InfernoNode, render } from 'inferno';
+=======
+import { Placement } from '@popperjs/core';
+import {
+  PropsWithChildren,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import { usePopper } from 'react-popper';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 
 type PopperProps = {
   popperContent: InfernoNode;
@@ -17,7 +29,33 @@ export class Popper extends Component<PopperProps> {
   constructor() {
     super();
 
+<<<<<<< HEAD
     Popper.id += 1;
+=======
+  const [referenceElement, setReferenceElement] =
+    useState<HTMLDivElement | null>(null);
+  const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(
+    null,
+  );
+
+  // One would imagine we could just use useref here, but it's against react-popper documentation and causes a positioning bug
+  // We still need them to call focus and clickoutside events :(
+  const popperRef = useRef<HTMLDivElement | null>(null);
+  const parentRef = useRef<HTMLDivElement | null>(null);
+
+  const { styles, attributes } = usePopper(referenceElement, popperElement, {
+    placement,
+  });
+
+  /** Close the popper when the user clicks outside */
+  function handleClickOutside(event: MouseEvent) {
+    if (
+      !popperRef.current?.contains(event.target as Node) &&
+      !parentRef.current?.contains(event.target as Node)
+    ) {
+      onClickOutside?.();
+    }
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
   }
 
   componentDidMount() {
@@ -34,6 +72,7 @@ export class Popper extends Component<PopperProps> {
     this.renderPopperContent(() => {
       document.body.appendChild(this.renderedContent);
 
+<<<<<<< HEAD
       // HACK: We don't want to create a wrapper, as it could break the layout
       // of consumers, so we do the inferno equivalent of `findDOMNode(this)`.
       // This is usually bad as refs are usually better, but refs did
@@ -76,4 +115,30 @@ export class Popper extends Component<PopperProps> {
   render() {
     return this.props.children;
   }
+=======
+  return (
+    <>
+      <div
+        ref={(node) => {
+          setReferenceElement(node);
+          parentRef.current = node;
+        }}
+      >
+        {children}
+      </div>
+      {isOpen && (
+        <div
+          ref={(node) => {
+            setPopperElement(node);
+            popperRef.current = node;
+          }}
+          style={{ ...styles.popper, zIndex: 5 }}
+          {...attributes.popper}
+        >
+          {content}
+        </div>
+      )}
+    </>
+  );
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 }

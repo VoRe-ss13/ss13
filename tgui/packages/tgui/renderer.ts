@@ -19,7 +19,11 @@ export const suspendRenderer = () => {
 };
 
 type CreateRenderer = <T extends unknown[] = [unknown]>(
+<<<<<<< HEAD
   getVNode?: (...args: T) => any
+=======
+  getVNode?: (...args: T) => ReactNode,
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 ) => (...args: T) => void;
 
 // prettier-ignore

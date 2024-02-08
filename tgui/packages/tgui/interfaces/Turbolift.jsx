@@ -35,8 +35,14 @@ export const Turbolift = (props) => {
                 content="Emergency Stop"
                 onClick={() => act('emergency_stop')}
               />
+<<<<<<< HEAD
             </Fragment>
           }>
+=======
+            </>
+          }
+        >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
           {!fire_mode || (
             <Section
               className="Section--elevator--fire"

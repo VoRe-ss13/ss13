@@ -1,6 +1,14 @@
 import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
-import { Box, Button, Modal, LabeledList, ProgressBar, Section, NoticeBox } from '../components';
+import {
+  Box,
+  Button,
+  Modal,
+  LabeledList,
+  ProgressBar,
+  Section,
+  NoticeBox,
+} from '../components';
 import { Window } from '../layouts';
 import { toTitleCase, decodeHtmlEntities } from 'common/string';
 
@@ -18,7 +26,8 @@ export const MechaControlConsole = (props) => {
               title="Log"
               buttons={
                 <Button icon="window-close" onClick={() => act('clear_log')} />
-              }>
+              }
+            >
               {stored_data.map((data) => (
                 <Box key={data.time}>
                   <Box color="label">
@@ -40,12 +49,14 @@ export const MechaControlConsole = (props) => {
                 <Fragment>
                   <Button
                     icon="comment"
-                    onClick={() => act('send_message', { mt: beacon.ref })}>
+                    onClick={() => act('send_message', { mt: beacon.ref })}
+                  >
                     Message
                   </Button>
                   <Button
                     icon="eye"
-                    onClick={() => act('get_log', { mt: beacon.ref })}>
+                    onClick={() => act('get_log', { mt: beacon.ref })}
+                  >
                     View Log
                   </Button>
                   <Button.Confirm
@@ -54,8 +65,14 @@ export const MechaControlConsole = (props) => {
                     icon="bomb"
                     onClick={() => act('shock', { mt: beacon.ref })}
                   />
+<<<<<<< HEAD
                 </Fragment>
               }>
+=======
+                </>
+              }
+            >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
               <LabeledList>
                 <LabeledList.Item label="Health">
                   <ProgressBar

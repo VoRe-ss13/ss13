@@ -29,8 +29,14 @@ export const BrigTimer = (props) => {
                 />
               )) ||
                 null}
+<<<<<<< HEAD
             </Fragment>
           }>
+=======
+            </>
+          }
+        >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
           <NumberInput
             animated
             fluid

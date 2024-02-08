@@ -6,14 +6,48 @@
 
 import { toFixed } from 'common/math';
 import { useLocalState } from 'tgui/backend';
+<<<<<<< HEAD
 import { useDispatch, useSelector } from 'common/redux';
 import { Box, Button, ColorBox, Divider, Dropdown, Flex, Input, LabeledList, NumberInput, Section, Stack, Tabs, TextArea } from 'tgui/components';
+=======
+import { useDispatch, useSelector } from 'tgui/backend';
+import {
+  Box,
+  Button,
+  ColorBox,
+  Divider,
+  Dropdown,
+  Flex,
+  Input,
+  LabeledList,
+  NumberInput,
+  Section,
+  Stack,
+  Tabs,
+  TextArea,
+} from 'tgui/components';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 import { ChatPageSettings } from '../chat';
-import { rebuildChat, saveChatToDisk, purgeChatMessageArchive } from '../chat/actions';
+import {
+  rebuildChat,
+  saveChatToDisk,
+  purgeChatMessageArchive,
+} from '../chat/actions';
 import { THEMES } from '../themes';
-import { changeSettingsTab, updateSettings, addHighlightSetting, removeHighlightSetting, updateHighlightSetting } from './actions';
+import {
+  changeSettingsTab,
+  updateSettings,
+  addHighlightSetting,
+  removeHighlightSetting,
+  updateHighlightSetting,
+} from './actions';
 import { SETTINGS_TABS, FONTS, MAX_HIGHLIGHT_SETTINGS } from './constants';
-import { selectActiveTab, selectSettings, selectHighlightSettings, selectHighlightSettingById } from './selectors';
+import {
+  selectActiveTab,
+  selectSettings,
+  selectHighlightSettings,
+  selectHighlightSettingById,
+} from './selectors';
 
 export const SettingsPanel = (props, context) => {
   const activeTab = useSelector(context, selectActiveTab);
@@ -31,9 +65,10 @@ export const SettingsPanel = (props, context) => {
                   dispatch(
                     changeSettingsTab({
                       tabId: tab.id,
-                    })
+                    }),
                   )
-                }>
+                }
+              >
                 {tab.name}
               </Tabs.Tab>
             ))}
@@ -67,7 +102,7 @@ export const SettingsGeneral = (props, context) => {
               dispatch(
                 updateSettings({
                   theme: value,
-                })
+                }),
               )
             }
           />
@@ -83,7 +118,7 @@ export const SettingsGeneral = (props, context) => {
                     dispatch(
                       updateSettings({
                         fontFamily: value,
-                      })
+                      }),
                     )
                   }
                 />
@@ -94,7 +129,7 @@ export const SettingsGeneral = (props, context) => {
                     dispatch(
                       updateSettings({
                         fontFamily: value,
-                      })
+                      }),
                     )
                   }
                 />
@@ -127,7 +162,7 @@ export const SettingsGeneral = (props, context) => {
               dispatch(
                 updateSettings({
                   fontSize: value,
-                })
+                }),
               )
             }
           />
@@ -145,7 +180,7 @@ export const SettingsGeneral = (props, context) => {
               dispatch(
                 updateSettings({
                   lineHeight: value,
-                })
+                }),
               )
             }
           />
@@ -160,7 +195,7 @@ export const SettingsGeneral = (props, context) => {
               dispatch(
                 updateSettings({
                   showReconnectWarning: !showReconnectWarning,
-                })
+                }),
               )
             }
           />
@@ -194,7 +229,7 @@ export const MessageLimits = (props, context) => {
               dispatch(
                 updateSettings({
                   visibleMessageLimit: value,
-                })
+                }),
               )
             }
           />
@@ -212,7 +247,7 @@ export const MessageLimits = (props, context) => {
               dispatch(
                 updateSettings({
                   persistentMessageLimit: value,
-                })
+                }),
               )
             }
           />
@@ -230,7 +265,7 @@ export const MessageLimits = (props, context) => {
               dispatch(
                 updateSettings({
                   combineMessageLimit: value,
-                })
+                }),
               )
             }
           />
@@ -249,7 +284,7 @@ export const MessageLimits = (props, context) => {
               dispatch(
                 updateSettings({
                   combineIntervalLimit: value,
-                })
+                }),
               )
             }
           />
@@ -302,7 +337,7 @@ export const ExportTab = (props, context) => {
               dispatch(
                 updateSettings({
                   logLineCount: value,
-                })
+                }),
               )
             }
           />
@@ -322,7 +357,8 @@ export const ExportTab = (props, context) => {
           onClick={() => {
             dispatch(purgeChatMessageArchive());
             setPurgeConfirm(2);
-          }}>
+          }}
+        >
           {purgeConfirm > 1 ? 'Purged!' : 'Are you sure?'}
         </Button>
       ) : (
@@ -334,7 +370,8 @@ export const ExportTab = (props, context) => {
             setTimeout(() => {
               setPurgeConfirm(false);
             }, 5000);
-          }}>
+          }}
+        >
           Purge message archive
         </Button>
       )}
@@ -408,7 +445,7 @@ const TextHighlightSetting = (props, context) => {
               dispatch(
                 removeHighlightSetting({
                   id: id,
-                })
+                }),
               )
             }
           />
@@ -424,7 +461,7 @@ const TextHighlightSetting = (props, context) => {
                 updateHighlightSetting({
                   id: id,
                   highlightBlacklist: !highlightBlacklist,
-                })
+                }),
               )
             }
           />
@@ -440,7 +477,7 @@ const TextHighlightSetting = (props, context) => {
                 updateHighlightSetting({
                   id: id,
                   highlightWholeMessage: !highlightWholeMessage,
-                })
+                }),
               )
             }
           />
@@ -456,7 +493,7 @@ const TextHighlightSetting = (props, context) => {
                 updateHighlightSetting({
                   id: id,
                   matchWord: !matchWord,
-                })
+                }),
               )
             }
           />
@@ -471,7 +508,7 @@ const TextHighlightSetting = (props, context) => {
                 updateHighlightSetting({
                   id: id,
                   matchCase: !matchCase,
-                })
+                }),
               )
             }
           />
@@ -488,7 +525,7 @@ const TextHighlightSetting = (props, context) => {
                 updateHighlightSetting({
                   id: id,
                   highlightColor: value,
-                })
+                }),
               )
             }
           />
@@ -503,7 +540,7 @@ const TextHighlightSetting = (props, context) => {
             updateHighlightSetting({
               id: id,
               highlightText: value,
-            })
+            }),
           )
         }
       />
@@ -517,7 +554,7 @@ const TextHighlightSetting = (props, context) => {
               updateHighlightSetting({
                 id: id,
                 blacklistText: value,
-              })
+              }),
             )
           }
         />

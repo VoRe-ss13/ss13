@@ -196,7 +196,8 @@ export class TextArea extends Component {
           noborder && 'TextArea--noborder',
           className,
         ])}
-        {...rest}>
+        {...rest}
+      >
         {!!displayedValue && (
           <Box position="absolute" width="100%" height="100%" overflow="hidden">
             <div
@@ -205,8 +206,14 @@ export class TextArea extends Component {
                 'TextArea__textarea_custom',
               ])}
               style={{
+<<<<<<< HEAD
                 'transform': `translateY(-${scrolledAmount}px)`,
               }}>
+=======
+                transform: `translateY(-${scrolledAmount}px)`,
+              }}
+            >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
               {displayedValue}
             </div>
           </Box>

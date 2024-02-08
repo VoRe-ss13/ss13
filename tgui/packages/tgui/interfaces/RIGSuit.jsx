@@ -1,6 +1,13 @@
 import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
-import { Box, Button, Flex, LabeledList, ProgressBar, Section } from '../components';
+import {
+  Box,
+  Button,
+  Flex,
+  LabeledList,
+  ProgressBar,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 import { capitalize, toTitleCase } from 'common/string';
 
@@ -95,8 +102,14 @@ const RIGSuitStatus = (props) => {
           {SealButton}
           {AIButton}
           {CoolingButton}
+<<<<<<< HEAD
         </Fragment>
       }>
+=======
+        </>
+      }
+    >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
       <LabeledList>
         <LabeledList.Item label="Power Supply">
           <ProgressBar
@@ -107,7 +120,8 @@ const RIGSuitStatus = (props) => {
               good: [35, Infinity],
               average: [15, 35],
               bad: [-Infinity, 15],
-            }}>
+            }}
+          >
             {charge} / {maxcharge}
           </ProgressBar>
         </LabeledList.Item>
@@ -157,7 +171,8 @@ const RIGSuitHardware = (props) => {
               selected={helmetDeployed}
               onClick={() => act('toggle_piece', { piece: 'helmet' })}
             />
-          }>
+          }
+        >
           {helmet ? capitalize(helmet) : 'ERROR'}
         </LabeledList.Item>
         <LabeledList.Item
@@ -170,7 +185,8 @@ const RIGSuitHardware = (props) => {
               selected={gauntletsDeployed}
               onClick={() => act('toggle_piece', { piece: 'gauntlets' })}
             />
-          }>
+          }
+        >
           {gauntlets ? capitalize(gauntlets) : 'ERROR'}
         </LabeledList.Item>
         <LabeledList.Item
@@ -183,7 +199,8 @@ const RIGSuitHardware = (props) => {
               selected={bootsDeployed}
               onClick={() => act('toggle_piece', { piece: 'boots' })}
             />
-          }>
+          }
+        >
           {boots ? capitalize(boots) : 'ERROR'}
         </LabeledList.Item>
         <LabeledList.Item
@@ -196,7 +213,8 @@ const RIGSuitHardware = (props) => {
               selected={chestDeployed}
               onClick={() => act('toggle_piece', { piece: 'chest' })}
             />
-          }>
+          }
+        >
           {chest ? capitalize(chest) : 'ERROR'}
         </LabeledList.Item>
       </LabeledList>
@@ -249,8 +267,8 @@ const RIGSuitModules = (props) => {
                     icon="arrow-circle-right"
                     onClick={() =>
                       act('interact_module', {
-                        'module': module.index,
-                        'module_mode': 'select',
+                        module: module.index,
+                        module_mode: 'select',
                       })
                     }
                   />
@@ -261,8 +279,8 @@ const RIGSuitModules = (props) => {
                     icon="arrow-circle-down"
                     onClick={() =>
                       act('interact_module', {
-                        'module': module.index,
-                        'module_mode': 'engage',
+                        module: module.index,
+                        module_mode: 'engage',
                       })
                     }
                   />
@@ -278,14 +296,20 @@ const RIGSuitModules = (props) => {
                     icon="arrow-circle-down"
                     onClick={() =>
                       act('interact_module', {
-                        'module': module.index,
-                        'module_mode': 'toggle',
+                        module: module.index,
+                        module_mode: 'toggle',
                       })
                     }
                   />
                 ) : null}
+<<<<<<< HEAD
               </Fragment>
             }>
+=======
+              </>
+            }
+          >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
             {module.damage >= 2 ? (
               <Box color="bad">-- MODULE DESTROYED --</Box>
             ) : (
@@ -308,15 +332,16 @@ const RIGSuitModules = (props) => {
                     {module.charges.map((charge, i) => (
                       <LabeledList.Item
                         key={charge.caption}
-                        label={capitalize(charge.caption)}>
+                        label={capitalize(charge.caption)}
+                      >
                         <Button
                           selected={module.realchargetype === charge.index}
                           icon="arrow-right"
                           onClick={() =>
                             act('interact_module', {
-                              'module': module.index,
-                              'module_mode': 'select_charge_type',
-                              'charge_type': charge.index,
+                              module: module.index,
+                              module_mode: 'select_charge_type',
+                              charge_type: charge.index,
                             })
                           }
                         />

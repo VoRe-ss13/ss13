@@ -1,6 +1,17 @@
 import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, LabeledList, ProgressBar, Modal, Section, Dropdown, AnimatedNumber, NoticeBox, Table } from '../components';
+import {
+  Box,
+  Button,
+  LabeledList,
+  ProgressBar,
+  Modal,
+  Section,
+  Dropdown,
+  AnimatedNumber,
+  NoticeBox,
+  Table,
+} from '../components';
 import { Window } from '../layouts';
 
 const NIF_WORKING = 0;
@@ -73,8 +84,14 @@ export const NIF = (props) => {
                     icon="window-close"
                     onClick={() => setViewing(null)}
                   />
+<<<<<<< HEAD
                 </Fragment>
               }>
+=======
+                </>
+              }
+            >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
               <Box>{viewingModule.desc}</Box>
               <Box>
                 It consumes{' '}
@@ -117,7 +134,8 @@ export const NIF = (props) => {
               selected={settingsOpen}
               onClick={() => setSettingsOpen(!settingsOpen)}
             />
-          }>
+          }
+        >
           {(settingsOpen && <NIFSettings />) || (
             <NIFMain setViewing={setViewing} />
           )}
@@ -193,7 +211,8 @@ const NIFMain = (props) => {
               good: [50, Infinity],
               average: [25, 50],
               bad: [-Infinity, 0],
-            }}>
+            }}
+          >
             {getNifCondition(nif_stat, nif_percent)} (
             <AnimatedNumber value={nif_percent} />
             %)
@@ -208,7 +227,8 @@ const NIFMain = (props) => {
               good: [250, Infinity],
               average: [150, 250],
               bad: [0, 150],
-            }}>
+            }}
+          >
             {getNutritionText(nutrition, isSynthetic)}
           </ProgressBar>
         </LabeledList.Item>
@@ -236,8 +256,14 @@ const NIFMain = (props) => {
                     tooltip="View Information"
                     tooltipPosition="left"
                   />
+<<<<<<< HEAD
                 </Fragment>
               }>
+=======
+                </>
+              }
+            >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
               {(module.activates && (
                 <Button
                   fluid

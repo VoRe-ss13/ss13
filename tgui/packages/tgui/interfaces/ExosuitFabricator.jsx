@@ -2,31 +2,47 @@ import { classes } from 'common/react';
 import { uniqBy } from 'common/collections';
 import { useBackend, useSharedState } from '../backend';
 import { formatSiUnit, formatMoney } from '../format';
+<<<<<<< HEAD
 import { Flex, Section, Tabs, Box, Button, Fragment, ProgressBar, NumberInput, Icon, Input, Tooltip } from '../components';
+=======
+import {
+  Flex,
+  Section,
+  Tabs,
+  Box,
+  Button,
+  ProgressBar,
+  NumberInput,
+  Icon,
+  Input,
+  Tooltip,
+} from '../components';
+import { Fragment } from 'react';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 import { Window } from '../layouts';
 import { createSearch, toTitleCase } from 'common/string';
 import { toFixed } from 'common/math';
 
 const MATERIAL_KEYS = {
-  'steel': 'sheet-metal_3',
-  'glass': 'sheet-glass_3',
-  'silver': 'sheet-silver_3',
-  'graphite': 'sheet-puck_3',
-  'plasteel': 'sheet-plasteel_3',
-  'durasteel': 'sheet-durasteel_3',
-  'verdantium': 'sheet-wavy_3',
-  'morphium': 'sheet-wavy_3',
-  'mhydrogen': 'sheet-mythril_3',
-  'gold': 'sheet-gold_3',
-  'diamond': 'sheet-diamond',
-  'supermatter': 'sheet-super_3',
-  'osmium': 'sheet-silver_3',
-  'phoron': 'sheet-phoron_3',
-  'uranium': 'sheet-uranium_3',
-  'titanium': 'sheet-titanium_3',
-  'lead': 'sheet-adamantine_3',
-  'platinum': 'sheet-adamantine_3',
-  'plastic': 'sheet-plastic_3',
+  steel: 'sheet-metal_3',
+  glass: 'sheet-glass_3',
+  silver: 'sheet-silver_3',
+  graphite: 'sheet-puck_3',
+  plasteel: 'sheet-plasteel_3',
+  durasteel: 'sheet-durasteel_3',
+  verdantium: 'sheet-wavy_3',
+  morphium: 'sheet-wavy_3',
+  mhydrogen: 'sheet-mythril_3',
+  gold: 'sheet-gold_3',
+  diamond: 'sheet-diamond',
+  supermatter: 'sheet-super_3',
+  osmium: 'sheet-silver_3',
+  phoron: 'sheet-phoron_3',
+  uranium: 'sheet-uranium_3',
+  titanium: 'sheet-titanium_3',
+  lead: 'sheet-adamantine_3',
+  platinum: 'sheet-adamantine_3',
+  plastic: 'sheet-plastic_3',
 };
 
 const COLOR_NONE = 0;
@@ -66,7 +82,7 @@ const partBuildColor = (cost, tally, material) => {
 };
 
 const partCondFormat = (materials, tally, part) => {
-  let format = { 'textColor': COLOR_NONE };
+  let format = { textColor: COLOR_NONE };
 
   Object.keys(part.cost).forEach((mat) => {
     format[mat] = partBuildColor(part.cost[mat], tally[mat], materials[mat]);
@@ -94,7 +110,7 @@ const queueCondFormat = (materials, queue) => {
       matFormat[mat] = partBuildColor(
         part.cost[mat],
         materialTally[mat],
-        materials[mat]
+        materials[mat],
       );
 
       if (matFormat[mat].color !== COLOR_NONE) {
@@ -120,7 +136,7 @@ const searchFilter = (search, allparts) => {
 
   const resultFilter = createSearch(
     search,
-    (part) => (part.name || '') + (part.desc || '') + (part.searchMeta || '')
+    (part) => (part.name || '') + (part.desc || '') + (part.searchMeta || ''),
   );
 
   Object.keys(allparts).forEach((category) => {
@@ -142,17 +158,17 @@ export const ExosuitFabricator = (props) => {
 
   const { materialTally, missingMatTally, textColors } = queueCondFormat(
     materialAsObj,
-    queue
+    queue,
   );
 
   const [displayMatCost, setDisplayMatCost] = useSharedState(
     'display_mats',
-    false
+    false,
   );
 
   const [displayAllMat, setDisplayAllMat] = useSharedState(
     'display_all_mats',
-    false
+    false,
   );
 
   return (
@@ -169,12 +185,14 @@ export const ExosuitFabricator = (props) => {
               <Section title="Settings" height="100%">
                 <Button.Checkbox
                   onClick={() => setDisplayMatCost(!displayMatCost)}
-                  checked={displayMatCost}>
+                  checked={displayMatCost}
+                >
                   Display Material Costs
                 </Button.Checkbox>
                 <Button.Checkbox
                   onClick={() => setDisplayAllMat(!displayAllMat)}
-                  checked={displayAllMat}>
+                  checked={displayAllMat}
+                >
                   Display All Materials
                 </Button.Checkbox>
                 {(data.species_types && (
@@ -210,7 +228,8 @@ export const ExosuitFabricator = (props) => {
                       content="R&D Sync"
                       onClick={() => act('sync_rnd')}
                     />
-                  }>
+                  }
+                >
                   <PartSets />
                 </Section>
               </Flex.Item>
@@ -246,7 +265,7 @@ const EjectMaterial = (props) => {
 
   const [removeMaterials, setRemoveMaterials] = useSharedState(
     'remove_mats_' + name,
-    1
+    1,
   );
 
   if (removeMaterials > 1 && sheets < removeMaterials) {
@@ -291,7 +310,7 @@ export const Materials = (props) => {
   const materials = data.materials || [];
 
   let display_materials = materials.filter(
-    (mat) => displayAllMat || mat.amount > 0
+    (mat) => displayAllMat || mat.amount > 0,
   );
 
   if (display_materials.length === 0) {
@@ -321,7 +340,7 @@ export const Materials = (props) => {
                 </Box>
               )}
             </Flex.Item>
-          ) || null
+          ) || null,
       )}
     </Flex>
   );
@@ -369,7 +388,7 @@ const PartSets = (props) => {
 
   const [selectedPartTab, setSelectedPartTab] = useSharedState(
     'part_tab',
-    partSets.length ? buildableParts[0] : ''
+    partSets.length ? buildableParts[0] : '',
   );
 
   return (
@@ -381,10 +400,11 @@ const PartSets = (props) => {
               key={set}
               selected={set === selectedPartTab}
               disabled={!buildableParts[set]}
-              onClick={() => setSelectedPartTab(set)}>
+              onClick={() => setSelectedPartTab(set)}
+            >
               {set}
             </Tabs.Tab>
-          )
+          ),
       )}
     </Tabs>
   );
@@ -409,7 +429,7 @@ const PartLists = (props) => {
 
   const [selectedPartTab, setSelectedPartTab] = useSharedState(
     'part_tab',
-    getFirstValidPartSet(partSets)
+    getFirstValidPartSet(partSets),
   );
 
   const [searchText, setSearchText] = useSharedState('search_text', '');
@@ -426,7 +446,7 @@ const PartLists = (props) => {
   let partsList;
   // Build list of sub-categories if not using a search filter.
   if (!searchText) {
-    partsList = { 'Parts': [] };
+    partsList = { Parts: [] };
     buildableParts[selectedPartTab].forEach((part) => {
       part['format'] = partCondFormat(materials, queueMaterials, part);
       if (!part.subCategory) {
@@ -506,7 +526,8 @@ const PartCategory = (props) => {
               })
             }
           />
-        }>
+        }
+      >
         {!parts.length && placeholder}
         {parts.map((part) => (
           <Fragment key={part.name}>
@@ -554,7 +575,8 @@ const PartCategory = (props) => {
                   <Flex.Item
                     width={'50px'}
                     key={material}
-                    color={COLOR_KEYS[part.format[material].color]}>
+                    color={COLOR_KEYS[part.format[material].color]}
+                  >
                     <MaterialAmount
                       formatmoney
                       style={{
@@ -614,8 +636,14 @@ const Queue = (props) => {
                   onClick={() => act('build_queue')}
                 />
               )}
+<<<<<<< HEAD
             </Fragment>
           }>
+=======
+            </>
+          }
+        >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
           <Flex direction="column" height="100%">
             <Flex.Item>
               <BeingBuilt />
@@ -682,7 +710,8 @@ const QueueList = (props) => {
         justify="center"
         wrap="wrap"
         height="20px"
-        inline>
+        inline
+      >
         <Flex.Item basis="content">
           <Button
             height="20px"

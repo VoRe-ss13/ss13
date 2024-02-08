@@ -65,7 +65,7 @@ export const ShuttleList = (props) => {
       <Section title="Overmap Ships">
         <Table>
           {sortBy((f: OvermapShip) => f.name?.toLowerCase() || f.name || f.ref)(
-            overmap_ships
+            overmap_ships,
           ).map((ship) => (
             <Table.Row key={ship.ref}>
               <Table.Cell collapsing>

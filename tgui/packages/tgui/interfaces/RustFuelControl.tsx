@@ -39,7 +39,8 @@ export const RustFuelContent = (props) => {
           content={'Set Tag'}
           onClick={() => act('set_tag')}
         />
-      }>
+      }
+    >
       <Table>
         <Table.Row header>
           <Table.Cell>Name</Table.Cell>

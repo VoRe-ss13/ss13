@@ -46,8 +46,14 @@ export const Microwave = (props) => {
                   <Button icon="eject" onClick={() => act('dispose')}>
                     Eject
                   </Button>
+<<<<<<< HEAD
                 </Fragment>
               }>
+=======
+                </>
+              }
+            >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
               <LabeledList>
                 {items.map((item) => (
                   <LabeledList.Item key={item.name} label={item.name}>

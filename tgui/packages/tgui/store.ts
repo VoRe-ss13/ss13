@@ -4,7 +4,21 @@
  * @license MIT
  */
 
+<<<<<<< HEAD
 import { Middleware, Reducer, Store, applyMiddleware, combineReducers, createStore } from 'common/redux';
+=======
+import { flow } from 'common/fp';
+import {
+  applyMiddleware,
+  combineReducers,
+  createStore,
+  Middleware,
+  Reducer,
+  Store,
+} from 'common/redux';
+
+import { assetMiddleware } from './assets';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 import { backendMiddleware, backendReducer } from './backend';
 import { debugMiddleware, debugReducer, relayMiddleware } from './debug';
 
@@ -44,11 +58,11 @@ export const configureStore = (options: ConfigureStoreOptions = {}): Store => {
   const middlewares: Middleware[] = !sideEffects
     ? []
     : [
-      ...(middleware?.pre || []),
-      assetMiddleware,
-      backendMiddleware,
-      ...(middleware?.post || []),
-    ];
+        ...(middleware?.pre || []),
+        assetMiddleware,
+        backendMiddleware,
+        ...(middleware?.post || []),
+      ];
 
   if (process.env.NODE_ENV !== 'production') {
     // We are using two if statements because Webpack is capable of
@@ -72,7 +86,7 @@ const loggingMiddleware: Middleware = (store) => (next) => (action) => {
   const { type } = action;
   logger.debug(
     'action',
-    type === 'update' || type === 'backend/update' ? { type } : action
+    type === 'update' || type === 'backend/update' ? { type } : action,
   );
   return next(action);
 };

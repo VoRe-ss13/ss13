@@ -1,6 +1,18 @@
 import { useBackend } from '../../backend';
+<<<<<<< HEAD
 import { Fragment } from 'inferno';
 import { Box, Section, LabeledList, Button, AnimatedNumber, ProgressBar } from '../../components';
+=======
+import { Fragment } from 'react';
+import {
+  Box,
+  Section,
+  LabeledList,
+  Button,
+  AnimatedNumber,
+  ProgressBar,
+} from '../../components';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 
 export const PortableBasicInfo = (props) => {
   const { act, data } = useBackend();
@@ -26,7 +38,8 @@ export const PortableBasicInfo = (props) => {
             selected={on}
             onClick={() => act('power')}
           />
-        }>
+        }
+      >
         <LabeledList>
           <LabeledList.Item label="Pressure">
             <AnimatedNumber value={pressure} />
@@ -45,7 +58,8 @@ export const PortableBasicInfo = (props) => {
                 good: [cellMaxCharge * 0.5, Infinity],
                 average: [cellMaxCharge * 0.25, cellMaxCharge * 0.5],
                 bad: [-Infinity, cellMaxCharge * 0.25],
-              }}>
+              }}
+            >
               {cellCharge} W
             </ProgressBar>
           </LabeledList.Item>
@@ -61,7 +75,8 @@ export const PortableBasicInfo = (props) => {
             disabled={!holding}
             onClick={() => act('eject')}
           />
-        }>
+        }
+      >
         {holding ? (
           <LabeledList>
             <LabeledList.Item label="Label">{holding.name}</LabeledList.Item>

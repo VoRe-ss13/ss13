@@ -1,4 +1,11 @@
-import { Section, Box, Button, NoticeBox, LabeledList, NumberInput } from '../components';
+import {
+  Section,
+  Box,
+  Button,
+  NoticeBox,
+  LabeledList,
+  NumberInput,
+} from '../components';
 import { useBackend } from '../backend';
 import { Fragment } from 'inferno';
 import { NtosWindow } from '../layouts';
@@ -36,7 +43,8 @@ export const NtosNetMonitor = (props) => {
               selected={ntnetstatus}
               onClick={() => act('toggleWireless')}
             />
-          }>
+          }
+        >
           {ntnetrelays ? (
             <LabeledList>
               <LabeledList.Item label="Active NTNet Relays">
@@ -116,8 +124,14 @@ export const NtosNetMonitor = (props) => {
                   <Button icon="balance-scale" onClick={() => act('unban_nid')}>
                     Unban NID
                   </Button>
+<<<<<<< HEAD
                 </Fragment>
               }>
+=======
+                </>
+              }
+            >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
               {banned_nids.join(', ') || 'None'}
             </LabeledList.Item>
             <LabeledList.Item
@@ -165,7 +179,8 @@ export const NtosNetMonitor = (props) => {
                 content="Clear Logs"
                 onClick={() => act('purgelogs')}
               />
-            }>
+            }
+          >
             {ntnetlogs.map((log) => (
               <Box key={log.entry} className="candystripe">
                 {log.entry}

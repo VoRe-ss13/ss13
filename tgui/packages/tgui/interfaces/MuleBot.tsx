@@ -34,7 +34,8 @@ export const MuleBot = (props) => {
                   disabled={!load}
                   onClick={() => act('unload')}
                 />
-              }>
+              }
+            >
               {load ? load : 'None.'}
             </LabeledList.Item>
           </LabeledList>
@@ -60,7 +61,8 @@ const MuleBotClosed = (props) => {
           disabled={locked && !issilicon}
           onClick={() => act('power')}
         />
-      }>
+      }
+    >
       {locked && !issilicon ? (
         <Box color="bad">This interface is currently locked.</Box>
       ) : (

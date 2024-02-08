@@ -5,8 +5,21 @@
  */
 
 import { classes } from 'common/react';
+<<<<<<< HEAD
 import { RefObject } from 'inferno';
 import { computeFlexClassName, computeFlexItemClassName, computeFlexItemProps, computeFlexProps, FlexItemProps, FlexProps } from './Flex';
+=======
+import { RefObject } from 'react';
+
+import {
+  computeFlexClassName,
+  computeFlexItemClassName,
+  computeFlexItemProps,
+  computeFlexProps,
+  FlexItemProps,
+  FlexProps,
+} from './Flex';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 
 type StackProps = FlexProps & {
   vertical?: boolean;

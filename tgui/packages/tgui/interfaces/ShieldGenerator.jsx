@@ -1,7 +1,19 @@
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
+<<<<<<< HEAD
 import { Fragment } from 'inferno';
 import { Button, Box, Section, LabeledList, NumberInput, Icon } from '../components';
+=======
+import { Fragment } from 'react';
+import {
+  Button,
+  Box,
+  Section,
+  LabeledList,
+  NumberInput,
+  Icon,
+} from '../components';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 import { round } from 'common/math';
 import { formatSiUnit, formatPower } from '../format';
 import { FullscreenNotice } from './common/FullscreenNotice';
@@ -74,7 +86,7 @@ const ShieldGeneratorContent = (props) => {
             {(target_field_strength &&
               round(
                 (100 * average_field_strength) / target_field_strength,
-                1
+                1,
               )) ||
               'NA'}
             %)
@@ -132,7 +144,8 @@ const ShieldGeneratorContent = (props) => {
             selected={active}
             onClick={() => act('toggle')}
           />
-        }>
+        }
+      >
         <LabeledList>
           <LabeledList.Item label="Coverage Radius">
             <NumberInput

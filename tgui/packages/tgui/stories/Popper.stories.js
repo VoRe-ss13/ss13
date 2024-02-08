@@ -14,13 +14,19 @@ const Story = () => {
             style={{
               background: 'white',
               border: '2px solid blue',
-            }}>
+            }}
+          >
             Loogatme!
           </Box>
         }
+<<<<<<< HEAD
         options={{
           placement: 'bottom',
         }}>
+=======
+        placement="bottom"
+      >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
         <Box
           style={{
             border: '5px solid white',
@@ -36,13 +42,19 @@ const Story = () => {
             style={{
               background: 'white',
               border: '2px solid blue',
-            }}>
+            }}
+          >
             I am on the right!
           </Box>
         }
+<<<<<<< HEAD
         options={{
           placement: 'right',
         }}>
+=======
+        placement="right"
+      >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
         <Box
           style={{
             border: '5px solid white',

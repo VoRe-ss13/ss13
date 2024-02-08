@@ -4,9 +4,28 @@
  * @license MIT
  */
 
+<<<<<<< HEAD
 import { useDispatch, useSelector } from 'common/redux';
 import { Button, Collapsible, Divider, Input, Section, Stack } from 'tgui/components';
 import { moveChatPageLeft, moveChatPageRight, removeChatPage, toggleAcceptedType, updateChatPage } from './actions';
+=======
+import { useDispatch, useSelector } from 'tgui/backend';
+import {
+  Button,
+  Collapsible,
+  Divider,
+  Input,
+  Section,
+  Stack,
+} from 'tgui/components';
+import {
+  moveChatPageLeft,
+  moveChatPageRight,
+  removeChatPage,
+  toggleAcceptedType,
+  updateChatPage,
+} from './actions';
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 import { MESSAGE_TYPES } from './constants';
 import { selectCurrentChatPage } from './selectors';
 
@@ -25,7 +44,7 @@ export const ChatPageSettings = (props, context) => {
                 updateChatPage({
                   pageId: page.id,
                   name: value,
-                })
+                }),
               )
             }
           />
@@ -39,9 +58,10 @@ export const ChatPageSettings = (props, context) => {
                 dispatch(
                   removeChatPage({
                     pageId: page.id,
-                  })
+                  }),
                 )
-              }>
+              }
+            >
               Remove
             </Button>
           </Stack.Item>
@@ -60,9 +80,10 @@ export const ChatPageSettings = (props, context) => {
                 dispatch(
                   moveChatPageLeft({
                     pageId: page.id,
-                  })
+                  }),
                 )
-              }>
+              }
+            >
               &laquo;
             </Button>
             <Button
@@ -71,9 +92,10 @@ export const ChatPageSettings = (props, context) => {
                 dispatch(
                   moveChatPageRight({
                     pageId: page.id,
-                  })
+                  }),
                 )
-              }>
+              }
+            >
               &raquo;
             </Button>
           </Stack.Item>
@@ -84,7 +106,7 @@ export const ChatPageSettings = (props, context) => {
       <Divider />
       <Section title="Messages to display" level={2}>
         {MESSAGE_TYPES.filter(
-          (typeDef) => !typeDef.important && !typeDef.admin
+          (typeDef) => !typeDef.important && !typeDef.admin,
         ).map((typeDef) => (
           <Button.Checkbox
             key={typeDef.type}
@@ -94,15 +116,16 @@ export const ChatPageSettings = (props, context) => {
                 toggleAcceptedType({
                   pageId: page.id,
                   type: typeDef.type,
-                })
+                }),
               )
-            }>
+            }
+          >
             {typeDef.name}
           </Button.Checkbox>
         ))}
         <Collapsible mt={1} color="transparent" title="Admin stuff">
           {MESSAGE_TYPES.filter(
-            (typeDef) => !typeDef.important && typeDef.admin
+            (typeDef) => !typeDef.important && typeDef.admin,
           ).map((typeDef) => (
             <Button.Checkbox
               key={typeDef.type}
@@ -112,9 +135,10 @@ export const ChatPageSettings = (props, context) => {
                   toggleAcceptedType({
                     pageId: page.id,
                     type: typeDef.type,
-                  })
+                  }),
                 )
-              }>
+              }
+            >
               {typeDef.name}
             </Button.Checkbox>
           ))}

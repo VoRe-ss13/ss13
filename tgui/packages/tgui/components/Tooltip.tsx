@@ -123,7 +123,12 @@ export class Tooltip extends Component<TooltipProps, TooltipState> {
           singletonPopper.setOptions({
             ...DEFAULT_OPTIONS,
             placement: this.props.position || 'auto',
+<<<<<<< HEAD
           });
+=======
+          },
+        );
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
 
           singletonPopper.update();
         }

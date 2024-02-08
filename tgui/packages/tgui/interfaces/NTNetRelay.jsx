@@ -39,7 +39,8 @@ const NTNetRelayContent = (props) => {
           content={'Relay ' + (enabled ? 'On' : 'Off')}
           onClick={() => act('toggle')}
         />
-      }>
+      }
+    >
       <LabeledList>
         <LabeledList.Item label="Network Buffer Status">
           {dos_overload} / {dos_capacity} GQ

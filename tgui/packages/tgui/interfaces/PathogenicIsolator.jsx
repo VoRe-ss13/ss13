@@ -1,7 +1,18 @@
 import { Fragment } from 'inferno';
 import { useBackend, useLocalState } from '../backend';
-import { ComplexModal, modalRegisterBodyOverride } from '../interfaces/common/ComplexModal';
-import { Box, Button, Flex, NoticeBox, LabeledList, Section, Tabs } from '../components';
+import {
+  ComplexModal,
+  modalRegisterBodyOverride,
+} from '../interfaces/common/ComplexModal';
+import {
+  Box,
+  Button,
+  Flex,
+  NoticeBox,
+  LabeledList,
+  Section,
+  Tabs,
+} from '../components';
 import { Window } from '../layouts';
 
 const virusModalBodyOverride = (modal) => {
@@ -24,8 +35,14 @@ const virusModalBodyOverride = (modal) => {
             }
           />
           <Button icon="times" color="red" onClick={() => act('modal_close')} />
+<<<<<<< HEAD
         </Fragment>
       }>
+=======
+        </>
+      }
+    >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
       <Box mx="0.5rem">
         <LabeledList>
           <LabeledList.Item label="Spread">
@@ -126,8 +143,14 @@ const PathogenicIsolatorTabHome = (props) => {
             disabled={!syringe_inserted}
             onClick={() => act('eject')}
           />
+<<<<<<< HEAD
         </Fragment>
       }>
+=======
+        </>
+      }
+    >
+>>>>>>> 84c6c7213e ([MIRROR] TGUI 5.0 Patch 2 ✨ (#7702))
       {(pathogen_pool.length &&
         pathogen_pool.map((pathogen) => (
           <Section key={pathogen.unique_id}>
@@ -184,14 +207,16 @@ const PathogenicIsolatorTabDatabase = (props) => {
           disabled={!can_print}
           onClick={() => act('print', { type: 'virus_list' })}
         />
-      }>
+      }
+    >
       {(database.length &&
         database.map((entry) => (
           <Button
             key={entry.name}
             fluid
             icon="search"
-            onClick={() => act('view_entry', { vir: entry.record })}>
+            onClick={() => act('view_entry', { vir: entry.record })}
+          >
             {entry.name}
           </Button>
         ))) || <Box color="average">The viral database is empty.</Box>}
