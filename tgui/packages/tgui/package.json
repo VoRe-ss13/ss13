@@ -12,7 +12,14 @@
     "inferno": "^7.4.11",
     "inferno-vnode-flags": "^7.4.11",
     "js-yaml": "^4.1.0",
+<<<<<<< HEAD
     "marked": "^4.0.16",
+=======
+    "marked": "^4.2.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-popper": "^2.3.0",
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
     "tgui-dev-server": "workspace:*",
     "tgui-polyfill": "workspace:*"
   }

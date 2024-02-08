@@ -4,7 +4,12 @@
  * @license MIT
  */
 
+<<<<<<< HEAD
 import { BooleanLike, classes, pureComponentHooks } from 'common/react';
+=======
+import { classes } from 'common/react';
+
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { BoxProps, computeBoxClassName, computeBoxProps, unit } from './Box';
 
 export type FlexProps = BoxProps & {

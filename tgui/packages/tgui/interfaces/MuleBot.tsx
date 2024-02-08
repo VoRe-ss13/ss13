@@ -1,5 +1,10 @@
 import { BooleanLike } from 'common/react';
+<<<<<<< HEAD
 import { Fragment } from 'inferno';
+=======
+import { Fragment } from 'react';
+
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { useBackend } from '../backend';
 import { Box, Button, LabeledList, Section } from '../components';
 import { Window } from '../layouts';

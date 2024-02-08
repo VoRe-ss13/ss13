@@ -1,8 +1,11 @@
 import { map, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
+<<<<<<< HEAD
 import { pureComponentHooks } from 'common/react';
 import { Fragment } from 'inferno';
+=======
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Chart, ColorBox, Flex, Icon, LabeledList, ProgressBar, Section, Table } from '../components';
 import { Window } from '../layouts';
@@ -254,8 +257,6 @@ export const AreaCharge = (props) => {
   );
 };
 
-AreaCharge.defaultHooks = pureComponentHooks;
-
 const AreaStatusColorBox = (props) => {
   const { status } = props;
   const power = Boolean(status & 2);
@@ -269,5 +270,3 @@ const AreaStatusColorBox = (props) => {
     />
   );
 };
-
-AreaStatusColorBox.defaultHooks = pureComponentHooks;

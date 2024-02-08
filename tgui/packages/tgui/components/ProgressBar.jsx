@@ -4,12 +4,40 @@
  * @license MIT
  */
 
+<<<<<<< HEAD:tgui/packages/tgui/components/ProgressBar.jsx
 import { clamp01, scale, keyOfMatchingRange, toFixed } from 'common/math';
 import { classes, pureComponentHooks } from 'common/react';
 import { computeBoxClassName, computeBoxProps } from './Box';
 import { CSS_COLORS } from '../constants';
 
 export const ProgressBar = (props) => {
+=======
+import { clamp01, keyOfMatchingRange, scale, toFixed } from 'common/math';
+import { classes } from 'common/react';
+import { PropsWithChildren } from 'react';
+
+import { CSS_COLORS } from '../constants';
+import { BoxProps, computeBoxClassName, computeBoxProps } from './Box';
+
+type Props = {
+  value: number;
+} & Partial<{
+  backgroundColor: string;
+  className: string;
+  color: string;
+  height: string | number;
+  maxValue: number;
+  minValue: number;
+  ranges: Record<string, [number, number]>;
+  style: Partial<HTMLDivElement['style']>;
+  title: string;
+  width: string | number;
+}> &
+  Partial<BoxProps> &
+  PropsWithChildren;
+
+export const ProgressBar = (props: Props) => {
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701)):tgui/packages/tgui/components/ProgressBar.tsx
   const {
     className,
     value,

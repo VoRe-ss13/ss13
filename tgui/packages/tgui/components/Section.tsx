@@ -5,7 +5,12 @@
  */
 
 import { canRender, classes } from 'common/react';
+<<<<<<< HEAD
 import { Component, createRef, InfernoNode, RefObject } from 'inferno';
+=======
+import { createRef, ReactNode, RefObject, useEffect } from 'react';
+
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { addScrollableNode, removeScrollableNode } from '../events';
 import { BoxProps, computeBoxClassName, computeBoxProps } from './Box';
 

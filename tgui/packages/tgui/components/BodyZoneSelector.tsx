@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { Component, createRef } from 'inferno';
+=======
+import { Component, createRef } from 'react';
+
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { resolveAsset } from '../assets';
 import { Box } from './Box';
 

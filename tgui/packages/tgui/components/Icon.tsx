@@ -6,8 +6,14 @@
  * @license MIT
  */
 
+<<<<<<< HEAD
 import { classes, pureComponentHooks } from 'common/react';
 import { InfernoNode } from 'inferno';
+=======
+import { classes } from 'common/react';
+import { ReactNode } from 'react';
+
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { BoxProps, computeBoxClassName, computeBoxProps } from './Box';
 
 const FA_OUTLINE_REGEX = /-o$/;

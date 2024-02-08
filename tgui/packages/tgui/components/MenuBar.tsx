@@ -5,9 +5,15 @@
  */
 
 import { classes } from 'common/react';
+<<<<<<< HEAD
 import { Component, createRef, InfernoNode, RefObject } from 'inferno';
 import { Box } from './Box';
+=======
+import { Component, createRef, ReactNode, RefObject } from 'react';
+
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { logger } from '../logging';
+import { Box } from './Box';
 import { Icon } from './Icon';
 
 type MenuProps = {

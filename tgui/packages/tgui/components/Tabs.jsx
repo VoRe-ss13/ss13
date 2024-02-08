@@ -5,7 +5,13 @@
  */
 
 import { canRender, classes } from 'common/react';
+<<<<<<< HEAD:tgui/packages/tgui/components/Tabs.jsx
 import { computeBoxClassName, computeBoxProps } from './Box';
+=======
+import { PropsWithChildren, ReactNode } from 'react';
+
+import { BoxProps, computeBoxClassName, computeBoxProps } from './Box';
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701)):tgui/packages/tgui/components/Tabs.tsx
 import { Icon } from './Icon';
 
 export const Tabs = (props) => {

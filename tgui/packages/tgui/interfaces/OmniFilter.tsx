@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 import { useBackend } from '../backend';
 import { Fragment } from 'inferno';
+=======
+import { BooleanLike } from 'common/react';
+import { Fragment } from 'react';
+
+import { useBackend } from '../backend';
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { Box, Button, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
-import { BooleanLike } from 'common/react';
 
 const getStatusText = (port) => {
   if (port.input) {

@@ -3,4 +3,22 @@
 /**/*.bundle.*
 /**/*.chunk.*
 /**/*.hot-update.*
+<<<<<<< HEAD
 /packages/inferno/**
+=======
+
+**.lock
+**.log
+**.json
+**.svg
+**.scss
+**.md
+**.css
+**.txt
+**.woff2
+**.eot
+**.ttf
+
+# CHOMPEdit - Until removed
+/packages/tgui_ch/**
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))

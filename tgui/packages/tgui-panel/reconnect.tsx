@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import { Button } from 'tgui/components';
 import { useDispatch } from 'common/redux';
+=======
+import { useDispatch } from 'tgui/backend';
+import { Button } from 'tgui/components';
+
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { dismissWarning } from './game/actions';
 
 let url: string | null = null;

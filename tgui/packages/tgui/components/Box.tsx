@@ -4,9 +4,15 @@
  * @license MIT
  */
 
+<<<<<<< HEAD
 import { BooleanLike, classes, pureComponentHooks } from 'common/react';
 import { createVNode, InfernoNode, SFC } from 'inferno';
 import { ChildFlags, VNodeFlags } from 'inferno-vnode-flags';
+=======
+import { BooleanLike, classes } from 'common/react';
+import { createElement, ReactNode } from 'react';
+
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { CSS_COLORS } from '../constants';
 
 export type BoxProps = {

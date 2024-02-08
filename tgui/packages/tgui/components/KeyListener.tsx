@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { Component } from 'inferno';
+=======
+import { Component } from 'react';
+
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { KeyEvent } from '../events';
 import { listenForKeyEvents } from '../hotkeys';
 

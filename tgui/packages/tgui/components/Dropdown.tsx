@@ -1,11 +1,17 @@
-import { createPopper, VirtualElement } from '@popperjs/core';
 import { classes } from 'common/react';
+<<<<<<< HEAD
 import { Component, findDOMfromVNode, InfernoNode, render } from 'inferno';
 import { Box, BoxProps } from './Box';
+=======
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+
+import { BoxProps, unit } from './Box';
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { Button } from './Button';
 import { Icon } from './Icon';
-import { Stack } from './Stack';
+import { Popper } from './Popper';
 
+<<<<<<< HEAD
 export interface DropdownEntry {
   displayText: string | number | InfernoNode;
   value: string | number | Enumerator;
@@ -28,9 +34,81 @@ type DropdownUniqueProps = {
   onSelected?: (selected: any) => void;
   buttons?: boolean;
 };
+=======
+type DropdownEntry = {
+  displayText: ReactNode;
+  value: string | number;
+};
 
-export type DropdownProps = BoxProps & DropdownUniqueProps;
+type DropdownOption = string | DropdownEntry;
 
+type Props = {
+  /** An array of strings which will be displayed in the
+  dropdown when open. See Dropdown.tsx for more advanced usage with DropdownEntry */
+  options: DropdownOption[];
+  /** Called when a value is picked from the list, `value` is the value that was picked */
+  onSelected: (value: any) => void;
+} & Partial<{
+  /** Whether to display previous / next buttons */
+  buttons: boolean;
+  /** Whether to clip the selected text */
+  clipSelectedText: boolean;
+  /** Color of dropdown button */
+  color: string;
+  /** Disables the dropdown */
+  disabled: boolean;
+  /** Text to always display in place of the selected text */
+  displayText: ReactNode;
+  /** Icon to display in dropdown button */
+  icon: string;
+  /** Angle of the icon */
+  iconRotation: number;
+  /** Whether or not the icon should spin */
+  iconSpin: boolean;
+  /** Width of the dropdown menu. Default: 15rem */
+  menuWidth: string;
+  /** Whether or not the arrow on the right hand side of the dropdown button is visible */
+  noChevron: boolean;
+  /** Called when dropdown button is clicked */
+  onClick: (event) => void;
+  /** Dropdown renders over instead of below */
+  over: boolean;
+  /** Currently selected entry */
+  selected: string | number;
+}> &
+  BoxProps;
+
+function getOptionValue(option: DropdownOption) {
+  return typeof option === 'string' ? option : option.value;
+}
+
+export function Dropdown(props: Props) {
+  const {
+    buttons,
+    className,
+    clipSelectedText = true,
+    color = 'default',
+    disabled,
+    displayText,
+    icon,
+    iconRotation,
+    iconSpin,
+    menuWidth = '15rem',
+    noChevron,
+    onClick,
+    onSelected,
+    options = [],
+    over,
+    selected,
+    width,
+  } = props;
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
+
+  const [open, setOpen] = useState(false);
+  const adjustedOpen = over ? !open : open;
+  const innerRef = useRef<HTMLDivElement>(null);
+
+<<<<<<< HEAD
 const DEFAULT_OPTIONS = {
   placement: 'left-start',
   modifiers: [
@@ -161,177 +239,102 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
       } else if (option !== null) {
         displayText = option.displayText;
         value = option.value;
+=======
+  /** Update the selected value when clicking the left/right buttons */
+  const updateSelected = useCallback(
+    (direction: 'previous' | 'next') => {
+      if (options.length < 1 || disabled) {
+        return;
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
       }
+      const startIndex = 0;
+      const endIndex = options.length - 1;
 
-      return (
-        <div
-          key={value}
-          className={classes([
-            'Dropdown__menuentry',
-            this.state.selected === value && 'selected',
-          ])}
-          onClick={() => {
-            this.setSelected(value);
-          }}>
-          {displayText}
-        </div>
+      let selectedIndex = options.findIndex(
+        (option) => getOptionValue(option) === selected
       );
-    });
 
-    const to_render = ops.length ? ops : 'No Options Found';
-
-    render(<div>{to_render}</div>, renderedMenu, () => {
-      let singletonPopper = Dropdown.singletonPopper;
-      if (singletonPopper === undefined) {
-        singletonPopper = createPopper(Dropdown.virtualElement, renderedMenu!, {
-          ...DEFAULT_OPTIONS,
-          placement: 'bottom-start',
-        });
-
-        Dropdown.singletonPopper = singletonPopper;
-      } else {
-        singletonPopper.setOptions({
-          ...DEFAULT_OPTIONS,
-          placement: 'bottom-start',
-        });
-
-        singletonPopper.update();
+      if (selectedIndex < 0) {
+        selectedIndex = direction === 'next' ? endIndex : startIndex;
       }
-    });
-  }
 
-  setOpen(open: boolean) {
-    this.setState((state) => ({
-      ...state,
-      open,
-    }));
-    if (open) {
-      setTimeout(() => {
-        this.openMenu();
-        window.addEventListener('click', this.handleClick);
-      });
-    } else {
-      this.closeMenu();
-      window.removeEventListener('click', this.handleClick);
-    }
-  }
+      let newIndex = selectedIndex;
+      if (direction === 'next') {
+        newIndex = selectedIndex === endIndex ? startIndex : selectedIndex++;
+      } else {
+        newIndex = selectedIndex === startIndex ? endIndex : selectedIndex--;
+      }
 
-  setSelected(selected: string) {
-    this.setState((state) => ({
-      ...state,
-      selected,
-    }));
-    this.setOpen(false);
-    if (this.props.onSelected) {
-      this.props.onSelected(selected);
-    }
-  }
+      onSelected?.(getOptionValue(options[newIndex]));
+    },
+    [disabled, onSelected, options, selected]
+  );
 
-  getOptionValue(option): string {
-    return typeof option === 'string' ? option : option.value;
-  }
+  /** Allows the menu to be scrollable on open */
+  useEffect(() => {
+    if (!open) return;
 
-  getSelectedIndex(): number {
-    const selected = this.state.selected || this.props.selected;
-    const { options = [] } = this.props;
+    innerRef.current?.focus();
+  }, [open]);
 
-    return options.findIndex((option) => {
-      return this.getOptionValue(option) === selected;
-    });
-  }
+  return (
+    <Popper
+      isOpen={open}
+      onClickOutside={() => setOpen(false)}
+      placement={over ? 'top-start' : 'bottom-start'}
+      content={
+        <div
+          className="Layout Dropdown__menu"
+          style={{ minWidth: menuWidth }}
+          ref={innerRef}>
+          {options.length === 0 && (
+            <div className="Dropdown__menuentry">No options</div>
+          )}
 
-  toPrevious(): void {
-    if (this.props.options.length < 1) {
-      return;
-    }
+          {options.map((option, index) => {
+            const value = getOptionValue(option);
 
-    let selectedIndex = this.getSelectedIndex();
-    const startIndex = 0;
-    const endIndex = this.props.options.length - 1;
-
-    const hasSelected = selectedIndex >= 0;
-    if (!hasSelected) {
-      selectedIndex = startIndex;
-    }
-
-    const previousIndex =
-      selectedIndex === startIndex ? endIndex : selectedIndex - 1;
-
-    this.setSelected(this.getOptionValue(this.props.options[previousIndex]));
-  }
-
-  toNext(): void {
-    if (this.props.options.length < 1) {
-      return;
-    }
-
-    let selectedIndex = this.getSelectedIndex();
-    const startIndex = 0;
-    const endIndex = this.props.options.length - 1;
-
-    const hasSelected = selectedIndex >= 0;
-    if (!hasSelected) {
-      selectedIndex = endIndex;
-    }
-
-    const nextIndex =
-      selectedIndex === endIndex ? startIndex : selectedIndex + 1;
-
-    this.setSelected(this.getOptionValue(this.props.options[nextIndex]));
-  }
-
-  render() {
-    const { props } = this;
-    const {
-      icon,
-      iconRotation,
-      iconSpin,
-      clipSelectedText = true,
-      color = 'default',
-      dropdownStyle,
-      over,
-      nochevron,
-      width,
-      onClick,
-      onSelected,
-      selected,
-      disabled,
-      displayText,
-      buttons,
-      ...boxProps
-    } = props;
-    const { className, ...rest } = boxProps;
-
-    const adjustedOpen = over ? !this.state.open : this.state.open;
-
-    return (
-      <Stack fill>
-        <Stack.Item width={width}>
-          <Box
-            width={'100%'}
+            return (
+              <div
+                className={classes([
+                  'Dropdown__menuentry',
+                  selected === value && 'selected',
+                ])}
+                key={index}
+                onClick={() => {
+                  setOpen(false);
+                  onSelected?.(value);
+                }}>
+                {typeof option === 'string' ? option : option.displayText}
+              </div>
+            );
+          })}
+        </div>
+      }>
+      <div>
+        <div className="Dropdown" style={{ width: unit(width) }}>
+          <div
             className={classes([
               'Dropdown__control',
               'Button',
+              'Button--dropdown',
               'Button--color--' + color,
               disabled && 'Button--disabled',
               className,
             ])}
             onClick={(event) => {
-              if (disabled && !this.state.open) {
+              if (disabled && !open) {
                 return;
               }
-              this.setOpen(!this.state.open);
-              if (onClick) {
-                onClick(event);
-              }
-            }}
-            {...rest}>
+              setOpen(!open);
+              onClick?.(event);
+            }}>
             {icon && (
               <Icon
+                mr={1}
                 name={icon}
                 rotation={iconRotation}
                 spin={iconSpin}
-                mr={1}
               />
             )}
             <span
@@ -339,48 +342,37 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
               style={{
                 overflow: clipSelectedText ? 'hidden' : 'visible',
               }}>
-              {displayText || this.state.selected}
+              {displayText || selected}
             </span>
-            {nochevron || (
+            {!noChevron && (
               <span className="Dropdown__arrow-button">
                 <Icon name={adjustedOpen ? 'chevron-up' : 'chevron-down'} />
               </span>
             )}
-          </Box>
-        </Stack.Item>
-        {buttons && (
-          <>
-            <Stack.Item height={'100%'}>
+          </div>
+          {buttons && (
+            <>
               <Button
-                height={'100%'}
+                disabled={disabled}
+                height={1.8}
                 icon="chevron-left"
-                disabled={disabled}
                 onClick={() => {
-                  if (disabled) {
-                    return;
-                  }
-
-                  this.toPrevious();
+                  updateSelected('previous');
                 }}
               />
-            </Stack.Item>
-            <Stack.Item height={'100%'}>
+
               <Button
-                height={'100%'}
-                icon="chevron-right"
                 disabled={disabled}
+                height={1.8}
+                icon="chevron-right"
                 onClick={() => {
-                  if (disabled) {
-                    return;
-                  }
-
-                  this.toNext();
+                  updateSelected('next');
                 }}
               />
-            </Stack.Item>
-          </>
-        )}
-      </Stack>
-    );
-  }
+            </>
+          )}
+        </div>
+      </div>
+    </Popper>
+  );
 }

@@ -5,9 +5,15 @@
  */
 
 import { map, zipWith } from 'common/collections';
+<<<<<<< HEAD:tgui/packages/tgui/components/Chart.jsx
 import { pureComponentHooks } from 'common/react';
 import { Component, createRef } from 'inferno';
 import { Box } from './Box';
+=======
+import { Component, createRef, RefObject } from 'react';
+
+import { Box, BoxProps } from './Box';
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701)):tgui/packages/tgui/components/Chart.tsx
 
 const normalizeData = (data, scale, rangeX, rangeY) => {
   if (data.length === 0) {

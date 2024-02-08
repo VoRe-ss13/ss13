@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 import { StoreProvider, configureStore } from 'tgui/store';
 
 import { DisposalBin } from 'tgui/interfaces/DisposalBin';
 import { backendUpdate } from 'tgui/backend';
+=======
+import { backendUpdate, setGlobalStore } from 'tgui/backend';
+import { DisposalBin } from 'tgui/interfaces/DisposalBin';
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { createRenderer } from 'tgui/renderer';
+import { configureStore } from 'tgui/store';
 
 const store = configureStore({ sideEffects: false });
 

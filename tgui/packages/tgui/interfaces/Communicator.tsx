@@ -1,9 +1,14 @@
 import { filter } from 'common/collections';
 import { BooleanLike } from 'common/react';
 import { decodeHtmlEntities, toTitleCase } from 'common/string';
+<<<<<<< HEAD
 import { Fragment } from 'inferno';
+=======
+import { Fragment } from 'react';
+
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { useBackend, useLocalState } from '../backend';
-import { Box, ByondUi, Button, Flex, Icon, LabeledList, Input, Section, Table } from '../components';
+import { Box, Button, ByondUi, Flex, Icon, Input, LabeledList, Section, Table } from '../components';
 import { Window } from '../layouts';
 import { CrewManifestContent } from './CrewManifest';
 

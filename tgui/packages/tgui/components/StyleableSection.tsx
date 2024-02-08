@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { SFC } from 'inferno';
+=======
+import { PropsWithChildren, ReactNode } from 'react';
+
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { Box } from './Box';
 
 // The cost of flexibility and prettiness.

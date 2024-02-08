@@ -4,7 +4,12 @@
  * @license MIT
  */
 
+<<<<<<< HEAD
 import { useSelector, useDispatch } from 'common/redux';
+=======
+import { useDispatch, useSelector } from 'tgui/backend';
+
+>>>>>>> eebf92d66f ([MIRROR] TGUI 5.0 Patch 1 (#7701))
 import { selectAudio } from './selectors';
 
 export const useAudio = (context) => {
