@@ -1,5 +1,6 @@
 import { BooleanLike } from 'common/react';
 import { Fragment } from 'react';
+
 import { useBackend } from '../backend';
 import { Button, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
@@ -34,7 +35,8 @@ export const OvermapNavigationContent = (props) => {
           <Button icon="eye" selected={viewing} onClick={() => act('viewing')}>
             Map View
           </Button>
-        }>
+        }
+      >
         <LabeledList>
           <LabeledList.Item label="Current Location">{sector}</LabeledList.Item>
           <LabeledList.Item label="Coordinates">

@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+
 import { useBackend } from '../backend';
 import { Box, Button, Flex, Section } from '../components';
 import { Window } from '../layouts';
@@ -33,7 +34,8 @@ export const ColorMate = (props) => {
                   <Button
                     fluid
                     icon="eye-dropper"
-                    onClick={() => act('select')}>
+                    onClick={() => act('select')}
+                  >
                     Select Color
                   </Button>
                   <Button fluid icon="fill-drip" onClick={() => act('paint')}>

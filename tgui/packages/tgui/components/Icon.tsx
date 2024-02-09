@@ -8,6 +8,7 @@
 
 import { classes } from 'common/react';
 import { ReactNode } from 'react';
+
 import { BoxProps, computeBoxClassName, computeBoxProps } from './Box';
 
 const FA_OUTLINE_REGEX = /-o$/;
@@ -86,7 +87,8 @@ export const IconStack = (props: IconStackProps) => {
   return (
     <span
       className={classes(['IconStack', className, computeBoxClassName(rest)])}
-      {...computeBoxProps(rest)}>
+      {...computeBoxProps(rest)}
+    >
       {children}
     </span>
   );
