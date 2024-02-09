@@ -1,36 +1,37 @@
-import { useBackend } from '../../backend';
-import { Window } from '../../layouts';
-import { Button, Section } from '../../components';
 import { BooleanLike } from 'common/react';
 
+import { useBackend } from '../../backend';
+import { Button, Section } from '../../components';
+import { Window } from '../../layouts';
+
 const ModeSpan = {
-  'Hold': '<span class="badge text-bg-secondary">Hold</span>',
-  'Digest': '<span class="badge text-bg-danger">Digest</span>',
-  'Absorb': '<span class="badge text-bg-light">Absorb</span>',
-  'Drain': '<span class="badge text-bg-warning">Drain</span>',
-  'Selective': '<span class="badge text-bg-warning">Selective</span>',
-  'Unabsorb': '<span class="badge text-bg-light">Unabsorb</span>',
-  'Heal': '<span class="badge text-bg-success">Heal</span>',
-  'Shrink': '<span class="badge text-bg-info">Shrink</span>',
-  'Grow': '<span class="badge text-bg-info">Grow</span>',
+  Hold: '<span class="badge text-bg-secondary">Hold</span>',
+  Digest: '<span class="badge text-bg-danger">Digest</span>',
+  Absorb: '<span class="badge text-bg-light">Absorb</span>',
+  Drain: '<span class="badge text-bg-warning">Drain</span>',
+  Selective: '<span class="badge text-bg-warning">Selective</span>',
+  Unabsorb: '<span class="badge text-bg-light">Unabsorb</span>',
+  Heal: '<span class="badge text-bg-success">Heal</span>',
+  Shrink: '<span class="badge text-bg-info">Shrink</span>',
+  Grow: '<span class="badge text-bg-info">Grow</span>',
   'Size Steal': '<span class="badge text-bg-info">Size Steal</span>',
   'Encase In Egg': '<span class="badge text-bg-primary">Encase In Egg</span>',
 };
 
 const ItemModeSpan = {
-  'Hold': '<span class="badge text-bg-secondary">Item: Hold</span>',
+  Hold: '<span class="badge text-bg-secondary">Item: Hold</span>',
   'Digest (Food Only)':
     '<span class="badge text-bg-danger">Item: Digest (Food Only)</span>',
-  'Digest': '<span class="badge text-bg-danger">Item: Digest</span>',
+  Digest: '<span class="badge text-bg-danger">Item: Digest</span>',
   'Digest (Dispersed Damage)':
     '<span class="badge text-bg-danger">Item: Digest (Dispersed Damage)</span>',
 };
 
 const AddonIcon = {
-  'Numbing': '',
-  'Stripping': '',
+  Numbing: '',
+  Stripping: '',
   'Leave Remains': '',
-  'Muffles': 'bi-volume-mute',
+  Muffles: 'bi-volume-mute',
   'Affect Worn Items': '',
   'Jams Sensors': 'bi-wifi-off',
   'Complete Absorb': '',
@@ -44,26 +45,26 @@ const ReagentAddonIcon = {
 };
 
 const AutotransferFlagIcon = {
-  'Creatures': '',
-  'Absorbed': '',
-  'Carbon': '',
-  'Silicon': '',
-  'Mobs': '',
-  'Animals': '',
-  'Mice': '',
-  'Dead': '',
+  Creatures: '',
+  Absorbed: '',
+  Carbon: '',
+  Silicon: '',
+  Mobs: '',
+  Animals: '',
+  Mice: '',
+  Dead: '',
   'Digestable Creatures': '',
   'Absorbable Creatures': '',
   'Full Health': '',
-  'Items': '',
-  'Trash': '',
-  'Eggs': '',
-  'Remains': '',
+  Items: '',
+  Trash: '',
+  Eggs: '',
+  Remains: '',
   'Indigestible Items': '',
   'Recyclable Items': '',
-  'Ores': '',
+  Ores: '',
   'Clothes and Bags': '',
-  'Food': '',
+  Food: '',
 };
 
 const GetAddons = (addons: string[]) => {
@@ -75,7 +76,7 @@ const GetAddons = (addons: string[]) => {
         AddonIcon[addon] +
         '"></i>' +
         addon +
-        '</span>'
+        '</span>',
     );
   });
 
@@ -95,7 +96,7 @@ const GetLiquidAddons = (addons: string[]) => {
         ReagentAddonIcon[addon] +
         '"></i>' +
         addon +
-        '</span>'
+        '</span>',
     );
   });
 
@@ -115,7 +116,7 @@ const GetAutotransferFlags = (addons: string[], whitelist: BooleanLike) => {
         AutotransferFlagIcon[addon] +
         '"></i>' +
         addon +
-        '</span>'
+        '</span>',
     );
   });
 
@@ -1204,7 +1205,7 @@ const downloadPrefs = (extension: string) => {
       ],
       {
         type: 'text/html;charset=utf8',
-      }
+      },
     );
     bellies.forEach((belly, i) => {
       blob = new Blob([blob, generateBellyString(belly, i)], {
@@ -1218,7 +1219,7 @@ const downloadPrefs = (extension: string) => {
         '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>',
         '</div></main></body></html>',
       ],
-      { type: 'text/html;charset=utf8' }
+      { type: 'text/html;charset=utf8' },
     );
   }
 
@@ -1231,7 +1232,7 @@ const downloadPrefs = (extension: string) => {
 
 export const VorePanelExport = () => {
   return (
-    <Window width={790} height={560} theme="abstract" resizeable>
+    <Window width={790} height={560} theme="abstract">
       <Window.Content>
         <VorePanelExportContent />
       </Window.Content>

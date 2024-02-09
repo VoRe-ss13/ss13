@@ -1,7 +1,15 @@
 /* eslint react/no-danger: "off" */
 import { KEY_ENTER } from '../../../common/keycodes';
 import { useBackend, useLocalState } from '../../backend';
-import { Box, Button, Divider, Flex, Input, LabeledList, Section } from '../../components';
+import {
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Input,
+  LabeledList,
+  Section,
+} from '../../components';
 import { Window } from '../../layouts';
 
 const Level = {
@@ -17,14 +25,14 @@ const LevelColor = {
 };
 
 const Tag = {
-  'example': 'Example',
+  example: 'Example',
 };
 
 const State = {
-  'open': 'Open',
-  'resolved': 'Resolved',
-  'closed': 'Closed',
-  'unknown': 'Unknown',
+  open: 'Open',
+  resolved: 'Resolved',
+  closed: 'Closed',
+  unknown: 'Unknown',
 };
 
 type Data = {
@@ -76,7 +84,8 @@ export const Ticket = (props) => {
               <Button content="Legacy UI" onClick={() => act('legacy')} />{' '}
               <Button content={Level[level]} color={LevelColor[level]} />
             </Box>
-          }>
+          }
+        >
           <LabeledList>
             <LabeledList.Item label="Ticket ID">
               #{id}: <div dangerouslySetInnerHTML={{ __html: name }} />
@@ -106,8 +115,8 @@ export const Ticket = (props) => {
             <Flex.Item>
               {Object.keys(log)
                 .slice(0)
-                .map((L) => (
-                  <div dangerouslySetInnerHTML={{ __html: log[L] }} />
+                .map((L, i) => (
+                  <div key={i} dangerouslySetInnerHTML={{ __html: log[L] }} />
                 ))}
             </Flex.Item>
             <Divider />
