@@ -121,3 +121,11 @@
   - rscadd: Mice are now ghostpods
   cadyn:
   - bugfix: fixed horrible awful code for mob spawners
+2024-02-11:
+  VoRe-bot:
+  - bugfix: chemMaster / ChemSynthesizer, color mate interface and some vorePanel
+      code style
+  - balance: Shadekin HP nerfs (Per eye color)
+  - balance: Bluespace crystals dephase shadekin that step on them
+  - balance: Bluespace crystals will dephase shadekin in a 3 tile radius when thrown.
+  - bugfix: mouse spawners
