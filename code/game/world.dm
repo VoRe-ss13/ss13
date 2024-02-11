@@ -108,6 +108,12 @@
 
 #undef RECOMMENDED_VERSION
 
+//TORCHEdit Begin
+#ifdef STAT_COLLECTION_ENABLED
+	generate_info_melee()
+	world.log << "Melee stats generated"
+#endif
+//TORCHEdit End
 	return
 
 var/world_topic_spam_protect_ip = "0.0.0.0"
