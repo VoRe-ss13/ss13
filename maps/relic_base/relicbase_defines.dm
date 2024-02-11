@@ -107,14 +107,14 @@
 			list("Fuel Depot - Z1 Space") //Stock lateload maps
 			)
 
-	//CHOMPStation Edit Start  - Adds Virgo's gateways
+	//CHOMPStation Edit Start  - Adds Virgo's gateways and comments the small ones
 	lateload_gateway = list(
 		// list("Gateway - Carp Farm"),
 		list("Gateway - Snow Field"),
 		// list("Gateway - Listening Post"),
 		list(list("Gateway - Honleth Highlands A", "Gateway - Honleth Highlands B")),
 		list("Gateway - Arynthi Lake Underground A","Gateway - Arynthi Lake A"),
-		list("Gateway - Arynthi Lake Underground B","Gateway - Arynthi Lake B")
+		list("Gateway - Arynthi Lake Underground B","Gateway - Arynthi Lake B"),
 		list("Gateway - Wild West")
 		) //TorchStation Edit
 
