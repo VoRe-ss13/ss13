@@ -1,6 +1,7 @@
 /datum/configuration
 	var/discord_whitelist = FALSE
 	var/vote_autotransfer_hard = 2
+	var/html_render_address
 
 /hook/startup/proc/read_tc_config()
 	var/list/Lines = file2list("config/config.txt")
@@ -31,4 +32,5 @@
 				config.discord_whitelist = TRUE
 			if("vote_autotransfer_hard")
 				config.vote_autotransfer_hard = text2num(value)
-
+			if("html_render_address")
+				config.html_render_address = value
