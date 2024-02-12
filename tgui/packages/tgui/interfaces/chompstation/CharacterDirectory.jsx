@@ -1,7 +1,15 @@
-import { Fragment } from 'react';
-import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Icon, LabeledList, Section, Table } from '../components';
-import { Window } from '../layouts';
+import { useState } from 'react';
+
+import { useBackend } from '../../backend';
+import {
+  Box,
+  Button,
+  Icon,
+  LabeledList,
+  Section,
+  Table,
+} from '../../components';
+import { Window } from '../../layouts';
 
 const getTagColor = (tag) => {
   switch (tag) {
@@ -24,33 +32,32 @@ const getTagColor = (tag) => {
 
 export const CharacterDirectory = (props) => {
   const { act, data } = useBackend();
-  const { personalVisibility, personalTag, personalErpTag } = data;
 
-<<<<<<< HEAD
-  const [overlay, setOverlay] = useLocalState('overlay', null);
+  const {
+    personalVisibility,
+    personalTag,
+    personalGenderTag,
+    personalSexualityTag,
+    personalErpTag,
+    personalEventTag,
+  } = data;
 
-  const [overwritePrefs, setOverwritePrefs] = useLocalState(
-    'overwritePrefs',
-    false,
-  );
-=======
   const [overlay, setOverlay] = useState(null);
   const [overwritePrefs, setOverwritePrefs] = useState(false);
->>>>>>> 0ba3f65e16 ([MIRROR] Fixed CharacterDirectory (#7730))
 
   function handleOverlay(value) {
     setOverlay(value);
   }
 
   return (
-    <Window width={640} height={480} resizeable>
+    <Window width={816} height={722} resizeable>
       <Window.Content scrollable>
         {(overlay && (
           <ViewCharacter overlay={overlay} onOverlay={handleOverlay} />
         )) || (
           <>
             <Section
-              title="Controls"
+              title="Settings and Preferences"
               buttons={
                 <>
                   <Box color="label" inline>
@@ -84,12 +91,41 @@ export const CharacterDirectory = (props) => {
                     }
                   />
                 </LabeledList.Item>
+                <LabeledList.Item label="Gender">
+                  <Button
+                    fluid
+                    content={personalGenderTag}
+                    onClick={() =>
+                      act('setGenderTag', { overwrite_prefs: overwritePrefs })
+                    }
+                  />
+                </LabeledList.Item>
+                <LabeledList.Item label="Sexuality">
+                  <Button
+                    fluid
+                    content={personalSexualityTag}
+                    onClick={() =>
+                      act('setSexualityTag', {
+                        overwrite_prefs: overwritePrefs,
+                      })
+                    }
+                  />
+                </LabeledList.Item>
                 <LabeledList.Item label="ERP Tag">
                   <Button
                     fluid
                     content={personalErpTag}
                     onClick={() =>
                       act('setErpTag', { overwrite_prefs: overwritePrefs })
+                    }
+                  />
+                </LabeledList.Item>
+                <LabeledList.Item label="Event Pref">
+                  <Button
+                    fluid
+                    content={personalEventTag}
+                    onClick={() =>
+                      act('setEventTag', { overwrite_prefs: overwritePrefs })
                     }
                   />
                 </LabeledList.Item>
@@ -113,11 +149,6 @@ export const CharacterDirectory = (props) => {
 };
 
 const ViewCharacter = (props) => {
-<<<<<<< HEAD
-  const [overlay, setOverlay] = useLocalState('overlay', null);
-
-=======
->>>>>>> 0ba3f65e16 ([MIRROR] Fixed CharacterDirectory (#7730))
   return (
     <Section
       title={props.overlay.name}
@@ -137,8 +168,17 @@ const ViewCharacter = (props) => {
           {props.overlay.tag}
         </Box>
       </Section>
+      <Section level={2} title="Gender">
+        <Box>{props.overlay.gendertag}</Box>
+      </Section>
+      <Section level={2} title="Sexuality">
+        <Box>{props.overlay.sexualitytag}</Box>
+      </Section>
       <Section level={2} title="ERP Tag">
         <Box>{props.overlay.erptag}</Box>
+      </Section>
+      <Section level={2} title="Event Pref">
+        <Box>{props.overlay.eventtag}</Box>
       </Section>
       <Section level={2} title="Character Ad">
         <Box style={{ 'word-break': 'break-all' }} preserveWhitespace>
@@ -164,14 +204,8 @@ const CharacterDirectoryList = (props) => {
 
   const { directory } = data;
 
-<<<<<<< HEAD
-  const [sortId, _setSortId] = useLocalState('sortId', 'name');
-  const [sortOrder, _setSortOrder] = useLocalState('sortOrder', 'name');
-  const [overlay, setOverlay] = useLocalState('overlay', null);
-=======
   const [sortId, _setSortId] = useState('name');
   const [sortOrder, _setSortOrder] = useState('name');
->>>>>>> 0ba3f65e16 ([MIRROR] Fixed CharacterDirectory (#7730))
 
   return (
     <Section
@@ -185,7 +219,10 @@ const CharacterDirectoryList = (props) => {
           <SortButton id="name">Name</SortButton>
           <SortButton id="species">Species</SortButton>
           <SortButton id="tag">Vore Tag</SortButton>
+          <SortButton id="gendertag">Gender</SortButton>
+          <SortButton id="sexualitytag">Sexuality</SortButton>
           <SortButton id="erptag">ERP Tag</SortButton>
+          <SortButton id="eventtag">Event Pref</SortButton>
           <Table.Cell collapsing textAlign="right">
             View
           </Table.Cell>
@@ -200,7 +237,10 @@ const CharacterDirectoryList = (props) => {
               <Table.Cell p={1}>{character.name}</Table.Cell>
               <Table.Cell>{character.species}</Table.Cell>
               <Table.Cell>{character.tag}</Table.Cell>
+              <Table.Cell>{character.gendertag}</Table.Cell>
+              <Table.Cell>{character.sexualitytag}</Table.Cell>
               <Table.Cell>{character.erptag}</Table.Cell>
+              <Table.Cell>{character.eventtag}</Table.Cell>
               <Table.Cell collapsing textAlign="right">
                 <Button
                   onClick={() => props.onOverlay(character)}
@@ -223,8 +263,8 @@ const SortButton = (props) => {
   const { id, children } = props;
 
   // Hey, same keys mean same data~
-  const [sortId, setSortId] = useLocalState('sortId', 'name');
-  const [sortOrder, setSortOrder] = useLocalState('sortOrder', 'name');
+  const [sortId, setSortId] = useState('name');
+  const [sortOrder, setSortOrder] = useState('name');
 
   return (
     <Table.Cell collapsing>
