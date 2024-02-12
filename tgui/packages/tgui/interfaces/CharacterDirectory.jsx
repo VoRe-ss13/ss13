@@ -1,5 +1,6 @@
-import { Fragment } from 'react';
-import { useBackend, useLocalState } from '../backend';
+import { useState } from 'react';
+
+import { useBackend } from '../backend';
 import { Box, Button, Icon, LabeledList, Section, Table } from '../components';
 import { Window } from '../layouts';
 
@@ -203,8 +204,8 @@ const SortButton = (props) => {
   const { id, children } = props;
 
   // Hey, same keys mean same data~
-  const [sortId, setSortId] = useLocalState('sortId', 'name');
-  const [sortOrder, setSortOrder] = useLocalState('sortOrder', 'name');
+  const [sortId, setSortId] = useState('name');
+  const [sortOrder, setSortOrder] = useState('name');
 
   return (
     <Table.Cell collapsing>
