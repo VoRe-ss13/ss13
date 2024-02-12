@@ -129,3 +129,18 @@
   - balance: Bluespace crystals dephase shadekin that step on them
   - balance: Bluespace crystals will dephase shadekin in a 3 tile radius when thrown.
   - bugfix: mouse spawners
+2024-02-12:
+  Upstream:
+  - admin: added "Short Stacker" admin item
+  - rscadd: Added a new variant of the size collar (Created by using wrench to break
+      crystal => Prevents user from changing the size manually and triggering the
+      collar with signal flips the wearer back and forth between a random size and
+      their original size)
+  - rscadd: Added a new verb "Spin Size Dial" to size guns (random size)
+  - rscadd: Added alt-click effect to gradual size guns (toggling size-trading mode)
+  - admin: new eventkit verb that allows eventmanagers/admins to create fake PDA conversations
+      (or props for them) without actually having to spawn a PDA/PDA Server (including
+      PDA Identities)
+  cadyn:
+  - rscadd: Added fax rendering for staff
+  - rscadd: Torchstation name to things
