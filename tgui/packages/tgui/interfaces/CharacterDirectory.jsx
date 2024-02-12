@@ -26,17 +26,8 @@ export const CharacterDirectory = (props) => {
   const { act, data } = useBackend();
   const { personalVisibility, personalTag, personalErpTag } = data;
 
-<<<<<<< HEAD
-  const [overlay, setOverlay] = useLocalState('overlay', null);
-
-  const [overwritePrefs, setOverwritePrefs] = useLocalState(
-    'overwritePrefs',
-    false,
-  );
-=======
   const [overlay, setOverlay] = useState(null);
   const [overwritePrefs, setOverwritePrefs] = useState(false);
->>>>>>> 0ba3f65e16 ([MIRROR] Fixed CharacterDirectory (#7730))
 
   function handleOverlay(value) {
     setOverlay(value);
@@ -113,11 +104,6 @@ export const CharacterDirectory = (props) => {
 };
 
 const ViewCharacter = (props) => {
-<<<<<<< HEAD
-  const [overlay, setOverlay] = useLocalState('overlay', null);
-
-=======
->>>>>>> 0ba3f65e16 ([MIRROR] Fixed CharacterDirectory (#7730))
   return (
     <Section
       title={props.overlay.name}
@@ -164,14 +150,8 @@ const CharacterDirectoryList = (props) => {
 
   const { directory } = data;
 
-<<<<<<< HEAD
-  const [sortId, _setSortId] = useLocalState('sortId', 'name');
-  const [sortOrder, _setSortOrder] = useLocalState('sortOrder', 'name');
-  const [overlay, setOverlay] = useLocalState('overlay', null);
-=======
   const [sortId, _setSortId] = useState('name');
   const [sortOrder, _setSortOrder] = useState('name');
->>>>>>> 0ba3f65e16 ([MIRROR] Fixed CharacterDirectory (#7730))
 
   return (
     <Section
