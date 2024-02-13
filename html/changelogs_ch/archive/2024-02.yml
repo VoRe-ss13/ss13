@@ -144,3 +144,8 @@
   cadyn:
   - rscadd: Added fax rendering for staff
   - rscadd: Torchstation name to things
+2024-02-13:
+  VoRe-bot:
+  - bugfix: fixes some crashing chem UIs
+  - qol: Makes more neutral traits be able to be taken by non-custom species.
+  - admin: PDA identities 'Eventkit' --> 'fun', tab clutter
