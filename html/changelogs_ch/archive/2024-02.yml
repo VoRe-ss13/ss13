@@ -149,3 +149,11 @@
   - bugfix: fixes some crashing chem UIs
   - qol: Makes more neutral traits be able to be taken by non-custom species.
   - admin: PDA identities 'Eventkit' --> 'fun', tab clutter
+2024-02-14:
+  Upstream:
+  - bugfix: fixed the user interface for the CharacterDirectory.
+  VoRe-bot:
+  - qol: Enabled logging on interactions with the Mind Binder and Body Snatcher
+  - balance: Increased the time to bind minds into mobs up to 30 seconds
+  - balance: whitelists only specific mobs
+  - balance: blacklists key items
