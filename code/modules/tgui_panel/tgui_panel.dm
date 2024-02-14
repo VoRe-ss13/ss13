@@ -79,13 +79,10 @@
 					"address" = client.address,
 					"computer_id" = client.computer_id,
 				),
-<<<<<<< HEAD
-=======
 				// CHOMPEdit - "server" section
 				"server" = list(
 					"round_id" = GLOB.round_id,
 				),
->>>>>>> e9effb63f5 (Implementing RoundIDs (#7740))
 				"window" = list(
 					"fancy" = FALSE,
 					"locked" = FALSE,
