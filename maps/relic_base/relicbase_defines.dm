@@ -115,7 +115,10 @@
 		list(list("Gateway - Honleth Highlands A", "Gateway - Honleth Highlands B")),
 		list("Gateway - Arynthi Lake Underground A","Gateway - Arynthi Lake A"),
 		list("Gateway - Arynthi Lake Underground B","Gateway - Arynthi Lake B"),
-		list("Gateway - Wild West")
+		list("Gateway - Wild West"),
+		list("Maddness Lab"),
+		list("Gateway - Abandoned City"),
+		list("Distant Mining Facility")
 		) //TorchStation Edit
 
 	lateload_gateway = null
