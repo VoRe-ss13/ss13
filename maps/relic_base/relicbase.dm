@@ -38,6 +38,7 @@
 	// #include "structures/closets/research.dm"
 	// #include "structures/closets/security.dm"
 	#include "turfs/outdoors.dm"
+	#include "turfs/redgates.dm"
 	#include "overmap/sectors.dm"
 	#include "events/wildlife_encounter.dm"
 

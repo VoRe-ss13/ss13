@@ -12,6 +12,7 @@
 #define Z_LEVEL_MISC 					10
 #define Z_LEVEL_FUELDEPOT				11
 #define Z_LEVEL_GATEWAY					12
+#define Z_LEVEL_REDGATE					13
 
 // Camera Network Additions
 #define NETWORK_EXTERIOR "Exterior" // Exterior Cameras
@@ -106,14 +107,35 @@
 			list("Fuel Depot - Z1 Space") //Stock lateload maps
 			)
 
-	//CHOMPStation Addition End
+	//CHOMPStation Edit Start  - Adds Virgo's gateways and comments the small ones
 	lateload_gateway = list(
-		list("Carp Farm"),
-		list("Snow Field")
-		) //CHOMPedit: Gateway maps. For now nothing fancy, just some already existing maps while we make our own.
+		// list("Gateway - Carp Farm"),
+		list("Gateway - Snow Field"),
+		// list("Gateway - Listening Post"),
+		list(list("Gateway - Honleth Highlands A", "Gateway - Honleth Highlands B")),
+		list("Gateway - Arynthi Lake Underground A","Gateway - Arynthi Lake A"),
+		list("Gateway - Arynthi Lake Underground B","Gateway - Arynthi Lake B"),
+		list("Gateway - Wild West"),
+		list("Maddness Lab"),
+		list("Gateway - Abandoned City"),
+		list("Distant Mining Facility")
+		) //TorchStation Edit
 
 	lateload_gateway = null
 
+	lateload_redgate = list(
+		list("Redgate - Teppi Ranch"),
+		list("Redgate - Innland"),
+		list("Redgate - Dark Adventure"),
+		list("Redgate - Star Dog"),
+		list("Redgate - Hotsprings"),
+		list("Redgate - Rain City"),
+		list("Redgate - Islands Underwater","Redgate - Islands"),
+		list("Redgate - Moving Train", "Redgate - Moving Train Upper Level"),
+		list("Redgate - Fantasy Dungeon", "Redgate - Fantasy Town"),
+		list("Redgate - Laserdome"),
+		list("Redgate - Cascading Falls")
+		)
 
 
 // Commented out due to causing a lot of bugs. The base proc plus overmap achieves this functionality anyways.
