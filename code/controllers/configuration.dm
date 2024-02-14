@@ -1165,11 +1165,8 @@ var/list/gamemode_cache = list()
 	return runnable_modes
 
 /datum/configuration/proc/post_load()
-<<<<<<< HEAD
-=======
 	SSdbcore.InitializeRound() // CHOMPEdit
 
->>>>>>> e9effb63f5 (Implementing RoundIDs (#7740))
 	//apply a default value to config.python_path, if needed
 	if (!config.python_path)
 		if(world.system_type == UNIX)
