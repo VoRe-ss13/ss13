@@ -75,28 +75,28 @@
 	desc = "A brand new but already lost base at the end of a squishy canyon"
 
 	mappath = 'gateway/BaseBlep.dmm'
-	associated_map_datum = /datum/map_z_level/sc_lateload/gateway_destination
+	associated_map_datum = /datum/map_z_level/thor_lateload/gateway_destination
 
 #include "gateway/maddnesslab.dm"
 /datum/map_template/thor_lateload/gateway/maddnesslab
 	name = "Maddness Lab"
 	desc = "An ancient base brimming with creations of maddness"
 	mappath = 'gateway/maddnesslab.dmm'
-	associated_map_datum = /datum/map_z_level/sc_lateload/gateway_destination
+	associated_map_datum = /datum/map_z_level/thor_lateload/gateway_destination
 
 #include "gateway/carpfarm.dm"
 /datum/map_template/thor_lateload/gateway/carpfarm
 	name = "Carp Farm"
 	desc = "Asteroid base surrounded by carp"
 	mappath = 'gateway/carpfarm.dmm'
-	associated_map_datum = /datum/map_z_level/sc_lateload/gateway_destination
+	associated_map_datum = /datum/map_z_level/thor_lateload/gateway_destination
 
 #include "gateway/hiddeneclipse.dm"
 /datum/map_template/thor_lateload/gateway/hiddeneclipse
 	name = "Distant Mining Facility"
 	desc = "Asteroid mining facility, lost to unknown horrors"
 	mappath = 'gateway/hiddeneclipse.dmm'
-	associated_map_datum = /datum/map_z_level/sc_lateload/gateway_destination
+	associated_map_datum = /datum/map_z_level/thor_lateload/gateway_destination
 
 //Gateway maps from Virgo!
 #include "../../gateway_vr/carpfarm.dm"
