@@ -39,7 +39,7 @@
 	if(sun in T.vis_contents)
 		warning("Was asked to add fake sun to [T.x], [T.y], [T.z] despite already having us in it's vis contents")
 		return
-	//sun.apply_to_turf(T) TORCHEdit. Done with this BS
+	sun.apply_to_turf(T)
 
 /datum/sun_holder/proc/remove_from_turf(turf/T)
 	if(!(sun in T.vis_contents))

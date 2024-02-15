@@ -45,7 +45,7 @@ SUBSYSTEM_DEF(planets)
 		else if(istype(T, /turf/simulated) && T.is_outdoors())
 			P.planet_floors += T
 			P.weather_holder.apply_to_turf(T)
-			P.sun_holder.apply_to_turf(T)
+			// P.sun_holder.apply_to_turf(T) TORCHEdit, replaced planetary lighting
 
 /datum/controller/subsystem/planets/proc/removeTurf(var/turf/T,var/is_edge)
 	if(z_to_planet.len >= T.z)
