@@ -157,3 +157,7 @@
   - balance: Increased the time to bind minds into mobs up to 30 seconds
   - balance: whitelists only specific mobs
   - balance: blacklists key items
+2024-02-15:
+  VoRe-bot:
+  - rscadd: Added round_id
+  - rscadd: Guidelines for shadekin and outsider, linked on spawn.
