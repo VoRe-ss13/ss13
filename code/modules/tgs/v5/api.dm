@@ -198,8 +198,23 @@
 		var/datum/tgs_chat_channel/channel = I
 		ids += channel.id
 
+<<<<<<< HEAD
 	SendChatMessageRaw(message2, ids)
 
+=======
+	message2 = UpgradeDeprecatedChatMessage(message2)
+
+	if (!length(channels))
+		return
+
+	var/list/data = message2._interop_serialize()
+	data[DMAPI5_CHAT_MESSAGE_CHANNEL_IDS] = ids
+	if(intercepted_message_queue)
+		intercepted_message_queue += list(data)
+	else
+		Bridge(DMAPI5_BRIDGE_COMMAND_CHAT_SEND, list(DMAPI5_BRIDGE_PARAMETER_CHAT_MESSAGE = data))
+
+>>>>>>> c79ad55ba8 (Infraupgrade (#7670))
 /datum/tgs_api/v5/ChatTargetedBroadcast(datum/tgs_message_content/message2, admin_only)
 	var/list/channels = list()
 	for(var/I in ChatChannelInfo())
@@ -207,6 +222,7 @@
 		if (!channel.is_private_channel && ((channel.is_admin_channel && admin_only) || (!channel.is_admin_channel && !admin_only)))
 			channels += channel.id
 
+<<<<<<< HEAD
 	SendChatMessageRaw(message2, channels)
 
 /datum/tgs_api/v5/ChatPrivateMessage(datum/tgs_message_content/message2, datum/tgs_chat_user/user)
@@ -243,6 +259,28 @@
 
 /datum/tgs_api/v5/proc/SendChatDataRaw(list/data)
 	Bridge(DMAPI5_BRIDGE_COMMAND_CHAT_SEND, list(DMAPI5_BRIDGE_PARAMETER_CHAT_MESSAGE = data))
+=======
+	message2 = UpgradeDeprecatedChatMessage(message2)
+
+	if (!length(channels))
+		return
+
+	var/list/data = message2._interop_serialize()
+	data[DMAPI5_CHAT_MESSAGE_CHANNEL_IDS] = channels
+	if(intercepted_message_queue)
+		intercepted_message_queue += list(data)
+	else
+		Bridge(DMAPI5_BRIDGE_COMMAND_CHAT_SEND, list(DMAPI5_BRIDGE_PARAMETER_CHAT_MESSAGE = data))
+
+/datum/tgs_api/v5/ChatPrivateMessage(datum/tgs_message_content/message2, datum/tgs_chat_user/user)
+	message2 = UpgradeDeprecatedChatMessage(message2)
+	var/list/data = message2._interop_serialize()
+	data[DMAPI5_CHAT_MESSAGE_CHANNEL_IDS] = list(user.channel.id)
+	if(intercepted_message_queue)
+		intercepted_message_queue += list(data)
+	else
+		Bridge(DMAPI5_BRIDGE_COMMAND_CHAT_SEND, list(DMAPI5_BRIDGE_PARAMETER_CHAT_MESSAGE = data))
+>>>>>>> c79ad55ba8 (Infraupgrade (#7670))
 
 /datum/tgs_api/v5/ChatChannelInfo()
 	RequireInitialBridgeResponse()
