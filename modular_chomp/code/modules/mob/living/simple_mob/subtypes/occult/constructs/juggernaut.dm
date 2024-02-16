@@ -1,13 +1,3 @@
-/mob/living/simple_mob/construct/juggernaut
-	maxHealth = 100
-	health = 100
-	melee_damage_lower = 15
-	melee_damage_upper = 20
-
-/mob/living/simple_mob/construct/juggernaut/behemoth
-	maxHealth = 300
-	health = 300
-
 /mob/living/simple_mob/construct/juggernaut/behemoth/unstoppable
 	name = "Behemoth"
 	real_name = "Behemoth"
