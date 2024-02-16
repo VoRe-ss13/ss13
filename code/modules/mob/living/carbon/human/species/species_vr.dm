@@ -105,7 +105,7 @@
 //Whatever fucking MONKEY decided we should go through EVERY SINGLE FUCKING VAR needs to NEVER touch a fucking keyboard again
 /datum/species/proc/copy_variables(var/datum/species/S, var/list/whitelist)
 	//List of variables to ignore, trying to copy type will runtime.
-	var/list/blacklist = list("type", "loc", "client", "ckey")
+	//var/list/blacklist = list("type", "loc", "client", "ckey")
 	//Makes thorough copy of species datum.
 	for(var/i in whitelist)
 		if(!(i in S.vars)) //Don't copy incompatible vars.

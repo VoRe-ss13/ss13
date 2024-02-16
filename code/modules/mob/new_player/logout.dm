@@ -8,7 +8,7 @@
 
 	..()
 
-	if(created_for)
+	//if(created_for)
 		//del_mannequin(created_for) No need to delete this, honestly. It saves up hardly any memory in the long run and fucks the GC in the short run.
 
 	if(!spawning)//Here so that if they are spawning and log out, the other procs can play out and they will have a mob to come back to.
