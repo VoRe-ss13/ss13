@@ -1003,7 +1003,10 @@ About the new airlock wires panel:
 		..(user)
 	return
 
+<<<<<<< HEAD
 /* // CHOMPEDIT: disabling becaue alt-clicking to view a turf is pretty important.
+=======
+>>>>>>> d225a23d17 (Reenables Doorbells 2 (#7749))
 /obj/machinery/door/airlock/AltClick(mob/user as mob)
 
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -1026,7 +1029,10 @@ About the new airlock wires panel:
 		src.add_fingerprint(user)
 		playsound(src, knock_unpowered_sound, 50, 0, 3)
 	return
+<<<<<<< HEAD
 */ //ChompEDIT - disable end
+=======
+>>>>>>> d225a23d17 (Reenables Doorbells 2 (#7749))
 
 /obj/machinery/door/airlock/tgui_act(action, params)
 	if(..())
@@ -1584,4 +1590,8 @@ About the new airlock wires panel:
 			qdel(src)
 			return TRUE
 	return FALSE
+<<<<<<< HEAD
 */
+=======
+*/
+>>>>>>> d225a23d17 (Reenables Doorbells 2 (#7749))
