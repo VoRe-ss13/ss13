@@ -28,11 +28,7 @@
 	base_attack_cooldown = 0 // Extremly rapid fire with rather weak bullets.
 
 /mob/living/simple_mob/mechanical/hivebot/precusor/laser
-<<<<<<< HEAD
 	projectiletype = /obj/item/projectile/beam/precursor
-=======
-	projectiletype = /obj/item/projectile/energy/mob/precursor
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	projectile_dispersion = 5
 	projectile_accuracy = -30
 
@@ -49,13 +45,8 @@
 	color = "#A020F0"
 
 /obj/item/shield_projector/rectangle/automatic/hivebot_drone
-<<<<<<< HEAD
 	shield_health = 100
 	max_shield_health = 100
-=======
-	shield_health = 50
-	max_shield_health = 50
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	shield_regen_delay = 5 SECONDS
 	shield_regen_amount = 20
 	size_x = 3
