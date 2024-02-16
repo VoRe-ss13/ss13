@@ -11,13 +11,8 @@
 	icon_state = "imperion"
 	icon_living = "imperion"
 	desc = "A strange precursor mecha"
-<<<<<<< HEAD
 	maxHealth = 400
 	health = 400
-=======
-	maxHealth = 300
-	health = 300
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	movement_cooldown = -1
 	unsuitable_atoms_damage = 0
 	projectiletype = /obj/item/projectile/energy/gaussrifle
@@ -469,13 +464,8 @@
 	return ..()
 
 /obj/item/shield_projector/rectangle/automatic/imperion
-<<<<<<< HEAD
 	shield_health = 500
 	max_shield_health = 500
-=======
-	shield_health = 250
-	max_shield_health = 250
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	shield_regen_delay = 60 SECONDS
 	shield_regen_amount = 50
 	size_x = 2
@@ -500,20 +490,11 @@
 /obj/item/projectile/energy/imperionspear
 	name = "energy spear"
 	icon_state = "arcane_barrage"
-<<<<<<< HEAD
 	damage = 35
 	armor_penetration = 35
 	damage_type = BURN
 	check_armour = "laser"
 	speed = 4.4
-=======
-	damage = 16
-	armor_penetration = 35
-	damage_type = BURN
-	check_armour = "laser"
-	speed = 7.0
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
-
 	flash_strength = 0
 
 /obj/item/projectile/bullet/imperionblaster
@@ -535,11 +516,7 @@
 	armor_penetration = 100
 	damage_type = BURN
 	check_armour = "laser"
-<<<<<<< HEAD
-	speed = 4.4
-=======
 	speed = 4.5
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 
 	flash_strength = 0
 
@@ -558,31 +535,18 @@
 /obj/item/projectile/energy/imperiontesla
 	name = "energy sphere"
 	icon_state = "tesla_projectile"
-<<<<<<< HEAD
 	damage = 50
-=======
-	damage = 25
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	armor_penetration = 50
 	damage_type = BURN
 	check_armour = "energy"
 	agony = 50
-<<<<<<< HEAD
 	speed = 8.2
-=======
-	speed = 10.0
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
-
 	flash_strength = 0
 
 /obj/item/projectile/energy/homing_bolt/missile
 	name = "homing rocket"
 	icon_state = "atrocket"
-<<<<<<< HEAD
 	damage = 40
-=======
-	damage = 20
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	damage_type = BURN
 	check_armour = "bullet"
 
