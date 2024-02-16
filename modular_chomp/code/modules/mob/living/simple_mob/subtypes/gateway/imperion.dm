@@ -495,7 +495,6 @@
 	damage_type = BURN
 	check_armour = "laser"
 	speed = 4.4
-
 	flash_strength = 0
 
 /obj/item/projectile/bullet/imperionblaster
@@ -517,7 +516,7 @@
 	armor_penetration = 100
 	damage_type = BURN
 	check_armour = "laser"
-	speed = 4.4
+	speed = 4.5
 
 	flash_strength = 0
 
@@ -542,7 +541,6 @@
 	check_armour = "energy"
 	agony = 50
 	speed = 8.2
-
 	flash_strength = 0
 
 /obj/item/projectile/energy/homing_bolt/missile
