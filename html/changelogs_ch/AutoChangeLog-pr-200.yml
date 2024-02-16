@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscadd: "Added a quiet gateway to The Dark"
+  - rscadd: "Added a quiet gateway to Sif"
