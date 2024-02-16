@@ -82,10 +82,6 @@ var/global/list/engineering_networks = list(
 /obj/machinery/camera/network/northern_star
 	network = list(NETWORK_NORTHERN_STAR)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 /obj/machinery/camera/network/outside
 	network = list(NETWORK_OUTSIDE)
 
