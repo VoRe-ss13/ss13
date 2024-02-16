@@ -23,13 +23,8 @@
 
 	faction = "candy"
 
-<<<<<<< HEAD
 	maxHealth = 50
 	health = 50
-=======
-	maxHealth = 20
-	health = 20
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	movement_cooldown = 2
 	melee_attack_delay = 2 SECOND
 	can_be_drop_prey = TRUE
@@ -213,12 +208,9 @@
 	icon_living = "blue"
 	icon_dead = "blue_dead"
 
-<<<<<<< HEAD
 	maxHealth = 50
 	health = 50
 
-=======
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	melee_damage_lower = 7
 	melee_damage_upper = 12
 
@@ -240,13 +232,8 @@
 	icon_living = "red"
 	icon_dead = "red_dead"
 
-<<<<<<< HEAD
 	maxHealth = 125
 	health = 125
-=======
-	maxHealth = 50
-	health = 50
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 
 	melee_damage_lower = 15
 	melee_damage_upper = 25
@@ -274,12 +261,9 @@
 	icon_living = "yellow"
 	icon_dead = "yellow_dead"
 
-<<<<<<< HEAD
 	maxHealth = 50
 	health = 50
 
-=======
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	melee_damage_lower = 8
 	melee_damage_upper = 15
 
@@ -322,12 +306,9 @@
 	icon_living = "purple"
 	icon_dead = "purple_dead"
 
-<<<<<<< HEAD
 	maxHealth = 50
 	health = 50
 
-=======
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	melee_damage_lower = 7
 	melee_damage_upper = 12
 
@@ -370,12 +351,9 @@
 
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/kiting
 
-<<<<<<< HEAD
 	maxHealth = 50
 	health = 50
 
-=======
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	melee_damage_lower = 4
 	melee_damage_upper = 8
 
@@ -763,8 +741,5 @@
 	B.emote_lists[DM_DIGEST] = list(
 		"Every clench of the predator's stomach grinds powerful digestive fluids into your body, forcibly churning away your strength!")
 
-<<<<<<< HEAD
+
 v
-=======
-v
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
