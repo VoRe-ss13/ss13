@@ -144,7 +144,7 @@
 // 		/datum/asset/simple/jquery,
 // 		/datum/asset/simple/goonchat,
 // 		/datum/asset/spritesheet/goonchat,
-// 		/datum/asset/simple/fontawesome
+// 		/datum/asset/simple/namespaced/fontawesome
 // 	)
 
 // /datum/asset/simple/goonchat
