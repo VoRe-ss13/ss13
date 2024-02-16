@@ -1,5 +1,6 @@
 //Unfiying spider health, into two catagories. Disrupters and tanks.
 /mob/living/simple_mob/animal/giant_spider/carrier //Disrupter, old 100
+<<<<<<< HEAD
 	maxHealth = 60
 	health = 60
 
@@ -47,6 +48,65 @@
 /mob/living/simple_mob/animal/giant_spider/webslinger //disrupter, old 90
 	maxHealth = 60
 	health = 60
+=======
+	maxHealth = 30
+	health = 30
+	melee_damage_lower = 4
+	melee_damage_upper = 12
+
+/mob/living/simple_mob/animal/giant_spider/electric //disrupter, old 210
+	maxHealth = 30
+	health = 30
+	projectiletype = /obj/item/projectile/energy/mob/electric_spider
+	melee_damage_lower = 5
+	melee_damage_upper = 12
+
+/mob/living/simple_mob/animal/giant_spider/frost //tank, old 175
+	maxHealth = 60
+	health = 60
+
+/mob/living/simple_mob/animal/giant_spider //tank, old 200
+	maxHealth = 60
+	health = 60
+	melee_damage_lower = 9
+	melee_damage_upper = 15
+
+/mob/living/simple_mob/animal/giant_spider/ion //disrupter, old 90
+	maxHealth = 30
+	health = 30
+
+/mob/living/simple_mob/animal/giant_spider/hunter //disrupter, old 120
+	maxHealth = 30
+	health = 30
+
+/mob/living/simple_mob/animal/giant_spider/lurker //disrupter, old 100
+	maxHealth = 30
+	health = 30
+
+/mob/living/simple_mob/animal/giant_spider/pepper //tank, old 210
+	maxHealth = 60
+	health = 60
+
+/mob/living/simple_mob/animal/giant_spider/phorogenic //tank, old 225
+	maxHealth = 60
+	health = 60
+	melee_damage_lower = 12
+	melee_damage_upper = 20
+
+/mob/living/simple_mob/animal/giant_spider/thermic //tank, old 175
+	maxHealth = 60
+	health = 60
+	melee_damage_lower = 5
+	melee_damage_upper = 12
+
+/mob/living/simple_mob/animal/giant_spider/tunneler //disrupter, old 120
+	maxHealth = 30
+	health = 30
+
+/mob/living/simple_mob/animal/giant_spider/webslinger //disrupter, old 90
+	maxHealth = 30
+	health = 30
+>>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 
 /obj/effect/spider/eggcluster
 	spider_type = /obj/effect/spider/spiderling/varied
@@ -198,4 +258,8 @@
 	health = 30
 
 	melee_damage_lower = 5
+<<<<<<< HEAD
 	melee_damage_upper = 10
+=======
+	melee_damage_upper = 10
+>>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/solarray //solar moth lite, dies to water
 	name = "solar ray"
 	desc = "A sting ray of fire, drifting around"
@@ -277,3 +278,17 @@
 	vore_capacity = 1
 	vore_pounce_chance = 0
 	vore_default_mode = DM_DIGEST
+=======
+
+/mob/living/simple_mob/vore/aggressive/rat
+	maxHealth = 75
+	health = 75
+
+/mob/living/simple_mob/vore/aggressive/rat/phoron
+	maxHealth = 87
+	health = 87
+
+/mob/living/simple_mob/vore/aggressive/rat/event
+	maxHealth = 25
+	health = 25
+>>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))

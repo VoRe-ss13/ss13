@@ -8,8 +8,13 @@
 	wreckage = /obj/structure/loot_pile/mecha/phazon
 	color = "#ffffff"
 
+<<<<<<< HEAD
 	health = 500
 	maxHealth = 500
+=======
+	health = 250
+	maxHealth = 250
+>>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	evasion = 10
 
 	special_attack_min_range = 1

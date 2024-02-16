@@ -1,9 +1,27 @@
+<<<<<<< HEAD
+=======
+/mob/living/simple_mob/construct/juggernaut
+	maxHealth = 100
+	health = 100
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+
+/mob/living/simple_mob/construct/juggernaut/behemoth
+	maxHealth = 300
+	health = 300
+
+>>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 /mob/living/simple_mob/construct/juggernaut/behemoth/unstoppable
 	name = "Behemoth"
 	real_name = "Behemoth"
 	desc = "The pinnacle of occult technology, Behemoths are nothing shy of both an Immovable Object, and Unstoppable Force."
+<<<<<<< HEAD
 	melee_damage_lower = 45
 	melee_damage_upper = 65
+=======
+	melee_damage_lower = 22
+	melee_damage_upper = 33
+>>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	ai_holder_type = /datum/ai_holder/simple_mob/intentional/adv_dark_gygax
 	projectiletype = /obj/item/projectile/energy/inversion
 	movement_cooldown = 1
