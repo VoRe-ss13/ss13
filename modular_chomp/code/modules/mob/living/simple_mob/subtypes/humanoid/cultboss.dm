@@ -1,18 +1,10 @@
 /mob/living/simple_mob/humanoid/cultist/magus/rift
 	name = "Rift Magus"
-<<<<<<< HEAD
 	maxHealth = 450 //Boss Mobs should be tanky.
 	health = 450
 
 	melee_damage_lower = 30
 	melee_damage_upper = 45
-=======
-	maxHealth = 225 //Boss Mobs should be tanky.
-	health = 225
-
-	melee_damage_lower = 15
-	melee_damage_upper = 22
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	attack_armor_pen = 50
 	heat_resist = 1
 	cold_resist = 1
@@ -35,17 +27,10 @@
 	injury_enrages = TRUE
 
 	armor_soak = list(
-<<<<<<< HEAD
 		"melee" = 5,
 		"bullet" = 5,
 		"laser" = 5,
 		"energy" = 5,
-=======
-		"melee" = 2,
-		"bullet" = 2,
-		"laser" = 2,
-		"energy" = 2,
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 		"bomb" = 0,
 		"bio" = 0,
 		"rad" = 0
@@ -148,10 +133,7 @@
 	light_range = 2
 	light_power = -2
 	light_color = "#FFFFFF"
-<<<<<<< HEAD
-=======
 	damage_type = BURN
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 
 /mob/living/simple_mob/humanoid/cultist/magus/rift
 	vore_active = 1
