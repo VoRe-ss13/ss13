@@ -7,13 +7,8 @@
 	maxHealth = 15 LASERS_TO_KILL
 	health = 15 LASERS_TO_KILL
 	projectiletype = /obj/item/projectile/arc/blue_energy/precusor
-<<<<<<< HEAD
 	melee_damage_lower = 30
 	melee_damage_upper = 50
-=======
-	melee_damage_lower = 15
-	melee_damage_upper = 25
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	special_attack_min_range = 1
 	special_attack_max_range = 7
 	special_attack_cooldown = 5 SECONDS
