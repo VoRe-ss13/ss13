@@ -20,6 +20,8 @@
 	return ..()
 
 /mob/living/Destroy()
+	ai_holder.holder = null
+	ai_holder.faction_friends.Cut()
 	QDEL_NULL(ai_holder)
 	return ..()
 
