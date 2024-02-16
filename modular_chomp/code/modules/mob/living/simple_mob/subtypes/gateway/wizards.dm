@@ -18,13 +18,8 @@
 
 	faction = "vr"
 
-<<<<<<< HEAD
 	maxHealth = 100
 	health = 100
-=======
-	maxHealth = 40
-	health = 40
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	movement_cooldown = 1
 	unsuitable_atoms_damage = 0
 	projectiletype = /obj/item/projectile/energy/homing_bolt/wizard
@@ -216,8 +211,4 @@
 	incoming_healing_percent = 0.8
 
 /datum/modifier/aura/crumbling/superboss
-<<<<<<< HEAD
 	aura_max_distance = 16
-=======
-	aura_max_distance = 16
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
