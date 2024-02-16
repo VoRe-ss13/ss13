@@ -123,27 +123,7 @@
 		health = 100
 		set_stat(CONSCIOUS)
 	else
-		// CHOMPEdit Start: Pain/etc calculations, but more efficient:tm: - this should work for literally anything that applies to health. Far better than slapping emote("pain") everywhere like scream does.
-		var/initialhealth = health // CHOMPEdit: Getting our health before this check
 		health = getMaxHealth() - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss() - halloss
-		if(!((ishuman(src)) || (issilicon(src))) && src.can_pain_emote) // Only run this if we're non-human/non-silicon (bots and mechanical simplemobs should be allowed to make pain sounds) & can emote pain, bc humans + carbons already do this. human_damage doesn't call parent, but sanity is better here.
-			if(health < initialhealth) // Did we lose health?
-				// Yes. How much by?
-				var/damage = initialhealth - health // Get our damage (say, 200 - 180 = 20, etc etc)
-				var/pain_noise = (damage * rand(0.5, 1.5)) // Multiply damage by our rand mod. 50 damage becomes 50 x 0.5, means prob 25. 50 x 1.5 means prob 75, etc.
-				switch(damage)
-					if(-INFINITY to 0)
-						return
-					if(1 to 25)
-						if(prob(pain_noise) && !isbelly(loc)) // No pain noises inside bellies.
-							emote("pain")
-					if(26 to 50)
-						if(prob(pain_noise * 1.5) && !isbelly(loc)) // No pain noises inside bellies.
-							emote("pain")
-					if(51 to INFINITY)
-						if(prob(pain_noise * 3)  && !isbelly(loc)) // More likely, most severe damage. No pain noises inside bellies.
-							emote("pain")
-	// CHOMPEdit End: Pain
 
 //This proc is used for mobs which are affected by pressure to calculate the amount of pressure that actually
 //affects them once clothing is factored in. ~Errorage
@@ -855,10 +835,6 @@
 /mob/living/adjustEarDamage(var/damage, var/deaf)
 	ear_damage = max(0, ear_damage + damage)
 	ear_deaf = max(0, ear_deaf + deaf)
-	if(ear_deaf > 0)
-		deaf_loop.start() // CHOMPStation Add: Ear Ringing/Deafness - Not sure if we need this, but, safety.
-	else if(ear_deaf <= 0)
-		deaf_loop.stop() // CHOMPStation Add: Ear Ringing/Deafness - Not sure if we need this, but, safety.
 
 //pass a negative argument to skip one of the variable
 /mob/living/setEarDamage(var/damage, var/deaf)
@@ -866,7 +842,6 @@
 		ear_damage = damage
 	if(deaf >= 0)
 		ear_deaf = deaf
-		deaf_loop.start() // CHOMPStation Add: Ear Ringing/Deafness - Not sure if we need this, but, safety.
 
 /mob/living/proc/vomit(var/skip_wait, var/blood_vomit)
 	if(!check_has_mouth())
@@ -1162,7 +1137,6 @@
 	if(!item)
 		return FALSE //Grab processing has a chance of returning null
 
-/* CHOMPEdit. If I want to do a nice little give I use the actual verb for it.
 	if(a_intent == I_HELP && Adjacent(target) && isitem(item) && ishuman(target))
 		var/obj/item/I = item
 		var/mob/living/carbon/human/H = target
@@ -1173,7 +1147,6 @@
 			to_chat(src, SPAN_NOTICE("You offer \the [I] to \the [target]."))
 			do_give(H)
 		return TRUE
-*/
 
 	drop_from_inventory(item)
 
@@ -1321,7 +1294,7 @@
 /datum/component/character_setup/proc/character_setup_click(source, location, control, params, user)
 	var/mob/owner = user
 	if(owner.client?.prefs)
-		INVOKE_ASYNC(owner.client.prefs, /datum/preferences/proc/ShowChoices, owner)
+		INVOKE_ASYNC(owner.client.prefs, TYPE_PROC_REF(/datum/preferences, ShowChoices), owner)
 
 /**
  * Screen object for vore panel

@@ -87,7 +87,9 @@
 		death()
 
 	if (src.stat != 2) //Alive.
-		if (src.paralysis || src.stunned || src.weakened || !src.has_power) //Stunned etc.
+		if (src.weakened > 0)	// Do not fullstun on weaken
+			AdjustWeakened(-1)
+		if (src.paralysis || src.stunned || !src.has_power) //Stunned etc.
 			src.set_stat(UNCONSCIOUS)
 			if (src.stunned > 0)
 				AdjustStunned(-1)
@@ -113,14 +115,10 @@
 		src.AdjustBlinded(-1)
 		src.blinded = 1
 
-	if (src.ear_deaf > 0)
-		src.ear_deaf--
+	if (src.ear_deaf > 0) src.ear_deaf--
 	if (src.ear_damage < 25)
 		src.ear_damage -= 0.05
 		src.ear_damage = max(src.ear_damage, 0)
-
-	if(src.ear_deaf <= 0) // CHOMPStation Add: Ear Ringing/Deafness - Not sure if we need this, but, safety.
-		deaf_loop.stop() // CHOMPStation Add: Ear Ringing/Deafness - Not sure if we need this, but, safety.
 
 	src.density = !( src.lying )
 
@@ -229,21 +227,20 @@
 					else
 						src.healths.icon_state = "health6"
 			else
-				switch(health)
-					if(200 to INFINITY)
-						src.healths.icon_state = "health0"
-					if(150 to 200)
-						src.healths.icon_state = "health1"
-					if(100 to 150)
-						src.healths.icon_state = "health2"
-					if(50 to 100)
-						src.healths.icon_state = "health3"
-					if(0 to 50)
-						src.healths.icon_state = "health4"
-					if(config.health_threshold_dead to 0)
-						src.healths.icon_state = "health5"
-					else
-						src.healths.icon_state = "health6"
+				if(health >= 200)
+					src.healths.icon_state = "health0"
+				else if(health >= 150)
+					src.healths.icon_state = "health1"
+				else if(health >= 100)
+					src.healths.icon_state = "health2"
+				else if(health >= 50)
+					src.healths.icon_state = "health3"
+				else if(health >= 0)
+					src.healths.icon_state = "health4"
+				else if(health >= config.health_threshold_dead)
+					src.healths.icon_state = "health5"
+				else
+					src.healths.icon_state = "health6"
 		else
 			src.healths.icon_state = "health7"
 

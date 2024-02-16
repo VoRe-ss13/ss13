@@ -190,9 +190,6 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	to_chat(world, "<span class='boldannounce'>[msg]</span>")
 	log_world(msg)
 
-
-	send2chat("Server Initialization completed! - Took [time] second[time == 1 ? "" : "s"].", "bot announce")
-
 	if (!current_runlevel)
 		SetRunLevel(RUNLEVEL_LOBBY)
 
@@ -281,7 +278,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	//(higher subsystems will be sooner in the queue, adding them later in the loop means we don't have to loop thru them next queue add)
 	sortTim(tickersubsystems, GLOBAL_PROC_REF(cmp_subsystem_priority))
 	for(var/I in runlevel_sorted_subsystems)
-		sortTim(runlevel_sorted_subsystems, GLOBAL_PROC_REF(cmp_subsystem_priority))
+		sortTim(I, GLOBAL_PROC_REF(cmp_subsystem_priority))
 		I += tickersubsystems
 
 	var/cached_runlevel = current_runlevel
