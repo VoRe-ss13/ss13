@@ -41,7 +41,7 @@
 
 		//Fops Edit Begin
 		if(config.discord_whitelist)
-			var/DBQuery/query = SSdbcore.NewQuery("SELECT ckey FROM whitelist") //Not optimal but keys in the DB aren't stored in ckey format so we have to check all of them through the ckey function.
+			var/datum/db_query/query = SSdbcore.NewQuery("SELECT ckey FROM whitelist") //Not optimal but keys in the DB aren't stored in ckey format so we have to check all of them through the ckey function.
 			query.Execute()
 
 			var/is_whitelisted = FALSE
