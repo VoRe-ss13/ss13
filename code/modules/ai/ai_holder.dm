@@ -21,7 +21,9 @@
 
 /mob/living/Destroy()
 	ai_holder.holder = null
-	ai_holder.faction_friends.Cut()
+	if(ai_holder.faction_friends.len) //This list is shared amongst the faction
+		ai_holder.faction_friends -= src
+		ai_holder.faction_friends = null
 	QDEL_NULL(ai_holder)
 	return ..()
 
