@@ -1,55 +1,8 @@
-<<<<<<< HEAD
 /mob/living/simple_mob/animal/space/alien/sentinel/praetorian/echo
 	name = "alien Echopraetorian"
 	color = "#424242"
 	health = 300
 	maxHealth = 300
-=======
-/mob/living/simple_mob/animal/space/alien
-	maxHealth = 100
-	health = 100
-	harm_intent_damage = 5
-	melee_damage_lower = 25
-	melee_damage_upper = 25
-	attack_armor_pen = 15
-
-/mob/living/simple_mob/animal/space/alien/drone
-	health = 60
-	melee_damage_lower = 15
-	melee_damage_upper = 15
-
-/mob/living/simple_mob/animal/space/alien/sentinel
-	health = 120
-	melee_damage_lower = 15
-	melee_damage_upper = 15
-
-/mob/living/simple_mob/animal/space/alien/sentinel/praetorian
-	maxHealth = 200
-	health = 200
-
-/mob/living/simple_mob/animal/space/alien/queen
-	health = 125
-	maxHealth = 125
-	melee_damage_lower = 7
-	melee_damage_upper = 7
-
-/mob/living/simple_mob/animal/space/alien/queen/empress
-	maxHealth = 200
-	health = 200
-
-/mob/living/simple_mob/animal/space/alien/queen/empress/mother
-	maxHealth = 300
-	health = 300
-	melee_damage_lower = 7
-	melee_damage_upper = 12
-
-//what are this things?
-/mob/living/simple_mob/animal/space/alien/sentinel/praetorian/echo
-	name = "alien Echopraetorian"
-	color = "#424242"
-	health = 150
-	maxHealth = 150
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	needs_reload = 1
 	projectiletype = /obj/item/projectile/sonic/strong
 	reload_time = 150 SECONDS
@@ -59,13 +12,8 @@
 	name = "alien Ionic praetorian"
 	color = "#004cff"
 	armor = list(melee = 0,bullet = 25,laser = 0,energy = 0,bomb = 0,bio = 100,rad = 100)
-<<<<<<< HEAD
 	health = 350
 	maxHealth = 350
-=======
-	health = 175
-	maxHealth = 175
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	needs_reload = 1
 	projectiletype = /obj/item/projectile/arc/emp_blast
 	reload_time = 150 SECONDS
@@ -77,13 +25,8 @@
 	name = "alien blazing praetorian"
 	color = "Red"
 	armor = list(melee = 0, bullet = 0, laser = 25, energy = 0, bomb = 0, bio = 100, rad = 100)
-<<<<<<< HEAD
 	health = 450
 	maxHealth = 450
-=======
-	health = 225
-	maxHealth = 225
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	needs_reload = 1
 	projectiletype = /obj/item/projectile/energy/fireball
 	reload_max = 3
@@ -104,17 +47,10 @@
 	armor_soak = list(melee = -15, bullet = 10, laser = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
 	base_attack_cooldown = 25
 	color = "#ff8214"
-<<<<<<< HEAD
 	health = 700
 	maxHealth = 700
 	melee_damage_lower = 25
 	melee_damage_upper = 35
-=======
-	health = 350
-	maxHealth = 350
-	melee_damage_lower = 12
-	melee_damage_upper = 17
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	movement_cooldown = 10
 	movement_shake_radius = 7
 	movement_sound = 'sound/weapons/heavysmash.ogg'
@@ -130,17 +66,10 @@
 	armor_soak = list(melee = -10, bullet = 10, laser = 5, energy = 0, bomb = 0, bio = 0, rad = 0)
 	base_attack_cooldown = 15
 	color = "#38b9ff"
-<<<<<<< HEAD
 	health = 500
 	maxHealth = 500
 	melee_damage_lower = 25
 	melee_damage_upper = 50
-=======
-	health = 250
-	maxHealth = 250
-	melee_damage_lower = 12
-	melee_damage_upper = 25
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	movement_cooldown = 12
 	movement_shake_radius = 7
 	needs_reload = 1
@@ -155,17 +84,10 @@
 	armor_soak = list(melee = -10, bullet = 10, laser = 5, energy = 0, bomb = 0, bio = 0, rad = 0)
 	base_attack_cooldown = 25
 	color = "#4a4a4a"
-<<<<<<< HEAD
 	health = 1250
 	maxHealth = 1250
 	melee_damage_lower = 25
 	melee_damage_upper = 50
-=======
-	health = 625
-	maxHealth = 625
-	melee_damage_lower = 12
-	melee_damage_upper = 25
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	movement_cooldown = 12
 	movement_shake_radius = 7
 	needs_reload = 1
@@ -178,13 +100,8 @@
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/careful
 	armor_soak = list(melee = 0, bullet = 5, laser = 5, energy = 0, bomb = 0, bio = 0, rad = 0)
 	color = "#ccff4a"
-<<<<<<< HEAD
 	health = 200
 	maxHealth = 200
-=======
-	health = 100
-	maxHealth = 100
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	needs_reload = 1
 	projectiletype = /obj/item/projectile/beam/stun/electric_spider
 	reload_max = 5
@@ -196,13 +113,8 @@
 	armor = list (melee = 0, bullet = 0, laser = 15, energy = 0, bomb = 0, bio = 100, rad = 100)
 	base_attack_cooldown = 15
 	color = "#ff7373"
-<<<<<<< HEAD
 	health = 250
 	maxHealth = 250
-=======
-	health = 125
-	maxHealth = 125
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	needs_reload = 1
 	projectiletype = /obj/item/projectile/bullet/incendiary/dragonflame
 	reload_max = 2
@@ -213,13 +125,8 @@
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/careful
 	armor = list(melee = 0, bullet = 15, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 100)
 	color = "#4f83ff"
-<<<<<<< HEAD
 	health = 200
 	maxHealth = 200
-=======
-	health = 100
-	maxHealth = 100
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	needs_reload = 1
 	projectiletype = /obj/item/projectile/energy/blob/freezing/splattering
 	reload_max = 3
@@ -230,13 +137,8 @@
 	projectiletype = /obj/item/projectile/energy/acid
 
 /mob/living/simple_mob/animal/space/alien/tanky
-<<<<<<< HEAD
 	health = 200
 	maxHealth = 200
-=======
-	health = 100
-	maxHealth = 100
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 
 /mob/living/simple_mob/animal/space/alien/hunterling
 	name = "alien hunterling"
@@ -254,15 +156,9 @@
 	name = "alien hunterlisk"
 	base_attack_cooldown = 15
 	color = "#575757"
-<<<<<<< HEAD
 	health = 150
 	maxHealth = 150
 	melee_damage_upper = 35
-=======
-	health = 75
-	maxHealth = 75
-	melee_damage_upper = 17
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
 	movement_cooldown = 3
 	size_multiplier = 1.25
 
