@@ -50,8 +50,4 @@
 			)
 	cost = 100
 	containertype = /obj/structure/closet/crate/nanotrasen
-<<<<<<< HEAD
 	container name = "Surplus Bluespace Fultons crate"
-=======
-	container name = "Surplus Bluespace Fultons crate"
->>>>>>> 3995338290 (Moar whitespace normalization [MDB IGNORE] (#7750))
