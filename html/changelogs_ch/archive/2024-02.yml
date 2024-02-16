@@ -161,3 +161,12 @@
   VoRe-bot:
   - rscadd: Added round_id
   - rscadd: Guidelines for shadekin and outsider, linked on spawn.
+2024-02-16:
+  VoRe-bot:
+  - rscadd: Recorder into loadout
+  - rscadd: Saxophone into loadout
+  - bugfix: loadout names for Trombone
+  - rscadd: Vending machines in the hidden mountain area
+  - rscadd: Common diseases for the Infected Room event
+  - balance: Infected Room is now slightly more common
+  - code_imp: Added makedisease proc, to build custom viruses.
