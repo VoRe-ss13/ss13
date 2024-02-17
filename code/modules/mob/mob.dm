@@ -15,8 +15,8 @@
 	if(!istype(src,/mob/observer)) //CHOMPEdit
 		ghostize() //CHOMPEdit
 	QDEL_NULL(plane_holder)
-	..()
-	return QDEL_HINT_HARDDEL_NOW
+	. = ..()
+	//return QDEL_HINT_HARDDEL_NOW
 
 /mob/proc/remove_screen_obj_references()
 	hands = null
@@ -1043,7 +1043,9 @@
 // Please always use this proc, never just set the var directly.
 /mob/proc/set_stat(var/new_stat)
 	. = (stat != new_stat)
+	if(.) SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, new_stat, stat)
 	stat = new_stat
+
 
 /mob/verb/face_direction()
 

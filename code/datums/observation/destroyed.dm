@@ -10,6 +10,5 @@
 	name = "Destroyed"
 
 /datum/Destroy()
-	if(GLOB.destroyed_event)
-		GLOB.destroyed_event.raise_event(src)
+	SEND_SIGNAL(src,COMSIG_OBSERVER_DESTROYED)
 	. = ..()

@@ -39,14 +39,14 @@ var/list/GPS_list = list()
 
 	if(holder && loc != holder)
 		GLOB.moved_event.unregister(holder, src)
-		GLOB.dir_set_event.unregister(holder, src)
+		//GLOB.dir_set_event.unregister(holder, src)
 		holder.client?.screen -= compass
 		holder = null
 
 	if(istype(loc, /mob))
 		holder = loc
-		GLOB.moved_event.register(holder, src, PROC_REF(update_compass))
-		GLOB.dir_set_event.register(holder, src, PROC_REF(update_compass))
+		RegisterSignal(holder,COMSIG_OBSERVER_MOVED, PROC_REF(update_compass))
+		//GLOB.dir_set_event.register(holder, src, PROC_REF(update_compass))
 
 	if(holder && tracking)
 		if(!is_in_processing_list)

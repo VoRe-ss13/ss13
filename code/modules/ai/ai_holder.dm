@@ -20,7 +20,9 @@
 	return ..()
 
 /mob/living/Destroy()
-	ai_holder.holder = null
+	if(ai_holder)
+		ai_holder.holder = null
+		ai_holder.UnregisterSignal(src,COMSIG_MOB_STATCHANGE)
 	if(ai_holder.faction_friends.len) //This list is shared amongst the faction
 		ai_holder.faction_friends -= src
 		ai_holder.faction_friends = null
@@ -226,7 +228,8 @@
 	holder = new_holder
 	home_turf = get_turf(holder)
 	manage_processing(AI_PROCESSING)
-	GLOB.stat_set_event.register(holder, src, PROC_REF(holder_stat_change))
+	//GLOB.stat_set_event.register(holder, src, PROC_REF(holder_stat_change)) n o
+	RegisterSignal(holder, COMSIG_MOB_STATCHANGE, PROC_REF(holder_stat_change))
 	..()
 
 /datum/ai_holder/Destroy()
@@ -246,7 +249,7 @@
 	else
 		STOP_AIFASTPROCESSING(src)
 
-/datum/ai_holder/proc/holder_stat_change(var/mob, old_stat, new_stat)
+/datum/ai_holder/proc/holder_stat_change(var/datum/source, new_stat, old_stat)
 	if(old_stat >= DEAD && new_stat <= DEAD) //Revived
 		manage_processing(AI_PROCESSING)
 	else if(old_stat <= DEAD && new_stat >= DEAD) //Killed

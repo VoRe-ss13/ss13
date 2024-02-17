@@ -26,8 +26,8 @@ GLOBAL_DATUM_INIT(turf_exited_event, /decl/observ/turf_exited, new)
 
 /turf/Entered(var/atom/movable/am, var/atom/old_loc)
 	. = ..()
-	GLOB.turf_entered_event.raise_event(src, am, old_loc)
+	SEND_SIGNAL(src, COMSIG_OBSERVER_TURF_ENTERED, am, old_loc)
 
 /turf/Exited(var/atom/movable/am, var/atom/new_loc)
 	. = ..()
-	GLOB.turf_exited_event.raise_event(src, am, new_loc)
+	SEND_SIGNAL(src, COMSIG_OBSERVER_TURF_EXITED, am, new_loc)

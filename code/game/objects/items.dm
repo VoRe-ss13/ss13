@@ -109,10 +109,10 @@
 	var/tip_timer // reference to timer id for a tooltip we might open soon
 
 	var/no_random_knockdown = FALSE			//stops item from being able to randomly knock people down in combat
-	
+
 	var/rock_climbing = FALSE //If true, allows climbing cliffs using click drag for single Z, walls if multiZ
 	var/climbing_delay = 1 //If rock_climbing, lower better.
-	
+
 /obj/item/Initialize(mapload) //CHOMPedit I stg I'm going to overwrite these many uncommented edits.
 	. = ..()
 	if(islist(origin_tech))
@@ -736,7 +736,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 			H.toggle_zoom_hud()	// If the user has already limited their HUD this avoids them having a HUD when they zoom in
 		H.set_viewsize(viewsize)
 		zoom = 1
-		GLOB.moved_event.register(H, src, PROC_REF(zoom))
+		RegisterSignal(H,COMSIG_OBSERVER_MOVED, PROC_REF(zoom))
 
 		var/tilesize = 32
 		var/viewoffset = tilesize * tileoffset
@@ -765,7 +765,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		if(!H.hud_used.hud_shown)
 			H.toggle_zoom_hud()
 		zoom = 0
-		GLOB.moved_event.unregister(H, src, PROC_REF(zoom))
+		UnregisterSignal(H,COMSIG_OBSERVER_MOVED)
 
 		H.client.pixel_x = 0
 		H.client.pixel_y = 0

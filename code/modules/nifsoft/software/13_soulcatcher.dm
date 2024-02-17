@@ -427,7 +427,7 @@
 	real_name = brainmob.real_name	//And the OTHER name
 
 	forceMove(get_turf(parent_human))
-	GLOB.moved_event.register(parent_human, src, /mob/observer/eye/ar_soul/proc/human_moved)
+	RegisterSignal(parent_human,COMSIG_OBSERVER_MOVED, /mob/observer/eye/ar_soul/proc/human_moved)
 
 	//Time to play dressup
 	if(brainmob.client.prefs)
