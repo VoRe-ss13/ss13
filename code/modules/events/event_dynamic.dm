@@ -68,8 +68,10 @@ var/list/event_last_fired = list()
 	possibleEvents[/datum/event/electrical_storm] = 15 * active_with_role["Janitor"] + 5 * active_with_role["Engineer"]
 	possibleEvents[/datum/event/wallrot] = 30 * active_with_role["Engineer"] + 50 * active_with_role["Gardener"]
 
+	/* TORCHEdit Start - Disable space vines until we revise its spawn areas
 	if(!spacevines_spawned)
 		possibleEvents[/datum/event/spacevine] = 10 + 5 * active_with_role["Engineer"]
+	*/
 	if(minutes_passed >= 30) // Give engineers time to set up engine
 		possibleEvents[/datum/event/meteor_wave] = 10 * active_with_role["Engineer"]
 		possibleEvents[/datum/event/blob] = 10 * active_with_role["Engineer"]
@@ -236,10 +238,10 @@ var/list/event_last_fired = list()
 
 		if(M.mind.assigned_role == "Botanist")
 			active_with_role["Botanist"]++
-			
+
 		if(M.mind.assigned_role == "Head of Security") //CHOMP Add
 			active_with_role["Head of Security"]++ //CHOMP Add
-			
+
 		if(M.mind.assigned_role == "Warden") //CHOMP Add
 			active_with_role["Warden"]++ //CHOMP Add
 
