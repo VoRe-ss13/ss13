@@ -1,8 +1,8 @@
-# Contributing to CHOMPStation
+# Contributing to TORCHStation13
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
-The following is a set of guidelines for contributing to Chomp Station, which is hosted in the [Chomp Station](https://github.com/CHOMPStation2/CHOMPStation2) on GitHub.
+The following is a set of guidelines for contributing to TORCHStation, which is hosted in the [TORCHStation](https://github.com/CHOMPStation2/CHOMPStation2) on GitHub.
 These are just guidelines, not rules, use your best judgment and feel free to propose changes to this document in a pull request.
 
 #### Table Of Contents
@@ -12,7 +12,7 @@ These are just guidelines, not rules, use your best judgment and feel free to pr
 
 [How Can I Contribute?](#how-can-i-contribute)
   * [Your First Code Contribution](#your-first-code-contribution)
-  * [Chomp Station Coding Standards](#chomp-station-coding-standards)
+  * [TORCHStation Coding Standards](#chomp-station-coding-standards)
   * [Pull Requests](#pull-requests)
   * [Git Commit Messages](#git-commit-messages)
 
@@ -30,9 +30,9 @@ By participating, you are expected to uphold this code.
 
 ### Your First Code Contribution
 
-Unsure where to begin contributing to Chomp Station? You can start by looking through the issues tab.
+Unsure where to begin contributing to TORCHStation? You can start by looking through the issues tab.
 
-### Chomp Station Map Edits
+### TORCHStation Map Edits
 
 * Our base map files are in [map/southern_cross/].
 * Our stationary overmap location files are in [maps/southern_cross/overmap/].
@@ -40,7 +40,7 @@ Unsure where to begin contributing to Chomp Station? You can start by looking th
 * Our surface POI map files (Wilderness, plains, ...) are in [modular_chomp/maps/submaps/surface_submaps/].
 * Map changes must be in tgm format. See the [Mapmerge2 Readme] for details, or use [StrongDMM] which can automatically save maps as tgm.
 
-### Chomp Station Coding Standards
+### TORCHStation Coding Standards
 
 Any code submissions that do not meet our coding standards are likely to be rejected, or at the very least, have a maintainer request changes on your PR. Save time and follow these standards from the start:
 
@@ -96,7 +96,7 @@ Then in our `handle_grabs_ch()` proc, if we want to avoid performing the stock g
 * If it does get merged upstream and the mirror appears on our repo, you are responsible for unfucking the comments situation, because it'll have to say VORE edits instead of CHOMP edits.
 
 ## Licensing
-CHOMPStation is licensed under the GNU Affero General Public License version 3, which can be found in full in LICENSE-AGPL3.txt.
+TORCHStation13 is licensed under the GNU Affero General Public License version 3, which can be found in full in LICENSE-AGPL3.txt.
 
 Commits with a git authorship date prior to `1420675200 +0000` (2015/01/08 00:00) are licensed under the GNU General Public License version 3, which can be found in full in LICENSE-GPL3.txt.
 

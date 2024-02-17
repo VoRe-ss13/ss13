@@ -37,7 +37,7 @@ https://i.imgur.com/Ei6QZOh.png
 On the top left is your **local/remote**, those are the two important things we want to focus on.
 Local is stuff that’s locally on YOUR PC, and remote is the fork that you made (and the other things we add).
 
-Before we go further, we’ll want to add CHOMPStation2 as a remote so we can keep you up to date. Don’t worry, it’s easy.
+Before we go further, we’ll want to add TORCHStation13 as a remote so we can keep you up to date. Don’t worry, it’s easy.
 Follow the picture instructions:
 https://i.imgur.com/0aBRaoq.png
 https://i.imgur.com/OaNNWjK.png
@@ -46,7 +46,7 @@ https://i.imgur.com/U7Maetj.png
 And you should see:
 https://i.imgur.com/Vlwn8R9.png
 
-If you see the CHOMPStation_Master ahead of your master, **don’t panic.** Right click on ‘master’ and choose “fast-forward”. You’ll see the local computer icon jump to meet Master, and then you go to the top and hit “Push” - Push sends your changes up to your repo/remote.
+If you see the TORCHStation13_Master ahead of your master, **don’t panic.** Right click on ‘master’ and choose “fast-forward”. You’ll see the local computer icon jump to meet Master, and then you go to the top and hit “Push” - Push sends your changes up to your repo/remote.
 
 Creating Your Branch:
 Now that that’s done, we’re going to create our branch.
@@ -78,7 +78,7 @@ https://i.imgur.com/lroAj8X.png
 You’ll see this pop out:
 https://i.imgur.com/21D6qt9.png
 
-If the TO repo doesn’t autofill, don’t panic. Just choose CHOMPStation2/CHOMPStation2, branch master.
+If the TO repo doesn’t autofill, don’t panic. Just choose TORCHStation13/CHOMPStation2, branch master.
 
 Then type the NAME of your PR, and a description underneath, then hit “Create Pull Request”!
 
