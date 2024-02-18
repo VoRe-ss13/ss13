@@ -200,3 +200,6 @@
   - server: RUST-G Updated alongwith its DMAPI
   - rscadd: Reenabled doorbells on airlocks and knocking on regular doors. This can
       be done by leftalt-clicking on a door.
+2024-02-18:
+  VoRe-bot:
+  - bugfix: fixes the character Directory
