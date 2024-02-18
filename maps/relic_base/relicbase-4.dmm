@@ -5925,15 +5925,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/main)
-"lK" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/structure/lattice,
-/turf/simulated/open{
-	outdoors = 1
-	},
-/area/surface/outside/plains/outpost)
 "lL" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -9367,8 +9358,8 @@
 /area/surface/outside/plains/outpost)
 "sd" = (
 /obj/effect/shuttle_landmark{
-	base_area = /area/space;
-	base_turf = /turf/space;
+	base_area = /area/surface/outside/plains/outpost;
+	base_turf = /turf/simulated/floor/reinforced;
 	docking_controller = "d2_w1_a_airlock";
 	landmark_tag = "d2_w1_a";
 	name = "Deck 2, Dock 1-A"
@@ -16623,16 +16614,6 @@
 /obj/item/device/perfect_tele,
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/heads/sc/sd)
-"GF" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/railing,
-/obj/structure/lattice,
-/turf/simulated/open{
-	outdoors = 1
-	},
-/area/surface/outside/plains/outpost/sky)
 "GG" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -18251,15 +18232,6 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/emergency_storage)
-"JU" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/lattice,
-/turf/simulated/open{
-	outdoors = 1
-	},
-/area/surface/outside/plains/outpost/sky)
 "JV" = (
 /obj/structure/table/marble,
 /obj/random/cigarettes,
@@ -44203,8 +44175,8 @@ il
 EG
 EG
 EG
-EG
-EG
+zv
+zv
 zv
 zv
 zv
@@ -44460,9 +44432,9 @@ wu
 xD
 xD
 xD
-xD
-xD
 ON
+zv
+zv
 zv
 zv
 zv
@@ -44717,9 +44689,9 @@ wu
 xD
 xD
 xD
-xD
-xD
 ON
+zv
+zv
 zv
 zv
 zv
@@ -44974,9 +44946,9 @@ wu
 xD
 xD
 xD
-xD
-xD
 ON
+zv
+zv
 zv
 zv
 zv
@@ -45221,9 +45193,9 @@ Rl
 tZ
 xD
 tK
-fW
-fW
 qC
+xD
+xD
 xD
 xD
 xD
@@ -45231,9 +45203,9 @@ wu
 xD
 xD
 xD
-xD
-xD
 ON
+zv
+zv
 zv
 zv
 zv
@@ -45478,9 +45450,9 @@ AC
 lj
 DU
 ON
-zv
-zv
 tU
+xD
+xD
 xD
 xD
 xD
@@ -45488,9 +45460,9 @@ wu
 xD
 xD
 xD
-xD
-xD
 ON
+zv
+zv
 zv
 zv
 zv
@@ -45735,9 +45707,9 @@ Rl
 xD
 Za
 ON
-zv
-EG
-se
+tU
+xD
+xD
 xD
 xD
 xD
@@ -45745,9 +45717,9 @@ wu
 xD
 xD
 xD
-xD
-xD
-ON
+Uo
+zv
+zv
 zv
 VH
 VH
@@ -46003,8 +45975,8 @@ xD
 kH
 xD
 xD
-xD
-Uo
+zb
+EG
 EG
 VH
 ZY
@@ -46473,7 +46445,7 @@ zv
 zv
 zv
 fW
-fW
+Vy
 fW
 qj
 xD
@@ -49303,7 +49275,7 @@ lX
 lX
 lX
 vC
-ON
+Vy
 zv
 zv
 zv
@@ -51375,7 +51347,7 @@ fW
 fW
 fW
 fW
-JU
+Vy
 qC
 xD
 xD
@@ -56840,7 +56812,7 @@ xD
 xD
 xD
 xD
-lK
+Cw
 zv
 zv
 zv
@@ -61136,7 +61108,7 @@ uy
 uy
 uy
 uh
-EG
+zv
 OY
 xD
 xD
@@ -62677,7 +62649,7 @@ vL
 LF
 EG
 EG
-GF
+tf
 xD
 xD
 xD
@@ -65574,7 +65546,7 @@ ng
 Dz
 Gp
 zv
-zv
+Vy
 zv
 zv
 zv
@@ -69098,7 +69070,7 @@ zv
 zv
 io
 zv
-tU
+Vy
 xD
 xD
 xD
@@ -69154,7 +69126,7 @@ xD
 xD
 xD
 xD
-ON
+Vy
 zv
 zv
 zv
@@ -70387,7 +70359,7 @@ zv
 zv
 zv
 EG
-zv
+Vy
 EG
 EG
 EG
@@ -74012,7 +73984,7 @@ zv
 zv
 zv
 re
-fW
+Vy
 fW
 fW
 fW
@@ -76078,7 +76050,7 @@ zv
 zv
 zv
 fW
-fW
+Vy
 fW
 qC
 xD
