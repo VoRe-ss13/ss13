@@ -14,7 +14,6 @@
 
 /mob/living/simple_mob/humanoid/cultist/elite
 	movement_cooldown = 1
-
 /mob/living/simple_mob/humanoid/cultist/magus
 	movement_cooldown = 1
 	projectiletype = /obj/item/projectile/energy/inversion

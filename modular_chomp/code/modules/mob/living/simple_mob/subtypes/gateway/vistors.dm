@@ -74,7 +74,6 @@
 	unsuitable_atoms_damage = 0
 	projectiletype = /obj/item/projectile/energy/homing_bolt
 	melee_attack_delay = 4 SECOND
-
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	ai_holder_type = /datum/ai_holder/simple_mob/intentional/adv_dark_gygax

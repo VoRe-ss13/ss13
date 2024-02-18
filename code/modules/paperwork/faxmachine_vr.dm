@@ -1,4 +1,4 @@
-var/global/last_fax_role_request
+//var/global/last_fax_role_request TORCH Removal
 
 /obj/machinery/photocopier/faxmachine
 	req_one_access = list()
@@ -8,7 +8,7 @@ var/global/last_fax_role_request
  * If the fax is a paper_bundle, do so recursively for each page.
  * returns a random unique faxid.
  */
-/obj/machinery/photocopier/faxmachine/proc/export_fax(fax) //CHOMPEdit Begin
+/obj/machinery/photocopier/faxmachine/export_fax(fax) //CHOMPEdit Begin
 	var faxid = "[num2text(world.realtime,12)]_[rand(9999)+1]"
 	if (istype(fax, /obj/item/weapon/paper))
 		var/obj/item/weapon/paper/P = fax
@@ -55,7 +55,7 @@ var/global/last_fax_role_request
 /**
  * Call the chat webhook to transmit a notification of an admin fax to the admin chat.
  */
-/obj/machinery/photocopier/faxmachine/proc/message_chat_admins(var/mob/sender, var/faxname, var/obj/item/sent, var/faxid, font_colour="#006100")
+/obj/machinery/photocopier/faxmachine/message_chat_admins(var/mob/sender, var/faxname, var/obj/item/sent, var/faxid, font_colour="#006100")
 	if(config.discord_faxes_disabled) //CHOMPEdit
 		return
 	if (config.chat_webhook_url)
@@ -76,6 +76,7 @@ var/global/last_fax_role_request
 		var/faxids = "FAXMULTIID: [faxid]_0"
 		var/contents = ""
 
+
 		if((!config.nodebot_enabled) && config.discord_faxes_autoprint)
 			var/faxmsg = return_file_text("[config.fax_export_dir]/fax_[faxid]_0.html")
 			contents += "\nFAX: ```[strip_html_properly(faxmsg)]```"
@@ -83,23 +84,25 @@ var/global/last_fax_role_request
 		for(var/page = 1, page <= B.pages.len, page++)
 			var/curid = "[faxid]_[page]"
 			faxids+= "|[curid]"
+			if(config.html_render_address) rustg_http_request_async(RUSTG_HTTP_METHOD_POST, "[config.html_render_address]/?name=[sender.name]&ckey=[sender.ckey]", return_file_text("[config.fax_export_dir]/fax_[curid].html"), list("Content-Type"="text/plain"), list("output_filename"=null,"body_filename"=null) ) //TORCHEdit
 			if((!config.nodebot_enabled) && config.discord_faxes_autoprint)
 				var/faxmsg = return_file_text("[config.fax_export_dir]/fax_[curid].html")
 				contents += "\nFAX PAGE [page]: ```[strip_html_properly(faxmsg)]```"
 
-		world.TgsTargetedChatBroadcast("MULTIFAX: [sanitize(faxname)] / [sanitize(sent.name)] - SENT BY: [sanitize(sender.name)] - [faxids] [contents]", TRUE) 
+		world.TgsTargetedChatBroadcast("MULTIFAX: [sanitize(faxname)] / [sanitize(sent.name)] - SENT BY: [sanitize(sender.name)] - [faxids] [contents]", TRUE)
 	else
 		var/contents = ""
+		if(config.html_render_address) rustg_http_request_async(RUSTG_HTTP_METHOD_POST, "[config.html_render_address]/?name=[sender.name]&ckey=[sender.ckey]", return_file_text("[config.fax_export_dir]/fax_[faxid].html"), list("Content-Type"="text/plain"), list("output_filename"=null,"body_filename"=null) ) //TORCHEdit
 		if((!config.nodebot_enabled) && config.discord_faxes_autoprint)
 			var/faxmsg = return_file_text("[config.fax_export_dir]/fax_[faxid].html")
 			contents += "\nFAX: ```[strip_html_properly(faxmsg)]```"
-		world.TgsTargetedChatBroadcast("FAX: [sanitize(faxname)] / [sanitize(sent.name)] - SENT BY: [sanitize(sender.name)] - FAXID: **[sanitize(faxid)]** [contents]", TRUE) 
+		world.TgsTargetedChatBroadcast("FAX: [sanitize(faxname)] / [sanitize(sent.name)] - SENT BY: [sanitize(sender.name)] - FAXID: **[sanitize(faxid)]** [contents]", TRUE)
 	//YW EDIT END
 
 /**
  * Call the chat webhook to transmit a notification of a job request
  */
-/obj/machinery/photocopier/faxmachine/proc/message_chat_rolerequest(var/font_colour="#006100", var/role_to_ping, var/reason, var/jobname)
+/obj/machinery/photocopier/faxmachine/message_chat_rolerequest(var/font_colour="#006100", var/role_to_ping, var/reason, var/jobname)
 	if(config.chat_webhook_url)
 		spawn(0)
 			var/query_string = "type=rolerequest"
@@ -109,7 +112,7 @@ var/global/last_fax_role_request
 			query_string += "&reason=[url_encode(reason)]"
 			query_string += "&job=[url_encode(jobname)]"
 			world.Export("[config.chat_webhook_url]?[query_string]")
-
+/* TORCH Removal
 //
 // Overrides/additions to stock defines go here, as well as hooks. Sort them by
 // the object they are overriding. So all /mob/living together, etc.
@@ -199,3 +202,4 @@ var/global/last_fax_role_request
 	message_chat_rolerequest(message_color, ping_name, reason, role)
 	last_fax_role_request = world.time
 	to_chat(L, "<span class='notice'>Your request was transmitted.</span>")
+*/
