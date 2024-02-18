@@ -4,15 +4,16 @@
 #define Z_LEVEL_UNDERGROUND				2
 #define Z_LEVEL_SURFACE					3
 #define Z_LEVEL_UPPER_FLOORS			4
-#define Z_LEVEL_UNDERMINES				5
+#define Z_LEVEL_THE_SKY					5
 #define Z_LEVEL_SURFACE_WILDS			6
 #define Z_LEVEL_SURFACE_OCEAN			7
 #define Z_LEVEL_CENTCOM					8
 #define Z_LEVEL_TRANSIT					9
 #define Z_LEVEL_MISC 					10
-#define Z_LEVEL_FUELDEPOT				11
-#define Z_LEVEL_GATEWAY					12
-#define Z_LEVEL_REDGATE					13
+#define Z_LEVEL_UNDERMINES				11
+#define Z_LEVEL_FUELDEPOT				14
+#define Z_LEVEL_GATEWAY					15
+#define Z_LEVEL_REDGATE					16
 
 // Camera Network Additions
 #define NETWORK_EXTERIOR "Exterior" // Exterior Cameras
@@ -98,6 +99,7 @@
 			Z_LEVEL_UNDERMINES,
 			Z_LEVEL_SURFACE_WILDS,
 			Z_LEVEL_SURFACE_OCEAN,
+			Z_LEVEL_THE_SKY,
 			Z_LEVEL_CATACOMBS
 		)
 
@@ -277,6 +279,12 @@
 	base_turf = /turf/simulated/mineral/floor/cave
 	transit_chance = 10
 
+/datum/map_z_level/relicbase/station/thesky
+	z = Z_LEVEL_THE_SKY
+	name = "Sky"
+	base_turf = /turf/simulated/open
+	transit_chance = 10
+
 /*
  KSC 9/29/20 = No longer relevant code as we have nonencludian portals to jump between outpost,caves and wilderness
 //Teleport to Mine
@@ -316,6 +324,7 @@
 		Z_LEVEL_SURFACE_WILDS,
 		Z_LEVEL_UNDERMINES,
 		Z_LEVEL_SURFACE_OCEAN,
+		Z_LEVEL_THE_SKY,
 		Z_LEVEL_CATACOMBS
 	)
 

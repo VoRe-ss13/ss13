@@ -68,6 +68,10 @@
 	name = "Outpost Perimeter"
 	icon_state = "green"
 
+/area/surface/outside/plains/outpost/sky
+	name = "The sky"
+	icon_state = "bluenew"
+
 // Rest of the 'plains' Z-level, for POIs.
 /area/surface/outside/plains/normal
 	name = "Plains"

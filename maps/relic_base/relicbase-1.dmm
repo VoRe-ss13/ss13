@@ -86,6 +86,10 @@
 /obj/structure/stairs/spawner/north,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"ar" = (
+/obj/effect/rune,
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "au" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/stairs/spawner/north,
@@ -261,6 +265,21 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"bB" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/contraband,
+/obj/random/junk,
+/obj/random/trash_pile,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "bI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -338,6 +357,25 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"cg" = (
+/obj/structure/girder/cult,
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
+"ch" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "ci" = (
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
@@ -384,6 +422,20 @@
 /obj/item/ammo_magazine/m10mm/empty,
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"cy" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/underground/catacombs)
 "cG" = (
 /obj/effect/floor_decal/rust,
@@ -616,6 +668,27 @@
 /obj/random/maintenance,
 /turf/simulated/mineral/cave,
 /area/maintenance/underground/catacombs)
+"es" = (
+/obj/effect/rune{
+	icon_state = "3"
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "mfloor6"
+	},
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
+"eu" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "ez" = (
 /obj/effect/zone_divider,
 /turf/simulated/wall,
@@ -688,6 +761,15 @@
 /area/maintenance/underground/catacombs)
 "eV" = (
 /obj/effect/zone_divider,
+/turf/simulated/floor/outdoors/rocks/caves{
+	outdoors = -1
+	},
+/area/maintenance/underground/catacombs)
+"eX" = (
+/obj/structure/table/bench/wooden,
+/obj/effect/landmark/start{
+	name = "Outsider"
+	},
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
 	},
@@ -847,6 +929,35 @@
 /obj/random/cigarettes,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"gc" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/contraband,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
+"ge" = (
+/obj/effect/rune{
+	icon_state = "shade3"
+	},
+/obj/item/weapon/material/knife/ritual,
+/obj/effect/gibspawner/human,
+/obj/item/clothing/head/culthood/alt,
+/obj/item/clothing/suit/cultrobes/alt,
+/obj/item/clothing/shoes/cult,
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "gg" = (
 /obj/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
@@ -986,6 +1097,14 @@
 /obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"ht" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/turf/simulated/floor/outdoors/rocks/caves{
+	outdoors = -1
+	},
+/area/maintenance/underground/catacombs)
 "hu" = (
 /obj/effect/decal/cleanable/filth,
 /obj/item/weapon/digestion_remains/skull/tajaran,
@@ -1118,6 +1237,18 @@
 	outdoors = -1
 	},
 /area/maintenance/underground/catacombs)
+"iu" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "iw" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -1151,6 +1282,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"iD" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/trash_pile,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "iF" = (
 /mob/living/simple_mob/animal/synx/scp{
 	dir = 4
@@ -1175,6 +1318,10 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"iS" = (
+/obj/effect/zone_divider,
+/turf/simulated/wall/cult,
 /area/maintenance/underground/catacombs)
 "iV" = (
 /obj/effect/floor_decal/rust,
@@ -1458,6 +1605,20 @@
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"lc" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/trash_pile,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "lf" = (
 /obj/structure/barricade,
 /obj/effect/floor_decal/rust,
@@ -1480,6 +1641,10 @@
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"li" = (
+/obj/structure/cult/forge,
+/turf/simulated/floor/cult,
 /area/maintenance/underground/catacombs)
 "lo" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1523,6 +1688,19 @@
 	},
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
+	},
+/area/maintenance/underground/catacombs)
+"lH" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
 	},
 /area/maintenance/underground/catacombs)
 "lI" = (
@@ -1613,6 +1791,12 @@
 /obj/random/unidentified_medicine/old_medicine,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"mw" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "mfloor4"
+	},
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "mA" = (
 /obj/random/underdark/uncertain,
 /turf/simulated/floor/outdoors/mud{
@@ -1686,6 +1870,29 @@
 /obj/random/mre,
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"nu" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/contraband,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/underground/catacombs)
 "nv" = (
 /obj/effect/floor_decal/rust,
@@ -1806,11 +2013,34 @@
 	outdoors = -1
 	},
 /area/maintenance/underground/catacombs)
+"or" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "ot" = (
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/obstruction,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"ow" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash_pile,
+/turf/simulated/floor/outdoors/rocks/caves{
+	outdoors = -1
+	},
 /area/maintenance/underground/catacombs)
 "oD" = (
 /obj/machinery/crystal,
@@ -1970,6 +2200,21 @@
 	},
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"pV" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/contraband,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/underground/catacombs)
 "qa" = (
 /obj/structure/catwalk,
@@ -2136,12 +2381,34 @@
 /obj/effect/zone_divider,
 /turf/simulated/mineral/cave,
 /area/maintenance/underground/catacombs)
+"rt" = (
+/obj/effect/decal/cleanable/blood,
+/obj/item/weapon/melee/cultblade,
+/obj/item/clothing/shoes/cult,
+/obj/item/clothing/suit/cultrobes/alt,
+/obj/item/clothing/head/culthood/alt,
+/obj/effect/gibspawner/human,
+/obj/item/weapon/digestion_remains/skull,
+/obj/effect/decal/cleanable/filth,
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "ru" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/blood/oil{
 	icon_state = "gib5"
 	},
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"rw" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/underground/catacombs)
 "rx" = (
 /obj/effect/zone_divider,
@@ -2189,6 +2456,20 @@
 /obj/random/maintenance,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"rO" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash_pile,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
+"rS" = (
+/obj/structure/cult/talisman,
+/turf/simulated/floor/cult,
 /area/maintenance/underground/catacombs)
 "rT" = (
 /obj/effect/decal/cleanable/filth,
@@ -2425,6 +2706,12 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"tk" = (
+/obj/effect/rune{
+	icon_state = "4"
+	},
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "tn" = (
 /obj/effect/floor_decal/rust,
 /mob/living/simple_mob/vore/retaliate/corrupthound/janihound/old{
@@ -2580,6 +2867,18 @@
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"us" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "uw" = (
 /obj/random/handgun/sec,
 /obj/effect/decal/cleanable/dirt,
@@ -2675,6 +2974,9 @@
 	outdoors = -1
 	},
 /area/maintenance/underground/catacombs)
+"vh" = (
+/turf/simulated/wall/cult,
+/area/maintenance/underground/catacombs)
 "vm" = (
 /obj/random/trash,
 /obj/effect/decal/cleanable/dirt,
@@ -2701,6 +3003,16 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty,
+/area/maintenance/underground/catacombs)
+"vu" = (
+/obj/structure/grille/cult,
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
+"vv" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "mfloor6"
+	},
+/turf/simulated/floor/cult,
 /area/maintenance/underground/catacombs)
 "vw" = (
 /obj/effect/floor_decal/rust,
@@ -2940,6 +3252,17 @@
 /obj/structure/barricade,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"wQ" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "wR" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
@@ -2949,6 +3272,10 @@
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_mob/vore/retaliate/corrupthound/janihound,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"wX" = (
+/obj/item/weapon/flame/candle/candelabra/everburn,
+/turf/simulated/floor/cult,
 /area/maintenance/underground/catacombs)
 "xc" = (
 /obj/random/maintenance/security,
@@ -3076,6 +3403,11 @@
 	outdoors = -1
 	},
 /area/maintenance/underground/catacombs)
+"xY" = (
+/obj/item/weapon/flame/candle/candelabra/everburn,
+/obj/effect/decal/cleanable/filth,
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "yb" = (
 /obj/random/trash,
 /obj/effect/zone_divider,
@@ -3095,6 +3427,23 @@
 /obj/random/trash,
 /turf/simulated/floor/outdoors/mud{
 	outdoors = -1
+	},
+/area/maintenance/underground/catacombs)
+"ym" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
 	},
 /area/maintenance/underground/catacombs)
 "yn" = (
@@ -3152,6 +3501,15 @@
 	outdoors = -1
 	},
 /area/maintenance/underground/catacombs)
+"yL" = (
+/obj/random/trash,
+/obj/random/trash,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "yQ" = (
 /obj/structure/catwalk,
 /obj/structure/barricade,
@@ -3166,6 +3524,23 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"yW" = (
+/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/underground/catacombs)
 "yX" = (
 /obj/effect/floor_decal/rust,
@@ -3296,10 +3671,39 @@
 /obj/random/cigarettes,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"An" = (
+/obj/effect/rune{
+	icon_state = "shade1"
+	},
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "Ap" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table/steel,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"At" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/underground/catacombs)
 "Av" = (
 /obj/effect/floor_decal/rust,
@@ -3445,6 +3849,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"BG" = (
+/obj/structure/constructshell/cult,
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "BJ" = (
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
@@ -3482,9 +3890,18 @@
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"Ce" = (
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "Ch" = (
 /obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
 /obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/outdoors/rocks/caves{
+	outdoors = -1
+	},
+/area/maintenance/underground/catacombs)
+"Cj" = (
+/obj/structure/girder/cult,
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
 	},
@@ -3515,6 +3932,22 @@
 /obj/effect/floor_decal/rust,
 /obj/structure/salvageable/autolathe,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"CH" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/underground/catacombs)
 "CQ" = (
 /obj/effect/floor_decal/rust,
@@ -3660,6 +4093,12 @@
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
 	},
+/area/maintenance/underground/catacombs)
+"DS" = (
+/obj/effect/rune{
+	icon_state = "main6"
+	},
+/turf/simulated/floor/cult,
 /area/maintenance/underground/catacombs)
 "DU" = (
 /obj/effect/floor_decal/rust,
@@ -4181,6 +4620,22 @@
 /obj/machinery/door/airlock/angled_tgmc/wide/generic,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"HP" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/contraband,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "HS" = (
 /obj/effect/floor_decal/rust,
 /obj/item/weapon/cell/device/weapon,
@@ -4259,6 +4714,15 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/underground/catacombs)
+"Ir" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/turf/simulated/floor/outdoors/rocks/caves{
+	outdoors = -1
+	},
+/area/maintenance/underground/catacombs)
 "It" = (
 /obj/effect/zone_divider,
 /obj/random/trash,
@@ -4312,6 +4776,18 @@
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"II" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash_pile,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "IK" = (
 /obj/structure/mob_spawner/mouse_nest,
 /obj/effect/zone_divider,
@@ -4322,6 +4798,30 @@
 "IM" = (
 /obj/structure/flora/smallbould,
 /turf/simulated/floor/water/indoors,
+/area/maintenance/underground/catacombs)
+"IN" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/underground/catacombs)
 "IO" = (
 /obj/effect/floor_decal/rust,
@@ -4337,6 +4837,12 @@
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
 	},
+/area/maintenance/underground/catacombs)
+"Jd" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "mfloor5"
+	},
+/turf/simulated/floor/cult,
 /area/maintenance/underground/catacombs)
 "Je" = (
 /obj/structure/handrail{
@@ -4438,6 +4944,14 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"JS" = (
+/obj/random/trash,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "JW" = (
 /obj/random/junk,
 /obj/structure/flora/ausbushes/grassybush{
@@ -4534,6 +5048,12 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/underground/catacombs)
+"KO" = (
+/obj/effect/rune{
+	icon_state = "6"
+	},
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "KQ" = (
 /mob/living/simple_mob/vore/pitcher_plant{
 	faction = "corrupt"
@@ -4559,9 +5079,17 @@
 	outdoors = -1
 	},
 /area/maintenance/underground/catacombs)
+"Ll" = (
+/obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "Lm" = (
 /obj/structure/sign/directions/stairwell,
 /turf/simulated/wall/wood,
+/area/maintenance/underground/catacombs)
+"Ln" = (
+/obj/effect/decal/cleanable/filth,
+/turf/simulated/floor/cult,
 /area/maintenance/underground/catacombs)
 "Lo" = (
 /obj/effect/zone_divider,
@@ -4820,6 +5348,16 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"Nh" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "Nl" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
@@ -4899,6 +5437,11 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"NK" = (
+/obj/structure/cult/pylon,
+/obj/structure/grille/cult,
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "NM" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
@@ -4930,6 +5473,20 @@
 /obj/random/trash_pile,
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
+	},
+/area/maintenance/underground/catacombs)
+"Om" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
 	},
 /area/maintenance/underground/catacombs)
 "On" = (
@@ -5428,6 +5985,10 @@
 	outdoors = -1
 	},
 /area/maintenance/underground/catacombs)
+"Sr" = (
+/obj/structure/cult/tome,
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "Su" = (
 /obj/effect/floor_decal/rust,
 /obj/random/maintenance,
@@ -5450,6 +6011,15 @@
 /obj/random/trash,
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"SO" = (
+/obj/structure/table/bench/wooden,
+/obj/item/weapon/gun/energy/locked/phasegun/rifle{
+	pixel_y = -4
+	},
+/turf/simulated/floor/outdoors/rocks/caves{
+	outdoors = -1
+	},
 /area/maintenance/underground/catacombs)
 "SP" = (
 /obj/structure/hull_corner{
@@ -5563,6 +6133,21 @@
 	pixel_y = 32
 	},
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"Tu" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/underground/catacombs)
 "Tw" = (
 /obj/random/trash,
@@ -5761,6 +6346,17 @@
 	outdoors = -1
 	},
 /area/maintenance/underground/catacombs)
+"UR" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/trash_pile,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "UT" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -5828,6 +6424,13 @@
 /obj/effect/zone_divider,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/maintenance/underground/catacombs)
+"Vp" = (
+/obj/structure/grille/broken/cult,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "mfloor4"
+	},
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "Vr" = (
 /turf/simulated/floor/water,
 /area/maintenance/underground/catacombs)
@@ -5854,6 +6457,13 @@
 /obj/effect/floor_decal/rust,
 /obj/structure/salvageable/server,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"VG" = (
+/obj/random/trash,
+/obj/random/trash_pile,
+/turf/simulated/floor/outdoors/rocks/caves{
+	outdoors = -1
+	},
 /area/maintenance/underground/catacombs)
 "VH" = (
 /obj/structure/barricade,
@@ -5899,6 +6509,13 @@
 "VV" = (
 /mob/living/simple_mob/animal/passive/fish/solarfish,
 /turf/simulated/floor/water/deep/indoors,
+/area/maintenance/underground/catacombs)
+"VZ" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "mfloor4"
+	},
+/obj/structure/simple_door/cult,
+/turf/simulated/floor/cult,
 /area/maintenance/underground/catacombs)
 "We" = (
 /obj/effect/floor_decal/rust,
@@ -6065,6 +6682,13 @@
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"Xi" = (
+/obj/effect/floor_decal/rust,
+/obj/effect/landmark/start{
+	name = "Outsider"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
 "Xq" = (
 /obj/effect/floor_decal/rust,
 /obj/item/weapon/extinguisher,
@@ -6098,6 +6722,27 @@
 /obj/effect/floor_decal/rust,
 /obj/structure/salvageable/data,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"XH" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/turf/simulated/floor/outdoors/rocks/caves{
+	outdoors = -1
+	},
+/area/maintenance/underground/catacombs)
+"XP" = (
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/trash,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/underground/catacombs)
 "XQ" = (
 /obj/random/trash,
@@ -6142,6 +6787,13 @@
 /obj/effect/floor_decal/rust,
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
+/area/maintenance/underground/catacombs)
+"Yo" = (
+/obj/effect/gateway/active/cult,
+/obj/effect/rune{
+	icon_state = "main4"
+	},
+/turf/simulated/floor/cult,
 /area/maintenance/underground/catacombs)
 "Yp" = (
 /obj/effect/floor_decal/rust,
@@ -6244,6 +6896,16 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/underground/catacombs)
+"Zk" = (
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/underground/catacombs)
 "Zq" = (
 /obj/item/weapon/beartrap/hunting{
 	anchored = 1;
@@ -6295,6 +6957,12 @@
 /obj/structure/table/woodentable,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
+"ZN" = (
+/obj/item/weapon/digestion_remains/skull,
+/obj/effect/decal/cleanable/filth,
+/obj/effect/decal/cleanable/filth,
+/turf/simulated/floor/cult,
+/area/maintenance/underground/catacombs)
 "ZR" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
@@ -6307,6 +6975,10 @@
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
 	},
+/area/maintenance/underground/catacombs)
+"ZU" = (
+/mob/living/simple_mob/humanoid/cultist/hunter,
+/turf/simulated/floor/cult,
 /area/maintenance/underground/catacombs)
 "ZV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26264,7 +26936,7 @@ Tc
 Tc
 Tc
 Tc
-RU
+vZ
 RU
 RU
 RU
@@ -26506,7 +27178,7 @@ Tc
 Tc
 Tc
 Tc
-BJ
+Oh
 BJ
 kw
 Tc
@@ -26763,8 +27435,8 @@ Tc
 Tc
 Tc
 Tc
-BJ
-BJ
+Oh
+ht
 BJ
 Tc
 Tc
@@ -27020,8 +27692,8 @@ Tc
 Tc
 Tc
 Tc
-BJ
-kw
+LY
+LY
 BJ
 BJ
 Tc
@@ -27276,10 +27948,10 @@ Tc
 Tc
 Tc
 Tc
-BJ
-kw
-BJ
-BJ
+VG
+LY
+LY
+LY
 BJ
 Tc
 Tc
@@ -27533,8 +28205,8 @@ Tc
 Tc
 Tc
 Tc
-BJ
-kw
+LY
+Ir
 Tc
 Tc
 BJ
@@ -27790,8 +28462,8 @@ Tc
 Tc
 Tc
 Tc
-kw
-BJ
+Ir
+LY
 Tc
 Tc
 LY
@@ -28046,12 +28718,12 @@ Tc
 Tc
 Tc
 Tc
-BJ
-BJ
+rO
+yL
 Tc
 Tc
 Tc
-BJ
+Oh
 BJ
 BJ
 Tc
@@ -28302,9 +28974,9 @@ Tc
 Tc
 Tc
 Tc
-kw
-kw
-BJ
+lc
+nu
+us
 Tc
 Tc
 Tc
@@ -28559,10 +29231,10 @@ Tc
 Tc
 Tc
 Tc
-BJ
-BJ
-Tc
-Tc
+Om
+IN
+HP
+JS
 Tc
 Tc
 Tc
@@ -28816,11 +29488,11 @@ Tc
 Tc
 Tc
 Tc
-BJ
-BJ
-Tc
-Tc
-Tc
+rw
+At
+gc
+eu
+Zk
 Tc
 Tc
 BJ
@@ -29072,12 +29744,12 @@ Tc
 Tc
 Tc
 Tc
-BJ
-BJ
-Tc
-Tc
-Tc
-Tc
+Nh
+lH
+gc
+yW
+ch
+wQ
 Tc
 Tc
 Tc
@@ -29328,13 +30000,13 @@ Tc
 Tc
 Tc
 Tc
-kw
-BJ
-BJ
-Tc
-Tc
-Tc
-Tc
+ow
+iu
+cy
+cy
+or
+CH
+iD
 Tc
 Tc
 Tc
@@ -29584,13 +30256,13 @@ Tc
 Tc
 Tc
 Tc
-BJ
-kw
-BJ
-Tc
-Tc
-Tc
-Tc
+ht
+XH
+XP
+lH
+ym
+ym
+rw
 Tc
 Tc
 Tc
@@ -29840,14 +30512,14 @@ Tc
 Tc
 Tc
 Tc
-BJ
-BJ
 kw
+ht
+LY
 Tc
-Tc
-Tc
-Tc
-Tc
+pV
+Tu
+XP
+II
 Tc
 Tc
 Tc
@@ -30097,12 +30769,12 @@ Tc
 Tc
 zY
 Am
-BJ
-BJ
-BJ
+LY
+ht
+VG
 Tc
-Tc
-Tc
+UR
+bB
 Tc
 Tc
 Tc
@@ -30354,8 +31026,8 @@ Tc
 Tc
 Nd
 Nd
-BJ
-BJ
+ht
+ht
 Tc
 Tc
 Tc
@@ -32080,7 +32752,7 @@ Tc
 Tc
 Tc
 rs
-BJ
+Un
 BJ
 BJ
 Tc
@@ -32591,7 +33263,7 @@ Tc
 Tc
 Tc
 BJ
-BJ
+Cj
 BJ
 rs
 Tc
@@ -35408,7 +36080,7 @@ Tc
 Tc
 Tc
 Tc
-BJ
+Cj
 BJ
 BJ
 Tc
@@ -35924,7 +36596,7 @@ Tc
 BJ
 BJ
 BJ
-BJ
+Cj
 Tc
 Tc
 Tc
@@ -36177,7 +36849,7 @@ Tc
 Tc
 Tc
 Tc
-BJ
+Cj
 BJ
 BJ
 Tc
@@ -36689,11 +37361,11 @@ Tc
 Tc
 Tc
 Tc
+Cj
+Ce
+Ce
 BJ
-BJ
-Tc
-BJ
-BJ
+Cj
 Tc
 Tc
 Tc
@@ -36946,9 +37618,9 @@ Tc
 Tc
 Tc
 Tc
-BJ
-BJ
-BJ
+Ce
+Ce
+Ce
 BJ
 Tc
 Tc
@@ -37192,19 +37864,19 @@ Tc
 Tc
 Tc
 rs
+vh
+vh
+vh
+vh
+vh
+vh
+vh
+vh
 Tc
 Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-BJ
-BJ
+cg
+Ce
+Ce
 BJ
 Tc
 Tc
@@ -37449,19 +38121,19 @@ Tc
 Tc
 Tc
 rs
+vh
+wX
+Ln
+ZN
+Ll
+BG
+wX
+vh
 Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-BJ
-BJ
+Ce
+Ce
+Ce
+Ce
 Tc
 Tc
 Tc
@@ -37706,19 +38378,19 @@ Tc
 Tc
 Tc
 rs
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-BJ
-BJ
+vh
+Sr
+es
+Ln
+Jd
+ar
+Ll
+vh
+NK
+vv
+Ce
+Ce
+Ce
 Tc
 Tc
 Tc
@@ -37963,19 +38635,19 @@ Tc
 Tc
 Tc
 rs
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-BJ
-BJ
+vh
+li
+Ll
+ge
+An
+Ce
+ZU
+VZ
+vu
+mw
+Ce
+Ce
+cg
 Tc
 Tc
 Tc
@@ -38220,18 +38892,18 @@ Tc
 Tc
 Tc
 rs
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-BJ
+vh
+rS
+Ce
+Yo
+DS
+Ln
+Ln
+mw
+Vp
+Ce
+Ce
+cg
 Tc
 Tc
 Tc
@@ -38477,17 +39149,17 @@ Tc
 Tc
 Tc
 rs
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
+vh
+Ll
+tk
+Ce
+Ce
+KO
+rt
+vh
+vu
+Ce
+Ce
 Tc
 Tc
 Tc
@@ -38734,16 +39406,16 @@ Tc
 Tc
 Tc
 rs
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
-Tc
+vh
+wX
+Ce
+BG
+Ll
+Ln
+xY
+vh
+NK
+Ce
 Tc
 Tc
 Tc
@@ -38991,14 +39663,14 @@ rs
 rs
 rs
 rs
-rs
-rs
-rs
-rs
-rs
-rs
-rs
-rs
+iS
+iS
+iS
+iS
+iS
+iS
+iS
+iS
 rs
 rs
 rs
@@ -53517,7 +54189,7 @@ Tc
 rs
 Tc
 Tc
-tJ
+SO
 BJ
 BJ
 BJ
@@ -53774,7 +54446,7 @@ Tc
 rs
 Tc
 Tc
-tJ
+SO
 BJ
 vV
 BJ
@@ -54032,8 +54704,8 @@ rs
 Tc
 Tc
 Tc
-tJ
-tJ
+SO
+eX
 tJ
 BJ
 Tc
@@ -54482,7 +55154,7 @@ Tc
 Tc
 Tc
 Fa
-iJ
+Xi
 an
 Fa
 Tc

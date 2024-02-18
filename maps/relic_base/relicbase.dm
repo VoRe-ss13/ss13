@@ -45,8 +45,9 @@
 	#include "relicbase-1.dmm" //Catacombs
 	#include "relicbase-2.dmm" //Underground
 	#include "relicbase-3.dmm" //Ground level
-	#include "relicbase-4.dmm" //Upper level
-	#include "relicbase-5.dmm" //Mines
+	#include "relicbase-4.dmm"
+	#include "relicbase-5.dmm" //the SKY
+	#include "relicbase-11.dmm" //Mines
 	#include "relicbase-6.dmm" //Wilderness
 	#include "relicbase-7.dmm" //Ocean/Plains
 	#include "relicbase-8.dmm" //Explo carrier

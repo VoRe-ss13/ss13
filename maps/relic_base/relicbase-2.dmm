@@ -35,13 +35,15 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "aaj" = (
-/obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
 /obj/random/junk,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -101,7 +103,13 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "aay" = (
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -111,7 +119,13 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "aaB" = (
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -201,7 +215,13 @@
 	})
 "ahM" = (
 /obj/effect/zone_divider,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -282,6 +302,19 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/maintenance/firstdeck/forestarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
+"akL" = (
+/obj/random/powercell,
+/obj/effect/floor_decal/rust,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
+/area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "ald" = (
@@ -415,6 +448,19 @@
 "avp" = (
 /turf/simulated/wall/r_wall,
 /area/security/tactical{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
+"avD" = (
+/obj/effect/decal/cleanable/filth,
+/obj/random/trash_pile,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "avF" = (
@@ -924,12 +970,15 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_magazine/ak74/plum{
 	initial_ammo = 0
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -1080,7 +1129,7 @@
 "aQj" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shuttle/arrival/station{
-	base_turf = /turf/simulated/floor/reinforced
+	base_turf = /turf/simulated/floor/tiled/techfloor/grid
 	})
 "aQy" = (
 /turf/simulated/floor/tiled/techmaint,
@@ -1096,9 +1145,15 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "aQS" = (
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/shuttle/arrival/station{
-	base_turf = /turf/simulated/floor/reinforced
+	base_turf = /turf/simulated/floor/tiled/techfloor/grid
 	})
 "aQZ" = (
 /obj/effect/floor_decal/rust,
@@ -1125,7 +1180,13 @@
 "aTg" = (
 /obj/random/junk,
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -1370,7 +1431,13 @@
 "bdb" = (
 /obj/random/trash,
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -1648,9 +1715,12 @@
 	pixel_x = 5;
 	pixel_y = -9
 	},
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -1741,9 +1811,12 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -2034,6 +2107,20 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"bVS" = (
+/obj/effect/floor_decal/rust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/zone_divider,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
+/area/maintenance/firstdeck/aftstarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "bXQ" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2248,12 +2335,15 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "cil" = (
-/obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
 /obj/random/trash,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -2492,17 +2582,26 @@
 	})
 "cwr" = (
 /obj/effect/shuttle_landmark/relicbase/arrivals/station,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/shuttle/arrival/station{
-	base_turf = /turf/simulated/floor/reinforced
+	base_turf = /turf/simulated/floor/tiled/techfloor/grid
 	})
 "cxc" = (
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_magazine/m762/empty,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -2847,6 +2946,17 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"cTT" = (
+/obj/random/junk,
+/obj/effect/decal/cleanable/filth,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/firstdeck/centralport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "cXq" = (
 /obj/random/trash_pile,
 /obj/effect/floor_decal/rust,
@@ -2955,7 +3065,13 @@
 	})
 "dbJ" = (
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -3225,16 +3341,31 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"drh" = (
+/obj/random/trash_pile,
+/obj/random/trash,
+/obj/effect/decal/cleanable/filth,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/firstdeck/centralport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "drn" = (
 /obj/random/junk,
 /obj/random/trash,
 /obj/item/weapon/digestion_remains/skull/tajaran,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/under/librarian,
 /obj/random/contraband,
 /obj/item/ammo_magazine/m762/empty,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -3303,7 +3434,13 @@
 "dss" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -3543,11 +3680,13 @@
 	})
 "dEI" = (
 /obj/random/junk,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -3867,7 +4006,13 @@
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -4123,7 +4268,7 @@
 	dir = 1
 	},
 /obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/gun/energy/locked/phasegun/rifle,
+/obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -4527,13 +4672,15 @@
 	})
 "eDE" = (
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/emblem/aronai{
 	color = "#3F1C0E";
 	dir = 5
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -4836,12 +4983,18 @@
 "eRp" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shuttle/escape/station{
-	base_turf = /turf/simulated/floor/reinforced
+	base_turf = /turf/simulated/floor/tiled/techfloor/grid
 	})
 "eRW" = (
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/shuttle/escape/station{
-	base_turf = /turf/simulated/floor/reinforced
+	base_turf = /turf/simulated/floor/tiled/techfloor/grid
 	})
 "eSF" = (
 /obj/structure/handrail{
@@ -4862,14 +5015,16 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/item/weapon/digestion_remains/skull/unknown,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/vomit,
 /obj/effect/floor_decal/emblem/aronai{
 	color = "#3F1C0E";
 	dir = 6
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -5237,15 +5392,17 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/asteroid,
 /obj/effect/floor_decal/emblem/aronai{
 	color = "#3F1C0E";
 	dir = 10
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -5605,7 +5762,13 @@
 "fRL" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -5804,13 +5967,16 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "gdX" = (
-/obj/effect/floor_decal/rust,
 /obj/random/junk,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -5819,14 +5985,16 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/item/weapon/digestion_remains/skull/sergal,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/shoes/orange,
 /obj/item/clothing/head/soft/orange,
 /obj/item/clothing/under/color/prison,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -5842,7 +6010,13 @@
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/rust,
 /obj/random/obstruction,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -6276,7 +6450,13 @@
 	})
 "gDx" = (
 /obj/effect/zone_divider,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -6587,13 +6767,20 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "gWa" = (
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/obstruction,
-/turf/simulated/floor/plating,
+/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -6803,9 +6990,12 @@
 	})
 "hiG" = (
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -7084,11 +7274,13 @@
 "hxs" = (
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/greenglow,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -7169,9 +7361,15 @@
 	})
 "hBr" = (
 /obj/effect/shuttle_landmark/relicbase/escape/station,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/shuttle/escape/station{
-	base_turf = /turf/simulated/floor/reinforced
+	base_turf = /turf/simulated/floor/tiled/techfloor/grid
 	})
 "hBA" = (
 /obj/effect/floor_decal/borderfloorblack,
@@ -7579,11 +7777,14 @@
 	pixel_x = -3;
 	pixel_y = 1
 	},
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/flour,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -7914,7 +8115,13 @@
 	})
 "iwA" = (
 /obj/effect/step_trigger/tramblock,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -8843,7 +9050,13 @@
 /obj/random/trash,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -8908,12 +9121,15 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -9229,7 +9445,13 @@
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -9515,11 +9737,13 @@
 "kyJ" = (
 /obj/random/junk,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/blood,
 /obj/random/obstruction,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -9665,7 +9889,13 @@
 "kLJ" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -9682,11 +9912,14 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "kNL" = (
-/obj/effect/floor_decal/rust,
 /obj/random/junk,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -9818,7 +10051,13 @@
 "lgW" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -9965,7 +10204,13 @@
 "lyn" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/zone_divider,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -10228,7 +10473,7 @@
 	},
 /obj/item/weapon/cell/device/weapon,
 /obj/structure/cable/green{
-	dir = 1
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard{
@@ -11263,10 +11508,13 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -11388,13 +11636,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"nPV" = (
-/obj/random/powercell,
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/maglev,
-/area/maintenance/firstdeck/centralport{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
 "nPZ" = (
 /obj/structure/cable{
 	d1 = 16;
@@ -11417,6 +11658,15 @@
 /obj/effect/zone_divider,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/aftstarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
+"nQM" = (
+/obj/machinery/door/airlock/maintenance/cargo{
+	req_access = list(50);
+	req_one_access = null
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "nQU" = (
@@ -11498,11 +11748,14 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "obm" = (
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -11776,9 +12029,12 @@
 "osA" = (
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -11850,7 +12106,13 @@
 "ovx" = (
 /obj/random/trash,
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -12120,11 +12382,14 @@
 /obj/random/junk,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -12268,7 +12533,13 @@
 "pay" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/zone_divider,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -12548,10 +12819,14 @@
 	})
 "pvA" = (
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -12567,7 +12842,13 @@
 "pxd" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -13044,10 +13325,12 @@
 	})
 "qgE" = (
 /obj/random/junk,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/floor_decal/emblem/black,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -13055,7 +13338,13 @@
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -13348,7 +13637,13 @@
 "qCn" = (
 /obj/random/powercell,
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/techfloor/grid,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -13723,7 +14018,6 @@
 	pixel_x = -3;
 	pixel_y = 1
 	},
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -13731,7 +14025,11 @@
 	icon_state = "mfloor6"
 	},
 /obj/random/humanoidremains,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -13893,8 +14191,12 @@
 	pixel_x = -9;
 	pixel_y = 1
 	},
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -13932,12 +14234,14 @@
 	},
 /area/maintenance/firstdeck/aftport)
 "rvk" = (
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/obstruction,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -14305,7 +14609,13 @@
 /obj/random/trash,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -14654,7 +14964,13 @@
 "svI" = (
 /obj/structure/girder/displaced,
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -15051,6 +15367,14 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"tfY" = (
+/obj/effect/landmark/start{
+	name = "Outsider"
+	},
+/turf/simulated/floor/outdoors/rocks/caves{
+	outdoors = -1
+	},
+/area/surface/underground/in_da_walls)
 "thW" = (
 /obj/effect/zone_divider,
 /obj/structure/catwalk,
@@ -15117,10 +15441,12 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -15324,42 +15650,46 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "tvG" = (
-/obj/effect/floor_decal/rust,
 /obj/random/junk,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/readylight,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "twn" = (
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "twz" = (
 /obj/effect/floor_decal/rust,
 /obj/random/contraband,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "twN" = (
 /obj/effect/floor_decal/rust,
 /obj/random/flashlight,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/centralport{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
-"txY" = (
-/obj/effect/floor_decal/rust,
-/obj/random/trash,
-/obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -15667,6 +15997,17 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/mixing{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
+"tXY" = (
+/obj/random/trash,
+/obj/effect/decal/cleanable/filth,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
+/area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "tYi" = (
@@ -16042,19 +16383,25 @@
 "uCD" = (
 /obj/random/junk,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "uDk" = (
-/obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
 /obj/random/junk,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -16703,7 +17050,13 @@
 /obj/random/powercell,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17022,7 +17375,13 @@
 	})
 "vVV" = (
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17127,26 +17486,32 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "wfM" = (
-/obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/cobweb2{
 	icon_state = "cobweb1"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "wgs" = (
-/obj/effect/floor_decal/rust,
 /obj/random/junk,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/obstruction,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17154,7 +17519,13 @@
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/zone_divider,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17165,11 +17536,14 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "whA" = (
-/obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17190,52 +17564,67 @@
 "wjg" = (
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/molten_item,
 /obj/item/ammo_magazine/ak74/plum{
 	initial_ammo = 0
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "wkT" = (
-/obj/effect/floor_decal/rust,
 /obj/random/junk,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "wlp" = (
-/obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "wnl" = (
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/item/clothing/head/helmet/space/syndicate/black/orange,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "wnp" = (
-/obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/cobweb2,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17381,15 +17770,18 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "wAa" = (
-/obj/effect/floor_decal/rust,
 /obj/random/junk,
 /obj/item/weapon/digestion_remains{
 	pixel_x = -9;
 	pixel_y = 1
 	},
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17405,18 +17797,26 @@
 "wAI" = (
 /obj/random/junk,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/random/humanoidremains,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "wAJ" = (
 /obj/random/junk,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/random/contraband,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17424,8 +17824,26 @@
 /obj/random/junk,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_mob/vore/retaliate/corrupthound/janihound/old{
+	ai_holder_type = /datum/ai_holder/simple_mob/retaliate;
+	desc = "A very old looking BARC janihound chassis! Evidently, it doesn't seem to be lawed anymore. You should probably leave it alone.";
+	health = 300;
+	maxHealth = 300;
+	name = "BARC-209";
+	size_multiplier = 2;
+	vore_bump_chance = 50;
+	vore_default_contamination_color = "black";
+	vore_default_contamination_flavor = "acrid";
+	vore_escape_chance = 10;
+	vore_ignores_undigestable = 1;
+	vore_pounce_successrate = 60
+	},
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17433,10 +17851,14 @@
 /obj/random/junk,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/ash,
 /obj/item/ammo_magazine/m762/empty,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17444,8 +17866,12 @@
 /obj/random/trash_pile,
 /obj/random/junk,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17462,20 +17888,28 @@
 /obj/random/junk,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/item/clothing/under/pants/mustangjeans/ripped,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "wCP" = (
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/trash_pile,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17501,7 +17935,6 @@
 	})
 "wDs" = (
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/generic,
 /obj/item/ammo_magazine/kord{
 	desc = "A rusty old box magazine for a TL-102 HSG. This one's been sitting for a long time.";
@@ -17510,7 +17943,12 @@
 	pixel_x = 7;
 	pixel_y = 6
 	},
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17839,19 +18277,25 @@
 /obj/random/trash_pile,
 /obj/random/junk,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/ash,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xbn" = (
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17861,12 +18305,15 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/item/weapon/digestion_remains/ribcage,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17888,14 +18335,17 @@
 /obj/random/junk,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/vomit,
 /obj/effect/decal/cleanable/generic,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17908,15 +18358,18 @@
 	pixel_x = -3;
 	pixel_y = 5
 	},
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/greenglow,
 /obj/effect/decal/cleanable/blood,
 /obj/item/clothing/under/lawyer/female,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17934,10 +18387,13 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/item/weapon/digestion_remains/ribcage,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/vomit,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -17948,47 +18404,61 @@
 	pixel_x = 5;
 	pixel_y = -9
 	},
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/toy/plushie/squid/orange,
 /obj/random/contraband,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xfb" = (
 /obj/random/junk,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_magazine/m762/empty,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xgY" = (
 /obj/random/trash,
 /obj/item/weapon/digestion_remains/skull/sergal,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
 /obj/effect/floor_decal/asteroid,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xhD" = (
 /obj/random/trash,
 /obj/item/clothing/under/excelsior/mixed,
-/obj/effect/floor_decal/rust,
 /obj/effect/gibspawner/generic,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18001,13 +18471,16 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xiq" = (
-/obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
 /obj/random/trash,
 /obj/random/trash,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18182,13 +18655,15 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xuC" = (
-/obj/effect/floor_decal/rust,
 /obj/random/trash,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/obstruction,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18206,11 +18681,14 @@
 	pixel_x = -3;
 	pixel_y = 5
 	},
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/flour,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18237,12 +18715,14 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/obstruction,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18296,12 +18776,13 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/item/weapon/digestion_remains/ribcage,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/fruit_smudge,
 /obj/item/ammo_magazine/m762/empty,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18323,13 +18804,15 @@
 "xAU" = (
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/humanoidremains,
 /obj/random/obstruction,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18371,14 +18854,15 @@
 	})
 "xCt" = (
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/flour,
 /obj/random/trash_pile,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18386,9 +18870,13 @@
 /obj/random/junk,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18396,32 +18884,39 @@
 /obj/random/trash_pile,
 /obj/random/junk,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
 /obj/item/weapon/handcuffs/cable/orange,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xFO" = (
 /obj/random/junk,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/molten_item,
 /obj/item/weapon/material/shard,
-/turf/simulated/floor/plating,
+/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/obj/structure/lattice,
+/turf/simulated/open,
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xGd" = (
-/obj/effect/floor_decal/rust,
 /obj/random/trash,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18461,10 +18956,12 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/item/ammo_magazine/m762/empty,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18480,21 +18977,26 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xIS" = (
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/random/humanoidremains,
 /obj/random/obstruction,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xJs" = (
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/item/ammo_magazine/ammo_box/b762/surplus,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18539,15 +19041,18 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xPa" = (
-/obj/effect/floor_decal/rust,
 /obj/random/trash,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/machinery/light/small/readylight{
 	dir = 1;
 	light_color = "#AF2A2A"
 	},
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18658,20 +19163,27 @@
 /obj/random/trash,
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/maglev,
+/turf/simulated/floor/tiled/techfloor/grid{
+	base_name = "maglev rails";
+	desc = "Train go brrrr.";
+	icon = 'icons/turf/flooring/maglevs.dmi';
+	icon_state = "maglevup";
+	name = "maglev rails"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xUf" = (
-/obj/effect/floor_decal/rust,
 /obj/structure/disposaloutlet{
 	dir = 4
 	},
 /obj/structure/disposalpipe/trunk,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/industrial/danger/full,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -18704,10 +19216,13 @@
 "xVs" = (
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18716,13 +19231,14 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/contraband,
 /obj/item/ammo_magazine/m762/empty,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18749,10 +19265,12 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18762,10 +19280,12 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18775,8 +19295,6 @@
 "xXH" = (
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
 /mob/living/simple_mob/vore/retaliate/corrupthound/janihound/old{
@@ -18793,7 +19311,11 @@
 	vore_ignores_undigestable = 1;
 	vore_pounce_successrate = 60
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18801,22 +19323,28 @@
 /obj/random/junk,
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/contraband,
 /obj/item/ammo_magazine/m762/empty,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xYo" = (
 /obj/random/trash,
 /obj/random/trash,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/ash,
 /obj/random/trash_pile,
-/turf/simulated/floor/plating,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18919,16 +19447,18 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "yfS" = (
-/obj/effect/floor_decal/rust,
 /obj/random/trash,
 /obj/structure/disposalpipe/segment{
 	dir = 1;
 	icon_state = "pipe-c"
 	},
 /obj/effect/decal/cleanable/filth,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/trash_pile,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -18940,8 +19470,12 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -18968,10 +19502,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/molten_item,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -18985,11 +19520,14 @@
 	dir = 8
 	},
 /obj/item/weapon/digestion_remains/skull/tajaran,
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
 /obj/effect/gibspawner/human,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -19006,8 +19544,6 @@
 	pixel_x = 5;
 	pixel_y = -9
 	},
-/obj/effect/floor_decal/rust,
-/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_magazine/ak74/plum{
@@ -19017,7 +19553,11 @@
 	color = "#3F1C0E";
 	dir = 9
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/water/indoors{
+	color = "#604838";
+	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
+	name = "filthy water"
+	},
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -33899,7 +34439,7 @@ xuQ
 xuQ
 xuQ
 xuQ
-gae
+skh
 gae
 gae
 gae
@@ -34596,7 +35136,7 @@ twn
 twn
 twn
 gfF
-ycp
+twn
 qCn
 twn
 ovx
@@ -34629,39 +35169,39 @@ twn
 twn
 twn
 twn
-nPV
-twn
-ycp
-ycp
 qCn
-ycp
+twn
+twn
+twn
+qCn
 twn
 twn
 twn
 twn
+twn
 vVV
 vVV
 vVV
 vVV
 vVV
-xJC
-xJC
-kaw
+vVV
+vVV
+akL
 pay
 vVV
-xJC
+vVV
 vVV
 vVV
 dss
 vVV
 vVV
 vVV
-xJC
-yaJ
-xJC
-yaJ
 vVV
-kaw
+dss
+vVV
+dss
+vVV
+akL
 vVV
 yhL
 hoA
@@ -35628,9 +36168,9 @@ twn
 twn
 twn
 twn
-ycp
 twn
-ycp
+twn
+twn
 twn
 twn
 twn
@@ -35664,9 +36204,9 @@ lgW
 twn
 kLJ
 twn
-ycp
-ycp
-ycp
+twn
+twn
+twn
 pxd
 vVV
 dss
@@ -35675,9 +36215,9 @@ dss
 vVV
 jrl
 vVV
-bTd
+bVS
 vVV
-xJC
+vVV
 vVV
 vVV
 bdb
@@ -35687,9 +36227,9 @@ vVV
 vVV
 vVV
 dss
-yaJ
-yaJ
-yaJ
+dss
+dss
+dss
 dss
 yhL
 apE
@@ -39766,9 +40306,9 @@ wlp
 xuC
 xUf
 yfS
-xGd
-cil
-xGd
+tXY
+drh
+tXY
 was
 rlb
 rlb
@@ -40025,7 +40565,7 @@ xVs
 ygs
 cxc
 wjg
-txY
+xGd
 was
 rlb
 rlb
@@ -40530,7 +41070,7 @@ was
 nGD
 lll
 uMb
-vwt
+nQM
 kNL
 wAQ
 xde
@@ -40796,7 +41336,7 @@ xXC
 yhQ
 frl
 bAT
-kNL
+cTT
 was
 rlb
 rlb
@@ -41310,7 +41850,7 @@ xXH
 kyJ
 hxs
 xbe
-wlp
+whA
 was
 rlb
 rlb
@@ -41824,7 +42364,7 @@ xYn
 nFG
 ibC
 aIX
-wlp
+whA
 was
 rlb
 rlb
@@ -42336,9 +42876,9 @@ xiq
 xIS
 obm
 xJs
-obm
+avD
 gWa
-wlp
+whA
 was
 rlb
 ick
@@ -65327,7 +65867,7 @@ qrJ
 qrJ
 tTv
 yis
-crS
+tfY
 ipe
 ipe
 ipe
