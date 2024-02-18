@@ -170,3 +170,36 @@
   - rscadd: Common diseases for the Infected Room event
   - balance: Infected Room is now slightly more common
   - code_imp: Added makedisease proc, to build custom viruses.
+2024-02-17:
+  VoRe-bot:
+  - rscadd: More traits!
+  - rscadd: Added a quiet gateway to The Dark
+  - rscadd: Added a quiet gateway to Sif
+  - rscadd: Added a missing shutter on deck one docking area
+  - rscadd: Added airlock tanks and station to the broken airlock by the vault and
+      connected it to distro, so this should function properly now.
+  - rscadd: Added some missing shutters from airlocks for consistency
+  - rscdel: Deleted some unnecessary emergency shutters on airlock windows for consistency
+  - rscdel: Deleted a random extra vent in deck 1 security checkpoint
+  - rscdel: Deleted unused wiring and scrubber pipework that used to go to the old
+      vault through maints. The vault now pulls from elsewhere.
+  - bugfix: Fixed the positioning of the fire alarms on the restaurant and bar outsider
+      shelter
+  - bugfix: Fixed the access levels on the trading ship airlock and suit cycler
+  - bugfix: 'Fixed the airlock on the trading ship so that the buttons and control
+      panel operate the doors. KNOWN BUG: Trying to cycle the airlock results in one
+      tick of cycled air before the vents shut down. I''m unsure how to fix this but
+      the doors can still be overridden and manually cycled. There''s atmos shields
+      on the doors either way to prevent air loss'
+  - bugfix: Rotates the pressure regulators on deck one to face the right direction,
+      no longer cutting off half of deck 1 from distro. This loop is probably in need
+      of improvements but it works.
+  - bugfix: Fix floating bullets
+  - refactor: DBCore updated to match TGStation
+  - server: TGS DMAPI Updated
+  - server: RUST-G Updated alongwith its DMAPI
+  - rscadd: Reenabled doorbells on airlocks and knocking on regular doors. This can
+      be done by leftalt-clicking on a door.
+2024-02-18:
+  VoRe-bot:
+  - bugfix: fixes the character Directory
