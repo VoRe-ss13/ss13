@@ -12794,6 +12794,9 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/item/stack/material/phoron{
+	amount = 10
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -13609,12 +13612,12 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "qzY" = (
-/obj/structure/table/standard,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/stack/material/phoron{
-	amount = 10
+/obj/structure/sink/kitchen{
+	dir = 8;
+	pixel_x = -5
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/xenobiology{
