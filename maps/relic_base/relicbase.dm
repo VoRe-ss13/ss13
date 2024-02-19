@@ -47,14 +47,14 @@
 	#include "relicbase-3.dmm" //Ground level
 	#include "relicbase-4.dmm" //Upper outpost levels
 	#include "relicbase-5.dmm" //the SKY
+	#include "relicbase-11.dmm" //Mines
 	#include "relicbase-6.dmm"	//Wilderness
 	#include "relicbase-7.dmm"  //Wilderness sky
+	#include "relicbase-12.dmm" //Ocean/Plains
+	#include "relicbase-13.dmm" //Surface Mines
 	#include "relicbase-8.dmm" //Explo carrier
 	#include "relicbase-9.dmm" //CC
 	#include "relicbase-10.dmm" //Transit
-	#include "relicbase-11.dmm" //Mines
-	#include "relicbase-12.dmm" //Ocean/Plains
-	#include "relicbase-13.dmm" //Surface Mines
 
 
 //	#include "southern_cross-casino.dmm" //CHOMPedit: Disabled to save resources and loaded in during events - Jack
