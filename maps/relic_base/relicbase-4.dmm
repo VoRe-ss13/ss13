@@ -17680,6 +17680,14 @@
 	},
 /turf/simulated/open,
 /area/crew_quarters/cafeteria)
+"IH" = (
+/obj/effect/landmark/map_data{
+	height = 4;
+	level = 4
+	},
+/obj/effect/overmap/visitable/planet/Thor,
+/turf/unsimulated/wall/planetary/normal/thor,
+/area/surface/outpost/wall)
 "II" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/carpet/bcarpet,
@@ -26323,7 +26331,7 @@ YD
 YD
 YD
 YD
-YD
+IH
 "}
 (2,1,1) = {"
 YD

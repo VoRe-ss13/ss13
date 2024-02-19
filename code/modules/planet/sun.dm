@@ -71,8 +71,7 @@
 /atom/movable/sun_visuals
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "white"
-	plane = PLANE_LIGHTING //TORCHEdit
-	blend_mode = 2 //TORCHEdit
+	plane = PLANE_O_LIGHTING_VISUAL
 	mouse_opacity = 0
 	alpha = 0
 	color = "#FFFFFF"

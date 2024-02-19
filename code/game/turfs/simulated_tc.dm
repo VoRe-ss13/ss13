@@ -34,8 +34,9 @@
 	for(var/datum/lighting_corner/corner in corners)
 		if(corner.sunlight == SUNLIGHT_NONE)
 			corner.sunlight = SUNLIGHT_POSSIBLE
-	var/datum/planet/planet = SSplanets.z_to_planet[holder.z]
-	sun = planet.sun_holder
+	if(SSplanets.z_to_planet[holder.z])
+		var/datum/planet/planet = SSplanets.z_to_planet[holder.z]
+		sun = planet.sun_holder
 
 /datum/component/sunlight_handler/InheritComponent(datum/component/sunlight_handler/old)
 	effect_str_r = old.effect_str_r
@@ -128,11 +129,11 @@
 					corner.sunlight = SUNLIGHT_POSSIBLE
 
 	if(!sun)
-		spawn(300)
+		if(SSplanets.z_to_planet[holder.z])
 			var/datum/planet/planet = SSplanets.z_to_planet[holder.z]
 			sun = planet.sun_holder
-			sunlight_update()
-		return
+		else
+			return
 
 	var/sunlight_mult = 0
 	switch(sunlight)

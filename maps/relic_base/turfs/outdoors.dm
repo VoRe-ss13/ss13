@@ -10,6 +10,85 @@
 #define TEMPERATURE_SIF 293.15 // warm
 #define TEMPERATURE_ALTSIF 225.15
 
+//Backwards compatibility sif tiles (mostly for POIs)
+/turf/simulated/floor/outdoors/mud/sif/planetuse
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/simulated/floor/outdoors/rocks/sif/planetuse
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/simulated/floor/tiled/sif/planetuse
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+	outdoors = OUTDOORS_YES
+
+/turf/simulated/floor/tiled/steel/sif/planetuse
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+	outdoors = OUTDOORS_YES
+
+/turf/simulated/floor/plating/sif/planetuse
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+	outdoors = OUTDOORS_YES
+
+/turf/simulated/floor/outdoors/snow/sif/planetuse
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/simulated/floor/outdoors/grass/sif/planetuse
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/simulated/floor/outdoors/grass/sif/forest/planetuse
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/simulated/floor/outdoors/dirt/sif/planetuse
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/simulated/mineral/sif
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/simulated/mineral/ignore_mapgen/sif
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/simulated/mineral/floor/sif
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/simulated/mineral/floor/ignore_mapgen/sif
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/simulated/floor/outdoors/mud/sif/planetuse
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/simulated/open/sif //CHOMP Edit now I'm adding shit here now too. Skylands
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_ALTSIF
+
 /turf/simulated/floor/outdoors/mud/thor/planetuse
 	oxygen		= MOLES_O2SIF
 	nitrogen	= MOLES_N2SIF
