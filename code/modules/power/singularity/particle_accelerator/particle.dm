@@ -101,4 +101,8 @@
 	else
 		//sleep(lag) //ChompEDIT
 		//move(lag) //ChompEDIT
+<<<<<<< HEAD
 		addtimer(CALLBACK(src, PROC_REF(move), lag), lag) //ChompEDIT
+=======
+		addtimer(CALLBACK(src, PROC_REF(move), lag), lag) //ChompEDIT
+>>>>>>> 55f28158c4 (Particle accelerator sleep() removal + outdated callback fix (#7790))
