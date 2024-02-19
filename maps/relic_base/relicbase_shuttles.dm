@@ -261,7 +261,7 @@
 	name = "Transit to Station"
 	landmark_tag = "arrivals_offsite"
 	base_area = /area/space
-	base_turf = /turf/space
+	base_turf = /turf/simulated/floor/tiled/techfloor/grid
 
 /obj/effect/shuttle_landmark/relicbase/arrivals/station
 	name = "Relic Base Arrivals Station"
@@ -286,7 +286,7 @@
 	landmark_tag = "escape_offsite"
 	docking_controller = "centcom_dock"
 	base_area = /area/space
-	base_turf = /turf/space
+	base_turf = /turf/simulated/floor/tiled/techfloor/grid
 
 /obj/effect/shuttle_landmark/relicbase/escape/station
 	name = "Relic Base Departures Station"
@@ -374,5 +374,3 @@
 
 
 // Heist shuttle
-
-
