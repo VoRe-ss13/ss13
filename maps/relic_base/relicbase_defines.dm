@@ -129,7 +129,7 @@
 		list("Redgate - Teppi Ranch"),
 		list("Redgate - Innland"),
 		list("Redgate - Dark Adventure"),
-		list("Redgate - Star Dog"),
+		// list("Redgate - Star Dog"),
 		list("Redgate - Hotsprings"),
 		list("Redgate - Rain City"),
 		list("Redgate - Islands Underwater","Redgate - Islands"),
