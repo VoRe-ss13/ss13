@@ -5925,6 +5925,15 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/main)
+"lK" = (
+/obj/effect/zone_divider,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/simulated/open{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost/sky)
 "lL" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -16614,6 +16623,12 @@
 /obj/item/device/perfect_tele,
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/heads/sc/sd)
+"GF" = (
+/obj/effect/zone_divider,
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outpost/main/landing)
 "GG" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -76550,10 +76565,10 @@ sJ
 fw
 oN
 Po
-ON
-zv
-zv
-io
+Uo
+EG
+EG
+lK
 zv
 zv
 zv
@@ -76807,11 +76822,11 @@ fw
 fw
 oN
 Po
+Sl
+Sl
+Sl
+GF
 ON
-zv
-zv
-io
-zv
 zv
 zv
 zv
@@ -77064,11 +77079,11 @@ fw
 fw
 oN
 Po
+Sl
+Sl
+Sl
+GF
 ON
-zv
-zv
-io
-zv
 zv
 zv
 zv
@@ -77321,11 +77336,11 @@ fw
 fw
 oN
 Po
+Sl
+Sl
+Sl
+GF
 ON
-zv
-zv
-io
-zv
 zv
 zv
 zv
@@ -77578,11 +77593,11 @@ fw
 fw
 oN
 Po
+Sl
+Sl
+Sl
+GF
 ON
-zv
-zv
-io
-zv
 zv
 zv
 zv
@@ -77835,11 +77850,11 @@ fw
 fw
 oN
 Po
+Sl
+Sl
+Sl
+GF
 ON
-zv
-zv
-io
-zv
 zv
 zv
 zv
@@ -78092,10 +78107,10 @@ Pk
 fw
 oN
 Po
-ON
-zv
-zv
-io
+tK
+fW
+fW
+bG
 zv
 zv
 zv
