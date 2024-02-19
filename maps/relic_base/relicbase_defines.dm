@@ -7,12 +7,12 @@
 #define Z_LEVEL_THE_SKY					5
 #define Z_LEVEL_SURFACE_WILDS			6
 #define Z_LEVEL_WILDERNESS_SKY			7
-#define Z_LEVEL_SURFACE_MINES			13
-#define Z_LEVEL_SURFACE_OCEAN			12
 #define Z_LEVEL_CENTCOM					8
 #define Z_LEVEL_TRANSIT					9
 #define Z_LEVEL_MISC 					10
 #define Z_LEVEL_UNDERMINES				11
+#define Z_LEVEL_SURFACE_OCEAN			12
+#define Z_LEVEL_SURFACE_MINES			13
 #define Z_LEVEL_FUELDEPOT				14
 #define Z_LEVEL_GATEWAY					15
 #define Z_LEVEL_REDGATE					16
