@@ -204,7 +204,7 @@
 /datum/map_template/thor_lateload/redgate/stardog
 	name = "Redgate - Star Dog"
 	desc = "That's a big dog!"
-	mappath = 'maps/redgate/stardog.dmm'
+	mappath = 'maps/relic_base/submaps/redgate/stardog.dmm'
 
 /datum/map_template/thor_lateload/redgate/hotsprings
 	name = "Redgate - Hotsprings"
