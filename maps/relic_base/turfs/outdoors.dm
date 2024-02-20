@@ -312,6 +312,11 @@
 	icon_state = "grass-heavy0"
 	edge_blending_priority = 4
 	initial_flooring = /decl/flooring/grass/heavy
+
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
 	turf_layers = list(
 		/turf/simulated/floor/outdoors/rocks,
 		/turf/simulated/floor/outdoors/dirt
@@ -359,6 +364,11 @@
 	temperature	= TEMPERATURE_SIF
 
 /turf/unsimulated/wall/planetary/normal/thor
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/simulated/open
 	oxygen		= MOLES_O2SIF
 	nitrogen	= MOLES_N2SIF
 	temperature	= TEMPERATURE_SIF
