@@ -4,14 +4,14 @@
 	name = "Garage Door"
 	open_sound = 'sound/machines/door/garagedooropen.ogg'
 	close_sound = 'sound/machines/door/garagedoorclose.ogg'
-	
+
 /obj/machinery/door/blast/gate/thin
 	open_sound = 'sound/machines/door/gateopen.ogg'
 	close_sound = 'sound/machines/door/gateclose.ogg'
-	
+
 /obj/machinery/camera/network/exterior
 	network = list(NETWORK_EXTERIOR)
-	
+
 /* Smol thing for funsies: Players will explore the tram tunnels.
  * However, Arrivals' South tunnel is cut off by mapping stuff, whereas departures and arrivals north isn't.
  * So! We'll tell players when they get there to go those directions.
@@ -33,7 +33,7 @@
 		)
 	else
 		return 0
-		
+
 // The tram's electrified maglev tracks
 /turf/simulated/floor/maglev // These WILL shock you.
 	name = "maglev track"
@@ -41,7 +41,7 @@
 	icon = 'icons/turf/flooring/maglevs.dmi'
 	icon_state = "maglevup"
 
-	var/area/shock_area = /area/hallway/primary // We use this, given our current tram /areas/ are set to this. Clean this up later if we give tram halls their own dedicated /area/ 
+	var/area/shock_area = /area/hallway/primary // We use this, given our current tram /areas/ are set to this. Clean this up later if we give tram halls their own dedicated /area/
 
 /turf/simulated/floor/maglev/Initialize()
 	. = ..()
@@ -57,19 +57,24 @@
 		track_zap(user)
 
 /turf/simulated/floor/maglev/proc/track_zap(var/mob/living/user)
-	if(!istype(user)) 
+	if(!istype(user))
 		return
 	if(electrocute_mob(user, shock_area, src))
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(5, 1, src)
 		s.start()
-		
+
 /turf/simulated/floor/maglev/unpowered
 	desc = "Magnetic levitation tram tracks. Unpowered? Looks like it. Safe? Your try."
-	
+
 /turf/simulated/floor/maglev/unpowered/Entered(var/atom/movable/AM, var/atom/old_loc)
 	return // No zappy.
-	
+
+/turf/unsimulated/mineral
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
 // Override for relicbase.
 // Base Mineral turf override, for testing.
 /turf/simulated/mineral/thor
@@ -83,13 +88,13 @@
 	desc = "Dark black basalt. Rich in exotic minerals."
 	icon = 'icons/turf/thor_ch.dmi'
 	icon_state = "deeprock"
-	
+
 /turf/simulated/mineral/thor/ignore_oregen
 	ignore_oregen = TRUE
-	
+
 /turf/simulated/mineral/thor/ignore_cavegen
 	ignore_cavegen = TRUE
-	
+
 /turf/simulated/mineral/thor/ignore_mapgen
 	ignore_mapgen = TRUE
 
@@ -100,13 +105,13 @@
 	icon = 'icons/turf/thor_ch.dmi'
 	icon_state = "basalt0"
 	temperature = 393.15
-	
+
 /turf/simulated/mineral/thor/floor/ignore_oregen
 	ignore_oregen = TRUE
-	
+
 /turf/simulated/mineral/thor/floor/ignore_cavegen
 	ignore_cavegen = TRUE
-	
+
 /turf/simulated/mineral/thor/floor/ignore_mapgen
 	ignore_mapgen = TRUE
 
@@ -121,13 +126,15 @@
 	desc = "Dark black basalt. Rich in exotic minerals."
 	icon_state = "deeprock"
 	icon = 'icons/turf/thor_ch.dmi'
+	temperature = 393.15
 
 /turf/unsimulated/mineral/thor/mines
 	name = "impassable dark rock"
 	desc = "Dark black basalt. Packed impossibly tightly, no way to get past this."
 	icon_state = "deeprock-solid"
 	icon = 'icons/turf/thor_ch.dmi'
-	
+	temperature = 393.15
+
 /turf/simulated/mineral/thor/floor/ignore_mapgen/cave
 	name = "basalt"
 
