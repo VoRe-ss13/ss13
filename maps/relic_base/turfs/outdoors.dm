@@ -350,3 +350,15 @@
 		/mob/living/simple_mob/vore/horse/big = 2,
 		/mob/living/simple_mob/vore/otie/zorgoia/feral = 0.2
 		)
+
+//Overrides to fix active edges
+
+/turf/unsimulated/mineral
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
+
+/turf/unsimulated/wall/planetary/normal/thor
+	oxygen		= MOLES_O2SIF
+	nitrogen	= MOLES_N2SIF
+	temperature	= TEMPERATURE_SIF
