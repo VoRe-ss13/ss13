@@ -198,6 +198,7 @@
 	desc = "A sweet, golden-brown liquid, usually used as part of confectionary. Just a spoonful wouldn't hurt, right?"
 	icon = 'icons/obj/food_ch.dmi'
 	icon_state = "butterscotch" //Sprite by Dinnel
+	trash = /obj/item/trash/snack_bowl
 	nutriment_amt = 1
 	nutriment_desc = list("sickly sweet deliciousness" = 1)
 
@@ -245,10 +246,26 @@
 	desc = "A precious little cinnamon roll, just begging to be eaten."
 	icon = 'icons/obj/food_ch.dmi'
 	icon_state = "cinnamon_roll" //Sprite by Dinnel
-	nutriment_amt = 1 //Todo - Change numbers.
-	nutriment_desc = list("a precious sweetness that needs protecting" = 2) //This is a WIP flavour, Could keep it if you don't mind the "gotta protect the precious cinnamon roll" joke
+	nutriment_amt = 2
+	nutriment_desc = list("a sweetness worth protecting" = 2)
 
-//TODO: Maybe butterscotch candies?
+/obj/item/weapon/reagent_containers/food/snacks/welders_original
+	name = "Welder's Original"
+	desc = "A golden, oblong sweet commonly eaten by both engineers and the elderly."
+	icon = 'icons/obj/food_ch.dmi'
+	icon_state = "welders_original" //Sprite by Dinnel
+	nutriment_amt = 2
+	nutriment_desc = list("smooth, creamy butterscotch and caramel" = 2)
+
+//GRANNY CREAM'S HOT BUTTER ICE CREAM
+/obj/item/weapon/reagent_containers/food/snacks/hotbuttericecream
+	name = "Hot Butter Ice Cream"
+	desc = "A bowl of ice cream and hot butter mixed together into an ominous, frothy concoction."
+	icon = 'icons/obj/food_ch.dmi'
+	icon_state = "hotbuttericecream" //Sprite by Dinnel
+	trash = /obj/item/trash/snack_bowl
+	nutriment_amt = 4
+	nutriment_desc = list ("hot butter" = 2, "ice cream" = 2)
 
 //So what if like yknow, you buy a bread tube and wow you actually get to test the new and improved producct.
 /obj/item/weapon/reagent_containers/food/snacks/tastybread/sequel
@@ -263,7 +280,7 @@
 	if(prob(1))
 		new /obj/item/weapon/reagent_containers/food/snacks/tastybread/sequel(src)
 		qdel(src) //Dispose of the body, let no one find it.
-		
+
 /obj/item/weapon/reagent_containers/food/snacks/tastybread/sequel/Initialize()
 	. = ..()
 	bitesize = 4
