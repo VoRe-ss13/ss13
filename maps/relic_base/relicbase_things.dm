@@ -70,11 +70,6 @@
 /turf/simulated/floor/maglev/unpowered/Entered(var/atom/movable/AM, var/atom/old_loc)
 	return // No zappy.
 
-/turf/unsimulated/mineral
-	oxygen		= MOLES_O2SIF
-	nitrogen	= MOLES_N2SIF
-	temperature	= TEMPERATURE_SIF
-
 // Override for relicbase.
 // Base Mineral turf override, for testing.
 /turf/simulated/mineral/thor

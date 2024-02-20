@@ -551,9 +551,6 @@ THOR_TURF_CREATE(/turf/simulated/floor)
 /turf/unsimulated/wall/planetary/normal/thor
 	name = "deep ocean"
 	alpha = 0
-	oxygen		= MOLES_O2SIF
-	nitrogen	= MOLES_N2SIF
-	temperature	= TEMPERATURE_SIF
 
 /obj/machinery/power/smes/buildable/offmap_spawn/empty/New()
 	..(1)
