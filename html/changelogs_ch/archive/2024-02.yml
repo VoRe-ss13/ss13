@@ -240,3 +240,25 @@
   - bugfix: Bigdragon noms didn't autotransfer
   tacoguy7765093:
   - bugfix: Fixed a corrupted overmap POI map crashing.
+2024-02-21:
+  Raeschen:
+  - rscadd: Emergency closet shelter in the tcomms supplies room
+  - bugfix: No qdelling hud element and selected_image /images
+  - rscdel: Remove hallucination 'fake_attacker'
+  VoRe-bot:
+  - bugfix: fixed high CPU usage in turf/simulated/wet_floor
+  - bugfix: Fixed a corrupted overmap POI map crashing.
+  - bugfix: Changed the recipe for hot butter ice cream to use ice instead of milk.
+  - bugfix: Gives Butterscotch and Hot Butter Ice Cream trash items when eaten. You
+      have to eat the bowls deliberately now.
+  - rscadd: Added CI workflow to test out TGS based changes.
+  - bugfix: Bigdragon noms didn't autotransfer
+  cadyn:
+  - bugfix: fix VV number inputs
+  - rscadd: Emergency closet shelter in the tcomms supplies room
+  - qol: developers no longer have to generate a javascript bundle when changing the
+      user interface
+  - bugfix: optimisation on particle accelerator
+  - bugfix: outdated callback syntax
+  - bugfix: No qdelling hud element and selected_image /images
+  - code_imp: stop qdelling progressbars
