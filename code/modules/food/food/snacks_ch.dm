@@ -208,7 +208,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/slicable/buttspie
 	name = "Butterscotch-Cinnamon Pie"
-	desc = "A delightfully caramel-coloured filling in a crispy pie base, dotted with sprays of cream."
+	desc = "A delightfully caramel-coloured filling in a crispy pie base."
 	icon = 'icons/obj/food_ch.dmi'
 	icon_state = "butts_pie" //Sprite by Dinnel
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/slice/buttspie
@@ -219,11 +219,11 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/slicable/buttspie/Initialize()
 	..()
-	bitesize = 4
+	bitesize = 2
 
-/obj/item/weapon/reagent_containers/food/snacks/slice/buttspie //TODO: Fix the numbers.
+/obj/item/weapon/reagent_containers/food/snacks/slice/buttspie
 	name = "Slice of Butterscotch-Cinnamon Pie"
-	desc = "A slice of pie, filled with delightfully caramel-coloured filling. There a spray of cream on top."
+	desc = "A slice of pie, filled with delightfully caramel-coloured filling."
 	icon = 'icons/obj/food_ch.dmi'
 	icon_state = "butts_pie_slice" //Sprite by Dinnel
 	trash = /obj/item/trash/plate
@@ -238,8 +238,8 @@
 	desc = "Spicy little candy rounds for very naughty individuals."
 	icon = 'icons/obj/food_ch.dmi'
 	icon_state = "spicy_boys" //Sprite by Dinnel
-	nutriment_amt = 1 //todo - change numbers
-	nutriment_desc = list("a sweet, candy-like spiciness." = 2) //WIP flavour??
+	nutriment_amt = 2
+	nutriment_desc = list("sweet cinnamon candy" = 2)
 
 /obj/item/weapon/reagent_containers/food/snacks/cinnamonroll
 	name = "cinnamon roll"
