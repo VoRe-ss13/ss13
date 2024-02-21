@@ -105,31 +105,28 @@
       allowing outsiders to access their own capsule
   - bugfix: Fixed the starting atmos on the skipjack plating parts of the SurvivalSecurity
       shelter so that it's breathable and not just Nitrogen.
+  Raeschen:
+  - balance: Shadekin HP nerfs (Per eye color)
+  - balance: Bluespace crystals dephase shadekin that step on them
+  - balance: Bluespace crystals will dephase shadekin in a 3 tile radius when thrown.
   TheCaramelion:
   - rscdel: Removed "Viral Infection" from the rotation.
   - rscadd: Added "Infected Room" to the rotation.
   - code_imp: event_manager.ch should be easier to read now.
   - bugfix: Blood, vomit and mucus containing viruses will now spread it.
-  VoRe-bot:
-  - bugfix: Removed access levels from buttons and doors on SurvivalSecurity shelter,
-      allowing outsiders to access their own capsule
-  - bugfix: Fixed the starting atmos on the skipjack plating parts of the SurvivalSecurity
-      shelter so that it's breathable and not just Nitrogen.
-  - bugfix: fixed horrible awful code for mob spawners
-  - rscadd: The hidden slimes should be useable and benefical
   WolvesAndOwls:
   - rscadd: Mice are now ghostpods
   cadyn:
   - bugfix: fixed horrible awful code for mob spawners
 2024-02-11:
-  VoRe-bot:
+  Kashargul:
   - bugfix: chemMaster / ChemSynthesizer, color mate interface and some vorePanel
       code style
-  - balance: Shadekin HP nerfs (Per eye color)
-  - balance: Bluespace crystals dephase shadekin that step on them
-  - balance: Bluespace crystals will dephase shadekin in a 3 tile radius when thrown.
+  cadyn:
   - bugfix: mouse spawners
 2024-02-12:
+  Kashargul:
+  - bugfix: fixes some crashing chem UIs
   Upstream:
   - admin: added "Short Stacker" admin item
   - rscadd: Added a new variant of the size collar (Created by using wrench to break
@@ -141,40 +138,52 @@
   - admin: new eventkit verb that allows eventmanagers/admins to create fake PDA conversations
       (or props for them) without actually having to spawn a PDA/PDA Server (including
       PDA Identities)
-  cadyn:
-  - rscadd: Added fax rendering for staff
-  - rscadd: Torchstation name to things
 2024-02-13:
-  VoRe-bot:
-  - bugfix: fixes some crashing chem UIs
-  - qol: Makes more neutral traits be able to be taken by non-custom species.
+  Raeschen:
   - admin: PDA identities 'Eventkit' --> 'fun', tab clutter
-2024-02-14:
   Upstream:
   - bugfix: fixed the user interface for the CharacterDirectory.
-  VoRe-bot:
+  tacoguy7765093:
+  - qol: Makes more neutral traits be able to be taken by non-custom species.
+2024-02-14:
+  Fracshun:
   - qol: Enabled logging on interactions with the Mind Binder and Body Snatcher
   - balance: Increased the time to bind minds into mobs up to 30 seconds
   - balance: whitelists only specific mobs
   - balance: blacklists key items
-2024-02-15:
-  VoRe-bot:
-  - rscadd: Added round_id
+  Raeschen:
   - rscadd: Guidelines for shadekin and outsider, linked on spawn.
+2024-02-15:
+  ItsSelis:
+  - rscadd: Added round_id
 2024-02-16:
-  VoRe-bot:
+  FluffMedic:
+  - rscadd: Vending machines in the hidden mountain area
+  Raeschen:
+  - rscadd: configurable role-request/fax to discord settings.
+  - rscadd: role request will ping if configured
+  - admin: Adminsent faxes include the body (if any)
+  - rscadd: Faxes to discord via TGS discord chatbot config
+  Sharkmare:
   - rscadd: Recorder into loadout
   - rscadd: Saxophone into loadout
   - bugfix: loadout names for Trombone
-  - rscadd: Vending machines in the hidden mountain area
+  TheCaramelion:
   - rscadd: Common diseases for the Infected Room event
   - balance: Infected Room is now slightly more common
   - code_imp: Added makedisease proc, to build custom viruses.
+  cadyn:
+  - bugfix: Fix floating bullets
+  - refactor: DBCore updated to match TGStation
+  - server: TGS DMAPI Updated
+  - server: RUST-G Updated alongwith its DMAPI
 2024-02-17:
-  VoRe-bot:
+  Aroliacue:
+  - rscadd: Reenabled doorbells on airlocks and knocking on regular doors. This can
+      be done by leftalt-clicking on a door.
+  FluffMedic:
   - rscadd: More traits!
-  - rscadd: Added a quiet gateway to The Dark
-  - rscadd: Added a quiet gateway to Sif
+  Missile597:
   - rscadd: Added a missing shutter on deck one docking area
   - rscadd: Added airlock tanks and station to the broken airlock by the vault and
       connected it to distro, so this should function properly now.
@@ -194,9 +203,40 @@
   - bugfix: Rotates the pressure regulators on deck one to face the right direction,
       no longer cutting off half of deck 1 from distro. This loop is probably in need
       of improvements but it works.
-  - bugfix: Fix floating bullets
-  - refactor: DBCore updated to match TGStation
-  - server: TGS DMAPI Updated
-  - server: RUST-G Updated alongwith its DMAPI
-  - rscadd: Reenabled doorbells on airlocks and knocking on regular doors. This can
-      be done by leftalt-clicking on a door.
+  TheCaramelion:
+  - rscadd: Added a quiet gateway to The Dark
+  - rscadd: Added a quiet gateway to Sif
+2024-02-18:
+  Kashargul:
+  - bugfix: fixes the character Directory
+2024-02-19:
+  Kashargul:
+  - rscadd: the item digest blacklist to belly reagents
+  - rscadd: the drone board to the list to prevent round removing of lost drones in
+      vore encounters
+  - bugfix: fixes the runtime in the liquid system hopefully fully this time
+  KotetsuRedwood:
+  - rscadd: Added Welder's Originals as a cookable food.
+  - rscadd: Added Hot Butter Ice Cream as a cookable food.
+  - spellcheck: Removed description of cream topping from the butterscotch pie.
+  - rscadd: Added *gwah and *wawa as sound emotes.
+  - sound: Added sounds for *gwah and *wawa emotes.
+2024-02-20:
+  ItsSelis:
+  - qol: developers no longer have to generate a javascript bundle when changing the
+      user interface
+  - rscadd: Added CI workflow to test out TGS based changes.
+  Kashargul:
+  - bugfix: the character directory sorting table for react
+  KotetsuRedwood:
+  - bugfix: Changed the recipe for hot butter ice cream to use ice instead of milk.
+  - bugfix: Gives Butterscotch and Hot Butter Ice Cream trash items when eaten. You
+      have to eat the bowls deliberately now.
+  Raeschen:
+  - bugfix: optimisation on particle accelerator
+  - bugfix: outdated callback syntax
+  - bugfix: fixed high CPU usage in turf/simulated/wet_floor
+  - code_imp: stop qdelling progressbars
+  - bugfix: Bigdragon noms didn't autotransfer
+  tacoguy7765093:
+  - bugfix: Fixed a corrupted overmap POI map crashing.
