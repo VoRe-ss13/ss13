@@ -35398,6 +35398,9 @@
 /area/surface/outpost/civilian/emergency_storage)
 "pQm" = (
 /obj/machinery/power/grid_checker,
+/obj/structure/cable/heavyduty{
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/substation/engineering)
 "pQy" = (
