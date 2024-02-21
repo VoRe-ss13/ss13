@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscadd: "Added CI workflow to test out TGS based changes."
