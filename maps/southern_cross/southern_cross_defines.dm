@@ -16,15 +16,6 @@ but they don't actually change anything about the load order
 #define Z_LEVEL_CENTCOM					7
 #define Z_LEVEL_TRANSIT					8
 #define Z_LEVEL_SURFACE_WILD			9
-<<<<<<< HEAD
-#define Z_LEVEL_SURFACE_SKYLANDS		10
-#define Z_LEVEL_SURFACE_VALLEY 			11
-#define Z_LEVEL_VR_REALM                12
-#define Z_LEVEL_FUELDEPOT				13
-#define Z_LEVEL_AEROSTAT				14
-#define Z_LEVEL_NS_MINE					15
-#define Z_LEVEL_GATEWAY					16
-=======
 #define Z_LEVEL_SURFACE_VALLEY 			10
 #define Z_LEVEL_VR_REALM                	11
 #define Z_LEVEL_FUELDEPOT				12
@@ -33,8 +24,6 @@ but they don't actually change anything about the load order
 //#define Z_LEVEL_SURFACE_SKYLANDS		//Sky islands removal due to lack of use
 //#define Z_LEVEL_AEROSTAT			//Disabled due to lack of use
 //#define Z_LEVEL_NS_MINE				//Disabled due to lack of use
-
->>>>>>> 5ab4e43201 (Remove sky islands, retouch wilderness shelter for single Z courtesy of Bib (#7805))
 
 //#define Z_LEVEL_SURFACE_CASINO			xx	//CHOMPedit - KSC = So there is weather on the casino. //Raz - When you do casino again, launch it in a test server, note what z-level it is on, and then replace xx with that z-level you noted. Revert back to xx and comment out when done.
 //#define Z_LEVEL_EMPTY_SPACE				xx //CHOMPedit: Disabling empty space as now the overmap generates empty space on demand.
