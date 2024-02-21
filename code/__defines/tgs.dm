@@ -1,6 +1,6 @@
 // tgstation-server DMAPI
 
-#define TGS_DMAPI_VERSION "7.0.2"
+#define TGS_DMAPI_VERSION "7.0.1"
 
 // All functions and datums outside this document are subject to change with any version and should not be relied on.
 
@@ -150,7 +150,7 @@
  * * event_handler - Optional user defined [/datum/tgs_event_handler].
  * * minimum_required_security_level: The minimum required security level to run the game in which the DMAPI is integrated. Can be one of [TGS_SECURITY_ULTRASAFE], [TGS_SECURITY_SAFE], or [TGS_SECURITY_TRUSTED].
  */
-/world/proc/TgsNew(datum/tgs_event_handler/event_handler, minimum_required_security_level = TGS_SECURITY_ULTRASAFE)
+/world/proc/TgsNew(datum/tgs_event_handler/event_handler, minimum_required_security_level = TGS_SECURITY_TRUSTED)
 	return
 
 /**
@@ -427,7 +427,6 @@
 
 /**
  * Send a message to connected chats. This function may sleep!
- * If TGS is offline when called, the message may be placed in a queue to be sent and this function will return immediately. Your message will be sent when TGS reconnects to the game.
  *
  * message - The [/datum/tgs_message_content] to send.
  * admin_only: If [TRUE], message will be sent to admin connected chats. Vice-versa applies.
@@ -437,7 +436,6 @@
 
 /**
  * Send a private message to a specific user. This function may sleep!
- * If TGS is offline when called, the message may be placed in a queue to be sent and this function will return immediately. Your message will be sent when TGS reconnects to the game.
  *
  * message - The [/datum/tgs_message_content] to send.
  * user: The [/datum/tgs_chat_user] to PM.
@@ -447,7 +445,6 @@
 
 /**
  * Send a message to connected chats that are flagged as game-related in TGS. This function may sleep!
- * If TGS is offline when called, the message may be placed in a queue to be sent and this function will return immediately. Your message will be sent when TGS reconnects to the game.
  *
  * message - The [/datum/tgs_message_content] to send.
  * channels - Optional list of [/datum/tgs_chat_channel]s to restrict the message to.

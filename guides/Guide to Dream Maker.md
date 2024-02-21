@@ -7,7 +7,7 @@ https://i.imgur.com/aJXB9sN.png
 We’re going to go to File, Open Environment, like so:
 https://i.imgur.com/F8K8Nmz.png
 
-You’ll then locate your CHOMPStation folder, and the .dme inside. Shown is mine:
+You’ll then locate your TORCHStation13 folder, and the .dme inside. Shown is mine:
 https://i.imgur.com/tvTDBWp.png
 
 Choose “Open”
