@@ -13,8 +13,7 @@
 			if(T && !istype(T,/turf/simulated/open))
 				make_indoors()
 		AddComponent(/datum/component/sunlight_handler)
-		SEND_SIGNAL(src,COMSIG_SUNLIGHT_CHECK)
-
+		SEND_SIGNAL(src,COMSIG_SUNLIGHT_INIT)
 
 /datum/component/sunlight_handler
 	var/datum/sun_holder/sun
@@ -24,19 +23,11 @@
 	var/effect_str_b = 0
 	var/list/datum/lighting_corner/affected = list()
 	var/sunlight = FALSE
+	var/inherited = FALSE
 
 /datum/component/sunlight_handler/New()
 	. = ..()
 	holder = parent
-	if(!holder.lighting_corners_initialised)
-		holder.generate_missing_corners()
-	var/corners = list(holder.lighting_corner_NE,holder.lighting_corner_NW,holder.lighting_corner_SE,holder.lighting_corner_SW)
-	for(var/datum/lighting_corner/corner in corners)
-		if(corner.sunlight == SUNLIGHT_NONE)
-			corner.sunlight = SUNLIGHT_POSSIBLE
-	if(SSplanets.z_to_planet[holder.z])
-		var/datum/planet/planet = SSplanets.z_to_planet[holder.z]
-		sun = planet.sun_holder
 
 /datum/component/sunlight_handler/InheritComponent(datum/component/sunlight_handler/old)
 	effect_str_r = old.effect_str_r
@@ -44,16 +35,40 @@
 	effect_str_b = old.effect_str_b
 	sunlight = old.sunlight
 	affected = old.affected
+	inherited = TRUE
 
 /datum/component/sunlight_handler/Initialize()
 	RegisterSignal(parent, COMSIG_TURF_UPDATE, /datum/component/sunlight_handler/proc/turf_update)
 	RegisterSignal(parent, COMSIG_SUNLIGHT_CHECK, /datum/component/sunlight_handler/proc/sunlight_check)
 	RegisterSignal(parent, COMSIG_SUNLIGHT_UPDATE, /datum/component/sunlight_handler/proc/sunlight_update)
+	RegisterSignal(parent, COMSIG_SUNLIGHT_INIT, /datum/component/sunlight_handler/proc/manualInit)
+
+//Moved initialization here to make sure that it doesn't happen too early when replacing turfs.
+/datum/component/sunlight_handler/proc/manualInit()
+	if(!holder.lighting_corners_initialised)
+		holder.generate_missing_corners()
+	var/corners = list(holder.lighting_corner_NE,holder.lighting_corner_NW,holder.lighting_corner_SE,holder.lighting_corner_SW)
+	for(var/datum/lighting_corner/corner in corners)
+		if(corner.sunlight == SUNLIGHT_NONE)
+			corner.sunlight = SUNLIGHT_POSSIBLE
+	if(SSplanets && SSplanets.z_to_planet.len >= holder.z && SSplanets.z_to_planet[holder.z])
+		var/datum/planet/planet = SSplanets.z_to_planet[holder.z]
+		sun = planet.sun_holder
+	if(!inherited)
+		SEND_SIGNAL(holder,COMSIG_SUNLIGHT_CHECK)
+	else
+		SEND_SIGNAL(holder,COMSIG_SUNLIGHT_UPDATE)
+		for(var/dir in (cardinal + cornerdirs))
+			SEND_SIGNAL(get_step(holder, dir),COMSIG_SUNLIGHT_UPDATE)
 
 /datum/component/sunlight_handler/proc/turf_update()
 	//var/oldtype = args[2]
 	var/old_density = args[3]
 	var/turf/new_turf = args[4]
+	var/above = args[5]
+	if(above)
+		sunlight_check()
+		return
 	if(new_turf.density && !old_density && sunlight) //This has the potential to cut off our sunlight
 		sunlight_check()
 	else if (!new_turf.density && old_density && !sunlight) //This has the potential to introduce sunlight
@@ -111,25 +126,28 @@
 
 /datum/component/sunlight_handler/proc/sunlight_update()
 	var/list/corners = list(holder.lighting_corner_NE,holder.lighting_corner_NW,holder.lighting_corner_SE,holder.lighting_corner_SW)
+	var/list/new_corners = list()
+	var/list/removed_corners = list()
 	for(var/datum/lighting_corner/corner in corners)
 		switch(corner.sunlight)
 			if(SUNLIGHT_NONE)
 				if(sunlight)
 					corner.sunlight = SUNLIGHT_CURRENT
-					affected += corner
+					new_corners += corner
 				else
 					corner.sunlight = SUNLIGHT_POSSIBLE
 			if(SUNLIGHT_POSSIBLE)
 				if(sunlight)
 					corner.sunlight = SUNLIGHT_CURRENT
-					affected += corner
+					new_corners += corner
 			if(SUNLIGHT_CURRENT)
 				if((corner in affected) && !sunlight)
 					affected -= corner
+					removed_corners += corner
 					corner.sunlight = SUNLIGHT_POSSIBLE
 
 	if(!sun)
-		if(SSplanets.z_to_planet[holder.z])
+		if(SSplanets && SSplanets.z_to_planet.len >= holder.z && SSplanets.z_to_planet[holder.z])
 			var/datum/planet/planet = SSplanets.z_to_planet[holder.z]
 			sun = planet.sun_holder
 		else
@@ -152,6 +170,13 @@
 
 	for(var/datum/lighting_corner/corner in affected)
 		corner.update_lumcount(delta_r,delta_g,delta_b)
+
+	for(var/datum/lighting_corner/corner in new_corners)
+		corner.update_lumcount(red,green,blue)
+		affected += corner
+
+	for(var/datum/lighting_corner/corner in removed_corners)
+		corner.update_lumcount(-effect_str_r,-effect_str_g,-effect_str_b)
 
 	effect_str_r = red
 	effect_str_g = green

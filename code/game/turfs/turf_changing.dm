@@ -44,6 +44,7 @@
 	var/old_dynamic_lumcount = dynamic_lumcount
 	var/oldtype = src.type	//TORCHEdit
 	var/old_density = src.density //TORCHEdit
+	var/was_open = istype(src,/turf/simulated/open) //TORCHEdit
 
 	var/turf/Ab = GetAbove(src)
 	if(Ab)
@@ -66,9 +67,9 @@
 
 	var/turf/new_turf  //TORCHEdit
 	if(ispath(N, /turf/simulated/floor))
-		var/turf/simulated/W = new N( locate(src.x, src.y, src.z) )
 		//TORCHEdit Begin
 		var/datum/component/sunlight_handler/shandler = GetComponent(/datum/component/sunlight_handler)
+		var/turf/simulated/W = new N( locate(src.x, src.y, src.z) )
 		if(shandler)
 			var/datum/component/sunlight_handler/new_shandler = W.AddComponent(/datum/component/sunlight_handler)
 			new_shandler.InheritComponent(shandler)
@@ -95,11 +96,11 @@
 		. = W
 
 	else
-
-		var/turf/W = new N( locate(src.x, src.y, src.z) )
-
 		//TORCHEdit Begin
 		var/datum/component/sunlight_handler/shandler = GetComponent(/datum/component/sunlight_handler)
+		var/turf/W = new N( locate(src.x, src.y, src.z) )
+
+
 		if(shandler)
 			var/datum/component/sunlight_handler/new_shandler = W.AddComponent(/datum/component/sunlight_handler)
 			new_shandler.InheritComponent(shandler)
@@ -123,32 +124,21 @@
 		. =  W
 
 	//TORCHEdit begin
-	//SEND_SIGNAL(src, COMSIG_TURF_UPDATE, oldtype, old_density, W)
-	//Sends signals in a cross pattern to all tiles that may have their sunlight var affected including this tile.
-	for(var/i = - SUNLIGHT_RADIUS, i <= SUNLIGHT_RADIUS, i++)
-		var/turf/T = locate(src.x + i, src.y, src.z)
-		if(T)
-			SEND_SIGNAL(T, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf)
+	var/is_open = istype(new_turf,/turf/simulated/open)
 
-	for(var/i = - SUNLIGHT_RADIUS, i <= SUNLIGHT_RADIUS, i++)
-		if(i == 0) //Don't send the signal to ourselves twice.
-			return
-		var/turf/T = locate(src.x, src.y + i, src.z)
-		if(T)
-			SEND_SIGNAL(T, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf)
+	propogate_sunlight_changes(oldtype, old_density, new_turf)
+	var/turf/simulated/cur_turf = src
+	if(is_open != was_open)
+		do
+			cur_turf = GetBelow(cur_turf)
+			if(is_open)
+				cur_turf.make_outdoors()
+			else
+				cur_turf.make_indoors()
+			cur_turf.propogate_sunlight_changes(oldtype, old_density, new_turf, above = TRUE)
+		while(istype(cur_turf,/turf/simulated/open) && HasBelow(cur_turf.z))
+	//TORCHEdit End
 
-	//Also need to send signals diagonally too now.
-	var/radius = ONE_OVER_SQRT_2 * SUNLIGHT_RADIUS + 1
-	for(var/dir in cornerdirs)
-		var/steps = 1
-		var/turf/cur_turf = get_step(src,dir)
-
-		while(steps < radius)
-			if(cur_turf)
-				SEND_SIGNAL(cur_turf, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf)
-			steps += 1
-			cur_turf = get_step(cur_turf,dir)
-	//TORCHEdit end
 	dangerous_objects = old_dangerous_objects
 
 	lighting_corner_NE = old_lighting_corner_NE
@@ -175,5 +165,36 @@
 		for(var/turf/space/space_tile in RANGE_TURFS(1, src))
 			space_tile.update_starlight()
 
+	SEND_SIGNAL(src,COMSIG_SUNLIGHT_INIT) //TORCHEdit
 	if(preserve_outdoors)
 		outdoors = old_outdoors
+
+
+//TORCHEdit begin
+/turf/proc/propogate_sunlight_changes(oldtype, old_density, new_turf, var/above = FALSE)
+	//SEND_SIGNAL(src, COMSIG_TURF_UPDATE, oldtype, old_density, W)
+	//Sends signals in a cross pattern to all tiles that may have their sunlight var affected including this tile.
+	for(var/i = - SUNLIGHT_RADIUS, i <= SUNLIGHT_RADIUS, i++)
+		var/turf/T = locate(src.x + i, src.y, src.z)
+		if(T)
+			SEND_SIGNAL(T, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf, above)
+
+	for(var/i = - SUNLIGHT_RADIUS, i <= SUNLIGHT_RADIUS, i++)
+		if(i == 0) //Don't send the signal to ourselves twice.
+			continue
+		var/turf/T = locate(src.x, src.y + i, src.z)
+		if(T)
+			SEND_SIGNAL(T, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf, above)
+
+	//Also need to send signals diagonally too now.
+	var/radius = ONE_OVER_SQRT_2 * SUNLIGHT_RADIUS + 1
+	for(var/dir in cornerdirs)
+		var/steps = 1
+		var/turf/cur_turf = get_step(src,dir)
+
+		while(steps < radius)
+			if(cur_turf)
+				SEND_SIGNAL(cur_turf, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf, above)
+			steps += 1
+			cur_turf = get_step(cur_turf,dir)
+//TORCHEdit end
