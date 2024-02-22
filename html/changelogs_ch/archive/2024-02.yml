@@ -262,3 +262,7 @@
   - bugfix: outdated callback syntax
   - bugfix: No qdelling hud element and selected_image /images
   - code_imp: stop qdelling progressbars
+2024-02-22:
+  VoRe-bot:
+  - rscadd: miasma for the chem grenade that some mobs spawn on loading
+  - bugfix: Several odd materials use the proper numbers
