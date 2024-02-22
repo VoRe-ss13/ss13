@@ -88,10 +88,23 @@
 		light_source.recalc_corner(src)
 
 // God that was a mess, now to do the rest of the corner code! Hooray!
-/datum/lighting_corner/proc/update_lumcount(delta_r, delta_g, delta_b)
+/datum/lighting_corner/proc/update_lumcount(delta_r, delta_g, delta_b, var/from_sholder = FALSE) //TORCHEdit
 	if (!(delta_r || delta_g || delta_b)) // 0 is falsey ok
 		return
 
+	//TORCHEdit Begin
+	if(sunlight == SUNLIGHT_ONLY && LAZYLEN(affecting)) change_sun()
+	if(sunlight == SUNLIGHT_CURRENT && !LAZYLEN(affecting) && !from_sholder)
+		if(master_NE)
+			SEND_SIGNAL(master_NE,COMSIG_SUNLIGHT_UPDATE,src)
+		if(master_SE)
+			SEND_SIGNAL(master_SE,COMSIG_SUNLIGHT_UPDATE,src)
+		if(master_SW)
+			SEND_SIGNAL(master_SW,COMSIG_SUNLIGHT_UPDATE,src)
+		if(master_NW)
+			SEND_SIGNAL(master_NW,COMSIG_SUNLIGHT_UPDATE,src)
+
+	//TORCHEdit End
 	lum_r += delta_r
 	lum_g += delta_g
 	lum_b += delta_b
@@ -175,3 +188,48 @@
 		SSlighting.corners_queue -= src
 
 	return ..()
+
+//TORCHEdit Begin
+/datum/lighting_corner/proc/update_sun()
+	if(!SSlighting.global_shandler)
+		return
+	lum_r = SSlighting.global_shandler.red
+	lum_g = SSlighting.global_shandler.green
+	lum_b = SSlighting.global_shandler.blue
+	cache_r = SSlighting.global_shandler.cache_r
+	cache_g = SSlighting.global_shandler.cache_g
+	cache_b = SSlighting.global_shandler.cache_b
+
+	var/datum/lighting_object/lighting_object = master_NE?.lighting_object
+	if (lighting_object && !lighting_object.needs_update)
+		lighting_object.needs_update = TRUE
+		SSlighting.objects_queue += lighting_object
+
+	lighting_object = master_SE?.lighting_object
+	if (lighting_object && !lighting_object.needs_update)
+		lighting_object.needs_update = TRUE
+		SSlighting.objects_queue += lighting_object
+
+	lighting_object = master_SW?.lighting_object
+	if (lighting_object && !lighting_object.needs_update)
+		lighting_object.needs_update = TRUE
+		SSlighting.objects_queue += lighting_object
+
+	lighting_object = master_NW?.lighting_object
+	if (lighting_object && !lighting_object.needs_update)
+		lighting_object.needs_update = TRUE
+		SSlighting.objects_queue += lighting_object
+
+/datum/lighting_corner/proc/change_sun()
+	lum_r = 0
+	lum_g = 0
+	lum_b = 0
+	if(master_NE)
+		SEND_SIGNAL(master_NE,COMSIG_SUNLIGHT_CHANGED,src)
+	if(master_SE)
+		SEND_SIGNAL(master_SE,COMSIG_SUNLIGHT_CHANGED,src)
+	if(master_SW)
+		SEND_SIGNAL(master_SW,COMSIG_SUNLIGHT_CHANGED,src)
+	if(master_NW)
+		SEND_SIGNAL(master_NW,COMSIG_SUNLIGHT_CHANGED,src)
+//TORCHEdit End

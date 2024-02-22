@@ -18,10 +18,12 @@
 /datum/component/sunlight_handler
 	var/datum/sun_holder/sun
 	var/turf/simulated/holder
+	var/datum/lighting_object/only_sun_object
 	var/effect_str_r = 0
 	var/effect_str_g = 0
 	var/effect_str_b = 0
 	var/list/datum/lighting_corner/affected = list()
+	var/list/datum/lighting_corner/only_sun = list()
 	var/sunlight = FALSE
 	var/inherited = FALSE
 
@@ -42,6 +44,7 @@
 	RegisterSignal(parent, COMSIG_SUNLIGHT_CHECK, /datum/component/sunlight_handler/proc/sunlight_check)
 	RegisterSignal(parent, COMSIG_SUNLIGHT_UPDATE, /datum/component/sunlight_handler/proc/sunlight_update)
 	RegisterSignal(parent, COMSIG_SUNLIGHT_INIT, /datum/component/sunlight_handler/proc/manualInit)
+	RegisterSignal(parent, COMSIG_SUNLIGHT_CHANGED, /datum/component/sunlight_handler/proc/corner_sunlight_change)
 
 //Moved initialization here to make sure that it doesn't happen too early when replacing turfs.
 /datum/component/sunlight_handler/proc/manualInit()
@@ -68,11 +71,14 @@
 	var/above = args[5]
 	if(above)
 		sunlight_check()
+		sunlight_update()
 		return
 	if(new_turf.density && !old_density && sunlight) //This has the potential to cut off our sunlight
 		sunlight_check()
+		sunlight_update()
 	else if (!new_turf.density && old_density && !sunlight) //This has the potential to introduce sunlight
 		sunlight_check()
+		sunlight_update()
 
 /datum/component/sunlight_handler/proc/sunlight_check()
 	var/cur_sunlight = sunlight
@@ -128,6 +134,7 @@
 	var/list/corners = list(holder.lighting_corner_NE,holder.lighting_corner_NW,holder.lighting_corner_SE,holder.lighting_corner_SW)
 	var/list/new_corners = list()
 	var/list/removed_corners = list()
+	var/sunlightonly_corners = 0
 	for(var/datum/lighting_corner/corner in corners)
 		switch(corner.sunlight)
 			if(SUNLIGHT_NONE)
@@ -141,10 +148,22 @@
 					corner.sunlight = SUNLIGHT_CURRENT
 					new_corners += corner
 			if(SUNLIGHT_CURRENT)
-				if((corner in affected) && !sunlight)
+				if(!sunlight && (corner in affected))
 					affected -= corner
 					removed_corners += corner
 					corner.sunlight = SUNLIGHT_POSSIBLE
+			if(SUNLIGHT_ONLY)
+				sunlightonly_corners++
+				if(!(sunlight == SUNLIGHT_OVERHEAD) && (corner in only_sun))
+					only_sun -= corner
+					sunlightonly_corners--
+					if(sunlight)
+						new_corners += corner
+						corner.sunlight = SUNLIGHT_CURRENT
+						continue
+					corner.lum_r = 0
+					corner.lum_g = 0
+					corner.lum_b = 0
 
 	if(!sun)
 		if(SSplanets && SSplanets.z_to_planet.len >= holder.z && SSplanets.z_to_planet[holder.z])
@@ -153,13 +172,41 @@
 		else
 			return
 
+	if(sunlight == SUNLIGHT_OVERHEAD)
+		for(var/datum/lighting_corner/corner in affected)
+			if(!LAZYLEN(corner.affecting))
+				affected -= corner
+				removed_corners += corner
+				only_sun += corner
+				corner.sunlight = SUNLIGHT_ONLY
+		for(var/datum/lighting_corner/corner in new_corners)
+			if(!LAZYLEN(corner.affecting))
+				new_corners -= corner
+				only_sun += corner
+				corner.sunlight = SUNLIGHT_ONLY
+
+	if(sunlightonly_corners == 4 && !only_sun_object)
+		var/datum/lighting_object/holder_object = holder.lighting_object
+		if(!holder_object.sunlight_only)
+			only_sun_object = holder_object
+			only_sun_object.sunlight_only = TRUE
+
+	if(only_sun_object)
+		only_sun_object.update_sun()
+
+	for(var/datum/lighting_corner/corner in only_sun)
+		corner.update_sun()
+
+	if(!affected.len && !new_corners.len && !removed_corners.len)
+		return //Nothing to do, avoid wasting time.
+
 	var/sunlight_mult = 0
 	switch(sunlight)
 		if(TRUE)
 			sunlight_mult = 0.6
 		if(SUNLIGHT_OVERHEAD)
 			sunlight_mult = 1.0
-	var/brightness = sun.our_brightness * sunlight_mult * sunlight * SSlighting.sun_mult
+	var/brightness = sun.our_brightness * sunlight_mult * SSlighting.sun_mult
 	var/list/color = hex2rgb(sun.our_color)
 	var/red = brightness * (color[1] / 255.0)
 	var/green = brightness * (color[2] / 255.0)
@@ -169,15 +216,30 @@
 	var/delta_b = blue - effect_str_b
 
 	for(var/datum/lighting_corner/corner in affected)
-		corner.update_lumcount(delta_r,delta_g,delta_b)
+		corner.update_lumcount(delta_r,delta_g,delta_b,from_sholder=TRUE)
 
 	for(var/datum/lighting_corner/corner in new_corners)
-		corner.update_lumcount(red,green,blue)
+		corner.update_lumcount(red,green,blue,from_sholder=TRUE)
 		affected += corner
 
 	for(var/datum/lighting_corner/corner in removed_corners)
-		corner.update_lumcount(-effect_str_r,-effect_str_g,-effect_str_b)
+		corner.update_lumcount(-effect_str_r,-effect_str_g,-effect_str_b,from_sholder=TRUE)
 
 	effect_str_r = red
 	effect_str_g = green
 	effect_str_b = blue
+
+/datum/component/sunlight_handler/proc/corner_sunlight_change()
+	var/datum/lighting_corner/sender = args[2]
+
+	if(!(sender in only_sun))
+		return
+
+	sender.sunlight = SUNLIGHT_CURRENT
+
+	if(only_sun_object)
+		only_sun_object.sunlight_only = FALSE
+
+	sender.update_lumcount(effect_str_r,effect_str_g,effect_str_b,from_sholder=TRUE)
+	only_sun -= sender
+	affected += sender

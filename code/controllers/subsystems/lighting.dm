@@ -3,12 +3,13 @@ SUBSYSTEM_DEF(lighting)
 	wait = 2
 	init_order = INIT_ORDER_LIGHTING
 	flags = SS_TICKER
-	var/sun_mult = 0.5
+	var/sun_mult = 1.0
 	var/static/list/sources_queue = list() // List of lighting sources queued for update.
 	var/static/list/corners_queue = list() // List of lighting corners queued for update.
 	var/static/list/objects_queue = list() // List of lighting objects queued for update.
 	var/static/list/sunlight_queue = list() //TORCHEdit // List of turfs that are affected by sunlight
 	var/static/list/sunlight_queue_active = list() //TORCHEdit // List of turfs that need to have their sunlight updated
+	var/datum/global_sunlight_handler/global_shandler //TORCHEdit //Precomputed lighting values for tiles only affected by the sun
 
 /datum/controller/subsystem/lighting/stat_entry(msg)
 	msg = "L:[length(sources_queue)]|C:[length(corners_queue)]|O:[length(objects_queue)]"
@@ -24,6 +25,8 @@ SUBSYSTEM_DEF(lighting)
 
 		subsystem_initialized = TRUE
 		create_all_lighting_objects()
+
+	global_shandler = new()
 
 	fire(FALSE, TRUE)
 
@@ -143,7 +146,7 @@ SUBSYSTEM_DEF(lighting)
 		queue.Cut(1, i + 1)
 
 /datum/controller/subsystem/lighting/proc/update_sunlight()
-
+	global_shandler.update_sun()
 	sunlight_queue_active = sunlight_queue.Copy()
 //TORCHEdit End
 

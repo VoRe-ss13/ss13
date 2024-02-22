@@ -5,6 +5,7 @@
 	///whether we are already in the SSlighting.objects_queue list
 	var/needs_update = FALSE
 
+	var/sunlight_only = FALSE //TORCHEdit
 
 	///the turf that our light is applied to
 	var/turf/affected_turf
@@ -48,6 +49,7 @@
 
 /datum/lighting_object/proc/update()
 
+	if(sunlight_only) return //TORCHEdit
 	// To the future coder who sees this and thinks
 	// "Why didn't he just use a loop?"
 	// Well my man, it's because the loop performed like shit.
@@ -120,3 +122,11 @@
 
 /datum/lighting_object/proc/addtoturf()
 	affected_turf.underlays |= current_underlay
+
+//TORCHEdit Begin
+/datum/lighting_object/proc/update_sun()
+	affected_turf.underlays -= current_underlay
+	current_underlay.icon_state = "transparent"
+	current_underlay.color = rgb(SSlighting.global_shandler.redint,SSlighting.global_shandler.greenint,SSlighting.global_shandler.blueint)
+	affected_turf.underlays |= current_underlay
+//TORCHEdit End
