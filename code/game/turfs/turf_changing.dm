@@ -45,6 +45,11 @@
 	var/oldtype = src.type	//TORCHEdit
 	var/old_density = src.density //TORCHEdit
 	var/was_open = istype(src,/turf/simulated/open) //TORCHEdit
+	//TORCHEdit Begin
+	var/datum/sunlight_handler/old_shandler
+	var/turf/simulated/simself = src
+	if(istype(simself) && simself.shandler)
+		old_shandler = simself.shandler
 
 	var/turf/Ab = GetAbove(src)
 	if(Ab)
@@ -68,11 +73,10 @@
 	var/turf/new_turf  //TORCHEdit
 	if(ispath(N, /turf/simulated/floor))
 		//TORCHEdit Begin
-		var/datum/component/sunlight_handler/shandler = GetComponent(/datum/component/sunlight_handler)
 		var/turf/simulated/W = new N( locate(src.x, src.y, src.z) )
-		if(shandler)
-			var/datum/component/sunlight_handler/new_shandler = W.AddComponent(/datum/component/sunlight_handler)
-			new_shandler.InheritComponent(shandler)
+		if(old_shandler)
+			W.shandler = old_shandler
+			old_shandler.holder_change(W)
 		//TORCHEdit End
 		if(old_fire)
 			fire = old_fire
@@ -97,13 +101,12 @@
 
 	else
 		//TORCHEdit Begin
-		var/datum/component/sunlight_handler/shandler = GetComponent(/datum/component/sunlight_handler)
 		var/turf/W = new N( locate(src.x, src.y, src.z) )
 
-
-		if(shandler)
-			var/datum/component/sunlight_handler/new_shandler = W.AddComponent(/datum/component/sunlight_handler)
-			new_shandler.InheritComponent(shandler)
+		var/turf/simulated/W_sim = W
+		if(istype(W_sim) && old_shandler)
+			W_sim.shandler = old_shandler
+			old_shandler.holder_change(W)
 		//TORCHEdit End
 		if(old_fire)
 			old_fire.RemoveFire()
@@ -165,7 +168,6 @@
 		for(var/turf/space/space_tile in RANGE_TURFS(1, src))
 			space_tile.update_starlight()
 
-	SEND_SIGNAL(src,COMSIG_SUNLIGHT_INIT) //TORCHEdit
 	if(preserve_outdoors)
 		outdoors = old_outdoors
 
@@ -175,16 +177,16 @@
 	//SEND_SIGNAL(src, COMSIG_TURF_UPDATE, oldtype, old_density, W)
 	//Sends signals in a cross pattern to all tiles that may have their sunlight var affected including this tile.
 	for(var/i = - SUNLIGHT_RADIUS, i <= SUNLIGHT_RADIUS, i++)
-		var/turf/T = locate(src.x + i, src.y, src.z)
-		if(T)
-			SEND_SIGNAL(T, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf, above)
+		var/turf/simulated/T = locate(src.x + i, src.y, src.z)
+		if(istype(T) && T.shandler)
+			T.shandler.turf_update(old_density, new_turf, above)
 
 	for(var/i = - SUNLIGHT_RADIUS, i <= SUNLIGHT_RADIUS, i++)
 		if(i == 0) //Don't send the signal to ourselves twice.
 			continue
-		var/turf/T = locate(src.x, src.y + i, src.z)
-		if(T)
-			SEND_SIGNAL(T, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf, above)
+		var/turf/simulated/T = locate(src.x, src.y + i, src.z)
+		if(istype(T) && T.shandler)
+			T.shandler.turf_update(old_density, new_turf, above)
 
 	//Also need to send signals diagonally too now.
 	var/radius = ONE_OVER_SQRT_2 * SUNLIGHT_RADIUS + 1
@@ -194,7 +196,9 @@
 
 		while(steps < radius)
 			if(cur_turf)
-				SEND_SIGNAL(cur_turf, COMSIG_TURF_UPDATE, oldtype, old_density, new_turf, above)
+				var/turf/simulated/T = cur_turf
+				if(istype(T) && T.shandler)
+					T.shandler.turf_update(old_density, new_turf, above)
 			steps += 1
 			cur_turf = get_step(cur_turf,dir)
 //TORCHEdit end

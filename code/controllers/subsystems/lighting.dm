@@ -128,10 +128,10 @@ SUBSYSTEM_DEF(lighting)
 	while(i < length(queue)) //we don't use for loop here because i cannot be changed during an iteration
 		i += 1
 
-		var/turf/T= queue[i]
-		if (QDELETED(T))
+		var/datum/sunlight_handler/shandler = queue[i]
+		if (QDELETED(shandler))
 			continue
-		SEND_SIGNAL(T,COMSIG_SUNLIGHT_UPDATE)
+		shandler.sunlight_update()
 
 		// We unroll TICK_CHECK here so we can clear out the queue to ensure any removals/additions when sleeping don't fuck us
 		if(init_tick_checks)

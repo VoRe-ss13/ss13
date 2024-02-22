@@ -95,14 +95,18 @@
 	//TORCHEdit Begin
 	if(sunlight == SUNLIGHT_ONLY && LAZYLEN(affecting)) change_sun()
 	if(sunlight == SUNLIGHT_CURRENT && !LAZYLEN(affecting) && !from_sholder)
-		if(master_NE)
-			SEND_SIGNAL(master_NE,COMSIG_SUNLIGHT_UPDATE,src)
-		if(master_SE)
-			SEND_SIGNAL(master_SE,COMSIG_SUNLIGHT_UPDATE,src)
-		if(master_SW)
-			SEND_SIGNAL(master_SW,COMSIG_SUNLIGHT_UPDATE,src)
-		if(master_NW)
-			SEND_SIGNAL(master_NW,COMSIG_SUNLIGHT_UPDATE,src)
+		var/turf/simulated/master_NE_sim = master_NE
+		var/turf/simulated/master_SE_sim = master_SE
+		var/turf/simulated/master_SW_sim = master_SW
+		var/turf/simulated/master_NW_sim = master_NW
+		if(istype(master_NE_sim) && master_NE_sim.shandler)
+			master_NE_sim.shandler.sunlight_update()
+		if(istype(master_SE_sim) && master_SE_sim.shandler)
+			master_SE_sim.shandler.sunlight_update()
+		if(istype(master_SW_sim) && master_SW_sim.shandler)
+			master_SW_sim.shandler.sunlight_update()
+		if(istype(master_NW_sim) && master_NW_sim.shandler)
+			master_NW_sim.shandler.sunlight_update()
 
 	//TORCHEdit End
 	lum_r += delta_r
@@ -224,12 +228,16 @@
 	lum_r = 0
 	lum_g = 0
 	lum_b = 0
-	if(master_NE)
-		SEND_SIGNAL(master_NE,COMSIG_SUNLIGHT_CHANGED,src)
-	if(master_SE)
-		SEND_SIGNAL(master_SE,COMSIG_SUNLIGHT_CHANGED,src)
-	if(master_SW)
-		SEND_SIGNAL(master_SW,COMSIG_SUNLIGHT_CHANGED,src)
-	if(master_NW)
-		SEND_SIGNAL(master_NW,COMSIG_SUNLIGHT_CHANGED,src)
+	var/turf/simulated/master_NE_sim = master_NE
+	var/turf/simulated/master_SE_sim = master_SE
+	var/turf/simulated/master_SW_sim = master_SW
+	var/turf/simulated/master_NW_sim = master_NW
+	if(istype(master_NE_sim) && master_NE_sim.shandler)
+		master_NE_sim.shandler.corner_sunlight_change(src)
+	if(istype(master_SE_sim) && master_SE_sim.shandler)
+		master_SE_sim.shandler.corner_sunlight_change(src)
+	if(istype(master_SW_sim) && master_SW_sim.shandler)
+		master_SW_sim.shandler.corner_sunlight_change(src)
+	if(istype(master_NW_sim) && master_NW_sim.shandler)
+		master_NW_sim.shandler.corner_sunlight_change(src)
 //TORCHEdit End

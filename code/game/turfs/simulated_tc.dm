@@ -1,3 +1,6 @@
+/turf/simulated
+	var/datum/sunlight_handler/shandler
+
 /turf/simulated/New()
 	. = ..()
 
@@ -12,10 +15,10 @@
 			var/turf/T = GetAbove(src)
 			if(T && !istype(T,/turf/simulated/open))
 				make_indoors()
-		AddComponent(/datum/component/sunlight_handler)
-		SEND_SIGNAL(src,COMSIG_SUNLIGHT_INIT)
+		shandler = new(src)
+		shandler.manualInit()
 
-/datum/component/sunlight_handler
+/datum/sunlight_handler
 	var/datum/sun_holder/sun
 	var/turf/simulated/holder
 	var/datum/lighting_object/only_sun_object
@@ -27,27 +30,12 @@
 	var/sunlight = FALSE
 	var/inherited = FALSE
 
-/datum/component/sunlight_handler/New()
+/datum/sunlight_handler/New(var/parent)
 	. = ..()
 	holder = parent
 
-/datum/component/sunlight_handler/InheritComponent(datum/component/sunlight_handler/old)
-	effect_str_r = old.effect_str_r
-	effect_str_g = old.effect_str_g
-	effect_str_b = old.effect_str_b
-	sunlight = old.sunlight
-	affected = old.affected
-	inherited = TRUE
-
-/datum/component/sunlight_handler/Initialize()
-	RegisterSignal(parent, COMSIG_TURF_UPDATE, /datum/component/sunlight_handler/proc/turf_update)
-	RegisterSignal(parent, COMSIG_SUNLIGHT_CHECK, /datum/component/sunlight_handler/proc/sunlight_check)
-	RegisterSignal(parent, COMSIG_SUNLIGHT_UPDATE, /datum/component/sunlight_handler/proc/sunlight_update)
-	RegisterSignal(parent, COMSIG_SUNLIGHT_INIT, /datum/component/sunlight_handler/proc/manualInit)
-	RegisterSignal(parent, COMSIG_SUNLIGHT_CHANGED, /datum/component/sunlight_handler/proc/corner_sunlight_change)
-
 //Moved initialization here to make sure that it doesn't happen too early when replacing turfs.
-/datum/component/sunlight_handler/proc/manualInit()
+/datum/sunlight_handler/proc/manualInit()
 	if(!holder.lighting_corners_initialised)
 		holder.generate_missing_corners()
 	var/corners = list(holder.lighting_corner_NE,holder.lighting_corner_NW,holder.lighting_corner_SE,holder.lighting_corner_SW)
@@ -57,18 +45,18 @@
 	if(SSplanets && SSplanets.z_to_planet.len >= holder.z && SSplanets.z_to_planet[holder.z])
 		var/datum/planet/planet = SSplanets.z_to_planet[holder.z]
 		sun = planet.sun_holder
-	if(!inherited)
-		SEND_SIGNAL(holder,COMSIG_SUNLIGHT_CHECK)
-	else
-		SEND_SIGNAL(holder,COMSIG_SUNLIGHT_UPDATE)
-		for(var/dir in (cardinal + cornerdirs))
-			SEND_SIGNAL(get_step(holder, dir),COMSIG_SUNLIGHT_UPDATE)
+	sunlight_check()
 
-/datum/component/sunlight_handler/proc/turf_update()
-	//var/oldtype = args[2]
-	var/old_density = args[3]
-	var/turf/new_turf = args[4]
-	var/above = args[5]
+/datum/sunlight_handler/proc/holder_change(var/new_holder)
+	holder = new_holder
+	sunlight_update()
+	for(var/dir in (cardinal + cornerdirs))
+		var/turf/simulated/T = get_step(holder, dir)
+		if(istype(T) && T.shandler)
+			T.shandler.sunlight_update()
+
+
+/datum/sunlight_handler/proc/turf_update(var/old_density, var/turf/new_turf, var/above)
 	if(above)
 		sunlight_check()
 		sunlight_update()
@@ -80,7 +68,7 @@
 		sunlight_check()
 		sunlight_update()
 
-/datum/component/sunlight_handler/proc/sunlight_check()
+/datum/sunlight_handler/proc/sunlight_check()
 	var/cur_sunlight = sunlight
 	if(holder.is_outdoors())
 		sunlight = SUNLIGHT_OVERHEAD
@@ -126,11 +114,11 @@
 	if(cur_sunlight != sunlight)
 		sunlight_update()
 		if(!sunlight)
-			SSlighting.sunlight_queue -= holder
+			SSlighting.sunlight_queue -= src
 		else
-			SSlighting.sunlight_queue += holder
+			SSlighting.sunlight_queue += src
 
-/datum/component/sunlight_handler/proc/sunlight_update()
+/datum/sunlight_handler/proc/sunlight_update()
 	var/list/corners = list(holder.lighting_corner_NE,holder.lighting_corner_NW,holder.lighting_corner_SE,holder.lighting_corner_SW)
 	var/list/new_corners = list()
 	var/list/removed_corners = list()
@@ -229,9 +217,7 @@
 	effect_str_g = green
 	effect_str_b = blue
 
-/datum/component/sunlight_handler/proc/corner_sunlight_change()
-	var/datum/lighting_corner/sender = args[2]
-
+/datum/sunlight_handler/proc/corner_sunlight_change(var/datum/lighting_corner/sender)
 	if(!(sender in only_sun))
 		return
 
