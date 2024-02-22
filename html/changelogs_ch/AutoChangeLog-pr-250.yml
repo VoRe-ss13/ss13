@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - code_imp: "editing the chomp specific UIs to be react compliant"
