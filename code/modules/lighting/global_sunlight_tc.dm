@@ -42,3 +42,4 @@
 	cache_r  = round(red * ., LIGHTING_ROUND_VALUE)
 	cache_g  = round(green * ., LIGHTING_ROUND_VALUE)
 	cache_b  = round(blue * ., LIGHTING_ROUND_VALUE)
+	#endif
