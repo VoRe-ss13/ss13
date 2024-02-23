@@ -47,13 +47,18 @@
 		sun = planet.sun_holder
 	sunlight_check()
 
-/datum/sunlight_handler/proc/holder_change(var/new_holder)
-	holder = new_holder
+/datum/sunlight_handler/proc/holder_change()
 	sunlight_update()
 	for(var/dir in (cardinal + cornerdirs))
 		var/turf/simulated/T = get_step(holder, dir)
 		if(istype(T) && T.shandler)
 			T.shandler.sunlight_update()
+	sunlight_update()
+	//Might seem silly and unoptimized to call update twice, but this is not called frequently and it makes things easier.
+	//Logical flow goes:
+	//Update 1: Disowns the lighting corner
+	//Update surrounding turfs: Allows for corner to be claimed by other sunlight handler
+	//Update 2: Accounts for changes made by surrounding turfs
 
 
 /datum/sunlight_handler/proc/turf_update(var/old_density, var/turf/new_turf, var/above)
@@ -179,6 +184,10 @@
 			only_sun_object = holder_object
 			only_sun_object.sunlight_only = TRUE
 
+	if(sunlightonly_corners < 4 && only_sun_object)
+		only_sun_object.sunlight_only = FALSE
+		only_sun_object = null
+
 	if(only_sun_object)
 		only_sun_object.update_sun()
 
@@ -225,6 +234,7 @@
 
 	if(only_sun_object)
 		only_sun_object.sunlight_only = FALSE
+		only_sun_object = null
 
 	sender.update_lumcount(effect_str_r,effect_str_g,effect_str_b,from_sholder=TRUE)
 	only_sun -= sender

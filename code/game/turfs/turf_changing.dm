@@ -76,7 +76,7 @@
 		var/turf/simulated/W = new N( locate(src.x, src.y, src.z) )
 		if(old_shandler)
 			W.shandler = old_shandler
-			old_shandler.holder_change(W)
+			old_shandler.holder = W
 		//TORCHEdit End
 		if(old_fire)
 			fire = old_fire
@@ -106,7 +106,7 @@
 		var/turf/simulated/W_sim = W
 		if(istype(W_sim) && old_shandler)
 			W_sim.shandler = old_shandler
-			old_shandler.holder_change(W)
+			old_shandler.holder = W
 		//TORCHEdit End
 		if(old_fire)
 			old_fire.RemoveFire()
@@ -140,6 +140,7 @@
 				cur_turf.make_indoors()
 			cur_turf.propogate_sunlight_changes(oldtype, old_density, new_turf, above = TRUE)
 		while(istype(cur_turf,/turf/simulated/open) && HasBelow(cur_turf.z))
+
 	//TORCHEdit End
 
 	dangerous_objects = old_dangerous_objects
@@ -168,6 +169,7 @@
 		for(var/turf/space/space_tile in RANGE_TURFS(1, src))
 			space_tile.update_starlight()
 
+	if(old_shandler) old_shandler.holder_change() //TORCHEdit
 	if(preserve_outdoors)
 		outdoors = old_outdoors
 
