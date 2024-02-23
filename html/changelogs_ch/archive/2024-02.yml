@@ -266,3 +266,6 @@
   VoRe-bot:
   - rscadd: miasma for the chem grenade that some mobs spawn on loading
   - bugfix: Several odd materials use the proper numbers
+2024-02-23:
+  VoRe-bot:
+  - code_imp: editing the chomp specific UIs to be react compliant
