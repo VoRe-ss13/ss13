@@ -1,7 +1,15 @@
 import { classes } from 'common/react';
 import { useBackend } from '../backend';
 import { Component, Fragment } from 'inferno';
-import { Box, Button, Dropdown, Icon, Section, Stack, Table } from '../components';
+import {
+  Box,
+  Button,
+  Dropdown,
+  Icon,
+  Section,
+  Stack,
+  Table,
+} from '../components';
 import { Window } from '../layouts';
 import { resolveAsset } from '../assets';
 import dateformat from 'dateformat';
@@ -64,7 +72,7 @@ export class Changelog extends Component {
 
     if (attemptNumber > maxAttempts) {
       return this.setData(
-        'Failed to load data after ' + maxAttempts + ' attempts'
+        'Failed to load data after ' + maxAttempts + ' attempts',
       );
     }
 
@@ -94,7 +102,7 @@ export class Changelog extends Component {
 
     if (dates) {
       dates.forEach((date) =>
-        this.dateChoices.push(dateformat(date, 'mmmm yyyy', true))
+        this.dateChoices.push(dateformat(date, 'mmmm yyyy', true)),
       );
       this.setSelectedDate(this.dateChoices[0]);
       this.getData(dates[0]);
@@ -124,7 +132,7 @@ export class Changelog extends Component {
               window.scrollTo(
                 0,
                 document.body.scrollHeight ||
-                  document.documentElement.scrollHeight
+                  document.documentElement.scrollHeight,
               );
               return this.getData(dates[index]);
             }}
@@ -143,7 +151,7 @@ export class Changelog extends Component {
               window.scrollTo(
                 0,
                 document.body.scrollHeight ||
-                  document.documentElement.scrollHeight
+                  document.documentElement.scrollHeight,
               );
               return this.getData(dates[index]);
             }}
@@ -165,7 +173,7 @@ export class Changelog extends Component {
               window.scrollTo(
                 0,
                 document.body.scrollHeight ||
-                  document.documentElement.scrollHeight
+                  document.documentElement.scrollHeight,
               );
               return this.getData(dates[index]);
             }}
@@ -179,18 +187,13 @@ export class Changelog extends Component {
         <h1>TORCHStation Changelist</h1>
         <p>
           {'The GitHub repository can be found '}
-          <a href="https://github.com/CHOMPStation2/CHOMPStation2">here</a>
+          <a href="https://github.com/VoRe-ss13/ss13">here</a>
           {', recent GitHub contributors can be found '}
-          <a href="https://github.com/CHOMPStation2/CHOMPStation2/pulse/monthly">
-            here
-          </a>
-          .
+          <a href="https://github.com/VoRe-ss13/ss13/pulse/monthly">here</a>.
         </p>
         <p>
           {'Visit our wiki '}
-          <a href="https://wiki.chompstation13.net/index.php/Chomp_Station_Wiki">
-            here
-          </a>
+          <a href="https://wiki.tor/C/index.php/Chomp_Station_Wiki">here</a>
           {', check out our discord server '}
           <a href="https://discord.com/invite/chompers">here</a>.
         </p>
@@ -206,9 +209,10 @@ export class Changelog extends Component {
           {'All code after '}
           <a
             href={
-              'https://github.com/CHOMPStation2/CHOMPStation2/commit/' +
+              'https://github.com/VoRe-ss13/ss13/commit/' +
               '333c566b88108de218d882840e61928a9b759d8f'
-            }>
+            }
+          >
             commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at
             4:38 PM PST
           </a>
@@ -217,11 +221,11 @@ export class Changelog extends Component {
           {'. All code before that commit is licensed under '}
           <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a>
           {', including tools unless their readme specifies otherwise. See '}
-          <a href="https://github.com/CHOMPStation2/CHOMPStation2/blob/master/LICENSE">
+          <a href="https://github.com/VoRe-ss13/ss13/blob/master/LICENSE">
             LICENSE
           </a>
           {' and '}
-          <a href="https://github.com/CHOMPStation2/CHOMPStation2/blob/master/LICENSE-GPL3.txt">
+          <a href="https://github.com/VoRe-ss13/ss13/blob/master/LICENSE-GPL3.txt">
             GPLv3.txt
           </a>
           {' for more details.'}
@@ -231,17 +235,19 @@ export class Changelog extends Component {
           {' See the footer of '}
           <a
             href={
-              'https://github.com/CHOMPStation2/CHOMPStation2/blob/master' +
+              'https://github.com/VoRe-ss13/ss13/blob/master' +
               '/code/__DEFINES/tgs.dm'
-            }>
+            }
+          >
             code/__DEFINES/tgs.dm
           </a>
           {' and '}
           <a
             href={
-              'https://github.com/CHOMPStation2/CHOMPStation2/blob/master' +
+              'https://github.com/VoRe-ss13/ss13/blob/master' +
               '/code/modules/tgs/LICENSE'
-            }>
+            }
+          >
             code/modules/tgs/LICENSE
           </a>
           {' for the MIT license.'}
@@ -277,7 +283,8 @@ export class Changelog extends Component {
                               className={classes([
                                 'Changelog__Cell',
                                 'Changelog__Cell--Icon',
-                              ])}>
+                              ])}
+                            >
                               <Icon
                                 color={
                                   icons[changeType]

@@ -2,7 +2,7 @@
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
-The following is a set of guidelines for contributing to TORCHStation, which is hosted in the [TORCHStation](https://github.com/CHOMPStation2/CHOMPStation2) on GitHub.
+The following is a set of guidelines for contributing to TORCHStation, which is hosted in the [TORCHStation](https://github.com/VoRe-ss13/ss13) on GitHub.
 These are just guidelines, not rules, use your best judgment and feel free to propose changes to this document in a pull request.
 
 #### Table Of Contents
@@ -44,7 +44,7 @@ Unsure where to begin contributing to TORCHStation? You can start by looking thr
 
 Any code submissions that do not meet our coding standards are likely to be rejected, or at the very least, have a maintainer request changes on your PR. Save time and follow these standards from the start:
 
-In an effort to make contributing easier to do, Black Major has started a modularity folder, https://github.com/CHOMPStation2/CHOMPStation2/tree/master/modular_chomp.
+In an effort to make contributing easier to do, Black Major has started a modularity folder, https://github.com/VoRe-ss13/ss13/tree/master/modular_chomp.
 Ideally, any content that can be written that is wholelly independant of vorestation's content, should be
 included in this modularity folder, and put into the associated folder that it would have appeared in among the standard files.
 

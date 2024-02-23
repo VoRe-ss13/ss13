@@ -11,7 +11,7 @@
 	gluttonous = 0
 	genders = list(MALE, FEMALE, PLURAL, NEUTER)
 	descriptors = list()
-	wikilink="https://wiki.chompstation13.net/index.php?title=Teshari" //CHOMPedit: link to our wiki
+	wikilink="https://wiki.torchstation13.net/index.php?title=Teshari" //CHOMPedit: link to our wiki
 	agility = 90
 /* Begin Chomp edit
 	male_sneeze_sound = list('sound/effects/mob_effects/tesharisneeze.ogg','sound/effects/mob_effects/tesharisneezeb.ogg')
