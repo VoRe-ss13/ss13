@@ -21663,7 +21663,7 @@
 	pixel_y = -32
 	},
 /obj/machinery/telecomms/hub/preset/southerncross{
-	autolinkers = list("hub","d1_relay","d2_relay","d3_relay","pnt_relay","cve_relay","wld_relay","tns_relay","explorer","exp_relay","c_relay","m_relay","r_relay","science","medical","supply","service","common","command","engineering","security","unused","hb_relay","receiverA","broadcasterA","casino_relay")
+	autolinkers = list("hub","d1_relay","d2_relay","d3_relay","pnt_relay","cve_relay","wld_relay","tns_relay","explorer","exp_relay","c_relay","m_relay","r_relay","s_relay","science","medical","supply","service","common","command","engineering","security","unused","hb_relay","receiverA","broadcasterA","casino_relay")
 	},
 /turf/simulated/floor/tiled/dark{
 	nitrogen = 100;
