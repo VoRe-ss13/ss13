@@ -2,7 +2,7 @@ Guide to Opening Your First PR
 This guide is intended for newbie developers who have never touched BYOND .dm code, Github, or other things. If you already know github, you can safely skip a good portion of the below information.
 
 Beginning:
-In order to go anywhere, we’re going to need our own Repository (the thing you get the code from) to make changes to. Luckily, this is a one-button-job. Go to https://github.com/CHOMPStation2/CHOMPStation2 and click Fork, as shown here:
+In order to go anywhere, we’re going to need our own Repository (the thing you get the code from) to make changes to. Luckily, this is a one-button-job. Go to https://github.com/VoRe-ss13/ss13 and click Fork, as shown here:
 https://i.imgur.com/tIbXmGN.png
 
 In the top left, you will see:

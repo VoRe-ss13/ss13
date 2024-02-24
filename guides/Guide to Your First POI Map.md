@@ -4,7 +4,7 @@ This guide **ASSUMES** you have gone through the Guide to Opening your First PR.
 
 You can also @ maintainers or staff devs, which can be viewed in the sidebar of each codebase’s Discord, and will usually have roles such as “Maintainer” (For VOREStation), “StaffDev/StaffMaintainer” (for CHOMPStation), and “Maintainer” (for Polaris).
 
-[CHOMPStation]([https://github.com/CHOMPStation2/CHOMPStation2/blob/master/guides/Guide%20to%20Opening%20Your%20First%20PR.md](https://github.com/CHOMPStation2/CHOMPStation2/blob/master/guides/Guide%20to%20Opening%20Your%20First%20PR.md))
+[CHOMPStation]([https://github.com/VoRe-ss13/ss13/blob/master/guides/Guide%20to%20Opening%20Your%20First%20PR.md](https://github.com/VoRe-ss13/ss13/blob/master/guides/Guide%20to%20Opening%20Your%20First%20PR.md))
 
 [VOREStation]([https://github.com/VOREStation/VOREStation/blob/master/guides/Guide%20to%20Opening%20Your%20First%20PR.md](https://github.com/VOREStation/VOREStation/blob/master/guides/Guide%20to%20Opening%20Your%20First%20PR.md))
 

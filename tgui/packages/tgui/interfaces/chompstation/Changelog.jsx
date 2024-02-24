@@ -188,16 +188,13 @@ export class Changelog extends Component {
         <h1>TORCHStation Changelist</h1>
         <p>
           {'The GitHub repository can be found '}
-          <a href="https://github.com/CHOMPStation2/CHOMPStation2">here</a>
+          <a href="https://github.com/VoRe-ss13/ss13">here</a>
           {', recent GitHub contributors can be found '}
-          <a href="https://github.com/CHOMPStation2/CHOMPStation2/pulse/monthly">
-            here
-          </a>
-          .
+          <a href="https://github.com/VoRe-ss13/ss13/pulse/monthly">here</a>.
         </p>
         <p>
           {'Visit our wiki '}
-          <a href="https://wiki.chompstation13.net/index.php/Chomp_Station_Wiki">
+          <a href="https://wiki.torchstation13.net/index.php/Chomp_Station_Wiki">
             here
           </a>
           {', check out our discord server '}
@@ -215,7 +212,7 @@ export class Changelog extends Component {
           {'All code after '}
           <a
             href={
-              'https://github.com/CHOMPStation2/CHOMPStation2/commit/' +
+              'https://github.com/VoRe-ss13/ss13/commit/' +
               '333c566b88108de218d882840e61928a9b759d8f'
             }
           >
@@ -227,11 +224,11 @@ export class Changelog extends Component {
           {'. All code before that commit is licensed under '}
           <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a>
           {', including tools unless their readme specifies otherwise. See '}
-          <a href="https://github.com/CHOMPStation2/CHOMPStation2/blob/master/LICENSE">
+          <a href="https://github.com/VoRe-ss13/ss13/blob/master/LICENSE">
             LICENSE
           </a>
           {' and '}
-          <a href="https://github.com/CHOMPStation2/CHOMPStation2/blob/master/LICENSE-GPL3.txt">
+          <a href="https://github.com/VoRe-ss13/ss13/blob/master/LICENSE-GPL3.txt">
             GPLv3.txt
           </a>
           {' for more details.'}
@@ -241,7 +238,7 @@ export class Changelog extends Component {
           {' See the footer of '}
           <a
             href={
-              'https://github.com/CHOMPStation2/CHOMPStation2/blob/master' +
+              'https://github.com/VoRe-ss13/ss13/blob/master' +
               '/code/__DEFINES/tgs.dm'
             }
           >
@@ -250,7 +247,7 @@ export class Changelog extends Component {
           {' and '}
           <a
             href={
-              'https://github.com/CHOMPStation2/CHOMPStation2/blob/master' +
+              'https://github.com/VoRe-ss13/ss13/blob/master' +
               '/code/modules/tgs/LICENSE'
             }
           >

@@ -24,11 +24,11 @@ When editing the list, please try and keep similar probabilities near each other
 			var/info = "The following is a general tip for playing on CHOMPStation! You can disable them using the periodic tips toggle in the Global tab of the character setup! \n"
 			return pick(
 			prob(60); "[info] Got a question about gameplay, roleplay or the setting? Press F1 to Mentorhelp!",
-			prob(60); "[info] We have a wiki that is actively updated! Please check it out at https://wiki.chompstation13.net/index.php/Chomp_Station_Wiki for help!",
+			prob(60); "[info] We have a wiki that is actively updated! Please check it out at https://wiki.torchstation13.net/index.php/Chomp_Station_Wiki for help!",
 			prob(60); "[info] Unsure about rules? Press F1 and ask our admins for clarification - they are happy to help.",
 			prob(30); "[info] Don't be afraid to approach your fellow players for advice! Learning things ICly can help build powerful bonds!",
 			prob(30); "[info] Need some guidance making a character or with roleplay concepts? Our discord's tutoring channel is happy to help!",
-			prob(30); "[info] Having difficulties getting started? Pressing F3 to speak and typing '; Hello! I'm a new hire. Could someone please give me a tour?' or as appropriate for your character is a good way to start! More help available at: https://wiki.chompstation13.net/index.php/The_Basics",
+			prob(30); "[info] Having difficulties getting started? Pressing F3 to speak and typing '; Hello! I'm a new hire. Could someone please give me a tour?' or as appropriate for your character is a good way to start! More help available at: https://wiki.torchstation13.net/index.php/The_Basics",
 			prob(30); "[info] Want to try out a new department? Consider joining as an intern when it's well-staffed. Our players enjoy teaching eager students. You can approach such roleplay as simply getting taught the local technologies, procedures - you don't need to be 'fresh out of school' to justify it!",
 			prob(30); "[info] Our discord is an excellent resource to stay up to date about changes and events! If wanting to separate your kink and real identities, Discord has a built in means to swap accounts within the client. It is OK to lurk!",
 			prob(5); "[info] Got another tip for the list? Please let us know on Discord in the feedback forums!"
@@ -67,7 +67,7 @@ When editing the list, please try and keep similar probabilities near each other
 				prob(10); "[info] Sending faxes to central command, using the 'pray' verb or pressing F1 to ahelp are highly encouraged when exploring the gateway or overmap locations! Letting GMs know something fun is happening allows them to spice things up and make the world feel alive!",
 				prob(40); "[info] Just because you see something doesn't mean your character has to. A courtesy 'missing' of contraband or scene details can go a long way towards preserving everyone's fun!",
 				prob(25); "[info] It is always a good idea to communicate on your department's private channel (whose key you can learn by examining your headset) when responding to an emergency! This lets your coworkers know if they might be needed!",
-				prob(25); "[info] While following the SOP is not mandatory, and you are free to break it (albeit, with potential in-character consequences), departments like security and medical do well to be familiar with them! https://wiki.chompstation13.net/index.php/Standard_Operating_Procedure",
+				prob(25); "[info] While following the SOP is not mandatory, and you are free to break it (albeit, with potential in-character consequences), departments like security and medical do well to be familiar with them! https://wiki.torchstation13.net/index.php/Standard_Operating_Procedure",
 				prob(25); "[info] Think a player is acting especially antagonistic? It might be better to Ahelp (with F1) rather than try to deal with it icly, staff can make sure it's all okay.",
 				prob(20); "[info] See a minor infraction as Security with a minimal time punishment? Consider using your ticket printer to give a non obtrusive punishment."
 				)
@@ -76,8 +76,8 @@ When editing the list, please try and keep similar probabilities near each other
 			var/info = "The following is a tip for understanding the lore of CHOMPStation! You can disable them using the periodic tips toggle in the Global tab of the character setup! \n"
 			return pick(
 				prob(25); "[info] Our lore is somewhat in line with other servers. The year is 2568 (current year+544).",
-				prob(75); "[info] You can find a short summary of our setting that everyone should know at https://wiki.chompstation13.net/index.php/Lore",
-				prob(50); "[info] You are currently working in the Vir system on the NLS Southern Cross telecommunications and traffic control station. https://wiki.chompstation13.net/index.php/Vir",
-				prob(50); "[info] The majority of employees live at the Northern Star asteroid colony orbiting a gas giant called Kara. It is also a central hub for visitors, logistics, and mining. This is the place the shuttle takes you at the end of the round. You may visit the mines via the exploration shuttles. https://wiki.chompstation13.net/index.php/NCS_Northern_Star",
-				prob(10); "[info] Thaler is a universal monopoly money. It is backed and supported by Sol Central and its allies. While ubiquitous in frontier worlds, it has an unfavourable exchange rate with most currencies used by well-settled regions, limiting immigration to places such as Earth. https://wiki.chompstation13.net/index.php/Lore"
+				prob(75); "[info] You can find a short summary of our setting that everyone should know at https://wiki.torchstation13.net/index.php/Lore",
+				prob(50); "[info] You are currently working in the Vir system on the NLS Southern Cross telecommunications and traffic control station. https://wiki.torchstation13.net/index.php/Vir",
+				prob(50); "[info] The majority of employees live at the Northern Star asteroid colony orbiting a gas giant called Kara. It is also a central hub for visitors, logistics, and mining. This is the place the shuttle takes you at the end of the round. You may visit the mines via the exploration shuttles. https://wiki.torchstation13.net/index.php/NCS_Northern_Star",
+				prob(10); "[info] Thaler is a universal monopoly money. It is backed and supported by Sol Central and its allies. While ubiquitous in frontier worlds, it has an unfavourable exchange rate with most currencies used by well-settled regions, limiting immigration to places such as Earth. https://wiki.torchstation13.net/index.php/Lore"
 			)

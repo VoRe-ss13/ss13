@@ -262,3 +262,19 @@
   - bugfix: outdated callback syntax
   - bugfix: No qdelling hud element and selected_image /images
   - code_imp: stop qdelling progressbars
+2024-02-22:
+  VoRe-bot:
+  - rscadd: miasma for the chem grenade that some mobs spawn on loading
+  - bugfix: Several odd materials use the proper numbers
+2024-02-23:
+  VoRe-bot:
+  - code_imp: editing the chomp specific UIs to be react compliant
+2024-02-24:
+  VoRe-bot:
+  - bugfix: a runtime in the tgs status command
+  - rscadd: Ability to dominate mob via dominate predator
+  - rscadd: Ability to dominate body without player's mind  (The same way one can
+      do via mind binder)
+  - code_imp: Mob whitelist from mind binder became a global list var/global/list/mob_takeover_whitelist
+  - rscadd: modified AR-Visor for teshari
+  - rscdel: Removed 2x Kara Z layers (Aerostat, Mines)
