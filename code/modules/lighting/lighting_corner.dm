@@ -95,18 +95,8 @@
 	//TORCHEdit Begin
 	if(sunlight == SUNLIGHT_ONLY && LAZYLEN(affecting)) change_sun()
 	if(sunlight == SUNLIGHT_CURRENT && !LAZYLEN(affecting) && !from_sholder)
-		var/turf/simulated/master_NE_sim = master_NE
-		var/turf/simulated/master_SE_sim = master_SE
-		var/turf/simulated/master_SW_sim = master_SW
-		var/turf/simulated/master_NW_sim = master_NW
-		if(istype(master_NE_sim) && master_NE_sim.shandler)
-			master_NE_sim.shandler.sunlight_update()
-		if(istype(master_SE_sim) && master_SE_sim.shandler)
-			master_SE_sim.shandler.sunlight_update()
-		if(istype(master_SW_sim) && master_SW_sim.shandler)
-			master_SW_sim.shandler.sunlight_update()
-		if(istype(master_NW_sim) && master_NW_sim.shandler)
-			master_NW_sim.shandler.sunlight_update()
+		update_sunlight_handlers()
+		update_sunlight_handlers()
 
 	//TORCHEdit End
 	lum_r += delta_r
@@ -240,4 +230,20 @@
 		master_SW_sim.shandler.corner_sunlight_change(src)
 	if(istype(master_NW_sim) && master_NW_sim.shandler)
 		master_NW_sim.shandler.corner_sunlight_change(src)
+	update_sunlight_handlers()
+
+
+/datum/lighting_corner/proc/update_sunlight_handlers()
+	var/turf/simulated/master_NE_sim = master_NE
+	var/turf/simulated/master_SE_sim = master_SE
+	var/turf/simulated/master_SW_sim = master_SW
+	var/turf/simulated/master_NW_sim = master_NW
+	if(istype(master_NE_sim) && master_NE_sim.shandler)
+		master_NE_sim.shandler.sunlight_update()
+	if(istype(master_SE_sim) && master_SE_sim.shandler)
+		master_SE_sim.shandler.sunlight_update()
+	if(istype(master_SW_sim) && master_SW_sim.shandler)
+		master_SW_sim.shandler.sunlight_update()
+	if(istype(master_NW_sim) && master_NW_sim.shandler)
+		master_NW_sim.shandler.sunlight_update()
 //TORCHEdit End

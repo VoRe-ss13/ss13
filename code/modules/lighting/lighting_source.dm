@@ -269,12 +269,12 @@
 		//TORCHEdit Begin
 			. = LUM_FALLOFF(corner, pixel_turf);
 			. *= light_power;
+			var/OLD = effect_str[corner];
 			if (. != 0)
 				effect_str[corner] = .
 			else
 				LAZYREMOVE(corner.affecting, src)
 				effect_str -= corner
-			var/OLD = effect_str[corner];
 			corner.update_lumcount						\
 			(											\
 				(. * lum_r) - (OLD * applied_lum_r),	\

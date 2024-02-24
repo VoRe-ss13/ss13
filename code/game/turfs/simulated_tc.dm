@@ -222,19 +222,25 @@
 	for(var/datum/lighting_corner/corner in removed_corners)
 		corner.update_lumcount(-effect_str_r,-effect_str_g,-effect_str_b,from_sholder=TRUE)
 
+	if(!affected.len)
+		effect_str_r = 0
+		effect_str_g = 0
+		effect_str_b = 0
+		return
+
 	effect_str_r = red
 	effect_str_g = green
 	effect_str_b = blue
 
 /datum/sunlight_handler/proc/corner_sunlight_change(var/datum/lighting_corner/sender)
+	if(only_sun_object)
+		only_sun_object.sunlight_only = FALSE
+		only_sun_object = null
+
 	if(!(sender in only_sun))
 		return
 
 	sender.sunlight = SUNLIGHT_CURRENT
-
-	if(only_sun_object)
-		only_sun_object.sunlight_only = FALSE
-		only_sun_object = null
 
 	sender.update_lumcount(effect_str_r,effect_str_g,effect_str_b,from_sholder=TRUE)
 	only_sun -= sender
