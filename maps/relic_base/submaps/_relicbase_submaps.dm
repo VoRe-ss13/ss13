@@ -209,7 +209,7 @@
 /datum/map_template/thor_lateload/redgate/hotsprings
 	name = "Redgate - Hotsprings"
 	desc = "This place is rather cosy for somewhere so abandoned!"
-	mappath = 'maps/redgate/hotsprings.dmm'
+	mappath = 'maps/relic_base/submaps/redgate/hotsprings.dmm'
 
 /datum/map_template/thor_lateload/redgate/cybercity
 	name = "Redgate - Rain City"
@@ -263,7 +263,7 @@
 /datum/map_template/thor_lateload/redgate/falls
 	name = "Redgate - Cascading Falls"
 	desc = "A world made up almost entirely of water, sprinkled with obscure marble structures."
-	mappath = 'maps/redgate/falls/falls.dmm'
+	mappath = 'maps/relic_base/submaps/redgate/falls.dmm'
 
 //////////////////////////////////////////////////////////////////////////////////////
 // Code Shenanigans for lateload maps
