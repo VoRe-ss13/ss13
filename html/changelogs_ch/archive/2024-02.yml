@@ -278,3 +278,12 @@
   - code_imp: Mob whitelist from mind binder became a global list var/global/list/mob_takeover_whitelist
   - rscadd: modified AR-Visor for teshari
   - rscdel: Removed 2x Kara Z layers (Aerostat, Mines)
+2024-02-25:
+  VoRe-bot:
+  - rscadd: Adds a "big nostrils" marking for characters with huge noses.
+  - rscadd: Wilderness shelter now flattened, thank you Bib bob
+  - rscdel: sky islands removed
+  - code_imp: Atmos scrubbers kill the final trace left behind after their minimum
+      threshold for scrubbing is passed.
+  - bugfix: Added an amount of meat to drop to metroids
+  - bugfix: Synths no longer infinitely get a rename prompt on MMI insertion
