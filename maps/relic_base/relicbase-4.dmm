@@ -2967,6 +2967,7 @@
 /obj/structure/bed/chair/bay/comfy/purple{
 	dir = 1
 	},
+/obj/effect/overmap/visitable/ship/landable/ursula,
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/ursula)
 "gb" = (
@@ -6922,6 +6923,7 @@
 /obj/effect/shuttle_landmark{
 	base_area = /area/surface/outpost/main/landing/three;
 	base_turf = /turf/simulated/floor/reinforced;
+	docking_controller = "ursula_dock";
 	landmark_tag = "ursula_dock";
 	name = "Ursula Dock"
 	},
@@ -20467,6 +20469,9 @@
 "Of" = (
 /obj/structure/window/reinforced/survival_pod{
 	opacity = 1
+	},
+/obj/machinery/computer/shuttle_control/explore/ursula{
+	dir = 4
 	},
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/ursula)
