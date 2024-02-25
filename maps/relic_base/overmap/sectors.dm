@@ -8,7 +8,16 @@
 [b]Notice[/b]: The Vir government welcomes you to this world."}
 
 	// Set map_z to your levels for a planetary base. If you're ever going to split this up/add more Z's to Thor, imitate SC. THESE MUST BE DEFINED FOR SENSORS + SUCH TO WORK.
-	map_z = list(Z_LEVEL_UNDERGROUND, Z_LEVEL_SURFACE, Z_LEVEL_UPPER_FLOORS, Z_LEVEL_SURFACE_WILDS, Z_LEVEL_SURFACE_OCEAN, Z_LEVEL_CATACOMBS)
+	map_z = list(Z_LEVEL_CATACOMBS, Z_LEVEL_UNDERGROUND, Z_LEVEL_SURFACE, Z_LEVEL_UPPER_FLOORS, Z_LEVEL_SURFACE_WILDS, Z_LEVEL_SURFACE_OCEAN, Z_LEVEL_CARRIER)
+
+	initial_generic_waypoints = list(
+		"baby_mammoth_dock",
+		"echidna_dock",
+		"stargazer_dock",
+		"ursula_dock",
+		"needle_dock",
+		)
+
 	in_space = 0
 	start_x  = 11
 	start_y  = 11
@@ -26,6 +35,9 @@
 	atmosphere.adjust_gas_temp("nitrogen", MOLES_N2STANDARD, 273)
 
 	. = ..()
+
+/obj/effect/overmap/visitable/planet/Thor/get_space_zlevels()
+	return list(Z_LEVEL_CARRIER)
 
 /obj/effect/overmap/visitable/planet/Thor/Initialize()
 	. = ..()

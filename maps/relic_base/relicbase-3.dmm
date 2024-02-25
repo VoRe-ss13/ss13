@@ -20855,6 +20855,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_2)
+"jdp" = (
+/obj/effect/overmap/visitable/ship/landable/needle,
+/turf/simulated/shuttle/floor/black,
+/area/shuttle/needle)
 "jdu" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -34364,6 +34368,12 @@
 "puu" = (
 /turf/simulated/floor/carpet/bcarpet,
 /area/chapel/office)
+"puD" = (
+/obj/machinery/computer/shuttle_control/explore/needle{
+	dir = 4
+	},
+/turf/simulated/shuttle/floor/black,
+/area/shuttle/needle)
 "puM" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
@@ -97573,7 +97583,7 @@ xVX
 xVX
 lem
 fAg
-dfR
+puD
 fAg
 nND
 fAg
@@ -98087,7 +98097,7 @@ xVX
 duI
 cqa
 dfR
-dfR
+jdp
 nGi
 dXN
 eAP
