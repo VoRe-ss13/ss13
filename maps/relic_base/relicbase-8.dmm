@@ -4076,6 +4076,10 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/expoutpost/hangarone)
+"mm" = (
+/obj/effect/overmap/visitable/ship/landable/echidna,
+/turf/simulated/shuttle/floor/black,
+/area/shuttle/echidna)
 "mn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -11407,6 +11411,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/computer/shuttle_control/explore/stargazer{
+	dir = 4
+	},
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/stargazer)
 "Cg" = (
@@ -11893,6 +11900,10 @@
 	},
 /turf/simulated/shuttle/floor/yellow,
 /area/shuttle/baby_mammoth)
+"HB" = (
+/obj/effect/overmap/visitable/ship/landable/stargazer,
+/turf/simulated/shuttle/floor/black,
+/area/shuttle/stargazer)
 "HH" = (
 /obj/machinery/shipsensors,
 /obj/effect/catwalk_plated/dark,
@@ -12006,6 +12017,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/turf/simulated/shuttle/floor/black,
+/area/shuttle/baby_mammoth)
+"IH" = (
+/obj/effect/overmap/visitable/ship/landable/baby_mammoth,
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/baby_mammoth)
 "IQ" = (
@@ -12177,6 +12192,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/computer/shuttle_control/explore/baby_mammoth{
+	dir = 4
+	},
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/baby_mammoth)
 "Kt" = (
@@ -12282,8 +12300,8 @@
 	dir = 8
 	},
 /obj/effect/shuttle_landmark{
-	base_area = /area/expoutpost/hangartwo;
-	base_turf = /area/expoutpost/hangarsix;
+	base_area = /area/expoutpost/hangarsix;
+	base_turf = /turf/simulated/floor/reinforced;
 	landmark_tag = "echidna_dock";
 	name = "Echidna Dock"
 	},
@@ -12930,6 +12948,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/computer/shuttle_control/explore/echidna,
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/echidna)
 "Sk" = (
@@ -34541,7 +34560,7 @@ dI
 de
 EJ
 MM
-Ps
+mm
 eD
 Ry
 QD
@@ -34559,7 +34578,7 @@ gT
 hf
 Qy
 Qf
-My
+HB
 ZR
 My
 My
@@ -34578,7 +34597,7 @@ jW
 kf
 ZU
 Fi
-YY
+IH
 UO
 IE
 Qb
