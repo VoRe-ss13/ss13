@@ -40,6 +40,7 @@
 	#include "turfs/outdoors.dm"
 	#include "turfs/redgates.dm"
 	#include "overmap/sectors.dm"
+	#include "overmap/space/fueldepot.dm" //This is a fuel depot in space.
 	#include "events/wildlife_encounter.dm"
 
 	#include "relicbase-1.dmm" //Catacombs - Z1

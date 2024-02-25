@@ -156,19 +156,6 @@
 	desc = "A classic."
 	mappath = 'maps/gateway_vr/wildwest.dmm'
 
-
-//Space submaps/sectors/POIs/whatever you wanna freaking call it, go here.
-#include "../../expedition_vr/space/_fueldepot.dm"
-/datum/map_template/thor_lateload/away_fueldepot
-	name = "Fuel Depot - Z1 Space"
-	desc = "An unmanned fuel depot floating in space."
-	mappath = 'maps/expedition_vr/space/fueldepot.dmm'
-	associated_map_datum = /datum/map_z_level/thor_lateload/away_fueldepot
-
-/datum/map_z_level/thor_lateload/away_fueldepot
-	name = "Away Mission - Fuel Depot"
-	z = Z_LEVEL_FUELDEPOT
-
 // Redgate submaps go here, taken straight up from virgo
 /datum/map_template/thor_lateload/redgate
 	name = "Redgate Submap"
