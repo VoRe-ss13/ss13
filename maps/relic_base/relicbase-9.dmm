@@ -7668,11 +7668,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/visible,
 /turf/simulated/shuttle/floor/voidcraft,
 /area/shuttle/syndicate)
-"hUS" = (
-/turf/unsimulated/floor{
-	icon_state = "sandwater"
-	},
-/area/beach)
 "hUU" = (
 /obj/structure/table/woodentable,
 /obj/item/device/flashlight/lamp/green{
@@ -31755,7 +31750,7 @@ nyq
 nyq
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -32012,7 +32007,7 @@ nyq
 nyq
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -32269,7 +32264,7 @@ bno
 oDZ
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -32526,7 +32521,7 @@ nyq
 bno
 nyq
 oDR
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -32783,7 +32778,7 @@ nyq
 nyq
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -33040,7 +33035,7 @@ nyq
 nyq
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -33297,7 +33292,7 @@ nyq
 nyq
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -33554,7 +33549,7 @@ nyq
 nyq
 eIq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -33811,7 +33806,7 @@ nyq
 nyq
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -34068,7 +34063,7 @@ nyq
 nyq
 jvL
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -34325,7 +34320,7 @@ nyq
 nyq
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -34582,7 +34577,7 @@ nyq
 nyq
 jvL
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -34839,7 +34834,7 @@ nyq
 nyq
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -35096,7 +35091,7 @@ nyq
 nyq
 jxJ
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -35353,7 +35348,7 @@ nyq
 nyq
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -35610,7 +35605,7 @@ nyq
 nyq
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -35867,7 +35862,7 @@ trY
 bno
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -36124,7 +36119,7 @@ nyq
 nyq
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
@@ -36381,7 +36376,7 @@ nyq
 nyq
 nyq
 nyq
-hUS
+nyq
 uIW
 cfK
 cfK
