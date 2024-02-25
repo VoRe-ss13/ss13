@@ -71,7 +71,7 @@ var/const/NETWORK_CARRIER  = "Exploration Carrier" //CHOMPedit: Exploration outp
 	autolinkers = list("tns_relay")
 
 /obj/machinery/telecomms/relay/preset/southerncross/explorer //CHOMPedit: Tcomms relay for exploration carrier
-	listening_level = Z_LEVEL_MISC
+	listening_level = Z_LEVEL_CARRIER
 	autolinkers = list("exp_relay")
 
 //Temp Removal TFF 15/2/20

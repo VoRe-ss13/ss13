@@ -10,7 +10,7 @@
 		return INITIALIZE_HINT_LATELOAD
 
 /turf/simulated/LateInitialize()
-	if(check_for_sun())
+	if(check_for_sun() && has_dynamic_lighting())
 		if(is_outdoors())
 			var/turf/T = GetAbove(src)
 			if(T && !istype(T,/turf/simulated/open))
@@ -180,7 +180,7 @@
 
 	if(sunlightonly_corners == 4 && !only_sun_object)
 		var/datum/lighting_object/holder_object = holder.lighting_object
-		if(!holder_object.sunlight_only)
+		if(holder_object && !holder_object.sunlight_only)
 			only_sun_object = holder_object
 			only_sun_object.sunlight_only = TRUE
 

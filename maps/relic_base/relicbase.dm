@@ -42,19 +42,19 @@
 	#include "overmap/sectors.dm"
 	#include "events/wildlife_encounter.dm"
 
-	#include "relicbase-1.dmm" //Catacombs
-	#include "relicbase-2.dmm" //Underground
-	#include "relicbase-3.dmm" //Ground level
-	#include "relicbase-4.dmm" //Upper outpost levels
-//	#include "relicbase-5.dmm" //the SKY
-	#include "relicbase-11.dmm" //Mines
-	#include "relicbase-6.dmm"	//Wilderness
-//	#include "relicbase-7.dmm"  //Wilderness sky
-	#include "relicbase-12.dmm" //Ocean/Plains
-//	#include "relicbase-13.dmm" //Surface Mines
-//	#include "relicbase-8.dmm" //Explo carrier
-	#include "relicbase-9.dmm" //CC
-	#include "relicbase-10.dmm" //Transit
+	#include "relicbase-1.dmm" //Catacombs - Z1
+	#include "relicbase-2.dmm" //Underground - Z2
+	#include "relicbase-3.dmm" //Ground level - Z3
+	#include "relicbase-4.dmm" //Upper outpost levels - Z4
+	#include "relicbase-5.dmm" //the SKY - Z5
+	#include "relicbase-11.dmm" //Mines - Z6
+	#include "relicbase-6.dmm"	//Wilderness - Z7
+	#include "relicbase-7.dmm"  //Wilderness sky - Z8
+	#include "relicbase-12.dmm" //Ocean/Plains - Z9
+	#include "relicbase-13.dmm" //Surface Mines - Z10
+	#include "relicbase-8.dmm" //Explo carrier - Z11
+	#include "relicbase-9.dmm" //CC - Z12
+	#include "relicbase-10.dmm" //Transit - Z13
 
 
 //	#include "southern_cross-casino.dmm" //CHOMPedit: Disabled to save resources and loaded in during events - Jack

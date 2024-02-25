@@ -17681,10 +17681,6 @@
 /turf/simulated/open,
 /area/crew_quarters/cafeteria)
 "IH" = (
-/obj/effect/landmark/map_data{
-	height = 4;
-	level = 4
-	},
 /obj/effect/overmap/visitable/planet/Thor,
 /turf/unsimulated/wall/planetary/normal/thor,
 /area/surface/outpost/wall)
