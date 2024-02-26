@@ -287,3 +287,9 @@
       threshold for scrubbing is passed.
   - bugfix: Added an amount of meat to drop to metroids
   - bugfix: Synths no longer infinitely get a rename prompt on MMI insertion
+2024-02-26:
+  VoRe-bot:
+  - qol: Grand piano can be moved around now
+  - server: Updates DMAPI to version 5.9.0
+  - rscadd: Added TGS event handler to notify of updates
+  - admin: Added TGS event handler to notify/warn for specific server events
