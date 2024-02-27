@@ -309,7 +309,10 @@
 	//and since most components are root level + 1, this won't even have to run
 	while (current_type != /datum/component)
 		current_type = type2parent(current_type)
+<<<<<<< HEAD
 		. += current_type
+=======
+>>>>>>> 96a43a09c1 ([MIRROR] Fix datum components (#7839))
 
 /**
   * Internal proc to handle most all of the signaling procedure
