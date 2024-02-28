@@ -143,16 +143,35 @@
 
 /turf/proc/generate_missing_corners()
 
+	//TORCHEdit Begin
+	var/turf/n = get_step(src,NORTH)
+	var/turf/s = get_step(src,SOUTH)
+	var/turf/w = get_step(src,WEST)
+	var/turf/e = get_step(src,EAST)
+
+
 	if (!lighting_corner_NE)
-		lighting_corner_NE = new/datum/lighting_corner(src, NORTH|EAST)
+		if(n && n.lighting_corner_SE)
+			lighting_corner_NE = n.lighting_corner_SE
+		else
+			lighting_corner_NE = new/datum/lighting_corner(src, NORTH|EAST)
 
 	if (!lighting_corner_SE)
-		lighting_corner_SE = new/datum/lighting_corner(src, SOUTH|EAST)
+		if(e && e.lighting_corner_SW)
+			lighting_corner_SE = e.lighting_corner_SW
+		else
+			lighting_corner_SE = new/datum/lighting_corner(src, SOUTH|EAST)
 
 	if (!lighting_corner_SW)
-		lighting_corner_SW = new/datum/lighting_corner(src, SOUTH|WEST)
+		if(s && s.lighting_corner_NW)
+			lighting_corner_SW = s.lighting_corner_NW
+		else
+			lighting_corner_SW = new/datum/lighting_corner(src, SOUTH|WEST)
 
 	if (!lighting_corner_NW)
-		lighting_corner_NW = new/datum/lighting_corner(src, NORTH|WEST)
+		if(w && w.lighting_corner_NE)
+			lighting_corner_NW = s.lighting_corner_NE
+		else
+			lighting_corner_NW = new/datum/lighting_corner(src, NORTH|WEST)
 
 	lighting_corners_initialised = TRUE

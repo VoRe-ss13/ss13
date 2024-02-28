@@ -32,6 +32,7 @@
 			N = /turf/simulated/open
 
 	var/obj/fire/old_fire = fire
+	var/old_lighting_corners_initialized = lighting_corners_initialised
 	var/old_dynamic_lighting = dynamic_lighting
 	var/old_lighting_object = lighting_object
 	var/old_lighting_corner_NE = lighting_corner_NE
@@ -74,6 +75,7 @@
 	if(ispath(N, /turf/simulated/floor))
 		//TORCHEdit Begin
 		var/turf/simulated/W = new N( locate(src.x, src.y, src.z) )
+		W.lighting_corners_initialised = old_lighting_corners_initialized
 		if(old_shandler)
 			W.shandler = old_shandler
 			old_shandler.holder = W
@@ -102,7 +104,7 @@
 	else
 		//TORCHEdit Begin
 		var/turf/W = new N( locate(src.x, src.y, src.z) )
-
+		W.lighting_corners_initialised = old_lighting_corners_initialized
 		var/turf/simulated/W_sim = W
 		if(istype(W_sim) && old_shandler)
 			W_sim.shandler = old_shandler
@@ -126,22 +128,6 @@
 		new_turf = W //TORCHEdit
 		. =  W
 
-	//TORCHEdit begin
-	var/is_open = istype(new_turf,/turf/simulated/open)
-
-	propogate_sunlight_changes(oldtype, old_density, new_turf)
-	var/turf/simulated/cur_turf = src
-	if(is_open != was_open)
-		do
-			cur_turf = GetBelow(cur_turf)
-			if(is_open)
-				cur_turf.make_outdoors()
-			else
-				cur_turf.make_indoors()
-			cur_turf.propogate_sunlight_changes(oldtype, old_density, new_turf, above = TRUE)
-		while(istype(cur_turf,/turf/simulated/open) && HasBelow(cur_turf.z))
-
-	//TORCHEdit End
 
 	dangerous_objects = old_dangerous_objects
 
@@ -169,6 +155,22 @@
 		for(var/turf/space/space_tile in RANGE_TURFS(1, src))
 			space_tile.update_starlight()
 
+	//TORCHEdit begin
+	var/is_open = istype(new_turf,/turf/simulated/open)
+
+	propogate_sunlight_changes(oldtype, old_density, new_turf)
+	var/turf/simulated/cur_turf = src
+	if(is_open != was_open)
+		do
+			cur_turf = GetBelow(cur_turf)
+			if(is_open)
+				cur_turf.make_outdoors()
+			else
+				cur_turf.make_indoors()
+			cur_turf.propogate_sunlight_changes(oldtype, old_density, new_turf, above = TRUE)
+		while(istype(cur_turf,/turf/simulated/open) && HasBelow(cur_turf.z))
+
+	//TORCHEdit End
 	if(old_shandler) old_shandler.holder_change() //TORCHEdit
 	if(preserve_outdoors)
 		outdoors = old_outdoors

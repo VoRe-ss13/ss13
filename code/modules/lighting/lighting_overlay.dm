@@ -105,6 +105,7 @@
 	else
 		affected_turf.underlays -= current_underlay
 		current_underlay.icon_state = "gradient"
+		current_underlay.color = null //TORCHEdit
 		current_underlay.color = list(
 			rr, rg, rb, 00,
 			gr, gg, gb, 00,
