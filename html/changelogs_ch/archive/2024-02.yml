@@ -293,3 +293,13 @@
   - server: Updates DMAPI to version 5.9.0
   - rscadd: Added TGS event handler to notify of updates
   - admin: Added TGS event handler to notify/warn for specific server events
+2024-02-28:
+  VoRe-bot:
+  - bugfix: fixed datumcomponents
+  - refactor: 515 Compatability
+  - refactor: Nuke observer datums in favor of comsigs
+  - refactor: GC Update
+  - refactor: Mob stale references dealt with and set to GC normally
+  - refactor: bicon and /icon ditched in favor of icon2html
+  - refactor: Asset delivery redone
+  - bugfix: Hiding no longer resets after moving.
