@@ -363,6 +363,22 @@
 	nitrogen	= MOLES_N2SIF
 	temperature	= TEMPERATURE_SIF
 
+//Dealing with having mining POIs spawn on different Z levels
+/turf/simulated/mineral/Initialize()
+	. = ..()
+	if(istype(src, /turf/simulated/mineral/thor) || istype(src, /turf/simulated/mineral/sif) || istype(src, /turf/simulated/mineral/floor/sif) || istype(src, /turf/simulated/mineral/ignore_mapgen/sif))
+		return
+	if(src.z == Z_LEVEL_SURFACE_MINES)
+		if(density)
+			ChangeTurf(/turf/simulated/mineral/ignore_mapgen/sif)
+		else
+			ChangeTurf(/turf/simulated/mineral/floor/ignore_mapgen/sif)
+	if(src.z == Z_LEVEL_UNDERMINES)
+		if(density)
+			ChangeTurf(/turf/simulated/mineral/thor/ignore_mapgen)
+		else
+			ChangeTurf(/turf/simulated/mineral/thor/floor/ignore_mapgen)
+
 /turf/unsimulated/wall/planetary/normal/thor
 	oxygen		= MOLES_O2SIF
 	nitrogen	= MOLES_N2SIF

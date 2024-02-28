@@ -100,6 +100,10 @@
 	icon = 'icons/turf/thor_ch.dmi'
 	icon_state = "basalt0"
 	temperature = 393.15
+	density = FALSE
+	opacity = 0
+	blocks_air = 0
+	can_build_into_floor = TRUE
 
 /turf/simulated/mineral/thor/floor/ignore_oregen
 	ignore_oregen = TRUE
