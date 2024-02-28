@@ -15,7 +15,7 @@ You will be greeted with:
 https://i.imgur.com/oAbOjwR.png
 
 If  you’d prefer to skip right to codestuff/the wiki, this is a good start. Otherwise, continue below:
-https://wiki.chompstation13.net/index.php?title=Basics_of_Coding_in_BYOND
+https://wiki.torchstation13.net/index.php?title=Basics_of_Coding_in_BYOND
 
 MAPPERS:
 If you are looking to MAP, the first thing we need to do is go to the top of the screen, choose “Build”, and Compile.
@@ -41,6 +41,6 @@ CODERS:
 Refer to the pins in #dev-general for Visual Studio Code, but you can still code in Dream Maker (Although it’s not a very good interface for it, and it’s WHY Visual Studio Code is recommended).
 
 Coding is fairly self-explanatory, find the things you want to change and change it. There’s no robust tutorial to coding, but we have a coding tutorial of sorts and explanation on our wiki:
-https://wiki.chompstation13.net/index.php?title=Basics_of_Coding_in_BYOND
+https://wiki.torchstation13.net/index.php?title=Basics_of_Coding_in_BYOND
 
 As with spriters/mappers, if you have questions, ask in Discord in #ss13-development! <3

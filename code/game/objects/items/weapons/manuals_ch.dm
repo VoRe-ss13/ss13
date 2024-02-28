@@ -20,5 +20,5 @@
 				</style>
 				</head>
 				<body>
-				<h1>((https://wiki.chompstation13.net/index.php?title=Guide_to_Chemistry))</h1>
+				<h1>((https://wiki.torchstation13.net/index.php?title=Guide_to_Chemistry))</h1>
 			"}

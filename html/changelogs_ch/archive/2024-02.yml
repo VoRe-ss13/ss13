@@ -240,3 +240,56 @@
   - bugfix: Bigdragon noms didn't autotransfer
   tacoguy7765093:
   - bugfix: Fixed a corrupted overmap POI map crashing.
+2024-02-21:
+  Raeschen:
+  - rscadd: Emergency closet shelter in the tcomms supplies room
+  - bugfix: No qdelling hud element and selected_image /images
+  - rscdel: Remove hallucination 'fake_attacker'
+  VoRe-bot:
+  - bugfix: fixed high CPU usage in turf/simulated/wet_floor
+  - bugfix: Fixed a corrupted overmap POI map crashing.
+  - bugfix: Changed the recipe for hot butter ice cream to use ice instead of milk.
+  - bugfix: Gives Butterscotch and Hot Butter Ice Cream trash items when eaten. You
+      have to eat the bowls deliberately now.
+  - rscadd: Added CI workflow to test out TGS based changes.
+  - bugfix: Bigdragon noms didn't autotransfer
+  cadyn:
+  - bugfix: fix VV number inputs
+  - rscadd: Emergency closet shelter in the tcomms supplies room
+  - qol: developers no longer have to generate a javascript bundle when changing the
+      user interface
+  - bugfix: optimisation on particle accelerator
+  - bugfix: outdated callback syntax
+  - bugfix: No qdelling hud element and selected_image /images
+  - code_imp: stop qdelling progressbars
+2024-02-22:
+  VoRe-bot:
+  - rscadd: miasma for the chem grenade that some mobs spawn on loading
+  - bugfix: Several odd materials use the proper numbers
+2024-02-23:
+  VoRe-bot:
+  - code_imp: editing the chomp specific UIs to be react compliant
+2024-02-24:
+  VoRe-bot:
+  - bugfix: a runtime in the tgs status command
+  - rscadd: Ability to dominate mob via dominate predator
+  - rscadd: Ability to dominate body without player's mind  (The same way one can
+      do via mind binder)
+  - code_imp: Mob whitelist from mind binder became a global list var/global/list/mob_takeover_whitelist
+  - rscadd: modified AR-Visor for teshari
+  - rscdel: Removed 2x Kara Z layers (Aerostat, Mines)
+2024-02-25:
+  VoRe-bot:
+  - rscadd: Adds a "big nostrils" marking for characters with huge noses.
+  - rscadd: Wilderness shelter now flattened, thank you Bib bob
+  - rscdel: sky islands removed
+  - code_imp: Atmos scrubbers kill the final trace left behind after their minimum
+      threshold for scrubbing is passed.
+  - bugfix: Added an amount of meat to drop to metroids
+  - bugfix: Synths no longer infinitely get a rename prompt on MMI insertion
+2024-02-26:
+  VoRe-bot:
+  - qol: Grand piano can be moved around now
+  - server: Updates DMAPI to version 5.9.0
+  - rscadd: Added TGS event handler to notify of updates
+  - admin: Added TGS event handler to notify/warn for specific server events
