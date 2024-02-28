@@ -6,7 +6,6 @@
 /obj/effect/step_trigger/teleporter/planetary_fall{
 	planet = null
 	},
-/turf/space,
 /turf/simulated/sky/moving/south,
 /area/space)
 "ag" = (
@@ -77,12 +76,10 @@
 	base_turf = /turf/simulated/floor/tiled/techfloor/grid
 	})
 "ar" = (
-/turf/space/transit/east,
 /turf/simulated/sky/moving/south,
 /area/space)
 "as" = (
 /turf/simulated/sky/moving/south,
-/turf/space/transit/east,
 /area/space)
 "at" = (
 /obj/effect/step_trigger/teleporter/random{
@@ -152,7 +149,6 @@
 /area/space)
 "cM" = (
 /turf/unsimulated/wall,
-/turf/unsimulated/wall/transit,
 /area/space)
 "cT" = (
 /turf/space/transit/south,
@@ -160,7 +156,6 @@
 	base_turf = /turf/simulated/floor/reinforced
 	})
 "cU" = (
-/turf/space,
 /turf/space,
 /area/space)
 "dk" = (
@@ -186,7 +181,6 @@
 /turf/space,
 /area/shuttle/shuttle3/orbit)
 "fk" = (
-/turf/space,
 /turf/simulated/floor/tiled/techfloor/grid/transit,
 /area/space)
 "gO" = (
@@ -201,14 +195,11 @@
 	teleport_z_offset = 4
 	},
 /turf/space,
-/turf/space,
 /area/space)
 "hY" = (
-/turf/space,
 /turf/simulated/sky/moving/north,
 /area/space)
 "iF" = (
-/turf/space,
 /turf/unsimulated/floor/transit{
 	icon_state = "maglevup"
 	},
@@ -232,7 +223,6 @@
 	stopper = 0;
 	tiles = 0
 	},
-/turf/space,
 /turf/simulated/sky/south,
 /area/space)
 "ni" = (
@@ -338,7 +328,6 @@
 /area/space)
 "rR" = (
 /turf/unsimulated/wall,
-/turf/unsimulated/wall/planetary/normal/thor,
 /area/space)
 "sD" = (
 /obj/structure/handrail{
@@ -518,7 +507,6 @@
 /obj/effect/step_trigger/teleporter/planetary_fall{
 	planet = null
 	},
-/turf/space,
 /turf/simulated/sky/south,
 /area/space)
 "EG" = (
@@ -613,7 +601,6 @@
 /turf/simulated/sky/south,
 /area/space)
 "KD" = (
-/turf/space,
 /turf/simulated/sky/south,
 /area/space)
 "Lz" = (
@@ -684,7 +671,6 @@
 	base_turf = /turf/simulated/floor/tiled/techfloor/grid
 	})
 "PG" = (
-/turf/simulated/sky/moving/north,
 /turf/simulated/sky/moving/north,
 /area/space)
 "Qb" = (
@@ -945,7 +931,6 @@
 	})
 "XE" = (
 /turf/unsimulated/wall,
-/turf/unsimulated/wall/planetary/sif/alt,
 /area/space)
 "XK" = (
 /obj/effect/floor_decal/sign/small_2{
