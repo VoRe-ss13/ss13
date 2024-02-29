@@ -303,3 +303,8 @@
   - refactor: bicon and /icon ditched in favor of icon2html
   - refactor: Asset delivery redone
   - bugfix: Hiding no longer resets after moving.
+2024-02-29:
+  VoRe-bot:
+  - server: DMAPI updated to version 7.1.1 to solve a very rare infinite hang bug
+      on world startup.
+  - bugfix: prevents mind-bound items crashing the MC
