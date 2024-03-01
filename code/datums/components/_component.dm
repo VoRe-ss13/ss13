@@ -241,30 +241,6 @@
 	while (current_type != /datum/component)
 		. += current_type
 		current_type = type2parent(current_type)
-<<<<<<< HEAD
-/**
-  * Internal proc to handle most all of the signaling procedure
-  *
-  * Will runtime if used on datums with an empty component list
-  *
-  * Use the [SEND_SIGNAL] define instead
-  */
-/datum/proc/_SendSignal(sigtype, list/arguments)
-	var/target = comp_lookup[sigtype]
-	if(!length(target))
-		var/datum/C = target
-		if(!C.signal_enabled)
-			return NONE
-		var/proctype = C.signal_procs[src][sigtype]
-		return NONE | CallAsync(C, proctype, arguments)
-	. = NONE
-	for(var/datum/C as anything in target)
-		if(!C.signal_enabled)
-			continue
-		var/proctype = C.signal_procs[src][sigtype]
-		. |= CallAsync(C, proctype, arguments)
-=======
->>>>>>> 18fbf65d97 (DCS Update (#7843))
 
 // The type arg is casted so initial works, you shouldn't be passing a real instance into this
 /**
