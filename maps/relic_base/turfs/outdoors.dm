@@ -341,19 +341,19 @@
 	animal_chance = 0.5
 
 	animal_types = list(
-		/mob/living/simple_mob/vore/aggressive/frog = 1,
-		/mob/living/simple_mob/animal/sif/glitterfly = 7,
-		/mob/living/simple_mob/vore/otie = 3,
-		/mob/living/simple_mob/vore/otie/feral = 1,
-		/mob/living/simple_mob/vore/fennec = 4,
-		/mob/living/simple_mob/animal/passive/lizard = 4,
-		/mob/living/simple_mob/animal/passive/armadillo = 2,
-		/mob/living/simple_mob/animal/passive/opossum = 2,
-		/mob/living/simple_mob/animal/passive/mouse/jerboa = 1,
-		/mob/living/simple_mob/vore/wolf/direwolf = 1,
-		/mob/living/simple_mob/vore/aggressive/rat = 1,
-		/mob/living/simple_mob/vore/horse/big = 2,
-		/mob/living/simple_mob/vore/otie/zorgoia/feral = 0.2
+		/mob/living/simple_mob/vore/aggressive/frog = 5,
+		/mob/living/simple_mob/animal/sif/glitterfly = 35,
+		/mob/living/simple_mob/vore/otie = 15,
+		/mob/living/simple_mob/vore/otie/feral = 5,
+		/mob/living/simple_mob/vore/fennec = 20,
+		/mob/living/simple_mob/animal/passive/lizard = 20,
+		/mob/living/simple_mob/animal/passive/armadillo = 10,
+		/mob/living/simple_mob/animal/passive/opossum = 10,
+		/mob/living/simple_mob/animal/passive/mouse/jerboa = 5,
+		/mob/living/simple_mob/vore/wolf/direwolf = 5,
+		/mob/living/simple_mob/vore/aggressive/rat = 5,
+		/mob/living/simple_mob/vore/horse/big = 10,
+		/mob/living/simple_mob/vore/otie/zorgoia/feral = 1
 		)
 
 //Overrides to fix active edges
