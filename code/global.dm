@@ -1,8 +1,13 @@
 // Items that ask to be called every cycle.
 var/global/datum/datacore/data_core = null
+<<<<<<< HEAD
 var/global/list/machines                 = list()	// ALL Machines, wether processing or not.
 var/global/list/processing_machines      = list()	// TODO - Move into SSmachines
 var/global/list/processing_power_items   = list()	// TODO - Move into SSmachines
+=======
+var/global/list/machines                 = SSmachines.all_machines //I would upgrade all instances of global.machines to SSmachines.all_machines but it's used in so many places and a search returns so many matches for 'machines' that isn't a use of the global...
+
+>>>>>>> b6648e0056 (Fixes a mistake made in SSmachines upgrade that made conveyors not work (#7874))
 var/global/list/active_diseases          = list()
 var/global/list/hud_icon_reference       = list()
 

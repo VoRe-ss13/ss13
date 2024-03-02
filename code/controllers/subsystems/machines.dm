@@ -26,7 +26,11 @@ SUBSYSTEM_DEF(machines)
 /datum/controller/subsystem/machines/Initialize(timeofday)
 	makepowernets()
 	admin_notice("<span class='danger'>Initializing atmos machinery.</span>", R_DEBUG)
+<<<<<<< HEAD
 	setup_atmos_machinery(global.machines)
+=======
+	setup_atmos_machinery(all_machines)
+>>>>>>> b6648e0056 (Fixes a mistake made in SSmachines upgrade that made conveyors not work (#7874))
 	fire()
 	..()
 
