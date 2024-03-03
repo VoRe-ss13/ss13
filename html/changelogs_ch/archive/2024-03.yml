@@ -25,3 +25,22 @@
   - qol: Updates DCS backend code.
   - rscadd: Dry Agent reagent
   - rscadd: Dry galoshes
+2024-03-03:
+  Upstream:
+  - rscadd: Added Cascade mode for resonators.
+  VoRe-bot:
+  - bugfix: Fixes being able to permanently heat up the wilderness/the valley
+  - bugfix: globals referencing order mistake in SSmachines
+  - bugfix: Gargoyle del runtime
+  - bugfix: chatmessage runtime
+  - bugfix: fixed landmine sprites
+  - qol: Improved some of the dreaming code including it's strings.
+  - bugfix: Upgrades Timsort
+  - bugfix: Upgrades machinery SS a little in structure
+  - bugfix: Expands find_references functionality with a few extra debug modes
+  - bugfix: A typo in atmos pipes
+  - bugfix: Some CALLs to LIBCALL
+  - bugfix: fix active edges in a few POIS
+  - qol: Timer subsystem update.
+  - bugfix: nif runtime
+  - bugfix: tgui runtimes (status and mob logout)
