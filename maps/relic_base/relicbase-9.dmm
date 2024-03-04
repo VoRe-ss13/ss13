@@ -19277,10 +19277,9 @@
 /obj/structure/bed/chair/bay/shuttle{
 	dir = 1
 	},
+/obj/item/tape/engineering,
 /turf/simulated/shuttle/floor/darkred,
-/area/shuttle/escape/centcom{
-	base_turf = /turf/simulated/floor/reinforced
-	})
+/area/shuttle/escape/centcom)
 "vxa" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Courthouse"

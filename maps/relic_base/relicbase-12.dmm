@@ -10,8 +10,8 @@
 /area/surface/outpost/wall)
 "e" = (
 /obj/effect/map_effect/portal/master/side_a/plains_to_caves,
-/turf/simulated/shuttle/wall/voidcraft,
-/area/surface/outpost/wall/checkpoint)
+/turf/unsimulated/wall/planetary/normal/thor,
+/area/surface/outpost/wall)
 "f" = (
 /turf/simulated/floor/water{
 	temperature = 293.15
@@ -115,6 +115,10 @@
 	temperature = 293.15
 	},
 /area/surface/outside/plains/normal)
+"P" = (
+/obj/effect/map_effect/portal/line/side_a,
+/turf/unsimulated/wall/planetary/normal/thor,
+/area/surface/outpost/wall)
 "R" = (
 /turf/simulated/floor/beach/sand{
 	outdoors = 1
@@ -23525,7 +23529,7 @@ B
 T
 "}
 (92,1,1) = {"
-i
+P
 u
 u
 X
@@ -25067,7 +25071,7 @@ B
 T
 "}
 (98,1,1) = {"
-i
+P
 u
 u
 X
@@ -25324,7 +25328,7 @@ B
 T
 "}
 (99,1,1) = {"
-i
+P
 u
 u
 X
