@@ -6472,10 +6472,6 @@
 /obj/effect/floor_decal/corner/pink/border{
 	dir = 8
 	},
-/obj/machinery/computer/shuttle_control/exploration{
-	dir = 4;
-	name = "Carrier Sling Control Console"
-	},
 /turf/simulated/floor/tiled,
 /area/expoutpost/debriefing)
 "rI" = (
@@ -8187,10 +8183,6 @@
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/plating,
 /area/expoutpost/shuttle)
-"vv" = (
-/obj/effect/shuttle_landmark/relicbase/sling_outpost,
-/turf/simulated/floor/reinforced/airless,
-/area/shuttle/expoutpost/site)
 "vw" = (
 /obj/structure/window/reinforced/full,
 /obj/structure/window/reinforced{
@@ -29483,7 +29475,7 @@ tJ
 uh
 uD
 uD
-vv
+uD
 uD
 uD
 wD

@@ -19273,14 +19273,6 @@
 "vwm" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/terminal)
-"vwu" = (
-/obj/structure/bed/chair/bay/shuttle{
-	dir = 1
-	},
-/turf/simulated/shuttle/floor/darkred,
-/area/shuttle/escape/centcom{
-	base_turf = /turf/simulated/floor/reinforced
-	})
 "vxa" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Courthouse"
@@ -39329,7 +39321,7 @@ vwm
 uTl
 uXF
 vfs
-vwu
+udo
 vBE
 xew
 vBE

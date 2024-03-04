@@ -14821,7 +14821,7 @@
 "gBe" = (
 /obj/effect/zone_divider,
 /turf/simulated/shuttle/wall/voidcraft/hard_corner,
-/area/surface/outpost/wall/checkpoint)
+/area/surface/outpost/wall)
 "gBg" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/structure/disposalpipe/segment{
@@ -20946,7 +20946,7 @@
 /obj/effect/map_effect/portal/master/side_b/caves_to_plains{
 	dir = 1
 	},
-/turf/simulated/shuttle/wall/voidcraft,
+/turf/unsimulated/wall/planetary/normal/thor,
 /area/surface/outpost/wall/checkpoint)
 "jfN" = (
 /obj/structure/cable/green{
@@ -27740,6 +27740,9 @@
 /obj/effect/floor_decal/corner/beige/bordercorner2{
 	dir = 1
 	},
+/obj/machinery/firealarm{
+	pixel_y = 40
+	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/delivery)
 "mpj" = (
@@ -34249,6 +34252,12 @@
 /obj/structure/table/wooden_reinforced,
 /turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_9)
+"psz" = (
+/obj/effect/map_effect/portal/line/side_b{
+	dir = 1
+	},
+/turf/unsimulated/wall/planetary/normal/thor,
+/area/surface/outpost/wall/checkpoint)
 "psP" = (
 /obj/structure/flora/tree/jungle_small,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -36233,9 +36242,8 @@
 /turf/simulated/floor/outdoors/dirt,
 /area/surface/outpost/main/dorms/dorm_1)
 "qdH" = (
-/obj/effect/zone_divider,
-/turf/unsimulated/wall/planetary/normal/thor,
-/area/surface/outpost/wall/checkpoint)
+/turf/simulated/shuttle/wall/voidcraft/hard_corner,
+/area/surface/outpost/wall)
 "qdO" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -41595,9 +41603,6 @@
 	},
 /obj/effect/floor_decal/corner/beige/bordercorner2{
 	dir = 4
-	},
-/obj/machinery/firealarm{
-	pixel_y = 24
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/delivery)
@@ -49074,6 +49079,9 @@
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/fishing)
 "vwo" = (
+/obj/effect/map_effect/portal/line/side_a{
+	dir = 4
+	},
 /turf/unsimulated/wall/planetary/normal/thor,
 /area/surface/outpost/wall/checkpoint)
 "vwr" = (
@@ -53370,7 +53378,7 @@
 	dir = 4;
 	portal_id = "outpost_to_mines"
 	},
-/turf/simulated/shuttle/wall/voidcraft/hard_corner,
+/turf/unsimulated/wall/planetary/normal/thor,
 /area/surface/outpost/wall/checkpoint)
 "xmn" = (
 /obj/effect/landmark/start{
@@ -56512,10 +56520,10 @@ tMO
 tMO
 tMO
 tMO
-vwo
-qdH
+tMO
+tUG
 dJR
-gKX
+vwo
 gKX
 gRP
 gRP
@@ -56523,9 +56531,9 @@ gRP
 gRP
 gKX
 xml
-vwo
-vwo
-vwo
+tMO
+tMO
+tMO
 tMO
 tMO
 tMO
@@ -56769,7 +56777,7 @@ mzP
 mzP
 mzP
 mzP
-aBh
+qdH
 gBe
 ewu
 nSd
@@ -56780,9 +56788,9 @@ abg
 abg
 aBh
 aBh
-aBh
-aBh
-aBh
+qdH
+qdH
+qdH
 mzP
 mzP
 mzP
@@ -80027,7 +80035,7 @@ xUb
 ybp
 bGz
 aaw
-ukq
+psz
 "}
 (93,1,1) = {"
 tMO
@@ -81569,7 +81577,7 @@ ybp
 ybp
 ybp
 aaw
-ukq
+psz
 "}
 (99,1,1) = {"
 tMO
@@ -81826,7 +81834,7 @@ fgv
 fgv
 fgv
 aaw
-ukq
+psz
 "}
 (100,1,1) = {"
 tMO

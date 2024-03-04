@@ -137,6 +137,12 @@
 "pL" = (
 /turf/unsimulated/wall/planetary/normal/thor,
 /area/surface/outpost/wall)
+"pR" = (
+/obj/effect/map_effect/portal/line/side_b{
+	dir = 8
+	},
+/turf/unsimulated/wall/planetary/normal/thor,
+/area/surface/outpost/wall/checkpoint)
 "rt" = (
 /turf/simulated/floor/tiled/steel_dirty,
 /area/surface/outpost/mining_main/exterior{
@@ -218,7 +224,7 @@
 	dir = 8;
 	portal_id = "outpost_to_mines"
 	},
-/turf/simulated/shuttle/wall/voidcraft/hard_corner,
+/turf/unsimulated/wall/planetary/normal/thor,
 /area/surface/outpost/wall/checkpoint)
 "BZ" = (
 /obj/machinery/light,
@@ -65076,7 +65082,7 @@ jH
 Js
 tf
 Gm
-Gm
+kT
 kT
 kT
 kT
@@ -65839,7 +65845,7 @@ pL
 pL
 pL
 Kz
-Dz
+pR
 Dz
 ci
 ci
