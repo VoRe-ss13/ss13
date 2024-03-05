@@ -4592,6 +4592,7 @@
 #include "maps\redgate\falls\atoll_objs.dm"
 #include "maps\redgate\falls\atoll_turfs.dm"
 #include "maps\relic_base\relicbase.dm"
+#include "maps\relic_base\turfs\outdoors.dm"
 #include "maps\southern_cross\items\encryptionkey_sc.dm"
 #include "maps\southern_cross\items\headset_sc.dm"
 #include "maps\southern_cross\items\clothing\sc_accessory.dm"
