@@ -61,3 +61,9 @@
   - bugfix: couple of TGUI runtimes (send_full_update, pen
   - bugfix: obj/belly runtime on cryo
   - refactor: tweaked client Del -> Destroy behavior
+2024-03-05:
+  VoRe-bot:
+  - bugfix: tickets clientlogout null
+  - bugfix: rig parts severe hard del
+  - bugfix: protean rig hard dels
+  - rscdel: Disables some non-essential sounds that would have played on april 1st.
