@@ -245,66 +245,58 @@
   - rscadd: Emergency closet shelter in the tcomms supplies room
   - bugfix: No qdelling hud element and selected_image /images
   - rscdel: Remove hallucination 'fake_attacker'
-  VoRe-bot:
-  - bugfix: fixed high CPU usage in turf/simulated/wet_floor
-  - bugfix: Fixed a corrupted overmap POI map crashing.
-  - bugfix: Changed the recipe for hot butter ice cream to use ice instead of milk.
-  - bugfix: Gives Butterscotch and Hot Butter Ice Cream trash items when eaten. You
-      have to eat the bowls deliberately now.
-  - rscadd: Added CI workflow to test out TGS based changes.
-  - bugfix: Bigdragon noms didn't autotransfer
   cadyn:
   - bugfix: fix VV number inputs
-  - rscadd: Emergency closet shelter in the tcomms supplies room
-  - qol: developers no longer have to generate a javascript bundle when changing the
-      user interface
-  - bugfix: optimisation on particle accelerator
-  - bugfix: outdated callback syntax
-  - bugfix: No qdelling hud element and selected_image /images
-  - code_imp: stop qdelling progressbars
 2024-02-22:
-  VoRe-bot:
-  - rscadd: miasma for the chem grenade that some mobs spawn on loading
+  FluffMedic:
   - bugfix: Several odd materials use the proper numbers
-2024-02-23:
-  VoRe-bot:
+  Kashargul:
   - code_imp: editing the chomp specific UIs to be react compliant
-2024-02-24:
-  VoRe-bot:
-  - bugfix: a runtime in the tgs status command
+  - rscadd: miasma for the chem grenade that some mobs spawn on loading
+  Raeschen:
+  - rscadd: Wilderness shelter now flattened, thank you Bib bob
+  - rscdel: sky islands removed
+  - rscdel: Removed 2x Kara Z layers (Aerostat, Mines)
+2024-02-23:
+  Delams-The-SM:
   - rscadd: Ability to dominate mob via dominate predator
   - rscadd: Ability to dominate body without player's mind  (The same way one can
       do via mind binder)
   - code_imp: Mob whitelist from mind binder became a global list var/global/list/mob_takeover_whitelist
+2024-02-24:
+  Kashargul:
+  - bugfix: a runtime in the tgs status command
   - rscadd: modified AR-Visor for teshari
-  - rscdel: Removed 2x Kara Z layers (Aerostat, Mines)
 2024-02-25:
-  VoRe-bot:
+  KotetsuRedwood:
   - rscadd: Adds a "big nostrils" marking for characters with huge noses.
-  - rscadd: Wilderness shelter now flattened, thank you Bib bob
-  - rscdel: sky islands removed
+  Raeschen:
+  - bugfix: Synths no longer infinitely get a rename prompt on MMI insertion
   - code_imp: Atmos scrubbers kill the final trace left behind after their minimum
       threshold for scrubbing is passed.
+  TheCaramelion:
   - bugfix: Added an amount of meat to drop to metroids
-  - bugfix: Synths no longer infinitely get a rename prompt on MMI insertion
 2024-02-26:
-  VoRe-bot:
-  - qol: Grand piano can be moved around now
-  - server: Updates DMAPI to version 5.9.0
+  ItsSelis:
   - rscadd: Added TGS event handler to notify of updates
   - admin: Added TGS event handler to notify/warn for specific server events
+  - server: Updates DMAPI to version 5.9.0
+  TheCaramelion:
+  - qol: Grand piano can be moved around now
 2024-02-28:
-  VoRe-bot:
+  Raeschen:
   - bugfix: fixed datumcomponents
+  - bugfix: Hiding no longer resets after moving.
+  cadyn:
   - refactor: 515 Compatability
   - refactor: Nuke observer datums in favor of comsigs
   - refactor: GC Update
   - refactor: Mob stale references dealt with and set to GC normally
   - refactor: bicon and /icon ditched in favor of icon2html
   - refactor: Asset delivery redone
-  - bugfix: Hiding no longer resets after moving.
 2024-02-29:
-  VoRe-bot:
+  ItsSelis:
   - server: DMAPI updated to version 7.1.1 to solve a very rare infinite hang bug
       on world startup.
+  Raeschen:
   - bugfix: prevents mind-bound items crashing the MC
