@@ -77,3 +77,9 @@
 2024-03-05:
   ItsSelis:
   - rscdel: Disables some non-essential sounds that would have played on april 1st.
+2024-03-07:
+  VoRe-bot:
+  - bugfix: Fixed voremobs not eating pounced mobs.
+  - rscadd: Crawling.
+  - qol: Laying down won't make you drop items in your hands.
+  - qol: You can now equip/unequip items while laying down.
