@@ -4,7 +4,7 @@
 
 	// CHOMPStation Edits Start: Disabling specific includes as vorestation.dme has them already loading via #includes there. UPDATE THIS if that changes.
 	#include "relicbase_areas.dm"
-	#include "relicbase_defines.dm"
+	// #include "relicbase_defines.dm" //Moved to the DME so turfs/outdoors.dm and the CI work properly
 	#include "relicbase_elevator.dm"
 	#include "relicbase_events.dm"
 	//#include "relicbase_jobs.dm"
