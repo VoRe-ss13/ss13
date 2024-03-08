@@ -99,11 +99,5 @@
 	if(movement_range <= 0)
 		qdel(src)
 	else
-<<<<<<< HEAD
-		//sleep(lag) //ChompEDIT
-		//move(lag) //ChompEDIT
-		addtimer(CALLBACK(src, PROC_REF(move), lag), lag) //ChompEDIT
-=======
 		spawn(lag)
 			move(lag)
->>>>>>> e29b9d4d35 (Reversions and fixes (#7889))
