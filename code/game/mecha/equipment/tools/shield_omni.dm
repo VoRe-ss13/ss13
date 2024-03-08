@@ -78,10 +78,7 @@
 	. = ..()
 	my_mech = loc
 	RegisterSignal(my_mech, COMSIG_OBSERVER_MOVED, /obj/item/shield_projector/proc/update_shield_positions)
-<<<<<<< HEAD
-=======
 	my_mech.AddComponent(/datum/component/recursive_move)
->>>>>>> 0fdd1ffc83 (Move recursive listening to component (#7894))
 	update_shift(my_mech)
 
 /obj/item/shield_projector/rectangle/mecha/proc/update_shift(atom/movable/mech)
