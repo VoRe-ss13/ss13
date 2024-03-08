@@ -83,3 +83,8 @@
   - rscadd: Crawling.
   - qol: Laying down won't make you drop items in your hands.
   - qol: You can now equip/unequip items while laying down.
+2024-03-08:
+  VoRe-bot:
+  - bugfix: fixed an exploit to reform outside of a belly
+  - bugfix: ooc panel style button showing for others than oneself
+  - balance: nerf the shit out of cyanide
