@@ -17505,16 +17505,15 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "wgs" = (
-/obj/random/junk,
 /obj/effect/decal/cleanable/filth,
 /obj/effect/decal/cleanable/dirt,
-/obj/random/obstruction,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/water/indoors{
-	color = "#604838";
-	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
-	name = "filthy water"
-	},
+/obj/structure/biowaste_tank,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/obj/effect/floor_decal/rust,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -18721,6 +18720,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/obstruction,
+/obj/item/weapon/storage/bag/trash,
 /turf/simulated/floor/water/indoors{
 	color = "#604838";
 	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
@@ -19221,6 +19221,7 @@
 /obj/random/trash,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/teleplumb_exit,
 /turf/simulated/floor/water/indoors{
 	color = "#604838";
 	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";

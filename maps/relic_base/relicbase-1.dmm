@@ -3574,6 +3574,10 @@
 	outdoors = -1
 	},
 /area/maintenance/underground/catacombs)
+"zi" = (
+/obj/structure/monolith,
+/turf/simulated/floor/atoll,
+/area/maintenance/underground/catacombs)
 "zj" = (
 /obj/random/maintenance/cargo,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -3948,6 +3952,9 @@
 	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
 	name = "filthy water"
 	},
+/area/maintenance/underground/catacombs)
+"CK" = (
+/turf/simulated/floor/atoll,
 /area/maintenance/underground/catacombs)
 "CQ" = (
 /obj/effect/floor_decal/rust,
@@ -6173,6 +6180,10 @@
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
 	},
+/area/maintenance/underground/catacombs)
+"TE" = (
+/mob/living/simple_mob/animal/passive/fish/trout,
+/turf/simulated/floor/water/indoors,
 /area/maintenance/underground/catacombs)
 "TF" = (
 /obj/structure/catwalk,
@@ -44954,7 +44965,7 @@ lr
 lr
 lr
 lr
-lr
+wH
 lr
 lr
 lr
@@ -45210,9 +45221,9 @@ wH
 lr
 lr
 lr
-VV
-lr
-lr
+AH
+CK
+wH
 lr
 lr
 lr
@@ -45466,11 +45477,11 @@ wH
 lr
 lr
 lr
-ag
-lr
-lr
-lr
-lr
+TE
+CK
+zi
+CK
+wH
 lr
 lr
 wH
@@ -45724,9 +45735,9 @@ pu
 lr
 lr
 lr
-lr
-lr
-lr
+wH
+CK
+wH
 lr
 lr
 lr
@@ -45982,7 +45993,7 @@ lr
 lr
 lr
 VV
-lr
+wH
 ag
 lr
 RT
