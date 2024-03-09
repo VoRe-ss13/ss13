@@ -9343,7 +9343,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
-/area/medical/medical_lockerroom)
+/area/maintenance/solars)
 "rV" = (
 /obj/structure/curtain/open/shower/security,
 /obj/machinery/shower,
@@ -18777,7 +18777,7 @@
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/maintenance/solars)
 "KA" = (
 /obj/effect/floor_decal/borderfloorblack/cee{
 	dir = 1
@@ -24287,7 +24287,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
-/area/surface/outside/plains/outpost)
+/area/maintenance/solars)
 "Vp" = (
 /obj/effect/wingrille_spawn/reinforced_phoron,
 /obj/machinery/door/firedoor/border_only,
@@ -24737,7 +24737,7 @@
 /area/surface/outside/plains/outpost)
 "Wp" = (
 /turf/simulated/floor/plating,
-/area/surface/outside/plains/outpost)
+/area/maintenance/solars)
 "Wq" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/carpet/bcarpet,
@@ -24779,18 +24779,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
-"Wv" = (
-/obj/machinery/door/firedoor/glass,
-/obj/effect/wingrille_spawn/reinforced,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "medlockdown";
-	name = "Medical Lockdown";
-	opacity = 0
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/surface/outside/plains/outpost)
 "Ww" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -66331,7 +66319,7 @@ xD
 xD
 xD
 xD
-Lt
+yc
 Kz
 yc
 bP
@@ -66588,7 +66576,7 @@ xD
 xD
 xD
 xD
-Wv
+bP
 Wp
 tZ
 Qe
@@ -66845,7 +66833,7 @@ xD
 xD
 xD
 xD
-Ns
+bP
 Vo
 LC
 Qf
@@ -67102,7 +67090,7 @@ xD
 xD
 xD
 MI
-Nr
+yc
 rU
 yc
 yc
