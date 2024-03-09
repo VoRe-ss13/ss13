@@ -88,3 +88,10 @@
   - bugfix: fixed an exploit to reform outside of a belly
   - bugfix: ooc panel style button showing for others than oneself
   - balance: nerf the shit out of cyanide
+2024-03-09:
+  VoRe-bot:
+  - code_imp: recursive listening now is a component
+  - bugfix: runtimes
+  - bugfix: various reversions and touchups
+  - bugfix: fixed ascending through floors
+  - bugfix: fixed shuttles not having roofs
