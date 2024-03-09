@@ -13,15 +13,21 @@ var/list/job_whitelist = list()
 		job_whitelist = splittext(text, "\n")
 
 /proc/is_job_whitelisted(mob/M, var/rank)
+	//TORCHEdit begin
+	if(check_rights(R_ADMIN, 0) || check_rights(R_DEBUG, 0) || check_rights(R_EVENT, 0)) // CHOMPedit
+		return 1
+	var/datum/job/job = job_master.GetJob(rank)
+	if(job.admin_only)
+		return 0
+
 	if(!config.use_jobwhitelist) // CHOMPedit
 		return 1 // CHOMPedit
-	var/datum/job/job = job_master.GetJob(rank)
+	//TORCHEdit End
 	if(!job.whitelist_only)
 		return 1
 	if(rank == USELESS_JOB) //VOREStation Edit - Visitor not Assistant
 		return 1
-	if(check_rights(R_ADMIN, 0) || check_rights(R_DEBUG, 0) || check_rights(R_EVENT, 0)) // CHOMPedit
-		return 1
+	//TORCH Removal. Moved this upwards
 	if(!job_whitelist)
 		return 0
 	if(M && rank)
