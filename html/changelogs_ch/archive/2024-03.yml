@@ -95,3 +95,6 @@
   - bugfix: various reversions and touchups
   - bugfix: fixed ascending through floors
   - bugfix: fixed shuttles not having roofs
+2024-03-10:
+  cadyn:
+  - bugfix: players can no longer be centcomm officers
