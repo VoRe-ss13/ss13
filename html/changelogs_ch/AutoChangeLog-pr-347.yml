@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - qol: "Blacklist radio channels from ghost-radio (Entertainment, bodycams)"
