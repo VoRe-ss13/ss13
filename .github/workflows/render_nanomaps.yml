@@ -40,8 +40,8 @@ jobs:
           ${{ runner.os }}-spacemandmm-
     - name: Install Tools
       run: |
-        bash tools/ci/install_spaceman_dmm.sh dmmtools
-        apt install -y ImageMagick
+        bash tools/ci/install_spaceman_dmm.sh dmm-tools
+        sudo apt install -y ImageMagick
     - name: Ensure +x on github-actions directory
       run: chmod -R +x ./tools/github-actions
 
