@@ -113,3 +113,19 @@
       R-UST, to make the locations closer to where they're supposed to be and so _certain_
       engineers don't go blowing up the R-UST with phoron in the hot loop
   - bugfix: holodeck, shootspeed and toggle_active target runtime
+2024-03-12:
+  VoRe-bot:
+  - image: New moth wing types
+  - bugfix: Organ/limb removal on explosion runtime
+  - bugfix: infinite EMP mine recursion
+  - rscadd: Added Viper Combat Armor, a low-tier fluff armor based on Viper Armor
+      from XCOM 2.
+  - rscadd: Added new 'Breasts' markings. Same shape as the standard human ones we
+      already have, but with minor thickness on the side sprites too. Comes in three
+      variants - Standard, Smooth and Reptile.
+  - rscadd: The Naga Alt 3-colour striped taur tail now has a vore sprite.
+  - bugfix: Repathed Naga Alt 3-colour tailsprites, ensuring they'll work with all
+      Naga suits.
+  - image: Added Viper Combat Armor and Breasts sprites.
+  - bugfix: icons duplicating in the vorepanel
+  - qol: Blacklist radio channels from ghost-radio (Entertainment, bodycams)
