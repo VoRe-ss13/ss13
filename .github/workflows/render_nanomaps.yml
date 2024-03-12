@@ -10,6 +10,7 @@ on:
       - master
     paths:
       - 'maps/**'
+  workflow_dispatch:
 
 permissions: {}
 jobs:
