@@ -129,3 +129,19 @@
   - image: Added Viper Combat Armor and Breasts sprites.
   - bugfix: icons duplicating in the vorepanel
   - qol: Blacklist radio channels from ghost-radio (Entertainment, bodycams)
+2024-03-13:
+  VoRe-bot:
+  - admin: Check Player Attack/Dialog logs, Gib, Resize and Cryo player are now using
+      tgui_input_list's
+  - qol: A few global vars are now properly managed
+  - admin: The loaded whitelists can be now edited in-game (so that players can be
+      whitelisted before the round has to be restarted)
+  - image: Fixed Viper Suit sprite being off-center by one pixel.
+  - image: Fixed a bunch of Snake Alt Suitsprites not being displayed properly.
+  - bugfix: fix icons
+  - rscadd: Added stack_end_detector to the master controller
+  - rscadd: Added warning how many times a specific subsystem had slept
+  - rscadd: Linter will now show an error if the subsystem ignite proc is overridden
+  - qol: Changed seed generation
+  - bugfix: Stunned effect allowing you to move
+  - bugfix: fixed errant red pixels on sergals, visible with digilegs
