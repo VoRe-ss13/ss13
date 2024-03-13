@@ -5,6 +5,7 @@
 /datum/lighting_corner
 	var/list/datum/light_source/affecting // Light sources affecting us.
 
+	var/sunlight = SUNLIGHT_NONE // TORCHEdit
 	var/x = 0
 	var/y = 0
 
@@ -75,7 +76,7 @@
 			master.lighting_corner_SE = src
 
 /datum/lighting_corner/proc/self_destruct_if_idle()
-	if (!LAZYLEN(affecting))
+	if (!LAZYLEN(affecting) && !sunlight) //TORCHEdit
 		qdel(src, force = TRUE)
 
 /datum/lighting_corner/proc/vis_update()
@@ -87,10 +88,17 @@
 		light_source.recalc_corner(src)
 
 // God that was a mess, now to do the rest of the corner code! Hooray!
-/datum/lighting_corner/proc/update_lumcount(delta_r, delta_g, delta_b)
+/datum/lighting_corner/proc/update_lumcount(delta_r, delta_g, delta_b, var/from_sholder = FALSE) //TORCHEdit
 	if (!(delta_r || delta_g || delta_b)) // 0 is falsey ok
 		return
 
+	//TORCHEdit Begin
+	if(sunlight == SUNLIGHT_ONLY && LAZYLEN(affecting)) change_sun()
+	if(sunlight == SUNLIGHT_CURRENT && !LAZYLEN(affecting) && !from_sholder)
+		update_sunlight_handlers()
+		update_sunlight_handlers()
+
+	//TORCHEdit End
 	lum_r += delta_r
 	lum_g += delta_g
 	lum_b += delta_b
@@ -174,3 +182,68 @@
 		SSlighting.corners_queue -= src
 
 	return ..()
+
+//TORCHEdit Begin
+/datum/lighting_corner/proc/update_sun()
+	if(!SSlighting.global_shandler)
+		return
+	lum_r = SSlighting.global_shandler.red
+	lum_g = SSlighting.global_shandler.green
+	lum_b = SSlighting.global_shandler.blue
+	cache_r = SSlighting.global_shandler.cache_r
+	cache_g = SSlighting.global_shandler.cache_g
+	cache_b = SSlighting.global_shandler.cache_b
+
+	var/datum/lighting_object/lighting_object = master_NE?.lighting_object
+	if (lighting_object && !lighting_object.needs_update)
+		lighting_object.needs_update = TRUE
+		SSlighting.objects_queue += lighting_object
+
+	lighting_object = master_SE?.lighting_object
+	if (lighting_object && !lighting_object.needs_update)
+		lighting_object.needs_update = TRUE
+		SSlighting.objects_queue += lighting_object
+
+	lighting_object = master_SW?.lighting_object
+	if (lighting_object && !lighting_object.needs_update)
+		lighting_object.needs_update = TRUE
+		SSlighting.objects_queue += lighting_object
+
+	lighting_object = master_NW?.lighting_object
+	if (lighting_object && !lighting_object.needs_update)
+		lighting_object.needs_update = TRUE
+		SSlighting.objects_queue += lighting_object
+
+/datum/lighting_corner/proc/change_sun()
+	lum_r = 0
+	lum_g = 0
+	lum_b = 0
+	var/turf/simulated/master_NE_sim = master_NE
+	var/turf/simulated/master_SE_sim = master_SE
+	var/turf/simulated/master_SW_sim = master_SW
+	var/turf/simulated/master_NW_sim = master_NW
+	if(istype(master_NE_sim) && master_NE_sim.shandler)
+		master_NE_sim.shandler.corner_sunlight_change(src)
+	if(istype(master_SE_sim) && master_SE_sim.shandler)
+		master_SE_sim.shandler.corner_sunlight_change(src)
+	if(istype(master_SW_sim) && master_SW_sim.shandler)
+		master_SW_sim.shandler.corner_sunlight_change(src)
+	if(istype(master_NW_sim) && master_NW_sim.shandler)
+		master_NW_sim.shandler.corner_sunlight_change(src)
+	update_sunlight_handlers()
+
+
+/datum/lighting_corner/proc/update_sunlight_handlers()
+	var/turf/simulated/master_NE_sim = master_NE
+	var/turf/simulated/master_SE_sim = master_SE
+	var/turf/simulated/master_SW_sim = master_SW
+	var/turf/simulated/master_NW_sim = master_NW
+	if(istype(master_NE_sim) && master_NE_sim.shandler)
+		master_NE_sim.shandler.sunlight_update()
+	if(istype(master_SE_sim) && master_SE_sim.shandler)
+		master_SE_sim.shandler.sunlight_update()
+	if(istype(master_SW_sim) && master_SW_sim.shandler)
+		master_SW_sim.shandler.sunlight_update()
+	if(istype(master_NW_sim) && master_NW_sim.shandler)
+		master_NW_sim.shandler.sunlight_update()
+//TORCHEdit End

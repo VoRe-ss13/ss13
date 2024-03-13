@@ -180,7 +180,8 @@
 /atom/movable/sun_visuals_overlap
 	icon = 'icons/effects/effects.dmi'
 	icon_state = null
-	plane = PLANE_O_LIGHTING_VISUAL
+	plane = PLANE_LIGHTING //TORCHEdit
+	blend_mode = 2 //TORCHEdit
 	mouse_opacity = 0
 	alpha = 0
 	color = "#FFFFFF"

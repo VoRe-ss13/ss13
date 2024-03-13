@@ -21,3 +21,4 @@
 /turf/simulated/floor/boxing/gym
 	name = "gym mat"
 	icon_state = "gym_mat"
+	

@@ -5,6 +5,8 @@
 	///whether we are already in the SSlighting.objects_queue list
 	var/needs_update = FALSE
 
+	var/sunlight_only = FALSE //TORCHEdit
+
 	///the turf that our light is applied to
 	var/turf/affected_turf
 
@@ -47,6 +49,7 @@
 
 /datum/lighting_object/proc/update()
 
+	if(sunlight_only) return //TORCHEdit
 	// To the future coder who sees this and thinks
 	// "Why didn't he just use a loop?"
 	// Well my man, it's because the loop performed like shit.
@@ -102,6 +105,7 @@
 	else
 		affected_turf.underlays -= current_underlay
 		current_underlay.icon_state = "gradient"
+		current_underlay.color = null //TORCHEdit
 		current_underlay.color = list(
 			rr, rg, rb, 00,
 			gr, gg, gb, 00,
@@ -119,3 +123,13 @@
 
 /datum/lighting_object/proc/addtoturf()
 	affected_turf.underlays |= current_underlay
+
+//TORCHEdit Begin
+/datum/lighting_object/proc/update_sun()
+	affected_turf.underlays -= current_underlay
+	current_underlay.icon_state = "transparent"
+	current_underlay.color = null //We have to set it to null before setting to a color, otherwise BYOND jank causes weird shit to happen if it was a matrix before.
+	current_underlay.color = rgb(SSlighting.global_shandler.redint,SSlighting.global_shandler.greenint,SSlighting.global_shandler.blueint)
+	affected_turf.underlays |= current_underlay
+	affected_turf.set_luminosity(1)
+//TORCHEdit End
