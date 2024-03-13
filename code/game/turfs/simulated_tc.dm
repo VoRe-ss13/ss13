@@ -10,7 +10,7 @@
 		return INITIALIZE_HINT_LATELOAD
 
 /turf/simulated/LateInitialize()
-	if(check_for_sun() && has_dynamic_lighting())
+	if((SSplanets && SSplanets.z_to_planet.len >= z && SSplanets.z_to_planet[z]) && has_dynamic_lighting()) //ONLY FOR PLANET TILES IGNORE FAKESUN TILES
 		if(is_outdoors())
 			var/turf/T = GetAbove(src)
 			if(T && !istype(T,/turf/simulated/open))
