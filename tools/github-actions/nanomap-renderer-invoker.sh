@@ -11,6 +11,9 @@ map_files=(
     "./maps/relic_base/relicbase-8.dmm"
     "./maps/relic_base/relicbase-9.dmm"
     "./maps/relic_base/relicbase-10.dmm"
+    "./maps/relic_base/relicbase-11.dmm"
+    "./maps/relic_base/relicbase-12.dmm"
+    "./maps/relic_base/relicbase-13.dmm"
 )
 
 ~/dmm-tools minimap "${map_files[@]}"
@@ -29,6 +32,8 @@ convert "relicbase-8-1.png" -resize 2240x2240 "relicbase_nanomap_z8.png"
 convert "relicbase-9-1.png" -resize 2240x2240 "relicbase_nanomap_z9.png"
 convert "relicbase-10-1.png" -resize 2240x2240 "relicbase_nanomap_z10.png"
 convert "relicbase-11-1.png" -resize 2240x2240 "relicbase_nanomap_z11.png"
+convert "relicbase-12-1.png" -resize 2240x2240 "relicbase_nanomap_z12.png"
+convert "relicbase-13-1.png" -resize 2240x2240 "relicbase_nanomap_z13.png"
 
 rm -rf "relicbase-1-1.png"
 rm -rf "relicbase-2-1.png"
@@ -41,6 +46,8 @@ rm -rf "relicbase-8-1.png"
 rm -rf "relicbase-9-1.png"
 rm -rf "relicbase-10-1.png"
 rm -rf "relicbase-11-1.png"
+rm -rf "relicbase-12-1.png"
+rm -rf "relicbase-13-1.png"
 
 cd "../../"
 cp data/minimaps/* "icons/_nanomaps/"

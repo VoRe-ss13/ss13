@@ -468,7 +468,7 @@
 	// It REALLY doesnt matter too much if these arent up to date
 	// They are relatively big
 	assets = list(
-		// CHOMP Edit: Restored for chomp station. Removed Tether.
+		// CHOMP Edit: Restored for chomp station. Removed Tether. //TORCHEdit new map
 		"relicbase_nanomap_z1.png"		= 'icons/_nanomaps/relicbase_nanomap_z1.png',
 		"relicbase_nanomap_z10.png"	= 'icons/_nanomaps/relicbase_nanomap_z10.png',
 		"relicbase_nanomap_z2.png"		= 'icons/_nanomaps/relicbase_nanomap_z2.png',
@@ -480,5 +480,7 @@
 		"relicbase_nanomap_z9.png"		= 'icons/_nanomaps/relicbase_nanomap_z9.png',
 		"relicbase_nanomap_z10.png"		= 'icons/_nanomaps/relicbase_nanomap_z10.png',
 		"relicbase_nanomap_z11.png"		= 'icons/_nanomaps/relicbase_nanomap_z11.png',
-		// CHOMP Edit End
+		"relicbase_nanomap_z12.png"		= 'icons/_nanomaps/relicbase_nanomap_z12.png',
+		"relicbase_nanomap_z13.png"		= 'icons/_nanomaps/relicbase_nanomap_z13.png',
+		// CHOMP Edit End //TORCHEdit end
 	)
