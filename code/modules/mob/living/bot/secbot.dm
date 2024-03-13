@@ -214,6 +214,7 @@
 	say("Down on the floor, [suspect_name]! You have [SECBOT_WAIT_TIME*2] seconds to comply.")
 	playsound(src, pick(preparing_arrest_sounds), 50)
 	// Register to be told when the target moves
+	target.AddComponent(/datum/component/recursive_move)
 	RegisterSignal(target, COMSIG_OBSERVER_MOVED, /mob/living/bot/secbot/proc/target_moved)
 
 // Callback invoked if the registered target moves
@@ -224,7 +225,8 @@
 
 /mob/living/bot/secbot/resetTarget()
 	..()
-	UnregisterSignal(target, COMSIG_OBSERVER_MOVED)
+	if(target)
+		UnregisterSignal(target, COMSIG_OBSERVER_MOVED)
 	awaiting_surrender = 0
 	attacked = FALSE
 	walk_to(src, 0)

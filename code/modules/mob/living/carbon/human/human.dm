@@ -58,10 +58,7 @@
 
 /mob/living/carbon/human/Destroy()
 	human_mob_list -= src
-	/* //Chomp REMOVE - this is done on mob/living/Destroy
-	for(var/organ in organs)
-		qdel(organ)
-	*/
+	QDEL_NULL_LIST(organs)
 	if(nif)
 		QDEL_NULL(nif)	//VOREStation Add
 	worn_clothing.Cut()
@@ -1464,9 +1461,14 @@
 		if(C.body_parts_covered & FEET)
 			footcoverage_check = TRUE
 			break
+	if(lying) // CHOMPadd - Drops stuff from hands, but no sleep.
+		playsound(src, 'sound/misc/slip.ogg', 25, 1, -1)
+		drop_both_hands()
+		return 0
 	if((species.flags & NO_SLIP && !footcoverage_check) || (shoes && (shoes.item_flags & NOSLIP))) //Footwear negates a species' natural traction.
 		return 0
 	if(..(slipped_on,stun_duration))
+		drop_both_hands() // CHOMPAdd - Drops stuff from both hands
 		return 1
 
 /mob/living/carbon/human/proc/relocate()

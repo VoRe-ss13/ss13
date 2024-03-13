@@ -4,26 +4,25 @@
 	living_mob_list -= src
 	player_list -= src
 	unset_machine()
-	QDEL_NULL(hud_used)
 	clear_fullscreen()
 	if(client)
 		for(var/obj/screen/movable/spell_master/spell_master in spell_masters)
 			qdel(spell_master)
 		remove_screen_obj_references()
-		client.screen.Cut()
+		client.screen = list()
 	if(mind && mind.current == src)
 		spellremove(src)
 	if(!istype(src,/mob/observer)) //CHOMPEdit
 		ghostize() //CHOMPEdit
 	//ChompEDIT start - fix hard qdels
 	QDEL_NULL(plane_holder)
-
+	QDEL_NULL(hud_used)
 	if(pulling)
 		stop_pulling() //TG does this on atom/movable but our stop_pulling proc is here so whatever
 
 	previewing_belly = null // from code/modules/vore/eating/mob_ch.dm
 	vore_selected = null // from code/modules/vore/eating/mob_vr
-
+	focus = null
 
 	if(mind)
 		if(mind.current == src)
@@ -564,6 +563,9 @@
 
 	if (AM.anchored)
 		to_chat(src, "<span class='warning'>It won't budge!</span>")
+		return
+
+	if(lying) // CHOMPAdd - No pulling while we crawl.
 		return
 
 	var/mob/M = AM
@@ -1221,19 +1223,22 @@
 	return 0
 
 //Exploitable Info Update
+/obj
+	var/datum/weakref/exploit_for //if this obj is an exploit for somebody, this points to them
 
 /mob/proc/amend_exploitable(var/obj/item/I)
 	if(istype(I))
 		exploit_addons |= I
 		var/exploitmsg = html_decode("\n" + "Has " + I.name + ".")
 		exploit_record += exploitmsg
+		I.exploit_for = WEAKREF(src)
 
 
 /obj/Destroy()
-	if(istype(src.loc, /mob))
-		var/mob/holder = src.loc
-		if(src in holder.exploit_addons)
-			holder.exploit_addons -= src
+	if(exploit_for)
+		var/mob/exploited = exploit_for.resolve()
+		exploited?.exploit_addons -= src
+		exploit_for = null
 	. = ..()
 
 
