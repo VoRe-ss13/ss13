@@ -21,6 +21,7 @@ map_files=(
 # Move and rename files so the game understands them
 cd "data/minimaps"
 
+<<<<<<< HEAD
 convert "relicbase-1-1.png" -resize 2240x2240 "relicbase_nanomap_z1.png"
 convert "relicbase-2-1.png" -resize 2240x2240 "relicbase_nanomap_z2.png"
 convert "relicbase-3-1.png" -resize 2240x2240 "relicbase_nanomap_z3.png"
@@ -48,6 +49,31 @@ rm -rf "relicbase-10-1.png"
 rm -rf "relicbase-11-1.png"
 rm -rf "relicbase-12-1.png"
 rm -rf "relicbase-13-1.png"
+=======
+convert "southern_cross-1-1.png" -resize 2240x2240 "southern_cross_nanomap_z1.png"
+convert "southern_cross-2-1.png" -resize 2240x2240 "southern_cross_nanomap_z2.png"
+convert "southern_cross-3-1.png" -resize 2240x2240 "southern_cross_nanomap_z3.png"
+convert "southern_cross-4-1.png" -resize 2240x2240 "southern_cross_nanomap_z4.png"
+convert "southern_cross-5-1.png" -resize 2240x2240 "southern_cross_nanomap_z5.png"
+convert "southern_cross-6-1.png" -resize 2240x2240 "southern_cross_nanomap_z6.png"
+convert "southern_cross-7-1.png" -resize 2240x2240 "southern_cross_nanomap_z7.png"
+convert "southern_cross-8-1.png" -resize 2240x2240 "southern_cross_nanomap_z8.png"
+convert "southern_cross-9-1.png" -resize 2240x2240 "southern_cross_nanomap_z9.png"
+convert "southern_cross-10-1.png" -resize 2240x2240 "southern_cross_nanomap_z10.png"
+convert "southern_cross-11-1.png" -resize 2240x2240 "southern_cross_nanomap_z11.png"
+
+rm -rf "southern_cross-1-1.png"
+rm -rf "southern_cross-2-1.png"
+rm -rf "southern_cross-3-1.png"
+rm -rf "southern_cross-4-1.png"
+rm -rf "southern_cross-5-1.png"
+rm -rf "southern_cross-6-1.png"
+rm -rf "southern_cross-7-1.png"
+rm -rf "southern_cross-8-1.png"
+rm -rf "southern_cross-9-1.png"
+rm -rf "southern_cross-10-1.png"
+rm -rf "southern_cross-11-1.png"
+>>>>>>> bdb1e687c7 (Switch nanomap rendering to spacemanDMM (#7951))
 
 cd "../../"
 cp data/minimaps/* "icons/_nanomaps/"
