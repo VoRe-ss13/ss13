@@ -35,11 +35,7 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ~/SpacemanDMM
-<<<<<<< HEAD
-        key: ${{ runner.os }}-spacemandmm-${{ hashFiles('_dependencies.sh') }}
-=======
         key: ${{ runner.os }}-spacemandmm-${{ hashFiles('_build_dependencies.sh') }}
->>>>>>> bdb1e687c7 (Switch nanomap rendering to spacemanDMM (#7951))
         restore-keys: |
           ${{ runner.os }}-spacemandmm-
     - name: Install Tools
