@@ -11619,7 +11619,8 @@
 	base_area = /area/surface/outpost/main/landing/one;
 	base_turf = /turf/simulated/floor/reinforced;
 	landmark_tag = "needle_dock";
-	name = "Needle Dock"
+	name = "Needle Dock";
+	docking_controller = "needle_dock"
 	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
@@ -25600,7 +25601,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/reinforced,
-/area/engineering/external_lights)
+/area/surface/outpost/main/landing/one)
 "lhZ" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
@@ -30102,7 +30103,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/reinforced,
-/area/engineering/external_lights)
+/area/surface/outpost/main/landing/one)
 "nfR" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -45012,8 +45013,13 @@
 	c_tag = "CIV - Hangar Pad 1 Southwest";
 	dir = 4
 	},
+/obj/machinery/embedded_controller/radio/simple_docking_controller{
+	pixel_x = -26;
+	frequency = 1380;
+	id_tag = "needle_dock"
+	},
 /turf/simulated/floor/reinforced,
-/area/engineering/external_lights)
+/area/surface/outpost/main/landing/one)
 "tGh" = (
 /obj/machinery/camera/network/exterior{
 	c_tag = "EXT - Civ Bar/Kitchen East 2";
@@ -53529,7 +53535,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/reinforced,
-/area/engineering/external_lights)
+/area/surface/outpost/main/landing/one)
 "xcK" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8

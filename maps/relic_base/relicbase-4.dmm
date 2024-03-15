@@ -10235,6 +10235,11 @@
 	c_tag = "CIV - Hangar Pad 3 Southwest";
 	dir = 4
 	},
+/obj/machinery/embedded_controller/radio/simple_docking_controller{
+	pixel_x = -26;
+	frequency = 1380;
+	id_tag = "ursula_dock"
+	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
@@ -21034,6 +21039,12 @@
 "OR" = (
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/machinery/embedded_controller/radio/simple_docking_controller{
+	pixel_y = 26;
+	id_tag = "hangar_3";
+	tag_door = "hangar_3_door";
+	frequency = 1380
 	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
