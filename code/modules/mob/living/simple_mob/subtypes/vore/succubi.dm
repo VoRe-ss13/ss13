@@ -56,6 +56,8 @@
 	emote_see = list("gestures for you to come over","winks","smiles","stretches")
 
 /mob/living/simple_mob/vore/succubus/init_vore()
+	if(!voremob_loaded) //TORCHAdd - Added to fix redgate runtime
+		return //TORCHAdd
 	..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
@@ -70,4 +72,3 @@
 	B.escapechance = 15
 	B.selective_preference = DM_DRAIN
 	B.escape_stun = 5
-
