@@ -2713,6 +2713,24 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
+"bvT" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/structure/hull_corner,
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outpost/main/landing/two)
 "bxS" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
@@ -4354,6 +4372,14 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_4)
+"clS" = (
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/wall/rplastihull,
+/area/surface/outpost/main/landing/two)
 "clX" = (
 /obj/machinery/door/airlock{
 	name = "Unit 1"
@@ -5768,6 +5794,17 @@
 /obj/structure/salvageable/implant_container_os,
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/landing/two)
+"cIR" = (
+/obj/structure/cable/heavyduty{
+	d2 = 0;
+	dir = 0;
+	icon_state = "0-4"
+	},
+/obj/structure/cable/blue,
+/turf/simulated/floor/tiled/steel_dirty{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "cIY" = (
 /obj/item/weapon/paper_bin{
 	pixel_x = -3;
@@ -7228,6 +7265,10 @@
 	dir = 8
 	},
 /obj/random/trash_pile,
+/obj/structure/cable/blue{
+	d2 = 8;
+	icon_state = "16-0"
+	},
 /turf/simulated/floor/tiled/milspec,
 /area/surface/outpost/main/landing/two)
 "dpN" = (
@@ -8539,6 +8580,18 @@
 	outdoors = -1
 	},
 /area/surface/outside/plains/outpost)
+"dOM" = (
+/obj/structure/marker_beacon{
+	icon_state = "markerjade-on";
+	picked_color = "Jade"
+	},
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outpost/main/landing/one)
 "dOO" = (
 /obj/machinery/camera/network/security{
 	c_tag = "SEC - Armory Exterior";
@@ -9139,6 +9192,11 @@
 "dZU" = (
 /obj/structure/railing/grey{
 	dir = 4
+	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
 /area/surface/outside/plains/outpost)
@@ -10636,9 +10694,6 @@
 /area/engineering/hallway/engineer_hallway)
 "eFF" = (
 /obj/effect/floor_decal/rust,
-/obj/machinery/power/apc/hyper{
-	pixel_y = -24
-	},
 /obj/random/trash_pile,
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/landing/two)
@@ -11482,6 +11537,11 @@
 /turf/simulated/wall/r_wall,
 /area/server)
 "eXH" = (
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
 "eYj" = (
@@ -11575,6 +11635,11 @@
 /obj/structure/closet/walllocker_double/hydrant/north,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 6
+	},
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
@@ -11676,6 +11741,11 @@
 	dir = 4
 	},
 /obj/structure/railing/grey,
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/steel_dirty,
 /area/surface/outside/plains/outpost)
 "fbA" = (
@@ -12282,6 +12352,26 @@
 	},
 /turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
+"fnu" = (
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/steel_dirty{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "fnx" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
@@ -12652,6 +12742,23 @@
 	},
 /turf/simulated/floor/lino,
 /area/crew_quarters/bar)
+"fwr" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outpost/main/landing/one)
 "fwx" = (
 /obj/machinery/computer/rdconsole/robotics,
 /turf/simulated/floor/tiled/white,
@@ -12702,6 +12809,11 @@
 "fyn" = (
 /obj/effect/floor_decal/steeldecal/monofloor{
 	dir = 4
+	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/reinforced,
 /area/surface/outpost/main/landing/one)
@@ -16652,6 +16764,14 @@
 "hiU" = (
 /turf/simulated/wall,
 /area/surface/outside/plains/outpost)
+"hjg" = (
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outpost/main/landing/one)
 "hji" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -18491,6 +18611,11 @@
 	},
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/industrial/danger,
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/reinforced,
 /area/surface/outpost/main/landing/one)
 "hWR" = (
@@ -18505,6 +18630,11 @@
 	dir = 1
 	},
 /obj/effect/zone_divider,
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/reinforced,
 /area/surface/outpost/main/landing/one)
 "hXm" = (
@@ -18521,6 +18651,11 @@
 	},
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/industrial/danger,
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/reinforced,
 /area/surface/outpost/main/landing/two)
 "hXw" = (
@@ -18770,6 +18905,17 @@
 /obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/mininglockerroom)
+"ibF" = (
+/obj/effect/floor_decal/steeldecal/monofloor{
+	dir = 4
+	},
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outpost/main/landing/two)
 "ibM" = (
 /obj/structure/loot_pile/maint/trash,
 /turf/simulated/floor/plating,
@@ -22576,6 +22722,14 @@
 	},
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/rnd/research)
+"jPZ" = (
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/wall/rplastihull,
+/area/surface/outpost/main/landing/two)
 "jQf" = (
 /obj/structure/table/wooden_reinforced,
 /obj/machinery/computer/security/telescreen/entertainment,
@@ -26277,6 +26431,17 @@
 	},
 /turf/simulated/floor/tiled/milspec,
 /area/surface/outpost/civilian/emergency_storage)
+"lvG" = (
+/obj/effect/floor_decal/steeldecal/monofloor{
+	dir = 8
+	},
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outpost/main/landing/one)
 "lvY" = (
 /obj/item/weapon/flag,
 /turf/simulated/floor/outdoors/grass/heavy{
@@ -27681,6 +27846,22 @@
 /obj/structure/dogbed,
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/heads/sc/hop)
+"mgb" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/cable/blue{
+	d2 = 8;
+	icon_state = "16-0"
+	},
+/obj/structure/cable/blue{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/steel_dirty{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "mgl" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
@@ -28510,6 +28691,14 @@
 /obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/security/lobby)
+"mzg" = (
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/steel_dirty,
+/area/surface/outside/plains/outpost)
 "mzt" = (
 /obj/machinery/atmospherics/pipe/zpipe/down/scrubbers,
 /obj/machinery/atmospherics/pipe/zpipe/down/supply,
@@ -29846,6 +30035,16 @@
 /obj/random/trash_pile,
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/garage)
+"naq" = (
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/steel_dirty{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "nar" = (
 /obj/effect/floor_decal/milspec/color/black,
 /obj/random/obstruction,
@@ -30101,6 +30300,17 @@
 /obj/machinery/camera/network/civilian{
 	c_tag = "CIV - Hangar Pad 1 Southeast";
 	dir = 8
+	},
+/obj/structure/cable/blue,
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
 	},
 /turf/simulated/floor/reinforced,
 /area/surface/outpost/main/landing/one)
@@ -30994,6 +31204,19 @@
 	outdoors = 1
 	},
 /area/surface/outside/path/plains)
+"nDx" = (
+/obj/effect/floor_decal/stairs/dark_stairs{
+	dir = 4
+	},
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "nDK" = (
 /obj/structure/table/woodentable,
 /obj/machinery/librarycomp,
@@ -33493,6 +33716,11 @@
 	pixel_y = -26;
 	specialfunctions = 4
 	},
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
 "oQE" = (
@@ -33575,6 +33803,10 @@
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
+	},
+/obj/structure/cable/blue{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/shuttle/floor/yellow,
 /area/shuttle/needle)
@@ -35673,6 +35905,11 @@
 /obj/machinery/camera/network/civilian{
 	c_tag = "CIV - Hangar Pad 2 Southwest";
 	dir = 4
+	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/reinforced,
 /area/surface/outpost/main/landing/two)
@@ -41138,6 +41375,15 @@
 	c_tag = "CIV - Hangar Pad 2 Southeast";
 	dir = 8
 	},
+/obj/structure/cable/blue{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
 /turf/simulated/floor/reinforced,
 /area/surface/outpost/main/landing/two)
 "sch" = (
@@ -41859,6 +42105,23 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/simulated/floor/water/atoll,
 /area/surface/outside/plains/outpost)
+"ssk" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outpost/main/landing/one)
 "ssv" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -42646,6 +42909,23 @@
 	outdoors = 1
 	},
 /area/surface/outside/plains/outpost)
+"sIs" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outpost/main/landing/one)
 "sIw" = (
 /obj/structure/table/marble,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -42692,6 +42972,14 @@
 /obj/structure/fans/tiny,
 /turf/simulated/floor/bmarble,
 /area/surface/outpost/main/dorms/dorm_9)
+"sJV" = (
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/wall/r_wall,
+/area/surface/outpost/main/landing/one)
 "sKd" = (
 /obj/effect/floor_decal/spline/fancy{
 	dir = 1
@@ -45018,6 +45306,11 @@
 	frequency = 1380;
 	id_tag = "needle_dock"
 	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/reinforced,
 /area/surface/outpost/main/landing/one)
 "tGh" = (
@@ -46442,6 +46735,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/kitchen)
+"uoq" = (
+/obj/structure/marker_beacon{
+	icon_state = "markerburgundy-on";
+	picked_color = "Burgundy"
+	},
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outpost/main/landing/one)
 "uos" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -48244,6 +48549,18 @@
 "uVH" = (
 /turf/simulated/wall/r_wall,
 /area/quartermaster/foyer)
+"uWh" = (
+/obj/structure/cable/heavyduty{
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/heavyduty{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "uWo" = (
 /obj/effect/zone_divider,
 /obj/structure/cable/green{
@@ -48681,6 +48998,19 @@
 /obj/machinery/chemical_synthesizer,
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
+"vdD" = (
+/obj/effect/floor_decal/stairs/dark_stairs{
+	dir = 8
+	},
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "vdF" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -51807,6 +52137,23 @@
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/emergency_storage)
+"won" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outpost/main/landing/one)
 "wor" = (
 /obj/structure/cable/pink{
 	icon_state = "1-2"
@@ -52889,6 +53236,23 @@
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_7)
+"wLG" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/reinforced,
+/area/surface/outpost/main/landing/one)
 "wLM" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -28
@@ -97339,12 +97703,12 @@ bkT
 bkT
 bkT
 bzZ
-bzZ
+wLG
 fyn
 fyn
 fyn
-bzZ
-bzZ
+ssk
+fwr
 bkT
 aUl
 wQh
@@ -97596,12 +97960,12 @@ xVX
 xVX
 xVX
 xVX
+hjg
 xVX
 xVX
 xVX
 xVX
-xVX
-bCk
+uoq
 tGe
 ilH
 rLe
@@ -98630,7 +98994,7 @@ szI
 hcr
 hcr
 wwo
-bkT
+sJV
 ipR
 rLe
 lgs
@@ -98887,7 +99251,7 @@ sYY
 hcr
 hcr
 hcr
-bkT
+sJV
 ipR
 rLe
 lgs
@@ -99144,7 +99508,7 @@ tAl
 hcr
 hcr
 hcr
-bkT
+sJV
 ipR
 rLe
 lgs
@@ -100171,7 +100535,7 @@ xVX
 xVX
 xVX
 xVX
-bAq
+dOM
 nfJ
 ilH
 rLe
@@ -100426,9 +100790,9 @@ bCM
 bCM
 fAA
 fAA
-fAA
-bCM
-bCM
+lvG
+sIs
+won
 bkT
 aUl
 rLe
@@ -100683,7 +101047,7 @@ eCt
 faW
 fBc
 fBc
-fBc
+vdD
 hcM
 tdE
 aUl
@@ -100937,17 +101301,17 @@ rLe
 rLe
 rLe
 eEw
-eEw
-hZu
-hZu
-hZu
-hZu
-hZu
-hZu
-hZu
-hZu
-hZu
-hZu
+mzg
+naq
+naq
+fnu
+naq
+naq
+naq
+naq
+naq
+naq
+cIR
 hZu
 yeV
 kPi
@@ -101191,20 +101555,20 @@ xpb
 xpb
 cHG
 djz
-djz
+mgb
 dZU
 dZU
 fby
 fxH
 fxH
-fxH
+nDx
 hev
 hzs
 aUl
 aUl
 rLe
 rLe
-jaB
+uWh
 jIj
 lBW
 pRx
@@ -101454,9 +101818,9 @@ bEa
 cIt
 bFL
 gam
-gam
-cIt
-bFL
+ibF
+bvT
+jPZ
 bmJ
 aUl
 rLe
@@ -101713,7 +102077,7 @@ qAn
 bFI
 cqf
 bFL
-bFL
+clS
 pLS
 ilH
 rLe

@@ -356,6 +356,20 @@
 "aQ" = (
 /turf/simulated/wall/durasteel,
 /area/ai)
+"aR" = (
+/obj/structure/marker_beacon{
+	icon_state = "markerjade-on";
+	picked_color = "Jade"
+	},
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/reinforced{
+	outdoors = 1
+	},
+/area/surface/outpost/main/landing/three)
 "aS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/cyan{
@@ -1799,6 +1813,20 @@
 	},
 /turf/simulated/shuttle/wall/voidcraft/blue,
 /area/shuttle/shuttle3/start)
+"dI" = (
+/obj/structure/marker_beacon{
+	icon_state = "markerburgundy-on";
+	picked_color = "Burgundy"
+	},
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/reinforced{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "dJ" = (
 /obj/machinery/camera/network/command{
 	c_tag = "AI - Exterior Southeast";
@@ -8755,6 +8783,25 @@
 /obj/effect/floor_decal/emblem/black,
 /turf/simulated/wall/rplastihull,
 /area/surface/outside/plains/outpost)
+"qN" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outpost/main/landing/three)
 "qO" = (
 /obj/machinery/camera/network/exterior{
 	c_tag = "EXT - Library North 5";
@@ -10015,6 +10062,9 @@
 	dir = 8
 	},
 /obj/machinery/light,
+/obj/structure/cable/blue{
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
@@ -10030,6 +10080,11 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
@@ -10045,6 +10100,9 @@
 	dir = 8
 	},
 /obj/machinery/light,
+/obj/structure/cable/blue{
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
@@ -10240,6 +10298,9 @@
 	frequency = 1380;
 	id_tag = "ursula_dock"
 	},
+/obj/structure/cable/blue{
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
@@ -10250,6 +10311,11 @@
 	},
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/industrial/danger,
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
@@ -10278,6 +10344,11 @@
 "tV" = (
 /obj/effect/floor_decal/steeldecal/monofloor{
 	dir = 1
+	},
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/reinforced{
 	outdoors = 1
@@ -10312,17 +10383,23 @@
 /area/surface/outpost/main/dorms/dorm_8/upstairs)
 "tY" = (
 /obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 5
+	dir = 6
 	},
-/obj/effect/floor_decal/borderfloorblack,
-/obj/effect/floor_decal/industrial/danger,
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
 /obj/structure/cable/blue{
-	icon_state = "2-4"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outpost/main/landing/three)
+/area/surface/outside/plains/outpost)
 "tZ" = (
 /obj/machinery/light/no_nightshift{
 	dir = 8
@@ -10382,6 +10459,11 @@
 	c_tag = "CIV - Hangar Pad 3 Southeast";
 	dir = 8
 	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
@@ -10408,6 +10490,9 @@
 /obj/machinery/camera/network/civilian{
 	c_tag = "CIV - Hangar Pad 4 Southwest";
 	dir = 4
+	},
+/obj/structure/cable/blue{
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
@@ -10443,6 +10528,11 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/industrial/danger,
 /obj/effect/decal/cleanable/blood/oil,
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
@@ -10462,7 +10552,9 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/industrial/danger,
 /obj/structure/cable/blue{
-	icon_state = "2-4"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
@@ -10727,21 +10819,24 @@
 /turf/simulated/floor/tiled/dark,
 /area/surface/outpost/main/teleporter)
 "uN" = (
-/obj/structure/lattice,
-/obj/structure/railing{
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloorblack{
 	dir = 8
 	},
-/obj/structure/railing{
-	dir = 1
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
 	},
-/obj/structure/catwalk,
 /obj/structure/cable/blue{
-	icon_state = "1-2"
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
-/turf/simulated/open{
+/turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost/sky)
+/area/surface/outside/plains/outpost)
 "uO" = (
 /obj/item/weapon/stool/padded,
 /obj/machinery/light/no_nightshift{
@@ -11012,17 +11107,16 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_7/upstairs)
 "vo" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/railing,
 /obj/structure/catwalk,
 /obj/structure/lattice,
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/grille,
 /obj/structure/cable/blue{
-	icon_state = "0-2"
-	},
-/obj/structure/cable/blue{
-	icon_state = "1-2"
+	d2 = 2;
+	icon_state = "32-2";
+	d1 = 32
 	},
 /turf/simulated/open{
 	outdoors = 1
@@ -11326,10 +11420,7 @@
 "vW" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/wingrille_spawn/reinforced,
-/obj/structure/cable/blue{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
+/turf/space,
 /area/medical/virology)
 "vX" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/green{
@@ -11483,6 +11574,25 @@
 	},
 /turf/simulated/floor/bmarble,
 /area/crew_quarters/heads/sc/sd)
+"wq" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outpost/main/landing/three)
 "ws" = (
 /obj/structure/cable/green{
 	d2 = 4;
@@ -11788,6 +11898,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
+"wQ" = (
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/blue{
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/reinforced{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "wR" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/reinforced,
@@ -12101,9 +12224,6 @@
 /area/medical/virology)
 "xw" = (
 /obj/item/weapon/storage/box/cups,
-/obj/structure/cable/blue{
-	icon_state = "2-4"
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5
 	},
@@ -12126,19 +12246,27 @@
 /turf/simulated/floor/carpet/blue2,
 /area/library_conference_room)
 "xy" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/wingrille_spawn/reinforced,
-/obj/structure/cable/blue{
-	icon_state = "4-8"
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 6
 	},
-/turf/simulated/floor/plating,
-/area/medical/virology)
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outpost/main/landing/three)
 "xz" = (
 /obj/structure/table/glass,
 /obj/item/roller,
-/obj/structure/cable/blue{
-	icon_state = "4-8"
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 9
 	},
@@ -12155,9 +12283,6 @@
 /area/medical/virology)
 "xA" = (
 /obj/structure/closet/secure_closet/personal/patient,
-/obj/structure/cable/blue{
-	icon_state = "1-8"
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5
 	},
@@ -12724,10 +12849,14 @@
 /area/medical/virology)
 "yH" = (
 /obj/structure/cable/blue{
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/white,
-/area/medical/virology)
+/turf/simulated/floor/reinforced{
+	outdoors = 1
+	},
+/area/surface/outpost/main/landing/three)
 "yI" = (
 /obj/machinery/camera/network/exterior{
 	c_tag = "EXT - Vault East";
@@ -13208,6 +13337,16 @@
 	},
 /turf/simulated/floor/tiled/milspec,
 /area/surface/outpost/civilian/emergency_storage)
+"zK" = (
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/reinforced{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "zL" = (
 /obj/machinery/computer/atmos_alert{
 	dir = 8
@@ -13387,9 +13526,6 @@
 /area/medical/virology)
 "Af" = (
 /obj/structure/reagent_dispensers/water_cooler/full,
-/obj/structure/cable/blue{
-	icon_state = "1-2"
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
 	},
@@ -13969,9 +14105,6 @@
 	},
 /obj/effect/floor_decal/corner/green/border{
 	dir = 4
-	},
-/obj/structure/cable/blue{
-	icon_state = "1-8"
 	},
 /obj/structure/cable/blue{
 	d2 = 8;
@@ -17180,6 +17313,16 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/storage)
+"Hl" = (
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/reinforced{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "Hm" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/glass{
@@ -17871,6 +18014,25 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora_isolation)
+"IE" = (
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8
+	},
+/obj/structure/cable/blue{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outpost/main/landing/three)
 "IF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -20368,6 +20530,11 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/industrial/danger,
 /obj/effect/zone_divider,
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
@@ -24217,6 +24384,20 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/qm)
+"Vf" = (
+/obj/structure/marker_beacon{
+	icon_state = "markerburgundy-on";
+	picked_color = "Burgundy"
+	},
+/obj/structure/cable/blue{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/reinforced{
+	outdoors = 1
+	},
+/area/surface/outpost/main/landing/three)
 "Vg" = (
 /turf/simulated/wall/wood,
 /area/library_conference_room)
@@ -66556,12 +66737,12 @@ hO
 lO
 lO
 lO
-hO
-hO
-hO
-hO
-hO
-hO
+xy
+IE
+IE
+IE
+IE
+IE
 tu
 gc
 fO
@@ -66813,13 +66994,13 @@ gQ
 gQ
 gQ
 gQ
+yH
 gQ
 gQ
 gQ
 gQ
 gQ
-gQ
-gZ
+Vf
 tQ
 ON
 zv
@@ -67853,7 +68034,7 @@ yF
 zv
 vT
 xw
-yH
+yD
 Af
 Bp
 CH
@@ -68109,7 +68290,7 @@ tV
 yF
 vl
 vT
-xy
+xa
 yK
 xa
 vT
@@ -68619,9 +68800,9 @@ jZ
 jZ
 gQ
 gQ
-tY
-uN
-vo
+tR
+Dq
+fW
 vW
 xA
 yL
@@ -69389,7 +69570,7 @@ gQ
 gQ
 gQ
 gQ
-gM
+aR
 ue
 ON
 zv
@@ -69641,11 +69822,11 @@ hQ
 hQ
 hQ
 hQ
-hQ
-hQ
-hQ
-hQ
-hQ
+qN
+wq
+wq
+wq
+wq
 tv
 gc
 fO
@@ -69898,7 +70079,7 @@ fW
 qC
 lX
 lX
-lX
+Hl
 Dq
 fW
 fW
@@ -70155,7 +70336,7 @@ zv
 tU
 lX
 lX
-lX
+Hl
 ON
 zv
 zv
@@ -70409,10 +70590,10 @@ EG
 EG
 EG
 EG
-OY
-lX
-lX
-lX
+vo
+zK
+zK
+wQ
 zb
 EG
 EG
@@ -70669,11 +70850,11 @@ Lp
 Lp
 Lp
 Lp
-Lp
-Lp
-Lp
-Lp
-Lp
+uN
+tY
+tY
+tY
+tY
 tw
 fO
 fO
@@ -70931,7 +71112,7 @@ qM
 ht
 ht
 sR
-hv
+dI
 ug
 ON
 zv
@@ -71189,7 +71370,7 @@ rX
 ht
 sS
 lX
-vC
+um
 ON
 zv
 zv
@@ -71446,7 +71627,7 @@ ht
 ht
 lX
 sU
-vC
+um
 ON
 zv
 zv
@@ -71703,7 +71884,7 @@ pi
 pi
 lX
 tz
-vC
+um
 ON
 zv
 zv
@@ -72217,7 +72398,7 @@ ht
 ht
 sV
 lX
-vC
+um
 ON
 zv
 zv
@@ -72474,7 +72655,7 @@ qM
 pi
 sX
 tD
-vC
+um
 ON
 zv
 zv
