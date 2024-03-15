@@ -145,3 +145,11 @@
   - qol: Changed seed generation
   - bugfix: Stunned effect allowing you to move
   - bugfix: fixed errant red pixels on sergals, visible with digilegs
+2024-03-15:
+  VoRe-bot:
+  - bugfix: Fixes a runtime and makes chat tags (OOC, LOOC, ect) use a cache properly.
+  - rscadd: Nanomap now renders non-tile objects
+  - bugfix: readds the updated inputs to the right click verbs again (one limitation,
+      on self will always open the tgui selection)
+  - balance: Modified Ion Storm requirements to be more common
+  - bugfix: fixed a runtime in soundloop
