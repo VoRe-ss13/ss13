@@ -11542,6 +11542,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 6
+	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
 "eYj" = (
@@ -11633,13 +11636,13 @@
 	pixel_y = 32
 	},
 /obj/structure/closet/walllocker_double/hydrant/north,
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 6
-	},
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
+	dir = 1
 	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
@@ -11660,6 +11663,15 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 10
+	},
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/blue{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/shuttle/floor/yellow,
 /area/shuttle/needle)
@@ -11686,6 +11698,11 @@
 	landmark_tag = "needle_dock";
 	name = "Needle Dock";
 	docking_controller = "needle_dock"
+	},
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
@@ -12944,6 +12961,9 @@
 /area/surface/outside/plains/outpost)
 "fAc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /turf/simulated/shuttle/wall/voidcraft/hard_corner,
 /area/shuttle/needle)
 "fAd" = (
@@ -18046,6 +18066,38 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/foyer)
+"hHl" = (
+/obj/machinery/power/apc/hyper{
+	pixel_y = -24;
+	environ = 1;
+	equipment = 1;
+	lighting = 1;
+	locked = 0;
+	coverlocked = 0
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/obj/structure/closet/crate/engineering,
+/obj/item/weapon/storage/briefcase/inflatable,
+/obj/item/device/t_scanner,
+/obj/item/clothing/glasses/welding,
+/obj/item/clothing/glasses/goggles,
+/obj/item/clothing/glasses/goggles,
+/obj/item/device/geiger,
+/obj/item/device/multitool,
+/obj/item/weapon/storage/toolbox/electrical,
+/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/weapon/tank/phoron,
+/obj/item/weapon/tank/phoron,
+/obj/fiftyspawner/glass,
+/obj/fiftyspawner/steel,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/turf/simulated/shuttle/floor/yellow,
+/area/shuttle/needle)
 "hHp" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -23603,6 +23655,21 @@
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/rnd/research)
+"kkl" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/power/smes/buildable/power_shuttle{
+	charge = 4e+006;
+	input_attempt = 1;
+	inputting = 1;
+	outputting = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "0-8"
+	},
+/turf/simulated/shuttle/floor/yellow,
+/area/shuttle/needle)
 "kkn" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/milspec,
@@ -26720,6 +26787,17 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay)
+"lDi" = (
+/obj/structure/window/reinforced/survival_pod,
+/obj/structure/bed/chair/bay/shuttle{
+	dir = 1
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = 32;
+	pixel_y = 3
+	},
+/turf/simulated/shuttle/floor/black,
+/area/shuttle/needle)
 "lDj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 1
@@ -33798,15 +33876,17 @@
 /obj/machinery/atmospherics/binary/pump{
 	dir = 4
 	},
-/obj/machinery/power/apc/hyper{
-	pixel_y = -24
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
 /obj/structure/cable/blue{
 	d2 = 8;
 	icon_state = "0-8"
+	},
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/floor/yellow,
 /area/shuttle/needle)
@@ -34416,9 +34496,15 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 4;
-	pixel_y = -28
+/obj/machinery/power/terminal,
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/blue{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/shuttle/floor/yellow,
 /area/shuttle/needle)
@@ -34512,6 +34598,11 @@
 	master_tag = "needle";
 	name = "interior access button";
 	pixel_y = 26
+	},
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
@@ -35492,6 +35583,11 @@
 	master_tag = "needle";
 	name = "exterior access button";
 	pixel_y = 26
+	},
+/obj/structure/cable/blue{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
@@ -39208,9 +39304,8 @@
 "rfg" = (
 /obj/machinery/portable_atmospherics/canister/phoron,
 /obj/machinery/atmospherics/portables_connector{
-	dir = 4
+	dir = 1
 	},
-/obj/machinery/light,
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
 "rfp" = (
@@ -41032,24 +41127,11 @@
 /turf/simulated/floor,
 /area/surface/outpost/civilian/fishing)
 "rRT" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/closet/crate/engineering,
-/obj/fiftyspawner/steel,
-/obj/fiftyspawner/glass,
-/obj/item/weapon/tank/phoron,
-/obj/item/weapon/tank/phoron,
-/obj/item/weapon/storage/toolbox/mechanical,
-/obj/item/weapon/storage/toolbox/electrical,
-/obj/item/device/multitool,
-/obj/item/weapon/storage/briefcase/inflatable,
-/obj/item/device/geiger,
-/obj/item/clothing/glasses/goggles,
-/obj/item/clothing/glasses/goggles,
-/obj/item/device/t_scanner,
-/obj/item/clothing/glasses/welding,
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 9
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
 	},
+/obj/machinery/portable_atmospherics/canister/phoron,
+/obj/machinery/light,
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
 "rSf" = (
@@ -98989,7 +99071,7 @@ dDy
 dXx
 eBf
 oRv
-fAg
+hHl
 szI
 hcr
 hcr
@@ -99501,9 +99583,9 @@ cGZ
 dhb
 dEI
 dYW
-eBf
+lDi
 peo
-fAg
+kkl
 tAl
 hcr
 hcr
