@@ -201,7 +201,7 @@
 /datum/map_template/thor_lateload/redgate/cybercity
 	name = "Redgate - Rain City"
 	desc = "A strange city on lockdown."
-	mappath = 'maps/redgate/cybercity.dmm'
+	mappath = 'maps/relic_base/submaps/redgate/cybercity.dmm'
 
 /datum/map_template/thor_lateload/redgate/islands
 	name = "Redgate - Islands"

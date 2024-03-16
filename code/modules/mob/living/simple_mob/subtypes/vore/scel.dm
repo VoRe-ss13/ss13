@@ -93,6 +93,8 @@
 	movement_cooldown = -1
 
 /mob/living/simple_mob/vore/scel/init_vore()
+	if(!voremob_loaded) //TORCHAdd - Added to fix redgate runtime
+		return //TORCHAdd
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
