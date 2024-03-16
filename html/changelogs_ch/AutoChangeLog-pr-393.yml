@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - bugfix: "Broken canisters staying attached to the port"
+  - bugfix: "Being able to attach broken canisters to ports"
