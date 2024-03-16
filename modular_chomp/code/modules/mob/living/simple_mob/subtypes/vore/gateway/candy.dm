@@ -741,8 +741,4 @@
 	B.emote_lists[DM_DIGEST] = list(
 		"Every clench of the predator's stomach grinds powerful digestive fluids into your body, forcibly churning away your strength!")
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 0ab7b1cdee (Nuke remaining .proc/s (#7981))
 v
