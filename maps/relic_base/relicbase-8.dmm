@@ -1328,6 +1328,11 @@
 	layer = 4;
 	pixel_x = -32
 	},
+/obj/machinery/embedded_controller/radio/simple_docking_controller{
+	frequency = 1380;
+	id_tag = "echidna_dock";
+	pixel_y = 26
+	},
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangarsix)
 "fG" = (
@@ -2465,6 +2470,11 @@
 /obj/machinery/status_display{
 	layer = 4;
 	pixel_x = -32
+	},
+/obj/machinery/embedded_controller/radio/simple_docking_controller{
+	frequency = 1380;
+	id_tag = "stargazer_dock";
+	pixel_y = 26
 	},
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangarfour)
@@ -4553,6 +4563,11 @@
 /obj/machinery/status_display{
 	layer = 4;
 	pixel_x = -32
+	},
+/obj/machinery/embedded_controller/radio/simple_docking_controller{
+	frequency = 1380;
+	id_tag = "baby_mammoth_dock";
+	pixel_y = 26
 	},
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangartwo)
@@ -11602,7 +11617,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
 	frequency = 1380;
-	id_tag = "shuttle4_pump"
+	id_tag = "baby_mammoth_pump"
 	},
 /obj/structure/closet/emcloset,
 /turf/simulated/shuttle/plating,
@@ -12114,14 +12129,14 @@
 "JB" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	frequency = 1380;
-	id_tag = "shuttle4_pump"
+	id_tag = "baby_mammoth_pump"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
 /obj/machinery/airlock_sensor{
 	frequency = 1380;
-	id_tag = "shuttle4_sensor";
+	id_tag = "baby_mammoth_sensor";
 	pixel_y = 28
 	},
 /turf/simulated/shuttle/plating,
@@ -12143,12 +12158,6 @@
 /turf/simulated/shuttle/wall/voidcraft/no_join,
 /area/shuttle/echidna)
 "Ke" = (
-/obj/machinery/door/airlock/multi_tile/metal/mait{
-	dir = 1;
-	icon_state = "door_locked";
-	id_tag = "echidna_inner";
-	locked = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 9
 	},
@@ -12156,6 +12165,11 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/voidcraft/vertical{
+	frequency = 1380;
+	id_tag = "echidna_inner";
+	name = "Internal Access"
 	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/echidna)
@@ -12295,7 +12309,8 @@
 	base_area = /area/expoutpost/hangarsix;
 	base_turf = /turf/simulated/floor/reinforced;
 	landmark_tag = "echidna_dock";
-	name = "Echidna Dock"
+	name = "Echidna Dock";
+	docking_controller = "echidna_dock"
 	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/echidna)
@@ -12306,7 +12321,7 @@
 "LR" = (
 /obj/machinery/shuttle_sensor{
 	dir = 5;
-	id_tag = "shuttle4sens_exp"
+	id_tag = "baby_mammoth_sensor"
 	},
 /turf/simulated/shuttle/wall/voidcraft/lightblue,
 /area/shuttle/baby_mammoth)
@@ -12423,13 +12438,13 @@
 /obj/machinery/access_button{
 	command = "cycle_interior";
 	frequency = 1380;
-	master_tag = "shuttle4_shuttle";
+	master_tag = "baby_mammoth";
 	name = "interior access button";
 	pixel_y = 26
 	},
 /obj/machinery/door/airlock/voidcraft/vertical{
 	frequency = 1380;
-	id_tag = "shuttle4_inner";
+	id_tag = "baby_mammoth_inner";
 	locked = 1;
 	name = "Internal Access"
 	},
@@ -12482,7 +12497,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
 	frequency = 1380;
-	id_tag = "shuttle4_pump"
+	id_tag = "baby_mammoth_pump"
 	},
 /obj/machinery/light,
 /turf/simulated/shuttle/plating,
@@ -12551,7 +12566,8 @@
 	base_area = /area/expoutpost/hangartwo;
 	base_turf = /turf/simulated/floor/reinforced;
 	landmark_tag = "baby_mammoth_dock";
-	name = "Baby_Mammoth Dock"
+	name = "Baby_Mammoth Dock";
+	docking_controller = "baby_mammoth_dock"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -12703,14 +12719,14 @@
 "Qj" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
 	frequency = 1380;
-	id_tag = "shuttle4_outer";
+	id_tag = "baby_mammoth_outer";
 	locked = 1;
 	name = "External Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_exterior";
 	frequency = 1380;
-	master_tag = "shuttle4_shuttle";
+	master_tag = "baby_mammoth";
 	name = "exterior access button";
 	pixel_y = 26
 	},
@@ -12858,19 +12874,19 @@
 "Rp" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	frequency = 1380;
-	id_tag = "shuttle4_pump"
+	id_tag = "baby_mammoth_pump"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	frequency = 1380;
-	id_tag = "shuttle4_shuttle";
+	id_tag = "baby_mammoth";
 	pixel_y = 26;
-	tag_airpump = "shuttle4_pump";
-	tag_chamber_sensor = "shuttle4_sensor";
-	tag_exterior_door = "shuttle4_outer";
-	tag_interior_door = "shuttle4_inner"
+	tag_airpump = "baby_mammoth_pump";
+	tag_chamber_sensor = "baby_mammoth_sensor";
+	tag_exterior_door = "baby_mammoth_outer";
+	tag_interior_door = "baby_mammoth_inner"
 	},
 /obj/structure/closet/walllocker/emerglocker{
 	pixel_x = -25;
@@ -13021,18 +13037,17 @@
 /turf/simulated/shuttle/wall/voidcraft/hard_corner,
 /area/shuttle/echidna)
 "Tv" = (
-/obj/machinery/door/airlock/multi_tile/metal/mait{
-	dir = 1;
-	icon_state = "door_locked";
-	id_tag = "echidna_outer";
-	locked = 1
-	},
 /obj/structure/cable/blue{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/machinery/door/airlock/voidcraft/vertical{
+	frequency = 1380;
+	id_tag = "echidna_outer";
+	name = "Internal Access"
+	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/echidna)
 "TA" = (
@@ -13145,6 +13160,11 @@
 	pixel_y = 26
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/door/airlock/voidcraft/vertical{
+	frequency = 1380;
+	id_tag = "echidna_inner";
+	name = "Internal Access"
+	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/echidna)
 "UX" = (
@@ -13194,7 +13214,8 @@
 	base_area = /area/expoutpost/hangarfour;
 	base_turf = /turf/simulated/floor/reinforced;
 	landmark_tag = "stargazer_dock";
-	name = "Stargazer Dock"
+	name = "Stargazer Dock";
+	docking_controller = "stargazer_dock"
 	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/stargazer)
@@ -13515,6 +13536,11 @@
 	pixel_y = 26
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/machinery/door/airlock/voidcraft/vertical{
+	frequency = 1380;
+	id_tag = "echidna_outer";
+	name = "Internal Access"
+	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/echidna)
 "Zo" = (
