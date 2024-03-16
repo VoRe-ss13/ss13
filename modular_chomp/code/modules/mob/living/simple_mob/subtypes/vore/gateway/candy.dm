@@ -370,7 +370,7 @@
 /mob/living/simple_mob/vore/candy/marshmellowserpent/do_special_attack(atom/A)
 	set_AI_busy(TRUE)
 	do_windup_animation(A, 20)
-	addtimer(CALLBACK(src, .proc/chargeend, A), 20)
+	addtimer(CALLBACK(src, PROC_REF(chargeend), A), 20)
 
 /mob/living/simple_mob/vore/candy/marshmellowserpent/proc/chargeend(atom/A)
 	if(stat) //you are dead
@@ -741,5 +741,8 @@
 	B.emote_lists[DM_DIGEST] = list(
 		"Every clench of the predator's stomach grinds powerful digestive fluids into your body, forcibly churning away your strength!")
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0ab7b1cdee (Nuke remaining .proc/s (#7981))
 v
