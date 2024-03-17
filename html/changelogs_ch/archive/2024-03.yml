@@ -159,3 +159,20 @@
   - qol: Makes throw notifications only appear if your pref says yes
   - rscadd: Added more emotes to synx
   - rscadd: Added wawa to the wawa-ers
+2024-03-17:
+  VoRe-bot:
+  - rscadd: Balloon Alerts
+  - rscadd: Brand Intelligence machines use Ballon Alerts to speak
+  - rscadd: Balloon Alerts for surgery steps, taste and transferring reagents
+  - bugfix: Fulton beacons won't be sent to CentCom
+  - balance: Adds the taste back to normal chat
+  - bugfix: Job restriction bypass at roundstart
+  - bugfix: fix a cabling mistake in hangar 2
+  - bugfix: Broken canisters staying attached to the port
+  - bugfix: Being able to attach broken canisters to ports
+  - bugfix: nuke bad .procs in callbacks
+  - bugfix: finally should resolve all our ntos icon cases
+  - bugfix: fixes an issue where the vorebelly contents did not collapse to a list
+      as supposed to for more than 21 ingested items
+  - bugfix: fixes the assets on the chemSynthesizer being not properly initialized
+  - bugfix: fixes ntos icon direct loading on crew monitor
