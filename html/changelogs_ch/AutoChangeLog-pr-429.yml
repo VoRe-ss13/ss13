@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscadd: "movement smoothing"
+  - config: "40fps time"
