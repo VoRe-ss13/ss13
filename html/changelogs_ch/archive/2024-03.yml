@@ -182,3 +182,15 @@
   - bugfix: chemmaster runtime
   - rscadd: Allow digitigrade legs for shadekin
   - bugfix: fixed a couple runtimes related to bellies
+2024-03-19:
+  VoRe-bot:
+  - admin: adds an new verb that allows to use tgui inputs on some existing verbs
+  - bugfix: fixes an issue where closing the prompt clears the ooc note section (favs
+      / maybes)
+  - bugfix: fixed upsidedown cargo console
+2024-03-20:
+  VoRe-bot:
+  - refactor: Remove obj/machinery recursivemove placement + signal registration as
+      a default, instead an optional
+  - rscadd: movement smoothing
+  - config: 40fps time
