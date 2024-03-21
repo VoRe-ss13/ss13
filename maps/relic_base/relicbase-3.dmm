@@ -6756,6 +6756,10 @@
 /area/surface/outside/plains/outpost{
 	outdoors = -1
 	})
+"dcL" = (
+/obj/structure/stairs/spawner/east,
+/turf/simulated/floor/plating,
+/area/engineering/atmos/storage)
 "dcZ" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -14321,6 +14325,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
+	},
+/obj/structure/railing/grey{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
@@ -26283,6 +26290,9 @@
 /area/engineering/workshop)
 "loR" = (
 /obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "lpj" = (
@@ -32648,6 +32658,9 @@
 /area/engineering/atmos)
 "ocW" = (
 /obj/structure/reagent_dispensers/watertank,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "odJ" = (
@@ -41283,9 +41296,12 @@
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
 "rPn" = (
-/obj/structure/stairs/spawner/west,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/railing/grey{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
-/area/engineering/atmos/storage)
+/area/engineering/atmos)
 "rPv" = (
 /obj/machinery/conveyor{
 	id = "mining_internal"
@@ -52604,6 +52620,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "woi" = (
@@ -53823,12 +53842,6 @@
 	},
 /obj/machinery/atmospherics/pipe/zpipe/up/supply{
 	dir = 1
-	},
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/window/reinforced{
-	dir = 8
 	},
 /turf/simulated/open{
 	outdoors = 1
@@ -71761,7 +71774,7 @@ rLe
 hQZ
 pCB
 nkH
-stq
+rPn
 aqq
 pCB
 spS
@@ -72789,7 +72802,7 @@ rLe
 qAQ
 pCB
 sPD
-rPn
+qyz
 rBB
 pCB
 ncJ
@@ -73046,7 +73059,7 @@ rLe
 qAQ
 pCB
 sZL
-qyz
+dcL
 xWJ
 pCB
 ncJ

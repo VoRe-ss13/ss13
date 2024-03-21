@@ -1282,6 +1282,9 @@
 	},
 /obj/structure/cable,
 /obj/structure/lattice,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "aRS" = (
@@ -14029,6 +14032,15 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"piP" = (
+/obj/machinery/light/small{
+	brightness_color = "#DA0205";
+	brightness_power = 1;
+	brightness_range = 5;
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/engineering/atmos/monitoring)
 "pkO" = (
 /obj/random/humanoidremains,
 /obj/effect/floor_decal/rust,
@@ -35656,7 +35668,7 @@ hHT
 hHT
 hHT
 sTS
-lJx
+piP
 xBC
 rlb
 rlb
