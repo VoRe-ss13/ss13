@@ -145,6 +145,12 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"aaP" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "abE" = (
 /obj/effect/landmark{
 	name = "maint_pred"
@@ -161,11 +167,24 @@
 /area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"acE" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/pipe/cap/visible{
-	color = "#ffcc00"
+"abI" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
 	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/red/border,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"aew" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "aeA" = (
@@ -206,6 +225,11 @@
 /area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"agN" = (
+/obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "agP" = (
 /obj/machinery/light/floortube{
 	dir = 4
@@ -291,6 +315,23 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"ajL" = (
+/obj/effect/floor_decal/corner/white/diagonal{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red{
+	dir = 1
+	},
+/obj/machinery/air_sensor{
+	frequency = 1441;
+	id_tag = "n2o_sensor"
+	},
+/obj/machinery/camera/network/engineering{
+	c_tag = "ATMTK - Nitrous Oxide";
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/n20,
+/area/surface/underground/in_da_walls)
 "ajN" = (
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
@@ -332,23 +373,34 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"amv" = (
+/obj/effect/floor_decal/corner/white/diagonal{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/red,
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4;
+	external_pressure_bound = 0;
+	external_pressure_bound_default = 0;
+	frequency = 1441;
+	icon_state = "map_vent_in";
+	id_tag = "n2o_out";
+	initialize_directions = 1;
+	internal_pressure_bound = 4000;
+	internal_pressure_bound_default = 4000;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	pump_direction = 0;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/n20,
+/area/surface/underground/in_da_walls)
 "anM" = (
 /obj/structure/closet/crate,
 /obj/effect/floor_decal/rust,
 /obj/machinery/light/small/readylight,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
-"anU" = (
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"aoE" = (
-/turf/simulated/wall/r_wall{
-	cached_rad_resistance = 150
-	},
-/area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "aoT" = (
@@ -401,6 +453,15 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"aqN" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "arl" = (
 /obj/structure/closet,
 /obj/random/tool,
@@ -430,19 +491,11 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"arR" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/wingrille_spawn/reinforced,
-/obj/machinery/meter,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "atmoslockdown";
-	name = "Atmospherics Lockdown";
-	opacity = 0
+"asx" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 10
 	},
-/turf/simulated/floor,
+/turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "ata" = (
 /obj/effect/floor_decal/rust,
@@ -463,6 +516,23 @@
 /obj/machinery/power/port_gen/pacman,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
+"auD" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "auO" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
@@ -617,6 +687,19 @@
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"awJ" = (
+/obj/effect/floor_decal/corner/black/full{
+	dir = 1
+	},
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 4;
+	frequency = 1441;
+	id = "co2_in";
+	pixel_y = 1;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/carbon_dioxide,
+/area/surface/underground/in_da_walls)
 "axd" = (
 /obj/structure/cable/green{
 	icon_state = "0-2"
@@ -630,6 +713,15 @@
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"axp" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "axF" = (
 /obj/structure/table/rack{
 	dir = 8;
@@ -867,6 +959,18 @@
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"azK" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "aAh" = (
 /obj/random/junk,
 /obj/effect/floor_decal/rust,
@@ -938,6 +1042,22 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"aDZ" = (
+/obj/machinery/atmospherics/portables_connector,
+/obj/machinery/portable_atmospherics/powered/scrubber{
+	anchored = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"aFF" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/atmospherics/binary/pump{
+	name = "O2 to Mixing"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "aFL" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -954,15 +1074,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"aGQ" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "aHh" = (
 /obj/effect/floor_decal/rust,
 /obj/random/maintenance,
@@ -1006,12 +1117,15 @@
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"aHZ" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
+"aIK" = (
+/obj/machinery/atmospherics/valve/digital{
+	dir = 4;
+	name = "CO2 Outlet Valve"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
-/area/maintenance/firstdeck/foreport{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
+/area/surface/underground/in_da_walls)
 "aIX" = (
 /obj/random/junk,
 /obj/random/trash,
@@ -1029,6 +1143,32 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"aJK" = (
+/obj/machinery/air_sensor{
+	frequency = 1441;
+	id_tag = "waste_sensor";
+	output = 63
+	},
+/obj/effect/floor_decal/corner/lime/full{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/surface/underground/in_da_walls)
+"aKb" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "aLc" = (
 /obj/effect/floor_decal/rust,
 /obj/random/junk,
@@ -1296,15 +1436,10 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"aWT" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+"aWH" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 8
-	},
-/obj/machinery/light/floortube{
-	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -1315,12 +1450,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"aXY" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "aYu" = (
 /obj/machinery/light/floortube{
 	dir = 4
@@ -1345,14 +1474,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"aZR" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "bae" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/floor_decal/rust,
@@ -1597,13 +1718,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"bfS" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "bgn" = (
 /obj/effect/floor_decal/rust,
 /obj/machinery/light/small{
@@ -1639,6 +1753,15 @@
 /area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"bid" = (
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "bix" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
@@ -1680,12 +1803,6 @@
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"blT" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "bmL" = (
 /obj/random/trash,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -1728,25 +1845,6 @@
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"bpK" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/zpipe/up/supply{
-	dir = 1
-	},
-/obj/structure/cable{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
-/obj/structure/cable,
-/obj/structure/lattice,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "bqg" = (
 /obj/structure/railing{
 	dir = 4
@@ -1807,23 +1905,8 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"brL" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/wingrille_spawn/reinforced,
-/obj/machinery/meter{
-	frequency = 1443;
-	id = "mair_in_meter";
-	name = "Mixed Air Tank In"
-	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "atmoslockdown";
-	name = "Atmospherics Lockdown";
-	opacity = 0
-	},
-/turf/simulated/floor,
+"bsz" = (
+/turf/simulated/floor/reinforced/airless,
 /area/surface/underground/in_da_walls)
 "btr" = (
 /obj/effect/floor_decal/rust,
@@ -1855,15 +1938,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"buS" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "bwe" = (
 /obj/random/trash,
 /obj/effect/floor_decal/rust,
@@ -1896,28 +1970,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"byI" = (
-/turf/simulated/floor/reinforced/n20,
-/area/surface/underground/in_da_walls)
-"byU" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
-	dir = 4;
-	input_tag = "n2o_in";
-	name = "Nitrous Oxide Supply Control";
-	output_tag = "n2o_out";
-	sensors = list("n2o_sensor"="Tank")
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "bzQ" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 6
@@ -2035,16 +2087,6 @@
 /area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"bDO" = (
-/obj/machinery/atmospherics/binary/pump,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "bEo" = (
 /obj/machinery/atmospherics/unary/freezer{
 	dir = 8;
@@ -2052,22 +2094,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
-"bFm" = (
-/obj/effect/floor_decal/corner/white/diagonal{
-	dir = 4
+"bEK" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red,
+/obj/machinery/meter,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 8
 	},
-/obj/effect/floor_decal/corner/red{
-	dir = 1
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 5
 	},
-/obj/machinery/air_sensor{
-	frequency = 1441;
-	id_tag = "n2o_sensor"
-	},
-/obj/machinery/camera/network/engineering{
-	c_tag = "ATMTK - Nitrous Oxide";
-	dir = 4
-	},
-/turf/simulated/floor/reinforced/n20,
+/turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "bFH" = (
 /obj/effect/floor_decal/rust,
@@ -2077,20 +2113,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"bFK" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/wingrille_spawn/reinforced,
-/obj/machinery/meter,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "atmoslockdown";
-	name = "Atmospherics Lockdown";
-	opacity = 0
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/green,
-/turf/simulated/floor,
-/area/surface/underground/in_da_walls)
 "bGh" = (
 /obj/machinery/status_display{
 	layer = 4;
@@ -2108,8 +2130,17 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"bGT" = (
-/turf/simulated/floor/reinforced/phoron,
+"bHn" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/green{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "bHC" = (
 /obj/effect/floor_decal/rust,
@@ -2231,18 +2262,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"bNG" = (
-/obj/machinery/atmospherics/valve/digital/open{
-	name = "Nitrogen Outlet Valve"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "bNZ" = (
 /obj/structure/hull_corner,
 /obj/effect/floor_decal/rust,
@@ -2265,11 +2284,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"bOD" = (
-/obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/simple/visible/universal,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "bOY" = (
 /obj/effect/floor_decal/rust,
 /obj/random/plushie,
@@ -2314,19 +2328,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"bTn" = (
-/obj/effect/floor_decal/corner/blue/full{
-	dir = 8
-	},
-/obj/machinery/air_sensor{
-	frequency = 1441;
-	id_tag = "o2_sensor"
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/reinforced/oxygen,
-/area/surface/underground/in_da_walls)
 "bUR" = (
 /obj/effect/floor_decal/rust,
 /obj/item/weapon/bone/skull,
@@ -2335,15 +2336,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"bVI" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 6
-	},
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "bVS" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
@@ -2358,14 +2350,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"bVT" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
-	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/yellow/border,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "bXQ" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -2377,6 +2361,13 @@
 /area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"bYi" = (
+/obj/machinery/atmospherics/unary/heater{
+	icon_state = "heater"
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "bYr" = (
 /obj/effect/zone_divider,
 /turf/simulated/wall/r_wall,
@@ -2455,6 +2446,18 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"caZ" = (
+/obj/machinery/atmospherics/binary/pump{
+	name = "N2 to Connector"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "cbW" = (
 /obj/effect/floor_decal/rust,
 /mob/living/simple_mob/vore/alienanimals/teppi/mutant,
@@ -2579,18 +2582,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"chy" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "cil" = (
 /obj/random/trash_pile,
 /obj/random/trash,
@@ -2636,6 +2627,12 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"ckb" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 9
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "ckc" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/girder/displaced,
@@ -2643,6 +2640,18 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"ckt" = (
+/obj/machinery/atmospherics/valve/digital/open{
+	name = "Nitrogen Outlet Valve"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "clX" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -2689,12 +2698,8 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"cpi" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/obj/machinery/atmospherics/binary/pump,
-/turf/simulated/floor/plating,
+"cpz" = (
+/turf/simulated/floor/reinforced/airmix,
 /area/surface/underground/in_da_walls)
 "cqq" = (
 /obj/structure/table/steel_reinforced,
@@ -2707,6 +2712,11 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"crb" = (
+/obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/industrial/outline/grey,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "cri" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/device/radio/intercom{
@@ -2735,13 +2745,6 @@
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"crG" = (
-/turf/simulated/wall/r_wall{
-	cached_rad_resistance = 150
-	},
-/area/maintenance/firstdeck/centralport{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
 "crS" = (
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
@@ -2759,13 +2762,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"cse" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4;
-	name = "N2O to Mixing"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "csl" = (
 /obj/effect/floor_decal/rust,
 /obj/random/flashlight,
@@ -2894,6 +2890,15 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"cyx" = (
+/obj/structure/closet/emcloset,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "cyY" = (
 /obj/random/trash_pile,
 /obj/effect/floor_decal/rust,
@@ -2926,20 +2931,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"cBj" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "cBz" = (
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/steel_dirty,
@@ -3094,11 +3085,6 @@
 	},
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
-"cIL" = (
-/obj/effect/floor_decal/rust,
-/obj/effect/zone_divider,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "cJe" = (
 /obj/structure/handrail{
 	dir = 8
@@ -3112,20 +3098,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"cJg" = (
-/obj/machinery/atmospherics/omni/mixer{
-	active_power_usage = 7500;
-	tag_east = 2;
-	tag_east_con = null;
-	tag_north = 1;
-	tag_north_con = 0.21;
-	tag_south_con = null;
-	tag_west = 1;
-	tag_west_con = 0.79
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "cJA" = (
 /obj/machinery/atmospherics/pipe/zpipe/up/scrubbers,
 /obj/machinery/atmospherics/pipe/zpipe/up/supply,
@@ -3141,22 +3113,15 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"cJG" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
-	dir = 4;
-	input_tag = "co2_in";
-	name = "Carbon Dioxide Supply Control";
-	output_tag = "co2_out";
-	sensors = list("co2_sensor"="Tank")
+"cKt" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
+/obj/machinery/light/floortube{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -3212,14 +3177,23 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"cOY" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
+"cNV" = (
+/obj/structure/grille,
+/turf/simulated/wall/r_wall,
+/area/surface/underground/in_da_walls)
+"cPg" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/meter,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "atmoslockdown";
+	name = "Atmospherics Lockdown";
+	opacity = 0
 	},
-/obj/machinery/atmospherics/binary/pump{
-	name = "O2 to Mixing"
-	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor,
 /area/surface/underground/in_da_walls)
 "cPp" = (
 /obj/effect/floor_decal/rust/color_rusted{
@@ -3255,6 +3229,24 @@
 /obj/item/weapon/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
+"cRZ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/meter{
+	frequency = 1443;
+	id = "mair_in_meter";
+	name = "Mixed Air Tank In"
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "atmoslockdown";
+	name = "Atmospherics Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/surface/underground/in_da_walls)
 "cTd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -3277,6 +3269,13 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"cTM" = (
+/obj/effect/floor_decal/rust,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/surface/underground/in_da_walls)
 "cTP" = (
 /obj/random/mob/mouse,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -3296,15 +3295,14 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"cVJ" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
+"cWx" = (
+/obj/machinery/atmospherics/omni/atmos_filter{
+	tag_east = 1;
+	tag_north = 4;
+	tag_south = 2;
+	tag_west = 5
 	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/green/border,
-/obj/machinery/light/small{
-	dir = 8
-	},
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "cXq" = (
@@ -3347,16 +3345,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"cZv" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
-	input_tag = "waste_in";
-	name = "Gas Mix Tank Control";
-	output_tag = "waste_out";
-	sensors = list("waste_sensor"="Tank")
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "daq" = (
 /obj/structure/handrail{
 	dir = 8
@@ -3371,12 +3359,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dat" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 10
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "daw" = (
 /obj/effect/floor_decal/rust,
 /obj/machinery/light/small/readylight,
@@ -3471,6 +3453,14 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"deV" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/yellow/border,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "deY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -3478,6 +3468,18 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"dfh" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 8
+	},
+/obj/machinery/light/floortube{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "dfj" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -3530,6 +3532,15 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"dip" = (
+/obj/machinery/atmospherics/binary/pump{
+	name = "O2 to Connector"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "diV" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -3538,10 +3549,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dje" = (
-/obj/structure/stairs/spawner/east,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "djt" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -3596,25 +3603,12 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dle" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "dmb" = (
 /obj/machinery/door/airlock/angled_tgmc/wide/generic,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dnx" = (
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "dny" = (
 /obj/structure/bed/chair/bay/shuttle,
 /obj/effect/decal/cleanable/dirt,
@@ -3632,6 +3626,15 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"doh" = (
+/obj/effect/floor_decal/corner/blue/full{
+	dir = 1
+	},
+/obj/machinery/camera/network/engineering{
+	c_tag = "ATMTK - Oxygen"
+	},
+/turf/simulated/floor/reinforced/oxygen,
+/area/surface/underground/in_da_walls)
 "don" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/maintenance{
@@ -3678,6 +3681,15 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"dpx" = (
+/obj/machinery/atmospherics/omni/atmos_filter{
+	tag_east = 1;
+	tag_north = 3;
+	tag_west = 2
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "dpC" = (
 /obj/effect/zone_divider,
 /obj/random/mob/mouse,
@@ -3792,15 +3804,6 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"drY" = (
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "dse" = (
 /obj/structure/closet/crate,
 /obj/random/maintenance,
@@ -3836,16 +3839,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dsw" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/purple/diagonal,
-/obj/effect/floor_decal/corner/orange{
-	dir = 8
-	},
-/turf/simulated/floor/reinforced/phoron,
-/area/surface/underground/in_da_walls)
 "dsF" = (
 /obj/structure/girder/displaced,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -3875,6 +3868,15 @@
 /obj/random/trash,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"dtG" = (
+/obj/effect/floor_decal/corner/lime/full{
+	dir = 1
+	},
+/obj/machinery/camera/network/engineering{
+	c_tag = "ATMTK - Gas Mixing"
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/surface/underground/in_da_walls)
 "duK" = (
 /turf/unsimulated/wall/cult{
 	desc = "An incredibly durable wall.";
@@ -3960,6 +3962,10 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"dyn" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "dyy" = (
 /obj/machinery/vending/snack{
 	dir = 4;
@@ -4080,15 +4086,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dEr" = (
-/obj/machinery/portable_atmospherics/powered/pump/filled{
-	anchored = 1
-	},
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "dEI" = (
 /obj/random/junk,
 /obj/effect/decal/cleanable/dirt,
@@ -4114,11 +4111,11 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
-"dGv" = (
-/obj/machinery/portable_atmospherics/powered/scrubber{
-	anchored = 1
+"dFU" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/machinery/light/floortube{
+	dir = 1
 	},
-/obj/machinery/atmospherics/portables_connector,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "dGw" = (
@@ -4130,10 +4127,6 @@
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dHm" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/red,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "dHH" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -4170,11 +4163,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dKq" = (
-/obj/effect/floor_decal/rust,
-/obj/random/contraband,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/surface/underground/in_da_walls)
 "dKC" = (
 /obj/structure/handrail{
 	dir = 8
@@ -4200,6 +4188,26 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"dKJ" = (
+/obj/machinery/light/floortube{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"dKL" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "dKV" = (
 /turf/simulated/wall,
 /area/maintenance/firstdeck/foreport{
@@ -4215,13 +4223,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dMy" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "dNf" = (
 /obj/random/trash_pile,
 /obj/effect/floor_decal/rust,
@@ -4239,13 +4240,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dNs" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "dPr" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	req_one_access = null
@@ -4279,13 +4273,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dQD" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "dQM" = (
 /obj/random/powercell,
 /obj/effect/floor_decal/rust,
@@ -4356,13 +4343,22 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dST" = (
-/obj/machinery/atmospherics/valve/digital{
-	dir = 4;
-	name = "N2O Outlet Valve"
+"dTn" = (
+/obj/effect/floor_decal/corner/white{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/corner/red/diagonal,
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 4;
+	frequency = 1441;
+	id = "n2o_in";
+	pixel_y = 1;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/n20,
+/area/surface/underground/in_da_walls)
+"dTS" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "dUc" = (
@@ -4473,6 +4469,12 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"dWm" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 5
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "dWn" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -4501,6 +4503,18 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"dXn" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+	dir = 8
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "dXU" = (
 /obj/structure/closet,
 /obj/random/tool,
@@ -4530,6 +4544,12 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"dZu" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "dZP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/cabinet,
@@ -4561,6 +4581,13 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"ebc" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4;
+	name = "N2O to Mixing"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "ebi" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -4609,20 +4636,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"ebS" = (
-/obj/effect/floor_decal/corner/orange/full{
-	dir = 8
-	},
-/obj/machinery/air_sensor{
-	frequency = 1441;
-	id_tag = "tox_sensor"
-	},
-/obj/machinery/camera/network/engineering{
-	c_tag = "ATMTK - Phoron";
-	dir = 4
-	},
-/turf/simulated/floor/reinforced/phoron,
-/area/surface/underground/in_da_walls)
 "ech" = (
 /obj/item/frame/noticeboard{
 	pixel_y = 29
@@ -4717,6 +4730,25 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"egV" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/zpipe/up/supply{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
+	},
+/obj/structure/cable,
+/obj/structure/lattice,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "ehx" = (
 /obj/structure/closet/crate,
 /turf/simulated/floor/plating,
@@ -4767,13 +4799,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"elt" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "emj" = (
 /obj/random/trash_pile,
 /obj/random/junk,
@@ -4851,6 +4876,16 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"epT" = (
+/obj/machinery/computer/general_air_control/large_tank_control{
+	input_tag = "waste_in";
+	name = "Gas Mix Tank Control";
+	output_tag = "waste_out";
+	sensors = list("waste_sensor"="Tank")
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "eqR" = (
 /obj/effect/zone_divider,
 /turf/simulated/wall/r_wall,
@@ -4931,17 +4966,17 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"esN" = (
-/obj/machinery/suit_storage_unit/engineering,
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
+"ett" = (
+/obj/effect/floor_decal/corner/red/full{
+	dir = 4
 	},
-/obj/structure/cable/yellow,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/foreport{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
+/obj/machinery/atmospherics/unary/outlet_injector{
+	frequency = 1441;
+	id = "n2_in";
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/nitrogen,
+/area/surface/underground/in_da_walls)
 "euG" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 10
@@ -5096,8 +5131,23 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"eAP" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+"ezV" = (
+/obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 4;
+	input_tag = "co2_in";
+	name = "Carbon Dioxide Supply Control";
+	output_tag = "co2_out";
+	sensors = list("co2_sensor"="Tank")
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "eAS" = (
@@ -5177,6 +5227,25 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"eDQ" = (
+/obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 4;
+	input_tag = "n2o_in";
+	name = "Nitrous Oxide Supply Control";
+	output_tag = "n2o_out";
+	sensors = list("n2o_sensor"="Tank")
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "eEP" = (
 /obj/structure/bed/double/padded{
 	name = "taur-sized bed";
@@ -5277,13 +5346,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"eHD" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "eHR" = (
 /obj/structure/bed/chair/sofa/purp{
 	dir = 4
@@ -5350,20 +5412,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"eKk" = (
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 5
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
-	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/yellow/border,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "eKz" = (
 /obj/random/crate,
 /obj/random/maintenance/clean,
@@ -5392,19 +5440,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"eLM" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/cap/visible{
-	color = "#00ff00";
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "eLZ" = (
 /obj/structure/closet/crate,
 /obj/effect/floor_decal/rust,
@@ -5450,6 +5485,16 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"eNh" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+	dir = 4
+	},
+/obj/machinery/meter,
+/obj/machinery/light/floortube{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "eNF" = (
 /obj/effect/floor_decal/rust,
 /obj/random/fishing_junk,
@@ -5479,6 +5524,20 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"eOe" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 9
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"eOf" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 1
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "ePC" = (
 /turf/simulated/open,
 /area/maintenance/firstdeck/forestarboard{
@@ -5507,25 +5566,6 @@
 /area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"eRl" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
-	dir = 4;
-	input_tag = "tox_in";
-	name = "Phoron Supply Control";
-	output_tag = "tox_out";
-	sensors = list("tox_sensor"="Tank")
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "eRp" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shuttle/escape/station{
@@ -5589,18 +5629,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"eTH" = (
-/obj/effect/floor_decal/corner/white/diagonal,
-/obj/effect/floor_decal/corner/blue{
-	dir = 8
-	},
-/obj/machinery/atmospherics/unary/outlet_injector{
-	frequency = 1443;
-	id = "air_in";
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced/airmix,
-/area/surface/underground/in_da_walls)
 "eUn" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table/steel_reinforced,
@@ -5701,13 +5729,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"eYn" = (
-/obj/machinery/atmospherics/binary/pump/on{
-	name = "Air to Supply";
-	target_pressure = 301.325
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "eYF" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
@@ -5727,6 +5748,38 @@
 	outdoors = -1
 	},
 /area/maintenance/firstdeck/aftport)
+"eZa" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/light/floortube{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"fcr" = (
+/obj/effect/floor_decal/corner/black/full{
+	dir = 4
+	},
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4;
+	external_pressure_bound = 0;
+	external_pressure_bound_default = 0;
+	frequency = 1441;
+	icon_state = "map_vent_in";
+	id_tag = "co2_out";
+	initialize_directions = 1;
+	internal_pressure_bound = 4000;
+	internal_pressure_bound_default = 4000;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	pump_direction = 0;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/carbon_dioxide,
+/area/surface/underground/in_da_walls)
+"fcZ" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "fdu" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -5747,14 +5800,6 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"fdE" = (
-/obj/effect/floor_decal/corner/black/full,
-/obj/machinery/camera/network/engineering{
-	c_tag = "ATMTK - Carbon Dioxide";
-	dir = 4
-	},
-/turf/simulated/floor/reinforced/carbon_dioxide,
-/area/surface/underground/in_da_walls)
 "fdW" = (
 /obj/effect/zone_divider,
 /obj/effect/floor_decal/rust,
@@ -5784,12 +5829,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"fgy" = (
-/obj/machinery/atmospherics/binary/pump{
-	name = "Air Mix to Connector"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "fhe" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/crate,
@@ -5800,6 +5839,13 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"fhE" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "fhW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -5843,6 +5889,23 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
+"fjp" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"fjJ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "fjL" = (
 /obj/effect/zone_divider,
 /obj/effect/floor_decal/rust,
@@ -5894,6 +5957,12 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"flX" = (
+/obj/machinery/atmospherics/valve/digital{
+	name = "Custom Mix Outlet Valve"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "fmf" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -5911,16 +5980,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"fmP" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/white{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/red/diagonal,
-/turf/simulated/floor/reinforced/n20,
-/area/surface/underground/in_da_walls)
 "fow" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	req_one_access = null
@@ -5946,6 +6005,15 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"fqu" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/light/floortube{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "fqK" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 4
@@ -6066,13 +6134,13 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"ftR" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/green{
-	dir = 8
+"fuA" = (
+/turf/simulated/wall/r_wall{
+	cached_rad_resistance = 150
 	},
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
+/area/maintenance/firstdeck/foreport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "fuR" = (
 /obj/structure/hull_corner{
 	dir = 4
@@ -6082,6 +6150,9 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"fuS" = (
+/turf/simulated/floor/reinforced/carbon_dioxide,
+/area/surface/underground/in_da_walls)
 "fvP" = (
 /obj/effect/floor_decal/rust,
 /obj/random/maintenance,
@@ -6114,6 +6185,16 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"fwP" = (
+/obj/machinery/camera/network/engineering{
+	c_tag = "ATMTK - Air"
+	},
+/obj/effect/floor_decal/corner/white/diagonal,
+/obj/effect/floor_decal/corner/blue{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/airmix,
+/area/surface/underground/in_da_walls)
 "fxh" = (
 /obj/effect/floor_decal/rust,
 /obj/random/flashlight,
@@ -6137,6 +6218,12 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"fyY" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "fzv" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/cable/green{
@@ -6159,12 +6246,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"fEk" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "fEr" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -6174,14 +6255,19 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"fEy" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4;
+	name = "CO2 to Connector"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "fFF" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
-"fGN" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/cyan,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "fGZ" = (
 /obj/structure/flora/ausbushes/grassybush{
 	opacity = 1
@@ -6304,9 +6390,12 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"fMp" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
+"fMs" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -6331,30 +6420,19 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"fOF" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/machinery/light/floortube{
-	dir = 1
+"fPc" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 10
 	},
 /turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"fOT" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 5
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
+/area/maintenance/firstdeck/foreport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "fPD" = (
 /turf/simulated/floor/tiled/steel_ridged,
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"fQd" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "fQk" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/reagent_dispensers/watertank,
@@ -6390,16 +6468,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"fRw" = (
-/obj/machinery/camera/network/engineering{
-	c_tag = "ATMTK - Air"
-	},
-/obj/effect/floor_decal/corner/white/diagonal,
-/obj/effect/floor_decal/corner/blue{
-	dir = 4
-	},
-/turf/simulated/floor/reinforced/airmix,
-/area/surface/underground/in_da_walls)
 "fRL" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
@@ -6413,6 +6481,15 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"fSE" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"fTH" = (
+/turf/simulated/floor/reinforced/nitrogen,
+/area/surface/underground/in_da_walls)
 "fTS" = (
 /obj/random/trash,
 /obj/effect/floor_decal/rust,
@@ -6422,22 +6499,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"fUl" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/wingrille_spawn/reinforced,
-/obj/machinery/meter,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "atmoslockdown";
-	name = "Atmospherics Lockdown";
-	opacity = 0
-	},
-/turf/simulated/floor,
-/area/surface/underground/in_da_walls)
 "fUn" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
@@ -6623,11 +6684,9 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"gdt" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4;
-	name = "CO2 to Mixing"
-	},
+"gdH" = (
+/obj/machinery/atmospherics/pipe/manifold4w/visible/yellow,
+/obj/machinery/meter,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "gdX" = (
@@ -6721,13 +6780,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"ghY" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green,
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "giW" = (
 /obj/structure/stairs/spawner/east,
 /obj/structure/cable/green{
@@ -6737,6 +6789,24 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"gja" = (
+/obj/effect/floor_decal/corner/red/full,
+/obj/machinery/atmospherics/unary/vent_pump{
+	external_pressure_bound = 0;
+	external_pressure_bound_default = 0;
+	frequency = 1441;
+	icon_state = "map_vent_in";
+	id_tag = "n2_out";
+	initialize_directions = 1;
+	internal_pressure_bound = 4000;
+	internal_pressure_bound_default = 4000;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	pump_direction = 0;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/nitrogen,
+/area/surface/underground/in_da_walls)
 "gjJ" = (
 /obj/structure/catwalk,
 /obj/item/device/radio/intercom{
@@ -6769,15 +6839,6 @@
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"gkw" = (
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "glQ" = (
 /obj/effect/floor_decal/rust,
 /obj/random/obstruction,
@@ -6798,6 +6859,12 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"glU" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 6
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "gmf" = (
 /obj/effect/floor_decal/rust,
 /obj/random/obstruction,
@@ -6806,9 +6873,12 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"gmH" = (
-/obj/machinery/atmospherics/binary/pump{
-	name = "Custom Mix to Connector"
+"gmA" = (
+/obj/structure/reagent_dispensers/fueltank,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -6820,15 +6890,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"gnF" = (
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"gnH" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 6
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "gnT" = (
 /obj/machinery/button/remote/blast_door{
 	id = "xenobio6station";
@@ -7021,6 +7082,26 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"gxZ" = (
+/obj/effect/floor_decal/corner/lime/full{
+	dir = 4
+	},
+/obj/machinery/atmospherics/unary/outlet_injector{
+	frequency = 1441;
+	id = "waste_in";
+	pixel_y = 1;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/airless,
+/area/surface/underground/in_da_walls)
+"gyb" = (
+/obj/machinery/meter{
+	frequency = 1443;
+	id = "dloop_atm_meter"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/universal,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "gyJ" = (
 /obj/structure/cable/green{
 	icon_state = "1-4"
@@ -7039,6 +7120,13 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"gzc" = (
+/obj/machinery/atmospherics/binary/pump/on{
+	dir = 1;
+	name = "Scrubber to Waste"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "gzZ" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -7117,23 +7205,6 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"gCM" = (
-/obj/machinery/air_sensor{
-	frequency = 1443;
-	id_tag = "air_sensor";
-	output = 7
-	},
-/obj/effect/floor_decal/corner/blue/diagonal{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/white{
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/reinforced/airmix,
-/area/surface/underground/in_da_walls)
 "gDa" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
@@ -7213,6 +7284,27 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"gFP" = (
+/obj/effect/floor_decal/corner/orange/full{
+	dir = 4
+	},
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4;
+	external_pressure_bound = 0;
+	external_pressure_bound_default = 0;
+	frequency = 1441;
+	icon_state = "map_vent_in";
+	id_tag = "tox_out";
+	initialize_directions = 1;
+	internal_pressure_bound = 4000;
+	internal_pressure_bound_default = 4000;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	pump_direction = 0;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/phoron,
+/area/surface/underground/in_da_walls)
 "gFQ" = (
 /obj/machinery/camera/network/research{
 	c_tag = "SCI - Xenobiology East";
@@ -7326,6 +7418,18 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"gNk" = (
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 24
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "gND" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
@@ -7334,6 +7438,11 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"gNJ" = (
+/turf/simulated/wall/r_wall{
+	cached_rad_resistance = 150
+	},
+/area/surface/underground/in_da_walls)
 "gOf" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -7350,15 +7459,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"gOP" = (
-/obj/structure/reagent_dispensers/fueltank,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "gPz" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/cable/green{
@@ -7451,18 +7551,21 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"gSY" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "gTm" = (
 /turf/simulated/floor/tiled/steel_dirty,
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"gTt" = (
+/obj/machinery/atmospherics/binary/pump,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "gUx" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -7494,6 +7597,11 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"gVR" = (
+/obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/simple/visible/universal,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "gWa" = (
 /obj/effect/decal/cleanable/filth,
 /obj/effect/decal/cleanable/dirt,
@@ -7580,20 +7688,6 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"hcL" = (
-/obj/effect/floor_decal/corner/white{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/red/diagonal,
-/obj/machinery/atmospherics/unary/outlet_injector{
-	dir = 4;
-	frequency = 1441;
-	id = "n2o_in";
-	pixel_y = 1;
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced/n20,
-/area/surface/underground/in_da_walls)
 "hcQ" = (
 /obj/effect/zone_divider,
 /obj/structure/reagent_dispensers/watertank,
@@ -7713,6 +7807,20 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"hhq" = (
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "hhE" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/rust,
@@ -7774,25 +7882,12 @@
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"hkx" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green,
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+"hmc" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 8
 	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"hmo" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 5
-	},
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -7802,13 +7897,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"hmx" = (
-/obj/machinery/atmospherics/binary/pump/on{
-	dir = 1;
-	name = "Scrubber to Waste"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "hmy" = (
 /obj/structure/bed/chair/sofa/right/purp{
 	dir = 4
@@ -7817,19 +7905,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"hnx" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -25
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "hnE" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -8076,6 +8151,27 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"hxH" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"hxN" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "hyg" = (
 /obj/effect/floor_decal/rust,
 /obj/random/obstruction,
@@ -8119,17 +8215,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"hzH" = (
-/obj/effect/floor_decal/corner/blue/full{
-	dir = 4
-	},
-/obj/machinery/atmospherics/unary/outlet_injector{
-	frequency = 1441;
-	id = "o2_in";
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced/oxygen,
-/area/surface/underground/in_da_walls)
 "hAt" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -8235,18 +8320,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"hDd" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1
-	},
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "hDi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/cigarettes,
@@ -8400,13 +8473,6 @@
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"hLz" = (
-/obj/machinery/atmospherics/binary/pump,
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "hLS" = (
 /obj/structure/closet/crate,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -8430,27 +8496,11 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"hNc" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "hNO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
-"hOm" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "hPd" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
@@ -8459,15 +8509,21 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"hRl" = (
-/obj/machinery/atmospherics/omni/atmos_filter{
-	tag_east = 1;
-	tag_north = 4;
-	tag_south = 2;
-	tag_west = 5
+"hQj" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/meter,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "atmoslockdown";
+	name = "Atmospherics Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor,
 /area/surface/underground/in_da_walls)
 "hRO" = (
 /obj/structure/catwalk,
@@ -8477,6 +8533,13 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"hSd" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/machinery/atmospherics/binary/pump,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "hSi" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
@@ -8494,6 +8557,41 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"hSs" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/meter{
+	frequency = 1443;
+	id = "mair_out_meter";
+	name = "Mixed Air Tank Out"
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "atmoslockdown";
+	name = "Atmospherics Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/surface/underground/in_da_walls)
+"hSM" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/white{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/red/diagonal,
+/turf/simulated/floor/reinforced/n20,
+/area/surface/underground/in_da_walls)
+"hSS" = (
+/obj/effect/floor_decal/rust,
+/obj/structure/table/steel_reinforced,
+/obj/random/contraband,
+/obj/random/contraband,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/surface/underground/in_da_walls)
 "hTm" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
@@ -8519,6 +8617,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
+"hTR" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "hUH" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/curtain/open/privacy,
@@ -8554,11 +8657,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"hYb" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "hYm" = (
 /obj/random/trash,
 /obj/random/junk,
@@ -8599,17 +8697,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"iac" = (
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "iaf" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -8664,6 +8751,15 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"idf" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	external_pressure_bound = 140;
+	external_pressure_bound_default = 140;
+	icon_state = "map_vent_out";
+	use_power = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "idM" = (
 /obj/random/contraband,
 /obj/random/maintenance,
@@ -8672,16 +8768,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"ieG" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/green{
-	dir = 8
-	},
-/obj/machinery/meter,
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "ifc" = (
 /obj/random/cutout,
 /obj/effect/floor_decal/rust,
@@ -8709,6 +8795,29 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"ifR" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"ifY" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/powered/pump/filled{
+	anchored = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"igt" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "igA" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/floor_decal/rust,
@@ -8869,45 +8978,16 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"iot" = (
-/obj/effect/floor_decal/corner/blue/full,
-/obj/machinery/atmospherics/unary/vent_pump{
-	external_pressure_bound = 0;
-	external_pressure_bound_default = 0;
-	frequency = 1441;
-	icon_state = "map_vent_in";
-	id_tag = "o2_out";
-	initialize_directions = 1;
-	internal_pressure_bound = 4000;
-	internal_pressure_bound_default = 4000;
-	pressure_checks = 2;
-	pressure_checks_default = 2;
-	pump_direction = 0;
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced/oxygen,
-/area/surface/underground/in_da_walls)
-"ioK" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"ioM" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "ipe" = (
 /turf/simulated/floor/outdoors/rocks/caves,
 /area/surface/underground/in_da_walls)
 "iqe" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 10
+/obj/machinery/suit_storage_unit/engineering,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
 	},
+/obj/structure/cable/yellow,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -8918,18 +8998,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/firstdeck/aftport)
-"irf" = (
-/obj/machinery/atmospherics/valve/digital{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "isd" = (
 /obj/structure/grille/rustic{
 	health = 25;
@@ -8981,6 +9049,10 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"itL" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "itR" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -8989,6 +9061,10 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"iul" = (
+/obj/machinery/atmospherics/pipe/manifold4w/visible/red,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "iuR" = (
 /obj/machinery/light/small/readylight{
 	dir = 1;
@@ -9057,6 +9133,9 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"iys" = (
+/turf/simulated/floor/reinforced/n20,
+/area/surface/underground/in_da_walls)
 "iyG" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -9091,6 +9170,12 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"iyS" = (
+/obj/machinery/atmospherics/valve/digital/open{
+	name = "Mixed Air Outlet Valve"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "iyX" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/reagent_dispensers/fueltank,
@@ -9141,20 +9226,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"iDp" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "iDK" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/crate,
@@ -9188,18 +9259,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"iEw" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "iEF" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/crate,
@@ -9218,12 +9277,6 @@
 /obj/random/maintenance/research,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
-"iHU" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "iIl" = (
@@ -9293,6 +9346,18 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"iJJ" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "iJS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -9337,6 +9402,12 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"iLj" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 6
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "iLo" = (
 /obj/effect/floor_decal/rust,
 /obj/machinery/light/small/readylight,
@@ -9363,15 +9434,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"iLX" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "iMp" = (
 /obj/effect/floor_decal/rust,
 /obj/item/weapon/digestion_remains{
@@ -9426,9 +9488,12 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"iOg" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 9
+"iNY" = (
+/obj/machinery/atmospherics/valve/digital/open{
+	name = "Oxygen Outlet Valve"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -9455,6 +9520,18 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"iQd" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 6
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "iQK" = (
 /obj/structure/bed/chair/sofa/right/black{
 	dir = 4
@@ -9593,26 +9670,6 @@
 /obj/structure/railing,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
-"iUw" = (
-/obj/effect/floor_decal/corner/blue/diagonal{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/white,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	external_pressure_bound = 0;
-	external_pressure_bound_default = 0;
-	frequency = 1443;
-	icon_state = "map_vent_in";
-	id_tag = "air_out";
-	internal_pressure_bound = 2000;
-	internal_pressure_bound_default = 2000;
-	pressure_checks = 2;
-	pressure_checks_default = 2;
-	pump_direction = 0;
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced/airmix,
-/area/surface/underground/in_da_walls)
 "iUW" = (
 /obj/effect/floor_decal/rust,
 /obj/random/junk,
@@ -9646,6 +9703,15 @@
 /obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"iYw" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4;
+	name = "Dorm's Emergency Oxygen Valve"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "iYy" = (
 /obj/effect/zone_divider,
 /obj/effect/floor_decal/rust,
@@ -9805,6 +9871,11 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"jjS" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "jkd" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
@@ -9918,6 +9989,17 @@
 /obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"jmJ" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/green/border,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "jmN" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -9941,6 +10023,18 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"jnn" = (
+/obj/machinery/atmospherics/valve/digital{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "jnC" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/bed/chair/bay/chair/padded/red/smallnest,
@@ -9990,10 +10084,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"jpS" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "jqg" = (
 /obj/structure/closet/crate,
 /obj/effect/floor_decal/rust,
@@ -10090,15 +10180,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"jvU" = (
-/obj/machinery/pipedispenser/disposal,
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/structure/cable/yellow,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "jwx" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -10107,18 +10188,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"jwC" = (
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 24
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "jwJ" = (
 /obj/random/junk,
 /obj/random/trash,
@@ -10173,12 +10242,11 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"jyK" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4;
-	name = "Phoron to Connector"
+"jyb" = (
+/obj/machinery/atmospherics/binary/pump,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "jzl" = (
@@ -10202,14 +10270,6 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
-"jBR" = (
-/obj/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "jBZ" = (
 /obj/random/junk,
 /obj/effect/floor_decal/rust,
@@ -10233,6 +10293,23 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"jDi" = (
+/obj/machinery/air_sensor{
+	frequency = 1443;
+	id_tag = "air_sensor";
+	output = 7
+	},
+/obj/effect/floor_decal/corner/blue/diagonal{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/white{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced/airmix,
+/area/surface/underground/in_da_walls)
 "jEd" = (
 /obj/random/trash,
 /obj/random/junk,
@@ -10251,6 +10328,26 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"jFh" = (
+/obj/machinery/atmospherics/valve/shutoff{
+	name = "Atmospherics to Distro automatic shutoff valve"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"jFl" = (
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 5
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/yellow/border,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "jGU" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
@@ -10267,6 +10364,11 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"jIy" = (
+/obj/effect/floor_decal/rust,
+/obj/effect/zone_divider,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "jKT" = (
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
@@ -10281,15 +10383,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"jLc" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4;
-	name = "Dorm's Emergency Oxygen Valve"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "jLn" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/bed/chair,
@@ -10338,15 +10431,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"jOC" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4;
-	name = "CO2 to Connector"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "jPq" = (
 /obj/effect/zone_divider,
 /turf/unsimulated/floor/dark,
@@ -10387,6 +10471,22 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"jSB" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/meter,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "atmoslockdown";
+	name = "Atmospherics Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor,
+/area/surface/underground/in_da_walls)
 "jSD" = (
 /obj/effect/floor_decal/rust,
 /obj/random/flashlight,
@@ -10425,13 +10525,6 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"jTH" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "jTX" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -10454,6 +10547,22 @@
 	outdoors = -1
 	},
 /area/maintenance/firstdeck/aftport)
+"jUE" = (
+/obj/machinery/computer/general_air_control/large_tank_control{
+	input_tag = "n2_in";
+	name = "Nitrogen Supply Control";
+	output_tag = "n2_out";
+	sensors = list("n2_sensor"="Tank")
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "jUP" = (
 /obj/structure/girder,
 /turf/simulated/floor/water/indoors,
@@ -10476,18 +10585,6 @@
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"jVV" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/green{
-	dir = 4
-	},
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "jWs" = (
 /obj/random/junk,
 /obj/effect/floor_decal/rust,
@@ -10518,13 +10615,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"jYX" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "jZt" = (
 /obj/structure/girder/displaced,
 /turf/simulated/floor/water/deep/indoors,
@@ -10544,12 +10634,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"jZH" = (
-/obj/machinery/atmospherics/valve/shutoff{
-	name = "Atmospherics to Distro automatic shutoff valve"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "jZI" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -10580,12 +10664,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"kbf" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "kbs" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/radiation,
@@ -10696,6 +10774,13 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"kjE" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "kjT" = (
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -10734,18 +10819,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"kmD" = (
-/obj/effect/floor_decal/corner/lime/full{
-	dir = 4
-	},
-/obj/machinery/atmospherics/unary/outlet_injector{
-	frequency = 1441;
-	id = "waste_in";
-	pixel_y = 1;
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced/airless,
-/area/surface/underground/in_da_walls)
 "knb" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/airlock/glass{
@@ -10754,6 +10827,12 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/tiled/white,
 /area/surface/outpost/civilian/sauna/cryosauna)
+"koB" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 9
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "krz" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -10766,11 +10845,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"ksf" = (
-/obj/effect/floor_decal/rust,
-/obj/structure/table/bench/padded,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/surface/underground/in_da_walls)
 "ksX" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table/steel,
@@ -10814,18 +10888,6 @@
 /area/rnd/research/firstdeck/hallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"kvA" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"kwc" = (
-/turf/simulated/floor/reinforced/oxygen,
-/area/surface/underground/in_da_walls)
 "kxn" = (
 /obj/random/trash,
 /obj/effect/floor_decal/rust,
@@ -10851,14 +10913,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"kyZ" = (
-/obj/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "kzR" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	req_one_access = null
@@ -10925,15 +10979,6 @@
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"kGb" = (
-/obj/machinery/atmospherics/valve/digital/open{
-	name = "Oxygen Outlet Valve"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "kIc" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -10953,6 +10998,21 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"kIy" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "kIF" = (
 /obj/structure/railing{
 	dir = 4
@@ -10970,15 +11030,6 @@
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"kJl" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "kKr" = (
 /obj/structure/cable{
 	d1 = 16;
@@ -11064,12 +11115,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"kOD" = (
-/obj/machinery/atmospherics/valve/digital{
-	name = "Custom Mix Outlet Valve"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "kRa" = (
 /obj/effect/floor_decal/rust,
 /obj/random/contraband,
@@ -11085,6 +11130,33 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"kVW" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/meter,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "atmoslockdown";
+	name = "Atmospherics Lockdown";
+	opacity = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor,
+/area/surface/underground/in_da_walls)
+"kXu" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"kXW" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "kYw" = (
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
@@ -11171,10 +11243,6 @@
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"lev" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "lfd" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -11183,6 +11251,15 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"lgs" = (
+/obj/effect/floor_decal/corner/red/full{
+	dir = 1
+	},
+/obj/machinery/camera/network/engineering{
+	c_tag = "ATMTK - Nitrogen"
+	},
+/turf/simulated/floor/reinforced/nitrogen,
+/area/surface/underground/in_da_walls)
 "lgI" = (
 /obj/structure/railing/grey,
 /obj/structure/stairs/spawner/west,
@@ -11247,17 +11324,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"lnJ" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/red,
-/obj/machinery/meter,
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 8
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 5
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "log" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/boxinggloves,
@@ -11278,6 +11344,23 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"lpz" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 6
+	},
+/obj/machinery/light/floortube{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"lra" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 8
+	},
+/obj/structure/railing/grey,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "lsr" = (
 /obj/structure/sign/warning{
 	desc = "WARNING - WILD ANIMALS. PROCEED AT YOUR OWN RISK.";
@@ -11376,35 +11459,37 @@
 "lAy" = (
 /turf/simulated/wall/r_wall,
 /area/surface/outpost/civilian/sauna/cryosauna)
-"lBD" = (
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"lBJ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "lCi" = (
 /obj/machinery/crystal/ice,
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
 	},
 /area/maintenance/firstdeck/aftport)
+"lCG" = (
+/obj/machinery/atmospherics/binary/pump{
+	name = "Custom Mix to Connector"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "lDE" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/reagent_dispensers/watertank,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"lEA" = (
+/obj/machinery/atmospherics/omni/mixer{
+	active_power_usage = 7500;
+	tag_east = 2;
+	tag_east_con = null;
+	tag_north = 1;
+	tag_north_con = 0.21;
+	tag_south_con = null;
+	tag_west = 1;
+	tag_west_con = 0.79
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "lED" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
@@ -11414,6 +11499,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"lFE" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "lGF" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/bed/chair{
@@ -11431,20 +11522,20 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"lJk" = (
-/turf/simulated/wall,
-/area/surface/underground/in_da_walls)
-"lJm" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 6
+"lIx" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"lJk" = (
+/turf/simulated/wall,
 /area/surface/underground/in_da_walls)
 "lJI" = (
 /obj/random/maintenance/misc,
@@ -11488,10 +11579,46 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"lRj" = (
-/turf/simulated/wall/r_wall{
-	cached_rad_resistance = 150
+"lPC" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 5
 	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"lQW" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"lQZ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"lRp" = (
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "lRw" = (
 /obj/structure/grille/rustic{
@@ -11519,21 +11646,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"lTC" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "lUf" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -11566,18 +11678,10 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
-"lZQ" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+"lZB" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -11618,6 +11722,16 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"mfQ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "mgE" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -11672,6 +11786,13 @@
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"mlm" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/pipe/cap/visible{
+	color = "#ffcc00"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "mls" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
@@ -11681,24 +11802,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"mmt" = (
-/obj/machinery/atmospherics/pipe/manifold4w/visible/yellow,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"mmC" = (
-/obj/machinery/atmospherics/unary/outlet_injector{
-	dir = 4;
-	frequency = 1441;
-	id = "tox_in";
-	pixel_y = 1;
-	use_power = 1
-	},
-/obj/effect/floor_decal/corner/purple/diagonal,
-/obj/effect/floor_decal/corner/orange{
-	dir = 4
-	},
-/turf/simulated/floor/reinforced/phoron,
-/area/surface/underground/in_da_walls)
 "mnJ" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -11728,6 +11831,20 @@
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
+"mon" = (
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "mqn" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -11754,6 +11871,15 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"msw" = (
+/obj/structure/reagent_dispensers/watertank,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "muz" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
@@ -11762,13 +11888,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"mvB" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	dir = 1
-	},
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "mvI" = (
 /obj/effect/floor_decal/rust,
 /obj/random/flashlight,
@@ -11909,10 +12028,6 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"myL" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/turf/simulated/wall/r_wall,
-/area/surface/underground/in_da_walls)
 "mzR" = (
 /obj/structure/curtain/open/privacy,
 /obj/effect/floor_decal/borderfloorblack{
@@ -11950,10 +12065,6 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"mBm" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "mCA" = (
 /obj/structure/cable/green{
 	d2 = 8;
@@ -12030,6 +12141,25 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"mDE" = (
+/obj/machinery/computer/general_air_control/large_tank_control{
+	dir = 4;
+	input_tag = "tox_in";
+	name = "Phoron Supply Control";
+	output_tag = "tox_out";
+	sensors = list("tox_sensor"="Tank")
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "mDO" = (
 /obj/structure/cable/green{
 	d2 = 8;
@@ -12119,17 +12249,9 @@
 	outdoors = 1
 	},
 /area/surface/underground/in_da_walls)
-"mHE" = (
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+"mGn" = (
+/obj/machinery/atmospherics/valve/digital{
+	name = "Custom Mix Inlet Valve"
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -12174,6 +12296,15 @@
 /obj/random/mob/mouse,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"mMz" = (
+/obj/machinery/pipedispenser/disposal,
+/obj/structure/cable/yellow{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "mMP" = (
 /obj/machinery/shieldwallgen{
 	anchored = 1;
@@ -12247,13 +12378,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"mOM" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 9
-	},
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "mOU" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -12279,23 +12403,6 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"mPN" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "mQv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -12370,6 +12477,24 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"mST" = (
+/turf/simulated/wall/r_wall{
+	cached_rad_resistance = 150
+	},
+/area/maintenance/firstdeck/centralport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
+"mTf" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"mUF" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "mUU" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralport{
@@ -12388,6 +12513,18 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"mYq" = (
+/obj/machinery/computer/general_air_control/large_tank_control{
+	input_tag = "o2_in";
+	name = "Oxygen Supply Control";
+	output_tag = "o2_out";
+	sensors = list("o2_sensor"="Tank")
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "mYQ" = (
 /obj/structure/railing{
 	dir = 8
@@ -12490,6 +12627,14 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"neq" = (
+/obj/machinery/atmospherics/omni/atmos_filter{
+	tag_east = 2;
+	tag_north = 1;
+	tag_west = 6
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "neD" = (
 /obj/machinery/button/remote/blast_door{
 	id = "xenobio10station";
@@ -12537,6 +12682,13 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"nhC" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "nko" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 1
@@ -12590,12 +12742,6 @@
 	},
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
-"nmm" = (
-/obj/machinery/atmospherics/valve/digital/open{
-	name = "Mixed Air Inlet Valve"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "nnX" = (
 /obj/effect/zone_divider,
 /turf/simulated/wall/r_wall,
@@ -12611,14 +12757,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"npA" = (
-/obj/machinery/meter{
-	frequency = 1443;
-	id = "dloop_atm_meter"
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/universal,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "npN" = (
 /obj/structure/railing{
 	dir = 8
@@ -12664,6 +12802,13 @@
 	},
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
+"nsU" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "ntK" = (
 /obj/structure/catwalk,
 /obj/item/device/radio/intercom{
@@ -12796,21 +12941,26 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"nEe" = (
-/obj/machinery/atmospherics/portables_connector{
+"nAR" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/red/border,
-/obj/machinery/light/small{
-	dir = 4
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
-"nEZ" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 4
+"nBe" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"nEe" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/machinery/meter,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "nFG" = (
@@ -12828,6 +12978,15 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"nFP" = (
+/obj/machinery/portable_atmospherics/powered/pump/filled{
+	anchored = 1
+	},
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "nGb" = (
 /obj/machinery/light/floortube{
 	dir = 8
@@ -12853,20 +13012,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"nGV" = (
-/obj/machinery/air_sensor{
-	frequency = 1441;
-	id_tag = "waste_sensor";
-	output = 63
-	},
-/obj/effect/floor_decal/corner/lime/full{
-	dir = 8
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/reinforced/airless,
-/area/surface/underground/in_da_walls)
 "nJB" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -12905,11 +13050,8 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"nLK" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/obj/machinery/atmospherics/binary/pump,
+"nLH" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "nLT" = (
@@ -12967,6 +13109,12 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"nPe" = (
+/obj/machinery/atmospherics/tvalve/mirrored/bypass{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "nPZ" = (
 /obj/structure/cable{
 	d1 = 16;
@@ -13023,6 +13171,14 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"nUC" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/red/border,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "nUQ" = (
 /obj/machinery/camera/network/research{
 	c_tag = "SCI - Xenobiology West";
@@ -13167,6 +13323,10 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"oeu" = (
+/obj/machinery/atmospherics/pipe/manifold4w/visible/yellow,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "ofs" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -13215,18 +13375,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"oiK" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
-	input_tag = "o2_in";
-	name = "Oxygen Supply Control";
-	output_tag = "o2_out";
-	sensors = list("o2_sensor"="Tank")
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "ojp" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -13343,6 +13491,35 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"orl" = (
+/obj/effect/floor_decal/corner/blue/diagonal{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/white,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	external_pressure_bound = 0;
+	external_pressure_bound_default = 0;
+	frequency = 1443;
+	icon_state = "map_vent_in";
+	id_tag = "air_out";
+	internal_pressure_bound = 2000;
+	internal_pressure_bound_default = 2000;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	pump_direction = 0;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/airmix,
+/area/surface/underground/in_da_walls)
+"orT" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "osi" = (
 /obj/machinery/door/window/brigdoor/westleft{
 	name = "Mini lab";
@@ -13397,6 +13574,20 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"otb" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/meter,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "atmoslockdown";
+	name = "Atmospherics Lockdown";
+	opacity = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/turf/simulated/floor,
+/area/surface/underground/in_da_walls)
 "otJ" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/cable/green{
@@ -13478,12 +13669,6 @@
 /obj/item/clothing/under/cheongsam,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/firstdeck/aftport)
-"owC" = (
-/obj/machinery/atmospherics/tvalve/mirrored/bypass{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "oxp" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -13515,9 +13700,30 @@
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
+"oxy" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 9
+	},
+/obj/machinery/light/floortube{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "oyQ" = (
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
+"oyW" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "ozy" = (
 /obj/structure/stairs/spawner/west,
 /turf/simulated/floor/plating,
@@ -13592,15 +13798,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"oBp" = (
-/obj/structure/closet/emcloset,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "oBq" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -13612,17 +13809,17 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"oEC" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+"oDF" = (
+/obj/effect/floor_decal/corner/white/diagonal,
+/obj/effect/floor_decal/corner/blue{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/atmospherics/unary/outlet_injector{
+	frequency = 1443;
+	id = "air_in";
+	use_power = 1
 	},
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/reinforced/airmix,
 /area/surface/underground/in_da_walls)
 "oFd" = (
 /turf/simulated/wall/r_wall,
@@ -13669,18 +13866,6 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"oIk" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "oIv" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/window/brigdoor/eastright{
@@ -13716,6 +13901,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
+"oKn" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "oLv" = (
 /obj/effect/floor_decal/rust,
 /obj/random/mob/mouse,
@@ -13735,13 +13929,7 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"oMk" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
+"oLN" = (
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "oMo" = (
@@ -13751,6 +13939,25 @@
 /obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"oMA" = (
+/obj/machinery/computer/general_air_control/large_tank_control{
+	frequency = 1443;
+	input_tag = "air_in";
+	name = "Mixed Air Supply Control";
+	output_tag = "air_out";
+	pressure_setting = 2000;
+	sensors = list("air_sensor"="Tank")
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"oOw" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 8
+	},
+/obj/structure/railing/grey,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "oQe" = (
 /obj/random/trash_pile,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -13863,17 +14070,6 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"oVB" = (
-/obj/effect/floor_decal/corner/red/full{
-	dir = 4
-	},
-/obj/machinery/atmospherics/unary/outlet_injector{
-	frequency = 1441;
-	id = "n2_in";
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced/nitrogen,
-/area/surface/underground/in_da_walls)
 "oVC" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -13932,15 +14128,11 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"oXY" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 6
-	},
-/obj/structure/catwalk,
+"oZP" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -13957,15 +14149,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"pbC" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "pbQ" = (
 /obj/random/trash_pile,
 /obj/random/junk,
@@ -13975,28 +14158,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"pci" = (
-/obj/effect/floor_decal/corner/white/diagonal{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/red,
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4;
-	external_pressure_bound = 0;
-	external_pressure_bound_default = 0;
-	frequency = 1441;
-	icon_state = "map_vent_in";
-	id_tag = "n2o_out";
-	initialize_directions = 1;
-	internal_pressure_bound = 4000;
-	internal_pressure_bound_default = 4000;
-	pressure_checks = 2;
-	pressure_checks_default = 2;
-	pump_direction = 0;
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced/n20,
-/area/surface/underground/in_da_walls)
 "pcD" = (
 /obj/random/mob/mouse,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -14025,6 +14186,20 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"peC" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "peQ" = (
 /obj/structure/reagent_dispensers/watertank/high,
 /obj/machinery/recharger/wallcharger{
@@ -14066,18 +14241,6 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"phm" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 10
-	},
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "phL" = (
 /obj/structure/bed/chair/office/light{
 	dir = 4
@@ -14111,15 +14274,6 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"piI" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "pkO" = (
 /obj/random/humanoidremains,
 /obj/effect/floor_decal/rust,
@@ -14128,6 +14282,12 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"plm" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "pme" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
@@ -14136,6 +14296,12 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"pnF" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 10
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "por" = (
 /obj/machinery/firealarm{
 	dir = 4;
@@ -14177,11 +14343,6 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"prp" = (
-/obj/machinery/atmospherics/pipe/manifold4w/visible/green,
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "prS" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
@@ -14233,11 +14394,6 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"puc" = (
-/obj/machinery/hologram/holopad,
-/obj/effect/floor_decal/industrial/outline/grey,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "pue" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -14309,6 +14465,20 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"pwy" = (
+/obj/effect/floor_decal/corner/orange/full{
+	dir = 8
+	},
+/obj/machinery/air_sensor{
+	frequency = 1441;
+	id_tag = "tox_sensor"
+	},
+/obj/machinery/camera/network/engineering{
+	c_tag = "ATMTK - Phoron";
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/phoron,
+/area/surface/underground/in_da_walls)
 "pwD" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -14389,22 +14559,6 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"pBp" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
-	input_tag = "n2_in";
-	name = "Nitrogen Supply Control";
-	output_tag = "n2_out";
-	sensors = list("n2_sensor"="Tank")
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "pCd" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/cable/green{
@@ -14439,11 +14593,26 @@
 /obj/random/maintenance/misc,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"pES" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan,
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "pFa" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
+"pFe" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/green{
+	dir = 8
+	},
+/obj/machinery/meter,
+/obj/machinery/light/floortube{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "pFn" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -14455,6 +14624,11 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"pFy" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/green,
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "pIb" = (
 /obj/structure/table/darkglass,
 /obj/random/snack,
@@ -14470,15 +14644,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"pIq" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 9
-	},
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "pJl" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -14575,31 +14740,17 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"pLc" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/wingrille_spawn/reinforced,
-/obj/machinery/meter,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "atmoslockdown";
-	name = "Atmospherics Lockdown";
-	opacity = 0
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/turf/simulated/floor,
-/area/surface/underground/in_da_walls)
-"pLz" = (
-/obj/machinery/firealarm{
-	pixel_y = 24
-	},
+"pMK" = (
+/obj/machinery/suit_cycler/engineering,
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d2 = 2;
+	icon_state = "0-2"
 	},
+/obj/structure/cable/yellow,
 /turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
+/area/maintenance/firstdeck/foreport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "pMP" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash_pile,
@@ -14630,18 +14781,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/water/indoors,
 /area/maintenance/firstdeck/aftport)
-"pOK" = (
-/obj/machinery/atmospherics/binary/pump{
-	name = "N2 to Connector"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "pPb" = (
 /obj/effect/zone_divider,
 /obj/effect/floor_decal/rust,
@@ -14685,6 +14824,11 @@
 /area/hallway/primary/firstdeck/auxdockaft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"pRr" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "pRQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -14733,13 +14877,6 @@
 "pTQ" = (
 /turf/simulated/wall,
 /area/hydroponics)
-"pUD" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "pVL" = (
 /obj/structure/table/standard,
 /obj/structure/window/reinforced{
@@ -14772,6 +14909,10 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"pXA" = (
+/obj/effect/floor_decal/rust,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/surface/underground/in_da_walls)
 "pXK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -14841,6 +14982,15 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"qbS" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/atmospherics/binary/pump{
+	name = "N2 to Mixing"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "qbZ" = (
 /obj/random/powercell,
 /obj/effect/floor_decal/rust,
@@ -14850,6 +15000,9 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"qcA" = (
+/turf/simulated/floor/reinforced/phoron,
+/area/surface/underground/in_da_walls)
 "qcN" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table/steel,
@@ -14927,6 +15080,10 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"qjd" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "qjQ" = (
 /obj/structure/closet,
 /obj/random/maintenance,
@@ -14951,15 +15108,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
-"qkn" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "qkM" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -14977,11 +15125,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"qlh" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/cyan,
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "qnR" = (
 /obj/random/trash,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -15039,16 +15182,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"qpG" = (
-/obj/machinery/atmospherics/unary/freezer{
-	icon_state = "freezer"
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "qqe" = (
 /obj/random/junk,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -15057,6 +15190,14 @@
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"qqr" = (
+/obj/effect/floor_decal/corner/black/full,
+/obj/machinery/camera/network/engineering{
+	c_tag = "ATMTK - Carbon Dioxide";
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/carbon_dioxide,
+/area/surface/underground/in_da_walls)
 "qqJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -15073,6 +15214,16 @@
 "qrJ" = (
 /turf/unsimulated/wall/planetary/normal/thor,
 /area/surface/outpost/wall)
+"qsh" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 10
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "quJ" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table/steel,
@@ -15100,6 +15251,10 @@
 /obj/machinery/power/emitter,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
+"qxB" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/turf/simulated/wall/r_wall,
+/area/surface/underground/in_da_walls)
 "qxJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -15118,10 +15273,11 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"qyo" = (
-/obj/machinery/atmospherics/portables_connector,
-/obj/machinery/portable_atmospherics/powered/scrubber{
-	anchored = 1
+"qyu" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4;
+	name = "Air Tank Bypass Pump"
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -15187,14 +15343,6 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"qzM" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4;
-	name = "Air Tank Bypass Pump"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "qzY" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -15207,10 +15355,6 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"qAc" = (
-/obj/machinery/atmospherics/pipe/manifold4w/visible/red,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "qCc" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -15254,6 +15398,12 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"qEe" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 5
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "qEB" = (
 /obj/effect/floor_decal/borderfloorblack/corner,
 /obj/effect/floor_decal/rust,
@@ -15386,9 +15536,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"qNp" = (
-/turf/simulated/floor/reinforced/carbon_dioxide,
-/area/surface/underground/in_da_walls)
 "qNr" = (
 /obj/structure/closet,
 /obj/item/toy/figure/scientist,
@@ -15436,12 +15583,6 @@
 /obj/random/trash,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
-"qOs" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 5
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "qQi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/trash,
@@ -15469,15 +15610,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"qTQ" = (
-/obj/effect/floor_decal/corner/lime/full{
-	dir = 1
-	},
-/obj/machinery/camera/network/engineering{
-	c_tag = "ATMTK - Gas Mixing"
-	},
-/turf/simulated/floor/reinforced/airless,
-/area/surface/underground/in_da_walls)
 "qVi" = (
 /obj/effect/zone_divider,
 /obj/structure/catwalk,
@@ -15551,6 +15683,18 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"qXE" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/green{
+	dir = 1
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "qYh" = (
 /obj/random/junk,
 /obj/effect/floor_decal/rust,
@@ -15583,12 +15727,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"qZx" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 9
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "raT" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table/steel_reinforced,
@@ -15656,6 +15794,21 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
+"rfJ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "rfL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -15693,17 +15846,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"riW" = (
-/obj/machinery/computer/general_air_control/large_tank_control{
-	frequency = 1443;
-	input_tag = "air_in";
-	name = "Mixed Air Supply Control";
-	output_tag = "air_out";
-	pressure_setting = 2000;
-	sensors = list("air_sensor"="Tank")
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "rji" = (
 /obj/machinery/door/window/brigdoor/westleft{
 	dir = 4;
@@ -15726,18 +15868,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"rkS" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
-	dir = 8
-	},
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "rkY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -15784,24 +15914,6 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"rnw" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/wingrille_spawn/reinforced,
-/obj/machinery/meter{
-	frequency = 1443;
-	id = "mair_out_meter";
-	name = "Mixed Air Tank Out"
-	},
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "atmoslockdown";
-	name = "Atmospherics Lockdown";
-	opacity = 0
-	},
-/turf/simulated/floor,
-/area/surface/underground/in_da_walls)
 "rny" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/cable/green{
@@ -15840,14 +15952,14 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"rpq" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
+"rpk" = (
+/obj/structure/table/standard,
+/obj/item/clothing/gloves/black,
+/obj/item/clothing/gloves/black,
+/obj/item/weapon/storage/belt/utility/atmostech,
+/obj/item/weapon/storage/belt/utility/atmostech,
+/obj/fiftyspawner/glass,
+/obj/fiftyspawner/steel,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "rpV" = (
@@ -15866,6 +15978,15 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"rqM" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "rqT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -15899,13 +16020,6 @@
 	outdoors = -1
 	},
 /area/maintenance/firstdeck/aftport)
-"rvb" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "rvk" = (
 /obj/effect/decal/cleanable/filth,
 /obj/effect/decal/cleanable/dirt,
@@ -15926,15 +16040,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
-"rwB" = (
-/obj/effect/floor_decal/corner/blue/full{
-	dir = 1
-	},
-/obj/machinery/camera/network/engineering{
-	c_tag = "ATMTK - Oxygen"
-	},
-/turf/simulated/floor/reinforced/oxygen,
-/area/surface/underground/in_da_walls)
 "rxm" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -15954,25 +16059,6 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"rzB" = (
-/obj/machinery/atmospherics/pipe/manifold4w/visible/yellow,
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"rAr" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green,
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/wingrille_spawn/reinforced,
-/obj/machinery/meter,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "atmoslockdown";
-	name = "Atmospherics Lockdown";
-	opacity = 0
-	},
-/turf/simulated/floor,
-/area/surface/underground/in_da_walls)
 "rAR" = (
 /obj/machinery/light_switch{
 	pixel_y = 30
@@ -16064,12 +16150,6 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"rIJ" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "rJa" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
@@ -16169,6 +16249,11 @@
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"rNL" = (
+/obj/effect/floor_decal/rust,
+/obj/structure/table/bench/padded,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/surface/underground/in_da_walls)
 "rNV" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/industrial/warning,
@@ -16336,11 +16421,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"rWW" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/green,
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "rXg" = (
 /obj/machinery/light_construct/floortube{
 	dir = 8
@@ -16350,13 +16430,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"rXq" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/red{
-	dir = 1
-	},
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "rXR" = (
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -16404,15 +16477,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"rZO" = (
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "sap" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/trash,
@@ -16422,18 +16486,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"saZ" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	dir = 4
-	},
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "sbg" = (
 /obj/structure/catwalk,
 /obj/random/trash,
@@ -16452,6 +16504,22 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"sdW" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"sfe" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "sfB" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -16547,6 +16615,12 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"siQ" = (
+/obj/machinery/atmospherics/valve/digital/open{
+	name = "Mixed Air Inlet Valve"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "sja" = (
 /obj/effect/floor_decal/rust,
 /obj/random/maintenance/misc,
@@ -16572,24 +16646,22 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"sjD" = (
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "skh" = (
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"skv" = (
-/obj/effect/floor_decal/corner/red/full{
-	dir = 8
-	},
-/obj/machinery/air_sensor{
-	frequency = 1441;
-	id_tag = "n2_sensor"
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/reinforced/nitrogen,
-/area/surface/underground/in_da_walls)
 "sls" = (
 /obj/structure/closet/l3closet/general,
 /obj/effect/floor_decal/industrial/warning/cee{
@@ -16633,6 +16705,12 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/firstdeck/aftport)
+"sqv" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "sqw" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/red{
 	dir = 1
@@ -16696,6 +16774,15 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"stJ" = (
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "suA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 10
@@ -16734,31 +16821,10 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"sxq" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"syt" = (
-/obj/effect/floor_decal/corner/black/full{
-	dir = 8
-	},
-/obj/machinery/air_sensor{
-	frequency = 1441;
-	id_tag = "co2_sensor"
-	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/simulated/floor/reinforced/carbon_dioxide,
-/area/surface/underground/in_da_walls)
-"szf" = (
-/obj/machinery/atmospherics/omni/atmos_filter{
-	tag_east = 2;
-	tag_north = 1;
-	tag_west = 6
+"syY" = (
+/obj/machinery/atmospherics/binary/pump/on{
+	name = "Air to Supply";
+	target_pressure = 301.325
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -16863,6 +16929,19 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"sGu" = (
+/obj/effect/floor_decal/corner/blue/full{
+	dir = 8
+	},
+/obj/machinery/air_sensor{
+	frequency = 1441;
+	id_tag = "o2_sensor"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced/oxygen,
+/area/surface/underground/in_da_walls)
 "sIh" = (
 /obj/machinery/portable_atmospherics/canister,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -16916,18 +16995,6 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"sJH" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "sKb" = (
 /obj/machinery/light{
 	dir = 1
@@ -16945,9 +17012,6 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"sLe" = (
-/turf/simulated/floor/reinforced/airless,
-/area/surface/underground/in_da_walls)
 "sLI" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 1;
@@ -17004,6 +17068,11 @@
 	outdoors = -1
 	},
 /area/surface/underground/in_da_walls)
+"sQE" = (
+/obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "sRk" = (
 /obj/effect/floor_decal/rust,
 /obj/random/maintenance/misc,
@@ -17011,12 +17080,11 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"sSq" = (
-/obj/structure/catwalk,
+"sRn" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -17037,6 +17105,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
+"sSS" = (
+/obj/machinery/atmospherics/binary/pump{
+	name = "Air Mix to Connector"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "sUJ" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table/steel,
@@ -17051,6 +17125,14 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"sVu" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4;
+	name = "Phoron to Connector"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "sVH" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 1;
@@ -17066,10 +17148,6 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"sWI" = (
-/obj/structure/grille,
-/turf/simulated/wall/r_wall,
-/area/surface/underground/in_da_walls)
 "sYh" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -17085,20 +17163,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"tat" = (
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "taJ" = (
 /obj/machinery/light/floortube{
 	dir = 8
@@ -17133,18 +17197,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"tcz" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/green{
-	dir = 1
-	},
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "tdg" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	req_one_access = null
@@ -17218,12 +17270,9 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"tiM" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
+"tje" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 9
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -17331,16 +17380,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"tos" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
-	dir = 4
-	},
-/obj/machinery/meter,
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "toy" = (
 /turf/simulated/floor/tiled,
 /area/rnd/mixing{
@@ -17548,6 +17587,32 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"tzD" = (
+/obj/effect/floor_decal/corner/blue/full{
+	dir = 4
+	},
+/obj/machinery/atmospherics/unary/outlet_injector{
+	frequency = 1441;
+	id = "o2_in";
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/oxygen,
+/area/surface/underground/in_da_walls)
+"tzE" = (
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"tzL" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "tAO" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -17560,10 +17625,8 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
-"tBV" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 4
-	},
+"tCi" = (
+/obj/machinery/atmospherics/pipe/simple/visible/green,
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/meter,
@@ -17575,6 +17638,13 @@
 	opacity = 0
 	},
 /turf/simulated/floor,
+/area/surface/underground/in_da_walls)
+"tCv" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/green{
+	dir = 8
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "tCN" = (
 /obj/machinery/door/airlock/maintenance_hatch{
@@ -17597,15 +17667,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"tGo" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	external_pressure_bound = 140;
-	external_pressure_bound_default = 140;
-	icon_state = "map_vent_out";
-	use_power = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "tHm" = (
 /turf/simulated/floor/water/indoors,
 /area/surface/underground/in_da_walls)
@@ -17648,9 +17709,25 @@
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"tJO" = (
-/turf/simulated/floor/reinforced/airmix,
+"tKj" = (
+/obj/effect/floor_decal/corner/black/full{
+	dir = 8
+	},
+/obj/machinery/air_sensor{
+	frequency = 1441;
+	id_tag = "co2_sensor"
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced/carbon_dioxide,
 /area/surface/underground/in_da_walls)
+"tKk" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/foreport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "tLj" = (
 /obj/structure/sign/warning/biohazard,
 /turf/simulated/wall/r_wall,
@@ -17702,6 +17779,14 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"tNY" = (
+/obj/machinery/atmospherics/omni/atmos_filter{
+	tag_north = 1;
+	tag_south = 2;
+	tag_west = 7
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "tOH" = (
 /obj/machinery/atmospherics/omni/mixer{
 	tag_east = 2;
@@ -17744,24 +17829,6 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"tQe" = (
-/obj/effect/floor_decal/corner/red/full,
-/obj/machinery/atmospherics/unary/vent_pump{
-	external_pressure_bound = 0;
-	external_pressure_bound_default = 0;
-	frequency = 1441;
-	icon_state = "map_vent_in";
-	id_tag = "n2_out";
-	initialize_directions = 1;
-	internal_pressure_bound = 4000;
-	internal_pressure_bound_default = 4000;
-	pressure_checks = 2;
-	pressure_checks_default = 2;
-	pump_direction = 0;
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced/nitrogen,
-/area/surface/underground/in_da_walls)
 "tRy" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -17786,6 +17853,24 @@
 "tTv" = (
 /turf/unsimulated/mineral,
 /area/surface/outpost/wall)
+"tTx" = (
+/obj/structure/closet/emcloset,
+/obj/machinery/camera/network/engineering{
+	c_tag = "ENG - Atmos North"
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"tUF" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "tVu" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -18128,17 +18213,6 @@
 /area/rnd/research/firstdeck/hallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"uqD" = (
-/obj/machinery/suit_cycler/engineering,
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/structure/cable/yellow,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/foreport{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
 "uqM" = (
 /obj/random/trash,
 /obj/effect/floor_decal/rust,
@@ -18154,15 +18228,28 @@
 /area/hallway/primary/seconddeck/dockhallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"ush" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/atmospherics/binary/pump,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"usB" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "usH" = (
 /turf/simulated/floor/tiled/white,
 /area/rnd/research/firstdeck/hallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"utL" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "uud" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -18231,9 +18318,11 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"uxJ" = (
+"uyr" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 1
+	},
 /obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/simple/visible/red,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "uyA" = (
@@ -18250,6 +18339,13 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"uzg" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/atmospherics/pipe/simple/visible/green{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "uzz" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6
@@ -18284,6 +18380,14 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"uAR" = (
+/turf/simulated/floor/reinforced/oxygen,
+/area/surface/underground/in_da_walls)
+"uBh" = (
+/obj/effect/floor_decal/rust,
+/obj/random/contraband,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/surface/underground/in_da_walls)
 "uCh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -18325,15 +18429,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"uDu" = (
-/obj/machinery/atmospherics/binary/pump{
-	name = "O2 to Connector"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "uEm" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -18342,18 +18437,18 @@
 /obj/machinery/portable_atmospherics/powered/pump,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
-"uEw" = (
-/obj/effect/floor_decal/corner/black/full{
-	dir = 1
+"uEC" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
-/obj/machinery/atmospherics/unary/outlet_injector{
-	dir = 4;
-	frequency = 1441;
-	id = "co2_in";
-	pixel_y = 1;
-	use_power = 1
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
-/turf/simulated/floor/reinforced/carbon_dioxide,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
+/turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "uFJ" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -18364,27 +18459,6 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"uGc" = (
-/obj/effect/floor_decal/corner/orange/full{
-	dir = 4
-	},
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4;
-	external_pressure_bound = 0;
-	external_pressure_bound_default = 0;
-	frequency = 1441;
-	icon_state = "map_vent_in";
-	id_tag = "tox_out";
-	initialize_directions = 1;
-	internal_pressure_bound = 4000;
-	internal_pressure_bound_default = 4000;
-	pressure_checks = 2;
-	pressure_checks_default = 2;
-	pump_direction = 0;
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced/phoron,
-/area/surface/underground/in_da_walls)
 "uGd" = (
 /obj/structure/closet,
 /obj/random/maintenance,
@@ -18446,16 +18520,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"uHw" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/green,
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "uHE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -18476,6 +18540,15 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"uIy" = (
+/obj/machinery/atmospherics/valve/digital{
+	dir = 4;
+	name = "N2O Outlet Valve"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "uJz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
@@ -18484,18 +18557,6 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"uJF" = (
-/obj/structure/closet/emcloset,
-/obj/machinery/camera/network/engineering{
-	c_tag = "ENG - Atmos North"
-	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "uJT" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 8;
@@ -18539,6 +18600,13 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"uMR" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4;
+	name = "CO2 to Mixing"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "uPi" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/grille,
@@ -18551,11 +18619,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
-"uPl" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "uPr" = (
 /obj/structure/cable/green{
 	icon_state = "2-4"
@@ -18581,10 +18644,20 @@
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
-"uTy" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 6
+"uSQ" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
 	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"uTo" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "uTz" = (
@@ -18621,6 +18694,19 @@
 	},
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
+"uVA" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/cap/visible{
+	color = "#00ff00";
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "uWA" = (
 /obj/effect/zone_divider,
 /turf/simulated/wall/log,
@@ -18710,6 +18796,16 @@
 /area/rnd/research/firstdeck/hallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"vaf" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/machinery/light/floortube{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "vaq" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
@@ -18781,11 +18877,6 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"veY" = (
-/obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "vfx" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -18817,6 +18908,20 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"viK" = (
+/obj/machinery/atmospherics/unary/outlet_injector{
+	dir = 4;
+	frequency = 1441;
+	id = "tox_in";
+	pixel_y = 1;
+	use_power = 1
+	},
+/obj/effect/floor_decal/corner/purple/diagonal,
+/obj/effect/floor_decal/corner/orange{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced/phoron,
+/area/surface/underground/in_da_walls)
 "viX" = (
 /obj/random/trash_pile,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -18836,12 +18941,9 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"vlv" = (
-/obj/effect/floor_decal/rust,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
+"vjZ" = (
+/obj/structure/stairs/spawner/east,
+/turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "vlM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -18952,6 +19054,15 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"vpA" = (
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "vqC" = (
 /obj/machinery/light_construct/floortube{
 	dir = 8
@@ -19025,6 +19136,12 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"vum" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "vuJ" = (
 /obj/machinery/air_sensor{
 	frequency = 1430;
@@ -19086,11 +19203,18 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"vwE" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 9
+"vwZ" = (
+/obj/effect/floor_decal/corner/red/full{
+	dir = 8
 	},
-/turf/simulated/floor/plating,
+/obj/machinery/air_sensor{
+	frequency = 1441;
+	id_tag = "n2_sensor"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/reinforced/nitrogen,
 /area/surface/underground/in_da_walls)
 "vCL" = (
 /obj/effect/floor_decal/borderfloorblack/corner{
@@ -19112,6 +19236,22 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"vDH" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"vEs" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "vFN" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/machinery/button/windowtint{
@@ -19195,6 +19335,24 @@
 /area/rnd/research/firstdeck/hallway{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"vJS" = (
+/obj/effect/floor_decal/corner/blue/full,
+/obj/machinery/atmospherics/unary/vent_pump{
+	external_pressure_bound = 0;
+	external_pressure_bound_default = 0;
+	frequency = 1441;
+	icon_state = "map_vent_in";
+	id_tag = "o2_out";
+	initialize_directions = 1;
+	internal_pressure_bound = 4000;
+	internal_pressure_bound_default = 4000;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	pump_direction = 0;
+	use_power = 1
+	},
+/turf/simulated/floor/reinforced/oxygen,
+/area/surface/underground/in_da_walls)
 "vJV" = (
 /obj/machinery/status_display{
 	layer = 4;
@@ -19246,6 +19404,12 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"vNo" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "vOB" = (
 /obj/effect/floor_decal/rust,
 /obj/random/mob/mouse,
@@ -19399,12 +19563,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"vWg" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 10
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "vWy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -19441,6 +19599,18 @@
 "vWD" = (
 /turf/simulated/wall,
 /area/surface/outpost/civilian/sauna/cryosauna)
+"vWR" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/light/floortube{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "vXc" = (
 /turf/simulated/mineral/cave,
 /area/maintenance/firstdeck{
@@ -19474,17 +19644,17 @@
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"wao" = (
+/obj/machinery/atmospherics/binary/pump,
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "was" = (
 /turf/simulated/wall/r_wall,
 /area/surface/underground/in_da_walls)
-"wbk" = (
-/obj/structure/table/standard,
-/obj/item/clothing/gloves/black,
-/obj/item/clothing/gloves/black,
-/obj/item/weapon/storage/belt/utility/atmostech,
-/obj/item/weapon/storage/belt/utility/atmostech,
-/obj/fiftyspawner/glass,
-/obj/fiftyspawner/steel,
+"waZ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "wcp" = (
@@ -19492,25 +19662,6 @@
 /obj/machinery/floodlight,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
-"wdv" = (
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"wdT" = (
-/obj/machinery/atmospherics/omni/atmos_filter{
-	tag_east = 1;
-	tag_north = 3;
-	tag_west = 2
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "weV" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
@@ -19563,6 +19714,18 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"wgG" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 6
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "wgJ" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
@@ -19625,21 +19788,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"wjm" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"wkC" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green,
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "wkT" = (
 /obj/random/junk,
 /obj/effect/decal/cleanable/filth,
@@ -19710,12 +19858,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
-"wri" = (
-/obj/machinery/atmospherics/pipe/simple/visible/green{
-	dir = 10
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "wtp" = (
 /obj/machinery/crystal,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -19731,6 +19873,16 @@
 	},
 /turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/civilian/sauna/cryosauna)
+"wvg" = (
+/obj/machinery/atmospherics/pipe/simple/visible/red,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 4
+	},
+/obj/machinery/light/floortube{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "wvh" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -19832,6 +19984,13 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"wzI" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "wzN" = (
 /obj/structure/sign/warning/fire,
 /turf/simulated/wall/rplastitanium,
@@ -20021,16 +20180,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"wEo" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 4
-	},
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "wFq" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
@@ -20069,6 +20218,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/firstdeck/centralport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
+"wHl" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "wIC" = (
@@ -20155,10 +20310,6 @@
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"wMZ" = (
-/obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/surface/underground/in_da_walls)
 "wNw" = (
 /obj/effect/zone_divider,
 /obj/random/maintenance/misc,
@@ -20198,11 +20349,18 @@
 "wOE" = (
 /turf/simulated/wall,
 /area/engineering/storage)
-"wOT" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
+"wPj" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
 	},
-/obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "wPB" = (
@@ -20230,16 +20388,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"wRJ" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 10
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "wRV" = (
 /turf/unsimulated/floor/dark,
 /area/maintenance/firstdeck/centralport{
@@ -20322,15 +20470,6 @@
 /area/rnd/storage{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"wWA" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
-	},
-/obj/machinery/portable_atmospherics/powered/pump/filled{
-	anchored = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "wWM" = (
 /obj/machinery/light{
 	light_color = "#0094FF"
@@ -20348,19 +20487,9 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"wXY" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+"wZi" = (
+/obj/machinery/atmospherics/pipe/manifold4w/visible/green,
 /obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"wYv" = (
-/obj/machinery/atmospherics/valve/digital/open{
-	name = "Mixed Air Outlet Valve"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"wYF" = (
-/obj/machinery/atmospherics/binary/pump,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "wZG" = (
@@ -20397,15 +20526,6 @@
 /area/rnd/storage{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"xaS" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/obj/machinery/atmospherics/binary/pump{
-	name = "N2 to Mixing"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "xbe" = (
 /obj/random/trash_pile,
 /obj/random/junk,
@@ -20450,13 +20570,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"xcr" = (
-/obj/effect/floor_decal/rust,
-/obj/structure/table/steel_reinforced,
-/obj/random/contraband,
-/obj/random/contraband,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/surface/underground/in_da_walls)
 "xct" = (
 /obj/structure/handrail{
 	dir = 8
@@ -20471,12 +20584,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"xcF" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 5
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "xde" = (
 /obj/random/junk,
 /obj/random/trash,
@@ -20595,21 +20702,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"xhe" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/obj/machinery/meter,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"xhA" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "xhD" = (
 /obj/random/trash,
 /obj/item/clothing/under/excelsior/mixed,
@@ -20667,14 +20759,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"xki" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
-	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/red/border,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "xkj" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
@@ -20816,13 +20900,11 @@
 /area/rnd/storage{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"xsu" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
+"xrW" = (
+/obj/machinery/portable_atmospherics/powered/scrubber{
+	anchored = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
+/obj/machinery/atmospherics/portables_connector,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
 "xtj" = (
@@ -20832,6 +20914,18 @@
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"xtt" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 10
+	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "xuC" = (
 /obj/random/trash,
 /obj/effect/decal/cleanable/filth,
@@ -20870,15 +20964,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"xvG" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "xvI" = (
 /obj/structure/handrail{
 	dir = 8
@@ -20938,24 +21023,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"xza" = (
-/obj/effect/floor_decal/corner/lime/full,
-/obj/machinery/atmospherics/unary/vent_pump{
-	external_pressure_bound = 0;
-	external_pressure_bound_default = 0;
-	frequency = 1441;
-	icon_state = "map_vent_in";
-	id_tag = "waste_out";
-	initialize_directions = 1;
-	internal_pressure_bound = 4000;
-	internal_pressure_bound_default = 4000;
-	pressure_checks = 2;
-	pressure_checks_default = 2;
-	pump_direction = 0;
-	use_power = 1
-	},
-/turf/simulated/floor/reinforced/airless,
-/area/surface/underground/in_da_walls)
 "xzf" = (
 /obj/random/crate,
 /obj/random/firstaid,
@@ -21072,14 +21139,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"xCY" = (
-/obj/machinery/atmospherics/omni/atmos_filter{
-	tag_north = 1;
-	tag_south = 2;
-	tag_west = 7
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "xDW" = (
 /obj/random/junk,
 /obj/random/trash,
@@ -21094,15 +21153,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"xEy" = (
-/obj/effect/floor_decal/corner/red/full{
-	dir = 1
-	},
-/obj/machinery/camera/network/engineering{
-	c_tag = "ATMTK - Nitrogen"
-	},
-/turf/simulated/floor/reinforced/nitrogen,
-/area/surface/underground/in_da_walls)
 "xEN" = (
 /obj/random/trash_pile,
 /obj/random/junk,
@@ -21119,25 +21169,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"xER" = (
-/obj/machinery/atmospherics/valve/digital{
-	name = "Custom Mix Inlet Valve"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"xFi" = (
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
-	},
-/obj/structure/cable/yellow,
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "xFO" = (
 /obj/random/junk,
 /obj/random/trash,
@@ -21242,6 +21273,16 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"xJv" = (
+/obj/machinery/atmospherics/unary/freezer{
+	icon_state = "freezer"
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/light/floortube{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
 "xJC" = (
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -21257,23 +21298,20 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
-"xLf" = (
-/obj/machinery/atmospherics/valve/digital{
-	dir = 4;
-	name = "CO2 Outlet Valve"
-	},
+"xMc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
-"xLp" = (
-/obj/structure/reagent_dispensers/watertank,
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+"xMq" = (
+/obj/machinery/light/small{
+	dir = 8
 	},
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/corner/purple/diagonal,
+/obj/effect/floor_decal/corner/orange{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced/phoron,
 /area/surface/underground/in_da_walls)
 "xMH" = (
 /obj/machinery/light/floortube/flicker{
@@ -21300,13 +21338,6 @@
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"xOF" = (
-/obj/machinery/atmospherics/unary/heater{
-	icon_state = "heater"
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "xPa" = (
 /obj/random/trash,
 /obj/effect/decal/cleanable/filth,
@@ -21529,9 +21560,24 @@
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
-"xWL" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+"xWM" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/light/floortube{
 	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/surface/underground/in_da_walls)
+"xWS" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
 	},
 /turf/simulated/floor/plating,
 /area/surface/underground/in_da_walls)
@@ -21649,13 +21695,6 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"yaN" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan,
-/obj/machinery/light/floortube{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
 "ybb" = (
 /obj/machinery/crystal,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -21708,34 +21747,14 @@
 /area/rnd/storage{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"ydd" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark,
-/area/engineering/storage)
-"ydS" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/surface/underground/in_da_walls)
-"yeb" = (
-/turf/simulated/floor/water/indoors,
-/area/maintenance/firstdeck/aftstarboard{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
-"yee" = (
-/obj/effect/floor_decal/corner/black/full{
-	dir = 4
-	},
+"ycM" = (
+/obj/effect/floor_decal/corner/lime/full,
 /obj/machinery/atmospherics/unary/vent_pump{
-	dir = 4;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
 	frequency = 1441;
 	icon_state = "map_vent_in";
-	id_tag = "co2_out";
+	id_tag = "waste_out";
 	initialize_directions = 1;
 	internal_pressure_bound = 4000;
 	internal_pressure_bound_default = 4000;
@@ -21744,8 +21763,19 @@
 	pump_direction = 0;
 	use_power = 1
 	},
-/turf/simulated/floor/reinforced/carbon_dioxide,
+/turf/simulated/floor/reinforced/airless,
 /area/surface/underground/in_da_walls)
+"ydd" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/engineering/storage)
+"yeb" = (
+/turf/simulated/floor/water/indoors,
+/area/maintenance/firstdeck/aftstarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "yfK" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -21898,9 +21928,6 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"yjB" = (
-/turf/simulated/floor/reinforced/nitrogen,
-/area/surface/underground/in_da_walls)
 "ykN" = (
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
@@ -28426,22 +28453,22 @@ rlb
 rlb
 rlb
 was
-aGQ
-buS
-buS
-buS
-buS
-buS
-buS
-buS
-buS
-buS
-buS
-buS
-buS
-buS
-buS
-iLX
+axp
+aqN
+aqN
+aqN
+aqN
+iJJ
+aqN
+aqN
+aqN
+aqN
+iJJ
+aqN
+aqN
+aqN
+aqN
+aew
 was
 rlb
 rlb
@@ -28683,22 +28710,22 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-sWI
-sWI
-sWI
-anU
-sWI
-sWI
-sWI
-sWI
-anU
-sWI
-sWI
-sWI
-sWI
-oMk
+vEs
+cNV
+cNV
+cNV
+cNV
+fcZ
+cNV
+cNV
+cNV
+cNV
+fcZ
+cNV
+cNV
+cNV
+cNV
+vEs
 was
 rlb
 rlb
@@ -28940,22 +28967,22 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-syt
-fdE
-sWI
-anU
-sWI
-bFm
-fmP
-sWI
-anU
-sWI
-ebS
-dsw
-sWI
-oMk
+vEs
+cNV
+tKj
+qqr
+cNV
+fcZ
+cNV
+ajL
+hSM
+cNV
+fcZ
+cNV
+pwy
+xMq
+cNV
+vEs
 was
 rlb
 rlb
@@ -29197,22 +29224,22 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-qNp
-qNp
-sWI
-anU
-sWI
-byI
-byI
-sWI
-anU
-sWI
-bGT
-bGT
-sWI
-oMk
+vEs
+cNV
+fuS
+fuS
+cNV
+fcZ
+cNV
+iys
+iys
+cNV
+fcZ
+cNV
+qcA
+qcA
+cNV
+vEs
 was
 rlb
 rlb
@@ -29454,22 +29481,22 @@ was
 was
 was
 was
-oMk
-sWI
-uEw
-yee
-sWI
-anU
-sWI
-hcL
-pci
-sWI
-anU
-sWI
-mmC
-uGc
-sWI
-oMk
+vEs
+cNV
+awJ
+fcr
+cNV
+fcZ
+cNV
+dTn
+amv
+cNV
+fcZ
+cNV
+viK
+gFP
+cNV
+vEs
 was
 rlb
 rlb
@@ -29708,25 +29735,25 @@ rlb
 rlb
 rlb
 was
-aGQ
-buS
-buS
-qkn
-sWI
-fUl
-tBV
-sWI
-anU
-sWI
-fUl
-tBV
-sWI
-anU
-sWI
-fUl
-tBV
-sWI
-oMk
+axp
+iJJ
+aqN
+uTo
+cNV
+jSB
+hQj
+cNV
+fcZ
+cNV
+jSB
+hQj
+cNV
+fcZ
+cNV
+jSB
+hQj
+cNV
+vEs
 was
 rlb
 rlb
@@ -29965,25 +29992,25 @@ was
 was
 was
 was
-oMk
-anU
-anU
-anU
-anU
-sJH
-tcz
-hmo
-lBD
-lBD
-mPN
-tcz
-hmo
-lBD
-lBD
-mPN
-tcz
-hmo
-tat
+vEs
+fcZ
+fcZ
+fcZ
+fcZ
+aKb
+qXE
+lPC
+vpA
+vpA
+auD
+qXE
+lPC
+vpA
+vpA
+auD
+qXE
+lPC
+mon
 was
 tWC
 tWC
@@ -30217,30 +30244,30 @@ rlb
 rlb
 rlb
 was
-aGQ
-buS
-buS
-buS
-buS
-iDp
-gkw
-xsu
-hYb
-gSY
-cJG
-xLf
-jOC
-hYb
-hYb
-byU
-dST
-jLc
-hYb
-hYb
-eRl
-irf
-jyK
-wdv
+axp
+aqN
+aqN
+aqN
+aqN
+peC
+bid
+hxN
+xMc
+lZB
+ezV
+aIK
+fEy
+xMc
+xMc
+eDQ
+uIy
+iYw
+xMc
+xMc
+mDE
+jnn
+sVu
+nAR
 was
 rlb
 rlb
@@ -30474,29 +30501,29 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-sWI
-sWI
-sWI
-sWI
-oXY
-pOK
-sxq
-ydS
-xhe
-gdt
-jTH
-gnF
-gnF
-xhe
-cse
-jTH
-gnF
-gnF
-xhe
-eLM
-jTH
+vEs
+cNV
+cNV
+cNV
+cNV
+cNV
+iQd
+caZ
+uSQ
+dZu
+mTf
+uMR
+nBe
+oLN
+oLN
+mTf
+ebc
+nBe
+oLN
+oLN
+mTf
+uVA
+nBe
 was
 rlb
 rlb
@@ -30731,29 +30758,29 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-skv
-yjB
-tQe
-rAr
-jVV
-bNG
-lev
-ieG
-xaS
-prp
-lev
-lev
-lev
-uHw
-mOM
-gnF
-gnF
-gnF
-fMp
-oEC
-wbk
+vEs
+cNV
+vwZ
+fTH
+gja
+tCi
+bHn
+ckt
+nLH
+pFe
+qbS
+wZi
+nLH
+nLH
+nLH
+vaf
+eOe
+oLN
+oLN
+oLN
+vum
+vWR
+rpk
 was
 rlb
 rlb
@@ -30988,28 +31015,28 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-xEy
-yjB
-oVB
-arR
-lTC
-pBp
-ioK
-rvb
-hRl
-dQD
-ioK
-jpS
-jpS
-xCY
-jpS
-ioK
-jpS
-jpS
-szf
-hnx
+vEs
+cNV
+lgs
+fTH
+ett
+cPg
+rfJ
+jUE
+nEe
+igt
+cWx
+nsU
+nEe
+mUF
+mUF
+tNY
+mUF
+nEe
+mUF
+mUF
+neq
+uEC
 was
 was
 rlb
@@ -31245,29 +31272,29 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-sWI
-sWI
-sWI
-sWI
-sSq
-tiM
-kbf
-fEk
-fMp
-fEk
-gnF
-gnF
-gnF
-gnF
-gnF
-gnF
-gnF
-puc
-rXq
-bDO
-cVJ
+vEs
+cNV
+cNV
+cNV
+cNV
+cNV
+stJ
+sfe
+vNo
+lFE
+vum
+lFE
+oLN
+oLN
+oLN
+oLN
+oLN
+oLN
+oLN
+crb
+uyr
+gTt
+jmJ
 was
 rlb
 rlb
@@ -31502,29 +31529,29 @@ rlb
 rlb
 rlb
 was
-oMk
-anU
-anU
-anU
-anU
-anU
-sSq
-dle
-gnF
-fEk
-fMp
-fEk
-bVI
-wWA
-dGv
-xcF
-uTy
-mBm
-fOF
-wXY
-eHD
-oIk
-eKk
+azK
+fcZ
+fcZ
+fcZ
+fcZ
+fcZ
+stJ
+tzL
+oLN
+lFE
+vum
+lFE
+lpz
+ifY
+xrW
+dWm
+glU
+dyn
+dFU
+jjS
+vDH
+lIx
+jFl
 was
 rlb
 rlb
@@ -31740,7 +31767,7 @@ dCM
 dCM
 dCM
 dCM
-cIL
+jIy
 dCM
 rlb
 rlb
@@ -31759,29 +31786,29 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-sWI
-sWI
-sWI
-sWI
-oXY
-uDu
-sxq
-fEk
-xhe
-fEk
-xWL
-wWA
-qyo
-dHm
-blT
-gnF
-gnH
-ioK
-qZx
-chy
-bVT
+vEs
+cNV
+cNV
+cNV
+cNV
+cNV
+iQd
+dip
+uSQ
+lFE
+mTf
+lFE
+fyY
+ifY
+aDZ
+itL
+sqv
+oLN
+iLj
+nEe
+koB
+oyW
+deV
 was
 rlb
 rlb
@@ -31997,7 +32024,7 @@ dCM
 dCM
 dCM
 dCM
-cIL
+jIy
 dCM
 dCM
 dCM
@@ -32016,29 +32043,29 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-bTn
-kwc
-iot
-rAr
-jVV
-kGb
-ftR
-cJg
-fMp
-fEk
-xWL
-wWA
-qyo
-qAc
-nLK
-jpS
-dHm
-gnF
-gnF
-kJl
-xki
+vEs
+cNV
+sGu
+uAR
+vJS
+tCi
+bHn
+iNY
+tCv
+lEA
+vum
+lFE
+fyY
+ifY
+aDZ
+iul
+hSd
+mUF
+itL
+oLN
+oLN
+hmc
+nUC
 was
 rlb
 rlb
@@ -32273,29 +32300,29 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-rwB
-kwc
-hzH
-arR
-rpq
-oiK
-rvb
-wEo
-wdT
-fEk
-xWL
-dEr
-qyo
-pIq
-hOm
-wYF
-dHm
-gnF
-gnF
-hDd
-nEe
+vEs
+cNV
+doh
+uAR
+tzD
+cPg
+mfQ
+mYq
+igt
+wvg
+dpx
+lFE
+fyY
+nFP
+aDZ
+oxy
+fSE
+wao
+itL
+oLN
+oLN
+cKt
+abI
 was
 rlb
 rlb
@@ -32530,28 +32557,28 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-sWI
-sWI
-sWI
-sWI
-anU
-ydS
-wri
-ghY
-cOY
-rWW
-vWg
-rIJ
-fQd
-fQd
-pbC
-fOT
-fMp
-gnF
-gnF
-lBJ
+vEs
+cNV
+cNV
+cNV
+cNV
+cNV
+fcZ
+dZu
+asx
+kXu
+aFF
+pFy
+pnF
+kXW
+aaP
+aaP
+fMs
+qEe
+vum
+oLN
+oLN
+orT
 was
 was
 rlb
@@ -32787,28 +32814,28 @@ rlb
 rlb
 rlb
 was
-oMk
-anU
-anU
-anU
-anU
-anU
-anU
-gnF
-gnF
-nEZ
-fMp
-fEk
-acE
-qOs
-uTy
-rIJ
-mmt
-kvA
-lnJ
-gnF
-gnF
-lBJ
+azK
+fcZ
+fcZ
+fcZ
+fcZ
+fcZ
+fcZ
+oLN
+oLN
+waZ
+vum
+lFE
+mlm
+lQW
+glU
+kXW
+oeu
+dKL
+bEK
+oLN
+oLN
+orT
 was
 was
 rlb
@@ -33044,28 +33071,28 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-sWI
-sWI
-sWI
-sWI
-drY
-riW
-gnF
-nEZ
-fMp
-fEk
-qpG
-utL
-mvB
-sxq
-wOT
-nEZ
-xvG
-gnF
-gnF
-lBJ
+vEs
+cNV
+cNV
+cNV
+cNV
+cNV
+tzE
+oMA
+oLN
+waZ
+vum
+lFE
+xJv
+dTS
+eOf
+uSQ
+kjE
+waZ
+fqu
+oLN
+oLN
+orT
 was
 was
 rlb
@@ -33301,28 +33328,28 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-gCM
-tJO
-eTH
-brL
-wjm
-nmm
-eAP
-qlh
-xhe
-fEk
-xOF
-utL
-dat
-wYF
-mmt
-hLz
-dHm
-gnF
-gnF
-lBJ
+vEs
+cNV
+jDi
+cpz
+oDF
+cRZ
+usB
+siQ
+qjd
+pES
+mTf
+lFE
+bYi
+dTS
+plm
+wao
+oeu
+jyb
+itL
+oLN
+oLN
+orT
 was
 was
 rlb
@@ -33558,28 +33585,28 @@ dCM
 dCM
 rlb
 was
-oMk
-sWI
-fRw
-tJO
-iUw
-rnw
-rkS
-wYv
-aXY
-qzM
-cpi
-prp
-wYF
-rzB
-mBm
-mBm
-iOg
-nEZ
-fMp
-gnF
-gnF
-lBJ
+vEs
+cNV
+fwP
+cpz
+orl
+hSs
+dXn
+iyS
+tUF
+qyu
+ush
+wZi
+wao
+gdH
+dyn
+dyn
+tje
+waZ
+vum
+oLN
+oLN
+orT
 was
 was
 rlb
@@ -33815,28 +33842,28 @@ dCM
 dCM
 dCM
 was
-oMk
-sWI
-sWI
-sWI
-sWI
-sWI
-phm
-fgy
-wRJ
-tos
-elt
-pUD
-eAP
-jYX
-eAP
-yaN
-eAP
-fGN
-fMp
-gnF
-gnF
-aWT
+vEs
+cNV
+cNV
+cNV
+cNV
+cNV
+xtt
+sSS
+qsh
+eNh
+wzI
+uzg
+qjd
+aWH
+qjd
+eZa
+qjd
+fjp
+vum
+oLN
+oLN
+dfh
 was
 was
 rlb
@@ -34070,30 +34097,30 @@ rlb
 rlb
 rlb
 dCM
-tGo
-myL
-hNc
-uPl
-uPl
-uPl
-uPl
-uPl
-lZQ
-cZv
-jpS
-jpS
-owC
-rvb
-ioK
-dNs
-jpS
-jpS
-jpS
-bfS
-dHm
-gnF
-gnF
-lBJ
+idf
+qxB
+fjJ
+pRr
+pRr
+pRr
+pRr
+pRr
+kIy
+epT
+mUF
+mUF
+nPe
+igt
+nEe
+ifR
+mUF
+mUF
+mUF
+fhE
+itL
+oLN
+oLN
+orT
 was
 was
 rlb
@@ -34329,28 +34356,28 @@ rlb
 dCM
 dCM
 was
-oMk
-sWI
-sWI
-sWI
-sWI
-sWI
-lJm
-gmH
-dnx
-gnF
-gnF
-fEk
-gnF
-blT
-gnF
-gnF
-gnF
-nEZ
-fMp
-gnF
-gnF
-lBJ
+vEs
+cNV
+cNV
+cNV
+cNV
+cNV
+wgG
+lCG
+nhC
+oLN
+oLN
+lFE
+oLN
+sqv
+oLN
+oLN
+oLN
+waZ
+vum
+oLN
+oLN
+orT
 was
 was
 rlb
@@ -34586,28 +34613,28 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-nGV
-sLe
-xza
-pLc
-saZ
-kOD
-wXY
-mBm
-mBm
-dMy
-fOF
-iOg
-gnF
-gnF
-gnF
-nEZ
-xvG
-gnF
-gnF
-lBJ
+vEs
+cNV
+aJK
+bsz
+ycM
+kVW
+hxH
+flX
+jjS
+dyn
+dyn
+sdW
+dFU
+tje
+oLN
+oLN
+oLN
+waZ
+fqu
+oLN
+oLN
+orT
 was
 was
 rlb
@@ -34843,28 +34870,28 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-qTQ
-sLe
-kmD
-bFK
-hkx
-xER
-wkC
-lev
-lev
-vwE
-gnF
-gnF
-gnF
-gnF
-gnF
-nEZ
-fMp
-gnF
-gnF
-lBJ
+vEs
+cNV
+dtG
+bsz
+gxZ
+otb
+lQZ
+mGn
+hTR
+nLH
+nLH
+ckb
+oLN
+oLN
+oLN
+oLN
+oLN
+waZ
+vum
+oLN
+oLN
+orT
 was
 was
 rlb
@@ -35100,28 +35127,28 @@ rlb
 rlb
 rlb
 was
-oMk
-sWI
-sWI
-sWI
-sWI
-sWI
-sSq
-gnF
-gnF
-gnF
-gnF
-gnF
-gnF
-gnF
-gnF
-gnF
-gnF
-nEZ
-fMp
-gnF
-gnF
-lBJ
+vEs
+cNV
+cNV
+cNV
+cNV
+cNV
+stJ
+oLN
+oLN
+oLN
+oLN
+oLN
+oLN
+oLN
+oLN
+oLN
+oLN
+waZ
+vum
+oLN
+oLN
+orT
 was
 was
 rlb
@@ -35357,28 +35384,28 @@ rlb
 rlb
 rlb
 was
-rZO
-buS
-buS
-buS
-buS
-buS
-mHE
-aZR
-aZR
-iac
-aZR
-aZR
-aZR
-aZR
-aZR
-iac
-xhA
-nEZ
-fMp
-gnF
-gnF
-iEw
+oKn
+aqN
+aqN
+aqN
+aqN
+aqN
+hhq
+sRn
+sRn
+dKJ
+sRn
+sRn
+sRn
+sRn
+sRn
+dKJ
+oZP
+waZ
+vum
+oLN
+oLN
+xWM
 was
 was
 was
@@ -35630,19 +35657,19 @@ was
 was
 was
 was
-oBp
-nEZ
-fMp
-gnF
-gnF
-piI
-hYb
-hYb
-hYb
-hYb
-ioM
-gnF
-lRj
+cyx
+waZ
+vum
+oLN
+oLN
+rqM
+xMc
+xMc
+xMc
+xMc
+xWS
+oLN
+gNJ
 rlb
 rlb
 rlb
@@ -35882,24 +35909,24 @@ rlb
 rlb
 rlb
 was
-ksf
-wMZ
-vlv
-wMZ
+rNL
+pXA
+cTM
+pXA
 was
-uJF
-nEZ
-iqe
-aHZ
-aHZ
-aHZ
-jpS
-uxJ
-hmx
-bOD
-jBR
-gnF
-lRj
+tTx
+waZ
+fPc
+tKk
+tKk
+tKk
+mUF
+agN
+gzc
+gVR
+lra
+oLN
+gNJ
 rlb
 rlb
 rlb
@@ -36139,24 +36166,24 @@ rlb
 rlb
 rlb
 was
-xcr
-wMZ
-wMZ
-wMZ
+hSS
+pXA
+pXA
+pXA
 was
-pLz
-vWg
+sjD
+pnF
 itm
-iHU
-iHU
-iHU
-veY
-eYn
-jZH
-npA
-kyZ
-dje
-lRj
+wHl
+wHl
+wHl
+sQE
+syY
+jFh
+gyb
+oOw
+vjZ
+gNJ
 rlb
 rlb
 rlb
@@ -36396,24 +36423,24 @@ rlb
 rlb
 rlb
 was
-ksf
-wMZ
-dKq
-wMZ
+rNL
+pXA
+uBh
+pXA
 was
-xLp
-gOP
-esN
-esN
-esN
-uqD
-jwC
-jvU
-jvU
-xFi
-cBj
-bpK
-lRj
+msw
+gmA
+iqe
+iqe
+iqe
+pMK
+gNk
+mMz
+mMz
+lRp
+wPj
+egV
+gNJ
 rlb
 rlb
 rlb
@@ -36657,25 +36684,25 @@ aac
 jbA
 aac
 exi
-aoE
-aoE
-aoE
-aoE
-aoE
-aoE
-aoE
-aoE
-aoE
-crG
-crG
-crG
-crG
-crG
-crG
-crG
-crG
-crG
-crG
+fuA
+fuA
+fuA
+fuA
+fuA
+fuA
+fuA
+fuA
+fuA
+mST
+mST
+mST
+mST
+mST
+mST
+mST
+mST
+mST
+mST
 lll
 lll
 lll
