@@ -194,3 +194,10 @@
       a default, instead an optional
   - rscadd: movement smoothing
   - config: 40fps time
+2024-03-22:
+  VoRe-bot:
+  - balance: Non-CE blueprint charges buffed from 10 -> 25
+  - bugfix: Phased shadekins being able to be attacked
+  - bugfix: Bump should ignore phased shadekins now
+  - bugfix: Smoke won't make creatures without lungs cough
+  - rscdel: tgui_ch
