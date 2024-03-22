@@ -1266,9 +1266,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "aRN" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
 	dir = 1
 	},
@@ -1282,9 +1279,6 @@
 	},
 /obj/structure/cable,
 /obj/structure/lattice,
-/obj/machinery/light/small{
-	dir = 4
-	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "aRS" = (
@@ -10314,6 +10308,9 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos/monitoring)

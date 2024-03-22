@@ -53837,12 +53837,6 @@
 /obj/structure/cable/green{
 	icon_state = "32-2"
 	},
-/obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/zpipe/up/supply{
-	dir = 1
-	},
 /turf/simulated/open{
 	outdoors = 1
 	},
