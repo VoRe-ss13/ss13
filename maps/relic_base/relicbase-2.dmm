@@ -3749,6 +3749,18 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"dsB" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/engineering/atmos/monitoring)
 "dsF" = (
 /obj/structure/girder/displaced,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -10801,6 +10813,9 @@
 	icon_state = "2-8"
 	},
 /obj/structure/catwalk,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos/monitoring)
 "kyJ" = (
@@ -12198,6 +12213,9 @@
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos/monitoring)
 "mOU" = (
@@ -17858,6 +17876,12 @@
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"tWI" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/mineral/cave,
+/area/surface/underground/in_da_walls)
 "tXn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -18329,6 +18353,18 @@
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"uDQ" = (
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/catwalk,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/engineering/atmos/monitoring)
 "uEm" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -23292,7 +23328,7 @@ rlb
 rlb
 rlb
 rlb
-rlb
+tWI
 rlb
 rlb
 rlb
@@ -28450,7 +28486,7 @@ rlb
 rlb
 rlb
 nEe
-jrH
+uDQ
 cCQ
 cCQ
 cCQ
@@ -30241,7 +30277,7 @@ rlb
 rlb
 rlb
 nEe
-jrH
+dsB
 cCQ
 cCQ
 cCQ
