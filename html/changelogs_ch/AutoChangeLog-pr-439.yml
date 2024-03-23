@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - bugfix: "fixed stinky invalid direction argument on a wire causing tcomms to not be connected to the power grid. I love dir :)"
