@@ -206,3 +206,15 @@
   - bugfix: fixed stinky invalid direction argument on a wire causing tcomms to not
       be connected to the power grid. I love dir :)
   - rscadd: Teppi speak Teppi again
+2024-03-24:
+  VoRe-bot:
+  - rscadd: '''turfpacks'' system for mappers'
+  - rscdel: Revert combat refactor magazine sizes
+  - bugfix: Borg pounce changed to stun
+  - bugfix: Black tiles at CC
+  - bugfix: fixes a wrong glass type given out on a quick selection on the RSF
+  - qol: Updated styling for admin ooc announcements (Special Verbs > Announce).
+  - bugfix: Phased kins won't stop people from moving
+  - bugfix: adminjump
+  - bugfix: Fixed Micros getting stuck in disposal bins without making every other
+      object you try to put in disposal bins explode
