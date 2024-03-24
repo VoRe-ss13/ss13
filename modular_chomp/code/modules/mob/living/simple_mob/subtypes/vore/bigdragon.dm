@@ -61,14 +61,4 @@
 					overlay_colors["Eyes"] = input_style_list[11]
 			catch
 			eyes = input_style_list[12]
-<<<<<<< HEAD
 			build_icons()
-=======
-			build_icons()
-
-//Most intresting set of OG melee damages
-/mob/living/simple_mob/vore/bigdragon
-	melee_damage_lower = 12
-	melee_damage_upper = 17
-	maxHealth = 400
->>>>>>> ccad338c93 (Tgpanel (#8007))
