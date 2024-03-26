@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - refactor: "refactored orbit code to be less horrible"
