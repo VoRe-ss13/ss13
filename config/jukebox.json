@@ -4891,6 +4891,7 @@
 "jukebox": true
 },
 {
+<<<<<<< HEAD
   "duration" : 3160,
   "url" : "https://cdn.discordapp.com/attachments/734618349824114748/1114205889252048966/Anthem_Reprise.mp3",
   "title" : "Anthem",
@@ -4919,5 +4920,15 @@
   "lobby": true,
   "jukebox": true,
   "genre": "Ambience"
+=======
+"url": "https://archive.org/download/04.-dos-en-uno/02.%20Hojas%20De%20Te.mp3",
+"title": "Hojas de Té",
+"duration": 2180,
+"artist": "Los Tres",
+"genre": "Rock",
+"secret": false,
+"lobby": false,
+"jukebox": true
+>>>>>>> 25b11c81ec (Update jukebox.json (#8068))
 }
 ]
