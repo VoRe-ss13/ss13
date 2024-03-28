@@ -1,4 +1,4 @@
-var/list/job_whitelist = list()
+GLOBAL_LIST_EMPTY(job_whitelist) // CHOMPEdit - Managed Globals
 
 /hook/startup/proc/loadJobWhitelist()
 	if(config.use_jobwhitelist) // CHOMPedit
@@ -10,7 +10,7 @@ var/list/job_whitelist = list()
 	if (!text)
 		log_misc("Failed to load config/jobwhitelist.txt")
 	else
-		job_whitelist = splittext(text, "\n")
+		GLOB.job_whitelist = splittext(text, "\n") // CHOMPEdit - Managed Globals
 
 /proc/is_job_whitelisted(mob/M, var/rank)
 	//TORCHEdit begin
@@ -28,10 +28,10 @@ var/list/job_whitelist = list()
 	if(rank == USELESS_JOB) //VOREStation Edit - Visitor not Assistant
 		return 1
 	//TORCH Removal. Moved this upwards
-	if(!job_whitelist)
+	if(!GLOB.job_whitelist) // CHOMPEdit - Managed Globals
 		return 0
 	if(M && rank)
-		for (var/s in job_whitelist)
+		for (var/s in GLOB.job_whitelist) // CHOMPEdit - Managed Globals
 			if(findtext(s,"[lowertext(M.ckey)] - [lowertext(rank)]"))
 				return 1
 			if(findtext(s,"[M.ckey] - All"))
