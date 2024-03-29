@@ -250,3 +250,10 @@
   - rscdel: dangerous calls inside the statpanel
   - code_imp: play_sound and porta_turret optimizations
   - rscadd: Catslug is now an option on the basic metamorph raygun
+2024-03-29:
+  VoRe-bot:
+  - rscadd: Added VR spawnpoint for a VR mall.
+  - rscdel: Removed space POI section in VR construct
+  - rscadd: Added *clap sound
+  - rscadd: Added huuuaaaa
+  - bugfix: missing target in a balloon alert
