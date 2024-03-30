@@ -257,3 +257,16 @@
   - rscadd: Added *clap sound
   - rscadd: Added huuuaaaa
   - bugfix: missing target in a balloon alert
+2024-03-30:
+  VoRe-bot:
+  - qol: Subsystems return a status value after initializing
+  - bugfix: addition for our code to ensure AI prefs are synced between shells and
+      bellies loaded on first deploy
+  - bugfix: some mecha runtimes
+  - bugfix: statpanel runtimes
+  - bugfix: mob holder runtime
+  - rscadd: adds the ability to customize the "encase in egg" egg size between 25
+      and 200% or keep it at 0 for automatic calculation from 25 to 100%
+  - rscadd: Added verb manager subsystem
+  - rscadd: Added speech controller subsystem
+  - qol: Topics to deleted things get discarded
