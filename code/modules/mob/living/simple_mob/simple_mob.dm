@@ -372,8 +372,6 @@
 		recolour.tgui_interact(usr)
 		return
 	to_chat(usr, "You've already recoloured yourself once. You are only allowed to recolour yourself once during a around.")
-<<<<<<< HEAD
-=======
 
 //Thermal vision adding
 
@@ -403,4 +401,3 @@
 	else
 		to_chat(usr, "You stop sensing creatures beyond the walls.")
 		sight -= SEE_MOBS
->>>>>>> 7ebbc908df (Fix bad verb i missed (#8134))
