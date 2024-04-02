@@ -232,11 +232,8 @@
 	if(vore_active && !voremob_loaded) //CHOMPedit: On-demand belly loading.
 		voremob_loaded = TRUE
 		init_vore()
-<<<<<<< HEAD
-=======
 	if(hasthermals)
 		add_verb(src, /mob/living/simple_mob/proc/hunting_vision) //So that maint preds can see prey through walls, to make it easier to find them. //ChompEDIT
->>>>>>> 7ebbc908df (Fix bad verb i missed (#8134))
 
 /mob/living/simple_mob/SelfMove(turf/n, direct, movetime)
 	var/turf/old_turf = get_turf(src)
