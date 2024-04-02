@@ -177,6 +177,9 @@
 	// VOREStation Add End
 
 	var/has_recoloured = FALSE
+	var/hunting_cooldown = 0
+	var/hasthermals = TRUE
+	var/isthermal = 0
 
 /mob/living/simple_mob/Initialize()
 	remove_verb(src,/mob/verb/observe) //CHOMPEdit TGPanel
