@@ -6,3 +6,10 @@
   - refactor: various optimizations for AI
   - refactor: visible_message now uses component instead of in_view
   - rscadd: Pilots and Field Medics now have full explorer access.
+2024-04-02:
+  VoRe-bot:
+  - bugfix: newscaster news icons not loading
+  - bugfix: resetting robot language to galcom should now work properly with the set
+      default language verb on cancel
+  - rscadd: The trash eat verb now gives a more ambiguous message instead of 'swallowing'
+      regardless of  vorgan.
