@@ -232,6 +232,11 @@
 	if(vore_active && !voremob_loaded) //CHOMPedit: On-demand belly loading.
 		voremob_loaded = TRUE
 		init_vore()
+<<<<<<< HEAD
+=======
+	if(hasthermals)
+		add_verb(src, /mob/living/simple_mob/proc/hunting_vision) //So that maint preds can see prey through walls, to make it easier to find them. //ChompEDIT
+>>>>>>> 7ebbc908df (Fix bad verb i missed (#8134))
 
 /mob/living/simple_mob/SelfMove(turf/n, direct, movetime)
 	var/turf/old_turf = get_turf(src)
@@ -359,7 +364,7 @@
 
 /mob/living/simple_mob/proc/ColorMate()
 	set name = "Recolour"
-	set category = "Abilities"
+	set category = "Abilities.Mob" //ChompEDIT
 	set desc = "Allows to recolour once."
 
 	if(!has_recoloured)
@@ -367,3 +372,35 @@
 		recolour.tgui_interact(usr)
 		return
 	to_chat(usr, "You've already recoloured yourself once. You are only allowed to recolour yourself once during a around.")
+<<<<<<< HEAD
+=======
+
+//Thermal vision adding
+
+/mob/living/simple_mob/proc/hunting_vision()
+	set name = "Track Prey Through Walls"
+	set category = "Abilities.Mob" //ChompEDIT
+	set desc = "Uses you natural predatory instincts to seek out prey even through walls, or your natural survival instincts to spot predators from a distance."
+
+	if(hunting_cooldown + 5 MINUTES < world.time)
+		to_chat(usr, "You can sense other creatures by focusing carefully on your surroundings.")
+		sight |= SEE_MOBS
+		hunting_cooldown = world.time
+		spawn(600)
+			to_chat(usr, "Your concentration wears off.")
+			sight -= SEE_MOBS
+	else if(hunting_cooldown + 5 MINUTES > world.time)
+		to_chat(usr, "You must wait for a while before using this again.")
+
+/mob/living/simple_mob/proc/hunting_vision_plus()
+	set name = "Thermal vision toggle"
+	set category = "Abilities.Mob" //ChompEDIT
+	set desc = "Uses you natural predatory instincts to seek out prey even through walls, or your natural survival instincts to spot predators from a distance."
+
+	if(!isthermal)
+		to_chat(usr, "You can sense other creatures by focusing carefully on your surroundings.")
+		sight |= SEE_MOBS
+	else
+		to_chat(usr, "You stop sensing creatures beyond the walls.")
+		sight -= SEE_MOBS
+>>>>>>> 7ebbc908df (Fix bad verb i missed (#8134))
