@@ -35876,7 +35876,7 @@
 /area/surface/outside/plains/outpost)
 "pJr" = (
 /obj/effect/floor_decal/rust,
-/obj/item/clothing/mask/gas/wwii,
+/obj/item/clothing/mask/gas,
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/garage)
 "pJG" = (
@@ -56451,24 +56451,24 @@
 	dir = 8
 	},
 /obj/structure/table/rack,
-/obj/item/clothing/mask/gas{
+/obj/item/clothing/mask/gas/clear{
 	pixel_x = -3;
 	pixel_y = -3
 	},
-/obj/item/clothing/mask/gas{
+/obj/item/clothing/mask/gas/clear{
 	pixel_x = -3;
 	pixel_y = -3
 	},
-/obj/item/clothing/mask/gas{
+/obj/item/clothing/mask/gas/clear{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/clothing/mask/gas{
+/obj/item/clothing/mask/gas/clear{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas/clear,
+/obj/item/clothing/mask/gas/clear,
 /obj/item/weapon/storage/pouch{
 	remove_delay = 0
 	},
