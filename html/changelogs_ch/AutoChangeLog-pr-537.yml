@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - bugfix: "Diffusers on point defenses won't turn off when meteors happen"

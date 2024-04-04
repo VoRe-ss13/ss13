@@ -39,3 +39,8 @@
   - rscadd: hlpain emote
   - bugfix: Shields diffusers will actually work when meteors happen
   - code_imp: cleanup some borg code
+2024-04-04:
+  VoRe-bot:
+  - bugfix: fixes pain shouts on max health changes
+  - bugfix: Diffusers on point defenses won't turn off when meteors happen
+  - rscadd: Speech sounds now penetrate walls
