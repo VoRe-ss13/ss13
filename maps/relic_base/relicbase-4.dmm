@@ -1075,7 +1075,7 @@
 /turf/simulated/open{
 	outdoors = 1
 	},
-/area/engineering/atmos)
+/area/engineering/atmos/storage)
 "ci" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -1808,20 +1808,20 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 4;
-	maxhealth = 600;
 	health = 600;
+	maxhealth = 600;
 	name = "atmos reinforced window"
 	},
 /obj/structure/window/reinforced{
 	dir = 1;
-	maxhealth = 600;
 	health = 600;
+	maxhealth = 600;
 	name = "atmos reinforced window"
 	},
 /obj/structure/window/reinforced{
 	dir = 1;
-	maxhealth = 600;
 	health = 600;
+	maxhealth = 600;
 	name = "atmos reinforced window"
 	},
 /turf/simulated/floor/plating,
@@ -10595,9 +10595,9 @@
 	dir = 4
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	pixel_x = -26;
 	frequency = 1380;
-	id_tag = "ursula_dock"
+	id_tag = "ursula_dock";
+	pixel_x = -26
 	},
 /obj/structure/cable/blue{
 	icon_state = "1-4"
@@ -11900,7 +11900,7 @@
 /turf/simulated/open{
 	outdoors = 1
 	},
-/area/engineering/atmos)
+/area/engineering/atmos/storage)
 "wr" = (
 /obj/machinery/portable_atmospherics/canister/phoron,
 /obj/effect/floor_decal/techfloor{
@@ -11908,8 +11908,8 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 4;
-	maxhealth = 600;
 	health = 600;
+	maxhealth = 600;
 	name = "atmos reinforced window"
 	},
 /obj/machinery/door/window/brigdoor/southright{
@@ -13961,8 +13961,8 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	maxhealth = 600;
 	health = 600;
+	maxhealth = 600;
 	name = "atmos reinforced window"
 	},
 /obj/machinery/door/window/brigdoor/southleft{
@@ -21676,10 +21676,10 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	pixel_y = 26;
+	frequency = 1380;
 	id_tag = "hangar_3";
-	tag_door = "hangar_3_door";
-	frequency = 1380
+	pixel_y = 26;
+	tag_door = "hangar_3_door"
 	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
@@ -25331,14 +25331,14 @@
 	},
 /obj/structure/window/reinforced{
 	dir = 8;
-	maxhealth = 600;
 	health = 600;
+	maxhealth = 600;
 	name = "atmos reinforced window"
 	},
 /obj/structure/window/reinforced{
 	dir = 1;
-	maxhealth = 600;
 	health = 600;
+	maxhealth = 600;
 	name = "atmos reinforced window"
 	},
 /turf/simulated/floor/plating,
@@ -26986,9 +26986,9 @@
 /obj/structure/catwalk,
 /obj/structure/lattice,
 /obj/structure/cable/blue{
+	d1 = 32;
 	d2 = 2;
-	icon_state = "32-2";
-	d1 = 32
+	icon_state = "32-2"
 	},
 /turf/simulated/open{
 	outdoors = 1
