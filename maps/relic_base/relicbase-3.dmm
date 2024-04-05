@@ -3782,16 +3782,23 @@
 /area/expoutpost/prep/recovery)
 "bYO" = (
 /obj/structure/table/sifwoodentable,
-/obj/item/weapon/storage/box/cdeathalarm_kit,
 /obj/item/weapon/storage/box/cdeathalarm_kit{
-	pixel_x = 5;
-	pixel_y = 5
+	pixel_x = -8;
+	pixel_y = -3
+	},
+/obj/item/weapon/storage/box/cdeathalarm_kit{
+	pixel_x = -8;
+	pixel_y = 7
 	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 10
 	},
 /obj/effect/floor_decal/corner/white/border{
 	dir = 10
+	},
+/obj/item/device/bluespaceradio/relicbase_prelinked{
+	pixel_x = 9;
+	pixel_y = 3
 	},
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/prep)
@@ -5739,6 +5746,7 @@
 	req_one_access = null
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/fans/tiny,
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/cryo/autoresleeve)
 "cHF" = (
@@ -7866,6 +7874,7 @@
 	opacity = 0
 	},
 /obj/structure/disposalpipe/segment,
+/obj/structure/fans/tiny,
 /turf/simulated/floor/bmarble,
 /area/quartermaster/delivery)
 "dAw" = (
@@ -27438,6 +27447,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 1
 	},
+/obj/structure/fans/tiny,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/firstdeck/cargo)
 "lOQ" = (
@@ -34609,6 +34619,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/fans/tiny,
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/cryo/autoresleeve)
 "pbo" = (
@@ -35178,6 +35189,7 @@
 	req_one_access = list(11)
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/fans/tiny,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/substation/engineering)
 "ppX" = (
@@ -54097,6 +54109,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/fans/tiny,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/firstdeck/cargo)
 "wVI" = (
