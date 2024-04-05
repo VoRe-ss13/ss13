@@ -182,10 +182,10 @@
 		var/datum/lighting_object/holder_object = holder.lighting_object
 		if(holder_object && !holder_object.sunlight_only)
 			only_sun_object = holder_object
-			only_sun_object.sunlight_only = TRUE
+			only_sun_object.set_sunonly(TRUE)
 
 	if(sunlightonly_corners < 4 && only_sun_object)
-		only_sun_object.sunlight_only = FALSE
+		only_sun_object.set_sunonly(FALSE)
 		only_sun_object = null
 
 	if(only_sun_object)
@@ -234,7 +234,7 @@
 
 /datum/sunlight_handler/proc/corner_sunlight_change(var/datum/lighting_corner/sender)
 	if(only_sun_object)
-		only_sun_object.sunlight_only = FALSE
+		only_sun_object.set_sunonly(FALSE)
 		only_sun_object = null
 
 	if(!(sender in only_sun))

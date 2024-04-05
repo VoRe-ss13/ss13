@@ -126,10 +126,23 @@
 
 //TORCHEdit Begin
 /datum/lighting_object/proc/update_sun()
+	affected_turf.underlays -= SSlighting.global_shandler.past_underlay
+	affected_turf.underlays |= SSlighting.global_shandler.current_underlay
+	/*
 	affected_turf.underlays -= current_underlay
 	current_underlay.icon_state = "transparent"
 	current_underlay.color = null //We have to set it to null before setting to a color, otherwise BYOND jank causes weird shit to happen if it was a matrix before.
 	current_underlay.color = rgb(SSlighting.global_shandler.redint,SSlighting.global_shandler.greenint,SSlighting.global_shandler.blueint)
-	affected_turf.underlays |= current_underlay
+	affected_turf.underlays |= current_underlay*/
 	affected_turf.set_luminosity(1)
+
+/datum/lighting_object/proc/set_sunonly(var/onlysun)
+	sunlight_only = onlysun
+	if(onlysun)
+		affected_turf.underlays -= current_underlay
+		affected_turf.underlays |= SSlighting.global_shandler.current_underlay
+	else
+		affected_turf.underlays |= current_underlay
+		affected_turf.underlays -= SSlighting.global_shandler.current_underlay
+
 //TORCHEdit End
