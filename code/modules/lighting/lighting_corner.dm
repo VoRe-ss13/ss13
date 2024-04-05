@@ -92,16 +92,16 @@
 	if (!(delta_r || delta_g || delta_b)) // 0 is falsey ok
 		return
 
-	//TORCHEdit Begin
-	if(sunlight == SUNLIGHT_ONLY && LAZYLEN(affecting)) change_sun()
-	if(sunlight == SUNLIGHT_CURRENT && !LAZYLEN(affecting) && !from_sholder)
-		update_sunlight_handlers()
-		update_sunlight_handlers()
-
-	//TORCHEdit End
+	if((sunlight == SUNLIGHT_ONLY || sunlight == SUNLIGHT_ONLY_SHADE) && LAZYLEN(affecting)) change_sun() //TORCHEdit
 	lum_r += delta_r
 	lum_g += delta_g
 	lum_b += delta_b
+
+	//TORCHEdit Begin
+	if(sunlight == SUNLIGHT_CURRENT && !LAZYLEN(affecting) && !from_sholder)
+		update_sunlight_handlers()
+		update_sunlight_handlers()
+	//TORCHEdit End
 
 	if (!needs_update)
 		needs_update = TRUE
@@ -187,12 +187,23 @@
 /datum/lighting_corner/proc/update_sun()
 	if(!SSlighting.global_shandler)
 		return
-	lum_r = SSlighting.global_shandler.red
-	lum_g = SSlighting.global_shandler.green
-	lum_b = SSlighting.global_shandler.blue
-	cache_r = SSlighting.global_shandler.cache_r
-	cache_g = SSlighting.global_shandler.cache_g
-	cache_b = SSlighting.global_shandler.cache_b
+	if(sunlight == SUNLIGHT_ONLY)
+		lum_r = SSlighting.global_shandler.red
+		lum_g = SSlighting.global_shandler.green
+		lum_b = SSlighting.global_shandler.blue
+		cache_r = SSlighting.global_shandler.cache_r
+		cache_g = SSlighting.global_shandler.cache_g
+		cache_b = SSlighting.global_shandler.cache_b
+		largest_color_luminosity = SSlighting.global_shandler.maxlum
+	if(sunlight == SUNLIGHT_ONLY_SHADE)
+		lum_r = SSlighting.global_shandler.redshade
+		lum_g = SSlighting.global_shandler.greenshade
+		lum_b = SSlighting.global_shandler.blueshade
+		cache_r = SSlighting.global_shandler.cache_r_shade
+		cache_g = SSlighting.global_shandler.cache_g_shade
+		cache_b = SSlighting.global_shandler.cache_b_shade
+		largest_color_luminosity = SSlighting.global_shandler.maxlumshade
+
 
 	var/datum/lighting_object/lighting_object = master_NE?.lighting_object
 	if (lighting_object && !lighting_object.needs_update)

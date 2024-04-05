@@ -15,16 +15,22 @@
 	var/cache_r = 0.0
 	var/cache_g = 0.0
 	var/cache_b = 0.0
+	var/cache_r_shade = 0.0
+	var/cache_g_shade = 0.0
+	var/cache_b_shade = 0.0
+	var/maxlum = 0.0
+	var/maxlumshade = 0.0
 	var/datum/sun_holder/sun
-	var/mutable_appearance/past_underlay
-	var/mutable_appearance/current_underlay
+	var/atom/movable/sun_vis_simple/vis_overhead
+	var/atom/movable/sun_vis_simple/vis_shade
 
 //TODO: add support for more than one planet existing
 /datum/global_sunlight_handler/New()
 	. = ..()
 	var/datum/planet/planet = SSplanets.z_to_planet[1]
 	sun = planet.sun_holder
-	current_underlay = mutable_appearance(LIGHTING_ICON, "transparent", null, PLANE_LIGHTING, 255, RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM)
+	vis_overhead = new(null)
+	vis_shade = new(null)
 
 /datum/global_sunlight_handler/proc/update_sun()
 	var/brightness = sun.our_brightness * SSlighting.sun_mult
@@ -41,12 +47,11 @@
 	redshadeint = round(redshade * 255)
 	greenshadeint = round(greenshade * 255)
 	blueshadeint = round(blueshade * 255)
-	//vis_overhead.color = rgb(redint,greenint,blueint)
-	//vis_shade.color = rgb(redshadeint,greenshadeint,blueshadeint)
-	past_underlay = current_underlay
-	current_underlay = mutable_appearance(LIGHTING_ICON, "transparent", null, PLANE_LIGHTING, 255, RESET_COLOR | RESET_ALPHA | RESET_TRANSFORM)
-	current_underlay.color = rgb(redint,greenint,blueint)
+	vis_overhead.color = rgb(redint,greenint,blueint)
+	vis_shade.color = rgb(redshadeint,greenshadeint,blueshadeint)
+
 	var/largest_color_luminosity = max(red, green, blue) // Scale it so one of them is the strongest lum, if it is above 1.
+	maxlum = largest_color_luminosity
 	. = 1 // factor
 	if (largest_color_luminosity > 1)
 		. = 1 / largest_color_luminosity
@@ -63,3 +68,30 @@
 	cache_g  = round(green * ., LIGHTING_ROUND_VALUE)
 	cache_b  = round(blue * ., LIGHTING_ROUND_VALUE)
 	#endif
+
+	largest_color_luminosity = max(redshade, greenshade, blueshade) // Scale it so one of them is the strongest lum, if it is above 1.
+	maxlumshade = largest_color_luminosity
+	. = 1 // factor
+	if (largest_color_luminosity > 1)
+		. = 1 / largest_color_luminosity
+
+	#if LIGHTING_SOFT_THRESHOLD != 0
+	else if (largest_color_luminosity < LIGHTING_SOFT_THRESHOLD)
+		. = 0 // 0 means soft lighting.
+
+	cache_r_shade  = round(redshade * ., LIGHTING_ROUND_VALUE) || LIGHTING_SOFT_THRESHOLD
+	cache_g_shade  = round(greenshade * ., LIGHTING_ROUND_VALUE) || LIGHTING_SOFT_THRESHOLD
+	cache_b_shade  = round(blueshade * ., LIGHTING_ROUND_VALUE) || LIGHTING_SOFT_THRESHOLD
+	#else
+	cache_r_shade  = round(redshade * ., LIGHTING_ROUND_VALUE)
+	cache_g_shade  = round(greenshade * ., LIGHTING_ROUND_VALUE)
+	cache_b_shade  = round(blueshade * ., LIGHTING_ROUND_VALUE)
+	#endif
+
+/atom/movable/sun_vis_simple
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "white"
+	plane = PLANE_O_LIGHTING_VISUAL
+	mouse_opacity = 0
+	alpha = 255
+	color = "#FFFFFF"

@@ -128,6 +128,7 @@
 	var/list/new_corners = list()
 	var/list/removed_corners = list()
 	var/sunlightonly_corners = 0
+	var/sunlightonly_shade_corners = 0
 	for(var/datum/lighting_corner/corner in corners)
 		switch(corner.sunlight)
 			if(SUNLIGHT_NONE)
@@ -157,6 +158,18 @@
 					corner.lum_r = 0
 					corner.lum_g = 0
 					corner.lum_b = 0
+			if(SUNLIGHT_ONLY_SHADE)
+				sunlightonly_shade_corners++
+				if(!(sunlight == TRUE) && (corner in only_sun))
+					only_sun -= corner
+					sunlightonly_shade_corners--
+					if(sunlight)
+						new_corners += corner
+						corner.sunlight = SUNLIGHT_CURRENT
+						continue
+					corner.lum_r = 0
+					corner.lum_g = 0
+					corner.lum_b = 0
 
 	if(!sun)
 		if(SSplanets && SSplanets.z_to_planet.len >= holder.z && SSplanets.z_to_planet[holder.z])
@@ -165,26 +178,29 @@
 		else
 			return
 
-	if(sunlight == SUNLIGHT_OVERHEAD)
+	var/sunonly_val = (sunlight == SUNLIGHT_OVERHEAD) ? SUNLIGHT_ONLY : SUNLIGHT_ONLY_SHADE
+
+	if(sunlight)
 		for(var/datum/lighting_corner/corner in affected)
 			if(!LAZYLEN(corner.affecting))
 				affected -= corner
 				removed_corners += corner
 				only_sun += corner
-				corner.sunlight = SUNLIGHT_ONLY
+				corner.sunlight = sunonly_val
 		for(var/datum/lighting_corner/corner in new_corners)
 			if(!LAZYLEN(corner.affecting))
 				new_corners -= corner
 				only_sun += corner
-				corner.sunlight = SUNLIGHT_ONLY
+				corner.sunlight = sunonly_val
 
-	if(sunlightonly_corners == 4 && !only_sun_object)
+	if((sunlightonly_corners == 4 || sunlightonly_shade_corners == 4) && !only_sun_object)
 		var/datum/lighting_object/holder_object = holder.lighting_object
 		if(holder_object && !holder_object.sunlight_only)
 			only_sun_object = holder_object
-			only_sun_object.set_sunonly(TRUE)
+			only_sun_object.set_sunonly(sunonly_val)
 
-	if(sunlightonly_corners < 4 && only_sun_object)
+
+	if(sunlightonly_corners < 4 && sunlightonly_shade_corners < 4 && only_sun_object)
 		only_sun_object.set_sunonly(FALSE)
 		only_sun_object = null
 
