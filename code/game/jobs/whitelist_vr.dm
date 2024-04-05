@@ -1,7 +1,7 @@
 GLOBAL_LIST_EMPTY(job_whitelist) // CHOMPEdit - Managed Globals
 
 /hook/startup/proc/loadJobWhitelist()
-	if(config.use_jobwhitelist) // CHOMPedit
+	if(CONFIG_GET(flag/use_jobwhitelist)) // CHOMPedit
 		load_jobwhitelist() // CHOMPedit
 	return 1
 
@@ -13,6 +13,7 @@ GLOBAL_LIST_EMPTY(job_whitelist) // CHOMPEdit - Managed Globals
 		GLOB.job_whitelist = splittext(text, "\n") // CHOMPEdit - Managed Globals
 
 /proc/is_job_whitelisted(mob/M, var/rank)
+<<<<<<< HEAD
 	//TORCHEdit begin
 	if(check_rights(R_ADMIN, 0) || check_rights(R_DEBUG, 0) || check_rights(R_EVENT, 0)) // CHOMPedit
 		return 1
@@ -21,6 +22,9 @@ GLOBAL_LIST_EMPTY(job_whitelist) // CHOMPEdit - Managed Globals
 		return 0
 
 	if(!config.use_jobwhitelist) // CHOMPedit
+=======
+	if(!CONFIG_GET(flag/use_jobwhitelist)) // CHOMPedit
+>>>>>>> e1a987c25c (Configuration Controller (#7857))
 		return 1 // CHOMPedit
 	//TORCHEdit End
 	if(!job.whitelist_only)
