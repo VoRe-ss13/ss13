@@ -130,7 +130,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		close(usr)
 	return 0
 
-/obj/item/device/pda/New(var/mob/living/carbon/human/H)
+/obj/item/device/pda/Initialize(var/mob/living/carbon/human/H) //ChompEDIT New --> Initialize
 	..()
 	PDAs += src
 	PDAs = sortAtom(PDAs)
