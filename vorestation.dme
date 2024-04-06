@@ -287,13 +287,6 @@
 #include "code\ATMOSPHERICS\pipes\vent.dm"
 #include "code\controllers\autotransfer.dm"
 #include "code\controllers\communications.dm"
-<<<<<<< HEAD
-#include "code\controllers\configuration.dm"
-#include "code\controllers\configuration_ch.dm"
-#include "code\controllers\configuration_tc.dm"
-#include "code\controllers\configuration_vr.dm"
-=======
->>>>>>> e1a987c25c (Configuration Controller (#7857))
 #include "code\controllers\controller.dm"
 #include "code\controllers\emergency_shuttle_controller.dm"
 #include "code\controllers\failsafe.dm"
@@ -312,6 +305,7 @@
 #include "code\controllers\configuration_ch\entries\game_options.dm"
 #include "code\controllers\configuration_ch\entries\general.dm"
 #include "code\controllers\configuration_ch\entries\resources.dm"
+#include "code\controllers\configuration_ch\entries\torchstation.dm"
 #include "code\controllers\configuration_ch\entries\vorestation.dm"
 #include "code\controllers\observer_listener\atom\observer.dm"
 #include "code\controllers\subsystems\ai.dm"

@@ -13,16 +13,16 @@
 	if (istype(fax, /obj/item/weapon/paper))
 		var/obj/item/weapon/paper/P = fax
 		var/text = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>";
-		rustg_file_write(text, "[config.fax_export_dir]/fax_[faxid].html")
+		rustg_file_write(text, "[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html")
 	else if (istype(fax, /obj/item/weapon/photo))
 		var/obj/item/weapon/photo/H = fax
-		fcopy(H.img, "[config.fax_export_dir]/photo_[faxid].png")
+		fcopy(H.img, "[CONFIG_GET(string/fax_export_dir)]/photo_[faxid].png")
 		var/text = "<html><head><title>[H.name]</title></head>" \
 			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
 			+ "<img src='photo_[faxid].png'>" \
 			+ "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
 			+ "</body></html>"
-		rustg_file_write(text, "[config.fax_export_dir]/fax_[faxid].html")
+		rustg_file_write(text, "[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html")
 	else if (istype(fax, /obj/item/weapon/paper_bundle))
 		var/def_faxid = faxid
 		faxid += "_0"
@@ -33,35 +33,30 @@
 			var/page_faxid = export_fax_id(pageobj,def_faxid + "_[page]")
 			data += "<a href='fax_[page_faxid].html'>Page [page] - [pageobj.name]</a><br>"
 		var/text = "<html><head><title>[B.name]</title></head><body>[data]</body></html>"
-		rustg_file_write(text, "[config.fax_export_dir]/fax_[faxid].html")
+		rustg_file_write(text, "[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html")
 	return faxid
 
 /obj/machinery/photocopier/faxmachine/proc/export_fax_id(fax,faxid)
 	if (istype(fax, /obj/item/weapon/paper))
 		var/obj/item/weapon/paper/P = fax
 		var/text = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>";
-		rustg_file_write(text, "[config.fax_export_dir]/fax_[faxid].html")
+		rustg_file_write(text, "[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html")
 	else if (istype(fax, /obj/item/weapon/photo))
 		var/obj/item/weapon/photo/H = fax
-		fcopy(H.img, "[config.fax_export_dir]/photo_[faxid].png")
+		fcopy(H.img, "[CONFIG_GET(string/fax_export_dir)]/photo_[faxid].png")
 		var/text = "<html><head><title>[H.name]</title></head>" \
 			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
 			+ "<img src='photo_[faxid].png'>" \
 			+ "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
 			+ "</body></html>"
-		rustg_file_write(text, "[config.fax_export_dir]/fax_[faxid].html")
+		rustg_file_write(text, "[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html")
 	return faxid
 //CHOMPEdit End
 /**
  * Call the chat webhook to transmit a notification of an admin fax to the admin chat.
  */
-<<<<<<< HEAD
 /obj/machinery/photocopier/faxmachine/message_chat_admins(var/mob/sender, var/faxname, var/obj/item/sent, var/faxid, font_colour="#006100")
-	if(config.discord_faxes_disabled) //CHOMPEdit
-=======
-/obj/machinery/photocopier/faxmachine/proc/message_chat_admins(var/mob/sender, var/faxname, var/obj/item/sent, var/faxid, font_colour="#006100")
 	if(CONFIG_GET(flag/discord_faxes_disabled)) //CHOMPEdit
->>>>>>> e1a987c25c (Configuration Controller (#7857))
 		return
 	if (CONFIG_GET(string/chat_webhook_url)) // CHOMPEdit
 		spawn(0)
@@ -81,40 +76,24 @@
 		var/faxids = "FAXMULTIID: [faxid]_0"
 		var/contents = ""
 
-<<<<<<< HEAD
-
-		if((!config.nodebot_enabled) && config.discord_faxes_autoprint)
-			var/faxmsg = return_file_text("[config.fax_export_dir]/fax_[faxid]_0.html")
-=======
-		if((!config.nodebot_enabled) && CONFIG_GET(flag/discord_faxes_autoprint)) // CHOMPEdit
+		if((!CONFIG_GET(flag/nodebot_enabled)) && CONFIG_GET(flag/discord_faxes_autoprint)) // CHOMPEdit
 			var/faxmsg = return_file_text("[CONFIG_GET(string/fax_export_dir)]/fax_[faxid]_0.html") // CHOMPEdit
->>>>>>> e1a987c25c (Configuration Controller (#7857))
 			contents += "\nFAX: ```[strip_html_properly(faxmsg)]```"
 
 		for(var/page = 1, page <= B.pages.len, page++)
 			var/curid = "[faxid]_[page]"
 			faxids+= "|[curid]"
-<<<<<<< HEAD
-			if(config.html_render_address) rustg_http_request_async(RUSTG_HTTP_METHOD_POST, "[config.html_render_address]/?name=[sender.name]&ckey=[sender.ckey]", return_file_text("[config.fax_export_dir]/fax_[curid].html"), list("Content-Type"="text/plain"), list("output_filename"=null,"body_filename"=null) ) //TORCHEdit
-			if((!config.nodebot_enabled) && config.discord_faxes_autoprint)
-				var/faxmsg = return_file_text("[config.fax_export_dir]/fax_[curid].html")
-=======
-			if((!config.nodebot_enabled) && CONFIG_GET(flag/discord_faxes_autoprint)) // CHOMPEdit
-				var/faxmsg = return_file_text("[CONFIG_GET(string/fax_export_dir)]/fax_[curid].html") // CHOMPEdit
->>>>>>> e1a987c25c (Configuration Controller (#7857))
+			if(CONFIG_GET(string/html_render_address)) rustg_http_request_async(RUSTG_HTTP_METHOD_POST, "[CONFIG_GET(string/html_render_address)]/?name=[sender.name]&ckey=[sender.ckey]", return_file_text("[CONFIG_GET(string/fax_export_dir)]/fax_[curid].html"), list("Content-Type"="text/plain"), list("output_filename"=null,"body_filename"=null) ) //TORCHEdit
+			if((!CONFIG_GET(flag/nodebot_enabled)) && CONFIG_GET(flag/discord_faxes_autoprint))
+				var/faxmsg = return_file_text("[CONFIG_GET(string/fax_export_dir)]/fax_[curid].html")
 				contents += "\nFAX PAGE [page]: ```[strip_html_properly(faxmsg)]```"
 
 		world.TgsTargetedChatBroadcast("MULTIFAX: [sanitize(faxname)] / [sanitize(sent.name)] - SENT BY: [sanitize(sender.name)] - [faxids] [contents]", TRUE)
 	else
 		var/contents = ""
-<<<<<<< HEAD
-		if(config.html_render_address) rustg_http_request_async(RUSTG_HTTP_METHOD_POST, "[config.html_render_address]/?name=[sender.name]&ckey=[sender.ckey]", return_file_text("[config.fax_export_dir]/fax_[faxid].html"), list("Content-Type"="text/plain"), list("output_filename"=null,"body_filename"=null) ) //TORCHEdit
-		if((!config.nodebot_enabled) && config.discord_faxes_autoprint)
-			var/faxmsg = return_file_text("[config.fax_export_dir]/fax_[faxid].html")
-=======
-		if((!config.nodebot_enabled) && CONFIG_GET(flag/discord_faxes_autoprint)) // CHOMPEdit
-			var/faxmsg = return_file_text("[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html") // CHOMPEdit
->>>>>>> e1a987c25c (Configuration Controller (#7857))
+		if(CONFIG_GET(string/html_render_address)) rustg_http_request_async(RUSTG_HTTP_METHOD_POST, "[CONFIG_GET(string/html_render_address)]/?name=[sender.name]&ckey=[sender.ckey]", return_file_text("[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html"), list("Content-Type"="text/plain"), list("output_filename"=null,"body_filename"=null) ) //TORCHEdit
+		if((!CONFIG_GET(flag/nodebot_enabled)) && CONFIG_GET(flag/discord_faxes_autoprint))
+			var/faxmsg = return_file_text("[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html")
 			contents += "\nFAX: ```[strip_html_properly(faxmsg)]```"
 		world.TgsTargetedChatBroadcast("FAX: [sanitize(faxname)] / [sanitize(sent.name)] - SENT BY: [sanitize(sender.name)] - FAXID: **[sanitize(faxid)]** [contents]", TRUE)
 	//YW EDIT END
@@ -122,13 +101,8 @@
 /**
  * Call the chat webhook to transmit a notification of a job request
  */
-<<<<<<< HEAD
 /obj/machinery/photocopier/faxmachine/message_chat_rolerequest(var/font_colour="#006100", var/role_to_ping, var/reason, var/jobname)
-	if(config.chat_webhook_url)
-=======
-/obj/machinery/photocopier/faxmachine/proc/message_chat_rolerequest(var/font_colour="#006100", var/role_to_ping, var/reason, var/jobname)
-	if(CONFIG_GET(string/chat_webhook_url)) // CHOMPEdit
->>>>>>> e1a987c25c (Configuration Controller (#7857))
+	if(CONFIG_GET(string/chat_webhook_url))
 		spawn(0)
 			var/query_string = "type=rolerequest"
 			query_string += "&key=[url_encode(CONFIG_GET(string/chat_webhook_key))]" // CHOMPEdit
@@ -136,13 +110,8 @@
 			query_string += "&color=[url_encode(font_colour)]"
 			query_string += "&reason=[url_encode(reason)]"
 			query_string += "&job=[url_encode(jobname)]"
-<<<<<<< HEAD
-			world.Export("[config.chat_webhook_url]?[query_string]")
+			world.Export("[CONFIG_GET(string/chat_webhook_url)]?[query_string]")
 /* TORCH Removal
-=======
-			world.Export("[CONFIG_GET(string/chat_webhook_url)]?[query_string]") // CHOMPEdit
-
->>>>>>> e1a987c25c (Configuration Controller (#7857))
 //
 // Overrides/additions to stock defines go here, as well as hooks. Sort them by
 // the object they are overriding. So all /mob/living together, etc.
@@ -232,7 +201,4 @@
 	message_chat_rolerequest(message_color, ping_name, reason, role)
 	last_fax_role_request = world.time
 	to_chat(L, "<span class='notice'>Your request was transmitted.</span>")
-<<<<<<< HEAD
 */
-=======
->>>>>>> e1a987c25c (Configuration Controller (#7857))

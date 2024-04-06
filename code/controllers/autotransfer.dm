@@ -6,15 +6,9 @@ var/datum/controller/transfer_controller/transfer_controller
 	var/shift_hard_end = 0 //VOREStation Edit
 	var/shift_last_vote = 0 //VOREStation Edit
 /datum/controller/transfer_controller/New()
-<<<<<<< HEAD
-	timerbuffer = config.vote_autotransfer_initial
-	shift_hard_end = config.vote_autotransfer_initial + (config.vote_autotransfer_interval * config.vote_autotransfer_hard) //CHOMPStation Edit //Change this "1" to how many extend votes you want there to be. //Note: Fuck you whoever just slapped a number here instead of using the FUCKING CONFIG LIKE ALL THE OTHER NUMBERS HERE //Fops Edit
-	shift_last_vote = shift_hard_end - config.vote_autotransfer_interval //VOREStation Edit
-=======
 	timerbuffer = CONFIG_GET(number/vote_autotransfer_initial) // CHOMPEdit
-	shift_hard_end = CONFIG_GET(number/vote_autotransfer_initial) + (CONFIG_GET(number/vote_autotransfer_interval) * 2) //CHOMPStation Edit //Change this "1" to how many extend votes you want there to be. //Note: Fuck you whoever just slapped a number here instead of using the FUCKING CONFIG LIKE ALL THE OTHER NUMBERS HERE
+	shift_hard_end = CONFIG_GET(number/vote_autotransfer_initial) + (CONFIG_GET(number/vote_autotransfer_interval) * CONFIG_GET(number/vote_autotransfer_hard)) //CHOMPStation Edit //Change this "1" to how many extend votes you want there to be. //Note: Fuck you whoever just slapped a number here instead of using the FUCKING CONFIG LIKE ALL THE OTHER NUMBERS HERE
 	shift_last_vote = shift_hard_end - CONFIG_GET(number/vote_autotransfer_interval) //VOREStation Edit // CHOMPEdit
->>>>>>> e1a987c25c (Configuration Controller (#7857))
 	START_PROCESSING(SSprocessing, src)
 
 /datum/controller/transfer_controller/Destroy()
