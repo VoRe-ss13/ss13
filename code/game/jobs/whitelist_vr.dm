@@ -1,7 +1,7 @@
 GLOBAL_LIST_EMPTY(job_whitelist) // CHOMPEdit - Managed Globals
 
 /hook/startup/proc/loadJobWhitelist()
-	if(config.use_jobwhitelist) // CHOMPedit
+	if(CONFIG_GET(flag/use_jobwhitelist)) // CHOMPedit
 		load_jobwhitelist() // CHOMPedit
 	return 1
 
@@ -20,7 +20,7 @@ GLOBAL_LIST_EMPTY(job_whitelist) // CHOMPEdit - Managed Globals
 	if(job.admin_only)
 		return 0
 
-	if(!config.use_jobwhitelist) // CHOMPedit
+	if(!CONFIG_GET(flag/use_jobwhitelist)) // CHOMPedit
 		return 1 // CHOMPedit
 	//TORCHEdit End
 	if(!job.whitelist_only)
