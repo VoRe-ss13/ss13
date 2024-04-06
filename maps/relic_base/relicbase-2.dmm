@@ -2215,11 +2215,19 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "bMl" = (
-/obj/random/trash,
-/turf/simulated/floor/outdoors/rocks/caves{
-	outdoors = -1
+/obj/effect/floor_decal/rust,
+/obj/random/junk,
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
 	},
-/area/maintenance/firstdeck/aftport)
+/obj/structure/cable/blue{
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "bMN" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/borderfloorblack{
@@ -2808,6 +2816,9 @@
 	icon_state = "2-8"
 	},
 /obj/effect/zone_divider,
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -5119,6 +5130,9 @@
 	pixel_y = 32
 	},
 /obj/effect/zone_divider,
+/obj/structure/cable/green{
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -5738,7 +5752,9 @@
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
 	},
-/area/maintenance/firstdeck/aftport)
+/area/maintenance/firstdeck/centralstarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "eZZ" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 9
@@ -6808,10 +6824,14 @@
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
 "gjO" = (
-/turf/simulated/floor/outdoors/rocks/caves{
-	outdoors = -1
+/obj/effect/floor_decal/rust,
+/obj/structure/cable/blue{
+	icon_state = "1-4"
 	},
-/area/maintenance/firstdeck/aftport)
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralstarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "gjT" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
@@ -9425,7 +9445,9 @@
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
 	},
-/area/maintenance/firstdeck/aftport)
+/area/maintenance/firstdeck/centralstarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "iJd" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/crate,
@@ -9782,14 +9804,6 @@
 /area/maintenance/firstdeck/aft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"iVR" = (
-/obj/structure/flora/ausbushes/grassybush{
-	opacity = 1
-	},
-/turf/simulated/floor/outdoors/rocks/caves{
-	outdoors = -1
-	},
-/area/maintenance/firstdeck/aftport)
 "iWz" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/reagent_dispensers/fueltank,
@@ -11109,6 +11123,9 @@
 	},
 /obj/structure/barricade,
 /obj/effect/floor_decal/rust,
+/obj/structure/cable/blue{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -11221,6 +11238,9 @@
 	},
 /obj/structure/cable/blue{
 	icon_state = "0-4"
+	},
+/obj/structure/cable/blue{
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard{
@@ -16347,7 +16367,9 @@
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
 	},
-/area/maintenance/firstdeck/aftport)
+/area/maintenance/firstdeck/centralstarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "rvk" = (
 /obj/effect/decal/cleanable/filth,
 /obj/effect/decal/cleanable/dirt,
@@ -18077,7 +18099,9 @@
 	})
 "tDw" = (
 /turf/simulated/mineral/cave,
-/area/maintenance/firstdeck/aftport)
+/area/maintenance/firstdeck/centralstarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "tEe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -19171,11 +19195,14 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "uWC" = (
-/obj/random/trash_pile,
-/turf/simulated/floor/outdoors/rocks/caves{
-	outdoors = -1
+/obj/effect/floor_decal/rust,
+/obj/structure/cable/blue{
+	icon_state = "2-8"
 	},
-/area/maintenance/firstdeck/aftport)
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "uWH" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/crate,
@@ -22168,6 +22195,14 @@
 	light_color = "#AF2A2A"
 	},
 /obj/effect/zone_divider,
+/obj/structure/cable/green{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -63813,8 +63848,8 @@ rlb
 rlb
 rlb
 rlb
-gjO
-gjO
+xtj
+xtj
 rlb
 rlb
 rlb
@@ -64070,8 +64105,8 @@ rlb
 rlb
 rlb
 rlb
-gjO
-gjO
+xtj
+xtj
 rlb
 rlb
 rlb
@@ -64327,8 +64362,8 @@ rlb
 rlb
 rlb
 yis
-bMl
-gjO
+pZy
+xtj
 rlb
 rlb
 rlb
@@ -64582,8 +64617,8 @@ rlb
 rlb
 rlb
 rlb
-uWC
-gjO
+gcj
+xtj
 ruY
 yis
 rlb
@@ -64837,10 +64872,10 @@ rlb
 rlb
 rlb
 rlb
-uWC
-gjO
-gjO
-gjO
+gcj
+xtj
+xtj
+xtj
 rlb
 rlb
 rlb
@@ -65093,11 +65128,11 @@ rlb
 rlb
 yis
 rlb
-gjO
-gjO
-gjO
-gjO
-gjO
+xtj
+xtj
+xtj
+xtj
+xtj
 rlb
 rlb
 rlb
@@ -65350,11 +65385,11 @@ rlb
 xtj
 xtj
 xtj
-bMl
-gjO
-bMl
-gjO
-gjO
+pZy
+xtj
+pZy
+xtj
+xtj
 rlb
 rlb
 rlb
@@ -65607,11 +65642,11 @@ xtj
 xtj
 pZy
 ohT
-iVR
-iVR
-gjO
-bMl
-gjO
+ohT
+ohT
+xtj
+pZy
+xtj
 yis
 rlb
 rlb
@@ -65864,12 +65899,12 @@ xtj
 xtj
 yis
 rlb
-iVR
+ohT
 tDw
-iVR
-iVR
-gjO
-gjO
+ohT
+ohT
+xtj
+xtj
 rlb
 rlb
 rlb
@@ -66120,14 +66155,14 @@ rlb
 rlb
 rlb
 rlb
-gjO
-gjO
+xtj
+xtj
 rlb
 rlb
 yis
-iVR
-gjO
-gjO
+ohT
+xtj
+xtj
 rlb
 rlb
 rlb
@@ -66376,17 +66411,17 @@ rlb
 rlb
 rlb
 rlb
-gjO
-gjO
-gjO
-gjO
-gjO
+xtj
+xtj
+xtj
+xtj
+xtj
 rlb
 rlb
 rlb
-bMl
-gjO
-gjO
+pZy
+xtj
+xtj
 rlb
 rlb
 rlb
@@ -66632,18 +66667,18 @@ rlb
 rlb
 rlb
 eYO
-gjO
-gjO
-gjO
-bMl
-gjO
-gjO
-gjO
+xtj
+xtj
+xtj
+pZy
+xtj
+xtj
+xtj
 rlb
 rlb
 rlb
-gjO
-bMl
+xtj
+pZy
 yis
 rlb
 rlb
@@ -66890,18 +66925,18 @@ rlb
 rlb
 rlb
 rlb
-gjO
-gjO
-gjO
-bMl
-gjO
-gjO
+xtj
+xtj
+xtj
+pZy
+xtj
+xtj
 rlb
 rlb
 rlb
-gjO
-gjO
-gjO
+xtj
+xtj
+xtj
 xVr
 viX
 rlb
@@ -67147,18 +67182,18 @@ rlb
 rlb
 rlb
 rlb
-gjO
-gjO
+xtj
+xtj
 yis
-bMl
-gjO
-bMl
+pZy
+xtj
+pZy
 rlb
 rlb
 rlb
 yis
-gjO
-gjO
+xtj
+xtj
 xVr
 xVr
 xVr
@@ -67404,18 +67439,18 @@ rlb
 rlb
 rlb
 rlb
-uWC
-gjO
-gjO
-bMl
-bMl
-gjO
+gcj
+xtj
+xtj
+pZy
+pZy
+xtj
 rlb
 rlb
 rlb
 rlb
-gjO
-bMl
+xtj
+pZy
 qnR
 xVr
 xVr
@@ -67662,17 +67697,17 @@ rlb
 rlb
 rlb
 rlb
-uWC
-gjO
-gjO
-gjO
-gjO
+gcj
+xtj
+xtj
+xtj
+xtj
 rlb
 rlb
 rlb
 rlb
 rlb
-gjO
+xtj
 xVr
 xVr
 xVr
@@ -67929,7 +67964,7 @@ rlb
 rlb
 rlb
 rlb
-gjO
+xtj
 xVr
 qnR
 qnR
@@ -70189,7 +70224,7 @@ bot
 kdu
 ezy
 wvW
-ezy
+bMl
 kxy
 kFQ
 ldS
@@ -70446,9 +70481,9 @@ bot
 dzk
 wvW
 wvW
-wvW
+uWC
 kzR
-wgL
+gjO
 wgL
 lsr
 kxy
@@ -71990,9 +72025,9 @@ rlb
 rlb
 rlb
 rlb
-lJk
-dCM
-lJk
+tJc
+wgL
+tJc
 rlb
 rlb
 rlb
@@ -72248,8 +72283,8 @@ bot
 bot
 tJc
 tJc
-dCM
-lJk
+wgL
+tJc
 rlb
 rlb
 rlb
@@ -72505,8 +72540,8 @@ kbU
 kbU
 htr
 tJc
-dCM
-lJk
+wgL
+tJc
 rlb
 rlb
 rlb
@@ -72762,8 +72797,8 @@ kbU
 kbU
 hJq
 huA
-dCM
-lJk
+wgL
+tJc
 rlb
 rlb
 rlb
@@ -73019,8 +73054,8 @@ bot
 jRc
 hJq
 tJc
-dCM
-lJk
+wgL
+tJc
 rlb
 rlb
 rlb
@@ -73276,8 +73311,8 @@ bot
 kbU
 hJq
 tJc
-lJk
-lJk
+tJc
+tJc
 rlb
 rlb
 rlb
