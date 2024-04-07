@@ -80,3 +80,17 @@
 2024-04-06:
   cadyn:
   - refactor: more lighting optimizations
+2024-04-07:
+  VoRe-bot:
+  - bugfix: Sentient food items can no longer astral project if they struggle
+  - bugfix: Sentient items now despawn correctly when leaving through cryo/gateway
+  - bugfix: solarmoth no longer flickers
+  - bugfix: hopefully maybe fixes icon related crashes
+  - refactor: Overlay subsystem replaced with TG version
+  - bugfix: Increase solar tracker max range to locate a controller
+  - bugfix: fix solarpanel maxdist aswell
+  - bugfix: virolgy door
+  - bugfix: runtime with new valley grass
+  - refactor: Replaced the old configuration with the configuration controller.
+  - admin: Added "Reload Configuration" button to Debug tab (requires DEBUG permission),
+      to reload config from files.
