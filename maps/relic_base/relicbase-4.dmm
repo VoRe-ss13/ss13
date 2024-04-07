@@ -6906,10 +6906,15 @@
 "nj" = (
 /obj/machinery/mech_recharger,
 /obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/cable/green,
 /obj/machinery/power/apc/hyper{
+	coverlocked = 0;
+	environ = 1;
+	equipment = 1;
+	lighting = 1;
+	locked = 0;
 	pixel_y = -24
 	},
-/obj/structure/cable/green,
 /turf/simulated/shuttle/plating,
 /area/shuttle/ursula)
 "nk" = (
@@ -9131,9 +9136,6 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/rust,
-/obj/machinery/power/apc/hyper{
-	pixel_y = -24
-	},
 /turf/simulated/floor/plating,
 /area/surface/outside/plains/outpost)
 "qW" = (
@@ -10948,6 +10950,11 @@
 	c_tag = "CIV - Hangar Pad 4 Southeast";
 	dir = 8
 	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
@@ -11503,6 +11510,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/fans/tiny,
 /turf/simulated/floor/plating,
 /area/engineering/atmos/storage)
 "vy" = (
@@ -11738,11 +11746,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/barrestroom)
-"vW" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/wingrille_spawn/reinforced,
-/turf/space,
-/area/medical/virology)
 "vX" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/green{
 	dir = 8
@@ -19346,6 +19349,7 @@
 	opacity = 0
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/fans/tiny,
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
@@ -24149,6 +24153,7 @@
 	name = "Club"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/structure/fans/tiny,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/bar)
 "Tz" = (
@@ -24169,6 +24174,7 @@
 /obj/machinery/door/airlock{
 	name = "Club"
 	},
+/obj/structure/fans/tiny,
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/bar)
 "TB" = (
@@ -69427,7 +69433,7 @@ gQ
 tR
 Dq
 fW
-vW
+xa
 xA
 yL
 SS

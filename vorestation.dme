@@ -1369,6 +1369,7 @@
 #include "code\game\objects\items\devices\radio\jammer_vr.dm"
 #include "code\game\objects\items\devices\radio\radio.dm"
 #include "code\game\objects\items\devices\radio\radio_ch.dm"
+#include "code\game\objects\items\devices\radio\radio_tc.dm"
 #include "code\game\objects\items\devices\radio\radio_vr.dm"
 #include "code\game\objects\items\devices\radio\radio_yw.dm"
 #include "code\game\objects\items\devices\radio\radiopack.dm"

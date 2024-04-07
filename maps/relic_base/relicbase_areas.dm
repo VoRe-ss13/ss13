@@ -734,28 +734,36 @@ z
 	name = "Maintenance Level - Central"
 	icon_state = "maintcentral"
 
+/area/maintenance/firstdeck/aft
+	name = "Maintenance Level - South"
+	icon_state = "amaint"
+
 /area/maintenance/firstdeck/aftstarboard
-	name = "Maintenance Level - Southwest"
+	name = "Maintenance Level - Southeast"
 	icon_state = "asmaint"
 
 /area/maintenance/firstdeck/aftport
-	name = "Maintenance Level - Southeast"
+	name = "Maintenance Level - Southwest"
 	icon_state = "apmaint"
 
+/area/maintenance/firstdeck/fore
+	name = "Maintenance Level - North"
+	icon_state = "fmaint"
+
 /area/maintenance/firstdeck/forestarboard
-	name = "Maintenance Level - Northwest"
+	name = "Maintenance Level - Northeast"
 	icon_state = "fsmaint"
 
 /area/maintenance/firstdeck/foreport
-	name = "Maintenance Level - Northeast"
+	name = "Maintenance Level - Northwest"
 	icon_state = "fpmaint"
 
 /area/maintenance/firstdeck/centralstarboard
-	name = "Maintenance Level - West"
+	name = "Maintenance Level - East"
 	icon_state = "smaint"
 
 /area/maintenance/firstdeck/centralport
-	name = "Maintenance Level - East"
+	name = "Maintenance Level - West"
 	icon_state = "pmaint"
 
 /area/maintenance/substation/firstdeck
