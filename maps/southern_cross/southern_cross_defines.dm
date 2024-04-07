@@ -7,6 +7,7 @@ so those just need to be updated every time someone rearranges the level load or
 but they don't actually change anything about the load order
 */
 //TO DO: Reorganize all #include for z-levels into one file
+<<<<<<< HEAD
 #define Z_LEVEL_STATION_ONE				1
 #define Z_LEVEL_STATION_TWO				2
 #define Z_LEVEL_STATION_THREE			3
@@ -20,6 +21,23 @@ but they don't actually change anything about the load order
 #define Z_LEVEL_VR_REALM                	11
 #define Z_LEVEL_FUELDEPOT				12
 #define Z_LEVEL_GATEWAY					13
+=======
+#define Z_LEVEL_STATION_MAINTS			1
+#define Z_LEVEL_STATION_ONE				2
+#define Z_LEVEL_STATION_TWO				3
+#define Z_LEVEL_STATION_THREE			4
+#define Z_LEVEL_SURFACE					5
+#define Z_LEVEL_SURFACE_MINE			6
+#define Z_LEVEL_MISC					7 //Carrier, actually
+#define Z_LEVEL_CENTCOM					8
+#define Z_LEVEL_TRANSIT					9
+#define Z_LEVEL_SURFACE_WILD			10
+#define Z_LEVEL_SURFACE_VALLEY 			11
+#define Z_LEVEL_VR_REALM                12
+#define Z_LEVEL_FUELDEPOT				13
+#define Z_LEVEL_JUNGLE					14
+#define Z_LEVEL_GATEWAY					15
+>>>>>>> 7c3fb6fb64 (Maintenance Deck (#8146))
 
 //#define Z_LEVEL_SURFACE_SKYLANDS		//Sky islands removal due to lack of use
 //#define Z_LEVEL_AEROSTAT			//Disabled due to lack of use
@@ -110,6 +128,7 @@ but they don't actually change anything about the load order
 	planet_datums_to_make = list(/datum/planet/sif) //This must be added to load maps at round start otherwise they will have weather or sun.
 
 	map_levels = list(
+			Z_LEVEL_STATION_MAINTS,
 			Z_LEVEL_STATION_ONE,
 			Z_LEVEL_STATION_TWO,
 			Z_LEVEL_STATION_THREE,
@@ -285,6 +304,25 @@ but they don't actually change anything about the load order
 	name = "Transit"
 	flags = MAP_LEVEL_ADMIN|MAP_LEVEL_SEALED|MAP_LEVEL_PLAYER|MAP_LEVEL_CONTACT
 
+<<<<<<< HEAD
+=======
+//Thor Z-Level
+/datum/map_z_level/southern_cross/thor
+	z = Z_LEVEL_JUNGLE
+	name = "Thor Surface"
+	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED
+	base_turf = /turf/simulated/floor/outdoors/rocks
+
+// Deck 0 Z-Level
+/datum/map_z_level/southern_cross/station/station_maintenance
+	z = Z_LEVEL_STATION_MAINTS
+	name = "Maintenance Deck"
+	base_turf = /turf/simulated/open
+	transit_chance = 15
+	holomap_offset_x = HOLOMAP_ICON_SIZE - SOUTHERN_CROSS_HOLOMAP_MARGIN_X - SOUTHERN_CROSS_MAP_SIZE - 40
+	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*1
+
+>>>>>>> 7c3fb6fb64 (Maintenance Deck (#8146))
 /*
  KSC 9/29/20 = No longer relevant code as we have nonencludian portals to jump between outpost,caves and wilderness
 //Teleport to Mine
