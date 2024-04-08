@@ -94,3 +94,8 @@
   - refactor: Replaced the old configuration with the configuration controller.
   - admin: Added "Reload Configuration" button to Debug tab (requires DEBUG permission),
       to reload config from files.
+2024-04-08:
+  VoRe-bot:
+  - rscdel: Removed some of the unused hooks.
+  - admin: Reload job/alien whitelist buttons in admin tab
+  - rscadd: Added camera and airlock controller to viro
