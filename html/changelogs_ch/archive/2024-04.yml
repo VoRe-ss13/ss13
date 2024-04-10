@@ -99,3 +99,16 @@
   - rscdel: Removed some of the unused hooks.
   - admin: Reload job/alien whitelist buttons in admin tab
   - rscadd: Added camera and airlock controller to viro
+2024-04-10:
+  VoRe-bot:
+  - balance: Reduce dive speed increase
+  - balance: Aquatic now works the same on deep and shallow water (No speed penalty)
+  - bugfix: Mice rays drop on the floor properly when shooting yourself
+  - rscadd: Check for client/key and remove on qdel of a ghost
+  - bugfix: Mobkin selection bug in VR
+  - bugfix: an issue with charging icons no longer working
+  - bugfix: Alongside say/whisper, emote/narrate voice-sounds now penetrate walls.
+  - rscdel: Removed items being dropped when in a purple stun, Less butter fingers
+      when doing EVA!
+  - balance: '''Weaken'' status now allows you to use items. You still got a second
+      chance!'
