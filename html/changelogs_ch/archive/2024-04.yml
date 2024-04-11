@@ -112,3 +112,12 @@
       when doing EVA!
   - balance: '''Weaken'' status now allows you to use items. You still got a second
       chance!'
+2024-04-11:
+  VoRe-bot:
+  - bugfix: Crisis W0RM borg being shown as surgical
+  - bugfix: removes the double definition of the service W0RM borg
+  - refactor: fuck the stupid limb icon cache get out of here
+  - bugfix: visible_messages pass to atoms in contents of other atoms correctly
+  - bugfix: visible_messages check visibility now
+  - code_imp: moved hearable.dm to components folder and renamed it to hearer.dm to
+      avoid conniptions
