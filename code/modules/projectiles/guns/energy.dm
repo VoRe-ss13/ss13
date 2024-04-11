@@ -29,8 +29,13 @@
 	var/battery_lock = 0	//If set, weapon cannot switch batteries
 	var/random_start_ammo = FALSE	//if TRUE, the weapon will spawn with randomly-determined ammo
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/energy/Initialize() //Torchedit
 	. = ..() //TORCHEdit
+=======
+/obj/item/weapon/gun/energy/New()
+	//..() CHOMPEdit moved to bottom
+>>>>>>> 57a0b4a5eb (minor fixes (#8209))
 	var/static/list/gun_icons = icon_states('icons/obj/gun_ch.dmi')
 	if (icon == 'icons/obj/gun_ch.dmi' && !(icon_state in gun_icons))
 		icon = 'icons/obj/gun.dmi'
@@ -46,6 +51,7 @@
 	if(random_start_ammo && cell_type)
 		power_supply.charge = charge_cost*rand(0,power_supply.maxcharge/charge_cost)
 	update_icon()
+	..() //CHOMPEdit if you see this, it is a cry for help. Please tell people to stop putting ..() at the top of New() :(
 
 /obj/item/weapon/gun/energy/Destroy()
 	if(self_recharge)
