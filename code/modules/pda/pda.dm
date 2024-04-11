@@ -146,11 +146,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 			model_name = "Thinktronic 5230 Personal Data Assistant"
 		if(2)
 			icon = 'icons/obj/pda_slim.dmi'
-<<<<<<< HEAD
-			model_name = "Ward-Takahashi SlimFit™ Personal Data Assistant"
-=======
 			model_name = "Ward-Takahashi SlimFit Personal Data Assistant"
->>>>>>> 2a2943c3af (Fix PDA option not working (#8216))
 		if(3)
 			icon = 'icons/obj/pda_old.dmi'
 			model_name = "Thinktronic 5120 Personal Data Assistant"
