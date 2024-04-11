@@ -176,11 +176,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 			)
 		if(7)
 			icon = 'icons/obj/pda_slider.dmi'			//VOREStation edit
-<<<<<<< HEAD
-			model_name = "Slider® Personal Data Assistant"
-=======
 			model_name = "Slider Personal Data Assistant"
->>>>>>> 2a2943c3af (Fix PDA option not working (#8216))
 		if(8)
 			icon = 'icons/obj/pda_vintage.dmi'
 			model_name = "\[ERR:INVALID_MANUFACTURER_ID\] Personal Data Assistant"
