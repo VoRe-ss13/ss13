@@ -121,3 +121,11 @@
   - bugfix: visible_messages check visibility now
   - code_imp: moved hearable.dm to components folder and renamed it to hearer.dm to
       avoid conniptions
+2024-04-12:
+  VoRe-bot:
+  - bugfix: fixed a couple bad config multipliers
+  - code_imp: more harddel fixes
+  - bugfix: fixed PDA choice not working due to New --> Initialise change
+  - bugfix: fixed taj veils being low on layer being hidden by eyes
+  - bugfix: fixed a couple runtimes that messed with integration tests
+  - bugfix: fixed sounds not reaching mobs inside of things
