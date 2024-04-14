@@ -129,3 +129,7 @@
   - bugfix: fixed taj veils being low on layer being hidden by eyes
   - bugfix: fixed a couple runtimes that messed with integration tests
   - bugfix: fixed sounds not reaching mobs inside of things
+2024-04-14:
+  VoRe-bot:
+  - bugfix: unathi hairs
+  - rscadd: more unathi and screll hairs
