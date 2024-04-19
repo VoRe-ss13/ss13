@@ -24,6 +24,8 @@
 
 	faction = "vampire"
 
+	allow_mind_transfer = TRUE //CHOMPAdd
+
 // Activate Noms!
 /mob/living/simple_mob/vore/bat
 	vore_active = 1
