@@ -7,9 +7,15 @@ SUBSYSTEM_DEF(lighting)
 	var/static/list/sources_queue = list() // List of lighting sources queued for update.
 	var/static/list/corners_queue = list() // List of lighting corners queued for update.
 	var/static/list/objects_queue = list() // List of lighting objects queued for update.
+<<<<<<< HEAD
 	var/static/list/sunlight_queue = list() //TORCHEdit // List of turfs that are affected by sunlight
 	var/static/list/sunlight_queue_active = list() //TORCHEdit // List of turfs that need to have their sunlight updated
 	var/datum/global_sunlight_handler/global_shandler //TORCHEdit //Precomputed lighting values for tiles only affected by the sun
+=======
+	var/static/list/sunlight_queue = list() //CHOMPEdit // List of turfs that are affected by sunlight
+	var/static/list/sunlight_queue_active = list() //CHOMPEdit // List of turfs that need to have their sunlight updated
+	var/list/planet_shandlers = list() //CHOMPEdit //Precomputed lighting values for tiles only affected by the sun
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 
 /datum/controller/subsystem/lighting/stat_entry(msg)
 	msg = "L:[length(sources_queue)]|C:[length(corners_queue)]|O:[length(objects_queue)]"
@@ -26,7 +32,15 @@ SUBSYSTEM_DEF(lighting)
 		subsystem_initialized = TRUE
 		create_all_lighting_objects()
 
+<<<<<<< HEAD
 	global_shandler = new()
+=======
+	//CHOMPEdit Begin
+	for(var/datum/planet/planet in SSplanets.planets)
+		if(!planet_shandlers[planet])
+			planet_shandlers[planet] = new /datum/planet_sunlight_handler(planet)
+	//CHOMPEdit End
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 
 	fire(FALSE, TRUE)
 
@@ -116,7 +130,11 @@ SUBSYSTEM_DEF(lighting)
 			break
 	if (i)
 		queue.Cut(1, i + 1)
+<<<<<<< HEAD
 //TORCHEdit Begin
+=======
+//CHOMPEdit Begin
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 		i = 0
 
 
@@ -146,9 +164,22 @@ SUBSYSTEM_DEF(lighting)
 		queue.Cut(1, i + 1)
 
 /datum/controller/subsystem/lighting/proc/update_sunlight()
+<<<<<<< HEAD
 	global_shandler.update_sun()
 	sunlight_queue_active = sunlight_queue.Copy()
 //TORCHEdit End
+=======
+	for(var/datum/planet/planet in planet_shandlers)
+		var/datum/planet_sunlight_handler/pshandler = planet_shandlers[planet]
+		pshandler.update_sun()
+	sunlight_queue_active = sunlight_queue.Copy()
+
+/datum/controller/subsystem/lighting/proc/get_pshandler(var/datum/planet/planet)
+	if(!planet_shandlers[planet])
+		planet_shandlers[planet] = new /datum/planet_sunlight_handler(planet)
+	return planet_shandlers[planet]
+//CHOMPEdit End
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 
 /datum/controller/subsystem/lighting/Recover()
 	subsystem_initialized = SSlighting.subsystem_initialized

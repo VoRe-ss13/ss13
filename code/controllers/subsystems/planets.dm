@@ -45,7 +45,11 @@ SUBSYSTEM_DEF(planets)
 		else if(istype(T, /turf/simulated) && T.is_outdoors())
 			P.planet_floors += T
 			P.weather_holder.apply_to_turf(T)
+<<<<<<< HEAD
 			// P.sun_holder.apply_to_turf(T) TORCHEdit, replaced planetary lighting
+=======
+			//P.sun_holder.apply_to_turf(T) CHOMPEdit replaced planetary lighting
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 
 /datum/controller/subsystem/planets/proc/removeTurf(var/turf/T,var/is_edge)
 	if(z_to_planet.len >= T.z)
@@ -108,7 +112,11 @@ SUBSYSTEM_DEF(planets)
 
 	var/new_color = P.sun["color"]
 	P.sun_holder.update_color(new_color)
+<<<<<<< HEAD
 	SSlighting.update_sunlight() //TORCHEdit
+=======
+	SSlighting.update_sunlight() //CHOMPEdit
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 
 /datum/controller/subsystem/planets/proc/updateTemp(var/datum/planet/P)
 	//Set new temperatures

@@ -43,14 +43,25 @@
 	var/old_outdoors = outdoors
 	var/old_dangerous_objects = dangerous_objects
 	var/old_dynamic_lumcount = dynamic_lumcount
+<<<<<<< HEAD
 	var/oldtype = src.type	//TORCHEdit
 	var/old_density = src.density //TORCHEdit
 	var/was_open = istype(src,/turf/simulated/open) //TORCHEdit
 	//TORCHEdit Begin
+=======
+	var/oldtype = src.type	//CHOMPEdit
+	var/old_density = src.density //CHOMPEdit
+	var/was_open = istype(src,/turf/simulated/open) //CHOMPEdit
+	//CHOMPEdit Begin
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 	var/datum/sunlight_handler/old_shandler
 	var/turf/simulated/simself = src
 	if(istype(simself) && simself.shandler)
 		old_shandler = simself.shandler
+<<<<<<< HEAD
+=======
+	//CHOMPEdit End
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 
 	var/turf/Ab = GetAbove(src)
 	if(Ab)
@@ -71,15 +82,29 @@
 	cut_overlays(TRUE)
 	RemoveElement(/datum/element/turf_z_transparency)
 
+<<<<<<< HEAD
 	var/turf/new_turf  //TORCHEdit
 	if(ispath(N, /turf/simulated/floor))
 		//TORCHEdit Begin
 		var/turf/simulated/W = new N( locate(src.x, src.y, src.z) )
+=======
+	var/turf/new_turf  //CHOMPEdit
+	if(ispath(N, /turf/simulated/floor))
+		//CHOMPEdit Begin
+		var/turf/simulated/W = new N( locate(src.x, src.y, src.z), is_turfchange=TRUE )
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 		W.lighting_corners_initialised = old_lighting_corners_initialized
 		if(old_shandler)
 			W.shandler = old_shandler
 			old_shandler.holder = W
+<<<<<<< HEAD
 		//TORCHEdit End
+=======
+		else if((SSplanets && SSplanets.z_to_planet.len >= z && SSplanets.z_to_planet[z]) && has_dynamic_lighting())
+			W.shandler = new(src)
+			W.shandler.manualInit()
+		//CHOMPEdit End
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 		if(old_fire)
 			fire = old_fire
 
@@ -98,18 +123,34 @@
 		W.levelupdate()
 		W.update_icon(1)
 		W.post_change()
+<<<<<<< HEAD
 		new_turf = W //TORCHEdit
 		. = W
 
 	else
 		//TORCHEdit Begin
 		var/turf/W = new N( locate(src.x, src.y, src.z) )
+=======
+		new_turf = W //CHOMPEdit
+		. = W
+
+	else
+		//CHOMPEdit Begin
+		var/turf/W = new N( locate(src.x, src.y, src.z), is_turfchange=TRUE )
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 		W.lighting_corners_initialised = old_lighting_corners_initialized
 		var/turf/simulated/W_sim = W
 		if(istype(W_sim) && old_shandler)
 			W_sim.shandler = old_shandler
 			old_shandler.holder = W
+<<<<<<< HEAD
 		//TORCHEdit End
+=======
+		else if(istype(W_sim) && (SSplanets && SSplanets.z_to_planet.len >= z && SSplanets.z_to_planet[z]) && has_dynamic_lighting())
+			W_sim.shandler = new(src)
+			W_sim.shandler.manualInit()
+		//CHOMPEdit End
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 		if(old_fire)
 			old_fire.RemoveFire()
 
@@ -125,7 +166,11 @@
 		W.levelupdate()
 		W.update_icon(1)
 		W.post_change()
+<<<<<<< HEAD
 		new_turf = W //TORCHEdit
+=======
+		new_turf = W //CHOMPEdit
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 		. =  W
 
 
@@ -155,7 +200,11 @@
 		for(var/turf/space/space_tile in RANGE_TURFS(1, src))
 			space_tile.update_starlight()
 
+<<<<<<< HEAD
 	//TORCHEdit begin
+=======
+	//CHOMPEdit begin
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 	var/is_open = istype(new_turf,/turf/simulated/open)
 
 	propogate_sunlight_changes(oldtype, old_density, new_turf)
@@ -170,13 +219,22 @@
 			cur_turf.propogate_sunlight_changes(oldtype, old_density, new_turf, above = TRUE)
 		while(istype(cur_turf,/turf/simulated/open) && HasBelow(cur_turf.z))
 
+<<<<<<< HEAD
 	//TORCHEdit End
 	if(old_shandler) old_shandler.holder_change() //TORCHEdit
+=======
+	//CHOMPEdit End
+	if(old_shandler) old_shandler.holder_change() //CHOMPEdit
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 	if(preserve_outdoors)
 		outdoors = old_outdoors
 
 
+<<<<<<< HEAD
 //TORCHEdit begin
+=======
+//CHOMPEdit begin
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 /turf/proc/propogate_sunlight_changes(oldtype, old_density, new_turf, var/above = FALSE)
 	//SEND_SIGNAL(src, COMSIG_TURF_UPDATE, oldtype, old_density, W)
 	//Sends signals in a cross pattern to all tiles that may have their sunlight var affected including this tile.
@@ -205,4 +263,8 @@
 					T.shandler.turf_update(old_density, new_turf, above)
 			steps += 1
 			cur_turf = get_step(cur_turf,dir)
+<<<<<<< HEAD
 //TORCHEdit end
+=======
+//CHOMPEdit end
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))

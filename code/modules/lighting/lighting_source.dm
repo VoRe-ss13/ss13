@@ -129,7 +129,11 @@
 		(. * lum_b) - (OLD * applied_lum_b)      \
 	);                                           \
 
+<<<<<<< HEAD
 //TORCHEdit Begin
+=======
+//CHOMPEdit Begin
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 #define APPLY_CORNER_NEW(C)                      \
 	. = LUM_FALLOFF(C, pixel_turf);              \
 	. *= light_power;                            \
@@ -144,7 +148,11 @@
 		(. * lum_g) - (OLD * applied_lum_g),     \
 		(. * lum_b) - (OLD * applied_lum_b)      \
 	);                                           \
+<<<<<<< HEAD
 //TORCHEdit End
+=======
+//CHOMPEdit End
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 #define REMOVE_CORNER(C)                         \
 	. = -effect_str[C];                          \
 	C.update_lumcount                            \
@@ -157,8 +165,13 @@
 /datum/light_source/proc/remove_lum()
 	applied = FALSE
 	for (var/datum/lighting_corner/corner as anything in effect_str)
+<<<<<<< HEAD
 		LAZYREMOVE(corner.affecting, src) //TORCHEdit
 		REMOVE_CORNER(corner) //TORCHEdit
+=======
+		LAZYREMOVE(corner.affecting, src) //CHOMPEdit
+		REMOVE_CORNER(corner) //CHOMPEdit
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 
 	effect_str = null
 
@@ -256,6 +269,7 @@
 	LAZYINITLIST(effect_str)
 	if (needs_update == LIGHTING_VIS_UPDATE)
 		for (var/datum/lighting_corner/corner as anything in new_corners)
+<<<<<<< HEAD
 			//TORCHEdit Begin
 			APPLY_CORNER_NEW(corner)
 			//TORCHEdit End
@@ -267,6 +281,19 @@
 
 		for (var/datum/lighting_corner/corner as anything in corners - new_corners) // Existing corners
 		//TORCHEdit Begin
+=======
+			//CHOMPEdit Begin
+			APPLY_CORNER_NEW(corner)
+			//CHOMPEdit End
+	else
+		for (var/datum/lighting_corner/corner as anything in new_corners)
+			//CHOMPEdit Begin
+			APPLY_CORNER_NEW(corner)
+			//CHOMPEdit End
+
+		for (var/datum/lighting_corner/corner as anything in corners - new_corners) // Existing corners
+		//CHOMPEdit Begin
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 			. = LUM_FALLOFF(corner, pixel_turf);
 			. *= light_power;
 			var/OLD = effect_str[corner];
@@ -281,12 +308,21 @@
 				(. * lum_g) - (OLD * applied_lum_g),	\
 				(. * lum_b) - (OLD * applied_lum_b)		\
 			);
+<<<<<<< HEAD
 		//TORCHEdit End
 
 	var/list/datum/lighting_corner/gone_corners = effect_str - corners
 	for (var/datum/lighting_corner/corner as anything in gone_corners)
 		LAZYREMOVE(corner.affecting, src) //TORCHEdit
 		REMOVE_CORNER(corner) //TORCHEdit
+=======
+		//CHOMPEdit End
+
+	var/list/datum/lighting_corner/gone_corners = effect_str - corners
+	for (var/datum/lighting_corner/corner as anything in gone_corners)
+		LAZYREMOVE(corner.affecting, src) //CHOMPEdit
+		REMOVE_CORNER(corner) //CHOMPEdit
+>>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 	effect_str -= gone_corners
 
 	applied_lum_r = lum_r
