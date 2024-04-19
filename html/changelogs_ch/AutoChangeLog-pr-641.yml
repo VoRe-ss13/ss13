@@ -2,4 +2,4 @@ author: "VoRe-bot"
 delete-after: True
 changes:
   - bugfix: "Splash screen inconsistency"
-  - remap: "add splash screen to centcomm Z-level"
+  - maptweak: "add splash screen to centcomm Z-level"
