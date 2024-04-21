@@ -5,11 +5,7 @@
 /datum/lighting_corner
 	var/list/datum/light_source/affecting // Light sources affecting us.
 
-<<<<<<< HEAD
-	var/sunlight = SUNLIGHT_NONE // TORCHEdit
-=======
 	var/sunlight = SUNLIGHT_NONE // CHOMPEdit
->>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 	var/x = 0
 	var/y = 0
 
@@ -80,11 +76,7 @@
 			master.lighting_corner_SE = src
 
 /datum/lighting_corner/proc/self_destruct_if_idle()
-<<<<<<< HEAD
-	if (!LAZYLEN(affecting) && !sunlight) //TORCHEdit
-=======
 	if (!LAZYLEN(affecting) && !sunlight) //CHOMPEdit
->>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 		qdel(src, force = TRUE)
 
 /datum/lighting_corner/proc/vis_update()
@@ -96,13 +88,6 @@
 		light_source.recalc_corner(src)
 
 // God that was a mess, now to do the rest of the corner code! Hooray!
-<<<<<<< HEAD
-/datum/lighting_corner/proc/update_lumcount(delta_r, delta_g, delta_b, var/from_sholder = FALSE) //TORCHEdit
-	if (!(delta_r || delta_g || delta_b)) // 0 is falsey ok
-		return
-
-	if((sunlight == SUNLIGHT_ONLY || sunlight == SUNLIGHT_ONLY_SHADE) && LAZYLEN(affecting)) change_sun() //TORCHEdit
-=======
 /datum/lighting_corner/proc/update_lumcount(delta_r, delta_g, delta_b, var/from_sholder = FALSE) //CHOMPEdit
 	if (!(delta_r || delta_g || delta_b)) // 0 is falsey ok
 		return
@@ -115,24 +100,15 @@
 			//Is this optimal? No. Is there a better way? Maybe. God knows I tried, but whatever fucking black magic is going on behind the scenes seems to defy all attempts at logic. So, if this works, it stays.
 			sunlight = SUNLIGHT_POSSIBLE
 	//CHOMPEdit End
->>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 	lum_r += delta_r
 	lum_g += delta_g
 	lum_b += delta_b
 
-<<<<<<< HEAD
-	//TORCHEdit Begin
-	if(sunlight == SUNLIGHT_CURRENT && !LAZYLEN(affecting) && !from_sholder)
-		update_sunlight_handlers()
-		update_sunlight_handlers()
-	//TORCHEdit End
-=======
 	//CHOMPEdit Begin
 	if(sunlight == SUNLIGHT_CURRENT && !LAZYLEN(affecting) && !from_sholder)
 		update_sunlight_handlers()
 		update_sunlight_handlers()
 	//CHOMPEdit End
->>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 
 	if (!needs_update)
 		needs_update = TRUE
@@ -214,28 +190,6 @@
 
 	return ..()
 
-<<<<<<< HEAD
-//TORCHEdit Begin
-/datum/lighting_corner/proc/update_sun()
-	if(!SSlighting.global_shandler)
-		return
-	if(sunlight == SUNLIGHT_ONLY)
-		lum_r = SSlighting.global_shandler.red
-		lum_g = SSlighting.global_shandler.green
-		lum_b = SSlighting.global_shandler.blue
-		cache_r = SSlighting.global_shandler.cache_r
-		cache_g = SSlighting.global_shandler.cache_g
-		cache_b = SSlighting.global_shandler.cache_b
-		largest_color_luminosity = SSlighting.global_shandler.maxlum
-	if(sunlight == SUNLIGHT_ONLY_SHADE)
-		lum_r = SSlighting.global_shandler.redshade
-		lum_g = SSlighting.global_shandler.greenshade
-		lum_b = SSlighting.global_shandler.blueshade
-		cache_r = SSlighting.global_shandler.cache_r_shade
-		cache_g = SSlighting.global_shandler.cache_g_shade
-		cache_b = SSlighting.global_shandler.cache_b_shade
-		largest_color_luminosity = SSlighting.global_shandler.maxlumshade
-=======
 //CHOMPEdit Begin
 /datum/lighting_corner/proc/update_sun(var/datum/planet_sunlight_handler/pshandler)
 	if(!pshandler)
@@ -256,7 +210,6 @@
 		cache_g = pshandler.cache_g_shade
 		cache_b = pshandler.cache_b_shade
 		largest_color_luminosity = pshandler.maxlumshade
->>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 
 
 	var/datum/lighting_object/lighting_object = master_NE?.lighting_object
@@ -311,9 +264,6 @@
 		master_SW_sim.shandler.sunlight_update()
 	if(istype(master_NW_sim) && master_NW_sim.shandler)
 		master_NW_sim.shandler.sunlight_update()
-<<<<<<< HEAD
-//TORCHEdit End
-=======
 
 /datum/lighting_corner/proc/all_onlysun()
 	var/datum/lighting_object/lighting_object = master_NE?.lighting_object
@@ -349,4 +299,3 @@
 		master_NW_sim.shandler.sunlight_update()
 
 //CHOMPEdit End
->>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))

@@ -96,19 +96,11 @@
 
 ///Setter for the byond luminosity var
 /turf/proc/set_luminosity(new_luminosity, force)
-<<<<<<< HEAD
-	/*TORCHEdit Begin
-	if((is_outdoors() && !force) || outdoors_adjacent)
-		if(check_for_sun()) //If another system handles our lighting, don't interfere
-			return
-	*/ //TORCHEdit End
-=======
 	/*CHOMP Removal Begin
 	if((is_outdoors() && !force) || outdoors_adjacent)
 		if(check_for_sun()) //If another system handles our lighting, don't interfere
 			return
 	*/ //CHOMP Removal End
->>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 	if(((is_outdoors() && !force) || outdoors_adjacent) && (z in fake_sunlight_zs)) //Special exception for fakesun lit tiles
 		return
 
@@ -153,11 +145,7 @@
 
 /turf/proc/generate_missing_corners()
 
-<<<<<<< HEAD
-	//TORCHEdit Begin
-=======
 	//CHOMPEdit Begin
->>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 	var/turf/n = get_step(src,NORTH)
 	var/turf/s = get_step(src,SOUTH)
 	var/turf/w = get_step(src,WEST)
@@ -187,9 +175,5 @@
 			lighting_corner_NW = s.lighting_corner_NE
 		else
 			lighting_corner_NW = new/datum/lighting_corner(src, NORTH|WEST)
-<<<<<<< HEAD
-
-=======
 	//CHOMPEdit End
->>>>>>> 0418e5c8d4 (Completely refactor planetary lighting (#8166))
 	lighting_corners_initialised = TRUE
