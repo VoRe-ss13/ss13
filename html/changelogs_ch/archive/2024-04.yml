@@ -219,3 +219,7 @@
   - bugfix: Icon edit access violation crash fit attempt
   cadyn:
   - bugfix: fixed splash screens
+2024-04-22:
+  VoRe-bot:
+  - bugfix: sleevemate not longer usable with pref disabled
+  - rscadd: new planetary lighting system
