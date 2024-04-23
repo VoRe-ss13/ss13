@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - qol: "Adjusted VR avatar loadouts"
+  - maptweak: "The VR stripmall has more decor."
