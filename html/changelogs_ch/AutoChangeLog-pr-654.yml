@@ -1,5 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - qol: "Shadekin Phase In/Out animation now adjusts to the shadekin's size"
-  - bugfix: "Thrown objects not passing though phased kins"

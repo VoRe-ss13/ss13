@@ -223,3 +223,18 @@
   VoRe-bot:
   - bugfix: sleevemate not longer usable with pref disabled
   - rscadd: new planetary lighting system
+2024-04-23:
+  VoRe-bot:
+  - bugfix: Another cached icon edit removal
+  - bugfix: Lockers check for opened when finishing the weld to prevent insta-traps
+  - rscdel: Removed VR respawn time
+  - bugfix: VR no longer will spawn duplicate PDAs flooding the PDA servers with fake
+      people.
+  - maptweak: VR new bar room added.
+  - bugfix: lighting runtimes
+  - maptweak: valley grass sprites are shifted to other sif turf sprites.
+  - qol: Shadekin Phase In/Out animation now adjusts to the shadekin's size
+  - bugfix: Thrown objects not passing though phased kins
+  - bugfix: Fixed empty hand interactions not working on non-rideable humanmobs with
+      forced buckling.
+  - bugfix: Adjustments to item staining with 'bloody' hands.
