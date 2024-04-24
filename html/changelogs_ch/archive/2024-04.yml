@@ -238,3 +238,10 @@
   - bugfix: Fixed empty hand interactions not working on non-rideable humanmobs with
       forced buckling.
   - bugfix: Adjustments to item staining with 'bloody' hands.
+2024-04-24:
+  VoRe-bot:
+  - qol: Adjusted VR avatar loadouts
+  - maptweak: The VR stripmall has more decor.
+  - rscadd: VR now uses the new sunlight system
+  - bugfix: various optimizations and fixes for sunlight
+  - rscadd: Instrument case holster, only for instruments

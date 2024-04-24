@@ -1,5 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - rscadd: "VR now uses the new sunlight system"
-  - bugfix: "various optimizations and fixes for sunlight"
