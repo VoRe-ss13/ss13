@@ -523,6 +523,28 @@
 	},
 /turf/simulated/floor/greengrid,
 /area/ai)
+"ash" = (
+/obj/machinery/power/solar{
+	id = "foreportsolar";
+	name = "Fore-Port Solar Array"
+	},
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating/turfpack/airless{
+	icon_state = "solarpanel"
+	},
+/area/solar/foreportsolar)
+"asp" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/machinery/light{
+	layer = 3
+	},
+/turf/simulated/open,
+/area/maintenance/thirddeck/aftport)
 "asO" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -544,6 +566,18 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/vistor_room_5)
+"atF" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/foreport)
 "atT" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/wingrille_spawn/reinforced/polarized{
@@ -801,6 +835,25 @@
 	},
 /turf/simulated/floor/plating/turfpack/airless,
 /area/maintenance/thirddeck/forestarboard)
+"aET" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/obj/structure/disposalpipe/sortjunction/flipped{
+	dir = 1;
+	name = "Dorms";
+	sortType = "Dorms"
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/thirddeck/aftdoorm)
 "aEV" = (
 /obj/random/soap,
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -1259,6 +1312,20 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
+"bag" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 10
+	},
+/obj/machinery/alarm{
+	pixel_y = 25
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftport)
 "bao" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -1327,6 +1394,12 @@
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/thirddeck/hiddenkitchen)
+"bfY" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftport)
 "bga" = (
 /obj/structure/table/bench/wooden,
 /obj/item/device/radio/intercom{
@@ -1415,19 +1488,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/solars/foreportsolar)
-"bjg" = (
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/power/solar{
-	id = "aftportsolar";
-	name = "Port Solar Array"
-	},
-/turf/simulated/floor/plating/turfpack/airless{
-	icon_state = "solarpanel"
-	},
-/area/solar/aftportsolar)
 "bjz" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -1681,6 +1741,12 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/dormsatmos)
+"bwR" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "bwZ" = (
 /obj/machinery/camera/network/engineering{
 	c_tag = "ENG - Solar Fore Starboard"
@@ -2046,6 +2112,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/solars/foreportsolar)
+"bJa" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/maintenance/thirddeck/dormsstarboard)
 "bJj" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
@@ -2313,6 +2388,21 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/techfloor,
 /area/ai)
+"bVj" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -25
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "bVQ" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -2431,6 +2521,30 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/simulated/floor/tiled,
 /area/maintenance/thirddeck/dormsstarboard/maintbar)
+"cbx" = (
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/solar{
+	id = "forestarboardsolar";
+	name = "Fore-Starboard Solar Array"
+	},
+/turf/simulated/floor/plating/turfpack/airless{
+	icon_state = "solarpanel"
+	},
+/area/solar/forestarboardsolar)
+"cbJ" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/maintenance{
+	req_access = null;
+	req_one_access = null
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "ccv" = (
 /obj/machinery/telecomms/broadcaster,
 /turf/simulated/floor/plating,
@@ -2482,6 +2596,14 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/plating,
 /area/maintenance/solars/forestarboardsolar)
+"ceO" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/turfpack/airless,
+/area/solar/forestarboardsolar)
 "cfh" = (
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled/white,
@@ -2589,6 +2711,18 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/research/particleaccelerator)
+"cgo" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 26;
+	pixel_y = 0
+	},
+/turf/simulated/open,
+/area/maintenance/thirddeck/forestarboard)
 "cgt" = (
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 4
@@ -2824,6 +2958,9 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/solars/foreportsolar)
+"cqi" = (
+/turf/simulated/floor/plating/turfpack/airless,
+/area/solar/aftportsolar)
 "cqo" = (
 /obj/structure/railing{
 	dir = 8
@@ -2999,14 +3136,6 @@
 /area/maintenance/thirddeck/dormsaft{
 	name = "Third Deck Aft Maintenance"
 	})
-"cyo" = (
-/obj/structure/disposalpipe/sortjunction/flipped{
-	dir = 1;
-	name = "Dorms";
-	sortType = "CMO Office"
-	},
-/turf/simulated/wall/r_wall,
-/area/hallway/primary/thirddeck/central)
 "cyx" = (
 /obj/structure/table/darkglass,
 /obj/item/weapon/storage/toolbox/electrical,
@@ -3084,19 +3213,6 @@
 	},
 /turf/simulated/wall,
 /area/crew_quarters/toilet)
-"cDq" = (
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/power/solar{
-	id = "forestarboardsolar";
-	name = "Starboard Solar Array"
-	},
-/turf/simulated/floor/plating/turfpack/airless{
-	icon_state = "solarpanel"
-	},
-/area/solar/forestarboardsolar)
 "cEp" = (
 /obj/machinery/alarm{
 	pixel_y = 25
@@ -3421,6 +3537,19 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/foreport)
+"cPB" = (
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/solar{
+	id = "aftstarboardsolar";
+	name = "Aft-Starboard Solar Array"
+	},
+/turf/simulated/floor/plating/turfpack/airless{
+	icon_state = "solarpanel"
+	},
+/area/solar/aftstarboardsolar)
 "cPJ" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/disposalpipe/segment,
@@ -3477,6 +3606,20 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/maintenance/thirddeck/hiddenkitchen)
+"cSi" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/foreport)
 "cSJ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
@@ -3525,6 +3668,16 @@
 	},
 /turf/simulated/open,
 /area/maintenance/thirddeck/forestarboard)
+"cUH" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "medbayquar";
+	name = "Medbay Emergency Lockdown Shutters";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/dormsstarboard)
 "cVl" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
@@ -3667,6 +3820,14 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/thirddeck/vrroom)
+"dcu" = (
+/obj/structure/table/steel,
+/obj/random/maintenance/clean,
+/obj/machinery/alarm{
+	pixel_y = 25
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/dormsstarboard)
 "dcT" = (
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -4255,6 +4416,14 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ai/ai_upload_foyer)
+"dCo" = (
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 26;
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "dCB" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
@@ -4536,6 +4705,13 @@
 /area/maintenance/thirddeck/dormsaft{
 	name = "Third Deck Aft Maintenance"
 	})
+"dKM" = (
+/obj/random/trash,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftport)
 "dMf" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8
@@ -5188,6 +5364,16 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/ai/ai_cyborg_station)
+"ebM" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/machinery/alarm{
+	pixel_y = 25
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/dormsstarboard)
 "ecc" = (
 /obj/item/weapon/stool/baystool/padded,
 /turf/simulated/floor/wood/alt/panel,
@@ -5286,6 +5472,20 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/dormsstarboard)
+"ehc" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 6
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 10
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "ehd" = (
 /obj/random/junk,
 /turf/simulated/floor/carpet/oracarpet,
@@ -5784,6 +5984,13 @@
 	},
 /turf/simulated/floor,
 /area/maintenance/substation/command)
+"evS" = (
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
+/turf/simulated/floor/tiled/white,
+/area/maintenance/thirddeck/aftport)
 "evV" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -5793,13 +6000,6 @@
 	},
 /turf/simulated/floor/plating/turfpack/airless,
 /area/maintenance/thirddeck/foreport)
-"evX" = (
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/simulated/open,
-/area/maintenance/thirddeck/forestarboard)
 "ewn" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	frequency = 1379;
@@ -6100,13 +6300,6 @@
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/heads/sc/hor/quarters)
-"eHn" = (
-/obj/effect/floor_decal/industrial/warning/corner,
-/obj/effect/floor_decal/industrial/warning/corner{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/dormsstarboard)
 "eHp" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/mask/gas,
@@ -6117,25 +6310,6 @@
 /obj/random/maintenance/research,
 /obj/random/maintenance/cargo,
 /obj/random/maintenance/cargo,
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/forestarboard)
-"eHC" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
 "eHT" = (
@@ -6506,30 +6680,17 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/dorms)
-"eTA" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/maintenance{
-	req_access = null;
-	req_one_access = null
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/forestarboard)
 "eTG" = (
 /turf/simulated/wall/r_wall,
 /area/hallway/primary/thirddeck/port)
+<<<<<<< HEAD
 "eTW" = (
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/white,
 /turf/space,
 /area/solar/aftstarboardsolar)
+=======
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 "eTX" = (
 /obj/structure/loot_pile/maint/junk,
 /turf/simulated/floor/plating,
@@ -6902,23 +7063,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/starboard)
-"ffT" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 4
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 9
-	},
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled,
-/area/hallway/primary/thirddeck/starboard)
 "fgf" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -6957,19 +7101,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/turfpack/airless,
 /area/solar/forestarboardsolar)
-"fhg" = (
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/solar{
-	id = "aftstarboardsolar";
-	name = "Starboard Solar Array"
-	},
-/turf/simulated/floor/plating/turfpack/airless{
-	icon_state = "solarpanel"
-	},
-/area/solar/aftstarboardsolar)
 "fhn" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -7471,15 +7602,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/starboard)
-"fyI" = (
-/obj/machinery/power/solar{
-	id = "foreportsolar";
-	name = "Port Solar Array"
-	},
-/turf/simulated/floor/plating/turfpack/airless{
-	icon_state = "solarpanel"
-	},
-/area/solar/foreportsolar)
 "fzr" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
@@ -7719,11 +7841,14 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftport)
+<<<<<<< HEAD
 "fFF" = (
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/white,
 /turf/space,
 /area/solar/foreportsolar)
+=======
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 "fGa" = (
 /turf/simulated/wall,
 /area/hallway/primary/thirddeck/aftportcentral)
@@ -7766,19 +7891,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/vistor_room_11)
-"fHn" = (
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/machinery/power/solar{
-	id = "aftportsolar";
-	name = "Port Solar Array"
-	},
-/turf/simulated/floor/plating/turfpack/airless{
-	icon_state = "solarpanel"
-	},
-/area/solar/aftportsolar)
 "fHI" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -7835,6 +7947,14 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/vistor_room_2)
+"fLa" = (
+/obj/structure/catwalk,
+/obj/structure/lattice,
+/obj/machinery/alarm{
+	pixel_y = 25
+	},
+/turf/simulated/open,
+/area/maintenance/thirddeck/aftport)
 "fLj" = (
 /obj/machinery/light{
 	dir = 1
@@ -8444,41 +8564,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/starboard)
-"gdl" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/tiled,
-/area/hallway/primary/thirddeck/starboard)
-"gdr" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 4
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 9
-	},
-/obj/structure/disposalpipe/sortjunction/flipped{
-	dir = 1;
-	name = "Dorms";
-	sortType = "CMO Office"
-	},
-/turf/simulated/floor/tiled,
-/area/hallway/primary/thirddeck/aftdoorm)
 "gdG" = (
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled,
@@ -8535,19 +8620,20 @@
 /obj/structure/grille/broken,
 /turf/space,
 /area/space)
-"ggF" = (
-/obj/structure/cable/yellow{
+"ggB" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
 	d2 = 8;
-	icon_state = "0-8"
+	icon_state = "4-8"
 	},
-/obj/machinery/power/solar{
-	id = "forestarboardsolar";
-	name = "Starboard Solar Array"
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
 	},
-/turf/simulated/floor/plating/turfpack/airless{
-	icon_state = "solarpanel"
-	},
-/area/solar/forestarboardsolar)
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "ggO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
@@ -8564,11 +8650,14 @@
 /obj/random/maintenance/clean,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
+<<<<<<< HEAD
 "ghY" = (
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/white,
 /turf/space,
 /area/solar/aftportsolar)
+=======
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 "gig" = (
 /obj/machinery/camera/network/third_deck{
 	c_tag = "Third Deck - Aft Civ Dorms 5";
@@ -8905,9 +8994,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aftdoorm)
+<<<<<<< HEAD
 "gwG" = (
 /turf/space,
 /area/thirddeck/roof)
+=======
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 "gwJ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9094,19 +9186,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/starboard)
-"gGw" = (
-/obj/structure/cable/yellow{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/machinery/power/solar{
-	id = "aftstarboardsolar";
-	name = "Starboard Solar Array"
-	},
-/turf/simulated/floor/plating/turfpack/airless{
-	icon_state = "solarpanel"
-	},
-/area/solar/aftstarboardsolar)
 "gGW" = (
 /obj/random/trash,
 /obj/random/junk,
@@ -9317,6 +9396,10 @@
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/sc/chief/quarters)
+"gQO" = (
+/obj/structure/lattice,
+/turf/space,
+/area)
 "gRp" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10162,6 +10245,20 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/starboard)
+"hDn" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "hDw" = (
 /obj/machinery/door/airlock/glass_external{
 	frequency = 1380;
@@ -10541,6 +10638,22 @@
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/heads/sc/hos/quarters)
+"hXs" = (
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "hYd" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -11435,6 +11548,19 @@
 /obj/random/action_figure,
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/vistor_room_8)
+"iLL" = (
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/solar{
+	id = "aftstarboardsolar";
+	name = "Aft-Starboard Solar Array"
+	},
+/turf/simulated/floor/plating/turfpack/airless{
+	icon_state = "solarpanel"
+	},
+/area/solar/aftstarboardsolar)
 "iMd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -11846,6 +11972,14 @@
 /area/maintenance/thirddeck/dormsaft{
 	name = "Third Deck Aft Maintenance"
 	})
+"jgY" = (
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 26;
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/dormsstarboard)
 "jhb" = (
 /obj/structure/disposalpipe/junction{
 	dir = 1;
@@ -12165,6 +12299,19 @@
 "jvv" = (
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/vistor_room_6)
+"jvH" = (
+/obj/machinery/power/solar{
+	id = "foreportsolar";
+	name = "Fore-Port Solar Array"
+	},
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating/turfpack/airless{
+	icon_state = "solarpanel"
+	},
+/area/solar/foreportsolar)
 "jvU" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -12243,15 +12390,6 @@
 	},
 /turf/simulated/floor/carpet,
 /area/bridge/meeting_room)
-"jBk" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/turfpack/airless,
-/area/solar/aftstarboardsolar)
 "jBq" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/simulated/floor/plating,
@@ -12625,6 +12763,24 @@
 	},
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
+"jOu" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "jOy" = (
 /obj/random/junk,
 /obj/random/trash,
@@ -12725,23 +12881,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aftportcentral)
-"jQV" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/warning{
-	dir = 5
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/structure/disposalpipe/sortjunction/flipped{
-	dir = 1;
-	name = "Bridge Conference room";
-	sortType = "CMO Office"
-	},
-/turf/simulated/floor/tiled,
-/area/bridge)
 "jRX" = (
 /obj/structure/railing{
 	dir = 4
@@ -13406,12 +13545,15 @@
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/dormsatmos)
+<<<<<<< HEAD
 "kzt" = (
 /obj/structure/railing{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
+=======
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 "kAi" = (
 /obj/structure/reagent_dispensers/cookingoil,
 /turf/simulated/floor/tiled/freezer,
@@ -13999,6 +14141,18 @@
 /area/maintenance/thirddeck/dormsport{
 	name = "Third Deck Aft Port Maintenance"
 	})
+"lbb" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/foreport)
 "lby" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
@@ -14398,6 +14552,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/bridge)
+"lzC" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "crglockdown";
+	name = "Cargo Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftport)
 "lzK" = (
 /obj/structure/sign/deck/third,
 /turf/simulated/wall,
@@ -14447,6 +14611,23 @@
 /area/maintenance/thirddeck/dormsport{
 	name = "Third Deck Aft Port Maintenance"
 	})
+"lAV" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 5
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/structure/disposalpipe/sortjunction/flipped{
+	dir = 1;
+	name = "Bridge Conference room";
+	sortType = "Bridge Conference room"
+	},
+/turf/simulated/floor/tiled,
+/area/bridge)
 "lBH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -15102,6 +15283,12 @@
 "lZq" = (
 /turf/simulated/floor/tiled,
 /area/maintenance/thirddeck/dormsstarboard)
+"lZt" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/open,
+/area/maintenance/thirddeck/foreport)
 "lZW" = (
 /obj/item/stack/material/marble{
 	amount = 25
@@ -16021,6 +16208,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/rnd/research/particleaccelerator)
+"mLj" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "mLT" = (
 /obj/item/toy/sif{
 	pixel_y = 10
@@ -16699,6 +16899,12 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
+"nnB" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftport)
 "npi" = (
 /obj/structure/table/wooden_reinforced,
 /obj/item/weapon/form_printer{
@@ -18237,6 +18443,19 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftport)
+"onK" = (
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/solar{
+	id = "aftportsolar";
+	name = "Aft-Port Solar Array"
+	},
+/turf/simulated/floor/plating/turfpack/airless{
+	icon_state = "solarpanel"
+	},
+/area/solar/aftportsolar)
 "onQ" = (
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 4;
@@ -20080,6 +20299,14 @@
 	},
 /turf/simulated/wall,
 /area/crew_quarters/sleep/vistor_room_7)
+"pMc" = (
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 26;
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftport)
 "pMo" = (
 /turf/simulated/floor/carpet/sblucarpet,
 /area/crew_quarters/sleep/vistor_room_8)
@@ -20403,6 +20630,13 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/thirddeck/vrroom)
+"qfb" = (
+/obj/structure/railing,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/open,
+/area/maintenance/thirddeck/aftport)
 "qff" = (
 /obj/machinery/computer/arcade,
 /obj/machinery/camera/network/third_deck{
@@ -20689,6 +20923,12 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aftportcentral)
+"qnQ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/thirddeck/starboard)
 "qnV" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/pants/yogapants,
@@ -20917,6 +21157,10 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/dormsstarboard)
+"qwC" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/dormsstarboard)
 "qwD" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -20991,6 +21235,9 @@
 /obj/random/maintenance/clean,
 /turf/simulated/open,
 /area/maintenance/thirddeck/forestarboard)
+"qyQ" = (
+/turf/simulated/floor/plating/turfpack/airless,
+/area/solar/aftstarboardsolar)
 "qzn" = (
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/disposal/wall{
@@ -21167,6 +21414,20 @@
 /obj/item/weapon/reagent_containers/glass/rag,
 /turf/simulated/floor/wood,
 /area/crew_quarters/cafeteria)
+"qFF" = (
+/obj/machinery/door/airlock/maintenance{
+	req_access = null;
+	req_one_access = null
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "qGE" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/wingrille_spawn/reinforced/polarized{
@@ -21748,6 +22009,22 @@
 "rdY" = (
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftport)
+"reB" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftport)
 "reM" = (
 /obj/structure/window/reinforced{
 	dir = 1;
@@ -21911,6 +22188,19 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/maintenance/thirddeck/foreport)
+"rlI" = (
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/solar{
+	id = "forestarboardsolar";
+	name = "Fore-Starboard Solar Array"
+	},
+/turf/simulated/floor/plating/turfpack/airless{
+	icon_state = "solarpanel"
+	},
+/area/solar/forestarboardsolar)
 "rmf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -22957,6 +23247,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/seconddeck/gym)
+"seu" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/dormsstarboard)
 "sev" = (
 /obj/item/device/radio/intercom{
 	dir = 1;
@@ -23024,6 +23320,20 @@
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/seconddeck/gym)
+"shc" = (
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 26;
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "shz" = (
 /obj/structure/railing,
 /turf/simulated/open,
@@ -23251,6 +23561,32 @@
 	},
 /turf/simulated/open,
 /area/rnd/research/particleaccelerator)
+"snx" = (
+/obj/structure/closet/crate,
+/obj/random/maintenance/clean,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 26;
+	pixel_y = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/dormsstarboard)
+"soF" = (
+/obj/machinery/door/airlock/maintenance{
+	req_access = null;
+	req_one_access = null
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/dormsstarboard)
 "soZ" = (
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/corner/brown/bordercorner,
@@ -23360,6 +23696,14 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood,
 /area/crew_quarters/cafeteria)
+"stB" = (
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/turfpack/airless,
+/area/solar/aftstarboardsolar)
 "sud" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
@@ -24279,6 +24623,17 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/vistor_room_11)
+"tfC" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/thirddeck/starboard)
 "tfQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 6
@@ -24611,6 +24966,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aftdoorm)
+"tos" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "Biohazard";
+	name = "Biohazard Shutter";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "toW" = (
 /obj/random/trash,
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -25444,6 +25809,16 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/medical/first_aid_station/thirddeck)
+"tZn" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#DDFFD3"
+	},
+/turf/simulated/open,
+/area/maintenance/thirddeck/dormsstarboard)
 "tZq" = (
 /obj/structure/curtain/open/shower,
 /obj/machinery/shower{
@@ -25997,19 +26372,6 @@
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/thirddeck/aft)
-"uzY" = (
-/obj/machinery/door/airlock/maintenance{
-	req_access = null;
-	req_one_access = null
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/dormsstarboard)
 "uAl" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -27132,6 +27494,9 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aftdoorm)
+"voo" = (
+/turf/simulated/floor/plating/turfpack/airless,
+/area/solar/foreportsolar)
 "voq" = (
 /obj/structure/table/standard,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -27595,6 +27960,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/primary/thirddeck/aftdoorm)
+"vCh" = (
+/obj/random/trash,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftport)
 "vDk" = (
 /obj/structure/table/glass,
 /obj/item/device/radio/intercom{
@@ -28162,6 +28535,16 @@
 /obj/machinery/door/firedoor/multi_tile/glass,
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/primary/thirddeck/aftdoorm)
+"vUp" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "englockdown";
+	name = "Engineering Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftport)
 "vUr" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -28344,6 +28727,18 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/vistor_room_1)
+"wbR" = (
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/thirddeck/starboard)
 "wbX" = (
 /obj/machinery/button/remote/airlock{
 	id = "Dorms1";
@@ -29323,6 +29718,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/dormsstarboard/maintbar)
+"wLu" = (
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftstarboard)
 "wLz" = (
 /obj/machinery/power/tracker,
 /obj/structure/cable/yellow{
@@ -29987,6 +30392,20 @@
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/vistor_room_10)
+"xho" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "englockdown";
+	name = "Engineering Lockdown";
+	opacity = 0
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -25
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/foreport)
 "xht" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -30258,6 +30677,16 @@
 /area/maintenance/thirddeck/dormsaft{
 	name = "Third Deck Aft Maintenance"
 	})
+"xrI" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "englockdown";
+	name = "Engineering Lockdown";
+	opacity = 0
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/foreport)
 "xrZ" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -30401,6 +30830,19 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/sleep/vistor_room_5)
+"xwL" = (
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/solar{
+	id = "aftportsolar";
+	name = "Aft-Port Solar Array"
+	},
+/turf/simulated/floor/plating/turfpack/airless{
+	icon_state = "solarpanel"
+	},
+/area/solar/aftportsolar)
 "xwQ" = (
 /obj/structure/toilet,
 /turf/simulated/floor/tiled/freezer,
@@ -30415,6 +30857,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/dormsatmos)
+"xxA" = (
+/obj/machinery/light{
+	dir = 8;
+	layer = 3
+	},
+/turf/simulated/open,
+/area/maintenance/thirddeck/foreport)
 "xxD" = (
 /turf/simulated/wall,
 /area/crew_quarters/sleep/vistor_room_5)
@@ -30642,6 +31091,13 @@
 /obj/structure/salvageable/console,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/dormsstarboard)
+"xGe" = (
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftport)
 "xGf" = (
 /turf/simulated/wall/r_wall,
 /area/crew_quarters/sleep/vistor_room_11)
@@ -31060,15 +31516,6 @@
 /obj/machinery/optable,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/dormsstarboard)
-"xRB" = (
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/aftstarboard)
 "xRV" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/manifold/hidden,
@@ -31262,19 +31709,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/forestarboard)
-"xWh" = (
-/obj/machinery/door/airlock/maintenance{
-	req_access = null;
-	req_one_access = null
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/plating,
-/area/maintenance/thirddeck/forestarboard)
 "xWm" = (
 /obj/random/soap,
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -31336,10 +31770,13 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/sleep/vistor_room_7)
+<<<<<<< HEAD
 "xYl" = (
 /obj/structure/cable/yellow,
 /turf/simulated/floor/plating/turfpack/airless,
 /area/space)
+=======
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 "xZl" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -31781,6 +32218,12 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/thirddeck/aftdoorm)
+"ylN" = (
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
+/turf/simulated/floor/tiled/white,
+/area/maintenance/thirddeck/aftport)
 "ylX" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
@@ -39399,19 +39842,19 @@ apc
 aqj
 apc
 apc
-bjg
-bjg
-bjg
-bjg
-bjg
-ghY
+xwL
+xwL
+xwL
+xwL
+xwL
+cqi
 xbg
-ghY
-bjg
-bjg
-bjg
-bjg
-bjg
+cqi
+xwL
+xwL
+xwL
+xwL
+xwL
 apc
 apc
 aqj
@@ -39915,19 +40358,19 @@ apc
 aqj
 apc
 apc
-fHn
-fHn
-fHn
-fHn
-fHn
-ghY
+onK
+onK
+onK
+onK
+onK
+cqi
 xbg
-ghY
-fHn
-fHn
-fHn
-fHn
-fHn
+cqi
+onK
+onK
+onK
+onK
+onK
 apc
 apc
 aqj
@@ -40173,19 +40616,19 @@ apc
 aqj
 apc
 apc
-ghY
-ghY
-ghY
-ghY
-ghY
-ghY
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 xbg
-ghY
-ghY
-ghY
-ghY
-ghY
-ghY
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 apc
 apc
 aqj
@@ -40397,6 +40840,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -40410,6 +40854,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+ash
+ash
+ash
+ash
+ash
+voo
+flb
+voo
+ash
+ash
+ash
+ash
+ash
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 aqj
@@ -40431,19 +40890,19 @@ apc
 aqj
 apc
 apc
-bjg
-bjg
-bjg
-bjg
-bjg
-ghY
+xwL
+xwL
+xwL
+xwL
+xwL
+cqi
 xbg
-ghY
-bjg
-bjg
-bjg
-bjg
-bjg
+cqi
+xwL
+xwL
+xwL
+xwL
+xwL
 apc
 apc
 aqj
@@ -40913,6 +41372,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -40926,6 +41386,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+jvH
+jvH
+jvH
+jvH
+jvH
+voo
+flb
+voo
+jvH
+jvH
+jvH
+jvH
+jvH
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 aqj
@@ -40947,19 +41422,19 @@ apc
 aqj
 apc
 apc
-fHn
-fHn
-fHn
-fHn
-fHn
-ghY
+onK
+onK
+onK
+onK
+onK
+cqi
 xbg
-ghY
-fHn
-fHn
-fHn
-fHn
-fHn
+cqi
+onK
+onK
+onK
+onK
+onK
 apc
 apc
 aqj
@@ -41171,19 +41646,19 @@ apc
 apc
 apc
 apc
-fFF
-fFF
-fFF
-fFF
-fFF
-fFF
+voo
+voo
+voo
+voo
+voo
+voo
 flb
-fFF
-fFF
-fFF
-fFF
-fFF
-fFF
+voo
+voo
+voo
+voo
+voo
+voo
 aqj
 aqj
 aqj
@@ -41205,19 +41680,19 @@ apc
 aqj
 apc
 apc
-ghY
-ghY
-ghY
-ghY
-ghY
-ghY
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 xbg
-ghY
-ghY
-ghY
-ghY
-ghY
-ghY
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 apc
 apc
 aqj
@@ -41429,6 +41904,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -41442,6 +41918,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+ash
+ash
+ash
+ash
+ash
+voo
+flb
+voo
+ash
+ash
+ash
+ash
+ash
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 aqj
@@ -41463,19 +41954,19 @@ apc
 aqj
 apc
 apc
-bjg
-bjg
-bjg
-bjg
-bjg
-ghY
+xwL
+xwL
+xwL
+xwL
+xwL
+cqi
 xbg
-ghY
-bjg
-bjg
-bjg
-bjg
-bjg
+cqi
+xwL
+xwL
+xwL
+xwL
+xwL
 apc
 apc
 aqj
@@ -41945,6 +42436,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -41958,6 +42450,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+jvH
+jvH
+jvH
+jvH
+jvH
+voo
+flb
+voo
+jvH
+jvH
+jvH
+jvH
+jvH
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 aqj
@@ -41979,19 +42486,19 @@ apc
 apc
 apc
 apc
-fHn
-fHn
-fHn
-fHn
-fHn
-ghY
+onK
+onK
+onK
+onK
+onK
+cqi
 xbg
-ghY
-fHn
-fHn
-fHn
-fHn
-fHn
+cqi
+onK
+onK
+onK
+onK
+onK
 apc
 apc
 apc
@@ -42203,19 +42710,19 @@ apc
 apc
 apc
 apc
-fFF
-fFF
-fFF
-fFF
-fFF
-fFF
+voo
+voo
+voo
+voo
+voo
+voo
 flb
-fFF
-fFF
-fFF
-fFF
-fFF
-fFF
+voo
+voo
+voo
+voo
+voo
+voo
 aqj
 aqj
 aqj
@@ -42237,19 +42744,19 @@ apc
 aqj
 apc
 apc
-ghY
-ghY
-ghY
-ghY
-ghY
-ghY
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 xbg
-ghY
-ghY
-ghY
-ghY
-ghY
-ghY
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 apc
 apc
 aqj
@@ -42461,6 +42968,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -42474,6 +42982,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+ash
+ash
+ash
+ash
+ash
+voo
+flb
+voo
+ash
+ash
+ash
+ash
+ash
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 aqj
@@ -42495,19 +43018,19 @@ apc
 aqj
 apc
 apc
-bjg
-bjg
-bjg
-bjg
-bjg
-ghY
+xwL
+xwL
+xwL
+xwL
+xwL
+cqi
 xbg
-ghY
-bjg
-bjg
-bjg
-bjg
-bjg
+cqi
+xwL
+xwL
+xwL
+xwL
+xwL
 apc
 apc
 aqj
@@ -42977,6 +43500,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -42990,6 +43514,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+jvH
+jvH
+jvH
+jvH
+jvH
+voo
+flb
+voo
+jvH
+jvH
+jvH
+jvH
+jvH
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 aqj
@@ -43011,19 +43550,19 @@ apc
 aqj
 apc
 apc
-fHn
-fHn
-fHn
-fHn
-fHn
-ghY
+onK
+onK
+onK
+onK
+onK
+cqi
 xbg
-ghY
-fHn
-fHn
-fHn
-fHn
-fHn
+cqi
+onK
+onK
+onK
+onK
+onK
 apc
 apc
 aqj
@@ -43235,19 +43774,19 @@ apc
 apc
 apc
 apc
-fFF
-fFF
-fFF
-fFF
-fFF
-fFF
+voo
+voo
+voo
+voo
+voo
+voo
 flb
-fFF
-fFF
-fFF
-fFF
-fFF
-fFF
+voo
+voo
+voo
+voo
+voo
+voo
 apc
 apc
 apc
@@ -43269,19 +43808,19 @@ apc
 aqj
 apc
 apc
-ghY
-ghY
-ghY
-ghY
-ghY
-ghY
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 xbg
-ghY
-ghY
-ghY
-ghY
-ghY
-ghY
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 apc
 apc
 aqj
@@ -43493,6 +44032,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -43506,6 +44046,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+ash
+ash
+ash
+ash
+ash
+voo
+flb
+voo
+ash
+ash
+ash
+ash
+ash
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 apc
@@ -43527,19 +44082,19 @@ apc
 aqj
 apc
 apc
-bjg
-bjg
-bjg
-bjg
-bjg
-ghY
+xwL
+xwL
+xwL
+xwL
+xwL
+cqi
 xbg
-ghY
-bjg
-bjg
-bjg
-bjg
-bjg
+cqi
+xwL
+xwL
+xwL
+xwL
+xwL
 apc
 apc
 aqj
@@ -44009,6 +44564,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -44022,6 +44578,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+jvH
+jvH
+jvH
+jvH
+jvH
+voo
+flb
+voo
+jvH
+jvH
+jvH
+jvH
+jvH
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 aqj
@@ -44043,19 +44614,19 @@ apc
 aqj
 apc
 apc
-fHn
-fHn
-fHn
-fHn
-fHn
-ghY
+onK
+onK
+onK
+onK
+onK
+cqi
 xbg
-ghY
-fHn
-fHn
-fHn
-fHn
-fHn
+cqi
+onK
+onK
+onK
+onK
+onK
 apc
 apc
 aqj
@@ -44267,19 +44838,19 @@ apc
 apc
 apc
 apc
-fFF
-fFF
-fFF
-fFF
-fFF
-fFF
+voo
+voo
+voo
+voo
+voo
+voo
 flb
-fFF
-fFF
-fFF
-fFF
-fFF
-fFF
+voo
+voo
+voo
+voo
+voo
+voo
 apc
 apc
 aqj
@@ -44301,19 +44872,19 @@ apc
 aqj
 apc
 apc
-ghY
-ghY
-ghY
-ghY
-ghY
-ghY
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 xbg
-ghY
-ghY
-ghY
-ghY
-ghY
-ghY
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 apc
 apc
 aqj
@@ -44525,6 +45096,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -44538,6 +45110,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+ash
+ash
+ash
+ash
+ash
+voo
+flb
+voo
+ash
+ash
+ash
+ash
+ash
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 aqj
 aqj
 aqj
@@ -44559,19 +45146,19 @@ epg
 apc
 apc
 apc
-bjg
-bjg
-bjg
-bjg
-bjg
-ghY
+xwL
+xwL
+xwL
+xwL
+xwL
+cqi
 xbg
-ghY
-bjg
-bjg
-bjg
-bjg
-bjg
+cqi
+xwL
+xwL
+xwL
+xwL
+xwL
 apc
 apc
 apc
@@ -45041,6 +45628,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -45054,6 +45642,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+jvH
+jvH
+jvH
+jvH
+jvH
+voo
+flb
+voo
+jvH
+jvH
+jvH
+jvH
+jvH
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 apc
@@ -45075,19 +45678,19 @@ apc
 aqj
 apc
 apc
-fHn
-fHn
-fHn
-fHn
-fHn
-ghY
+onK
+onK
+onK
+onK
+onK
+cqi
 xbg
-ghY
-fHn
-fHn
-fHn
-fHn
-fHn
+cqi
+onK
+onK
+onK
+onK
+onK
 apc
 apc
 aqj
@@ -45299,19 +45902,19 @@ apc
 apc
 apc
 apc
-fFF
-fFF
-fFF
-fFF
-fFF
-fFF
+voo
+voo
+voo
+voo
+voo
+voo
 flb
-fFF
-fFF
-fFF
-fFF
-fFF
-fFF
+voo
+voo
+voo
+voo
+voo
+voo
 apc
 apc
 apc
@@ -45333,19 +45936,19 @@ apc
 aqj
 apc
 apc
-ghY
-ghY
-ghY
-ghY
-ghY
-ghY
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 xbg
-ghY
-ghY
-ghY
-ghY
-ghY
-ghY
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 apc
 apc
 aqj
@@ -45557,6 +46160,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -45570,6 +46174,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+ash
+ash
+ash
+ash
+ash
+voo
+flb
+voo
+ash
+ash
+ash
+ash
+ash
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 apc
@@ -45591,19 +46210,19 @@ apc
 aqj
 apc
 apc
-bjg
-bjg
-bjg
-bjg
-bjg
-ghY
+xwL
+xwL
+xwL
+xwL
+xwL
+cqi
 xbg
-ghY
-bjg
-bjg
-bjg
-bjg
-bjg
+cqi
+xwL
+xwL
+xwL
+xwL
+xwL
 apc
 apc
 aqj
@@ -46073,6 +46692,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -46086,6 +46706,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+jvH
+jvH
+jvH
+jvH
+jvH
+voo
+flb
+voo
+jvH
+jvH
+jvH
+jvH
+jvH
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 dgt
 dgt
 dgt
@@ -46107,19 +46742,19 @@ dgt
 dgt
 dgt
 dgt
-fHn
-fHn
-fHn
-fHn
-fHn
-ghY
+onK
+onK
+onK
+onK
+onK
+cqi
 xbg
-ghY
-fHn
-fHn
-fHn
-fHn
-fHn
+cqi
+onK
+onK
+onK
+onK
+onK
 apc
 apc
 aqj
@@ -46331,19 +46966,19 @@ apc
 apc
 apc
 apc
-fFF
-fFF
-fFF
-fFF
-fFF
-fFF
+voo
+voo
+voo
+voo
+voo
+voo
 flb
-fFF
-fFF
-fFF
-fFF
-fFF
-fFF
+voo
+voo
+voo
+voo
+voo
+voo
 dgt
 dgt
 dgt
@@ -46589,6 +47224,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
@@ -46602,6 +47238,21 @@ fyI
 fyI
 fyI
 fyI
+=======
+ash
+ash
+ash
+ash
+ash
+voo
+flb
+voo
+ash
+ash
+ash
+ash
+ash
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 dgt
 dgt
 dgt
@@ -47105,19 +47756,28 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 fyI
 fyI
 fyI
 fyI
 fyI
 fFF
+=======
+jvH
+jvH
+jvH
+jvH
+jvH
+apc
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 flb
-fFF
-fyI
-fyI
-fyI
-fyI
-fyI
+voo
+jvH
+jvH
+jvH
+jvH
+jvH
 dgt
 dgt
 dgt
@@ -49943,7 +50603,7 @@ dgt
 dgt
 dgt
 dgt
-aqj
+gQO
 aqj
 lQR
 dgt
@@ -50227,7 +50887,7 @@ pkH
 pkH
 pkH
 pkH
-pkH
+tcw
 tcw
 tcw
 tcw
@@ -50485,7 +51145,7 @@ rdY
 rdY
 rdY
 rdY
-rdY
+pMc
 qTm
 rdY
 rdY
@@ -50743,7 +51403,7 @@ pkH
 pkH
 pkH
 pkH
-pkH
+tcw
 tcw
 rdY
 tcw
@@ -53332,12 +53992,12 @@ rdY
 wty
 lYz
 ieB
-wty
+ylN
 wty
 pkH
 cme
 rdY
-wty
+evS
 ieB
 jGq
 eXY
@@ -53583,7 +54243,11 @@ dgt
 dgt
 dgt
 tcw
+<<<<<<< HEAD
 rdY
+=======
+lzC
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 ieB
 tSF
 peN
@@ -54106,8 +54770,13 @@ fFB
 diJ
 diJ
 qTm
+<<<<<<< HEAD
 rdY
 rdY
+=======
+lzC
+nnB
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 dOb
 rdY
 rdY
@@ -54335,7 +55004,11 @@ dgt
 dgt
 dgt
 bdC
+<<<<<<< HEAD
 bDU
+=======
+atF
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 bdC
 iGW
 iGW
@@ -54358,14 +55031,19 @@ dgt
 dgt
 tcw
 tcw
-sbr
+fLa
 vVx
 efk
 vVx
 sbr
 ieB
+<<<<<<< HEAD
 eXY
 rdY
+=======
+dKM
+bfY
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 ieB
 wty
 wty
@@ -54593,14 +55271,19 @@ dgt
 dgt
 dgt
 bdC
+<<<<<<< HEAD
 bDU
 bkm
+=======
+lbb
+xho
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 iGW
 yfg
 yfg
 yfg
 yfg
-yfg
+xxA
 yfg
 yfg
 yfg
@@ -54851,8 +55534,13 @@ dgt
 dgt
 dgt
 bdC
+<<<<<<< HEAD
 bDU
 bkm
+=======
+lbb
+xrI
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 bdC
 afx
 afx
@@ -55109,8 +55797,13 @@ dgt
 dgt
 dgt
 bdC
+<<<<<<< HEAD
 bDU
 bkm
+=======
+lbb
+xrI
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 eAx
 ukE
 ukE
@@ -55122,8 +55815,13 @@ ukE
 ukE
 ukE
 eAx
+<<<<<<< HEAD
 rdY
 rdY
+=======
+vUp
+nnB
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 rdY
 pkH
 dgt
@@ -55367,8 +56065,13 @@ dgt
 dgt
 dgt
 bdC
+<<<<<<< HEAD
 bDU
 bkm
+=======
+lbb
+xrI
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 bdC
 ssq
 ssq
@@ -55625,14 +56328,19 @@ dgt
 dgt
 dgt
 bdC
+<<<<<<< HEAD
 bDU
 bkm
+=======
+lbb
+xrI
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 iGW
 cEp
 yfg
 yfg
 yfg
-yfg
+lZt
 yfg
 yfg
 yfg
@@ -55648,11 +56356,11 @@ dgt
 dgt
 dgt
 tcw
-uWp
+qfb
 vVx
 jVt
 vVx
-xym
+asp
 ieB
 dtC
 rdY
@@ -55661,7 +56369,7 @@ yhv
 rdY
 rdY
 eXY
-rdY
+xGe
 ieB
 jkX
 xes
@@ -55883,7 +56591,11 @@ dgt
 dgt
 dgt
 bdC
+<<<<<<< HEAD
 bDU
+=======
+cSi
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 bdC
 iGW
 iGW
@@ -56424,7 +57136,11 @@ dgt
 dgt
 dgt
 pkH
+<<<<<<< HEAD
 rdY
+=======
+lzC
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 pkH
 dgt
 dgt
@@ -56682,7 +57398,11 @@ dgt
 dgt
 dgt
 pkH
+<<<<<<< HEAD
 eXY
+=======
+dKM
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 pkH
 dgt
 dgt
@@ -56697,7 +57417,7 @@ dgt
 tcw
 rdY
 ndR
-eXY
+vCh
 tcw
 dgt
 apc
@@ -57725,7 +58445,7 @@ dgt
 pkH
 ndR
 ieB
-nNp
+bag
 lxl
 ieB
 xes
@@ -57981,7 +58701,7 @@ dgt
 dgt
 dgt
 pkH
-ndR
+reB
 ieB
 jkX
 nNp
@@ -63906,7 +64626,7 @@ ihC
 iJc
 jUh
 cPJ
-jQV
+lAV
 ktn
 cPJ
 lsm
@@ -64164,7 +64884,7 @@ iiZ
 iKs
 rhR
 fbp
-cyo
+fbp
 fbp
 kTs
 lsW
@@ -64970,7 +65690,7 @@ tzt
 tXE
 uyY
 uLr
-gdr
+aET
 uYr
 voq
 vIQ
@@ -70343,11 +71063,11 @@ dIt
 dUZ
 ejh
 esF
-eHC
-eTA
-ffT
-fDg
-gdl
+hDn
+cbJ
+wbR
+qnQ
+tfC
 gEK
 fDg
 fDg
@@ -71140,7 +71860,7 @@ kfL
 sEn
 kfL
 xzq
-xRB
+wLu
 jVD
 fCr
 jCH
@@ -71406,7 +72126,7 @@ psu
 pWK
 oGh
 qaU
-uzY
+soF
 qaU
 apc
 apc
@@ -71634,7 +72354,7 @@ dgt
 dgt
 cju
 toW
-bqJ
+qiO
 aIV
 dgt
 dgt
@@ -71891,8 +72611,13 @@ dgt
 dgt
 dgt
 cju
+<<<<<<< HEAD
 pRR
 bqJ
+=======
+ggB
+bwR
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 aIV
 dgt
 dgt
@@ -72149,8 +72874,13 @@ dgt
 dgt
 dgt
 cju
+<<<<<<< HEAD
 pRR
 bqJ
+=======
+jOu
+tos
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 aIV
 dgt
 dgt
@@ -72176,7 +72906,7 @@ dgt
 dgt
 dgt
 qaU
-bCC
+fjK
 hAK
 ecn
 qQv
@@ -73952,7 +74682,7 @@ dgt
 dgt
 dgt
 aIV
-kzt
+mLj
 cGT
 cju
 fGy
@@ -74210,11 +74940,16 @@ dgt
 dgt
 dgt
 aIV
+<<<<<<< HEAD
 bUI
 cHn
+=======
+ehc
+hXs
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 uYx
 xWc
-bqJ
+dCo
 bqJ
 aIV
 dgt
@@ -74229,8 +74964,13 @@ bCC
 rRF
 bCC
 rRF
+<<<<<<< HEAD
 bCC
 bCC
+=======
+qwC
+seu
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 sJM
 bCC
 lZq
@@ -74488,7 +75228,11 @@ vHd
 wPJ
 xQY
 uSG
+<<<<<<< HEAD
 bCC
+=======
+cUH
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 sJM
 lZq
 hsc
@@ -75001,7 +75745,7 @@ fED
 aoF
 lFu
 oJi
-oJi
+bJa
 fzy
 aoF
 aex
@@ -75016,7 +75760,7 @@ oci
 bFE
 bCC
 sJM
-bCC
+fjK
 qQv
 bCC
 sJM
@@ -75513,7 +76257,7 @@ dgt
 dgt
 dgt
 qaU
-eHn
+ebM
 qvE
 qvE
 qvE
@@ -75522,7 +76266,7 @@ qvE
 qvE
 gUE
 sJM
-fjK
+bCC
 lZq
 cKh
 lDy
@@ -76033,7 +76777,7 @@ fED
 aoF
 cqo
 ufx
-ufx
+tZn
 qRA
 aoF
 ove
@@ -76545,8 +77289,13 @@ dgt
 dgt
 dgt
 qaU
+<<<<<<< HEAD
 bCC
 bCC
+=======
+cUH
+aex
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 bCC
 bCC
 rQK
@@ -76794,7 +77543,7 @@ ggO
 rNB
 aIV
 bqJ
-bqJ
+dCo
 aIV
 dgt
 dgt
@@ -76825,7 +77574,7 @@ qRa
 bCC
 bCC
 sJM
-bCC
+fjK
 bCC
 sJM
 kOv
@@ -77079,7 +77828,7 @@ fls
 bCC
 bCC
 sJM
-xUo
+dcu
 omS
 xUK
 ssw
@@ -78369,7 +79118,7 @@ hLW
 dpO
 cLY
 sJM
-bCC
+fjK
 bCC
 qRa
 tUX
@@ -78875,7 +79624,7 @@ lZq
 lZq
 lZq
 bCC
-bCC
+jgY
 bCC
 smH
 lZq
@@ -79901,16 +80650,16 @@ pAE
 bqJ
 bqJ
 bqJ
-bqJ
+qiO
 cGT
 qRa
 xUo
 xpu
 sJM
-apR
+snx
 oLY
 sJM
-bCC
+fjK
 opn
 bCC
 pzp
@@ -80409,7 +81158,7 @@ cGT
 pRR
 bqJ
 cGT
-evX
+cgo
 gmb
 oYY
 cGT
@@ -80665,7 +81414,7 @@ cGT
 cGT
 cGT
 pRR
-bqJ
+qiO
 cGT
 cGT
 lfv
@@ -81443,9 +82192,9 @@ cGT
 aWg
 luF
 bBZ
-bqJ
+qiO
 cGT
-bqJ
+qiO
 cGT
 cGT
 cGT
@@ -82730,11 +83479,11 @@ gmb
 nAK
 tKl
 shz
-pRR
+bVj
 cGT
 cPN
 xyc
-bqJ
+qiO
 cGT
 bqJ
 bqJ
@@ -83756,19 +84505,19 @@ fVU
 kNG
 aIV
 bUI
-xWh
+qFF
 cHn
 cHn
 cHn
-cHn
+shc
 uYx
 xWc
 cGT
 cPN
 xyc
-bqJ
+qiO
 cGT
-bqJ
+dCo
 bqJ
 aWg
 aIV
@@ -84792,14 +85541,14 @@ cAd
 aIV
 cPN
 xyc
-bqJ
+dCo
 cGT
 bqJ
 cPN
 cGT
 bqJ
 xyc
-bqJ
+qiO
 cGT
 luF
 wLN
@@ -85839,19 +86588,19 @@ apc
 apc
 apc
 apc
-gGw
-gGw
-gGw
-gGw
-gGw
-eTW
+cPB
+cPB
+cPB
+cPB
+cPB
+qyQ
 gHR
-eTW
-gGw
-gGw
-gGw
-gGw
-gGw
+qyQ
+cPB
+cPB
+cPB
+cPB
+cPB
 apc
 apc
 apc
@@ -86059,7 +86808,7 @@ apc
 apc
 apc
 apc
-aqj
+apc
 apc
 apc
 apc
@@ -86102,9 +86851,9 @@ fgf
 fgf
 fgf
 fgf
-jBk
+stB
 wnf
-jBk
+stB
 gJa
 gJa
 gJa
@@ -86355,19 +87104,19 @@ apc
 apc
 apc
 apc
-fhg
-fhg
-fhg
-fhg
-fhg
-eTW
+iLL
+iLL
+iLL
+iLL
+iLL
+qyQ
 gHR
-eTW
-fhg
-fhg
-fhg
-fhg
-fhg
+qyQ
+iLL
+iLL
+iLL
+iLL
+iLL
 apc
 apc
 aqj
@@ -86613,19 +87362,19 @@ epg
 epg
 apc
 apc
-eTW
-eTW
-eTW
-eTW
-eTW
-eTW
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
 gHR
-eTW
-eTW
-eTW
-eTW
-eTW
-eTW
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
 apc
 apc
 aqj
@@ -86837,6 +87586,7 @@ aqj
 apc
 apc
 apc
+<<<<<<< HEAD
 cDq
 cDq
 cDq
@@ -86850,6 +87600,21 @@ cDq
 cDq
 cDq
 cDq
+=======
+rlI
+rlI
+rlI
+rlI
+rlI
+tfe
+tfe
+tfe
+rlI
+rlI
+rlI
+rlI
+rlI
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 apc
@@ -86871,19 +87636,19 @@ apc
 aqj
 apc
 apc
-gGw
-gGw
-gGw
-gGw
-gGw
-eTW
+cPB
+cPB
+cPB
+cPB
+cPB
+qyQ
 gHR
-eTW
-gGw
-gGw
-gGw
-gGw
-gGw
+qyQ
+cPB
+cPB
+cPB
+cPB
+cPB
 apc
 apc
 aqj
@@ -87092,9 +87857,9 @@ apc
 apc
 apc
 aqj
-aqj
-aqj
-aqj
+apc
+apc
+apc
 fya
 cko
 cko
@@ -87134,9 +87899,9 @@ fgf
 fgf
 fgf
 fgf
-jBk
+stB
 wnf
-jBk
+stB
 gJa
 gJa
 gJa
@@ -87349,6 +88114,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 apc
 apc
 apc
@@ -87366,6 +88132,25 @@ ggF
 ggF
 ggF
 ggF
+=======
+aqj
+aqj
+aqj
+aqj
+cbx
+cbx
+cbx
+cbx
+cbx
+tfe
+tfe
+tfe
+cbx
+cbx
+cbx
+cbx
+cbx
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 apc
@@ -87387,19 +88172,19 @@ apc
 aqj
 apc
 apc
-fhg
-fhg
-fhg
-fhg
-fhg
-eTW
+iLL
+iLL
+iLL
+iLL
+iLL
+qyQ
 gHR
-eTW
-fhg
-fhg
-fhg
-fhg
-fhg
+qyQ
+iLL
+iLL
+iLL
+iLL
+iLL
 apc
 apc
 aqj
@@ -87607,7 +88392,7 @@ apc
 apc
 apc
 apc
-aqj
+apc
 apc
 apc
 apc
@@ -87626,15 +88411,7 @@ apc
 apc
 apc
 apc
-aqj
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-aqj
 apc
 apc
 apc
@@ -87645,19 +88422,27 @@ apc
 aqj
 apc
 apc
-eTW
-eTW
-eTW
-eTW
-eTW
-eTW
+apc
+apc
+apc
+apc
+apc
+aqj
+apc
+apc
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
 gHR
-eTW
-eTW
-eTW
-eTW
-eTW
-eTW
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
 apc
 apc
 aqj
@@ -87869,6 +88654,7 @@ aqj
 apc
 apc
 apc
+<<<<<<< HEAD
 cDq
 cDq
 cDq
@@ -87882,40 +88668,55 @@ cDq
 cDq
 cDq
 cDq
+=======
+rlI
+rlI
+rlI
+rlI
+rlI
+tfe
+tfe
+tfe
+rlI
+rlI
+rlI
+rlI
+rlI
+apc
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
 apc
 apc
 aqj
 apc
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-aqj
-apc
-apc
-gGw
-gGw
-gGw
-gGw
-gGw
-eTW
+cPB
+cPB
+cPB
+cPB
+cPB
+qyQ
 gHR
-eTW
-gGw
-gGw
-gGw
-gGw
-gGw
+qyQ
+cPB
+cPB
+cPB
+cPB
+cPB
 apc
 apc
 aqj
@@ -88124,9 +88925,9 @@ apc
 apc
 apc
 aqj
-aqj
-aqj
-aqj
+apc
+apc
+apc
 fya
 cko
 cko
@@ -88140,9 +88941,9 @@ fgj
 fgj
 fgj
 qqO
-aqj
-aqj
-aqj
+apc
+apc
+apc
 apc
 apc
 apc
@@ -88166,9 +88967,9 @@ fgf
 fgf
 fgf
 fgf
-jBk
+stB
 wnf
-jBk
+stB
 gJa
 gJa
 gJa
@@ -88382,6 +89183,7 @@ apc
 apc
 apc
 aqj
+<<<<<<< HEAD
 apc
 apc
 apc
@@ -88400,6 +89202,34 @@ ggF
 ggF
 apc
 apc
+=======
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
+aqj
+aqj
+aqj
+cbx
+cbx
+cbx
+cbx
+cbx
+tfe
+tfe
+tfe
+cbx
+cbx
+cbx
+cbx
+cbx
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
 aqj
 apc
 apc
@@ -88408,30 +89238,22 @@ apc
 apc
 apc
 apc
-aqj
 apc
 apc
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-fhg
-fhg
-fhg
-fhg
-fhg
-eTW
+iLL
+iLL
+iLL
+iLL
+iLL
+qyQ
 gHR
-eTW
-fhg
-fhg
-fhg
-fhg
-fhg
+qyQ
+iLL
+iLL
+iLL
+iLL
+iLL
 apc
 apc
 aqj
@@ -88677,19 +89499,19 @@ apc
 aqj
 apc
 apc
-eTW
-eTW
-eTW
-eTW
-eTW
-eTW
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
 gHR
-eTW
-eTW
-eTW
-eTW
-eTW
-eTW
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
 apc
 apc
 aqj
@@ -88897,9 +89719,11 @@ apc
 apc
 apc
 apc
+aqj
 apc
 apc
 apc
+<<<<<<< HEAD
 apc
 cDq
 cDq
@@ -88914,6 +89738,21 @@ cDq
 cDq
 cDq
 cDq
+=======
+rlI
+rlI
+rlI
+rlI
+rlI
+tfe
+tfe
+tfe
+rlI
+rlI
+rlI
+rlI
+rlI
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 aqj
@@ -88935,19 +89774,19 @@ apc
 aqj
 apc
 apc
-gGw
-gGw
-gGw
-gGw
-gGw
-eTW
+cPB
+cPB
+cPB
+cPB
+cPB
+qyQ
 gHR
-eTW
-gGw
-gGw
-gGw
-gGw
-gGw
+qyQ
+cPB
+cPB
+cPB
+cPB
+cPB
 apc
 apc
 aqj
@@ -89172,9 +90011,9 @@ fgj
 fgj
 fgj
 qqO
-apc
-apc
-apc
+aqj
+aqj
+aqj
 apc
 apc
 apc
@@ -89198,9 +90037,9 @@ fgf
 fgf
 fgf
 fgf
-jBk
+stB
 wnf
-jBk
+stB
 gJa
 gJa
 gJa
@@ -89417,6 +90256,7 @@ apc
 apc
 apc
 apc
+<<<<<<< HEAD
 ggF
 ggF
 ggF
@@ -89431,13 +90271,21 @@ ggF
 ggF
 ggF
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
+=======
+cbx
+cbx
+cbx
+cbx
+cbx
+tfe
+tfe
+tfe
+cbx
+cbx
+cbx
+cbx
+cbx
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 aqj
@@ -89451,19 +90299,27 @@ apc
 aqj
 apc
 apc
-fhg
-fhg
-fhg
-fhg
-fhg
-eTW
+apc
+apc
+apc
+apc
+apc
+aqj
+apc
+apc
+iLL
+iLL
+iLL
+iLL
+iLL
+qyQ
 gHR
-eTW
-fhg
-fhg
-fhg
-fhg
-fhg
+qyQ
+iLL
+iLL
+iLL
+iLL
+iLL
 apc
 apc
 aqj
@@ -89671,7 +90527,7 @@ apc
 apc
 apc
 apc
-aqj
+apc
 apc
 apc
 apc
@@ -89709,19 +90565,19 @@ apc
 aqj
 apc
 apc
-eTW
-eTW
-eTW
-eTW
-eTW
-eTW
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
 gHR
-eTW
-eTW
-eTW
-eTW
-eTW
-eTW
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
 apc
 apc
 aqj
@@ -89933,6 +90789,7 @@ aqj
 apc
 apc
 apc
+<<<<<<< HEAD
 cDq
 cDq
 cDq
@@ -89946,6 +90803,21 @@ cDq
 cDq
 cDq
 cDq
+=======
+rlI
+rlI
+rlI
+rlI
+rlI
+tfe
+tfe
+tfe
+rlI
+rlI
+rlI
+rlI
+rlI
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 aqj
@@ -89967,19 +90839,19 @@ apc
 aqj
 apc
 apc
-gGw
-gGw
-gGw
-gGw
-gGw
-eTW
+cPB
+cPB
+cPB
+cPB
+cPB
+qyQ
 gHR
-eTW
-gGw
-gGw
-gGw
-gGw
-gGw
+qyQ
+cPB
+cPB
+cPB
+cPB
+cPB
 apc
 apc
 aqj
@@ -90188,9 +91060,9 @@ apc
 apc
 apc
 aqj
-aqj
-aqj
-aqj
+apc
+apc
+apc
 fya
 cko
 cko
@@ -90204,9 +91076,9 @@ fgj
 fgj
 fgj
 qqO
-aqj
-aqj
-aqj
+apc
+apc
+apc
 apc
 apc
 apc
@@ -90230,9 +91102,9 @@ fgf
 fgf
 fgf
 fgf
-jBk
+stB
 wnf
-jBk
+stB
 gJa
 gJa
 gJa
@@ -90446,6 +91318,7 @@ apc
 apc
 apc
 aqj
+<<<<<<< HEAD
 apc
 apc
 apc
@@ -90464,38 +91337,58 @@ ggF
 ggF
 apc
 apc
+=======
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
+aqj
+aqj
+aqj
+cbx
+cbx
+cbx
+cbx
+cbx
+tfe
+tfe
+tfe
+cbx
+cbx
+cbx
+cbx
+cbx
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
 aqj
 apc
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-aqj
-apc
-apc
-fhg
-fhg
-fhg
-fhg
-fhg
-eTW
+iLL
+iLL
+iLL
+iLL
+iLL
+qyQ
 gHR
-eTW
-fhg
-fhg
-fhg
-fhg
-fhg
+qyQ
+iLL
+iLL
+iLL
+iLL
+iLL
 apc
 apc
 apc
@@ -90741,19 +91634,19 @@ apc
 aqj
 apc
 apc
-eTW
-eTW
-eTW
-eTW
-eTW
-eTW
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
 gHR
-eTW
-eTW
-eTW
-eTW
-eTW
-eTW
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
 apc
 apc
 aqj
@@ -90961,9 +91854,11 @@ apc
 apc
 apc
 apc
+aqj
 apc
 apc
 apc
+<<<<<<< HEAD
 apc
 cDq
 cDq
@@ -90979,8 +91874,24 @@ cDq
 cDq
 cDq
 apc
+=======
+rlI
+rlI
+rlI
+rlI
+rlI
+tfe
+tfe
+tfe
+rlI
+rlI
+rlI
+rlI
+rlI
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
+aqj
 apc
 apc
 apc
@@ -90999,19 +91910,19 @@ apc
 apc
 apc
 apc
-gGw
-gGw
-gGw
-gGw
-gGw
-eTW
+cPB
+cPB
+cPB
+cPB
+cPB
+qyQ
 gHR
-eTW
-gGw
-gGw
-gGw
-gGw
-gGw
+qyQ
+cPB
+cPB
+cPB
+cPB
+cPB
 apc
 apc
 aqj
@@ -91221,8 +92132,8 @@ apc
 apc
 apc
 apc
-aqj
-aqj
+apc
+apc
 fya
 cko
 cko
@@ -91236,9 +92147,9 @@ fgj
 fgj
 fgj
 qqO
-apc
-apc
-apc
+aqj
+aqj
+aqj
 apc
 apc
 apc
@@ -91262,9 +92173,9 @@ fgf
 fgf
 fgf
 fgf
-jBk
+stB
 wnf
-jBk
+stB
 gJa
 gJa
 gJa
@@ -91480,6 +92391,7 @@ apc
 apc
 apc
 aqj
+<<<<<<< HEAD
 apc
 ggF
 ggF
@@ -91495,13 +92407,22 @@ ggF
 ggF
 ggF
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
+=======
+aqj
+cbx
+cbx
+cbx
+cbx
+cbx
+tfe
+tfe
+tfe
+cbx
+cbx
+cbx
+cbx
+cbx
+>>>>>>> 8704e4a478 (Fixing all the issues I created on the map (Changes Deck 0/1/2/3 as well as Sif Plains and CentCom maps) (#8304))
 apc
 apc
 aqj
@@ -91515,19 +92436,27 @@ apc
 aqj
 apc
 apc
-fhg
-fhg
-fhg
-fhg
-fhg
-eTW
+apc
+apc
+apc
+apc
+apc
+aqj
+apc
+apc
+iLL
+iLL
+iLL
+iLL
+iLL
+qyQ
 gHR
-eTW
-fhg
-fhg
-fhg
-fhg
-fhg
+qyQ
+iLL
+iLL
+iLL
+iLL
+iLL
 apc
 apc
 aqj
@@ -91739,22 +92668,22 @@ apc
 apc
 aqj
 apc
-apc
-apc
-apc
-apc
-apc
-apc
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
 tfe
 apc
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
+aqj
 apc
 apc
 apc
@@ -91773,19 +92702,19 @@ apc
 aqj
 apc
 apc
-eTW
-eTW
-eTW
-eTW
-eTW
-eTW
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
 gHR
-eTW
-eTW
-eTW
-eTW
-eTW
-eTW
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
+qyQ
 apc
 apc
 aqj
@@ -91997,30 +92926,22 @@ apc
 apc
 aqj
 apc
+rlI
+rlI
+rlI
+rlI
+rlI
+tfe
+tfe
+tfe
+rlI
+rlI
+rlI
+rlI
+rlI
 apc
 apc
 apc
-apc
-apc
-apc
-ruA
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-aqj
 apc
 apc
 apc
@@ -92031,19 +92952,27 @@ apc
 aqj
 apc
 apc
-gGw
-gGw
-gGw
-gGw
-gGw
-eTW
+apc
+apc
+apc
+apc
+apc
+aqj
+apc
+apc
+cPB
+cPB
+cPB
+cPB
+cPB
+qyQ
 gHR
-eTW
-gGw
-gGw
-gGw
-gGw
-gGw
+qyQ
+cPB
+cPB
+cPB
+cPB
+cPB
 apc
 apc
 aqj
@@ -92251,23 +93180,23 @@ apc
 apc
 apc
 apc
-xeL
-xeL
+apc
+apc
 aqj
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-lbQ
-apc
-apc
-apc
-apc
-apc
-apc
+fya
+cko
+cko
+cko
+cko
+nHS
+tfe
+fFq
+fgj
+fgj
+fgj
+fgj
+qqO
 apc
 apc
 apc
@@ -92294,9 +93223,9 @@ fgf
 fgf
 fgf
 fgf
-jBk
+stB
 wnf
-jBk
+stB
 gJa
 gJa
 gJa
@@ -92510,56 +93439,56 @@ apc
 apc
 apc
 xeL
-vtf
 xeL
 aqj
+apc
+cbx
+cbx
+cbx
+cbx
+cbx
+tfe
+tfe
+tfe
+cbx
+cbx
+cbx
+cbx
+cbx
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
+apc
 aqj
-aqj
-aqj
-aqj
-aqj
-aqj
-aqj
 apc
 apc
-apc
-apc
-apc
-aqj
-apc
-aqj
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-aqj
-apc
-apc
-fhg
-fhg
-fhg
-fhg
-fhg
-eTW
+iLL
+iLL
+iLL
+iLL
+iLL
+qyQ
 gHR
-eTW
-fhg
-fhg
-fhg
-fhg
-fhg
+qyQ
+iLL
+iLL
+iLL
+iLL
+iLL
 apc
 apc
 aqj
@@ -92768,31 +93697,31 @@ apc
 apc
 apc
 xeL
+vtf
 xeL
-xeL
-apc
-apc
-apc
-apc
-apc
-apc
-apc
 aqj
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
+tfe
 apc
 apc
 apc
 apc
 apc
-aqj
-aqj
-aqj
-aqj
-aqj
-aqj
-aqj
-aqj
-aqj
-aqj
+apc
+apc
+apc
+apc
 apc
 apc
 apc
@@ -93025,23 +93954,23 @@ apc
 apc
 apc
 apc
+xeL
+xeL
+xeL
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-aqj
-aqj
-aqj
-aqj
-aqj
-aqj
-aqj
-aqj
-apc
-apc
+rlI
+rlI
+rlI
+rlI
+rlI
+tfe
+tfe
+tfe
+rlI
+rlI
+rlI
+rlI
+rlI
 apc
 apc
 apc
@@ -93287,19 +94216,19 @@ apc
 apc
 apc
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
+fya
+cko
+cko
+cko
+cko
+nHS
+tfe
+fFq
+fgj
+fgj
+fgj
+fgj
+qqO
 apc
 apc
 apc
@@ -93545,19 +94474,19 @@ apc
 apc
 apc
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
+cbx
+cbx
+cbx
+cbx
+cbx
+tfe
+tfe
+tfe
+cbx
+cbx
+cbx
+cbx
+cbx
 apc
 apc
 apc
@@ -93801,21 +94730,21 @@ apc
 apc
 apc
 apc
+aqj
+aqj
+aqj
+aqj
+aqj
+aqj
+aqj
+apc
+ruA
 apc
 apc
 apc
+aqj
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
+aqj
 apc
 apc
 apc
@@ -94065,24 +94994,24 @@ apc
 apc
 apc
 apc
+aqj
+apc
+ceO
 apc
 apc
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
+aqj
+aqj
+aqj
+aqj
+aqj
+aqj
+aqj
+aqj
+aqj
+aqj
+aqj
+aqj
 apc
 apc
 apc
@@ -94320,14 +95249,14 @@ apc
 apc
 apc
 apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
-apc
+aqj
+aqj
+aqj
+aqj
+aqj
+lbQ
+aqj
+aqj
 apc
 apc
 apc
