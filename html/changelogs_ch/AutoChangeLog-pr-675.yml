@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - bugfix: "Fixed a bug involving making custom areas in VR which can delete you if made."
