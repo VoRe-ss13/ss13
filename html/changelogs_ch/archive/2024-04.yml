@@ -245,3 +245,24 @@
   - rscadd: VR now uses the new sunlight system
   - bugfix: various optimizations and fixes for sunlight
   - rscadd: Instrument case holster, only for instruments
+2024-04-28:
+  VoRe-bot:
+  - qol: Tagged mail will show it's location.
+  - bugfix: Fixed tagger not changing the tag of an already tagged envelope
+  - bugfix: Fixed certain firework stars from being able to change Sif's weather
+  - bugfix: more GC bullshit
+  - bugfix: fixed many bad uses of the usr variable
+  - bugfix: Meatyores shower will have the proper text when ending
+  - bugfix: Attempting to fix a rare subsystem crash
+  - rscadd: Added a reaction to change liquid fire to neo liquid fire (liquid fire,
+      sulfur and a small amount of phoron + catalyst)
+  - balance: Changed the reagents in cherry bomb to liquid fire instead of neo liquid
+      fire
+  - rscadd: Added ore grubs and lizardmen to the random mining mob spawn pool
+  - bugfix: lighting bullshit
+  - bugfix: Security law of maints 3 overriding the lockdown system I keep forgetting
+      exists.
+  - bugfix: solars devouring shield useage by adding platting
+  - bugfix: fixed the disposals and the lack of antibody scanners
+  - bugfix: Fixed a bug involving making custom areas in VR which can delete you if
+      made.
