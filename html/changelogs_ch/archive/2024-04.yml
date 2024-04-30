@@ -266,3 +266,15 @@
   - bugfix: fixed the disposals and the lack of antibody scanners
   - bugfix: Fixed a bug involving making custom areas in VR which can delete you if
       made.
+2024-04-30:
+  VoRe-bot:
+  - rscadd: 'Added admin spawn set of goggles that''s sole purpose is seeing kin (Rae:
+      commented out the meson/kin hybrid though)'
+  - balance: Makes it so the large kinetic weapons don't need wielding since that
+      code is appears broken and I doubt the two very rare items will become broken
+      if they get the kinetic blast effect.
+  - bugfix: gc agony
+  - code_imp: '''hud_enabled'' variable for guns actually works now!'
+  - bugfix: Belly-linked vac-pack dirt nutrition gain now scales with target vorgan's
+      gain setting.
+  - rscadd: Added a one life trait. Combination of no resleeve and no defib.
