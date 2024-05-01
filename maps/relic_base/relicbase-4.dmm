@@ -1694,17 +1694,6 @@
 	},
 /turf/simulated/floor/bluegrid,
 /area/ai/ai_upload)
-"dn" = (
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 9
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/surface/outside/plains/outpost)
 "do" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/wingrille_spawn/reinforced,
@@ -3626,6 +3615,20 @@
 	outdoors = 1
 	},
 /area/surface/outpost/main/landing/three)
+"ha" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/obj/structure/catwalk,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	brightness_color = "#DA0205";
+	brightness_power = 1;
+	brightness_range = 5;
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/engineering/engine_room)
 "hb" = (
 /obj/effect/floor_decal/corner_techfloor_grid{
 	dir = 9
@@ -4463,19 +4466,17 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/brig)
 "iz" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/obj/machinery/light/small{
-	dir = 4
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/wingrille_spawn/reinforced_phoron,
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "englockdown";
+	name = "Engineering Lockdown";
+	opacity = 0
 	},
 /turf/simulated/floor/plating,
-/area/engineering/engine_monitoring)
+/area/engineering/atmos/storage)
 "iA" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
@@ -4889,20 +4890,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/range)
-"ji" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
-/obj/structure/catwalk,
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/machinery/light/small{
-	brightness_color = "#DA0205";
-	brightness_power = 1;
-	brightness_range = 5;
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/engineering/engine_room)
 "jj" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
 	dir = 5
@@ -5080,7 +5067,9 @@
 	name = "Engineering Lockdown";
 	opacity = 0
 	},
-/obj/machinery/door/airlock/atmos,
+/obj/machinery/door/airlock/atmos{
+	rad_resistance = 150
+	},
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/fans/tiny,
 /turf/simulated/floor/plating,
@@ -8224,6 +8213,14 @@
 	},
 /turf/simulated/floor/tiled/red,
 /area/security/prison)
+"oQ" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/surface/outside/plains/outpost)
 "oR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 1
@@ -12534,7 +12531,7 @@
 "wQ" = (
 /obj/structure/sign/warning/radioactive,
 /turf/simulated/wall/r_lead,
-/area/engineering/engine_room)
+/area/engineering/engine_monitoring)
 "wR" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/reinforced,
@@ -12839,28 +12836,20 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
 "xu" = (
-/obj/structure/lattice,
-/obj/structure/railing/grey{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 6
 	},
-/obj/structure/railing/grey{
-	dir = 1
+/obj/structure/catwalk,
+/obj/machinery/status_display{
+	layer = 4;
+	pixel_x = -32
 	},
-/obj/machinery/atmospherics/pipe/zpipe/down/supply{
-	dir = 4
+/obj/machinery/camera/network/exterior{
+	c_tag = "EXT - R-UST Exterior, East";
+	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/zpipe/down/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/open{
-	outdoors = 1
-	},
-/area/engineering/atmos/storage)
+/turf/simulated/floor/plating,
+/area/engineering/engine_monitoring)
 "xv" = (
 /obj/structure/table/glass,
 /obj/item/weapon/folder/white,
@@ -14156,14 +14145,13 @@
 	},
 /area/surface/outside/plains/outpost)
 "zW" = (
-/obj/structure/catwalk,
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/mob/living/simple_mob/animal/passive/cat/bluespace{
+	dir = 4
 	},
-/turf/simulated/floor/plating,
-/area/engineering/engine_room)
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "zX" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/space_heater,
@@ -16839,9 +16827,14 @@
 /turf/simulated/floor/plating,
 /area/engineering/atmos/storage)
 "EU" = (
-/obj/structure/sign/warning/radioactive,
-/turf/simulated/wall/r_lead,
-/area/engineering/engine_monitoring)
+/obj/structure/catwalk,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/engineering/engine_room)
 "EV" = (
 /obj/machinery/status_display{
 	layer = 4;
@@ -18097,12 +18090,10 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/storage)
 "Hl" = (
-/obj/effect/zone_divider,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating{
-	outdoors = 1
+/turf/simulated/wall/r_wall{
+	cached_rad_resistance = 150
 	},
-/area/surface/outside/plains/outpost/sky)
+/area/quartermaster/warehouse)
 "Hm" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/glass{
@@ -18811,15 +18802,9 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora_isolation)
 "IE" = (
-/obj/item/device/geiger/wall/east,
-/obj/structure/catwalk,
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/plating,
-/area/engineering/engine_room)
+/obj/structure/sign/warning/radioactive,
+/turf/simulated/wall/r_lead,
+/area/engineering/atmos/storage)
 "IF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -18869,6 +18854,19 @@
 	d1 = 32
 	},
 /turf/simulated/open,
+/area/engineering/engine_room)
+"IL" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/obj/structure/catwalk,
+/obj/machinery/light/small{
+	brightness_color = "#DA0205";
+	brightness_power = 1;
+	brightness_range = 5;
+	dir = 8
+	},
+/turf/simulated/floor/plating{
+	outdoors = 1
+	},
 /area/engineering/engine_room)
 "IM" = (
 /obj/structure/bed/chair/sofa/right/black{
@@ -19393,6 +19391,20 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/security_lockerroom)
+"JR" = (
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/obj/structure/lattice,
+/obj/structure/cable/green{
+	d1 = 32;
+	d2 = 4;
+	icon_state = "32-4"
+	},
+/turf/simulated/open{
+	outdoors = 1
+	},
+/area/engineering/atmos/storage)
 "JS" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/rust,
@@ -20155,10 +20167,6 @@
 	outdoors = 1
 	},
 /area/surface/outside/plains/outpost)
-"Lq" = (
-/obj/structure/sign/warning/radioactive,
-/turf/simulated/wall/r_lead,
-/area/engineering/atmos/storage)
 "Lr" = (
 /obj/structure/bedsheetbin,
 /obj/structure/table/woodentable,
@@ -20306,12 +20314,6 @@
 	},
 /turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
-"LH" = (
-/obj/structure/catwalk,
-/turf/simulated/floor/plating{
-	outdoors = 1
-	},
-/area/surface/outside/plains/outpost/sky)
 "LI" = (
 /obj/structure/railing{
 	dir = 4
@@ -20741,17 +20743,19 @@
 /turf/simulated/floor/plating,
 /area/engineering/engine_monitoring)
 "Mt" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/wingrille_spawn/reinforced_phoron,
-/obj/machinery/door/blast/regular{
-	density = 0;
-	icon_state = "pdoor0";
-	id = "englockdown";
-	name = "Engineering Lockdown";
-	opacity = 0
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/catwalk,
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/engineering/atmos/storage)
+/area/engineering/engine_monitoring)
 "Mu" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
@@ -21338,6 +21342,17 @@
 	temperature = 80
 	},
 /area/tcommsat/chamber)
+"Nx" = (
+/obj/structure/railing,
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 9
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/surface/outside/plains/outpost)
 "Ny" = (
 /obj/machinery/telecomms/bus/preset_two/southerncross,
 /turf/simulated/floor/tiled/dark{
@@ -23414,20 +23429,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/storage)
 "Rv" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 6
-	},
 /obj/structure/catwalk,
-/obj/machinery/status_display{
-	layer = 4;
-	pixel_x = -32
+/turf/simulated/floor/plating{
+	outdoors = 1
 	},
-/obj/machinery/camera/network/exterior{
-	c_tag = "EXT - R-UST Exterior, East";
-	dir = 5
-	},
-/turf/simulated/floor/plating,
-/area/engineering/engine_monitoring)
+/area/surface/outside/plains/outpost/sky)
 "Rx" = (
 /obj/random/junk,
 /obj/random/toolbox,
@@ -23845,6 +23851,29 @@
 	},
 /turf/simulated/shuttle/plating,
 /area/shuttle/ursula)
+"Sk" = (
+/obj/structure/lattice,
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/zpipe/down/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/zpipe/down/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/open{
+	outdoors = 1
+	},
+/area/engineering/atmos/storage)
 "Sl" = (
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
@@ -24212,17 +24241,14 @@
 /turf/simulated/floor/carpet/geo,
 /area/surface/outpost/main/bar)
 "SQ" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/obj/item/device/geiger/wall/east,
 /obj/structure/catwalk,
-/obj/machinery/light/small{
-	brightness_color = "#DA0205";
-	brightness_power = 1;
-	brightness_range = 5;
-	dir = 8
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
-/turf/simulated/floor/plating{
-	outdoors = 1
-	},
+/turf/simulated/floor/plating,
 /area/engineering/engine_room)
 "SR" = (
 /obj/structure/disposalpipe/junction{
@@ -25246,14 +25272,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/cafeteria)
-"UM" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/surface/outside/plains/outpost)
 "UN" = (
 /obj/structure/bed/chair/sofa/left/black{
 	dir = 8
@@ -25386,19 +25404,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/qm)
 "Vd" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/obj/structure/lattice,
-/obj/structure/cable/green{
-	d1 = 32;
-	d2 = 4;
-	icon_state = "32-4"
-	},
-/turf/simulated/open{
+/obj/effect/zone_divider,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating{
 	outdoors = 1
 	},
-/area/engineering/atmos/storage)
+/area/surface/outside/plains/outpost/sky)
 "Ve" = (
 /obj/machinery/computer/security/mining,
 /obj/machinery/firealarm{
@@ -25504,13 +25515,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/solars)
 "Vp" = (
-/mob/living/simple_mob/animal/passive/cat/bluespace{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techmaint{
-	outdoors = 1
-	},
-/area/surface/outside/plains/outpost)
+/obj/structure/sign/warning/radioactive,
+/turf/simulated/wall/r_lead,
+/area/engineering/engine_room)
 "Vq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -41708,11 +41715,11 @@ io
 zv
 YV
 YV
+iz
+iz
 YV
-YV
-YV
-YV
-YV
+iz
+iz
 YV
 YV
 YV
@@ -41970,7 +41977,7 @@ Qu
 Qu
 Qu
 Pq
-Vd
+JR
 Pq
 YV
 zv
@@ -42227,7 +42234,7 @@ ig
 ig
 ig
 aR
-xu
+Sk
 wq
 YV
 zv
@@ -42991,7 +42998,7 @@ zv
 zv
 io
 EG
-Lq
+IE
 dI
 dI
 dI
@@ -43247,7 +43254,7 @@ zv
 zv
 zv
 wU
-LH
+Rv
 jB
 Pq
 aJ
@@ -43504,8 +43511,8 @@ zv
 zv
 zv
 wU
-LH
-Mt
+Rv
+YV
 hK
 dN
 gv
@@ -43761,8 +43768,8 @@ zv
 zv
 zv
 wU
-LH
-Mt
+Rv
+YV
 hK
 rI
 cK
@@ -44018,7 +44025,7 @@ io
 io
 io
 wU
-Hl
+Vd
 YV
 MS
 Oy
@@ -44275,7 +44282,7 @@ zv
 zv
 zv
 wU
-LH
+Rv
 YV
 YV
 YV
@@ -45050,13 +45057,13 @@ uQ
 JD
 JD
 JD
+Vp
+JD
+JD
+JD
+JD
+JD
 wQ
-JD
-JD
-JD
-JD
-JD
-EU
 NW
 Kr
 Lg
@@ -46338,17 +46345,17 @@ ZC
 Ga
 Fx
 GR
-wQ
+Vp
 HG
 Iv
 Jh
 JL
 nT
 yf
-EU
+wQ
 ho
 kX
-EU
+wQ
 xD
 xD
 xD
@@ -46594,7 +46601,7 @@ JD
 Fy
 Gb
 Fy
-wQ
+Vp
 JD
 HH
 Iw
@@ -46606,7 +46613,7 @@ NW
 Gd
 NT
 NW
-Vp
+zW
 xD
 xD
 Rl
@@ -46856,7 +46863,7 @@ Hd
 HJ
 Iz
 Ji
-iz
+Mt
 Kw
 JM
 VB
@@ -47109,11 +47116,11 @@ FE
 Gf
 Gy
 GT
-zW
+EU
 HN
 IC
 JD
-EU
+wQ
 NW
 ho
 Ms
@@ -47366,7 +47373,7 @@ FF
 Wl
 HN
 GU
-zW
+EU
 HN
 IF
 JD
@@ -47374,7 +47381,7 @@ NW
 NW
 NW
 NW
-EU
+wQ
 NW
 NW
 PM
@@ -47629,7 +47636,7 @@ IJ
 JD
 NW
 NW
-EU
+wQ
 NW
 NW
 NW
@@ -47880,14 +47887,14 @@ FI
 Wl
 JD
 JD
-IE
+SQ
 sf
 IK
 JD
 JD
 xD
 xD
-Rv
+xu
 OH
 OH
 OH
@@ -47899,11 +47906,11 @@ xD
 Za
 ON
 nB
-QF
-QF
-QF
-QF
-QF
+Hl
+Hl
+Hl
+Hl
+Hl
 Yt
 QF
 QF
@@ -48156,7 +48163,7 @@ xD
 Za
 ON
 zv
-QF
+Hl
 VC
 VG
 VG
@@ -48394,14 +48401,14 @@ Wl
 Wl
 wt
 yV
-SQ
+IL
 HU
-ji
+ha
 IO
 IO
-UM
-UM
-dn
+oQ
+oQ
+Nx
 zC
 zC
 zC
@@ -48413,7 +48420,7 @@ xD
 Za
 ON
 zv
-QF
+Hl
 VD
 VG
 VG
@@ -48670,7 +48677,7 @@ xD
 Za
 ON
 zv
-QF
+Hl
 yt
 Ws
 VG
@@ -48927,7 +48934,7 @@ xD
 Za
 ON
 zv
-QF
+Hl
 VM
 Wt
 WQ
@@ -49184,7 +49191,7 @@ xD
 Za
 ON
 zv
-HT
+Vb
 Vb
 Vb
 WS
