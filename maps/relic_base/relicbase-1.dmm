@@ -3804,13 +3804,6 @@
 /obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
-"Bo" = (
-/obj/effect/floor_decal/rust,
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/underground/catacombs)
 "Bp" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table,
@@ -35128,7 +35121,7 @@ Fu
 tw
 Qg
 ZY
-au
+iJ
 iJ
 iJ
 ZY
@@ -35385,8 +35378,8 @@ QL
 Em
 ZY
 kM
-Bo
-Bo
+ao
+ao
 iJ
 ZY
 Tc
@@ -35641,8 +35634,8 @@ Tc
 HS
 iJ
 Wh
-iJ
-iJ
+oQ
+au
 iJ
 iJ
 ZY

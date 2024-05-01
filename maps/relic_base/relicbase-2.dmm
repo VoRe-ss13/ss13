@@ -1020,6 +1020,20 @@
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"aGq" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/engineering/atmos)
 "aGJ" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
@@ -1284,23 +1298,6 @@
 /obj/random/trash,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aft{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
-"aRN" = (
-/obj/effect/floor_decal/rust,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "aRS" = (
@@ -2249,7 +2246,8 @@
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable/green{
+	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
@@ -2387,6 +2385,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "bVS" = (
@@ -2845,17 +2844,7 @@
 "ctT" = (
 /obj/structure/stairs/spawner/east,
 /obj/effect/floor_decal/rust,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/effect/zone_divider,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -2985,6 +2974,23 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"cCQ" = (
+/obj/effect/floor_decal/rust,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "cCT" = (
 /obj/structure/handrail{
 	dir = 4
@@ -3090,12 +3096,24 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/effect/zone_divider,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing,
+/obj/structure/cable/green{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -4193,6 +4211,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "dKC" = (
@@ -4459,15 +4480,16 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "dVC" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/rust,
 /obj/structure/cable/green{
 	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
-/area/engineering/atmos)
+/area/maintenance/firstdeck/centralstarboard{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "dVE" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/landmark{
@@ -4689,6 +4711,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "edi" = (
@@ -4761,6 +4784,12 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"egv" = (
+/obj/machinery/atmospherics/pipe/simple/visible/universal{
+	dir = 4
+	},
+/turf/simulated/floor/plating,
+/area/engineering/atmos)
 "egA" = (
 /obj/structure/closet/crate,
 /obj/effect/floor_decal/rust,
@@ -5151,11 +5180,6 @@
 	pixel_y = 32
 	},
 /obj/effect/zone_divider,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -6636,6 +6660,23 @@
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"gac" = (
+/obj/effect/floor_decal/rust,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "gae" = (
 /obj/structure/girder/reinforced,
 /turf/simulated/floor/plating,
@@ -6748,7 +6789,14 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/simulated/open,
+/obj/effect/floor_decal/rust,
+/obj/structure/cable/green{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
+	},
+/obj/structure/cable/green,
+/turf/simulated/floor/plating,
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -6825,7 +6873,9 @@
 /area/surface/outpost/civilian/sauna/cryosauna)
 "gjO" = (
 /obj/effect/floor_decal/rust,
-/obj/structure/cable/blue{
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
@@ -8939,9 +8989,16 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "ikR" = (
-/obj/machinery/power/breakerbox/activated{
-	RCon_tag = "Atmos Substation Bypass"
+/obj/machinery/power/smes/buildable{
+	RCon_tag = "Substation - Atmospherics";
+	charge = 2e+006;
+	input_attempt = 1
 	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/green,
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "ilw" = (
@@ -10034,15 +10091,6 @@
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"jkU" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/engineering/atmos)
 "jlg" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/closet,
@@ -10260,12 +10308,6 @@
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"jrH" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/engineering/atmos)
 "jsA" = (
 /obj/structure/girder/reinforced,
 /turf/simulated/floor/outdoors/rocks/caves{
@@ -10304,16 +10346,13 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "jun" = (
-/obj/machinery/power/smes/buildable{
-	RCon_tag = "Substation - Atmospherics";
-	charge = 2e+006;
-	input_attempt = 1
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/structure/cable/green,
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "jwx" = (
@@ -11088,24 +11127,22 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "kxM" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	req_one_access = null
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/rust,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 1
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 8
+	},
+/obj/machinery/power/apc{
+	name = "south bump";
+	pixel_y = -24
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/plating,
-/area/maintenance/firstdeck/centralport{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
+/area/engineering/atmos)
 "kyJ" = (
 /obj/random/junk,
 /obj/random/trash,
@@ -11125,7 +11162,9 @@
 	},
 /obj/structure/barricade,
 /obj/effect/floor_decal/rust,
-/obj/structure/cable/blue{
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
@@ -11192,6 +11231,9 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "kFQ" = (
@@ -11238,11 +11280,14 @@
 	name = "north bump";
 	pixel_y = 24
 	},
-/obj/structure/cable/blue{
-	icon_state = "0-4"
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
 	},
-/obj/structure/cable/blue{
-	icon_state = "4-8"
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard{
@@ -11255,14 +11300,6 @@
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "kKr" = (
-/obj/structure/cable{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
-/obj/structure/cable/blue{
-	icon_state = "0-8"
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -11272,6 +11309,16 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/rust,
+/obj/structure/railing,
+/obj/structure/cable/green{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -11491,6 +11538,11 @@
 "lea" = (
 /obj/effect/floor_decal/rust,
 /obj/random/cigarettes,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -11788,22 +11840,11 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "lMK" = (
-/obj/effect/floor_decal/rust,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/firstdeck/centralport{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
+/area/engineering/atmos)
 "lNq" = (
 /obj/effect/floor_decal/corner_steel_grid{
 	dir = 9
@@ -12402,6 +12443,11 @@
 	pixel_x = 5;
 	pixel_y = 21
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -12423,9 +12469,9 @@
 	name = "east bump";
 	pixel_x = 24
 	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck{
@@ -12578,22 +12624,14 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "mOP" = (
-/obj/effect/floor_decal/rust,
+/obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/structure/cable/green{
-	d1 = 1;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/firstdeck/centralport{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
+/area/engineering/atmos)
 "mOU" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -12699,34 +12737,20 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "mVQ" = (
-/obj/structure/cable{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/firstdeck{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
+/area/engineering/atmos)
 "mYQ" = (
 /obj/structure/railing{
 	dir = 8
-	},
-/obj/effect/floor_decal/rust,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /obj/machinery/light/small/readylight{
 	dir = 4;
 	light_color = "#AF2A2A"
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/open,
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -12943,11 +12967,6 @@
 	})
 "npz" = (
 /obj/structure/stairs/spawner/south,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -12956,16 +12975,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/effect/floor_decal/rust,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/effect/landmark{
-	name = "maint_pred"
-	},
-/turf/simulated/floor/plating,
+/turf/simulated/open,
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -13379,8 +13389,8 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "nQX" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
+/obj/machinery/power/breakerbox/activated{
+	RCon_tag = "Atmos Substation Bypass"
 	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
@@ -14375,6 +14385,9 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "peQ" = (
@@ -14568,10 +14581,12 @@
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "prv" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
 	},
-/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "prS" = (
@@ -14784,22 +14799,11 @@
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "pAN" = (
-/obj/effect/floor_decal/rust,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
+/obj/machinery/atmospherics/pipe/manifold/visible/red{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/firstdeck/centralport{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
+/area/engineering/atmos)
 "pBk" = (
 /obj/structure/bed/chair/bay/shuttle,
 /obj/effect/decal/cleanable/dirt,
@@ -15511,11 +15515,20 @@
 /turf/unsimulated/wall/planetary/normal/thor,
 /area/surface/outpost/wall)
 "qsK" = (
-/obj/machinery/atmospherics/pipe/simple/visible/universal{
-	dir = 4
+/obj/effect/floor_decal/rust,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
-/area/engineering/atmos)
+/area/maintenance/firstdeck/centralport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "qtg" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/machinery/atmospherics/pipe/simple/visible/green{
@@ -15791,14 +15804,10 @@
 	})
 "qLU" = (
 /obj/effect/floor_decal/rust,
-/obj/structure/cable{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
-/obj/structure/cable{
+/obj/structure/cable/green{
+	d1 = 1;
 	d2 = 4;
-	icon_state = "0-4"
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aft{
@@ -15946,19 +15955,15 @@
 "qWK" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/cable/green{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/obj/structure/cable/green,
-/obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/zpipe/up/supply{
-	dir = 1
-	},
-/obj/structure/railing{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport{
@@ -17499,24 +17504,36 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/aft{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
-"sTQ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 8
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/engineering/atmos)
+/area/maintenance/firstdeck/aft{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
+"sTQ" = (
+/obj/effect/floor_decal/rust,
+/obj/structure/cable/green{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
+	},
+/obj/structure/cable/green,
+/obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/zpipe/up/supply{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "sTS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -17552,6 +17569,9 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "sVk" = (
@@ -17569,6 +17589,17 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/mixing{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
+"sWc" = (
+/obj/effect/floor_decal/rust,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "sWi" = (
@@ -18315,6 +18346,17 @@
 "tTv" = (
 /turf/unsimulated/mineral,
 /area/surface/outpost/wall)
+"tUB" = (
+/obj/effect/floor_decal/rust,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/aft{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "tVu" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -19010,6 +19052,18 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"uJh" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/effect/floor_decal/rust,
+/obj/effect/landmark{
+	name = "maint_pred"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "uJz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
@@ -19125,7 +19179,7 @@
 	name = "Station Intercom (General)";
 	pixel_x = 21
 	},
-/obj/structure/cable{
+/obj/structure/cable/green{
 	d1 = 16;
 	d2 = 0;
 	icon_state = "16-0"
@@ -19190,7 +19244,9 @@
 	})
 "uWC" = (
 /obj/effect/floor_decal/rust,
-/obj/structure/cable/blue{
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
@@ -19566,22 +19622,24 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "vrt" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/door/airlock/maintenance_hatch{
+	req_one_access = null
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 8
-	},
-/obj/machinery/power/apc{
-	name = "south bump";
-	pixel_y = -24
-	},
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/rust,
 /obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
-/area/engineering/atmos)
+/area/maintenance/firstdeck/centralport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "vrI" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -20730,6 +20788,11 @@
 "wFy" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/zone_divider,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -21764,12 +21827,10 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xEe" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
 	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "xEN" = (
@@ -22097,11 +22158,21 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "xTH" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/red{
-	dir = 1
+/obj/effect/floor_decal/rust,
+/obj/item/device/radio/intercom{
+	dir = 1;
+	name = "Station Intercom (General)";
+	pixel_y = 21
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
-/area/engineering/atmos)
+/area/maintenance/firstdeck{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "xUe" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/universal,
@@ -22194,14 +22265,14 @@
 	light_color = "#AF2A2A"
 	},
 /obj/effect/zone_divider,
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
 	pixel_y = 24
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aft{
@@ -22494,14 +22565,16 @@
 "yhF" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 1
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 8
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -30633,17 +30706,17 @@ iQE
 iQE
 iQE
 iQE
-prv
+xEe
 dbh
 ucx
 iQE
 iQE
-prv
+xEe
 dbh
 ucx
 iQE
 iQE
-prv
+xEe
 dbh
 ucx
 iQE
@@ -32699,7 +32772,7 @@ biE
 vhz
 nft
 vVd
-qsK
+egv
 fhZ
 oWa
 nEe
@@ -32956,7 +33029,7 @@ lYv
 hKD
 nft
 vVd
-xTH
+pAN
 tAy
 akD
 nEe
@@ -33213,8 +33286,8 @@ ekv
 xQu
 lHA
 vVd
-qsK
-jrH
+egv
+lMK
 nEe
 nEe
 rlb
@@ -33470,8 +33543,8 @@ aEq
 tqs
 aSb
 vVd
-nQX
-jkU
+mVQ
+prv
 nEe
 nEe
 rlb
@@ -35013,7 +35086,7 @@ oMP
 lHA
 vVd
 vVd
-vrt
+kxM
 nEe
 nEe
 rlb
@@ -35270,7 +35343,7 @@ oMP
 etF
 vVd
 vVd
-sTQ
+aGq
 nEe
 nEe
 rlb
@@ -35527,7 +35600,7 @@ oMP
 lHA
 vVd
 vVd
-sTQ
+aGq
 nEe
 nEe
 rlb
@@ -35784,7 +35857,7 @@ oMP
 lHA
 vVd
 vVd
-sTQ
+aGq
 nEe
 nEe
 rlb
@@ -36299,7 +36372,7 @@ lHA
 vVd
 vVd
 xNi
-dVC
+jun
 hHT
 hHT
 hHT
@@ -36556,7 +36629,7 @@ cLs
 vhz
 vhz
 vhz
-xEe
+mOP
 oUk
 pwQ
 xUe
@@ -37071,8 +37144,8 @@ iqe
 iqe
 uKE
 ecU
-jun
 ikR
+nQX
 kFw
 jNJ
 oeN
@@ -40421,8 +40494,8 @@ lJk
 lJk
 lJk
 lll
-aRN
-kxM
+qWK
+vrt
 nGN
 mss
 oif
@@ -40678,10 +40751,10 @@ lll
 lll
 lll
 lll
-lMK
+yhF
 yjd
 tdi
-qWK
+sTQ
 gqL
 gqL
 lJk
@@ -40931,11 +41004,11 @@ lJk
 rlb
 lJk
 lll
-aRN
-yhF
-yhF
-yhF
-mOP
+qWK
+qsK
+qsK
+qsK
+cCQ
 yjd
 qHZ
 yjd
@@ -41445,7 +41518,7 @@ lll
 lll
 lll
 lll
-pAN
+gac
 don
 aDi
 kFn
@@ -50700,9 +50773,9 @@ lJk
 pyL
 kZR
 uWQ
-luF
+xTH
 gfD
-gfD
+uJh
 uWQ
 ycA
 ycA
@@ -50958,7 +51031,7 @@ ycA
 lUp
 uWQ
 mEJ
-mVQ
+gRe
 npz
 uWQ
 tuI
@@ -63091,8 +63164,8 @@ vnu
 olx
 vnu
 wFy
-vnu
-vnu
+tUB
+qLU
 vnu
 fXt
 was
@@ -63348,7 +63421,7 @@ rlb
 lJk
 was
 xVY
-qLU
+vnu
 sSP
 iVw
 hyL
@@ -70998,7 +71071,7 @@ bot
 dzk
 kDI
 kKr
-wgL
+sWc
 luE
 kxy
 rlb
@@ -71255,7 +71328,7 @@ rlb
 dzk
 kxy
 kKM
-wgL
+dVC
 luU
 kxy
 rlb
