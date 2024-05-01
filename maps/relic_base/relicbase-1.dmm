@@ -3065,7 +3065,7 @@
 	dir = 8
 	},
 /obj/structure/cable/yellow{
-	d2 = 0;
+	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
@@ -5295,6 +5295,8 @@
 /area/maintenance/underground/catacombs)
 "MQ" = (
 /obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
