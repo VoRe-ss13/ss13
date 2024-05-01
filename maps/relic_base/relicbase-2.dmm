@@ -4282,6 +4282,14 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"dNB" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/mixing{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "dPr" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	req_one_access = null
@@ -18719,7 +18727,7 @@
 	pixel_x = -24
 	},
 /obj/structure/closet/firecloset/full,
-/obj/structure/cable/yellow{
+/obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
 	},
@@ -18776,7 +18784,7 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/structure/cable/yellow{
+/obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
 	},
@@ -18887,6 +18895,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/railing,
 /turf/simulated/floor/tiled/white,
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -19183,6 +19192,9 @@
 	d1 = 16;
 	d2 = 0;
 	icon_state = "16-0"
+	},
+/obj/structure/railing{
+	dir = 8
 	},
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/sauna/cryosauna)
@@ -19484,6 +19496,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
+/obj/structure/railing{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -19500,13 +19515,14 @@
 /obj/machinery/atmospherics/pipe/zpipe/up/supply{
 	dir = 4
 	},
-/obj/structure/cable,
-/obj/structure/cable{
+/obj/structure/cable/green,
+/obj/structure/cable/green{
 	d1 = 16;
 	d2 = 0;
 	icon_state = "16-0"
 	},
-/turf/simulated/floor/tiled/white,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
@@ -19521,6 +19537,9 @@
 "vnl" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/structure/railing{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/mixing{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -70331,7 +70350,7 @@ toy
 toy
 uAz
 vmf
-sPj
+dNB
 wxn
 dUN
 xpk
