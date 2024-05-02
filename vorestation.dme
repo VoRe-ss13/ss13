@@ -2958,6 +2958,7 @@
 #include "code\modules\mob\emote.dm"
 #include "code\modules\mob\gender.dm"
 #include "code\modules\mob\gender_vr.dm"
+#include "code\modules\mob\ghost_simplemob_spawn_tc.dm"
 #include "code\modules\mob\hear_say.dm"
 #include "code\modules\mob\holder.dm"
 #include "code\modules\mob\inventory.dm"
