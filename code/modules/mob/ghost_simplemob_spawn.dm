@@ -27,6 +27,7 @@ GLOBAL_LIST_INIT(ghost_spawnable_mobs,list(
 	"Otie" = /mob/living/simple_mob/vore/otie,
 	"Otie - Mutated" =/mob/living/simple_mob/vore/otie/feral,
 	"Otie - Red" = /mob/living/simple_mob/vore/otie/red,
+	"Otie - Security" = /mob/living/simple_mob/vore/otie/security,
 	"Pakkun" =/mob/living/simple_mob/vore/pakkun,
 	"Pakkun - Snapdragon" =/mob/living/simple_mob/vore/pakkun/snapdragon,
 	"Pakkun - Sand" = /mob/living/simple_mob/vore/pakkun/sand,
