@@ -18,7 +18,9 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/asteroid_steel,
@@ -36,7 +38,9 @@
 /area/surface/outpost/wall)
 "cW" = (
 /obj/structure/cable/heavyduty{
-	icon_state = "4-8"
+	icon_state = "4-8";
+	d1 = 4;
+	d2 = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty,
 /area/surface/outpost/wall/checkpoint)
@@ -107,10 +111,11 @@
 	pixel_y = 24
 	},
 /obj/structure/cable/heavyduty{
-	d2 = 0;
+	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/asteroid_steel,
@@ -190,7 +195,9 @@
 /area/surface/outpost/wall/checkpoint)
 "wp" = (
 /obj/structure/cable/heavyduty{
-	icon_state = "1-2"
+	icon_state = "1-2";
+	d1 = 1;
+	d2 = 2
 	},
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/surface/outpost/mining_main/exterior{
@@ -198,7 +205,9 @@
 	})
 "zE" = (
 /obj/structure/cable/heavyduty{
-	icon_state = "4-8"
+	icon_state = "4-8";
+	d1 = 4;
+	d2 = 8
 	},
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/surface/outpost/mining_main/exterior{
@@ -221,7 +230,9 @@
 	})
 "Cs" = (
 /obj/structure/cable/heavyduty{
-	icon_state = "1-2"
+	icon_state = "1-2";
+	d1 = 1;
+	d2 = 2
 	},
 /obj/machinery/light{
 	dir = 4
@@ -278,7 +289,9 @@
 	name = "Wilderness Containment"
 	},
 /obj/structure/cable/heavyduty{
-	icon_state = "4-8"
+	icon_state = "4-8";
+	d1 = 4;
+	d2 = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty,
 /area/surface/outpost/wall/checkpoint)
@@ -311,7 +324,7 @@
 	dir = 4
 	},
 /obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/green,
+/obj/structure/cable,
 /obj/item/stack/material/phoron{
 	amount = 10
 	},
@@ -351,7 +364,9 @@
 /area/surface/outpost/wall/checkpoint)
 "MF" = (
 /obj/structure/cable/heavyduty{
-	icon_state = "1-2"
+	icon_state = "1-2";
+	d1 = 1;
+	d2 = 2
 	},
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
@@ -369,7 +384,9 @@
 	})
 "Ox" = (
 /obj/structure/cable/heavyduty{
-	icon_state = "1-2"
+	icon_state = "1-2";
+	d1 = 1;
+	d2 = 2
 	},
 /turf/simulated/floor/plating,
 /area/surface/outside/wilderness/mountains)
@@ -383,7 +400,9 @@
 	})
 "PZ" = (
 /obj/structure/cable/heavyduty{
-	icon_state = "4-8"
+	icon_state = "4-8";
+	d1 = 4;
+	d2 = 8
 	},
 /obj/machinery/light{
 	dir = 1
@@ -419,7 +438,8 @@
 	dir = 1
 	},
 /obj/structure/cable/heavyduty{
-	d2 = 0;
+	d1 = 1;
+	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/asteroid_steel,

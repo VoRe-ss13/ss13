@@ -1832,6 +1832,12 @@
 	},
 /obj/effect/map_helper/airlock/door/ext_door,
 /obj/effect/map_helper/airlock/button/ext_button,
+/obj/machinery/access_button{
+	dir = 8;
+	name = "exterior access button";
+	pixel_x = -9;
+	pixel_y = -24
+	},
 /turf/simulated/shuttle/floor/voidcraft/dark,
 /area/shuttle/ninja)
 "aZo" = (
@@ -7745,21 +7751,6 @@
 /obj/mecha/working/ripley/mining,
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/merchant)
-"iaB" = (
-/obj/machinery/access_button{
-	dir = 8;
-	name = "exterior access button";
-	pixel_x = 25;
-	pixel_y = 6
-	},
-/obj/machinery/door/airlock{
-	icon = 'icons/obj/doors/Dooruranium.dmi'
-	},
-/turf/unsimulated/floor{
-	icon_state = "plating";
-	name = "plating"
-	},
-/area/ninja_dojo/dojo)
 "iaK" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/belt/security/tactical/bandolier,
@@ -27385,7 +27376,7 @@ jUW
 nXc
 nXc
 lxX
-iaB
+lxX
 nXc
 jUW
 jUW
