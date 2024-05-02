@@ -331,15 +331,6 @@
 
 /datum/config_entry/flag/disable_player_mice
 
-//TORCHAdd Start - Porting "Join As Mob" verb from Rogue Star.
-/datum/config_entry/flag/allow_ghost_mob_spawn
-	default = TRUE
-
-/datum/config_entry/number/ghost_mob_count
-	default = 5
-	min_val = 0
-//TORCHAdd End
-
 /// Set to 1 to prevent newly-spawned mice from understanding human speech
 /datum/config_entry/flag/uneducated_mice
 
