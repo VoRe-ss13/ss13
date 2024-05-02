@@ -245,10 +245,7 @@
 	edge_blending_priority = 6
 	movement_cost = 2
 	initial_flooring = /decl/flooring/snow
-	turf_layers = list(
-		/turf/simulated/floor/outdoors/rocks,
-		/turf/simulated/floor/outdoors/dirt
-		)
+	demote_to = /turf/simulated/floor/outdoors/dirt
 
 /turf/simulated/floor/outdoors/snow/thor/planetuse/Entered(atom/A)
 	if(isliving(A))
@@ -317,44 +314,14 @@
 	nitrogen	= MOLES_N2SIF
 	temperature	= TEMPERATURE_SIF
 
-	turf_layers = list(
-		/turf/simulated/floor/outdoors/rocks,
-		/turf/simulated/floor/outdoors/dirt
-		)
+	demote_to = /turf/simulated/floor/outdoors/dirt
 	grass_chance = 25
 
-	grass_types = list(
-		/obj/structure/flora/ausbushes/sparsegrass,
-		/obj/structure/flora/ausbushes/fullgrass,
-		/obj/structure/flora/ausbushes/lavendergrass,
-		/obj/structure/flora/ausbushes/genericbush,
-		/obj/structure/flora/ausbushes/grassybush,
-		/obj/structure/flora/ausbushes/sunnybush,
-		/obj/structure/flora/ausbushes/brflowers,
-		/obj/structure/flora/ausbushes/ppflowers,
-		/obj/structure/flora/ausbushes/ywflowers,
-		/obj/structure/flora/tree/jungle_small,
-		/obj/structure/flora/tree/jungle,
-		/obj/structure/flora/ausbushes/leafybush,
-		)
+	grass = "thor_real"
 
 	animal_chance = 0.5
 
-	animal_types = list(
-		/mob/living/simple_mob/vore/aggressive/frog = 5,
-		/mob/living/simple_mob/animal/sif/glitterfly = 35,
-		/mob/living/simple_mob/vore/otie = 15,
-		/mob/living/simple_mob/vore/otie/feral = 5,
-		/mob/living/simple_mob/vore/fennec = 20,
-		/mob/living/simple_mob/animal/passive/lizard = 20,
-		/mob/living/simple_mob/animal/passive/armadillo = 10,
-		/mob/living/simple_mob/animal/passive/opossum = 10,
-		/mob/living/simple_mob/animal/passive/mouse/jerboa = 5,
-		/mob/living/simple_mob/vore/wolf/direwolf = 5,
-		/mob/living/simple_mob/vore/aggressive/rat = 5,
-		/mob/living/simple_mob/vore/horse/big = 10,
-		/mob/living/simple_mob/vore/otie/zorgoia/feral = 1
-		)
+	animals = "thor_real"
 
 //Overrides to fix active edges
 
