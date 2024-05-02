@@ -2103,7 +2103,8 @@
 	name = "north bump";
 	pixel_y = 24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
@@ -2419,7 +2420,9 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "bZd" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
@@ -3078,10 +3081,6 @@
 	dir = 1
 	},
 /obj/effect/zone_divider,
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/railing,
 /obj/structure/cable/green{
 	d1 = 16;
 	d2 = 0;
@@ -4381,14 +4380,6 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"dUh" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/rnd/mixing{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
 "dUp" = (
 /obj/effect/floor_decal/rust,
 /obj/machinery/recharger/wallcharger{
@@ -4813,6 +4804,11 @@
 	},
 /obj/item/weapon/cell/device/weapon,
 /obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -4977,7 +4973,9 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "err" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/light/small{
@@ -5304,7 +5302,9 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "eEV" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/rust,
@@ -5981,7 +5981,9 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "fpc" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/railing,
@@ -6330,7 +6332,9 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "fJA" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/effect/floor_decal/stairs/dark_stairs{
@@ -6349,7 +6353,9 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "fKk" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/glass{
@@ -6364,7 +6370,9 @@
 /turf/simulated/floor/plating,
 /area/engineering/atmos)
 "fKB" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
@@ -6398,7 +6406,9 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "fLm" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
@@ -6801,41 +6811,30 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "ggc" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 24
-	},
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
 	},
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/fore{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
-"ggv" = (
 /obj/structure/cable/green{
 	d1 = 16;
 	d2 = 0;
 	icon_state = "16-0"
 	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/fore{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"ggv" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/mixing{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "giW" = (
 /obj/structure/stairs/spawner/east,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/fore{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -6905,7 +6904,8 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
@@ -6952,7 +6952,7 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "gpr" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -7126,23 +7126,13 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "gyJ" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
+/obj/structure/cable/green,
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/fore{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
-"gyM" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "west bump";
+	pixel_x = -24
 	},
-/obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/fore{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -7163,11 +7153,6 @@
 	light_color = "#AF2A2A"
 	},
 /obj/effect/floor_decal/rust,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/fore{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -7198,7 +7183,8 @@
 	d2 = 0;
 	icon_state = "16-0"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
@@ -7206,13 +7192,17 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "gCg" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
@@ -7220,7 +7210,9 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "gCu" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/steel_dirty,
@@ -12053,8 +12045,8 @@
 	},
 /obj/item/weapon/cell/device/weapon,
 /obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport{
@@ -15081,7 +15073,9 @@
 /turf/simulated/floor/reinforced/airmix,
 /area/engineering/atmos)
 "pRn" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/camera/network/civilian{
@@ -16717,17 +16711,6 @@
 "rSE" = (
 /turf/simulated/wall/r_wall,
 /area/rnd/mixing{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
-"rSP" = (
-/obj/structure/cable,
-/obj/structure/cable{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "rSX" = (
@@ -18433,11 +18416,17 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "tWI" = (
-/obj/machinery/light/small{
-	dir = 4
+/obj/effect/floor_decal/rust,
+/obj/structure/cable/green{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
 	},
-/turf/simulated/mineral/cave,
-/area/surface/underground/in_da_walls)
+/obj/structure/cable/green,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/aftport{
+	base_turf = /turf/simulated/floor/outdoors/rocks/caves
+	})
 "tXn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
@@ -23993,7 +23982,7 @@ rlb
 rlb
 rlb
 rlb
-tWI
+rlb
 rlb
 rlb
 rlb
@@ -45939,7 +45928,7 @@ rlb
 rlb
 lJk
 mnJ
-rSP
+mHt
 jjc
 lJk
 rlb
@@ -46196,7 +46185,7 @@ lJk
 lJk
 lJk
 eii
-eig
+tWI
 eig
 lJk
 rlb
@@ -59994,8 +59983,8 @@ rlb
 rlb
 rlb
 fNq
-ggv
-gyM
+fLb
+kdV
 gtt
 hjj
 fQk
@@ -70320,7 +70309,7 @@ toy
 toy
 uAz
 vmf
-dUh
+ggv
 wxn
 dUN
 xpk
