@@ -18,7 +18,7 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 4
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -114,7 +114,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/structure/cable/green{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
@@ -324,7 +324,7 @@
 	dir = 4
 	},
 /obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/green,
+/obj/structure/cable,
 /obj/item/stack/material/phoron{
 	amount = 10
 	},
