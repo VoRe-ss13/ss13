@@ -34,11 +34,15 @@ SUBSYSTEM_DEF(xenoarch)
 		if(!M.density)
 			continue
 
-		if(isnull(M.geologic_data))
-			M.geologic_data = new /datum/geosample(M)
+		//TORCH Removal moved downwards
 
 		if((M.z in using_map.xenoarch_exempt_levels) || !prob(XENOARCH_SPAWN_CHANCE))
 			continue
+
+		//TORCHEdit Begin
+		if(isnull(M.geologic_data))
+			M.geologic_data = new /datum/geosample(M)
+		//TORCHEdit End
 
 		var/farEnough = 1
 		for(var/turf/T as anything in digsite_spawning_turfs)
