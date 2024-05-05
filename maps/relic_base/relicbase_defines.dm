@@ -211,7 +211,7 @@
 	holomap_legend_y = 160
 
 /datum/map_z_level/relicbase/station/station_one
-	z = Z_LEVEL_UNDERGROUND|MAP_LEVEL_XENOARCH_EXEMPT
+	z = Z_LEVEL_UNDERGROUND
 	name = "Underground"
 	base_turf = /turf/simulated/mineral/floor/cave
 	transit_chance = 10
@@ -219,7 +219,7 @@
 	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*0
 
 /datum/map_z_level/relicbase/station/station_two
-	z = Z_LEVEL_SURFACE|MAP_LEVEL_XENOARCH_EXEMPT
+	z = Z_LEVEL_SURFACE
 	name = "Surface"
 	base_turf = /turf/simulated/open
 	transit_chance = 10
@@ -227,7 +227,7 @@
 	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*1
 
 /datum/map_z_level/relicbase/station/station_three
-	z = Z_LEVEL_UPPER_FLOORS|MAP_LEVEL_XENOARCH_EXEMPT
+	z = Z_LEVEL_UPPER_FLOORS
 	name = "Upper Levels"
 	base_turf = /turf/simulated/open
 	transit_chance = 10
@@ -256,15 +256,15 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks
 
 /datum/map_z_level/relicbase/surface_wild
-	z = Z_LEVEL_SURFACE_WILDS|MAP_LEVEL_XENOARCH_EXEMPT
+	z = Z_LEVEL_SURFACE_WILDS
 	name = "Wilderness"
-	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONTACT|MAP_LEVEL_CONSOLES|MAP_LEVEL_VORESPAWN
+	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONTACT|MAP_LEVEL_CONSOLES|MAP_LEVEL_VORESPAWN|MAP_LEVEL_XENOARCH_EXEMPT
 	base_turf = /turf/simulated/floor/outdoors/rocks
 
 /datum/map_z_level/relicbase/surface_ocean
-	z = Z_LEVEL_SURFACE_OCEAN|MAP_LEVEL_XENOARCH_EXEMPT
+	z = Z_LEVEL_SURFACE_OCEAN
 	name = "Ocean"
-	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONTACT|MAP_LEVEL_CONSOLES|MAP_LEVEL_VORESPAWN
+	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONTACT|MAP_LEVEL_CONSOLES|MAP_LEVEL_VORESPAWN|MAP_LEVEL_XENOARCH_EXEMPT
 	base_turf = /turf/simulated/floor/outdoors/rocks
 
 /datum/map_z_level/relicbase/carrier
@@ -274,17 +274,17 @@
 	transit_chance = 10
 
 /datum/map_z_level/relicbase/centcom
-	z = Z_LEVEL_CENTCOM|MAP_LEVEL_XENOARCH_EXEMPT
+	z = Z_LEVEL_CENTCOM
 	name = "Centcom"
-	flags = MAP_LEVEL_ADMIN|MAP_LEVEL_CONTACT
+	flags = MAP_LEVEL_ADMIN|MAP_LEVEL_CONTACT|MAP_LEVEL_XENOARCH_EXEMPT
 
 /datum/map_z_level/relicbase/transit
-	z = Z_LEVEL_TRANSIT|MAP_LEVEL_XENOARCH_EXEMPT
+	z = Z_LEVEL_TRANSIT
 	name = "Transit"
-	flags = MAP_LEVEL_ADMIN|MAP_LEVEL_SEALED|MAP_LEVEL_PLAYER|MAP_LEVEL_CONTACT
+	flags = MAP_LEVEL_ADMIN|MAP_LEVEL_SEALED|MAP_LEVEL_PLAYER|MAP_LEVEL_CONTACT|MAP_LEVEL_XENOARCH_EXEMPT
 
 /datum/map_z_level/relicbase/station/catacombs
-	z = Z_LEVEL_CATACOMBS|MAP_LEVEL_XENOARCH_EXEMPT
+	z = Z_LEVEL_CATACOMBS
 	name = "Catacombs"
 	base_turf = /turf/simulated/mineral/floor/cave
 	transit_chance = 10
