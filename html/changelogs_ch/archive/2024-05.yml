@@ -39,3 +39,9 @@
   purplefoxy27:
   - rscadd: Ghosts can now join the round as mobs
   - admin: Added verb to control how many mobs ghosts can spawn as in the Fun tab.
+2024-05-05:
+  VoRe-bot:
+  - refactor: shandlers do two initial runs during RUNLEVEL_LOBBY
+  - bugfix: sunlight in VR
+  cadyn:
+  - bugfix: memory optimizations
