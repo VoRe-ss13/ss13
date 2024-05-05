@@ -156,7 +156,7 @@
 "aE" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/machinery/door/firedoor/border_only,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -205,7 +205,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -232,7 +232,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangerhall)
 "aZ" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -284,7 +284,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/aftdock)
 "bk" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -344,7 +344,7 @@
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/structure/cable/blue,
+/obj/structure/cable,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -399,7 +399,7 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/stargazer)
 "bB" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -498,17 +498,17 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/telecomms)
 "bS" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -525,7 +525,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -634,7 +634,7 @@
 	pixel_x = 12;
 	pixel_y = -24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
 	},
@@ -654,7 +654,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hallwayaftport)
 "cl" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -737,7 +737,7 @@
 /turf/simulated/floor/tiled/airless,
 /area/wreck/ufoship)
 "cL" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -758,7 +758,7 @@
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/stargazer)
 "cO" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -814,7 +814,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/aftdock)
 "de" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -901,7 +901,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -918,7 +918,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/hangarfour)
 "dx" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -989,12 +989,12 @@
 /turf/simulated/wall,
 /area/maintenance/solars/expportsolar)
 "dF" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -1051,7 +1051,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangarfour)
 "dQ" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
 	},
@@ -1165,7 +1165,7 @@
 	name = "east bump";
 	pixel_x = 24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -1373,7 +1373,7 @@
 	input_level = 150000;
 	output_level = 100000
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
@@ -1542,7 +1542,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangarfour)
 "fU" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -1566,7 +1566,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangartwo)
 "fZ" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
@@ -1578,7 +1578,7 @@
 /turf/simulated/floor/bluegrid,
 /area/maintenance/expoutpost/telecomms)
 "gb" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -1603,7 +1603,7 @@
 	dir = 5
 	},
 /obj/machinery/power/terminal,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -1623,7 +1623,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/hangerhall)
 "gi" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -1750,7 +1750,7 @@
 /turf/simulated/wall/r_wall,
 /area/expoutpost/hangartwo)
 "gW" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -1770,7 +1770,7 @@
 /area/expoutpost/hallwayaftport)
 "ha" = (
 /obj/structure/disposalpipe/segment,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -1803,7 +1803,7 @@
 	pixel_x = 11;
 	pixel_y = 24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -1895,7 +1895,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -1919,7 +1919,7 @@
 /area/expoutpost/hangartwo)
 "hE" = (
 /obj/structure/catwalk,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -1934,7 +1934,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/hangerhall)
 "hI" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -2273,7 +2273,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/debriefing)
 "iZ" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
@@ -2300,7 +2300,7 @@
 	req_access = list();
 	req_one_access = list(11,24)
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -2327,7 +2327,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -2376,7 +2376,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2407,7 +2407,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/hangarsix)
 "jw" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2467,7 +2467,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/debriefing)
 "jH" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -2556,7 +2556,7 @@
 /turf/simulated/floor/airless,
 /area/expoutpost/hangerhall)
 "jV" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -2623,12 +2623,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/expoutpost/hangarthree)
 "kl" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -2679,7 +2679,7 @@
 /turf/simulated/floor/wood/sif,
 /area/maintenance/expoutpost/outerportmaint)
 "ky" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2687,7 +2687,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/atmospherics)
 "kF" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2738,12 +2738,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/expoutpost/hangarsix)
 "kP" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -2762,7 +2762,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -2854,7 +2854,7 @@
 	dir = 4;
 	pixel_x = -22
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -2884,7 +2884,7 @@
 "lu" = (
 /obj/structure/catwalk,
 /obj/machinery/door/airlock/maintenance,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -3048,7 +3048,7 @@
 /area/expoutpost/aftdock)
 "md" = (
 /obj/machinery/atmospherics/portables_connector,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -3081,7 +3081,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangartwo)
 "mo" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -3253,7 +3253,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -3267,7 +3267,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/shuttle)
 "mZ" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -3281,7 +3281,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangerhall)
 "na" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -3335,7 +3335,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/hangarsix)
 "nl" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -3347,7 +3347,7 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -3364,7 +3364,7 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/echidna)
 "nn" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -3372,12 +3372,12 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/outerstarboardmaint)
 "nr" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -3433,7 +3433,7 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
@@ -3481,7 +3481,7 @@
 	req_access = list(17,43);
 	req_one_access = list(17)
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -3502,12 +3502,12 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -3534,7 +3534,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/expoutpost/gateway)
 "nR" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -3582,7 +3582,7 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/echidna)
 "nV" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -3602,7 +3602,7 @@
 	name = "Station Intercom (General)";
 	pixel_x = 21
 	},
-/obj/structure/cable/blue,
+/obj/structure/cable,
 /obj/machinery/camera/network/carrier{
 	c_tag = "CAR - Port Solars";
 	dir = 1
@@ -3632,12 +3632,12 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -3716,7 +3716,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/prep)
 "op" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -3738,7 +3738,7 @@
 	dir = 2;
 	name = "Hangar Two"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -3751,7 +3751,7 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
 	},
@@ -3791,7 +3791,7 @@
 /turf/simulated/shuttle/floor/white,
 /area/shuttle/baby_mammoth)
 "oK" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -3858,12 +3858,12 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangerhall)
 "oZ" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -3903,12 +3903,12 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/innerstarboardmaint)
 "pe" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -3928,7 +3928,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/outerportmaint)
 "pl" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -3957,7 +3957,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangarone)
 "pn" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -3996,7 +3996,7 @@
 /obj/machinery/door/airlock/maintenance,
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/catwalk,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4027,14 +4027,14 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/echidna)
 "pA" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -4175,7 +4175,7 @@
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -4201,7 +4201,7 @@
 	name = "north bump";
 	pixel_y = 24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
@@ -4210,7 +4210,7 @@
 /area/maintenance/expoutpost/outerportmaint)
 "qf" = (
 /obj/item/frame/apc,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -4246,7 +4246,7 @@
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/structure/cable/blue,
+/obj/structure/cable,
 /obj/structure/table/sifwoodentable,
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled,
@@ -4310,7 +4310,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/nukestorage)
 "qw" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4373,7 +4373,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/expoutpost/hangarone)
 "qG" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4530,7 +4530,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangartwo)
 "ro" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -4615,7 +4615,7 @@
 /area/expoutpost/hangarfour)
 "rE" = (
 /obj/structure/catwalk,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4663,7 +4663,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4672,7 +4672,7 @@
 /area/maintenance/expoutpost/outerstarboardmaint)
 "rQ" = (
 /obj/structure/disposalpipe/segment,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4783,7 +4783,7 @@
 "si" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/machinery/door/firedoor/border_only,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -4809,7 +4809,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4827,7 +4827,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/outerportmaint)
 "st" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -4853,7 +4853,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -4895,7 +4895,7 @@
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/echidna)
 "sz" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -4957,7 +4957,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -4971,7 +4971,7 @@
 /turf/simulated/floor/tiled/white,
 /area/expoutpost/hangaroneprep)
 "sJ" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -5028,7 +5028,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/hangerhall)
 "sX" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5045,7 +5045,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hallwayaftport)
 "sY" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5082,7 +5082,7 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/echidna)
 "tg" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5141,7 +5141,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5159,7 +5159,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/hangarfive)
 "tu" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -5246,7 +5246,7 @@
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/steeldecal/steel_decals5,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -5257,7 +5257,7 @@
 /area/expoutpost/prep)
 "tR" = (
 /obj/structure/closet/emcloset,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -5288,7 +5288,7 @@
 "tX" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -5305,7 +5305,7 @@
 /area/expoutpost/hangaroneprep)
 "tY" = (
 /obj/machinery/light/small,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -5427,7 +5427,7 @@
 "us" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -5449,7 +5449,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/hangarsix)
 "uv" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -5469,7 +5469,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/atmospherics)
 "uz" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5495,7 +5495,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangerhall)
 "uC" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -5555,7 +5555,7 @@
 /obj/effect/floor_decal/corner/pink/border{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -5612,7 +5612,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -30
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5746,7 +5746,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5787,7 +5787,7 @@
 /turf/simulated/floor/tiled/white,
 /area/expoutpost/prep/recovery)
 "vG" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -5816,7 +5816,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -5878,7 +5878,7 @@
 /area/expoutpost/hangaroneprep)
 "vZ" = (
 /obj/structure/catwalk,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -5986,7 +5986,7 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/echidna)
 "wH" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -6042,12 +6042,12 @@
 	pixel_x = 11;
 	pixel_y = -24
 	},
-/obj/structure/cable/blue,
+/obj/structure/cable,
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -6088,7 +6088,7 @@
 /turf/simulated/wall,
 /area/expoutpost/hallwayaftport)
 "wT" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -6142,7 +6142,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -6170,7 +6170,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/innerstarboardmaint)
 "xi" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -6202,7 +6202,7 @@
 "xm" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/machinery/door/firedoor/border_only,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -6246,7 +6246,7 @@
 /area/shuttle/shuttlebackup/start)
 "xw" = (
 /obj/structure/catwalk,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -6337,7 +6337,7 @@
 	name = "Gateway"
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -6388,7 +6388,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/expoutpost/hangarfour)
 "ya" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -6400,7 +6400,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangerhall)
 "yc" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -6447,7 +6447,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -6520,7 +6520,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/shuttle)
 "yE" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -6559,7 +6559,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/gateway)
 "yN" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -6600,7 +6600,7 @@
 /turf/simulated/shuttle/floor/white,
 /area/shuttle/baby_mammoth)
 "yX" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -6620,7 +6620,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/aftdock)
 "zb" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -6705,7 +6705,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/obj/structure/cable/blue,
+/obj/structure/cable,
 /obj/machinery/power/apc{
 	name = "south bump";
 	pixel_y = -24
@@ -6748,7 +6748,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -6773,7 +6773,7 @@
 "zM" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -6875,7 +6875,7 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/baby_mammoth)
 "Ag" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -6948,7 +6948,7 @@
 /turf/simulated/wall/r_wall,
 /area/expoutpost/hangarthree)
 "Av" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -6996,7 +6996,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/expoutpost/hangarsix)
 "AM" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -7019,12 +7019,12 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/hangarfour)
 "AR" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -7130,7 +7130,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/innerportmaint)
 "Br" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -7161,7 +7161,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangarsix)
 "Bu" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -7183,7 +7183,7 @@
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/echidna)
 "Bw" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -7196,7 +7196,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangerhall)
 "Bx" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -7283,7 +7283,7 @@
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/shuttlebackup/start)
 "BI" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -7364,7 +7364,7 @@
 /obj/structure/bed/chair/office/dark{
 	dir = 1
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -7473,7 +7473,7 @@
 /turf/simulated/shuttle/wall/voidcraft/hard_corner,
 /area/shuttle/baby_mammoth)
 "Cw" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -7769,7 +7769,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/atmospherics)
 "DI" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -7794,7 +7794,7 @@
 "DN" = (
 /obj/effect/floor_decal/borderfloorwhite/corner,
 /obj/effect/floor_decal/corner/paleblue/bordercorner,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -7876,12 +7876,12 @@
 /turf/space,
 /area/space)
 "Ec" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -7991,7 +7991,7 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/stargazer)
 "EA" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -8034,7 +8034,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/hangarfive)
 "EH" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -8090,7 +8090,7 @@
 "EV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -8106,7 +8106,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangarfive)
 "EY" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -8134,7 +8134,7 @@
 	input_level = 150000;
 	output_level = 100000
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
@@ -8188,7 +8188,7 @@
 /turf/simulated/shuttle/wall/voidcraft/hard_corner,
 /area/shuttle/baby_mammoth)
 "Fi" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -8232,7 +8232,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/debriefing)
 "Fy" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -8284,7 +8284,7 @@
 /area/expoutpost/displayroom)
 "FH" = (
 /obj/machinery/light/small,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -8310,7 +8310,7 @@
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/shuttlebackup/start)
 "FO" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -8344,12 +8344,12 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -8458,7 +8458,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -8469,7 +8469,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangerhall)
 "Gq" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -8636,7 +8636,7 @@
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -8723,7 +8723,7 @@
 /area/solar/expstarboardsolar)
 "Hd" = (
 /obj/effect/decal/cleanable/cobweb2,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -8750,7 +8750,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -8832,7 +8832,7 @@
 	name = "north bump";
 	pixel_y = 24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
 	},
@@ -9030,12 +9030,12 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/hangarone)
 "Iv" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -9100,7 +9100,7 @@
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/structure/cable/blue,
+/obj/structure/cable,
 /turf/simulated/floor/tiled/white,
 /area/expoutpost/prep/recovery)
 "IG" = (
@@ -9289,7 +9289,7 @@
 /turf/simulated/floor/tiled/white,
 /area/expoutpost/hangaroneprep)
 "Jp" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -9440,7 +9440,7 @@
 	pixel_y = 32;
 	req_one_access = list(43,67)
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -9530,7 +9530,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/outerstarboardmaint)
 "KB" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -9588,12 +9588,12 @@
 /obj/machinery/light/spot{
 	dir = 8
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -9750,7 +9750,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/debriefing)
 "LA" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -9853,7 +9853,7 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 8
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -9882,7 +9882,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -9915,7 +9915,7 @@
 	pixel_y = -24;
 	req_access = list(19)
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -9994,7 +9994,7 @@
 /turf/simulated/shuttle/wall,
 /area/wreck/supplyshuttle)
 "Mp" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -10140,7 +10140,7 @@
 /area/shuttle/shuttlebackup/start)
 "MT" = (
 /obj/structure/bed/chair/office/dark,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -10323,17 +10323,17 @@
 /turf/simulated/floor/airless,
 /area/solar/expportsolar)
 "NC" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -10441,7 +10441,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/outerstarboardmaint)
 "Oh" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -10476,7 +10476,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/aftdock)
 "Ol" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -10489,7 +10489,7 @@
 /area/expoutpost/hangerhall)
 "On" = (
 /obj/structure/closet/emcloset,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -10530,7 +10530,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -10642,7 +10642,7 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner{
 	dir = 1
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -10669,7 +10669,7 @@
 	name = "north bump";
 	pixel_y = 24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -10768,7 +10768,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/debriefing)
 "Pn" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -10910,12 +10910,12 @@
 /turf/simulated/wall/r_wall,
 /area/wreck/ufoship)
 "Qb" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -10937,12 +10937,12 @@
 /turf/simulated/floor/tiled/white/airless,
 /area/wreck/ufoship)
 "Qf" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -10966,7 +10966,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/expoutpost/hangarone)
 "Qk" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -11093,7 +11093,7 @@
 	req_access = list();
 	req_one_access = list(11,24)
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -11117,7 +11117,7 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/aftdock)
 "QI" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -11145,7 +11145,7 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/shuttlebackup/start)
 "QP" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -11257,7 +11257,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangaroneprep)
 "Rg" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -11283,7 +11283,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -11316,7 +11316,7 @@
 /turf/simulated/floor/airless,
 /area/wreck/ufoship)
 "Rv" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -11373,7 +11373,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangarsix)
 "RI" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -11442,7 +11442,7 @@
 /turf/simulated/shuttle/wall/voidcraft,
 /area/shuttle/stargazer)
 "RR" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -11533,12 +11533,12 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/baby_mammoth)
 "Sl" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -11666,7 +11666,7 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -11729,7 +11729,7 @@
 	name = "west bump";
 	pixel_x = -24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 2;
 	icon_state = "0-2"
 	},
@@ -11943,7 +11943,7 @@
 /obj/item/stack/cable_coil/yellow,
 /obj/item/stack/cable_coil/yellow,
 /obj/item/stack/cable_coil/yellow,
-/obj/structure/cable/blue,
+/obj/structure/cable,
 /obj/machinery/camera/network/carrier{
 	c_tag = "CAR - Starboard Solars";
 	dir = 1
@@ -11970,7 +11970,7 @@
 /area/shuttle/stargazer)
 "TC" = (
 /obj/structure/catwalk,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -12038,15 +12038,10 @@
 /turf/simulated/floor/plating,
 /area/expoutpost/hangarone)
 "TQ" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/structure/cable/blue{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -12078,7 +12073,7 @@
 	operating = 0;
 	pixel_y = 24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
 	},
@@ -12094,7 +12089,7 @@
 /turf/simulated/wall/r_wall,
 /area/maintenance/expoutpost/innerstarboardmaint)
 "Uh" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
@@ -12116,7 +12111,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/innerportmaint)
 "Uk" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -12229,7 +12224,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangarfive)
 "UE" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -12240,7 +12235,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/teleporter)
 "UF" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -12249,7 +12244,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -12378,7 +12373,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/light,
 /obj/structure/disposalpipe/segment,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -12444,14 +12439,14 @@
 /turf/simulated/floor/tiled/white,
 /area/expoutpost/hangaroneprep)
 "Vk" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
@@ -12552,12 +12547,12 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangarone)
 "VK" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -12631,12 +12626,12 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangerhall)
 "VW" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -12650,7 +12645,7 @@
 /area/expoutpost/prep)
 "Wb" = (
 /obj/structure/closet/emcloset,
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -12728,7 +12723,7 @@
 /turf/space,
 /area/space)
 "Wt" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -12769,7 +12764,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -12777,7 +12772,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/expoutpost/innerportmaint)
 "WC" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -12798,12 +12793,12 @@
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/gateway)
 "WG" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -12929,7 +12924,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/expoutpost/gateway)
 "Xr" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -13045,12 +13040,12 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -13129,7 +13124,7 @@
 /turf/simulated/floor/tiled/steel,
 /area/expoutpost/hangarsix)
 "Ya" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -13240,7 +13235,7 @@
 	name = "north bump";
 	pixel_y = 24
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d2 = 4;
 	icon_state = "0-4"
 	},
@@ -13274,7 +13269,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangarone)
 "YI" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -13290,7 +13285,7 @@
 	name = "Recovery";
 	req_one_access = list(5,43)
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -13345,7 +13340,7 @@
 /turf/simulated/shuttle/wall/voidcraft/hard_corner,
 /area/shuttle/echidna)
 "YW" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -13424,17 +13419,17 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
@@ -13484,7 +13479,7 @@
 	dir = 4;
 	icon_state = "pipe-c"
 	},
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
@@ -13526,7 +13521,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/expoutpost/hangarthree)
 "ZA" = (
-/obj/structure/cable/blue{
+/obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"

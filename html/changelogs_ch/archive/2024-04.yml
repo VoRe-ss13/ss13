@@ -187,3 +187,94 @@
   VoRe-bot:
   - bugfix: broken unicode characters again...
   - bugfix: autochangelog not working for maptweaks
+2024-04-20:
+  VoRe-bot:
+  - rscadd: Add new marking Full Body Gloss (additive)
+  - bugfix: fix even more harddels woooo
+  - refactor: Steal TG's find_references()
+  - bugfix: scrolling not working on tgui windows
+  - bugfix: too many chat messages pushed to archive on login mid round after leaving
+  - bugfix: a rare crash condition on the BodyRecords UI if there were no records
+      available
+  - bugfix: Splash screen inconsistency
+  - maptweak: add splash screen to centcomm Z-level
+  - rscadd: Teshari Face Mask from chompstation
+  - rscadd: Facial protection to the mask, since it cant be removed
+  - bugfix: Fixed an old `to_chat` and also added framework for adding more face states
+      to the mask
+  - bugfix: temporarily disable server exploding submap
+  - bugfix: removes a round removal method for drones
+  - rscadd: mind transfer preference
+  - code_imp: remove mind transfer whitelist, move to individual subtype allowance
+      bool
+  - bugfix: borg pounces properly disarm on successful hits again
+  - bugfix: vore mobs stun at min(weakened, 2) seconds to prevent instant interruptions
+      of vore attempts
+  - bugfix: multiple verb usages for speech setting instead of proc calls
+  - bugfix: mind_bound items can use /me now
+  - bugfix: Translocator not sending people into belly
+  - bugfix: Translocators will make sure everything is cool before sending you into
+      a stomach
+  - bugfix: trait selection oof hardfeet along with no scan and no defib
+  - bugfix: Icon edit access violation crash fit attempt
+  cadyn:
+  - bugfix: fixed splash screens
+2024-04-22:
+  VoRe-bot:
+  - bugfix: sleevemate not longer usable with pref disabled
+  - rscadd: new planetary lighting system
+2024-04-23:
+  VoRe-bot:
+  - bugfix: Another cached icon edit removal
+  - bugfix: Lockers check for opened when finishing the weld to prevent insta-traps
+  - rscdel: Removed VR respawn time
+  - bugfix: VR no longer will spawn duplicate PDAs flooding the PDA servers with fake
+      people.
+  - maptweak: VR new bar room added.
+  - bugfix: lighting runtimes
+  - maptweak: valley grass sprites are shifted to other sif turf sprites.
+  - qol: Shadekin Phase In/Out animation now adjusts to the shadekin's size
+  - bugfix: Thrown objects not passing though phased kins
+  - bugfix: Fixed empty hand interactions not working on non-rideable humanmobs with
+      forced buckling.
+  - bugfix: Adjustments to item staining with 'bloody' hands.
+2024-04-24:
+  VoRe-bot:
+  - qol: Adjusted VR avatar loadouts
+  - maptweak: The VR stripmall has more decor.
+  - rscadd: VR now uses the new sunlight system
+  - bugfix: various optimizations and fixes for sunlight
+  - rscadd: Instrument case holster, only for instruments
+2024-04-28:
+  VoRe-bot:
+  - qol: Tagged mail will show it's location.
+  - bugfix: Fixed tagger not changing the tag of an already tagged envelope
+  - bugfix: Fixed certain firework stars from being able to change Sif's weather
+  - bugfix: more GC bullshit
+  - bugfix: fixed many bad uses of the usr variable
+  - bugfix: Meatyores shower will have the proper text when ending
+  - bugfix: Attempting to fix a rare subsystem crash
+  - rscadd: Added a reaction to change liquid fire to neo liquid fire (liquid fire,
+      sulfur and a small amount of phoron + catalyst)
+  - balance: Changed the reagents in cherry bomb to liquid fire instead of neo liquid
+      fire
+  - rscadd: Added ore grubs and lizardmen to the random mining mob spawn pool
+  - bugfix: lighting bullshit
+  - bugfix: Security law of maints 3 overriding the lockdown system I keep forgetting
+      exists.
+  - bugfix: solars devouring shield useage by adding platting
+  - bugfix: fixed the disposals and the lack of antibody scanners
+  - bugfix: Fixed a bug involving making custom areas in VR which can delete you if
+      made.
+2024-04-30:
+  VoRe-bot:
+  - rscadd: 'Added admin spawn set of goggles that''s sole purpose is seeing kin (Rae:
+      commented out the meson/kin hybrid though)'
+  - balance: Makes it so the large kinetic weapons don't need wielding since that
+      code is appears broken and I doubt the two very rare items will become broken
+      if they get the kinetic blast effect.
+  - bugfix: gc agony
+  - code_imp: '''hud_enabled'' variable for guns actually works now!'
+  - bugfix: Belly-linked vac-pack dirt nutrition gain now scales with target vorgan's
+      gain setting.
+  - rscadd: Added a one life trait. Combination of no resleeve and no defib.

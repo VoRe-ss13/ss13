@@ -3065,7 +3065,7 @@
 	dir = 8
 	},
 /obj/structure/cable/yellow{
-	d2 = 0;
+	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
@@ -3802,13 +3802,6 @@
 /obj/random/trash,
 /obj/random/junk,
 /obj/random/junk,
-/turf/simulated/floor/plating,
-/area/maintenance/underground/catacombs)
-"Bo" = (
-/obj/effect/floor_decal/rust,
-/obj/structure/railing{
-	dir = 8
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
 "Bp" = (
@@ -5295,6 +5288,8 @@
 /area/maintenance/underground/catacombs)
 "MQ" = (
 /obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
@@ -35126,7 +35121,7 @@ Fu
 tw
 Qg
 ZY
-au
+iJ
 iJ
 iJ
 ZY
@@ -35383,8 +35378,8 @@ QL
 Em
 ZY
 kM
-Bo
-Bo
+ao
+ao
 iJ
 ZY
 Tc
@@ -35639,8 +35634,8 @@ Tc
 HS
 iJ
 Wh
-iJ
-iJ
+oQ
+au
 iJ
 iJ
 ZY

@@ -43,14 +43,15 @@
 	var/old_outdoors = outdoors
 	var/old_dangerous_objects = dangerous_objects
 	var/old_dynamic_lumcount = dynamic_lumcount
-	var/oldtype = src.type	//TORCHEdit
-	var/old_density = src.density //TORCHEdit
-	var/was_open = istype(src,/turf/simulated/open) //TORCHEdit
-	//TORCHEdit Begin
+	var/oldtype = src.type	//CHOMPEdit
+	var/old_density = src.density //CHOMPEdit
+	var/was_open = istype(src,/turf/simulated/open) //CHOMPEdit
+	//CHOMPEdit Begin
 	var/datum/sunlight_handler/old_shandler
 	var/turf/simulated/simself = src
 	if(istype(simself) && simself.shandler)
 		old_shandler = simself.shandler
+	//CHOMPEdit End
 
 	var/turf/Ab = GetAbove(src)
 	if(Ab)
@@ -71,15 +72,18 @@
 	cut_overlays(TRUE)
 	RemoveElement(/datum/element/turf_z_transparency)
 
-	var/turf/new_turf  //TORCHEdit
+	var/turf/new_turf  //CHOMPEdit
 	if(ispath(N, /turf/simulated/floor))
-		//TORCHEdit Begin
-		var/turf/simulated/W = new N( locate(src.x, src.y, src.z) )
+		//CHOMPEdit Begin
+		var/turf/simulated/W = new N( locate(src.x, src.y, src.z), is_turfchange=TRUE )
 		W.lighting_corners_initialised = old_lighting_corners_initialized
 		if(old_shandler)
 			W.shandler = old_shandler
 			old_shandler.holder = W
-		//TORCHEdit End
+		else if((SSplanets && SSplanets.z_to_planet.len >= z && SSplanets.z_to_planet[z]) && has_dynamic_lighting())
+			W.shandler = new(src)
+			W.shandler.manualInit()
+		//CHOMPEdit End
 		if(old_fire)
 			fire = old_fire
 
@@ -98,18 +102,21 @@
 		W.levelupdate()
 		W.update_icon(1)
 		W.post_change()
-		new_turf = W //TORCHEdit
+		new_turf = W //CHOMPEdit
 		. = W
 
 	else
-		//TORCHEdit Begin
-		var/turf/W = new N( locate(src.x, src.y, src.z) )
+		//CHOMPEdit Begin
+		var/turf/W = new N( locate(src.x, src.y, src.z), is_turfchange=TRUE )
 		W.lighting_corners_initialised = old_lighting_corners_initialized
 		var/turf/simulated/W_sim = W
 		if(istype(W_sim) && old_shandler)
 			W_sim.shandler = old_shandler
 			old_shandler.holder = W
-		//TORCHEdit End
+		else if(istype(W_sim) && (SSplanets && SSplanets.z_to_planet.len >= z && SSplanets.z_to_planet[z]) && has_dynamic_lighting())
+			W_sim.shandler = new(src)
+			W_sim.shandler.manualInit()
+		//CHOMPEdit End
 		if(old_fire)
 			old_fire.RemoveFire()
 
@@ -125,7 +132,7 @@
 		W.levelupdate()
 		W.update_icon(1)
 		W.post_change()
-		new_turf = W //TORCHEdit
+		new_turf = W //CHOMPEdit
 		. =  W
 
 
@@ -155,8 +162,17 @@
 		for(var/turf/space/space_tile in RANGE_TURFS(1, src))
 			space_tile.update_starlight()
 
-	//TORCHEdit begin
+	//CHOMPEdit begin
+	var/turf/simulated/sim_self = src
+	if(lighting_object && istype(sim_self) && sim_self.shandler) //sanity check, but this should never be null for either of the switch cases (lighting_object will be null during initializations sometimes)
+		switch(lighting_object.sunlight_only)
+			if(SUNLIGHT_ONLY)
+				vis_contents += sim_self.shandler.pshandler.vis_overhead
+			if(SUNLIGHT_ONLY_SHADE)
+				vis_contents += sim_self.shandler.pshandler.vis_shade
+
 	var/is_open = istype(new_turf,/turf/simulated/open)
+
 
 	propogate_sunlight_changes(oldtype, old_density, new_turf)
 	var/turf/simulated/cur_turf = src
@@ -170,13 +186,13 @@
 			cur_turf.propogate_sunlight_changes(oldtype, old_density, new_turf, above = TRUE)
 		while(istype(cur_turf,/turf/simulated/open) && HasBelow(cur_turf.z))
 
-	//TORCHEdit End
-	if(old_shandler) old_shandler.holder_change() //TORCHEdit
+	//CHOMPEdit End
+	if(old_shandler) old_shandler.holder_change() //CHOMPEdit
 	if(preserve_outdoors)
 		outdoors = old_outdoors
 
 
-//TORCHEdit begin
+//CHOMPEdit begin
 /turf/proc/propogate_sunlight_changes(oldtype, old_density, new_turf, var/above = FALSE)
 	//SEND_SIGNAL(src, COMSIG_TURF_UPDATE, oldtype, old_density, W)
 	//Sends signals in a cross pattern to all tiles that may have their sunlight var affected including this tile.
@@ -205,4 +221,4 @@
 					T.shandler.turf_update(old_density, new_turf, above)
 			steps += 1
 			cur_turf = get_step(cur_turf,dir)
-//TORCHEdit end
+//CHOMPEdit end

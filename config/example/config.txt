@@ -502,7 +502,7 @@ RADIATION_MATERIAL_RESISTANCE_DIVISOR 16
 ## 0:1 subtraction:division for computing effective radiation on a turf
 ## 0 / RAD_RESIST_CALC_DIV = Each turf absorbs some fraction of the working radiation level
 ## 1 / RAD_RESIST_CALC_SUB = Each turf absorbs a fixed amount of radiation
-RADIATION_RESISTANCE_CALC_MODE 1
+RADIATION_RESISTANCE_CALC_MODE 0
 
 ## IP Reputation Checking
 # Enable/disable IP reputation checking (present/nonpresent)
@@ -612,3 +612,11 @@ JUKEBOX_TRACK_FILES config/jukebox.json
 # Admins may manually give them the verb even if disabled
 # Uncomment to enable
 #ALLOW_SIMPLE_MOB_RECOLOR
+
+
+# Controls whether players can spawn as mobs without admin intervention when ghosting (Using 'Join As Mob' verb when ghosting)
+# Uncomment to enable
+ALLOW_GHOST_MOB_SPAWN
+
+# Controls how many mobs ghosts can spawn as
+GHOST_MOB_COUNT 5

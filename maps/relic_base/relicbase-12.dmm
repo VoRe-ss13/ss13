@@ -1832,6 +1832,12 @@
 	},
 /obj/effect/map_helper/airlock/door/ext_door,
 /obj/effect/map_helper/airlock/button/ext_button,
+/obj/machinery/access_button{
+	dir = 8;
+	name = "exterior access button";
+	pixel_x = -9;
+	pixel_y = -24
+	},
 /turf/simulated/shuttle/floor/voidcraft/dark,
 /area/shuttle/ninja)
 "aZo" = (
@@ -6011,6 +6017,9 @@
 	icon_state = "freezerfloor"
 	},
 /area/syndicate_station)
+"fWI" = (
+/turf/closed/indestructible/start_area,
+/area/space)
 "fWK" = (
 /obj/structure/closet{
 	name = "Evidence Closet"
@@ -7742,21 +7751,6 @@
 /obj/mecha/working/ripley/mining,
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/merchant)
-"iaB" = (
-/obj/machinery/access_button{
-	dir = 8;
-	name = "exterior access button";
-	pixel_x = 25;
-	pixel_y = 6
-	},
-/obj/machinery/door/airlock{
-	icon = 'icons/obj/doors/Dooruranium.dmi'
-	},
-/turf/unsimulated/floor{
-	icon_state = "plating";
-	name = "plating"
-	},
-/area/ninja_dojo/dojo)
 "iaK" = (
 /obj/structure/table/rack,
 /obj/item/weapon/storage/belt/security/tactical/bandolier,
@@ -20550,6 +20544,9 @@
 /obj/item/weapon/grenade/spawnergrenade/manhacks,
 /turf/simulated/shuttle/floor/darkred,
 /area/shuttle/skipjack)
+"wPe" = (
+/turf/closed/indestructible/splashscreen,
+/area/space)
 "wPA" = (
 /obj/structure/table/reinforced,
 /obj/item/device/aicard,
@@ -20645,6 +20642,10 @@
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/reinforced,
 /area/centcom/specops)
+"wUm" = (
+/obj/effect/landmark/start/new_player,
+/turf/closed/indestructible/start_area,
+/area/space)
 "wVn" = (
 /obj/machinery/door/airlock/silver{
 	name = "Toilet"
@@ -21639,21 +21640,21 @@
 (1,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+wPe
 vFi
 vFi
 vFi
@@ -21896,21 +21897,21 @@ xUf
 (2,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -22153,21 +22154,21 @@ xUf
 (3,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -22410,21 +22411,21 @@ xUf
 (4,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -22667,21 +22668,21 @@ xUf
 (5,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -22924,21 +22925,21 @@ xUf
 (6,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -23181,21 +23182,21 @@ xUf
 (7,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -23438,21 +23439,21 @@ xUf
 (8,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+wUm
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -23695,21 +23696,21 @@ xUf
 (9,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -23952,21 +23953,21 @@ xUf
 (10,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -24209,21 +24210,21 @@ xUf
 (11,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -24466,21 +24467,21 @@ xUf
 (12,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -24723,21 +24724,21 @@ xUf
 (13,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -24980,21 +24981,21 @@ xUf
 (14,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -25237,21 +25238,21 @@ xUf
 (15,1,1) = {"
 vFi
 vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
-vFi
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
+fWI
 vFi
 vFi
 vFi
@@ -27375,7 +27376,7 @@ jUW
 nXc
 nXc
 lxX
-iaB
+lxX
 nXc
 jUW
 jUW

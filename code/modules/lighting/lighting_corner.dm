@@ -5,7 +5,7 @@
 /datum/lighting_corner
 	var/list/datum/light_source/affecting // Light sources affecting us.
 
-	var/sunlight = SUNLIGHT_NONE // TORCHEdit
+	var/sunlight = SUNLIGHT_NONE // CHOMPEdit
 	var/x = 0
 	var/y = 0
 
@@ -76,7 +76,7 @@
 			master.lighting_corner_SE = src
 
 /datum/lighting_corner/proc/self_destruct_if_idle()
-	if (!LAZYLEN(affecting) && !sunlight) //TORCHEdit
+	if (!LAZYLEN(affecting) && !sunlight) //CHOMPEdit
 		qdel(src, force = TRUE)
 
 /datum/lighting_corner/proc/vis_update()
@@ -88,20 +88,27 @@
 		light_source.recalc_corner(src)
 
 // God that was a mess, now to do the rest of the corner code! Hooray!
-/datum/lighting_corner/proc/update_lumcount(delta_r, delta_g, delta_b, var/from_sholder = FALSE) //TORCHEdit
+/datum/lighting_corner/proc/update_lumcount(delta_r, delta_g, delta_b, var/from_sholder = FALSE) //CHOMPEdit
 	if (!(delta_r || delta_g || delta_b)) // 0 is falsey ok
 		return
 
-	if((sunlight == SUNLIGHT_ONLY || sunlight == SUNLIGHT_ONLY_SHADE) && LAZYLEN(affecting)) change_sun() //TORCHEdit
+	//CHOMPEdit Begin
+	if((sunlight == SUNLIGHT_ONLY || sunlight == SUNLIGHT_ONLY_SHADE) && LAZYLEN(affecting))
+		change_sun()
+		if(sunlight == SUNLIGHT_ONLY || sunlight == SUNLIGHT_ONLY_SHADE)
+			//Okay fuck. If we're here some doodoo kaka bullshit happened (probably thanks to in-round map loading) and now the sunlight handler that owned us previously is fucking gone (real cool dude) so like try to get a new one ig
+			//Is this optimal? No. Is there a better way? Maybe. God knows I tried, but whatever fucking black magic is going on behind the scenes seems to defy all attempts at logic. So, if this works, it stays.
+			sunlight = SUNLIGHT_POSSIBLE
+	//CHOMPEdit End
 	lum_r += delta_r
 	lum_g += delta_g
 	lum_b += delta_b
 
-	//TORCHEdit Begin
+	//CHOMPEdit Begin
 	if(sunlight == SUNLIGHT_CURRENT && !LAZYLEN(affecting) && !from_sholder)
 		update_sunlight_handlers()
 		update_sunlight_handlers()
-	//TORCHEdit End
+	//CHOMPEdit End
 
 	if (!needs_update)
 		needs_update = TRUE
@@ -183,26 +190,26 @@
 
 	return ..()
 
-//TORCHEdit Begin
-/datum/lighting_corner/proc/update_sun()
-	if(!SSlighting.global_shandler)
+//CHOMPEdit Begin
+/datum/lighting_corner/proc/update_sun(var/datum/planet_sunlight_handler/pshandler)
+	if(!pshandler)
 		return
 	if(sunlight == SUNLIGHT_ONLY)
-		lum_r = SSlighting.global_shandler.red
-		lum_g = SSlighting.global_shandler.green
-		lum_b = SSlighting.global_shandler.blue
-		cache_r = SSlighting.global_shandler.cache_r
-		cache_g = SSlighting.global_shandler.cache_g
-		cache_b = SSlighting.global_shandler.cache_b
-		largest_color_luminosity = SSlighting.global_shandler.maxlum
+		lum_r = pshandler.red
+		lum_g = pshandler.green
+		lum_b = pshandler.blue
+		cache_r = pshandler.cache_r
+		cache_g = pshandler.cache_g
+		cache_b = pshandler.cache_b
+		largest_color_luminosity = pshandler.maxlum
 	if(sunlight == SUNLIGHT_ONLY_SHADE)
-		lum_r = SSlighting.global_shandler.redshade
-		lum_g = SSlighting.global_shandler.greenshade
-		lum_b = SSlighting.global_shandler.blueshade
-		cache_r = SSlighting.global_shandler.cache_r_shade
-		cache_g = SSlighting.global_shandler.cache_g_shade
-		cache_b = SSlighting.global_shandler.cache_b_shade
-		largest_color_luminosity = SSlighting.global_shandler.maxlumshade
+		lum_r = pshandler.redshade
+		lum_g = pshandler.greenshade
+		lum_b = pshandler.blueshade
+		cache_r = pshandler.cache_r_shade
+		cache_g = pshandler.cache_g_shade
+		cache_b = pshandler.cache_b_shade
+		largest_color_luminosity = pshandler.maxlumshade
 
 
 	var/datum/lighting_object/lighting_object = master_NE?.lighting_object
@@ -257,4 +264,38 @@
 		master_SW_sim.shandler.sunlight_update()
 	if(istype(master_NW_sim) && master_NW_sim.shandler)
 		master_NW_sim.shandler.sunlight_update()
-//TORCHEdit End
+
+/datum/lighting_corner/proc/all_onlysun()
+	var/datum/lighting_object/lighting_object = master_NE?.lighting_object
+	if (lighting_object && !(lighting_object.sunlight_only == sunlight))
+		return FALSE
+
+	lighting_object = master_SE?.lighting_object
+	if (lighting_object && !(lighting_object.sunlight_only == sunlight))
+		return FALSE
+
+	lighting_object = master_SW?.lighting_object
+	if (lighting_object && !(lighting_object.sunlight_only == sunlight))
+		return FALSE
+
+	lighting_object = master_NW?.lighting_object
+	if (lighting_object && !(lighting_object.sunlight_only == sunlight))
+		return FALSE
+
+	return TRUE
+
+/datum/lighting_corner/proc/wake_sleepers()
+	var/turf/simulated/master_NE_sim = master_NE
+	var/turf/simulated/master_SE_sim = master_SE
+	var/turf/simulated/master_SW_sim = master_SW
+	var/turf/simulated/master_NW_sim = master_NW
+	if(istype(master_NE_sim) && master_NE_sim.shandler && master_NE_sim.shandler.sleeping)
+		master_NE_sim.shandler.sunlight_update()
+	if(istype(master_SE_sim) && master_SE_sim.shandler && master_SE_sim.shandler.sleeping)
+		master_SE_sim.shandler.sunlight_update()
+	if(istype(master_SW_sim) && master_SW_sim.shandler && master_SW_sim.shandler.sleeping)
+		master_SW_sim.shandler.sunlight_update()
+	if(istype(master_NW_sim) && master_NW_sim.shandler && master_NW_sim.shandler.sleeping)
+		master_NW_sim.shandler.sunlight_update()
+
+//CHOMPEdit End
