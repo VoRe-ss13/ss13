@@ -45,3 +45,6 @@
   - bugfix: sunlight in VR
   cadyn:
   - bugfix: memory optimizations
+2024-05-06:
+  purplefoxy27:
+  - bugfix: fix atmos on POIs on plains/wilderness
