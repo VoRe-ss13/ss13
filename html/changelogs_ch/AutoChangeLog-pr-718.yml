@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - bugfix: "Fixed empty hand interactions not working on borgs with forced buckling."
