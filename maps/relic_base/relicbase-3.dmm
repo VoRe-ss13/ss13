@@ -40677,7 +40677,7 @@
 /obj/structure/catwalk,
 /obj/machinery/disposal,
 /turf/simulated/floor/plating/thor/planetuse,
-/area/surface/outside/path/plains)
+/area/engineering/external_lights)
 "qRw" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
@@ -44197,6 +44197,23 @@
 /obj/item/tape/engineering,
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/garage)
+"soQ" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24
+	},
+/turf/simulated/floor/plating,
+/area/hallway/primary/seconddeck/dockhallway)
 "spv" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -111663,7 +111680,7 @@ rLe
 sct
 rLe
 iTg
-jCC
+soQ
 klz
 uMN
 kSF

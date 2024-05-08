@@ -8263,12 +8263,6 @@
 	},
 /turf/simulated/floor/tiled/red,
 /area/security/prison)
-"oQ" = (
-/obj/structure/sign/warning/radioactive,
-/turf/simulated/floor/tiled/techmaint{
-	outdoors = 1
-	},
-/area/surface/outside/plains/outpost)
 "oR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 1
@@ -23086,7 +23080,7 @@
 /area/crew_quarters/cafeteria)
 "Qe" = (
 /obj/machinery/power/smes/buildable{
-	RCon_tag = "Expedition Outpost - Port Solars";
+	RCon_tag = "Medical Roof Solars";
 	charge = 2.5e+006;
 	input_attempt = 1;
 	input_level = 150000;
@@ -70140,7 +70134,7 @@ xD
 xD
 xD
 xD
-oQ
+xD
 xD
 xD
 xD
