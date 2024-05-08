@@ -36749,6 +36749,7 @@
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
+/obj/item/device/lightreplacer,
 /turf/simulated/floor/tiled,
 /area/janitor)
 "ppA" = (
@@ -44751,6 +44752,7 @@
 /obj/item/weapon/tool/crowbar,
 /obj/item/weapon/tool/crowbar/red,
 /obj/item/weapon/storage/box/lights/mixed,
+/obj/item/device/lightreplacer,
 /turf/simulated/floor/tiled/old_tile/yellow,
 /area/engineering/workshop)
 "syN" = (
