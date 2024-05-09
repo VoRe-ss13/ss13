@@ -6994,11 +6994,6 @@
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
-"gqL" = (
-/turf/simulated/open,
-/area/maintenance/firstdeck/centralport{
-	base_turf = /turf/simulated/floor/outdoors/rocks/caves
-	})
 "gsl" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
@@ -40733,8 +40728,8 @@ yhF
 yjd
 tdi
 sTQ
-gqL
-gqL
+lll
+lll
 lJk
 rlb
 rlb

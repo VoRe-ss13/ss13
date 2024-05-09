@@ -419,6 +419,9 @@
 	c_tag = "MED - Medical Foyer";
 	dir = 1
 	},
+/obj/machinery/vending/wallmed1{
+	pixel_y = -30
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/foyer)
 "aiU" = (
@@ -3377,6 +3380,12 @@
 	},
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/hallway/primary/thirddeck/stationgateway)
+"bIF" = (
+/obj/machinery/vending/wallmed1{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/surface/outpost/main/gym)
 "bJe" = (
 /obj/structure/cable/green{
 	d2 = 4;
@@ -3442,6 +3451,19 @@
 "bJR" = (
 /turf/simulated/floor/water/atoll,
 /area/surface/outside/plains/outpost)
+"bKk" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/vending/wallmed1{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 3
+	},
+/turf/simulated/floor/carpet/oracarpet,
+/area/engineering/break_room)
 "bKH" = (
 /obj/machinery/light/no_nightshift{
 	dir = 8
@@ -7393,6 +7415,9 @@
 /obj/structure/table/standard,
 /obj/item/weapon/storage/firstaid/adv,
 /obj/item/weapon/storage/firstaid/adv,
+/obj/machinery/vending/wallmed1{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white,
 /area/security/aid_station)
 "djz" = (
@@ -31384,6 +31409,11 @@
 	c_tag = "CIV - Cafeteria Lobby East";
 	dir = 8
 	},
+/obj/machinery/vending/wallmed1{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 3
+	},
 /turf/simulated/floor/lino,
 /area/crew_quarters/bar)
 "mTk" = (
@@ -38586,6 +38616,26 @@
 	outdoors = -1
 	},
 /area/medical/medbay_primary_storage)
+"pYy" = (
+/obj/structure/cable/heavyduty{
+	icon_state = "4-8";
+	d1 = 4;
+	d2 = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/zone_divider,
+/obj/machinery/vending/wallmed1{
+	pixel_y = -30
+	},
+/turf/simulated/floor/tiled/steel_dirty{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "pYz" = (
 /obj/machinery/mech_recharger,
 /obj/effect/floor_decal/industrial/warning,
@@ -41644,10 +41694,6 @@
 	dir = 4
 	},
 /obj/machinery/computer/timeclock/premade/north,
-/obj/machinery/computer/id_restorer{
-	dir = 1;
-	pixel_y = -26
-	},
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -58807,6 +58853,9 @@
 	},
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 1
+	},
+/obj/machinery/vending/wallmed1{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
@@ -79839,7 +79888,7 @@ gBl
 ioS
 ioS
 sid
-ioS
+bKk
 oZD
 pSB
 rpQ
@@ -93770,7 +93819,7 @@ qiD
 yeV
 yeV
 yeV
-pKL
+pYy
 plr
 mnr
 mnr
@@ -96610,7 +96659,7 @@ xUR
 xsB
 bky
 xUR
-wDm
+bIF
 jxH
 wDm
 tzk

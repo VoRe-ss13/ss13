@@ -5453,6 +5453,9 @@
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
+/obj/machinery/vending/wallmed1{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/red,
 /area/security/prison)
 "kg" = (
@@ -8263,6 +8266,12 @@
 	},
 /turf/simulated/floor/tiled/red,
 /area/security/prison)
+"oQ" = (
+/obj/structure/sign/warning/radioactive,
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "oR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 1
@@ -12555,6 +12564,9 @@
 	},
 /obj/machinery/camera/network/command{
 	c_tag = "COM - Bridge North"
+	},
+/obj/machinery/vending/wallmed1{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark,
 /area/bridge)
@@ -20486,6 +20498,9 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/machinery/vending/wallmed1{
+	pixel_y = 32
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_monitoring)
 "Lr" = (
@@ -23080,7 +23095,7 @@
 /area/crew_quarters/cafeteria)
 "Qe" = (
 /obj/machinery/power/smes/buildable{
-	RCon_tag = "Medical Roof Solars";
+	RCon_tag = "Expedition Outpost - Port Solars";
 	charge = 2.5e+006;
 	input_attempt = 1;
 	input_level = 150000;
@@ -27129,6 +27144,12 @@
 	},
 /turf/simulated/shuttle/wall/voidcraft/blue,
 /area/shuttle/shuttle3/start)
+"XR" = (
+/obj/machinery/vending/wallmed1{
+	pixel_y = 32
+	},
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/cafeteria)
 "XS" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -58566,7 +58587,7 @@ fW
 fW
 Co
 PW
-XU
+XR
 Lb
 XP
 Kj
@@ -70134,7 +70155,7 @@ xD
 xD
 xD
 xD
-xD
+oQ
 xD
 xD
 xD
