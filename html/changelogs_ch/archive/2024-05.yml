@@ -92,3 +92,18 @@
   - rscadd: Adds inhand sprites for rubber duckies
   VoRe-bot:
   - qol: trash piles can be walked over
+2024-05-13:
+  VoRe-bot:
+  - rscadd: Colorable luna moth wings
+  - qol: Vac-Pacs are now belt and back equippable.
+  - bugfix: Vap-Pac is less proper. Same with the generic headset.
+  - qol: Made the rad collectors engi access required instead of Chief engi
+  - bugfix: Known OM planets show up in helm now.
+  - maptweak: Stargazer modified for easier fuel canister swapping.
+  - sound: Planet arrival sound now plays for planets too.
+  - maptweak: VR ThirdLife bar dorms have bathrooms
+  - maptweak: Access changes in VR thirdlife bar
+  - sound: Removed the wailing souls from the Thirdlife bar
+  - maptweak: Escape pods should actually allow people to enter them now.
+  - rscadd: Protean's rigsuit control will mimic assimilated rigsuits
+  - rscadd: Red, green, and purple dragon plushies.
