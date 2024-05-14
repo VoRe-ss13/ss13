@@ -172,15 +172,9 @@
 	. = ..()
 	if(!emagged)
 		emagged = TRUE
-<<<<<<< HEAD
-		target_size = (rand(1,300)) /100
-		if(target_size < 0.1)
-			target_size = 0.1
-=======
 		target_size = (rand(25,200)) /100 //ChompEDIT - set to our rule cap
 		if(target_size < 0.25) //ChompEDIT - set to our rule cap
 			target_size = 0.25 //ChompEDIT - set to our rule cap
->>>>>>> 36b88fb10b (Bracelet Sizecap - missed lower end (#8390))
 		user.visible_message("<span class='notice'>\The [user] swipes the [emag_source] over the \the [src].</span>","<span class='notice'>You swipes the [emag_source] over the \the [src].</span>")
 		return 1
 
@@ -189,15 +183,9 @@
 
 /obj/item/clothing/gloves/bluespace/emagged/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	target_size = (rand(1,300)) /100
-	if(target_size < 0.1)
-		target_size = 0.1
-=======
 	target_size = (rand(25,200)) /100 //ChompEDIT - set to our rule cap
 	if(target_size < 0.25) //ChompEDIT - set to our rule cap
 		target_size = 0.25 //ChompEDIT - set to our rule cap
->>>>>>> 36b88fb10b (Bracelet Sizecap - missed lower end (#8390))
 
 //Same as Nanotrasen Security Uniforms
 /obj/item/clothing/under/ert
