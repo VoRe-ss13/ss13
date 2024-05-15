@@ -34,7 +34,12 @@ SUBSYSTEM_DEF(xenoarch)
 		if(!M.density)
 			continue
 
+<<<<<<< HEAD
 		//TORCH Removal moved downwards
+=======
+		/*if(isnull(M.geologic_data)) CHOMP Removal. Initialized when needed now.
+			M.geologic_data = new /datum/geosample(M)*/
+>>>>>>> cf1db3c049 (Memory tracking shenanigans (#8359))
 
 		if((M.z in using_map.xenoarch_exempt_levels) || !prob(XENOARCH_SPAWN_CHANCE))
 			continue
