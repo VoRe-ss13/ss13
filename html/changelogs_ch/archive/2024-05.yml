@@ -124,3 +124,19 @@
   - bugfix: Nightmare slimes not killing you
   - qol: Made nightmare slimes more forgiving
   - bugfix: Removed some lines of obsolete code
+2024-05-16:
+  VoRe-bot:
+  - bugfix: ZAS zones not separating properly when airlocks open/close
+  - rscadd: Unlock succubus bite
+  - rscadd: cdn testserver script from tg
+  - qol: sorts our verbs
+  - bugfix: fixes ghostjump
+  - bugfix: fixes runtime in cmd_admin_z_narrate
+  - code_imp: Porting server maint subsystem from TG to remove nulls from important
+      lists
+  - rscadd: Ping to the panel
+  - code_imp: adds proc profile_memory to be able to diagnose where memory is being
+      used
+  - bugfix: several memory optimizations
+  - bugfix: try to fix planetary lighting issues again
+  - bugfix: Gas overlays get removed when there's not enough gas
