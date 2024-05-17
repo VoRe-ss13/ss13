@@ -140,3 +140,11 @@
   - bugfix: several memory optimizations
   - bugfix: try to fix planetary lighting issues again
   - bugfix: Gas overlays get removed when there's not enough gas
+2024-05-17:
+  VoRe-bot:
+  - rscadd: The asteroid gateway now has a different and functioning portal puzzle.
+      Filled in some blank spaces a smidge.
+  - bugfix: Two eclipse sprites no longer go invisible in one direction.
+  - bugfix: Fixed reclaimed nutrition pile gains not scaling with absorbing vorgan's
+      nutrition percent settings.
+  - rscadd: One SP-Pod.
