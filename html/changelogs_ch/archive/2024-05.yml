@@ -148,3 +148,8 @@
   - bugfix: Fixed reclaimed nutrition pile gains not scaling with absorbing vorgan's
       nutrition percent settings.
   - rscadd: One SP-Pod.
+2024-05-19:
+  Missile597:
+  - maptweak: Renamed the solars SMES RCON tag for real for real
+  VoRe-bot:
+  - bugfix: fixed an exploit to freely gain infinite supermatter sheets
