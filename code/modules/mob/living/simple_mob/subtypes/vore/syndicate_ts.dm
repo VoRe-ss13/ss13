@@ -37,7 +37,7 @@
 	say_list_type = /datum/say_list/otie
 	tame_chance = 0
 
-	list/armor = list(			// Values for normal getarmor() checks
+	armor = list(			// Values for normal getarmor() checks
 				"melee" = 40,
 				"bullet" = 30,
 				"laser" = 20,
@@ -46,7 +46,7 @@
 				"bio" = 100,
 				"rad" = 100
 				)
-	list/armor_soak = list(		// Values for getsoak() checks.
+	armor_soak = list(		// Values for getsoak() checks.
 				"melee" = 0,
 				"bullet" = 0,
 				"laser" = 0,
@@ -88,7 +88,7 @@
 	special_attack_max_range = 3
 	special_attack_cooldown = 30 SECONDS
 
-	list/armor = list(			// Values for normal getarmor() checks
+	armor = list(			// Values for normal getarmor() checks
 				"melee" = 40,
 				"bullet" = 30,
 				"laser" = 20,
@@ -97,7 +97,7 @@
 				"bio" = 100,
 				"rad" = 100
 				)
-	list/armor_soak = list(		// Values for getsoak() checks.
+	armor_soak = list(		// Values for getsoak() checks.
 				"melee" = 10,
 				"bullet" = 10,
 				"laser" = 10,
@@ -188,7 +188,7 @@
 	buckle_movable = TRUE
 	buckle_lying = FALSE
 	vore_icons = SA_ICON_LIVING | SA_ICON_REST
-	list/armor = list(			// Values for normal getarmor() checks
+	armor = list(			// Values for normal getarmor() checks
 				"melee" = 40,
 				"bullet" = 30,
 				"laser" = 20,
@@ -197,7 +197,7 @@
 				"bio" = 100,
 				"rad" = 100
 				)
-	list/armor_soak = list(		// Values for getsoak() checks.
+	armor_soak = list(		// Values for getsoak() checks.
 				"melee" = 10,
 				"bullet" = 10,
 				"laser" = 10,
@@ -275,7 +275,7 @@
 
 	say_list_type = /datum/say_list/merc
 
-	list/armor = list(			// Values for normal getarmor() checks
+	armor = list(			// Values for normal getarmor() checks
 				"melee" = 40,
 				"bullet" = 30,
 				"laser" = 20,
