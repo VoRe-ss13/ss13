@@ -8,8 +8,8 @@
 	icon_dead = "syndotie_std-dead"
 	icon_rest = "syndotie_std_rest"
 	faction = "syndicate"
-	maxHealth = 250
-	health = 250
+	maxHealth = 200
+	health = 200
 	minbodytemp = 200
 	melee_damage_lower = 15
 	melee_damage_upper = 20
@@ -177,7 +177,7 @@
 	harm_intent_damage = 10
 	melee_damage_lower = 30
 	melee_damage_upper = 35
-	maxHealth = 300
+	maxHealth = 350
 	melee_attack_delay = 1
 	minbodytemp = 0
 
@@ -227,6 +227,23 @@
 	threaten_delay = 0 SECONDS
 	use_astar = TRUE
 
+/datum/ai_holder/simple_mob/merc/ranged/torch/lmg
+	threaten = FALSE
+	returns_home = TRUE
+	wander = TRUE
+	intelligence_level = AI_SMART
+	threaten_delay = 0 SECONDS
+	use_astar = TRUE
+	conserve_ammo = FALSE
+
+/datum/ai_holder/simple_mob/merc/ranged/sniper/torch
+	vision_range = 20
+	threaten = FALSE
+	returns_home = TRUE
+	wander = TRUE
+	intelligence_level = AI_SMART
+	threaten_delay = 0 SECONDS
+	use_astar = TRUE
 
 /mob/living/simple_mob/vore/wolftaur/syndicate
 	name = "mercenary commando"
@@ -256,14 +273,14 @@
 	var/exploded = FALSE
 	var/explosion_dev_range		= 0
 	var/explosion_heavy_range	= 0
-	var/explosion_light_range	= 3
-	var/explosion_flash_range	= 6 // This doesn't do anything iirc.
+	var/explosion_light_range	= 1
+	var/explosion_flash_range	= 6
 
 	var/explosion_delay_lower	= 0 SECOND	// Lower bound for explosion delay.
 	var/explosion_delay_upper	= 1 SECONDS	// Upper bound.
 
 
-	loot_list = list(/obj/item/weapon/gun/projectile/automatic/serdy/type901 = 25)
+	loot_list = list(/obj/item/weapon/gun/projectile/automatic/serdy/type901 = 15)
 
 	projectiletype = /obj/item/projectile/bullet/rifle/a545
 	projectilesound = 'sound/weapons/serdy/type901.ogg'
@@ -311,17 +328,17 @@
 			gib(src)
 	return ..()
 
-/mob/living/simple_mob/vore/wolftaur/syndicate/beret
+/mob/living/simple_mob/vore/wolftaur/syndicate/alt1
 	icon_dead = "synditaur_r1"
 	icon_living = "synditaur_r1"
 	icon_state = "synditaur_r1"
 	icon_rest = "synditaur_r1"
-/mob/living/simple_mob/vore/wolftaur/syndicate/beret_black
+/mob/living/simple_mob/vore/wolftaur/syndicate/alt2
 	icon_dead = "synditaur_r3"
 	icon_living = "synditaur_r3"
 	icon_state = "synditaur_r3"
 	icon_rest = "synditaur_r3"
-/mob/living/simple_mob/vore/wolftaur/syndicate/light
+/mob/living/simple_mob/vore/wolftaur/syndicate/alt3
 	icon_dead = "synditaur_r2"
 	icon_living = "synditaur_r2"
 	icon_state = "synditaur_r2"
@@ -336,7 +353,7 @@
 	icon_living = "synditaur_lmg"
 	icon_state = "synditaur_lmg"
 	icon_rest = "synditaur_lmg"
-	loot_list = list(/obj/item/weapon/gun/projectile/automatic/l6_saw = 25)
+	loot_list = list(/obj/item/weapon/gun/projectile/automatic/l6_saw = 5)
 	projectiletype = /obj/item/projectile/bullet/pistol
 	projectilesound = 'sound/weapons/ballistics/a545.ogg'
 	projectile_dispersion = 12
@@ -344,4 +361,45 @@
 	random_skin = 0
 	base_attack_cooldown = 0.3
 	reload_max = 50
+	ai_holder_type = /datum/ai_holder/simple_mob/merc/ranged/torch/lmg
+
+/mob/living/simple_mob/vore/wolftaur/syndicate/smg
+	name = "mercenary commando"
+	desc = "A tough looking armored canid creature armed with an SMG!"
+	faction = "syndicate"
+	icon_dead = "synditaur_smg"
+	icon_living = "synditaur_smg"
+	icon_state = "synditaur_smg"
+	icon_rest = "synditaur_smg"
+	loot_list = list(/obj/item/weapon/gun/projectile/automatic/p90 = 15)
+	projectiletype = /obj/item/projectile/bullet/a57
+	projectilesound = 'sound/weapons/ballistics/a545.ogg'
+	projectile_dispersion = 1
+	projectile_accuracy = -10
+	random_skin = 0
+	base_attack_cooldown = 0.1
+	reload_max = 15
 	ai_holder_type = /datum/ai_holder/simple_mob/merc/ranged/torch
+/*
+/mob/living/simple_mob/vore/wolftaur/syndicate/awp
+	name = "mercenary commando sniper"
+	desc = "A tough looking armored canid creature armed with a sniper rifle!"
+	faction = "syndicate"
+	icon_dead = "synditaur_awp"
+	icon_living = "synditaur_awp"
+	icon_state = "synditaur_awp"
+	icon_rest = "synditaur_awp"
+	loot_list = list(/obj/item/weapon/gun/projectile/automatic/serdy/awp = 15)
+	projectiletype = /obj/item/projectile/bullet/rifle/a338
+	projectilesound = 'sound/weapons/ballistics/a762x54.ogg'
+	projectile_dispersion = 0
+	projectile_accuracy = 50
+	random_skin = 0
+	base_attack_cooldown = 30
+	ranged_attack_delay = 2.5
+	reload_max = 5
+	ai_holder_type = /datum/ai_holder/simple_mob/merc/ranged/sniper/torch
+\*
+*/
+
+///commented this guy out because i couldn't figure out how to make him do the neat little laser pointer targeting thingy the regular merc sniper does before blastin' - Serdy
