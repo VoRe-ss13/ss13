@@ -20,7 +20,7 @@
 	attacktext = list("mauled","chomped","savaged")
 	friendly = list("nuzzles", "slobberlicks", "noses softly at", "noseboops", "headbumps against", "leans on", "nibbles affectionately on")
 	meat_amount = 6
-	movement_cooldown = -2
+	movement_cooldown = -2.5
 	melee_attack_delay = 0
 	old_x = -16
 	old_y = 0
@@ -38,8 +38,8 @@
 	tame_chance = 0
 
 	armor = list(			// Values for normal getarmor() checks
-				"melee" = 40,
-				"bullet" = 30,
+				"melee" = 20,
+				"bullet" = 10,
 				"laser" = 20,
 				"energy" = 5,
 				"bomb" = 0,
@@ -89,8 +89,8 @@
 	special_attack_cooldown = 30 SECONDS
 
 	armor = list(			// Values for normal getarmor() checks
-				"melee" = 40,
-				"bullet" = 30,
+				"melee" = 20,
+				"bullet" = 20,
 				"laser" = 20,
 				"energy" = 5,
 				"bomb" = 0,
@@ -98,9 +98,9 @@
 				"rad" = 100
 				)
 	armor_soak = list(		// Values for getsoak() checks.
-				"melee" = 10,
-				"bullet" = 10,
-				"laser" = 10,
+				"melee" = 5,
+				"bullet" = 5,
+				"laser" = 5,
 				"energy" = 5,
 				"bomb" = 5,
 				"bio" = 0,
@@ -189,18 +189,18 @@
 	buckle_lying = FALSE
 	vore_icons = SA_ICON_LIVING | SA_ICON_REST
 	armor = list(			// Values for normal getarmor() checks
-				"melee" = 40,
-				"bullet" = 30,
-				"laser" = 20,
+				"melee" = 30,
+				"bullet" = 10,
+				"laser" = 10,
 				"energy" = 5,
 				"bomb" = 0,
 				"bio" = 100,
 				"rad" = 100
 				)
 	armor_soak = list(		// Values for getsoak() checks.
-				"melee" = 10,
-				"bullet" = 10,
-				"laser" = 10,
+				"melee" = 5,
+				"bullet" = 5,
+				"laser" = 5,
 				"energy" = 5,
 				"bomb" = 5,
 				"bio" = 0,
@@ -237,7 +237,7 @@
 	icon_living = "synditaur"
 	icon_state = "synditaur"
 	icon_rest = "synditaur"
-	maxHealth = 150
+	maxHealth = 200
 	harm_intent_damage = 5
 	melee_damage_lower = 15
 	melee_damage_upper = 20
