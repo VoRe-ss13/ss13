@@ -153,3 +153,8 @@
   - maptweak: Renamed the solars SMES RCON tag for real for real
   VoRe-bot:
   - bugfix: fixed an exploit to freely gain infinite supermatter sheets
+2024-05-21:
+  VoRe-bot:
+  - maptweak: Crash fix in the DJ inn
+  - rscadd: 4 eastern dragon plushies
+  - rscadd: Dragon plushies to the vendor
