@@ -49,39 +49,27 @@ export const BrigTimer = (props) => {
                 fluid
                 icon="hourglass-start"
                 onClick={() => act('preset', { preset: 'short' })}
-<<<<<<< HEAD
-              />
-=======
               >
                 {'Add ' + formatTime(data.preset_short)}
               </Button>
->>>>>>> fe7e122a19 ([MIRROR] multiple UI timing issues (#8418))
             </Flex.Item>
             <Flex.Item grow={1}>
               <Button
                 fluid
                 icon="hourglass-start"
                 onClick={() => act('preset', { preset: 'medium' })}
-<<<<<<< HEAD
-              />
-=======
               >
                 {'Add ' + formatTime(data.preset_medium)}
               </Button>
->>>>>>> fe7e122a19 ([MIRROR] multiple UI timing issues (#8418))
             </Flex.Item>
             <Flex.Item grow={1}>
               <Button
                 fluid
                 icon="hourglass-start"
                 onClick={() => act('preset', { preset: 'long' })}
-<<<<<<< HEAD
-              />
-=======
               >
                 {'Add ' + formatTime(data.preset_long)}
               </Button>
->>>>>>> fe7e122a19 ([MIRROR] multiple UI timing issues (#8418))
             </Flex.Item>
           </Flex>
         </Section>
