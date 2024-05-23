@@ -158,3 +158,6 @@
   - maptweak: Crash fix in the DJ inn
   - rscadd: 4 eastern dragon plushies
   - rscadd: Dragon plushies to the vendor
+2024-05-23:
+  VoRe-bot:
+  - bugfix: laser staff used the wrong projectile path
