@@ -115,9 +115,9 @@
 /area/awaymission/hiddeneclipse/eclipsecarrier/science)
 "cf" = (
 /obj/effect/simple_portal/coords{
-	tele_x = 182;
-	tele_y = 13;
-	tele_z = 16
+	tele_x = 130;
+	tele_y = 132;
+	tele_z = 3
 	},
 /turf/simulated/shuttle/floor/alienplating/blue,
 /area/awaymission/hiddeneclipse/precursortemple)
@@ -977,9 +977,16 @@
 /turf/simulated/floor/tiled/old_tile/purple,
 /area/awaymission/hiddeneclipse/eclipsecarrier/science)
 "uB" = (
+<<<<<<< HEAD
 /obj/structure/fans/hardlight/colorable,
 /obj/machinery/door/blast/puzzle{
 	id = "FindTheButton2"
+=======
+/obj/effect/simple_portal/coords{
+	tele_x = 130;
+	tele_y = 132;
+	tele_z = 3
+>>>>>>> 7fd3cd3a9e (Some POI Stuff (#8413))
 	},
 /turf/simulated/shuttle/floor/alien,
 /area/awaymission/hiddeneclipse/theabyss)
