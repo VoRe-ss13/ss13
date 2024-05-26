@@ -161,3 +161,8 @@
 2024-05-23:
   VoRe-bot:
   - bugfix: laser staff used the wrong projectile path
+2024-05-26:
+  VoRe-bot:
+  - rscadd: Added a new latex marking for digi paws
+  - bugfix: fixed medi-sci maints
+  - maptweak: some valley POIs are a smidge diffrent
