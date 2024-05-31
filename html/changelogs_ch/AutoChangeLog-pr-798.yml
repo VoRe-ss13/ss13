@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - bugfix: "Fixed unathi size 1 bellysprites not working."

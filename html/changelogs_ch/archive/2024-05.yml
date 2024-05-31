@@ -166,3 +166,7 @@
   - rscadd: Added a new latex marking for digi paws
   - bugfix: fixed medi-sci maints
   - maptweak: some valley POIs are a smidge diffrent
+2024-05-31:
+  VoRe-bot:
+  - bugfix: Fixed unathi size 1 bellysprites not working.
+  - bugfix: Fixed slug glue breaking agresive mobs AI
