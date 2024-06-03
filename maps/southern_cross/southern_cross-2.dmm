@@ -11906,6 +11906,8 @@
 	},
 /obj/item/device/denecrotizer/medical,
 /obj/item/device/sleevemate,
+/obj/item/weapon/holosign_creator/medical,
+/obj/item/weapon/holosign_creator/medical,
 /turf/simulated/floor/tiled/white,
 /area/medical/reception)
 "aKO" = (
@@ -47461,6 +47463,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
+/obj/item/weapon/holosign_creator/medical,
 /turf/simulated/floor/tiled/white,
 /area/medical/medical_lockerroom)
 "eKZ" = (
@@ -49786,6 +49789,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
+/obj/item/weapon/holosign_creator/medical,
 /turf/simulated/floor/tiled/white,
 /area/medical/medical_lockerroom)
 "fXq" = (
@@ -56870,6 +56874,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
+/obj/item/weapon/holosign_creator/medical,
 /turf/simulated/floor/tiled/white,
 /area/medical/medical_lockerroom)
 "jGd" = (
@@ -76793,6 +76798,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
+/obj/item/weapon/holosign_creator/medical,
 /turf/simulated/floor/tiled/white,
 /area/medical/medical_lockerroom)
 "vGJ" = (
