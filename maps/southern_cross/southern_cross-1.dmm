@@ -19048,8 +19048,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/auxdockaft)
-<<<<<<< HEAD
-=======
 "hQX" = (
 /obj/structure/table/standard,
 /obj/item/weapon/reagent_containers/spray/cleaner,
@@ -19063,7 +19061,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
->>>>>>> 316545e1ff (Holo signs for Medical (#8463))
 "hQZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
