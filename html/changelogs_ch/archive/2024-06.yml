@@ -14,3 +14,14 @@
   - balance: Medical stays clean of viruses, as well as the engine room monitoring,
       construction, gravgen and toxins test area
   - maptweak: Deck 3 escape pod access fixes
+2024-06-06:
+  VoRe-bot:
+  - balance: lace masks are now small and allow drinking
+  - bugfix: tf pref for transformite
+  - bugfix: smol modification to the extended draketaur halves, so now their hindpawbs
+      are visible
+  - bugfix: an issue with charges not being correct
+  - balance: Dark Respite antibio improved
+  - bugfix: Infections no longer deathlock shadekin
+  - bugfix: autotransfer messages not showing on our auto transfer
+  - rscadd: preference to select a belly rub target
