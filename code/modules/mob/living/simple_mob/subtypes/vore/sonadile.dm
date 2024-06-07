@@ -44,6 +44,8 @@
 	vore_bump_emote = "pounces on"
 
 /mob/living/simple_mob/vore/sonadile/init_vore()
+	if(!voremob_loaded) //TORCHAdd - Added to fix redgate runtime
+		return //TORCHAdd
 	..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
