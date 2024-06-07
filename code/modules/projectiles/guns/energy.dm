@@ -30,7 +30,7 @@
 	var/random_start_ammo = FALSE	//if TRUE, the weapon will spawn with randomly-determined ammo
 
 
-/obj/item/weapon/gun/energy/Initialize() //TORCHEdit
+/obj/item/weapon/gun/energy/New()
 	//..() CHOMPEdit moved to bottom
 	var/static/list/gun_icons = icon_states('icons/obj/gun_ch.dmi')
 	if (icon == 'icons/obj/gun_ch.dmi' && !(icon_state in gun_icons))
@@ -46,8 +46,14 @@
 	//random starting power! gives us a random number of shots in the battery between 0 and the max possible
 	if(random_start_ammo && cell_type)
 		power_supply.charge = charge_cost*rand(0,power_supply.maxcharge/charge_cost)
+	// update_icon() // TORCHEdit - Moved to Initialize to fix runtime for obj/item/weapon/archaeological_find spawned
+	..() //CHOMPEdit if you see this, it is a cry for help. Please tell people to stop putting ..() at the top of New() :(
+
+//TORCHAdd - Start
+/obj/item/weapon/gun/energy/Initialize()
+	. = ..()
 	update_icon()
-	. = ..() //CHOMPEdit if you see this, it is a cry for help. Please tell people to stop putting ..() at the top of New() :( //TORCHEdit
+//TORCHAdd - end
 
 /obj/item/weapon/gun/energy/Destroy()
 	if(self_recharge)
