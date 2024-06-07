@@ -56,7 +56,7 @@
 	title = "Exploration Manager"
 
 /datum/job/pathfinder/get_request_reasons()
-	return list("Training crew")
+	return list("Training crew", "Assembling expedition team")
 
 
 /datum/job/pilot
@@ -115,6 +115,8 @@
 /datum/alt_title/offsite_scout
 	title = "Offsite Scout"
 
+/datum/job/explorer/get_request_reasons()
+	return list("Assembling expedition team")
 
 /datum/job/sar
 	title = "Field Medic"
@@ -140,3 +142,6 @@
 
 /datum/alt_title/offsite_medic
 	title = "Offsite Medic"
+
+/datum/job/sar/get_request_reasons()
+	return list("Assembling expedition team")
