@@ -25,3 +25,7 @@
   - bugfix: Infections no longer deathlock shadekin
   - bugfix: autotransfer messages not showing on our auto transfer
   - rscadd: preference to select a belly rub target
+2024-06-08:
+  VoRe-bot:
+  - rscadd: re-adds the station date and season to the Panel
+  - maptweak: The chapel POI for lost borgs now have lost borg access
