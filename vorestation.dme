@@ -91,6 +91,11 @@
 #include "code\__defines\preferences.dm"
 #include "code\__defines\process_scheduler.dm"
 #include "code\__defines\procpath.dm"
+<<<<<<< HEAD
+=======
+#include "code\__defines\projectile.dm"
+#include "code\__defines\projectile_cm.dm"
+>>>>>>> 0ab421aabe (undefines our defines (#8506))
 #include "code\__defines\projectiles.dm"
 #include "code\__defines\qdel.dm"
 #include "code\__defines\research.dm"
