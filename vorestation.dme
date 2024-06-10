@@ -920,10 +920,6 @@
 #include "code\game\machinery\buttons.dm"
 #include "code\game\machinery\buttons_vr.dm"
 #include "code\game\machinery\CableLayer.dm"
-<<<<<<< HEAD
-#include "code\game\machinery\casino_prize_dispenser_ch.dm"
-=======
->>>>>>> ca14a9d7cc (Nano UI be gone take2 (#8490))
 #include "code\game\machinery\cell_charger.dm"
 #include "code\game\machinery\cloning.dm"
 #include "code\game\machinery\cryo.dm"
@@ -2071,16 +2067,10 @@
 #include "code\modules\busy_space_yw\organizations.dm"
 #include "code\modules\casino\boxes_casino.dm"
 #include "code\modules\casino\casino.dm"
-<<<<<<< HEAD
-#include "code\modules\casino\casino_book.dm"
-#include "code\modules\casino\casino_tc.dm"
-#include "code\modules\casino\spawnergrenade_casino.dm"
-=======
 #include "code\modules\casino\casino_prize_vendor.dm"
 #include "code\modules\casino\headset_casino.dm"
 #include "code\modules\casino\premium_vendors.dm"
 #include "code\modules\casino\slots.dm"
->>>>>>> ca14a9d7cc (Nano UI be gone take2 (#8490))
 #include "code\modules\catalogue\atoms.dm"
 #include "code\modules\catalogue\catalogue_data.dm"
 #include "code\modules\catalogue\catalogue_data_vr.dm"
