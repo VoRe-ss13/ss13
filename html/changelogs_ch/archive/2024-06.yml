@@ -14,3 +14,26 @@
   - balance: Medical stays clean of viruses, as well as the engine room monitoring,
       construction, gravgen and toxins test area
   - maptweak: Deck 3 escape pod access fixes
+2024-06-06:
+  VoRe-bot:
+  - balance: lace masks are now small and allow drinking
+  - bugfix: tf pref for transformite
+  - bugfix: smol modification to the extended draketaur halves, so now their hindpawbs
+      are visible
+  - bugfix: an issue with charges not being correct
+  - balance: Dark Respite antibio improved
+  - bugfix: Infections no longer deathlock shadekin
+  - bugfix: autotransfer messages not showing on our auto transfer
+  - rscadd: preference to select a belly rub target
+2024-06-08:
+  VoRe-bot:
+  - rscadd: re-adds the station date and season to the Panel
+  - maptweak: The chapel POI for lost borgs now have lost borg access
+2024-06-11:
+  VoRe-bot:
+  - balance: lost and gravekeeper drones now have a small chance to unlock the scrambled
+      module by digesting mobs
+  - balance: lost and gravekeeper get access to an advanced self repair module when
+      digesting 5 mobs (stats are experimental and could change in the future)
+  - rscadd: advanced self repair module which can repair all modules, but only one
+      after another
