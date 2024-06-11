@@ -44,6 +44,8 @@
 	vore_bump_emote = "pounces on"
 
 /mob/living/simple_mob/vore/stalker/init_vore()
+	if(!voremob_loaded) //TORCHAdd - Added to fix redgate runtime
+		return //TORCHAdd
 	..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
@@ -274,4 +276,3 @@
 	else if(!stand_ground)
 		ai_log("engage_target() : Target ([target]) too far away. Exiting.", AI_LOG_DEBUG)
 		set_stance(STANCE_APPROACH)
-

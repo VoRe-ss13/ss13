@@ -136,6 +136,7 @@
 		list("Redgate - Teppi Ranch"),
 		list("Redgate - Innland"),
 		list("Redgate - Dark Adventure"),
+		list("Redgate - Eggnog Town Underground","Redgate - Eggnog Town"),
 		list("Redgate - Star Dog"),
 		list("Redgate - Hotsprings"),
 		list("Redgate - Rain City"),
@@ -143,7 +144,8 @@
 		list("Redgate - Moving Train", "Redgate - Moving Train Upper Level"),
 		list("Redgate - Fantasy Dungeon", "Redgate - Fantasy Town"),
 		list("Redgate - Laserdome"),
-		list("Redgate - Cascading Falls")
+		list("Redgate - Cascading Falls"),
+		list("Redgate - Jungle Underground", "Redgate - Jungle")
 		)
 
 
