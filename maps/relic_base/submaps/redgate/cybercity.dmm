@@ -4455,10 +4455,10 @@
 /turf/simulated/wall/tgmc/window/darkwall,
 /area/redgate/city/house1)
 "gbg" = (
-/obj/structure/casino_table/blackjack_l{
+/obj/machinery/light/floortube,
+/obj/structure/casino_table/blackjack_r{
 	dir = 4
 	},
-/obj/machinery/light/floortube,
 /turf/simulated/floor/carpet/purple,
 /area/redgate/city/casino)
 "gbV" = (
@@ -13298,7 +13298,6 @@
 /obj/item/weapon/grenade/spawnergrenade/casino/cow,
 /obj/item/weapon/grenade/spawnergrenade/casino/fennec,
 /obj/item/weapon/grenade/spawnergrenade/casino/fox,
-/obj/item/weapon/grenade/spawnergrenade/casino/goldcrest,
 /obj/item/weapon/grenade/spawnergrenade/casino/otie,
 /obj/item/weapon/grenade/spawnergrenade/casino/penguin,
 /obj/item/weapon/grenade/spawnergrenade/casino/redpanda,
@@ -17628,7 +17627,7 @@
 /obj/machinery/door/window/eastright{
 	dir = 8
 	},
-/obj/item/weapon/book/manual/casino,
+/obj/item/weapon/book/codex/casino,
 /turf/simulated/floor/tiled/yellow,
 /area/redgate/city/casino)
 "wXV" = (
@@ -17795,11 +17794,11 @@
 /turf/simulated/floor/tiled/eris/white/brown_perforated,
 /area/redgate/city/lasertag)
 "xmT" = (
-/obj/structure/casino_table/blackjack_r{
-	dir = 4
-	},
 /obj/machinery/light/floortube{
 	dir = 1
+	},
+/obj/structure/casino_table/blackjack_l{
+	dir = 4
 	},
 /turf/simulated/floor/carpet/purple,
 /area/redgate/city/casino)
@@ -27136,9 +27135,9 @@ aII
 aUA
 xmT
 goE
-caL
-cuU
 lZj
+cuU
+caL
 goE
 gbg
 aUA
