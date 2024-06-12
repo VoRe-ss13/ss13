@@ -1,8 +1,0 @@
-author: "purplefoxy27"
-delete-after: True
-changes:
-  - rscadd: "Rain City redgate now has maintenance pred spawn points &  some mobs can now be possessed by ghosts."
-  - rscadd: "Jungle and Eggnog redgates have been added."
-  - rscdel: "Signposts have been removed for the Fantasy Dungeon redgate"
-  - bugfix: "Cascading Falls redgate had their teleport points corrected"
-  - maptweak: "Old Medbot in catacombs starts muted to avoid runtimes"
