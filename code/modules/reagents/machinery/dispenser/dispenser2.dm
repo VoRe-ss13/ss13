@@ -28,11 +28,7 @@
 
 /obj/machinery/chemical_dispenser/examine(mob/user)
 	. = ..()
-<<<<<<< HEAD
-	. += "It has [cartridges.len] cartridges installed, and has space for [DISPENSER_MAX_CARTRIDGES - cartridges.len] more."
-=======
 	. += "It has [cartridges.len] cartridges installed, and has space for [max_catriges - cartridges.len] more."
->>>>>>> 15863e00f8 ([MIRROR] Undefines local defines and moves global to __define (#8502))
 
 /obj/machinery/chemical_dispenser/verb/rotate_clockwise()
 	set name = "Rotate Dispenser Clockwise"
@@ -51,11 +47,7 @@
 			to_chat(user, "<span class='warning'>\The [C] will not fit in \the [src]!</span>")
 		return
 
-<<<<<<< HEAD
-	if(cartridges.len >= DISPENSER_MAX_CARTRIDGES)
-=======
 	if(cartridges.len >= max_catriges)
->>>>>>> 15863e00f8 ([MIRROR] Undefines local defines and moves global to __define (#8502))
 		if(user)
 			to_chat(user, "<span class='warning'>\The [src] does not have any slots open for \the [C] to fit into!</span>")
 		return

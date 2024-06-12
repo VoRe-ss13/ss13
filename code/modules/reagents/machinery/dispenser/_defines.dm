@@ -4,9 +4,4 @@
 
 // Chemistry dispenser starts with 21
 // ERT dispenser starts with 28
-<<<<<<< HEAD
-#define DISPENSER_MAX_CARTRIDGES 30
-
-=======
 // #define DISPENSER_MAX_CARTRIDGES 30 //changed to var
->>>>>>> 15863e00f8 ([MIRROR] Undefines local defines and moves global to __define (#8502))
