@@ -24182,7 +24182,7 @@
 /area/chapel/main)
 "jRb" = (
 /obj/machinery/door/airlock/security{
-	name = "Evidence Storage";
+	name = "Equipment Lockup";
 	req_access = list(1)
 	},
 /obj/structure/cable/green{
@@ -40739,7 +40739,7 @@
 /area/engineering/engi_restroom)
 "qNd" = (
 /obj/machinery/door/airlock/security{
-	name = "Evidence Storage";
+	name = "Equipment Lockup";
 	req_access = list(1)
 	},
 /turf/simulated/floor/tiled/dark,
