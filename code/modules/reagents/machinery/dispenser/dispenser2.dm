@@ -14,6 +14,7 @@
 
 	var/accept_drinking = 0
 	var/amount = 30
+	var/max_catriges = 30
 
 	use_power = USE_POWER_IDLE
 	idle_power_usage = 100
