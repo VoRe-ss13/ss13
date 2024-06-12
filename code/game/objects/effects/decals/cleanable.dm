@@ -27,11 +27,7 @@ generic_filth = TRUE means when the decal is saved, it will be switched out for 
 
 /obj/effect/decal/cleanable/Destroy()
 	SSpersistence.forget_value(src, /datum/persistent/filth)
-<<<<<<< HEAD
-	cut_overlays()
-=======
 	QDEL_NULL(jan_icon)
->>>>>>> 8ea9a9a1aa ([MIRROR] some GC things (#8507))
 	. = ..()
 
 /obj/effect/decal/cleanable/clean_blood(var/ignore = 0)
