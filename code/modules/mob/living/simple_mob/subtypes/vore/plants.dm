@@ -38,6 +38,8 @@
 	vore_bump_emote = "encloses on"
 
 /mob/living/simple_mob/vore/mantrap/init_vore()
+	if(!voremob_loaded) //TORCHAdd - Added to fix redgate runtime
+		return //TORCHAdd
 	..()
 	var/obj/belly/B = vore_selected
 	B.name = "trap"
@@ -125,6 +127,8 @@
 	projectilesound = 'sound/effects/slime_squish.ogg'
 
 /mob/living/simple_mob/vore/pitcher/init_vore()
+	if(!voremob_loaded) //TORCHAdd - Added to fix redgate runtime
+		return //TORCHAdd
 	..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"

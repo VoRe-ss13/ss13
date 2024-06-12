@@ -29,3 +29,26 @@
   VoRe-bot:
   - rscadd: re-adds the station date and season to the Panel
   - maptweak: The chapel POI for lost borgs now have lost borg access
+2024-06-11:
+  VoRe-bot:
+  - balance: lost and gravekeeper drones now have a small chance to unlock the scrambled
+      module by digesting mobs
+  - balance: lost and gravekeeper get access to an advanced self repair module when
+      digesting 5 mobs (stats are experimental and could change in the future)
+  - rscadd: advanced self repair module which can repair all modules, but only one
+      after another
+2024-06-12:
+  VoRe-bot:
+  - code_imp: move the update_icon in xenoarch to Initialize as well
+  - bugfix: hides some verbs which shouldn't show on the panel
+  - rscdel: nano ui
+  - code_imp: merge the casino code into upstream's enhanced version
+  - code_imp: casino_chip_exchanger -> chipmachine
+  - code_imp: casinoslave_handler -> casinosentientprize_handler
+  purplefoxy27:
+  - rscadd: Rain City redgate now has maintenance pred spawn points &  some mobs can
+      now be possessed by ghosts.
+  - rscadd: Jungle and Eggnog redgates have been added.
+  - rscdel: Signposts have been removed for the Fantasy Dungeon redgate
+  - bugfix: Cascading Falls redgate had their teleport points corrected
+  - maptweak: Old Medbot in catacombs starts muted to avoid runtimes

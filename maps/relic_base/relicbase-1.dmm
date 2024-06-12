@@ -4058,7 +4058,8 @@
 	desc = "A little medical robot. He looks pretty untrustworthy.";
 	emagged = 1;
 	faction = "mouse";
-	name = "Old Medibot"
+	name = "Old Medibot";
+	vocal = 0
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/underground/catacombs)
