@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - bugfix: "belly reagent examine messaged relying to direct volume instead of percentage"

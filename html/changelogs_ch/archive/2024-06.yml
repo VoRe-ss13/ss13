@@ -52,3 +52,11 @@
   - rscdel: Signposts have been removed for the Fantasy Dungeon redgate
   - bugfix: Cascading Falls redgate had their teleport points corrected
   - maptweak: Old Medbot in catacombs starts muted to avoid runtimes
+2024-06-13:
+  VoRe-bot:
+  - bugfix: belly reagent examine messaged relying to direct volume instead of percentage
+  - rscadd: Separated messages for auto-transfers versus struggle transfers
+  - qol: Disabling Entrance Logs also stops the pred from seeing auto-transfer messages
+  - bugfix: Fixed tasting things not directly entering a belly, such as in boxes or
+      held by others
+  - bugfix: snowfield's armory is no longer magically linked to SC's
