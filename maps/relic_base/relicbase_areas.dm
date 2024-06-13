@@ -394,6 +394,10 @@
 	name = "\improper Disused Garage"
 	icon_state = "storage"
 
+/area/surface/outpost/main/gardening_tools
+	name = "\improper Gardening Storage"
+	icon_state = "storage"
+
 /area/surface/outpost/main/crew_quarters
 	name = "\improper Main Outpost Crew Quarters"
 	sound_env = MEDIUM_SOFTFLOOR
@@ -1092,6 +1096,10 @@ z
 	name = "\improper Medbay Foyer"
 	icon_state = "medbay2"
 	music = 'sound/ambience/signal.ogg'
+
+/area/medical/medsci
+	name = "\improper Medical Science Hallway"
+	icon_state = "medbay2"
 
 /area/medical/first_aid_station/seconddeck/
 	name = "\improper First-Aid Station"
