@@ -60,3 +60,22 @@
   - bugfix: Fixed tasting things not directly entering a belly, such as in boxes or
       held by others
   - bugfix: snowfield's armory is no longer magically linked to SC's
+2024-06-14:
+  Missile597:
+  - rscadd: Added Genetics Lab
+  - rscadd: Added public gardening tool storage area
+  - rscadd: Added a cargo tug for cargo
+  - rscadd: Added cargo status displays on upper floor
+  - rscdel: Removed the mistakenly placed walls above atmos entrance
+  - rscdel: Deleted a misplaced radioactive sign
+  - bugfix: Fixed dorms nanomed not getting power
+  - bugfix: Lights outside atmos are now powered
+  - bugfix: Changed the name of two security airlocks that were incorrectly labelled
+      as evidence storage
+  - qol: Added another box of lights for engineering, these tend to run out fast as
+      we have a lot of lights on this map
+  - maptweak: Tinyfans extended to cover department lobbies as well (no more cold
+      seating areas). Added some tinyfans in areas that were missing them like the
+      bathrooms
+  - maptweak: Hooked lobbies up to atmos and added air alarms. Also hooked up the
+      2nd floor shower room to atmos
