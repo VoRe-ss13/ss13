@@ -79,3 +79,11 @@
       bathrooms
   - maptweak: Hooked lobbies up to atmos and added air alarms. Also hooked up the
       2nd floor shower room to atmos
+2024-06-16:
+  VoRe-bot:
+  - balance: Nif vendors have logs now. Sec can check them
+  - rscadd: Strange weather
+  - bugfix: Reconstituting as a teshari xeno chimera should no longer break vore sprites.
+  - rscadd: Certain medications are now available as loadout items
+  - balance: Paradox gen requires to be wired like an emitter
+  - balance: Paradox gen requires 1/20th of the power now. Loot pool is adjusted
