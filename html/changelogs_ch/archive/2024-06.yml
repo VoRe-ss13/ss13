@@ -87,3 +87,6 @@
   - rscadd: Certain medications are now available as loadout items
   - balance: Paradox gen requires to be wired like an emitter
   - balance: Paradox gen requires 1/20th of the power now. Loot pool is adjusted
+2024-06-17:
+  VoRe-bot:
+  - bugfix: Fixed synths not getting the verb to change eye color.

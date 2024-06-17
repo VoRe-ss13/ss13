@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - bugfix: "Fixed synths not getting the verb to change eye color."
