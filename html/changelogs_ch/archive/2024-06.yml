@@ -90,3 +90,7 @@
 2024-06-17:
   VoRe-bot:
   - bugfix: Fixed synths not getting the verb to change eye color.
+2024-06-18:
+  VoRe-bot:
+  - bugfix: fixes blood cleaning on objects.
+  - balance: 75% reduction in blood loss from burns
