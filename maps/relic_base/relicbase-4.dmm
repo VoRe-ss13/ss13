@@ -5679,15 +5679,12 @@
 /area/quartermaster/storage)
 "eXU" = (
 /obj/structure/railing{
-	dir = 1
-	},
-/obj/structure/railing{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost/sky)
+/area/crew_quarters/cafeteria)
 "eXV" = (
 /obj/machinery/fusion_fuel_injector/mapped{
 	dir = 1;
@@ -6217,18 +6214,6 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_8/upstairs)
-"fyc" = (
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/techmaint{
-	outdoors = 1
-	},
-/area/surface/outside/plains/outpost)
 "fyv" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 9
@@ -8406,6 +8391,12 @@
 	outdoors = 1
 	},
 /area/surface/outpost/main/landing)
+"hqv" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "hqF" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -9905,6 +9896,17 @@
 	},
 /turf/simulated/open,
 /area/surface/outpost/main/dorms/dorm_6/upstairs)
+"iMj" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/crew_quarters/cafeteria)
 "iMR" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -14552,11 +14554,13 @@
 /turf/simulated/open,
 /area/surface/outpost/main/dorms/dorm_3/upstairs)
 "mFz" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost/sky)
+/area/crew_quarters/cafeteria)
 "mFN" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced/airless,
@@ -20416,11 +20420,10 @@
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/heads/sc/sd)
 "qUx" = (
-/obj/structure/catwalk,
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/crew_quarters/cafeteria)
 "qUz" = (
 /obj/structure/closet/secure_closet/security,
 /obj/item/device/gps/security,
@@ -24281,13 +24284,17 @@
 	},
 /area/crew_quarters/cafeteria)
 "ugJ" = (
-/obj/structure/railing{
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost/sky)
+/area/surface/outside/plains/outpost)
 "ugQ" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
@@ -24640,14 +24647,6 @@
 /obj/random/junk,
 /turf/simulated/floor/tiled/milspec,
 /area/surface/outpost/civilian/emergency_storage)
-"utA" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techmaint{
-	outdoors = 1
-	},
-/area/surface/outside/plains/outpost/sky)
 "utW" = (
 /obj/structure/toilet{
 	dir = 1
@@ -56856,14 +56855,14 @@ lCw
 mmR
 dwp
 qeQ
-utA
-umZ
-umZ
-umZ
-umZ
 mFz
 qUx
-fyc
+qUx
+qUx
+qUx
+ueR
+hqv
+ugJ
 gZN
 osy
 pur
@@ -57113,14 +57112,14 @@ sHq
 fsZ
 uWp
 qeQ
-utA
-umZ
-umZ
-umZ
-umZ
-npA
+mFz
 qUx
-fyc
+qUx
+qUx
+qUx
+npA
+hqv
+ugJ
 eJM
 aLG
 tBg
@@ -57370,11 +57369,11 @@ qeQ
 qeQ
 qeQ
 qeQ
+iMj
 eXU
-ugJ
-ugJ
-ugJ
-ugJ
+eXU
+eXU
+eXU
 aLG
 aHc
 jZj
