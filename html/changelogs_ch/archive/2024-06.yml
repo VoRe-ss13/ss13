@@ -94,3 +94,8 @@
   VoRe-bot:
   - bugfix: fixes blood cleaning on objects.
   - balance: 75% reduction in blood loss from burns
+2024-06-20:
+  VoRe-bot:
+  - maptweak: Moved and removed some vending machines in the dark which were unnecessary
+      or gave shadekin loot they shouldn't be using
+  - rscadd: plug tail big leggies
