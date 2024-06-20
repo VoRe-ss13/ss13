@@ -599,7 +599,7 @@
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/engineering/external_lights)
 "avC" = (
 /obj/machinery/status_display{
 	pixel_x = 30
@@ -3986,7 +3986,7 @@
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/engineering/external_lights)
 "dFk" = (
 /turf/simulated/floor/tiled/milspec,
 /area/surface/outside/plains/outpost)
@@ -5265,7 +5265,7 @@
 /turf/simulated/floor/plating{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/engineering/atmos/storage)
 "eEV" = (
 /obj/structure/cable/green{
 	d1 = 32;
@@ -5368,7 +5368,7 @@
 /obj/machinery/light/no_nightshift{
 	dir = 4
 	},
-/turf/simulated/open{
+/turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
 /area/crew_quarters/cafeteria)
@@ -5678,24 +5678,16 @@
 	},
 /area/quartermaster/storage)
 "eXU" = (
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 6
+/obj/structure/railing{
+	dir = 1
 	},
-/obj/effect/floor_decal/borderfloorblack{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 8
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+/obj/structure/railing{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/surface/outside/plains/outpost/sky)
 "eXV" = (
 /obj/machinery/fusion_fuel_injector/mapped{
 	dir = 1;
@@ -6225,6 +6217,18 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_8/upstairs)
+"fyc" = (
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost)
 "fyv" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 9
@@ -7030,11 +7034,6 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
 	},
 /turf/simulated/floor/reinforced{
 	outdoors = 1
@@ -8626,7 +8625,7 @@
 /turf/simulated/floor/plating{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/engineering/engine_monitoring)
 "hAJ" = (
 /obj/machinery/telecomms/server/presets/command,
 /turf/simulated/floor/tiled/dark{
@@ -10565,15 +10564,10 @@
 	c_tag = "CIV - Hangar Pad 4 Southwest";
 	dir = 4
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/engineering/external_lights)
 "jnG" = (
 /obj/structure/closet/wardrobe/red,
 /obj/item/clothing/suit/storage/hazardvest/green,
@@ -14558,20 +14552,11 @@
 /turf/simulated/open,
 /area/surface/outpost/main/dorms/dorm_3/upstairs)
 "mFz" = (
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 5
-	},
-/obj/effect/floor_decal/borderfloorblack,
-/obj/effect/floor_decal/industrial/danger,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
+/obj/structure/railing,
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/surface/outside/plains/outpost/sky)
 "mFN" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced/airless,
@@ -15476,7 +15461,7 @@
 /obj/machinery/light/no_nightshift{
 	dir = 4
 	},
-/turf/simulated/open{
+/turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
 /area/crew_quarters/cafeteria)
@@ -15851,7 +15836,7 @@
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/engineering/external_lights)
 "nJo" = (
 /obj/structure/railing,
 /obj/structure/railing{
@@ -20431,16 +20416,8 @@
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/heads/sc/sd)
 "qUx" = (
-/obj/structure/marker_beacon{
-	icon_state = "markerburgundy-on";
-	picked_color = "Burgundy"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/reinforced{
+/obj/structure/catwalk,
+/turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
 /area/surface/outside/plains/outpost)
@@ -21495,11 +21472,6 @@
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/industrial/danger,
 /obj/effect/decal/cleanable/blood/oil,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
@@ -22239,7 +22211,7 @@
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/engineering/external_lights)
 "ssj" = (
 /obj/structure/bed/double/padded,
 /obj/machinery/light_switch{
@@ -24309,24 +24281,13 @@
 	},
 /area/crew_quarters/cafeteria)
 "ugJ" = (
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 6
-	},
-/obj/effect/floor_decal/borderfloorblack{
-	dir = 8
-	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 8
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/railing{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/surface/outside/plains/outpost/sky)
 "ugQ" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
@@ -24679,6 +24640,14 @@
 /obj/random/junk,
 /turf/simulated/floor/tiled/milspec,
 /area/surface/outpost/civilian/emergency_storage)
+"utA" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint{
+	outdoors = 1
+	},
+/area/surface/outside/plains/outpost/sky)
 "utW" = (
 /obj/structure/toilet{
 	dir = 1
@@ -26470,7 +26439,7 @@
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/engineering/external_lights)
 "vTu" = (
 /obj/machinery/camera/network/exterior{
 	c_tag = "Xenobotany Rooftop East Exterior Camera";
@@ -26849,23 +26818,14 @@
 	},
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/industrial/danger,
-/obj/structure/cable{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/machinery/camera/network/civilian{
 	c_tag = "CIV - Hangar Pad 4 Southeast";
 	dir = 8
 	},
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 24
-	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/engineering/external_lights)
 "wqZ" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -29021,15 +28981,10 @@
 	dir = 8
 	},
 /obj/machinery/light,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/tiled/techmaint{
 	outdoors = 1
 	},
-/area/surface/outside/plains/outpost)
+/area/engineering/external_lights)
 "ylo" = (
 /turf/simulated/open,
 /area/surface/outpost/civilian/emergency_storage)
@@ -56901,15 +56856,15 @@ lCw
 mmR
 dwp
 qeQ
-uPP
-pur
-pur
-pur
-pur
-uUk
-bxY
-fGn
-uPP
+utA
+umZ
+umZ
+umZ
+umZ
+mFz
+qUx
+fyc
+gZN
 osy
 pur
 pur
@@ -57158,14 +57113,14 @@ sHq
 fsZ
 uWp
 qeQ
-uPP
-pur
-pur
-pur
-pur
+utA
+umZ
+umZ
+umZ
+umZ
 npA
-bxY
-fGn
+qUx
+fyc
 eJM
 aLG
 tBg
@@ -57415,11 +57370,11 @@ qeQ
 qeQ
 qeQ
 qeQ
-sAW
-jZD
-jZD
-jZD
-jZD
+eXU
+ugJ
+ugJ
+ugJ
+ugJ
 aLG
 aHc
 jZj
@@ -73320,11 +73275,11 @@ ppQ
 ppQ
 ppQ
 ppQ
-eXU
-ugJ
-ugJ
-ugJ
-ugJ
+ppQ
+ppQ
+ppQ
+ppQ
+ppQ
 ykZ
 wjN
 wjN
@@ -73582,7 +73537,7 @@ vQW
 lJN
 lJN
 xbk
-qUx
+dpI
 jlL
 uPP
 pur
@@ -73840,7 +73795,7 @@ dEO
 lJN
 bMb
 jar
-mFz
+oXm
 uPP
 pur
 pur
@@ -74097,7 +74052,7 @@ lJN
 lJN
 jar
 mBG
-mFz
+oXm
 uPP
 pur
 pur
@@ -74354,7 +74309,7 @@ czv
 czv
 jar
 lcW
-mFz
+oXm
 uPP
 pur
 pur
@@ -74868,7 +74823,7 @@ lJN
 lJN
 arW
 jar
-mFz
+oXm
 uPP
 pur
 pur
@@ -75125,7 +75080,7 @@ vQW
 czv
 jdQ
 utZ
-mFz
+oXm
 uPP
 pur
 pur
@@ -75382,7 +75337,7 @@ lJN
 czv
 jar
 lcW
-mFz
+oXm
 uPP
 pur
 pur
@@ -75639,7 +75594,7 @@ lJN
 lJN
 nOS
 mBG
-mFz
+oXm
 uPP
 pur
 pur
@@ -75896,7 +75851,7 @@ vxs
 lJN
 jar
 jar
-mFz
+oXm
 uPP
 pur
 pur
