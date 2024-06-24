@@ -55,4 +55,14 @@ VBO_maw13
 VBO_maw14
 VBO_intestines9
 VBO_notbelly
+<<<<<<< HEAD
 VBO_wriggly
+=======
+VBO_wriggly
+
+Hunter Dovetail:
+VBOanim_belly2
+VBOanim_gullet1
+VBOanim_gullet2
+VBOanim_intestine1
+>>>>>>> 821e2cf9ca (VBO DMI fix. (#8571))
