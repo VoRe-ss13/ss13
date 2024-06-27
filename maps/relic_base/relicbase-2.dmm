@@ -5857,10 +5857,10 @@
 /area/engineering/atmos)
 "fbL" = (
 /obj/structure/kitchenspike,
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/machinery/light/no_nightshift,
+/obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/machinery/light/no_nightshift,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/kitchen)
 "fdu" = (
@@ -13475,13 +13475,13 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "nJF" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/item/device/radio/intercom{
 	dir = 1;
 	name = "Station Intercom (General)";
 	pixel_y = 21
 	},
 /obj/structure/closet/secure_closet/freezer/meat,
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/kitchen)
 "nKa" = (
