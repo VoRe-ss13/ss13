@@ -99,3 +99,6 @@
   - maptweak: Moved and removed some vending machines in the dark which were unnecessary
       or gave shadekin loot they shouldn't be using
   - rscadd: plug tail big leggies
+2024-06-28:
+  VoRe-bot:
+  - server: move the asset cache dir in the same way TG did
