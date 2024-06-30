@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - bugfix: "Increase the main menu window height to kill the scrollbar on default load"
