@@ -22,7 +22,3 @@
 /turf/simulated/floor/boxing/gym
 	name = "gym mat"
 	icon_state = "gym_mat"
-<<<<<<< HEAD
-	
-=======
->>>>>>> c3e49d6b42 (Footstep element (#8576))
