@@ -99,3 +99,22 @@
   - maptweak: Moved and removed some vending machines in the dark which were unnecessary
       or gave shadekin loot they shouldn't be using
   - rscadd: plug tail big leggies
+2024-06-28:
+  VoRe-bot:
+  - server: move the asset cache dir in the same way TG did
+2024-06-29:
+  VoRe-bot:
+  - qol: digestion damage types can be set higher; the max total damage is still the
+      same.
+  - qol: Weaver is useable by all species
+  - qol: refactored alcohol traits
+  - qol: expanded feedback when you drink from a glass
+  - balance: halves pink slime brute / burn heal
+  - bugfix: Drop Overmap dynamic Z levels from 3 to 2
+  - qol: anom weathers are a smidge less spicy
+  - bugfix: missing weather names
+  - qol: made patches transfer their reagents straight into blood, so you can use
+      them for anything
+  - rscadd: Added a new outsider pod "Dragon Cave"
+  - qol: ' Diona ar now the speed of lizards.'
+  - balance: Diona now have a value of 0.5 slowdown compared to their previous 5
