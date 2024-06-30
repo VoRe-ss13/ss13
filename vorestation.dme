@@ -4985,7 +4985,6 @@
 #include "modular_chomp\code\modules\power\cells\power_cells.dm"
 #include "modular_chomp\code\modules\projectiles\gun.dm"
 #include "modular_chomp\code\modules\projectiles\mob.dm"
-#include "modular_chomp\code\modules\projectiles\projectile.dm"
 #include "modular_chomp\code\modules\projectiles\ammo_refactor\_ammo_defines.dm"
 #include "modular_chomp\code\modules\projectiles\ammo_refactor\ammo_autolathe.dm"
 #include "modular_chomp\code\modules\projectiles\ammo_refactor\ammo_magazine_override.dm"
