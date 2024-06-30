@@ -55,9 +55,6 @@ VBO_maw13
 VBO_maw14
 VBO_intestines9
 VBO_notbelly
-<<<<<<< HEAD
-VBO_wriggly
-=======
 VBO_wriggly
 
 Hunter Dovetail:
@@ -69,6 +66,3 @@ VBOanim_gullet2
 VBOanim_intestine1
 VBOanim_belly3
 VBO_anim_intestine2
-
-
->>>>>>> 8a78a98689 (VBOs Awaiting Merge (#8578))
