@@ -4985,8 +4985,6 @@
 #include "modular_chomp\code\modules\power\cells\power_cells.dm"
 #include "modular_chomp\code\modules\projectiles\gun.dm"
 #include "modular_chomp\code\modules\projectiles\mob.dm"
-<<<<<<< HEAD
-=======
 #include "modular_chomp\code\modules\projectiles\projectile.dm"
 #include "modular_chomp\code\modules\projectiles\ammo_refactor\_ammo_defines.dm"
 #include "modular_chomp\code\modules\projectiles\ammo_refactor\ammo_autolathe.dm"
@@ -4995,7 +4993,6 @@
 #include "modular_chomp\code\modules\projectiles\ammo_refactor\ammo_overrides.dm"
 #include "modular_chomp\code\modules\projectiles\ammo_refactor\ammo_types.dm"
 #include "modular_chomp\code\modules\projectiles\ammo_refactor\gun_overrides.dm"
->>>>>>> abc16a2e2a (The big ammo simplification (#8171))
 #include "modular_chomp\code\modules\projectiles\clockwork\clockwork_guns_ch.dm"
 #include "modular_chomp\code\modules\projectiles\guns\alts.dm"
 #include "modular_chomp\code\modules\projectiles\guns\phase.dm"
