@@ -36,7 +36,11 @@
     disallow_jobhop = TRUE
     total_positions = 5
     spawn_positions = 5
+<<<<<<< HEAD
     supervisors = "nobody, but you fall under NanoTrasen's Unauthorized Personnel SOP while on NT property. Please read <a href='https://wiki.torchstation13.net/index.php/Rules#Shadekin/%22Anomaly%22_Guidelines'>the Shadekin Guidelines</a> clearly before playing"
+=======
+    supervisors = "nobody, but you fall under NanoTrasen's Unauthorized Personnel SOP while on NT property. Please read <a href='https://wiki.chompstation13.net/index.php/Rules#Shadekin/%22Anomaly%22_Guidelines'>the Shadekin Guidelines</a> clearly before playing"
+>>>>>>> 8cf666d5c5 (Change base Shadekin spawns from 3 to 5 (#8580))
 
     flag = NONCREW
     departments = list(DEPARTMENT_NONCREW)
@@ -64,6 +68,14 @@
 	else
 		return FALSE
 
+<<<<<<< HEAD
+=======
+/datum/job/shadekin/update_limit(var/comperator)
+	var/current_limit = spawn_positions + round(comperator / 50)
+	if(current_limit > total_positions)
+		total_positions = current_limit
+
+>>>>>>> 8cf666d5c5 (Change base Shadekin spawns from 3 to 5 (#8580))
 /datum/job/vr_avatar //So VR avatars dont spawn with PDAs and flood the servers
 	title = JOB_VR
 	disallow_jobhop = TRUE
