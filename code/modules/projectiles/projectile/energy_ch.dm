@@ -57,3 +57,29 @@
 	SA_bonus_damage = 60
 	armor_penetration = -20
 	hud_state = "laser_heat"
+
+/obj/item/projectile/energy/acid/ch
+	name = "acidic spit"
+	icon_state = "neurotoxin"
+	fire_sound = 'modular_chomp/sound/voice/alien_spitacid.ogg'
+	damage = 30
+	damage_type = BURN
+	agony = 0
+	check_armour = "laser"
+	armor_penetration = 0	// No.
+	hitsound_wall = 'sound/weapons/effects/alien_spit_wall.ogg'
+	hitsound = 'sound/weapons/effects/alien_spit_wall.ogg'
+	hud_state = "electrothermal"
+
+/obj/item/projectile/energy/acid/ch/weak
+	name = "acidic spit"
+	icon_state = "neurotoxin"
+	fire_sound = 'modular_chomp/sound/voice/alien_spitacid.ogg'
+	damage = 10
+	damage_type = BURN
+	agony = 10
+	check_armour = "laser"
+	armor_penetration = 10	// Maybe a little.
+	hitsound_wall = 'sound/weapons/effects/alien_spit_wall.ogg'
+	hitsound = 'sound/weapons/effects/alien_spit_wall.ogg'
+	hud_state = "electrothermal"
