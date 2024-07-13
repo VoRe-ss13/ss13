@@ -145,6 +145,105 @@
 
 ////// TIER ONE XENOMORPH CASTES //////
 
+/// XENOMORPH FACEHUGGER /// -- WIP
+
+/mob/living/simple_mob/xeno_ch/hugger
+	name = "xenomorph hugger"
+	desc = "A small skittering spider-like xenomorph-- Don't let it get on your face!"
+
+	movement_cooldown = -3
+	icon = 'modular_chomp/icons/mob/48x48_xenos.dmi'
+	icon_dead = "Normal Facehugger Dead"
+	icon_living = "Normal Facehugger Running"
+	icon_rest = "Normal Facehugger Sleeping"
+	icon_state = "Normal Facehugger Running"
+	pixel_x = -9
+	default_pixel_x = -9
+	pixel_y = -8
+	default_pixel_y = -8
+	icon_state_prepounce = "Normal Facehugger Thrown"
+	icon_pounce = 'modular_chomp/icons/mob/48x48_xenos.dmi'
+	icon_state_pounce = "Normal Facehugger Thrown"
+
+	ai_holder_type = /datum/ai_holder/simple_mob/melee
+
+	pass_flags = PASSTABLE
+	mob_swap_flags = 0
+	mob_push_flags = 0
+
+	melee_damage_lower = 5
+	melee_damage_upper = 5
+	melee_attack_delay = null
+	base_attack_cooldown = 5
+	maxHealth = 25
+	health = 25
+	armor = list(
+				"melee" = 5,
+				"bullet" = 0,
+				"laser" = 0,
+				"energy" = 0,
+				"bomb" = 0,
+				"bio" = 100,
+				"rad" = 100
+				)
+
+	special_attack_min_range = 1
+	special_attack_max_range = 7
+	special_attack_cooldown = 5 SECONDS
+
+	var/leap_warmup = 0 SECOND // How long the leap telegraphing is.
+	var/leap_sound = 'sound/weapons/spiderlunge.ogg' //Temporary. -- Serdy
+
+/mob/living/simple_mob/xeno_ch/hugger/apply_bonus_melee_damage(atom/A, damage_amount)
+	if(isliving(A))
+		var/mob/living/L = A
+		if(L.incapacitated(INCAPACITATION_DISABLED))
+			return damage_amount * 1.5
+	return ..()
+
+/mob/living/simple_mob/xeno_ch/hugger/do_special_attack(atom/A) //Yoinked from the spiders originally. Could probably be implemented better. -- Serdy
+	set waitfor = FALSE
+	set_AI_busy(TRUE)
+
+	do_windup_animation(A, leap_warmup)
+	sleep(leap_warmup) // For the telegraphing.
+
+	status_flags |= LEAPING
+	visible_message(span("danger","\The [src] leaps at \the [A]!"))
+	throw_at(get_step(get_turf(A), get_turf(src)), special_attack_max_range+1, 1, src)
+	playsound(src, leap_sound, 75, 1)
+
+	sleep(5)
+
+	if(status_flags & LEAPING)
+		status_flags &= ~LEAPING
+
+	var/turf/T = get_turf(src)
+
+	. = FALSE
+
+	// Now for the stun.
+	var/mob/living/victim = null
+	for(var/mob/living/L in T)
+		if(L == src)
+			continue
+
+		if(ishuman(L))
+			var/mob/living/carbon/human/H = L
+			if(H.check_shields(damage = 0, damage_source = src, attacker = src, def_zone = null, attack_text = "the leap"))
+				continue // We were blocked.
+
+		victim = L
+		break
+
+	if(victim)
+		victim.Weaken(2)
+		victim.visible_message(span("danger","\The [src] knocks down \the [victim]!"))
+		to_chat(victim, span("critical", "\The [src] jumps on you!"))
+		. = TRUE
+
+	set_AI_busy(FALSE)
+
 /// XENOMORPH LARVA /// - WIP
 
 /mob/living/simple_mob/xeno_ch/larva
@@ -164,6 +263,10 @@
 	icon_state_prepounce = "Larva Running"
 	icon_pounce = 'modular_chomp/icons/mob/1x1_xenos.dmi'
 	icon_state_pounce = "Larva Running"
+
+	pass_flags = PASSTABLE
+	mob_swap_flags = 0
+	mob_push_flags = 0
 
 	ai_holder_type = /datum/ai_holder/simple_mob/xenolarva
 
@@ -246,6 +349,10 @@
 	default_pixel_x = -16
 	pixel_y = 0
 	default_pixel_y = 0
+
+	pass_flags = PASSTABLE
+	mob_swap_flags = 0
+	mob_push_flags = 0
 
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/evasive
 
@@ -421,6 +528,10 @@
 	icon_overlay_spit_pounce = "alienspit_leap"
 
 	ai_holder_type = /datum/ai_holder/simple_mob/melee
+
+	pass_flags = PASSTABLE
+	mob_swap_flags = 0
+	mob_push_flags = 0
 
 	melee_damage_lower = 25
 	melee_damage_upper = 25
@@ -646,6 +757,10 @@
 	icon_state_pounce = "Wraith Running"
 
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/evasive
+
+	pass_flags = PASSTABLE
+	mob_swap_flags = 0
+	mob_push_flags = 0
 
 	melee_damage_lower = 25
 	melee_damage_upper = 25
@@ -941,7 +1056,10 @@
 				"bio" = 100,
 				"rad" = 100
 				)
-/*
+
+
+/// XENOMORPH DRAGON /// - Will burn you to a crisp.
+
 /mob/living/simple_mob/xeno_ch/dragon
 	name = "xenomorph dragon"
 	desc = "An extraterrestrial hive-based endoparasitoid with a multi-staged life cycle. This is what you get when a xenomorph embryo infects a firebreathing dragon."
@@ -959,7 +1077,7 @@
 	icon_state_prepounce = "Dragon Running"
 	icon_pounce = 'modular_chomp/icons/mob/2x2_xenos.dmi'
 	icon_state_pounce = "Dragon Running"
-	ai_holder_type = /datum/ai_holder/simple_mob/intentional/dragon
+	ai_holder_type = /datum/ai_holder/simple_mob/melee
 	melee_damage_lower = 60
 	melee_damage_upper = 60
 	maxHealth = 2000
@@ -974,7 +1092,239 @@
 				"rad" = 100
 				)
 
-*/ /// - Commented out till i can figure out how to get em to use firebreath and stuff. - Serdy
+
+
+/// Commented out because i can't get this to work. Help meeeeeeeee. - Serdy
+
+/*
+	var/notame = 1
+	var/norange = 0
+	var/nospecial = 0
+	var/noenrage = 0
+	var/enraged = 0
+	var/flametoggle = 1
+	var/specialtoggle = 1
+	var/flames = 1
+	var/firebreathtimer = 50
+	var/chargetimer = 1
+	var/charge_warmup = 2 SECOND
+	var/charge_sound = 'sound/weapons/spiderlunge.ogg'
+
+/datum/ai_holder/simple_mob/intentional/xeno
+	intelligence_level = 3
+	mauling = 1
+	var/yeet_range = 5
+	var/yeet_threshold = 2
+	var/charge_max = 7
+
+/// Extremely hacky implementation for cool xeno dragon special attacks. Actual Narky tier spaghetti code. If you know who that is, I'm sorry. :cry: - Serdy
+
+
+/mob/living/simple_mob/xeno_ch/dragon/handle_special()
+	if(!noenrage)
+		if(!enraged)
+			if(health <= (maxHealth * 0.5))
+				enraged = 1
+				say("No more games. COME HERE.")
+		if(enraged)
+			if(health >= (maxHealth * 0.5))
+				enraged = 0
+	if(resting)	//Give them a way to slowly heal over time while player controlled
+		adjustBruteLoss(-2.5)
+		adjustFireLoss(-2.5)
+		adjustToxLoss(-5)
+		adjustOxyLoss(-5)
+
+/datum/ai_holder/simple_mob/intentional/dragon/xeno/pre_special_attack(atom/A)
+	if(isliving(A))
+		var/mob/living/target = A
+		var/tally = 0
+		var/list/potential_targets = list_targets()
+		//Spin attack if surrounded
+		for(var/atom/movable/AM in potential_targets)
+			if(get_dist(holder, AM) > yeet_range)
+				continue
+			if(!can_attack(AM))
+				continue
+			tally++
+		if(tally >= yeet_threshold)
+			holder.a_intent = I_GRAB
+			return
+
+		//Charge attack if target is far away, but not if there's no line of sight
+		if(get_dist(holder, target) > charge_max)
+			if(target in check_trajectory(target, holder, pass_flags = PASSTABLE))
+				holder.a_intent = I_DISARM
+				return
+
+	//Default to firebreath if we can't charge or yeet
+	holder.a_intent = I_HURT
+
+/mob/living/simple_mob/xeno_ch/dragon/do_special_attack(atom/A)
+	. = TRUE
+	switch(a_intent)
+		if(I_DISARM)
+			if(!nospecial)
+				if(specialtoggle)
+					chargestart(A)
+		if(I_HURT)
+			if(!norange)
+				if(flametoggle)
+					firebreathstart(A)
+		if(I_GRAB)
+			if(!nospecial)
+				if(specialtoggle)
+					repulse()
+
+///
+///		Dragon special attacks hackery
+///
+
+/mob/living/simple_mob/xeno_ch/dragon/proc/repulse(var/range = 2)
+	var/list/thrownatoms = list()
+	for(var/mob/living/victim in oview(range, src))
+		thrownatoms += victim
+	src.spin(12,1)
+	for(var/am in thrownatoms)
+		var/atom/movable/AM = am
+		if(AM == src || AM.anchored)
+			continue
+		addtimer(CALLBACK(src, PROC_REF(yeet), am), 1)
+	playsound(src, "sound/weapons/punchmiss.ogg", 50, 1)
+
+//Split repulse into two parts so I can recycle this later
+/mob/living/simple_mob/xeno_ch/dragon/proc/yeet(var/atom/movable/AM, var/gentle = 0)
+	var/maxthrow = 7
+	var/atom/throwtarget
+	var/distfromcaster
+	throwtarget = get_edge_target_turf(src, get_dir(src, get_step_away(AM, src)))
+	distfromcaster = get_dist(src, AM)
+	if(distfromcaster == 0)
+		if(isliving(AM))
+			var/mob/living/M = AM
+			M.Weaken(5)
+			if(!gentle)
+				M.adjustBruteLoss(50)	//A dragon just slammed ontop of you
+			to_chat(M, "<span class='userdanger'>You're slammed into the floor by [src]!</span>")
+	else
+		if(isliving(AM))
+			var/mob/living/M = AM
+			M.Weaken(1.5)
+			if(!gentle)
+				M.adjustBruteLoss(20)
+			to_chat(M, "<span class='userdanger'>You're thrown back by [src]!</span>")
+			playsound(src, get_sfx("punch"), 50, 1)
+		AM.throw_at(throwtarget, maxthrow, 3, src)
+
+/mob/living/simple_mob/xeno_ch/dragon/proc/chargestart(var/atom/A)
+	if(!enraged)
+		set_AI_busy(TRUE)
+
+	do_windup_animation(A, charge_warmup)
+	//callbacks are more reliable than byond's process scheduler
+	chargetimer = addtimer(CALLBACK(src, PROC_REF(chargeend), A), charge_warmup, TIMER_STOPPABLE)
+
+
+/mob/living/simple_mob/xeno_ch/dragon/proc/chargeend(var/atom/A, var/explicit = 0, var/gentle = 0)
+	//make sure our target still exists and is on a turf
+	if(QDELETED(A) || !isturf(get_turf(A)))
+		set_AI_busy(FALSE)
+		return
+	status_flags |= LEAPING
+	flying  = 1		//So we can thunk into things
+	hovering = 1	// So we don't hurt ourselves running off cliffs
+	visible_message(span("danger","\The [src] charges at \the [A]!"))
+	throw_at(A, 7, 2)
+	playsound(src, charge_sound, 75, 1)
+	if(status_flags & LEAPING)
+		status_flags &= ~LEAPING
+	flying = 0
+	hovering = 0
+
+	var/mob/living/target = null
+	if(explicit)	//Allows specific targetting
+		if(Adjacent(A))
+			target = A
+	if(!target)
+		for(var/mob/living/victim in orange(1, src))
+			target = victim
+			break	//take the first target in range
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		if(H.check_shields(0, src, src, null, "the charge"))
+			return // We were blocked.
+	if(target)
+		yeet(target, gentle)
+	set_AI_busy(FALSE)
+
+/mob/living/simple_mob/xeno_ch/dragon/proc/firebreathstart(var/atom/A)
+	glow_toggle = 1
+	set_light(glow_range, glow_intensity, glow_color) //Setting it here so the light starts immediately
+	if(!enraged)
+		set_AI_busy(TRUE)
+	flames = 1
+	firebreathtimer = addtimer(CALLBACK(src, PROC_REF(firebreathend), A), charge_warmup, TIMER_STOPPABLE)
+	playsound(src, "sound/magic/Fireball.ogg", 50, 1)
+
+/mob/living/simple_mob/xeno_ch/dragon/proc/firebreathend(var/atom/A)
+	//make sure our target still exists and is on a turf
+	if(QDELETED(A) || !isturf(get_turf(A)))
+		set_AI_busy(FALSE)
+		return
+	var/obj/item/projectile/P = new /obj/item/projectile/bullet/dragon(get_turf(src))
+	src.visible_message("<span class='danger'>\The [src] spews fire at \the [A]!</span>")
+	playsound(src, "sound/weapons/Flamer.ogg", 50, 1)
+	P.launch_projectile(A, BP_TORSO, src)
+	set_AI_busy(FALSE)
+	glow_toggle = 0
+	flames = 0
+
+/obj/item/projectile/bullet/dragon
+	use_submunitions = 1
+	only_submunitions = 1 	//lmao this var doesn't even do anything
+	range = 0				//so instead we circumvent it with this :^)
+	embed_chance = 0
+	submunition_spread_max = 300
+	submunition_spread_min = 150
+	submunitions = list(/obj/item/projectile/bullet/incendiary/dragonflame = 5)
+
+/obj/item/projectile/bullet/dragon/on_range()
+	qdel(src)
+
+
+//Making it so fire passes through mobs but not walls
+/obj/item/projectile/bullet/incendiary/dragonflame/check_penetrate(var/atom/A)
+	if(!A || !A.density) return 1
+
+	if(istype(A, /obj/mecha))
+		return 1
+
+	if(ismob(A))
+		if(!mob_passthrough_check)
+			return 0
+		return 1
+
+/obj/item/projectile/bullet/incendiary/dragonflame/on_range()
+	qdel(src)
+
+/obj/item/projectile/bullet/incendiary/dragonflame/Move()
+	. = ..()
+	var/turf/T = get_turf(src)
+	if(T)
+		new /obj/effect/decal/cleanable/liquid_fuel(T,0.2,1)
+		T.hotspot_expose(500, 50, 1)
+		T.create_fire(700)
+
+//Snowflake on_hit so the bullet can set both mobs and carbons on fire, but still let carbons stop drop and roll out the fire stacks.
+/obj/item/projectile/bullet/incendiary/dragonflame/on_hit(atom/target, blocked = 0, def_zone)
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
+	else
+		. = ..()
+
+*/
 
 ////// HIVE LEADER CASTES //////
 
