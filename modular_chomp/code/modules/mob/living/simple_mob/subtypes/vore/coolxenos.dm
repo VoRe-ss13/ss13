@@ -145,6 +145,105 @@
 
 ////// TIER ONE XENOMORPH CASTES //////
 
+/// XENOMORPH FACEHUGGER /// -- WIP
+
+/mob/living/simple_mob/xeno_ch/hugger
+	name = "xenomorph hugger"
+	desc = "A small skittering spider-like xenomorph-- Don't let it get on your face!"
+
+	movement_cooldown = -3
+	icon = 'modular_chomp/icons/mob/48x48_xenos.dmi'
+	icon_dead = "Normal Facehugger Dead"
+	icon_living = "Normal Facehugger Running"
+	icon_rest = "Normal Facehugger Sleeping"
+	icon_state = "Normal Facehugger Running"
+	pixel_x = -9
+	default_pixel_x = -9
+	pixel_y = -8
+	default_pixel_y = -8
+	icon_state_prepounce = "Normal Facehugger Thrown"
+	icon_pounce = 'modular_chomp/icons/mob/48x48_xenos.dmi'
+	icon_state_pounce = "Normal Facehugger Thrown"
+
+	ai_holder_type = /datum/ai_holder/simple_mob/melee
+
+	pass_flags = PASSTABLE
+	mob_swap_flags = 0
+	mob_push_flags = 0
+
+	melee_damage_lower = 5
+	melee_damage_upper = 5
+	melee_attack_delay = null
+	base_attack_cooldown = 5
+	maxHealth = 25
+	health = 25
+	armor = list(
+				"melee" = 5,
+				"bullet" = 0,
+				"laser" = 0,
+				"energy" = 0,
+				"bomb" = 0,
+				"bio" = 100,
+				"rad" = 100
+				)
+
+	special_attack_min_range = 1
+	special_attack_max_range = 7
+	special_attack_cooldown = 5 SECONDS
+
+	var/leap_warmup = 0 SECOND // How long the leap telegraphing is.
+	var/leap_sound = 'sound/weapons/spiderlunge.ogg' //Temporary. -- Serdy
+
+/mob/living/simple_mob/xeno_ch/hugger/apply_bonus_melee_damage(atom/A, damage_amount)
+	if(isliving(A))
+		var/mob/living/L = A
+		if(L.incapacitated(INCAPACITATION_DISABLED))
+			return damage_amount * 1.5
+	return ..()
+
+/mob/living/simple_mob/xeno_ch/hugger/do_special_attack(atom/A) //Yoinked from the spiders originally. Could probably be implemented better. -- Serdy
+	set waitfor = FALSE
+	set_AI_busy(TRUE)
+
+	do_windup_animation(A, leap_warmup)
+	sleep(leap_warmup) // For the telegraphing.
+
+	status_flags |= LEAPING
+	visible_message(span("danger","\The [src] leaps at \the [A]!"))
+	throw_at(get_step(get_turf(A), get_turf(src)), special_attack_max_range+1, 1, src)
+	playsound(src, leap_sound, 75, 1)
+
+	sleep(5)
+
+	if(status_flags & LEAPING)
+		status_flags &= ~LEAPING
+
+	var/turf/T = get_turf(src)
+
+	. = FALSE
+
+	// Now for the stun.
+	var/mob/living/victim = null
+	for(var/mob/living/L in T)
+		if(L == src)
+			continue
+
+		if(ishuman(L))
+			var/mob/living/carbon/human/H = L
+			if(H.check_shields(damage = 0, damage_source = src, attacker = src, def_zone = null, attack_text = "the leap"))
+				continue // We were blocked.
+
+		victim = L
+		break
+
+	if(victim)
+		victim.Weaken(2)
+		victim.visible_message(span("danger","\The [src] knocks down \the [victim]!"))
+		to_chat(victim, span("critical", "\The [src] jumps on you!"))
+		. = TRUE
+
+	set_AI_busy(FALSE)
+
 /// XENOMORPH LARVA /// - WIP
 
 /mob/living/simple_mob/xeno_ch/larva
