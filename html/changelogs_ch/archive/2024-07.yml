@@ -1,0 +1,50 @@
+2024-07-01:
+  VoRe-bot:
+  - rscadd: VBOanim_synthbelly1
+  - rscadd: VBOanim_taurbelly1
+  - rscadd: VBOanim_belly4
+  - rscadd: VBOanim_belly5
+  - rscadd: VBOanim_belly6
+  - rscadd: VBOanim_belly7
+  - rscadd: VBO_maw18
+  - rscadd: Kasssc's VBOanim_belly1
+  - rscadd: VBOanim_intestine2
+  - rscadd: Cleans up some of the previous maw visuals by erasing cutout scratches
+      (well not really this PR... but, I'm working on it!)
+  - bugfix: Increase the main menu window height to kill the scrollbar on default
+      load
+  - qol: New snowish looking bushes have been added to sif grass spawn pool. They
+      can give six fiber used in primal stuff
+  - qol: Sandstone and marble bricks can be manually created at a cost of 4 to 1,
+      and 10 seconds.
+  - rscadd: Footstep and slosh elements
+  - code_imp: No more lists in every single turf in existance with footstep sounds
+2024-07-02:
+  VoRe-bot:
+  - rscadd: Added a new gateway map called Diescraper. Dont fall!
+  - rscadd: Added single use for mapping purposes.
+  - maptweak: Fixes slab IDs in Downtown city
+  - bugfix: fixed random slosh sounds happening with 0 liquids
+  - bugfix: Fixed the Venom Injection trait to work for CHOMP/.
+  - rscadd: VBOanim_gullet1
+  - rscadd: VBO_maw19
+  - bugfix: other VBOs quality and brightness
+  - bugfix: increased brightness to some layers of VBO_maw18
+  - code_imp: Deleted some now unused files
+  - code_imp: Slosh sounds moved to global_lists_ch
+  - code_imp: Exterminated the last list from all the turfs
+2024-07-06:
+  VoRe-bot:
+  - qol: Reduced the footstep volume
+  - bugfix: Footstep and slosh elements making sounds when transfering through bellies/storages
+  - bugfix: Footstep and slosh elements not applying on resleeve/cloning/in-belly
+      spawns
+  - rscadd: 5 New superposed pods have been added.
+  - maptweak: Diescraper's turfs should be properly indoors now
+  - maptweak: Fixed secret button not proccing.
+2024-07-09:
+  VoRe-bot:
+  - bugfix: Fixed slosh sounds playing while phased
+  - rscadd: you can now transfer ammo between magazines and boxes of ammo
+  - rscadd: guns now tell you what magazines they accept
+  - refactor: ammo simplified drastically

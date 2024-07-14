@@ -441,7 +441,7 @@
 	set category = "Abilities.Settings" //ChompEDIT - TGPanel
 
 	if(custom_name)
-		to_chat(usr, "You can't pick another custom name. Go ask for a name change.")
+		to_chat(usr, "You can't pick another custom name. [isshell(src) ? "" : "Go ask for a name change."]")
 		return 0
 
 	spawn(0)
@@ -1781,3 +1781,5 @@
 
 /mob/living/silicon/robot/proc/has_upgrade(var/given_type)
 	return (has_basic_upgrade(given_type) || has_advanced_upgrade(given_type) || has_restricted_upgrade(given_type) || has_no_prod_upgrade(given_type))
+
+#undef CYBORG_POWER_USAGE_MULTIPLIER

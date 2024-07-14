@@ -1346,9 +1346,6 @@
 /turf/simulated/floor/plating,
 /area/surface/outpost/mining_main/crew_area)
 "nj" = (
-/obj/structure/table/rack{
-	dir = 1
-	},
 /obj/item/weapon/pickaxe{
 	pixel_x = 5
 	},
@@ -1367,45 +1364,11 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
+/obj/structure/table/rack{
+	dir = 1
 	},
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
 /turf/simulated/floor/tiled/techmaint,
 /area/surface/outpost/mining_main/crew_area)
 "nk" = (
@@ -2308,6 +2271,12 @@
 "ve" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6
+	},
+/obj/fiftyspawner/steel,
+/obj/fiftyspawner/rglass,
+/obj/machinery/autolathe{
+	hacked = 1;
+	name = "hacked autolathe"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/surface/outpost/mining_main/crew_area)

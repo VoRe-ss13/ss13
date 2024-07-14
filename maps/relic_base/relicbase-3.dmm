@@ -3765,23 +3765,7 @@
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 4
 	},
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/mininglockerroom)
 "bRn" = (
@@ -4748,18 +4732,6 @@
 	},
 /obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
 /obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
 /obj/item/clothing/suit/armor/pcarrier/green,
 /obj/item/clothing/suit/armor/pcarrier/green,
 /obj/item/clothing/suit/armor/pcarrier/green,
@@ -4768,6 +4740,8 @@
 /obj/item/clothing/suit/armor/pcarrier/green,
 /obj/item/clothing/suit/armor/pcarrier/green,
 /obj/item/clothing/suit/armor/pcarrier/green,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/prep)
 "cnd" = (
@@ -9590,10 +9564,13 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 8
 	},
-/obj/machinery/autolathe,
 /obj/fiftyspawner/steel,
 /obj/fiftyspawner/rglass,
 /obj/fiftyspawner/leather,
+/obj/machinery/autolathe{
+	hacked = 1;
+	name = "hacked autolathe"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/prep)
 "dWJ" = (
@@ -11849,23 +11826,7 @@
 	pixel_x = -24;
 	pixel_y = 8
 	},
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/mininglockerroom)
 "eSQ" = (
@@ -16936,23 +16897,7 @@
 /obj/effect/floor_decal/corner/beige/border{
 	dir = 4
 	},
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/mininglockerroom)
 "gUO" = (
@@ -17006,63 +16951,6 @@
 	name = "ammo cabinet";
 	req_one_access = list(43,67)
 	},
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -18856,23 +18744,7 @@
 /obj/effect/floor_decal/corner/beige/bordercorner2{
 	dir = 8
 	},
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/mininglockerroom)
 "hEJ" = (
@@ -25657,18 +25529,6 @@
 	},
 /obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
 /obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
 /obj/item/clothing/suit/armor/pcarrier/green,
 /obj/item/clothing/suit/armor/pcarrier/green,
 /obj/item/clothing/suit/armor/pcarrier/green,
@@ -25677,6 +25537,8 @@
 /obj/item/clothing/suit/armor/pcarrier/green,
 /obj/item/clothing/suit/armor/pcarrier/green,
 /obj/item/clothing/suit/armor/pcarrier/green,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/prep)
 "kwe" = (
@@ -31696,15 +31558,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/item/weapon/gun/projectile/automatic/z8{
-	allowed_magazines = list(/obj/item/ammo_magazine/ar10);
-	desc = "The Z9 Shepherd is the newer model of the old Z8 battle rifle, made by the now defunct Zendai Foundries. Makes you feel like an old-school badass when you hold it. This one fits AR-10 magazines. Chambered in 7.62x51mm, and has an under barrel grenade launcher. Marked with 'Property of the Pathfinder' on the stock.";
-	magazine_type = /obj/item/ammo_magazine/ar10
-	},
 /obj/item/weapon/storage/pouch/flares/full_flare,
 /obj/item/weapon/storage/pouch/large{
 	remove_delay = 0
 	},
+/obj/item/weapon/gun/projectile/automatic/serdy/vityazb,
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/pathfinder)
 "mWw" = (
@@ -35433,12 +35291,6 @@
 	},
 /obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
 /obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
 /obj/item/clothing/suit/armor/pcarrier/green,
 /obj/item/clothing/suit/armor/pcarrier/green,
 /obj/item/clothing/suit/armor/pcarrier/green,
@@ -35447,6 +35299,8 @@
 /obj/item/clothing/suit/armor/pcarrier/green,
 /obj/item/clothing/suit/armor/pcarrier/green,
 /obj/item/clothing/suit/armor/pcarrier/green,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/prep)
 "oKw" = (
@@ -39113,23 +38967,7 @@
 /obj/effect/floor_decal/corner/beige/bordercorner2{
 	dir = 10
 	},
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/mininglockerroom)
 "qcV" = (
@@ -46926,63 +46764,6 @@
 	name = "ammo cabinet";
 	req_one_access = list(43,67)
 	},
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5
 	},
@@ -57362,23 +57143,7 @@
 	dir = 6
 	},
 /obj/structure/closet/secure_closet/miner,
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec{
-	allowed_magazines = list(/obj/item/ammo_magazine/m545/small);
-	caliber = "5.45mm";
-	desc = "A snazzy survival rifle, small enough to fit into a backpack. Despite it's odd shape, it's pretty comfortable in the hands. This one is OD green. Additionally, it can only accept low capacity magazines. Chambered in 5.45x39mm.";
-	magazine_type = /obj/item/ammo_magazine/m545/small
-	},
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/m545/small/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
-/obj/item/ammo_magazine/ammo_box/b545/large/hunter,
+/obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/mininglockerroom)
 "xjM" = (
