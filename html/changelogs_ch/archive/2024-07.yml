@@ -33,3 +33,18 @@
   - code_imp: Deleted some now unused files
   - code_imp: Slosh sounds moved to global_lists_ch
   - code_imp: Exterminated the last list from all the turfs
+2024-07-06:
+  VoRe-bot:
+  - qol: Reduced the footstep volume
+  - bugfix: Footstep and slosh elements making sounds when transfering through bellies/storages
+  - bugfix: Footstep and slosh elements not applying on resleeve/cloning/in-belly
+      spawns
+  - rscadd: 5 New superposed pods have been added.
+  - maptweak: Diescraper's turfs should be properly indoors now
+  - maptweak: Fixed secret button not proccing.
+2024-07-09:
+  VoRe-bot:
+  - bugfix: Fixed slosh sounds playing while phased
+  - rscadd: you can now transfer ammo between magazines and boxes of ammo
+  - rscadd: guns now tell you what magazines they accept
+  - refactor: ammo simplified drastically
