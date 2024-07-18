@@ -32,19 +32,11 @@
  */
 
 /datum/job/shadekin
-<<<<<<< HEAD
-    title = JOB_ANOMALY
-    disallow_jobhop = TRUE
-    total_positions = 5
-    spawn_positions = 5
-    supervisors = "nobody, but you fall under NanoTrasen's Unauthorized Personnel SOP while on NT property. Please read <a href='https://wiki.torchstation13.net/index.php/Rules#Shadekin/%22Anomaly%22_Guidelines'>the Shadekin Guidelines</a> clearly before playing"
-=======
 	title = JOB_ANOMALY
 	disallow_jobhop = TRUE
 	total_positions = 5
 	spawn_positions = 5
-	supervisors = "nobody, but you fall under NanoTrasen's Unauthorized Personnel SOP while on NT property. Please read <a href='https://wiki.chompstation13.net/index.php/Rules#Shadekin/%22Anomaly%22_Guidelines'>the Shadekin Guidelines</a> clearly before playing"
->>>>>>> c3b129f1a3 ([READY TO MERGE] Port's RS's anti job camping to Anomoly (#8618))
+	supervisors = "nobody, but you fall under NanoTrasen's Unauthorized Personnel SOP while on NT property. Please read <a href='https://wiki.torchstation13.net/index.php/Rules#Shadekin/%22Anomaly%22_Guidelines'>the Shadekin Guidelines</a> clearly before playing"
 
 	flag = NONCREW
 	departments = list(DEPARTMENT_NONCREW)
