@@ -48,3 +48,9 @@
   - rscadd: you can now transfer ammo between magazines and boxes of ammo
   - rscadd: guns now tell you what magazines they accept
   - refactor: ammo simplified drastically
+2024-07-18:
+  VoRe-bot:
+  - qol: linearizes the anomaly limit
+  - rscadd: Base Shadekin spawns from 3 to 5
+  - code_imp: HasProximity is now garbage collected
+  - qol: Xenochimeras now get stunned instead of weakened when reconstituting
