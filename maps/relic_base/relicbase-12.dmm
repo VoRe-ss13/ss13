@@ -4527,9 +4527,6 @@
 /turf/simulated/floor/tiled/old_tile/white,
 /area/centcom/medical)
 "dZq" = (
-/obj/machinery/vending/medical{
-	pixel_y = 32
-	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
 	},
@@ -15934,6 +15931,10 @@
 	icon_state = "dark"
 	},
 /area/centcom/creed)
+"rMF" = (
+/obj/machinery/vending/medical,
+/turf/simulated/wall/bay/r_wall/black,
+/area/centcom/medical)
 "rMY" = (
 /turf/simulated/shuttle/floor/red,
 /area/shuttle/response_ship{
@@ -33409,7 +33410,7 @@ wWS
 wWS
 wWS
 wWS
-wWS
+rMF
 dZq
 xdP
 hGO

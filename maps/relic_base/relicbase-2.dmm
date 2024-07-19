@@ -4397,6 +4397,15 @@
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
+"dSj" = (
+/obj/machinery/vending/wardrobe/bardrobe,
+/obj/item/device/radio/intercom{
+	dir = 1;
+	name = "Station Intercom (General)";
+	pixel_y = 21
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/bar)
 "dSm" = (
 /obj/machinery/light/small,
 /obj/structure/reagent_dispensers/fueltank,
@@ -6717,7 +6726,7 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "fXY" = (
-/obj/machinery/computer/cloning/resleeving,
+/obj/machinery/computer/transhuman/resleeving,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
@@ -14425,11 +14434,6 @@
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 24
-	},
-/obj/item/device/radio/intercom{
-	dir = 1;
-	name = "Station Intercom (General)";
-	pixel_y = 21
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
@@ -54806,7 +54810,7 @@ uWQ
 wFq
 wFq
 cIK
-cIK
+dSj
 oRK
 jGu
 cIK
