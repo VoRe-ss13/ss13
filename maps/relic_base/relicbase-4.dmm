@@ -3082,9 +3082,6 @@
 	icon_state = "2-8"
 	},
 /obj/structure/catwalk,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 10
-	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_monitoring)
 "cOU" = (
@@ -4365,10 +4362,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
-	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 9;
-	name = "Reinforced Window Nugget"
 	},
 /obj/structure/catwalk,
 /obj/item/device/geiger/wall/east,
