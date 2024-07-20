@@ -159,6 +159,10 @@
 /obj/structure/fence,
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/surface/outside/plains/outpost)
+"ado" = (
+/obj/machinery/vending/cart,
+/turf/simulated/floor/tiled/steel_dirty,
+/area/engineering/external_lights)
 "adz" = (
 /obj/structure/table/wooden_reinforced,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
@@ -1929,7 +1933,7 @@
 	name = "Barista"
 	},
 /turf/simulated/floor/wood,
-/area/crew_quarters/cafeteria)
+/area/crew_quarters/bar)
 "aYt" = (
 /obj/machinery/door/airlock/medical{
 	name = "Autoresleever Access";
@@ -3384,6 +3388,10 @@
 	},
 /turf/simulated/floor/bmarble,
 /area/crew_quarters/heads/sc/hos)
+"bIu" = (
+/obj/machinery/vending/giftvendor,
+/turf/simulated/floor/tiled/steel_dirty,
+/area/engineering/external_lights)
 "bIz" = (
 /obj/effect/landmark/start{
 	name = "Cyborg"
@@ -3679,6 +3687,18 @@
 	},
 /turf/simulated/floor/carpet,
 /area/library)
+"bQb" = (
+/obj/machinery/door/blast/gate/thin{
+	layer = 3.1;
+	id = "kitchen";
+	name = "Kitchen Shutters";
+	dir = 2
+	},
+/obj/structure/table/marble,
+/obj/machinery/door/firedoor/border_only,
+/obj/item/device/juke_remote,
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/kitchen)
 "bQd" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/cable/green{
@@ -4652,9 +4672,6 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/obj/effect/landmark/start{
-	name = "Assistant"
-	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_4)
 "clS" = (
@@ -4779,9 +4796,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
-	},
-/obj/effect/landmark/start{
-	name = "Assistant"
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_6)
@@ -4963,8 +4977,9 @@
 	id = "bar";
 	name = "Bar Shutters"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/wood,
-/area/crew_quarters/cafeteria)
+/area/crew_quarters/bar)
 "cpZ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -9819,6 +9834,10 @@
 /area/surface/outpost/main/landing/two)
 "eda" = (
 /obj/structure/closet/crate/freezer,
+/obj/machinery/alarm/freezer{
+	dir = 4;
+	pixel_x = -22
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/medical/surgery_storage)
 "edc" = (
@@ -11273,8 +11292,9 @@
 	id = "bar";
 	name = "Bar Shutters"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/wood,
-/area/crew_quarters/cafeteria)
+/area/crew_quarters/bar)
 "eFk" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -11342,9 +11362,6 @@
 	},
 /obj/machinery/alarm{
 	pixel_y = 23
-	},
-/obj/effect/landmark/start{
-	name = "Assistant"
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_10)
@@ -12435,15 +12452,9 @@
 /turf/simulated/floor/bmarble,
 /area/engineering/hallway/engineer_hallway)
 "fdm" = (
-/obj/structure/table/hardwoodtable,
-/obj/machinery/door/blast/gate/thin{
-	layer = 3.1;
-	id = "bar";
-	name = "Bar Shutters";
-	dir = 4
-	},
-/turf/simulated/floor/wood,
-/area/crew_quarters/cafeteria)
+/obj/machinery/vending/loadout/gadget,
+/turf/simulated/floor/tiled/steel_dirty,
+/area/engineering/external_lights)
 "fdn" = (
 /obj/structure/table/wooden_reinforced,
 /turf/simulated/floor/outdoors/dirt,
@@ -18603,6 +18614,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/holodeck_control)
+"hzq" = (
+/obj/machinery/lapvend,
+/turf/simulated/floor/tiled/steel_dirty,
+/area/engineering/external_lights)
 "hzs" = (
 /obj/structure/hull_corner,
 /turf/simulated/floor/outdoors/grass/heavy,
@@ -20222,6 +20237,7 @@
 /obj/machinery/cash_register/civilian{
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
 "iiF" = (
@@ -20546,6 +20562,7 @@
 "ipX" = (
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/pink/border,
+/obj/structure/table/glass,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "iqf" = (
@@ -22185,9 +22202,6 @@
 	},
 /obj/machinery/alarm{
 	pixel_y = 23
-	},
-/obj/effect/landmark/start{
-	name = "Assistant"
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_7)
@@ -23955,6 +23969,7 @@
 	},
 /obj/random/tech_supply,
 /obj/random/tech_supply,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/old_tile/yellow,
 /area/engineering/workshop)
 "jNR" = (
@@ -24222,6 +24237,9 @@
 /obj/machinery/door/airlock/medical{
 	name = "Operating Theatre Storage";
 	req_access = list(45)
+	},
+/obj/structure/fans/hardlight/colorable{
+	light_color = "#D7D7D7"
 	},
 /turf/simulated/floor/plating,
 /area/medical/surgery_storage)
@@ -24753,6 +24771,11 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/surgery2)
+"kej" = (
+/obj/machinery/smartfridge/drinks,
+/obj/machinery/door/firedoor/border_only,
+/turf/simulated/floor/wood,
+/area/crew_quarters/bar)
 "keA" = (
 /obj/machinery/door/airlock/engineering{
 	name = "SMES Room";
@@ -24780,9 +24803,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
-	},
-/obj/effect/landmark/start{
-	name = "Assistant"
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_1)
@@ -26902,6 +26922,12 @@
 	dir = 1;
 	pixel_y = -22
 	},
+/obj/item/weapon/storage/box/gloves{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/item/weapon/storage/box/masks,
+/obj/structure/table/glass,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "kZX" = (
@@ -29483,6 +29509,7 @@
 	c_tag = "EXT - Gateway/Cryo West 2";
 	dir = 8
 	},
+/obj/machinery/portable_atmospherics/hydroponics/soil,
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/hallway/primary/thirddeck/stationgateway)
 "mdI" = (
@@ -29533,6 +29560,7 @@
 	name = "Kitchen Shutters";
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/kitchen)
 "meE" = (
@@ -29797,7 +29825,7 @@
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
-/obj/machinery/cell_charger,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "mku" = (
@@ -31492,6 +31520,8 @@
 	id = "bar";
 	name = "Bar Shutters"
 	},
+/obj/machinery/door/firedoor/border_only,
+/obj/item/device/juke_remote,
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
 "mRP" = (
@@ -38123,9 +38153,6 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/obj/effect/landmark/start{
-	name = "Assistant"
-	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_2)
 "pMp" = (
@@ -42128,9 +42155,6 @@
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
-/obj/effect/landmark/start{
-	name = "Assistant"
-	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_9)
 "rqi" = (
@@ -44581,8 +44605,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/obj/effect/landmark/start{
-	name = "Assistant"
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_5)
@@ -44662,9 +44687,6 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
-	},
-/obj/effect/landmark/start{
-	name = "Assistant"
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_3)
@@ -45370,6 +45392,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/obj/machinery/vending/wardrobe/chefdrobe,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/kitchen)
 "sFn" = (
@@ -45390,6 +45413,7 @@
 	dir = 2
 	},
 /obj/structure/table/marble,
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/kitchen)
 "sGf" = (
@@ -45491,6 +45515,7 @@
 	name = "Bar Shutters";
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
 "sIA" = (
@@ -49388,6 +49413,9 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/fans/hardlight/colorable{
+	light_color = "#D7D7D7"
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/surgery_storage)
 "unW" = (
@@ -51049,9 +51077,6 @@
 	},
 /obj/machinery/alarm{
 	pixel_y = 23
-	},
-/obj/effect/landmark/start{
-	name = "Assistant"
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_8)
@@ -53742,6 +53767,7 @@
 /obj/item/weapon/material/kitchen/utensil/spoon{
 	pixel_x = 2
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/kitchen)
 "vOV" = (
@@ -53765,6 +53791,7 @@
 /obj/item/weapon/reagent_containers/food/condiment/small/peppermill{
 	pixel_x = 3
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/kitchen)
 "vPZ" = (
@@ -55455,7 +55482,7 @@
 /area/medical/foyer)
 "wwJ" = (
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/structure/closet/secure_closet/freezer/meat,
+/obj/structure/closet/secure_closet/freezer/kitchen,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/kitchen)
 "wwL" = (
@@ -55544,6 +55571,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/expoutpost/prep/recovery)
+"wyu" = (
+/obj/structure/sink{
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloorblack,
+/obj/effect/floor_decal/corner/lime/border,
+/turf/simulated/floor/tiled/hydro,
+/area/hydroponics)
 "wyC" = (
 /obj/machinery/camera/network/exterior{
 	c_tag = "EXT - Tool Storage South"
@@ -58758,8 +58793,9 @@
 	id = "bar";
 	name = "Bar Shutters"
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/wood,
-/area/crew_quarters/cafeteria)
+/area/crew_quarters/bar)
 "xFS" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -59502,7 +59538,7 @@
 	dir = 1;
 	pixel_y = 21
 	},
-/obj/machinery/cell_charger,
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "xSu" = (
@@ -60183,6 +60219,7 @@
 	name = "Kitchen Shutters";
 	dir = 4
 	},
+/obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/kitchen)
 "ydP" = (
@@ -88527,8 +88564,8 @@ mpQ
 dNI
 kMd
 qVA
-xke
-xke
+xGB
+xGB
 yeV
 yeV
 yeV
@@ -89028,7 +89065,7 @@ xCr
 xCr
 rNv
 tvo
-ufQ
+wyu
 xCr
 uZH
 qnH
@@ -89048,11 +89085,11 @@ yeV
 yeV
 rLe
 pvD
-hra
-rLe
-rLe
+eiZ
+eiZ
+eiZ
 mda
-rLe
+eiZ
 qfb
 qfb
 nKF
@@ -89556,7 +89593,7 @@ fBa
 dCB
 qos
 vaB
-eiZ
+hzq
 qaW
 yeV
 yeV
@@ -89808,12 +89845,12 @@ xcj
 xcj
 xcj
 xTy
-sFu
+bQb
 dhM
 dCB
 fru
 ide
-eiZ
+ado
 lCs
 yeV
 yeV
@@ -91351,7 +91388,7 @@ pRp
 qyr
 mOK
 mOK
-qyr
+wDA
 tqv
 akH
 ide
@@ -91605,14 +91642,14 @@ vSA
 xrz
 xFG
 cpv
-mRO
+cpv
 ihk
 mRO
-mRO
+kej
 iZM
 uDD
 ide
-eiZ
+fdm
 xke
 yeV
 yeV
@@ -91869,7 +91906,7 @@ lsh
 wzR
 sOc
 ide
-eiZ
+bIu
 gbZ
 yeV
 yeV
@@ -92118,7 +92155,7 @@ sVG
 wBu
 fqD
 eFf
-fdm
+sIw
 sIw
 iZV
 mVB
@@ -92636,7 +92673,7 @@ bEe
 vaB
 xke
 xGB
-xke
+xGB
 xGB
 ybp
 ide

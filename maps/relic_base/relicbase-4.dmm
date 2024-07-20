@@ -2683,6 +2683,9 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_9/upstairs)
 "czd" = (
@@ -3003,6 +3006,10 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_4/upstairs)
 "cNT" = (
@@ -3075,9 +3082,6 @@
 	icon_state = "2-8"
 	},
 /obj/structure/catwalk,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 10
-	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_monitoring)
 "cOU" = (
@@ -3763,6 +3767,9 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_10/upstairs)
 "dvQ" = (
@@ -4356,10 +4363,6 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 9;
-	name = "Reinforced Window Nugget"
-	},
 /obj/structure/catwalk,
 /obj/item/device/geiger/wall/east,
 /turf/simulated/floor/plating,
@@ -4549,6 +4552,9 @@
 /area/quartermaster/warehouse)
 "ecc" = (
 /obj/structure/toilet,
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/dorms/dorm_10/upstairs)
 "eck" = (
@@ -5641,6 +5647,10 @@
 /obj/structure/toilet{
 	dir = 1
 	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/dorms/dorm_1/upstairs)
 "eVr" = (
@@ -5904,6 +5914,10 @@
 /obj/structure/table/woodentable,
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/dark,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/open,
 /area/surface/outpost/main/dorms/dorm_2/upstairs)
 "ffP" = (
@@ -5970,6 +5984,10 @@
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_2/upstairs)
@@ -9025,6 +9043,9 @@
 /area/security/prison)
 "hXX" = (
 /obj/structure/toilet,
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/dorms/dorm_8/upstairs)
 "hYm" = (
@@ -10409,6 +10430,9 @@
 /obj/structure/table/woodentable,
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/dark,
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/open,
 /area/surface/outpost/main/dorms/dorm_9/upstairs)
 "jhz" = (
@@ -10990,6 +11014,9 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_7/upstairs)
 "jLf" = (
@@ -11528,6 +11555,10 @@
 /obj/structure/toilet{
 	dir = 1
 	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/dorms/dorm_3/upstairs)
 "khA" = (
@@ -11992,6 +12023,10 @@
 	icon_state = "freezer"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 22
+	},
 /turf/simulated/floor/tiled/dark,
 /area/rnd/xenobiology/xenoflora_isolation)
 "kyA" = (
@@ -14275,6 +14310,9 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_8/upstairs)
 "mxB" = (
@@ -15273,6 +15311,9 @@
 /area/surface/outpost/civilian/pool)
 "nji" = (
 /obj/structure/toilet,
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/dorms/dorm_9/upstairs)
 "njs" = (
@@ -15564,6 +15605,9 @@
 /area/library_conference_room)
 "ntf" = (
 /obj/structure/toilet,
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/dorms/dorm_7/upstairs)
 "nvF" = (
@@ -15861,6 +15905,10 @@
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_5/upstairs)
@@ -17139,6 +17187,10 @@
 /obj/structure/table/woodentable,
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/dark,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/open,
 /area/surface/outpost/main/dorms/dorm_3/upstairs)
 "oLm" = (
@@ -17929,6 +17981,9 @@
 /obj/structure/table/woodentable,
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/dark,
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/open,
 /area/surface/outpost/main/dorms/dorm_8/upstairs)
 "pmB" = (
@@ -18103,6 +18158,10 @@
 /obj/structure/table/woodentable,
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/dark,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/open,
 /area/surface/outpost/main/dorms/dorm_4/upstairs)
 "ptm" = (
@@ -19521,10 +19580,8 @@
 	dir = 1;
 	pixel_y = -24
 	},
-/obj/item/device/radio/intercom{
-	dir = 1;
-	name = "Station Intercom (General)";
-	pixel_y = 21
+/obj/machinery/alarm{
+	pixel_y = 23
 	},
 /turf/simulated/floor/tiled/dark,
 /area/rnd/xenobiology/xenoflora)
@@ -20552,6 +20609,10 @@
 /obj/structure/toilet{
 	dir = 1
 	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/dorms/dorm_5/upstairs)
 "rap" = (
@@ -20994,6 +21055,10 @@
 "rtc" = (
 /obj/structure/toilet{
 	dir = 1
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/dorms/dorm_4/upstairs)
@@ -21766,6 +21831,10 @@
 /obj/structure/table/woodentable,
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/dark,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/open,
 /area/surface/outpost/main/dorms/dorm_6/upstairs)
 "rYS" = (
@@ -23584,6 +23653,10 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_3/upstairs)
 "tCj" = (
@@ -23735,6 +23808,10 @@
 /obj/structure/table/woodentable,
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/dark,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/open{
 	outdoors = 1
 	},
@@ -24651,6 +24728,10 @@
 /obj/structure/toilet{
 	dir = 1
 	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/dorms/dorm_6/upstairs)
 "utZ" = (
@@ -25233,6 +25314,10 @@
 "uSK" = (
 /obj/structure/toilet{
 	dir = 1
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/dorms/dorm_2/upstairs)
@@ -26264,6 +26349,10 @@
 /obj/structure/table/woodentable,
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/dark,
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/open,
 /area/surface/outpost/main/dorms/dorm_1/upstairs)
 "vOl" = (
@@ -26292,6 +26381,10 @@
 /obj/structure/cable/green{
 	d2 = 8;
 	icon_state = "0-8"
+	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
 	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_1/upstairs)
@@ -26498,6 +26591,9 @@
 /obj/structure/table/woodentable,
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/dark,
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/open,
 /area/surface/outpost/main/dorms/dorm_7/upstairs)
 "vZt" = (
@@ -27279,6 +27375,10 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_6/upstairs)
 "wPm" = (
@@ -27825,6 +27925,10 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -22
+	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
 "xnr" = (
@@ -28556,6 +28660,9 @@
 /obj/structure/table/woodentable,
 /obj/structure/lattice,
 /obj/effect/catwalk_plated/dark,
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
 /turf/simulated/open,
 /area/surface/outpost/main/dorms/dorm_10/upstairs)
 "xTj" = (
