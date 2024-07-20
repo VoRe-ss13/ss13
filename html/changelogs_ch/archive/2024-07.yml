@@ -54,3 +54,48 @@
   - rscadd: Base Shadekin spawns from 3 to 5
   - code_imp: HasProximity is now garbage collected
   - qol: Xenochimeras now get stunned instead of weakened when reconstituting
+2024-07-19:
+  VoRe-bot:
+  - rscadd: Added "Blank Mail Envelope"
+  - rscadd: Added Spawn-Mail proc, staff only.
+  - rscadd: Added Postal Services supply crate
+  - rscadd: Added Blank Mail Envelopes in some points of the station
+  - rscadd: VBO_maw20 (canine)
+  - rscadd: VBO_maw21 (draconic)
+  - rscadd: VBO_maw22 (crocodile/alligator)
+  - bugfix: FINALLY clears up (some) background smudges, tidying up maw_16,17,18 and
+      19 (including the stray tongue dot, on maw_18's throat)
+  - qol: Bone breaks inside guts are now only audible to people in whisper range,
+      have fun blendering.
+  - bugfix: Xenochimeras not being able to revive properly
+  - image: Zorgoia taur tail sprites have been adjusted.
+  - rscadd: Re-Adds deadman interaction with signalers again.
+2024-07-20:
+  Missile597:
+  - rscadd: Added a missing emergency shutter on the garden storage (oops)
+  - rscdel: Removed a redundant APC in an area that should be unpowered (outpost perimeter
+      - let me know if this breaks anything I missed)
+  - bugfix: Fixed a few lights not in powered areas that weren't working
+  - bugfix: Fixed an incorrectly coloured cable end
+  - bugfix: Replaced some grass tiles with steel tiles that were under stairs to hopefully
+      prevent weird flora spawn inside staircases
+  - maptweak: Reworked the whole Diner and hydroponics area
+  - maptweak: Diner entrances reworked. No lobby anymore, with entrances moved to
+      be more friendly to the new layout. Old lobby area is now part of the main area
+  - maptweak: Hydroponics moved to the ground floor where the kitchen used to be.
+      Added a farm and beehive area.
+  - maptweak: Bar split off from Diner. Diner area on the west side and bar on the
+      east side. Changed the shutters to be more like shop shutters
+  - maptweak: Freezer and Bar Backroom storage moves downstairs
+  - maptweak: Added a downstairs public restroom area under the bar.
+  - maptweak: Added some more roofing upstairs past the balconies to cover the extended
+      bar and diner area
+  - maptweak: Moved a few objects around outside and re-jigged some atmos and power
+      grids to account for the new layout
+  VoRe-bot:
+  - rscadd: vore soulcatcher
+  - rscadd: experimental resize, costing 125 Nutrition
+  - code_imp: changes all our UI files to typescript
+  - rscadd: Some new boss esque mobs that can be accessed by messing with a strange
+      machine during an anomalous weather
+  - rscadd: Added anti-job-camping to Anomalys

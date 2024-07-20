@@ -7,11 +7,12 @@ import {
 } from './VorePanelExportBellyStringHelpers';
 
 // prettier-ignore
-const generateBellyString = (belly: Belly, index: number) => {
+export const generateBellyString = (belly: Belly, index: number) => {
   const {
     // General Information
     name,
     desc,
+    message_mode,
     absorbed_desc,
     vore_verb,
     release_verb,
@@ -238,6 +239,7 @@ const generateBellyString = (belly: Belly, index: number) => {
   result += '<hr>';
 
   result += '<b>== Messages ==</b><br>';
+  result +='Show All Interactive Messages: ' + (message_mode ? '<span style="color: green;">Yes' : '<span style="color: red;">No') + '</span><br>';
   result += '<div role="messagesTabpanel">'; // Start Div messagesTabpanel
   result += '<div class="row"><div class="col-4">';
   result += '<div class="list-group" id="messagesList" role="messagesTablist">';
@@ -832,129 +834,4 @@ const generateBellyString = (belly: Belly, index: number) => {
   result += '</div></div></div>';
 
   return result;
-};
-
-const getCurrentTimestamp = (): string => {
-  let now = new Date();
-  let hours = String(now.getHours());
-  if (hours.length < 2) {
-    hours = '0' + hours;
-  }
-  let minutes = String(now.getMinutes());
-  if (minutes.length < 2) {
-    minutes = '0' + minutes;
-  }
-  let dayofmonth = String(now.getDate());
-  if (dayofmonth.length < 2) {
-    dayofmonth = '0' + dayofmonth;
-  }
-  let month = String(now.getMonth() + 1); // 0-11
-  if (month.length < 2) {
-    month = '0' + month;
-  }
-  let year = String(now.getFullYear());
-
-  return (
-    ' ' +
-    year +
-    '-' +
-    month +
-    '-' +
-    dayofmonth +
-    ' (' +
-    hours +
-    ' ' +
-    minutes +
-    ')'
-  );
-};
-
-const downloadPrefs = (extension: string) => {
-  const { act, data } = useBackend<Data>();
-
-  const { db_version, db_repo, mob_name, bellies } = data;
-
-  let datesegment = getCurrentTimestamp();
-
-  let filename = mob_name + datesegment + extension;
-  let blob;
-
-  if (extension === '.html') {
-    let style = '<style>' + '</style>';
-
-    blob = new Blob(
-      [
-        '<!DOCTYPE html><html lang="en"><head>' +
-          '<meta charset="utf-8">' +
-          '<meta name="viewport" content="width=device-width, initial-scale=1">' +
-          '<title>' +
-          bellies.length +
-          ' Exported Bellies (DB_VER: ' +
-          db_repo +
-          '-' +
-          db_version +
-          ')</title>' +
-          '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">' +
-          '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">' +
-          style +
-          '</head><body class="py-4"><main><div class="container"><h2>Bellies of ' +
-          mob_name +
-          '</h2><p class="lead">Generated on: ' +
-          datesegment +
-          '</p><div class="accordion" id="accordionBellies">',
-      ],
-      {
-        type: 'text/html;charset=utf8',
-      },
-    );
-    bellies.forEach((belly, i) => {
-      blob = new Blob([blob, generateBellyString(belly, i)], {
-        type: 'text/html;charset=utf8',
-      });
-    });
-    blob = new Blob(
-      [
-        blob,
-        '</div>',
-        '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>',
-        '</div></main></body></html>',
-      ],
-      { type: 'text/html;charset=utf8' },
-    );
-  }
-
-  if (extension === '.vrdb') {
-    blob = new Blob([JSON.stringify(bellies)], { type: 'application/json' });
-  }
-
-  (window.navigator as any).msSaveOrOpenBlob(blob, filename);
-};
-
-export const VorePanelExport = () => {
-  return (
-    <Window width={790} height={560} theme="abstract">
-      <Window.Content>
-        <VorePanelExportContent />
-      </Window.Content>
-    </Window>
-  );
-};
-
-const VorePanelExportContent = (props) => {
-  const { act, data } = useBackend<Data>();
-
-  const { bellies } = data;
-
-  return (
-    <Section title="Vore Export Panel">
-      <Section title="Export">
-        <Button fluid icon="file-alt" onClick={() => downloadPrefs('.html')}>
-          Export (HTML)
-        </Button>
-        <Button fluid icon="file-alt" onClick={() => downloadPrefs('.vrdb')}>
-          Export (VRDB)
-        </Button>
-      </Section>
-    </Section>
-  );
 };
