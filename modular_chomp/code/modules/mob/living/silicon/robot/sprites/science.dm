@@ -7,8 +7,6 @@
 	sprite_hud_icon_state = "sci-borg"
 	has_vore_belly_resting_sprites = TRUE
 	has_eye_light_sprites = TRUE
-<<<<<<< HEAD
-=======
 
 
 /datum/robot_sprite/dogborg/tall/science/dullahanscience
@@ -30,4 +28,3 @@
 	has_eye_light_sprites = TRUE
 	has_custom_open_sprites = TRUE
 	pixel_x = 0
->>>>>>> 7049db906e (Dullahan borg Hotfix (#8657))

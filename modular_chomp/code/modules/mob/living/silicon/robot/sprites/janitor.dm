@@ -10,8 +10,6 @@
 	sprite_icon_state = "vixjani"
 	has_vore_belly_resting_sprites = TRUE
 	has_eye_light_sprites = TRUE
-<<<<<<< HEAD
-=======
 
 
 /datum/robot_sprite/dogborg/tall/dullahanjanitormodule
@@ -36,4 +34,3 @@
 	has_vore_belly_sprites = TRUE
 	rest_sprite_options = list("Default", "Sit")
 	pixel_x = 0
->>>>>>> 7049db906e (Dullahan borg Hotfix (#8657))
