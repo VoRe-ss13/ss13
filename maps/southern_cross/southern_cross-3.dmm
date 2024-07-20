@@ -389,10 +389,6 @@
 /turf/simulated/floor/tiled,
 /area/crew_quarters/seconddeck/gym)
 "akk" = (
-/obj/machinery/particle_accelerator/control_box{
-	anchored = 1;
-	construction_state = 1
-	},
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/dark,
 /area/rnd/research/particleaccelerator)
@@ -13769,11 +13765,6 @@
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
 "kQJ" = (
-/obj/structure/particle_accelerator/particle_emitter/center{
-	anchored = 1;
-	construction_state = 1;
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 4
@@ -13870,11 +13861,6 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/bridge)
 "kTO" = (
-/obj/structure/particle_accelerator/fuel_chamber{
-	anchored = 1;
-	construction_state = 1;
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/tiled/dark,
 /area/rnd/research/particleaccelerator)
@@ -14809,11 +14795,6 @@
 /turf/simulated/floor/tiled,
 /area/maintenance/thirddeck/dormsstarboard/maintbar)
 "lPC" = (
-/obj/structure/particle_accelerator/end_cap{
-	anchored = 1;
-	construction_state = 1;
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -15320,11 +15301,6 @@
 /turf/simulated/floor/tiled,
 /area/bridge)
 "mhK" = (
-/obj/structure/particle_accelerator/particle_emitter/left{
-	anchored = 1;
-	construction_state = 1;
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -16082,11 +16058,6 @@
 /turf/simulated/floor/tiled,
 /area/bridge)
 "mKT" = (
-/obj/structure/particle_accelerator/particle_emitter/right{
-	anchored = 1;
-	construction_state = 1;
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/atmospherics/pipe/simple/hidden/purple{
 	dir = 6
@@ -31928,11 +31899,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/sleep/vistor_room_5)
 "ylp" = (
-/obj/structure/particle_accelerator/power_box{
-	anchored = 1;
-	construction_state = 1;
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 6
