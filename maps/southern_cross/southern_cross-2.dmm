@@ -15129,6 +15129,10 @@
 	c_tag = "SCI - Break Room";
 	dir = 4
 	},
+/obj/machinery/vending/wallmed1{
+	dir = 4;
+	pixel_x = -25
+	},
 /turf/simulated/floor/wood,
 /area/rnd/research)
 "aUx" = (
@@ -43041,12 +43045,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/heads/sc/hor)
 "cEk" = (
-/obj/item/device/radio/intercom{
-	dir = 1;
-	name = "Station Intercom (General)";
-	pixel_y = 21
-	},
-/obj/machinery/photocopier,
+/obj/machinery/vending/coffee,
 /turf/simulated/floor/wood,
 /area/rnd/research)
 "cEl" = (
@@ -45328,10 +45327,11 @@
 /obj/item/weapon/pen,
 /obj/item/weapon/clipboard,
 /obj/item/weapon/clipboard,
-/obj/item/weapon/storage/firstaid/regular{
-	pixel_x = 5;
-	pixel_y = 5
+/obj/item/weapon/reagent_containers/food/drinks/britcup{
+	pixel_x = -5;
+	pixel_y = 2
 	},
+/obj/item/weapon/reagent_containers/food/drinks/britcup,
 /turf/simulated/floor/wood,
 /area/rnd/research)
 "dzX" = (
@@ -55066,7 +55066,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 9
 	},
-/obj/structure/table/standard,
+/obj/machinery/photocopier,
 /turf/simulated/floor/tiled/white,
 /area/rnd/lab)
 "iKA" = (
@@ -61979,6 +61979,14 @@
 	},
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
+"mAR" = (
+/obj/item/device/radio/intercom{
+	dir = 8;
+	name = "Station Intercom (General)";
+	pixel_x = -21
+	},
+/turf/simulated/floor/wood,
+/area/rnd/research)
 "mAU" = (
 /turf/simulated/floor/tiled/freezer,
 /area/medical/medical_restroom)
@@ -122982,8 +122990,8 @@ cAP
 cAP
 afr
 afr
-dzb
-dzb
+cAP
+cAP
 cAP
 gdd
 hti
@@ -123241,7 +123249,7 @@ cCR
 afs
 afP
 aUw
-cEl
+mAR
 fpA
 gdV
 hru
