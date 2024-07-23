@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - maptweak: "Moved a couple machines in mechfabship and also has the shutters open by default to prevent lockouts."
