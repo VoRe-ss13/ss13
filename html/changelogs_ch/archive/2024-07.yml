@@ -152,3 +152,9 @@
   - rscdel: Removes Locus spawner in Oldhotel.
   - rscdel: Removed the SciencePod, Sciencepodv2 and Science ship from the superpose
       pod spawn list.
+2024-07-24:
+  VoRe-bot:
+  - maptweak: Moved a couple machines in mechfabship and also has the shutters open
+      by default to prevent lockouts.
+  - bugfix: caught souls being able to take over the pred's body
+  - bugfix: Anorole camp message
