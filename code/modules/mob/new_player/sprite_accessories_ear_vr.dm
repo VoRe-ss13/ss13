@@ -30,6 +30,29 @@
 	do_colouration = 1
 	extra_overlay = "shadekin-round-inner"
 
+<<<<<<< HEAD
+=======
+/datum/sprite_accessory/ears/lleill
+	name = "Lleill Ears, colorable"
+	desc = ""
+	icon = 'icons/mob/vore/ears_32x64.dmi'
+	icon_state = "lleill"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "lleill-antlers"
+	species_allowed = list(SPECIES_LLEILL)
+
+/datum/sprite_accessory/ears/lleill/curled
+	name = "Lleill Ears Curled, colorable"
+	icon_state = "lleill2"
+	extra_overlay = "lleill2-antlers"
+
+/datum/sprite_accessory/ears/lleill/tall
+	name = "Lleill Ears Tall, colorable"
+	icon_state = "lleill3"
+	extra_overlay = "lleill3-antlers"
+
+>>>>>>> b6436f1dc3 ([MIRROR] Lleill Species - Part 2 (#8701))
 // Ears avaliable to anyone
 
 /datum/sprite_accessory/ears/alien_slug

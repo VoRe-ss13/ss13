@@ -543,6 +543,11 @@
 		suiciding--
 		return 0
 
+	if(wear_mask && (wear_mask.item_flags & INFINITE_AIR))
+		failed_last_breath = 0
+		adjustOxyLoss(-5)
+		return
+
 	if(does_not_breathe)
 		failed_last_breath = 0
 		adjustOxyLoss(-5)
@@ -2045,6 +2050,8 @@
 			holder.icon_state = "-100" 	// X_X
 		else
 			holder.icon_state = RoundHealth((health-CONFIG_GET(number/health_threshold_crit))/(getMaxHealth()-CONFIG_GET(number/health_threshold_crit))*100) // CHOMPEdit
+		if(block_hud)
+			holder.icon_state = "hudblank"
 		apply_hud(HEALTH_HUD, holder)
 
 	if (BITTEST(hud_updateflag, LIFE_HUD))
@@ -2055,6 +2062,8 @@
 			holder.icon_state = "huddead"
 		else
 			holder.icon_state = "hudhealthy"
+		if(block_hud)
+			holder.icon_state = "hudblank"
 		apply_hud(LIFE_HUD, holder)
 
 	if (BITTEST(hud_updateflag, STATUS_HUD))
@@ -2088,6 +2097,10 @@ End Chomp edit */
 				holder2.icon_state = "hudill"
 			else
 				holder2.icon_state = "hudhealthy"
+		if(block_hud)
+			holder.icon_state = "hudblank"
+			holder2.icon_state = "hudblank"
+
 		apply_hud(STATUS_HUD, holder)
 		apply_hud(STATUS_HUD_OOC, holder2)
 
@@ -2102,6 +2115,8 @@ End Chomp edit */
 		else
 			holder.icon_state = "hudunknown"
 
+		if(block_hud)
+			holder.icon_state = "hudblank"
 		apply_hud(ID_HUD, holder)
 
 	if (BITTEST(hud_updateflag, WANTED_HUD))
@@ -2128,7 +2143,8 @@ End Chomp edit */
 					else if((R.fields["id"] == E.fields["id"]) && (R.fields["criminal"] == "Released"))
 						holder.icon_state = "hudreleased"
 						break
-
+		if(block_hud)
+			holder.icon_state = "hudblank"
 		apply_hud(WANTED_HUD, holder)
 
 	if (  BITTEST(hud_updateflag, IMPLOYAL_HUD) \
