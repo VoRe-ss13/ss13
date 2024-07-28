@@ -1,0 +1,5 @@
+author: "Missile597"
+delete-after: True
+changes:
+  - bugfix: "Replaced lights with ones that will actually night shift dim"
+  - bugfix: "Connected half the atmos grid to the other half that got disconnected at some point... oops, might have been my fault!"
