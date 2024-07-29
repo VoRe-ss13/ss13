@@ -71,8 +71,12 @@
 
 	output += "<hr>" //ChompADD - a line divider between functional and info buttons
 
+<<<<<<< HEAD
 	/*
 	//nobody uses this feature
+=======
+	//nobody uses this feature //WELL WE'RE GONNA
+>>>>>>> f9abe972d2 (Custom Footstep sounds (#8695))
 	if(!IsGuestKey(src.key))
 		establish_db_connection()
 
@@ -762,9 +766,6 @@
 	new_character.force_update_limbs()
 	new_character.update_icons_body()
 	new_character.update_transform() //VOREStation Edit
-
-	new_character.set_footsteps(chosen_species.footstep) // CHOMPEdit
-	new_character.set_slosh() //CHOMPEdit
 
 	new_character.key = key		//Manually transfer the key to log them in
 
