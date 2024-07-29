@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - rscadd: "Added a way for staff to spawn in overmap ships mid round via the Map-Template-Place-NewZ verb."

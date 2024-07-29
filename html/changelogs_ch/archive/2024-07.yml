@@ -158,3 +158,34 @@
       by default to prevent lockouts.
   - bugfix: caught souls being able to take over the pred's body
   - bugfix: Anorole camp message
+2024-07-29:
+  EtheoBoxxman:
+  - bugfix: ' Fixed Etheo''s fluff borg sprite'
+  Missile597:
+  - bugfix: Replaced lights with ones that will actually night shift dim
+  - bugfix: Connected half the atmos grid to the other half that got disconnected
+      at some point... oops, might have been my fault!
+  VoRe-bot:
+  - rscadd: You can now place reagents inside chewables
+  - maptweak: Adds cargo access to the lossy sheet storage in the cargo warehouse.
+  - maptweak: External cargo walls are reinforced
+  - rscadd: An option to give body control to any stored soul within the vore soulcatcher
+      as long as prefs align
+  - rscadd: succubus drain (lethal) can soulcatch
+  - rscadd: ghost join for vore soulcatcher
+  - bugfix: priority issues for vore soulcatcher overlays when blind and vorefx were
+      enabled causing toggling effects (blind can now blind on vorefx)
+  - bugfix: applying vore soulcatcher preference settings right away not working
+  - bugfix: transfer to MMIs from vore soulcatcher
+  - bugfix: captured simple_mobs and silicons not always showing their custom name
+      in vore soulscatchers
+  - rscadd: Added a way for staff to spawn in overmap ships mid round via the Map-Template-Place-NewZ
+      verb.
+  - bugfix: re-adds missing cost to items that were missing it
+  - balance: Adjusted diver visibility in shallow water.
+  - balance: Simplemob targeting ai invisibility threshold changed from 50% to 25%.
+  - balance: removes some boards from outsider circuit printer
+  - bugfix: properly implents marble/sandstone crafting
+  - rscadd: loadout items now show what jobs they're restricted to/enabled by
+  - bugfix: fixed a couple of teshi belted cloaks being under general outerwear rather
+      than in xenowear
