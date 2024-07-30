@@ -43,14 +43,19 @@
 			footstep_ret = GLOB.lightclawfootstep
 		if(FOOTSTEP_MOB_CLAW)
 			footstep_ret = GLOB.clawfootstep
-		if(FOOTSTEP_MOB_BAREFOOT)
-			footstep_ret = GLOB.barefootstep
 		if(FOOTSTEP_MOB_HEAVY)
 			footstep_ret = GLOB.heavyfootstep
 		if(FOOTSTEP_MOB_SHOE)
 			footstep_ret = GLOB.footstep
 		if(FOOTSTEP_MOB_SLIME)
 			footstep_ret = 'modular_chomp/sound/effects/footstep/slime1.ogg'
+<<<<<<< HEAD
+=======
+		if(FOOTSTEP_MOB_SLITHER)
+			footstep_ret = 'modular_chomp/sound/effects/footstep/crawl1.ogg'
+		else
+			footstep_ret = GLOB.barefootstep
+>>>>>>> 52f27cb4f7 (Step Element runtime fix (#8708))
 	return footstep_ret
 
 /datum/element/footstep/Detach(atom/movable/source)
