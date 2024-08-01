@@ -1,5 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - rscadd: "Added a new extreme weather for admins called \"extreme monsoon\""
-  - bugfix: "Weather defines updated"

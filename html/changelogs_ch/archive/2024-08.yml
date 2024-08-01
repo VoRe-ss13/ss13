@@ -1,0 +1,5 @@
+2024-08-01:
+  VoRe-bot:
+  - rscadd: Added a new extreme weather for admins called "extreme monsoon"
+  - bugfix: Weather defines updated
+  - admin: Adds a new option to the smites
