@@ -33,8 +33,8 @@
 		return
 
 	while(finalized == "No" && M.client)
-		choice = tgui_input_list(M, "What type of predator do you want to play as?", "Maintpred Choice", GLOB.ghost_spawnable_mobs)		//RS EDIT
-		if(choice)		//RS EDIT START //TORCHEdit - Porting "Join As Mob" verb and changes from Rogue Star.
+		choice = tgui_input_list(M, "What type of predator do you want to play as?", "Maintpred Choice", GLOB.ghost_spawnable_mobs)		//RS EDIT //TORCHEdit Start - Porting "Join As Mob" verb and changes from Rogue Star.
+		if(choice)		//RS EDIT START
 			if(islist(GLOB.ghost_spawnable_mobs[choice]))	//Allow for nested list for organization reasons
 				var/list/ourlist = GLOB.ghost_spawnable_mobs[choice]
 				var/newchoice = tgui_input_list(M, "Which one?", "[choice]", ourlist)
@@ -45,7 +45,7 @@
 				choice = newchoice
 				mobtype = ourlist[newchoice]
 			else
-				mobtype = GLOB.ghost_spawnable_mobs[choice]	//RS EDIT END
+				mobtype = GLOB.ghost_spawnable_mobs[choice]	//RS EDIT END // //TORCHEdit end
 
 			finalized = tgui_alert(M, "Are you sure you want to play as [choice]?","Confirmation",list("No","Yes"))
 
