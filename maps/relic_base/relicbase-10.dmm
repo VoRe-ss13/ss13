@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/turf/simulated/mineral/cave,
+/turf/simulated/mineral/sif,
 /area/surface/outside/wilderness/mountains)
 "ad" = (
 /obj/machinery/light{
@@ -152,7 +152,7 @@
 	name = "Surface Mines Operations Pad"
 	})
 "ox" = (
-/turf/simulated/mineral/floor/ignore_cavegen,
+/turf/simulated/mineral/floor/ignore_mapgen/sif,
 /area/surface/outside/path)
 "oT" = (
 /obj/machinery/light{

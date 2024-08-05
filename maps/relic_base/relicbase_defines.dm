@@ -251,9 +251,15 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks
 */
 
-/datum/map_z_level/relicbase/surface_mine
+/datum/map_z_level/relicbase/undeground_mine
 	z = Z_LEVEL_UNDERMINES
 	name = "Underground Mines"
+	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONSOLES
+	base_turf = /turf/simulated/floor/outdoors/rocks
+
+/datum/map_z_level/relicbase/surface_mine
+	z = Z_LEVEL_SURFACE_MINES
+	name = "Surface Mines"
 	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONSOLES
 	base_turf = /turf/simulated/floor/outdoors/rocks
 
