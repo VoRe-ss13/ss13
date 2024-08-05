@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - bugfix: "dullahancargomodule class"
+  - bugfix: "second dullahan miner name -> v2"
