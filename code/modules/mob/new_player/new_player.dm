@@ -71,12 +71,8 @@
 
 	output += "<hr>" //ChompADD - a line divider between functional and info buttons
 
-<<<<<<< HEAD
 	/*
 	//nobody uses this feature
-=======
-	//nobody uses this feature //WELL WE'RE GONNA
->>>>>>> f9abe972d2 (Custom Footstep sounds (#8695))
 	if(!IsGuestKey(src.key))
 		establish_db_connection()
 
