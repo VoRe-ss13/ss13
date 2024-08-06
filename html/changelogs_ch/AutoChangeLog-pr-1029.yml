@@ -1,4 +1,0 @@
-author: "purplefoxy27"
-delete-after: True
-changes:
-  - bugfix: "Fixes ores not spawning in the surface mines"

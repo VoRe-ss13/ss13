@@ -1,5 +1,0 @@
-author: "purplefoxy27"
-delete-after: True
-changes:
-  - rscadd: "Maintenance predators can now listen to radio and have thermal vision."
-  - bugfix: "The 'Join as Mob' verb is now properly in the 'Join' section in the 'Ghost' tab"

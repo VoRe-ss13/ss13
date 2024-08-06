@@ -3,3 +3,25 @@
   - rscadd: Added a new extreme weather for admins called "extreme monsoon"
   - bugfix: Weather defines updated
   - admin: Adds a new option to the smites
+2024-08-06:
+  VoRe-bot:
+  - bugfix: Fixes a small oversight that made foostep element throw constant runtimes
+  - qol: Vorespawns with auto-accept on aren't affected by inactivity
+  - rscadd: Vorespawns into a belly with entrance logs disabled don't announce the
+      entrance to the pred
+  - rscadd: New wings, "Large speckled leather wings, tricolor"
+  - bugfix: dullahancargomodule class
+  - bugfix: second dullahan miner name -> v2
+  - bugfix: Fixed a case in which belly signals could trigger too many soulcatcher
+      messages
+  - rscadd: Added an option for players to choose their footstep sound
+  - qol: Reduced footstep volume
+  - code_imp: Less procs, more signals
+  - qol: Added the ability to point at items in your inventory
+  - code_imp: Added COMSIG_MOB_POINTED
+  - refactor: Everything point related moved to the modular folder
+  purplefoxy27:
+  - bugfix: Fixes ores not spawning in the surface mines
+  - rscadd: Maintenance predators can now listen to radio and have thermal vision.
+  - bugfix: The 'Join as Mob' verb is now properly in the 'Join' section in the 'Ghost'
+      tab
