@@ -3188,9 +3188,7 @@
 /area/surface/outpost/main/dorms/dorm_9/upstairs)
 "cRK" = (
 /obj/structure/undies_wardrobe,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_2/upstairs)
 "cSK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -4057,11 +4055,7 @@
 /area/surface/outside/plains/outpost)
 "dHr" = (
 /obj/structure/undies_wardrobe,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_5/upstairs)
 "dHU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -4517,9 +4511,7 @@
 /area/engineering/engine_waste)
 "ebk" = (
 /obj/structure/undies_wardrobe,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_6/upstairs)
 "ebs" = (
 /turf/simulated/floor/wood,
@@ -5912,13 +5904,11 @@
 /area/security/prison)
 "ffy" = (
 /obj/structure/table/woodentable,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_2/upstairs)
 "ffP" = (
 /obj/effect/floor_decal/corner_techfloor_grid{
@@ -9640,9 +9630,7 @@
 /area/engineering/engine_monitoring)
 "ixE" = (
 /obj/structure/undies_wardrobe,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_1/upstairs)
 "ixT" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -10428,12 +10416,10 @@
 /area/surface/outpost/civilian/pool)
 "jhr" = (
 /obj/structure/table/woodentable,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_9/upstairs)
 "jhz" = (
 /obj/machinery/door/firedoor/glass,
@@ -11433,9 +11419,7 @@
 /area/crew_quarters/cafeteria)
 "kbB" = (
 /obj/structure/undies_wardrobe,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_7/upstairs)
 "kcQ" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -13802,9 +13786,7 @@
 /area/ai)
 "lVe" = (
 /obj/structure/undies_wardrobe,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_10/upstairs)
 "lVn" = (
 /obj/machinery/computer/atmos_alert{
@@ -17185,13 +17167,11 @@
 /area/security/security_lockerroom)
 "oLg" = (
 /obj/structure/table/woodentable,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_3/upstairs)
 "oLm" = (
 /obj/structure/table/steel_reinforced,
@@ -17979,12 +17959,10 @@
 /area/rnd/xenobiology/xenoflora)
 "plP" = (
 /obj/structure/table/woodentable,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_8/upstairs)
 "pmB" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
@@ -18156,13 +18134,11 @@
 /area/security/prison)
 "psT" = (
 /obj/structure/table/woodentable,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_4/upstairs)
 "ptm" = (
 /turf/simulated/floor/tiled/freezer,
@@ -21829,13 +21805,11 @@
 /area/maintenance/solars)
 "rYC" = (
 /obj/structure/table/woodentable,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_6/upstairs)
 "rYS" = (
 /obj/machinery/camera/network/cargo{
@@ -23806,15 +23780,11 @@
 /area/engineering/engine_monitoring)
 "tGk" = (
 /obj/structure/table/woodentable,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_5/upstairs)
 "tGB" = (
 /obj/machinery/camera/network/exterior{
@@ -26347,13 +26317,11 @@
 /area/surface/outside/plains/outpost)
 "vNB" = (
 /obj/structure/table/woodentable,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
 	},
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_1/upstairs)
 "vOl" = (
 /turf/simulated/wall/r_wall{
@@ -26589,12 +26557,10 @@
 /area/security/security_lockerroom)
 "vYU" = (
 /obj/structure/table/woodentable,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_7/upstairs)
 "vZt" = (
 /obj/structure/cable/green{
@@ -27231,9 +27197,7 @@
 /area/engineering/engine_room)
 "wJe" = (
 /obj/structure/undies_wardrobe,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_4/upstairs)
 "wJq" = (
 /obj/structure/catwalk,
@@ -27265,9 +27229,7 @@
 /area/surface/outpost/main/landing)
 "wLG" = (
 /obj/structure/undies_wardrobe,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_8/upstairs)
 "wMa" = (
 /obj/structure/table/darkglass,
@@ -27505,9 +27467,7 @@
 /area/ai/ai_upload)
 "wVE" = (
 /obj/structure/undies_wardrobe,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_3/upstairs)
 "wVN" = (
 /obj/structure/closet/crate,
@@ -27716,9 +27676,7 @@
 /area/security/main)
 "xcV" = (
 /obj/structure/undies_wardrobe,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_9/upstairs)
 "xdv" = (
 /obj/structure/cable/green{
@@ -28658,12 +28616,10 @@
 /area/security/prison)
 "xSN" = (
 /obj/structure/table/woodentable,
-/obj/structure/lattice,
-/obj/effect/catwalk_plated/dark,
 /obj/machinery/alarm{
 	pixel_y = 23
 	},
-/turf/simulated/open,
+/turf/simulated/floor/carpet/bcarpet,
 /area/surface/outpost/main/dorms/dorm_10/upstairs)
 "xTj" = (
 /obj/structure/railing{
