@@ -25,3 +25,13 @@
   - rscadd: Maintenance predators can now listen to radio and have thermal vision.
   - bugfix: The 'Join as Mob' verb is now properly in the 'Join' section in the 'Ghost'
       tab
+2024-08-07:
+  Missile597:
+  - maptweak: Closed up the holes in bedrooms with carpet instead of catwalk now
+  VoRe-bot:
+  - bugfix: showing borg name on the fax instead of just 1
+  - qol: most ships start as known, except for wrecks and the mercenary manta
+  - rscadd: Adds a new shadekin tail, Shadekin Fat Tail
+  - rscadd: Two new belly options for vorespawn. Whitelisting ckeys and whether the
+      belly absorbs prey on spawn.
+  - rscadd: Added a prompt for vorespawn preds to instantly absorb their chosen prey.
