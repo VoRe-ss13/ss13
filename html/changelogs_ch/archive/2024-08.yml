@@ -53,3 +53,6 @@
       any more
   - rscdel: removed accessories_vr.dm entirely, merging the files where appropriate
       - shouldn't cause any lost items
+2024-08-10:
+  VoRe-bot:
+  - bugfix: self transfer to mmis not working
