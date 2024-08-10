@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - qol: "3 more slots for the mailbag"
+  - bugfix: "Fixed mailbag not able to pick up mail off the ground"
