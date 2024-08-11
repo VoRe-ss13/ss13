@@ -56,3 +56,9 @@
 2024-08-10:
   VoRe-bot:
   - bugfix: self transfer to mmis not working
+2024-08-11:
+  VoRe-bot:
+  - bugfix: Fixed bigdragon scaling issues.
+  - qol: 3 more slots for the mailbag
+  - bugfix: Fixed mailbag not able to pick up mail off the ground
+  - bugfix: Fixed various runtimes regarding balloon alerts
