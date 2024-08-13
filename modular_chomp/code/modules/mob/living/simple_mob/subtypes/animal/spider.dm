@@ -2,12 +2,23 @@
 /mob/living/simple_mob/animal/giant_spider/carrier //Disrupter, old 100
 	maxHealth = 60
 	health = 60
+<<<<<<< HEAD
+=======
+	//melee_damage_lower = 4
+	//melee_damage_upper = 12
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 
 /mob/living/simple_mob/animal/giant_spider/electric //disrupter, old 210
 	maxHealth = 60
 	health = 60
 	projectiletype = /obj/item/projectile/energy/mob/electric_spider
+<<<<<<< HEAD
 
+=======
+	//melee_damage_lower = 5
+	//melee_damage_upper = 12
+/*
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 /mob/living/simple_mob/animal/giant_spider/frost //tank, old 175
 	maxHealth = 120
 	health = 120
@@ -105,6 +116,7 @@
 
 	melee_damage_lower = 5
 	melee_damage_upper = 10
+*/
 
 //Hijacking this file to make new event spiders
 
@@ -114,9 +126,10 @@
 	max_tox = 0
 	max_co2 = 0
 
+	/* Use the parent
 	maxHealth = 20
 	health = 20
-
+	*/
 	melee_damage_lower = 5
 	melee_damage_upper = 7
 
@@ -126,17 +139,20 @@
 	max_tox = 0
 	max_co2 = 0
 
+	/* Use the parent
 	maxHealth = 15
 	health = 15
+	*/
 
 /mob/living/simple_mob/animal/giant_spider/hunter/space
 	name = "giant space spider"
 	min_oxy = 0
 	max_tox = 0
 	max_co2 = 0
-
+	/*Use the parent
 	maxHealth = 20
 	health = 20
+	*/
 
 /mob/living/simple_mob/animal/giant_spider/lurker/space
 	maxHealth = 20
@@ -149,9 +165,10 @@
 	max_co2 = 0
 
 	egg_type = /obj/effect/spider/eggcluster/royal/space
-
+	/* Use the parent
 	maxHealth = 30
 	health = 30
+	*/
 
 /mob/living/simple_mob/animal/giant_spider/pepper/space
 	name = "giant space spider"
@@ -194,8 +211,14 @@
 	min_oxy = 0
 	max_tox = 0
 	max_co2 = 0
+
+	/* Use the parent
 	maxHealth = 30
 	health = 30
 
 	melee_damage_lower = 5
 	melee_damage_upper = 10
+<<<<<<< HEAD
+=======
+	*/
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))

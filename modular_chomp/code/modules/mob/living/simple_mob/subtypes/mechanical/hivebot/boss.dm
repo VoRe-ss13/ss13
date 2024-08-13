@@ -7,8 +7,13 @@
 	maxHealth = 15 LASERS_TO_KILL
 	health = 15 LASERS_TO_KILL
 	projectiletype = /obj/item/projectile/arc/blue_energy/precusor
+<<<<<<< HEAD
 	melee_damage_lower = 30
 	melee_damage_upper = 50
+=======
+	melee_damage_lower = 30 //old 15
+	melee_damage_upper = 50 //old 30
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	special_attack_min_range = 1
 	special_attack_max_range = 7
 	special_attack_cooldown = 5 SECONDS

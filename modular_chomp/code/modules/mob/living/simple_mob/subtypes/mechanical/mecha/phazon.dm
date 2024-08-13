@@ -8,7 +8,11 @@
 	wreckage = /obj/structure/loot_pile/mecha/phazon
 	color = "#ffffff"
 
+<<<<<<< HEAD
 	health = 500
+=======
+	health = 500 //Old 250
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	maxHealth = 500
 	evasion = 10
 

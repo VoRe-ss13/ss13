@@ -62,3 +62,14 @@
 			catch
 			eyes = input_style_list[12]
 			build_icons()
+<<<<<<< HEAD
+=======
+
+//Most intresting set of OG melee damages
+/* Combat refactor walkback
+/mob/living/simple_mob/vore/bigdragon
+	melee_damage_lower = 12
+	melee_damage_upper = 17
+	maxHealth = 400
+*/
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))

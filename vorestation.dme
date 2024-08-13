@@ -4938,6 +4938,11 @@
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\horror\Master.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\humanoid\cultboss.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\humanoid\cultist_ch.dm"
+<<<<<<< HEAD
+=======
+#include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\humanoid\mercenary.dm"
+#include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\humanoid\pirate.dm"
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\humanoid\eclipse\eclipse.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\humanoid\eclipse\heads.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\humanoid\eclipse\lore.dm"
@@ -4956,6 +4961,11 @@
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\mechanical\hivebot\tank.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\mechanical\mecha\gygax.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\mechanical\mecha\phazon.dm"
+<<<<<<< HEAD
+=======
+#include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\meteroid\metTypes.dm"
+#include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\occult\constructs\construct.dm"
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\occult\constructs\juggernaut.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\occult\constructs\purity_construct.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\slimess\feral.dm"
@@ -4965,7 +4975,6 @@
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\vore\carp.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\vore\corrupt_hounds.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\vore\desert_planet_mobs.dm"
-#include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\vore\event.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\vore\greatwolf.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\vore\jelly.dm"
 #include "modular_chomp\code\modules\mob\living\simple_mob\subtypes\vore\smokestar.dm"
@@ -5007,10 +5016,16 @@
 #include "modular_chomp\code\modules\projectiles\ammo_refactor\gun_overrides.dm"
 #include "modular_chomp\code\modules\projectiles\clockwork\clockwork_guns_ch.dm"
 #include "modular_chomp\code\modules\projectiles\guns\alts.dm"
+<<<<<<< HEAD
+=======
+#include "modular_chomp\code\modules\projectiles\guns\beam.dm"
+#include "modular_chomp\code\modules\projectiles\guns\bullet.dm"
+#include "modular_chomp\code\modules\projectiles\guns\energy.dm"
+#include "modular_chomp\code\modules\projectiles\guns\magnetic.dm"
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 #include "modular_chomp\code\modules\projectiles\guns\phase.dm"
 #include "modular_chomp\code\modules\projectiles\guns\special.dm"
 #include "modular_chomp\code\modules\projectiles\guns\staffs.dm"
-#include "modular_chomp\code\modules\projectiles\guns\energy\laser.dm"
 #include "modular_chomp\code\modules\projectiles\guns\energy\special.dm"
 #include "modular_chomp\code\modules\projectiles\guns\projectile\revolver.dm"
 #include "modular_chomp\code\modules\projectiles\precursor\eclipse.dm"

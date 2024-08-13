@@ -1,6 +1,10 @@
 /mob/living/simple_mob/slime/feral
 	cores = 3 // Xenobio will love getting their hands on these.
+<<<<<<< HEAD
 	maxHealth = 150
+=======
+	maxHealth = 150 //Old 75
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	movement_cooldown = 0
 	melee_damage_lower = 15
 	melee_damage_upper = 15

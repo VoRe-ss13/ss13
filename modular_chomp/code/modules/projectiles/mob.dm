@@ -6,7 +6,11 @@
 	icon_state = "impact_beam_heavy"
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
+<<<<<<< HEAD
 	damage = 60
+=======
+	damage = 60 //Old 25
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	armor_penetration = 30
 	light_range = 3
 	light_power = 1
@@ -17,7 +21,11 @@
 	icon_state = "impact_laser"
 	fire_sound = 'sound/weapons/Laser.ogg'
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
+<<<<<<< HEAD
 	damage = 40
+=======
+	damage = 40 //old 20
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	armor_penetration = 10
 	damage_type = BURN
 	check_armour = "laser"
@@ -27,7 +35,11 @@
 	icon_state = "impact_laser"
 	fire_sound = 'sound/weapons/Laser.ogg'
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
+<<<<<<< HEAD
 	damage = 30
+=======
+	damage = 30 //Old 10
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	armor_penetration = 0
 	damage_type = BURN
 	check_armour = "laser"
@@ -38,7 +50,7 @@
 	icon_state = "impact_laser"
 	fire_sound = 'sound/weapons/Laser.ogg'
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage = 10
+	damage = 20 //Old 10
 	damage_type = BURN
 	check_armour = "laser"
 
@@ -46,7 +58,7 @@
 	name = "inversion blast"
 	icon = 'icons/obj/projectiles_impact.dmi'
 	icon_state = "impact_invert"
-	damage = 15
+	damage = 30 //old 15
 	armor_penetration = 60
 	damage_type = BURN
 	check_armour = "laser"
@@ -74,14 +86,18 @@
 	light_color = "#FF0099"
 
 	hud_state = "plasma_rifle"
+<<<<<<< HEAD
 	damage = 48
+=======
+	damage = 48 //Old 25
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	armor_penetration = 10
 
 
 //Eclipse mob stuff
 
 /obj/item/projectile/energy/blob/moth
-	damage = 15
+	damage = 30 //old 15
 	armor_penetration = 15
 	my_chems = list("fuel", "mold")
 	flammability = 0.25
@@ -97,7 +113,7 @@
 	speed = 3.2
 
 /obj/item/projectile/energy/electrode/eclipse
-	damage = 20
+	damage = 40 //old 20
 	damage_type = BURN
 	color = "#38b9ff"
 	speed = 3.2
@@ -114,21 +130,21 @@
 
 /obj/item/projectile/energy/mob/heavysniper
 	armor_penetration = 40
-	damage = 40
+	damage = 60 //Old 40, not doubling that lol
 	speed = 1.2
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
 	name = "sniper beam"
 	icon_state = "impact_xray"
 
 /obj/item/projectile/energy/declone/burn
-	damage = 15
+	damage = 30 //Old 15
 	nodamage = 0
 	speed = 3.2
 	irradiate = 30
 
 /obj/item/projectile/energy/mob/ionbeam
 	name = "Ion Burst"
-	damage = 10
+	damage = 20 //Old 10
 	damage_type = ELECTROMAG
 	light_color = "#00CCFF"
 	icon_state = "impact_blue"

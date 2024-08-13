@@ -18,7 +18,11 @@
 
 	faction = "vr"
 
+<<<<<<< HEAD
 	maxHealth = 100
+=======
+	maxHealth = 100 //Old 50
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	health = 100
 	movement_cooldown = 1
 	unsuitable_atoms_damage = 0
@@ -26,8 +30,8 @@
 	melee_attack_delay = 4 SECOND
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/kiting
 
-	melee_damage_lower = 8
-	melee_damage_upper = 15
+	melee_damage_lower = 15
+	melee_damage_upper = 25
 	size_multiplier = 1.50
 
 	loot_list = list(/obj/item/clothing/head/vrwizard = 10,

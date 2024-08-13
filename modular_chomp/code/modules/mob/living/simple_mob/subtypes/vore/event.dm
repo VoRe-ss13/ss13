@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/solarray //solar moth lite, dies to water
 	name = "solar ray"
 	desc = "A sting ray of fire, drifting around"
@@ -7,6 +8,9 @@
 	icon_dead = "solarray-dead"
 	health = 30
 	maxHealth = 30
+=======
+//File has been unticked for combat refactor walkback
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 
 	movement_cooldown = 3			// Lower is faster.
 	aquatic_movement = 0			// If set, the mob will move through fluids with no hinderance.
@@ -16,6 +20,7 @@
 	heat_damage_per_tick = 3	// Amount of damage applied if animal's body temperature is higher than maxbodytemp
 	cold_damage_per_tick = 2	// Same as heat_damage_per_tick, only if the bodytemperature it's lower than minbodytemp
 
+<<<<<<< HEAD
 	min_oxy = 0					// Oxygen in moles, minimum, 0 is 'no minimum'
 	max_oxy = 0					// Oxygen in moles, maximum, 0 is 'no maximum'
 	min_tox = 0					// Phoron min
@@ -277,3 +282,8 @@
 	vore_capacity = 1
 	vore_pounce_chance = 0
 	vore_default_mode = DM_DIGEST
+=======
+/mob/living/simple_mob/vore/aggressive/rat/event
+	maxHealth = 25
+	health = 25
+>>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
