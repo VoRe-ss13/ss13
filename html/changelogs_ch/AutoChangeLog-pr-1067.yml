@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscdel: "removed text notifs when prepping to throw/catch stuff"
