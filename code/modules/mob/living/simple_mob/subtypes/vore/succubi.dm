@@ -73,8 +73,6 @@
 	B.escapechance = 15
 	B.selective_preference = DM_DIGEST
 	B.escape_stun = 5
-<<<<<<< HEAD
-=======
 	B.transferlocation_absorb = "curves"
 
 	var/obj/belly/curves = new /obj/belly(src)
@@ -120,4 +118,3 @@
 		"Try as you might, you barely make an impression before %pred simply clenches with the most minimal effort, binding you back into her %belly.",
 		"Unfortunately, %pred seems to have absolutely no intention of letting you go, and your futile effort goes nowhere.",
 		"Strain as you might, you can't keep up the effort long enough before you sink back into %pred's %belly.")
->>>>>>> 109d387dc8 ([MIRROR] Adds auto-transfer on absorb function, selective mode chance function, and applies both to succubi (#8770))
