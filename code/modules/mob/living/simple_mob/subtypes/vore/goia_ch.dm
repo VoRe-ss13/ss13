@@ -77,9 +77,141 @@
 	faction = "neutral"
 	tamed = 1
 
+<<<<<<< HEAD
 /datum/say_list/zorgoia
 	speak = list("Prurr.", "Murrr.")
 	emote_hear = list("chuffs", "murrs", "churls", "hisses", "lets out a cougar like scream", "yawns")
 	emote_see = list("licks their maw", "stretches", "yawns", "noodles")
 	say_maybe_target = list("weh?")
 	say_got_target = list("Rurrr!", "ROAR!", "RAH!")
+=======
+	I = image(icon, "[goia_overlays[3]][resting? "-rest" : null]", pixel_x = -16)
+	I.color = goia_overlays[goia_overlays[3]]
+	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+	I.plane = MOB_PLANE
+	I.layer = MOB_LAYER
+	add_overlay(I)
+	qdel(I)
+
+	I = image(icon, "[goia_overlays[4]][resting? "-rest" : null]", pixel_x = -16)
+	I.color = goia_overlays[goia_overlays[4]]
+	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+	I.plane = MOB_PLANE
+	I.layer = MOB_LAYER
+	add_overlay(I)
+	qdel(I)
+
+	I = image(icon, "[goia_overlays[5]][resting? "-rest" : null]", pixel_x = -16)
+	I.color = goia_overlays[goia_overlays[5]]
+	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+	I.plane = MOB_PLANE
+	I.layer = MOB_LAYER
+	add_overlay(I)
+	qdel(I)
+
+	I = image(icon, "[goia_overlays[6]][resting? "-rest" : null]", pixel_x = -16)
+	I.color = goia_overlays[goia_overlays[6]]
+	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+	I.plane = MOB_PLANE
+	I.layer = MOB_LAYER
+	add_overlay(I)
+	qdel(I)
+
+	I = image(icon, "[goia_overlays[7]][resting? "-rest" : null]", pixel_x = -16)
+	I.color = goia_overlays[goia_overlays[7]]
+	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+	I.plane = MOB_PLANE
+	I.layer = MOB_LAYER
+	add_overlay(I)
+	qdel(I)
+
+	I = image(icon, "[goia_overlays[8]][resting? "-rest" : null]", pixel_x = -16)
+	I.color = goia_overlays[goia_overlays[8]]
+	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+	I.plane = MOB_PLANE
+	I.layer = MOB_LAYER
+	add_overlay(I)
+	qdel(I)
+
+	I = image(icon, "[goia_overlays[9]][resting? "-rest" : null]", pixel_x = -16)
+	I.color = goia_overlays[goia_overlays[9]]
+	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+	I.plane = PLANE_LIGHTING_ABOVE
+	add_overlay(I)
+	qdel(I)
+
+	I = image(icon, "[goia_overlays[10]][resting? "-rest" : null]", pixel_x = -16)
+	I.color = goia_overlays[goia_overlays[10]]
+	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+	I.plane = MOB_PLANE
+	I.layer = MOB_LAYER
+	add_overlay(I)
+	qdel(I)
+
+	I = image(icon, "[goia_overlays[1]][resting? "-rest" : (vore_fullness? "-[vore_fullness]" : null)]", pixel_x = -16) //todo, check kasscs resting sprite
+	I.color = goia_overlays[goia_overlays[1]]
+	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+	I.plane = MOB_PLANE
+	I.layer = MOB_LAYER
+	add_overlay(I)
+	qdel(I)
+
+/mob/living/simple_mob/vore/zorgoia/attack_hand(mob/living/carbon/human/M as mob)
+	switch(M.a_intent)
+		if(I_HELP)
+			if(health > 0)
+				if(M.zone_sel.selecting == BP_GROIN)
+					if(M.vore_bellyrub(src))
+						return
+				M.visible_message("<span class='notice'>[M] [response_help] \the [src].</span>")
+				if(has_AI())
+					var/datum/ai_holder/AI = ai_holder
+					AI.set_stance(STANCE_IDLE)
+					if(prob(tame_chance))
+						AI.violent_breakthrough = FALSE
+						AI.hostile = FALSE
+						friend = M
+						AI.set_follow(friend)
+						if(tamed != 1)
+							tamed = 1
+							faction = M.faction
+					sleep(1 SECOND)
+
+		if(I_GRAB)
+			if(health > 0)
+				if(has_AI())
+					var/datum/ai_holder/AI = ai_holder
+					audible_emote("growls disapprovingly at [M].")
+					if(M == friend)
+						AI.lose_follow()
+						friend = null
+					return
+			..()
+		else
+			..()
+
+/mob/living/simple_mob/vore/zorgoia/Login()
+	. = ..()
+	if(!riding_datum)
+		riding_datum = new /datum/riding/simple_mob(src)
+	add_verb(src,/mob/living/simple_mob/proc/animal_mount)
+	add_verb(src,/mob/living/proc/toggle_rider_reins)
+	movement_cooldown = 0
+
+/mob/living/simple_mob/vore/zorgoia/MouseDrop_T(mob/living/M, mob/living/user)
+	return
+
+/mob/living/simple_mob/vore/zorgoia/death() //are they going to be ok?
+	. = ..()
+	cut_overlays()
+
+/mob/living/simple_mob/vore/zorgoia/tamed
+	tamed = TRUE
+
+/datum/ai_holder/simple_mob/melee/evasive/zorgoia
+
+/datum/ai_holder/simple_mob/melee/evasive/zorgoia/New(var/mob/living/simple_mob/vore/zorgoia/new_holder)
+	.=..()
+	if(new_holder.tamed)
+		hostile = FALSE
+>>>>>>> 1cdbf715ca (fixes goia grabs (#8806))
