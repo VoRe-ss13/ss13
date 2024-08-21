@@ -464,8 +464,8 @@
 	return ..()
 
 /obj/item/shield_projector/rectangle/automatic/imperion
-	shield_health = 500
-	max_shield_health = 500
+	shield_health = 250
+	max_shield_health = 250
 	shield_regen_delay = 60 SECONDS
 	shield_regen_amount = 50
 	size_x = 2
@@ -494,7 +494,8 @@
 	armor_penetration = 35
 	damage_type = BURN
 	check_armour = "laser"
-	speed = 4.4
+	speed = 7.0
+
 	flash_strength = 0
 
 /obj/item/projectile/bullet/imperionblaster
@@ -540,7 +541,8 @@
 	damage_type = BURN
 	check_armour = "energy"
 	agony = 50
-	speed = 8.2
+	speed = 10.0
+
 	flash_strength = 0
 
 /obj/item/projectile/energy/homing_bolt/missile

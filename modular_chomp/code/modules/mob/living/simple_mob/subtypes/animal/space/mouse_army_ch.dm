@@ -24,6 +24,8 @@
 	icon_living = "mouse_ammo"
 	icon_dead = "mouse_ammo_dead"
 	icon_rest = "mouse_ammo_sleep"
+	maxHealth = 15
+	health = 15
 
 /mob/living/simple_mob/animal/space/mouse_army/stealth
 	icon_state = "mouse_stealth"

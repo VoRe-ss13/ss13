@@ -1,3 +1,6 @@
+/mob/living/simple_mob/mechanical/combat_drone
+	projectiletype = /obj/item/projectile/energy/mob/drone
+
 /mob/living/simple_mob/mechanical/combat_drone/lesser/aerostat
 	desc = "A Vir System Authority automated combat drone with an aged apperance."
 	movement_cooldown = 10

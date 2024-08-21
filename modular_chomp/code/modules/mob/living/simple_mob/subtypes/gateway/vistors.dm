@@ -192,8 +192,8 @@
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "chick"
 	icon_living = "chick"
-	maxHealth = 50
-	health = 50
+	maxHealth = 25
+	health = 25
 	movement_cooldown = 0
 	unsuitable_atoms_damage = 0
 	projectiletype = null
@@ -203,8 +203,8 @@
 	pilot_type = null
 
 	attack_armor_pen = 25
-	melee_damage_lower = 10
-	melee_damage_upper = 40
+	melee_damage_lower = 5
+	melee_damage_upper = 20
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/kiting
 	mob_size = MOB_MINISCULE
 	density = 0
