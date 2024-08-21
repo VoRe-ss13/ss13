@@ -1,23 +1,15 @@
-<<<<<<< HEAD
-=======
 
 /*
 /mob/living/simple_mob/humanoid/cultist
 	maxHealth = 75
 	health = 75
 */
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 /mob/living/simple_mob/humanoid/cultist/human
 	movement_cooldown = 1
 
 /mob/living/simple_mob/humanoid/cultist/caster
 	movement_cooldown = 1
 	projectiletype = /obj/item/projectile/energy/inversion
-<<<<<<< HEAD
-
-/mob/living/simple_mob/humanoid/cultist/tesh
-	movement_cooldown = -1
-=======
 	melee_damage_lower = 15 //Old 7
 	melee_damage_upper = 15
 
@@ -27,22 +19,10 @@
 	melee_damage_upper = 15
 	maxHealth = 37
 	health = 37
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 
 /mob/living/simple_mob/humanoid/cultist/castertesh
 	movement_cooldown = -1
 	projectiletype = /obj/item/projectile/energy/inversion
-<<<<<<< HEAD
-
-/mob/living/simple_mob/humanoid/cultist/elite
-	movement_cooldown = 1
-/mob/living/simple_mob/humanoid/cultist/magus
-	movement_cooldown = 1
-	projectiletype = /obj/item/projectile/energy/inversion
-
-/mob/living/simple_mob/humanoid/cultist/hunter
-	maxHealth = 175 //Ehhh, this AI is like mini-boss at best
-=======
 	melee_damage_lower = 15
 	melee_damage_upper = 15
 	maxHealth = 50
@@ -63,7 +43,6 @@
 
 /mob/living/simple_mob/humanoid/cultist/hunter
 	maxHealth = 175 //Ehhh, this AI is like mini-boss at best //Old 87
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	health = 175
 	movement_cooldown = 0
 
@@ -89,11 +68,7 @@
 	desc = "An indiuval wrapped up in a makeshift rig, made from fallen cultist."
 	icon_state = "cobra-cultist"
 	icon_living = "cobra-cultist"
-<<<<<<< HEAD
-	maxHealth = 150
-=======
 	maxHealth = 150 //Old 75
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	health = 150
 
 	faction = "cult"
@@ -105,13 +80,8 @@
 	response_harm = "hits"
 
 	harm_intent_damage = 5
-<<<<<<< HEAD
-	melee_damage_lower = 15
-	melee_damage_upper = 25
-=======
 	melee_damage_lower = 15 //old 7
 	melee_damage_upper = 25 //old 15
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	attack_sharp = 1
 	attack_edge = 1
 	attacktext = list("slashed", "stabbed")

@@ -2,23 +2,16 @@
 /mob/living/simple_mob/animal/giant_spider/carrier //Disrupter, old 100
 	maxHealth = 60
 	health = 60
-<<<<<<< HEAD
-=======
 	//melee_damage_lower = 4
 	//melee_damage_upper = 12
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 
 /mob/living/simple_mob/animal/giant_spider/electric //disrupter, old 210
 	maxHealth = 60
 	health = 60
 	projectiletype = /obj/item/projectile/energy/mob/electric_spider
-<<<<<<< HEAD
-
-=======
 	//melee_damage_lower = 5
 	//melee_damage_upper = 12
 /*
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 /mob/living/simple_mob/animal/giant_spider/frost //tank, old 175
 	maxHealth = 120
 	health = 120
@@ -218,7 +211,4 @@
 
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-<<<<<<< HEAD
-=======
 	*/
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))

@@ -45,13 +45,8 @@
 	color = "#A020F0"
 
 /obj/item/shield_projector/rectangle/automatic/hivebot_drone
-<<<<<<< HEAD
-	shield_health = 100
-	max_shield_health = 100
-=======
 	shield_health = 100 //Old 50
 	max_shield_health = 100 //Old 50
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	shield_regen_delay = 5 SECONDS
 	shield_regen_amount = 20
 	size_x = 3

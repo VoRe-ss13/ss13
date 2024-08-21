@@ -3,7 +3,7 @@
 	movement_cooldown = 10
 	say_list_type = /datum/say_list/malf_drone/drone_aerostat
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/kiting/threatening/drone_aerostat
-	
+
 /datum/say_list/malf_drone/drone_aerostat
 	speak = list("ALERT.","Hostile-ile-ile entities dee-twhoooo-wected.","Threat parameterszzzz- szzet.","Bring sub-sub-sub-systems uuuup to combat alert alpha-a-a.")
 	emote_see = list("beeps menacingly","whirrs threateningly","scans its immediate vicinity")
@@ -20,9 +20,6 @@
 
 /datum/ai_holder/simple_mob/ranged/kiting/threatening/drone_aerostat
 	threaten_delay = 10 SECOND
-<<<<<<< HEAD
-	threaten_timeout = 30 SECONDS
-=======
 	threaten_timeout = 30 SECONDS
 /* Combat refactor walkback
 /mob/living/simple_mob/mechanical/combat_drone
@@ -45,4 +42,3 @@
 	shield_regen_amount = 10
 	size_x = 1
 	size_y = 1
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))

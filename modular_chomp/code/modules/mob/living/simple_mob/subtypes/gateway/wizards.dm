@@ -18,11 +18,7 @@
 
 	faction = "vr"
 
-<<<<<<< HEAD
-	maxHealth = 100
-=======
 	maxHealth = 100 //Old 50
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	health = 100
 	movement_cooldown = 1
 	unsuitable_atoms_damage = 0

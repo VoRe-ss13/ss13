@@ -49,11 +49,7 @@
 
 /obj/item/projectile/bullet/rifle/clockwork
 	fire_sound = 'modular_chomp/sound/weapons/clockwork/cwc_rifle_fire.ogg'
-<<<<<<< HEAD
-	damage = 20
-=======
 	damage = 20 //Old 10
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	hud_state = "rifle_heavy"
 
 /obj/item/projectile/beam/shock/clockwork
@@ -66,11 +62,7 @@
 	tracer_type = /obj/effect/projectile/tracer/voltbeam
 	impact_type = /obj/effect/projectile/impact/voltbeam
 
-<<<<<<< HEAD
-	damage = 40
-=======
 	damage = 40 //Old 20
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	agony = 15
 	eyeblur = 2
 	hitsound = 'sound/effects/lightningshock.ogg'

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /* Combat refactor walkback
 /mob/living/simple_mob/construct/juggernaut
 	maxHealth = 100
@@ -11,7 +9,6 @@
 	maxHealth = 300
 	health = 300
 */
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 /mob/living/simple_mob/construct/juggernaut/behemoth/unstoppable
 	name = "Behemoth"
 	real_name = "Behemoth"

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 //Combat refactor changes commented out
 /*
 /mob/living/simple_mob/animal/space/alien
@@ -41,7 +39,6 @@
 	melee_damage_upper = 12
 */
 //what are this things?
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 /mob/living/simple_mob/animal/space/alien/sentinel/praetorian/echo
 	name = "alien Echopraetorian"
 	color = "#424242"
@@ -113,11 +110,7 @@
 	health = 500
 	maxHealth = 500
 	melee_damage_lower = 25
-<<<<<<< HEAD
-	melee_damage_upper = 50
-=======
 	melee_damage_upper = 30
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	movement_cooldown = 12
 	movement_shake_radius = 7
 	needs_reload = 1
@@ -135,11 +128,7 @@
 	health = 1250
 	maxHealth = 1250
 	melee_damage_lower = 25
-<<<<<<< HEAD
-	melee_damage_upper = 50
-=======
 	melee_damage_upper = 30
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	movement_cooldown = 12
 	movement_shake_radius = 7
 	needs_reload = 1

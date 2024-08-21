@@ -6,11 +6,7 @@
 	icon_state = "impact_beam_heavy"
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-<<<<<<< HEAD
-	damage = 60
-=======
 	damage = 60 //Old 25
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	armor_penetration = 30
 	light_range = 3
 	light_power = 1
@@ -21,11 +17,7 @@
 	icon_state = "impact_laser"
 	fire_sound = 'sound/weapons/Laser.ogg'
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-<<<<<<< HEAD
-	damage = 40
-=======
 	damage = 40 //old 20
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	armor_penetration = 10
 	damage_type = BURN
 	check_armour = "laser"
@@ -35,11 +27,7 @@
 	icon_state = "impact_laser"
 	fire_sound = 'sound/weapons/Laser.ogg'
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-<<<<<<< HEAD
-	damage = 30
-=======
 	damage = 30 //Old 10
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	armor_penetration = 0
 	damage_type = BURN
 	check_armour = "laser"
@@ -86,11 +74,7 @@
 	light_color = "#FF0099"
 
 	hud_state = "plasma_rifle"
-<<<<<<< HEAD
-	damage = 48
-=======
 	damage = 48 //Old 25
->>>>>>> 99830636d9 ([READY] Walks back combat refactor, plus ammo balance changes (#8728))
 	armor_penetration = 10
 
 
