@@ -32,72 +32,17 @@
 
 	color = null //color is selected when spawned
 
-<<<<<<< HEAD
-	max_buckled_mobs = 0 //No Yeehaw
-	can_buckle = FALSE
-	buckle_movable = FALSE
-
-	say_list_type = /datum/say_list/zorgoia
-	vore_active = 1
-	vore_capacity = 3 //These bois can nom a bunch!
-	vore_pounce_chance = 35	//More likely to nom
-=======
 	vore_active = 1
 	vore_capacity = 3
 	vore_icons = 0 //The icon system down there handles the vore belly
 	vore_pounce_chance = 35
 	vore_bump_chance = 25
->>>>>>> b6336b3d48 (Zorgoia patches (#8784))
 	vore_icons = SA_ICON_LIVING | SA_ICON_REST
 	vore_stomach_name = "stomach" //Might make a better vore text but have this one for now.
 	vore_stomach_flavor = "You find yourself greedily gulped down into the zorgoia's stomach; the walls are surprisingly roomy in comparison to other critters of this size as their stomach makes up a majority of their long noodle shaped body. Your body contorting with the zorgoias long shape as every inch of you is tightly bound by their glowy walls."
 	vore_default_contamination_flavor = "Acrid"
 	vore_default_item_mode = IM_DIGEST
 
-<<<<<<< HEAD
-	// CHOMPAdd: Don't think its checked, but just in case
-	species_sounds = "Canine"
-	pain_emote_1p = list("yelp", "whine", "bark", "growl")
-	pain_emote_3p = list("yelps", "whines", "barks", "growls")
-
-/mob/living/simple_mob/vore/otie/zorgoia/New()
-	..()
-	switch(rand(9))
-		if(0)
-			color = "#1a00ff"
-		if(1)
-			color = "#6c5bff"
-		if(2)
-			color = "#ff00fe"
-		if(3)
-			color = "#ff0000"
-		if(4)
-			color = "#00d3ff"
-		if(5)
-			color = "#00ff7c"
-		if(6)
-			color = "#00ff35"
-		if(7)
-			color = "#e1ff00"
-		if(8)
-			color = "#ff9f00"
-		if(9)
-			color = "#393939"
-
-/mob/living/simple_mob/vore/otie/zorgoia/feral //gets the pet2tame feature. starts out hostile tho so get gamblin'
-	name = "agressive zorgoia"
-	desc = "It's a a reptilian mammal hybrid, known for its voracious nature and love for fruits. By more popular terms its refered to as the furry slinky! This one seems quite hungry and in a bad mood!"
-	faction = "virgo3b"
-	tame_chance = 10 // Only a 1 in 10 chance of success. It's feral. What do you expect?
-	min_oxy = 0
-	max_oxy = 0
-	min_tox = 0
-	max_tox = 0
-	min_co2 = 0
-	max_co2 = 0
-	min_n2 = 0
-	max_n2 = 0
-=======
 
 	can_be_drop_prey = FALSE
 	allow_mind_transfer = TRUE
@@ -345,7 +290,6 @@
 	icon = 'modular_chomp/icons/mob/zorgoia64x32.dmi'
 	vore_capacity = 3
 	//Heads up, the order of these overlays stacking on top of each other is different from the array order. So goia_overlay[1] is the belly, but rendering on top of everything at the end instead
->>>>>>> b6336b3d48 (Zorgoia patches (#8784))
 
 /mob/living/simple_mob/vore/otie/zorgoia/friendly //gets the pet2tame feature and doesn't kill you right away
 	name = "friendly zorgoia"
