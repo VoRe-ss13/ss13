@@ -1,27 +1,54 @@
+
+/*
+/mob/living/simple_mob/humanoid/cultist
+	maxHealth = 75
+	health = 75
+*/
 /mob/living/simple_mob/humanoid/cultist/human
 	movement_cooldown = 1
+	melee_damage_lower = 15
+	melee_damage_upper = 15
 
 /mob/living/simple_mob/humanoid/cultist/caster
 	movement_cooldown = 1
 	projectiletype = /obj/item/projectile/energy/inversion
+	melee_damage_lower = 15 //Old 7
+	melee_damage_upper = 15
 
 /mob/living/simple_mob/humanoid/cultist/tesh
 	movement_cooldown = -1
+	melee_damage_lower = 15 //Old 7
+	melee_damage_upper = 15
+	maxHealth = 37
+	health = 37
 
 /mob/living/simple_mob/humanoid/cultist/castertesh
 	movement_cooldown = -1
 	projectiletype = /obj/item/projectile/energy/inversion
+	melee_damage_lower = 15
+	melee_damage_upper = 15
+	maxHealth = 50
+	health = 50
 
 /mob/living/simple_mob/humanoid/cultist/elite
 	movement_cooldown = 1
+	melee_damage_lower = 20
+	melee_damage_upper = 20
+
 /mob/living/simple_mob/humanoid/cultist/magus
 	movement_cooldown = 1
 	projectiletype = /obj/item/projectile/energy/inversion
+	maxHealth = 150 //Old 100
+	health = 150
+	melee_damage_lower = 15
+	melee_damage_upper = 15
 
 /mob/living/simple_mob/humanoid/cultist/hunter
-	maxHealth = 175 //Ehhh, this AI is like mini-boss at best
+	maxHealth = 175 //Ehhh, this AI is like mini-boss at best //Old 87
 	health = 175
 	movement_cooldown = 0
+	melee_damage_lower = 21	//Saw Cleaver Brutality
+	melee_damage_upper = 21
 
 /mob/living/simple_mob/humanoid/cultist/human/bloodjaunt/fireball //Teleporting Cultists, now with fireballs
 	name = "Burning Mage"
@@ -34,9 +61,8 @@
 	movement_cooldown = 0
 
 	harm_intent_damage = 5
-	melee_damage_lower = 5
-	melee_damage_upper = 10
-
+	melee_damage_lower = 7
+	melee_damage_upper = 7
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged
 	projectiletype = /obj/item/projectile/energy/fireball
 
@@ -45,7 +71,7 @@
 	desc = "An indiuval wrapped up in a makeshift rig, made from fallen cultist."
 	icon_state = "cobra-cultist"
 	icon_living = "cobra-cultist"
-	maxHealth = 150
+	maxHealth = 150 //Old 75
 	health = 150
 
 	faction = "cult"
@@ -57,8 +83,8 @@
 	response_harm = "hits"
 
 	harm_intent_damage = 5
-	melee_damage_lower = 15
-	melee_damage_upper = 25
+	melee_damage_lower = 15 //old 7
+	melee_damage_upper = 25 //old 15
 	attack_sharp = 1
 	attack_edge = 1
 	attacktext = list("slashed", "stabbed")
@@ -68,6 +94,15 @@
 	projectilesound = 'sound/weapons/spiderlunge.ogg'
 	movement_cooldown = 2
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged
+
+/obj/item/shield_projector/rectangle/automatic/magus
+	name = "cult shield stone"
+	desc = "A stone wielded by only the most powerful of cult leaders. It projects a shield around the user."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "implant_melted"
+	shield_health = 100
+	max_shield_health = 100
+	shield_regen_delay = 10 SECONDS
 
 //Nibbler//
 /mob/living/simple_mob/humanoid/cultist/human/bloodjaunt/fireball
@@ -229,15 +264,3 @@
 		"The bubbling of the carnivorous, little predator's belly cuts off the sounds outside, the greedy walls working in and giving you a fresh coat of enzymes.",
 		"The %pred traces their claws over your form and sings an incantation, and you feel your strength wane as the walls work in with renewed vigor.",
 		"The motion of the %pred's trotting sloshes and sways you from side to side, occasionally coating you in more hot fluids! Eating away your stamina with irragular flexes to allow them to keep eating you away." ,)
-
-
-//Projectile//
-/obj/item/projectile/energy/inversion
-	name = "inversion blast"
-	icon = 'icons/obj/projectiles_impact.dmi'
-	icon_state = "impact_invert"
-	damage = 15
-	armor_penetration = 60
-	damage_type = BURN
-	check_armour = "laser"
-	color = "#ffffff"

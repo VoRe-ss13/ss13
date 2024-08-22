@@ -62,3 +62,61 @@
   - qol: 3 more slots for the mailbag
   - bugfix: Fixed mailbag not able to pick up mail off the ground
   - bugfix: Fixed various runtimes regarding balloon alerts
+2024-08-15:
+  VoRe-bot:
+  - rscdel: removed text notifs when prepping to throw/catch stuff
+  - rscadd: Mail Scanner, a tool for mail carriers to verify mail delivery
+  - qol: Mailman > Mail Carrier
+  - qol: Mail Carriers start with their job stuff in their backpack now
+  - bugfix: accidentally had patches on patchless tan jacket's inventory sprite
+  - rscadd: talon miners now have a job icon for AR HUDs
+  - bugfix: fixed tails layering weirdly under the character on character setup
+  - qol: electrical storms have a high chance to flicker the lights instead of obliterating
+      them
+  - rscadd: Reagent Dispensers now allow you to save a series of button presses as
+      a recipe/macro and replay it. This is per-dispenser per-shift.
+  - bugfix: random loot spawners delete properly
+  - qol: adds counter-clockwise rotation to pipes, grave markers, windoors, infrared
+      assemblies, vending machines, drill braces, floor tubes, chemical dispensers,
+      water coolers, disposal pipes, shield capacitors, and micro roads
+  - bugfix: prevents cortical borers from crashing VR pods
+  - qol: removes 0 tick blood dry timers from maploaded blood
+  - bugfix: prevents storing grabs in crates
+  - bugfix: fixes look-up verb when outdoors
+  - rscadd: vehicles obey gravity
+  - rscadd: cargo tug can dangerously traverse stairs
+  - bugfix: fixes incorrect "TECH_MAGNETS" defines
+  - bugfix: fixes med/sec bot runtimes
+  - bugfix: fixes injury/stumblevore proccing every step when buckled to borgs or
+      taurs
+  - bugfix: fixes item interactions with virus dishes
+  - bugfix: Species blood color is used again
+  - qol: Blood color reset button now uses the species' default
+  - qol: Blood color button now has a colored dot
+  - qol: Shorter autoresleeve time after steps mechanics are applied
+  - qol: Shoes muffle the death message
+  - rscadd: More emotes for mind-binded individuals
+  - bugfix: Souls caught in the vore soulcatcher will now actually have their prefs.
+  - qol: an unarmoured version of the martian miner coat is now available in loadouts
+  - qol: emergency beacon behaviour tweaks; shorter activation, fixed deployment location,
+      and integrated micro-gps
+  - qol: added emergency beacons to pilot lockers
+  - qol: deployed emergency beacons can be disassembled with a wrench
+  - rscadd: added `isopenturf` helper, returns true if the checked turf is `space`
+      or `simulated/open`
+  - rscadd: added `isnonsolidturf` helper, returns true if the checked turf is `space`,
+      `simulated/open`, `simulated/floor/water`, or `simulated/floor/lava`
+  - rscadd: Added in smol raptor borgs from bubber station!
+  - qol: reduces nutrition gain of trash for sleepers from 5 to 1, there's enough
+      ways to get nutrition and some units, like janitors can collect a lot of trash
+      into their sleeper
+  - bugfix: techmaint tiles are no longer destroyed when crowbarred up, and replacements
+      can be made using steel sheets
+  - bugfix: techfloor, steel hi-grip floor, and techgrid floor tiles can all be made
+      using steel as well
+2024-08-22:
+  VoRe-bot:
+  - rscadd: Dullahan Clownborg
+  - rscadd: panel covers to dullahan and smol raptors
+  - rscadd: dullahan syndicate sprite to only medic
+  - bugfix: Fixed various proximity related runtimes

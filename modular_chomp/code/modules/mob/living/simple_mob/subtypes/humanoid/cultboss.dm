@@ -1,10 +1,10 @@
 /mob/living/simple_mob/humanoid/cultist/magus/rift
 	name = "Rift Magus"
-	maxHealth = 450 //Boss Mobs should be tanky.
+	maxHealth = 450 //Boss Mobs should be tanky. //Old 225
 	health = 450
 
-	melee_damage_lower = 30
-	melee_damage_upper = 45
+	melee_damage_lower = 30 //Old 15
+	melee_damage_upper = 45 //Old 22
 	attack_armor_pen = 50
 	heat_resist = 1
 	cold_resist = 1
@@ -26,7 +26,7 @@
 	damage_fatigue_mult = 0.5 // We don't want to give them a flat, huge boost to attack speed, but at the same time, make them fight harder the closer they are to dying.
 	injury_enrages = TRUE
 
-	armor_soak = list(
+	armor_soak = list( //Combat refactor walk back. old 2 armor_soak
 		"melee" = 5,
 		"bullet" = 5,
 		"laser" = 5,
