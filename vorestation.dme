@@ -5007,12 +5007,9 @@
 #include "modular_chomp\code\modules\projectiles\ammo_refactor\gun_overrides.dm"
 #include "modular_chomp\code\modules\projectiles\clockwork\clockwork_guns_ch.dm"
 #include "modular_chomp\code\modules\projectiles\guns\alts.dm"
-<<<<<<< HEAD
-=======
 #include "modular_chomp\code\modules\projectiles\guns\beam.dm"
 #include "modular_chomp\code\modules\projectiles\guns\bullet.dm"
 #include "modular_chomp\code\modules\projectiles\guns\magnetic.dm"
->>>>>>> c2a55e4bc3 (combat update hotfix (#8783))
 #include "modular_chomp\code\modules\projectiles\guns\phase.dm"
 #include "modular_chomp\code\modules\projectiles\guns\special.dm"
 #include "modular_chomp\code\modules\projectiles\guns\staffs.dm"
