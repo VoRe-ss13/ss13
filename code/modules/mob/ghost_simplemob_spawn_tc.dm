@@ -86,7 +86,8 @@ GLOBAL_LIST_INIT(ghost_spawnable_mobs,list(
 		"Wolf - Dog" = /mob/living/simple_mob/vore/wolf/direwolf/dog,
 		"Wolf - Dog - Sec" = /mob/living/simple_mob/vore/wolf/direwolf/dog/sec,
 		"Wolf - Andrewsarchus" = /mob/living/simple_mob/vore/wolf/direwolf/andrews
-	)
+	),
+	"Zorgoia" = /mob/living/simple_mob/vore/zorgoia,// TORCHAdd - Add chomps zorgoia with bigdragon customization
 	))
 
 /mob/observer/dead/verb/join_as_simplemob()	//Copypasta from join_as_drone()
