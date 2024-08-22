@@ -2,13 +2,14 @@
 	name = "zorgoia"
 	desc = "It's a a reptilian mammal hybrid, known for its voracious nature and love for fruits. By more popular terms its referred to as the furry slinky!"
 	tt_desc = "Zorgoyuh slinkus"
-	icon = 'modular_chomp/icons/mob/vore64x32_ch.dmi'
-	icon_state = "zorgoia"
-	icon_living = "zorgoia"
-	icon_dead = "zorgoia-dead"
+	icon = 'modular_chomp/icons/mob/zorgoia64x32.dmi' //We use the new modular ones now
+	icon_state = null //Overlay system will make the goias
+	icon_living = null
+	icon_rest = null
+	icon_dead = "zorgoia-death"
 	faction = "zorgoia"
-	maxHealth = 100
-	health = 100
+	maxHealth = 150 //chonk
+	health = 150
 	melee_damage_lower = 5
 	melee_damage_upper = 15 //Don't break my bones bro
 	see_in_dark = 5
@@ -18,6 +19,13 @@
 	attacktext = list("mauled")
 	friendly = list("nuzzles", "noses softly at", "noseboops", "headbumps against", "nibbles affectionately on")
 	meat_amount = 5
+	has_eye_glow = TRUE //(evil)
+
+	old_x = 0
+	old_y = 0
+	default_pixel_x = 0
+	pixel_x = 0
+	pixel_y = 0
 
 	max_buckled_mobs = 1 //Yeehaw
 	can_buckle = TRUE
@@ -291,20 +299,14 @@
 	vore_capacity = 3
 	//Heads up, the order of these overlays stacking on top of each other is different from the array order. So goia_overlay[1] is the belly, but rendering on top of everything at the end instead
 
-/mob/living/simple_mob/vore/otie/zorgoia/friendly //gets the pet2tame feature and doesn't kill you right away
-	name = "friendly zorgoia"
-	desc = "It's a a reptilian mammal hybrid, known for its voracious nature and love for fruits. By more popular terms its refered to as the furry slinky! This one seems harmless and friendly!"
-	faction = "neutral"
-	tamed = 1
+	var/image/I = image(icon, "[goia_overlays[2]][resting? "-rest" : null]", pixel_x = -16)
+	I.color = goia_overlays[goia_overlays[2]]
+	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+	I.plane = MOB_PLANE
+	I.layer = MOB_LAYER
+	add_overlay(I)
+	qdel(I)
 
-<<<<<<< HEAD
-/datum/say_list/zorgoia
-	speak = list("Prurr.", "Murrr.")
-	emote_hear = list("chuffs", "murrs", "churls", "hisses", "lets out a cougar like scream", "yawns")
-	emote_see = list("licks their maw", "stretches", "yawns", "noodles")
-	say_maybe_target = list("weh?")
-	say_got_target = list("Rurrr!", "ROAR!", "RAH!")
-=======
 	I = image(icon, "[goia_overlays[3]][resting? "-rest" : null]", pixel_x = -16)
 	I.color = goia_overlays[goia_overlays[3]]
 	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
@@ -437,4 +439,3 @@
 	.=..()
 	if(new_holder.tamed)
 		hostile = FALSE
->>>>>>> b6336b3d48 (Zorgoia patches (#8784))

@@ -114,3 +114,9 @@
       can be made using steel sheets
   - bugfix: techfloor, steel hi-grip floor, and techgrid floor tiles can all be made
       using steel as well
+2024-08-22:
+  VoRe-bot:
+  - rscadd: Dullahan Clownborg
+  - rscadd: panel covers to dullahan and smol raptors
+  - rscadd: dullahan syndicate sprite to only medic
+  - bugfix: Fixed various proximity related runtimes
