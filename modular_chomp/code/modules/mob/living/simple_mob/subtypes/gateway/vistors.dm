@@ -3,7 +3,7 @@
 	icon = 'icons/mob/animal_vg.dmi'
 	icon_state = "drone3"
 	icon_living = "drone3"
-	maxHealth = 50
+	maxHealth = 50 //Old 25
 	health = 50
 	movement_cooldown = 0
 	unsuitable_atoms_damage = 0
@@ -68,13 +68,14 @@
 
 	faction = "vistor"
 
-	maxHealth = 150
+	maxHealth = 150 //Old 75
 	health = 150
 	movement_cooldown = 0
 	unsuitable_atoms_damage = 0
 	projectiletype = /obj/item/projectile/energy/homing_bolt
 	melee_attack_delay = 4 SECOND
-	melee_damage_lower = 25
+
+	melee_damage_lower = 25 //Old 12
 	melee_damage_upper = 25
 	ai_holder_type = /datum/ai_holder/simple_mob/intentional/adv_dark_gygax
 
@@ -138,7 +139,7 @@
 	icon = 'icons/mob/animal_vg.dmi'
 	icon_state = "mushroom"
 	icon_living = "mushroom"
-	maxHealth = 200
+	maxHealth = 200 //Old 100
 	health = 200
 	movement_cooldown = 0
 	unsuitable_atoms_damage = 0
@@ -169,7 +170,7 @@
 	icon = 'icons/mob/animal_vg.dmi'
 	icon_state = "scarybat"
 	icon_living = "scarybat"
-	maxHealth = 200
+	maxHealth = 200 //Old 100
 	health = 200
 	movement_cooldown = 0
 	unsuitable_atoms_damage = 0
@@ -186,13 +187,13 @@
 	loot_list = list(/obj/item/clothing/suit/armor/tesla/vistor = 100
 			)
 
-/mob/living/simple_mob/mechanical/mecha/vistor/vistoryellow
+/mob/living/simple_mob/mechanical/mecha/vistor/vistoryellow //Combat refactor walkback: This one seems fine
 	name = "vistor yellow"
 	icon = 'icons/mob/animal.dmi'
 	icon_state = "chick"
 	icon_living = "chick"
-	maxHealth = 50
-	health = 50
+	maxHealth = 25
+	health = 25
 	movement_cooldown = 0
 	unsuitable_atoms_damage = 0
 	projectiletype = null
@@ -202,8 +203,8 @@
 	pilot_type = null
 
 	attack_armor_pen = 25
-	melee_damage_lower = 10
-	melee_damage_upper = 40
+	melee_damage_lower = 5
+	melee_damage_upper = 20
 	ai_holder_type = /datum/ai_holder/simple_mob/ranged/kiting
 	mob_size = MOB_MINISCULE
 	density = 0
@@ -213,7 +214,7 @@
 	icon = 'icons/mecha/mecha.dmi'
 	icon_state = "honker"
 	icon_living = "honker"
-	maxHealth = 300
+	maxHealth = 300 //Old 150
 	health = 300
 	movement_cooldown = 0
 	unsuitable_atoms_damage = 0
@@ -268,7 +269,7 @@
 	icon = 'icons/mecha/mecha.dmi'
 	icon_state = "mime"
 	icon_living = "mime"
-	maxHealth = 300
+	maxHealth = 300 //Old 150
 	health = 300
 	movement_cooldown = 0
 	damage_fatigue_mult = 0
