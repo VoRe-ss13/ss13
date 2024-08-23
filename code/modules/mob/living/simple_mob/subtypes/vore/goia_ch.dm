@@ -77,14 +77,6 @@
 	faction = "neutral"
 	tamed = 1
 
-<<<<<<< HEAD
-/datum/say_list/zorgoia
-	speak = list("Prurr.", "Murrr.")
-	emote_hear = list("chuffs", "murrs", "churls", "hisses", "lets out a cougar like scream", "yawns")
-	emote_see = list("licks their maw", "stretches", "yawns", "noodles")
-	say_maybe_target = list("weh?")
-	say_got_target = list("Rurrr!", "ROAR!", "RAH!")
-=======
 	I = image(icon, "[goia_overlays[3]][resting? "-rest" : null]", pixel_x = -16)
 	I.color = goia_overlays[goia_overlays[3]]
 	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
@@ -214,4 +206,3 @@
 	.=..()
 	if(new_holder.tamed)
 		hostile = FALSE
->>>>>>> 1cdbf715ca (fixes goia grabs (#8806))
