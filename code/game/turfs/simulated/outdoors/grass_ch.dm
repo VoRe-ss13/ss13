@@ -139,8 +139,7 @@ GLOBAL_LIST_INIT(grass_animals,list(
 		/mob/living/simple_mob/animal/passive/mouse/jerboa = 5,
 		/mob/living/simple_mob/vore/wolf/direwolf = 5,
 		/mob/living/simple_mob/vore/aggressive/rat = 5,
-		/mob/living/simple_mob/vore/horse/big = 10,
-		/mob/living/simple_mob/vore/otie/zorgoia/feral = 1
+		/mob/living/simple_mob/vore/horse/big = 10
 		),
 //TORCHEdit End
 ))

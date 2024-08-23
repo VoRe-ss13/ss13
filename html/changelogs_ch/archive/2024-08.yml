@@ -114,3 +114,32 @@
       can be made using steel sheets
   - bugfix: techfloor, steel hi-grip floor, and techgrid floor tiles can all be made
       using steel as well
+2024-08-22:
+  VoRe-bot:
+  - rscadd: Dullahan Clownborg
+  - rscadd: panel covers to dullahan and smol raptors
+  - rscadd: dullahan syndicate sprite to only medic
+  - bugfix: Fixed various proximity related runtimes
+2024-08-23:
+  VoRe-bot:
+  - balance: Colt-Single-Action 25 -> 35
+  - balance: Most small caliber revolvers 10 -> 25
+  - bugfix: Fixed a bug that made half of the lower caliber revolvers doing the improper
+      amount of damage.
+  - balance: Mob HP has been buffed back to normal values, mostly double the HP
+  - balance: Projectiles are notably more lethal now. Double the amount, damage breakpoints
+      are now 20/40/60 instead of 10/20/40,
+  - bugfix: Fixes revolvers using the wrong projectile path.
+  - balance: Laser weaponry now has less shots to compensate for higher damage.
+  - balance: 14.5mm ammo is now separate from big ammo.
+  - balance: Foam and riot foam darts are now printable
+  - balance: increased cost of 14.5mm ammo
+  - bugfix: Fixed autolathes printing the wrong bullet paths involving 14.5
+  - balance: Foam Riot Darts 50->20
+  - qol: Foam riot darts are now printable
+  - bugfix: Fixed weapons that fire medium/large bullets firing the wrong projectile.
+  - bugfix: Fixed rubbershot being as lethal as the real thing.
+  - sound: Added better sounds for the sniper rifles.
+  - balance: Rubbershot doesn't cause bleeding anymore.
+  purplefoxy27:
+  - rscdel: Disables the wilderness sky z-level to improve performance
