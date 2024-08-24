@@ -94,7 +94,7 @@
 	var/list/department_hours = list()	// VOREStation Edit - Track hours of leave accured for each department.
 	var/list/play_hours	= list() // VOREStation Edit - Tracks total playtime hours for each departments.
 
-	preload_rsc = PRELOAD_RSC
+	preload_rsc = "http://dl.dropboxusercontent.com/scl/fi/euskc2s3mrd8qeqbbth3d/resource.zip?rlkey=g08hkb6wk8l84698ydi2nowyy&st=vrvcqwsf&dl=0" //TORCHEdit temporary fix for server net issues
 
 	var/global/obj/screen/click_catcher/void
 
