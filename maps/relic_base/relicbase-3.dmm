@@ -5213,7 +5213,8 @@
 /area/rnd/research)
 "cud" = (
 /obj/machinery/door/airlock/voidcraft{
-	name = "Wilderness Containment"
+	name = "Wilderness Containment";
+	locked = 1
 	},
 /obj/structure/cable/heavyduty{
 	d1 = 4;
@@ -16551,12 +16552,6 @@
 	},
 /turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_8)
-"gKX" = (
-/obj/effect/map_effect/portal/line/side_a{
-	dir = 4
-	},
-/turf/simulated/shuttle/wall/voidcraft/hard_corner,
-/area/surface/outpost/wall/checkpoint)
 "gLq" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -16839,12 +16834,6 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/chapel/office)
-"gRP" = (
-/obj/effect/map_effect/portal/line/side_a{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel_dirty,
-/area/surface/outpost/wall/checkpoint)
 "gRR" = (
 /obj/machinery/camera/network/exterior{
 	c_tag = "EXT - Research South 5"
@@ -32566,6 +32555,13 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/debriefing)
+"nnB" = (
+/obj/machinery/door/airlock/voidcraft{
+	name = "Wilderness Containment";
+	locked = 1
+	},
+/turf/simulated/floor/tiled/steel_dirty,
+/area/surface/outpost/wall/checkpoint)
 "nnE" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
@@ -52970,9 +52966,6 @@
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/fishing)
 "vwo" = (
-/obj/effect/map_effect/portal/line/side_a{
-	dir = 4
-	},
 /turf/unsimulated/wall/planetary/normal/thor,
 /area/surface/outpost/wall/checkpoint)
 "vwr" = (
@@ -57486,13 +57479,6 @@
 /obj/structure/stairs/spawner/west,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/cafeteria)
-"xml" = (
-/obj/effect/map_effect/portal/master/side_a{
-	dir = 4;
-	portal_id = "outpost_to_mines"
-	},
-/turf/unsimulated/wall/planetary/normal/thor,
-/area/surface/outpost/wall/checkpoint)
 "xmn" = (
 /obj/effect/landmark/start{
 	name = "Cargo Technician"
@@ -60814,13 +60800,13 @@ tMO
 tUG
 dJR
 vwo
-gKX
-gRP
-gRP
-gRP
-gRP
-gKX
-xml
+aBh
+abg
+abg
+abg
+abg
+aBh
+vwo
 tMO
 tMO
 tMO
@@ -61589,7 +61575,7 @@ acm
 cud
 jQM
 cPd
-adb
+nnB
 acm
 isN
 isN
