@@ -176,3 +176,11 @@
   - bugfix: 7.62 weapons now point to the right projectile path.
   - bugfix: The detectives .45 revolver now wont TF real bullets to rubber bullets
       if loaded with such.
+2024-08-25:
+  VoRe-bot:
+  - rscadd: Teppi plushie
+  - balance: Mech armor has been nerfed.
+  - bugfix: Fixed in-hand sprites for the m4 and m6
+  - sound: Modified all of the gun sounds.
+  - balance: limits item size of suitable vacuumable items to everything smaller than
+      huge size
