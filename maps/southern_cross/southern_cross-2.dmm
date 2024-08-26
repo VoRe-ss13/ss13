@@ -25842,6 +25842,12 @@
 /obj/effect/floor_decal/corner/red/bordercorner{
 	dir = 4
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/computer/rdconsole/security{
+	dir = 8
+	},
+>>>>>>> 4390c97f28 (Protolathes Fix: Round 2 (#8837))
 /turf/simulated/floor/tiled,
 /area/security/security_hallway)
 "bAm" = (
@@ -28459,6 +28465,12 @@
 /obj/machinery/ai_status_display{
 	pixel_y = -32
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/computer/rdconsole/medical{
+	dir = 1
+	},
+>>>>>>> 4390c97f28 (Protolathes Fix: Round 2 (#8837))
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "bIS" = (
@@ -32861,7 +32873,13 @@
 	dir = 4;
 	layer = 3
 	},
+<<<<<<< HEAD
 /obj/structure/reagent_dispensers/watertank/high,
+=======
+/obj/machinery/computer/rdconsole/service{
+	dir = 8
+	},
+>>>>>>> 4390c97f28 (Protolathes Fix: Round 2 (#8837))
 /turf/simulated/floor/tiled/hydro,
 /area/hydroponics)
 "bYq" = (
@@ -41636,6 +41654,12 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 6
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/computer/rdconsole/service{
+	dir = 1
+	},
+>>>>>>> 4390c97f28 (Protolathes Fix: Round 2 (#8837))
 /turf/simulated/floor/tiled,
 /area/janitor)
 "cAw" = (
@@ -51158,6 +51182,15 @@
 	},
 /turf/simulated/floor/lino,
 /area/chapel/office)
+<<<<<<< HEAD
+=======
+"gFZ" = (
+/obj/machinery/computer/rdconsole/cargo{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/office)
+>>>>>>> 4390c97f28 (Protolathes Fix: Round 2 (#8837))
 "gGj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -51526,6 +51559,19 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
+<<<<<<< HEAD
+=======
+"gQB" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/computer/rdconsole/engineering{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/engineering/workshop)
+>>>>>>> 4390c97f28 (Protolathes Fix: Round 2 (#8837))
 "gQR" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
