@@ -184,3 +184,7 @@
   - sound: Modified all of the gun sounds.
   - balance: limits item size of suitable vacuumable items to everything smaller than
       huge size
+2024-08-26:
+  VoRe-bot:
+  - bugfix: Weather beasts have their stats adjusted
+  - qol: The heavy fog weather beast has more of a tell to their attacks.
