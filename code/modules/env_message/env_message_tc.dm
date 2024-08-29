@@ -2,7 +2,7 @@ var/global/list/env_messages = list()
 
 /obj/effect/env_message
 	name = "Env message"
-	icon = 'icons/effects/env_message.dmi'
+	icon = 'icons/effects/env_message_tc.dmi'
 	icon_state = "env_message"
 	plane = PLANE_LIGHTING_ABOVE
 	mouse_opacity = TRUE
@@ -17,6 +17,11 @@ var/global/list/env_messages = list()
 /obj/effect/env_message/Destroy()
 	env_messages -= src
 	return ..()
+
+/obj/effect/env_message/examine(mob/user)
+	. = ..()
+	for(var/tckey in message_list)
+		. += message_list[tckey]
 
 /obj/effect/env_message/proc/add_message(var/tckey, var/message)
 	message_list[tckey] = message
@@ -67,7 +72,7 @@ var/global/list/env_messages = list()
 	if(!istype(src) || !get_turf(src) || !src.ckey)
 		return
 
-	var/new_message = sanitize(tgui_input_text(src, "Your Message:", "Env Message"))
+	var/new_message = sanitize(tgui_input_text(src, "Type in your message. It will be displayed to players who hover over the spot where you are right now. If you already have a message somewhere, it will be removed in the process. Please refrain from abusive or deceptive messages, but otherwise, feel free to be creative!", "Env Message"))
 
 	if(!new_message)
 		return
@@ -95,12 +100,12 @@ var/global/list/env_messages = list()
 	var/obj/effect/env_message/EM = locate(/obj/effect/env_message) in ourturf
 
 	if(EM)
-		var/answer = tgui_alert(src, "Do you want to remove this env message?", list("Yes", "Only My Message", "No"))
+		var/answer = tgui_alert(src, "Do you want to remove this env message? (Note: Selecting 'Yes' will remove other players' messages on this tyle too. Please don't remove other players' messages for no reason. Use 'Only My Message' to remove yours only.)", "Env Message", list("Yes", "Only My Message", "No"))
 		if(answer == "Yes")
 			qdel(EM)
 		else if(answer == "Only My Message")
 			clear_env_message(src.ckey)
 	else
-		var/answer = tgui_alert(src, "Do you want to remove your env message?", list("Yes", "No"))
+		var/answer = tgui_alert(src, "Do you want to remove your env message?", "Env Message", list("Yes", "No"))
 		if(answer == "Yes")
 			clear_env_message(src.ckey)
