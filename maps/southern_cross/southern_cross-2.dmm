@@ -51526,8 +51526,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
-<<<<<<< HEAD
-=======
 "gQB" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -51541,7 +51539,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/workshop)
->>>>>>> 247d2ae7b9 (Fixes departmental lathes changing to omni lathes (#8835))
 "gQR" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,

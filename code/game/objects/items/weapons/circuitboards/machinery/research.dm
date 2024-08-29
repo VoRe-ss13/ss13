@@ -55,8 +55,6 @@
 							/obj/item/weapon/stock_parts/manipulator = 2,
 							/obj/item/weapon/reagent_containers/glass/beaker = 2)
 
-<<<<<<< HEAD
-=======
 // CHOMPAdd - Departmental Lathes
 
 /obj/item/weapon/circuitboard/protolathe/science
@@ -89,7 +87,6 @@
 
 // CHOMPAdd End
 
->>>>>>> 247d2ae7b9 (Fixes departmental lathes changing to omni lathes (#8835))
 /obj/item/weapon/circuitboard/circuit_imprinter
 	name = T_BOARD("circuit imprinter")
 	build_path = /obj/machinery/r_n_d/circuit_imprinter
