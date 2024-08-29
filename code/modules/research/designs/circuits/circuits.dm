@@ -206,8 +206,6 @@ CIRCUITS BELOW
 	req_tech = list(TECH_DATA = 2, TECH_ENGINEERING = 2)
 	build_path = /obj/item/weapon/circuitboard/protolathe
 	sort_string = "HABAB"
-<<<<<<< HEAD
-=======
 	department = LATHE_ALL | LATHE_SCIENCE // CHOMPAdd
 
 // CHOMPEdit - Departmental Lathes
@@ -255,7 +253,6 @@ CIRCUITS BELOW
 	sort_string = "HADAG"
 
 // CHOMPEdit End
->>>>>>> 799892a1c6 (unique bord ids (#8846))
 
 /datum/design/circuit/circuit_imprinter
 	name = "circuit imprinter"
