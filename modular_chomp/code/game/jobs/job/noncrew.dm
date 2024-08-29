@@ -1,17 +1,9 @@
 /datum/job/noncrew
-<<<<<<< HEAD
-    title = JOB_OUTSIDER
-    disallow_jobhop = TRUE
-    total_positions = 6
-    spawn_positions = 6
-    supervisors = "nobody, but you fall under NanoTrasen's Unauthorized Personnel SOP while on NT property. Please read <a href='https://wiki.torchstation13.net/index.php/Rules#Outsiders_Guidelines'>the Outsider Guidelines</a> clearly before playing"
-=======
 	title = JOB_OUTSIDER
 	disallow_jobhop = TRUE
 	total_positions = 6
 	spawn_positions = 6
-	supervisors = "nobody, but you fall under NanoTrasen's Unauthorized Personnel SOP while on NT property. Please read <a href='https://wiki.chompstation13.net/index.php/Rules#Outsiders_Guidelines'>the Outsider Guidelines</a> clearly before playing"
->>>>>>> 2457aefda9 (New outsider alt title: Space Farer (outsider shuttles) (#8775))
+	supervisors = "nobody, but you fall under NanoTrasen's Unauthorized Personnel SOP while on NT property. Please read <a href='https://wiki.torchstation13.net/index.php/Rules#Outsiders_Guidelines'>the Outsider Guidelines</a> clearly before playing"
 
 	flag = NONCREW
 	departments = list(DEPARTMENT_NONCREW)
