@@ -188,3 +188,14 @@
   VoRe-bot:
   - bugfix: Weather beasts have their stats adjusted
   - qol: The heavy fog weather beast has more of a tell to their attacks.
+2024-08-29:
+  VoRe-bot:
+  - rscadd: Lesser lightweight
+  - rscadd: Alternate teppi plushie
+  - bugfix: overide left on a projectile has been switched off.
+  - bugfix: Needing extra pumps on full power frontier shotgun mode to end the sequence.
+  - rscadd: Frontier shotgun is added to the game, and exploration vendor.
+  - bugfix: Frontier Marksmen Rifle not starting with the correct firing speed
+  - rscadd: added research samples, for research. collect them using special sample
+      containers, then analyze them or reduce them into useful resources! or just
+      put them on a table and use them as a conversation piece.
