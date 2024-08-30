@@ -1,0 +1,4 @@
+author: "Heroman3003"
+delete-after: True
+changes:
+  - rscadd: "Added Env Messages, a system for leaving behind RP posts in the world with easy visibility."
