@@ -5522,6 +5522,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/security_hallway)
+"eNM" = (
+/obj/machinery/door/firedoor/glass,
+/turf/simulated/floor/tiled/dark,
+/area/quartermaster/storage)
 "eOe" = (
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/dorms/dorm_7/upstairs)
@@ -17237,7 +17241,7 @@
 	dir = 1;
 	name = "security camera"
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/dark,
 /area/quartermaster/storage)
 "oNq" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -28853,7 +28857,7 @@
 /turf/simulated/wall/r_wall,
 /area/surface/outpost/main/bar)
 "ydE" = (
-/turf/unsimulated/mask,
+/turf/simulated/open,
 /area/quartermaster/storage)
 "ydZ" = (
 /obj/machinery/recharge_station,
@@ -50247,8 +50251,8 @@ dsa
 qpf
 ggm
 ggm
-bag
-bag
+eNM
+eNM
 oMP
 ggm
 ggm

@@ -31018,6 +31018,9 @@
 /obj/structure/fans/tiny,
 /turf/simulated/floor/bmarble,
 /area/surface/outpost/main/dorms/dorm_5)
+"mJm" = (
+/turf/simulated/wall/elevator,
+/area/quartermaster/delivery)
 "mJy" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/water/atoll,
@@ -34133,7 +34136,7 @@
 /area/surface/outside/plains/outpost)
 "nWX" = (
 /obj/turbolift_map_holder/southern_cross/port,
-/turf/simulated/floor/plating,
+/turf/simulated/wall/elevator,
 /area/quartermaster/delivery)
 "nXu" = (
 /obj/effect/zone_divider,
@@ -44998,7 +45001,7 @@
 /obj/effect/floor_decal/corner/beige/bordercorner2{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/dark,
 /area/quartermaster/delivery)
 "syG" = (
 /obj/structure/table/steel_reinforced,
@@ -45358,7 +45361,7 @@
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/dark,
 /area/quartermaster/delivery)
 "sEl" = (
 /turf/simulated/floor/plating,
@@ -53842,7 +53845,7 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
 "vRh" = (
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled/dark,
 /area/quartermaster/delivery)
 "vRB" = (
 /turf/simulated/floor/wood,
@@ -80602,10 +80605,10 @@ bkB
 ybp
 uPu
 xZf
-vRh
-vRh
-vRh
-vRh
+mJm
+mJm
+mJm
+mJm
 nWX
 xZf
 rLe
@@ -80859,11 +80862,11 @@ tBi
 kQR
 tUO
 tUO
+mJm
 vRh
 vRh
 vRh
-vRh
-vRh
+mJm
 xZf
 fgv
 fgv
@@ -81116,11 +81119,11 @@ qRH
 hEH
 eRM
 tUO
+mJm
 vRh
 vRh
 vRh
-vRh
-vRh
+mJm
 xZf
 rLe
 fgv
@@ -81373,11 +81376,11 @@ dOs
 uml
 dHS
 tUO
+mJm
 vRh
 vRh
 vRh
-vRh
-vRh
+mJm
 xZf
 rLe
 fgv
@@ -81630,11 +81633,11 @@ cRW
 vgP
 ibD
 tUO
+mJm
 vRh
 vRh
 vRh
-vRh
-vRh
+mJm
 xZf
 hVQ
 fgv
@@ -81889,7 +81892,7 @@ xjF
 tUO
 xZf
 syw
-wgj
+vRh
 sDU
 xZf
 xZf
