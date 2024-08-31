@@ -464,6 +464,12 @@
 "akl" = (
 /turf/simulated/wall/r_wall,
 /area/medical/sleeper)
+"akn" = (
+/obj/machinery/computer/security/telescreen/bodycamera{
+	pixel_x = -32
+	},
+/turf/simulated/floor/carpet,
+/area/crew_quarters/heads/sc/hos)
 "akt" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -3603,9 +3609,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/security/armoury)
 "bNe" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/engineering/hallway/engineer_hallway)
 "bNK" = (
 /obj/effect/floor_decal/borderfloorblack{
@@ -8093,6 +8097,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/computer/security/telescreen/bodycamera{
+	pixel_y = -32
+	},
 /turf/simulated/floor/carpet,
 /area/security/warden)
 "dxA" = (
@@ -12111,7 +12118,9 @@
 /area/storage/primary)
 "eVE" = (
 /obj/structure/railing,
-/turf/simulated/floor/outdoors/grass/heavy,
+/turf/simulated/floor/outdoors/grass/heavy{
+	outdoors = -1
+	},
 /area/surface/outside/plains/outpost)
 "eVT" = (
 /obj/structure/cable/green{
@@ -13955,6 +13964,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/computer/security/telescreen/bodycamera{
+	pixel_x = -32
+	},
 /turf/simulated/floor/carpet,
 /area/security/detectives_office)
 "fGY" = (
@@ -15432,6 +15444,9 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
 	},
+/obj/machinery/computer/security/telescreen/bodycamera{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/lobby)
 "glL" = (
@@ -16894,6 +16909,14 @@
 	outdoors = 1
 	},
 /area/surface/outpost/civilian/emergency_storage)
+"gTa" = (
+/obj/structure/flora/ausbushes/grassybush{
+	opacity = 1
+	},
+/turf/simulated/floor/outdoors/grass/heavy{
+	outdoors = -1
+	},
+/area/surface/outside/plains/outpost)
 "gTj" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -21883,7 +21906,9 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/simulated/floor/outdoors/grass/heavy,
+/turf/simulated/floor/outdoors/grass/heavy{
+	outdoors = -1
+	},
 /area/surface/outside/plains/outpost)
 "iQM" = (
 /obj/structure/cable/green{
@@ -21925,9 +21950,7 @@
 	icon_state = "32-2"
 	},
 /obj/structure/lattice,
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/surface/outside/plains/outpost)
 "iRJ" = (
 /obj/structure/catwalk,
@@ -22015,9 +22038,7 @@
 	},
 /area/engineering/external_lights)
 "iSY" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/engineering/hallway/atmos_hallway)
 "iTg" = (
 /turf/simulated/wall/r_wall,
@@ -23474,9 +23495,7 @@
 	d2 = 8;
 	icon_state = "32-8"
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/hallway/primary/seconddeck/dockhallway)
 "jCX" = (
 /obj/structure/cable/green{
@@ -23549,9 +23568,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/engineering/hallway/atmos_hallway)
 "jEG" = (
 /obj/structure/table/hardwoodtable,
@@ -26641,9 +26658,7 @@
 /turf/simulated/wall/rplastihull,
 /area/shuttle/research/station)
 "kTG" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/hallway/primary/seconddeck/dockhallway)
 "kTO" = (
 /turf/simulated/wall/log,
@@ -26662,9 +26677,7 @@
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/hallway/primary/seconddeck/dockhallway)
 "kUz" = (
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -28262,9 +28275,7 @@
 	dir = 1;
 	name = "security camera"
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/quartermaster/hallway)
 "lAd" = (
 /obj/structure/cable{
@@ -28570,9 +28581,7 @@
 	d2 = 8;
 	icon_state = "32-8"
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/maintenance/substation/research)
 "lGH" = (
 /obj/structure/cable/heavyduty{
@@ -30519,9 +30528,7 @@
 /area/surface/outside/plains/outpost)
 "mzt" = (
 /obj/structure/railing,
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/crew_quarters/cafeteria)
 "mzE" = (
 /obj/effect/floor_decal/borderfloorblack,
@@ -34126,7 +34133,7 @@
 /area/surface/outside/plains/outpost)
 "nWX" = (
 /obj/turbolift_map_holder/southern_cross/port,
-/turf/simulated/floor/outdoors/grass/heavy,
+/turf/simulated/floor/plating,
 /area/quartermaster/delivery)
 "nXu" = (
 /obj/effect/zone_divider,
@@ -45457,9 +45464,7 @@
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/crew_quarters/kitchen)
 "sHd" = (
 /obj/machinery/camera/network/exterior{
@@ -49477,9 +49482,7 @@
 /turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "upc" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/quartermaster/hallway)
 "ups" = (
 /obj/machinery/power/smes/buildable{
@@ -51081,9 +51084,7 @@
 /turf/simulated/floor/water/atoll,
 /area/surface/outside/plains/outpost)
 "uRn" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/rnd/research)
 "uRy" = (
 /obj/effect/decal/cleanable/dirt,
@@ -52267,9 +52268,7 @@
 	},
 /area/surface/outside/path/plains)
 "vlF" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/surface/outside/plains/outpost{
 	outdoors = -1
 	})
@@ -52557,9 +52556,7 @@
 	dir = 4
 	},
 /obj/structure/railing/grey,
-/turf/simulated/floor/plating{
-	outdoors = 1
-	},
+/turf/simulated/floor/plating,
 /area/medical/sleeper)
 "vqz" = (
 /obj/structure/cable/heavyduty{
@@ -53624,9 +53621,7 @@
 /obj/structure/sign/directions/stairs_down{
 	pixel_y = 25
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/crew_quarters/kitchen)
 "vKF" = (
 /obj/structure/cable/green{
@@ -53847,7 +53842,7 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
 "vRh" = (
-/turf/simulated/floor/outdoors/grass/heavy,
+/turf/simulated/floor/plating,
 /area/quartermaster/delivery)
 "vRB" = (
 /turf/simulated/floor/wood,
@@ -57553,9 +57548,7 @@
 	layer = 4;
 	pixel_y = 32
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/crew_quarters/cafeteria)
 "xoq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -91083,7 +91076,7 @@ azW
 azW
 aOI
 bcg
-bsI
+akn
 bHZ
 ckF
 cyw
@@ -97521,9 +97514,9 @@ aCQ
 lPo
 dfk
 dfk
-rLe
-rLe
-rLe
+kYl
+kYl
+kYl
 iQz
 jAs
 jXI
@@ -97778,8 +97771,8 @@ aCQ
 tgb
 dfk
 dfk
-fgv
-rLe
+gTa
+kYl
 eVE
 iRF
 jAu
