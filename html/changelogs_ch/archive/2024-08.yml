@@ -227,3 +227,10 @@
   - bugfix: Engineering console has the right name now
   - bugfix: Fixed Protolathe consoles not syncing with the research server
   - code_imp: fix some dullahan borg sprites not showing
+2024-08-31:
+  Heroman3003:
+  - rscadd: Added Env Messages, a system for leaving behind RP posts in the world
+      with easy visibility.
+  VoRe-bot:
+  - rscadd: 'New outsider alt-title, space farer: Currently only 2 shuttles'
+  - maptweak: Added outsider shuttles, the pizzashuttle, and the cyber shuttle.
