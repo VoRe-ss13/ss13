@@ -32,6 +32,7 @@
 	if (not_has_ooc_text(M))
 		return
 
+<<<<<<< HEAD
 	while(finalized == "No" && M.client)
 		choice = tgui_input_list(M, "What type of predator do you want to play as?", "Maintpred Choice", GLOB.ghost_spawnable_mobs)		//RS EDIT //TORCHEdit Start - Porting "Join As Mob" verb and changes from Rogue Star.
 		if(choice)		//RS EDIT START
@@ -46,6 +47,14 @@
 				mobtype = ourlist[newchoice]
 			else
 				mobtype = GLOB.ghost_spawnable_mobs[choice]	//RS EDIT END // //TORCHEdit end
+=======
+	while(finalized != "Yes" && M.client)
+		choice = tgui_input_list(M, "What type of predator do you want to play as?", "Maintpred Choice", possible_mobs)
+		if(!choice)	//We probably pushed the cancel button on the mob selection. Let's just put the ghost pod back in the list.
+			to_chat(M, "<span class='notice'>No mob selected, cancelling.</span>")
+			reset_ghostpod()
+			return
+>>>>>>> 9f42148ab1 ([MIRROR] default tgui alert input handling (#8891))
 
 			finalized = tgui_alert(M, "Are you sure you want to play as [choice]?","Confirmation",list("No","Yes"))
 
