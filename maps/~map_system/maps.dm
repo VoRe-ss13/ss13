@@ -191,7 +191,7 @@ var/list/all_maps = list()
 
 // Boolean for if we should use SSnightshift night hours
 /datum/map/proc/get_nightshift()
-	return get_night(5) //Defaults to z1, customize however you want on your own maps - CHOMPEdit - Sif is 5
+	return get_night(3) //Defaults to z1, customize however you want on your own maps - CHOMPEdit - Sif is 5 //TORCHEdit - Thor's main zlevel is 3
 
 /datum/map/proc/setup_map()
 	return
