@@ -2472,7 +2472,11 @@
 #include "code\modules\entopics_vr\alternate_appearance.dm"
 #include "code\modules\entopics_vr\entopics.dm"
 #include "code\modules\entrepreneur\entrepreneur_items.dm"
+<<<<<<< HEAD
 #include "code\modules\env_message\env_message_tc.dm"
+=======
+#include "code\modules\env_message\env_message.dm"
+>>>>>>> 610c2ce956 ([MIRROR] Implements Env Message system (#8892))
 #include "code\modules\error_handler\_defines.dm"
 #include "code\modules\error_handler\error_handler.dm"
 #include "code\modules\error_handler\error_viewer.dm"
