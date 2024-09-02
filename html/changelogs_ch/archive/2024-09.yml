@@ -1,0 +1,6 @@
+2024-09-02:
+  VoRe-bot:
+  - rscdel: Removed night shift voice lines
+  - config: Night shift depends now on Sif
+  - bugfix: pred spawn leading to a null as selected belly
+  - rscadd: VBO_22
