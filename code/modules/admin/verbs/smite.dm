@@ -9,7 +9,11 @@
 		return
 
 	var/list/smite_types = list(SMITE_BREAKLEGS,SMITE_BLUESPACEARTILLERY,SMITE_SPONTANEOUSCOMBUSTION,SMITE_LIGHTNINGBOLT,
+<<<<<<< HEAD
 								SMITE_SHADEKIN_ATTACK,SMITE_SHADEKIN_NOMF,SMITE_AD_SPAM,SMITE_REDSPACE_ABDUCT,SMITE_AUTOSAVE,SMITE_AUTOSAVE_WIDE,
+=======
+								SMITE_SHADEKIN_ATTACK,SMITE_SHADEKIN_NOMF,SMITE_AD_SPAM,SMITE_REDSPACE_ABDUCT,SMITE_AUTOSAVE,SMITE_AUTOSAVE_WIDE,SMITE_SPICEREQUEST,SMITE_PEPPERNADE,SMITE_TERROR,
+>>>>>>> e9b597bed9 ([MIRROR] Spice Smites (#8867))
 								SMITE_PIE, SMITE_SPICE, SMITE_HOTDOG) //CHOMP Add pie, spicy air and hot dog
 
 	var/smite_choice = tgui_input_list(usr, "Select the type of SMITE for [target]","SMITE Type Choice", smite_types)
@@ -159,6 +163,24 @@
 			if(target.client)
 				target.client.create_fake_ad_popup_multiple(/obj/screen/popup/default, 15)
 
+<<<<<<< HEAD
+=======
+		if(SMITE_TERROR)
+			if(ishuman(target))
+				target.fear = 200
+
+		if(SMITE_PEPPERNADE)
+			var/obj/item/weapon/grenade/chem_grenade/teargas/grenade = new /obj/item/weapon/grenade/chem_grenade/teargas
+			grenade.loc = target.loc
+			to_chat(target,"<span class='warning'>GRENADE?!</span>")
+			grenade.detonate()
+
+		if(SMITE_SPICEREQUEST)
+			var/obj/item/weapon/reagent_containers/food/condiment/spacespice/spice = new /obj/item/weapon/reagent_containers/food/condiment/spacespice
+			spice.loc = target.loc
+			to_chat(target,"A bottle of spices appears at your feet... be careful what you wish for!")
+
+>>>>>>> e9b597bed9 ([MIRROR] Spice Smites (#8867))
 		if(SMITE_PIE) //CHOMP Add
 			new/obj/effect/decal/cleanable/pie_smudge(get_turf(target))
 			playsound(target, 'sound/effects/slime_squish.ogg', 100, 1, get_rand_frequency(), falloff = 5)
