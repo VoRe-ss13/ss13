@@ -1,0 +1,9 @@
+author: "purplefoxy27"
+delete-after: True
+changes:
+  - rscadd: "Added bodycam telescreens to security."
+  - rscadd: "Added basic RTG for mining and xenoarch in the underground mines."
+  - qol: "Swapped xenoarch excavation suit for its heat-resistant variant."
+  - bugfix: "Fixed most spots of indoors rain throughout the outpost (hopefully all)."
+  - bugfix: "Fixes tram tunnel walls not scrolling."
+  - bugfix: "Adjust lightweight trait description."
