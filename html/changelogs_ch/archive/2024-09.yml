@@ -1,0 +1,25 @@
+2024-09-02:
+  VoRe-bot:
+  - rscdel: Removed night shift voice lines
+  - config: Night shift depends now on Sif
+  - bugfix: pred spawn leading to a null as selected belly
+  - rscadd: VBO_22
+2024-09-04:
+  VoRe-bot:
+  - qol: filled in the public teleporter sprite with an alpha layer to make it easier
+      to use them
+  - qol: samples have a more useful description, and are now safer to handle (container
+      still advised) with voidsuits but can have other effects besides just burning
+      your hands
+  - balance: culling of materials happens at 2500 instead of the previous 500
+  - balance: material loss is 50% instead of the roughly 22% average of before.
+  - balance: material loss can happen until a single material remains.
+  - qol: hacktools can now be found in a new NULL contraband crate set
+  - qol: hacktools can now hack secure crates and lockers open (but not relock them)
+  purplefoxy27:
+  - rscadd: Added bodycam telescreens to security.
+  - rscadd: Added basic RTG for mining and xenoarch in the underground mines.
+  - qol: Swapped xenoarch excavation suit for its heat-resistant variant.
+  - bugfix: Fixed most spots of indoors rain throughout the outpost (hopefully all).
+  - bugfix: Fixes tram tunnel walls not scrolling.
+  - bugfix: Adjust lightweight trait description.
