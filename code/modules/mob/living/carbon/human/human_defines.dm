@@ -161,10 +161,7 @@
 
 	// Custom Species Name
 	var/custom_species
-<<<<<<< HEAD
-=======
 
 	var/block_hud
 
 	var/phobias		//For holding a list of phobias
->>>>>>> 7425ef0b2c ([MIRROR] Fear and Phobias (#8857))
