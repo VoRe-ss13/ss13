@@ -789,10 +789,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/redgate/jungle/aboveground)
-"iS" = (
-/obj/random/potion_base,
-/turf/simulated/floor/water/digestive_enzymes,
-/area/redgate/jungle/temple)
 "iT" = (
 /obj/structure/salvageable/console{
 	dir = 8
@@ -10988,7 +10984,7 @@ Ji
 hM
 Bg
 YE
-iS
+YE
 pL
 Ji
 Ji

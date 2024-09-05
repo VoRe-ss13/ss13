@@ -7,18 +7,18 @@
 #define Z_LEVEL_THE_SKY					5
 #define Z_LEVEL_UNDERMINES				6
 #define Z_LEVEL_SURFACE_WILDS			7
-#define Z_LEVEL_WILDERNESS_SKY			8
-#define Z_LEVEL_SURFACE_OCEAN			9
-#define Z_LEVEL_SURFACE_MINES			10
-#define Z_LEVEL_CARRIER 				11
-#define Z_LEVEL_CENTCOM					12
-#define Z_LEVEL_TRANSIT					13
+// #define Z_LEVEL_WILDERNESS_SKY			8
+#define Z_LEVEL_SURFACE_OCEAN			8
+#define Z_LEVEL_SURFACE_MINES			9
+#define Z_LEVEL_CARRIER 				10
+#define Z_LEVEL_CENTCOM					11
+#define Z_LEVEL_TRANSIT					12
 
 
 
-#define Z_LEVEL_FUELDEPOT				14
-#define Z_LEVEL_GATEWAY					15
-#define Z_LEVEL_REDGATE					16
+#define Z_LEVEL_FUELDEPOT				13
+#define Z_LEVEL_GATEWAY					14
+#define Z_LEVEL_REDGATE					15
 
 // Camera Network Additions
 #define NETWORK_EXTERIOR "Exterior" // Exterior Cameras
@@ -104,7 +104,7 @@
 			Z_LEVEL_UNDERMINES,
 			Z_LEVEL_SURFACE_WILDS,
 			Z_LEVEL_SURFACE_MINES,
-			Z_LEVEL_WILDERNESS_SKY,
+			// Z_LEVEL_WILDERNESS_SKY,
 			Z_LEVEL_SURFACE_OCEAN,
 			Z_LEVEL_THE_SKY,
 			Z_LEVEL_CATACOMBS
@@ -251,9 +251,15 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks
 */
 
-/datum/map_z_level/relicbase/surface_mine
+/datum/map_z_level/relicbase/undeground_mine
 	z = Z_LEVEL_UNDERMINES
 	name = "Underground Mines"
+	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONSOLES
+	base_turf = /turf/simulated/floor/outdoors/rocks
+
+/datum/map_z_level/relicbase/surface_mine
+	z = Z_LEVEL_SURFACE_MINES
+	name = "Surface Mines"
 	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONSOLES
 	base_turf = /turf/simulated/floor/outdoors/rocks
 
@@ -335,7 +341,7 @@
 		Z_LEVEL_UPPER_FLOORS,
 		Z_LEVEL_SURFACE_WILDS,
 		Z_LEVEL_SURFACE_MINES,
-		Z_LEVEL_WILDERNESS_SKY,
+		// Z_LEVEL_WILDERNESS_SKY,
 		Z_LEVEL_UNDERMINES,
 		Z_LEVEL_SURFACE_OCEAN,
 		Z_LEVEL_THE_SKY,

@@ -300,8 +300,8 @@ var/global/list/valid_bloodreagents = list("default","iron","copper","phoron","s
 
 	for(var/T in pref.pos_traits + pref.neg_traits) // CHOMPEdit: Only Positive traits cost slots now.
 		points_left -= traits_costs[T]
-	for(var/T in pref.pos_traits)
-		traits_left--
+		if(T in pref.pos_traits)
+			traits_left--
 	. += "<b>Traits Left:</b> [traits_left]<br>"
 	. += "<b>Points Left:</b> [points_left]<br>"
 	if(points_left < 0 || traits_left < 0 || (!pref.custom_species && pref.species == SPECIES_CUSTOM))
@@ -329,7 +329,7 @@ var/global/list/valid_bloodreagents = list("default","iron","copper","phoron","s
 	. += "</ul>"
 
 	. += "<b>Blood Color: </b>" //People that want to use a certain species to have that species traits (xenochimera/promethean/spider) should be able to set their own blood color.
-	. += "<a href='?src=\ref[src];blood_color=1'>Set Color</a>"
+	. += "<a href='?src=\ref[src];blood_color=1'>Set Color <font color='[pref.blood_color]'>&#9899;</font></a>"
 	. += "<a href='?src=\ref[src];blood_reset=1'>R</a><br>"
 	. += "<b>Blood Reagent: </b>"	//Wanna be copper-based? Go ahead.
 	. += "<a href='?src=\ref[src];blood_reagents=1'>[pref.blood_reagents]</a><br>"
@@ -385,9 +385,11 @@ var/global/list/valid_bloodreagents = list("default","iron","copper","phoron","s
 		return TOPIC_REFRESH
 
 	else if(href_list["blood_reset"])
-		var/choice = tgui_alert(user, "Reset blood color to human default (#A10808)?","Reset Blood Color",list("Reset","Cancel")) //ChompEDIT - usr removal
+		var/datum/species/spec = GLOB.all_species[pref.species]
+		var/new_blood = spec.blood_color ? spec.blood_color : "#A10808"
+		var/choice = tgui_alert(user, "Reset blood color to species default ([new_blood])?","Reset Blood Color",list("Reset","Cancel")) //ChompEDIT - usr removal
 		if(choice == "Reset")
-			pref.blood_color = "#A10808"
+			pref.blood_color = new_blood
 		return TOPIC_REFRESH
 
 	else if(href_list["blood_reagents"])

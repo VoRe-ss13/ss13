@@ -2,51 +2,61 @@
 /mob/living/simple_mob/animal/giant_spider/carrier //Disrupter, old 100
 	maxHealth = 60
 	health = 60
+	//melee_damage_lower = 4
+	//melee_damage_upper = 12
 
 /mob/living/simple_mob/animal/giant_spider/electric //disrupter, old 210
 	maxHealth = 60
 	health = 60
 	projectiletype = /obj/item/projectile/energy/mob/electric_spider
-
+	//melee_damage_lower = 5
+	//melee_damage_upper = 12
+/*
 /mob/living/simple_mob/animal/giant_spider/frost //tank, old 175
-	maxHealth = 120
-	health = 120
+	maxHealth = 60
+	health = 60
 
 /mob/living/simple_mob/animal/giant_spider //tank, old 200
-	maxHealth = 120
-	health = 120
+	maxHealth = 60
+	health = 60
+	melee_damage_lower = 9
+	melee_damage_upper = 15
 
 /mob/living/simple_mob/animal/giant_spider/ion //disrupter, old 90
-	maxHealth = 60
-	health = 60
+	maxHealth = 30
+	health = 30
 
 /mob/living/simple_mob/animal/giant_spider/hunter //disrupter, old 120
-	maxHealth = 60
-	health = 60
+	maxHealth = 30
+	health = 30
 
 /mob/living/simple_mob/animal/giant_spider/lurker //disrupter, old 100
-	maxHealth = 60
-	health = 60
+	maxHealth = 30
+	health = 30
 
 /mob/living/simple_mob/animal/giant_spider/pepper //tank, old 210
-	maxHealth = 120
-	health = 120
+	maxHealth = 60
+	health = 60
 
 /mob/living/simple_mob/animal/giant_spider/phorogenic //tank, old 225
-	maxHealth = 120
-	health = 120
+	maxHealth = 60
+	health = 60
+	melee_damage_lower = 12
+	melee_damage_upper = 20
 
 /mob/living/simple_mob/animal/giant_spider/thermic //tank, old 175
-	maxHealth = 120
-	health = 120
-
-/mob/living/simple_mob/animal/giant_spider/tunneler_spider //disrupter, old 120
 	maxHealth = 60
 	health = 60
+	melee_damage_lower = 5
+	melee_damage_upper = 12
+
+/mob/living/simple_mob/animal/giant_spider/tunneler //disrupter, old 120
+	maxHealth = 30
+	health = 30
 
 /mob/living/simple_mob/animal/giant_spider/webslinger //disrupter, old 90
-	maxHealth = 60
-	health = 60
+	maxHealth = 30
+	health = 30
 
 /obj/effect/spider/eggcluster
 	spider_type = /obj/effect/spider/spiderling/varied
@@ -105,6 +115,7 @@
 
 	melee_damage_lower = 5
 	melee_damage_upper = 10
+*/
 
 //Hijacking this file to make new event spiders
 
@@ -114,9 +125,10 @@
 	max_tox = 0
 	max_co2 = 0
 
+	/* Use the parent
 	maxHealth = 20
 	health = 20
-
+	*/
 	melee_damage_lower = 5
 	melee_damage_upper = 7
 
@@ -126,17 +138,20 @@
 	max_tox = 0
 	max_co2 = 0
 
+	/* Use the parent
 	maxHealth = 15
 	health = 15
+	*/
 
 /mob/living/simple_mob/animal/giant_spider/hunter/space
 	name = "giant space spider"
 	min_oxy = 0
 	max_tox = 0
 	max_co2 = 0
-
+	/*Use the parent
 	maxHealth = 20
 	health = 20
+	*/
 
 /mob/living/simple_mob/animal/giant_spider/lurker/space
 	maxHealth = 20
@@ -149,9 +164,10 @@
 	max_co2 = 0
 
 	egg_type = /obj/effect/spider/eggcluster/royal/space
-
+	/* Use the parent
 	maxHealth = 30
 	health = 30
+	*/
 
 /mob/living/simple_mob/animal/giant_spider/pepper/space
 	name = "giant space spider"
@@ -194,8 +210,11 @@
 	min_oxy = 0
 	max_tox = 0
 	max_co2 = 0
+
+	/* Use the parent
 	maxHealth = 30
 	health = 30
 
 	melee_damage_lower = 5
 	melee_damage_upper = 10
+	*/
