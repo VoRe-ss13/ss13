@@ -47,7 +47,7 @@
 
 	//Tries to load prefs if a client is present otherwise gives freebie stomach
 	spawn(2 SECONDS)
-		if(M)
+		if(!QDELETED(M))
 			M.init_vore()
 
 	//return TRUE to hook-caller
@@ -55,6 +55,7 @@
 
 /mob/proc/init_vore()
 	//Something else made organs, meanwhile.
+	AddElement(/datum/element/slosh) // CHOMPEdit - Sloshy element
 	if(LAZYLEN(vore_organs))
 		//CHOMPAdd Start
 		if(!soulgem)
@@ -89,6 +90,11 @@
 			soulgem = new(src)
 		return TRUE
 		//CHOMPAdd End
+
+/mob/living/init_vore()
+	if(no_vore)
+		return FALSE
+	return ..()
 
 //
 // Hide vore organs in contents
@@ -268,9 +274,10 @@
 	P.nutrition_messages = src.nutrition_messages
 	P.weight_message_visible = src.weight_message_visible
 	P.weight_messages = src.weight_messages
+	P.vore_sprite_color = src.vore_sprite_color // CHOMPEdit
+	P.allow_mind_transfer = src.allow_mind_transfer
 
 	//CHOMP stuff Start
-	P.allow_mind_transfer = src.allow_mind_transfer
 	P.phase_vore = src.phase_vore
 	P.noisy_full = src.noisy_full
 	P.latejoin_vore = src.latejoin_vore
@@ -280,7 +287,6 @@
 	P.apply_reagents = src.apply_reagents
 	P.autotransferable = src.autotransferable
 	P.strip_pref = src.strip_pref
-	P.vore_sprite_color = src.vore_sprite_color
 	P.vore_sprite_multiply = src.vore_sprite_multiply
 	P.no_latejoin_vore_warning = src.no_latejoin_vore_warning
 	P.no_latejoin_prey_warning = src.no_latejoin_prey_warning
@@ -342,9 +348,10 @@
 	nutrition_messages = P.nutrition_messages
 	weight_message_visible = P.weight_message_visible
 	weight_messages = P.weight_messages
+	vore_sprite_color = P.vore_sprite_color //CHOMPEdit
+	allow_mind_transfer = P.allow_mind_transfer
 
 	//CHOMP stuff
-	allow_mind_transfer = P.allow_mind_transfer
 	phase_vore = P.phase_vore
 	noisy_full = P.noisy_full
 	latejoin_vore = P.latejoin_vore
@@ -354,7 +361,6 @@
 	apply_reagents = P.apply_reagents
 	autotransferable = P.autotransferable
 	strip_pref = P.strip_pref
-	vore_sprite_color = P.vore_sprite_color
 	vore_sprite_multiply = P.vore_sprite_multiply
 	no_latejoin_vore_warning = P.no_latejoin_vore_warning
 	no_latejoin_prey_warning = P.no_latejoin_prey_warning
@@ -373,15 +379,89 @@
 		for(var/entry in P.belly_prefs)
 			list_to_object(entry,src)
 
-	if(soulgem)
-		src.soulgem.release_mobs()
-		QDEL_NULL(soulgem)
-	if(P.soulcatcher_prefs.len)
-		soulgem = list_to_object(P.soulcatcher_prefs, src)
-	else
-		soulgem = new(src)
+		//CHOMPAdd Start
+		if(soulgem)
+			src.soulgem.release_mobs()
+			QDEL_NULL(soulgem)
+		if(P.soulcatcher_prefs.len)
+			soulgem = list_to_object(P.soulcatcher_prefs, src)
+		else
+			soulgem = new(src)
+		//CHMPAdd End
 
 	return TRUE
+
+/mob/proc/load_vore_prefs_from_slot()
+
+	var/datum/preferences/P = client.prefs
+
+	var/remembered_default = P.load_vore_prefs_from_client(src) //Loads the preferences of a chosen slot
+	if(!remembered_default)
+		return
+
+	apply_vore_prefs() //Applies the vore preferences of said slot
+
+	if(remembered_default)
+		P.return_to_character_slot(src, remembered_default) //sets you back to the original default slot
+
+	return TRUE
+
+
+/datum/preferences/proc/load_vore_prefs_from_client(mob/user)
+	if(selecting_slots)
+		to_chat(user, "<span class='warning'>You already have a slot selection dialog open!</span>")
+		return
+	var/savefile/S = new /savefile(path)
+	if(!S)
+		error("Somehow missing savefile path?! [path]")
+		return
+
+	var/name
+	var/nickname //vorestation edit - This set appends nicknames to the save slot
+	var/list/charlist = list()
+	var/default //VOREStation edit
+	for(var/i=1, i<= CONFIG_GET(number/character_slots), i++) //CHOMPEdit
+		S.cd = "/character[i]"
+		S["real_name"] >> name
+		S["nickname"] >> nickname //vorestation edit
+		if(!name)
+			name = "[i] - \[Unused Slot\]"
+		else if(i == default_slot)
+			name = "►[i] - [name]"
+		else
+			name = "[i] - [name]"
+		if (i == default_slot) //VOREStation edit
+			default = "[name][nickname ? " ([nickname])" : ""]"
+		charlist["[name][nickname ? " ([nickname])" : ""]"] = i
+
+	var/remember_default = default_slot
+
+	selecting_slots = TRUE
+	var/choice = tgui_input_list(user, "Select a character to load:", "Load Slot", charlist, default)
+	selecting_slots = FALSE
+	if(!choice)
+		return
+
+	var/slotnum = charlist[choice]
+	if(!slotnum)
+		error("Player picked [choice] slot to load, but that wasn't one we sent.")
+		return
+
+	load_character(slotnum)
+	attempt_vr(user.client?.prefs_vr,"load_vore","") //VOREStation Edit
+	sanitize_preferences()
+
+	return remember_default
+
+/datum/preferences/proc/return_to_character_slot(mob/user, var/remembered_default)
+	var/savefile/S = new /savefile(path)
+	if(!S)
+		error("Somehow missing savefile path?! [path]")
+		return
+
+	load_character(remembered_default)
+	attempt_vr(user.client?.prefs_vr,"load_vore","") //VOREStation Edit
+	sanitize_preferences()
 
 //
 // Release everything in every vore organ
@@ -1286,7 +1366,7 @@
 		dispvoreprefs += "<b>Late join prey auto accept:</b> [no_latejoin_prey_warning ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
 	dispvoreprefs += "<b>Global Vore Privacy is:</b> [eating_privacy_global ? "<font color='green'>Subtle</font>" : "<font color='red'>Loud</font>"]<br>"
 	dispvoreprefs += "<b>Current active belly:</b> [vore_selected ? vore_selected.name : "None"]<br>"
-	dispvoreprefs += "<b>Current active belly:</b> [belly_rub_target ? belly_rub_target : vore_selected.name]<br>"
+	dispvoreprefs += "<b>Belly rub target:</b> [belly_rub_target ? belly_rub_target : (vore_selected ? vore_selected.name : "None")]<br>"
 	//CHOMPEdit End
 	user << browse("<html><head><title>Vore prefs: [src]</title></head><body><center>[dispvoreprefs]</center></body></html>", "window=[name]mvp;size=300x400;can_resize=1;can_minimize=0")
 	onclose(user, "[name]")

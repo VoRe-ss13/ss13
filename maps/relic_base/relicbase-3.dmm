@@ -17,7 +17,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/surface/outpost/wall/checkpoint)
 "aar" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/outdoors/dirt{
@@ -298,7 +298,7 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 5
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/status_display{
@@ -398,7 +398,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/substation/engineering)
 "aiN" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -464,6 +464,12 @@
 "akl" = (
 /turf/simulated/wall/r_wall,
 /area/medical/sleeper)
+"akn" = (
+/obj/machinery/computer/security/telescreen/bodycamera{
+	pixel_x = -32
+	},
+/turf/simulated/floor/carpet,
+/area/crew_quarters/heads/sc/hos)
 "akt" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -862,7 +868,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/foyer)
 "atV" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/outdoors/dirt,
@@ -1237,7 +1243,7 @@
 /area/crew_quarters/heads/sc/hos)
 "aFW" = (
 /obj/structure/bed/chair/comfy/brown,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/item/device/radio/intercom{
@@ -1502,7 +1508,7 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/civilian/fishing)
 "aLQ" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/sign/directions/evac{
@@ -1762,7 +1768,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 10
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment{
@@ -2032,7 +2038,7 @@
 /obj/item/weapon/paper_bin,
 /obj/item/weapon/pen/multi,
 /obj/item/weapon/stamp/hos,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/table/hardwoodtable,
@@ -2169,7 +2175,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/patient_b)
 "bgG" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/photocopier/faxmachine{
@@ -2948,7 +2954,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/library)
 "byj" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/conveyor{
@@ -3348,7 +3354,7 @@
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/chapel/main)
 "bHV" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/table/glass,
@@ -3495,7 +3501,7 @@
 /turf/simulated/floor/carpet/oracarpet,
 /area/engineering/break_room)
 "bKH" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/item/device/radio/intercom/department/security{
@@ -3603,9 +3609,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/security/armoury)
 "bNe" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/engineering/hallway/engineer_hallway)
 "bNK" = (
 /obj/effect/floor_decal/borderfloorblack{
@@ -3934,7 +3938,7 @@
 /turf/simulated/floor/wood/alt/panel,
 /area/lawoffice)
 "bVW" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/beige/border,
 /obj/effect/floor_decal/borderfloorblack/corner2,
@@ -4448,7 +4452,7 @@
 /obj/item/device/radio/off,
 /obj/item/weapon/tool/wrench,
 /obj/effect/floor_decal/industrial/outline/grey,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/disposal/wall{
@@ -4544,7 +4548,7 @@
 /turf/simulated/floor/carpet,
 /area/security/warden)
 "ckG" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/item/weapon/melee/umbrella/random,
@@ -4839,7 +4843,7 @@
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/emergency_storage)
 "coa" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -5240,7 +5244,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/security_processing)
 "cuy" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/table/wooden_reinforced,
@@ -5383,7 +5387,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/gym)
 "cxo" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/structure/cable/green{
@@ -5447,7 +5451,7 @@
 /turf/simulated/floor/plating,
 /area/rnd/lab)
 "cyk" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/red/border{
@@ -5564,7 +5568,7 @@
 	pixel_y = 10;
 	req_access = list(3)
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -5678,7 +5682,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -5725,7 +5729,7 @@
 /area/medical/psych)
 "cCP" = (
 /obj/structure/closet/secure_closet/engineering_welding,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/old_tile/yellow,
@@ -6808,7 +6812,7 @@
 	},
 /area/surface/outside/plains/outpost)
 "cWF" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -6977,7 +6981,7 @@
 	pixel_x = -2;
 	pixel_y = -2
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/alarm{
@@ -7034,7 +7038,7 @@
 /obj/effect/floor_decal/corner/pink/border,
 /obj/effect/floor_decal/borderfloorblack/corner2,
 /obj/effect/floor_decal/corner/pink/bordercorner2,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "daA" = (
@@ -7140,7 +7144,7 @@
 	dir = 4
 	},
 /obj/machinery/disposal,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -7583,7 +7587,7 @@
 /turf/simulated/floor/tiled/milspec,
 /area/surface/outpost/main/landing/two)
 "dnC" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -7776,7 +7780,7 @@
 /obj/item/clothing/head/welding,
 /obj/item/weapon/storage/belt/utility,
 /obj/effect/floor_decal/industrial/hatch/yellow,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -7994,7 +7998,7 @@
 	},
 /area/surface/outside/path/plains)
 "dvT" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/item/device/radio/intercom{
@@ -8093,6 +8097,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/computer/security/telescreen/bodycamera{
+	pixel_y = -32
+	},
 /turf/simulated/floor/carpet,
 /area/security/warden)
 "dxA" = (
@@ -8152,7 +8159,7 @@
 	},
 /area/surface/outside/path/plains)
 "dyF" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
@@ -8516,7 +8523,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/foyer)
 "dEf" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/item/weapon/melee/umbrella/random,
@@ -9202,7 +9209,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/prep)
 "dPB" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_dirty{
@@ -9223,7 +9230,7 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_6)
 "dQv" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -10027,13 +10034,13 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/cafeteria)
 "eiI" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/structure/extinguisher_cabinet{
@@ -10554,7 +10561,7 @@
 	},
 /area/surface/outside/path/plains)
 "era" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -10880,7 +10887,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/surface/outpost/main/gym)
 "evo" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/outdoors/dirt,
@@ -11132,7 +11139,7 @@
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/needle)
 "eAR" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/machinery/vending/fitness,
@@ -11412,7 +11419,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -11451,7 +11458,7 @@
 	dir = 4;
 	id = "QMLoad2"
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/foyer)
 "eJl" = (
@@ -11589,7 +11596,7 @@
 /turf/simulated/floor/plating,
 /area/rnd/misc_lab)
 "eMF" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -12111,7 +12118,9 @@
 /area/storage/primary)
 "eVE" = (
 /obj/structure/railing,
-/turf/simulated/floor/outdoors/grass/heavy,
+/turf/simulated/floor/outdoors/grass/heavy{
+	outdoors = -1
+	},
 /area/surface/outside/plains/outpost)
 "eVT" = (
 /obj/structure/cable/green{
@@ -12636,7 +12645,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/ai_monitored/storage/eva)
 "ffr" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/computer/guestpass{
@@ -13421,7 +13430,7 @@
 /obj/effect/floor_decal/corner/pink/bordercorner2{
 	dir = 1
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -13720,7 +13729,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -13952,8 +13961,11 @@
 /area/security/detectives_office)
 "fGV" = (
 /obj/structure/table/wooden_reinforced,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/computer/security/telescreen/bodycamera{
+	pixel_x = -32
 	},
 /turf/simulated/floor/carpet,
 /area/security/detectives_office)
@@ -14038,7 +14050,7 @@
 /area/security/detectives_office)
 "fKl" = (
 /obj/structure/table/wooden_reinforced,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/carpet,
@@ -14298,7 +14310,7 @@
 /obj/random/medical/lite,
 /obj/random/medical/lite,
 /obj/random/medical/lite,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
@@ -14418,7 +14430,7 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/borderfloorblack/corner2,
 /obj/effect/floor_decal/corner/red/bordercorner2,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/item/device/radio/intercom/department/security{
 	pixel_y = -23
 	},
@@ -14471,7 +14483,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 9
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
@@ -14592,6 +14604,8 @@
 	c_tag = "EXT - Civ Bar/Kitchen West 2";
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/steel_dirty{
 	outdoors = 1
 	},
@@ -14721,7 +14735,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 1
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack/corner2{
@@ -15019,7 +15033,7 @@
 /turf/simulated/floor/carpet,
 /area/library)
 "gcN" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -15430,6 +15444,9 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
 	},
+/obj/machinery/computer/security/telescreen/bodycamera{
+	pixel_x = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/lobby)
 "glL" = (
@@ -15444,7 +15461,7 @@
 /area/security/lobby)
 "glR" = (
 /obj/structure/filingcabinet/filingcabinet,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -15723,7 +15740,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 9
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/security/security_hallway)
 "guv" = (
@@ -15859,6 +15876,12 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty{
 	outdoors = 1
@@ -16009,7 +16032,7 @@
 /area/security/detectives_office)
 "gAJ" = (
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/cable/green{
@@ -16416,7 +16439,7 @@
 /turf/simulated/floor/outdoors/dirt,
 /area/surface/outpost/mining_main)
 "gIM" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/firealarm{
@@ -16633,7 +16656,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/lobby)
 "gMC" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/outdoors/dirt,
 /area/surface/outpost/main/exploration)
 "gMH" = (
@@ -16740,7 +16763,7 @@
 	},
 /area/surface/outpost/main/dorms/dorm_5)
 "gOU" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -16755,7 +16778,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/window/reinforced{
@@ -16856,7 +16879,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 5
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -16872,7 +16895,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 6
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 24
@@ -16886,6 +16909,14 @@
 	outdoors = 1
 	},
 /area/surface/outpost/civilian/emergency_storage)
+"gTa" = (
+/obj/structure/flora/ausbushes/grassybush{
+	opacity = 1
+	},
+/turf/simulated/floor/outdoors/grass/heavy{
+	outdoors = -1
+	},
+/area/surface/outside/plains/outpost)
 "gTj" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -17032,7 +17063,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/security_hallway)
 "gWO" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/computer/timeclock/premade/north,
@@ -17209,7 +17240,7 @@
 /turf/simulated/floor/bmarble,
 /area/chapel/main)
 "haH" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -17263,7 +17294,7 @@
 /area/quartermaster/foyer)
 "haP" = (
 /obj/structure/closet/secure_closet/brig,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -17719,7 +17750,7 @@
 /turf/simulated/wall,
 /area/medical/patient_a)
 "hmx" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -17842,7 +17873,7 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -18880,7 +18911,7 @@
 	pixel_y = -28;
 	tag_door = "car_mining_base_door"
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/structure/table/steel_reinforced,
 /obj/item/weapon/packageWrap,
 /obj/item/weapon/packageWrap,
@@ -19029,7 +19060,7 @@
 /obj/structure/table/reinforced,
 /obj/item/weapon/forensics/sample_kit/powder,
 /obj/item/weapon/forensics/sample_kit,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/security/detectives_office)
 "hHu" = (
@@ -19051,7 +19082,7 @@
 /area/expoutpost/shuttle)
 "hIp" = (
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -19062,7 +19093,7 @@
 "hIF" = (
 /obj/effect/floor_decal/corner/black/diagonal,
 /obj/structure/table/marble,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/item/weapon/material/kitchen/utensil/fork,
@@ -19110,7 +19141,7 @@
 "hKE" = (
 /obj/structure/closet/secure_closet/explorer,
 /obj/item/device/cataloguer,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -19144,7 +19175,7 @@
 /area/security/detectives_office)
 "hLi" = (
 /obj/structure/bookcase,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/carpet,
 /area/security/detectives_office)
 "hLs" = (
@@ -19264,7 +19295,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 8
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/security/lobby)
 "hPp" = (
@@ -20015,7 +20046,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/machinery/power/apc{
@@ -20130,7 +20161,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 6
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/item/device/radio/intercom{
@@ -21224,7 +21255,7 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 9
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/bed/chair{
@@ -21563,7 +21594,7 @@
 /area/chapel/main)
 "iKb" = (
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -21875,7 +21906,9 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/simulated/floor/outdoors/grass/heavy,
+/turf/simulated/floor/outdoors/grass/heavy{
+	outdoors = -1
+	},
 /area/surface/outside/plains/outpost)
 "iQM" = (
 /obj/structure/cable/green{
@@ -21917,9 +21950,7 @@
 	icon_state = "32-2"
 	},
 /obj/structure/lattice,
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/surface/outside/plains/outpost)
 "iRJ" = (
 /obj/structure/catwalk,
@@ -22007,9 +22038,7 @@
 	},
 /area/engineering/external_lights)
 "iSY" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/engineering/hallway/atmos_hallway)
 "iTg" = (
 /turf/simulated/wall/r_wall,
@@ -22111,7 +22140,7 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 1
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/status_display{
@@ -22217,7 +22246,7 @@
 /obj/random/tech_supply,
 /obj/random/tech_supply,
 /obj/random/tech_supply,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/status_display{
@@ -22586,7 +22615,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/cable/green{
@@ -22849,7 +22878,7 @@
 /obj/effect/floor_decal/corner/red/border,
 /obj/effect/floor_decal/borderfloorblack/corner2,
 /obj/effect/floor_decal/corner/red/bordercorner2,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/structure/bed/chair{
 	dir = 1
 	},
@@ -22956,7 +22985,7 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 9
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark,
 /area/security/lobby)
@@ -23293,7 +23322,7 @@
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/sc/hop)
 "jAv" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/status_display{
@@ -23466,9 +23495,7 @@
 	d2 = 8;
 	icon_state = "32-8"
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/hallway/primary/seconddeck/dockhallway)
 "jCX" = (
 /obj/structure/cable/green{
@@ -23541,9 +23568,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/engineering/hallway/atmos_hallway)
 "jEG" = (
 /obj/structure/table/hardwoodtable,
@@ -23739,7 +23764,7 @@
 /turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "jJW" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/structure/railing/grey,
@@ -24005,7 +24030,7 @@
 /turf/simulated/floor/bmarble,
 /area/security/lobby)
 "jOV" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/railing/grey,
@@ -24201,7 +24226,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay)
 "jSi" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
@@ -24643,7 +24668,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/shuttle)
 "kbZ" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -24668,7 +24693,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/server)
 "kcv" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/railing/grey{
@@ -25131,7 +25156,7 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_10)
 "kln" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/table/wooden_reinforced,
@@ -25505,7 +25530,7 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/corner/pink/bordercorner2,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -24
@@ -25726,7 +25751,7 @@
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/surface/outside/plains/outpost)
 "kxY" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/steel_dirty,
@@ -26565,7 +26590,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/hallway/primary/seconddeck/dockhallway)
 "kSH" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/item/weapon/melee/umbrella/random,
@@ -26633,9 +26658,7 @@
 /turf/simulated/wall/rplastihull,
 /area/shuttle/research/station)
 "kTG" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/hallway/primary/seconddeck/dockhallway)
 "kTO" = (
 /turf/simulated/wall/log,
@@ -26654,9 +26677,7 @@
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/hallway/primary/seconddeck/dockhallway)
 "kUz" = (
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -26748,7 +26769,7 @@
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -27237,7 +27258,7 @@
 	name = "south bump";
 	pixel_y = -24
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/machinery/light_switch{
 	pixel_x = 12;
 	pixel_y = -24
@@ -27559,7 +27580,7 @@
 /turf/simulated/floor/carpet/blue,
 /area/crew_quarters/heads/sc/hop)
 "lmK" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/expoutpost/pathfinder)
 "lmW" = (
@@ -27885,7 +27906,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/weapon/storage/belt/utility,
 /obj/item/device/multitool,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -27979,7 +28000,7 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 6
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/structure/flora/pottedplant/tropical,
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -28050,7 +28071,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/fiftyspawner/steel,
 /obj/fiftyspawner/steel,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/old_tile/yellow,
 /area/engineering/workshop)
 "lvr" = (
@@ -28178,7 +28199,7 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_10)
 "lyC" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/structure/railing/grey{
@@ -28254,9 +28275,7 @@
 	dir = 1;
 	name = "security camera"
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/quartermaster/hallway)
 "lAd" = (
 /obj/structure/cable{
@@ -28281,7 +28300,7 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_1)
 "lAI" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -28476,7 +28495,7 @@
 /turf/simulated/floor/tiled/white,
 /area/hallway/secondary/cryostorage_hallway)
 "lEV" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/railing/grey{
@@ -28562,9 +28581,7 @@
 	d2 = 8;
 	icon_state = "32-8"
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/maintenance/substation/research)
 "lGH" = (
 /obj/structure/cable/heavyduty{
@@ -29225,7 +29242,7 @@
 	},
 /area/surface/outpost/main/dorms/dorm_7)
 "lUR" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/beige/border,
 /obj/effect/floor_decal/borderfloorblack/corner2{
@@ -29262,7 +29279,7 @@
 /obj/machinery/vending/tool{
 	dir = 1
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
@@ -29399,7 +29416,7 @@
 	dir = 1;
 	pixel_x = 5
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
@@ -29819,7 +29836,7 @@
 /obj/effect/floor_decal/corner/pink/bordercorner2{
 	dir = 5
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/status_display{
@@ -29966,7 +29983,7 @@
 /turf/simulated/floor/outdoors/dirt,
 /area/surface/outside/plains/outpost)
 "mnx" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/purple/border,
 /obj/effect/floor_decal/borderfloorblack/corner2,
@@ -30194,7 +30211,7 @@
 	dir = 6
 	},
 /obj/effect/floor_decal/borderfloorblack/corner2,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "msA" = (
@@ -30511,9 +30528,7 @@
 /area/surface/outside/plains/outpost)
 "mzt" = (
 /obj/structure/railing,
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/crew_quarters/cafeteria)
 "mzE" = (
 /obj/effect/floor_decal/borderfloorblack,
@@ -30561,7 +30576,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/debriefing)
 "mzN" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/item/weapon/flag,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/security/lobby)
@@ -30580,7 +30595,7 @@
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -31003,6 +31018,9 @@
 /obj/structure/fans/tiny,
 /turf/simulated/floor/bmarble,
 /area/surface/outpost/main/dorms/dorm_5)
+"mJm" = (
+/turf/simulated/wall/elevator,
+/area/quartermaster/delivery)
 "mJy" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/water/atoll,
@@ -31190,7 +31208,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/surface/outside/path/plains)
 "mNh" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/railing/grey{
@@ -31724,7 +31742,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/pathfinder)
 "mWw" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/structure/railing/grey{
 	dir = 1
 	},
@@ -32331,7 +32349,7 @@
 /obj/item/weapon/melee/umbrella/random,
 /obj/item/weapon/melee/umbrella/random,
 /obj/structure/table/rack/shelf/steel,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -32547,7 +32565,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/medical/biostorage)
 "nna" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -33239,7 +33257,7 @@
 /obj/effect/floor_decal/corner/pink/bordercorner2{
 	dir = 9
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "nFy" = (
@@ -33991,7 +34009,7 @@
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/garage)
 "nUD" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/expoutpost/prep)
 "nUR" = (
@@ -34118,7 +34136,7 @@
 /area/surface/outside/plains/outpost)
 "nWX" = (
 /obj/turbolift_map_holder/southern_cross/port,
-/turf/simulated/floor/outdoors/grass/heavy,
+/turf/simulated/wall/elevator,
 /area/quartermaster/delivery)
 "nXu" = (
 /obj/effect/zone_divider,
@@ -35151,7 +35169,7 @@
 /area/chapel/main)
 "oCQ" = (
 /obj/effect/zone_divider,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/structure/table/wooden_reinforced,
 /turf/simulated/floor/outdoors/dirt,
 /area/surface/outpost/main/exploration)
@@ -35453,7 +35471,7 @@
 /obj/item/weapon/gun/energy/locked/frontier/holdout,
 /obj/item/weapon/gun/energy/locked/frontier/holdout,
 /obj/item/weapon/gun/energy/locked/frontier/holdout,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -35662,7 +35680,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/reception)
 "oNP" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/railing/grey,
@@ -35754,7 +35772,7 @@
 /obj/item/weapon/melee/umbrella/random,
 /obj/item/weapon/melee/umbrella/random,
 /obj/structure/table/rack/shelf/steel,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/alarm{
@@ -35980,7 +35998,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "oRY" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/machinery/light_switch{
@@ -36201,7 +36219,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
@@ -36303,7 +36321,7 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_10)
 "oZD" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/structure/cable/green{
@@ -36537,7 +36555,7 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 10
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
@@ -36791,7 +36809,7 @@
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 9
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/machinery/vending/wardrobe/janidrobe,
@@ -38397,11 +38415,11 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/cafeteria)
 "pRr" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -38592,7 +38610,7 @@
 /area/hydroponics)
 "pUI" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/white/border,
 /turf/simulated/floor/tiled/dark,
@@ -38796,7 +38814,7 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 9
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/machinery/status_display{
@@ -39494,7 +39512,7 @@
 /obj/structure/closet{
 	name = "Evidence Closet"
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -40154,7 +40172,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/hallway/atmos_hallway)
 "qxh" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/outdoors/grass/heavy,
@@ -40655,7 +40673,7 @@
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 6
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/random/soap,
@@ -40794,7 +40812,7 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 1
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/hydro,
@@ -40883,7 +40901,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6
 	},
@@ -40956,7 +40974,7 @@
 /turf/simulated/wall,
 /area/medical/foyer)
 "qTc" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -41124,7 +41142,7 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 1
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/hydro,
@@ -42231,7 +42249,7 @@
 /obj/effect/floor_decal/corner/white/bordercorner2{
 	dir = 8
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/item/device/radio/intercom{
@@ -42242,7 +42260,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/shuttle)
 "rqX" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -43458,13 +43476,13 @@
 /area/medical/sleeper)
 "rRr" = (
 /obj/structure/flora/ausbushes/genericbush,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/grass,
 /area/hydroponics)
 "rRL" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -43955,7 +43973,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/rnd/workshop)
 "sfn" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -44384,7 +44402,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/cryo/autoresleeve)
 "sog" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/railing/grey{
@@ -44859,7 +44877,7 @@
 /area/engineering/locker_room)
 "swh" = (
 /obj/structure/closet/secure_closet/engineering_personal,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -44968,7 +44986,7 @@
 /turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "syw" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -44983,7 +45001,7 @@
 /obj/effect/floor_decal/corner/beige/bordercorner2{
 	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/dark,
 /area/quartermaster/delivery)
 "syG" = (
 /obj/structure/table/steel_reinforced,
@@ -45249,7 +45267,7 @@
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 1
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/hydro,
@@ -45334,7 +45352,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/engineering/external_lights)
 "sDU" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/beige/border,
 /obj/effect/floor_decal/borderfloorblack/corner2,
@@ -45343,7 +45361,7 @@
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
-/turf/simulated/floor/tiled,
+/turf/simulated/floor/tiled/dark,
 /area/quartermaster/delivery)
 "sEl" = (
 /turf/simulated/floor/plating,
@@ -45449,9 +45467,7 @@
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/crew_quarters/kitchen)
 "sHd" = (
 /obj/machinery/camera/network/exterior{
@@ -45764,11 +45780,11 @@
 	d2 = 9;
 	icon_state = "6-9"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty{
 	outdoors = 1
@@ -46178,7 +46194,7 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/crew_quarters/heads/sc/cmo)
 "sWJ" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
@@ -46349,7 +46365,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 8
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/railing/grey,
@@ -46998,6 +47014,12 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/steel_dirty{
 	outdoors = 1
 	},
@@ -47021,6 +47043,12 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty{
 	outdoors = 1
@@ -47065,18 +47093,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/debriefing)
-"tsb" = (
-/obj/structure/cable/heavyduty{
-	icon_state = "2-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/tiled/steel_dirty{
-	outdoors = 1
-	},
-/area/surface/outside/path/plains)
 "tso" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 6
@@ -47182,7 +47198,7 @@
 /area/surface/outside/path/plains)
 "ttU" = (
 /obj/structure/bed/chair/wood,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet{
@@ -47240,7 +47256,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 28
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
@@ -47267,7 +47283,7 @@
 /obj/machinery/vending/fitness{
 	dir = 8
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -47608,7 +47624,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/cafeteria)
 "tzr" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -48822,7 +48838,7 @@
 	},
 /area/surface/outpost/main/dorms/dorm_2)
 "tYs" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/machinery/vending/wallmed1{
 	dir = 1;
 	name = "NanoMed Wall";
@@ -48997,6 +49013,9 @@
 	},
 /obj/machinery/computer/timeclock/premade/east,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/steel_dirty{
 	outdoors = 1
 	},
@@ -49138,7 +49157,7 @@
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/lime/border,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -24
@@ -49466,9 +49485,7 @@
 /turf/simulated/floor/wood/alt/parquet,
 /area/library)
 "upc" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/quartermaster/hallway)
 "ups" = (
 /obj/machinery/power/smes/buildable{
@@ -49495,22 +49512,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/quartermaster/foyer)
-"uqa" = (
-/mob/living/simple_mob/vore/otie/zorgoia/feral{
-	ai_holder_type = /datum/ai_holder/simple_mob/melee/thor_underground;
-	faction = "neutral";
-	health = 350;
-	maxHealth = 350;
-	name = "big zorgoia";
-	size_multiplier = 2;
-	vore_bump_chance = 100;
-	vore_ignores_undigestable = 1;
-	vore_pounce_maxhealth = 150;
-	vore_stomach_flavor = "You have ended up in the zorgoia's primary stomach. The end of the line for the solidness of the most of its food. It is very hot and humid here, and it doesn't help that the little air left is saturated with pungent fumes of digesting food. The slimy folds of this powerful belly knead and squeeze firmly against your form, the globs and strands of the dark, almost tar-like internal slop within feel rather thick compared to the usual. The muscular walls seem awfully eager to cling and rub against you, while oozing numbingly thick and dense juices against your body.";
-	vore_stomach_name = "stomach"
-	},
-/turf/simulated/floor/plating,
-/area/surface/outpost/main/garage)
 "uqj" = (
 /obj/machinery/seed_storage/garden{
 	dir = 4;
@@ -50905,7 +50906,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/foyer)
 "uNG" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -51021,7 +51022,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/research)
 "uPP" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -51086,9 +51087,7 @@
 /turf/simulated/floor/water/atoll,
 /area/surface/outside/plains/outpost)
 "uRn" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/rnd/research)
 "uRy" = (
 /obj/effect/decal/cleanable/dirt,
@@ -51312,7 +51311,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/medical/psych)
 "uVC" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty,
@@ -51438,7 +51437,7 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/wood,
@@ -51555,7 +51554,7 @@
 /obj/structure/closet{
 	name = "Evidence Closet"
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -51709,7 +51708,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "vcx" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/cable/green{
@@ -52035,7 +52034,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/sleeper)
 "vhy" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/item/device/radio/intercom{
@@ -52272,9 +52271,7 @@
 	},
 /area/surface/outside/path/plains)
 "vlF" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/surface/outside/plains/outpost{
 	outdoors = -1
 	})
@@ -52370,7 +52367,7 @@
 /turf/simulated/floor/outdoors/dirt,
 /area/medical/medbay_primary_storage)
 "vnA" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -52562,9 +52559,7 @@
 	dir = 4
 	},
 /obj/structure/railing/grey,
-/turf/simulated/floor/plating{
-	outdoors = 1
-	},
+/turf/simulated/floor/plating,
 /area/medical/sleeper)
 "vqz" = (
 /obj/structure/cable/heavyduty{
@@ -52748,7 +52743,7 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_9)
 "vsx" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
@@ -52799,7 +52794,7 @@
 "vtl" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/appliance/mixer/cereal,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/machinery/firealarm{
@@ -52981,7 +52976,7 @@
 /turf/unsimulated/wall/planetary/normal/thor,
 /area/surface/outpost/wall/checkpoint)
 "vwr" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/structure/railing,
@@ -53410,7 +53405,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/hallway/engineer_hallway)
 "vFE" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -53528,7 +53523,7 @@
 	},
 /area/server)
 "vHG" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/outdoors/grass/heavy,
@@ -53587,7 +53582,7 @@
 	},
 /area/medical/patient_a)
 "vJH" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/structure/railing/grey{
 	dir = 8
 	},
@@ -53623,15 +53618,13 @@
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/sign/directions/stairs_down{
 	pixel_y = 25
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/crew_quarters/kitchen)
 "vKF" = (
 /obj/structure/cable/green{
@@ -53743,7 +53736,7 @@
 /turf/simulated/floor/wood/alt/panel,
 /area/surface/outpost/main/dorms/dorm_8)
 "vOu" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
@@ -53852,7 +53845,7 @@
 /turf/simulated/shuttle/plating,
 /area/shuttle/needle)
 "vRh" = (
-/turf/simulated/floor/outdoors/grass/heavy,
+/turf/simulated/floor/tiled/dark,
 /area/quartermaster/delivery)
 "vRB" = (
 /turf/simulated/floor/wood,
@@ -54072,7 +54065,7 @@
 /turf/simulated/floor/plating,
 /area/surface/outpost/main/dorms/dorm_6)
 "vVZ" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/steel_dirty{
@@ -54558,7 +54551,7 @@
 /area/surface/outside/plains/outpost)
 "wdH" = (
 /obj/machinery/vending/fitness,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/wood,
@@ -54929,7 +54922,7 @@
 /obj/effect/floor_decal/corner/pink/bordercorner2{
 	dir = 4
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -54991,7 +54984,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/engine_eva)
 "wmS" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/outdoors/dirt,
@@ -55034,7 +55027,7 @@
 /area/rnd/research)
 "wnE" = (
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -55150,7 +55143,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/hallway/engineer_hallway)
 "wqh" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_dirty{
@@ -55209,7 +55202,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/effect/floor_decal/borderfloorblack/corner2,
@@ -55248,6 +55241,8 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/steel_dirty{
 	outdoors = 1
 	},
@@ -55989,7 +55984,7 @@
 /turf/simulated/floor/tiled/white,
 /area/surface/outpost/main/gym)
 "wGB" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/panel,
@@ -57266,7 +57261,7 @@
 "xix" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -57298,7 +57293,7 @@
 /turf/simulated/floor/reinforced,
 /area/surface/outpost/main/landing/one)
 "xkd" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -57328,7 +57323,7 @@
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/surface/outside/path/plains)
 "xks" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/bed/chair,
@@ -57396,7 +57391,7 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/main/dorms/dorm_3)
 "xle" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /turf/simulated/floor/wood/alt/panel,
 /area/chapel/main)
 "xlv" = (
@@ -57406,7 +57401,7 @@
 /turf/simulated/floor/wood,
 /area/hallway/primary/thirddeck/stationgateway)
 "xlL" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /obj/item/weapon/melee/umbrella/random,
@@ -57512,7 +57507,7 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "xnv" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 8
 	},
 /obj/structure/railing/grey,
@@ -57556,9 +57551,7 @@
 	layer = 4;
 	pixel_y = 32
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/crew_quarters/cafeteria)
 "xoq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -57795,7 +57788,7 @@
 /obj/machinery/chemical_dispenser/bar_soft/full{
 	dir = 8
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/wood,
@@ -58653,7 +58646,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/pathfinder)
 "xEh" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/outdoors/dirt,
@@ -58765,7 +58758,7 @@
 	},
 /area/surface/outside/path/plains)
 "xFu" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -59127,7 +59120,7 @@
 /obj/effect/floor_decal/corner/pink/bordercorner2{
 	dir = 4
 	},
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -59630,7 +59623,7 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/kitchen)
 "xTH" = (
-/obj/machinery/light/no_nightshift{
+/obj/machinery/light{
 	dir = 1
 	},
 /obj/effect/landmark/start{
@@ -59839,7 +59832,7 @@
 /turf/simulated/floor/plating,
 /area/surface/outpost/civilian/emergency_storage)
 "xWJ" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/structure/railing/grey{
 	dir = 1
 	},
@@ -60340,7 +60333,7 @@
 /turf/simulated/floor/wood,
 /area/surface/outpost/civilian/fishing)
 "yfP" = (
-/obj/machinery/light/no_nightshift,
+/obj/machinery/light,
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/yellow/border,
 /obj/effect/floor_decal/borderfloorblack/corner2,
@@ -80612,10 +80605,10 @@ bkB
 ybp
 uPu
 xZf
-vRh
-vRh
-vRh
-vRh
+mJm
+mJm
+mJm
+mJm
 nWX
 xZf
 rLe
@@ -80869,11 +80862,11 @@ tBi
 kQR
 tUO
 tUO
+mJm
 vRh
 vRh
 vRh
-vRh
-vRh
+mJm
 xZf
 fgv
 fgv
@@ -81126,11 +81119,11 @@ qRH
 hEH
 eRM
 tUO
+mJm
 vRh
 vRh
 vRh
-vRh
-vRh
+mJm
 xZf
 rLe
 fgv
@@ -81383,11 +81376,11 @@ dOs
 uml
 dHS
 tUO
+mJm
 vRh
 vRh
 vRh
-vRh
-vRh
+mJm
 xZf
 rLe
 fgv
@@ -81640,11 +81633,11 @@ cRW
 vgP
 ibD
 tUO
+mJm
 vRh
 vRh
 vRh
-vRh
-vRh
+mJm
 xZf
 hVQ
 fgv
@@ -81899,7 +81892,7 @@ xjF
 tUO
 xZf
 syw
-wgj
+vRh
 sDU
 xZf
 xZf
@@ -87522,7 +87515,7 @@ psQ
 yeV
 pJG
 sAX
-tsb
+puZ
 udl
 fWl
 sOK
@@ -91086,7 +91079,7 @@ azW
 azW
 aOI
 bcg
-bsI
+akn
 bHZ
 ckF
 cyw
@@ -97524,9 +97517,9 @@ aCQ
 lPo
 dfk
 dfk
-rLe
-rLe
-rLe
+kYl
+kYl
+kYl
 iQz
 jAs
 jXI
@@ -97781,8 +97774,8 @@ aCQ
 tgb
 dfk
 dfk
-fgv
-rLe
+gTa
+kYl
 eVE
 iRF
 jAu
@@ -107304,7 +107297,7 @@ mGe
 mZt
 ntX
 nVa
-uqa
+mYp
 mYm
 pHS
 qsb

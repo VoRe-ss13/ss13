@@ -1,4 +1,10 @@
 export const stats: (string | undefined)[] = [undefined, 'average', 'bad'];
+export const vorespawnAbsorbedText: string[] = ['No', 'Yes', 'Prey Choice'];
+export const vorespawnAbsorbedColor: (string | undefined)[] = [
+  undefined,
+  'green',
+  'orange',
+];
 
 export const digestModeToColor = {
   Default: undefined,
@@ -42,4 +48,11 @@ export const digestModeToPreyMode = {
   'Size Steal': 'having your size stolen.',
   Heal: 'being healed.',
   'Encase In Egg': 'being encased in an egg.',
+};
+
+export const SYNTAX_REGEX = /%belly|%pred|%prey/g;
+export const SYNTAX_COLOR = {
+  '%belly': 'average',
+  '%pred': 'bad',
+  '%prey': 'good',
 };

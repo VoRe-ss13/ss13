@@ -589,6 +589,7 @@
 			if(imp.handle_implant(character,character.zone_sel.selecting))
 				imp.post_implant(character)
 	var/gut = join_props["voreny"]
+	var/start_absorbed = join_props["absorb"] //CHOMPAdd
 	var/mob/living/prey = join_props["prey"]
 	//CHOMPEdit Start - Item TF
 	if(itemtf && istype(itemtf, /obj/item/capture_crystal))
@@ -611,13 +612,22 @@
 		for(var/obj/belly/B in character.vore_organs)
 			if(B.name == gut)
 				gut_to_enter = B
+				character.vore_selected = B
 		var/datum/effect/effect/system/teleport_greyscale/tele = new /datum/effect/effect/system/teleport_greyscale()
 		tele.set_up("#00FFFF", get_turf(prey))
 		tele.start()
 		character.forceMove(get_turf(prey))
+		//CHOMPAdd Start
+		if(start_absorbed)
+			prey.absorbed = 1
+		//CHOMPAdd End
 		prey.forceMove(gut_to_enter)
 	else
 		if(gut)
+			//CHOMPAdd Start
+			if(start_absorbed)
+				character.absorbed = 1
+			//CHOMPAdd End
 			character.forceMove(gut)
 
 	character.client.init_verbs() // init verbs for the late join
@@ -762,9 +772,6 @@
 	new_character.force_update_limbs()
 	new_character.update_icons_body()
 	new_character.update_transform() //VOREStation Edit
-
-	new_character.set_footsteps(chosen_species.footstep) // CHOMPEdit
-	new_character.set_slosh() //CHOMPEdit
 
 	new_character.key = key		//Manually transfer the key to log them in
 
