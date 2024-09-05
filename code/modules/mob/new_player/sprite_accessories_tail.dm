@@ -1048,8 +1048,6 @@
 	extra_overlay2 = "zorgoia_fluff_top"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
-<<<<<<< HEAD
-=======
 
 /datum/sprite_accessory/tail/lleill
 	name = "Lleill tail"
@@ -1069,4 +1067,3 @@
 	name = "Lleill tail, Small"
 	icon_state = "tail3"
 	extra_overlay = "tail3_marking"
->>>>>>> b6436f1dc3 ([MIRROR] Lleill Species - Part 2 (#8701))

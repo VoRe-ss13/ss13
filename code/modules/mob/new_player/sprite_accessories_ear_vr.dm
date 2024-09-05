@@ -30,8 +30,6 @@
 	do_colouration = 1
 	extra_overlay = "shadekin-round-inner"
 
-<<<<<<< HEAD
-=======
 /datum/sprite_accessory/ears/lleill
 	name = "Lleill Ears, colorable"
 	desc = ""
@@ -52,7 +50,6 @@
 	icon_state = "lleill3"
 	extra_overlay = "lleill3-antlers"
 
->>>>>>> b6436f1dc3 ([MIRROR] Lleill Species - Part 2 (#8701))
 // Ears avaliable to anyone
 
 /datum/sprite_accessory/ears/alien_slug
