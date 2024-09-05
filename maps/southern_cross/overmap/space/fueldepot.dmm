@@ -1255,6 +1255,30 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
+<<<<<<< HEAD
+=======
+"da" = (
+/obj/structure/cryofeed,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	health = 1e+006;
+	req_access = list(5)
+	},
+/obj/structure/window/reinforced{
+	dir = 4;
+	health = 1e+006
+	},
+/turf/simulated/floor/tiled/milspec/raised,
+/area/sc_away/fueldepotspawn)
+"ec" = (
+/obj/effect/floor_decal/industrial/warning/dust/corner{
+	dir = 8
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+>>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 "es" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1272,7 +1296,73 @@
 /turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
 "ft" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/manifold/visible{
+=======
+/obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,
+/obj/structure/catwalk,
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"fZ" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/lattice,
+/turf/space,
+/area/space)
+"hQ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/fans/hardlight,
+/obj/machinery/door/airlock/hatch{
+	req_one_access = null
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"ib" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/techmaint/airless,
+/area/sc_away/fueldepot)
+"if" = (
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 10
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"ii" = (
+/obj/structure/lattice,
+/turf/space,
+/area/sc_away/fueldepot)
+"iF" = (
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"ja" = (
+/obj/structure/catwalk,
+/obj/structure/table/rack/steel,
+/obj/item/weapon/tool/crowbar/red,
+/obj/item/weapon/tool/wrench,
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"jm" = (
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"jC" = (
+/obj/structure/lattice,
+/turf/space,
+/area/space)
+"lN" = (
+/mob/living/simple_mob/vore/alienanimals/catslug/custom/spaceslug,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+>>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 	dir = 8
 	},
 /obj/structure/catwalk,
@@ -1306,6 +1396,116 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
+<<<<<<< HEAD
+=======
+"rV" = (
+/turf/simulated/wall/rshull,
+/area/sc_away/fueldepotspawn)
+"sg" = (
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 5
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"sq" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12;
+	pixel_y = 2
+	},
+/turf/simulated/floor/tiled/kafel_full,
+/area/sc_away/fueldepotspawn)
+"sM" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/lattice,
+/turf/space,
+/area/space)
+"sX" = (
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 9
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"uc" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/effect/floor_decal/industrial/warning/dust/corner,
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"un" = (
+/obj/machinery/power/rtg,
+/obj/structure/cable/green,
+/turf/simulated/floor/tiled/techmaint/airless,
+/area/sc_away/fueldepot)
+"vF" = (
+/obj/effect/floor_decal/industrial/warning/dust,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"wz" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/wingrille_spawn/reinforced,
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepotspawn)
+"wC" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	dir = 1;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/visible/fuel,
+/obj/structure/catwalk,
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"zb" = (
+/obj/machinery/light_switch{
+	pixel_y = 26
+	},
+/turf/simulated/floor/tiled/techmaint/airless,
+/area/sc_away/fueldepot)
+"Au" = (
+/obj/structure/bed/padded,
+/obj/effect/landmark{
+	name = "JoinLateFuelDepot"
+	},
+/obj/machinery/computer/cryopod{
+	pixel_x = 32;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"AT" = (
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"Bu" = (
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+>>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 "BA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/aux{
 	dir = 8
@@ -1319,6 +1519,26 @@
 /obj/structure/catwalk,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
+<<<<<<< HEAD
+=======
+"BD" = (
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"BI" = (
+/obj/machinery/cryopod{
+	quiet = 1
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/milspec/raised,
+/area/sc_away/fueldepotspawn)
+>>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 "DC" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 8
@@ -1350,6 +1570,72 @@
 	},
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
+<<<<<<< HEAD
+=======
+"Jf" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/lattice,
+/turf/space,
+/area/space)
+"Jr" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/tiled/kafel_full,
+/area/sc_away/fueldepotspawn)
+"Km" = (
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"Lo" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"Ls" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/vending/sovietsoda,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"LN" = (
+/obj/machinery/gear_dispenser/suit_fancy/autolok,
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"MO" = (
+/obj/effect/floor_decal/industrial/warning/dust,
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"MQ" = (
+/turf/simulated/floor/tiled/kafel_full,
+/area/sc_away/fueldepotspawn)
+>>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 "Nq" = (
 /obj/structure/table/rack/shelf/steel,
 /obj/random/tool,
@@ -1366,6 +1652,70 @@
 /obj/item/weapon/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
+<<<<<<< HEAD
+=======
+"QT" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/effect/landmark{
+	name = "JoinLateFuelDepot"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"Ro" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/space)
+"Tq" = (
+/obj/structure/sign/warning/vacuum{
+	pixel_x = -32
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -24
+	},
+/obj/effect/floor_decal/rust,
+/obj/machinery/portable_atmospherics/powered/pump/filled,
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"Tt" = (
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 8
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"TC" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"TX" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"Ul" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/space)
+"Vq" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/floor_decal/industrial/warning/dust/corner{
+	dir = 8
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+>>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 "Vy" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -12513,6 +12863,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 aa
 aa
 aa
@@ -12522,6 +12873,17 @@ aa
 aa
 aa
 aa
+=======
+jC
+Ro
+rV
+rV
+Ho
+rV
+rV
+da
+rV
+>>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 aa
 ay
 bz

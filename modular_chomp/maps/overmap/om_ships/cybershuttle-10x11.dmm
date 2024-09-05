@@ -135,7 +135,8 @@
 	},
 /obj/machinery/power/apc/alarms_hidden{
 	dir = 4;
-	pixel_x = 24
+	pixel_x = 24;
+	locked = 0
 	},
 /turf/simulated/floor/plating,
 /area/shuttle/cybershuttle)
@@ -169,7 +170,18 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/cybershuttle)
+<<<<<<< HEAD
 "P" = (
+=======
+"M" = (
+/obj/machinery/photocopier/faxmachine{
+	department = "CyberShuttle"
+	},
+/obj/structure/table/survival_pod,
+/turf/simulated/floor/tiled/techfloor,
+/area/shuttle/cybershuttle)
+"Q" = (
+>>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 /obj/machinery/ion_engine{
 	dir = 1
 	},
@@ -330,7 +342,7 @@ a
 a
 D
 d
-g
+M
 k
 V
 R
