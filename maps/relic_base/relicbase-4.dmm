@@ -457,6 +457,9 @@
 /obj/effect/floor_decal/corner/red/bordercorner2{
 	dir = 1
 	},
+/obj/machinery/computer/security/telescreen/bodycamera{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/security/main)
 "apO" = (
@@ -689,9 +692,7 @@
 	c_tag = "CIV - Library Southeast";
 	dir = 8
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/library_conference_room)
 "azb" = (
 /obj/machinery/power/apc{
@@ -2539,9 +2540,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/engineering/atmos/storage)
 "cvp" = (
 /obj/machinery/camera/network/exterior{
@@ -2788,9 +2787,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/medical/medical_lockerroom)
 "cAK" = (
 /obj/machinery/camera/network/exterior{
@@ -5525,6 +5522,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/security_hallway)
+"eNM" = (
+/obj/machinery/door/firedoor/glass,
+/turf/simulated/floor/tiled/dark,
+/area/quartermaster/storage)
 "eOe" = (
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/dorms/dorm_7/upstairs)
@@ -15521,11 +15522,6 @@
 	},
 /turf/simulated/shuttle/floor/purple,
 /area/shuttle/ursula)
-"nru" = (
-/turf/simulated/wall/r_wall{
-	cached_rad_resistance = 150
-	},
-/area/quartermaster/delivery)
 "nsc" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
 /obj/structure/catwalk,
@@ -17245,7 +17241,7 @@
 	dir = 1;
 	name = "security camera"
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/dark,
 /area/quartermaster/storage)
 "oNq" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -19458,9 +19454,7 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "qmU" = (
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/engineering/atmos/storage)
 "qnh" = (
 /obj/structure/cable/cyan{
@@ -22033,9 +22027,7 @@
 	dir = 4
 	},
 /obj/structure/catwalk,
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/medical/medsci)
 "skR" = (
 /obj/structure/cable/green{
@@ -24203,9 +24195,7 @@
 	d2 = 4;
 	icon_state = "32-4"
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/engineering/atmos/storage)
 "uaT" = (
 /obj/structure/table/glass,
@@ -26568,9 +26558,7 @@
 	d2 = 8;
 	icon_state = "32-8"
 	},
-/turf/simulated/open{
-	outdoors = 1
-	},
+/turf/simulated/open,
 /area/library_conference_room)
 "wbm" = (
 /obj/machinery/smartfridge/survival_pod{
@@ -28869,7 +28857,7 @@
 /turf/simulated/wall/r_wall,
 /area/surface/outpost/main/bar)
 "ydE" = (
-/turf/unsimulated/mask,
+/turf/simulated/open,
 /area/quartermaster/storage)
 "ydZ" = (
 /obj/machinery/recharge_station,
@@ -50262,9 +50250,9 @@ eXT
 dsa
 qpf
 ggm
-nru
-bag
-bag
+ggm
+eNM
+eNM
 oMP
 ggm
 ggm
