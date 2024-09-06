@@ -23,3 +23,7 @@
   - bugfix: Fixed most spots of indoors rain throughout the outpost (hopefully all).
   - bugfix: Fixes tram tunnel walls not scrolling.
   - bugfix: Adjust lightweight trait description.
+2024-09-06:
+  VoRe-bot:
+  - balance: Illell have normal pain and burn mods
+  - bugfix: description label of the bellyrub target in examine
