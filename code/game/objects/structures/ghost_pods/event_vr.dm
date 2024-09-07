@@ -32,7 +32,7 @@
 	if (not_has_ooc_text(M))
 		return
 
-	while(finalized == "No" && M.client)
+	while(finalized != "Yes" && M.client)
 		choice = tgui_input_list(M, "What type of predator do you want to play as?", "Maintpred Choice", GLOB.ghost_spawnable_mobs)		//RS EDIT //TORCHEdit Start - Porting "Join As Mob" verb and changes from Rogue Star.
 		if(choice)		//RS EDIT START
 			if(islist(GLOB.ghost_spawnable_mobs[choice]))	//Allow for nested list for organization reasons

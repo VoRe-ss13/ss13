@@ -73,6 +73,8 @@
 
 		handle_heartbeat()
 		handle_nif() 			//VOREStation Addition
+		if(phobias)
+			handle_phobias()
 		if(!client)
 			species.handle_npc(src)
 
@@ -543,6 +545,11 @@
 		adjustOxyLoss(2)//If you are suiciding, you should die a little bit faster
 		suiciding--
 		return 0
+
+	if(wear_mask && (wear_mask.item_flags & INFINITE_AIR))
+		failed_last_breath = 0
+		adjustOxyLoss(-5)
+		return
 
 	if(does_not_breathe)
 		failed_last_breath = 0
@@ -1303,6 +1310,27 @@
 			if(tiredness >= 100)
 				Sleeping(5)
 
+		if(fear)
+			fear = (fear - 1)
+			if(fear >= 80 && is_preference_enabled(/datum/client_preference/play_ambiance))
+				if(last_fear_sound + 51 SECONDS <= world.time)
+					src << sound('sound/effects/Heart Beat.ogg',0,0,0,25)
+					last_fear_sound = world.time
+			if(fear >= 80 && !isSynthetic())
+				if(prob(1) && get_active_hand())
+					var/stuff_to_drop = get_active_hand()
+					drop_item()
+					visible_message("<span class='notice'>\The [src] suddenly drops their [stuff_to_drop].</span>","<span class='warning'>You drop your [stuff_to_drop]!</span>")
+				if(prob(5))
+					var/fear_self = pick(fear_message_self)
+					var/fear_other = pick(fear_message_other)
+					visible_message("<span class='notice'>\The [src][fear_other]</span>","<span class='warning'>[fear_self]</span>")
+			else if(fear >= 30 && !isSynthetic())
+				if(prob(2))
+					var/fear_self = pick(fear_message_self)
+					var/fear_other = pick(fear_message_other)
+					visible_message("<span class='notice'>\The [src][fear_other]</span>","<span class='warning'>[fear_self]</span>")
+
 		if(paralysis || sleeping)
 			blinded = 1
 			set_stat(UNCONSCIOUS)
@@ -1506,6 +1534,19 @@
 			overlay_fullscreen("tired", /obj/screen/fullscreen/oxy, severity)
 		else
 			clear_fullscreen("tired")
+
+		if(fear)
+			var/severity = 0
+			switch(fear)
+				if(10 to 20)		severity = 1
+				if(20 to 30)		severity = 2
+				if(30 to 50)		severity = 3
+				if(50 to 70)		severity = 4
+				if(70 to 90)		severity = 5
+				if(90 to INFINITY)	severity = 6
+			overlay_fullscreen("fear", /obj/screen/fullscreen/fear, severity)
+		else
+			clear_fullscreen("fear")
 
 		if(healths)
 			if (chem_effects[CE_PAINKILLER] > 100)
@@ -2053,6 +2094,8 @@
 			holder.icon_state = "-100" 	// X_X
 		else
 			holder.icon_state = RoundHealth((health-CONFIG_GET(number/health_threshold_crit))/(getMaxHealth()-CONFIG_GET(number/health_threshold_crit))*100) // CHOMPEdit
+		if(block_hud)
+			holder.icon_state = "hudblank"
 		apply_hud(HEALTH_HUD, holder)
 
 	if (BITTEST(hud_updateflag, LIFE_HUD))
@@ -2063,6 +2106,8 @@
 			holder.icon_state = "huddead"
 		else
 			holder.icon_state = "hudhealthy"
+		if(block_hud)
+			holder.icon_state = "hudblank"
 		apply_hud(LIFE_HUD, holder)
 
 	if (BITTEST(hud_updateflag, STATUS_HUD))
@@ -2096,6 +2141,10 @@ End Chomp edit */
 				holder2.icon_state = "hudill"
 			else
 				holder2.icon_state = "hudhealthy"
+		if(block_hud)
+			holder.icon_state = "hudblank"
+			holder2.icon_state = "hudblank"
+
 		apply_hud(STATUS_HUD, holder)
 		apply_hud(STATUS_HUD_OOC, holder2)
 
@@ -2110,6 +2159,8 @@ End Chomp edit */
 		else
 			holder.icon_state = "hudunknown"
 
+		if(block_hud)
+			holder.icon_state = "hudblank"
 		apply_hud(ID_HUD, holder)
 
 	if (BITTEST(hud_updateflag, WANTED_HUD))
@@ -2136,7 +2187,8 @@ End Chomp edit */
 					else if((R.fields["id"] == E.fields["id"]) && (R.fields["criminal"] == "Released"))
 						holder.icon_state = "hudreleased"
 						break
-
+		if(block_hud)
+			holder.icon_state = "hudblank"
 		apply_hud(WANTED_HUD, holder)
 
 	if (  BITTEST(hud_updateflag, IMPLOYAL_HUD) \
