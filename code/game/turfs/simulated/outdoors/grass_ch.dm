@@ -256,7 +256,7 @@ GLOBAL_LIST_INIT(grass_trees, list(
 		/obj/structure/flora/tree/jungle_small,
 		/obj/structure/flora/tree/jungle
 		),
-	"seasonalfall" = list(
+	"seasonalautumn" = list(	//TORCHEdit - Fixing wrong list name. We should eventually PR this upstream, but rn I'm fixing this as an edit to fix a runtime asap
 		/obj/structure/flora/tree/bigtree
 		),
 	"seasonalwinter" = list(
