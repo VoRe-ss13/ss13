@@ -53,7 +53,7 @@
 	#include "relicbase-7.dmm"	//Wilderness - Z7
 	// #include "relicbase-8.dmm"  //Wilderness sky - Z8
 	#include "relicbase-9.dmm" //Ocean/Plains - Z9
-	#include "relicbase-10.dmm" //Surface Mines - Z10
+	// #include "relicbase-10.dmm" //Surface Mines - Z10
 	#include "relicbase-11.dmm" //Explo carrier - Z11
 	#include "relicbase-12.dmm" //CC - Z12
 	#include "relicbase-13.dmm" //Transit - Z13
