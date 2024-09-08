@@ -1308,9 +1308,6 @@
 /obj/machinery/chem_master{
 	pixel_x = -7
 	},
-/obj/machinery/photocopier/faxmachine{
-	department = "CyberShuttle"
-	},
 /turf/simulated/shuttle/floor/white,
 /area/shuttle/whiteshipOM2)
 "Ij" = (
