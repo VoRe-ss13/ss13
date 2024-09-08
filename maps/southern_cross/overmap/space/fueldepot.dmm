@@ -10,8 +10,6 @@
 	dir = 5
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
@@ -42,8 +40,6 @@
 /area/sc_away/fueldepot)
 "ae" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/aux{
@@ -82,8 +78,6 @@
 /area/sc_away/fueldepot)
 "ai" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
@@ -108,8 +102,6 @@
 /area/sc_away/fueldepot)
 "al" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
@@ -141,8 +133,6 @@
 "ao" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -154,36 +144,25 @@
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "aq" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	icon_state = "0-4"
+/obj/structure/railing{
+	dir = 8
 	},
-/obj/effect/floor_decal/industrial/warning/dust{
-	dir = 9
-	},
-/turf/simulated/shuttle/plating/airless,
-/area/sc_away/fueldepot)
+/obj/structure/lattice,
+/turf/space,
+/area/space)
 "ar" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/effect/floor_decal/industrial/warning/dust{
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/manifold/visible{
 	dir = 1
 	},
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "as" = (
-/obj/machinery/power/solar,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /obj/effect/floor_decal/industrial/warning/dust{
-	dir = 5
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
@@ -243,19 +222,8 @@
 /turf/space,
 /area/space)
 "aD" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
+/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/manifold4w/visible,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "aE" = (
@@ -291,39 +259,26 @@
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "aJ" = (
+/obj/structure/grille,
+/obj/structure/lattice,
+/turf/space,
+/area/space)
+"aK" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /turf/simulated/shuttle/plating/airless,
-/area/sc_away/fueldepot)
-"aK" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
 "aL" = (
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
 "aM" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /obj/effect/floor_decal/industrial/warning/dust,
+/obj/machinery/power/tracker,
+/obj/structure/cable,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "aN" = (
@@ -337,14 +292,17 @@
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "aO" = (
-/obj/machinery/power/tracker,
-/obj/structure/cable,
-/turf/simulated/shuttle/plating/airless,
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
 "aP" = (
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techmaint/airless,
@@ -432,12 +390,11 @@
 /area/sc_away/fueldepot)
 "aX" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	icon_state = "2-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /obj/structure/cable{
-	icon_state = "1-8"
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
@@ -470,16 +427,14 @@
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "bc" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 10
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 8
 	},
 /obj/structure/catwalk,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "be" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -490,6 +445,7 @@
 	dir = 1
 	},
 /obj/structure/catwalk,
+/obj/machinery/vending/weeb,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "bg" = (
@@ -530,13 +486,12 @@
 /area/sc_away/fueldepot)
 "bk" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/fuel,
 /turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
 "bl" = (
@@ -553,8 +508,6 @@
 /area/sc_away/fueldepot)
 "bm" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/fuel,
@@ -570,10 +523,11 @@
 /turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
 "bo" = (
-/obj/machinery/atmospherics/pipe/manifold/visible{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/visible/fuel{
+	dir = 8
 	},
 /obj/structure/catwalk,
+/obj/machinery/light/floortube,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "bp" = (
@@ -596,8 +550,8 @@
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "br" = (
-/obj/machinery/atmospherics/pipe/simple/visible{
-	dir = 6
+/obj/machinery/atmospherics/pipe/manifold/visible/fuel{
+	dir = 1
 	},
 /obj/structure/catwalk,
 /turf/simulated/shuttle/plating/airless,
@@ -682,8 +636,6 @@
 /area/sc_away/fueldepot)
 "bA" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
@@ -698,13 +650,9 @@
 /area/sc_away/fueldepot)
 "bB" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel{
@@ -722,8 +670,6 @@
 /area/sc_away/fueldepot)
 "bD" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/aux,
@@ -836,8 +782,6 @@
 /area/sc_away/fueldepot)
 "bO" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/aux{
@@ -851,8 +795,6 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
@@ -932,8 +874,6 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/visible/aux,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/effect/catwalk_plated/dark,
@@ -1086,8 +1026,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -1127,8 +1065,6 @@
 	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/shuttle/plating/airless,
@@ -1202,8 +1138,6 @@
 /area/sc_away/fueldepot)
 "cF" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/aux{
@@ -1230,8 +1164,6 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/catwalk_plated/dark,
@@ -1242,8 +1174,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
@@ -1255,8 +1185,6 @@
 /obj/effect/catwalk_plated/dark,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
-<<<<<<< HEAD
-=======
 "da" = (
 /obj/structure/cryofeed,
 /obj/structure/window/reinforced{
@@ -1278,7 +1206,6 @@
 	},
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
->>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 "es" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1290,15 +1217,25 @@
 /obj/structure/catwalk,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
+"eL" = (
+/obj/structure/fans/hardlight,
+/obj/machinery/door/airlock/hatch{
+	req_one_access = null
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"eX" = (
+/obj/machinery/pointdefense_control{
+	id_tag = "depot_pd"
+	},
+/turf/simulated/floor/tiled/techmaint/airless,
+/area/sc_away/fueldepot)
 "fl" = (
 /obj/structure/table/steel_reinforced,
 /obj/random/toolbox,
 /turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
 "ft" = (
-<<<<<<< HEAD
-/obj/machinery/atmospherics/pipe/manifold/visible{
-=======
 /obj/machinery/atmospherics/pipe/manifold4w/visible/fuel,
 /obj/structure/catwalk,
 /turf/simulated/shuttle/plating/airless,
@@ -1362,17 +1299,22 @@
 "lN" = (
 /mob/living/simple_mob/vore/alienanimals/catslug/custom/spaceslug,
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
->>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 	dir = 8
 	},
 /obj/structure/catwalk,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
-"ja" = (
-/obj/structure/catwalk,
-/obj/structure/table/rack/steel,
-/obj/item/weapon/tool/crowbar/red,
-/obj/item/weapon/tool/wrench,
+"nn" = (
+/obj/machinery/power/solar,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "om" = (
@@ -1385,6 +1327,55 @@
 	},
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
+"oJ" = (
+/obj/effect/wingrille_spawn/reinforced,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepotspawn)
+"oO" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/pointdefense{
+	id_tag = "depot_pd"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"pK" = (
+/obj/machinery/shower{
+	dir = 8;
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/structure/curtain/open/shower,
+/obj/structure/window/basic{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/kafel_full,
+/area/sc_away/fueldepotspawn)
+"pS" = (
+/obj/effect/floor_decal/industrial/outline/red,
+/obj/machinery/atmospherics/portables_connector/fuel{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint/airless,
+/area/sc_away/fueldepot)
+"qH" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"rh" = (
+/obj/effect/floor_decal/industrial/outline/red,
+/obj/machinery/atmospherics/portables_connector/fuel{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint/airless,
+/area/sc_away/fueldepot)
 "rE" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/aux{
 	dir = 1
@@ -1396,8 +1387,6 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
-<<<<<<< HEAD
-=======
 "rV" = (
 /turf/simulated/wall/rshull,
 /area/sc_away/fueldepotspawn)
@@ -1505,7 +1494,6 @@
 	},
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
->>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 "BA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/aux{
 	dir = 8
@@ -1519,8 +1507,6 @@
 /obj/structure/catwalk,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
-<<<<<<< HEAD
-=======
 "BD" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/sc_away/fueldepotspawn)
@@ -1538,7 +1524,6 @@
 	},
 /turf/simulated/floor/tiled/milspec/raised,
 /area/sc_away/fueldepotspawn)
->>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 "DC" = (
 /obj/machinery/atmospherics/pipe/simple/visible/fuel{
 	dir = 8
@@ -1548,17 +1533,99 @@
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"DL" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/rust,
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"EO" = (
+/obj/structure/table/steel_reinforced,
+/obj/item/device/bluespaceradio/southerncross_prelinked{
+	pixel_x = -8
+	},
+/obj/item/device/spaceflare{
+	pixel_y = 12;
+	pixel_x = 4
+	},
+/obj/item/device/spaceflare{
+	pixel_y = 0;
+	pixel_x = 4
+	},
+/obj/item/device/spaceflare{
+	pixel_y = 4;
+	pixel_x = 4
+	},
+/obj/item/device/spaceflare{
+	pixel_y = 8;
+	pixel_x = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"Fe" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/closet/emcloset,
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"Fp" = (
+/obj/machinery/vending/tool,
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"Fq" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"FH" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "FK" = (
 /obj/structure/table/rack/shelf/steel,
 /obj/random/powercell,
 /turf/simulated/floor/tiled/techmaint/airless,
+/area/sc_away/fueldepot)
+"Ho" = (
+/obj/machinery/door/airlock/hatch{
+	req_one_access = null
+	},
+/turf/simulated/floor/tiled/kafel_full,
+/area/sc_away/fueldepotspawn)
+"HC" = (
+/obj/effect/floor_decal/industrial/warning/dust/corner,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"HW" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/pointdefense{
+	id_tag = "depot_pd"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"IB" = (
+/obj/effect/floor_decal/industrial/warning/dust/corner{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
 "IR" = (
 /obj/machinery/atmospherics/pipe/simple/visible/aux{
@@ -1570,8 +1637,6 @@
 	},
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
-<<<<<<< HEAD
-=======
 "Jf" = (
 /obj/structure/railing{
 	dir = 4
@@ -1635,7 +1700,6 @@
 "MQ" = (
 /turf/simulated/floor/tiled/kafel_full,
 /area/sc_away/fueldepotspawn)
->>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 "Nq" = (
 /obj/structure/table/rack/shelf/steel,
 /obj/random/tool,
@@ -1647,13 +1711,20 @@
 /obj/item/weapon/storage/toolbox/electrical,
 /turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
+"Pr" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/pointdefense{
+	id_tag = "depot_pd"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
 "Qg" = (
 /obj/structure/table/rack/steel,
 /obj/item/weapon/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
-<<<<<<< HEAD
-=======
 "QT" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -1715,7 +1786,6 @@
 	},
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
->>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 "Vy" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1723,10 +1793,69 @@
 /obj/structure/catwalk,
 /turf/simulated/shuttle/plating/airless,
 /area/sc_away/fueldepot)
+"WJ" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"Xb" = (
+/obj/structure/bed/padded,
+/obj/effect/landmark{
+	name = "JoinLateFuelDepot"
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 24
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"XE" = (
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -26
+	},
+/turf/simulated/floor/tiled/techmaint/airless,
+/area/sc_away/fueldepot)
+"XG" = (
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
 "Ys" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
+"Yw" = (
+/obj/effect/floor_decal/industrial/warning/dust{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/shuttle/plating/airless,
+/area/sc_away/fueldepot)
+"YT" = (
+/obj/effect/floor_decal/rust,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/sc_away/fueldepotspawn)
+"ZZ" = (
+/obj/structure/railing,
+/obj/structure/lattice,
+/turf/space,
+/area/space)
 
 (1,1,1) = {"
 aa
@@ -9762,9 +9891,9 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
+jC
+jC
+HW
 aa
 aa
 aa
@@ -9904,9 +10033,9 @@ aa
 aa
 aa
 aa
+jC
 aa
-aa
-aa
+aK
 aa
 aa
 aa
@@ -10025,30 +10154,30 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ay
+aJ
+aJ
+aJ
+aJ
+aJ
+aJ
+jC
+jC
+ZZ
 bz
 bN
-aC
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+fZ
+jC
+jC
+jC
+sX
+at
+at
+at
+at
+at
+Lo
+FH
+TX
 aa
 aa
 aa
@@ -10165,14 +10294,14 @@ aa
 aa
 aa
 aa
+HW
+aa
+jC
 aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
+jC
 aa
 aa
 ay
@@ -10182,13 +10311,13 @@ aC
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+AT
+cw
+cw
+cw
+cw
+cw
+cy
 aa
 aa
 aa
@@ -10307,15 +10436,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+Fq
+WJ
+aF
+aF
+aF
+aF
+aF
+aF
+jC
 aa
 ay
 bz
@@ -10324,13 +10453,13 @@ aC
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+as
+uc
+aE
+aE
+aE
+aE
+aN
 aa
 aa
 aa
@@ -10447,17 +10576,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aJ
+jC
+aF
+HC
+Yw
+Yw
+Yw
+Yw
+Yw
+IB
+jC
 aa
 ay
 bz
@@ -10466,13 +10595,13 @@ aC
 aa
 aa
 aa
+Km
+aM
 aa
 aa
 aa
-aa
-aa
-aa
-aa
+ii
+ii
 aa
 aa
 aa
@@ -10589,16 +10718,16 @@ aa
 aa
 aa
 aa
+aJ
 aa
-aa
-aa
-aa
-aq
-at
-at
-at
-aI
-aa
+aF
+MO
+bn
+bn
+bn
+bn
+aG
+XG
 aF
 aF
 aF
@@ -10607,14 +10736,14 @@ bN
 aF
 aF
 aF
-aa
-aq
+jC
+as
+Vq
+at
 at
 at
 at
 aI
-aa
-aa
 aa
 aa
 aa
@@ -10731,15 +10860,15 @@ aa
 aa
 aa
 aa
+aJ
 aa
-aa
-aa
-aa
+aF
+vF
 ar
 aD
 aD
 aD
-aJ
+bC
 aO
 aF
 aW
@@ -10754,9 +10883,9 @@ cs
 cw
 cw
 cw
+cw
+cw
 cy
-aa
-aa
 aa
 aa
 aa
@@ -10873,32 +11002,32 @@ aa
 aa
 aa
 aa
+aJ
 aa
-aa
-aa
-aa
-as
-aE
-aE
-aE
-aK
-aP
+aF
+MO
+bp
+bp
+bp
+bp
+aG
+ib
 aP
 aX
 bk
-bA
+wC
 bO
-aP
-aP
-aP
-aP
+aL
+aL
+aL
+aL
 ct
 aE
 aE
 aE
+aE
+aE
 aN
-aa
-aa
 aa
 aa
 aa
@@ -11015,16 +11144,16 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aJ
+jC
+aF
+ec
+Tt
+Tt
+Tt
+if
 aG
-aa
+jC
 aF
 aY
 bl
@@ -11033,14 +11162,14 @@ bN
 aG
 OG
 aF
-aa
+jC
 aG
 aa
+jC
 aa
 aa
 aa
-aa
-aa
+jC
 aa
 aa
 aa
@@ -11157,12 +11286,12 @@ aa
 aa
 aa
 aa
+jC
 aa
-aa
-aa
-aa
-aa
-aa
+jC
+jC
+aF
+aF
 aF
 aF
 aG
@@ -11182,7 +11311,7 @@ aF
 aa
 aa
 aa
-aa
+jC
 aa
 aa
 aa
@@ -11299,7 +11428,7 @@ aa
 aw
 aw
 aw
-aa
+jC
 aa
 aa
 aa
@@ -11324,7 +11453,7 @@ aF
 aa
 aa
 aa
-aa
+jC
 aa
 aa
 aw
@@ -11441,7 +11570,7 @@ au
 ad
 ah
 ja
-ax
+sM
 aw
 aw
 aw
@@ -11452,9 +11581,9 @@ aH
 aG
 aG
 aR
-bn
-bn
-aj
+rh
+rh
+rh
 bQ
 ap
 ap
@@ -11466,7 +11595,7 @@ aF
 aw
 aw
 aw
-aw
+Jf
 aw
 au
 cz
@@ -11596,8 +11725,8 @@ ao
 aS
 bc
 bo
-bC
-rE
+lN
+bQ
 cc
 cn
 aU
@@ -11738,7 +11867,7 @@ ap
 cp
 br
 ft
-bC
+ft
 rE
 cc
 cn
@@ -11878,9 +12007,9 @@ aH
 aG
 aG
 bq
-bp
-bp
-aj
+pS
+pS
+pS
 bW
 cd
 cd
@@ -11892,7 +12021,7 @@ aF
 av
 av
 av
-av
+aq
 av
 az
 ja
@@ -12018,7 +12147,7 @@ aa
 aF
 FK
 aG
-aG
+eX
 aV
 bD
 bD
@@ -12034,7 +12163,7 @@ aF
 aa
 aa
 aa
-aa
+jC
 aa
 aa
 av
@@ -12155,13 +12284,13 @@ aa
 aa
 aa
 aa
-aa
-aa
-aF
-aF
-aG
-aF
-aF
+jC
+rV
+rV
+rV
+eL
+rV
+rV
 bf
 aj
 bz
@@ -12176,7 +12305,7 @@ aF
 aa
 aa
 aa
-aa
+jC
 aa
 aa
 aa
@@ -12297,28 +12426,28 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aG
-aa
-aF
-aG
+rV
+Fp
+EO
+LN
+BD
+Tq
+rV
+zb
 aG
 bz
 IR
 aG
-aG
+XE
 aF
-aa
+jC
 aG
 aa
+jC
 aa
 aa
 aa
-aa
-aa
+jC
 aa
 aa
 aa
@@ -12439,28 +12568,28 @@ aa
 aa
 aa
 aa
-aq
-at
-at
-at
+rV
+Ls
+TC
+TC
+DL
+DL
+hQ
 aL
-aP
-aP
-aP
-aP
+aL
 bA
 BA
-aP
-aP
-aP
-aP
+aL
+aL
+aL
+aL
 cu
 at
 at
 at
+at
+at
 aI
-aa
-aa
 aa
 aa
 aa
@@ -12581,14 +12710,14 @@ aa
 aa
 aa
 aa
-ar
-aD
-aD
-aD
-aM
-aa
-aF
-aG
+rV
+qH
+BD
+iF
+YT
+QT
+oJ
+un
 bs
 bz
 bN
@@ -12600,9 +12729,9 @@ cv
 cw
 cw
 cw
+cw
+cw
 cy
-aa
-aa
 aa
 aa
 aa
@@ -12721,15 +12850,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-as
-aE
-aE
-aE
-aN
-aa
-aF
+jC
+Ul
+wz
+Fe
+BD
+Xb
+Au
+BI
+rV
 aF
 aF
 bz
@@ -12737,14 +12866,14 @@ bN
 aF
 aF
 aF
-aa
+jC
 as
+uc
+aE
 aE
 aE
 aE
 aN
-aa
-aa
 aa
 aa
 aa
@@ -12863,17 +12992,6 @@ aa
 aa
 aa
 aa
-<<<<<<< HEAD
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-=======
 jC
 Ro
 rV
@@ -12883,7 +13001,6 @@ rV
 rV
 da
 rV
->>>>>>> 672d2ea60a (Spacefarer patches (#8907))
 aa
 ay
 bz
@@ -12892,13 +13009,13 @@ aC
 aa
 aa
 aa
+as
+MO
 aa
 aa
 aa
-aa
-aa
-aa
-aa
+ii
+ii
 aa
 aa
 aa
@@ -13017,13 +13134,13 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+Pr
+TX
+jm
+rV
+MQ
+sq
+rV
 aa
 aa
 aa
@@ -13034,13 +13151,13 @@ aC
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+as
+Vq
+at
+at
+at
+at
+aI
 aa
 aa
 aa
@@ -13162,10 +13279,10 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
+rV
+Jr
+pK
+rV
 aa
 aa
 aa
@@ -13176,13 +13293,13 @@ aC
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+Bu
+cw
+cw
+cw
+cw
+cw
+cy
 aa
 aa
 aa
@@ -13304,29 +13421,29 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ay
+rV
+rV
+rV
+rV
+jC
+jC
+jC
+ZZ
 bz
 bN
-aC
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+fZ
+jC
+jC
+jC
+sg
+aE
+aE
+aE
+aE
+aE
+nn
+FH
+WJ
 aa
 aa
 aa
@@ -13447,8 +13564,8 @@ aa
 aa
 aa
 aa
-aa
-aa
+jC
+jC
 aa
 aa
 aa
@@ -13466,9 +13583,9 @@ aa
 aa
 aa
 aa
+jC
 aa
-aa
-aa
+aK
 aa
 aa
 aa
@@ -13608,9 +13725,9 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
+jC
+jC
+oO
 aa
 aa
 aa
