@@ -45,3 +45,18 @@
   - rscadd: New pAI chassis
   - rscadd: added two spice smites; one harmless, one extra spicy
   - image: Added a new tail, the feathered raptor tail
+2024-09-09:
+  VoRe-bot:
+  - rscadd: Adds a new spawnpoint for outsiders to spawn in the fuel depot. Spacefarer
+      subjob highly recommended.
+  - maptweak: Fixed docking the whiteship II
+  - maptweak: Overhauled the fuel depot and made it spawn randomly in the OM
+  - maptweak: Fixed broken door bolts on whiteship II, removed stray door.
+  - maptweak: Cybershuttle access fix
+  - qol: Superposed pods can be rightclicked to be reset now instead of needing a
+      pen
+  - balance: Buffed the metawhiteship's generator to be a superpacman
+  - balance: Added a fuel cost to the superposed ship's short jumps
+  - maptweak: Fixed a wiring issue in the fuel depot
+  purplefoxy27:
+  - rscdel: Disables the surface mines z-level to improve performance
