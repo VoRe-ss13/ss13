@@ -1,0 +1,4 @@
+author: "FluffMedic"
+delete-after: True
+changes:
+  - rscadd: "Adds upstream fuel depot and future spawn point."
