@@ -792,16 +792,12 @@ macro "hotkeymode"
 	elem
 		name = "CTRL+SHIFT+SUBTRACT"
 		command = "planedown"
-<<<<<<< HEAD
-
-=======
 //	elem	// CHOMPREMOVE Start
 //		name = "Space"
 //		command = ".throwon"
 //	elem
 //		name = "Space+UP"
 //		command = ".throwoff" // CHOMPREMOVE End
->>>>>>> 4674e71c9e (Reverts the spacebar toggling R key (#8948))
 macro "borgmacro"
 	elem
 		name = "TAB"
