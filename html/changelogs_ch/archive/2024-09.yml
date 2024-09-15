@@ -60,3 +60,16 @@
   - maptweak: Fixed a wiring issue in the fuel depot
   purplefoxy27:
   - rscdel: Disables the surface mines z-level to improve performance
+2024-09-15:
+  FluffMedic:
+  - rscadd: Adds upstream fuel depot and future spawn point.
+  VoRe-bot:
+  - qol: lets proteans do weaver things again
+  - rscadd: You can now hold spacebar to throw items.
+  - rscadd: Id card to exploration borg to transfer points from the cataloguer and
+      use on the vendor
+  - rscadd: Examining a mob now puts their description in a box. It's pretty.
+  - maptweak: Whiteship mk2 rewiring plus duplicate fax removal
+  - code_imp: Fax machine inits instead of new now, fixes superposed pod fax machines
+      not updating the list.
+  - qol: spacebar no longers triggers throw
