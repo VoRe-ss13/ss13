@@ -209,6 +209,11 @@
 	name = "Cocoon Spinner"
 	desc = "Allows you to build a cocoon around yourself, using it to transform your body if you desire."
 	cost = 1
+<<<<<<< HEAD
+=======
+//	allowed_species = list(SPECIES_HANNER, SPECIES_CUSTOM) //So it only shows up for custom species and hanner CHOMPEDIT: It's a roleplay trait. Will things explode if more folks have it?
+	custom_only = FALSE
+>>>>>>> 5b395ee351 (Cocoon Spin Freedom (#8956))
 
 /datum/trait/positive/cocoon_tf/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
