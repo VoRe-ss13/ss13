@@ -736,7 +736,12 @@
 				if(O.status & ORGAN_BROKEN)
 					O.mend_fracture()		//Only works if the bone won't rebreak, as usual
 					H.custom_pain("You feel a terrible agony tear through your bones!",60)
+<<<<<<< HEAD
 					H.AdjustWeakened(1)		//Bones being regrown will knock you over
+=======
+					H.adjustHalLoss(60)
+					H.AdjustStunned(1)		//Bones being regrown will knock you over - CHOMPEdit - Crawling made this trivial, get stunned
+>>>>>>> 4da64922a0 (Fixes too much hallos damage being taken (#8974))
 		//CHOMPEdit End
 
 /datum/reagent/myelamine

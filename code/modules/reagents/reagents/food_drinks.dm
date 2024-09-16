@@ -1243,7 +1243,12 @@
 			if(O.status & ORGAN_BROKEN)
 				O.mend_fracture()
 				H.custom_pain("You feel the agonizing power of calcium mending your bones!",60)
+<<<<<<< HEAD
 				H.AdjustWeakened(1)
+=======
+				H.adjustHalLoss(60) // CHOMPAdd - Get hallos damaged
+				H.AdjustStunned(1) // CHOMPEdit - Crawling again, weakened to stunned
+>>>>>>> 4da64922a0 (Fixes too much hallos damage being taken (#8974))
 				break // Only mend one bone, whichever comes first in the list
 	//VOREStation Edit End
 
