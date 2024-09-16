@@ -1651,13 +1651,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/engineering/gravgen)
 "gk" = (
-<<<<<<< HEAD
-/turf/unsimulated/floor/carpet/gaycarpet,
-/area/maintenance/bar)
-=======
 /turf/simulated/floor/carpet/gaycarpet,
 /area/maintenance/zerobar)
->>>>>>> c9ac947b1b (Deck 0 fixes (#8960))
 "gl" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -1896,13 +1891,8 @@
 /obj/structure/bed/chair/oldsofa/right{
 	dir = 8
 	},
-<<<<<<< HEAD
-/turf/unsimulated/floor/carpet/gaycarpet,
-/area/maintenance/bar)
-=======
 /turf/simulated/floor/carpet/gaycarpet,
 /area/maintenance/zerobar)
->>>>>>> c9ac947b1b (Deck 0 fixes (#8960))
 "hl" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow{
@@ -3907,13 +3897,8 @@
 /area/maintenance/bar)
 "pe" = (
 /obj/random/trash,
-<<<<<<< HEAD
-/turf/unsimulated/floor/carpet/gaycarpet,
-/area/maintenance/bar)
-=======
 /turf/simulated/floor/carpet/gaycarpet,
 /area/maintenance/zerobar)
->>>>>>> c9ac947b1b (Deck 0 fixes (#8960))
 "pf" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/bed/chair/bay{
@@ -4670,13 +4655,8 @@
 /area/maintenance/starboard)
 "sf" = (
 /obj/effect/decal/cleanable/fruit_smudge,
-<<<<<<< HEAD
-/turf/unsimulated/floor/carpet/gaycarpet,
-/area/maintenance/bar)
-=======
 /turf/simulated/floor/carpet/gaycarpet,
 /area/maintenance/zerobar)
->>>>>>> c9ac947b1b (Deck 0 fixes (#8960))
 "sh" = (
 /obj/item/weapon/storage/firstaid/regular{
 	empty = 1;
@@ -6170,13 +6150,8 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-<<<<<<< HEAD
-/turf/unsimulated/floor/carpet/gaycarpet,
-/area/maintenance/bar)
-=======
 /turf/simulated/floor/carpet/gaycarpet,
 /area/maintenance/zerobar)
->>>>>>> c9ac947b1b (Deck 0 fixes (#8960))
 "yo" = (
 /turf/simulated/wall/r_wall/turfpack/station,
 /area/maintenance/engineering)
@@ -11942,13 +11917,8 @@
 /obj/structure/bed/chair/oldsofa/left{
 	dir = 8
 	},
-<<<<<<< HEAD
-/turf/unsimulated/floor/carpet/gaycarpet,
-/area/maintenance/bar)
-=======
 /turf/simulated/floor/carpet/gaycarpet,
 /area/maintenance/zerobar)
->>>>>>> c9ac947b1b (Deck 0 fixes (#8960))
 "Wt" = (
 /obj/structure/flora/pottedplant/subterranean,
 /turf/simulated/floor/plating/turfpack/station,
@@ -12959,13 +12929,8 @@
 /area/maintenance/abfirstaid)
 "ZJ" = (
 /obj/structure/bed/chair/oldsofa/right,
-<<<<<<< HEAD
-/turf/unsimulated/floor/carpet/gaycarpet,
-/area/maintenance/bar)
-=======
 /turf/simulated/floor/carpet/gaycarpet,
 /area/maintenance/zerobar)
->>>>>>> c9ac947b1b (Deck 0 fixes (#8960))
 "ZK" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/simulated/floor/plating/turfpack/station,
