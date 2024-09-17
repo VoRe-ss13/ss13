@@ -1,7 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - rscadd: "Added more shuttles for spacefarers"
-  - code_imp: "Added documentation to generic_shuttle.dm on how to make your own OM ship"
-  - rscadd: "SDF Corvette adjustments"
-  - rscadd: "Daedelus adjustments."
