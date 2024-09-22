@@ -8,7 +8,7 @@
 	icon_living = "stalker"
 	icon_state = "stalker"
 	icon_rest = "stalker-rest"
-	faction = "stalker"
+	faction = FACTION_STALKER
 	old_x = -16
 	old_y = 0
 	default_pixel_x = -16

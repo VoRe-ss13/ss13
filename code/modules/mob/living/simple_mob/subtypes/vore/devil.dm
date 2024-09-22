@@ -8,7 +8,7 @@
 	icon_living = "devil"
 	icon_state = "devil"
 	icon_rest = "devil"
-	faction = "devil"
+	faction = FACTION_DEVIL
 	old_x = -16
 	old_y = 0
 	default_pixel_x = -16
