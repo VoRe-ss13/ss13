@@ -1,13 +1,7 @@
 import { BooleanLike } from 'common/react';
-<<<<<<< HEAD:tgui/packages/tgui/interfaces/pda/pda_main_menu.tsx
-
-import { useBackend } from '../../backend';
-import { Box, Button, LabeledList, Section } from '../../components';
-=======
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Box, Button, Icon, LabeledList, Section } from 'tgui/components';
->>>>>>> 41945d8d5c ([MIRROR] Add a transition effect to opening PDA apps and color to flashlight (#9007)):tgui/packages/tgui/interfaces/Pda/pda_screens/pda_main_menu.tsx
 
 type Data = {
   owner: string;
