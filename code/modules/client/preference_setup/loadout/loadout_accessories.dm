@@ -554,8 +554,6 @@ Talon pin
 	"Service - Echelons" = /obj/item/clothing/accessory/solgov/department/service/army
 	)
 	gear_tweaks += new/datum/gear_tweak/path(insignia)
-<<<<<<< HEAD
-=======
 
 /datum/gear/accessory/belt_selection
 	display_name = "belts (selection, colorable)"
@@ -571,4 +569,3 @@ Talon pin
 	)
 	gear_tweaks += new/datum/gear_tweak/path(wristband_lists)
 	gear_tweaks += gear_tweak_free_color_choice
->>>>>>> 59122df349 ([MIRROR] A bunch of new clothes (#9008))
