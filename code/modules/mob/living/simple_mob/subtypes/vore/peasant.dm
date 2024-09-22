@@ -28,7 +28,7 @@
 		"peasantmb"
 	)
 
-	faction = "peasant"
+	faction = FACTION_PEASANT
 
 /mob/living/simple_mob/vore/peasant/New()
 	..()
