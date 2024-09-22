@@ -554,3 +554,7 @@ Talon pin
 	"Service - Echelons" = /obj/item/clothing/accessory/solgov/department/service/army
 	)
 	gear_tweaks += new/datum/gear_tweak/path(insignia)
+<<<<<<< HEAD
+=======
+
+>>>>>>> f506503c9a ([MIRROR] Revert "Add plushies to loadout!" (#9004))
