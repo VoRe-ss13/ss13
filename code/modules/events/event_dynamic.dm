@@ -70,12 +70,8 @@ var/list/event_last_fired = list()
 
 	/* TORCHEdit Start - Disable space vines until we revise its spawn areas
 	if(!spacevines_spawned)
-<<<<<<< HEAD
-		possibleEvents[/datum/event/spacevine] = 10 + 5 * active_with_role["Engineer"]
-	*/
-=======
 		possibleEvents[/datum/event/spacevine] = 10 + 5 * active_with_role[DEPARTMENT_ENGINEERING]
->>>>>>> 4153768ba1 ([MIRROR] Job rank and radio channel rework (#8965))
+	*/
 	if(minutes_passed >= 30) // Give engineers time to set up engine
 		possibleEvents[/datum/event/meteor_wave] = 10 * active_with_role[DEPARTMENT_ENGINEERING]
 		possibleEvents[/datum/event/blob] = 10 * active_with_role[DEPARTMENT_ENGINEERING]
