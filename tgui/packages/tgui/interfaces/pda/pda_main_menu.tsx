@@ -1,7 +1,13 @@
 import { BooleanLike } from 'common/react';
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/pda/pda_main_menu.tsx
 
 import { useBackend } from '../../backend';
 import { Box, Button, LabeledList, Section } from '../../components';
+=======
+import { useState } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Icon, LabeledList, Section } from 'tgui/components';
+>>>>>>> 41945d8d5c ([MIRROR] Add a transition effect to opening PDA apps and color to flashlight (#9007)):tgui/packages/tgui/interfaces/Pda/pda_screens/pda_main_menu.tsx
 
 type Data = {
   owner: string;
@@ -20,13 +26,43 @@ type category = {
   ref: string;
 };
 
+const specialIconColors = {
+  'Enable Flashlight': '#0f0',
+  'Disable Flashlight': '#f00',
+};
+
 export const pda_main_menu = (props) => {
   const { act, data } = useBackend<Data>();
+
+  const [showTransition, setShowTransition] = useState('');
+
+  const startProgram = (program: category) => {
+    if (
+      program.name.startsWith('Enable') ||
+      program.name.startsWith('Disable')
+    ) {
+      // Special case, instant
+      act('StartProgram', { program: program.ref });
+      return;
+    }
+
+    setShowTransition(program.icon);
+
+    setTimeout(() => {
+      setShowTransition('');
+      act('StartProgram', { program: program.ref });
+    }, 200);
+  };
 
   const { owner, ownjob, idInserted, categories, pai, notifying, apps } = data;
 
   return (
     <>
+      {showTransition && (
+        <Box className="Pda__Transition">
+          <Icon name={showTransition} size={4} />
+        </Box>
+      )}
       <Box>
         <LabeledList>
           <LabeledList.Item label="Owner" color="average">
@@ -58,8 +94,13 @@ export const pda_main_menu = (props) => {
                       key={app.ref}
                       icon={app.ref in notifying ? app.notify_icon : app.icon}
                       iconSpin={app.ref in notifying}
+                      iconColor={
+                        app.name in specialIconColors
+                          ? specialIconColors[app.name]
+                          : null
+                      }
                       color={app.ref in notifying ? 'red' : 'transparent'}
-                      onClick={() => act('StartProgram', { program: app.ref })}
+                      onClick={() => startProgram(app)}
                     >
                       {app.name}
                     </Button>
