@@ -5986,9 +5986,18 @@
 /obj/machinery/light{
 	dir = 8
 	},
+<<<<<<< HEAD:maps/relic_base/relicbase-12.dmm
 /obj/structure/table/rack/gun_rack/steel,
 /obj/item/weapon/gun/projectile/automatic/serdy/vityaz{
 	pixel_y = -6
+=======
+/turf/simulated/floor/tiled/techmaint,
+/area/shadekin)
+"fUa" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "SC-CBcargobay2"
+>>>>>>> 2694a018a2 (Various map fixes! (#9019)):maps/southern_sun/southern_cross-7.dmm
 	},
 /obj/item/weapon/gun/projectile/automatic/serdy/vityaz,
 /obj/item/weapon/gun/projectile/automatic/serdy/vityaz{
@@ -9924,8 +9933,19 @@
 /obj/item/stack/material/glass{
 	amount = 50
 	},
+<<<<<<< HEAD:maps/relic_base/relicbase-12.dmm
 /obj/item/stack/material/glass{
 	amount = 50
+=======
+/obj/effect/floor_decal/corner/green/diagonal,
+/obj/structure/disposalpipe/trunk,
+/turf/simulated/floor/tiled/white,
+/area/shadekin)
+"ktL" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "SC-CBcargobay1"
+>>>>>>> 2694a018a2 (Various map fixes! (#9019)):maps/southern_sun/southern_cross-7.dmm
 	},
 /obj/item/stack/material/glass{
 	amount = 50
@@ -11227,9 +11247,69 @@
 	},
 /area/wizard_station)
 "lPr" = (
+<<<<<<< HEAD:maps/relic_base/relicbase-12.dmm
 /obj/structure/table/standard,
 /obj/item/weapon/surgical/circular_saw{
 	pixel_y = 8
+=======
+/obj/structure/table/rack,
+/obj/item/device/suit_cooling_unit,
+/obj/item/device/suit_cooling_unit,
+/obj/item/device/suit_cooling_unit,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/syndicate_station)
+"lPt" = (
+/obj/structure/table/rack,
+/obj/item/weapon/tank/emergency/oxygen/double,
+/obj/item/weapon/tank/emergency/oxygen/double,
+/obj/item/weapon/tank/emergency/oxygen/double,
+/obj/item/weapon/tank/emergency/oxygen/double,
+/obj/item/weapon/tank/emergency/oxygen/double,
+/obj/item/weapon/tank/emergency/oxygen/double,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/syndicate_station)
+"lPx" = (
+/obj/structure/table/rack,
+/obj/item/weapon/rig/merc/empty,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/syndicate_station)
+"lPD" = (
+/obj/structure/flora/rocks1,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/holofloor/desert,
+/area/holodeck/source_picnicarea)
+"lPJ" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1380;
+	icon_state = "door_locked";
+	id_tag = "supply_shuttle_hatch";
+	locked = 1;
+	name = "Shuttle Hatch";
+	req_access = list(13)
+	},
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "SC-CBcargobay2"
+	},
+/turf/simulated/shuttle/plating,
+/area/shuttle/supply)
+"lPM" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/bed/chair/shuttle{
+	dir = 4
+	},
+/obj/machinery/status_display{
+	layer = 4;
+	pixel_x = -32
+>>>>>>> 2694a018a2 (Various map fixes! (#9019)):maps/southern_sun/southern_cross-7.dmm
 	},
 /obj/item/weapon/surgical/hemostat,
 /obj/item/weapon/surgical/scalpel,
@@ -20561,11 +20641,41 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/centcom/terminal)
 "wRt" = (
+<<<<<<< HEAD:maps/relic_base/relicbase-12.dmm
 /obj/structure/table/steel_reinforced,
 /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster,
 /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster,
 /turf/simulated/floor/reinforced,
 /area/centcom/specops)
+=======
+/obj/effect/floor_decal/corner/white/diagonal,
+/obj/item/weapon/stool/padded,
+/turf/unsimulated/floor{
+	icon_state = "steel"
+	},
+/area/centcom/bar)
+"wRy" = (
+/obj/structure/closet/secure_closet/hos,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/creed)
+"wRG" = (
+/obj/machinery/door/airlock/external{
+	frequency = 1380;
+	icon_state = "door_locked";
+	id_tag = "supply_shuttle_hatch";
+	locked = 1;
+	name = "Shuttle Hatch";
+	req_access = list(13)
+	},
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "SC-CBcargobay1"
+	},
+/turf/simulated/shuttle/plating,
+/area/shuttle/supply)
+>>>>>>> 2694a018a2 (Various map fixes! (#9019)):maps/southern_sun/southern_cross-7.dmm
 "wRX" = (
 /obj/machinery/clonepod,
 /turf/simulated/shuttle/floor/white,
