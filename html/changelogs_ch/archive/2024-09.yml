@@ -100,3 +100,32 @@
       things. Anyway, reverted to Weaver to how it was before upstream changes, aka
       open to all species.'
   - bugfix: liquid belly examine setting not saving
+2024-09-23:
+  VoRe-bot:
+  - qol: med/sec records and ids no longer out you as a hanner (useful for characters
+      who are unaware of their own status)
+  - bugfix: Brig Physician is now selectable
+  - maptweak: SDF Corvette not cycling airlocks properly
+  - bugfix: tweaks mouse holes to not iterate over world contents
+  - bugfix: prevents micros from teleporting out of your hand if removed from a mouse
+      hole
+  - rscadd: Closing a beaker and clicking on venomous animals/people with it will
+      allow you to express their venom into the beaker once every 30 seconds.
+  - rscadd: You can now select 1 of 47 different plushies to bring with you from loadout
+      accessories~!
+  - rscadd: Brig Physician role
+  - bugfix: Geneticists start with their right headset now
+  - rscadd: added HYPER binder underwear
+  - bugfix: Fixed onelife trait runtimes
+  - rscadd: PDAs now show a little animation when opening apps.
+  - rscadd: The PDA flashlight button is now highlighted.
+  - balance: patches will apply touch again
+  - rscadd: Line tool and paint bucket tool to Canvases.
+  - rscadd: Click-and-drag brush in Canvas.
+  - balance: 'Osteo/Milk effect: Weakened to Stun'
+  - code_imp: custom_pain proc actually hurts you now
+  - rscadd: PDAs will now display image embeds for cdn.discordapp.com and i.imgur.com
+      links.
+  - rscadd: Preference to turn off image embedding completely.
+  - bugfix: SurvivalDIY11x11 lite works now
+  - bugfix: Only osteodaxon/milk makes you be in pain now
