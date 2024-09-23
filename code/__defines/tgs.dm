@@ -157,7 +157,11 @@
  * * event_handler - Optional user defined [/datum/tgs_event_handler].
  * * minimum_required_security_level: The minimum required security level to run the game in which the DMAPI is integrated. Can be one of [TGS_SECURITY_ULTRASAFE], [TGS_SECURITY_SAFE], or [TGS_SECURITY_TRUSTED].
  */
+<<<<<<< HEAD
 /world/proc/TgsNew(datum/tgs_event_handler/event_handler, minimum_required_security_level = TGS_SECURITY_TRUSTED)
+=======
+/world/proc/TgsNew(datum/tgs_event_handler/event_handler, minimum_required_security_level = TGS_SECURITY_TRUSTED, datum/tgs_http_handler/http_handler) //CHOMPEdit we need trusted
+>>>>>>> 0961df8a0a (trusted level (#9027))
 	return
 
 /**
