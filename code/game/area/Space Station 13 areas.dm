@@ -2684,6 +2684,7 @@ var/list/the_station_areas = list (
 	icon_state = "shuttlered"
 	requires_power = 1
 
+/* TORCHRemove Start - We remain on Forbearance here
 // CHOMPAdd Start new Map
 /area/SouthernCrossV2/Maints
 	name = "\improper Evac"
@@ -2693,3 +2694,4 @@ var/list/the_station_areas = list (
 	name = "\improper Evac"
 	icon_state = "shuttle2"
 // CHOMPAdd End new Map
+*/ //TORCHRemove End
