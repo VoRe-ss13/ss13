@@ -129,3 +129,8 @@
   - rscadd: Preference to turn off image embedding completely.
   - bugfix: SurvivalDIY11x11 lite works now
   - bugfix: Only osteodaxon/milk makes you be in pain now
+2024-09-24:
+  VoRe-bot:
+  - qol: Zorgoia simplemobs now can have their style exported and imported for later!
+  - qol: Zorgoia simplemobs now spawn with random colors and markings.
+  - bugfix: turrets properly target simple mobs and xenos/aliens again
