@@ -2778,8 +2778,15 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/SouthernCrossV2/Medical/Psych_Room_2)
 "aWE" = (
+<<<<<<< HEAD
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/open,
+=======
+/obj/structure/railing/grey{
+	color = "yellow"
+	},
+/turf/simulated/floor/glass/reinforced,
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 /area/SouthernCrossV2/Maints/Deck3_Engineering_ForStarChamber2)
 "aWW" = (
 /obj/structure/cable/green{
@@ -4400,9 +4407,15 @@
 /turf/simulated/floor/tiled/kafel_full/white,
 /area/SouthernCrossV2/Bridge/RD_Quarters)
 "bCC" = (
-/obj/effect/catwalk_plated/techmaint,
 /obj/random/trash,
+<<<<<<< HEAD
 /turf/simulated/open,
+=======
+/obj/structure/railing/grey{
+	color = "yellow"
+	},
+/turf/simulated/floor/glass/reinforced,
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 /area/SouthernCrossV2/Maints/Deck3_Medical_AftPortCorridor1)
 "bCG" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan,
@@ -9415,6 +9428,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/SouthernCrossV2/Medical/Surgery_Storage)
+"dkv" = (
+/obj/structure/sign/levels/engineering/solars{
+	dir = 1;
+	pixel_y = 9
+	},
+/obj/structure/sign/levels/engineering/solars{
+	pixel_y = -9
+	},
+/obj/structure/sign/directions/engineering/solars{
+	dir = 10
+	},
+/turf/simulated/wall/r_wall,
+/area/SouthernCrossV2/Maints/Deck3_Bridge_AftStarCorridor1)
 "dkH" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -9806,6 +9832,13 @@
 	},
 /turf/simulated/floor/wood/alt,
 /area/SouthernCrossV2/Domicile/Chomp_Dinner_2)
+"dsH" = (
+/obj/structure/railing/grey{
+	color = "yellow";
+	dir = 1
+	},
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_ForPort_Corridor1)
 "dsP" = (
 /obj/structure/railing,
 /turf/simulated/open,
@@ -12013,7 +12046,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/open,
+/turf/simulated/floor/glass/reinforced,
 /area/SouthernCrossV2/Maints/Deck3_Medical_AftPortChamber2)
 "eaN" = (
 /obj/machinery/computer/security/telescreen/entertainment{
@@ -14242,6 +14275,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/SouthernCrossV2/Commons/Central_3_Deck_Hall)
+"eLF" = (
+/obj/random/trash,
+/obj/random/junk,
+/obj/random/trash_pile,
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_ForPort_Chamber1)
 "eLN" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 4
@@ -14448,6 +14488,10 @@
 	name = "S-alarm";
 	pixel_y = -25
 	},
+/obj/random/trash_pile,
+/obj/random/trash,
+/obj/random/trash,
+/obj/random/junk,
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Maints/Deck3_Medical_ForStarChamber1)
 "eNS" = (
@@ -18875,8 +18919,12 @@
 /turf/simulated/wall,
 /area/SouthernCrossV2/Medical/Restrooms)
 "fTK" = (
+<<<<<<< HEAD
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/open,
+=======
+/turf/simulated/floor/glass/reinforced,
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 /area/SouthernCrossV2/Maints/Deck3_Dorms_ForPort_Corridor1)
 "fTX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -22625,8 +22673,12 @@
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Maints/Bridge_Substation)
 "hgE" = (
+<<<<<<< HEAD
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/open,
+=======
+/turf/simulated/floor/glass/reinforced,
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 /area/SouthernCrossV2/Maints/Deck3_Medical_ForChamber1)
 "hgN" = (
 /turf/simulated/wall,
@@ -23099,6 +23151,16 @@
 	},
 /turf/simulated/floor/greengrid,
 /area/SouthernCrossV2/Bridge/AI_Core_Chamber)
+"hqb" = (
+/obj/structure/railing/grey{
+	color = "yellow";
+	dir = 8
+	},
+/obj/structure/railing/grey{
+	color = "yellow"
+	},
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_ForPort_Corridor1)
 "hqk" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden,
 /obj/effect/catwalk_plated,
@@ -27022,22 +27084,18 @@
 /turf/simulated/open,
 /area/SouthernCrossV2/Maints/Deck3_Dorms_ForPort_Corridor1)
 "iDQ" = (
+<<<<<<< HEAD
 /obj/machinery/alarm{
 	pixel_y = -25;
 	name = "S-alarm";
+=======
+/obj/structure/railing/grey{
+	color = "yellow";
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 	dir = 1
 	},
-/obj/machinery/light/small,
-/obj/structure/girder/reinforced{
-	default_material = "lead"
-	},
-/obj/machinery/door/blast/radproof/open{
-	dir = 4;
-	id = "SC-GCengineroom";
-	layer = 3.5
-	},
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Construction_Area)
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Medical_ForChamber1)
 "iEb" = (
 /obj/structure/bed/chair/wood{
 	dir = 8
@@ -29168,17 +29226,11 @@
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Domicile/Dormitory_12)
 "jlQ" = (
-/obj/effect/catwalk_plated/techmaint,
-/obj/machinery/porta_turret/crescent{
-	check_down = 0;
-	check_access = 0;
-	req_one_access = list(19);
-	desc = "A light weight energy turret design to be non-lethal, a deterrence against rowdy crew and deadly targets";
-	name = "Disabler turret";
-	faction = "nanotrasen"
+/obj/structure/railing/grey{
+	color = "yellow"
 	},
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Security/Transit_Turrets)
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Medical_AftPortCorridor1)
 "jme" = (
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
@@ -31561,6 +31613,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 10
+	},
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Engine1_Chamber)
 "kat" = (
@@ -32580,10 +32635,13 @@
 	pixel_y = 6;
 	pixel_x = -4
 	},
+<<<<<<< HEAD
 /obj/machinery/alarm{
 	pixel_y = 25;
 	name = "N-alarm"
 	},
+=======
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Construction_Area)
 "kqx" = (
@@ -32676,10 +32734,15 @@
 /turf/simulated/floor/reinforced/airless,
 /area/SouthernCrossV2/Engineering/Atmospherics_Chamber)
 "krr" = (
+<<<<<<< HEAD
 /obj/effect/catwalk_plated/techmaint,
 /obj/random/trash,
 /turf/simulated/open,
 /area/SouthernCrossV2/Maints/Deck3_Engineering_ForStarChamber1)
+=======
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Medical_PortChamber2)
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 "krt" = (
 /obj/structure/table/standard,
 /obj/random/coin/sometimes,
@@ -33719,6 +33782,11 @@
 	},
 /turf/space,
 /area/space)
+"kLn" = (
+/obj/random/trash_pile,
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/SouthernCrossV2/Maints/Deck3_Medical_ForPortChamber1)
 "kLr" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -34748,6 +34816,13 @@
 /obj/random/junk,
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Maints/Deck3_Medical_AftCorridor2)
+"laT" = (
+/obj/effect/catwalk_plated/techmaint,
+/obj/random/trash_pile,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/open,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_StarChamber2)
 "laU" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -36842,6 +36917,14 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/kafel_full/blue,
 /area/SouthernCrossV2/Medical/Restrooms)
+"lJz" = (
+/obj/structure/sign/directions/engineering/solars,
+/obj/structure/sign/levels/engineering/solars{
+	dir = 8;
+	pixel_y = -9
+	},
+/turf/simulated/wall/r_wall,
+/area/SouthernCrossV2/Maints/Deck3_Medical_ForPortChamber1)
 "lJN" = (
 /turf/simulated/wall/r_wall,
 /area/SouthernCrossV2/Medical/Resleeving)
@@ -36850,7 +36933,14 @@
 	name = "1S-light fixture"
 	},
 /obj/effect/floor_decal/industrial/hatch/blue,
+<<<<<<< HEAD
 /obj/machinery/portable_atmospherics/canister/air/airlock,
+=======
+/obj/machinery/atmospherics/pipe/tank{
+	dir = 1;
+	start_pressure = 0
+	},
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Engine1_Chamber)
 "lKg" = (
@@ -37640,15 +37730,15 @@
 	pixel_y = 9;
 	pixel_x = 7
 	},
-/obj/item/device/t_scanner/advanced{
-	pixel_y = 5;
-	pixel_x = -13
-	},
 /obj/item/weapon/storage/belt/utility/atmostech{
 	pixel_y = -3;
 	pixel_x = -2
 	},
 /obj/item/weapon/storage/belt/utility/atmostech,
+/obj/item/device/t_scanner/upgraded{
+	pixel_y = 5;
+	pixel_x = -12
+	},
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Atmospherics_Chamber)
 "lVx" = (
@@ -38422,7 +38512,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/SouthernCrossV2/Harbor/For_3_Deck_Airlock_Access_2)
 "mgf" = (
-/turf/simulated/floor/glass/reinforced,
+/turf/simulated/floor/tiled,
 /area/SouthernCrossV2/Domicile/Public_Hydroponics)
 "mgv" = (
 /obj/machinery/alarm{
@@ -38756,13 +38846,17 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
+<<<<<<< HEAD
 /turf/simulated/open,
+=======
+/obj/effect/catwalk_plated/techmaint,
+/turf/simulated/floor/glass/reinforced,
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 /area/SouthernCrossV2/Maints/Deck3_Engineering_ForStarChamber2)
 "mjJ" = (
 /obj/structure/table/steel,
@@ -40845,10 +40939,10 @@
 /turf/simulated/floor/carpet/turcarpet,
 /area/SouthernCrossV2/Bridge/Captain_Office)
 "mTB" = (
-/obj/machinery/atmospherics/binary/pump{
+/obj/effect/engine_setup/pump_max,
+/obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 4
 	},
-/obj/effect/engine_setup/pump_max,
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Engine2_Waste_Handling)
 "mTF" = (
@@ -40924,9 +41018,22 @@
 /turf/simulated/floor/wood/alt,
 /area/SouthernCrossV2/Medical/Patient_4)
 "mVB" = (
+<<<<<<< HEAD
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/open,
 /area/SouthernCrossV2/Maints/Deck3_Engineering_AftStarCorridor1)
+=======
+/obj/structure/railing/grey{
+	color = "yellow";
+	dir = 8
+	},
+/obj/structure/railing/grey{
+	color = "yellow";
+	dir = 1
+	},
+/turf/simulated/open,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_AftPortChamber1)
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 "mVO" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -45681,13 +45788,17 @@
 "orE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+<<<<<<< HEAD
 /turf/simulated/open,
+=======
+/obj/effect/catwalk_plated/techmaint,
+/turf/simulated/floor/glass/reinforced,
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 /area/SouthernCrossV2/Maints/Deck3_Engineering_ForStarChamber2)
 "orM" = (
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -48453,6 +48564,13 @@
 /obj/structure/girder/reinforced,
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Maints/Deck3_Bridge_ForStarCorridor2)
+"plP" = (
+/obj/structure/railing/grey{
+	color = "yellow";
+	dir = 4
+	},
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Engineering_ForStarChamber2)
 "plR" = (
 /obj/effect/floor_decal/spline/fancy{
 	dir = 5
@@ -48570,6 +48688,17 @@
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/tiled,
 /area/SouthernCrossV2/Commons/Central_3_Deck_Hall)
+"pnr" = (
+/obj/structure/railing/grey{
+	color = "yellow";
+	dir = 8
+	},
+/obj/structure/railing/grey{
+	color = "yellow";
+	dir = 1
+	},
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_ForPort_Corridor1)
 "pnQ" = (
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/plating,
@@ -50500,6 +50629,16 @@
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /turf/simulated/floor/reinforced/airless,
 /area/space)
+"pTP" = (
+/obj/structure/sign/directions/engineering/solars{
+	dir = 4
+	},
+/obj/structure/sign/levels/engineering/solars{
+	dir = 8;
+	pixel_y = -9
+	},
+/turf/simulated/wall/r_wall,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_ForStarChamber1)
 "pTW" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/tiled,
@@ -51013,17 +51152,12 @@
 /turf/simulated/floor/wood/alt/tile,
 /area/SouthernCrossV2/Domicile/Dormitory_08)
 "qdr" = (
-/obj/machinery/light/small,
-/obj/structure/girder/reinforced{
-	default_material = "lead"
-	},
-/obj/machinery/door/blast/radproof/open{
-	dir = 4;
-	id = "SC-GCengineroom";
-	layer = 3.5
-	},
+/obj/effect/graffitispawner,
+/obj/random/trash_pile,
+/obj/random/junk,
+/obj/random/junk,
 /turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Construction_Area)
+/area/SouthernCrossV2/Maints/Deck3_Dorms_ForPort_Chamber1)
 "qdY" = (
 /obj/machinery/light/small,
 /obj/random/junk,
@@ -53340,8 +53474,19 @@
 /area/SouthernCrossV2/Harbor/For_3_Deck_Airlock_Access_2)
 "qMF" = (
 /obj/random/trash,
+<<<<<<< HEAD
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/open,
+=======
+/obj/structure/railing/grey{
+	color = "yellow"
+	},
+/obj/structure/railing/grey{
+	color = "yellow";
+	dir = 8
+	},
+/turf/simulated/floor/glass/reinforced,
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 /area/SouthernCrossV2/Maints/Deck3_Engineering_ForStarChamber2)
 "qMP" = (
 /obj/machinery/atmospherics/portables_connector{
@@ -53355,18 +53500,15 @@
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Atmospherics_Chamber)
 "qMY" = (
-/obj/effect/catwalk_plated/techmaint,
-/obj/machinery/porta_turret/crescent{
-	check_down = 0;
-	check_access = 0;
-	req_one_access = list(19);
-	desc = "A light weight energy turret design to be non-lethal, a deterrence against rowdy crew and deadly targets";
-	name = "Disabler turret";
-	faction = "nanotrasen"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Security/Transit_Turrets)
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/SouthernCrossV2/Commons/For_3_Deck_Stairwell)
 "qNj" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/carpet/green,
@@ -53612,6 +53754,17 @@
 	},
 /turf/space,
 /area/space)
+"qTG" = (
+/obj/structure/railing/grey{
+	color = "yellow";
+	dir = 8
+	},
+/obj/structure/railing/grey{
+	color = "yellow";
+	dir = 1
+	},
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Medical_PortChamber2)
 "qTR" = (
 /obj/structure/table/glass,
 /obj/machinery/light{
@@ -53916,6 +54069,12 @@
 /obj/effect/floor_decal/corner/beige/bordercorner,
 /turf/simulated/floor/tiled,
 /area/SouthernCrossV2/Domicile/Dorm_Corridor_4)
+"rab" = (
+/obj/structure/railing/grey{
+	color = "yellow"
+	},
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_ForPort_Corridor1)
 "rae" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -54462,6 +54621,13 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/SouthernCrossV2/Engineering/Engine2_Access_Hall)
+"rhn" = (
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 22
+	},
+/turf/simulated/floor/plating,
+/area/SouthernCrossV2/Engineering/Construction_Area)
 "rhw" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/random/junk,
@@ -55136,6 +55302,12 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/techmaint,
 /area/SouthernCrossV2/Bridge/Control_Atrium)
+"rqC" = (
+/obj/effect/catwalk_plated/techmaint,
+/obj/random/trash_pile,
+/obj/random/junk,
+/turf/simulated/open,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_StarChamber2)
 "rqF" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -55497,11 +55669,9 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "rwZ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 10
-	},
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Engine1_Chamber)
+/obj/random/junk,
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Medical_AftPortCorridor1)
 "rxc" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/shuttle/blue{
@@ -55530,6 +55700,20 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/SouthernCrossV2/Domicile/Dorm_Corridor_4)
+"rxi" = (
+/obj/structure/sign/levels/engineering/solars{
+	dir = 4;
+	pixel_y = 9
+	},
+/obj/structure/sign/levels/engineering/solars{
+	dir = 8;
+	pixel_y = -9
+	},
+/obj/structure/sign/directions/engineering/solars{
+	dir = 6
+	},
+/turf/simulated/wall/r_wall,
+/area/SouthernCrossV2/Maints/Deck3_Bridge_AftPortCorridor1)
 "rxk" = (
 /obj/effect/floor_decal/industrial/warning{
 	layer = 3
@@ -57727,15 +57911,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/SouthernCrossV2/Domicile/Dormitory_08)
 "slG" = (
-/obj/effect/catwalk_plated/techmaint,
-/obj/machinery/porta_turret/crescent{
-	check_down = 0;
-	check_access = 0;
-	req_one_access = list(19);
-	desc = "A light weight energy turret design to be non-lethal, a deterrence against rowdy crew and deadly targets";
-	name = "Disabler turret";
-	faction = "nanotrasen"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -57752,8 +57927,8 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Security/Transit_Turrets)
+/turf/simulated/floor/tiled,
+/area/SouthernCrossV2/Commons/For_3_Deck_Stairwell)
 "sma" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -58122,6 +58297,13 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techmaint,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_AftPortChamber1)
+"sqh" = (
+/obj/structure/ladder{
+	pixel_y = 3
+	},
+/obj/effect/floor_decal/industrial/outline/yellow,
+/turf/simulated/floor/tiled/techfloor/grid,
 /area/SouthernCrossV2/Maints/Deck3_Dorms_AftPortChamber1)
 "sqk" = (
 /obj/machinery/atmospherics/unary/heat_exchanger{
@@ -58849,16 +59031,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/SouthernCrossV2/Engineering/Engine_Tech_Storage)
 "sEa" = (
-/obj/structure/girder/reinforced{
-	default_material = "lead"
-	},
-/obj/machinery/door/blast/radproof/open{
-	dir = 4;
-	id = "SC-GCengineroom";
-	layer = 3.5
-	},
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Construction_Area)
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Medical_AftPortCorridor1)
 "sEc" = (
 /turf/simulated/floor/tiled/kafel_full/white,
 /area/SouthernCrossV2/Domicile/Dormitory_09)
@@ -61242,6 +61416,11 @@
 	name = "S-alarm";
 	dir = 1
 	},
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/air/airlock,
+/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Engine1_Chamber)
 "tls" = (
@@ -61621,6 +61800,12 @@
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/space)
+"ttH" = (
+/obj/random/trash,
+/obj/random/trash_pile,
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_ForPort_Chamber1)
 "ttJ" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central5,
 /obj/structure/noticeboard{
@@ -62205,11 +62390,12 @@
 /turf/simulated/floor/wood/alt,
 /area/SouthernCrossV2/Domicile/Chomp_Dinner_1)
 "tFZ" = (
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	dir = 1
+/obj/structure/railing/grey{
+	color = "yellow";
+	dir = 8
 	},
 /turf/simulated/floor/glass/reinforced,
-/area/SouthernCrossV2/Domicile/Public_Hydroponics)
+/area/SouthernCrossV2/Maints/Deck3_Medical_PortChamber2)
 "tGp" = (
 /obj/structure/railing{
 	dir = 4
@@ -63244,6 +63430,7 @@
 /obj/effect/floor_decal/corner/lightorange/border{
 	dir = 1
 	},
+/obj/item/device/t_scanner/advanced,
 /turf/simulated/floor/tiled,
 /area/SouthernCrossV2/Engineering/Deck3_1_Corridor)
 "tYA" = (
@@ -63406,26 +63593,12 @@
 /turf/simulated/floor/carpet/purcarpet,
 /area/SouthernCrossV2/Bridge/Captain_Office)
 "uct" = (
-/obj/effect/floor_decal/borderfloor{
+/obj/structure/railing/grey{
+	color = "yellow";
 	dir = 1
 	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 1
-	},
-/obj/machinery/turretid/stun{
-	pixel_y = 26;
-	req_access = list(29);
-	check_access = 0;
-	check_down = 0;
-	check_weapons = 1;
-	lethal_is_configurable = 0;
-	name = "transit turret control panel";
-	check_anomalies = 0;
-	check_arrest = 0;
-	check_records = 0
-	},
-/turf/simulated/floor/tiled,
-/area/SouthernCrossV2/Security/Transit_Turrets)
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Medical_PortChamber2)
 "ucy" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -64137,6 +64310,27 @@
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Maints/Deck3_Center_Star)
+<<<<<<< HEAD
+=======
+"umX" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/white{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/milspec/raised,
+/area/SouthernCrossV2/Bridge/AI_Core_Chamber)
+"und" = (
+/obj/structure/sign/directions/engineering/solars{
+	dir = 8
+	},
+/obj/structure/sign/levels/engineering/solars{
+	pixel_y = -9
+	},
+/turf/simulated/wall/r_wall,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_ForPort_Chamber1)
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 "uni" = (
 /obj/structure/sign/department/atmos{
 	layer = 3.5;
@@ -65563,6 +65757,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/SouthernCrossV2/Commons/Aft_3_Deck_Central_Corridor_1)
+"uKE" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/catwalk_plated/techmaint,
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Engineering_ForStarChamber2)
 "uKF" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/random/junk,
@@ -66721,15 +66922,15 @@
 /turf/simulated/floor/wood/alt/panel,
 /area/SouthernCrossV2/Bridge/CE_Quarters)
 "uZK" = (
-/obj/machinery/portable_atmospherics/canister/air/airlock,
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
-	},
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/machinery/camera/network/security{
 	c_tag = "D3-Eng-1st Engine2";
 	network = list("engineering","Engine");
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/tank{
+	dir = 1;
+	start_pressure = 0
 	},
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Engine1_Chamber)
@@ -67632,6 +67833,11 @@
 	},
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Construction_Area)
+"vnT" = (
+/obj/random/trash_pile,
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_ForPort_Chamber1)
 "vnV" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -68911,12 +69117,19 @@
 /area/SouthernCrossV2/Domicile/Chomp_Lounge)
 "vHG" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
-/turf/simulated/floor/glass/reinforced,
+/turf/simulated/floor/tiled,
 /area/SouthernCrossV2/Domicile/Public_Hydroponics)
 "vIb" = (
 /obj/machinery/vending/coffee,
 /turf/simulated/floor/wood/alt,
 /area/SouthernCrossV2/Bridge/Conference_Room)
+"vIf" = (
+/obj/structure/railing/grey{
+	color = "yellow";
+	dir = 8
+	},
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Dorms_ForPort_Corridor1)
 "vIr" = (
 /obj/structure/table/bench/marble,
 /obj/effect/floor_decal/spline/plain{
@@ -71063,6 +71276,9 @@
 	id = "Eng Lockdown";
 	name = "Lockdown Gate";
 	desc = "A heavily reinforced gate, sector lockdown!"
+	},
+/obj/structure/sign/warning/airlock{
+	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/SouthernCrossV2/Engineering/Airlock_Access)
@@ -75435,6 +75651,9 @@
 	},
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Atmospherics_Chamber)
+"xDu" = (
+/turf/simulated/floor/glass/reinforced,
+/area/SouthernCrossV2/Maints/Deck3_Engineering_ForStarChamber2)
 "xDw" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
@@ -76139,6 +76358,11 @@
 /obj/structure/bed/chair/bay/chair/padded/red/bignest,
 /turf/simulated/floor/carpet/gaycarpet,
 /area/SouthernCrossV2/Domicile/Dormitory_05)
+"xMi" = (
+/obj/effect/catwalk_plated/techmaint,
+/obj/random/trash,
+/turf/simulated/open,
+/area/SouthernCrossV2/Maints/Deck3_Engineering_ForStarChamber1)
 "xMl" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -86025,7 +86249,7 @@ aGi
 gmg
 aGi
 aGi
-sEa
+jcJ
 vTE
 dHa
 dHa
@@ -86283,7 +86507,7 @@ jcJ
 jcJ
 aGi
 lsT
-sEa
+jcJ
 tgj
 tgj
 wzt
@@ -86522,7 +86746,7 @@ xtj
 xJY
 sOU
 rae
-rwZ
+vLY
 uZK
 mCr
 urH
@@ -86541,7 +86765,7 @@ sWn
 sWn
 wjD
 ubE
-sEa
+jcJ
 bng
 eeV
 sqK
@@ -86799,7 +87023,7 @@ jcJ
 jcJ
 ulX
 aGi
-iDQ
+eLm
 tgj
 qcT
 lDH
@@ -87057,7 +87281,7 @@ jcJ
 jcJ
 aGi
 aGi
-sEa
+jcJ
 tgj
 xei
 pkC
@@ -87315,7 +87539,7 @@ jcJ
 jcJ
 aGi
 aGi
-sEa
+jcJ
 tgj
 vLz
 iRi
@@ -87573,7 +87797,7 @@ jcJ
 jcJ
 aGi
 aGi
-sEa
+jcJ
 kaJ
 gvZ
 hAo
@@ -87831,7 +88055,7 @@ jcJ
 jcJ
 aGi
 aGi
-sEa
+jcJ
 tXO
 tXO
 tXO
@@ -88089,7 +88313,7 @@ jcJ
 jcJ
 aGi
 aGi
-sEa
+jcJ
 tXO
 czb
 roY
@@ -88347,7 +88571,7 @@ pRO
 pRO
 aGi
 aGi
-qdr
+eLm
 tXO
 dzT
 dQn
@@ -88605,7 +88829,7 @@ jWT
 jWT
 kVy
 vCq
-sEa
+jcJ
 tXO
 dVb
 jQQ
@@ -88863,7 +89087,7 @@ jcJ
 jcJ
 aGi
 xYg
-sEa
+jcJ
 tXO
 rmf
 bOR
@@ -89117,11 +89341,11 @@ xDE
 jcJ
 jcJ
 jcJ
-jcJ
+rhn
 yjL
 aGi
 aGi
-sEa
+jcJ
 tXO
 jqU
 mag
@@ -93253,9 +93477,9 @@ ffp
 ocD
 sOE
 joW
-mVB
-mVB
-mVB
+cOG
+gun
+gun
 mqI
 jFf
 mTB
@@ -93511,9 +93735,9 @@ eaY
 cIT
 hUU
 joW
-mVB
-mVB
-mVB
+kWZ
+gun
+gun
 mqI
 pfQ
 oGN
@@ -93769,9 +93993,9 @@ eaY
 xiQ
 gZd
 joW
-mVB
-mVB
-mVB
+kWZ
+gun
+gun
 mqI
 nse
 piW
@@ -95813,7 +96037,7 @@ vpl
 spK
 clf
 reN
-krr
+tZh
 xom
 qTm
 syI
@@ -96071,7 +96295,7 @@ vBg
 sjC
 clf
 reN
-tZh
+xMi
 qjx
 qTm
 syI
@@ -97623,8 +97847,8 @@ dOf
 oUk
 clf
 nhu
-aWE
-aWE
+xDu
+xDu
 qTm
 qTm
 qTm
@@ -97881,9 +98105,9 @@ bBk
 imS
 clf
 wFS
-aWE
-aWE
-wYU
+plP
+plP
+xDu
 oAF
 uNr
 nAa
@@ -98656,8 +98880,13 @@ dFr
 hwu
 gam
 aWE
+<<<<<<< HEAD
 jCc
 wYU
+=======
+uKE
+ier
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 oAF
 hJs
 aVT
@@ -101311,7 +101540,7 @@ hWG
 ycV
 nRP
 muw
-muw
+wVX
 lPX
 lPX
 lPX
@@ -101570,7 +101799,7 @@ muw
 voL
 muw
 muw
-muw
+wVX
 jTu
 lPX
 gCl
@@ -101720,7 +101949,7 @@ odv
 pIA
 fWL
 hKP
-fWL
+rxi
 dHa
 dHa
 dHa
@@ -102054,7 +102283,7 @@ pvp
 oQM
 pvp
 wtj
-wtj
+ttH
 wtj
 jZH
 aTK
@@ -102080,8 +102309,8 @@ uOc
 jTu
 viP
 hrB
-wVX
-wVX
+mVB
+sqh
 hgZ
 gPw
 drl
@@ -102311,8 +102540,8 @@ dHa
 pvp
 wtj
 onR
-vXB
-tNl
+wRG
+eLF
 qkf
 jZH
 mYV
@@ -102565,12 +102794,12 @@ dHa
 dHa
 dHa
 dHa
-pvp
+und
 pvp
 tNl
 tNl
-vXB
-vXB
+wRG
+vnT
 wzO
 jZH
 gxS
@@ -103086,7 +103315,7 @@ tNl
 wRG
 wtj
 vXB
-dvU
+qdr
 naq
 jZH
 gqj
@@ -103343,7 +103572,7 @@ tNl
 vXB
 biB
 omi
-vXB
+wRG
 jVP
 oXo
 juo
@@ -104371,11 +104600,11 @@ pfx
 reP
 hLn
 ede
-fTK
-fTK
-fTK
-fTK
-fTK
+pnr
+vIf
+vIf
+vIf
+hqb
 pfx
 wvD
 jZH
@@ -104629,11 +104858,11 @@ ori
 iKS
 bge
 sJb
+dsH
 fTK
 fTK
 fTK
-fTK
-fTK
+rab
 pfx
 pKv
 jZH
@@ -106367,9 +106596,9 @@ stg
 iSF
 eup
 eup
-eup
+iSF
 uMP
-jlQ
+bYz
 bYz
 fJj
 cNZ
@@ -106625,7 +106854,7 @@ bXW
 qsN
 eup
 eup
-eup
+iSF
 iSE
 tvL
 gop
@@ -106883,7 +107112,7 @@ bXW
 cvU
 eup
 eup
-eup
+iSF
 jVA
 cHl
 fHW
@@ -106934,7 +107163,7 @@ mgf
 mgf
 mgf
 mgf
-tFZ
+qTV
 eSH
 nrR
 rfG
@@ -107141,7 +107370,7 @@ mpp
 jWS
 eup
 eup
-eup
+iSF
 inK
 moT
 xGI
@@ -107643,7 +107872,7 @@ jjK
 ylA
 wVH
 tPH
-jlQ
+aaM
 aaM
 rqw
 nkF
@@ -108170,10 +108399,10 @@ tat
 tat
 qIj
 ofh
-uct
+cvU
 eup
 eup
-eup
+iSF
 bOD
 cIk
 bHJ
@@ -108431,7 +108660,7 @@ sOg
 htL
 eup
 eup
-eup
+iSF
 jVA
 bfP
 fHW
@@ -108482,7 +108711,7 @@ mgf
 mgf
 mgf
 mgf
-tFZ
+qTV
 mEk
 nrR
 rfG
@@ -108689,7 +108918,7 @@ rnN
 cRl
 eup
 eup
-eup
+iSF
 weg
 tpU
 qIs
@@ -108947,9 +109176,9 @@ sOg
 kIy
 eup
 eup
-eup
+iSF
 jVj
-jlQ
+bYz
 bYz
 fwN
 vFh
@@ -111010,7 +111239,7 @@ ncV
 jcH
 fmR
 wbH
-jlQ
+pMP
 yjo
 fVU
 ipJ
@@ -112885,7 +113114,7 @@ dHa
 dHa
 dHa
 dHa
-lmX
+pTP
 lmX
 xmc
 xIE
@@ -113183,7 +113412,7 @@ ueV
 kxT
 fcD
 gZV
-wtq
+rqC
 uTy
 beO
 ppd
@@ -113441,7 +113670,7 @@ eSM
 fcD
 fcD
 wtq
-wtq
+laT
 uTy
 eRh
 aEV
@@ -113588,7 +113817,7 @@ dTD
 uaG
 rul
 cwa
-rul
+dkv
 dHa
 dHa
 dHa
@@ -116182,7 +116411,7 @@ dHa
 dHa
 dHa
 dHa
-aan
+lJz
 aan
 bMd
 bMd
@@ -116699,7 +116928,7 @@ dHa
 dHa
 dHa
 eaE
-kcG
+pyK
 kcG
 vxz
 vXD
@@ -116713,10 +116942,17 @@ kcG
 pZA
 hsw
 axl
+<<<<<<< HEAD
 tWL
 tWL
 tWL
 tWL
+=======
+qTG
+tFZ
+tFZ
+tFZ
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 rFQ
 wro
 gvN
@@ -116971,10 +117207,17 @@ vwH
 ulO
 ayA
 ayA
+<<<<<<< HEAD
 tWL
 tWL
 tWL
 tWL
+=======
+uct
+krr
+krr
+krr
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 rFQ
 rFQ
 maN
@@ -117217,7 +117460,7 @@ dHa
 eaE
 uNb
 kfL
-kcG
+pyK
 mfp
 toW
 uNb
@@ -117229,11 +117472,19 @@ vwH
 pZA
 aWm
 aWm
+<<<<<<< HEAD
 tWL
 tWL
 tWL
 tWL
 tWL
+=======
+uct
+krr
+krr
+krr
+krr
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 rFQ
 jiV
 sYA
@@ -117475,7 +117726,7 @@ dHa
 aan
 sCc
 jhv
-kcG
+pyK
 tcM
 toW
 uNb
@@ -117487,11 +117738,19 @@ vwH
 pZA
 aWm
 aWm
+<<<<<<< HEAD
 tWL
 tWL
 tWL
 tWL
 tWL
+=======
+uct
+krr
+krr
+krr
+krr
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 rFQ
 qHV
 qht
@@ -117733,7 +117992,7 @@ aan
 aan
 uNb
 kfL
-kcG
+kLn
 kcG
 aEE
 fiE
@@ -117745,11 +118004,19 @@ hZh
 pZA
 dzC
 hum
+<<<<<<< HEAD
 tWL
 tWL
 tWL
 tWL
 tWL
+=======
+uct
+krr
+krr
+krr
+krr
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 rFQ
 kxl
 xSt
@@ -118536,9 +118803,15 @@ blM
 ixY
 iMd
 hIh
+<<<<<<< HEAD
 rQE
 rQE
 rQE
+=======
+sEa
+jlQ
+vXz
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 hsc
 fdT
 pEj
@@ -118774,7 +119047,7 @@ yaW
 iAh
 knU
 niE
-hgE
+iDQ
 hgE
 hgE
 hIh
@@ -118794,8 +119067,13 @@ rvp
 juv
 wLU
 hIh
+<<<<<<< HEAD
 rQE
 rQE
+=======
+sEa
+jlQ
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 uKF
 hsc
 fCX
@@ -119032,7 +119310,7 @@ yaW
 iPa
 ctH
 niE
-hgE
+iDQ
 hgE
 hgE
 hIh
@@ -119052,7 +119330,11 @@ aIV
 wfT
 qXC
 hIh
+<<<<<<< HEAD
 rQE
+=======
+sEa
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 bCC
 rQE
 hsc
@@ -119290,7 +119572,7 @@ npz
 tIc
 tIc
 suB
-hgE
+iDQ
 hgE
 hgE
 hIh
@@ -119310,8 +119592,13 @@ aIV
 wfT
 pML
 hIh
+<<<<<<< HEAD
 rQE
 rQE
+=======
+sEa
+jlQ
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 dyt
 hsc
 hsc
@@ -119548,7 +119835,7 @@ yaW
 hnW
 ctH
 niE
-hgE
+iDQ
 hgE
 hgE
 hIh
@@ -119568,9 +119855,15 @@ aIV
 wfT
 jfX
 hIh
+<<<<<<< HEAD
 uKF
 rQE
 rQE
+=======
+rwZ
+jlQ
+vXz
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 hsc
 bCU
 bCU
@@ -119806,7 +120099,7 @@ yaW
 xfg
 ctH
 niE
-hgE
+iDQ
 hgE
 hgE
 hIh
@@ -119826,9 +120119,15 @@ aIV
 wfT
 oSC
 hIh
+<<<<<<< HEAD
 rQE
 rQE
 rQE
+=======
+sEa
+jlQ
+vXz
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 hsc
 qaj
 pEj
@@ -120064,7 +120363,7 @@ wDV
 wmx
 ddi
 vYj
-hgE
+iDQ
 hgE
 hgE
 hIh
@@ -120084,7 +120383,11 @@ aIV
 wfT
 kge
 hIh
+<<<<<<< HEAD
 rQE
+=======
+sEa
+>>>>>>> bdcbfc3b5f (Southern Sun Map fixes! 1.4 (#9046))
 bCC
 rQE
 hsc
@@ -125985,8 +126288,8 @@ dHa
 dHa
 dgt
 dgt
-vkF
-vkF
+cej
+cej
 vkF
 nxp
 dVi
