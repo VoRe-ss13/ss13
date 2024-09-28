@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - qol: "Graffitis will take your mouse position now"
