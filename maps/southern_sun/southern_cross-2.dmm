@@ -10214,14 +10214,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/SouthernCrossV2/Security/Prison_Wing)
 "aDy" = (
-<<<<<<< HEAD
-/obj/machinery/alarm{
-	dir = 4;
-	name = "W-alarm";
-	pixel_x = -25
-	},
-=======
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"

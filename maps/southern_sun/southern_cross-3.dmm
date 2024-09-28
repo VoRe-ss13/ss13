@@ -1879,11 +1879,7 @@
 	dir = 8;
 	name = "1E-light fixture"
 	},
-<<<<<<< HEAD
-/turf/simulated/floor/plating,
-=======
 /turf/simulated/floor/airless,
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /area/SouthernCrossV2/Engineering/Solar_Control_ForStar)
 "aFT" = (
 /obj/machinery/iv_drip,
@@ -4913,24 +4909,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/SouthernCrossV2/Domicile/Dormitory_12)
 "bLC" = (
-<<<<<<< HEAD
-/obj/machinery/power/smes/buildable{
-	RCon_tag = "Solar - AftStar";
-	input_attempt = 1;
-	input_level = 150000;
-	output_level = 100000
-	},
-/obj/structure/cable,
-/obj/structure/sign/warning/high_voltage{
-	pixel_y = -32
-	},
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Solar_Control_AftStar)
-=======
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/airless,
 /area/SouthernCrossV2/Engineering/Solar_Control_ForPort)
->>>>>>> 280146cb05 (Various map fixes (#9043))
 "bLD" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -6139,10 +6120,6 @@
 /area/SouthernCrossV2/Bridge/HoP_Office)
 "chr" = (
 /obj/effect/catwalk_plated/techmaint,
-<<<<<<< HEAD
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Solar_Control_ForStar)
-=======
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
@@ -6151,7 +6128,6 @@
 /obj/random/trash,
 /turf/simulated/floor/airless,
 /area/SouthernCrossV2/Engineering/Solar_Control_AftPort)
->>>>>>> 280146cb05 (Various map fixes (#9043))
 "cih" = (
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
@@ -8586,15 +8562,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-<<<<<<< HEAD
-/obj/machinery/alarm{
-	pixel_y = 25;
-	name = "N-alarm"
-	},
-/turf/simulated/floor/plating,
-=======
 /turf/simulated/floor/airless,
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /area/SouthernCrossV2/Engineering/Solar_Control_ForPort)
 "cVl" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
@@ -8842,14 +8810,7 @@
 	name = "1E-light fixture"
 	},
 /obj/effect/catwalk_plated/techmaint,
-<<<<<<< HEAD
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 9
-	},
-/turf/simulated/floor/plating,
-=======
 /turf/simulated/floor/airless,
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /area/SouthernCrossV2/Engineering/Solar_Control_AftPort)
 "cZW" = (
 /obj/effect/catwalk_plated/techmaint,
@@ -11161,8 +11122,6 @@
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/dark,
 /area/SouthernCrossV2/Domicile/Observation_Lounge)
-<<<<<<< HEAD
-=======
 "dRW" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/yellow{
@@ -11173,7 +11132,6 @@
 /obj/random/junk,
 /turf/simulated/floor/airless,
 /area/SouthernCrossV2/Engineering/Solar_Control_AftPort)
->>>>>>> 280146cb05 (Various map fixes (#9043))
 "dSf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -11588,13 +11546,6 @@
 	},
 /turf/simulated/floor/glass,
 /area/SouthernCrossV2/Bridge/Control_Atrium)
-<<<<<<< HEAD
-"dWa" = (
-/obj/effect/catwalk_plated/techmaint,
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Solar_Control_ForPort)
-=======
->>>>>>> 280146cb05 (Various map fixes (#9043))
 "dWg" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -11620,16 +11571,7 @@
 	dir = 1
 	},
 /obj/structure/cable/yellow,
-<<<<<<< HEAD
-/obj/machinery/alarm{
-	dir = 1;
-	name = "S-alarm";
-	pixel_y = -25
-	},
-/turf/simulated/floor/plating,
-=======
 /turf/simulated/floor/airless,
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /area/SouthernCrossV2/Engineering/Solar_Control_AftStar)
 "dWD" = (
 /obj/random/junk,
@@ -25814,8 +25756,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/SouthernCrossV2/Medical/Deck3_Corridor)
-<<<<<<< HEAD
-=======
 "ikV" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/yellow{
@@ -25826,7 +25766,6 @@
 /obj/random/trash,
 /turf/simulated/floor/airless,
 /area/SouthernCrossV2/Engineering/Solar_Control_ForStar)
->>>>>>> 280146cb05 (Various map fixes (#9043))
 "ilN" = (
 /obj/machinery/vending/wardrobe/atmosdrobe,
 /obj/effect/floor_decal/borderfloorblack/full,
@@ -30504,13 +30443,6 @@
 /turf/simulated/floor/tiled,
 /area/SouthernCrossV2/Commons/Stairwell_Port)
 "jIY" = (
-<<<<<<< HEAD
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-=======
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/airless,
 /area/SouthernCrossV2/Engineering/Solar_Control_AftStar)
@@ -30769,18 +30701,6 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/SouthernCrossV2/Medical/Virology)
-<<<<<<< HEAD
-"jOu" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/effect/catwalk_plated/techmaint,
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Solar_Control_ForStar)
-=======
->>>>>>> 280146cb05 (Various map fixes (#9043))
 "jOy" = (
 /turf/simulated/floor/grass,
 /area/SouthernCrossV2/Domicile/Public_Garden)
@@ -35750,12 +35670,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-<<<<<<< HEAD
-/turf/simulated/floor/plating,
-=======
 /obj/random/trash,
 /turf/simulated/floor/airless,
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /area/SouthernCrossV2/Engineering/Solar_Control_AftStar)
 "lwD" = (
 /obj/structure/table/rack,
@@ -44011,13 +43927,6 @@
 /turf/simulated/floor/reinforced/airless,
 /area/space)
 "nVM" = (
-<<<<<<< HEAD
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-=======
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/airless,
 /area/SouthernCrossV2/Engineering/Solar_Control_AftPort)
@@ -45610,10 +45519,6 @@
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Engine2_Chamber)
 "otX" = (
-<<<<<<< HEAD
-/obj/structure/cable/yellow,
-=======
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /obj/effect/catwalk_plated/techmaint,
 /obj/machinery/power/apc/hyper{
 	dir = 1;
@@ -47202,13 +47107,6 @@
 /obj/structure/reagent_dispensers/foam,
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Maints/Deck3_Medical_StarCorridor1)
-<<<<<<< HEAD
-"oTP" = (
-/obj/effect/catwalk_plated/techmaint,
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Solar_Control_AftPort)
-=======
->>>>>>> 280146cb05 (Various map fixes (#9043))
 "oUd" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -47938,25 +47836,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Engine2_Waste_Handling)
-<<<<<<< HEAD
-"pgc" = (
-/obj/machinery/power/smes/buildable{
-	RCon_tag = "Solar - ForStar";
-	input_attempt = 1;
-	input_level = 150000;
-	output_level = 100000
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/structure/sign/warning/high_voltage{
-	pixel_y = 32
-	},
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Solar_Control_ForStar)
-=======
->>>>>>> 280146cb05 (Various map fixes (#9043))
 "pgC" = (
 /obj/effect/floor_decal/industrial/hatch,
 /obj/machinery/atmospheric_field_generator/perma/underdoors{
@@ -49944,10 +49823,6 @@
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Atmospherics_Chamber)
 "pOt" = (
-<<<<<<< HEAD
-/obj/structure/cable/yellow,
-=======
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/airless,
 /area/SouthernCrossV2/Engineering/Solar_Control_ForPort)
@@ -53970,9 +53845,6 @@
 /obj/structure/window/titanium{
 	dir = 8
 	},
-<<<<<<< HEAD
-/obj/effect/catwalk_plated/techmaint,
-=======
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
@@ -53983,7 +53855,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Solar_Control_AftPort)
 "reI" = (
@@ -54963,18 +54834,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/SouthernCrossV2/Commons/Star_Breakroom)
-<<<<<<< HEAD
-"rtw" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/effect/catwalk_plated/techmaint,
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Solar_Control_ForPort)
-=======
->>>>>>> 280146cb05 (Various map fixes (#9043))
 "rtM" = (
 /obj/machinery/iv_drip,
 /obj/item/weapon/reagent_containers/blood/prelabeled/OMinus{
@@ -58413,13 +58272,6 @@
 	},
 /turf/simulated/open,
 /area/SouthernCrossV2/Maints/Deck3_Engineering_AftStarChamber3)
-<<<<<<< HEAD
-"szK" = (
-/obj/effect/catwalk_plated/techmaint,
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Solar_Control_AftStar)
-=======
->>>>>>> 280146cb05 (Various map fixes (#9043))
 "sAc" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/portable_atmospherics/canister/oxygen,
@@ -60161,18 +60013,6 @@
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/plating,
 /area/SouthernCrossV2/Engineering/Atmospherics_Substation)
-<<<<<<< HEAD
-"tbB" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/effect/catwalk_plated/techmaint,
-/turf/simulated/floor/plating,
-/area/SouthernCrossV2/Engineering/Solar_Control_AftStar)
-=======
->>>>>>> 280146cb05 (Various map fixes (#9043))
 "tbC" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/shuttle/blue{
@@ -66018,14 +65858,7 @@
 	name = "1E-light fixture"
 	},
 /obj/effect/catwalk_plated/techmaint,
-<<<<<<< HEAD
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 10
-	},
-/turf/simulated/floor/plating,
-=======
 /turf/simulated/floor/airless,
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /area/SouthernCrossV2/Engineering/Solar_Control_ForPort)
 "uUU" = (
 /obj/machinery/atmospherics/portables_connector{
@@ -69513,15 +69346,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-<<<<<<< HEAD
-/obj/machinery/alarm{
-	pixel_y = 25;
-	name = "N-alarm"
-	},
-/turf/simulated/floor/plating,
-=======
 /turf/simulated/floor/airless,
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /area/SouthernCrossV2/Engineering/Solar_Control_ForStar)
 "vWd" = (
 /obj/effect/catwalk_plated/techmaint,
@@ -71154,11 +70979,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-<<<<<<< HEAD
-/turf/simulated/floor/plating,
-=======
 /turf/simulated/floor/airless,
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /area/SouthernCrossV2/Engineering/Solar_Control_ForPort)
 "wxE" = (
 /obj/structure/dispenser/oxygen,
@@ -71370,17 +71191,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-<<<<<<< HEAD
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/effect/catwalk_plated/techmaint,
-/turf/simulated/floor/plating,
-=======
 /turf/simulated/floor/airless,
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /area/SouthernCrossV2/Engineering/Solar_Control_ForStar)
 "wBQ" = (
 /obj/effect/catwalk_plated,
@@ -74999,16 +74810,7 @@
 	dir = 1
 	},
 /obj/structure/cable/yellow,
-<<<<<<< HEAD
-/obj/machinery/alarm{
-	dir = 1;
-	name = "S-alarm";
-	pixel_y = -25
-	},
-/turf/simulated/floor/plating,
-=======
 /turf/simulated/floor/airless,
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /area/SouthernCrossV2/Engineering/Solar_Control_AftPort)
 "xCv" = (
 /obj/structure/table/bench/wooden,
@@ -77370,11 +77172,7 @@
 	dir = 8;
 	name = "1E-light fixture"
 	},
-<<<<<<< HEAD
-/turf/simulated/floor/plating,
-=======
 /turf/simulated/floor/airless,
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /area/SouthernCrossV2/Engineering/Solar_Control_AftStar)
 "ykl" = (
 /obj/machinery/light{
@@ -95999,12 +95797,8 @@ dHa
 qRA
 buv
 nVM
-<<<<<<< HEAD
-pgQ
-=======
 nVM
 chr
->>>>>>> 280146cb05 (Various map fixes (#9043))
 qBZ
 xyE
 dHa
@@ -96260,12 +96054,8 @@ jub
 pmn
 uHI
 qRA
-<<<<<<< HEAD
-fxW
-=======
 otX
 dRW
->>>>>>> 280146cb05 (Various map fixes (#9043))
 liY
 oKg
 xyE
@@ -118367,12 +118157,8 @@ dHa
 dbu
 fCm
 wam
-<<<<<<< HEAD
-kfl
-=======
 ikV
 rEC
->>>>>>> 280146cb05 (Various map fixes (#9043))
 bDN
 uRK
 ttG

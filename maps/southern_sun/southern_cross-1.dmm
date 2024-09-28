@@ -51804,12 +51804,9 @@
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 6
 	},
-<<<<<<< HEAD
-=======
 /obj/structure/table/steel,
 /obj/item/device/lightreplacer,
 /obj/item/device/lightreplacer,
->>>>>>> 280146cb05 (Various map fixes (#9043))
 /turf/simulated/floor/tiled/dark,
 /area/SouthernCrossV2/Domicile/Custodial_Office)
 "pOT" = (
