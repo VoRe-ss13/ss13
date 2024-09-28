@@ -22,15 +22,6 @@
 	var/icon/mainOverlay = new/icon('icons/effects/crayondecal.dmi',"[type]",2.1)
 	var/icon/shadeOverlay = new/icon('icons/effects/crayondecal.dmi',"[type]s",2.1)
 
-<<<<<<< HEAD
-	mainOverlay.Blend(main,ICON_ADD)
-	shadeOverlay.Blend(shade,ICON_ADD)
-
-	add_overlay(mainOverlay)
-	add_overlay(shadeOverlay)
-
-	add_hiddenprint(usr)
-=======
 	add_hiddenprint(usr)
 
 /obj/effect/decal/cleanable/crayon/update_icon()
@@ -46,4 +37,3 @@
 		add_overlay(shadeOverlay)
 	return
 // CHOMPEdit End
->>>>>>> cdc6d7a4a8 (Makes sure there's an actual icon before attempting to Blend() (#9068))
