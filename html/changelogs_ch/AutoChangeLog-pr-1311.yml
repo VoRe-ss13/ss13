@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - code_imp: "Graffitis make sure there's an icon before attempting to Blend()"
