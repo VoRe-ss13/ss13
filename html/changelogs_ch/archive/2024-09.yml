@@ -230,3 +230,14 @@
   - maptweak: Set the secondary engine power supply SMES output to off at round start
       so it doesn't drain all it's power before the second engine can be set up.
   - rscadd: Food replicator machine
+2024-09-30:
+  VoRe-bot:
+  - rscadd: New junk mail in the mail
+  - balance: Severely reduced the chance of receveing non-job goodies
+  - balance: Slightly raised the mail per minute
+  - rscadd: Slightly raised the chance of special goodies
+  - qol: Mail bags can hold contraband packages now
+  - bugfix: soulcatcher SR vision
+  - bugfix: naming of the pme ch and player narrate ch input windows
+  - rscadd: You can now turn on automatic punctuation for say messages.
+  - rscadd: You can now choose your own runechat color.
