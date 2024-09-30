@@ -10,23 +10,35 @@
  */
 /obj/machinery/photocopier/faxmachine/export_fax(fax) //CHOMPEdit Begin
 	var faxid = "[num2text(world.realtime,12)]_[rand(9999)+1]"
-	if (istype(fax, /obj/item/weapon/paper))
-		var/obj/item/weapon/paper/P = fax
+	if (istype(fax, /obj/item/paper))
+		var/obj/item/paper/P = fax
 		var/text = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>";
+<<<<<<< HEAD
 		rustg_file_write(text, "[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html")
 	else if (istype(fax, /obj/item/weapon/photo))
 		var/obj/item/weapon/photo/H = fax
 		fcopy(H.img, "[CONFIG_GET(string/fax_export_dir)]/photo_[faxid].png")
+=======
+		rustg_file_write(text, "[config.fax_export_dir]/fax_[faxid].html")
+	else if (istype(fax, /obj/item/photo))
+		var/obj/item/photo/H = fax
+		fcopy(H.img, "[config.fax_export_dir]/photo_[faxid].png")
+>>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 		var/text = "<html><head><title>[H.name]</title></head>" \
 			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
 			+ "<img src='photo_[faxid].png'>" \
 			+ "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
 			+ "</body></html>"
+<<<<<<< HEAD
 		rustg_file_write(text, "[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html")
 	else if (istype(fax, /obj/item/weapon/paper_bundle))
+=======
+		rustg_file_write(text, "[config.fax_export_dir]/fax_[faxid].html")
+	else if (istype(fax, /obj/item/paper_bundle))
+>>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 		var/def_faxid = faxid
 		faxid += "_0"
-		var/obj/item/weapon/paper_bundle/B = fax
+		var/obj/item/paper_bundle/B = fax
 		var/data = ""
 		for (var/page = 1, page <= B.pages.len, page++)
 			var/obj/pageobj = B.pages[page]
@@ -37,13 +49,20 @@
 	return faxid
 
 /obj/machinery/photocopier/faxmachine/proc/export_fax_id(fax,faxid)
-	if (istype(fax, /obj/item/weapon/paper))
-		var/obj/item/weapon/paper/P = fax
+	if (istype(fax, /obj/item/paper))
+		var/obj/item/paper/P = fax
 		var/text = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>";
+<<<<<<< HEAD
 		rustg_file_write(text, "[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html")
 	else if (istype(fax, /obj/item/weapon/photo))
 		var/obj/item/weapon/photo/H = fax
 		fcopy(H.img, "[CONFIG_GET(string/fax_export_dir)]/photo_[faxid].png")
+=======
+		rustg_file_write(text, "[config.fax_export_dir]/fax_[faxid].html")
+	else if (istype(fax, /obj/item/photo))
+		var/obj/item/photo/H = fax
+		fcopy(H.img, "[config.fax_export_dir]/photo_[faxid].png")
+>>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 		var/text = "<html><head><title>[H.name]</title></head>" \
 			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
 			+ "<img src='photo_[faxid].png'>" \
@@ -70,8 +89,8 @@
 			world.Export("[CONFIG_GET(string/chat_webhook_url)]?[query_string]") // CHOMPEdit
 	//YW EDIT //CHOMPEdit also
 	var/idlen = length(faxid) + 1
-	if (istype(sent, /obj/item/weapon/paper_bundle))
-		var/obj/item/weapon/paper_bundle/B = sent
+	if (istype(sent, /obj/item/paper_bundle))
+		var/obj/item/paper_bundle/B = sent
 		faxid = copytext(faxid,1,idlen-2)
 		var/faxids = "FAXMULTIID: [faxid]_0"
 		var/contents = ""

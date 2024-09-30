@@ -4689,8 +4689,12 @@
 #include "maps\redgate\falls\atoll_decals.dm"
 #include "maps\redgate\falls\atoll_objs.dm"
 #include "maps\redgate\falls\atoll_turfs.dm"
+<<<<<<< HEAD
 #include "maps\relic_base\relicbase.dm"
 #include "maps\relic_base\turfs\outdoors.dm"
+=======
+#include "maps\southern_cross\southern_cross.dm"
+>>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 #include "maps\southern_cross\items\encryptionkey_sc.dm"
 #include "maps\southern_cross\items\headset_sc.dm"
 #include "maps\southern_cross\items\clothing\sc_accessory.dm"
@@ -4701,7 +4705,11 @@
 #include "maps\southern_cross\structures\closets\misc.dm"
 #include "maps\southern_cross\structures\closets\research.dm"
 #include "maps\southern_cross\structures\closets\security.dm"
+<<<<<<< HEAD
 #include "maps\southern_cross\submaps\virtual_reality\constructVR.dm"
+=======
+#include "maps\southern_cross\turfs\outdoors.dm"
+>>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 #include "maps\submaps\_helpers.dm"
 #include "maps\submaps\_readme.dm"
 #include "maps\~map_system\maps.dm"
