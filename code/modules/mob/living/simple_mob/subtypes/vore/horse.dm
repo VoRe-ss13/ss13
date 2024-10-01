@@ -140,8 +140,11 @@
 	vore_bump_emote	= "chomps down on"
 
 /mob/living/simple_mob/vore/horse/kelpie/init_vore()
+<<<<<<< HEAD
 	if(!voremob_loaded) //TORCHAdd - Added to fix redgate runtime
 		return //TORCHAdd
+=======
+>>>>>>> af2de93a8f (Revert "Missing kelpie init check" (#9110))
 	..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
