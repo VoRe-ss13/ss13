@@ -1129,8 +1129,13 @@
 
 	var/list/visible_implants = list()
 	for(var/obj/item/organ/external/organ in src.organs)
+<<<<<<< HEAD
 		for(var/obj/item/weapon/O in organ.implants)
 			if(!istype(O,/obj/item/weapon/implant) && (O.w_class > class) && !istype(O,/obj/item/weapon/material/shard/shrapnel))
+=======
+		for(var/obj/item/O in organ.implants)
+			if(!istype(O,/obj/item/implant) && (O.w_class > class) && !istype(O,/obj/item/material/shard/shrapnel) && !istype(O,/obj/item/nif))
+>>>>>>> 5e6fbd72d2 ([MIRROR] don't have nifs stick out of heads (#9113))
 				visible_implants += O
 
 	return(visible_implants)
