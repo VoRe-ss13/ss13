@@ -39,7 +39,7 @@
 	if(world.time < last_teleport + teleport_cooldown)
 		. += "<span class='warning'>[src] is recharging power. A timer on the side reads <b>[round((last_teleport + teleport_cooldown - world.time)/10)]</b> seconds.</span>"
 	if(boosted)
-		. += SPAN_NOTICE("There appears to be a booster haphazardly jammed into the side of [src]. That looks unsafe.")
+		. += span_notice("There appears to be a booster haphazardly jammed into the side of [src]. That looks unsafe.")
 	if(!panel_open)
 		. += "<span class='notice'>The panel is <i>screwed</i> in, obstructing the linking device.</span>"
 	else
@@ -82,9 +82,15 @@
 				to_chat(user, "<span class='notice'>You link [src] to the one in [I]'s buffer.</span>")
 				update_icon()
 				return 1
+<<<<<<< HEAD
 	
 	if(istype(I, /obj/item/device/quantum_pad_booster))
 		var/obj/item/device/quantum_pad_booster/booster = I
+=======
+
+	if(istype(I, /obj/item/quantum_pad_booster))
+		var/obj/item/quantum_pad_booster/booster = I
+>>>>>>> 31407a0be3 ([MIRROR] First part of a span rework (#9120))
 		visible_message("[user] violently jams [booster] into the side of [src]. [src] beeps, quietly.", \
 		"You hear the sound of a device being improperly installed in sensitive machinery, then subsequent beeping.", runemessage = "beep!")
 		playsound(src, 'sound/items/rped.ogg', 25, 1)

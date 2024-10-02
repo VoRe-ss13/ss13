@@ -215,8 +215,13 @@
 					return
 
 				if(seed.kitchen_tag == "sunflower")
+<<<<<<< HEAD
 					new /obj/item/weapon/reagent_containers/food/snacks/rawsunflower(get_turf(src))
 					to_chat(user, SPAN_NOTICE("You remove the seeds from the flower, slightly damaging them."))
+=======
+					new /obj/item/reagent_containers/food/snacks/rawsunflower(get_turf(src))
+					to_chat(user, span_notice("You remove the seeds from the flower, slightly damaging them."))
+>>>>>>> 31407a0be3 ([MIRROR] First part of a span rework (#9120))
 					qdel(src)
 					return
 
