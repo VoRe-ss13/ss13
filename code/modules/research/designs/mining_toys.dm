@@ -63,6 +63,17 @@
 	sort_string = "FBAAA"
 	department = LATHE_ALL | LATHE_CARGO // CHOMPAdd
 
+<<<<<<< HEAD
+=======
+/datum/design/item/weapon/mining/mining_scanner
+	id = "mining_scanner"
+	req_tech = list(TECH_MAGNET = 3, TECH_ENGINEERING = 4, TECH_BLUESPACE = 1)
+	materials = list(MAT_STEEL = 1000,MAT_GLASS = 500)
+	build_path = /obj/item/mining_scanner/advanced
+	sort_string = "FBAAB"
+	department = LATHE_ALL | LATHE_CARGO // CHOMPAdd
+
+>>>>>>> 07c3627fbf ([MIRROR] revert datum changes for now and fixes vorebelly descriptions getting stuck (#9116))
 /datum/design/item/weapon/mining/upgradeAOE
 	name = "Mining Explosion Upgrade"
 	desc = "An area of effect upgrade for the Proto-Kinetic Accelerator."
