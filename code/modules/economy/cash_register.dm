@@ -190,8 +190,13 @@
 			scan_cash(SC)
 	else if(istype(O, /obj/item/weapon/card/emag))
 		return ..()
+<<<<<<< HEAD
 	else if(O.has_tool_quality(TOOL_WRENCH))
 		var/obj/item/weapon/tool/wrench/W = O
+=======
+	else if(istype(O) && O.has_tool_quality(TOOL_WRENCH))
+		var/obj/item/tool/wrench/W = O
+>>>>>>> 58ab7a2d7b ([MIRROR] fix timer window (#9135))
 		toggle_anchors(W, user)
 	// Not paying: Look up price and add it to transaction_amount
 	else
