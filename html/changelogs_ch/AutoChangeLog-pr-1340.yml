@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - code_imp: "Modularizes the VR map."
+  - maptweak: "VR map is latest."
