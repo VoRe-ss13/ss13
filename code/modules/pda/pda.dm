@@ -80,7 +80,13 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/list/notifying_programs = list()
 	var/retro_mode = 0
 
+<<<<<<< HEAD
 /obj/item/device/pda/examine(mob/user)
+=======
+	// var/gunshot_residue // VOREstation edit: prevents wrist PDA from preventing gun use // CHOMPRemove no bandaids
+
+/obj/item/pda/examine(mob/user)
+>>>>>>> 4acb710cfe ([MIRROR] Fixes wrist PDA runtiming when firing guns (#9156))
 	. = ..()
 	if(Adjacent(user))
 		. += "The time [stationtime2text()] is displayed in the corner of the screen."
