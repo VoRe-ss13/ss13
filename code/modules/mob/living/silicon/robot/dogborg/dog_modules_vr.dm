@@ -444,6 +444,8 @@
 /obj/item/device/lightreplacer/dogborg/attack_self(mob/user)//Recharger refill is so last season. Now we recycle without magic!
 
 	var/choice = tgui_alert(user, "Do you wish to check the reserves or change the color?", "Selection List", list("Reserves", "Color"))
+	if(!choice)
+		return
 	if(choice == "Color")
 		var/new_color = input(usr, "Choose a color to set the light to! (Default is [LIGHT_COLOR_INCANDESCENT_TUBE])", "", selected_color) as color|null
 		if(new_color)
@@ -469,6 +471,49 @@
 		else
 			to_chat(user, "<span class='filter_notice'>It has [uses] lights remaining.</span>")
 			return
+
+/obj/item/dogborg/stasis_clamp
+	name = "stasis clamp"
+	desc = "A magnetic clamp which can halt the flow of gas in a pipe, via a localised stasis field."
+	icon = 'icons/atmos/clamp.dmi'
+	icon_state = "pclamp0"
+	var/max_clamps = 3
+	var/busy
+	var/list/clamps = list()
+
+/obj/item/dogborg/stasis_clamp/afterattack(var/atom/A, mob/user as mob, proximity)
+	if(!proximity)
+		return
+
+	if (istype(A, /obj/machinery/atmospherics/pipe/simple))
+		if(busy)
+			return
+		var/C = locate(/obj/machinery/clamp) in get_turf(A)
+		if(!C)
+			if(length(clamps) >= max_clamps)
+				to_chat(user, span_warning("You've already placed the maximum amount of [max_clamps] [src]s. Find and remove some before placing new ones."))
+				return
+			busy = TRUE
+			to_chat(user, span_notice("You begin to attach \the [C] to \the [A]..."))
+			if(do_after(user, 30))
+				to_chat(user, span_notice("You have attached \the [src] to \the [A]."))
+				var/obj/machinery/clamp/clamp = new/obj/machinery/clamp(A.loc, A)
+				clamps.Add(clamp)
+				if(isrobot(user))
+					var/mob/living/silicon/robot/R = user
+					R.use_direct_power(1000, 1500)
+		else
+			busy = TRUE
+			to_chat(user, span_notice("You begin to remove \the [C] from \the [A]..."))
+			if(do_after(user, 30))
+				to_chat(user, span_notice("You have removed \the [src] from \the [A]."))
+				clamps.Remove(C)
+				qdel(C)
+		busy = FALSE
+
+/obj/item/dogborg/stasis_clamp/Destroy()
+	clamps.Cut()
+	. = ..()
 
 //Pounce stuff for K-9
 /obj/item/weapon/dogborg/pounce
@@ -571,3 +616,30 @@
 	if(prob(75)) //75% chance to stun for 5 seconds, really only going to be 4 bcus click cooldown+animation.
 		T.apply_effect(5, STUN, armor_block)
 		T.drop_both_hands() //CHOMPEdit Stuns no longer drop items
+
+/obj/item/weapon/reagent_containers/glass/beaker/large/borg
+	var/mob/living/silicon/robot/R
+	var/last_robot_loc
+
+/obj/item/weapon/reagent_containers/glass/beaker/large/borg/Initialize()
+	. = ..()
+	R = loc.loc
+	RegisterSignal(src, COMSIG_OBSERVER_MOVED, PROC_REF(check_loc))
+
+/obj/item/weapon/reagent_containers/glass/beaker/large/borg/proc/check_loc(atom/movable/mover, atom/old_loc, atom/new_loc)
+	if(old_loc == R || old_loc == R.module)
+		last_robot_loc = old_loc
+	if(!istype(loc, /obj/machinery) && loc != R && loc != R.module)
+		if(last_robot_loc)
+			forceMove(last_robot_loc)
+			last_robot_loc = null
+		else
+			forceMove(R)
+		if(loc == R)
+			hud_layerise()
+
+/obj/item/weapon/reagent_containers/glass/beaker/large/borg/Destroy()
+	UnregisterSignal(src, COMSIG_OBSERVER_MOVED)
+	R = null
+	last_robot_loc = null
+	..()

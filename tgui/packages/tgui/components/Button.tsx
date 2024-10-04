@@ -5,7 +5,7 @@
  */
 
 import { Placement } from '@popperjs/core';
-import { KEY } from 'common/keys';
+import { isEscape, KEY } from 'common/keys';
 import { BooleanLike, classes } from 'common/react';
 import {
   ChangeEvent,
@@ -91,8 +91,20 @@ export const Button = (props: Props) => {
 
   const toDisplay: ReactNode = content || children;
 
+  const ref = useRef(null);
+
+  function handleButtonClick(event) {
+    if (!disabled && onClick) {
+      onClick(event);
+      if (ref?.current) {
+        (ref.current as HTMLElement).blur();
+      }
+    }
+  }
+
   let buttonContent = (
     <div
+      ref={ref}
       className={classes([
         'Button',
         fluid && 'Button--fluid',
@@ -114,9 +126,7 @@ export const Button = (props: Props) => {
       ])}
       tabIndex={!disabled ? 0 : undefined}
       onClick={(event) => {
-        if (!disabled && onClick) {
-          onClick(event);
-        }
+        handleButtonClick(event);
       }}
       onKeyDown={(event) => {
         if (!captureKeys) {
@@ -133,7 +143,7 @@ export const Button = (props: Props) => {
         }
 
         // Refocus layout on pressing escape.
-        if (event.key === KEY.Escape) {
+        if (isEscape(event.key)) {
           event.preventDefault();
         }
       }}
@@ -347,7 +357,7 @@ const ButtonInput = (props: InputProps) => {
             commitResult(event);
             return;
           }
-          if (event.key === KEY.Escape) {
+          if (isEscape(event.key)) {
             setInInput(false);
           }
         }}

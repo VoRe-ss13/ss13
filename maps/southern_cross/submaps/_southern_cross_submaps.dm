@@ -20,7 +20,7 @@
 #include "gateway/maddnesslab.dmm"
 #include "gateway/snowfield.dmm"
 #include "gateway/hiddeneclipse.dmm"
-#include "virtual_reality/constructVR.dmm"
+#include "modular_chomp/maps/virtual_reality/constructVR.dmm"
 #endif
 
 
@@ -48,6 +48,13 @@
 	name = "Abandoned City"
 	desc = "An abandoned city overrun with piracy and mercernaries."
 	mappath = 'gateway/darkrps.dmm'
+	associated_map_datum = /datum/map_z_level/sc_lateload/gateway_destination
+
+#include "gateway/diescraper.dm"
+/datum/map_template/sc_lateload/gateway/diescraper
+	name = "Skyscraper"
+	desc = "A skyscraper of various businesses, apartments, and recreations. Do not fall"
+	mappath = 'gateway/diescraper.dmm'
 	associated_map_datum = /datum/map_z_level/sc_lateload/gateway_destination
 
 #include "gateway/BaseBlep.dm"
@@ -81,14 +88,15 @@
 
 //VR maps go here, tell me if theres a better way to load this
 // #include "virtual_reality/constructVR.dm" Virtual Reality areas included by default.
+//#include "modular_chomp/maps/virtual_reality/constructVR.dm" //Included in .dme
 /datum/map_template/sc_lateload/vr_world
 	name = "VR World"
 	desc = "A dynamic, virtual world."
-	mappath = 'virtual_reality/constructVR.dmm'
+	mappath = 'modular_chomp/maps/virtual_reality/constructVR.dmm' //Use modular
 	associated_map_datum = /datum/map_z_level/sc_lateload/vr_world
 
 /datum/map_z_level/sc_lateload/vr_world
-	name = "Away Mission - Fuel Depot"
+	name = "VR World"
 	z = Z_LEVEL_VR_REALM
 
 /datum/map_template/sc_lateload/thor

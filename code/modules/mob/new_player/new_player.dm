@@ -119,12 +119,12 @@
 	if (client.prefs.lastlorenews == GLOB.news_data.newsindex)
 		client.seen_news = 1
 
-	if(GLOB.news_data.station_newspaper && !client.seen_news && client.is_preference_enabled(/datum/client_preference/show_lore_news))
+	if(GLOB.news_data.station_newspaper && !client.seen_news && client.prefs?.read_preference(/datum/preference/toggle/show_lore_news))
 		show_latest_news(GLOB.news_data.station_newspaper)
 		client.prefs.lastlorenews = GLOB.news_data.newsindex
 		SScharacter_setup.queue_preferences_save(client.prefs)
 
-	panel = new(src, "Welcome","Welcome", 210, 400, src) // VOREStation Edit //ChompEDIT, height 300 -> 400
+	panel = new(src, "Welcome","Welcome", 210, 500, src) // VOREStation Edit //ChompEDIT, height 320 -> 500
 	panel.set_window_options("can_close=0")
 	panel.set_content(output)
 	panel.open()
@@ -589,6 +589,7 @@
 			if(imp.handle_implant(character,character.zone_sel.selecting))
 				imp.post_implant(character)
 	var/gut = join_props["voreny"]
+	var/start_absorbed = join_props["absorb"] //CHOMPAdd
 	var/mob/living/prey = join_props["prey"]
 	//CHOMPEdit Start - Item TF
 	if(itemtf && istype(itemtf, /obj/item/capture_crystal))
@@ -611,13 +612,22 @@
 		for(var/obj/belly/B in character.vore_organs)
 			if(B.name == gut)
 				gut_to_enter = B
+				character.vore_selected = B
 		var/datum/effect/effect/system/teleport_greyscale/tele = new /datum/effect/effect/system/teleport_greyscale()
 		tele.set_up("#00FFFF", get_turf(prey))
 		tele.start()
 		character.forceMove(get_turf(prey))
+		//CHOMPAdd Start
+		if(start_absorbed)
+			prey.absorbed = 1
+		//CHOMPAdd End
 		prey.forceMove(gut_to_enter)
 	else
 		if(gut)
+			//CHOMPAdd Start
+			if(start_absorbed)
+				character.absorbed = 1
+			//CHOMPAdd End
 			character.forceMove(gut)
 
 	character.client.init_verbs() // init verbs for the late join
@@ -665,7 +675,7 @@
 			if(!(client.prefs.GetJobDepartment(job, 1) & job.flag))
 				if(!(client.prefs.GetJobDepartment(job, 2) & job.flag))
 					if(!(client.prefs.GetJobDepartment(job, 3) & job.flag))
-						if(!show_hidden_jobs && job.title != "Assistant")	// Assistant is always an option
+						if(!show_hidden_jobs && job.title != JOB_ALT_ASSISTANT)	// Assistant is always an option
 							continue
 			var/active = 0
 			// Only players with the job assigned and AFK for less than 10 minutes count as active
@@ -718,7 +728,7 @@
 	if(mind)
 		mind.active = 0					//we wish to transfer the key manually
 		// VOREStation edit to disable the destructive forced renaming for our responsible whitelist clowns.
-		//if(mind.assigned_role == "Clown")				//give them a clownname if they are a clown
+		//if(mind.assigned_role == JOB_CLOWN)				//give them a clownname if they are a clown
 		//	new_character.real_name = pick(clown_names)	//I hate this being here of all places but unfortunately dna is based on real_name!
 		//	new_character.rename_self("clown")
 		mind.original = new_character

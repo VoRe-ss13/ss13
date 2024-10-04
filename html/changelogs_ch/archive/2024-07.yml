@@ -1,0 +1,191 @@
+2024-07-01:
+  VoRe-bot:
+  - rscadd: VBOanim_synthbelly1
+  - rscadd: VBOanim_taurbelly1
+  - rscadd: VBOanim_belly4
+  - rscadd: VBOanim_belly5
+  - rscadd: VBOanim_belly6
+  - rscadd: VBOanim_belly7
+  - rscadd: VBO_maw18
+  - rscadd: Kasssc's VBOanim_belly1
+  - rscadd: VBOanim_intestine2
+  - rscadd: Cleans up some of the previous maw visuals by erasing cutout scratches
+      (well not really this PR... but, I'm working on it!)
+  - bugfix: Increase the main menu window height to kill the scrollbar on default
+      load
+  - qol: New snowish looking bushes have been added to sif grass spawn pool. They
+      can give six fiber used in primal stuff
+  - qol: Sandstone and marble bricks can be manually created at a cost of 4 to 1,
+      and 10 seconds.
+  - rscadd: Footstep and slosh elements
+  - code_imp: No more lists in every single turf in existance with footstep sounds
+2024-07-02:
+  VoRe-bot:
+  - rscadd: Added a new gateway map called Diescraper. Dont fall!
+  - rscadd: Added single use for mapping purposes.
+  - maptweak: Fixes slab IDs in Downtown city
+  - bugfix: fixed random slosh sounds happening with 0 liquids
+  - bugfix: Fixed the Venom Injection trait to work for CHOMP/.
+  - rscadd: VBOanim_gullet1
+  - rscadd: VBO_maw19
+  - bugfix: other VBOs quality and brightness
+  - bugfix: increased brightness to some layers of VBO_maw18
+  - code_imp: Deleted some now unused files
+  - code_imp: Slosh sounds moved to global_lists_ch
+  - code_imp: Exterminated the last list from all the turfs
+2024-07-06:
+  VoRe-bot:
+  - qol: Reduced the footstep volume
+  - bugfix: Footstep and slosh elements making sounds when transfering through bellies/storages
+  - bugfix: Footstep and slosh elements not applying on resleeve/cloning/in-belly
+      spawns
+  - rscadd: 5 New superposed pods have been added.
+  - maptweak: Diescraper's turfs should be properly indoors now
+  - maptweak: Fixed secret button not proccing.
+2024-07-09:
+  VoRe-bot:
+  - bugfix: Fixed slosh sounds playing while phased
+  - rscadd: you can now transfer ammo between magazines and boxes of ammo
+  - rscadd: guns now tell you what magazines they accept
+  - refactor: ammo simplified drastically
+2024-07-18:
+  VoRe-bot:
+  - qol: linearizes the anomaly limit
+  - rscadd: Base Shadekin spawns from 3 to 5
+  - code_imp: HasProximity is now garbage collected
+  - qol: Xenochimeras now get stunned instead of weakened when reconstituting
+2024-07-19:
+  VoRe-bot:
+  - rscadd: Added "Blank Mail Envelope"
+  - rscadd: Added Spawn-Mail proc, staff only.
+  - rscadd: Added Postal Services supply crate
+  - rscadd: Added Blank Mail Envelopes in some points of the station
+  - rscadd: VBO_maw20 (canine)
+  - rscadd: VBO_maw21 (draconic)
+  - rscadd: VBO_maw22 (crocodile/alligator)
+  - bugfix: FINALLY clears up (some) background smudges, tidying up maw_16,17,18 and
+      19 (including the stray tongue dot, on maw_18's throat)
+  - qol: Bone breaks inside guts are now only audible to people in whisper range,
+      have fun blendering.
+  - bugfix: Xenochimeras not being able to revive properly
+  - image: Zorgoia taur tail sprites have been adjusted.
+  - rscadd: Re-Adds deadman interaction with signalers again.
+2024-07-20:
+  Missile597:
+  - rscadd: Added a missing emergency shutter on the garden storage (oops)
+  - rscdel: Removed a redundant APC in an area that should be unpowered (outpost perimeter
+      - let me know if this breaks anything I missed)
+  - bugfix: Fixed a few lights not in powered areas that weren't working
+  - bugfix: Fixed an incorrectly coloured cable end
+  - bugfix: Replaced some grass tiles with steel tiles that were under stairs to hopefully
+      prevent weird flora spawn inside staircases
+  - maptweak: Reworked the whole Diner and hydroponics area
+  - maptweak: Diner entrances reworked. No lobby anymore, with entrances moved to
+      be more friendly to the new layout. Old lobby area is now part of the main area
+  - maptweak: Hydroponics moved to the ground floor where the kitchen used to be.
+      Added a farm and beehive area.
+  - maptweak: Bar split off from Diner. Diner area on the west side and bar on the
+      east side. Changed the shutters to be more like shop shutters
+  - maptweak: Freezer and Bar Backroom storage moves downstairs
+  - maptweak: Added a downstairs public restroom area under the bar.
+  - maptweak: Added some more roofing upstairs past the balconies to cover the extended
+      bar and diner area
+  - maptweak: Moved a few objects around outside and re-jigged some atmos and power
+      grids to account for the new layout
+  VoRe-bot:
+  - rscadd: vore soulcatcher
+  - rscadd: experimental resize, costing 125 Nutrition
+  - code_imp: changes all our UI files to typescript
+  - rscadd: Some new boss esque mobs that can be accessed by messing with a strange
+      machine during an anomalous weather
+  - rscadd: Added anti-job-camping to Anomalys
+2024-07-21:
+  Missile597:
+  - rscadd: Added uniform vendors to bar storage and kitchen
+  - rscadd: Added sugar and flour locker to kitchen that was previously missed (replacing
+      the extra meat locker)
+  - rscadd: Added a drinks fridge to the bar
+  - rscadd: Added emergency shutters to teh bar and kitchen counters
+  - rscadd: Added a box of masks and gloves outside of surgery so medical don't have
+      to borrow viro's boxes anymore
+  - rscadd: Added boomboxes to the bar and kitchen to pair with the jukebox so that
+      the service members aren't left out
+  - rscadd: Added a sink to hydroponics
+  - rscadd: 'Added air alamrs to areas that were previously missing them: Dorms and
+      Xenobotany'
+  - rscadd: Added some tech vendors outside the bar that were previously missing from
+      the map (as far as I can see)
+  - rscdel: Removed dormitory spawns for assistants (I don't think these could crash
+      into a dorms scene but there's plenty of other assisstant spawns so I just nixxed
+      these)
+  - rscdel: Removed the corner window nuggets around the stairs on the upper floor
+      engine entrance (these were preventing interactions with neighbouring tiles
+      for some reason, preventing clicking the door etc)
+  - bugfix: Replace the maints resleeving console with a functional one
+  - maptweak: Extended the bar area to cover the full counter
+  - maptweak: Moved the CentCom level NanoMed Plus so it's not blocking the tile in
+      front of it
+  - maptweak: Replace medical's chargers with basic (the correct) chargers so that
+      defibs can be recharged (was previously heavy duty). Added a basic charging
+      station to engineering storage.
+  VoRe-bot:
+  - maptweak: Science PA has been removed from round start.
+  - maptweak: Ore Storage is now in the Cargo Warehouse.
+  - rscadd: Mushroom head markings
+  - rscadd: 'added in new borg sprites (dullahan) for the following modules: medical,
+      cargo, sec, service, mining, exploration, engineering, janitor, science
+
+      :cl:'
+  - code_imp: small typescript cleanup and oversighted chomp UI
+  - rscadd: Auto-transfer locations can now have extra destinations beyond the main
+      location.
+  - rscadd: Adds "Spawn in Belly" verb for ghosts
+  - balance: rebalanced how locus difficulty of transport is handled. In the process
+      makes it much harder to accidentally destroy the station with loci
+  - maptweak: Adds a coffee machine to the sci break room
+  - maptweak: Moved the copy machine to R&D
+  - maptweak: Removed the medkit and added a nanomed in the sci break room
+  - maptweak: Sci break room gets cups too
+  - rscdel: Removes overpowered mecha weapon from MechFabStorage pod
+  - rscdel: Removes the protolathe from MechFabShip pod and replaces it with mecha
+      parts and prebuilt mechs.
+  - rscdel: Removes Locus spawner in Oldhotel.
+  - rscdel: Removed the SciencePod, Sciencepodv2 and Science ship from the superpose
+      pod spawn list.
+2024-07-24:
+  VoRe-bot:
+  - maptweak: Moved a couple machines in mechfabship and also has the shutters open
+      by default to prevent lockouts.
+  - bugfix: caught souls being able to take over the pred's body
+  - bugfix: Anorole camp message
+2024-07-29:
+  EtheoBoxxman:
+  - bugfix: ' Fixed Etheo''s fluff borg sprite'
+  Missile597:
+  - bugfix: Replaced lights with ones that will actually night shift dim
+  - bugfix: Connected half the atmos grid to the other half that got disconnected
+      at some point... oops, might have been my fault!
+  VoRe-bot:
+  - rscadd: You can now place reagents inside chewables
+  - maptweak: Adds cargo access to the lossy sheet storage in the cargo warehouse.
+  - maptweak: External cargo walls are reinforced
+  - rscadd: An option to give body control to any stored soul within the vore soulcatcher
+      as long as prefs align
+  - rscadd: succubus drain (lethal) can soulcatch
+  - rscadd: ghost join for vore soulcatcher
+  - bugfix: priority issues for vore soulcatcher overlays when blind and vorefx were
+      enabled causing toggling effects (blind can now blind on vorefx)
+  - bugfix: applying vore soulcatcher preference settings right away not working
+  - bugfix: transfer to MMIs from vore soulcatcher
+  - bugfix: captured simple_mobs and silicons not always showing their custom name
+      in vore soulscatchers
+  - rscadd: Added a way for staff to spawn in overmap ships mid round via the Map-Template-Place-NewZ
+      verb.
+  - bugfix: re-adds missing cost to items that were missing it
+  - balance: Adjusted diver visibility in shallow water.
+  - balance: Simplemob targeting ai invisibility threshold changed from 50% to 25%.
+  - balance: removes some boards from outsider circuit printer
+  - bugfix: properly implents marble/sandstone crafting
+  - rscadd: loadout items now show what jobs they're restricted to/enabled by
+  - bugfix: fixed a couple of teshi belted cloaks being under general outerwear rather
+      than in xenowear

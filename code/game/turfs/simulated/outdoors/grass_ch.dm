@@ -139,8 +139,7 @@ GLOBAL_LIST_INIT(grass_animals,list(
 		/mob/living/simple_mob/animal/passive/mouse/jerboa = 5,
 		/mob/living/simple_mob/vore/wolf/direwolf = 5,
 		/mob/living/simple_mob/vore/aggressive/rat = 5,
-		/mob/living/simple_mob/vore/horse/big = 10,
-		/mob/living/simple_mob/vore/otie/zorgoia/feral = 1
+		/mob/living/simple_mob/vore/horse/big = 10
 		),
 //TORCHEdit End
 ))
@@ -152,12 +151,14 @@ GLOBAL_LIST_INIT(grass_grass,list(
 		),
 	"sif" = list(
 		/obj/structure/flora/sif/eyes = 1,
-		/obj/structure/flora/sif/tendrils = 10
+		/obj/structure/flora/sif/tendrils = 5,
+		/obj/structure/flora/bush = 5
 		),
 	"sifforest" = list(
 		/obj/structure/flora/sif/frostbelle = 1,
 		/obj/structure/flora/sif/eyes = 5,
-		/obj/structure/flora/sif/tendrils = 30
+		/obj/structure/flora/sif/tendrils = 20,
+		/obj/structure/flora/bush = 10
 		),
 	"valley" = list(
 		/obj/structure/flora/sif/eyes = 20,
@@ -255,7 +256,7 @@ GLOBAL_LIST_INIT(grass_trees, list(
 		/obj/structure/flora/tree/jungle_small,
 		/obj/structure/flora/tree/jungle
 		),
-	"seasonalfall" = list(
+	"seasonalautumn" = list(	//TORCHEdit - Fixing wrong list name. We should eventually PR this upstream, but rn I'm fixing this as an edit to fix a runtime asap
 		/obj/structure/flora/tree/bigtree
 		),
 	"seasonalwinter" = list(
