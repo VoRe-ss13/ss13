@@ -46,7 +46,11 @@ var/list/mentor_verbs_default = list(
 	set category = "Admin.Secrets" //CHOMPEdit
 	set name = "Make Mentor"
 	if(!holder)
+<<<<<<< HEAD
 		to_chat(src, "<span class='pm warning'>Error: Only administrators may use this command.</span>")
+=======
+		to_chat(src, span_admin_pm_warning("Error: Only administrators may use this command."))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 		return
 	var/list/client/targets[0]
 	for(var/client/T in GLOB.clients)
@@ -56,12 +60,21 @@ var/list/mentor_verbs_default = list(
 		return
 	var/client/C = targets[target]
 	if(has_mentor_powers(C) || C.deadmin_holder) // If an admin is deadminned you could mentor them and that will cause fuckery if they readmin
+<<<<<<< HEAD
 		to_chat(src, "<span class='pm warning'>Error: They already have mentor powers.</span>")
 		return
 	var/datum/mentor/M = new /datum/mentor(C.ckey)
 	M.associate(C)
 	to_chat(C, "<span class='pm notice'>You have been granted mentorship.</span>")
 	to_chat(src, "<span class='pm notice'>You have made [C] a mentor.</span>")
+=======
+		to_chat(src, span_admin_pm_warning("Error: They already have mentor powers."))
+		return
+	var/datum/mentor/M = new /datum/mentor(C.ckey)
+	M.associate(C)
+	to_chat(C, span_admin_pm_notice("You have been granted mentorship."))
+	to_chat(src, span_admin_pm_notice("You have made [C] a mentor."))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 	log_admin("[key_name(src)] made [key_name(C)] a mentor.")
 	feedback_add_details("admin_verb","Make Mentor") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	// CHOMPedit Start - Adding to DB Logic
@@ -76,7 +89,11 @@ var/list/mentor_verbs_default = list(
 	set category = "Admin.Secrets" //CHOMPEdit
 	set name = "Unmake Mentor"
 	if(!holder)
+<<<<<<< HEAD
 		to_chat(src, "<span class='pm warning'>Error: Only administrators may use this command.</span>")
+=======
+		to_chat(src, span_admin_pm_warning("Error: Only administrators may use this command."))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 		return
 	var/list/client/targets[0]
 	for(var/client/T in GLOB.mentors)
@@ -86,8 +103,13 @@ var/list/mentor_verbs_default = list(
 		return
 	var/client/C = targets[target]
 	C.mentorholder.disassociate()
+<<<<<<< HEAD
 	to_chat(C, "<span class='pm warning'>Your mentorship has been revoked.</span>")
 	to_chat(src, "<span class='pm notice'>You have revoked [C]'s mentorship.</span>")
+=======
+	to_chat(C, span_admin_pm_warning("Your mentorship has been revoked."))
+	to_chat(src, span_admin_pm_notice("You have revoked [C]'s mentorship."))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 	log_admin("[key_name(src)] revoked [key_name(C)]'s mentorship.")
 	feedback_add_details("admin_verb","Unmake Mentor") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	// CHOMPedit Start - Removing from DB Logic
@@ -147,7 +169,11 @@ var/list/mentor_verbs_default = list(
 
 /client/proc/cmd_mhelp_reply(whom)
 	if(prefs.muted & MUTE_ADMINHELP)
+<<<<<<< HEAD
 		to_chat(src, "<span class='pm warning'>Error: Mentor-PM: You are unable to use admin PM-s (muted).</span>")
+=======
+		to_chat(src, span_admin_pm_warning("Error: Mentor-PM: You are unable to use admin PM-s (muted)."))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 		return
 	var/client/C
 	if(istext(whom))
@@ -156,7 +182,11 @@ var/list/mentor_verbs_default = list(
 		C = whom
 	if(!C)
 		if(has_mentor_powers(src))
+<<<<<<< HEAD
 			to_chat(src, "<span class='pm warning'>Error: Mentor-PM: Client not found.</span>")
+=======
+			to_chat(src, span_admin_pm_warning("Error: Mentor-PM: Client not found."))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 		return
 
 	var/datum/ticket/T = C.current_ticket // CHOMPedit - Ticket System
@@ -198,15 +228,24 @@ var/list/mentor_verbs_default = list(
 	set hidden = 1
 
 	if(prefs.muted & MUTE_ADMINHELP)
+<<<<<<< HEAD
 		to_chat(src, "<span class='pm warning'>Error: Mentor-PM: You are unable to use admin PM-s (muted).</span>")
+=======
+		to_chat(src, span_mentor_pm_warning("Error: Mentor-PM: You are unable to use mentor PM-s (muted)."))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 		return
 
 	//Not a mentor and no open ticket
 	if(!has_mentor_powers(src) && !current_ticket) // CHOMPedit - Ticket System
+<<<<<<< HEAD
 		to_chat(src, "<span class='pm warning'>You can no longer reply to this ticket, please open another one by using the Mentorhelp verb if need be.</span>")
 		to_chat(src, "<span class='pm notice'>Message: [msg]</span>")
 		return
 
+=======
+		to_chat(src, span_mentor_pm_warning("You can no longer reply to this ticket, please open another one by using the Mentorhelp verb if need be."))
+		to_chat(src, span_mentor_pm_notice("Message: [msg]"))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 	var/client/recipient
 
 	if(istext(whom))
@@ -223,12 +262,20 @@ var/list/mentor_verbs_default = list(
 			return
 
 		if(prefs.muted & MUTE_ADMINHELP)
+<<<<<<< HEAD
 			to_chat(src, "<span class='pm warning'>Error: Mentor-PM: You are unable to use admin PM-s (muted).</span>")
+=======
+			to_chat(src, span_mentor_pm_warning("Error: Mentor-PM: You are unable to use mentor PM-s (muted)."))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 			return
 
 		if(!recipient)
 			if(has_mentor_powers(src))
+<<<<<<< HEAD
 				to_chat(src, "<span class='pm warning'>Error:Mentor-PM: Client not found.</span>")
+=======
+				to_chat(src, span_mentor_pm_warning("Error:Mentor-PM: Client not found."))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 				to_chat(src, msg)
 			else
 				log_admin("Mentorhelp: [key_name(src)]: [msg]")
@@ -237,10 +284,15 @@ var/list/mentor_verbs_default = list(
 
 	//Has mentor powers but the recipient no longer has an open ticket
 	if(has_mentor_powers(src) && !recipient.current_ticket) // CHOMPedit - Ticket System
+<<<<<<< HEAD
 		to_chat(src, "<span class='pm warning'>You can no longer reply to this ticket.</span>")
 		to_chat(src, "<span class='pm notice'>Message: [msg]</span>")
 		return
 
+=======
+		to_chat(src, span_mentor_pm_warning("You can no longer reply to this ticket."))
+		to_chat(src, span_mentor_pm_notice("Message: [msg]"))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 	if (src.handle_spam_prevention(msg,MUTE_ADMINHELP))
 		return
 
@@ -248,7 +300,11 @@ var/list/mentor_verbs_default = list(
 	if(!msg)
 		return
 
+<<<<<<< HEAD
 	var/interaction_message = "<span class='pm notice'>Mentor-PM from-<b>[src]</b> to-<b>[recipient]</b>: [msg]</span>"
+=======
+	var/interaction_message = span_mentor_pm_notice("Mentor-PM from-<b>[src]</b> to-<b>[recipient]</b>: [msg]")
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 
 	// CHOMPedit Start - Ticket System
 	if (recipient.current_ticket && !has_mentor_powers(recipient))

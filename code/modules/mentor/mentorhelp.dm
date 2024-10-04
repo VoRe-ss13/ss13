@@ -358,7 +358,11 @@ GLOBAL_DATUM_INIT(mhelp_tickets, /datum/mentor_help_tickets, new)
 	if(tgui_alert(usr, "Really escalate this ticket to admins? No mentors will ever be able to interact with it again if you do.","Escalate",list("Yes","No")) != "Yes")
 		return
 	if (src.initiator == null) // You can't escalate a mentorhelp of someone who's logged out because it won't create the adminhelp properly
+<<<<<<< HEAD
 		to_chat(usr, "<span class='pm warning'>Error: client not found, unable to escalate.</span>")
+=======
+		to_chat(usr, span_mentor_pm_warning("Error: client not found, unable to escalate."))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 		return
 	var/datum/admin_help/AH = new /datum/admin_help(src.name, src.initiator, FALSE)
 	message_mentors("[usr.ckey] escalated Ticket [TicketHref("#[id]")]")
@@ -467,7 +471,11 @@ GLOBAL_DATUM_INIT(mhelp_tickets, /datum/mentor_help_tickets, new)
 			if(current_mentorhelp)
 				log_admin("Mentorhelp: [key_name(src)]: [msg]")
 				current_mentorhelp.MessageNoRecipient(msg)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='adminnotice'><span class='mentor'>Mentor-PM to-<b>Mentors</b>: [msg]</span></span>")
+=======
+				to_chat(usr, span_mentor_pm_notice("Mentor-PM to-<b>Mentors</b>: [msg]"))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 				return
 			else
 				to_chat(usr, "<span class='warning'>Ticket not found, creating new one...</span>")

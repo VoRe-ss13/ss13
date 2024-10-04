@@ -179,8 +179,13 @@
 	if(going_kaboom)
 		return
 	going_kaboom = TRUE
+<<<<<<< HEAD
 	visible_message("<span class='danger'>\The [src] lets out an shower of sparks as it starts to lose stability!</span>",\
 		"<span class='italics'>You hear a loud electrical crack!</span>")
+=======
+	visible_message(span_danger("\The [src] lets out an shower of sparks as it starts to lose stability!"),\
+		span_warningplain("You hear a loud electrical crack!"))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 	playsound(src, 'sound/effects/lightningshock.ogg', 100, 1, extrarange = 5)
 	tesla_zap(src, 5, power_gen * 0.05)
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(explosion), get_turf(src), 2, 3, 4, 8), 100) // Not a normal explosion.
@@ -285,8 +290,13 @@
 	can_buckle = FALSE
 
 /obj/machinery/power/rtg/kugelblitz/proc/asplod()
+<<<<<<< HEAD
 	visible_message("<span class='danger'>\The [src] lets out an shower of sparks as it starts to lose stability!</span>",\
 		"<span class='italics'>You hear a loud electrical crack!</span>")
+=======
+	visible_message(span_danger("\The [src] lets out an shower of sparks as it starts to lose stability!"),\
+		span_warningplain("You hear a loud electrical crack!"))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 	playsound(src, 'sound/effects/lightningshock.ogg', 100, 1, extrarange = 5)
 	var/turf/T = get_turf(src)
 	qdel(src)

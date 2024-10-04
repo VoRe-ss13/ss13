@@ -47,9 +47,15 @@
 			playsound(src, 'sound/effects/blobattack.ogg', 30, 1)
 			var/T = get_turf(src)
 			new /obj/effect/gibspawner/human(T)
+<<<<<<< HEAD
 			visible_message("<span class='warning'>With a sickening squish, [src] reforms their whole body, casting their old parts on the floor!</span>",
 			"<span class='notice'>We reform our body.  We are whole once more.</span>",
 			"<span class='italics'>You hear organic matter ripping and tearing!</span>")
+=======
+			visible_message(span_warning("With a sickening squish, [src] reforms their whole body, casting their old parts on the floor!"),
+			span_notice("We reform our body.  We are whole once more."),
+			span_warningplain("You hear organic matter ripping and tearing!"))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 
 	feedback_add_details("changeling_powers","RR")
 	return 1

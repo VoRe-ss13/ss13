@@ -215,8 +215,13 @@ Buildable meters
 	playsound(src, W.usesound, 50, 1)
 	user.visible_message( \
 		"[user] fastens \the [src].", \
+<<<<<<< HEAD
 		"<span class='notice'>You fasten \the [src].</span>", \
 		"<span class='italics'>You hear ratcheting.</span>")
+=======
+		span_notice("You fasten \the [src]."), \
+		span_warningplain("You hear ratcheting."))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 
 	qdel(src)
 
