@@ -2,11 +2,7 @@
 BASEDIR=$PWD
 #Put directories to get maps from here. One per line.
 mapdirs=(
-<<<<<<< HEAD
         "maps/relic_base"
-=======
-    "maps/southern_sun"
->>>>>>> 95a4a5c1dd ([MIRROR] Adds Juke Build (#9006))
 )
 #DO NOT TOUCH THIS VARIABLE. It will automatically fill with any maps in mapdirs that are form MAPNAME-n.dmm where n is the z level.
 map_files=()
