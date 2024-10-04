@@ -21,11 +21,18 @@
 	var/list/choices = list("/obj",
 	"/obj/structure",
 	"/obj/item",
+<<<<<<< HEAD
 	"/obj/item/device",
 	"/obj/item/weapon",
 	"/obj/item/weapon/gun",
 	"/obj/item/weapon/reagent_containers",
 	"/obj/item/weapon/reagent_containers/food",
+=======
+	"/obj/item/melee",
+	"/obj/item/gun",
+	"/obj/item/reagent_containers",
+	"/obj/item/reagent_containers/food",
+>>>>>>> dd40869551 ([MIRROR] entertainment cameras now update on move and some cleanup (#9155))
 	"/obj/item/clothing",
 	"/obj/item/weapon/storage/box/fluff", //VOREStation Edit,
 	"/obj/machinery",
