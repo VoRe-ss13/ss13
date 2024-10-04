@@ -70,8 +70,9 @@
 	output += "<p><a href='byond://?src=\ref[src];observe=1'>Observe</A></p>"
 
 	output += "<hr>" //ChompADD - a line divider between functional and info buttons
-	
-	//nobody uses this feature //WELL WE'RE GONNA
+
+	/*
+	//nobody uses this feature //WELL WE'RE GONNA //TORCHEdit Not really. Not yet at least
 	if(!IsGuestKey(src.key))
 		establish_db_connection()
 
@@ -90,6 +91,7 @@
 				output += "<p><b><a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A><br>(NEW!)</b></p>" //ChompEDIT - fixed height
 			else
 				output += "<p><a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A><br><i>No Changes</i></p>" //ChompEDIT - fixed height
+	*/
 
 	if(client?.check_for_new_server_news())
 		output += "<p><b><a href='byond://?src=\ref[src];shownews=1'>Show Server News</A><br>(NEW!)</b></p>" //ChompEDIT 'Game updates' --> 'Server news'
