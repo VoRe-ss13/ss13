@@ -59,6 +59,11 @@
 @include meta.load-css('./interfaces/NuclearBomb.scss');
 @include meta.load-css('./interfaces/Paper.scss');
 @include meta.load-css('./interfaces/Pda.scss');
+<<<<<<< HEAD
+=======
+@include meta.load-css('./interfaces/ResearchConsole.scss');
+@include meta.load-css('./interfaces/ResleevingConsole.scss');
+>>>>>>> e761314845 ([MIRROR] TGUI Research Console Rewrite (#9151))
 @include meta.load-css('./interfaces/Roulette.scss');
 @include meta.load-css('./interfaces/Safe.scss');
 @include meta.load-css('./interfaces/TachyonArray.scss');
