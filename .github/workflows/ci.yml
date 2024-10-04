@@ -17,10 +17,7 @@ jobs:
       cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
-<<<<<<< HEAD
-=======
       # Caches
->>>>>>> a7aad18e69 (changes back some CI changes (#9032))
       - name: Ensure +x on CI directory
         run: |
           chmod -R +x ./tools/ci
@@ -28,11 +25,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/SpacemanDMM
-<<<<<<< HEAD
-          key: ${{ runner.os }}-spacemandmm-${{ hashFiles('_dependencies.sh') }}
-=======
           key: ${{ runner.os }}-spacemandmm-${{ hashFiles('dependencies.sh') }}
->>>>>>> a7aad18e69 (changes back some CI changes (#9032))
           restore-keys: |
             ${{ runner.os }}-spacemandmm-
       - name: Restore Yarn cache
@@ -65,10 +58,7 @@ jobs:
         run: |
           pip3 install setuptools
           bash tools/ci/install_build_deps.sh
-<<<<<<< HEAD
-=======
           bash tools/ci/install_ripgrep.sh
->>>>>>> a7aad18e69 (changes back some CI changes (#9032))
           bash tools/ci/install_spaceman_dmm.sh dreamchecker
           tools/bootstrap/python -c ''
       - name: Run Tests
