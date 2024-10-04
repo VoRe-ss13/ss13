@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-/world/TgsNew(datum/tgs_event_handler/event_handler, minimum_required_security_level = TGS_SECURITY_TRUSTED) //Fops edit, needs to be trusted for certain features to work.
-=======
-/world/TgsNew(datum/tgs_event_handler/event_handler, minimum_required_security_level = TGS_SECURITY_ULTRASAFE, datum/tgs_http_handler/http_handler = null)
->>>>>>> 6068fb44cd ([MIRROR] Make config.sql_enabled actually respected in all cases || Chompadd, updates dependencies and dmapi (#8913))
+/world/TgsNew(datum/tgs_event_handler/event_handler, minimum_required_security_level = TGS_SECURITY_TRUSTED, datum/tgs_http_handler/http_handler = null) //Fops edit, needs to be trusted for certain features to work.
 	var/current_api = TGS_READ_GLOBAL(tgs)
 	if(current_api)
 		TGS_ERROR_LOG("API datum already set (\ref[current_api] ([current_api]))! Was TgsNew() called more than once?")
