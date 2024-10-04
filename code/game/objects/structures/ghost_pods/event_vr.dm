@@ -23,7 +23,7 @@
 	var/finalized = "No"
 	var/mobtype		//RS EDIT // TORCHEdit - Update ghostpod to deal with updated mob list from RS
 
-	if(jobban_isbanned(M, "GhostRoles"))
+	if(jobban_isbanned(M, JOB_GHOSTROLES))
 		to_chat(M, "<span class='warning'>You cannot inhabit this creature because you are banned from playing ghost roles.</span>")
 		reset_ghostpod()
 		return
@@ -32,7 +32,7 @@
 	if (not_has_ooc_text(M))
 		return
 
-	while(finalized == "No" && M.client)
+	while(finalized != "Yes" && M.client)
 		choice = tgui_input_list(M, "What type of predator do you want to play as?", "Maintpred Choice", GLOB.ghost_spawnable_mobs)		//RS EDIT //TORCHEdit Start - Porting "Join As Mob" verb and changes from Rogue Star.
 		if(choice)		//RS EDIT START
 			if(islist(GLOB.ghost_spawnable_mobs[choice]))	//Allow for nested list for organization reasons

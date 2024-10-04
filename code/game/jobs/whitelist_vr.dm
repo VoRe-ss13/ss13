@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(job_whitelist) // CHOMPEdit - Managed Globals
 	//TORCHEdit End
 	if(!job.whitelist_only)
 		return 1
-	if(rank == USELESS_JOB) //VOREStation Edit - Visitor not Assistant
+	if(rank == JOB_ALT_VISITOR) //VOREStation Edit - Visitor not Assistant
 		return 1
 	//TORCH Removal. Moved this upwards
 	if(!GLOB.job_whitelist) // CHOMPEdit - Managed Globals
@@ -36,6 +36,7 @@ GLOBAL_LIST_EMPTY(job_whitelist) // CHOMPEdit - Managed Globals
 				return 1
 			if(findtext(s,"[M.ckey] - All"))
 				return 1
+	return 0
 
 //ChompEDIT START - admin reload buttons
 /client/proc/reload_jobwhitelist()

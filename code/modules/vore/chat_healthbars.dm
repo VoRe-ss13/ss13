@@ -6,7 +6,7 @@
 	if(!reciever.client)	//No one is home, don't bother
 		return
 	if(!override)	//Did the person push the verb? Ignore the pref
-		if(!reciever.client.is_preference_enabled(/datum/client_preference/vore_health_bars))
+		if(!reciever.client.prefs?.read_preference(/datum/preference/toggle/vore_health_bars))
 			return
 	if(!istype(src.loc, /obj/belly)) // not in a belly? don't bother
 		return
@@ -105,6 +105,16 @@
 	set category = "Abilities.Vore" //CHOMPEdit
 
 	var/nuffin = TRUE
+
+	var/obj/belly/amprey = src.loc
+
+	if(istype(amprey))
+		var/datum/digest_mode/selective/DM_S = GLOB.digest_modes[DM_SELECT]
+		var/digest_mode = amprey.digest_mode == DM_SELECT ? DM_S.get_selective_mode(amprey, src) : amprey.digest_mode
+		to_chat(src, "<span class='notice'>[digest_mode] - You are in [amprey.owner]'s [amprey.name]:</span>")
+		src.chat_healthbar(src, TRUE, TRUE)
+		nuffin = FALSE
+
 	for(var/obj/belly/b in vore_organs)
 		if(!b.contents.len)
 			continue
@@ -115,10 +125,10 @@
 			if(!belly_announce)
 				var/datum/digest_mode/selective/DM_S = GLOB.digest_modes[DM_SELECT]
 				var/digest_mode = b.digest_mode == DM_SELECT ? DM_S.get_selective_mode(b, thing) : b.digest_mode
-				to_chat(src, "<span class='notice'>[digest_mode] - Within [b.name]:</span>")	//We only want to announce the belly if we found something
+				to_chat(src, "<span class='notice'>[digest_mode] - Within your [b.name]:</span>")	//We only want to announce the belly if we found something
 				belly_announce = TRUE
 			var/mob/living/ourmob = thing
 			ourmob.chat_healthbar(src, TRUE, TRUE)
 			nuffin = FALSE
 	if(nuffin)
-		to_chat(src, "<span class='warning'>There are no mobs within any of your bellies to print health bars for.</span>")
+		to_chat(src, "<span class='warning'>There are no mobs within any of your bellies to print health bars for, and you are not in a belly yourself.</span>")

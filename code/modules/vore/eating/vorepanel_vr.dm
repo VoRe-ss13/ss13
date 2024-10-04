@@ -582,8 +582,9 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 		data["soulcatcher"]["ext_hearing"] = host.soulgem.flag_check(NIF_SC_ALLOW_EARS)
 		data["soulcatcher"]["ext_vision"] = host.soulgem.flag_check(NIF_SC_ALLOW_EYES)
 		data["soulcatcher"]["mind_backups"] = host.soulgem.flag_check(NIF_SC_BACKUPS)
-		data["soulcatcher"]["ar_projecting"] = host.soulgem.flag_check(NIF_SC_PROJECTING)
+		data["soulcatcher"]["sr_projecting"] = host.soulgem.flag_check(NIF_SC_PROJECTING)
 		data["soulcatcher"]["show_vore_sfx"] = host.soulgem.flag_check(SOULGEM_SHOW_VORE_SFX)
+		data["soulcatcher"]["see_sr_projecting"] = host.soulgem.flag_check(SOULGEM_SEE_SR_SOULS)
 	var/nutri_value = 0
 	if(istype(host, /mob/living))
 		var/mob/living/H = host
@@ -628,6 +629,9 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				return FALSE
 
 			var/new_name = html_encode(tgui_input_text(usr,"New belly's name:","New Belly"))
+
+			if(!new_name)
+				return FALSE
 
 			var/failure_msg
 			if(length(new_name) > BELLIES_NAME_MAX || length(new_name) < BELLIES_NAME_MIN)
@@ -1845,6 +1849,16 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				to_chat(usr,"<span class='notice'>Chomp-specific preferences applied from active slot!</span>")
 				unsaved_changes = FALSE
 			return TRUE
+		if("loadprefsfromslot")
+			var/alert = tgui_alert(usr, "Are you sure you want to load another character slot's preferences? This will remove your current vore organs and eject their contents. This will not be immediately saved to your character slot, and you will need to save manually to overwrite your current bellies and preferences.","Confirmation",list("Load","Cancel"))
+			if(alert != "Load")
+				return FALSE
+			if(!host.load_vore_prefs_from_slot())
+				tgui_alert_async(usr, "ERROR: Vore-specific preferences failed to apply!","Error") //CHOMPEdit
+			else
+				to_chat(usr,"<span class='notice'>Vore-specific preferences applied from active slot!</span>") //CHOMPEdit
+				unsaved_changes = TRUE
+			return TRUE
 		//CHOMPEdit - "Belly HTML Export Earlyport"
 		if("exportpanel")
 			var/mob/living/user = usr
@@ -2292,12 +2306,16 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			host.soulgem.toggle_setting(NIF_SC_BACKUPS)
 			unsaved_changes = TRUE
 			return TRUE
-		if("toggle_ar_projecting")
+		if("toggle_sr_projecting")
 			host.soulgem.toggle_setting(NIF_SC_PROJECTING)
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_vore_sfx")
 			host.soulgem.toggle_setting(SOULGEM_SHOW_VORE_SFX)
+			unsaved_changes = TRUE
+			return TRUE
+		if("toggle_sr_vision")
+			host.soulgem.toggle_setting(SOULGEM_SEE_SR_SOULS)
 			unsaved_changes = TRUE
 			return TRUE
 		if("soulcatcher_rename")
@@ -2778,7 +2796,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 						l.adjust_nutrition(thismuch)
 					ourtarget.death()		// To make sure all on-death procs get properly called
 					if(ourtarget)
-						if(ourtarget.is_preference_enabled(/datum/client_preference/digestion_noises))
+						if(ourtarget.check_sound_preference(/datum/preference/toggle/digestion_noises))
 							if(!b.fancy_vore)
 								SEND_SOUND(ourtarget, sound(get_sfx("classic_death_sounds")))
 							else
@@ -3819,7 +3837,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			. = TRUE
 		if("b_del")
 			var/alert = tgui_alert(user, "Are you sure you want to delete your [lowertext(host.vore_selected.name)]?","Confirmation",list("Cancel","Delete")) //ChompEDIT - user, not usr
-			if(!(alert == "Delete"))
+			if(alert != "Delete")
 				return FALSE
 
 			var/failure_msg = ""
