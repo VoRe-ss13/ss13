@@ -181,7 +181,7 @@ export const DmMapsIncludeTarget = new Juke.Target({
       //...Juke.glob('_maps/RandomZLevels/**/*.dmm'),
       //...Juke.glob('_maps/shuttles/**/*.dmm'),
       //...Juke.glob('_maps/templates/**/*.dmm'),
-      ...Juke.glob('maps/southern_sun/**/*.dmm'),
+      ...Juke.glob('maps/relic_base/**/*.dmm'), //TORCHEdit - Changing to forbearance
       ...Juke.glob('maps/southern_cross/**/*.dmm'),
       ...Juke.glob('maps/submap/**/*.dmm'),
     ];
@@ -202,7 +202,7 @@ export const DmTarget = new Juke.Target({
   inputs: [
     '_maps/map_files/generic/**',
     'maps/**/*.dm',
-    'maps/southern_sun/**/*.dmm', // Placed here so it recompiles on map changes
+    'maps/relic_base/**/*.dmm', // Placed here so it recompiles on map changes //TORCHEdit - Changing to forbearance
     'maps/southern_cross/**/*.dmm', // Placed here so it recompiles on map changes
     'maps/submap/**/*.dmm', // Placed here so it recompiles on map changes
     'code/**',
