@@ -1,5 +1,8 @@
 // Sorted by however I felt like it
-// We have two other ways of doing this, so why not a third. This one atleast has more span options.
+
+// Adds a generic box around whatever message you're sending in chat. Really makes things stand out.
+#define examine_block(str) ("<div class='examine_block'>" + str + "</div>")
+
 #define span_ooc(str) ("<span class='ooc'>" + str + "</span>")
 #define span_looc(str) ("<span class='looc'>" + str + "</span>")
 
@@ -37,12 +40,16 @@
 #define span_npc_emote(str) ("<span class='npcemote'>" + str + "</span>")
 
 #define span_attack(str) ("<span class='attack'>" + str + "</span>")
-#define span_moderate(str) ("<span class='moderate'>" + str + "</span>")
 #define span_disarm(str) ("<span class='disarm'>" + str + "</span>")
 #define span_passive(str) ("<span class='passive'>" + str + "</span>")
 
 #define span_critical(str) ("<span class='critical'>" + str + "</span>")
 #define span_danger(str) ("<span class='danger'>" + str + "</span>")
+<<<<<<< HEAD
+=======
+#define span_bolddanger(str) ("<span class='bolddanger'>" + str + "</span>")
+#define span_userdanger(str) ("<span class='userdanger'>" + str + "</span>")
+>>>>>>> dd40869551 ([MIRROR] entertainment cameras now update on move and some cleanup (#9155))
 #define span_warning(str) ("<span class='warning'>" + str + "</span>")
 #define span_rose(str) ("<span class='rose'>" + str + "</span>")
 #define span_info(str) ("<span class='info'>" + str + "</span>")
@@ -50,7 +57,22 @@
 #define span_alium(str) ("<span class='alium'>" + str + "</span>")
 #define span_cult(str) ("<span class='cult'>" + str + "</span>")
 
+<<<<<<< HEAD
 #define span_reflex_shoot(str) ("<span class='reflex_shoot'>" + str + "</span>")
+=======
+#define span_sinister(str) ("<span class='sinister'>" + str + "</span>")
+
+#define span_wingdings(str) ("<span class='wingdings'>" + str + "</span>") //CHOMPAdd
+
+/* Direct communication spans */
+
+#define span_psay(str) ("<span class='psay'>" + str + "</span>")
+#define span_pemote(str) ("<span class='pemote'>" + str + "</span>")
+
+/* Export spans */
+
+#define span_chatexport(str) ("<span class='chatexport'>" + str + "</span>")
+>>>>>>> dd40869551 ([MIRROR] entertainment cameras now update on move and some cleanup (#9155))
 
 /* Vore messages */
 

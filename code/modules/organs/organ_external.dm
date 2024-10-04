@@ -884,26 +884,44 @@ Note that amputating the affected organ does in fact remove the infection from t
 			if(!clean)
 				var/gore_sound = "[(robotic >= ORGAN_ROBOT) ? "tortured metal" : "ripping tendons and flesh"]"
 				owner.visible_message(
+<<<<<<< HEAD
 					"<span class='danger'>\The [owner]'s [src.name] flies off in an arc!</span>",\
 					"<span class='moderate'><b>Your [src.name] goes flying off!</b></span>",\
 					"<span class='danger'>You hear a terrible sound of [gore_sound].</span>")
+=======
+					span_danger("\The [owner]'s [src.name] flies off in an arc!"),\
+					span_bolddanger("Your [src.name] goes flying off!"),\
+					span_danger("You hear a terrible sound of [gore_sound]."))
+>>>>>>> dd40869551 ([MIRROR] entertainment cameras now update on move and some cleanup (#9155))
 		if(DROPLIMB_BURN)
 			if(cannot_gib)
 				return
 			var/gore = "[(robotic >= ORGAN_ROBOT) ? "": " of burning flesh"]"
 			owner.visible_message(
+<<<<<<< HEAD
 				"<span class='danger'>\The [owner]'s [src.name] flashes away into ashes!</span>",\
 				"<span class='moderate'><b>Your [src.name] flashes away into ashes!</b></span>",\
 				"<span class='danger'>You hear a crackling sound[gore].</span>")
+=======
+				span_danger("\The [owner]'s [src.name] flashes away into ashes!"),\
+				span_bolddanger("Your [src.name] flashes away into ashes!"),\
+				span_danger("You hear a crackling sound[gore]."))
+>>>>>>> dd40869551 ([MIRROR] entertainment cameras now update on move and some cleanup (#9155))
 		if(DROPLIMB_BLUNT)
 			if(cannot_gib)
 				return
 			var/gore = "[(robotic >= ORGAN_ROBOT) ? "": " in shower of gore"]"
 			var/gore_sound = "[(status >= ORGAN_ROBOT) ? "rending sound of tortured metal" : "sickening splatter of gore"]"
 			owner.visible_message(
+<<<<<<< HEAD
 				"<span class='danger'>\The [owner]'s [src.name] explodes[gore]!</span>",\
 				"<span class='moderate'><b>Your [src.name] explodes[gore]!</b></span>",\
 				"<span class='danger'>You hear the [gore_sound].</span>")
+=======
+				span_danger("\The [owner]'s [src.name] explodes[gore]!"),\
+				span_bolddanger("Your [src.name] explodes[gore]!"),\
+				span_danger("You hear the [gore_sound]."))
+>>>>>>> dd40869551 ([MIRROR] entertainment cameras now update on move and some cleanup (#9155))
 
 	var/mob/living/carbon/human/victim = owner //Keep a reference for post-removed().
 	var/obj/item/organ/external/parent_organ = parent
