@@ -255,13 +255,18 @@ update_flag
 		playsound(src, WT.usesound, 50, 1)
 		if(do_after(user, 20 * WT.toolspeed))
 			if(!src || !WT.isOn()) return
-			to_chat(user, "<span class='notice'>You deconstruct the [src].</span>")
+			to_chat(user, span_notice("You deconstruct the [src]."))
 			new /obj/item/stack/material/steel( src.loc, 10)
 			qdel(src)
 			return
 	//Voreend
+<<<<<<< HEAD
 	if(!W.has_tool_quality(TOOL_WRENCH) && !istype(W, /obj/item/weapon/tank) && !istype(W, /obj/item/device/analyzer) && !istype(W, /obj/item/device/pda))
 		visible_message("<span class='warning'>\The [user] hits \the [src] with \a [W]!</span>")
+=======
+	if(!W.has_tool_quality(TOOL_WRENCH) && !istype(W, /obj/item/tank) && !istype(W, /obj/item/analyzer) && !istype(W, /obj/item/pda))
+		visible_message(span_warning("\The [user] hits \the [src] with \a [W]!"))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		src.health -= W.force
 		src.add_fingerprint(user)
 		healthcheck()

@@ -21,8 +21,13 @@
 		if(slot_belt)
 			sprite_sheets = list(SPECIES_TESHARI = 'icons/inventory/belt/mob_teshari.dmi')
 
+<<<<<<< HEAD
 /obj/item/weapon/towel/attack_self(mob/living/user as mob)
 	user.visible_message(text("<span class='notice'>[] uses [] to towel themselves off.</span>", user, src))
+=======
+/obj/item/towel/attack_self(mob/living/user as mob)
+	user.visible_message(span_notice("[user] uses [src] to towel themselves off."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	playsound(src, 'sound/weapons/towelwipe.ogg', 25, 1)
 	if(user.fire_stacks > 0)
 		user.fire_stacks = (max(0, user.fire_stacks - 1.5))

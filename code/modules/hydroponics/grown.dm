@@ -157,7 +157,7 @@
 					return
 
 			M.stop_pulling()
-			to_chat(M, "<span class='notice'>You slipped on the [name]!</span>")
+			to_chat(M, span_notice("You slipped on the [name]!"))
 			playsound(src, 'sound/misc/slip.ogg', 50, 1, -3)
 			M.Stun(8)
 			M.Weaken(5)
@@ -177,8 +177,13 @@
 			var/obj/item/stack/cable_coil/C = W
 			if(C.use(5))
 				//TODO: generalize this.
+<<<<<<< HEAD
 				to_chat(user, "<span class='notice'>You add some cable to the [src.name] and slide it inside the battery casing.</span>")
 				var/obj/item/weapon/cell/potato/pocell = new /obj/item/weapon/cell/potato(get_turf(user))
+=======
+				to_chat(user, span_notice("You add some cable to the [src.name] and slide it inside the battery casing."))
+				var/obj/item/cell/potato/pocell = new /obj/item/cell/potato(get_turf(user))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				if(src.loc == user && istype(user,/mob/living/carbon/human))
 					user.put_in_hands(pocell)
 				pocell.maxcharge = src.potency * 200
@@ -189,7 +194,7 @@
 		if(W.sharp)
 
 			if(seed.kitchen_tag == "pumpkin") // Ugggh these checks are awful.
-				user.show_message("<span class='notice'>You carve a face into [src]!</span>", 1)
+				user.show_message(span_notice("You carve a face into [src]!"), 1)
 				new /obj/item/clothing/head/pumpkinhead (user.loc)
 				qdel(src)
 				return
@@ -197,7 +202,7 @@
 			if(seed.chems)
 
 				if(W.sharp && W.edge && !isnull(seed.chems["woodpulp"]))
-					user.show_message("<span class='notice'>You make planks out of \the [src]!</span>", 1)
+					user.show_message(span_notice("You make planks out of \the [src]!"), 1)
 					playsound(src, 'sound/effects/woodcutting.ogg', 50, 1)
 					var/flesh_colour = seed.get_trait(TRAIT_FLESH_COLOUR)
 					if(!flesh_colour) flesh_colour = seed.get_trait(TRAIT_PRODUCT_COLOUR)
@@ -210,7 +215,7 @@
 							if(G.get_amount() >= G.max_amount)
 								continue
 							G.attackby(NG, user)
-						to_chat(user, "<span class='filter_notice'>You add the newly-formed wood to the stack. It now contains [NG.get_amount()] planks.</span>")
+						to_chat(user, span_filter_notice("You add the newly-formed wood to the stack. It now contains [NG.get_amount()] planks."))
 					qdel(src)
 					return
 
@@ -221,31 +226,51 @@
 					return
 
 				if(seed.kitchen_tag == "potato" || !isnull(seed.chems["potato"]))
+<<<<<<< HEAD
 					to_chat(user, "<span class='filter_notice'>You slice \the [src] into sticks.</span>")
 					new /obj/item/weapon/reagent_containers/food/snacks/rawsticks(get_turf(src))
+=======
+					to_chat(user, span_filter_notice("You slice \the [src] into sticks."))
+					new /obj/item/reagent_containers/food/snacks/rawsticks(get_turf(src))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 					qdel(src)
 					return
 
 				if(!isnull(seed.chems["carrotjuice"]))
+<<<<<<< HEAD
 					to_chat(user, "<span class='filter_notice'>You slice \the [src] into sticks.</span>")
 					new /obj/item/weapon/reagent_containers/food/snacks/carrotfries(get_turf(src))
+=======
+					to_chat(user, span_filter_notice("You slice \the [src] into sticks."))
+					new /obj/item/reagent_containers/food/snacks/carrotfries(get_turf(src))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 					qdel(src)
 					return
 
 				if(!isnull(seed.chems["pineapplejuice"]))
+<<<<<<< HEAD
 					to_chat(user, "<span class='filter_notice'>You slice \the [src] into rings.</span>")
 					new /obj/item/weapon/reagent_containers/food/snacks/pineapple_ring(get_turf(src))
+=======
+					to_chat(user, span_filter_notice("You slice \the [src] into rings."))
+					new /obj/item/reagent_containers/food/snacks/pineapple_ring(get_turf(src))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 					qdel(src)
 					return
 
 				if(!isnull(seed.chems["soymilk"]))
+<<<<<<< HEAD
 					to_chat(user, "<span class='filter_notice'>You roughly chop up \the [src].</span>")
 					new /obj/item/weapon/reagent_containers/food/snacks/soydope(get_turf(src))
+=======
+					to_chat(user, span_filter_notice("You roughly chop up \the [src]."))
+					new /obj/item/reagent_containers/food/snacks/soydope(get_turf(src))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 					qdel(src)
 					return
 
 				if(seed.get_trait(TRAIT_FLESH_COLOUR))
-					to_chat(user, "<span class='filter_notice'>You slice up \the [src].</span>")
+					to_chat(user, span_filter_notice("You slice up \the [src]."))
 					var/slices = rand(3,5)
 					var/reagents_to_transfer = round(reagents.total_volume/slices)
 					for(var/i=1; i<=slices; i++)
@@ -270,7 +295,7 @@
 			return
 		if(prob(35))
 			if(user)
-				to_chat(user, "<span class='danger'>\The [src] has fallen to bits.</span>")
+				to_chat(user, span_danger("\The [src] has fallen to bits."))
 				user.drop_from_inventory(src)
 			qdel(src)
 
@@ -283,14 +308,14 @@
 		return
 
 	if(user.a_intent == I_HURT)
-		user.visible_message("<span class='danger'>\The [user] squashes \the [src]!</span>")
+		user.visible_message(span_danger("\The [user] squashes \the [src]!"))
 		seed.thrown_at(src,user)
 		sleep(-1)
 		if(src) qdel(src)
 		return
 
 	if(seed.kitchen_tag == "grass")
-		user.show_message("<span class='notice'>You make a grass tile out of \the [src]!</span>", 1)
+		user.show_message(span_notice("You make a grass tile out of \the [src]!"), 1)
 		var/flesh_colour = seed.get_trait(TRAIT_FLESH_COLOUR)
 		if(!flesh_colour) flesh_colour = seed.get_trait(TRAIT_PRODUCT_COLOUR)
 		for(var/i=0,i<2,i++)
@@ -307,7 +332,7 @@
 		return
 
 	if(seed.kitchen_tag == "carpet")
-		user.show_message("<span class='notice'>You shape some carpet squares out of \the [src] fibers!</span>", 1)
+		user.show_message(span_notice("You shape some carpet squares out of \the [src] fibers!"), 1)
 		for(var/i=0,i<2,i++)
 			var/obj/item/stack/tile/carpet/G = new (user.loc)
 			for (var/obj/item/stack/tile/carpet/NG in user.loc)
@@ -316,12 +341,12 @@
 				if(NG.get_amount() >= NG.max_amount)
 					continue
 				NG.attackby(G, user)
-			to_chat(user, "<span class='filter_notice'>You add the newly-formed carpet to the stack. It now contains [G.get_amount()] tiles.</span>")
+			to_chat(user, span_filter_notice("You add the newly-formed carpet to the stack. It now contains [G.get_amount()] tiles."))
 		qdel(src)
 		return
 
 	if(seed.get_trait(TRAIT_SPREAD) > 0)
-		to_chat(user, "<span class='notice'>You plant the [src.name].</span>")
+		to_chat(user, span_notice("You plant the [src.name]."))
 		new /obj/machinery/portable_atmospherics/hydroponics/soil/invisible(get_turf(user),src.seed)
 		GLOB.seed_planted_shift_roundstat++
 		qdel(src)
@@ -333,13 +358,13 @@
 			if("shand")
 				var/obj/item/stack/medical/bruise_pack/tajaran/poultice = new /obj/item/stack/medical/bruise_pack/tajaran(user.loc)
 				poultice.heal_brute = potency
-				to_chat(user, "<span class='notice'>You mash the leaves into a poultice.</span>")
+				to_chat(user, span_notice("You mash the leaves into a poultice."))
 				qdel(src)
 				return
 			if("mtear")
 				var/obj/item/stack/medical/ointment/tajaran/poultice = new /obj/item/stack/medical/ointment/tajaran(user.loc)
 				poultice.heal_burn = potency
-				to_chat(user, "<span class='notice'>You mash the petals into a poultice.</span>")
+				to_chat(user, span_notice("You mash the petals into a poultice."))
 				qdel(src)
 				return
 	*/

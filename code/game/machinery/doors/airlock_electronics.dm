@@ -19,7 +19,7 @@
 /obj/item/weapon/airlock_electronics/emag_act(var/remaining_charges, var/mob/user)
 	if(!emagged)
 		emagged = 1
-		to_chat(user, "<span class='notice'>You remove the access restrictions on [src]!</span>")
+		to_chat(user, span_notice("You remove the access restrictions on [src]!"))
 		return 1
 
 /obj/item/weapon/airlock_electronics/attack_self(mob/user as mob)
@@ -148,6 +148,11 @@
 	origin_tech = list(TECH_DATA = 2)
 	secure = 1
 
+<<<<<<< HEAD
 /obj/item/weapon/airlock_electronics/secure/emag_act(var/remaining_charges, var/mob/user)
 	to_chat(user, "<span class='warning'>You don't appear to be able to bypass this hardened device!</span>")
+=======
+/obj/item/airlock_electronics/secure/emag_act(var/remaining_charges, var/mob/user)
+	to_chat(user, span_warning("You don't appear to be able to bypass this hardened device!"))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	return -1

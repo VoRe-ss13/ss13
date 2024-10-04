@@ -202,8 +202,13 @@
 		..()
 
 /mob/living/simple_mob/animal/passive/snake/python/noodle/attackby(var/obj/item/O, var/mob/user)
+<<<<<<< HEAD
 	if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/snakesnack))
 		visible_message("<span class='notice'>[user] feeds \the [O] to [src].</span>")
+=======
+	if(istype(O, /obj/item/reagent_containers/food/snacks/snakesnack))
+		visible_message(span_notice("[user] feeds \the [O] to [src]."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		qdel(O)
 	else
 		return ..()

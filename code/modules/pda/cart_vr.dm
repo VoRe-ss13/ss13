@@ -49,8 +49,13 @@ var/list/exploration_cartridges = list(
 	if (hold.handle_mousedrop(usr, over_object))
 		..(over_object)
 
+<<<<<<< HEAD
 /obj/item/weapon/cartridge/storage/attack_self(mob/user as mob)
 	to_chat(user, "<span class='notice'>You empty [src].</span>")
+=======
+/obj/item/cartridge/storage/attack_self(mob/user as mob)
+	to_chat(user, span_notice("You empty [src]."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	var/turf/T = get_turf(src)
 	hold.hide_from(usr)
 	for(var/obj/item/I in hold.contents)

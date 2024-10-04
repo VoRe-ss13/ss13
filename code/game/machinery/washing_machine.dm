@@ -108,8 +108,13 @@
 			return
 	/*if(W.has_tool_quality(TOOL_SCREWDRIVER))
 		panel = !panel
+<<<<<<< HEAD
 		to_chat(user, "<span class='notice'>You [panel ? "open" : "close"] the [src]'s maintenance panel</span>")*/
 	if(istype(W,/obj/item/weapon/pen/crayon) || istype(W,/obj/item/weapon/stamp))
+=======
+		to_chat(user, span_notice("You [panel ? "open" : "close"] the [src]'s maintenance panel"))*/
+	if(istype(W,/obj/item/pen/crayon) || istype(W,/obj/item/stamp))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(state in list(	1, 3, 6))
 			if(!crayon)
 				user.drop_item()
@@ -130,7 +135,7 @@
 			..()
 
 	else if(is_type_in_list(W, disallowed_types))
-		to_chat(user, "<span class='warning'>You can't fit \the [W] inside.</span>")
+		to_chat(user, span_warning("You can't fit \the [W] inside."))
 		return
 
 	else if(istype(W, /obj/item/clothing) || istype(W, /obj/item/weapon/bedsheet) || istype(W, /obj/item/stack/hairlesshide))
@@ -141,9 +146,9 @@
 				washing += W
 				state = 3
 			else
-				to_chat(user, "<span class='notice'>You can't put the item in right now.</span>")
+				to_chat(user, span_notice("You can't put the item in right now."))
 		else
-			to_chat(user, "<span class='notice'>The washing machine is full.</span>")
+			to_chat(user, span_notice("The washing machine is full."))
 	else
 		..()
 	update_icon()
@@ -167,7 +172,7 @@
 			washing.Cut()
 			state = 1
 		if(5)
-			to_chat(user, "<span class='warning'>The [src] is busy.</span>")
+			to_chat(user, span_warning("The [src] is busy."))
 		if(6)
 			state = 7
 		if(7)

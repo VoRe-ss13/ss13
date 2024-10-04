@@ -251,8 +251,13 @@
 
 /obj/machinery/casino_prize_dispenser/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(currently_vending)
+<<<<<<< HEAD
 		if(istype(W, /obj/item/weapon/spacecasinocash))
 			to_chat(usr, "<span class='warning'>Please select prize on display with sufficient amount of chips.</span>")
+=======
+		if(istype(W, /obj/item/spacecasinocash))
+			to_chat(usr, span_warning("Please select prize on display with sufficient amount of chips."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		else
 			SStgui.update_uis(src)
 			return // don't smack that machine with your 2 chips
@@ -268,8 +273,13 @@
 		to_chat(usr, "[icon2html(cashmoney, user.client)] <span class='warning'>That is not enough chips.</span>") //CHOMPEdit
 		return 0
 
+<<<<<<< HEAD
 	if(istype(cashmoney, /obj/item/weapon/spacecasinocash))
 		visible_message("<span class='info'>\The [usr] inserts some chips into \the [src].</span>")
+=======
+	if(istype(cashmoney, /obj/item/spacecasinocash))
+		visible_message(span_info("\The [usr] inserts some chips into \the [src]."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		cashmoney.worth -= price
 
 		if(cashmoney.worth <= 0)
@@ -343,11 +353,11 @@
 				if("event")
 					restriction_check = category_event
 				else
-					to_chat(usr, "<span class='warning'>Prize checkout error has occured, purchase cancelled.</span>")
+					to_chat(usr, span_warning("Prize checkout error has occurred, purchase cancelled."))
 					return FALSE
 
 			if(restriction_check < 1)
-				to_chat(usr, "<span class='warning'>[name] is restricted, this prize can't be bought.</span>")
+				to_chat(usr, span_warning("[name] is restricted, this prize can't be bought."))
 				return FALSE
 			if(restriction_check > 1)
 				item_given = TRUE
@@ -362,7 +372,7 @@
 				var/obj/item/weapon/spacecasinocash/cash = usr.get_active_hand()
 				paid = pay_with_chips(cash, usr, price)
 			else
-				to_chat(usr, "<span class='warning'>Payment failure: Improper payment method, please provide chips.</span>")
+				to_chat(usr, span_warning("Payment failure: Improper payment method, please provide chips."))
 				return TRUE // we set this because they shouldn't even be able to get this far, and we want the UI to update.
 			if(paid)
 				if(item_given == TRUE)
@@ -372,7 +382,7 @@
 				do_logging(currently_vending, usr, bi)
 				. = TRUE
 			else
-				to_chat(usr, "<span class='warning'>Payment failure: unable to process payment.</span>")
+				to_chat(usr, span_warning("Payment failure: unable to process payment."))
 
 /obj/machinery/casino_prize_dispenser/proc/vend(datum/data/casino_prize/bi, mob/user)
 	SStgui.update_uis(src)
@@ -404,7 +414,7 @@
 		return
 
 	for(var/mob/O in hearers(src, null))
-		O.show_message("<span class='npcsay'><span class='name'>\The [src]</span> beeps, \"[message]\"</span>",2)
+		O.show_message(span_npcsay("<span class='name'>\The [src]</span> beeps, \"[message]\""),2)
 	return
 
 /obj/machinery/casino_prize_dispenser/process() //Might not need this, but just to be safe for now

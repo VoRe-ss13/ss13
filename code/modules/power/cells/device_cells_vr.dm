@@ -7,8 +7,13 @@
 
 /obj/item/weapon/cell/device/weapon/recharge/alien/attack_self(var/mob/user)
 	user.remove_from_mob(src)
+<<<<<<< HEAD
 	to_chat(user, "<span class='notice'>You swap [src] to 'machinery cell' mode.</span>")
 	var/obj/item/weapon/cell/newcell = new swaps_to(null)
+=======
+	to_chat(user, span_notice("You swap [src] to 'machinery cell' mode."))
+	var/obj/item/cell/newcell = new swaps_to(null)
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	user.put_in_active_hand(newcell)
 	var/percentage = charge/maxcharge
 	newcell.charge = newcell.maxcharge * percentage
@@ -32,8 +37,13 @@
 
 /obj/item/weapon/cell/void/attack_self(var/mob/user)
 	user.remove_from_mob(src)
+<<<<<<< HEAD
 	to_chat(user, "<span class='notice'>You swap [src] to 'device cell' mode.</span>")
 	var/obj/item/weapon/cell/newcell = new swaps_to(null)
+=======
+	to_chat(user, span_notice("You swap [src] to 'device cell' mode."))
+	var/obj/item/cell/newcell = new swaps_to(null)
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	user.put_in_active_hand(newcell)
 	var/percentage = charge/maxcharge
 	newcell.charge = newcell.maxcharge * percentage

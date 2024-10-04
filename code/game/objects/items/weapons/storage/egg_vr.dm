@@ -27,8 +27,13 @@
 	icon = open_egg_icon
 	..()
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/vore_egg/proc/hatch(mob/living/user as mob)
 	visible_message("<span class='danger'>\The [src] begins to shake as something pushes out from within!</span>")
+=======
+/obj/item/storage/vore_egg/proc/hatch(mob/living/user as mob)
+	visible_message(span_danger("\The [src] begins to shake as something pushes out from within!"))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	animate_shake()
 	if(do_after(user, 50))
 		if(use_sound)

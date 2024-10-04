@@ -170,8 +170,13 @@
 	else if (istype(O, /obj/item/weapon/spacecash/ewallet))
 		var/obj/item/weapon/spacecash/ewallet/E = O
 		scan_wallet(E)
+<<<<<<< HEAD
 	else if (istype(O, /obj/item/weapon/spacecash))
 		to_chat(usr, "<span class='warning'>This device does not accept cash.</span>")
+=======
+	else if (istype(O, /obj/item/spacecash))
+		to_chat(usr, span_warning("This device does not accept cash."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 	else if(istype(O, /obj/item/weapon/card/emag))
 		return ..()
@@ -396,7 +401,7 @@
 
 /obj/item/device/retail_scanner/emag_act(var/remaining_charges, var/mob/user)
 	if(!emagged)
-		to_chat(user, "<span class='danger'>You stealthily swipe the cryptographic sequencer through \the [src].</span>")
+		to_chat(user, span_danger("You stealthily swipe the cryptographic sequencer through \the [src]."))
 		playsound(src, "sparks", 50, 1)
 		req_access = list()
 		emagged = 1

@@ -29,21 +29,27 @@ var/global/ingredientLimit = 20000
 /obj/item/weapon/reagent_containers/food/snacks/customizable/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/weapon/reagent_containers/food/snacks))
 		if((contents.len >= ingMax) || (contents.len >= ingredientLimit))
-			to_chat(user, "<span class='warning'>That's already looking pretty stuffed.</span>")
+			to_chat(user, span_warning("That's already looking pretty stuffed."))
 			return
 
 		var/obj/item/weapon/reagent_containers/food/snacks/S = I
 		if(istype(S,/obj/item/weapon/reagent_containers/food/snacks/customizable))
 			var/obj/item/weapon/reagent_containers/food/snacks/customizable/SC = S
 			if(fullyCustom && SC.fullyCustom)
-				to_chat(user, "<span class='warning'>You slap yourself on the back of the head for thinking that stacking plates is an interesting dish.</span>")
+				to_chat(user, span_warning("You slap yourself on the back of the head for thinking that stacking plates is an interesting dish."))
 				return
+<<<<<<< HEAD
 		if(!recursiveFood && istype(I, /obj/item/weapon/reagent_containers/food/snacks/customizable))
 			//to_chat(user, "<span class='warning'>[pick("As uniquely original as that idea is, you can't figure out how to perform it.","That would be a straining topological exercise.","This world just isn't ready for your cooking genius.","It's possible that you may have a problem.","It won't fit.","You don't think that would taste very good.","Quit goofin' around.")]</span>")
 			to_chat(user, "<span class='warning'>As uniquely original as that idea is, you can't figure out how to perform it.</span>")
+=======
+		if(!recursiveFood && istype(I, /obj/item/reagent_containers/food/snacks/customizable))
+			//to_chat(user, span_warning("[pick("As uniquely original as that idea is, you can't figure out how to perform it.","That would be a straining topological exercise.","This world just isn't ready for your cooking genius.","It's possible that you may have a problem.","It won't fit.","You don't think that would taste very good.","Quit goofin' around.")]"))
+			to_chat(user, span_warning("As uniquely original as that idea is, you can't figure out how to perform it."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 		/*if(!user.drop_item())
-			to_chat(user, "<span class='warning'>\The [I] is stuck to your hands!</span>")
+			to_chat(user, span_warning("\The [I] is stuck to your hands!"))
 			return*/
 		user.drop_item()
 		I.forceMove(src)
@@ -66,7 +72,7 @@ var/global/ingredientLimit = 20000
 			drawTopping()
 
 		updateName()
-		to_chat(user, "<span class='notice'>You add the [I.name] to the [src.name].</span>")
+		to_chat(user, span_notice("You add the [I.name] to the [src.name]."))
 	else
 		. = ..()
 	return
@@ -183,10 +189,17 @@ var/global/ingredientLimit = 20000
 
 // Various Snacks //////////////////////////////////////////////
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/slice/bread/attackby(obj/item/I,mob/user,params)
 	if(istype(I,/obj/item/weapon/reagent_containers/food/snacks))
 		if(!recursiveFood && istype(I, /obj/item/weapon/reagent_containers/food/snacks/customizable))
 			to_chat(user, "<span class='warning'>Sorry, no recursive food.</span>")
+=======
+/obj/item/reagent_containers/food/snacks/slice/bread/attackby(obj/item/I,mob/user,params)
+	if(istype(I,/obj/item/reagent_containers/food/snacks))
+		if(!recursiveFood && istype(I, /obj/item/reagent_containers/food/snacks/customizable))
+			to_chat(user, span_warning("Sorry, no recursive food."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 		var/obj/F = new/obj/item/weapon/reagent_containers/food/snacks/customizable/sandwich(get_turf(src),I) //boy ain't this a mouthful
 		F.attackby(I, user)
@@ -216,9 +229,15 @@ var/global/ingredientLimit = 20000
 		qdel(I)
 		qdel(src)
 
+<<<<<<< HEAD
 	if(istype(I,/obj/item/weapon/reagent_containers/food/snacks))
 		if(!recursiveFood && istype(I, /obj/item/weapon/reagent_containers/food/snacks/customizable))
 			to_chat(user, "<span class='warning'>Sorry, no recursive food.</span>")
+=======
+	if(istype(I,/obj/item/reagent_containers/food/snacks))
+		if(!recursiveFood && istype(I, /obj/item/reagent_containers/food/snacks/customizable))
+			to_chat(user, span_warning("Sorry, no recursive food."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 		var/obj/F = new/obj/item/weapon/reagent_containers/food/snacks/customizable/burger(get_turf(src),I)
 		F.attackby(I, user)
@@ -226,10 +245,17 @@ var/global/ingredientLimit = 20000
 	else
 		return ..()
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/sliceable/flatdough/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/weapon/reagent_containers/food/snacks))
 		if(!recursiveFood && istype(I, /obj/item/weapon/reagent_containers/food/snacks/customizable))
 			to_chat(user, "<span class='warning'>Sorry, no recursive food.</span>")
+=======
+/obj/item/reagent_containers/food/snacks/sliceable/flatdough/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/reagent_containers/food/snacks))
+		if(!recursiveFood && istype(I, /obj/item/reagent_containers/food/snacks/customizable))
+			to_chat(user, span_warning("Sorry, no recursive food."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 		var/obj/F = new/obj/item/weapon/reagent_containers/food/snacks/customizable/pizza(get_turf(src),I)
 		F.attackby(I, user)
@@ -237,10 +263,17 @@ var/global/ingredientLimit = 20000
 	else
 		return ..()
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/spagetti/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/weapon/reagent_containers/food/snacks))
 		if(!recursiveFood && istype(I, /obj/item/weapon/reagent_containers/food/snacks/customizable))
 			to_chat(user, "<span class='warning'>Sorry, no recursive food.</span>")
+=======
+/obj/item/reagent_containers/food/snacks/spagetti/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/reagent_containers/food/snacks))
+		if(!recursiveFood && istype(I, /obj/item/reagent_containers/food/snacks/customizable))
+			to_chat(user, span_warning("Sorry, no recursive food."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 		var/obj/F = new/obj/item/weapon/reagent_containers/food/snacks/customizable/pasta(get_turf(src),I)
 		F.attackby(I, user)
@@ -251,9 +284,15 @@ var/global/ingredientLimit = 20000
 // Custom Meals ////////////////////////////////////////////////
 /*
 /obj/item/trash/plate/attackby(obj/item/I, mob/user)
+<<<<<<< HEAD
 	if(istype(I,/obj/item/weapon/reagent_containers/food/snacks))
 		if(istype(I,/obj/item/weapon/reagent_containers/food/snacks/customizable/fullycustom)) //no platestacking even with recursive food, for now
 			to_chat(user, "<span class='warning'>That's already got a plate!</span>")
+=======
+	if(istype(I,/obj/item/reagent_containers/food/snacks))
+		if(istype(I,/obj/item/reagent_containers/food/snacks/customizable/fullycustom)) //no platestacking even with recursive food, for now
+			to_chat(user, span_warning("That's already got a plate!"))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 		var/obj/F = new/obj/item/weapon/reagent_containers/food/snacks/customizable/fullycustom(get_turf(src),I)
 		F.attackby(I, user)
@@ -269,9 +308,15 @@ var/global/ingredientLimit = 20000
 	icon_state = "soup"
 
 /obj/item/trash/bowl/attackby(obj/item/I, mob/user)
+<<<<<<< HEAD
 	if(istype(I,/obj/item/weapon/reagent_containers/food/snacks))
 		if(!recursiveFood && istype(I, /obj/item/weapon/reagent_containers/food/snacks/customizable))
 			to_chat(user, "<span class='warning'>Sorry, no recursive food.</span>")
+=======
+	if(istype(I,/obj/item/reagent_containers/food/snacks))
+		if(!recursiveFood && istype(I, /obj/item/reagent_containers/food/snacks/customizable))
+			to_chat(user, span_warning("Sorry, no recursive food."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 		var/obj/F = new/obj/item/weapon/reagent_containers/food/snacks/customizable/soup(get_turf(src),I)
 		F.attackby(I, user)

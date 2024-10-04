@@ -37,8 +37,13 @@
 	charge_cost = 120
 	fire_delay = 12
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/energy/pulse_rifle/destroyer/attack_self(mob/living/user as mob)
 	to_chat(user, "<span class='warning'>[src.name] has three settings, and they are all DESTROY.</span>")
+=======
+/obj/item/gun/energy/pulse_rifle/destroyer/attack_self(mob/living/user as mob)
+	to_chat(user, span_warning("[src.name] has three settings, and they are all DESTROY."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 /*
  * Pulse Carbine

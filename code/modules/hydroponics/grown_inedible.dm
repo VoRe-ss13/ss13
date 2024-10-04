@@ -43,8 +43,13 @@
 
 /obj/item/weapon/corncob/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
+<<<<<<< HEAD
 	if(istype(W, /obj/item/weapon/surgical/circular_saw) || istype(W, /obj/item/weapon/material/knife/machete/hatchet) || istype(W, /obj/item/weapon/material/knife))
 		to_chat(user, "<span class='notice'>You use [W] to fashion a pipe out of the corn cob!</span>")
+=======
+	if(istype(W, /obj/item/surgical/circular_saw) || istype(W, /obj/item/material/knife/machete/hatchet) || istype(W, /obj/item/material/knife))
+		to_chat(user, span_notice("You use [W] to fashion a pipe out of the corn cob!"))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		new /obj/item/clothing/mask/smokable/pipe/cobpipe (user.loc)
 		qdel(src)
 		return

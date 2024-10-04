@@ -44,8 +44,13 @@
 			var/image/stampoverlay = image('icons/obj/bureaucracy.dmi', "paperplane_[initial(stamp.icon_state)]")
 			add_overlay(stampoverlay)
 
+<<<<<<< HEAD
 /obj/item/weapon/paperplane/attack_self(mob/user)
 	to_chat(user, "<span class='notice'>You unfold [src].</span>")
+=======
+/obj/item/paperplane/attack_self(mob/user)
+	to_chat(user, span_notice("You unfold [src]."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	var/atom/movable/internal_paper_tmp = internalPaper
 	internal_paper_tmp.forceMove(loc)
 	internalPaper = null
@@ -54,8 +59,13 @@
 
 /obj/item/weapon/paperplane/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	..()
+<<<<<<< HEAD
 	if(istype(P, /obj/item/weapon/pen))
 		to_chat(user, "<span class='notice'>You should unfold [src] before changing it.</span>")
+=======
+	if(istype(P, /obj/item/pen))
+		to_chat(user, span_notice("You should unfold [src] before changing it."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return
 
 	else if(istype(P, /obj/item/weapon/stamp)) 	//we don't randomize stamps on a paperplane
@@ -64,8 +74,8 @@
 
 	else if(is_hot(P))
 		if(user.disabilities & CLUMSY && prob(10))
-			user.visible_message("<span class='warning'>[user] accidentally ignites themselves!</span>", \
-				"<span class='userdanger'>You miss the [src] and accidentally light yourself on fire!</span>")
+			user.visible_message(span_warning("[user] accidentally ignites themselves!"), \
+				span_userdanger("You miss the [src] and accidentally light yourself on fire!"))
 			user.unEquip(P)
 			user.adjust_fire_stacks(1)
 			user.IgniteMob()
@@ -74,7 +84,7 @@
 		if(!(in_range(user, src))) //to prevent issues as a result of telepathically lighting a paper
 			return
 		user.unEquip(src)
-		user.visible_message("<span class='danger'>[user] lights [src] ablaze with [P]!</span>", "<span class='danger'>You light [src] on fire!</span>")
+		user.visible_message(span_danger("[user] lights [src] ablaze with [P]!"), span_danger("You light [src] on fire!"))
 		fire_act()
 
 	add_fingerprint(user)
@@ -86,7 +96,7 @@
 	if(prob(2))
 		if((H.head && H.head.body_parts_covered & EYES) || (H.wear_mask && H.wear_mask.body_parts_covered & EYES) || (H.glasses && H.glasses.body_parts_covered & EYES))
 			return
-		visible_message("<span class='danger'>\The [src] hits [H] in the eye!</span>")
+		visible_message(span_danger("\The [src] hits [H] in the eye!"))
 		H.eye_blurry += 10
 		var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[O_EYES]
 		if(E)
@@ -97,9 +107,9 @@
 	if ( istype(user) )
 		if( (!in_range(src, user)) || user.stat || user.restrained() )
 			return
-		to_chat(user, "<span class='notice'>You fold [src] into the shape of a plane!</span>")
+		to_chat(user, span_notice("You fold [src] into the shape of a plane!"))
 		user.unEquip(src)
 		I = new /obj/item/weapon/paperplane(user, src)
 		user.put_in_hands(I)
 	else
-		to_chat(user, "<span class='notice'> You lack the dexterity to fold \the [src]. </span>")
+		to_chat(user, span_notice(" You lack the dexterity to fold \the [src]. "))

@@ -87,6 +87,7 @@
 			pods += P
 			P.connected = src
 			P.name = "[initial(P.name)] #[pods.len]"
+<<<<<<< HEAD
 			to_chat(user, "<span class='notice'>You connect [P] to [src].</span>")
 	else if(istype(W, /obj/item/weapon/disk/transcore) && !our_db.core_dumped)
 		user.unEquip(W)
@@ -95,13 +96,23 @@
 		to_chat(user, "<span class='notice'>You insert \the [W] into \the [src].</span>")
 	if(istype(W, /obj/item/weapon/disk/body_record))
 		var/obj/item/weapon/disk/body_record/brDisk = W
+=======
+			to_chat(user, span_notice("You connect [P] to [src]."))
+	else if(istype(W, /obj/item/disk/transcore) && !our_db.core_dumped)
+		user.unEquip(W)
+		disk = W
+		disk.forceMove(src)
+		to_chat(user, span_notice("You insert \the [W] into \the [src]."))
+	if(istype(W, /obj/item/disk/body_record))
+		var/obj/item/disk/body_record/brDisk = W
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(!brDisk.stored)
-			to_chat(user, "<span class='warning'>\The [W] does not contain a stored body record.</span>")
+			to_chat(user, span_warning("\The [W] does not contain a stored body record."))
 			return
 		user.unEquip(W)
 		W.forceMove(get_turf(src)) // Drop on top of us
 		active_br = new /datum/transhuman/body_record(brDisk.stored) // Loads a COPY!
-		to_chat(user, "<span class='notice'>\The [src] loads the body record from \the [W] before ejecting it.</span>")
+		to_chat(user, span_notice("\The [src] loads the body record from \the [W] before ejecting it."))
 		attack_hand(user)
 		view_b_rec("view_b_rec", list("ref" = "\ref[active_br]"))
 	else
@@ -259,7 +270,7 @@
 			if(disk)
 				our_db.core_dump(disk)
 				sleep(5)
-				visible_message("<span class='warning'>\The [src] spits out \the [disk].</span>")
+				visible_message(span_warning("\The [src] spits out \the [disk]."))
 				disk.forceMove(get_turf(src))
 				disk = null
 		if("ejectdisk")
@@ -458,7 +469,7 @@
 
 /obj/item/weapon/cmo_disk_holder/attack_self(var/mob/attacker)
 	playsound(src, 'sound/items/poster_ripped.ogg', 50)
-	to_chat(attacker, "<span class='warning'>You tear open \the [name].</span>")
+	to_chat(attacker, span_warning("You tear open \the [name]."))
 	attacker.unEquip(src)
 	var/obj/item/weapon/disk/transcore/newdisk = new(get_turf(src))
 	attacker.put_in_any_hand_if_possible(newdisk)

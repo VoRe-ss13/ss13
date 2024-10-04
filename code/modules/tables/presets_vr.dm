@@ -14,8 +14,13 @@
 
 	..()
 
+<<<<<<< HEAD
 /obj/structure/table/darkglass/dismantle(obj/item/weapon/tool/wrench/W, mob/user)
 	to_chat(user, "<span class='warning'>You cannot dismantle \the [src].</span>")
+=======
+/obj/structure/table/darkglass/dismantle(obj/item/tool/wrench/W, mob/user)
+	to_chat(user, span_warning("You cannot dismantle \the [src]."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	return
 /obj/structure/table/alien/blue
 	icon = 'icons/turf/shuttle_alien_blue.dmi'
@@ -37,8 +42,13 @@
 
 	..()
 
+<<<<<<< HEAD
 /obj/structure/table/fancyblack/dismantle(obj/item/weapon/tool/wrench/W, mob/user)
 	to_chat(user, "<span class='warning'>You cannot dismantle \the [src].</span>")
+=======
+/obj/structure/table/fancyblack/dismantle(obj/item/tool/wrench/W, mob/user)
+	to_chat(user, span_warning("You cannot dismantle \the [src]."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	return
 
 /obj/structure/table/gold

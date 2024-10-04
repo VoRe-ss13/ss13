@@ -5,9 +5,15 @@
 	item_state_slots = list(slot_r_hand_str = "red", slot_l_hand_str = "red")
 
 /*
+<<<<<<< HEAD
 /obj/item/clothing/gloves/boxing/attackby(obj/item/weapon/W, mob/user)
 	if(W.has_tool_quality(TOOL_WIRECUTTER) || istype(W, /obj/item/weapon/surgical/scalpel))
 		to_chat(user, "<span class='notice'>That won't work.</span>")	//Nope
+=======
+/obj/item/clothing/gloves/boxing/attackby(obj/item/W, mob/user)
+	if(W.has_tool_quality(TOOL_WIRECUTTER) || istype(W, /obj/item/surgical/scalpel))
+		to_chat(user, span_notice("That won't work."))	//Nope
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return
 	..()
 */

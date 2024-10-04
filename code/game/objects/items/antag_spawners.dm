@@ -48,8 +48,13 @@
 	icon_state = "oldshieldoff"
 	ghost_query_type = /datum/ghost_query/apprentice
 
+<<<<<<< HEAD
 /obj/item/weapon/antag_spawner/technomancer_apprentice/attack_self(mob/user)
 	to_chat(user, "<span class='notice'>Teleporter attempting to lock on to your apprentice.</span>")
+=======
+/obj/item/antag_spawner/technomancer_apprentice/attack_self(mob/user)
+	to_chat(user, span_notice("Teleporter attempting to lock on to your apprentice."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	request_player()
 
 /obj/item/weapon/antag_spawner/technomancer_apprentice/request_player()
@@ -60,7 +65,7 @@
 	..()
 	if(!used)
 		icon_state = "oldshieldoff"
-		visible_message("<span class='warning'>The teleporter failed to find the apprentice.  Perhaps another attempt could be made later?</span>")
+		visible_message(span_warning("The teleporter failed to find the apprentice.  Perhaps another attempt could be made later?"))
 
 /obj/item/weapon/antag_spawner/technomancer_apprentice/spawn_antag(client/C, turf/T)
 	sparks.start()
@@ -94,8 +99,13 @@
 	ghost_query_type = /datum/ghost_query/syndicate_drone
 	var/drone_type = null
 
+<<<<<<< HEAD
 /obj/item/weapon/antag_spawner/syndicate_drone/attack_self(mob/user)
 	to_chat(user, "<span class='notice'>Teleporter attempting to lock on to an available unit.</span>")
+=======
+/obj/item/antag_spawner/syndicate_drone/attack_self(mob/user)
+	to_chat(user, span_notice("Teleporter attempting to lock on to an available unit."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	request_player()
 
 /obj/item/weapon/antag_spawner/syndicate_drone/request_player()
@@ -106,14 +116,14 @@
 	..()
 	if(!used)
 		icon_state = "oldshieldoff"
-		visible_message("<span class='warning'>The teleporter failed to find any available.  Perhaps another attempt could be made later?</span>")
+		visible_message(span_warning("The teleporter failed to find any available.  Perhaps another attempt could be made later?"))
 
 /obj/item/weapon/antag_spawner/syndicate_drone/spawn_antag(client/C, turf/T)
 	sparks.start()
 	var/mob/living/silicon/robot/R = new drone_type(T)
 
 	// Put this text here before ckey change so that their laws are shown below it, since borg login() shows it.
-	to_chat(C, "<span class='notice'>You are a <b>Mercenary Drone</b>, activated to serve your team.</span>")
+	to_chat(C, span_notice("You are a <b>Mercenary Drone</b>, activated to serve your team."))
 	to_chat(C, "<span class='notice'><b>Be sure to examine your currently loaded lawset closely.</b>  It would be wise \
 	to speak with your team, and learn what their plan is for today.</span>")
 
@@ -131,5 +141,10 @@
 /obj/item/weapon/antag_spawner/syndicate_drone/combat_medic
 	drone_type = /mob/living/silicon/robot/syndicate/combat_medic
 
+<<<<<<< HEAD
 /obj/item/weapon/antag_spawner/syndicate_drone/mechanist
 	drone_type = /mob/living/silicon/robot/syndicate/mechanist
+=======
+/obj/item/antag_spawner/syndicate_drone/mechanist
+	drone_type = /mob/living/silicon/robot/syndicate/mechanist
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))

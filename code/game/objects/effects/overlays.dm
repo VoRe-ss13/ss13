@@ -67,10 +67,15 @@
 
 // Todo: Add a version that gradually reaccumulates over time by means of alpha transparency. -Spades
 /obj/effect/overlay/snow/attackby(obj/item/W as obj, mob/user as mob)
+<<<<<<< HEAD
 	if (istype(W, /obj/item/weapon/shovel))
 		user.visible_message("<span class='notice'>[user] begins to shovel away \the [src].</span>")
+=======
+	if (istype(W, /obj/item/shovel))
+		user.visible_message(span_notice("[user] begins to shovel away \the [src]."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(do_after(user, 40))
-			to_chat(user, "<span class='notice'>You have finished shoveling!</span>")
+			to_chat(user, span_notice("You have finished shoveling!"))
 			qdel(src)
 		return
 

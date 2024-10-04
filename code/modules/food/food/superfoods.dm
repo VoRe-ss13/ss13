@@ -255,7 +255,7 @@
 				new /obj/item/weapon/reagent_containers/food/snacks/chaoscakeslice(src.loc)
 
 		else
-			to_chat(user, "<span class='notice'>It looks so good... But it feels so wrong to eat it before it's finished...</span>")
+			to_chat(user, span_notice("It looks so good... But it feels so wrong to eat it before it's finished..."))
 			return
 	if(istype(W,/obj/item/weapon/chaoscake_layer))
 		var/obj/item/weapon/chaoscake_layer/C = W
@@ -298,13 +298,19 @@
 						 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/mushroompizza/bigslice,
 						 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza/bigslice)
 
+<<<<<<< HEAD
 /obj/structure/theonepizza/attackby(var/obj/item/weapon/W, var/mob/living/user)
 	if(istype(W,/obj/item/weapon/material/knife))
 		user.visible_message("<b>\The [user]</b> starts to slowly cut through The One Pizza.", "<span class='notice'>You start to slowly cut through The One Pizza.</span>")
+=======
+/obj/structure/theonepizza/attackby(var/obj/item/W, var/mob/living/user)
+	if(istype(W,/obj/item/material/knife))
+		user.visible_message("<b>\The [user]</b> starts to slowly cut through The One Pizza.", span_notice("You start to slowly cut through The One Pizza."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(do_after(user, slicetime, exclusive = TASK_USER_EXCLUSIVE))
 			if(!src)
 				return		// We got disappeared already
-			user.visible_message("<b>\The [user]</b> successfully cuts The One Pizza.", "<span class='notice'>You successfully cut The One Pizza.</span>")
+			user.visible_message("<b>\The [user]</b> successfully cuts The One Pizza.", span_notice("You successfully cut The One Pizza."))
 			for(var/slicetype in slicelist)
 				new slicetype(src.loc)
 			qdel(src)

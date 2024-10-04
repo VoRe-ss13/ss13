@@ -97,7 +97,7 @@
 		return ..()
 	if(resting)
 		playsound(src, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-		user.visible_message("<span class='notice'>\The [user] shakes \the [src] awake.</span>","<span class='notice'>You shake \the [src] awake!</span>")
+		user.visible_message(span_notice("\The [user] shakes \the [src] awake."),span_notice("You shake \the [src] awake!"))
 		lay_down()
 		return
 	else
@@ -166,8 +166,13 @@
 		B.digest_mode = DM_SELECT
 
 /mob/living/simple_mob/vore/pakkun/attackby(var/obj/item/O, var/mob/user) //if they're newspapered, they'll spit out any junk they've eaten for whatever reason
+<<<<<<< HEAD
     if(istype(O, /obj/item/weapon/newspaper) && !ckey && isturf(user.loc))
         user.visible_message("<span class='info'>[user] swats [src] with [O]!</span>")
+=======
+    if(istype(O, /obj/item/newspaper) && !ckey && isturf(user.loc))
+        user.visible_message(span_info("[user] swats [src] with [O]!"))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
         release_vore_contents()
         for(var/mob/living/L in living_mobs(0))
             if(!(LAZYFIND(prey_excludes, L)))
@@ -266,7 +271,7 @@
 
 /mob/living/simple_mob/vore/pakkun/snapdragon/snappy/attack_hand(mob/living/carbon/human/M as mob)
 	if(M.a_intent == I_HELP && !(M in petters))
-		to_chat(M, "<span class='notice'>\The [src] gets a mischievous glint in her eye!!</span>")
+		to_chat(M, span_notice("\The [src] gets a mischievous glint in her eye!!"))
 		petters += M //YOU HAVE OFFERED YOURSELF TO THE LIZARD
 	return ..()
 

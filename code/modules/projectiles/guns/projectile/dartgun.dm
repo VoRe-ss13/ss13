@@ -102,11 +102,16 @@
 /obj/item/weapon/gun/projectile/dartgun/examine(mob/user)
 	. = ..()
 	if(beakers.len)
+<<<<<<< HEAD
 		. += "<span class='notice'>[src] contains:</span>"
 		for(var/obj/item/weapon/reagent_containers/glass/beaker/B in beakers)
+=======
+		. += span_notice("[src] contains:")
+		for(var/obj/item/reagent_containers/glass/beaker/B in beakers)
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			if(B.reagents && B.reagents.reagent_list.len)
 				for(var/datum/reagent/R in B.reagents.reagent_list)
-					. += "<span class='notice'>[R.volume] units of [R.name]</span>"
+					. += span_notice("[R.volume] units of [R.name]")
 
 /obj/item/weapon/gun/projectile/dartgun/attackby(obj/item/I as obj, mob/user as mob)
 	if(istype(I, /obj/item/weapon/reagent_containers/glass))

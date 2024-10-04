@@ -36,7 +36,7 @@
 	if(!user.checkClickCooldown())
 		return
 	user.setClickCooldown(1 SECOND)
-	to_chat(user, "<span class='notice'>Click.</span>")
+	to_chat(user, span_notice("Click."))
 	playsound(src, 'sound/items/penclick.ogg', 50, 1)
 
 /*
@@ -100,8 +100,13 @@
 	var/selectedColor = 1
 	var/colors = list("black","blue","red")
 
+<<<<<<< HEAD
 /obj/item/weapon/pen/AltClick(mob/user)
 	to_chat(user, "<span class='notice'>Click.</span>")
+=======
+/obj/item/pen/AltClick(mob/user)
+	to_chat(user, span_notice("Click."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	playsound(src, 'sound/items/penclick.ogg', 50, 1)
 	return
 
@@ -116,7 +121,7 @@
 	else
 		icon_state = "pen_[colour]"
 
-	to_chat(user, "<span class='notice'>Changed color to '[colour].'</span>")
+	to_chat(user, span_notice("Changed color to '[colour].'"))
 
 /obj/item/weapon/pen/invisible
 	desc = "It's an invisble pen marker."
@@ -187,7 +192,7 @@
 	else
 		activate(user)
 
-	to_chat(user, "<span class='notice'>You [active ? "de" : ""]activate \the [src]'s blade.</span>")
+	to_chat(user, span_notice("You [active ? "de" : ""]activate \the [src]'s blade."))
 
 /obj/item/weapon/pen/blade/proc/activate(mob/living/user)
 	if(active)
@@ -316,7 +321,7 @@
 				colour = COLOR_WHITE
 			else
 				colour = COLOR_BLACK
-		to_chat(usr, "<span class='info'>You select the [lowertext(selected_type)] ink container.</span>")
+		to_chat(usr, span_info("You select the [lowertext(selected_type)] ink container."))
 
 
 /*

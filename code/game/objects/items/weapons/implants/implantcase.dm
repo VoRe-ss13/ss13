@@ -35,13 +35,19 @@
 		if(!src.imp)	return
 		if(!src.imp.allow_reagents)	return
 		if(src.imp.reagents.total_volume >= src.imp.reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>\The [src] is full.</span>")
+			to_chat(user, span_warning("\The [src] is full."))
 		else
 			spawn(5)
 				I.reagents.trans_to_obj(src.imp, 5)
+<<<<<<< HEAD
 				to_chat(user, "<span class='notice'>You inject 5 units of the solution. The syringe now contains [I.reagents.total_volume] units.</span>")
 	else if (istype(I, /obj/item/weapon/implanter))
 		var/obj/item/weapon/implanter/M = I
+=======
+				to_chat(user, span_notice("You inject 5 units of the solution. The syringe now contains [I.reagents.total_volume] units."))
+	else if (istype(I, /obj/item/implanter))
+		var/obj/item/implanter/M = I
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if (M.imp)
 			if ((src.imp || M.imp.implanted))
 				return

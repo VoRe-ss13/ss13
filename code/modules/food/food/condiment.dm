@@ -36,23 +36,28 @@
 
 	if(istype(target, /obj/item/weapon/reagent_containers/food/snacks)) // These are not opencontainers but we can transfer to them
 		if(!reagents || !reagents.total_volume)
-			to_chat(user, "<span class='notice'>There is no condiment left in \the [src].</span>")
+			to_chat(user, span_notice("There is no condiment left in \the [src]."))
 			return
 
 		if(!target.reagents.get_free_space())
-			to_chat(user, "<span class='notice'>You can't add more condiment to \the [target].</span>")
+			to_chat(user, span_notice("You can't add more condiment to \the [target]."))
 			return
 
 		var/trans = reagents.trans_to_obj(target, amount_per_transfer_from_this)
-		to_chat(user, "<span class='notice'>You add [trans] units of the condiment to \the [target].</span>")
+		to_chat(user, span_notice("You add [trans] units of the condiment to \the [target]."))
 	else
 		..()
 
 /obj/item/weapon/reagent_containers/food/condiment/feed_sound(var/mob/user)
 	playsound(src, 'sound/items/drink.ogg', rand(10, 50), 1)
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/condiment/self_feed_message(var/mob/user)
 	to_chat(user, "<span class='notice'>You swallow some of contents of \the [src].</span>")
+=======
+/obj/item/reagent_containers/food/condiment/self_feed_message(var/mob/user)
+	to_chat(user, span_notice("You swallow some of contents of \the [src]."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 /obj/item/weapon/reagent_containers/food/condiment/on_reagent_change()
 	if(reagents.reagent_list.len > 0)

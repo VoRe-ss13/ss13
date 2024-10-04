@@ -143,7 +143,7 @@
 		turn_off()
 	else
 		turn_on()
-	to_chat(user, "<span class='notice'>You switch \the [src] [on ? "on" : "off"].</span>")
+	to_chat(user, span_notice("You switch \the [src] [on ? "on" : "off"]."))
 
 /obj/item/device/suit_cooling_unit/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (W.has_tool_quality(TOOL_SCREWDRIVER))
@@ -238,7 +238,7 @@
 
 /obj/item/device/suit_cooling_unit/emergency/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (W.has_tool_quality(TOOL_SCREWDRIVER))
-		to_chat(user, "<span class='warning'>This cooler's cell is permanently installed!</span>")
+		to_chat(user, span_warning("This cooler's cell is permanently installed!"))
 		return
 
 	return ..()

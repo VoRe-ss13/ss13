@@ -31,8 +31,13 @@ Controlled by the player_tips subsystem under code/controllers/subsystems/player
 				if(!M.key && !(M.key in HasReceived))
 					to_chat(M, SPAN_WARNING("You have periodic player tips enabled. You may turn them off at any time with the Toggle Receiving Player Tips verb in Preferences, or in character set up under the OOC tab!\n Player tips appear every 45-75 minutes."))
 					HasReceived.Add(M.key)
+<<<<<<< HEAD
 				tip = GLOB.is_valid_url.Replace(tip,"<span class='linkify'>$1</span>")
 				to_chat(M, SPAN_NOTICE("[tip]"))
+=======
+				tip = GLOB.is_valid_url.Replace(tip,span_linkify("$1"))
+				to_chat(M, span_notice("[tip]"))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 
 
@@ -47,4 +52,8 @@ Controlled by the player_tips subsystem under code/controllers/subsystems/player
 	if(choice == "cancel")
 		return
 	var/static/datum/player_tips/player_tips = new
+<<<<<<< HEAD
 	to_chat(src, SPAN_NOTICE("[GLOB.is_valid_url.Replace(player_tips.pick_tip(choice),"<span class='linkify'>$1</span>")]"))
+=======
+	to_chat(src, span_notice("[GLOB.is_valid_url.Replace(player_tips.pick_tip(choice),span_linkify("$1"))]"))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))

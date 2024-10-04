@@ -68,11 +68,16 @@
 	. = ..()
 
 	if(loaded)
+<<<<<<< HEAD
 		var/obj/item/weapon/tank/T = loaded
 		. += "<span class='notice'>\The [T]'s pressure meter shows: [T.air_contents.return_pressure()] kpa.</span>"
+=======
+		var/obj/item/tank/T = loaded
+		. += span_notice("\The [T]'s pressure meter shows: [T.air_contents.return_pressure()] kpa.")
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 		switch(check_ammo())
 			if(TRUE)
-				. += "<span class='notice'>\The [src]'s display registers a proper fuel mixture.</span>"
+				. += span_notice("\The [src]'s display registers a proper fuel mixture.")
 			if(FALSE)
-				. += "<span class='warning'>\The [src]'s display registers an improper fuel mixture.</span>"
+				. += span_warning("\The [src]'s display registers an improper fuel mixture.")
