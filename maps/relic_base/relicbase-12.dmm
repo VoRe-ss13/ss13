@@ -16947,8 +16947,8 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/taperecorder,
 /obj/item/taperecorder,
-/obj/item/tape/random,
-/obj/item/tape/random,
+/obj/item/rectape/random,
+/obj/item/rectape/random,
 /turf/simulated/floor/tiled/techfloor,
 /area/centcom/security)
 "sOh" = (

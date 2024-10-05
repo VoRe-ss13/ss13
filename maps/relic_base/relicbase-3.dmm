@@ -1674,7 +1674,7 @@
 /obj/item/storage/box/snakesnackbox,
 /obj/item/megaphone,
 /obj/item/radio/off,
-/obj/item/tape/random,
+/obj/item/rectape/random,
 /obj/item/taperecorder,
 /obj/item/reagent_containers/food/drinks/flask/barflask,
 /obj/machinery/recharger,
@@ -7891,8 +7891,8 @@
 "dtH" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/taperecorder,
-/obj/item/tape/random,
-/obj/item/tape/random,
+/obj/item/rectape/random,
+/obj/item/rectape/random,
 /obj/effect/floor_decal/corner/black/diagonal,
 /turf/simulated/floor/tiled/dark,
 /area/security/security_processing)
@@ -29413,8 +29413,8 @@
 /area/storage/primary)
 "lZL" = (
 /obj/structure/table/steel,
-/obj/item/tape/random,
-/obj/item/tape/random,
+/obj/item/rectape/random,
+/obj/item/rectape/random,
 /obj/item/taperecorder,
 /obj/item/taperecorder,
 /obj/effect/floor_decal/borderfloorblack{
@@ -37467,7 +37467,7 @@
 /area/rnd/research)
 "pxa" = (
 /obj/structure/table/woodentable,
-/obj/item/tape/random,
+/obj/item/rectape/random,
 /obj/item/taperecorder,
 /obj/machinery/camera/network/civilian{
 	c_tag = "CIV - Library West";
@@ -58599,8 +58599,8 @@
 "xDu" = (
 /obj/structure/table/woodentable,
 /obj/item/taperecorder,
-/obj/item/tape/random,
-/obj/item/tape/random,
+/obj/item/rectape/random,
+/obj/item/rectape/random,
 /obj/item/camera,
 /obj/item/barcodescanner,
 /obj/machinery/atmospherics/unary/vent_pump/on{
