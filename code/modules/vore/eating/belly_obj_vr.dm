@@ -2439,6 +2439,7 @@
 			break
 	if(!dest_belly) return
 	if(ismob(prey))
+<<<<<<< HEAD
 		var/living_count = 0
 		for(var/mob/living/L in contents)
 			living_count++
@@ -2465,6 +2466,16 @@
 
 		autotransfer_owner_message = "<span class='vwarning'>[autotransfer_owner_message]</span>"
 		autotransfer_prey_message = "<span class='vwarning'>[autotransfer_prey_message]</span>"
+=======
+		var/autotransfer_owner_message
+		var/autotransfer_prey_message
+		if(dest_belly_name == autotransferlocation)
+			autotransfer_owner_message = span_vwarning(belly_format_string(primary_autotransfer_messages_owner, prey, dest = dest_belly_name))
+			autotransfer_prey_message = span_vwarning(belly_format_string(primary_autotransfer_messages_prey, prey, dest = dest_belly_name))
+		else
+			autotransfer_owner_message =  span_vwarning(belly_format_string(secondary_autotransfer_messages_owner, prey, dest = dest_belly_name))
+			autotransfer_prey_message = span_vwarning(belly_format_string(secondary_autotransfer_messages_prey, prey, dest = dest_belly_name))
+>>>>>>> 05ce6b2d75 (fix autotransfer dest placeholder (#9164))
 
 		to_chat(prey, autotransfer_prey_message)
 		if(entrance_logs)
