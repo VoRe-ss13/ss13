@@ -34,3 +34,8 @@
   - spellcheck: Fixed a typo in the CE office, RIP emergecny bag of holding
   - code_imp: Modularizes the VR map.
   - maptweak: VR map is latest.
+2024-10-05:
+  VoRe-bot:
+  - rscadd: Not Re-Enabled wormhole event
+  - rscadd: Wormholes have a chance to pick a belly as an exit
+  - qol: Wormholes won't throw you into Sif anymore
