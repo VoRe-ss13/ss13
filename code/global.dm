@@ -145,7 +145,12 @@ var/list/emergency_module_types = list(
 )
 // List of modules available to AI shells
 var/list/shell_module_types = list(
+<<<<<<< HEAD
 	"Standard", "Service", "Clerical"
+=======
+	"Standard", "Engineering", "Surgeon", "Crisis",
+	"Miner", "Janitor", "Service", "Clerical", "Security", "Research"
+>>>>>>> d6cb0e004d ([MIRROR] Enable research module / prevent AI shells from building more AI shells (#9167))
 )
 // List of whitelisted modules
 var/list/whitelisted_module_types = list(
