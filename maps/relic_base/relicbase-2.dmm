@@ -569,32 +569,32 @@
 /obj/machinery/door/window/brigdoor/southleft{
 	name = "Surplus Firearms"
 	},
-/obj/item/weapon/gun/projectile/serdy_pistols/vp70m,
-/obj/item/weapon/gun/projectile/serdy_pistols/glock71,
-/obj/item/weapon/gun/energy/monorifle/combat,
-/obj/item/weapon/gun/projectile/automatic/z8,
-/obj/item/weapon/gun/projectile/garand,
-/obj/item/weapon/gun/projectile/garand,
-/obj/item/weapon/gun/projectile/garand,
-/obj/item/weapon/gun/projectile/garand,
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/rosewood_weathered,
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/oak,
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel,
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel/rosewood,
-/obj/item/weapon/gun/projectile/shotgun/pump/rifle,
-/obj/item/weapon/gun/projectile/shotgun/pump/rifle,
-/obj/item/weapon/gun/projectile/shotgun/pump/rifle,
-/obj/item/weapon/gun/projectile/shotgun/pump/rifle,
-/obj/item/weapon/gun/projectile/shotgun/pump/rifle,
-/obj/item/weapon/gun/projectile/shotgun/pump/rifle,
-/obj/item/weapon/gun/projectile/shotgun/pump/rifle,
-/obj/item/weapon/gun/projectile/automatic/serdy/sks,
-/obj/item/weapon/gun/projectile/colt/detective,
-/obj/item/weapon/gun/projectile/colt/detective,
-/obj/item/weapon/gun/projectile/colt/detective,
-/obj/item/weapon/gun/projectile/colt/detective,
-/obj/item/weapon/gun/projectile/colt/detective,
-/obj/item/weapon/gun/projectile/colt/detective,
+/obj/item/gun/projectile/serdy_pistols/vp70m,
+/obj/item/gun/projectile/serdy_pistols/glock71,
+/obj/item/gun/energy/monorifle/combat,
+/obj/item/gun/projectile/automatic/z8,
+/obj/item/gun/projectile/garand,
+/obj/item/gun/projectile/garand,
+/obj/item/gun/projectile/garand,
+/obj/item/gun/projectile/garand,
+/obj/item/gun/projectile/shotgun/doublebarrel/rosewood_weathered,
+/obj/item/gun/projectile/shotgun/doublebarrel/oak,
+/obj/item/gun/projectile/shotgun/doublebarrel,
+/obj/item/gun/projectile/shotgun/doublebarrel/rosewood,
+/obj/item/gun/projectile/shotgun/pump/rifle,
+/obj/item/gun/projectile/shotgun/pump/rifle,
+/obj/item/gun/projectile/shotgun/pump/rifle,
+/obj/item/gun/projectile/shotgun/pump/rifle,
+/obj/item/gun/projectile/shotgun/pump/rifle,
+/obj/item/gun/projectile/shotgun/pump/rifle,
+/obj/item/gun/projectile/shotgun/pump/rifle,
+/obj/item/gun/projectile/automatic/serdy/sks,
+/obj/item/gun/projectile/colt/detective,
+/obj/item/gun/projectile/colt/detective,
+/obj/item/gun/projectile/colt/detective,
+/obj/item/gun/projectile/colt/detective,
+/obj/item/gun/projectile/colt/detective,
+/obj/item/gun/projectile/colt/detective,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -768,19 +768,19 @@
 /obj/item/ammo_magazine/m9mm/vp70,
 /obj/item/ammo_magazine/m9mm/vp70,
 /obj/item/ammo_magazine/m9mm/vp70,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
 /obj/item/ammo_magazine/m9mm,
 /obj/item/ammo_magazine/m9mm,
 /obj/item/ammo_magazine/m9mm,
@@ -978,7 +978,7 @@
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/table/steel,
-/obj/item/weapon/storage/firstaid/combat,
+/obj/item/storage/firstaid/combat,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -1084,16 +1084,16 @@
 	name = "Energy Spears"
 	},
 /obj/structure/window/reinforced,
-/obj/item/weapon/melee/energy/spear{
+/obj/item/melee/energy/spear{
 	lcolor = "#FF0000"
 	},
-/obj/item/weapon/melee/energy/spear{
+/obj/item/melee/energy/spear{
 	lcolor = "#FF0000"
 	},
-/obj/item/weapon/melee/energy/spear{
+/obj/item/melee/energy/spear{
 	lcolor = "#FF0000"
 	},
-/obj/item/weapon/melee/energy/spear{
+/obj/item/melee/energy/spear{
 	lcolor = "#FF0000"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -1148,17 +1148,17 @@
 	dir = 4;
 	name = "Energy"
 	},
-/obj/item/weapon/gun/energy/plasmastun,
-/obj/item/weapon/gun/energy/gun/burst,
-/obj/item/weapon/gun/energy/laser,
-/obj/item/weapon/gun/energy/laser,
-/obj/item/weapon/gun/energy/laser,
+/obj/item/gun/energy/plasmastun,
+/obj/item/gun/energy/gun/burst,
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/item/weapon/gun/energy/gun/burst,
-/obj/item/weapon/gun/energy/pummeler,
-/obj/item/weapon/gun/energy/vepr/plasma,
+/obj/item/gun/energy/gun/burst,
+/obj/item/gun/energy/pummeler,
+/obj/item/gun/energy/vepr/plasma,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -1254,23 +1254,23 @@
 	name = "Energy"
 	},
 /obj/structure/window/reinforced,
-/obj/item/weapon/cell/device/weapon{
+/obj/item/cell/device/weapon{
 	pixel_x = -2;
 	pixel_y = -2
 	},
-/obj/item/weapon/cell/device/weapon{
+/obj/item/cell/device/weapon{
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/weapon/cell/device/weapon{
+/obj/item/cell/device/weapon{
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/vepr,
-/obj/item/weapon/cell/vepr,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/vepr,
+/obj/item/cell/vepr,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -1586,7 +1586,7 @@
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = -1;
 	pixel_y = -9
 	},
@@ -1955,7 +1955,7 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = 5;
 	pixel_y = -9
 	},
@@ -2093,7 +2093,7 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "bBI" = (
-/obj/item/weapon/flag,
+/obj/item/flag,
 /obj/machinery/status_display{
 	layer = 4;
 	pixel_y = 32
@@ -2352,7 +2352,7 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "bRj" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2375,7 +2375,7 @@
 	})
 "bUR" = (
 /obj/effect/floor_decal/rust,
-/obj/item/weapon/bone/skull,
+/obj/item/bone/skull,
 /obj/effect/decal/cleanable/filth,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/firstdeck/aftport{
@@ -2574,7 +2574,7 @@
 	})
 "cet" = (
 /obj/structure/closet/crate,
-/obj/item/weapon/gun/projectile/shotgun/pump/rifle/ceremonial,
+/obj/item/gun/projectile/shotgun/pump/rifle/ceremonial,
 /turf/simulated/floor/tiled/techmaint,
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -2699,7 +2699,7 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "cmB" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
 /obj/random/trash,
@@ -3463,7 +3463,7 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "dbv" = (
-/obj/item/weapon/flag,
+/obj/item/flag,
 /obj/machinery/status_display{
 	layer = 4;
 	pixel_y = -32
@@ -3770,7 +3770,7 @@
 /obj/random/maintenance,
 /obj/random/maintenance,
 /obj/random/maintenance,
-/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/obj/item/storage/box/monkeycubes/wolpincubes,
 /turf/simulated/floor/outdoors/rocks/caves{
 	outdoors = -1
 	},
@@ -3792,7 +3792,7 @@
 "drn" = (
 /obj/random/junk,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains/skull/tajaran,
+/obj/item/digestion_remains/skull/tajaran,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/under/librarian,
 /obj/random/contraband,
@@ -4018,7 +4018,7 @@
 	},
 /obj/structure/table/woodentable,
 /obj/machinery/reagentgrinder,
-/obj/item/weapon/reagent_containers/food/drinks/shaker,
+/obj/item/reagent_containers/food/drinks/shaker,
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
 "dzk" = (
@@ -4163,14 +4163,14 @@
 	})
 "dFO" = (
 /obj/structure/closet/crate,
-/obj/item/weapon/circuitboard/smes,
-/obj/item/weapon/circuitboard/smes,
-/obj/item/weapon/smes_coil,
-/obj/item/weapon/smes_coil,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/smes_coil/super_capacity,
-/obj/item/weapon/smes_coil/super_io,
-/obj/item/weapon/smes_coil/super_io,
+/obj/item/circuitboard/smes,
+/obj/item/circuitboard/smes,
+/obj/item/smes_coil,
+/obj/item/smes_coil,
+/obj/item/smes_coil/super_capacity,
+/obj/item/smes_coil/super_capacity,
+/obj/item/smes_coil/super_io,
+/obj/item/smes_coil/super_io,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/engineering/storage)
@@ -4422,14 +4422,14 @@
 /obj/random/mre,
 /obj/random/mre,
 /obj/random/mre,
-/obj/item/weapon/gun/energy/locked/phasegun/unlocked,
-/obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
-/obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
+/obj/item/gun/energy/locked/phasegun/unlocked,
+/obj/item/gun/energy/locked/phasegun/rifle/unlocked,
+/obj/item/gun/energy/locked/phasegun/rifle/unlocked,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -4775,7 +4775,7 @@
 	})
 "edS" = (
 /obj/effect/floor_decal/rust,
-/obj/item/weapon/digestion_remains/skull/teshari,
+/obj/item/digestion_remains/skull/teshari,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -4871,8 +4871,8 @@
 /obj/machinery/light/small/flicker{
 	dir = 1
 	},
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
+/obj/item/cell/device/weapon,
+/obj/item/gun/energy/locked/phasegun/rifle/unlocked,
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 8;
@@ -5346,7 +5346,7 @@
 	})
 "eDz" = (
 /obj/structure/table/hardwoodtable,
-/obj/item/weapon/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
 /turf/simulated/floor/lino,
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -5526,9 +5526,9 @@
 	})
 "eKd" = (
 /obj/structure/table/hardwoodtable,
-/obj/item/weapon/reagent_containers/food/drinks/metaglass/metapint,
-/obj/item/weapon/reagent_containers/food/drinks/metaglass/metapint,
-/obj/item/weapon/reagent_containers/food/drinks/metaglass/metapint,
+/obj/item/reagent_containers/food/drinks/metaglass/metapint,
+/obj/item/reagent_containers/food/drinks/metaglass/metapint,
+/obj/item/reagent_containers/food/drinks/metaglass/metapint,
 /turf/simulated/floor/lino,
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -5706,7 +5706,7 @@
 /obj/random/junk,
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains/skull/unknown,
+/obj/item/digestion_remains/skull/unknown,
 /obj/effect/decal/cleanable/vomit,
 /obj/effect/floor_decal/emblem/aronai{
 	color = "#3F1C0E";
@@ -5811,7 +5811,7 @@
 /obj/effect/floor_decal/rust,
 /obj/random/maintenance/medical,
 /obj/random/maintenance/medical,
-/obj/item/weapon/storage/box/monkeycubes/sparracubes,
+/obj/item/storage/box/monkeycubes/sparracubes,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -6165,7 +6165,7 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "fsX" = (
-/obj/item/weapon/flag,
+/obj/item/flag,
 /obj/machinery/status_display{
 	layer = 4;
 	pixel_y = 32
@@ -6566,9 +6566,9 @@
 /area/engineering/atmos)
 "fQH" = (
 /obj/structure/table/gamblingtable,
-/obj/item/weapon/reagent_containers/food/drinks/cans/beercan,
-/obj/item/weapon/reagent_containers/food/drinks/cans/beercan,
-/obj/item/weapon/reagent_containers/food/drinks/cans/beercan,
+/obj/item/reagent_containers/food/drinks/cans/beercan,
+/obj/item/reagent_containers/food/drinks/cans/beercan,
+/obj/item/reagent_containers/food/drinks/cans/beercan,
 /turf/simulated/floor/carpet/bcarpet,
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -6695,8 +6695,8 @@
 /obj/structure/table/standard,
 /obj/item/clothing/gloves/black,
 /obj/item/clothing/gloves/black,
-/obj/item/weapon/storage/belt/utility/atmostech,
-/obj/item/weapon/storage/belt/utility/atmostech,
+/obj/item/storage/belt/utility/atmostech,
+/obj/item/storage/belt/utility/atmostech,
 /obj/fiftyspawner/glass,
 /obj/fiftyspawner/steel,
 /turf/simulated/floor/plating,
@@ -6709,9 +6709,9 @@
 "fXt" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aft{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -6871,7 +6871,7 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains/skull/sergal,
+/obj/item/digestion_remains/skull/sergal,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/shoes/orange,
@@ -7780,11 +7780,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/obstruction,
-/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
-/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
-/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
-/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
-/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/obj/item/storage/box/monkeycubes/wolpincubes,
+/obj/item/storage/box/monkeycubes/wolpincubes,
+/obj/item/storage/box/monkeycubes/wolpincubes,
+/obj/item/storage/box/monkeycubes/wolpincubes,
+/obj/item/storage/box/monkeycubes/wolpincubes,
 /turf/simulated/floor/water/indoors{
 	color = "#604838";
 	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
@@ -8246,7 +8246,7 @@
 /turf/simulated/floor,
 /area/engineering/atmos)
 "huJ" = (
-/obj/item/weapon/stool/baystool,
+/obj/item/stool/baystool,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/eris/steel/bar_light,
 /area/maintenance/firstdeck{
@@ -8404,7 +8404,7 @@
 	})
 "hzh" = (
 /obj/structure/table/gamblingtable,
-/obj/item/weapon/deck/cards,
+/obj/item/deck/cards,
 /turf/simulated/floor/carpet/bcarpet,
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -8786,7 +8786,7 @@
 /obj/effect/zone_divider,
 /obj/effect/floor_decal/rust,
 /obj/random/junk,
-/obj/item/weapon/digestion_remains/skull/teshari,
+/obj/item/digestion_remains/skull/teshari,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -8952,7 +8952,7 @@
 "ibC" = (
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = -3;
 	pixel_y = 1
 	},
@@ -9360,7 +9360,7 @@
 /obj/item/frame/noticeboard{
 	pixel_y = 29
 	},
-/obj/item/weapon/storage/box/monkeycubes/farwacubes,
+/obj/item/storage/box/monkeycubes/farwacubes,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -9674,7 +9674,7 @@
 	})
 "iMp" = (
 /obj/effect/floor_decal/rust,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = -9;
 	pixel_y = 1
 	},
@@ -9729,7 +9729,7 @@
 "iOs" = (
 /obj/effect/zone_divider,
 /obj/effect/floor_decal/rust,
-/obj/item/weapon/digestion_remains/skull/teshari,
+/obj/item/digestion_remains/skull/teshari,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -10015,7 +10015,7 @@
 	})
 "iZo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/weapon/stool/baystool,
+/obj/item/stool/baystool,
 /turf/simulated/floor/tiled/eris/bcircuit,
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -10273,7 +10273,7 @@
 "jmA" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
+/obj/item/gun/energy/locked/phasegun/rifle/unlocked,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -10346,7 +10346,7 @@
 "jpq" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/weapon/deck/cards,
+/obj/item/deck/cards,
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/maintenance/firstdeck/aftport{
@@ -10403,7 +10403,7 @@
 "jrC" = (
 /obj/effect/zone_divider,
 /obj/effect/floor_decal/rust,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = -3;
 	pixel_y = 5
 	},
@@ -10690,7 +10690,7 @@
 /obj/effect/floor_decal/rust,
 /obj/random/maintenance,
 /obj/random/trash,
-/obj/item/weapon/bone/skull/tajaran,
+/obj/item/bone/skull/tajaran,
 /obj/effect/decal/cleanable/filth,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/firstdeck/aftport{
@@ -10779,14 +10779,14 @@
 /obj/structure/closet/chefcloset,
 /obj/item/glass_jar,
 /obj/item/device/retail_scanner/civilian,
-/obj/item/weapon/soap/nanotrasen,
+/obj/item/soap/nanotrasen,
 /obj/item/device/destTagger{
 	pixel_x = 4;
 	pixel_y = 3
 	},
-/obj/item/weapon/packageWrap,
-/obj/item/weapon/packageWrap,
-/obj/item/weapon/packageWrap,
+/obj/item/packageWrap,
+/obj/item/packageWrap,
+/obj/item/packageWrap,
 /obj/item/clothing/gloves/sterile/latex,
 /obj/item/clothing/gloves/sterile/latex,
 /obj/structure/cable/green{
@@ -10820,7 +10820,7 @@
 	},
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/body_bag,
-/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/obj/item/storage/box/monkeycubes/wolpincubes,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -10877,7 +10877,7 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "jUS" = (
-/obj/item/weapon/flag,
+/obj/item/flag,
 /obj/machinery/status_display{
 	layer = 4;
 	pixel_y = -32
@@ -11313,7 +11313,7 @@
 /obj/effect/floor_decal/rust,
 /obj/structure/bed/chair/bay/chair/padded/red/smallnest,
 /obj/random/plushie,
-/obj/item/weapon/digestion_remains/skull/teshari,
+/obj/item/digestion_remains/skull/teshari,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -11473,14 +11473,14 @@
 "kLs" = (
 /obj/structure/closet,
 /obj/effect/floor_decal/rust,
-/obj/item/weapon/gun/energy/locked/phasegun/unlocked,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
-/obj/item/weapon/cell/device/weapon,
+/obj/item/gun/energy/locked/phasegun/unlocked,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -11857,7 +11857,7 @@
 	light_color = "#7F0000"
 	},
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
+/obj/item/gun/energy/locked/phasegun/rifle/unlocked,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -11870,7 +11870,7 @@
 	},
 /obj/effect/floor_decal/rust,
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
+/obj/item/gun/energy/locked/phasegun/rifle/unlocked,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralstarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -12216,27 +12216,27 @@
 	dir = 4;
 	name = "Ballistics"
 	},
-/obj/item/weapon/gun/projectile/shotgun/pump/combat{
+/obj/item/gun/projectile/shotgun/pump/combat{
 	pixel_y = -5
 	},
-/obj/item/weapon/gun/projectile/shotgun/pump/combat,
-/obj/item/weapon/gun/projectile/automatic/z8{
+/obj/item/gun/projectile/shotgun/pump/combat,
+/obj/item/gun/projectile/automatic/z8{
 	allowed_magazines = list(/obj/item/ammo_magazine/ar10);
 	desc = "The Z9 Shepherd is the newer model of the old Z8 battle rifle, made by the now defunct Zendai Foundries. Makes you feel like an old-school badass when you hold it. This one fits AR-10 magazines. Chambered in 7.62x51mm, and has an under barrel grenade launcher.";
 	magazine_type = /obj/item/ammo_magazine/ar10
 	},
-/obj/item/weapon/gun/projectile/automatic/p90,
-/obj/item/weapon/gun/projectile/serdy_pistols/vp70m,
-/obj/item/weapon/gun/projectile/shotgun/pump/combat,
-/obj/item/weapon/gun/projectile/automatic/p90,
-/obj/item/weapon/gun/projectile/automatic/serdy/keltec,
-/obj/item/weapon/gun/projectile/automatic/serdy/mp5,
-/obj/item/weapon/gun/projectile/serdy_pistols/tp23,
-/obj/item/weapon/gun/projectile/serdy_pistols/tp23,
-/obj/item/weapon/gun/projectile/serdy_pistols/tp23,
-/obj/item/weapon/gun/projectile/serdy_pistols/tp23,
-/obj/item/weapon/gun/projectile/serdy_pistols/glock71,
-/obj/item/weapon/gun/projectile/automatic/serdy/spas35,
+/obj/item/gun/projectile/automatic/p90,
+/obj/item/gun/projectile/serdy_pistols/vp70m,
+/obj/item/gun/projectile/shotgun/pump/combat,
+/obj/item/gun/projectile/automatic/p90,
+/obj/item/gun/projectile/automatic/serdy/keltec,
+/obj/item/gun/projectile/automatic/serdy/mp5,
+/obj/item/gun/projectile/serdy_pistols/tp23,
+/obj/item/gun/projectile/serdy_pistols/tp23,
+/obj/item/gun/projectile/serdy_pistols/tp23,
+/obj/item/gun/projectile/serdy_pistols/tp23,
+/obj/item/gun/projectile/serdy_pistols/glock71,
+/obj/item/gun/projectile/automatic/serdy/spas35,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/tactical{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -12268,7 +12268,7 @@
 	name = "north bump";
 	pixel_y = 24
 	},
-/obj/item/weapon/cell/device/weapon,
+/obj/item/cell/device/weapon,
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
@@ -13229,7 +13229,7 @@
 	},
 /obj/structure/table/woodentable,
 /obj/item/ammo_magazine/ammo_box/b12g/beanbag,
-/obj/item/weapon/gun/projectile/shotgun/doublebarrel,
+/obj/item/gun/projectile/shotgun/doublebarrel,
 /obj/item/device/retail_scanner/civilian,
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
@@ -13648,7 +13648,7 @@
 "nTU" = (
 /obj/effect/floor_decal/rust,
 /obj/random/plushie,
-/obj/item/weapon/digestion_remains/skull/teshari,
+/obj/item/digestion_remains/skull/teshari,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -13730,12 +13730,12 @@
 	})
 "obA" = (
 /obj/structure/table/glass,
-/obj/item/weapon/weldingtool,
+/obj/item/weldingtool,
 /obj/item/clothing/head/welding,
-/obj/item/weapon/surgical/scalpel{
+/obj/item/surgical/scalpel{
 	pixel_y = 12
 	},
-/obj/item/weapon/surgical/circular_saw,
+/obj/item/surgical/circular_saw,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -13769,7 +13769,7 @@
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 36
 	},
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -13833,7 +13833,7 @@
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
 	})
 "oha" = (
-/obj/item/weapon/stool/padded,
+/obj/item/stool/padded,
 /turf/simulated/floor/carpet/bcarpet,
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -14386,7 +14386,7 @@
 /obj/effect/floor_decal/rust,
 /obj/random/maintenance,
 /obj/random/junk,
-/obj/item/weapon/bone/skull/unathi,
+/obj/item/bone/skull/unathi,
 /obj/effect/decal/cleanable/filth,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/firstdeck/aftport{
@@ -14651,7 +14651,7 @@
 /obj/machinery/recharger/wallcharger{
 	pixel_x = -28
 	},
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -14668,7 +14668,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/weapon/storage/box/beakers{
+/obj/item/storage/box/beakers{
 	pixel_x = 2;
 	pixel_y = 2
 	},
@@ -14930,9 +14930,9 @@
 	})
 "puS" = (
 /obj/structure/table/standard,
-/obj/item/weapon/clipboard,
-/obj/item/weapon/folder,
-/obj/item/weapon/pen,
+/obj/item/clipboard,
+/obj/item/folder,
+/obj/item/pen,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -14959,7 +14959,7 @@
 /obj/random/maintenance,
 /obj/random/maintenance,
 /obj/structure/closet/secure_closet/medical2,
-/obj/item/weapon/storage/box/monkeycubes/farwacubes,
+/obj/item/storage/box/monkeycubes/farwacubes,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -15227,7 +15227,7 @@
 /obj/structure/table/standard,
 /obj/item/device/slime_scanner,
 /obj/item/device/slime_scanner,
-/obj/item/weapon/hand_labeler,
+/obj/item/hand_labeler,
 /obj/item/clothing/gloves/sterile/latex,
 /obj/structure/window/reinforced{
 	dir = 4
@@ -15451,7 +15451,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/weapon/storage/box/syringes,
+/obj/item/storage/box/syringes,
 /obj/item/glass_jar,
 /obj/item/glass_jar,
 /turf/simulated/floor/tiled/techmaint,
@@ -15463,10 +15463,10 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/weapon/melee/baton/slime/loaded,
-/obj/item/weapon/gun/energy/taser/xeno,
-/obj/item/weapon/gun/energy/taser/xeno,
-/obj/item/weapon/melee/baton/slime/loaded,
+/obj/item/melee/baton/slime/loaded,
+/obj/item/gun/energy/taser/xeno,
+/obj/item/gun/energy/taser/xeno,
+/obj/item/melee/baton/slime/loaded,
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -15742,14 +15742,14 @@
 /area/crew_quarters/bar)
 "qor" = (
 /obj/structure/table/standard,
-/obj/item/weapon/storage/box/monkeycubes,
-/obj/item/weapon/storage/box/monkeycubes,
-/obj/item/weapon/storage/box/monkeycubes,
-/obj/item/weapon/storage/box/monkeycubes,
+/obj/item/storage/box/monkeycubes,
+/obj/item/storage/box/monkeycubes,
+/obj/item/storage/box/monkeycubes,
+/obj/item/storage/box/monkeycubes,
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/weapon/reagent_containers/food/snacks/monkeycube/wrapped,
+/obj/item/reagent_containers/food/snacks/monkeycube/wrapped,
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -15760,7 +15760,7 @@
 	dir = 4
 	},
 /obj/machinery/recharger,
-/obj/item/weapon/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -15942,11 +15942,11 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/freezer/meat,
-/obj/item/weapon/reagent_containers/food/snacks/meat,
-/obj/item/weapon/reagent_containers/food/snacks/meat,
-/obj/item/weapon/reagent_containers/food/snacks/meat,
-/obj/item/weapon/reagent_containers/food/snacks/meat,
-/obj/item/weapon/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/food/snacks/meat,
+/obj/item/reagent_containers/food/snacks/meat,
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/xenobiology{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -16049,7 +16049,7 @@
 /obj/structure/closet,
 /obj/item/toy/figure/scientist,
 /obj/item/clothing/accessory/armband/science,
-/obj/item/weapon/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /obj/item/clothing/shoes/galoshes,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
@@ -16118,7 +16118,7 @@
 /obj/structure/closet,
 /obj/item/toy/figure/scientist,
 /obj/item/clothing/accessory/armband/science,
-/obj/item/weapon/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bucket,
 /obj/item/clothing/shoes/galoshes,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
@@ -16405,7 +16405,7 @@
 "rfe" = (
 /obj/random/junk,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = -3;
 	pixel_y = 1
 	},
@@ -16584,8 +16584,8 @@
 	})
 "roc" = (
 /obj/effect/floor_decal/rust,
-/obj/item/weapon/storage/box/monkeycubes/farwacubes,
-/obj/item/weapon/storage/box/monkeycubes/stokcubes,
+/obj/item/storage/box/monkeycubes/farwacubes,
+/obj/item/storage/box/monkeycubes/stokcubes,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -16611,7 +16611,7 @@
 "rpV" = (
 /obj/random/junk,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = -9;
 	pixel_y = 1
 	},
@@ -17416,7 +17416,7 @@
 "sss" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/closet/wardrobe/grey,
-/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/obj/item/storage/box/monkeycubes/wolpincubes,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -17555,7 +17555,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -17628,7 +17628,7 @@
 /obj/random/maintenance/misc,
 /obj/random/maintenance/misc,
 /obj/random/maintenance/misc,
-/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/obj/item/storage/box/monkeycubes/wolpincubes,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/fore{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -18055,7 +18055,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
 	},
-/obj/item/weapon/extinguisher,
+/obj/item/extinguisher,
 /obj/machinery/camera/network/research{
 	c_tag = "SCI - Xenobiology Access";
 	dir = 1
@@ -18106,7 +18106,7 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = -5;
 	pixel_y = 3
 	},
@@ -19346,7 +19346,7 @@
 "uHg" = (
 /obj/effect/floor_decal/rust,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = -1;
 	pixel_y = -9
 	},
@@ -20132,7 +20132,7 @@
 /obj/effect/floor_decal/rust,
 /obj/random/maintenance/medical,
 /obj/random/maintenance,
-/obj/item/weapon/storage/box/monkeycubes/sarucubes,
+/obj/item/storage/box/monkeycubes/sarucubes,
 /turf/simulated/floor/tiled/white,
 /area/maintenance/firstdeck/aftport{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -20970,7 +20970,7 @@
 	})
 "wAa" = (
 /obj/random/junk,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = -9;
 	pixel_y = 1
 	},
@@ -21247,19 +21247,19 @@
 /area/engineering/atmos)
 "wKp" = (
 /obj/structure/table/woodentable,
-/obj/item/weapon/reagent_containers/food/drinks/coffee{
+/obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = -5;
 	pixel_y = -6
 	},
-/obj/item/weapon/reagent_containers/food/drinks/coffee{
+/obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = 5;
 	pixel_y = 6
 	},
-/obj/item/weapon/reagent_containers/food/drinks/coffee{
+/obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = -5;
 	pixel_y = 6
 	},
-/obj/item/weapon/reagent_containers/food/drinks/coffee{
+/obj/item/reagent_containers/food/drinks/coffee{
 	pixel_x = 5;
 	pixel_y = -6
 	},
@@ -21593,7 +21593,7 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains/ribcage,
+/obj/item/digestion_remains/ribcage,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -21643,7 +21643,7 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = -3;
 	pixel_y = 5
 	},
@@ -21675,7 +21675,7 @@
 /obj/random/junk,
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains/ribcage,
+/obj/item/digestion_remains/ribcage,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/vomit,
 /turf/simulated/floor/water/indoors{
@@ -21689,7 +21689,7 @@
 "xeR" = (
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = 5;
 	pixel_y = -9
 	},
@@ -21726,7 +21726,7 @@
 	})
 "xgY" = (
 /obj/random/trash,
-/obj/item/weapon/digestion_remains/skull/sergal,
+/obj/item/digestion_remains/skull/sergal,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -21802,7 +21802,7 @@
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar)
 "xkg" = (
-/obj/item/weapon/stool,
+/obj/item/stool,
 /obj/effect/floor_decal/rust,
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -21909,8 +21909,8 @@
 "xpC" = (
 /obj/effect/floor_decal/rust,
 /obj/random/junk,
-/obj/item/weapon/digestion_remains,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains,
+/obj/item/digestion_remains{
 	pixel_x = -9;
 	pixel_y = 1
 	},
@@ -22006,8 +22006,8 @@
 /obj/random/trash,
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains/skull/unknown,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains/skull/unknown,
+/obj/item/digestion_remains{
 	pixel_x = -3;
 	pixel_y = 5
 	},
@@ -22041,14 +22041,14 @@
 /obj/random/junk,
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = -5;
 	pixel_y = 3
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/obstruction,
-/obj/item/weapon/storage/bag/trash,
+/obj/item/storage/bag/trash,
 /turf/simulated/floor/water/indoors{
 	color = "#604838";
 	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
@@ -22113,7 +22113,7 @@
 "xzV" = (
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains/ribcage,
+/obj/item/digestion_remains/ribcage,
 /obj/effect/decal/cleanable/fruit_smudge,
 /obj/item/ammo_magazine/m762/empty,
 /turf/simulated/floor/water/indoors{
@@ -22269,7 +22269,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
-/obj/item/weapon/handcuffs/cable/orange,
+/obj/item/handcuffs/cable/orange,
 /turf/simulated/floor/water/indoors{
 	color = "#604838";
 	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
@@ -22283,8 +22283,8 @@
 /obj/random/trash,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/molten_item,
-/obj/item/weapon/material/shard,
-/obj/item/weapon/storage/box/monkeycubes/wolpincubes,
+/obj/item/material/shard,
+/obj/item/storage/box/monkeycubes/wolpincubes,
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/maintenance/firstdeck/centralport{
@@ -22350,10 +22350,10 @@
 "xIr" = (
 /obj/machinery/light/small/readylight,
 /obj/structure/table/woodentable,
-/obj/item/weapon/reagent_containers/food/drinks/metaglass/metapint,
-/obj/item/weapon/reagent_containers/food/drinks/metaglass/metapint,
-/obj/item/weapon/reagent_containers/food/drinks/metaglass/metapint,
-/obj/item/weapon/reagent_containers/food/drinks/metaglass/metapint,
+/obj/item/reagent_containers/food/drinks/metaglass/metapint,
+/obj/item/reagent_containers/food/drinks/metaglass/metapint,
+/obj/item/reagent_containers/food/drinks/metaglass/metapint,
+/obj/item/reagent_containers/food/drinks/metaglass/metapint,
 /turf/simulated/floor/carpet/bcarpet,
 /area/maintenance/firstdeck/forestarboard{
 	base_turf = /turf/simulated/floor/outdoors/rocks/caves
@@ -22809,7 +22809,7 @@
 "xZs" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/gun/energy/locked/phasegun/rifle/unlocked,
+/obj/item/gun/energy/locked/phasegun/rifle/unlocked,
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftstarboard{
@@ -22988,7 +22988,7 @@
 /obj/structure/disposalpipe/up{
 	dir = 8
 	},
-/obj/item/weapon/digestion_remains/skull/tajaran,
+/obj/item/digestion_remains/skull/tajaran,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
 /obj/effect/gibspawner/human,
@@ -23026,7 +23026,7 @@
 "yhQ" = (
 /obj/random/trash,
 /obj/random/trash,
-/obj/item/weapon/digestion_remains{
+/obj/item/digestion_remains{
 	pixel_x = 5;
 	pixel_y = -9
 	},

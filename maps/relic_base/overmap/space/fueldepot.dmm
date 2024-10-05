@@ -1701,7 +1701,7 @@
 /area/sc_away/fueldepot)
 "OG" = (
 /obj/structure/table/rack/steel,
-/obj/item/weapon/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical,
 /turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
 "Ph" = (
@@ -1738,7 +1738,7 @@
 /area/sc_away/fueldepot)
 "Qg" = (
 /obj/structure/table/rack/steel,
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/techmaint/airless,
 /area/sc_away/fueldepot)
 "RE" = (
