@@ -44,6 +44,15 @@
 #define span_critical(str) ("<span class='critical'>" + str + "</span>")
 #define span_danger(str) ("<span class='danger'>" + str + "</span>")
 #define span_warning(str) ("<span class='warning'>" + str + "</span>")
+<<<<<<< HEAD
+=======
+#define span_warningplain(str) ("<span class='warningplain'>" + str + "</span>")
+#define span_boldwarning(str) ("<span class='boldwarning'>" + str + "</span>")
+#define span_filter_warning(str) ("<span class='filter_warning'>" + str + "</span>")
+#define span_filter_combat(str) ("<span class='filter_combat'>" + str + "</span>")
+#define span_unconscious(str) ("<span class='unconscious'>" + str + "</span>")
+
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 #define span_rose(str) ("<span class='rose'>" + str + "</span>")
 #define span_info(str) ("<span class='info'>" + str + "</span>")
 #define span_notice(str) ("<span class='notice'>" + str + "</span>")
@@ -111,4 +120,60 @@
 #define span_maroon(str) ("<span class='maroon'>" + str + "</span>")
 #define span_brown(str) ("<span class='brown'>" + str + "</span>")
 #define span_lightpurple(str) ("<span class='lightpurple'>" + str + "</span>")
+<<<<<<< HEAD
 #define span_darkpink(str) ("<span class='lightpurple'>" + str + "</span>")
+=======
+#define span_darkpink(str) ("<span class='darkpurple'>" + str + "</span>")
+
+/* System and Debug */
+
+#define span_prefix(str) ("<span class='prefix'>" + str + "</span>")
+#define span_admin(str) ("<span class='admin'>" + str + "</span>")
+#define span_adminnotice(str) ("<span class='adminnotice'>" + str + "</span>")
+#define span_boldannounce(str) ("<span class='boldannounce'>" + str + "</span>")
+#define span_linkOn(str) ("<span class='linkOn'>" + str + "</span>")
+#define span_linkOff(str) ("<span class='linkOff'>" + str + "</span>")
+#define span_log_message(str) ("<span class='log_message'>" + str + "</span>")
+#define span_filter_system(str) ("<span class='filter_system'>" + str + "</span>")
+#define span_filter_debuglogs(str) ("<span class='filter_debuglogs'>" + str + "</span>")
+#define span_filter_adminlog(str) ("<span class='filter_adminlog'>" + str + "</span>")
+#define span_pm(str) ("<span class='pm'>" + str + "</span>")
+#define span_filter_pm(str) ("<span class='filter_pm'>" + str + "</span>")
+#define span_adminhelp(str) ("<span class='adminhelp'>" + str + "</span>")
+#define span_mentor(str) ("<span class='mentor'>" + str + "</span>")
+#define span_filter_pray(str) ("<span class='filter_pray'>" + str + "</span>")
+
+/* Admin only usage */
+
+#define span_admin_pm_notice(str) ("<span class='pm notice'>" + str + "</span>")
+#define span_admin_pm_warning(str) ("<span class='pm warning'>" + str + "</span>")
+
+#define span_mentor_pm_notice(str) ("<span class='mentor notice'>" + str + "</span>")
+#define span_mentor_pm_warning(str) ("<span class='mentor warning'>" + str + "</span>")
+
+/* Adminchat */
+
+#define span_admin_channel(str) ("<span class='admin_channel'>" + str + "</span>")
+#define span_mod_channel(str) ("<span class='mod_channel'>" + str + "</span>")
+#define span_event_channel(str) ("<span class='event_channel'>" + str + "</span>")
+#define span_mentor_channel(str) ("<span class='mentor_channel'>" + str + "</span>")
+
+/* Byond Sizes */
+
+#define span_small(str) "<font size='1'>" + str + "</font>"
+
+#define span_normal(str) "<font size='2'>" + str + "</font>"
+
+#define span_large(str) "<font size='3'>" + str + "</font>"
+
+#define span_huge(str) "<font size='4'>" + str + "</font>"
+
+#define span_giant(str) "<font size='5'>" + str + "</font>"
+
+/* Style spans */
+
+#define span_italics(str) ("<span class='italics'>" + str + "</span>")
+#define span_bold(str) ("<span class='bold'>" + str + "</span>")
+
+#define span_linkify(str) ("<span class='linkify'>" + str + "</span>")
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))

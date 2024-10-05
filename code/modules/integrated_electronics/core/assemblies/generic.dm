@@ -213,8 +213,13 @@
 		return
 	playsound(src, 'sound/machines/click.ogg', 75, 1)
 	user.visible_message("\The [user] attaches \the [src] to the wall.",
+<<<<<<< HEAD
 		"<span class='notice'>You attach \the [src] to the wall.</span>",
 		"<span class='italics'>You hear clicking.</span>")
+=======
+		span_notice("You attach \the [src] to the wall."),
+		span_warningplain("You hear clicking."))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 	if(istype(user, /mob/living/silicon/robot)) //Robots cannot unequip/drop items, for Safety Reasons.
 		forceMove(T)
 	user.drop_item(T)

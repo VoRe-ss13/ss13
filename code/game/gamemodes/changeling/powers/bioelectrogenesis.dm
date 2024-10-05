@@ -50,9 +50,15 @@
 				add_attack_logs(src,G.affecting,"Changeling shocked")
 
 				if(siemens)
+<<<<<<< HEAD
 					visible_message("<span class='warning'>Arcs of electricity strike [G.affecting]!</span>",
 					"<span class='warning'>Our hand channels raw electricity into [G.affecting].</span>",
 					"<span class='italics'>You hear sparks!</span>")
+=======
+					visible_message(span_warning("Arcs of electricity strike [G.affecting]!"),
+					span_warning("Our hand channels raw electricity into [G.affecting]."),
+					span_warningplain("You hear sparks!"))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 				else
 					to_chat(src, "<span class='warning'>Our gloves block us from shocking \the [G.affecting].</span>")
 				src.mind.changeling.chem_charges -= 10
@@ -73,10 +79,17 @@
 				L.Add(cell)
 
 			//Now for the actual recharging.
+<<<<<<< HEAD
 			for(var/obj/item/weapon/cell/cell in L)
 				visible_message("<span class='warning'>Some sparks fall out from \the [src.name]\'s [held_item]!</span>",
 				"<span class='warning'>Our hand channels raw electricity into \the [held_item].</span>",
 				"<span class='italics'>You hear sparks!</span>")
+=======
+			for(var/obj/item/cell/cell in L)
+				visible_message(span_warning("Some sparks fall out from \the [src.name]\'s [held_item]!"),
+				span_warning("Our hand channels raw electricity into \the [held_item]."),
+				span_warningplain("You hear sparks!"))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 				var/i = 10
 				if(siemens)
 					while(i)
@@ -115,9 +128,15 @@
 
 /obj/item/weapon/electric_hand/New()
 	if(ismob(loc))
+<<<<<<< HEAD
 		visible_message("<span class='warning'>Electrical arcs form around [loc.name]\'s hand!</span>",
 		"<span class='warning'>We store a charge of electricity in our hand.</span>",
 		"<span class='italics'>You hear crackling electricity!</span>")
+=======
+		visible_message(span_warning("Electrical arcs form around [loc.name]\'s hand!"),
+		span_warning("We store a charge of electricity in our hand."),
+		span_warningplain("You hear crackling electricity!"))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 		var/T = get_turf(src)
 		new /obj/effect/effect/sparks(T)
 
@@ -152,9 +171,15 @@
 		add_attack_logs(user,C,"Shocked with [src]")
 
 		if(siemens)
+<<<<<<< HEAD
 			visible_message("<span class='warning'>Arcs of electricity strike [C]!</span>",
 			"<span class='warning'>Our hand channels raw electricity into [C]</span>",
 			"<span class='italics'>You hear sparks!</span>")
+=======
+			visible_message(span_warning("Arcs of electricity strike [C]!"),
+			span_warning("Our hand channels raw electricity into [C]"),
+			span_warningplain("You hear sparks!"))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 		else
 			to_chat(src, "<span class='warning'>Our gloves block us from shocking \the [C].</span>")
 		//qdel(src)  //Since we're no longer a one hit stun, we need to stick around.
@@ -170,10 +195,17 @@
 
 		S.electrocute_act(60,src,0.75) //If only they had surge protectors.
 		if(siemens)
+<<<<<<< HEAD
 			visible_message("<span class='warning'>Arcs of electricity strike [S]!</span>",
 			"<span class='warning'>Our hand channels raw electricity into [S]</span>",
 			"<span class='italics'>You hear sparks!</span>")
 			to_chat(S, "<span class='danger'>Warning: Electrical surge detected!</span>")
+=======
+			visible_message(span_warning("Arcs of electricity strike [S]!"),
+			span_warning("Our hand channels raw electricity into [S]"),
+			span_warningplain("You hear sparks!"))
+			to_chat(S, span_danger("Warning: Electrical surge detected!"))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 		//qdel(src)
 		user.mind.changeling.chem_charges -= 10
 		return 1
@@ -183,10 +215,17 @@
 			var/success = 0
 			var/obj/T = target
 			//We can also recharge things we touch, such as APCs or hardsuits.
+<<<<<<< HEAD
 			for(var/obj/item/weapon/cell/cell in T.contents)
 				visible_message("<span class='warning'>Some sparks fall out from \the [target]!</span>",
 				"<span class='warning'>Our hand channels raw electricity into \the [target].</span>",
 				"<span class='italics'>You hear sparks!</span>")
+=======
+			for(var/obj/item/cell/cell in T.contents)
+				visible_message(span_warning("Some sparks fall out from \the [target]!"),
+				span_warning("Our hand channels raw electricity into \the [target]."),
+				span_warningplain("You hear sparks!"))
+>>>>>>> f610c06e62 ([MIRROR] fix admin and mentor PMs (#9161))
 				var/i = 10
 				if(siemens)
 					while(i)
