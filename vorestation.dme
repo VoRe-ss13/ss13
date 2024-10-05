@@ -2555,6 +2555,7 @@
 #include "code\modules\events\supply_demand_vr.dm"
 #include "code\modules\events\viral_infection.dm"
 #include "code\modules\events\wallrot.dm"
+#include "code\modules\events\wormholes.dm"
 #include "code\modules\examine\examine.dm"
 #include "code\modules\examine\stat_icons.dm"
 #include "code\modules\examine\descriptions\armor.dm"
@@ -3225,6 +3226,7 @@
 #include "code\modules\mob\living\carbon\human\species\station\prometheans.dm"
 #include "code\modules\mob\living\carbon\human\species\station\prometheans_vr.dm"
 #include "code\modules\mob\living\carbon\human\species\station\prommie_blob.dm"
+#include "code\modules\mob\living\carbon\human\species\station\replicant_crew.dm"
 #include "code\modules\mob\living\carbon\human\species\station\station.dm"
 #include "code\modules\mob\living\carbon\human\species\station\station_special_abilities_ch.dm"
 #include "code\modules\mob\living\carbon\human\species\station\station_special_abilities_vr.dm"
@@ -4689,12 +4691,8 @@
 #include "maps\redgate\falls\atoll_decals.dm"
 #include "maps\redgate\falls\atoll_objs.dm"
 #include "maps\redgate\falls\atoll_turfs.dm"
-<<<<<<< HEAD
 #include "maps\relic_base\relicbase.dm"
 #include "maps\relic_base\turfs\outdoors.dm"
-=======
-#include "maps\southern_cross\southern_cross.dm"
->>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 #include "maps\southern_cross\items\encryptionkey_sc.dm"
 #include "maps\southern_cross\items\headset_sc.dm"
 #include "maps\southern_cross\items\clothing\sc_accessory.dm"
@@ -4705,11 +4703,7 @@
 #include "maps\southern_cross\structures\closets\misc.dm"
 #include "maps\southern_cross\structures\closets\research.dm"
 #include "maps\southern_cross\structures\closets\security.dm"
-<<<<<<< HEAD
 #include "maps\southern_cross\submaps\virtual_reality\constructVR.dm"
-=======
-#include "maps\southern_cross\turfs\outdoors.dm"
->>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 #include "maps\submaps\_helpers.dm"
 #include "maps\submaps\_readme.dm"
 #include "maps\~map_system\maps.dm"
@@ -5134,4 +5128,5 @@
 #include "modular_chomp\maps\submaps\surface_submaps\valleyend\valleyend_areas.dm"
 #include "modular_chomp\maps\submaps\surface_submaps\wilderness\wilderness.dm"
 #include "modular_chomp\maps\submaps\surface_submaps\wilderness\wilderness_areas.dm"
+#include "modular_chomp\maps\virtual_reality\constructVR.dm"
 // END_INCLUDE
