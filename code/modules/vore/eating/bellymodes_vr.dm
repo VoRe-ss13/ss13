@@ -143,16 +143,11 @@
 			EL = emote_lists[digest_mode]
 		//ChompEDIT END
 		if((LAZYLEN(EL) || LAZYLEN(emote_lists[DM_HOLD_ABSORBED]) || (digest_mode == DM_DIGEST && LAZYLEN(emote_lists[DM_HOLD])) || (digest_mode == DM_SELECT && (LAZYLEN(emote_lists[DM_HOLD])||LAZYLEN(emote_lists[DM_DIGEST])||LAZYLEN(emote_lists[DM_ABSORB])) )) && next_emote <= world.time)
-			var/living_count = 0
-			var/absorbed_count = 0
-			for(var/mob/living/L in contents)
-				living_count++
-				if(L.absorbed)
-					absorbed_count++
 			next_emote = world.time + (emote_time SECONDS)
 			for(var/mob/living/M in contents)
 				if(M.absorbed)
 					EL = emote_lists[DM_HOLD_ABSORBED]
+<<<<<<< HEAD
 
 					var/raw_message = pick(EL)
 					var/formatted_message
@@ -162,6 +157,10 @@
 					formatted_message = replacetext(formatted_message, "%countprey", absorbed_count)
 					if(formatted_message)
 						to_chat(M, "<span class='vnotice'>[formatted_message]</span>")
+=======
+					if(LAZYLEN(EL))
+						to_chat(M, span_vnotice(belly_format_string(EL, M, use_absorbed_count = TRUE)))
+>>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 				else
 					if (digest_mode == DM_SELECT)
 						var/datum/digest_mode/selective/DM_S = GLOB.digest_modes[DM_SELECT]
@@ -169,6 +168,7 @@
 					else if(digest_mode == DM_DIGEST && !M.digestable)
 						EL = emote_lists[DM_HOLD]					// Use Hold's emote list if we're indigestible
 
+<<<<<<< HEAD
 					var/raw_message = pick(EL)
 					var/formatted_message
 					formatted_message = replacetext(raw_message, "%belly", lowertext(name))
@@ -178,6 +178,10 @@
 					formatted_message = replacetext(formatted_message, "%count", contents.len)
 					if(formatted_message)
 						to_chat(M, "<span class='vnotice'>[formatted_message]</span>")
+=======
+					if(LAZYLEN(EL))
+						to_chat(M, span_vnotice(belly_format_string(EL, M)))
+>>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 	if(to_update)
 		updateVRPanels()
@@ -311,7 +315,7 @@
 		if(!M.digestion_in_progress)
 			M.digestion_in_progress = TRUE
 			if(M.health > -36 || (ishuman(M) && M.health > -136))
-				to_chat(M, "<span class='vnotice'>(Your predator has enabled gradual body digestion. Stick around for a second round of churning to reach the true finisher.)</span>")
+				to_chat(M, span_vnotice("(Your predator has enabled gradual body digestion. Stick around for a second round of churning to reach the true finisher.)"))
 		if(M.health < M.maxHealth * -1) //Siplemobs etc
 			if(ishuman(M))
 				if(M.health < (M.maxHealth * -1) -100) //Spacemans can go much deeper. Jank but maxHealth*-2 doesn't work with flat standard -100hp death threshold.
@@ -336,32 +340,20 @@
 				M.digestion_in_progress = FALSE
 		if(M.digestion_in_progress)
 			return //CHOMPAdd End
-	var/digest_alert_owner = pick(digest_messages_owner)
-	var/digest_alert_prey = pick(digest_messages_prey)
+	var/digest_alert_owner = span_vnotice(belly_format_string(digest_messages_owner, M))
+	var/digest_alert_prey = span_vnotice(belly_format_string(digest_messages_prey, M))
 	var/compensation = M.maxHealth / 5 //Dead body bonus.
 	if(ishuman(M))
 		compensation += M.getOxyLoss() //How much of the prey's damage was caused by passive crit oxyloss to compensate the lost nutrition.
 
-	var/living_count = 0
-	for(var/mob/living/L in contents)
-		living_count++
-
-	//Replace placeholder vars
-	digest_alert_owner = replacetext(digest_alert_owner, "%pred", owner)
-	digest_alert_owner = replacetext(digest_alert_owner, "%prey", M)
-	digest_alert_owner = replacetext(digest_alert_owner, "%belly", lowertext(name))
-	digest_alert_owner = replacetext(digest_alert_owner, "%countprey", living_count)
-	digest_alert_owner = replacetext(digest_alert_owner, "%count", contents.len)
-
-	digest_alert_prey = replacetext(digest_alert_prey, "%pred", owner)
-	digest_alert_prey = replacetext(digest_alert_prey, "%prey", M)
-	digest_alert_prey = replacetext(digest_alert_prey, "%belly", lowertext(name))
-	digest_alert_prey = replacetext(digest_alert_prey, "%countprey", living_count)
-	digest_alert_prey = replacetext(digest_alert_prey, "%count", contents.len)
-
 	//Send messages
+<<<<<<< HEAD
 	to_chat(owner, "<span class='vnotice'>[digest_alert_owner]</span>")
 	to_chat(M, "<span class='vnotice'>[digest_alert_prey]</span>")
+=======
+	to_chat(owner, digest_alert_owner)
+	to_chat(M, digest_alert_prey)
+>>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 	if(M.ckey)
 		GLOB.prey_digested_roundstat++
