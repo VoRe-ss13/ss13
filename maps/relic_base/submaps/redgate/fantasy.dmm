@@ -949,9 +949,9 @@
 /area/redgate/fantasy/bard)
 "fY" = (
 /obj/structure/table/rack/shelf/wood,
-/obj/item/device/flashlight/lantern,
-/obj/item/device/flashlight/lantern,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/simulated/floor/wood,
 /area/redgate/fantasy/mininghouse)
 "ga" = (
@@ -1453,7 +1453,7 @@
 /area/redgate/fantasy/farmhouse)
 "jx" = (
 /obj/structure/table/woodentable,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/simulated/floor/wood/alt,
 /area/redgate/fantasy/jewler)
 "jz" = (
@@ -2092,7 +2092,7 @@
 /area/redgate/fantasy/butcher)
 "ng" = (
 /obj/structure/table/woodentable,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/simulated/floor/wood/alt/parquet,
 /area/redgate/fantasy/house)
 "nj" = (
@@ -2247,7 +2247,7 @@
 /area/redgate/fantasy/gambling)
 "od" = (
 /obj/structure/closet/crate/wooden,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /obj/item/material/knife/tacknife/boot,
 /obj/random/potion_ingredient,
 /turf/simulated/floor/wood/alt/panel,
@@ -3430,7 +3430,7 @@
 /area/redgate/fantasy/mininghouse)
 "uZ" = (
 /obj/structure/closet/cabinet,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /obj/item/clothing/under/redpyjamas,
 /obj/item/clothing/under/assistantformal,
 /obj/item/storage/wallet,
@@ -4081,7 +4081,7 @@
 /area/redgate/fantasy/hedgemaze)
 "yR" = (
 /obj/structure/table/woodentable,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/simulated/floor/carpet/purple,
 /area/redgate/fantasy/bard)
 "yT" = (
@@ -4299,7 +4299,7 @@
 /area/redgate/fantasy/churchhouse)
 "Ao" = (
 /obj/structure/closet/crate/wooden,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /obj/item/material/knife/tacknife/boot,
 /obj/random/fantasy_item,
 /turf/simulated/floor/wood/alt/panel,
@@ -4598,7 +4598,7 @@
 /area/redgate/fantasy/blacksmith)
 "Cu" = (
 /obj/structure/closet/crate/wooden,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /obj/item/material/knife/tacknife/boot,
 /obj/random/potion_base,
 /turf/simulated/floor/wood/alt/panel,
@@ -4782,7 +4782,7 @@
 /turf/simulated/floor/carpet,
 /area/redgate/fantasy/castle)
 "Dw" = (
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/simulated/floor/concrete,
 /area/redgate/fantasy/mininghouse)
 "Dz" = (
@@ -4927,7 +4927,7 @@
 /area/redgate/fantasy/guardhouse)
 "Ew" = (
 /obj/structure/closet/crate/wooden,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /obj/item/material/knife/tacknife/boot,
 /obj/random/instrument,
 /turf/simulated/floor/wood/alt/panel,
@@ -5692,7 +5692,7 @@
 /area/redgate/fantasy/castle)
 "Jo" = (
 /obj/structure/closet/crate/wooden,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /obj/item/material/knife/tacknife/boot,
 /turf/simulated/floor/wood/alt/panel,
 /area/redgate/fantasy/walls)
@@ -5787,7 +5787,7 @@
 /area/redgate/fantasy/hedgemaze)
 "JW" = (
 /obj/structure/closet/crate/wooden,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /obj/item/material/knife/tacknife/boot,
 /obj/random/material,
 /turf/simulated/floor/wood/alt/panel,
@@ -5845,7 +5845,7 @@
 /area/redgate/fantasy/grocery)
 "Km" = (
 /obj/structure/table/woodentable,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/simulated/floor/carpet/green,
 /area/redgate/fantasy/house)
 "Kq" = (
@@ -6854,8 +6854,8 @@
 /area/redgate/fantasy/arena)
 "QF" = (
 /obj/structure/table/rack/shelf/wood,
-/obj/item/device/flashlight/lantern,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/simulated/floor/wood/alt,
 /area/redgate/fantasy/shop)
 "QL" = (
@@ -8022,7 +8022,7 @@
 /area/redgate/fantasy/castle)
 "Yn" = (
 /obj/structure/closet/crate/chest,
-/obj/item/device/slow_sizegun/magic,
+/obj/item/slow_sizegun/magic,
 /obj/item/toy/character/wizard,
 /obj/machinery/light/small/torch{
 	dir = 4

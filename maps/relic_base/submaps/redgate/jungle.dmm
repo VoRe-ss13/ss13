@@ -1189,7 +1189,7 @@
 "oo" = (
 /obj/structure/closet/crate/wooden,
 /obj/item/storage/box/matches,
-/obj/item/device/slow_sizegun/magic,
+/obj/item/slow_sizegun/magic,
 /obj/random/fantasy_item,
 /obj/random/potion_ingredient,
 /turf/simulated/floor/wood,
@@ -1639,7 +1639,7 @@
 /area/redgate/jungle/aboveground)
 "tk" = (
 /obj/structure/closet/crate/nanotrasen,
-/obj/item/device/gps/explorer,
+/obj/item/gps/explorer,
 /obj/random/bluespace,
 /turf/simulated/mineral/floor/cave,
 /area/redgate/jungle/westcaves)
@@ -2155,7 +2155,7 @@
 /area/redgate/jungle/aboveground)
 "zr" = (
 /obj/structure/table/woodentable,
-/obj/item/device/healthanalyzer/scroll,
+/obj/item/healthanalyzer/scroll,
 /obj/item/robot_parts/robot_component/diagnosis_unit,
 /turf/simulated/floor/reinforced,
 /area/redgate/jungle/aboveground)
@@ -2171,7 +2171,7 @@
 /area/redgate/jungle/aboveground)
 "zv" = (
 /obj/structure/table/rack/shelf/wood,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/simulated/mineral/floor/light{
 	nitrogen = 82.1472;
 	oxygen = 21.8366;
@@ -2611,7 +2611,7 @@
 /area/redgate/jungle/temple)
 "Fu" = (
 /obj/structure/table/alien/blue,
-/obj/item/device/nif,
+/obj/item/nif,
 /turf/simulated/floor/bluegrid,
 /area/redgate/jungle/temple)
 "Fv" = (
@@ -4134,14 +4134,14 @@
 /area/redgate/jungle/temple)
 "XX" = (
 /obj/structure/closet/crate/wooden,
-/obj/item/device/flashlight/lantern,
-/obj/item/device/flashlight/lantern,
-/obj/item/device/flashlight/lantern,
-/obj/item/device/flashlight/lantern,
-/obj/item/device/flashlight/lantern,
-/obj/item/device/flashlight/lantern,
-/obj/item/device/flashlight/lantern,
-/obj/item/device/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /obj/item/storage/pouch/flares/full_flare,
 /obj/item/storage/pouch/flares/full_flare,
 /obj/item/storage/pouch/flares/full_flare,

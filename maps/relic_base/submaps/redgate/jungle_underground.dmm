@@ -1326,7 +1326,7 @@
 /turf/simulated/floor,
 /area/redgate/jungle/facilityne)
 "pO" = (
-/obj/item/device/healthanalyzer/advanced,
+/obj/item/healthanalyzer/advanced,
 /turf/simulated/floor,
 /area/redgate/jungle/facilityse)
 "pR" = (
@@ -3183,7 +3183,7 @@
 /turf/simulated/floor,
 /area/redgate/jungle/facilitysw)
 "ME" = (
-/obj/item/device/pipe_painter,
+/obj/item/pipe_painter,
 /turf/simulated/floor,
 /area/redgate/jungle/facilitynw)
 "MF" = (
@@ -3273,7 +3273,7 @@
 /area/redgate/jungle/facilitynw)
 "Nx" = (
 /obj/structure/closet/walllocker_double/medical/north,
-/obj/item/device/glasses_kit,
+/obj/item/glasses_kit,
 /obj/random/medical/pillbottle,
 /obj/random/medical/pillbottle,
 /turf/simulated/floor,
@@ -3848,7 +3848,7 @@
 /area/redgate/jungle/facilityne)
 "Us" = (
 /obj/structure/closet,
-/obj/item/device/multitool,
+/obj/item/multitool,
 /obj/item/pen/multi,
 /obj/item/stack/cable_coil/silver,
 /obj/item/tool/wirecutters/brass,

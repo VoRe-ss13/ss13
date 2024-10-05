@@ -149,7 +149,7 @@
 	dir = 1
 	},
 /obj/structure/table/woodentable,
-/obj/item/device/tape/random,
+/obj/item/tape/random,
 /turf/simulated/floor/wood,
 /area/redgate/city/library)
 "anE" = (
@@ -294,7 +294,7 @@
 /area/redgate/city/house13)
 "azU" = (
 /obj/structure/table/woodentable,
-/obj/item/device/flashlight/lamp/green{
+/obj/item/flashlight/lamp/green{
 	pixel_y = 8
 	},
 /turf/simulated/floor/wood,
@@ -740,7 +740,7 @@
 /area/redgate/city/police)
 "aYz" = (
 /obj/structure/table/woodentable,
-/obj/item/device/tape/random,
+/obj/item/tape/random,
 /obj/machinery/light_switch{
 	pixel_y = 24
 	},
@@ -887,7 +887,7 @@
 /area/redgate/city/hospital)
 "biY" = (
 /obj/structure/table/reinforced,
-/obj/item/device/mass_spectrometer/adv,
+/obj/item/mass_spectrometer/adv,
 /turf/simulated/floor/tiled/white,
 /area/redgate/city/science)
 "bka" = (
@@ -1202,7 +1202,7 @@
 /area/redgate/city/succ)
 "bJy" = (
 /obj/structure/table/woodentable,
-/obj/item/device/flashlight/lamp/green{
+/obj/item/flashlight/lamp/green{
 	pixel_y = 8
 	},
 /turf/simulated/floor/wood,
@@ -2100,7 +2100,7 @@
 /area/redgate/city/doctor)
 "cXQ" = (
 /obj/structure/table/glass,
-/obj/item/device/defib_kit/loaded,
+/obj/item/defib_kit/loaded,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -2222,11 +2222,11 @@
 /area/redgate/city/science)
 "deJ" = (
 /obj/structure/table/rack,
-/obj/item/device/gps/medical{
+/obj/item/gps/medical{
 	pixel_y = 3
 	},
-/obj/item/device/gps/medical,
-/obj/item/device/gps/medical{
+/obj/item/gps/medical,
+/obj/item/gps/medical{
 	pixel_x = -3
 	},
 /obj/structure/fireaxecabinet/empty{
@@ -2680,7 +2680,7 @@
 /area/redgate/city/restaurant)
 "dKy" = (
 /obj/structure/table/standard,
-/obj/item/device/camera{
+/obj/item/camera{
 	pixel_x = 2;
 	pixel_y = 3
 	},
@@ -4575,13 +4575,13 @@
 /area/redgate/city/clotheshop)
 "gjk" = (
 /obj/structure/closet/walllocker_double/emergency_engi/north,
-/obj/item/device/multitool,
+/obj/item/multitool,
 /obj/item/storage/toolbox/brass,
 /turf/simulated/floor/tiled/dark,
 /area/redgate/city/comms)
 "gjl" = (
 /obj/structure/table/steel,
-/obj/item/device/multitool,
+/obj/item/multitool,
 /turf/simulated/floor/tiled/dark,
 /area/redgate/city/workshop)
 "gjG" = (
@@ -4615,7 +4615,7 @@
 /area/redgate/city/science)
 "gmI" = (
 /obj/structure/table/standard,
-/obj/item/device/defib_kit/loaded,
+/obj/item/defib_kit/loaded,
 /turf/simulated/floor/tiled/white,
 /area/redgate/city/hospital)
 "gmQ" = (
@@ -4802,7 +4802,7 @@
 /area/redgate/city/hospital)
 "gEX" = (
 /obj/structure/table/woodentable,
-/obj/item/device/retail_scanner,
+/obj/item/retail_scanner,
 /turf/simulated/floor/wood/alt,
 /area/redgate/city/stripclub)
 "gFk" = (
@@ -4862,7 +4862,7 @@
 /area/redgate/city/house17)
 "gIb" = (
 /obj/structure/table/woodentable,
-/obj/item/device/flashlight/lamp/green{
+/obj/item/flashlight/lamp/green{
 	pixel_y = 8
 	},
 /turf/simulated/floor/carpet/blue,
@@ -5006,7 +5006,7 @@
 /obj/structure/closet,
 /obj/item/folder/red,
 /obj/item/folder/red,
-/obj/item/device/tape/random,
+/obj/item/tape/random,
 /obj/random/powercell/device,
 /turf/simulated/floor/tiled/red,
 /area/redgate/city/corporation)
@@ -5143,7 +5143,7 @@
 /obj/structure/closet,
 /obj/random/coin,
 /obj/random/maintenance/clean,
-/obj/item/device/camera,
+/obj/item/camera,
 /obj/item/clothing/under/librarian,
 /turf/simulated/floor/wood,
 /area/redgate/city/library)
@@ -5370,7 +5370,7 @@
 /obj/structure/window/basic{
 	dir = 1
 	},
-/obj/item/device/retail_scanner,
+/obj/item/retail_scanner,
 /turf/simulated/floor/tiled/white,
 /area/redgate/city/pharmacy)
 "hip" = (
@@ -5546,7 +5546,7 @@
 /area/redgate/city/workshop)
 "hAZ" = (
 /obj/structure/table/glass,
-/obj/item/device/flashlight/lamp,
+/obj/item/flashlight/lamp,
 /turf/simulated/floor/carpet/purple,
 /area/redgate/city/house2)
 "hBj" = (
@@ -5646,7 +5646,7 @@
 /area/redgate/city/stripclub)
 "hFs" = (
 /obj/structure/table/woodentable,
-/obj/item/device/retail_scanner,
+/obj/item/retail_scanner,
 /turf/simulated/floor/wood/alt,
 /area/redgate/city/hotel)
 "hFF" = (
@@ -5754,8 +5754,8 @@
 /area/redgate/city/theatre)
 "hMM" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/device/mmi,
-/obj/item/device/robotanalyzer,
+/obj/item/mmi,
+/obj/item/robotanalyzer,
 /turf/simulated/floor/tiled/milspec,
 /area/redgate/city/ripper)
 "hNk" = (
@@ -6163,7 +6163,7 @@
 /area/redgate/city/check1)
 "imS" = (
 /obj/structure/table/steel,
-/obj/item/device/electronic_assembly/large/default,
+/obj/item/electronic_assembly/large/default,
 /turf/simulated/floor/tiled/dark,
 /area/redgate/city/workshop)
 "imV" = (
@@ -6246,7 +6246,7 @@
 /area/redgate/city/toys)
 "itN" = (
 /obj/structure/table/glass,
-/obj/item/device/nif/bad{
+/obj/item/nif/bad{
 	name = "display model NIF"
 	},
 /obj/machinery/light{
@@ -6337,7 +6337,7 @@
 /area/redgate/city/house3)
 "iAv" = (
 /obj/structure/table/woodentable,
-/obj/item/device/flashlight/lamp/green,
+/obj/item/flashlight/lamp/green,
 /turf/simulated/floor/carpet/bcarpet,
 /area/redgate/city/house3)
 "iAW" = (
@@ -6856,10 +6856,10 @@
 /area/redgate/city/corporation)
 "jiS" = (
 /obj/structure/table/steel,
-/obj/item/device/integrated_electronics/wirer{
+/obj/item/integrated_electronics/wirer{
 	pixel_x = 5
 	},
-/obj/item/device/integrated_electronics/debugger{
+/obj/item/integrated_electronics/debugger{
 	pixel_x = -5
 	},
 /turf/simulated/floor/tiled/dark,
@@ -6987,7 +6987,7 @@
 /area/redgate/city/hospital)
 "jqG" = (
 /obj/structure/table/standard,
-/obj/item/device/retail_scanner,
+/obj/item/retail_scanner,
 /turf/simulated/floor/tiled/monotile,
 /area/redgate/city/stripclub)
 "jqI" = (
@@ -9061,7 +9061,7 @@
 /turf/simulated/floor/wood,
 /area/redgate/city/house11)
 "lUM" = (
-/obj/item/device/communicator/watch,
+/obj/item/communicator/watch,
 /turf/simulated/floor/carpet/brown,
 /area/redgate/city/hotel)
 "lVa" = (
@@ -9170,7 +9170,7 @@
 /area/redgate/city/apartments)
 "mcm" = (
 /obj/structure/table/reinforced,
-/obj/item/device/multitool{
+/obj/item/multitool{
 	pixel_x = 5
 	},
 /obj/item/reagent_containers/spray/cleaner,
@@ -9182,7 +9182,7 @@
 /area/redgate/city/clotheshop)
 "mdv" = (
 /obj/structure/table/woodentable,
-/obj/item/device/flashlight/lamp/green,
+/obj/item/flashlight/lamp/green,
 /turf/simulated/floor/carpet/blue,
 /area/redgate/city/house4)
 "mdY" = (
@@ -9255,13 +9255,13 @@
 /area/redgate/city/police)
 "mjx" = (
 /obj/structure/table/reinforced,
-/obj/item/device/gps/engineering{
+/obj/item/gps/engineering{
 	pixel_x = -3
 	},
-/obj/item/device/gps/engineering{
+/obj/item/gps/engineering{
 	pixel_y = 3
 	},
-/obj/item/device/gps/engineering{
+/obj/item/gps/engineering{
 	pixel_x = 3;
 	pixel_y = 6
 	},
@@ -9746,7 +9746,7 @@
 /area/redgate/city/gym)
 "mNh" = (
 /obj/structure/table/woodentable,
-/obj/item/device/taperecorder,
+/obj/item/taperecorder,
 /turf/simulated/floor/wood,
 /area/redgate/city/library)
 "mNF" = (
@@ -10117,7 +10117,7 @@
 /area/redgate/city/gym)
 "noL" = (
 /obj/structure/table/woodentable,
-/obj/item/device/flashlight/lamp,
+/obj/item/flashlight/lamp,
 /turf/simulated/floor/carpet/blue,
 /area/redgate/city/house16)
 "npc" = (
@@ -10140,7 +10140,7 @@
 /area/redgate/city/streets)
 "nqc" = (
 /obj/structure/table/glass,
-/obj/item/device/flashlight/lamp,
+/obj/item/flashlight/lamp,
 /turf/simulated/floor/carpet/purple,
 /area/redgate/city/cardmon)
 "nqu" = (
@@ -10215,7 +10215,7 @@
 /area/redgate/city/altevian)
 "nvN" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/device/defib_kit/jumper_kit,
+/obj/item/defib_kit/jumper_kit,
 /turf/simulated/floor/tiled/milspec,
 /area/redgate/city/ripper)
 "nwI" = (
@@ -10316,7 +10316,7 @@
 /area/redgate/city/waterworks)
 "nAC" = (
 /obj/structure/table/rack,
-/obj/item/device/suit_cooling_unit{
+/obj/item/suit_cooling_unit{
 	pixel_y = -5
 	},
 /obj/machinery/light{
@@ -10507,7 +10507,7 @@
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
-/obj/item/device/healthanalyzer,
+/obj/item/healthanalyzer,
 /obj/item/clothing/mask/breath/anesthetic,
 /turf/simulated/floor/dungeon,
 /area/redgate/city/doctor)
@@ -11319,7 +11319,7 @@
 /area/redgate/city/police)
 "oQV" = (
 /obj/structure/table/alien/blue,
-/obj/item/device/retail_scanner,
+/obj/item/retail_scanner,
 /turf/simulated/shuttle/floor,
 /area/redgate/city/nifshop)
 "oQW" = (
@@ -11688,7 +11688,7 @@
 /area/redgate/city/chopshop)
 "ple" = (
 /obj/structure/table/standard,
-/obj/item/device/healthanalyzer,
+/obj/item/healthanalyzer,
 /turf/simulated/floor/tiled/white,
 /area/redgate/city/hospital)
 "plq" = (
@@ -12699,7 +12699,7 @@
 /area/redgate/city/apartments)
 "qBt" = (
 /obj/structure/table/woodentable,
-/obj/item/device/flashlight/lamp/green,
+/obj/item/flashlight/lamp/green,
 /obj/random/action_figure,
 /turf/simulated/floor/carpet,
 /area/redgate/city/house15)
@@ -12919,7 +12919,7 @@
 /area/redgate/city/waterworks)
 "qOv" = (
 /obj/structure/table/glass,
-/obj/item/device/nif/bad{
+/obj/item/nif/bad{
 	name = "display model NIF"
 	},
 /obj/machinery/light{
@@ -13450,11 +13450,11 @@
 /area/redgate/city/cardmon)
 "rBx" = (
 /obj/structure/table/standard,
-/obj/item/device/camera_film{
+/obj/item/camera_film{
 	pixel_x = 4;
 	pixel_y = 11
 	},
-/obj/item/device/camera_film{
+/obj/item/camera_film{
 	pixel_x = -3;
 	pixel_y = 4
 	},
@@ -14082,7 +14082,7 @@
 /area/redgate/city/drugden)
 "sst" = (
 /obj/structure/closet/secure_closet/medical3,
-/obj/item/device/glasses_kit,
+/obj/item/glasses_kit,
 /obj/item/storage/box/bloodpacks,
 /obj/item/storage/box/autoinjectors,
 /turf/simulated/floor/tiled/white,
@@ -14488,7 +14488,7 @@
 /area/redgate/city/house7)
 "sVe" = (
 /obj/structure/table/steel,
-/obj/item/device/integrated_circuit_printer,
+/obj/item/integrated_circuit_printer,
 /turf/simulated/floor/tiled/dark,
 /area/redgate/city/workshop)
 "sVm" = (
@@ -14921,7 +14921,7 @@
 /area/redgate/city/wiz)
 "tub" = (
 /obj/structure/table/woodentable,
-/obj/item/device/flashlight/lamp/green,
+/obj/item/flashlight/lamp/green,
 /obj/item/clothing/glasses/regular,
 /turf/simulated/floor/carpet/green,
 /area/redgate/city/house17)
@@ -15498,11 +15498,11 @@
 /area/redgate/city/house16)
 "ujz" = (
 /obj/structure/table/rack,
-/obj/item/device/radio{
+/obj/item/radio{
 	pixel_x = -1;
 	pixel_y = -3
 	},
-/obj/item/device/radio{
+/obj/item/radio{
 	pixel_x = 2
 	},
 /turf/simulated/floor/tiled/eris/white/bluecorner,
@@ -15649,7 +15649,7 @@
 /area/redgate/city/hospital)
 "uwj" = (
 /obj/structure/table/glass,
-/obj/item/device/healthanalyzer,
+/obj/item/healthanalyzer,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -16281,7 +16281,7 @@
 	pixel_x = -4;
 	pixel_y = 5
 	},
-/obj/item/device/healthanalyzer,
+/obj/item/healthanalyzer,
 /turf/simulated/floor/tiled/white,
 /area/redgate/city/hospital)
 "vfl" = (
@@ -17151,7 +17151,7 @@
 /area/redgate/city/clotheshop)
 "wpE" = (
 /obj/structure/table/woodentable,
-/obj/item/device/retail_scanner/civilian,
+/obj/item/retail_scanner/civilian,
 /turf/simulated/floor/wood/alt,
 /area/redgate/city/restaurant)
 "wpN" = (
@@ -17446,8 +17446,8 @@
 /area/redgate/city/corporation)
 "wLD" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/device/flash/synthetic,
-/obj/item/device/flash/synthetic,
+/obj/item/flash/synthetic,
+/obj/item/flash/synthetic,
 /turf/simulated/floor/tiled/milspec,
 /area/redgate/city/ripper)
 "wMk" = (
@@ -17948,7 +17948,7 @@
 /turf/simulated/floor/wood,
 /area/redgate/city/house2)
 "xyk" = (
-/obj/item/device/radio/headset,
+/obj/item/radio/headset,
 /turf/simulated/floor/carpet/brown,
 /area/redgate/city/hotel)
 "xyC" = (

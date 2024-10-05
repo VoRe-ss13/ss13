@@ -1189,7 +1189,7 @@
 /area/redgate/fantasy/crypt)
 "zh" = (
 /obj/structure/table/alien/blue,
-/obj/item/device/gps/mining,
+/obj/item/gps/mining,
 /turf/simulated/floor/tiled/techfloor,
 /area/redgate/fantasy/alienbasement)
 "zj" = (

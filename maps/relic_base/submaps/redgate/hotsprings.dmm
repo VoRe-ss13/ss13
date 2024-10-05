@@ -551,8 +551,8 @@
 /obj/item/clothing/shoes/boots/winter,
 /obj/structure/closet,
 /obj/random/firstaid,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
+/obj/item/flashlight/maglight,
+/obj/item/flashlight/maglight,
 /turf/simulated/floor/tiled/steel,
 /area/redgate/hotsprings/redgate)
 "nV" = (
@@ -895,7 +895,7 @@
 	range = 10
 	},
 /obj/structure/table/wooden_reinforced,
-/obj/item/device/flashlight/lamp/green{
+/obj/item/flashlight/lamp/green{
 	pixel_y = 2
 	},
 /turf/simulated/floor/carpet/sblucarpet,
@@ -907,7 +907,7 @@
 /area/redgate/hotsprings/house/hotspringhouse)
 "vo" = (
 /obj/structure/table/wooden_reinforced,
-/obj/item/device/flashlight/lamp/green{
+/obj/item/flashlight/lamp/green{
 	pixel_y = 2
 	},
 /turf/simulated/floor/wood,
@@ -1484,8 +1484,8 @@
 /obj/item/clothing/shoes/boots/winter,
 /obj/structure/closet,
 /obj/random/firstaid,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
+/obj/item/flashlight/maglight,
+/obj/item/flashlight/maglight,
 /turf/simulated/floor/tiled/steel,
 /area/redgate/hotsprings/redgate)
 "Iy" = (
@@ -1585,8 +1585,8 @@
 /obj/item/clothing/shoes/boots/winter,
 /obj/structure/closet,
 /obj/random/firstaid,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
+/obj/item/flashlight/maglight,
+/obj/item/flashlight/maglight,
 /turf/simulated/floor/tiled/steel,
 /area/redgate/hotsprings/redgate)
 "Ly" = (
@@ -1816,7 +1816,7 @@
 	range = 10
 	},
 /obj/structure/table/wooden_reinforced,
-/obj/item/device/flashlight/lamp/green{
+/obj/item/flashlight/lamp/green{
 	pixel_y = 2
 	},
 /turf/simulated/floor/carpet/sblucarpet,
@@ -1828,7 +1828,7 @@
 /area/redgate/hotsprings/house/hotspringhouse)
 "Rp" = (
 /obj/structure/table/rack/shelf,
-/obj/item/device/slow_sizegun,
+/obj/item/slow_sizegun,
 /turf/simulated/floor/tiled/steel,
 /area/redgate/hotsprings/outdoors)
 "RF" = (
@@ -1840,8 +1840,8 @@
 /obj/item/clothing/shoes/boots/winter,
 /obj/structure/closet,
 /obj/random/firstaid,
-/obj/item/device/flashlight/maglight,
-/obj/item/device/flashlight/maglight,
+/obj/item/flashlight/maglight,
+/obj/item/flashlight/maglight,
 /turf/simulated/floor/tiled/steel,
 /area/redgate/hotsprings/redgate)
 "RO" = (

@@ -35,7 +35,7 @@
 "aI" = (/turf/simulated/floor/lino,/area/awaymission/carpfarm/base)
 "aJ" = (/obj/structure/table/rack,/obj/item/clothing/suit/space/void/mining,/obj/item/clothing/mask/breath,/obj/item/clothing/head/helmet/space/void/mining,/obj/item/mining_scanner,/obj/item/tank/jetpack/oxygen,/obj/effect/floor_decal/industrial/outline/yellow,/turf/simulated/floor/plating,/area/awaymission/carpfarm/base)
 "aK" = (/turf/simulated/floor/plating,/area/awaymission/carpfarm/base)
-"aL" = (/obj/structure/closet/toolcloset,/obj/item/pickaxe/jackhammer,/obj/effect/floor_decal/industrial/outline/yellow,/obj/item/device/multitool,/turf/simulated/floor/plating,/area/awaymission/carpfarm/base)
+"aL" = (/obj/structure/closet/toolcloset,/obj/item/pickaxe/jackhammer,/obj/effect/floor_decal/industrial/outline/yellow,/obj/item/multitool,/turf/simulated/floor/plating,/area/awaymission/carpfarm/base)
 "aM" = (/obj/machinery/gateway{density = 0; dir = 10},/turf/simulated/floor/bluegrid,/area/awaymission/carpfarm/base)
 "aN" = (/obj/machinery/gateway,/turf/simulated/floor/bluegrid,/area/awaymission/carpfarm/base)
 "aO" = (/obj/machinery/gateway{density = 0; dir = 6},/turf/simulated/floor/bluegrid,/area/awaymission/carpfarm/base)

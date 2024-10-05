@@ -1180,22 +1180,22 @@
 /area/sc_away/fueldepotspawn)
 "dZ" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/device/bluespaceradio/southerncross_prelinked{
+/obj/item/bluespaceradio/southerncross_prelinked{
 	pixel_x = -8
 	},
-/obj/item/device/spaceflare{
+/obj/item/spaceflare{
 	pixel_x = 4;
 	pixel_y = 12
 	},
-/obj/item/device/spaceflare{
+/obj/item/spaceflare{
 	pixel_x = 4;
 	pixel_y = 0
 	},
-/obj/item/device/spaceflare{
+/obj/item/spaceflare{
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/item/device/spaceflare{
+/obj/item/spaceflare{
 	pixel_x = 4;
 	pixel_y = 8
 	},
