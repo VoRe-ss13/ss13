@@ -13,29 +13,17 @@
 	if (istype(fax, /obj/item/paper))
 		var/obj/item/paper/P = fax
 		var/text = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>";
-<<<<<<< HEAD
 		rustg_file_write(text, "[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html")
-	else if (istype(fax, /obj/item/weapon/photo))
-		var/obj/item/weapon/photo/H = fax
-		fcopy(H.img, "[CONFIG_GET(string/fax_export_dir)]/photo_[faxid].png")
-=======
-		rustg_file_write(text, "[config.fax_export_dir]/fax_[faxid].html")
 	else if (istype(fax, /obj/item/photo))
 		var/obj/item/photo/H = fax
-		fcopy(H.img, "[config.fax_export_dir]/photo_[faxid].png")
->>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
+		fcopy(H.img, "[CONFIG_GET(string/fax_export_dir)]/photo_[faxid].png")
 		var/text = "<html><head><title>[H.name]</title></head>" \
 			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
 			+ "<img src='photo_[faxid].png'>" \
 			+ "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
 			+ "</body></html>"
-<<<<<<< HEAD
 		rustg_file_write(text, "[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html")
-	else if (istype(fax, /obj/item/weapon/paper_bundle))
-=======
-		rustg_file_write(text, "[config.fax_export_dir]/fax_[faxid].html")
 	else if (istype(fax, /obj/item/paper_bundle))
->>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 		var/def_faxid = faxid
 		faxid += "_0"
 		var/obj/item/paper_bundle/B = fax
@@ -52,17 +40,10 @@
 	if (istype(fax, /obj/item/paper))
 		var/obj/item/paper/P = fax
 		var/text = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>";
-<<<<<<< HEAD
 		rustg_file_write(text, "[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html")
-	else if (istype(fax, /obj/item/weapon/photo))
-		var/obj/item/weapon/photo/H = fax
-		fcopy(H.img, "[CONFIG_GET(string/fax_export_dir)]/photo_[faxid].png")
-=======
-		rustg_file_write(text, "[config.fax_export_dir]/fax_[faxid].html")
 	else if (istype(fax, /obj/item/photo))
 		var/obj/item/photo/H = fax
-		fcopy(H.img, "[config.fax_export_dir]/photo_[faxid].png")
->>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
+		fcopy(H.img, "[CONFIG_GET(string/fax_export_dir)]/photo_[faxid].png")
 		var/text = "<html><head><title>[H.name]</title></head>" \
 			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
 			+ "<img src='photo_[faxid].png'>" \

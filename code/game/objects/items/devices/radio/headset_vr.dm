@@ -50,18 +50,14 @@
 			return
 	..()
 
-<<<<<<< HEAD
-/obj/item/device/radio/headset/mob_headset/handle_message_mode(mob/living/M, list/message_pieces, channel)	//RS ADD START // TORCHEdit Start - Porting "Join As Mob" verb and changes from Rogue Star.
+/obj/item/radio/headset/mob_headset/handle_message_mode(mob/living/M, list/message_pieces, channel)	//RS ADD START // TORCHEdit Start - Porting "Join As Mob" verb and changes from Rogue Star.
 	if(isanimal(M))
 		if(!istype(M.default_language,/datum/language/common))
 			to_chat(M,"<span class = 'warning'>You need to speak common to speak on the radio!</span>")
 			return
 	return ..()		//RS ADD END // TORCHEdit End - Porting "Join As Mob" verb and changes from Rogue Star.
 
-/obj/item/device/radio/headset/headset_cargo
-=======
 /obj/item/radio/headset/headset_cargo
->>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 	desc = "A headset used by the QM's slaves."
 
 /obj/item/radio/headset/headset_cargo/alt

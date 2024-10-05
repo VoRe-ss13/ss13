@@ -210,8 +210,6 @@
 		stop_pulling()
 		canmove = FALSE
 
-<<<<<<< HEAD
-=======
 		//CHOMPAdd Start
 		var/list/allowed_implants = list(
 			/obj/item/implant/sizecontrol,
@@ -229,7 +227,6 @@
 			clear_alert("embeddedobject")
 		//CHOMPAdd End
 
->>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 		// change
 		ability_flags |= AB_PHASE_SHIFTED
 		ability_flags |= AB_PHASE_SHIFTING

@@ -29,12 +29,7 @@
 	var/battery_lock = 0	//If set, weapon cannot switch batteries
 	var/random_start_ammo = FALSE	//if TRUE, the weapon will spawn with randomly-determined ammo
 
-<<<<<<< HEAD
-
-/obj/item/weapon/gun/energy/New()
-=======
 /obj/item/gun/energy/New()
->>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 	//..() CHOMPEdit moved to bottom
 	var/static/list/gun_icons = icon_states('icons/obj/gun_ch.dmi')
 	if (icon == 'icons/obj/gun_ch.dmi' && !(icon_state in gun_icons))
