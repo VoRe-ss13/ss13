@@ -69,7 +69,7 @@
 	newPred.ckey = M.ckey
 	newPred.visible_message("<span class='warning'>[newPred] emerges from somewhere!</span>")
 	log_and_message_admins("successfully entered \a [src] and became a [newPred].")
-	newPred.mob_radio = new /obj/item/device/radio/headset/mob_headset(newPred)		//RS ADD // TORCHEdit Start - Porting "Join As Mob" verb and changes from Rogue Star.
+	newPred.mob_radio = new /obj/item/radio/headset/mob_headset(newPred)		//RS ADD // TORCHEdit Start - Porting "Join As Mob" verb and changes from Rogue Star.
 	newPred.mob_radio.frequency = PUB_FREQ		//RS ADD
 	newPred.sight |= SEE_SELF		//RS ADD
 	newPred.sight |= SEE_MOBS		//RS ADD // TORCHEdit end
