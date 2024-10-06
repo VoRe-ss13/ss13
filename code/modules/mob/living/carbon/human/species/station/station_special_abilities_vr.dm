@@ -409,7 +409,7 @@
 		src.species.bloodsucker_controlmode = tgui_input_list(src,"Choose your preferred control of blood sucking. \
 		You can only cause bleeding wounds with pop up and intents modes. Choosing intents prints controls to chat.", "Configure Bloodsuck", control_options, "always loud")
 		if(src.species.bloodsucker_controlmode == "intents") //We are printing to chat for better readability
-			to_chat(src, SPAN_NOTICE("You've chosen to use intents for blood draining. \n \
+			to_chat(src, span_notice("You've chosen to use intents for blood draining. \n \
 			HELP - Loud, No Bleeding \n \
 			DISARM - Subtle, Causes bleeding \n \
 			GRAB - Subtle, No Bleeding \n \
@@ -474,8 +474,8 @@
 		src.visible_message(span_red("<i>[src] moves their head next to [B]'s neck, seemingly looking for something!</i>"), range = 1)
 
 	if(bleed) //Due to possibility of missing/misclick and missing the bleeding cues, we are warning the scene members of BLEEDING being on
-		to_chat(src, SPAN_WARNING("This is going to cause [B] to keep bleeding!"))
-		to_chat(B, SPAN_DANGER("You are going to keep bleeding from this bite!"))
+		to_chat(src, span_warning("This is going to cause [B] to keep bleeding!"))
+		to_chat(B, span_danger("You are going to keep bleeding from this bite!"))
 
 	if(do_after(src, 300, B)) //Thrirty seconds.
 		if(!Adjacent(B)) return
@@ -514,7 +514,7 @@
 	if(!ishuman(src))
 		return //If you're not a human you don't have permission to do this.
 	var/mob/living/carbon/human/C = src
-	var/obj/item/weapon/grab/G = src.get_active_hand()
+	var/obj/item/grab/G = src.get_active_hand()
 	if(!istype(G))
 		to_chat(C, "<span class='warning'>You must be grabbing a creature in your active hand to absorb them.</span>")
 		return
@@ -577,7 +577,7 @@
 	if(!ishuman(src))
 		return //If you're not a human you don't have permission to do this.
 
-	var/obj/item/weapon/grab/G = src.get_active_hand()
+	var/obj/item/grab/G = src.get_active_hand()
 	if(!istype(G))
 		to_chat(src, "<span class='warning'>You must be grabbing a creature in your active hand to drain them.</span>")
 		return
@@ -673,7 +673,7 @@
 	if(!ishuman(src))
 		return //If you're not a human you don't have permission to do this.
 	var/mob/living/carbon/human/C = src
-	var/obj/item/weapon/grab/G = src.get_active_hand()
+	var/obj/item/grab/G = src.get_active_hand()
 	if(!istype(G))
 		to_chat(C, "<span class='warning'>You must be grabbing a creature in your active hand to feed them.</span>")
 		return
@@ -763,7 +763,7 @@
 /mob/living/carbon/human/vore_shred_time = 10 SECONDS
 /mob/living/carbon/human/can_shred()
 	//Humans need a grab
-	var/obj/item/weapon/grab/G = get_active_hand()
+	var/obj/item/grab/G = get_active_hand()
 	if(!istype(G))
 		to_chat(src,"<span class='warning'>You have to have a very strong grip on someone first!</span>")
 		return FALSE
@@ -1138,15 +1138,15 @@
 		return
 
 	if(do_after(src, 25, exclusive = TASK_USER_EXCLUSIVE))
-		var/obj/item/weapon/storage/vore_egg/bugcocoon/C = new(loc)
+		var/obj/item/storage/vore_egg/bugcocoon/C = new(loc)
 		forceMove(C)
 		transforming = TRUE
 		var/datum/tgui_module/appearance_changer/cocoon/V = new(src, src)
 		V.tgui_interact(src)
 
-		var/mob_holder_type = src.holder_type || /obj/item/weapon/holder
+		var/mob_holder_type = src.holder_type || /obj/item/holder
 		C.w_class = src.size_multiplier * 4 //Egg size and weight scaled to match occupant.
-		var/obj/item/weapon/holder/H = new mob_holder_type(C, src)
+		var/obj/item/holder/H = new mob_holder_type(C, src)
 		C.max_storage_space = H.w_class
 		C.icon_scale_x = 0.25 * C.w_class
 		C.icon_scale_y = 0.25 * C.w_class
@@ -1430,7 +1430,7 @@
 	light_color = "#FF0D00"
 //LONG VORE ABILITY END
 
-/obj/item/weapon/gun/energy/gun/tongue //This is the 'tongue' gun for admin memery.
+/obj/item/gun/energy/gun/tongue //This is the 'tongue' gun for admin memery.
 	name = "tongue"
 	desc = "A tongue that can be used to grab things."
 	icon = 'icons/mob/dogborg_vr.dmi'
@@ -1442,7 +1442,7 @@
 	charge_cost = 0 //This is an adminspawn gun...No reason to force it to have a charge state.
 
 	projectile_type = /obj/item/projectile/beam/appendage
-	cell_type = /obj/item/weapon/cell/device/weapon/recharge
+	cell_type = /obj/item/cell/device/weapon/recharge
 	battery_lock = 1
 	modifystate = null
 
@@ -1450,11 +1450,11 @@
 	firemodes = list(
 		list(mode_name="vore", projectile_type=/obj/item/projectile/beam/appendage, modifystate=null, fire_sound='sound/vore/sunesound/pred/schlorp.ogg', charge_cost = 0),)
 
-/obj/item/weapon/gun/energy/gun/tongue/update_icon() //No updating the icon.
+/obj/item/gun/energy/gun/tongue/update_icon() //No updating the icon.
 	icon_state = "synthtongue"
 	return
 
-/obj/item/weapon/gun/energy/bfgtaser/tongue
+/obj/item/gun/energy/bfgtaser/tongue
 	name = "9000-series Ball Tongue Taser"
 	desc = "A banned riot control device."
 	slot_flags = SLOT_BELT|SLOT_BACK
@@ -1517,8 +1517,8 @@
 			to_chat(src, "<span class='warning'>You need to be closer to do that.</span>")
 			return
 
-		visible_message(span("warning","\The [src] rears back, ready to lunge!"))
-		to_chat(target, span("danger","\The [src] focuses on you!"))
+		visible_message(span_warning("\The [src] rears back, ready to lunge!"))
+		to_chat(target, span_danger("\The [src] focuses on you!"))
 		// Telegraph, since getting stunned suddenly feels bad.
 		do_windup_animation(target, leap_warmup)
 		sleep(leap_warmup) // For the telegraphing.
@@ -1528,7 +1528,7 @@
 
 		// Do the actual leap.
 		status_flags |= LEAPING // Lets us pass over everything.
-		visible_message(span("critical","\The [src] leaps at \the [target]!"))
+		visible_message(span_critical("\The [src] leaps at \the [target]!"))
 		throw_at(get_step(target, get_turf(src)), 7, 1, src)
 		playsound(src, leap_sound, 75, 1)
 
