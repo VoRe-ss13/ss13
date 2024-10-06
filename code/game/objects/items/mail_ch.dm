@@ -144,14 +144,11 @@
 
 /obj/item/mail/update_icon()
 	. = ..()
-<<<<<<< HEAD
-=======
 	cut_overlays()
 	if(colored_envelope)
 		var/image/envelope = image(icon, icon_state)
 		envelope.color = colored_envelope
 		add_overlay(envelope)
->>>>>>> d212eafb1c (move the envelope color to update_icon (#9137))
 	var/bonus_stamp_offset = 0
 	for(var/stamp in stamps)
 		var/image/stamp_image = image(
