@@ -72,7 +72,7 @@
 	output += "<hr>" //ChompADD - a line divider between functional and info buttons
 
 	/*
-	//nobody uses this feature
+	//nobody uses this feature //WELL WE'RE GONNA //TORCHEdit Not really. Not yet at least
 	if(!IsGuestKey(src.key))
 		establish_db_connection()
 
@@ -584,7 +584,7 @@
 		ticker.minds += character.mind//Cyborgs and AIs handle this in the transform proc.	//TODO!!!!! ~Carn
 	if(ishuman(character))
 		if(character.client.prefs.auto_backup_implant)
-			var/obj/item/weapon/implant/backup/imp = new(src)
+			var/obj/item/implant/backup/imp = new(src)
 
 			if(imp.handle_implant(character,character.zone_sel.selecting))
 				imp.post_implant(character)
