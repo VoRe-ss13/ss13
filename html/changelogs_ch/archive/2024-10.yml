@@ -39,3 +39,12 @@
   - rscadd: Not Re-Enabled wormhole event
   - rscadd: Wormholes have a chance to pick a belly as an exit
   - qol: Wormholes won't throw you into Sif anymore
+2024-10-06:
+  VoRe-bot:
+  - bugfix: adds missing vore init check to kelpie
+  - rscadd: new inner thighs marking
+  - balance: Hanner no longer have NO_SCAN.
+  - qol: face of glamour uses a new pref, allow_mimicry
+  - qol: domination no longer checks resleeve lock
+  - qol: morph uses new pref, allow _mimicry,
+  - rscadd: The Grower Pod now shows progress bars when you examine it.
