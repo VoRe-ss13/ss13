@@ -231,31 +231,9 @@
 	return data
 
 /obj/machinery/computer/transhuman/resleeving/tgui_act(action, params)
-<<<<<<< HEAD
-	if(..())
-		return TRUE
-
-	. = TRUE
-	switch(tgui_modal_act(src, action, params))
-		if(TGUI_MODAL_ANSWER)
-			// if(params["id"] == "del_rec" && active_record)
-			// 	var/obj/item/weapon/card/id/C = usr.get_active_hand()
-			// 	if(!istype(C) && !istype(C, /obj/item/device/pda))
-			// 		set_temp("ID not in hand.", "danger")
-			// 		return
-			// 	if(check_access(C))
-			// 		records.Remove(active_record)
-			// 		qdel(active_record)
-			// 		set_temp("Record deleted.", "success")
-			// 		menu = MENU_RECORDS
-			// 	else
-			// 		set_temp("Access denied.", "danger")
-			return
-=======
 	. = ..()
 	if(.)
 		return
->>>>>>> da6ab0be93 ([MIRROR] Medical UI fixes and tweaks (#9130))
 
 	switch(action)
 		if("view_b_rec")
