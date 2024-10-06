@@ -25,8 +25,6 @@
 			"label": "Build All"
 		},
 		{
-<<<<<<< HEAD
-=======
 			"type": "process",
 			"command": "tools/build/build",
 			"args": ["-DLOWMEMORYMODE"],
@@ -147,7 +145,6 @@
 			"label": "Build All (Force Minitest)"
 		},
 		{
->>>>>>> ee65e57e24 ([MIRROR] Add vscode tasks to force-compile a specific map (#9118))
 			"type": "dreammaker",
 			"dme": "vorestation.dme",
 			"problemMatcher": [
