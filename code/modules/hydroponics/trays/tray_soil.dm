@@ -8,9 +8,9 @@
 	frozen = -1
 
 /obj/machinery/portable_atmospherics/hydroponics/soil/attackby(var/obj/item/O as obj, var/mob/user as mob)
-	if(istype(O,/obj/item/weapon/tank))
+	if(istype(O,/obj/item/tank))
 		return
-	if(istype(O,/obj/item/weapon/shovel))
+	if(istype(O,/obj/item/shovel))
 		if(!seed)
 			var/choice= tgui_alert(user, "Do you want to destroy the growplot?", "Destroy growplot?" , list("Yes", "No"))
 			if(!choice||choice=="No")
