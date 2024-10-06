@@ -369,13 +369,8 @@
 	extras_holder.vis_contents = extras
 
 	hud_item.update(bgmap, extras_holder, badmap ? FALSE : pinging)
-<<<<<<< HEAD
-	
-/obj/item/device/mapping_unit/proc/update_marker()
-=======
 
 /obj/item/mapping_unit/proc/update_marker()
->>>>>>> 31407a0be3 ([MIRROR] First part of a span rework (#9120))
 	marker_prefix = base_prefix
 	if (prefix_update_head)
 		if(ishuman(loc))

@@ -1666,13 +1666,8 @@
 
 /obj/structure/sign/flag/attackby(obj/item/W, mob/user)
 	..()
-<<<<<<< HEAD
-	if(istype(W, /obj/item/weapon/flame/lighter) || istype(W, /obj/item/weapon/weldingtool))
-		visible_message(SPAN_WARNING("\The [user] starts to burn \the [src] down!"))
-=======
 	if(istype(W, /obj/item/flame/lighter) || istype(W, /obj/item/weldingtool))
 		visible_message(span_warning("\The [user] starts to burn \the [src] down!"))
->>>>>>> 31407a0be3 ([MIRROR] First part of a span rework (#9120))
 		if(!do_after(user, 2 SECONDS))
 			return FALSE
 		visible_message(span_warning("\The [user] burns \the [src] down!"))

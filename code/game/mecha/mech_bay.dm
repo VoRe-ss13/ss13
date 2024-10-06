@@ -57,13 +57,8 @@
 
 	var/done = FALSE
 	var/obj/mecha/mech = charging
-<<<<<<< HEAD
-	var/obj/item/weapon/cell/cell = charging.get_cell()
-	if(cell)	
-=======
 	var/obj/item/cell/cell = charging.get_cell()
 	if(cell)
->>>>>>> 31407a0be3 ([MIRROR] First part of a span rework (#9120))
 		var/t = min(charge, cell.maxcharge - cell.charge)
 		if(t > 0)
 			if(istype(mech))

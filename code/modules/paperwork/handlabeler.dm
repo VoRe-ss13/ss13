@@ -50,13 +50,8 @@
 	if(isobserver(A))
 		to_chat(user, span_warning("[src] passes through [A.name]."))
 		return
-<<<<<<< HEAD
-	if(istype(A, /obj/item/weapon/reagent_containers/glass))
-		to_chat(user, SPAN_WARNING("The label can't stick to the [A.name] (Try using a pen)."))
-=======
 	if(istype(A, /obj/item/reagent_containers/glass))
 		to_chat(user, span_warning("The label can't stick to the [A.name] (Try using a pen)."))
->>>>>>> 31407a0be3 ([MIRROR] First part of a span rework (#9120))
 		return
 	if(istype(A, /obj/machinery/portable_atmospherics/hydroponics))
 		var/obj/machinery/portable_atmospherics/hydroponics/tray = A

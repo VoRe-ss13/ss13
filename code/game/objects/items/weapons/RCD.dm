@@ -291,15 +291,9 @@
 /obj/item/weapon/rcd/debug/consume_resources(amount)
 	return TRUE
 
-<<<<<<< HEAD
-/obj/item/weapon/rcd/debug/attackby(obj/item/weapon/W, mob/user)
-	if(istype(W, /obj/item/weapon/rcd_ammo))
-		to_chat(user, span("notice", "\The [src] makes its own material, no need to add more."))
-=======
 /obj/item/rcd/debug/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/rcd_ammo))
 		to_chat(user, span_notice("\The [src] makes its own material, no need to add more."))
->>>>>>> 31407a0be3 ([MIRROR] First part of a span rework (#9120))
 		return FALSE
 	return ..()
 
