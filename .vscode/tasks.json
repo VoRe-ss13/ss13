@@ -154,6 +154,11 @@
 			"label": "dm: build - vorestation.dme"
 		},
 		{
+			"command": "${command:dreammaker.reparse}",
+			"group": "build",
+			"label": "dm: reparse"
+		},
+		{
 			"type": "shell",
 			"command": "bin/tgui-build",
 			"windows": {

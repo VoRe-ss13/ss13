@@ -24,7 +24,7 @@
 	attacktext = list("kicked")
 
 	meat_amount = 6
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat
 
 	max_buckled_mobs = 1 //Yeehaw
 	can_buckle = TRUE
@@ -140,8 +140,6 @@
 	vore_bump_emote	= "chomps down on"
 
 /mob/living/simple_mob/vore/horse/kelpie/init_vore()
-	if(!voremob_loaded) //TORCHAdd - Added to fix redgate runtime
-		return //TORCHAdd
 	..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
