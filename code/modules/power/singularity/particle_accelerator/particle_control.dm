@@ -202,7 +202,11 @@
 
 /obj/machinery/particle_accelerator/control_box/proc/is_interactive(mob/user)
 	if(!interface_control)
+<<<<<<< HEAD
 		to_chat(user, "<span class='alert'>ERROR: Request timed out. Check wire contacts.</span>")
+=======
+		to_chat(user, span_warning("ERROR: Request timed out. Check wire contacts."))
+>>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 		return FALSE
 	if(construction_state != 3)
 		return FALSE

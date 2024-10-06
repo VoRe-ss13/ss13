@@ -391,8 +391,13 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 
 	last_notification = message // TGUI Hook
 
+<<<<<<< HEAD
 	to_chat(human,"<span class='filter_nif'><b>\[[icon2html(src.big_icon, human.client)]NIF\]</b> displays, \"<span class='[alert ? "danger" : "notice"]'>[message]</span>\"</span>")
 	if(prob(1)) human.visible_message("<span class='notice'>\The [human] [pick(look_messages)].</span>")
+=======
+	to_chat(human,span_filter_nif(span_bold("\[[icon2html(src.big_icon, human.client)]NIF\]") + " displays, " + (alert ? span_danger(message) : span_notice(message))))
+	if(prob(1)) human.visible_message(span_notice("\The [human] [pick(look_messages)]."))
+>>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 	if(alert)
 		human << bad_sound
 	else

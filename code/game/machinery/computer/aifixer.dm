@@ -36,8 +36,13 @@
 				occupier = null
 		else if(card.carded_ai)
 			var/mob/living/silicon/ai/new_occupant = card.carded_ai
+<<<<<<< HEAD
 			to_chat(new_occupant, "<span class='notice'>You have been transferred into a stationary terminal. Sadly there is no remote access from here.</span>")
 			to_chat(user, "<span class='notice'>Transfer Successful:</span> [new_occupant] placed within stationary terminal.")
+=======
+			to_chat(new_occupant, span_notice("You have been transferred into a stationary terminal. Sadly there is no remote access from here."))
+			to_chat(user, span_notice("Transfer Successful:") + " [new_occupant] placed within stationary terminal.")
+>>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 			new_occupant.forceMove(src)
 			new_occupant.cancel_camera()
 			new_occupant.control_disabled = TRUE

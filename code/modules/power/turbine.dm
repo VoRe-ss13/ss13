@@ -141,7 +141,11 @@
 				to_chat(user, "<span class='notice'>Turbine connected.</span>")
 				stat &= ~BROKEN
 			else
+<<<<<<< HEAD
 				to_chat(user, "<span class='alert'>Turbine not connected.</span>")
+=======
+				to_chat(user, span_warning("Turbine not connected."))
+>>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 				stat |= BROKEN
 
 /obj/machinery/compressor/process()
@@ -239,7 +243,11 @@
 				to_chat(user, "<span class='notice'>Compressor connected.</span>")
 				stat &= ~BROKEN
 			else
+<<<<<<< HEAD
 				to_chat(user, "<span class='alert'>Compressor not connected.</span>")
+=======
+				to_chat(user, span_warning("Compressor not connected."))
+>>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 				stat |= BROKEN
 
 /obj/machinery/power/turbine/process()
