@@ -9,7 +9,7 @@
 	food_color = "#FFAD33"
 	cooked_sound = 'sound/machines/ding.ogg'
 	var/datum/looping_sound/deep_fryer/fry_loop
-	circuit = /obj/item/weapon/circuitboard/fryer
+	circuit = /obj/item/circuitboard/fryer
 	appliancetype = FRYER
 	active_power_usage = 12 KILOWATTS
 	heating_power = 12 KILOWATTS
@@ -27,7 +27,7 @@
 	resistance = 2 KILOWATTS	// Approx. 2 minutes to heat up.
 
 	max_contents = 2
-	container_type = /obj/item/weapon/reagent_containers/cooking_container/fryer
+	container_type = /obj/item/reagent_containers/cooking_container/fryer
 
 	stat = POWEROFF // Starts turned off
 
@@ -249,11 +249,11 @@
 		return
 	if(default_part_replacement(user, I))
 		return
-	if(istype(I, /obj/item/weapon/reagent_containers/glass) && I.reagents)
+	if(istype(I, /obj/item/reagent_containers/glass) && I.reagents)
 		if (I.reagents.total_volume <= 0 && oil)
 			//Its empty, handle scooping some hot oil out of the fryer
 			oil.trans_to(I, I.reagents.maximum_volume)
-			user.visible_message("<span class='filter_notice'>[user] scoops some oil out of \the [src].</span>", span("notice","You scoop some oil out of \the [src]."))
+			user.visible_message("<span class='filter_notice'>[user] scoops some oil out of \the [src].</span>", span_notice("You scoop some oil out of \the [src]."))
 			return 1
 		else
 	//It contains stuff, handle pouring any oil into the fryer
