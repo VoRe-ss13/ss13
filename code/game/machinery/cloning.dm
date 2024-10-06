@@ -120,7 +120,12 @@
 
 	clonemind.transfer_to(H)
 	H.ckey = R.ckey
+<<<<<<< HEAD
 	to_chat(H, "<span class='warning'><b>Consciousness slowly creeps over you as your body regenerates.</b><br><b><font size='3'>Your recent memories are fuzzy, and it's hard to remember anything from today...</font></b></span><br><span class='notice'><i>So this is what cloning feels like?</i></span>")
+=======
+	to_chat(H, span_warning(span_bold("Consciousness slowly creeps over you as your body regenerates.") + "<br>" + span_bold(span_large("Your recent memories are fuzzy, and it's hard to remember anything from today...")) + \
+		"<br>" + span_notice(span_italics("So this is what cloning feels like?"))))
+>>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 
 	// -- Mode/mind specific stuff goes here
 	callHook("clone", list(H))

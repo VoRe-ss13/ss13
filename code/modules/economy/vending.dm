@@ -754,7 +754,11 @@ GLOBAL_LIST_EMPTY(vending_products)
 		return
 
 	for(var/mob/O in hearers(src, null))
+<<<<<<< HEAD
 		O.show_message("<span class='npcsay'><span class='name'>\The [src]</span> beeps, \"[message]\"</span>",2)
+=======
+		O.show_message(span_npc_say("<span class='name'>\The [src]</span> beeps, \"[message]\""),2)
+>>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 	return
 
 /obj/machinery/vending/power_change()

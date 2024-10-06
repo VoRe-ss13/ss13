@@ -191,7 +191,11 @@
 		..()
 
 /obj/effect/spider/spiderling/die()
+<<<<<<< HEAD
 	visible_message("<span class='alert'>[src] dies!</span>")
+=======
+	visible_message(span_warning("[src] dies!"))
+>>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 	new /obj/effect/decal/cleanable/spiderling_remains(src.loc)
 	..()
 

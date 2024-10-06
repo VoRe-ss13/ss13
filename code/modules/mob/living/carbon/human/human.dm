@@ -1401,7 +1401,11 @@
 	if(!. && error_msg && user)
 		if(!fail_msg)
 			fail_msg = "There is no exposed flesh or thin material [target_zone == BP_HEAD ? "on their head" : "on their body"] to inject into."
+<<<<<<< HEAD
 		to_chat(user, "<span class='alert'>[fail_msg]</span>")
+=======
+		to_chat(user, span_warning("[fail_msg]"))
+>>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 
 /mob/living/carbon/human/print_flavor_text(var/shrink = 1)
 	var/list/equipment = list(src.head,src.wear_mask,src.glasses,src.w_uniform,src.wear_suit,src.gloves,src.shoes)

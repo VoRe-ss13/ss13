@@ -468,7 +468,11 @@ so as to remain in compliance with the most up-to-date laws."
 		return
 	var/paramslist = params2list(params)
 	if(paramslist["shift"]) // screen objects don't do the normal Click() stuff so we'll cheat
+<<<<<<< HEAD
 		to_chat(usr,"<span class='boldnotice'>[name]</span> - <span class='info'>[desc]</span>")
+=======
+		to_chat(usr,span_boldnotice(name) + " - " + span_info(desc))
+>>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 		return
 	if(master)
 		return usr.client.Click(master, location, control, params)

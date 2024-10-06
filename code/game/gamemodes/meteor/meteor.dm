@@ -28,17 +28,24 @@
 			if(!location)	continue
 			switch(location.loc.type)
 				if( /area/shuttle/escape/centcom )
-					text += "<br><b><font size=2>[player.real_name] escaped on the emergency shuttle</font></b>"
+					text += "<br>"
+					text += span_bold(span_normal("[player.real_name] escaped on the emergency shuttle"))
 				if( /area/shuttle/escape_pod1/centcom, /area/shuttle/escape_pod2/centcom, /area/shuttle/escape_pod3/centcom, /area/shuttle/escape_pod5/centcom )
-					text += "<br><font size=2>[player.real_name] escaped in a life pod.</font>"
+					text += "<br>"
+					text += span_normal("[player.real_name] escaped in a life pod.")
 				else
-					text += "<br><font size=1>[player.real_name] survived but is stranded without any hope of rescue.</font>"
+					text += "<br>"
+					text += span_small("[player.real_name] survived but is stranded without any hope of rescue.")
 			survivors++
 
 	if(survivors)
-		to_world("<span class='notice'><B>The following survived the meteor storm</B></span>:[text]")
+		to_world(span_notice(span_bold("The following survived the meteor storm")) + ":[text]")
 	else
+<<<<<<< HEAD
 		to_world("<span class='notice'><B>Nobody survived the meteor storm!</B></span>")
+=======
+		to_world(span_notice(span_bold("Nobody survived the meteor storm!")))
+>>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 
 	feedback_set_details("round_end_result","end - evacuation")
 	feedback_set("round_end_result",survivors)
