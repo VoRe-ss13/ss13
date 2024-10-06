@@ -9123,14 +9123,8 @@
 /area/medical/medical_restroom)
 "aAv" = (
 /obj/structure/table/steel,
-<<<<<<< HEAD
-/obj/item/weapon/newspaper,
-/obj/item/device/tape,
-/obj/item/device/taperecorder{
-=======
 /obj/item/newspaper,
 /obj/item/taperecorder{
->>>>>>> 139bceec17 (Fixes tape spawning in place of recording tape (#9123))
 	pixel_x = -4;
 	pixel_y = 2
 	},
@@ -43061,12 +43055,7 @@
 /obj/item/device/paicard{
 	pixel_x = 4
 	},
-<<<<<<< HEAD
-/obj/item/device/tape,
-/obj/item/device/taperecorder{
-=======
 /obj/item/taperecorder{
->>>>>>> 139bceec17 (Fixes tape spawning in place of recording tape (#9123))
 	pixel_x = -3
 	},
 /obj/item/weapon/reagent_containers/food/drinks/jar,
@@ -75329,23 +75318,12 @@
 	pixel_x = 11;
 	pixel_y = 6
 	},
-<<<<<<< HEAD
-/obj/item/weapon/tape_roll,
-/obj/item/weapon/tape_roll,
-/obj/item/weapon/tape_roll,
-/obj/item/weapon/tape_roll,
-/obj/item/device/tape,
-/obj/item/device/tape,
-/obj/item/device/taperecorder,
-/obj/item/device/taperecorder,
-=======
 /obj/item/tape_roll,
 /obj/item/tape_roll,
 /obj/item/tape_roll,
 /obj/item/tape_roll,
 /obj/item/taperecorder,
 /obj/item/taperecorder,
->>>>>>> 139bceec17 (Fixes tape spawning in place of recording tape (#9123))
 /obj/item/stack/cable_coil/random,
 /obj/item/stack/cable_coil/random,
 /obj/item/stack/cable_coil/random,
