@@ -101,8 +101,8 @@
 
 /mob/living/bullet_act(var/obj/item/projectile/P, var/def_zone)
 	//CHOMPedit begin, re-adds stealth removed feature
-	if(istype(get_active_hand(),/obj/item/device/assembly/signaler))
-		var/obj/item/device/assembly/signaler/signaler = get_active_hand()
+	if(istype(get_active_hand(),/obj/item/assembly/signaler))
+		var/obj/item/assembly/signaler/signaler = get_active_hand()
 		if(signaler.deadman && prob(80))
 			log_and_message_admins("has triggered a signaler deadman's switch")
 			src.visible_message("<font color='red'>[src] triggers their deadman's switch!</font>")
@@ -516,7 +516,7 @@
 	stuttering += 20
 	make_jittery(150)
 	emp_act(1)
-	to_chat(src, span("critical", "You've been struck by lightning!"))
+	to_chat(src, span_critical("You've been struck by lightning!"))
 
 // Called when touching a lava tile.
 // Does roughly 70 damage (30 instantly, up to ~40 over time) to unprotected mobs, and 10 to fully protected mobs.
