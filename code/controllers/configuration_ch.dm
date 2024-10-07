@@ -4,7 +4,11 @@
 
 /datum/configuration
 	var/discord_restriction = FALSE
+<<<<<<< HEAD
 	var/use_jobwhitelist = FALSE // Fops edit
+=======
+	var/use_jobwhitelist = FALSE
+>>>>>>> c2d07ac951 (Job whitelist removal (#9163))
 	var/emojis = FALSE
 
 	var/vorefootstep_volume = 75	//In future see about making a function to adjust volume serverside in config.txt, easy to do with reenable values. - Jack
