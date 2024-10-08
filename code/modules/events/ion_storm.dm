@@ -50,11 +50,6 @@
 		if(!(target.z in affecting_z))
 			continue
 		var/law = target.generate_ion_law()
-<<<<<<< HEAD
-		to_chat(target, "<span class='danger'>You have detected a change in your laws information:</span>")
-		to_chat(target, law)
-=======
->>>>>>> abb09dcb0e (keep shells in sync with AI (#9145))
 		target.add_ion_law(law)
 		//CHOMPEdit Start - Outpost 21 upport: shells don't get ion laws, and sync to AI instead
 		if(target.deployed_shell)
