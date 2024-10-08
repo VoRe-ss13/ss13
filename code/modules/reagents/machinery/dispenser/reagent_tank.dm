@@ -378,13 +378,8 @@
 		if(bottle)
 			playsound(src, I.usesound, 50, 1)
 			if(do_after(user, 20) && bottle)
-<<<<<<< HEAD
-				to_chat(user, "<span class='notice'>You unfasten the jug.</span>")
-				var/obj/item/weapon/reagent_containers/glass/cooler_bottle/G = new /obj/item/weapon/reagent_containers/glass/cooler_bottle( src.loc )
-=======
 				to_chat(user, span_notice("You unfasten the jug."))
 				var/obj/item/reagent_containers/glass/cooler_bottle/G = new /obj/item/reagent_containers/glass/cooler_bottle( src.loc )
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				for(var/datum/reagent/R in reagents.reagent_list)
 					var/total_reagent = reagents.get_reagent_amount(R.id)
 					G.reagents.add_reagent(R.id, total_reagent)
@@ -428,13 +423,8 @@
 		src.add_fingerprint(user)
 		if(!bottle)
 			if(anchored)
-<<<<<<< HEAD
-				var/obj/item/weapon/reagent_containers/glass/cooler_bottle/G = I
-				to_chat(user, "<span class='notice'>You start to screw the bottle onto the water-cooler.</span>")
-=======
 				var/obj/item/reagent_containers/glass/cooler_bottle/G = I
 				to_chat(user, span_notice("You start to screw the bottle onto the water-cooler."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				if(do_after(user, 20) && !bottle && anchored)
 					bottle = 1
 					update_icon()

@@ -1432,13 +1432,8 @@ End CHOMP Removal*/
 	name = "dusty hard drive"
 	desc = "A hard drive containing knowledge of various languages."
 
-<<<<<<< HEAD
-/obj/item/weapon/implant/language/fluff/m41l/post_implant(mob/M)
-	to_chat(M,"<span class='notice'>LANGUAGES - LOADING</span>")
-=======
 /obj/item/implant/language/fluff/m41l/post_implant(mob/M)
 	to_chat(M,span_notice("LANGUAGES - LOADING"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	M.add_language(LANGUAGE_SKRELLIAN)
 	M.add_language(LANGUAGE_UNATHI)
 	M.add_language(LANGUAGE_SIIK)

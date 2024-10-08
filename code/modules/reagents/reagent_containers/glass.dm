@@ -106,13 +106,8 @@
 		return 1
 	return ..()
 
-<<<<<<< HEAD
-/obj/item/weapon/reagent_containers/glass/self_feed_message(var/mob/user)
-	// to_chat(user, "<span class='notice'>You swallow a gulp from \the [src].</span>")
-=======
 /obj/item/reagent_containers/glass/self_feed_message(var/mob/user)
 	// to_chat(user, span_notice("You swallow a gulp from \the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	balloon_alert(user, "Swallowed from \the [src]") // CHOMPEdit - Changed to balloon alert
 
 /obj/item/weapon/reagent_containers/glass/proc/attempt_snake_milking(mob/living/user, mob/living/target)
@@ -405,13 +400,8 @@
 	if(isprox(D))
 		to_chat(user, "This wooden bucket doesn't play well with electronics.")
 		return
-<<<<<<< HEAD
-	else if(istype(D, /obj/item/weapon/material/knife/machete/hatchet))
-		to_chat(user, "<span class='notice'>You cut a big hole in \the [src] with \the [D].  It's kinda useless as a bucket now.</span>")
-=======
 	else if(istype(D, /obj/item/material/knife/machete/hatchet))
 		to_chat(user, span_notice("You cut a big hole in \the [src] with \the [D].  It's kinda useless as a bucket now."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		user.put_in_hands(new /obj/item/clothing/head/helmet/bucket/wood)
 		user.drop_from_inventory(src)
 		qdel(src)

@@ -75,13 +75,8 @@
 				if(M.get_amount() < 25)
 					to_chat(user, span_warning("You need at least 25 phoron sheets to make a blitz rod!"))
 					return
-<<<<<<< HEAD
-				var/obj/item/weapon/fuel_assembly/blitz/unshielded/F = new(get_turf(src))
-				visible_message("<span class='notice'>\The [src] compresses the supermatter and phoron into a new blitz rod! It looks unstable, maybe you should be careful with it.</span>")
-=======
 				var/obj/item/fuel_assembly/blitz/unshielded/F = new(get_turf(src))
 				visible_message(span_notice("\The [src] compresses the supermatter and phoron into a new blitz rod! It looks unstable, maybe you should be careful with it."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				M.use(25)
 				user.put_in_hands(F)
 				blitzprogress = 0

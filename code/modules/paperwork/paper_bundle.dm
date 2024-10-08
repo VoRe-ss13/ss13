@@ -58,19 +58,11 @@
 	add_fingerprint(usr)
 	return
 
-<<<<<<< HEAD
-/obj/item/weapon/paper_bundle/proc/insert_sheet_at(mob/user, var/index, obj/item/weapon/sheet)
-	if(istype(sheet, /obj/item/weapon/paper))
-		to_chat(user, "<span class='notice'>You add [(sheet.name == "paper") ? "the paper" : sheet.name] to [(src.name == "paper bundle") ? "the paper bundle" : src.name].</span>")
-	else if(istype(sheet, /obj/item/weapon/photo))
-		to_chat(user, "<span class='notice'>You add [(sheet.name == "photo") ? "the photo" : sheet.name] to [(src.name == "paper bundle") ? "the paper bundle" : src.name].</span>")
-=======
 /obj/item/paper_bundle/proc/insert_sheet_at(mob/user, var/index, obj/item/sheet)
 	if(istype(sheet, /obj/item/paper))
 		to_chat(user, span_notice("You add [(sheet.name == "paper") ? "the paper" : sheet.name] to [(src.name == "paper bundle") ? "the paper bundle" : src.name]."))
 	else if(istype(sheet, /obj/item/photo))
 		to_chat(user, span_notice("You add [(sheet.name == "photo") ? "the photo" : sheet.name] to [(src.name == "paper bundle") ? "the paper bundle" : src.name]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 	user.drop_from_inventory(sheet)
 	sheet.loc = src

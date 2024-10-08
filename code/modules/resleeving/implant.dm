@@ -85,13 +85,8 @@
 		return
 
 	if(imps.len)
-<<<<<<< HEAD
-		to_chat(user, "<span class='notice'>You eject a backup implant.</span>")
-		var/obj/item/weapon/implant/backup/imp = imps[imps.len]
-=======
 		to_chat(user, span_notice("You eject a backup implant."))
 		var/obj/item/implant/backup/imp = imps[imps.len]
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		imp.forceMove(get_turf(user))
 		imps -= imp
 		user.put_in_any_hand_if_possible(imp)

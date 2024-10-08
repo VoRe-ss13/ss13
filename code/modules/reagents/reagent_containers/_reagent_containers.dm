@@ -84,18 +84,6 @@
 	reagents.splash(target, reagents.total_volume)
 	return 1
 
-<<<<<<< HEAD
-/obj/item/weapon/reagent_containers/proc/self_feed_message(var/mob/user)
-	// to_chat(user, "<span class='notice'>You eat \the [src]</span>")
-	balloon_alert(user, "You eat \the [src]") // CHOMPEdit - Changed to balloon alert
-
-/obj/item/weapon/reagent_containers/proc/other_feed_message_start(var/mob/user, var/mob/target)
-	// user.visible_message("<span class='warning'>[user] is trying to feed [target] \the [src]!</span>")
-	balloon_alert_visible(user, "[user] is trying to feed [target] \the [src]!") // CHOMPEdit - Changed to balloon alert
-
-/obj/item/weapon/reagent_containers/proc/other_feed_message_finish(var/mob/user, var/mob/target)
-	// user.visible_message("<span class='warning'>[user] has fed [target] \the [src]!</span>")
-=======
 /obj/item/reagent_containers/proc/self_feed_message(var/mob/user)
 	// to_chat(user, span_notice("You eat \the [src]"))
 	balloon_alert(user, "You eat \the [src]") // CHOMPEdit - Changed to balloon alert
@@ -106,7 +94,6 @@
 
 /obj/item/reagent_containers/proc/other_feed_message_finish(var/mob/user, var/mob/target)
 	// user.visible_message(span_warning("[user] has fed [target] \the [src]!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	balloon_alert_visible(user, "[user] has fed [target] \the [src]!") // CHOMPEdit - Changed to balloon alert
 
 /obj/item/weapon/reagent_containers/proc/feed_sound(var/mob/user)

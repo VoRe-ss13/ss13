@@ -64,15 +64,9 @@
 			inserted_gps = W
 			user.unEquip(W)
 			W.forceMove(src)
-<<<<<<< HEAD
-			user.visible_message("[user] inserts [W] into \the [src]'s GPS device slot.", "<span class='notice'>You insert [W] into \the [src]'s GPS device slot.</span>")
-	else if(istype(W, /obj/item/device/multitool))
-		var/obj/item/device/multitool/M = W
-=======
 			user.visible_message("[user] inserts [W] into \the [src]'s GPS device slot.", span_notice("You insert [W] into \the [src]'s GPS device slot."))
 	else if(istype(W, /obj/item/multitool))
 		var/obj/item/multitool/M = W
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(M.connectable && istype(M.connectable, /obj/machinery/telepad))
 			telepad = M.connectable
 			M.connectable = null

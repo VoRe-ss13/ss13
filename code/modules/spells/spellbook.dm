@@ -273,13 +273,8 @@
 		user.attack_log += text("\[[time_stamp()]\] [span_orange("[user.real_name] ([user.ckey]) learned the spell [spellname] ([S]).")]")
 		onlearned(user)
 
-<<<<<<< HEAD
-/obj/item/weapon/spellbook/oneuse/proc/recoil(mob/user as mob)
-	user.visible_message("<span class='warning'>[src] glows in a black light!</span>")
-=======
 /obj/item/spellbook/oneuse/proc/recoil(mob/user as mob)
 	user.visible_message(span_warning("[src] glows in a black light!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 /obj/item/weapon/spellbook/oneuse/proc/onlearned(mob/user as mob)
 	used = 1

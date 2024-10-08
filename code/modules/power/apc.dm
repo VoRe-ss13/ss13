@@ -489,15 +489,9 @@ GLOBAL_LIST_EMPTY(apcs)
 						//ticker.mode:apcs-- //XSI said no and I agreed. -rastaf0
 					else
 						user.visible_message(\
-<<<<<<< HEAD
-							"<span class='warning'>[user.name] has removed the power control board from [name]!</span>",\
-							"<span class='notice'>You remove the power control board.</span>")
-						new /obj/item/weapon/module/power_control(loc)
-=======
 							span_warning("[user.name] has removed the power control board from [name]!"),\
 							span_notice("You remove the power control board."))
 						new /obj/item/module/power_control(loc)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		else if(opened != 2) //cover isn't removed
 			opened = 0
 			update_icon()
@@ -602,13 +596,8 @@ GLOBAL_LIST_EMPTY(apcs)
 				new /obj/item/stack/cable_coil(loc,10)
 				to_chat(user, span_notice("You cut the cables and dismantle the power terminal."))
 				qdel(terminal)
-<<<<<<< HEAD
-	else if(istype(W, /obj/item/weapon/module/power_control) && opened && has_electronics == APC_HAS_ELECTRONICS_NONE && !((stat & BROKEN)))
-		user.visible_message("<span class='warning'>[user.name] inserts the power control board into [src].</span>", \
-=======
 	else if(istype(W, /obj/item/module/power_control) && opened && has_electronics == APC_HAS_ELECTRONICS_NONE && !((stat & BROKEN)))
 		user.visible_message(span_warning("[user.name] inserts the power control board into [src]."), \
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 							"You start to insert the power control board into the frame...")
 		playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
 		if(do_after(user, 10))
@@ -617,13 +606,8 @@ GLOBAL_LIST_EMPTY(apcs)
 				reboot()
 				to_chat(user, span_notice("You place the power control board inside the frame."))
 				qdel(W)
-<<<<<<< HEAD
-	else if(istype(W, /obj/item/weapon/module/power_control) && opened && has_electronics == APC_HAS_ELECTRONICS_NONE && ((stat & BROKEN)))
-		to_chat(user, "<span class='warning'>The [src] is too broken for that. Repair it first.</span>")
-=======
 	else if(istype(W, /obj/item/module/power_control) && opened && has_electronics == APC_HAS_ELECTRONICS_NONE && ((stat & BROKEN)))
 		to_chat(user, span_warning("The [src] is too broken for that. Repair it first."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return
 	else if(W.has_tool_quality(TOOL_WELDER) && opened && has_electronics == APC_HAS_ELECTRONICS_NONE && !terminal)
 		var/obj/item/weapon/weldingtool/WT = W.get_welder()

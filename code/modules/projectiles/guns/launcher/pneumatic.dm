@@ -210,13 +210,8 @@
 			if(T.remove_fuel(0,user))
 				if(!src || !T.isOn()) return
 				playsound(src, W.usesound, 100, 1)
-<<<<<<< HEAD
-				to_chat(user, "<span class='notice'>You weld the valve into place.</span>")
-				new /obj/item/weapon/gun/launcher/pneumatic(get_turf(src))
-=======
 				to_chat(user, span_notice("You weld the valve into place."))
 				new /obj/item/gun/launcher/pneumatic(get_turf(src))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				qdel(src)
 		return
 	else

@@ -127,13 +127,8 @@
 
 		var/obj/item/weapon/reagent_containers/RC = W
 
-<<<<<<< HEAD
-		if(!accept_drinking && istype(RC,/obj/item/weapon/reagent_containers/food))
-			to_chat(user, "<span class='warning'>This machine only accepts beakers!</span>")
-=======
 		if(!accept_drinking && istype(RC,/obj/item/reagent_containers/food))
 			to_chat(user, span_warning("This machine only accepts beakers!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 
 		if(!RC.is_open_container())

@@ -1030,17 +1030,10 @@
 
 		log_admin("VORE: [src] used Eat Trash to swallow [I].")
 
-<<<<<<< HEAD
-		if(istype(I,/obj/item/device/flashlight/flare) || istype(I,/obj/item/weapon/flame/match) || istype(I,/obj/item/weapon/storage/box/matches))
-			to_chat(src, "<span class='notice'>You can taste the flavor of spicy cardboard.</span>")
-		else if(istype(I,/obj/item/device/flashlight/glowstick))
-			to_chat(src, "<span class='notice'>You found out the glowy juice only tastes like regret.</span>")
-=======
 		if(istype(I,/obj/item/flashlight/flare) || istype(I,/obj/item/flame/match) || istype(I,/obj/item/storage/box/matches))
 			to_chat(src, span_notice("You can taste the flavor of spicy cardboard."))
 		else if(istype(I,/obj/item/flashlight/glowstick))
 			to_chat(src, span_notice("You found out the glowy juice only tastes like regret."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		else if(istype(I,/obj/item/trash/cigbutt))
 			to_chat(src, span_notice("You can taste the flavor of bitter ash. Classy."))
 		else if(istype(I,/obj/item/clothing/mask/smokable))
@@ -1048,25 +1041,6 @@
 			if(C.lit)
 				to_chat(src, span_notice("You can taste the flavor of burning ash. Spicy!"))
 			else
-<<<<<<< HEAD
-				to_chat(src, "<span class='notice'>You can taste the flavor of aromatic rolling paper and funny looks.</span>")
-		else if(istype(I,/obj/item/weapon/paper))
-			to_chat(src, "<span class='notice'>You can taste the dry flavor of bureaucracy.</span>")
-		else if(istype(I,/obj/item/weapon/book))
-			to_chat(src, "<span class='notice'>You can taste the dry flavor of knowledge.</span>")
-		else if(istype(I,/obj/item/weapon/dice)) //CHOMPedit: Removed roulette ball because that's not active here.
-			to_chat(src, "<span class='notice'>You can taste the bitter flavor of cheating.</span>")
-		else if(istype(I,/obj/item/weapon/lipstick))
-			to_chat(src, "<span class='notice'>You can taste the flavor of couture and style. Toddler at the make-up bag style.</span>")
-		else if(istype(I,/obj/item/weapon/soap))
-			to_chat(src, "<span class='notice'>You can taste the bitter flavor of verbal purification.</span>")
-		else if(istype(I,/obj/item/weapon/spacecash) || istype(I,/obj/item/weapon/storage/wallet))
-			to_chat(src, "<span class='notice'>You can taste the flavor of wealth and reckless waste.</span>")
-		else if(istype(I,/obj/item/weapon/broken_bottle) || istype(I,/obj/item/weapon/material/shard))
-			to_chat(src, "<span class='notice'>You can taste the flavor of pain. This can't possibly be healthy for your guts.</span>")
-		else if(istype(I,/obj/item/weapon/light))
-			var/obj/item/weapon/light/L = I
-=======
 				to_chat(src, span_notice("You can taste the flavor of aromatic rolling paper and funny looks."))
 		else if(istype(I,/obj/item/paper))
 			to_chat(src, span_notice("You can taste the dry flavor of bureaucracy."))
@@ -1084,20 +1058,9 @@
 			to_chat(src, span_notice("You can taste the flavor of pain. This can't possibly be healthy for your guts."))
 		else if(istype(I,/obj/item/light))
 			var/obj/item/light/L = I
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			if(L.status == LIGHT_BROKEN)
 				to_chat(src, span_notice("You can taste the flavor of pain. This can't possibly be healthy for your guts."))
 			else
-<<<<<<< HEAD
-				to_chat(src, "<span class='notice'>You can taste the flavor of really bad ideas.</span>")
-		else if(istype(I,/obj/item/weapon/bikehorn/tinytether))
-			to_chat(src, "<span class='notice'>You feel a rush of power swallowing such a large, err, tiny structure.</span>")
-		else if(istype(I,/obj/item/device/mmi/digital/posibrain) || istype(I,/obj/item/device/aicard))
-			to_chat(src, "<span class='notice'>You can taste the sweet flavor of digital friendship. Or maybe it is something else.</span>")
-		else if(istype(I,/obj/item/device/paicard))
-			to_chat(src, "<span class='notice'>You can taste the sweet flavor of digital friendship.</span>")
-			var/obj/item/device/paicard/ourcard = I
-=======
 				to_chat(src, span_notice("You can taste the flavor of really bad ideas."))
 		else if(istype(I,/obj/item/bikehorn/tinytether))
 			to_chat(src, span_notice("You feel a rush of power swallowing such a large, err, tiny structure."))
@@ -1106,7 +1069,6 @@
 		else if(istype(I,/obj/item/paicard))
 			to_chat(src, span_notice("You can taste the sweet flavor of digital friendship."))
 			var/obj/item/paicard/ourcard = I
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			if(ourcard.pai && ourcard.pai.client && isbelly(ourcard.loc))
 				var/obj/belly/B = ourcard.loc
 				to_chat(ourcard.pai, "<span class= 'notice'><B>[B.desc]</B></span>")
@@ -1126,30 +1088,6 @@
 					//to_chat(C.bound_mob, "<span class= 'notice'>Outside of your crystal, you can see; <B>[B.desc]</B></span>") //CHOMPedit: moved to modular_chomp capture_crystal.dm
 					to_chat(src, span_notice("You can taste the the power of command."))
 		// CHOMPedit begin
-<<<<<<< HEAD
-		else if(istype(I,/obj/item/device/starcaster_news))
-			to_chat(src, "<span class='notice'>You can taste the dry flavor of digital garbage, oh wait its just the news.</span>")
-		else if(istype(I,/obj/item/weapon/newspaper))
-			to_chat(src, "<span class='notice'>You can taste the dry flavor of garbage, oh wait its just the news.</span>")
-		else if (istype(I,/obj/item/weapon/cell))
-			visible_message("<span class='warning'>[src] sates their electric appetite with a [I]!</span>")
-			to_chat(src, "<span class='notice'>You can taste the spicy flavor of electrolytes, yum.</span>")
-		else if (istype(I,/obj/item/device/walkpod))
-			visible_message("<span class='warning'>[src] sates their musical appetite with a [I]!</span>")
-			to_chat(src, "<span class='notice'>You can taste the jazzy flavor of music.</span>")
-		else if (istype(I,/obj/item/mail/junkmail))
-			visible_message("<span class='warning'>[src] devours the [I]!</span>")
-			to_chat(src, "<span class='notice'>You can taste the flavor of the galactic postal service.</span>")
-		else if (istype(I,/obj/item/weapon/gun/energy/sizegun))
-			visible_message("<span class='warning'>[src] devours the [I]!</span>")
-			to_chat(src, "<span class='notice'>You didn't read the warning label, did you?</span>")
-		else if (istype(I,/obj/item/device/slow_sizegun))
-			visible_message("<span class='warning'>[src] devours the [I]!</span>")
-			to_chat(src, "<span class='notice'>You taste the flavor of sunday driver bluespace.</span>")
-		else if (istype(I,/obj/item/device/laser_pointer))
-			visible_message("<span class='warning'>[src] devours the [I]!</span>")
-			to_chat(src, "<span class='notice'>You taste the flavor of a laser.</span>")
-=======
 		else if(istype(I,/obj/item/starcaster_news))
 			to_chat(src, span_notice("You can taste the dry flavor of digital garbage, oh wait its just the news."))
 		else if(istype(I,/obj/item/newspaper))
@@ -1172,7 +1110,6 @@
 		else if (istype(I,/obj/item/laser_pointer))
 			visible_message(span_warning("[src] devours the [I]!"))
 			to_chat(src, span_notice("You taste the flavor of a laser."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		else if (istype(I,/obj/item/canvas))
 			visible_message(span_warning("[src] devours the [I]!"))
 			to_chat(src, span_notice("You taste the flavor of priceless artwork."))

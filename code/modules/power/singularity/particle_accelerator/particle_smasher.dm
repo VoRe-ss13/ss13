@@ -87,13 +87,8 @@
 				"You hear a ratchet.")
 		update_icon()
 		return
-<<<<<<< HEAD
-	else if(istype(W, /obj/item/weapon/card/id))
-		to_chat(user, "<span class='notice'>Swiping \the [W] on \the [src] doesn't seem to do anything...</span>")
-=======
 	else if(istype(W, /obj/item/card/id))
 		to_chat(user, span_notice("Swiping \the [W] on \the [src] doesn't seem to do anything..."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return ..()
 	else if(((isrobot(user) && istype(W.loc, /obj/item/weapon/gripper)) || (!isrobot(user) && W.canremove)) && storage.len < max_storage)
 		if(isrobot(user) && istype(W.loc, /obj/item/weapon/gripper))

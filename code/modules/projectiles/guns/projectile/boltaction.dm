@@ -71,13 +71,8 @@
 	if(sawn_off)
 		to_chat(user, span_warning("The [src] is already shortened!"))
 		return
-<<<<<<< HEAD
-	if(istype(A, /obj/item/weapon/surgical/circular_saw) || istype(A, /obj/item/weapon/melee/energy) || istype(A, /obj/item/weapon/pickaxe/plasmacutter) && w_class != ITEMSIZE_NORMAL)
-		to_chat(user, "<span class='notice'>You begin to shorten the barrel and stock of \the [src].</span>")
-=======
 	if(istype(A, /obj/item/surgical/circular_saw) || istype(A, /obj/item/melee/energy) || istype(A, /obj/item/pickaxe/plasmacutter) && w_class != ITEMSIZE_NORMAL)
 		to_chat(user, span_notice("You begin to shorten the barrel and stock of \the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(loaded.len)
 			afterattack(user, user)
 			playsound(src, fire_sound, 50, 1)

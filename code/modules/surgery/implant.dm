@@ -281,13 +281,8 @@
 		var/fail_prob = 10
 		fail_prob += 100 - tool_quality(tool)
 		if (prob(fail_prob))
-<<<<<<< HEAD
-			var/obj/item/weapon/implant/imp = affected.implants[1]
-			user.visible_message("<span class='danger'> Something beeps inside [target]'s [affected.name]!</span>")
-=======
 			var/obj/item/implant/imp = affected.implants[1]
 			user.visible_message(span_danger(" Something beeps inside [target]'s [affected.name]!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			playsound(imp, 'sound/items/countdown.ogg', 75, 1, -3)
 			spawn(25)
 				imp.activate()

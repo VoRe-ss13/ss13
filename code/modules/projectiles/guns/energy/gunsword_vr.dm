@@ -118,10 +118,5 @@
 	add_fingerprint(user)
 	return
 
-<<<<<<< HEAD
-/obj/item/weapon/cell/device/weapon/gunsword/update_icon()
-	cut_overlays()
-=======
 /obj/item/cell/device/weapon/gunsword/update_icon()
 	cut_overlays()
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))

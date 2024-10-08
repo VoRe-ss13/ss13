@@ -32,13 +32,8 @@
 	. = ..()
 
 /obj/structure/filingcabinet/attackby(obj/item/P as obj, mob/user as mob)
-<<<<<<< HEAD
-	if(istype(P, /obj/item/weapon/paper) || istype(P, /obj/item/weapon/folder) || istype(P, /obj/item/weapon/photo) || istype(P, /obj/item/weapon/paper_bundle))
-		to_chat(user, "<span class='notice'>You put [P] in [src].</span>")
-=======
 	if(istype(P, /obj/item/paper) || istype(P, /obj/item/folder) || istype(P, /obj/item/photo) || istype(P, /obj/item/paper_bundle))
 		to_chat(user, span_notice("You put [P] in [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		user.drop_item()
 		P.loc = src
 		open_animation()

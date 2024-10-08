@@ -108,13 +108,8 @@
 			playsound(loc, 'sound/items/Ratchet.ogg', 40)
 			update_icon()
 		else
-<<<<<<< HEAD
-			to_chat(user, "<span class='warning'>You are unable to secure [src] while it is active!</span>")
-	else if (istype(W, /obj/item/weapon/cell))
-=======
 			to_chat(user, span_warning("You are unable to secure [src] while it is active!"))
 	else if (istype(W, /obj/item/cell))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(panel_open)
 			if(cell)
 				to_chat(user, span_warning("There is a power cell already installed."))

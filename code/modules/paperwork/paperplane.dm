@@ -44,13 +44,8 @@
 			var/image/stampoverlay = image('icons/obj/bureaucracy.dmi', "paperplane_[initial(stamp.icon_state)]")
 			add_overlay(stampoverlay)
 
-<<<<<<< HEAD
-/obj/item/weapon/paperplane/attack_self(mob/user)
-	to_chat(user, "<span class='notice'>You unfold [src].</span>")
-=======
 /obj/item/paperplane/attack_self(mob/user)
 	to_chat(user, span_notice("You unfold [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	var/atom/movable/internal_paper_tmp = internalPaper
 	internal_paper_tmp.forceMove(loc)
 	internalPaper = null
@@ -59,13 +54,8 @@
 
 /obj/item/weapon/paperplane/attackby(obj/item/P, mob/living/carbon/human/user, params)
 	..()
-<<<<<<< HEAD
-	if(istype(P, /obj/item/weapon/pen))
-		to_chat(user, "<span class='notice'>You should unfold [src] before changing it.</span>")
-=======
 	if(istype(P, /obj/item/pen))
 		to_chat(user, span_notice("You should unfold [src] before changing it."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return
 
 	else if(istype(P, /obj/item/weapon/stamp)) 	//we don't randomize stamps on a paperplane

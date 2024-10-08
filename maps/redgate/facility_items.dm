@@ -9,13 +9,8 @@
 /obj/item/weapon/card/id/keycard/update_icon()
 	return
 
-<<<<<<< HEAD
-/obj/item/weapon/card/id/keycard/read()
-	to_chat(usr, "<span class='notice'>It is a red keycard, it must unlock something.</span>")
-=======
 /obj/item/card/id/keycard/read()
 	to_chat(usr, span_notice("It is a red keycard, it must unlock something."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 /obj/item/weapon/card/id/keycard/attack_self(mob/living/user as mob)
 	return

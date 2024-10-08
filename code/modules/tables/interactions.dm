@@ -145,13 +145,8 @@
 		break_to_parts()
 		return
 
-<<<<<<< HEAD
-	if(istype(W, /obj/item/weapon/melee/changeling/arm_blade))
-		user.visible_message("<span class='danger'>\The [src] was sliced apart by [user]!</span>")
-=======
 	if(istype(W, /obj/item/melee/changeling/arm_blade))
 		user.visible_message(span_danger("\The [src] was sliced apart by [user]!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		break_to_parts()
 		return
 

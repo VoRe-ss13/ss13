@@ -152,13 +152,8 @@
 			playsound(src, "sound/machines/click.ogg", 100, 1)
 			flick(insert_anim, src)
 		else
-<<<<<<< HEAD
-			to_chat(user, "<span class='notice'>There is already something in \the [src].</span>")
-	else if(istype(O, /obj/item/device/toner))
-=======
 			to_chat(user, span_notice("There is already something in \the [src]."))
 	else if(istype(O, /obj/item/toner))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(toner <= 10) //allow replacing when low toner is affecting the print darkness
 			user.drop_item()
 			to_chat(user, span_notice("You insert the toner cartridge into \the [src]."))

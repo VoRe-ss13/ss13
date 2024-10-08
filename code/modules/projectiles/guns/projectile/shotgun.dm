@@ -186,13 +186,8 @@
 	if(sawn_off)
 		to_chat(user, span_warning("The [src] is already shortened!"))
 		return
-<<<<<<< HEAD
-	if(istype(A, /obj/item/weapon/surgical/circular_saw) || istype(A, /obj/item/weapon/melee/energy) || istype(A, /obj/item/weapon/pickaxe/plasmacutter))
-		to_chat(user, "<span class='notice'>You begin to shorten the barrel of \the [src].</span>")
-=======
 	if(istype(A, /obj/item/surgical/circular_saw) || istype(A, /obj/item/melee/energy) || istype(A, /obj/item/pickaxe/plasmacutter))
 		to_chat(user, span_notice("You begin to shorten the barrel of \the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(loaded.len)
 			var/burstsetting = burst
 			burst = 2
@@ -248,4 +243,3 @@
 	load_method = SINGLE_CASING
 	max_shells = 5
 	ammo_type = /obj/item/ammo_casing/a12g/beanbag
-

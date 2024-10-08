@@ -285,13 +285,8 @@
 		else
 			to_chat(user, span_notice("You cannot put \the [W] into the machine. ((The micro must be connected to the server.))"))
 			return
-<<<<<<< HEAD
-	else if(istype(W, /obj/item/weapon/holder/mouse)) //No you can't turn your army of mice into giant rats.
-		to_chat(user, "<span class='notice'>You cannot put \the [W] into the machine. The machine reads 'NOT ENOUGH BIOMASS'.</span>")
-=======
 	else if(istype(W, /obj/item/holder/mouse)) //No you can't turn your army of mice into giant rats.
 		to_chat(user, span_notice("You cannot put \the [W] into the machine. The machine reads 'NOT ENOUGH BIOMASS'."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return
 	user.drop_item() //Put the micro on the floor (or drop the item)
 	if(istype(W, /obj/item/weapon/holder/micro)) //I hate this but it's the only way to get their stuff to drop.

@@ -324,15 +324,9 @@
 				to_chat(user, span_warning("Your [O] contains components unsuitable for cookery."))
 				return 1
 		return
-<<<<<<< HEAD
-	else if(istype(O,/obj/item/weapon/grab))
-		var/obj/item/weapon/grab/G = O
-		to_chat(user, "<span class='warning'>This is ridiculous. You can not fit \the [G.affecting] in this [src].</span>")
-=======
 	else if(istype(O,/obj/item/grab))
 		var/obj/item/grab/G = O
 		to_chat(user, span_warning("This is ridiculous. You can not fit \the [G.affecting] in this [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return 1
 	else if(O.is_screwdriver())
 		default_deconstruction_screwdriver(user, O)

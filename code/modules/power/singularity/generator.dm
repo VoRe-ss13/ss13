@@ -46,13 +46,8 @@
 				playsound(src, W.usesound, 50, 1)
 				to_chat(user, span_cult("\The [src] looks like it could be adapted to forge advanced materials via particle acceleration, somehow.."))
 		else
-<<<<<<< HEAD
-			to_chat(user, "<span class='notice'>\The [src]'s mechanisms look secure.</span>")
-	if(istype(W, /obj/item/weapon/smes_coil/super_io) && panel_open)
-=======
 			to_chat(user, span_notice("\The [src]'s mechanisms look secure."))
 	if(istype(W, /obj/item/smes_coil/super_io) && panel_open)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		visible_message("<b>\The [user]</b> begins to modify \the [src] with \the [W].")
 		if(do_after(user, 300))
 			user.drop_from_inventory(W)

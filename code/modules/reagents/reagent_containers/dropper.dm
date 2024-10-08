@@ -31,13 +31,8 @@
 			to_chat(user, span_notice("[target] is full."))
 			return
 
-<<<<<<< HEAD
-		if(!target.is_open_container() && !ismob(target) && !istype(target, /obj/item/weapon/reagent_containers/food) && !istype(target, /obj/item/clothing/mask/smokable/cigarette)) //You can inject humans and food but you cant remove the shit.
-			to_chat(user, "<span class='notice'>You cannot directly fill this object.</span>")
-=======
 		if(!target.is_open_container() && !ismob(target) && !istype(target, /obj/item/reagent_containers/food) && !istype(target, /obj/item/clothing/mask/smokable/cigarette)) //You can inject humans and food but you cant remove the shit.
 			to_chat(user, span_notice("You cannot directly fill this object."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 
 		var/trans = 0

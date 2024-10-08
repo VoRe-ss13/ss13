@@ -165,13 +165,8 @@
 					to_chat(user, span_notice("[target] is empty."))
 					return
 
-<<<<<<< HEAD
-				if(!target.is_open_container() && !istype(target, /obj/structure/reagent_dispensers) && !istype(target, /obj/item/slime_extract) && !istype(target, /obj/item/weapon/reagent_containers/food))
-					to_chat(user, "<span class='notice'>You cannot directly remove reagents from this object.</span>")
-=======
 				if(!target.is_open_container() && !istype(target, /obj/structure/reagent_dispensers) && !istype(target, /obj/item/slime_extract) && !istype(target, /obj/item/reagent_containers/food))
 					to_chat(user, span_notice("You cannot directly remove reagents from this object."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 					return
 
 				var/trans = target.reagents.trans_to_obj(src, amount_per_transfer_from_this)
@@ -191,13 +186,8 @@
 			if(istype(target, /obj/item/weapon/implantcase/chem))
 				return
 
-<<<<<<< HEAD
-			if(!target.is_open_container() && !ismob(target) && !istype(target, /obj/item/weapon/reagent_containers/food) && !istype(target, /obj/item/slime_extract) && !istype(target, /obj/item/clothing/mask/smokable/cigarette) && !istype(target, /obj/item/weapon/storage/fancy/cigarettes) && !istype(target, /obj/item/clothing/mask/chewable)) // CHOMPEdit
-				to_chat(user, "<span class='notice'>You cannot directly fill this object.</span>")
-=======
 			if(!target.is_open_container() && !ismob(target) && !istype(target, /obj/item/reagent_containers/food) && !istype(target, /obj/item/slime_extract) && !istype(target, /obj/item/clothing/mask/smokable/cigarette) && !istype(target, /obj/item/storage/fancy/cigarettes) && !istype(target, /obj/item/clothing/mask/chewable)) // CHOMPEdit
 				to_chat(user, span_notice("You cannot directly fill this object."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				return
 			if(!target.reagents.get_free_space())
 				to_chat(user, span_notice("[target] is full."))

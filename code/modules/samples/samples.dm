@@ -197,13 +197,8 @@
 		SC.update_icon()
 		to_chat(user, span_notice("You store \the [src] in \the [SC]."))
 
-<<<<<<< HEAD
-	if(istype(P, /obj/item/device/cataloguer))
-		to_chat(user, "<span class='notice'>You start to scan \the [src] with \the [P]...</span>")
-=======
 	if(istype(P, /obj/item/cataloguer))
 		to_chat(user, span_notice("You start to scan \the [src] with \the [P]..."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(do_after(user, 2 SECONDS))
 			to_chat(user, span_notice("\The [src] seems to have [origin_tech[1]] properties?"))
 

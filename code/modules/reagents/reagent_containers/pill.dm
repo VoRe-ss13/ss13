@@ -101,13 +101,8 @@
 
 /obj/item/weapon/reagent_containers/pill/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(is_sharp(W))
-<<<<<<< HEAD
-		var/obj/item/weapon/reagent_containers/powder/J = new /obj/item/weapon/reagent_containers/powder(src.loc)
-		// user.visible_message("<span class='warning'>[user] gently cuts up [src] with [W]!</span>")
-=======
 		var/obj/item/reagent_containers/powder/J = new /obj/item/reagent_containers/powder(src.loc)
 		// user.visible_message(span_warning("[user] gently cuts up [src] with [W]!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		balloon_alert_visible("[user] gently cuts up [src] with [W]!", "You gently cut up \the [src] with [W]") // CHOMPEdit - Changed to balloon alert
 		playsound(src.loc, 'sound/effects/chop.ogg', 50, 1)
 
@@ -116,15 +111,9 @@
 		J.get_appearance()
 		qdel(src)
 
-<<<<<<< HEAD
-	if(istype(W, /obj/item/weapon/card/id))
-		var/obj/item/weapon/reagent_containers/powder/J = new /obj/item/weapon/reagent_containers/powder(src.loc)
-		// user.visible_message("<span class='warning'>[user] clumsily cuts up [src] with [W]!</span>")
-=======
 	if(istype(W, /obj/item/card/id))
 		var/obj/item/reagent_containers/powder/J = new /obj/item/reagent_containers/powder(src.loc)
 		// user.visible_message(span_warning("[user] clumsily cuts up [src] with [W]!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		balloon_alert_visible("[user] clumsily cuts up [src] with [W]!", "You clumsily cut up \the [src] with [W]") // CHOMPEdit - Changed to balloon alert
 		playsound(src.loc, 'sound/effects/chop.ogg', 50, 1)
 

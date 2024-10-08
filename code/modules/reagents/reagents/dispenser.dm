@@ -204,13 +204,8 @@
 	if(istype(O, /obj/item/weapon/book))
 		if(volume < 5)
 			return
-<<<<<<< HEAD
-		if(istype(O, /obj/item/weapon/book/tome))
-			to_chat(usr, "<span class='notice'>The solution does nothing. Whatever this is, it isn't normal ink.</span>")
-=======
 		if(istype(O, /obj/item/book/tome))
 			to_chat(usr, span_notice("The solution does nothing. Whatever this is, it isn't normal ink."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 		var/obj/item/weapon/book/affectedbook = O
 		affectedbook.dat = null

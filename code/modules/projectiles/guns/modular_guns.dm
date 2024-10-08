@@ -77,13 +77,8 @@
 	if(guncomponents.len >= max_components) //We have too many componenets and can't fit more.
 		to_chat(user, span_warning("You can't add any more components!"))
 		return
-<<<<<<< HEAD
-	if(istype(O, /obj/item/weapon/stock_parts/capacitor) && capacitor_rating == 5)
-		to_chat(user, "<span class='warning'>You can't add any more capacitors!</span>")
-=======
 	if(istype(O, /obj/item/stock_parts/capacitor) && capacitor_rating == 5)
 		to_chat(user, span_warning("You can't add any more capacitors!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return
 	user.drop_item()
 	guncomponents += O

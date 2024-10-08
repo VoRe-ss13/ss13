@@ -100,13 +100,8 @@
 	var/selectedColor = 1
 	var/colors = list("black","blue","red")
 
-<<<<<<< HEAD
-/obj/item/weapon/pen/AltClick(mob/user)
-	to_chat(user, "<span class='notice'>Click.</span>")
-=======
 /obj/item/pen/AltClick(mob/user)
 	to_chat(user, span_notice("Click."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	playsound(src, 'sound/items/penclick.ogg', 50, 1)
 	return
 

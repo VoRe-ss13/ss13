@@ -355,15 +355,6 @@
 	return ..() && target.op_stage.dehusk == 2
 
 /datum/surgery_step/dehusk/structfinish/begin_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
-<<<<<<< HEAD
-	if(istype(tool,/obj/item/weapon/surgical/bioregen))
-		user.visible_message("<span class='notice'>[user] begins to recreate blood vessels and fill in the gaps in [target]'s flesh with \the [tool].</span>", \
-	"<span class='notice'>You begin to recreate blood vessels and fill in the gaps in [target]'s flesh with \the [tool].</span>")
-		user.balloon_alert_visible("Begins recreating blood vessels and filing gaps in [target]'s flesh", "Recreating blood vessels and filling gaps in the flesh") // CHOMPEdit
-	else if(istype(tool,/obj/item/weapon/surgical/FixOVein))
-		user.visible_message("<span class='notice'>[user] attempts to recreate blood vessels and fill in the gaps in [target]'s flesh with \the [tool].</span>", \
-	"<span class='notice'>You attempt to recreate blood vessels and fill in the gaps in [target]'s flesh with \the [tool].</span>")
-=======
 	if(istype(tool,/obj/item/surgical/bioregen))
 		user.visible_message(span_notice("[user] begins to recreate blood vessels and fill in the gaps in [target]'s flesh with \the [tool]."), \
 	span_notice("You begin to recreate blood vessels and fill in the gaps in [target]'s flesh with \the [tool]."))
@@ -371,7 +362,6 @@
 	else if(istype(tool,/obj/item/surgical/FixOVein))
 		user.visible_message(span_notice("[user] attempts to recreate blood vessels and fill in the gaps in [target]'s flesh with \the [tool]."), \
 	span_notice("You attempt to recreate blood vessels and fill in the gaps in [target]'s flesh with \the [tool]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		user.balloon_alert_visible("Attempts to recreate blood vessesl and fill the gaps in [target]'s flesh", "Attempting to recreate blood vessels and fill gaps in the flesh") // CHOMPEdit
 	..()
 
@@ -387,15 +377,6 @@
 
 /datum/surgery_step/dehusk/structfinish/fail_step(mob/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
-<<<<<<< HEAD
-	if(istype(tool,/obj/item/weapon/surgical/bioregen))
-		user.visible_message("<span class='danger'>[user]'s hand slips, causing \the [tool] to scrape [target]'s body.</span>", \
-	"<span class='danger'>Your hand slips, causing \the [tool] to scrape [target]'s body.</span>")
-		user.balloon_alert_visible("Slips, scraping [target]'s body", "You slip, scraping the body.") // CHOMPEdit
-	else if(istype(tool,/obj/item/weapon/surgical/FixOVein))
-		user.visible_message("<span class='danger'>[user] fails to finish the structure over the gaps in [target]'s flesh, doing more damage than good.</span>", \
-	"<span class='danger'>You fail to finish the structure over the gaps in [target]'s flesh, doing more damage than good.</span>")
-=======
 	if(istype(tool,/obj/item/surgical/bioregen))
 		user.visible_message(span_danger("[user]'s hand slips, causing \the [tool] to scrape [target]'s body."), \
 	span_danger("Your hand slips, causing \the [tool] to scrape [target]'s body."))
@@ -403,7 +384,6 @@
 	else if(istype(tool,/obj/item/surgical/FixOVein))
 		user.visible_message(span_danger("[user] fails to finish the structure over the gaps in [target]'s flesh, doing more damage than good."), \
 	span_danger("You fail to finish the structure over the gaps in [target]'s flesh, doing more damage than good."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		user.balloon_alert_visible("Fails to finish the structure in [target]'s flesh, doing more damage", "You fail to finish the structur, doing more damage") // CHOMPEdit
 
 	affected.createwound(CUT, 15)

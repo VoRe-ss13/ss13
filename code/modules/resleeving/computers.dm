@@ -87,16 +87,6 @@
 			pods += P
 			P.connected = src
 			P.name = "[initial(P.name)] #[pods.len]"
-<<<<<<< HEAD
-			to_chat(user, "<span class='notice'>You connect [P] to [src].</span>")
-	else if(istype(W, /obj/item/weapon/disk/transcore) && !our_db.core_dumped)
-		user.unEquip(W)
-		disk = W
-		disk.forceMove(src)
-		to_chat(user, "<span class='notice'>You insert \the [W] into \the [src].</span>")
-	if(istype(W, /obj/item/weapon/disk/body_record))
-		var/obj/item/weapon/disk/body_record/brDisk = W
-=======
 			to_chat(user, span_notice("You connect [P] to [src]."))
 	else if(istype(W, /obj/item/disk/transcore) && !our_db.core_dumped)
 		user.unEquip(W)
@@ -105,7 +95,6 @@
 		to_chat(user, span_notice("You insert \the [W] into \the [src]."))
 	if(istype(W, /obj/item/disk/body_record))
 		var/obj/item/disk/body_record/brDisk = W
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(!brDisk.stored)
 			to_chat(user, span_warning("\The [W] does not contain a stored body record."))
 			return

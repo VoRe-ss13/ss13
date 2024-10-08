@@ -15,13 +15,8 @@
 	else
 		collapse_rifle(user)
 
-<<<<<<< HEAD
-/obj/item/weapon/gun/projectile/heavysniper/proc/collapse_rifle(mob/user)
-	to_chat(user, "<span class='warning'>You begin removing \the [src]'s barrel.</span>")
-=======
 /obj/item/gun/projectile/heavysniper/proc/collapse_rifle(mob/user)
 	to_chat(user, span_warning("You begin removing \the [src]'s barrel."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	if(do_after(user, 40))
 		if(user.unEquip(src, force=1))
 			to_chat(user, span_warning("You remove \the [src]'s barrel."))
