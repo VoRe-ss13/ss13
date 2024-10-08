@@ -45,24 +45,6 @@
 	var/_path = token["path"]
 	// CHOMPEdit Start
 	// new _path(creating, token["age"]+1)
-<<<<<<< HEAD
-	var/atom/inst = new _path(creating, token["age"]+1)
-	if(token["pixel_x"])
-		inst.pixel_x = token["pixel_x"]
-	if(token["pixel_y"])
-		inst.pixel_y = token["pixel_y"]
-
-	if(istype(inst, /obj/effect/decal/cleanable/crayon))
-		var/obj/effect/decal/cleanable/crayon/Crayart = inst
-		if(token["art_type"])
-			Crayart.art_type = token["art_type"]
-		if(token["art_color"])
-			Crayart.art_color = token["art_color"]
-		if(token["art_shade"])
-			Crayart.art_shade = token["art_shade"]
-
-		Crayart.update_icon()
-=======
 	var/atom/inst
 	if(ispath(_path, /obj/effect/decal/cleanable/crayon))
 		if(!istext(token["art_color"]) || !istext(token["art_shade"]) || !istext(token["art_type"]))
@@ -78,7 +60,6 @@
 			inst.pixel_x = token["pixel_x"]
 		if(token["pixel_y"])
 			inst.pixel_y = token["pixel_y"]
->>>>>>> 9f3f16ae8d (check that as well (#9147))
 	// CHOMPEdit End
 
 /datum/persistent/filth/GetEntryAge(var/atom/entry)
