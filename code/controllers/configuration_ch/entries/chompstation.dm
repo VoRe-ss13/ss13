@@ -3,7 +3,11 @@
 //	default = FALSE
 
 /datum/config_entry/flag/use_jobwhitelist
+<<<<<<< HEAD
 	default = FALSE //TORCHEdit
+=======
+	default = TRUE
+>>>>>>> a7f6236a11 (Adds anti job camping for heads + Config patch (#9188))
 
 // FIXME: Unused
 ///datum/config_entry/flag/emojis
