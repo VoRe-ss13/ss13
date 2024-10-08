@@ -55,7 +55,7 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_SYSTEM,
     name: 'System Messages',
     description: 'Messages from your client, always enabled',
-    selector: '.boldannounce',
+    selector: '.boldannounce, .world, .span_filter_system, .sinister',
     important: true,
   },
   // Basic types
@@ -75,7 +75,7 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_LOCALCHAT,
     name: 'Local',
     description: 'In-character local messages (say, emote, etc)',
-    selector: '.say, .emote, .emotesubtle',
+    selector: '.say, .emote, .emotesubtle, .pnarrate, .filter_say',
   },
   {
     type: MESSAGE_TYPE_PLOCALCHAT,
@@ -113,14 +113,22 @@ export const MESSAGE_TYPES = [
     name: 'Info',
     description: 'Non-urgent messages from the game and items',
     selector:
+<<<<<<< HEAD
       '.notice:not(.pm), .adminnotice:not(.pm), .info, .sinister, .cult, .infoplain, .announce, .hear, .smallnotice, .holoparasite, .boldnotice',
+=======
+      '.notice:not(.pm):not(.mentor), .adminnotice:not(.pm), .info, .cult, .alium, .infoplain, .announce, .hear, .smallnotice, .holoparasite, .boldnotice, .suicide, .unconscious, .filter_notice',
+>>>>>>> a92a42b85b (converts our spans (#9185))
   },
   {
     type: MESSAGE_TYPE_WARNING,
     name: 'Warnings',
     description: 'Urgent messages from the game and items',
     selector:
+<<<<<<< HEAD
       '.warning:not(.pm), .critical, .userdanger, .italics, .alertsyndie, .warningplain',
+=======
+      '.warning:not(.pm):not(.mentor), .boldwarning:not(.pm):not(.mentor), .critical, .userdanger, .alertsyndie, .warningplain, .sinister, .filter_warning',
+>>>>>>> a92a42b85b (converts our spans (#9185))
   },
   {
     type: MESSAGE_TYPE_DEADCHAT,
@@ -145,7 +153,7 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_ADMINPM,
     name: 'Admin PMs',
     description: 'Messages to/from admins (adminhelp)',
-    selector: '.pm, .adminhelp',
+    selector: '.pm, .adminhelp, .filter_pm',
   },
   {
     type: MESSAGE_TYPE_MENTORPM,
@@ -157,7 +165,12 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_COMBAT,
     name: 'Combat Log',
     description: 'Urist McTraitor has stabbed you with a knife!',
+<<<<<<< HEAD
     selector: '.danger',
+=======
+    selector:
+      '.danger, .attack, .disarm, .passive, .bolddanger, .filter_combat',
+>>>>>>> a92a42b85b (converts our spans (#9185))
   },
   {
     type: MESSAGE_TYPE_CHATPRINT,
@@ -209,7 +222,10 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_ADMINLOG,
     name: 'Admin Log',
     description: 'ADMIN LOG: Urist McAdmin has jumped to coordinates X, Y, Z',
+<<<<<<< HEAD
     selector: '.log_message',
+=======
+>>>>>>> a92a42b85b (converts our spans (#9185))
     admin: true,
   },
   {
