@@ -48,13 +48,8 @@
 	icon_state = "oldshieldoff"
 	ghost_query_type = /datum/ghost_query/apprentice
 
-<<<<<<< HEAD
-/obj/item/weapon/antag_spawner/technomancer_apprentice/attack_self(mob/user)
-	to_chat(user, "<span class='notice'>Teleporter attempting to lock on to your apprentice.</span>")
-=======
 /obj/item/antag_spawner/technomancer_apprentice/attack_self(mob/user)
 	to_chat(user, span_notice("Teleporter attempting to lock on to your apprentice."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	request_player()
 
 /obj/item/weapon/antag_spawner/technomancer_apprentice/request_player()
@@ -99,13 +94,8 @@
 	ghost_query_type = /datum/ghost_query/syndicate_drone
 	var/drone_type = null
 
-<<<<<<< HEAD
-/obj/item/weapon/antag_spawner/syndicate_drone/attack_self(mob/user)
-	to_chat(user, "<span class='notice'>Teleporter attempting to lock on to an available unit.</span>")
-=======
 /obj/item/antag_spawner/syndicate_drone/attack_self(mob/user)
 	to_chat(user, span_notice("Teleporter attempting to lock on to an available unit."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	request_player()
 
 /obj/item/weapon/antag_spawner/syndicate_drone/request_player()
@@ -141,10 +131,5 @@
 /obj/item/weapon/antag_spawner/syndicate_drone/combat_medic
 	drone_type = /mob/living/silicon/robot/syndicate/combat_medic
 
-<<<<<<< HEAD
-/obj/item/weapon/antag_spawner/syndicate_drone/mechanist
-	drone_type = /mob/living/silicon/robot/syndicate/mechanist
-=======
 /obj/item/antag_spawner/syndicate_drone/mechanist
 	drone_type = /mob/living/silicon/robot/syndicate/mechanist
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))

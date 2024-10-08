@@ -108,13 +108,8 @@
 			return
 	/*if(W.has_tool_quality(TOOL_SCREWDRIVER))
 		panel = !panel
-<<<<<<< HEAD
-		to_chat(user, "<span class='notice'>You [panel ? "open" : "close"] the [src]'s maintenance panel</span>")*/
-	if(istype(W,/obj/item/weapon/pen/crayon) || istype(W,/obj/item/weapon/stamp))
-=======
 		to_chat(user, span_notice("You [panel ? "open" : "close"] the [src]'s maintenance panel"))*/
 	if(istype(W,/obj/item/pen/crayon) || istype(W,/obj/item/stamp))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(state in list(	1, 3, 6))
 			if(!crayon)
 				user.drop_item()

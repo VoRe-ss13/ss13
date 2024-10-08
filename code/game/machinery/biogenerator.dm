@@ -225,13 +225,8 @@
 			beaker = O
 			updateUsrDialog()
 	else if(processing)
-<<<<<<< HEAD
-		to_chat(user, "<span class='notice'>\The [src] is currently processing.</span>")
-	else if(istype(O, /obj/item/weapon/storage/bag/plants))
-=======
 		to_chat(user, span_notice("\The [src] is currently processing."))
 	else if(istype(O, /obj/item/storage/bag/plants))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		var/i = 0
 		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents)
 			i++
@@ -248,13 +243,8 @@
 				to_chat(user, span_notice("You empty \the [O] into \the [src]."))
 
 
-<<<<<<< HEAD
-	else if(!istype(O, /obj/item/weapon/reagent_containers/food/snacks/grown))
-		to_chat(user, "<span class='notice'>You cannot put this in \the [src].</span>")
-=======
 	else if(!istype(O, /obj/item/reagent_containers/food/snacks/grown))
 		to_chat(user, span_notice("You cannot put this in \the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	else
 		var/i = 0
 		for(var/obj/item/weapon/reagent_containers/food/snacks/grown/G in contents)

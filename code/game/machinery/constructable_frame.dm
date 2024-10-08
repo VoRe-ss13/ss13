@@ -51,13 +51,8 @@
 					var/obj/item/weapon/circuitboard/B = P
 					if(B.board_type == "machine")
 					//VOREStation Addition End
-<<<<<<< HEAD
-						if(istype(B, /obj/item/weapon/circuitboard/quantumpad) && istype(get_area(src), /area/shuttle))
-							to_chat(user, "<span class='warning'>This is too unstable a platform for a quantum pad to operate on!</span>")
-=======
 						if(istype(B, /obj/item/circuitboard/quantumpad) && istype(get_area(src), /area/shuttle))
 							to_chat(user, span_warning("This is too unstable a platform for a quantum pad to operate on!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 							return
 					//VOREStation Addition End
 						playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
@@ -98,13 +93,8 @@
 					if(components.len == 0)
 						to_chat(user, span_notice("You remove the circuit board."))
 					else
-<<<<<<< HEAD
-						to_chat(user, "<span class='notice'>You remove the circuit board and other components.</span>")
-						for(var/obj/item/weapon/W in components)
-=======
 						to_chat(user, span_notice("You remove the circuit board and other components."))
 						for(var/obj/item/W in components)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 							W.loc = src.loc
 					desc = initial(desc)
 					req_components = null

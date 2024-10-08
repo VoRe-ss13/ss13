@@ -13,13 +13,8 @@
 	set name = "Arm Blade (20)"
 
 	if(src.mind.changeling.recursive_enhancement)
-<<<<<<< HEAD
-		if(changeling_generic_weapon(/obj/item/weapon/melee/changeling/arm_blade/greater))
-			to_chat(src, "<span class='notice'>We prepare an extra sharp blade.</span>")
-=======
 		if(changeling_generic_weapon(/obj/item/melee/changeling/arm_blade/greater))
 			to_chat(src, span_notice("We prepare an extra sharp blade."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return 1
 
 	else
@@ -43,13 +38,8 @@
 	set name = "Claw (15)"
 
 	if(src.mind.changeling.recursive_enhancement)
-<<<<<<< HEAD
-		if(changeling_generic_weapon(/obj/item/weapon/melee/changeling/claw/greater, 1, 15))
-			to_chat(src, "<span class='notice'>We prepare an extra sharp claw.</span>")
-=======
 		if(changeling_generic_weapon(/obj/item/melee/changeling/claw/greater, 1, 15))
 			to_chat(src, span_notice("We prepare an extra sharp claw."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return 1
 
 	else
@@ -84,17 +74,10 @@
 		span_italics("You hear organic matter ripping and tearing!"))
 		src.creator = loc
 
-<<<<<<< HEAD
-/obj/item/weapon/melee/changeling/dropped(mob/user)
-	visible_message("<span class='warning'>With a sickening crunch, [creator] reforms their arm!</span>",
-	"<span class='notice'>We assimilate the weapon back into our body.</span>",
-	"<span class='italics'>You hear organic matter ripping and tearing!</span>")
-=======
 /obj/item/melee/changeling/dropped(mob/user)
 	visible_message(span_warning("With a sickening crunch, [creator] reforms their arm!"),
 	span_notice("We assimilate the weapon back into our body."),
 	span_italics("You hear organic matter ripping and tearing!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	playsound(src, 'sound/effects/blobattack.ogg', 30, 1)
 	spawn(1)
 		if(src)

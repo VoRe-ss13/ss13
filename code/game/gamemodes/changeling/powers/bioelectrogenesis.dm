@@ -24,13 +24,8 @@
 
 	if(held_item == null)
 		if(src.mind.changeling.recursive_enhancement)
-<<<<<<< HEAD
-			if(changeling_generic_weapon(/obj/item/weapon/electric_hand/efficent,0))
-				to_chat(src, "<span class='notice'>We will shock others more efficently.</span>")
-=======
 			if(changeling_generic_weapon(/obj/item/electric_hand/efficent,0))
 				to_chat(src, span_notice("We will shock others more efficently."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				return 1
 		else
 			if(changeling_generic_weapon(/obj/item/weapon/electric_hand,0))  //Chemical cost is handled in the equip proc.
@@ -78,17 +73,10 @@
 				L.Add(cell)
 
 			//Now for the actual recharging.
-<<<<<<< HEAD
-			for(var/obj/item/weapon/cell/cell in L)
-				visible_message("<span class='warning'>Some sparks fall out from \the [src.name]\'s [held_item]!</span>",
-				"<span class='warning'>Our hand channels raw electricity into \the [held_item].</span>",
-				"<span class='italics'>You hear sparks!</span>")
-=======
 			for(var/obj/item/cell/cell in L)
 				visible_message(span_warning("Some sparks fall out from \the [src.name]\'s [held_item]!"),
 				span_warning("Our hand channels raw electricity into \the [held_item]."),
 				span_italics("You hear sparks!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				var/i = 10
 				if(siemens)
 					while(i)
@@ -195,17 +183,10 @@
 			var/success = 0
 			var/obj/T = target
 			//We can also recharge things we touch, such as APCs or hardsuits.
-<<<<<<< HEAD
-			for(var/obj/item/weapon/cell/cell in T.contents)
-				visible_message("<span class='warning'>Some sparks fall out from \the [target]!</span>",
-				"<span class='warning'>Our hand channels raw electricity into \the [target].</span>",
-				"<span class='italics'>You hear sparks!</span>")
-=======
 			for(var/obj/item/cell/cell in T.contents)
 				visible_message(span_warning("Some sparks fall out from \the [target]!"),
 				span_warning("Our hand channels raw electricity into \the [target]."),
 				span_italics("You hear sparks!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				var/i = 10
 				if(siemens)
 					while(i)

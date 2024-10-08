@@ -260,13 +260,8 @@ update_flag
 			qdel(src)
 			return
 	//Voreend
-<<<<<<< HEAD
-	if(!W.has_tool_quality(TOOL_WRENCH) && !istype(W, /obj/item/weapon/tank) && !istype(W, /obj/item/device/analyzer) && !istype(W, /obj/item/device/pda))
-		visible_message("<span class='warning'>\The [user] hits \the [src] with \a [W]!</span>")
-=======
 	if(!W.has_tool_quality(TOOL_WRENCH) && !istype(W, /obj/item/tank) && !istype(W, /obj/item/analyzer) && !istype(W, /obj/item/pda))
 		visible_message(span_warning("\The [user] hits \the [src] with \a [W]!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		src.health -= W.force
 		src.add_fingerprint(user)
 		healthcheck()

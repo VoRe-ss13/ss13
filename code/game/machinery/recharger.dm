@@ -79,15 +79,9 @@
 				to_chat(user, span_notice("\The [G] does not have any cell in its magazine installed."))
 				return
 		else
-<<<<<<< HEAD
-			to_chat(user, "\The [G] does not have a magazine installed..") // CHOMPedit end
-	if(istype(G, /obj/item/device/paicard))
-		var/obj/item/device/paicard/ourcard = G
-=======
 			to_chat(user, span_notice("\The [G] does not have a magazine installed..")) // CHOMPedit end
 	if(istype(G, /obj/item/paicard))
 		var/obj/item/paicard/ourcard = G
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(ourcard.panel_open)
 			to_chat(user, span_warning("\The [ourcard] won't fit in the recharger with its panel open."))
 			return

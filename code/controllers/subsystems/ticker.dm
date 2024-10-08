@@ -232,14 +232,8 @@ var/global/datum/controller/subsystem/ticker/ticker
 		end_game_state = END_GAME_MODE_FINISHED // Only do this cleanup once!
 		mode.cleanup()
 		//call a transfer shuttle vote
-<<<<<<< HEAD
-		to_world("<span class='danger'>The round has ended!</span>")
-		SSvote.autotransfer()
-=======
 		to_world(span_danger("The round has ended!"))
 		new /datum/vote/crew_transfer
-		to_world("<span class='danger'>The round has ended!</span>")
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 // Called during GAME_STATE_FINISHED (RUNLEVEL_POSTGAME)
 /datum/controller/subsystem/ticker/proc/post_game_tick()

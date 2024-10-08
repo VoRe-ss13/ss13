@@ -75,8 +75,6 @@
 
 #define span_reflex_shoot(str) ("<span class='reflex_shoot'>" + str + "</span>")
 
-<<<<<<< HEAD
-=======
 #define span_wingdings(str) ("<span class='wingdings'>" + str + "</span>") //CHOMPAdd
 
 /* Direct communication spans */
@@ -88,7 +86,6 @@
 
 #define span_chatexport(str) ("<span class='chatexport'>" + str + "</span>")
 
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 /* Vore messages */
 
 #define span_valert(str) ("<span class='valert'>" + str + "</span>")
@@ -148,9 +145,6 @@
 #define span_maroon(str) ("<span class='maroon'>" + str + "</span>")
 #define span_brown(str) ("<span class='brown'>" + str + "</span>")
 #define span_lightpurple(str) ("<span class='lightpurple'>" + str + "</span>")
-<<<<<<< HEAD
-#define span_darkpink(str) ("<span class='lightpurple'>" + str + "</span>")
-=======
 #define span_darkpink(str) ("<span class='darkpurple'>" + str + "</span>")
 
 /* System and Debug */
@@ -196,4 +190,3 @@
 #define span_bold(str) ("<span class='bold'>" + str + "</span>")
 
 #define span_linkify(str) ("<span class='linkify'>" + str + "</span>")
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))

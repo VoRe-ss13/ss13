@@ -409,13 +409,8 @@ Class Procs:
 	playsound(src, S.usesound, 50, 1)
 	if(do_after(user, 20 * S.toolspeed))
 		if(stat & BROKEN)
-<<<<<<< HEAD
-			to_chat(user, "<span class='notice'>The broken glass falls out.</span>")
-			new /obj/item/weapon/material/shard(src.loc)
-=======
 			to_chat(user, span_notice("The broken glass falls out."))
 			new /obj/item/material/shard(src.loc)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		else
 			to_chat(user, span_notice("You disconnect the monitor."))
 		. = dismantle()

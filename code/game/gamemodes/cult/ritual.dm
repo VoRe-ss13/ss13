@@ -94,13 +94,8 @@ var/global/list/rnwords = list("ire","ego","nahlizet","certum","veri","jatkaa","
 		to_chat(user, "You retrace your steps, carefully undoing the lines of the rune.")
 		qdel(src)
 		return
-<<<<<<< HEAD
-	else if(istype(I, /obj/item/weapon/nullrod))
-		to_chat(user, "<span class='notice'>You disrupt the vile magic with the deadening field of the null rod!</span>")
-=======
 	else if(istype(I, /obj/item/nullrod))
 		to_chat(user, span_notice("You disrupt the vile magic with the deadening field of the null rod!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		qdel(src)
 		return
 	return

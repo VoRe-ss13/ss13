@@ -107,13 +107,8 @@
 
 
 /obj/machinery/computer/guestpass/attackby(obj/I, mob/user)
-<<<<<<< HEAD
-	if(istype(I, /obj/item/weapon/card/id/guest))
-		to_chat(user, "<span class='warning'>The guest pass terminal denies to accept the guest pass.</span>")
-=======
 	if(istype(I, /obj/item/card/id/guest))
 		to_chat(user, span_warning("The guest pass terminal denies to accept the guest pass."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return
 	if(istype(I, /obj/item/weapon/card/id))
 		if(stat & NOPOWER) //checking for power in here so crowbar and screwdriver and stuff still works.

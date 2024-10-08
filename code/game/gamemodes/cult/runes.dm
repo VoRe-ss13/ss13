@@ -776,13 +776,8 @@ var/list/sacrificed = list()
 				R:visibility=15
 			S=1
 	if(S)
-<<<<<<< HEAD
-		if(istype(W,/obj/item/weapon/nullrod))
-			to_chat(usr, "<span class='warning'>Arcane markings suddenly glow from underneath a thin layer of dust!</span>")
-=======
 		if(istype(W,/obj/item/nullrod))
 			to_chat(usr, span_warning("Arcane markings suddenly glow from underneath a thin layer of dust!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 		if(istype(W,/obj/effect/rune))
 			usr.say("Nikt[pick("'","`")]o barada kla'atu!")

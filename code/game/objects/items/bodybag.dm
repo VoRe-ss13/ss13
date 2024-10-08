@@ -255,13 +255,8 @@
 			if(syringe)
 				to_chat(user,span_warning("\The [src] already has an injector! Remove it first."))
 			else
-<<<<<<< HEAD
-				var/obj/item/weapon/reagent_containers/syringe/syringe = W
-				to_chat(user,"<span class='info'>You insert \the [syringe] into \the [src], and it locks into place.</span>")
-=======
 				var/obj/item/reagent_containers/syringe/syringe = W
 				to_chat(user,span_info("You insert \the [syringe] into \the [src], and it locks into place."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				user.unEquip(syringe)
 				src.syringe = syringe
 				syringe.loc = null

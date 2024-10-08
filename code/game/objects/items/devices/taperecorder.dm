@@ -331,13 +331,8 @@
 		to_chat(usr, span_notice("You can't print the transcript while playing or recording!"))
 		return
 
-<<<<<<< HEAD
-	to_chat(usr, "<span class='notice'>Transcript printed.</span>")
-	var/obj/item/weapon/paper/P = new /obj/item/weapon/paper(get_turf(src))
-=======
 	to_chat(usr, span_notice("Transcript printed."))
 	var/obj/item/paper/P = new /obj/item/paper(get_turf(src))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	var/t1 = "<B>Transcript:</B><BR><BR>"
 	for(var/i=1,mytape.storedinfo.len >= i,i++)
 		var/printedmessage = mytape.storedinfo[i]

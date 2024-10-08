@@ -166,15 +166,9 @@
 		reattach_gun(user)
 	else if(istype(W, /obj/item/weapon/cell))
 		if(bcell)
-<<<<<<< HEAD
-			to_chat(user, "<span class='notice'>\The [src] already has a cell.</span>")
-		else if(!istype(W, /obj/item/weapon/cell/device/weapon)) //Weapon cells only!
-			to_chat(user, "<span class='notice'>This cell will not fit in the device.</span>")
-=======
 			to_chat(user, span_notice("\The [src] already has a cell."))
 		else if(!istype(W, /obj/item/cell/device/weapon)) //Weapon cells only!
 			to_chat(user, span_notice("This cell will not fit in the device."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		else
 			if(!user.unEquip(W))
 				return

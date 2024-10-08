@@ -239,8 +239,4 @@
 //Non-Random Posters
 
 /obj/structure/sign/poster/custom
-<<<<<<< HEAD
-	roll_type = /obj/item/weapon/contraband/poster/custom
-=======
 	roll_type = /obj/item/contraband/poster/custom
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))

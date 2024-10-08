@@ -191,13 +191,8 @@ var/bluespace_item_types = newlist(/obj/item/weapon/storage/backpack/holding,
 	return 1
 
 /datum/teleport/instant/science/teleportChecks()
-<<<<<<< HEAD
-	if(istype(teleatom, /obj/item/weapon/disk/nuclear)) // Don't let nuke disks get teleported --NeoFite
-		teleatom.visible_message("<span class='danger'>\The [teleatom] bounces off of the portal!</span>")
-=======
 	if(istype(teleatom, /obj/item/disk/nuclear)) // Don't let nuke disks get teleported --NeoFite
 		teleatom.visible_message(span_danger("\The [teleatom] bounces off of the portal!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return 0
 
 	if(!isemptylist(teleatom.search_contents_for(/obj/item/weapon/disk/nuclear)))
@@ -213,13 +208,8 @@ var/bluespace_item_types = newlist(/obj/item/weapon/storage/backpack/holding,
 			var/obj/mecha/MM = teleatom
 			to_chat(MM.occupant, span_danger("\The [MM] would not survive the jump to a location so far away!"))
 			return 0
-<<<<<<< HEAD
-		if(!isemptylist(teleatom.search_contents_for(/obj/item/weapon/storage/backpack/holding)))
-			teleatom.visible_message("<span class='danger'>\The [teleatom] bounces off of the portal!</span>")
-=======
 		if(!isemptylist(teleatom.search_contents_for(/obj/item/storage/backpack/holding)))
 			teleatom.visible_message(span_danger("\The [teleatom] bounces off of the portal!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return 0
 	*/ //VOREStation Removal End
 	//VOREStation Edit Start

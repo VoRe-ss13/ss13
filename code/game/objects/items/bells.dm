@@ -98,11 +98,6 @@
 		ring(user)
 
 
-<<<<<<< HEAD
-/obj/item/weapon/deskbell/proc/break_bell(mob/user)
-	to_chat(user,"<span class='notice'>The ringing abruptly stops as [src]'s ringer gets jammed inside!</span>")
-=======
 /obj/item/deskbell/proc/break_bell(mob/user)
 	to_chat(user,span_notice("The ringing abruptly stops as [src]'s ringer gets jammed inside!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	broken = 1

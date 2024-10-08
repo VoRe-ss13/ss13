@@ -144,13 +144,8 @@
 			tank = W
 			user.visible_message("<b>\The [user]</b> installs \the [tank] into \the [src].", span_notice("You install \the [tank] into \the [src]."))
 			src.add_fingerprint(user)
-<<<<<<< HEAD
-	if(istype(W, /obj/item/weapon/tank) && !stat)
-		to_chat(user, "<span class='warning'>Please open the maintenance hatch first.</span>")
-=======
 	if(istype(W, /obj/item/tank) && !stat)
 		to_chat(user, span_warning("Please open the maintenance hatch first."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 /obj/machinery/oxygen_pump/examine(var/mob/user)
 	. = ..()

@@ -257,13 +257,8 @@
 			return
 		//VOREstation Edit End
 		if(prying)
-<<<<<<< HEAD
-			to_chat(user, "<span class='notice'>Someone's busy prying that [density ? "open" : "closed"]!</span>")
-		var/obj/item/weapon/weldingtool/W = C.get_welder()
-=======
 			to_chat(user, span_notice("Someone's busy prying that [density ? "open" : "closed"]!"))
 		var/obj/item/weldingtool/W = C.get_welder()
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(W.remove_fuel(0, user))
 			blocked = !blocked
 			user.visible_message(span_danger("\The [user] [blocked ? "welds" : "unwelds"] \the [src] with \a [W]."),\

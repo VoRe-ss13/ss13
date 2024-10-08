@@ -17,13 +17,8 @@
 /obj/item/weapon/spell/flame_tongue/New()
 	..()
 	set_light(3, 2, l_color = "#FF6A00")
-<<<<<<< HEAD
-	visible_message("<span class='warning'>\The [loc]'s hand begins to emit a flame.</span>")
-	welder = new /obj/item/weapon/weldingtool/spell(src)
-=======
 	visible_message(span_warning("\The [loc]'s hand begins to emit a flame."))
 	welder = new /obj/item/weldingtool/spell(src)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	welder.setWelding(1)
 
 /obj/item/weapon/spell/flame_tongue/Destroy()

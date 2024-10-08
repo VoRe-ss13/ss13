@@ -85,13 +85,8 @@
 			contains = JAR_MONEY
 		if(contains != JAR_MONEY)
 			return
-<<<<<<< HEAD
-		var/obj/item/weapon/spacecash/S = W
-		user.visible_message("<span class='notice'>[user] puts [S.worth] [S.worth > 1 ? "thalers" : "thaler"] into \the [src].</span>")
-=======
 		var/obj/item/spacecash/S = W
 		user.visible_message(span_notice("[user] puts [S.worth] [S.worth > 1 ? "thalers" : "thaler"] into \the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		user.drop_from_inventory(S)
 		S.loc = src
 		update_icon()

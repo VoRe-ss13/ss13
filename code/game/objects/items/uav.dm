@@ -336,13 +336,8 @@
 	CheckHealth()
 	return
 
-<<<<<<< HEAD
-/obj/item/device/uav/attack_generic(var/mob/user, var/damage, var/attack_verb)
-	visible_message("<span class='danger'>[user] [attack_verb] the [src]!</span>")
-=======
 /obj/item/uav/attack_generic(var/mob/user, var/damage, var/attack_verb)
 	visible_message(span_danger("[user] [attack_verb] the [src]!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	playsound(src, 'sound/weapons/smash.ogg', 50, 1)
 	user.do_attack_animation(src)
 	health -= damage
@@ -361,13 +356,8 @@
 	if(health <= 0)
 		die()
 
-<<<<<<< HEAD
-/obj/item/device/uav/proc/die()
-	visible_message("<span class='danger'>[src] shorts out and explodes!</span>")
-=======
 /obj/item/uav/proc/die()
 	visible_message(span_danger("[src] shorts out and explodes!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	power_down()
 	var/turf/T = get_turf(src)
 	qdel(src)

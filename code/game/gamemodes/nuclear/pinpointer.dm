@@ -313,10 +313,5 @@
 /obj/item/weapon/pinpointer/shuttle/merc
 	shuttle_comp_id = "Mercenary"
 
-<<<<<<< HEAD
-/obj/item/weapon/pinpointer/shuttle/heist
-	shuttle_comp_id = "Skipjack"
-=======
 /obj/item/pinpointer/shuttle/heist
 	shuttle_comp_id = "Skipjack"
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))

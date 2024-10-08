@@ -466,13 +466,8 @@
 				if(components.len == 0)
 					to_chat(user, span_notice("There are no components to remove."))
 				else
-<<<<<<< HEAD
-					to_chat(user, "<span class='notice'>You remove the components.</span>")
-					for(var/obj/item/weapon/W in components)
-=======
 					to_chat(user, span_notice("You remove the components."))
 					for(var/obj/item/W in components)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 						W.forceMove(src.loc)
 					check_components()
 					update_desc()
@@ -542,13 +537,8 @@
 				if (components.len == 0)
 					to_chat(user, span_notice("You remove the cables."))
 				else
-<<<<<<< HEAD
-					to_chat(user, "<span class='notice'>You remove the cables and components.</span>")
-					for(var/obj/item/weapon/W in components)
-=======
 					to_chat(user, span_notice("You remove the cables and components."))
 					for(var/obj/item/W in components)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 						W.forceMove(src.loc)
 					check_components()
 					update_desc()

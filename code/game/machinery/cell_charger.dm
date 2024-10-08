@@ -50,15 +50,9 @@
 	if(stat & BROKEN)
 		return
 
-<<<<<<< HEAD
-	if(istype(W, /obj/item/weapon/cell) && anchored)
-		if(istype(W, /obj/item/weapon/cell/device))
-			to_chat(user, "<span class='warning'>\The [src] isn't fitted for that type of cell.</span>")
-=======
 	if(istype(W, /obj/item/cell) && anchored)
 		if(istype(W, /obj/item/cell/device))
 			to_chat(user, span_warning("\The [src] isn't fitted for that type of cell."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 		if(charging)
 			to_chat(user, span_warning("There is already [charging] in [src]."))

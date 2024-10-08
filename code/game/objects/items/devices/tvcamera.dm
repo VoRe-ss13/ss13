@@ -369,13 +369,8 @@
 				desc = "This TV camera assembly has wires sticking out"
 				return
 		if(3)
-<<<<<<< HEAD
-			if(istype(W, /obj/item/weapon/tool/wirecutters))
-				to_chat(user, "<span class='notice'> You trim the wires.</span>")
-=======
 			if(istype(W, /obj/item/tool/wirecutters))
 				to_chat(user, span_notice(" You trim the wires."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				buildstep++
 				desc = "This TV camera assembly needs casing."
 				return

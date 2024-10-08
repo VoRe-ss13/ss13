@@ -1110,13 +1110,8 @@
 			to_chat(user, span_notice("You remove [Gun] from the turret frame."))
 
 		if(5)
-<<<<<<< HEAD
-			to_chat(user, "<span class='notice'>You remove the prox sensor from the turret frame.</span>")
-			new /obj/item/device/assembly/prox_sensor(loc)
-=======
 			to_chat(user, span_notice("You remove the prox sensor from the turret frame."))
 			new /obj/item/assembly/prox_sensor(loc)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			build_step = 4
 
 /obj/machinery/porta_turret_construct/attack_ai()

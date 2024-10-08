@@ -41,13 +41,8 @@
 	throw_range = 20
 	var/randomize = TRUE
 	var/square_chance = 10
-<<<<<<< HEAD
-	
-/obj/item/weapon/soap/Initialize()
-=======
 
 /obj/item/soap/Initialize()
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	if(randomize && prob(square_chance))
 		icon_state = "[icon_state]-alt"
 

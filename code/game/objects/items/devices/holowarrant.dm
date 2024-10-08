@@ -51,15 +51,9 @@
 	..()
 
 //hit other people with it
-<<<<<<< HEAD
-/obj/item/device/holowarrant/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
-	user.visible_message("<span class='notice'>You show the warrant to [M].</span>", \
-			"<span class='notice'>[user] holds up a warrant projector and shows the contents to [M].</span>")
-=======
 /obj/item/holowarrant/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	user.visible_message(span_notice("You show the warrant to [M]."), \
 			span_notice("[user] holds up a warrant projector and shows the contents to [M]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	M.examinate(src)
 
 /obj/item/device/holowarrant/update_icon()
@@ -121,7 +115,7 @@
 	name = "holowarrant devices"
 	desc = "A box of holowarrant displays for security use."
 
-/obj/item/weapon/storage/box/holowarrants/New() 
+/obj/item/weapon/storage/box/holowarrants/New()
 	..()
 	for(var/i = 0 to 3)
 		new /obj/item/device/holowarrant(src) // VOREStation addition ends

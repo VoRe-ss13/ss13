@@ -201,13 +201,8 @@
 					user.put_in_hands(O)
 					return TRUE
 
-<<<<<<< HEAD
-			if(!istype(I, /obj/item/device/assembly/signaler))
-				to_chat(user, "<span class='error'>You need a remote signaller!</span>")
-=======
 			if(!istype(I, /obj/item/assembly/signaler))
 				to_chat(user, span_warning("You need a remote signaller!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				return
 
 			if(user.unEquip(I))

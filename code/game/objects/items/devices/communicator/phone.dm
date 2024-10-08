@@ -184,15 +184,9 @@
 		return
 
 	if(isobserver(candidate))
-<<<<<<< HEAD
-		to_chat(candidate, "<span class='warning'>Your communicator call request was declined.</span>")
-	else if(istype(candidate, /obj/item/device/communicator))
-		var/obj/item/device/communicator/comm = candidate
-=======
 		to_chat(candidate, span_warning("Your communicator call request was declined."))
 	else if(istype(candidate, /obj/item/communicator))
 		var/obj/item/communicator/comm = candidate
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		comm.voice_invites -= src
 
 	voice_requests -= candidate
