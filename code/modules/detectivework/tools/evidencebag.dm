@@ -38,13 +38,8 @@
 		else
 			return
 
-<<<<<<< HEAD
-	if(istype(I, /obj/item/weapon/evidencebag))
-		to_chat(user, "<span class='notice'>You find putting an evidence bag in another evidence bag to be slightly absurd.</span>")
-=======
 	if(istype(I, /obj/item/evidencebag))
 		to_chat(user, span_notice("You find putting an evidence bag in another evidence bag to be slightly absurd."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return
 
 	if(I.w_class > 3)

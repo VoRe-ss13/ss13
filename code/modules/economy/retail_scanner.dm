@@ -170,13 +170,8 @@
 	else if (istype(O, /obj/item/weapon/spacecash/ewallet))
 		var/obj/item/weapon/spacecash/ewallet/E = O
 		scan_wallet(E)
-<<<<<<< HEAD
-	else if (istype(O, /obj/item/weapon/spacecash))
-		to_chat(usr, "<span class='warning'>This device does not accept cash.</span>")
-=======
 	else if (istype(O, /obj/item/spacecash))
 		to_chat(usr, span_warning("This device does not accept cash."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 	else if(istype(O, /obj/item/weapon/card/emag))
 		return ..()

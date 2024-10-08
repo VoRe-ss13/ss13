@@ -177,13 +177,8 @@
 			var/obj/item/stack/cable_coil/C = W
 			if(C.use(5))
 				//TODO: generalize this.
-<<<<<<< HEAD
-				to_chat(user, "<span class='notice'>You add some cable to the [src.name] and slide it inside the battery casing.</span>")
-				var/obj/item/weapon/cell/potato/pocell = new /obj/item/weapon/cell/potato(get_turf(user))
-=======
 				to_chat(user, span_notice("You add some cable to the [src.name] and slide it inside the battery casing."))
 				var/obj/item/cell/potato/pocell = new /obj/item/cell/potato(get_turf(user))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				if(src.loc == user && istype(user,/mob/living/carbon/human))
 					user.put_in_hands(pocell)
 				pocell.maxcharge = src.potency * 200
@@ -226,46 +221,26 @@
 					return
 
 				if(seed.kitchen_tag == "potato" || !isnull(seed.chems["potato"]))
-<<<<<<< HEAD
-					to_chat(user, "<span class='filter_notice'>You slice \the [src] into sticks.</span>")
-					new /obj/item/weapon/reagent_containers/food/snacks/rawsticks(get_turf(src))
-=======
 					to_chat(user, span_filter_notice("You slice \the [src] into sticks."))
 					new /obj/item/reagent_containers/food/snacks/rawsticks(get_turf(src))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 					qdel(src)
 					return
 
 				if(!isnull(seed.chems["carrotjuice"]))
-<<<<<<< HEAD
-					to_chat(user, "<span class='filter_notice'>You slice \the [src] into sticks.</span>")
-					new /obj/item/weapon/reagent_containers/food/snacks/carrotfries(get_turf(src))
-=======
 					to_chat(user, span_filter_notice("You slice \the [src] into sticks."))
 					new /obj/item/reagent_containers/food/snacks/carrotfries(get_turf(src))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 					qdel(src)
 					return
 
 				if(!isnull(seed.chems["pineapplejuice"]))
-<<<<<<< HEAD
-					to_chat(user, "<span class='filter_notice'>You slice \the [src] into rings.</span>")
-					new /obj/item/weapon/reagent_containers/food/snacks/pineapple_ring(get_turf(src))
-=======
 					to_chat(user, span_filter_notice("You slice \the [src] into rings."))
 					new /obj/item/reagent_containers/food/snacks/pineapple_ring(get_turf(src))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 					qdel(src)
 					return
 
 				if(!isnull(seed.chems["soymilk"]))
-<<<<<<< HEAD
-					to_chat(user, "<span class='filter_notice'>You roughly chop up \the [src].</span>")
-					new /obj/item/weapon/reagent_containers/food/snacks/soydope(get_turf(src))
-=======
 					to_chat(user, span_filter_notice("You roughly chop up \the [src]."))
 					new /obj/item/reagent_containers/food/snacks/soydope(get_turf(src))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 					qdel(src)
 					return
 

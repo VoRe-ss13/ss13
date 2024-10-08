@@ -30,13 +30,8 @@
 		return
 
 	//Fine fine, we can ask.
-<<<<<<< HEAD
-	var/obj/item/device/nif/nif = H.nif
-	to_chat(src,"<span class='notice'>Request sent to [H].</span>")
-=======
 	var/obj/item/nif/nif = H.nif
 	to_chat(src,span_notice("Request sent to [H]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 	var/req_time = world.time
 	nif.notify("Transient mindstate detected, analyzing...")

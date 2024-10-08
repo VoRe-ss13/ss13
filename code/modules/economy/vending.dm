@@ -294,13 +294,8 @@ GLOBAL_LIST_EMPTY(vending_products)
  * Takes payment for whatever is the currently_vending item. Returns 1 if
  * successful, 0 if failed.
  */
-<<<<<<< HEAD
-/obj/machinery/vending/proc/pay_with_ewallet(var/obj/item/weapon/spacecash/ewallet/wallet)
-	visible_message("<span class='info'>\The [usr] swipes \the [wallet] through \the [src].</span>")
-=======
 /obj/machinery/vending/proc/pay_with_ewallet(var/obj/item/spacecash/ewallet/wallet)
 	visible_message(span_info("\The [usr] swipes \the [wallet] through \the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	playsound(src, 'sound/machines/id_swipe.ogg', 50, 1)
 	if(currently_vending.price > wallet.worth)
 		to_chat(usr, span_warning("Insufficient funds on chargecard."))
@@ -316,13 +311,8 @@ GLOBAL_LIST_EMPTY(vending_products)
  * Takes payment for whatever is the currently_vending item. Returns 1 if
  * successful, 0 if failed
  */
-<<<<<<< HEAD
-/obj/machinery/vending/proc/pay_with_card(obj/item/weapon/card/id/I, mob/M)
-	visible_message("<span class='info'>[M] swipes a card through [src].</span>")
-=======
 /obj/machinery/vending/proc/pay_with_card(obj/item/card/id/I, mob/M)
 	visible_message(span_info("[M] swipes a card through [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	playsound(src, 'sound/machines/id_swipe.ogg', 50, 1)
 
 	var/datum/money_account/customer_account = get_account(I.associated_account_number)

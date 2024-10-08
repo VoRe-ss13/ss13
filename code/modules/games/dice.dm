@@ -164,17 +164,10 @@
 		/obj/item/weapon/dice,
 		)
 
-<<<<<<< HEAD
-/obj/item/weapon/storage/dicecup/attack_self(mob/user as mob)
-	user.visible_message("<span class='notice'>[user] shakes [src].</span>", \
-							 "<span class='notice'>You shake [src].</span>", \
-							 "<span class='notice'>You hear dice rolling.</span>")
-=======
 /obj/item/storage/dicecup/attack_self(mob/user as mob)
 	user.visible_message(span_notice("[user] shakes [src]."), \
 							 span_notice("You shake [src]."), \
 							 span_notice("You hear dice rolling."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	rollCup(user)
 
 /obj/item/weapon/storage/dicecup/proc/rollCup(mob/user as mob)

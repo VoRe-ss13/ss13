@@ -98,13 +98,8 @@
 		return
 
 	var/datum/weather_holder/WH = P.weather_holder
-<<<<<<< HEAD
-	if(WH.firework_override && istype(loaded_star, /obj/item/weapon/firework_star/weather))			// Enable weather-based events to not be ruined
-		to_chat(user, "<span class='warning'>\The [src] beeps as it seems some interference is preventing launch of this type of firework.</span>")
-=======
 	if(WH.firework_override && istype(loaded_star, /obj/item/firework_star/weather))			// Enable weather-based events to not be ruined
 		to_chat(user, span_warning("\The [src] beeps as it seems some interference is preventing launch of this type of firework."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return
 
 	to_chat(user, span_notice("You launch the firework!"))

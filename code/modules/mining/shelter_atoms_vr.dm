@@ -209,13 +209,8 @@ GLOBAL_LIST_EMPTY(unique_deployable)
 	verbs -= /obj/structure/table/proc/do_put
 	..()
 
-<<<<<<< HEAD
-/obj/structure/table/survival_pod/dismantle(obj/item/weapon/tool/wrench/W, mob/user)
-	to_chat(user, "<span class='warning'>You cannot dismantle \the [src].</span>")
-=======
 /obj/structure/table/survival_pod/dismantle(obj/item/tool/wrench/W, mob/user)
 	to_chat(user, span_warning("You cannot dismantle \the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	return
 
 //Sleeper

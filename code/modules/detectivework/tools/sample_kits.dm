@@ -132,15 +132,9 @@
 /obj/item/weapon/forensics/sample_kit/proc/can_take_sample(var/mob/user, var/atom/supplied)
 	return (supplied.suit_fibers && supplied.suit_fibers.len)
 
-<<<<<<< HEAD
-/obj/item/weapon/forensics/sample_kit/proc/take_sample(var/mob/user, var/atom/supplied)
-	var/obj/item/weapon/sample/S = new evidence_path(get_turf(user), supplied)
-	to_chat(user, "<span class='notice'>You transfer [S.evidence.len] [S.evidence.len > 1 ? "[evidence_type]s" : "[evidence_type]"] to \the [S].</span>")
-=======
 /obj/item/forensics/sample_kit/proc/take_sample(var/mob/user, var/atom/supplied)
 	var/obj/item/sample/S = new evidence_path(get_turf(user), supplied)
 	to_chat(user, span_notice("You transfer [S.evidence.len] [S.evidence.len > 1 ? "[evidence_type]s" : "[evidence_type]"] to \the [S]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 /obj/item/weapon/forensics/sample_kit/afterattack(var/atom/A, var/mob/user, var/proximity)
 	if(!proximity)

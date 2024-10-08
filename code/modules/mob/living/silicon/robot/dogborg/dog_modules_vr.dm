@@ -314,13 +314,8 @@
 				water.use_charge(5)  //CHOMPAdd
 			busy = 0 //CHOMPAdd prevents abuse
 			return
-<<<<<<< HEAD
-		if(istype(target,/obj/item/weapon/reagent_containers/food))
-			user.visible_message("[user] nibbles away at \the [target.name].", "<span class='notice'>You begin to nibble away at \the [target.name]...</span>")
-=======
 		if(istype(target,/obj/item/reagent_containers/food))
 			user.visible_message("[user] nibbles away at \the [target.name].", span_notice("You begin to nibble away at \the [target.name]..."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			busy = 1 //CHOMPAdd prevents abuse
 			if(do_after (user, 50))
 				user.visible_message("[user] finishes eating \the [target.name].", span_notice("You finish eating \the [target.name]."))
@@ -330,13 +325,8 @@
 				R.cell.charge = R.cell.charge + 250
 			busy = 0 //CHOMPAdd prevents abuse
 			return
-<<<<<<< HEAD
-		if(istype(target,/obj/item/weapon/cell))
-			user.visible_message("<span class='filter_notice'>[user] begins cramming \the [target.name] down its throat.</span>", "<span class='notice'>You begin cramming \the [target.name] down your throat...</span>")
-=======
 		if(istype(target,/obj/item/cell))
 			user.visible_message(span_filter_notice("[user] begins cramming \the [target.name] down its throat."), span_notice("You begin cramming \the [target.name] down your throat..."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			busy = 1
 			if(do_after (user, 50))
 				user.visible_message(span_filter_notice("[user] finishes gulping down \the [target.name]."), span_notice("You finish swallowing \the [target.name]."))
@@ -598,7 +588,7 @@
 		T.hitby(src)
 	else
 		src.throw_at(get_step(get_turf(T),get_turf(src)), 4, 1, src)
-	*/ 
+	*/
 	src.throw_at(get_step(get_turf(T),get_turf(src)), 4, 1, src) //ChompEDIT - no bluespace pounce
 	//ChompEDIT END
 	playsound(src, 'sound/mecha/mechstep2.ogg', 50, 1)

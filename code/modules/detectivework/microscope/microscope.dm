@@ -16,13 +16,8 @@
 		to_chat(user, span_warning("There is already a slide in the microscope."))
 		return
 
-<<<<<<< HEAD
-	if(istype(W, /obj/item/weapon/forensics/swab)|| istype(W, /obj/item/weapon/sample/fibers) || istype(W, /obj/item/weapon/sample/print))
-		to_chat(user, "<span class='notice'>You insert \the [W] into the microscope.</span>")
-=======
 	if(istype(W, /obj/item/forensics/swab)|| istype(W, /obj/item/sample/fibers) || istype(W, /obj/item/sample/print))
 		to_chat(user, span_notice("You insert \the [W] into the microscope."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		user.unEquip(W)
 		W.forceMove(src)
 		sample = W
@@ -41,15 +36,9 @@
 		to_chat(user, span_notice("You stop examining \the [sample]."))
 		return
 
-<<<<<<< HEAD
-	to_chat(user, "<span class='notice'>Printing findings now...</span>")
-	var/obj/item/weapon/paper/report = new(get_turf(src))
-	report.stamped = list(/obj/item/weapon/stamp)
-=======
 	to_chat(user, span_notice("Printing findings now..."))
 	var/obj/item/paper/report = new(get_turf(src))
 	report.stamped = list(/obj/item/stamp)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	report.overlays = list("paper_stamped")
 	report_num++
 

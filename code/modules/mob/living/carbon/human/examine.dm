@@ -194,13 +194,8 @@
 
 	//handcuffed?
 	if(handcuffed && handcuffed.show_examine)
-<<<<<<< HEAD
-		if(istype(handcuffed, /obj/item/weapon/handcuffs/cable))
-			msg += "<span class='warning'>[T.He] [T.is] [icon2html(handcuffed,user.client)] restrained with cable!</span>"
-=======
 		if(istype(handcuffed, /obj/item/handcuffs/cable))
 			msg += span_warning("[T.He] [T.is] [icon2html(handcuffed,user.client)] restrained with cable!")
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		else
 			msg += span_warning("[T.He] [T.is] [icon2html(handcuffed,user.client)] handcuffed!")
 

@@ -247,13 +247,8 @@
 		playsound(src,'sound/items/eatfood.ogg', rand(10,50), 1)
 		if(!has_AI())//No autobarf on player control.
 			return
-<<<<<<< HEAD
-		if(istype(O, /obj/item/weapon/reagent_containers/food/snacks/donut) && istype(src, /mob/living/simple_mob/vore/otie/security))
-			to_chat(user,"<span class='notice'>The guard pup accepts your offer for their catch.</span>")
-=======
 		if(istype(O, /obj/item/reagent_containers/food/snacks/donut) && istype(src, /mob/living/simple_mob/vore/otie/security))
 			to_chat(user,span_notice("The guard pup accepts your offer for their catch."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			release_vore_contents()
 		else if(prob(2)) //Small chance to get prey out from non-sec oties.
 			to_chat(user,span_notice("The pup accepts your offer for their catch."))

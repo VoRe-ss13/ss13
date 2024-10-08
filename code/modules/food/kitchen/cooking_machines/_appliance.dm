@@ -237,29 +237,16 @@
 	if(istype(check) && islist(check.cooked) && (cook_type in check.cooked))
 		to_chat(user, span_warning("\The [check] has already been [cook_type]."))
 		return 0
-<<<<<<< HEAD
-	else if(istype(check, /obj/item/weapon/reagent_containers/glass))
-		to_chat(user, "<span class='warning'>That would probably break [src].</span>")
-		return 0
-	else if(istype(check, /obj/item/weapon/disk/nuclear))
-		to_chat(user, "<span class='warning'>You can't cook that.</span>")
-=======
 	else if(istype(check, /obj/item/reagent_containers/glass))
 		to_chat(user, span_warning("That would probably break [src]."))
 		return 0
 	else if(istype(check, /obj/item/disk/nuclear))
 		to_chat(user, span_warning("You can't cook that."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return 0
 	else if(I.has_tool_quality(TOOL_CROWBAR) || I.has_tool_quality(TOOL_SCREWDRIVER) || istype(I, /obj/item/weapon/storage/part_replacer)) // You can't cook tools, dummy.
 		return 0
-<<<<<<< HEAD
-	else if(!istype(check) &&  !istype(check, /obj/item/weapon/holder))
-		to_chat(user, "<span class='warning'>That's not edible.</span>")
-=======
 	else if(!istype(check) &&  !istype(check, /obj/item/holder))
 		to_chat(user, span_warning("That's not edible."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return 0
 
 	return 1

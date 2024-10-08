@@ -4428,16 +4428,6 @@
 	nutriment_desc = list("bread" = 3)
 
 // potato + knife = raw sticks
-<<<<<<< HEAD
-/obj/item/weapon/reagent_containers/food/snacks/grown/attackby(obj/item/weapon/W, mob/user)
-	if(seed && seed.kitchen_tag && seed.kitchen_tag == "potato" && istype(W,/obj/item/weapon/material/knife))
-		new /obj/item/weapon/reagent_containers/food/snacks/rawsticks(get_turf(src))
-		to_chat(user, "<span class='notice'>You cut the potato.</span>")
-		qdel(src)
-	else if(seed && seed.kitchen_tag && seed.kitchen_tag == "sunflower" && istype(W,/obj/item/weapon/material/knife))
-		new /obj/item/weapon/reagent_containers/food/snacks/rawsunflower(get_turf(src))
-		to_chat(user, "<span class='notice'>You remove the seeds from the flower, slightly damaging them.</span>")
-=======
 /obj/item/reagent_containers/food/snacks/grown/attackby(obj/item/W, mob/user)
 	if(seed && seed.kitchen_tag && seed.kitchen_tag == "potato" && istype(W,/obj/item/material/knife))
 		new /obj/item/reagent_containers/food/snacks/rawsticks(get_turf(src))
@@ -4446,7 +4436,6 @@
 	else if(seed && seed.kitchen_tag && seed.kitchen_tag == "sunflower" && istype(W,/obj/item/material/knife))
 		new /obj/item/reagent_containers/food/snacks/rawsunflower(get_turf(src))
 		to_chat(user, span_notice("You remove the seeds from the flower, slightly damaging them."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		qdel(src)
 	else
 		. = ..()

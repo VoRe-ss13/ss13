@@ -29,13 +29,8 @@
 /mob/living/carbon/proc/reduce_cuff_time()
 	return FALSE
 
-<<<<<<< HEAD
-/mob/living/carbon/proc/cuff_resist(obj/item/weapon/handcuffs/I, breakouttime = 1200, cuff_break = 0)
-	
-=======
 /mob/living/carbon/proc/cuff_resist(obj/item/handcuffs/I, breakouttime = 1200, cuff_break = 0)
 
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	if(istype(I))
 		breakouttime = I.breakouttime
 

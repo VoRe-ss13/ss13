@@ -298,15 +298,9 @@
 						 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/mushroompizza/bigslice,
 						 /obj/item/weapon/reagent_containers/food/snacks/sliceable/pizza/vegetablepizza/bigslice)
 
-<<<<<<< HEAD
-/obj/structure/theonepizza/attackby(var/obj/item/weapon/W, var/mob/living/user)
-	if(istype(W,/obj/item/weapon/material/knife))
-		user.visible_message("<b>\The [user]</b> starts to slowly cut through The One Pizza.", "<span class='notice'>You start to slowly cut through The One Pizza.</span>")
-=======
 /obj/structure/theonepizza/attackby(var/obj/item/W, var/mob/living/user)
 	if(istype(W,/obj/item/material/knife))
 		user.visible_message("<b>\The [user]</b> starts to slowly cut through The One Pizza.", span_notice("You start to slowly cut through The One Pizza."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(do_after(user, slicetime, exclusive = TASK_USER_EXCLUSIVE))
 			if(!src)
 				return		// We got disappeared already

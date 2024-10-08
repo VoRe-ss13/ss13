@@ -433,15 +433,9 @@ var/list/mining_overlay_cache = list()
 			C.scan_atom(user, src)
 			return
 
-<<<<<<< HEAD
-		if (istype(W, /obj/item/device/measuring_tape))
-			var/obj/item/device/measuring_tape/P = W
-			user.visible_message("<b>\The [user]</b> extends \a [P] towards \the [src].","<span class='notice'>You extend \the [P] towards \the [src].</span>")
-=======
 		if (istype(W, /obj/item/measuring_tape))
 			var/obj/item/measuring_tape/P = W
 			user.visible_message("<b>\The [user]</b> extends \a [P] towards \the [src].",span_notice("You extend \the [P] towards \the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			if(do_after(user, 15))
 				to_chat(user, span_notice("\The [src] has been excavated to a depth of [excavation_level]cm."))
 			return

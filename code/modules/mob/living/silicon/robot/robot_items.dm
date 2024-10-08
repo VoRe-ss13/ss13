@@ -349,13 +349,8 @@
 			flick("doc_printer_mod_ejecting", src)
 			spawn(22)
 				var/turf/T = get_turf(src)
-<<<<<<< HEAD
-				T.visible_message("<span class='notice'>\The [src.loc] dispenses a sheet of crisp white paper.</span>")
-				new /obj/item/weapon/paper(T)
-=======
 				T.visible_message(span_notice("\The [src.loc] dispenses a sheet of crisp white paper."))
 				new /obj/item/paper(T)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if ("Form")
 			var/list/content = print_form()
 			if(!content)
@@ -364,13 +359,8 @@
 			flick("doc_printer_mod_printing", src)
 			spawn(22)
 				var/turf/T = get_turf(src)
-<<<<<<< HEAD
-				T.visible_message("<span class='notice'>\The [src.loc] dispenses an official form to fill.</span>")
-				new /obj/item/weapon/paper(T, content[1], content[2])
-=======
 				T.visible_message(span_notice("\The [src.loc] dispenses an official form to fill."))
 				new /obj/item/paper(T, content[1], content[2])
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 /obj/item/weapon/form_printer/proc/print_form()
 	var/list/paper_forms = list("Empty", "Command", "Security", "Supply", "Science", "Medical", "Engineering", "Service", "Exploration", "Event", "Other", "Mercenary")

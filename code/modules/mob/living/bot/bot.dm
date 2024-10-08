@@ -160,13 +160,8 @@
 			emagged = 0
 			qdel(O)
 		else
-<<<<<<< HEAD
-			to_chat(user, "<span class='notice'>Unable to repair with the maintenance panel closed.</span>")
-	else if(istype(O, /obj/item/device/paicard))
-=======
 			to_chat(user, span_notice("Unable to repair with the maintenance panel closed."))
 	else if(istype(O, /obj/item/paicard))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(open)
 			insertpai(user, O)
 			to_chat(user, span_notice("You slot the card into \the [initial(src.name)]."))

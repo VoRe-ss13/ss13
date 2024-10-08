@@ -51,10 +51,5 @@
 	var/mob/living/M = holder.wearer
 	if(!M)
 		return
-<<<<<<< HEAD
-	for(var/obj/item/weapon/kinetic_crusher/machete/gauntlets/gaming in M.contents)
-		M.drop_from_inventory(gaming, src)
-=======
 	for(var/obj/item/kinetic_crusher/machete/gauntlets/gaming in M.contents)
 		M.drop_from_inventory(gaming, src)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))

@@ -51,13 +51,8 @@
 /obj/item/weapon/reagent_containers/food/condiment/feed_sound(var/mob/user)
 	playsound(src, 'sound/items/drink.ogg', rand(10, 50), 1)
 
-<<<<<<< HEAD
-/obj/item/weapon/reagent_containers/food/condiment/self_feed_message(var/mob/user)
-	to_chat(user, "<span class='notice'>You swallow some of contents of \the [src].</span>")
-=======
 /obj/item/reagent_containers/food/condiment/self_feed_message(var/mob/user)
 	to_chat(user, span_notice("You swallow some of contents of \the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 /obj/item/weapon/reagent_containers/food/condiment/on_reagent_change()
 	if(reagents.reagent_list.len > 0)

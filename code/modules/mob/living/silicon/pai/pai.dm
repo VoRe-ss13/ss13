@@ -514,13 +514,8 @@
 					return
 				if("Cancel", null)
 					return
-<<<<<<< HEAD
-		else if (istype(W, /obj/item/weapon/card/id) && idaccessible == 0)
-			to_chat(user, "<span class='notice'>[src] is not accepting access modifications at this time.</span>")		// CHOMPEDIT : purdev (spelling fix)
-=======
 		else if (istype(W, /obj/item/card/id) && idaccessible == 0)
 			to_chat(user, span_notice("[src] is not accepting access modifications at this time."))		// CHOMPEDIT : purdev (spelling fix)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 
 /mob/living/silicon/pai/verb/allowmodification()

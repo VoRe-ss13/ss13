@@ -403,8 +403,4 @@
 /obj/item/weapon/storage/box/nifsofts_sizechange/New()
 	..()
 	for(var/i = 0 to 7)
-<<<<<<< HEAD
-		new /obj/item/weapon/disk/nifsoft/sizechange(src)
-=======
 		new /obj/item/disk/nifsoft/sizechange(src)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))

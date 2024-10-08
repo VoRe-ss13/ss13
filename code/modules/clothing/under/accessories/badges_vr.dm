@@ -122,12 +122,6 @@
 	..()
 	new /obj/item/weapon/paper/dosimeter_manual(src)
 	new /obj/item/clothing/accessory/dosimeter(src)
-<<<<<<< HEAD
-	new /obj/item/weapon/dosimeter_film(src)
-	new /obj/item/weapon/dosimeter_film(src)
-	new /obj/item/weapon/dosimeter_film(src)
-=======
 	new /obj/item/dosimeter_film(src)
 	new /obj/item/dosimeter_film(src)
 	new /obj/item/dosimeter_film(src)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))

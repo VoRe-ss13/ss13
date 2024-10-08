@@ -93,13 +93,8 @@
 	A.media_source = paired_juke
 	update_music()
 	return TRUE
-<<<<<<< HEAD
-	
-/obj/item/device/juke_remote/proc/detach_area()
-=======
 
 /obj/item/juke_remote/proc/detach_area()
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	if(!our_area || (paired_juke && our_area.media_source != paired_juke))
 		return
 	our_area.media_source = null

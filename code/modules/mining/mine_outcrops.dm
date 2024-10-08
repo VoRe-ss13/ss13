@@ -89,13 +89,8 @@
 	outcropdrop = /obj/item/weapon/ore/uranium
 
 /obj/structure/outcrop/attackby(obj/item/W as obj, mob/user as mob)
-<<<<<<< HEAD
-	if (istype(W, /obj/item/weapon/pickaxe))
-		to_chat(user, "<span class='notice'>[user] begins to hack away at \the [src].</span>")
-=======
 	if (istype(W, /obj/item/pickaxe))
 		to_chat(user, span_notice("[user] begins to hack away at \the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(do_after(user,40))
 			to_chat(user, span_notice("You have finished digging!"))
 			for(var/i=0;i<(rand(mindrop,upperdrop));i++)

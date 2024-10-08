@@ -33,13 +33,8 @@
 						new /obj/item/weapon/coin/phoron(user.loc)
 				else if(M.default_type == "uranium")
 					while(coinsToProduce-- > 0)
-<<<<<<< HEAD
-						new /obj/item/weapon/coin/uranium(user.loc)
-				src.visible_message("<span class='notice'>\The [src] rattles and dispenses several [M.default_type] coins!</span>")
-=======
 						new /obj/item/coin/uranium(user.loc)
 				src.visible_message(span_notice("\The [src] rattles and dispenses several [M.default_type] coins!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				coinsToProduce = initial(coinsToProduce)
 				if(M.amount == 0)
 					icon_state = "coinpress0"

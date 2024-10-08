@@ -58,15 +58,9 @@
 		var/armorcheck = run_armor_check(null, P.check_armour)
 		var/soakedcheck = get_armor_soak(null, P.check_armour)
 		if(!(istype(P, /obj/item/projectile/energy) || istype(P, /obj/item/projectile/beam)))
-<<<<<<< HEAD
-			visible_message("<span class='danger'>The [P.name] bounces off of [src]'s shell!</span>", \
-						"<span class='userdanger'>The [P.name] bounces off of [src]'s shell!</span>")
-			new /obj/item/weapon/material/shard/shrapnel(src.loc)
-=======
 			visible_message(span_danger("The [P.name] bounces off of [src]'s shell!"), \
 						span_userdanger("The [P.name] bounces off of [src]'s shell!"))
 			new /obj/item/material/shard/shrapnel(src.loc)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			if(!(P.damage_type == BRUTE || P.damage_type == BURN))
 				projectile_dam_type = BRUTE
 				incoming_damage = round(incoming_damage / 4) //Damage from strange sources is converted to brute for physical projectiles, though severely decreased.

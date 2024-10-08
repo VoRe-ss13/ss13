@@ -96,15 +96,9 @@
 	return
 
 /obj/structure/meteorite/attackby(var/obj/item/I, var/mob/M)
-<<<<<<< HEAD
-	if(istype(I, /obj/item/weapon/pickaxe))
-		var/obj/item/weapon/pickaxe/P = I
-		M.visible_message("<span class='warning'>[M] starts [P.drill_verb] \the [src].</span>", "<span class='warning'>You start [P.drill_verb] \the [src].</span>")
-=======
 	if(istype(I, /obj/item/pickaxe))
 		var/obj/item/pickaxe/P = I
 		M.visible_message(span_warning("[M] starts [P.drill_verb] \the [src]."), span_warning("You start [P.drill_verb] \the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 		if(!do_after(M, P.digspeed*3))
 			return
