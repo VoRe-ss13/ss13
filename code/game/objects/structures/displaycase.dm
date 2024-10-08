@@ -13,9 +13,9 @@
 /obj/structure/displaycase/ex_act(severity)
 	switch(severity)
 		if (1)
-			new /obj/item/weapon/material/shard( src.loc )
+			new /obj/item/material/shard( src.loc )
 			if (occupied)
-				new /obj/item/weapon/gun/energy/captain( src.loc )
+				new /obj/item/gun/energy/captain( src.loc )
 				occupied = 0
 			qdel(src)
 		if (2)
@@ -39,7 +39,7 @@
 		if (!( src.destroyed ))
 			src.density = FALSE
 			src.destroyed = 1
-			new /obj/item/weapon/material/shard( src.loc )
+			new /obj/item/material/shard( src.loc )
 			playsound(src, "shatter", 70, 1)
 			update_icon()
 	else
@@ -54,7 +54,7 @@
 	return
 
 
-/obj/structure/displaycase/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/displaycase/attackby(obj/item/W as obj, mob/user as mob)
 	user.setClickCooldown(user.get_attack_speed(W))
 	user.do_attack_animation(src)
 	playsound(src, 'sound/effects/Glasshit.ogg', 50, 1)

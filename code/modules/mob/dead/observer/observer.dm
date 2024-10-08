@@ -151,7 +151,7 @@
 		return
 
 /mob/observer/dead/attackby(obj/item/W, mob/user)
-	if(istype(W,/obj/item/weapon/book/tome))
+	if(istype(W,/obj/item/book/tome))
 		var/mob/observer/dead/M = src
 		M.manifest(user)
 
@@ -433,7 +433,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return ..()
 
 	if(get_z(destination) in using_map?.secret_levels)
-		to_chat(src,SPAN_WARNING("Sorry, that z-level does not allow ghosts."))
+		to_chat(src,span_warning("Sorry, that z-level does not allow ghosts."))
 		if(following)
 			stop_following()
 		return
@@ -445,7 +445,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return ..()
 
 	if(get_z(newloc) in using_map?.secret_levels)
-		to_chat(src,SPAN_WARNING("Sorry, that z-level does not allow ghosts."))
+		to_chat(src,span_warning("Sorry, that z-level does not allow ghosts."))
 		if(following)
 			stop_following()
 		return
@@ -1034,8 +1034,8 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		if(choice == "Yes")
 			paiController.recruitWindow(usr)
 		var/count = 0
-		for(var/obj/item/device/paicard/p in GLOB.all_pai_cards)
-			var/obj/item/device/paicard/PP = p
+		for(var/obj/item/paicard/p in GLOB.all_pai_cards)
+			var/obj/item/paicard/PP = p
 			if(PP.pai == null)
 				count++
 				PP.add_overlay("pai-ghostalert")

@@ -129,6 +129,7 @@
 	panel.set_content(output)
 	panel.open()
 	return
+
 //CHOMPEdit Begin
 /mob/new_player/get_status_tab_items()
 	. = ..()
@@ -136,8 +137,8 @@
 
 	. += "Game Mode: [SSticker.hide_mode ? "Secret" : "[config.mode_names[master_mode]]"]"
 
-	if(SSvote.mode)
-		. += "Vote: [capitalize(SSvote.mode)] Time Left: [SSvote.time_remaining] s"
+	//if(SSvote.mode)
+	//	. += "Vote: [capitalize(SSvote.mode)] Time Left: [SSvote.time_remaining] s"
 
 	if(SSticker.current_state == GAME_STATE_INIT)
 		. += "Time To Start: Server Initializing"
@@ -584,7 +585,7 @@
 		ticker.minds += character.mind//Cyborgs and AIs handle this in the transform proc.	//TODO!!!!! ~Carn
 	if(ishuman(character))
 		if(character.client.prefs.auto_backup_implant)
-			var/obj/item/weapon/implant/backup/imp = new(src)
+			var/obj/item/implant/backup/imp = new(src)
 
 			if(imp.handle_implant(character,character.zone_sel.selecting))
 				imp.post_implant(character)

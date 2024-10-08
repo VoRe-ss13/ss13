@@ -3,7 +3,7 @@
 	desc = "Used to teleport objects to and from the telescience telepad."
 	icon_screen = "teleport"
 	icon_keyboard = "teleport_key"
-	circuit = /obj/item/weapon/circuitboard/telesci_console
+	circuit = /obj/item/circuitboard/telesci_console
 	var/sending = 1
 	var/obj/machinery/telepad/telepad = null
 	var/temp_msg = "Telescience control console initialized. Welcome."
@@ -27,7 +27,7 @@
 	// Used to adjust OP-ness: (4 crystals * 6 efficiency * 12.5 coefficient) = 300 range.
 	var/powerCoefficient = 12.5
 	var/list/crystals = list()
-	var/obj/item/device/gps/inserted_gps
+	var/obj/item/gps/inserted_gps
 	var/overmap_range = 3
 
 /obj/machinery/computer/telescience/Destroy()
@@ -46,10 +46,10 @@
 	. = ..()
 	recalibrate()
 	for(var/i = 1; i <= starting_crystals; i++)
-		crystals += new /obj/item/weapon/bluespace_crystal/artificial(src) // starting crystals
+		crystals += new /obj/item/bluespace_crystal/artificial(src) // starting crystals
 
 /obj/machinery/computer/telescience/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/weapon/bluespace_crystal))
+	if(istype(W, /obj/item/bluespace_crystal))
 		if(crystals.len >= max_crystals)
 			to_chat(user, span_warning("There are not enough crystal slots."))
 			return
@@ -59,7 +59,7 @@
 		W.forceMove(src)
 		user.visible_message("[user] inserts [W] into \the [src]'s crystal slot.", span_notice("You insert [W] into \the [src]'s crystal slot."))
 		updateDialog()
-	else if(istype(W, /obj/item/device/gps))
+	else if(istype(W, /obj/item/gps))
 		if(!inserted_gps)
 			inserted_gps = W
 			user.unEquip(W)

@@ -29,7 +29,7 @@ Controlled by the player_tips subsystem under code/controllers/subsystems/player
 		for(var/mob/M in player_list)
 			if(M.client?.prefs?.read_preference(/datum/preference/toggle/player_tips))
 				if(!M.key && !(M.key in HasReceived))
-					to_chat(M, SPAN_WARNING("You have periodic player tips enabled. You may turn them off at any time with the Toggle Receiving Player Tips verb in Preferences, or in character set up under the OOC tab!\n Player tips appear every 45-75 minutes."))
+					to_chat(M, span_warning("You have periodic player tips enabled. You may turn them off at any time with the Toggle Receiving Player Tips verb in Preferences, or in character set up under the OOC tab!\n Player tips appear every 45-75 minutes."))
 					HasReceived.Add(M.key)
 				tip = GLOB.is_valid_url.Replace(tip,span_linkify("$1"))
 				to_chat(M, span_notice("[tip]"))

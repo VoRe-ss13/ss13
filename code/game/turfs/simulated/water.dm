@@ -48,13 +48,13 @@
 	return "water_shallow"
 
 /turf/simulated/floor/water/attackby(obj/item/O as obj, mob/user as mob)
-	var/obj/item/weapon/reagent_containers/RG = O
+	var/obj/item/reagent_containers/RG = O
 	if (istype(RG) && RG.is_open_container())
 		RG.reagents.add_reagent(reagent_type, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
 		user.visible_message(span_notice("[user] fills \the [RG] using \the [src]."),span_notice("You fill \the [RG] using \the [src]."))
 		return 1
 
-	else if(istype(O, /obj/item/weapon/mop))
+	else if(istype(O, /obj/item/mop))
 		O.reagents.add_reagent(reagent_type, 5)
 		to_chat(user, span_notice("You wet \the [O] in \the [src]."))
 		playsound(src, 'sound/effects/slosh.ogg', 25, 1)

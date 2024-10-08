@@ -283,7 +283,7 @@
 		if("cable")
 			var/turf/T = get_turf(P)
 			P.hack_aborted = 0
-			P.cable = new /obj/item/weapon/pai_cable(T)
+			P.cable = new /obj/item/pai_cable(T)
 			for(var/mob/M in viewers(T))
 				M.show_message(span_warning("A port on [P] opens to reveal [P.cable], which promptly falls to the floor."), 3,
 								span_warning("You hear the soft click of something light and hard falling to the ground."), 2)

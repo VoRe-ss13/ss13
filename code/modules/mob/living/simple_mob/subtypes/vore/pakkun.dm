@@ -30,7 +30,7 @@
 	can_be_drop_pred = 1 //They can tongue vore.
 
 	meat_amount = 5
-	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat
+	meat_type = /obj/item/reagent_containers/food/snacks/meat
 
 	vore_active = 1
 	vore_icons = SA_ICON_LIVING

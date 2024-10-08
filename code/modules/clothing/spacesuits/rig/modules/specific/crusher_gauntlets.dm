@@ -15,11 +15,11 @@
 	use_power_cost = 0
 	active_power_cost = 0
 	passive_power_cost = 0
-	var/obj/item/weapon/kinetic_crusher/machete/gauntlets/rig/stored_gauntlets
+	var/obj/item/kinetic_crusher/machete/gauntlets/rig/stored_gauntlets
 
 /obj/item/rig_module/gauntlets/Initialize()
 	. = ..()
-	stored_gauntlets = new /obj/item/weapon/kinetic_crusher/machete/gauntlets/rig(src)
+	stored_gauntlets = new /obj/item/kinetic_crusher/machete/gauntlets/rig(src)
 	stored_gauntlets.storing_module = src
 
 /obj/item/rig_module/gauntlets/activate()

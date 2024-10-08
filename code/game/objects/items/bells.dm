@@ -1,4 +1,4 @@
-/obj/item/weapon/deskbell
+/obj/item/deskbell
 	name = "desk bell"
 	desc = "An annoying bell. Ring for service."
 	icon = 'icons/obj/items.dmi'
@@ -13,17 +13,17 @@
 	var/static/radial_use = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_use")
 	var/static/radial_pickup = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_pickup")
 
-/obj/item/weapon/deskbell/examine(mob/user)
+/obj/item/deskbell/examine(mob/user)
 	. = ..()
 	if(broken)
 		. += "<b>It looks damaged, the ringer is stuck firmly inside.</b>"
 
-/obj/item/weapon/deskbell/attack(mob/target as mob, mob/living/user as mob)
+/obj/item/deskbell/attack(mob/target as mob, mob/living/user as mob)
 	if(!broken)
 		playsound(src, 'sound/effects/deskbell.ogg', 50, 1)
 	..()
 
-/obj/item/weapon/deskbell/attack_hand(mob/user)
+/obj/item/deskbell/attack_hand(mob/user)
 
 	//This defines the radials and what call we're assiging to them.
 	var/list/options = list()
@@ -60,7 +60,7 @@
 		if("pick up")
 			..()
 
-/obj/item/weapon/deskbell/proc/ring(mob/user)
+/obj/item/deskbell/proc/ring(mob/user)
 	if(user.a_intent == "harm")
 		playsound(src, 'sound/effects/deskbell_rude.ogg', 50, 1)
 		to_chat(user,span_notice("You hammer [src] rudely!"))
@@ -70,7 +70,7 @@
 		playsound(src, 'sound/effects/deskbell.ogg', 50, 1)
 		to_chat(user,span_notice("You gracefully ring [src]."))
 
-/obj/item/weapon/deskbell/proc/check_ability(mob/user)
+/obj/item/deskbell/proc/check_ability(mob/user)
 	if (ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
@@ -84,7 +84,7 @@
 		to_chat(user,span_notice("You are not able to ring [src]."))
 	return 0
 
-/obj/item/weapon/deskbell/attackby(obj/item/W, mob/user, params)
+/obj/item/deskbell/attackby(obj/item/W, mob/user, params)
 	if(!istype(W))
 		return
 	if(W.has_tool_quality(TOOL_WRENCH) && isturf(loc))

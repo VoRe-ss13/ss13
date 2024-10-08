@@ -253,7 +253,7 @@
 	visible_message(span_danger("[src] blows apart!"))
 
 	var/turf/Tsec = get_turf(src)
-	new /obj/item/device/assembly/prox_sensor(Tsec)
+	new /obj/item/assembly/prox_sensor(Tsec)
 	new /obj/item/stack/rods(Tsec)
 	new /obj/item/stack/rods(Tsec)
 	new /obj/item/stack/cable_coil/cut(Tsec)

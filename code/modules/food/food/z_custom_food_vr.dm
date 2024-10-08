@@ -6,7 +6,7 @@ var/global/recursiveFood = 0
 var/global/ingredientLimit = 20000
 
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable
+/obj/item/reagent_containers/food/snacks/customizable
 	icon = 'icons/obj/food_custom.dmi'
 	bitesize = 2
 
@@ -18,7 +18,7 @@ var/global/ingredientLimit = 20000
 	var/image/topping
 	var/image/filling
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/Initialize(loc,ingredient)
+/obj/item/reagent_containers/food/snacks/customizable/Initialize(loc,ingredient)
 	. = ..()
 	topping = image(icon,,"[initial(icon_state)]_top")
 	filling = image(icon,,"[initial(icon_state)]_filling")
@@ -26,15 +26,15 @@ var/global/ingredientLimit = 20000
 	src.updateName()
 	return
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/attackby(obj/item/I, mob/user)
-	if(istype(I,/obj/item/weapon/reagent_containers/food/snacks))
+/obj/item/reagent_containers/food/snacks/customizable/attackby(obj/item/I, mob/user)
+	if(istype(I,/obj/item/reagent_containers/food/snacks))
 		if((contents.len >= ingMax) || (contents.len >= ingredientLimit))
 			to_chat(user, span_warning("That's already looking pretty stuffed."))
 			return
 
-		var/obj/item/weapon/reagent_containers/food/snacks/S = I
-		if(istype(S,/obj/item/weapon/reagent_containers/food/snacks/customizable))
-			var/obj/item/weapon/reagent_containers/food/snacks/customizable/SC = S
+		var/obj/item/reagent_containers/food/snacks/S = I
+		if(istype(S,/obj/item/reagent_containers/food/snacks/customizable))
+			var/obj/item/reagent_containers/food/snacks/customizable/SC = S
 			if(fullyCustom && SC.fullyCustom)
 				to_chat(user, span_warning("You slap yourself on the back of the head for thinking that stacking plates is an interesting dish."))
 				return
@@ -71,7 +71,7 @@ var/global/ingredientLimit = 20000
 		. = ..()
 	return
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/proc/generateFilling(var/obj/item/weapon/reagent_containers/food/snacks/S, params)
+/obj/item/reagent_containers/food/snacks/customizable/proc/generateFilling(var/obj/item/reagent_containers/food/snacks/S, params)
 	var/image/I
 	if(fullyCustom)
 		var/icon/C = getFlatIcon(S, S.dir, 0)
@@ -103,7 +103,7 @@ var/global/ingredientLimit = 20000
 			I.pixel_x = 2
 	return I
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/proc/updateName()
+/obj/item/reagent_containers/food/snacks/customizable/proc/updateName()
 	var/i = 1
 	var/new_name
 	for(var/obj/item/S in ingredients)
@@ -121,11 +121,11 @@ var/global/ingredientLimit = 20000
 		name = new_name
 	return new_name
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/Destroy()
+/obj/item/reagent_containers/food/snacks/customizable/Destroy()
 	QDEL_LIST_NULL(ingredients)
 	return ..()
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/proc/drawTopping()
+/obj/item/reagent_containers/food/snacks/customizable/proc/drawTopping()
 	var/image/I = topping
 	I.pixel_y = (ingredients.len+1)*2
 	add_overlay(I)
@@ -133,15 +133,15 @@ var/global/ingredientLimit = 20000
 
 // Sandwiches //////////////////////////////////////////////////
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/sandwich
+/obj/item/reagent_containers/food/snacks/customizable/sandwich
 	name = "sandwich"
 	desc = "A timeless classic."
 	icon_state = "c_sandwich"
 	stackIngredients = 1
 	addTop = 0
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/sandwich/attackby(obj/item/I,mob/user)
-	if(istype(I,/obj/item/weapon/reagent_containers/food/snacks/slice/bread) && !addTop)
+/obj/item/reagent_containers/food/snacks/customizable/sandwich/attackby(obj/item/I,mob/user)
+	if(istype(I,/obj/item/reagent_containers/food/snacks/slice/bread) && !addTop)
 		I.reagents.trans_to_holder(reagents,I.reagents.total_volume)
 		qdel(I)
 		addTop = 1
@@ -149,7 +149,7 @@ var/global/ingredientLimit = 20000
 	else
 		..()
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/burger
+/obj/item/reagent_containers/food/snacks/customizable/burger
 	name = "burger"
 	desc = "The apex of space culinary achievement."
 	icon_state = "c_burger"
@@ -158,25 +158,25 @@ var/global/ingredientLimit = 20000
 
 // Misc Subtypes ///////////////////////////////////////////////
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/fullycustom
+/obj/item/reagent_containers/food/snacks/customizable/fullycustom
 	name = "on a plate"
 	desc = "A unique dish."
 	icon_state = "fullycustom"
 	fullyCustom = 1 //how the fuck do you forget to add this?
 	ingMax = 1
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/soup
+/obj/item/reagent_containers/food/snacks/customizable/soup
 	name = "soup"
 	desc = "A bowl with liquid and... stuff in it."
 	icon_state = "soup"
 	trash = /obj/item/trash/bowl
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/pizza
+/obj/item/reagent_containers/food/snacks/customizable/pizza
 	name = "pan pizza"
 	desc = "A personalized pan pizza meant for only one person."
 	icon_state = "personal_pizza"
 
-/obj/item/weapon/reagent_containers/food/snacks/customizable/pasta
+/obj/item/reagent_containers/food/snacks/customizable/pasta
 	name = "spaghetti"
 	desc = "Noodles. With stuff. Delicious."
 	icon_state = "pasta_bot"
@@ -188,30 +188,30 @@ var/global/ingredientLimit = 20000
 		if(!recursiveFood && istype(I, /obj/item/reagent_containers/food/snacks/customizable))
 			to_chat(user, span_warning("Sorry, no recursive food."))
 			return
-		var/obj/F = new/obj/item/weapon/reagent_containers/food/snacks/customizable/sandwich(get_turf(src),I) //boy ain't this a mouthful
+		var/obj/F = new/obj/item/reagent_containers/food/snacks/customizable/sandwich(get_turf(src),I) //boy ain't this a mouthful
 		F.attackby(I, user)
 		qdel(src)
 	else
 		return ..()
 
-/obj/item/weapon/reagent_containers/food/snacks/bun/attackby(obj/item/I, mob/user)
+/obj/item/reagent_containers/food/snacks/bun/attackby(obj/item/I, mob/user)
 	// Bun + meatball = burger
-	if(istype(I,/obj/item/weapon/reagent_containers/food/snacks/meatball))
-		new /obj/item/weapon/reagent_containers/food/snacks/monkeyburger(src)
+	if(istype(I,/obj/item/reagent_containers/food/snacks/meatball))
+		new /obj/item/reagent_containers/food/snacks/monkeyburger(src)
 		to_chat(user, "You make a burger.")
 		qdel(I)
 		qdel(src)
 
 	// Bun + cutlet = hamburger
-	else if(istype(I, /obj/item/weapon/reagent_containers/food/snacks/cutlet))
-		new /obj/item/weapon/reagent_containers/food/snacks/monkeyburger(src)
+	else if(istype(I, /obj/item/reagent_containers/food/snacks/cutlet))
+		new /obj/item/reagent_containers/food/snacks/monkeyburger(src)
 		to_chat(user, "You make a burger.")
 		qdel(I)
 		qdel(src)
 
 	// Bun + sausage = hotdog
-	else if(istype(I, /obj/item/weapon/reagent_containers/food/snacks/sausage))
-		new /obj/item/weapon/reagent_containers/food/snacks/hotdog(src)
+	else if(istype(I, /obj/item/reagent_containers/food/snacks/sausage))
+		new /obj/item/reagent_containers/food/snacks/hotdog(src)
 		to_chat(user, "You make a hotdog.")
 		qdel(I)
 		qdel(src)
@@ -220,7 +220,7 @@ var/global/ingredientLimit = 20000
 		if(!recursiveFood && istype(I, /obj/item/reagent_containers/food/snacks/customizable))
 			to_chat(user, span_warning("Sorry, no recursive food."))
 			return
-		var/obj/F = new/obj/item/weapon/reagent_containers/food/snacks/customizable/burger(get_turf(src),I)
+		var/obj/F = new/obj/item/reagent_containers/food/snacks/customizable/burger(get_turf(src),I)
 		F.attackby(I, user)
 		qdel(src)
 	else
@@ -231,7 +231,7 @@ var/global/ingredientLimit = 20000
 		if(!recursiveFood && istype(I, /obj/item/reagent_containers/food/snacks/customizable))
 			to_chat(user, span_warning("Sorry, no recursive food."))
 			return
-		var/obj/F = new/obj/item/weapon/reagent_containers/food/snacks/customizable/pizza(get_turf(src),I)
+		var/obj/F = new/obj/item/reagent_containers/food/snacks/customizable/pizza(get_turf(src),I)
 		F.attackby(I, user)
 		qdel(src)
 	else
@@ -242,7 +242,7 @@ var/global/ingredientLimit = 20000
 		if(!recursiveFood && istype(I, /obj/item/reagent_containers/food/snacks/customizable))
 			to_chat(user, span_warning("Sorry, no recursive food."))
 			return
-		var/obj/F = new/obj/item/weapon/reagent_containers/food/snacks/customizable/pasta(get_turf(src),I)
+		var/obj/F = new/obj/item/reagent_containers/food/snacks/customizable/pasta(get_turf(src),I)
 		F.attackby(I, user)
 		qdel(src)
 	else
@@ -255,7 +255,7 @@ var/global/ingredientLimit = 20000
 		if(istype(I,/obj/item/reagent_containers/food/snacks/customizable/fullycustom)) //no platestacking even with recursive food, for now
 			to_chat(user, span_warning("That's already got a plate!"))
 			return
-		var/obj/F = new/obj/item/weapon/reagent_containers/food/snacks/customizable/fullycustom(get_turf(src),I)
+		var/obj/F = new/obj/item/reagent_containers/food/snacks/customizable/fullycustom(get_turf(src),I)
 		F.attackby(I, user)
 		qdel(src)
 	else
@@ -273,7 +273,7 @@ var/global/ingredientLimit = 20000
 		if(!recursiveFood && istype(I, /obj/item/reagent_containers/food/snacks/customizable))
 			to_chat(user, span_warning("Sorry, no recursive food."))
 			return
-		var/obj/F = new/obj/item/weapon/reagent_containers/food/snacks/customizable/soup(get_turf(src),I)
+		var/obj/F = new/obj/item/reagent_containers/food/snacks/customizable/soup(get_turf(src),I)
 		F.attackby(I, user)
 		qdel(src)
 	else

@@ -19,7 +19,7 @@
 	// Unless the walker is confused.
 	if(m_intent == "walk" && confused <= 0)
 		if(!n.is_safe_to_enter(src))
-			to_chat(src, span("warning", "\The [n] is dangerous to move into."))
+			to_chat(src, span_warning("\The [n] is dangerous to move into."))
 			return FALSE // In case any code wants to know if movement happened.
 	return ..() // Parent call should make the mob move.
 
@@ -58,7 +58,7 @@ default behaviour is:
 		spread_fire(tmob)
 
 		for(var/mob/living/M in range(tmob, 1))
-			if(tmob.pinned.len ||  ((M.pulling == tmob && ( tmob.restrained() && !( M.restrained() ) && M.stat == 0)) || locate(/obj/item/weapon/grab, tmob.grabbed_by.len)) )
+			if(tmob.pinned.len ||  ((M.pulling == tmob && ( tmob.restrained() && !( M.restrained() ) && M.stat == 0)) || locate(/obj/item/grab, tmob.grabbed_by.len)) )
 				if ( !(world.time % 5) )
 					to_chat(src, span_warning("[tmob] is restrained, you cannot push past"))
 				now_pushing = 0
@@ -166,11 +166,11 @@ default behaviour is:
 				to_chat(src, span_danger("You fail to push [tmob]'s fat ass out of the way."))
 				now_pushing = 0
 				return
-		if(tmob.r_hand && istype(tmob.r_hand, /obj/item/weapon/shield/riot))
+		if(tmob.r_hand && istype(tmob.r_hand, /obj/item/shield/riot))
 			if(prob(99))
 				now_pushing = 0
 				return
-		if(tmob.l_hand && istype(tmob.l_hand, /obj/item/weapon/shield/riot))
+		if(tmob.l_hand && istype(tmob.l_hand, /obj/item/shield/riot))
 			if(prob(99))
 				now_pushing = 0
 				return
@@ -220,7 +220,7 @@ default behaviour is:
 			Move(T, t, move_time)
 
 		if(ishuman(AM) && AM:grabbed_by)
-			for(var/obj/item/weapon/grab/G in AM:grabbed_by)
+			for(var/obj/item/grab/G in AM:grabbed_by)
 				step(G:assailant, get_dir(G:assailant, AM))
 				G.adjust_position()
 		now_pushing = 0

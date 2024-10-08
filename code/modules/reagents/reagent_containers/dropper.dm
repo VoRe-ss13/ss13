@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 /// Droppers.
 ////////////////////////////////////////////////////////////////////////////////
-/obj/item/weapon/reagent_containers/dropper
+/obj/item/reagent_containers/dropper
 	name = "dropper"
 	desc = "A dropper. Transfers up to 5 units at a time."
 	icon = 'icons/obj/chemical.dmi'
@@ -14,7 +14,7 @@
 	drop_sound = 'sound/items/drop/glass.ogg'
 	pickup_sound = 'sound/items/pickup/glass.ogg'
 
-/obj/item/weapon/reagent_containers/dropper/examine(var/mob/user)
+/obj/item/reagent_containers/dropper/examine(var/mob/user)
 	. = ..()
 	if(get_dist(user, src) <= 2)
 		if(reagents && reagents.reagent_list.len)
@@ -22,7 +22,7 @@
 		else
 			. += span_notice("It is empty.")
 
-/obj/item/weapon/reagent_containers/dropper/afterattack(var/obj/target, var/mob/user, var/proximity)
+/obj/item/reagent_containers/dropper/afterattack(var/obj/target, var/mob/user, var/proximity)
 	if(!target.reagents || !proximity) return
 
 	if(reagents.total_volume)
@@ -93,16 +93,16 @@
 
 	return
 
-/obj/item/weapon/reagent_containers/dropper/on_reagent_change()
+/obj/item/reagent_containers/dropper/on_reagent_change()
 	update_icon()
 
-/obj/item/weapon/reagent_containers/dropper/update_icon()
+/obj/item/reagent_containers/dropper/update_icon()
 	if(reagents.total_volume)
 		icon_state = "dropper1"
 	else
 		icon_state = "dropper0"
 
-/obj/item/weapon/reagent_containers/dropper/industrial
+/obj/item/reagent_containers/dropper/industrial
 	name = "Industrial Dropper"
 	desc = "A larger dropper. Transfers up to 10 units at a time."
 	amount_per_transfer_from_this = 10

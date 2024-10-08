@@ -39,8 +39,8 @@
 /datum/surgery_step/repairflesh/scan_injury
 	surgery_name = "Scan Injury"
 	allowed_tools = list(
-	/obj/item/weapon/autopsy_scanner = 100,
-	/obj/item/device/analyzer = 10
+	/obj/item/autopsy_scanner = 100,
+	/obj/item/analyzer = 10
 	)
 
 	priority = 2
@@ -95,7 +95,7 @@
 	allowed_tools = list(
 	/obj/item/stack/medical/advanced/ointment = 100,
 	/obj/item/stack/medical/ointment = 50,
-	/obj/item/weapon/tape_roll = 30,
+	/obj/item/tape_roll = 30,
 	/obj/item/taperoll = 10
 	)
 
@@ -165,7 +165,7 @@
 	allowed_tools = list(
 	/obj/item/stack/medical/advanced/bruise_pack = 100,
 	/obj/item/stack/medical/bruise_pack = 50,
-	/obj/item/weapon/tape_roll = 40,
+	/obj/item/tape_roll = 40,
 	/obj/item/taperoll = 10
 	)
 

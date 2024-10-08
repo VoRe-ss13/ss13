@@ -35,7 +35,7 @@
 				L.visible_message(span_warning("\The [L] tries to grab \the [src] but fails!"))
 				return
 
-			var/obj/item/weapon/grab/G = new /obj/item/weapon/grab(L, src)
+			var/obj/item/grab/G = new /obj/item/grab(L, src)
 
 			L.put_in_active_hand(G)
 
@@ -114,7 +114,7 @@
 	//Animals can't be stunned(?)
 	if(O.damtype == HALLOSS)
 		effective_force = 0
-	if(supernatural && istype(O,/obj/item/weapon/nullrod))
+	if(supernatural && istype(O,/obj/item/nullrod))
 		effective_force *= 2
 		purge = 3
 	if(O.force <= resistance)
@@ -295,7 +295,7 @@
 		inflict_shock_damage(200) // Mobs that are very beefy or resistant to shock may survive getting struck.
 		updatehealth()
 		if(health <= 0)
-			visible_message(span("critical", "\The [src] disintegrates into ash!"))
+			visible_message(span_critical("\The [src] disintegrates into ash!"))
 			ash()
 			return // No point deafening something that wont exist.
 
@@ -307,7 +307,7 @@
 	if(!client)
 		updatehealth()
 		if(health <= 0)
-			visible_message(span("critical", "\The [src] flashes into ash as the lava consumes them!"))
+			visible_message(span_critical("\The [src] flashes into ash as the lava consumes them!"))
 			ash()
 
 // Injections.
@@ -315,4 +315,3 @@
 	if(ignore_thickness)
 		return TRUE
 	return !thick_armor
-

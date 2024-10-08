@@ -21,7 +21,7 @@
 
 	var/temperature_archived
 	var/mob/living/carbon/occupant = null
-	var/obj/item/weapon/reagent_containers/glass/beaker = null
+	var/obj/item/reagent_containers/glass/beaker = null
 
 	var/current_heat_capacity = 50
 
@@ -165,8 +165,8 @@
 
 	add_fingerprint(usr)
 
-/obj/machinery/atmospherics/unary/cryo_cell/attackby(var/obj/item/weapon/G as obj, var/mob/user as mob)
-	if(istype(G, /obj/item/weapon/reagent_containers/glass))
+/obj/machinery/atmospherics/unary/cryo_cell/attackby(var/obj/item/G as obj, var/mob/user as mob)
+	if(istype(G, /obj/item/reagent_containers/glass))
 		if(beaker)
 			to_chat(user, span_warning("A beaker is already loaded into the machine."))
 			return
@@ -177,14 +177,14 @@
 		user.visible_message("[user] adds \a [G] to \the [src]!", "You add \a [G] to \the [src]!")
 		SStgui.update_uis(src)
 		update_icon()
-	else if(istype(G, /obj/item/weapon/grab))
-		var/obj/item/weapon/grab/grab = G
+	else if(istype(G, /obj/item/grab))
+		var/obj/item/grab/grab = G
 		if(!ismob(grab.affecting))
 			return
 		if(occupant)
 			to_chat(user,span_warning("\The [src] is already occupied by [occupant]."))
 		if(grab.affecting.has_buckled_mobs())
-			to_chat(user, span("warning", "\The [grab.affecting] has other entities attached to it. Remove them first."))
+			to_chat(user, span_warning("\The [grab.affecting] has other entities attached to it. Remove them first."))
 			return
 		var/mob/M = grab.affecting
 		qdel(grab)
@@ -343,7 +343,7 @@
 	if(isliving(usr))
 		var/mob/living/L = usr
 		if(L.has_buckled_mobs())
-			to_chat(L, span("warning", "You have other entities attached to yourself. Remove them first."))
+			to_chat(L, span_warning("You have other entities attached to yourself. Remove them first."))
 			return
 		if(L.stat != CONSCIOUS)
 			return

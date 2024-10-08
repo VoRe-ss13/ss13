@@ -221,7 +221,7 @@ var/list/possible_cable_coil_colours = list(
 			return
 		coil.cable_join(src, user)
 
-	else if(istype(W, /obj/item/device/multitool))
+	else if(istype(W, /obj/item/multitool))
 
 		if(powernet && (powernet.avail > 0))		// is it powered?
 			to_chat(user, span_warning("[DisplayPower(powernet.avail)] in power network."))
@@ -600,7 +600,7 @@ var/list/possible_cable_coil_colours = list(
 		w_class = ITEMSIZE_SMALL
 
 /obj/item/stack/cable_coil/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/device/multitool))
+	if(istype(W, /obj/item/multitool))
 		var/selected_type = tgui_input_list(user, "Pick new colour.", "Cable Colour", possible_cable_coil_colours) //ChompEDIT usr --> user
 		set_cable_color(selected_type, user) //ChompEDIT usr --> user
 		return
@@ -616,7 +616,7 @@ var/list/possible_cable_coil_colours = list(
 		if(src.amount <= 14)
 			to_chat(usr, span_warning("You need at least 15 lengths to make restraints!"))
 			return
-		var/obj/item/weapon/handcuffs/cable/B = new /obj/item/weapon/handcuffs/cable(usr.loc)
+		var/obj/item/handcuffs/cable/B = new /obj/item/handcuffs/cable(usr.loc)
 		B.color = color
 		to_chat(usr, span_notice("You wind some cable together to make some restraints."))
 		src.use(15)

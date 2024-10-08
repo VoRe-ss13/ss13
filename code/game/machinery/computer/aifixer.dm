@@ -2,7 +2,7 @@
 	name = "\improper AI system integrity restorer"
 	desc = "Used with intelliCards containing nonfunctional AIs to restore them to working order."
 	req_one_access = list(access_robotics, access_heads)
-	circuit = /obj/item/weapon/circuitboard/aifixer
+	circuit = /obj/item/circuitboard/aifixer
 	icon_keyboard = "tech_key"
 	icon_screen = "ai-fixer"
 	light_color = LIGHT_COLOR_PINK
@@ -22,7 +22,7 @@
 			else
 				to_chat(user, span_warning("The screws on [name]'s screen won't budge and it emits a warning beep."))
 			return
-	if(istype(I, /obj/item/device/aicard))
+	if(istype(I, /obj/item/aicard))
 		if(stat & (NOPOWER|BROKEN))
 			to_chat(user, span_warning("This terminal isn't functioning right now."))
 			return
@@ -30,7 +30,7 @@
 			to_chat(user, span_danger("Terminal is busy restoring [occupier] right now."))
 			return
 
-		var/obj/item/device/aicard/card = I
+		var/obj/item/aicard/card = I
 		if(occupier)
 			if(card.grab_ai(occupier, user))
 				occupier = null

@@ -1,8 +1,8 @@
 ////////////// PTR-7 Anti-Materiel Rifle //////////////
 
-/obj/item/weapon/gun/projectile/heavysniper/collapsible
+/obj/item/gun/projectile/heavysniper/collapsible
 
-/obj/item/weapon/gun/projectile/heavysniper/collapsible/verb/take_down()
+/obj/item/gun/projectile/heavysniper/collapsible/verb/take_down()
 	set category = "Object"
 	set name = "Disassemble Rifle"
 
@@ -162,14 +162,14 @@
 			w_class = ITEMSIZE_LARGE
 
 		if(3)
-			var/obj/item/weapon/gun/projectile/heavysniper/collapsible/gun = new (get_turf(src), 0)
+			var/obj/item/gun/projectile/heavysniper/collapsible/gun = new (get_turf(src), 0)
 			if(usr && istype(usr, /mob/living/carbon/human))
 				var/mob/living/carbon/human/user = usr
 				user.unEquip(src, force=1)
 				user.put_in_any_hand_if_possible(gun) || gun.dropInto(loc)
 			qdel(src)
 
-/obj/item/weapon/gun/projectile/heavysniper/update_icon()
+/obj/item/gun/projectile/heavysniper/update_icon()
 	if(bolt_open)
 		icon_state = "heavysniper-open"
 	else

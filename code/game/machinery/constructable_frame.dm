@@ -8,7 +8,7 @@
 	density = TRUE
 	anchored = TRUE
 	use_power = USE_POWER_OFF
-	var/obj/item/weapon/circuitboard/circuit = null
+	var/obj/item/circuitboard/circuit = null
 	var/list/components = null
 	var/list/req_components = null
 	var/list/req_component_names = null
@@ -47,8 +47,8 @@
 						new /obj/item/stack/material/steel(src.loc, 5)
 						qdel(src)
 			if(2)
-				if(istype(P, /obj/item/weapon/circuitboard))
-					var/obj/item/weapon/circuitboard/B = P
+				if(istype(P, /obj/item/circuitboard))
+					var/obj/item/circuitboard/B = P
 					if(B.board_type == "machine")
 					//VOREStation Addition End
 						if(istype(B, /obj/item/circuitboard/quantumpad) && istype(get_area(src), /area/shuttle))

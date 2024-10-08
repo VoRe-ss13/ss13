@@ -28,7 +28,7 @@
 				to_chat(src, span_notice("We will shock others more efficently."))
 				return 1
 		else
-			if(changeling_generic_weapon(/obj/item/weapon/electric_hand,0))  //Chemical cost is handled in the equip proc.
+			if(changeling_generic_weapon(/obj/item/electric_hand,0))  //Chemical cost is handled in the equip proc.
 				return 1
 		return 0
 
@@ -40,8 +40,8 @@
 			siemens = gloves.siemens_coefficient
 
 		//If we're grabbing someone, electrocute them.
-		if(istype(held_item,/obj/item/weapon/grab))
-			var/obj/item/weapon/grab/G = held_item
+		if(istype(held_item,/obj/item/grab))
+			var/obj/item/grab/G = held_item
 			if(G.affecting)
 				G.affecting.electrocute_act(10 * siemens, src, 1.0, BP_TORSO, 0)
 				var/agony = 80 * siemens //Does more than if hit with an electric hand, since grabbing is slower.
@@ -65,11 +65,11 @@
 			var/list/L = new() //We make a new list to avoid copypasta.
 
 			//Check our hand.
-			if(istype(held_item,/obj/item/weapon/cell))
+			if(istype(held_item,/obj/item/cell))
 				L.Add(held_item)
 
 			//Now check our hand's item's contents, so we can recharge guns and other stuff.
-			for(var/obj/item/weapon/cell/cell in held_item.contents)
+			for(var/obj/item/cell/cell in held_item.contents)
 				L.Add(cell)
 
 			//Now for the actual recharging.
@@ -97,7 +97,7 @@
 				src.mind.changeling.chem_charges -= 10
 			return success
 
-/obj/item/weapon/electric_hand
+/obj/item/electric_hand
 	name = "electrified hand"
 	desc = "You could probably shock someone badly if you touched them, or recharge something."
 	icon = 'icons/obj/weapons.dmi'
@@ -108,12 +108,12 @@
 	var/agony_amount = 60
 	var/electrocute_amount = 10
 
-/obj/item/weapon/electric_hand/efficent
+/obj/item/electric_hand/efficent
 	shock_cost = 5
 	agony_amount = 80
 	electrocute_amount = 20
 
-/obj/item/weapon/electric_hand/New()
+/obj/item/electric_hand/New()
 	if(ismob(loc))
 		visible_message(span_warning("Electrical arcs form around [loc.name]\'s hand!"),
 		span_warning("We store a charge of electricity in our hand."),
@@ -121,12 +121,12 @@
 		var/T = get_turf(src)
 		new /obj/effect/effect/sparks(T)
 
-/obj/item/weapon/electric_hand/dropped(mob/user)
+/obj/item/electric_hand/dropped(mob/user)
 	spawn(1)
 		if(src)
 			qdel(src)
 
-/obj/item/weapon/electric_hand/afterattack(var/atom/target, var/mob/living/carbon/human/user, proximity)
+/obj/item/electric_hand/afterattack(var/atom/target, var/mob/living/carbon/human/user, proximity)
 	if(!target)
 		return
 	if(!proximity)

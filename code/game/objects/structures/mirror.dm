@@ -63,7 +63,7 @@
 			to_chat(user, span_notice("The broken glass falls out."))
 			icon_state = "mirror_frame"
 			glass = !glass
-			new /obj/item/weapon/material/shard( src.loc )
+			new /obj/item/material/shard( src.loc )
 			return
 		if(!shattered && glass)
 			playsound(src, I.usesound, 50, 1)

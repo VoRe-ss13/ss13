@@ -184,7 +184,7 @@
 					keepgoing = FALSE
 
 	if(E.len == 0)
-		to_chat(src, SPAN_NOTICE("There are no mobs to examine."))
+		to_chat(src, span_notice("There are no mobs to examine."))
 		return
 	var/atom/B = null
 	if(E.len == 1)
@@ -193,7 +193,7 @@
 		B = tgui_input_list(src, "What would you like to examine?", "Examine", E)
 	if(!B)
 		return
-	if(!isbelly(loc) && !istype(loc, /obj/item/weapon/holder) && !isAI(src))
+	if(!isbelly(loc) && !istype(loc, /obj/item/holder) && !isAI(src))
 		if(B.z == src.z)
 			face_atom(B)
 	var/list/results = B.examine(src)

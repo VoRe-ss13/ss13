@@ -154,10 +154,10 @@
 	else
 		icon_state = material.door_icon_base
 
-/obj/structure/simple_door/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/simple_door/attackby(obj/item/W as obj, mob/user as mob)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	if(istype(W,/obj/item/weapon/simple_key))
-		var/obj/item/weapon/simple_key/key = W
+	if(istype(W,/obj/item/simple_key))
+		var/obj/item/simple_key/key = W
 		if(state)
 			to_chat(user,span_notice("\The [src] must be closed in order for you to lock it."))
 		else if(key.key_id != src.lock_id)
@@ -173,7 +173,7 @@
 		if(do_after(user,digTool.digspeed*hardness) && src)
 			visible_message(span_danger("[user] finished digging [src]!"))
 			Dismantle()
-	else if(istype(W,/obj/item/weapon) && breakable) //not sure, can't not just weapons get passed to this proc?
+	else if(istype(W,/obj/item) && breakable) //not sure, can't not just weapons get passed to this proc?
 		hardness -= W.force/10
 		visible_message(span_danger("[user] hits [src] with [W]!"))
 		if(material == get_material_by_name("resin"))
@@ -184,7 +184,7 @@
 			playsound(src, 'sound/weapons/smash.ogg', 50, 1)
 		CheckHardness()
 	else if(W.has_tool_quality(TOOL_WELDER) && breakable)
-		var/obj/item/weapon/weldingtool/WT = W.get_welder()
+		var/obj/item/weldingtool/WT = W.get_welder()
 		if(material.ignition_point && WT.remove_fuel(0, user))
 			TemperatureAct(150)
 	else

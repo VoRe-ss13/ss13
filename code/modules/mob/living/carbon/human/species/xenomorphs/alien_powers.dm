@@ -333,7 +333,7 @@
 
 	src.visible_message(span_warning("<b>\The [src]</b> seizes [T] aggressively!"))
 
-	var/obj/item/weapon/grab/G = new(src,T)
+	var/obj/item/grab/G = new(src,T)
 	if(use_hand == "left")
 		l_hand = G
 	else
@@ -355,7 +355,7 @@
 		to_chat(src, span_danger("You cannot do that in your current state."))
 		return
 
-	var/obj/item/weapon/grab/G = locate() in src
+	var/obj/item/grab/G = locate() in src
 	if(!G || !istype(G))
 		to_chat(src, span_danger("You are not grabbing anyone."))
 		return

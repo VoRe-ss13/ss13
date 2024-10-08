@@ -1,5 +1,5 @@
 //Body snatcher. Based off the sleevemate, but instead of storing a mind it lets you swap your mind with someone. Extremely illegal and being caught with one s
-/obj/item/device/bodysnatcher
+/obj/item/bodysnatcher
 	name = "\improper Body Snatcher Device"
 	desc = "An extremely illegal tool that allows the user to swap minds with the selected humanoid victim. The LED panel on the side states 'Place both heads on the device, pull trigger, then wait for the transfer to complete.'"
 	icon = 'icons/obj/device_alt.dmi'
@@ -10,11 +10,11 @@
 	matter = list(MAT_STEEL = 200)
 	origin_tech = list(TECH_MAGNET = 2, TECH_BIO = 2, TECH_ILLEGAL = 1)
 
-/obj/item/device/bodysnatcher/New()
+/obj/item/bodysnatcher/New()
 	..()
 	flags |= NOBLUDGEON //So borgs don't spark.
 
-/obj/item/device/bodysnatcher/attack(mob/living/M, mob/living/user)
+/obj/item/bodysnatcher/attack(mob/living/M, mob/living/user)
 	usr.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(ishuman(M) || issilicon(M)) //Allows body swapping with humans, synths, and pAI's/borgs since they all have a mind.
 		if(usr == M)
@@ -28,6 +28,14 @@
 		if(!M.allow_mind_transfer)
 			to_chat(usr,span_danger("The target's mind is too complex to be affected!"))
 			return
+
+		/* CHOMPRemove Start, we have a vore pref for that
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+			if(H.resleeve_lock && usr.ckey != H.resleeve_lock)
+				to_chat(src, span_danger("[H] cannot be impersonated!"))
+				return
+		*///CHOMPRemove End
 
 		if(M.stat == DEAD) //Are they dead?
 			to_chat(usr,span_warning("A warning pops up on the device, informing you that [M] is dead, and, as such, the mind transfer can not be done."))

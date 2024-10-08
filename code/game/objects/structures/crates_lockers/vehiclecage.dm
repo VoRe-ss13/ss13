@@ -27,7 +27,7 @@
 	to_chat(user, span_notice("You need a wrench to take this apart!"))
 	return
 
-/obj/structure/vehiclecage/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/vehiclecage/attackby(obj/item/W as obj, mob/user as mob)
 	var/turf/T = get_turf(src)
 	if(!T)
 		to_chat(user, span_notice("You can't open this here!"))
@@ -82,7 +82,7 @@
 
 	update_icon()
 
-/obj/structure/vehiclecage/proc/disassemble(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/vehiclecage/proc/disassemble(obj/item/W as obj, mob/user as mob)
 	var/turf/T = get_turf(src)
 	new /obj/item/stack/material/steel(src.loc, 5)
 

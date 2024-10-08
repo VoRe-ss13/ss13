@@ -322,13 +322,13 @@ var/list/tape_roll_applications = list()
 		var/mob/M = mover
 		add_fingerprint(M)
 		if(!allowed(M))	//only select few learn art of not crumpling the tape
-			to_chat(M, span("warning", "You are not supposed to go past \the [src]..."))
+			to_chat(M, span_warning("You are not supposed to go past \the [src]..."))
 			if(M.a_intent == I_HELP && !(istype(M, /mob/living/simple_mob)))
 				return FALSE
 			crumple()
 	return ..()
 
-/obj/item/tape/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/item/tape/attackby(obj/item/W as obj, mob/user as mob)
 	breaktape(user)
 
 /obj/item/tape/attack_hand(mob/user as mob)

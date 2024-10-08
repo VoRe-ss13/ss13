@@ -366,7 +366,7 @@
 	girder_material = "resin"
 
 /* CHOMPEdit - moved this block to modular_chomp\code\game\objects\items\weapons\rcd.dm
-/obj/structure/girder/rcd_values(mob/living/user, obj/item/weapon/rcd/the_rcd, passed_mode)
+/obj/structure/girder/rcd_values(mob/living/user, obj/item/rcd/the_rcd, passed_mode)
 	var/turf/simulated/T = get_turf(src)
 	if(!istype(T) || T.density)
 		return FALSE
@@ -391,14 +391,14 @@
 			)
 	return FALSE
 
-/obj/structure/girder/rcd_act(mob/living/user, obj/item/weapon/rcd/the_rcd, passed_mode)
+/obj/structure/girder/rcd_act(mob/living/user, obj/item/rcd/the_rcd, passed_mode)
 	var/turf/simulated/T = get_turf(src)
 	if(!istype(T) || T.density) // Should stop future bugs of people bringing girders to centcom and RCDing them, or somehow putting a girder on a durasteel wall and deconning it.
 		return FALSE
 
 	switch(passed_mode)
 		if(RCD_FLOORWALL)
-			to_chat(user, span("notice", "You finish a wall."))
+			to_chat(user, span_notice("You finish a wall."))
 			// This is mostly the same as using on a floor. The girder's material is preserved, however.
 			T.ChangeTurf(wall_type)
 			var/turf/simulated/wall/new_T = get_turf(src) // Ref to the wall we just built.
@@ -411,7 +411,7 @@
 			return TRUE
 
 		if(RCD_DECONSTRUCT)
-			to_chat(user, span("notice", "You deconstruct \the [src]."))
+			to_chat(user, span_notice("You deconstruct \the [src]."))
 			qdel(src)
 			return TRUE
 */

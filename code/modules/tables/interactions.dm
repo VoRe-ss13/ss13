@@ -80,7 +80,7 @@
 				O.forceMove(loc)
 				auto_align(I, params, TRUE)
 			else
-				to_chat(user, SPAN_WARNING("\The [I] is too big for you to move!"))
+				to_chat(user, span_warning("\The [I] is too big for you to move!"))
 			return
 
 	return ..()
@@ -90,8 +90,8 @@
 	if (!W) return
 
 	// Handle harm intent grabbing/tabling.
-	if(istype(W, /obj/item/weapon/grab) && get_dist(src,user)<2)
-		var/obj/item/weapon/grab/G = W
+	if(istype(W, /obj/item/grab) && get_dist(src,user)<2)
+		var/obj/item/grab/G = W
 		if (istype(G.affecting, /mob/living))
 			var/mob/living/M = G.affecting
 			var/obj/occupied = turf_is_crowded()
@@ -111,7 +111,7 @@
 						playsound(src, 'sound/weapons/tablehit1.ogg', 50, 1)
 					var/list/L = take_damage(rand(1,5))
 					// Shards. Extra damage, plus potentially the fact YOU LITERALLY HAVE A PIECE OF GLASS/METAL/WHATEVER IN YOUR FACE
-					for(var/obj/item/weapon/material/shard/S in L)
+					for(var/obj/item/material/shard/S in L)
 						if(prob(50))
 							M.visible_message(span_danger("\The [S] slices [M]'s face messily!"),
 							                   span_danger("\The [S] slices your face messily!"))
@@ -135,7 +135,7 @@
 	if(W.loc != user) // This should stop mounted modules ending up outside the module.
 		return
 
-	if(istype(W, /obj/item/weapon/melee/energy/blade))
+	if(istype(W, /obj/item/melee/energy/blade))
 		var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 		spark_system.set_up(5, 0, src.loc)
 		spark_system.start()

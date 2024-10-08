@@ -242,7 +242,7 @@
 	icon_rest = "hotiesc_rest"
 
 /mob/living/simple_mob/vore/otie/attackby(var/obj/item/O, var/mob/user) // Trade donuts for bellybrig victims.
-	if(istype(O, /obj/item/weapon/reagent_containers/food))
+	if(istype(O, /obj/item/reagent_containers/food))
 		qdel(O)
 		playsound(src,'sound/items/eatfood.ogg', rand(10,50), 1)
 		if(!has_AI())//No autobarf on player control.
