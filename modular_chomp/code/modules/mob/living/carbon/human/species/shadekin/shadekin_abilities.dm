@@ -26,7 +26,7 @@
 		if(istype(thing, /mob/living/carbon/human))
 			var/mob/living/carbon/human/watchers = thing
 			if(watchers in oviewers(7,src) && watchers.species != SPECIES_SHADEKIN)	// And they can see us... //CHOMPEDIT - (And aren't themselves a shadekin)
-				if(!(watchers.stat) && !isbelly(watchers.loc) && !istype(watchers.loc, /obj/item/weapon/holder))	// And they are alive and not being held by someone...
+				if(!(watchers.stat) && !isbelly(watchers.loc) && !istype(watchers.loc, /obj/item/holder))	// And they are alive and not being held by someone...
 					watcher++	// They are watching us!
 		else if(istype(thing, /mob/living/silicon/robot))
 			var/mob/living/silicon/robot/watchers = thing
@@ -209,6 +209,23 @@
 			pulledby.stop_pulling()
 		stop_pulling()
 		canmove = FALSE
+
+		//CHOMPAdd Start
+		var/list/allowed_implants = list(
+			/obj/item/implant/sizecontrol,
+			/obj/item/implant/compliance,
+		)
+		for(var/obj/item/organ/external/organ in organs)
+			for(var/obj/item/O in organ.implants)
+				if(is_type_in_list(O, allowed_implants))
+					continue
+				if(O == nif)
+					nif.unimplant(src)
+				O.forceMove(drop_location())
+				organ.implants -= O
+		if(!has_embedded_objects())
+			clear_alert("embeddedobject")
+		//CHOMPAdd End
 
 		// change
 		ability_flags |= AB_PHASE_SHIFTED
