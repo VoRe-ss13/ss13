@@ -29,13 +29,8 @@
 		add_overlay(image(icon = 'icons/turf/outdoors.dmi', icon_state = "snow_footprints", dir = text2num(d)))
 
 /turf/simulated/floor/outdoors/snow/attackby(var/obj/item/W, var/mob/user)
-<<<<<<< HEAD
-	if(istype(W, /obj/item/weapon/shovel))
-		to_chat(user, "<span class='notice'>You begin to remove \the [src] with your [W].</span>")
-=======
 	if(istype(W, /obj/item/shovel))
 		to_chat(user, span_notice("You begin to remove \the [src] with your [W]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(do_after(user, 4 SECONDS * W.toolspeed))
 			to_chat(user, span_notice("\The [src] has been dug up, and now lies in a pile nearby."))
 			new /obj/item/stack/material/snow(src, 10)

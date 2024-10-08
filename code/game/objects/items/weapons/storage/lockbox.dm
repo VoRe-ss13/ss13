@@ -34,13 +34,8 @@
 				to_chat(user, span_notice("You unlock \the [src]!"))
 				return
 		else
-<<<<<<< HEAD
-			to_chat(user, "<span class='warning'>Access Denied</span>")
-	else if(istype(W, /obj/item/weapon/melee/energy/blade))
-=======
 			to_chat(user, span_warning("Access Denied"))
 	else if(istype(W, /obj/item/melee/energy/blade))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(emag_act(INFINITY, user, W, "The locker has been sliced open by [user] with an energy blade!", "You hear metal being sliced and sparks flying."))
 			var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 			spark_system.set_up(5, 0, src.loc)

@@ -659,13 +659,8 @@
 /obj/item/weapon/rig/equipped(mob/living/carbon/human/M)
 	..()
 
-<<<<<<< HEAD
-	if(istype(M.back, /obj/item/weapon/rig) && istype(M.belt, /obj/item/weapon/rig))
-		to_chat(M, "<span class='notice'>You try to put on the [src], but it won't fit.</span>")
-=======
 	if(istype(M.back, /obj/item/rig) && istype(M.belt, /obj/item/rig))
 		to_chat(M, span_notice("You try to put on the [src], but it won't fit."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(M && (M.back == src || M.belt == src))
 			if(!M.unEquip(src))
 				return

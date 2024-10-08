@@ -161,25 +161,15 @@
 				to_chat(user, span_notice("You secured the girder!"))
 				reset_girder()
 
-<<<<<<< HEAD
-	else if(istype(W, /obj/item/weapon/pickaxe/plasmacutter))
-		to_chat(user, "<span class='notice'>Now slicing apart the girder...</span>")
-=======
 	else if(istype(W, /obj/item/pickaxe/plasmacutter))
 		to_chat(user, span_notice("Now slicing apart the girder..."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(do_after(user,30 * W.toolspeed))
 			if(!src) return
 			to_chat(user, span_notice("You slice apart the girder!"))
 			dismantle()
 
-<<<<<<< HEAD
-	else if(istype(W, /obj/item/weapon/pickaxe/diamonddrill))
-		to_chat(user, "<span class='notice'>You drill through the girder!</span>")
-=======
 	else if(istype(W, /obj/item/pickaxe/diamonddrill))
 		to_chat(user, span_notice("You drill through the girder!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		dismantle()
 
 	else if(W.has_tool_quality(TOOL_SCREWDRIVER))
@@ -356,24 +346,14 @@
 			to_chat(user, span_notice("You dissasembled the girder!"))
 			dismantle()
 
-<<<<<<< HEAD
-	else if(istype(W, /obj/item/weapon/pickaxe/plasmacutter))
-		to_chat(user, "<span class='notice'>Now slicing apart the girder...</span>")
-=======
 	else if(istype(W, /obj/item/pickaxe/plasmacutter))
 		to_chat(user, span_notice("Now slicing apart the girder..."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(do_after(user,30 * W.toolspeed))
 			to_chat(user, span_notice("You slice apart the girder!"))
 		dismantle()
 
-<<<<<<< HEAD
-	else if(istype(W, /obj/item/weapon/pickaxe/diamonddrill))
-		to_chat(user, "<span class='notice'>You drill through the girder!</span>")
-=======
 	else if(istype(W, /obj/item/pickaxe/diamonddrill))
 		to_chat(user, span_notice("You drill through the girder!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		new /obj/effect/decal/remains/human(get_turf(src))
 		dismantle()
 

@@ -80,13 +80,8 @@
 			locked = !locked
 			to_chat(user, span_notice("You [locked ? "" : "un"]lock the circuit controls."))
 		else
-<<<<<<< HEAD
-			to_chat(user, "<span class='warning'>Access denied.</span>")
-	else if(istype(I,/obj/item/device/multitool))
-=======
 			to_chat(user, span_warning("Access denied."))
 	else if(istype(I,/obj/item/multitool))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(locked)
 			to_chat(user, span_warning("Circuit controls are locked."))
 			return

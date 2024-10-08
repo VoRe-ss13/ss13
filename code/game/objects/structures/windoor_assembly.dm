@@ -189,13 +189,8 @@
 				if(!src.electronics)
 					to_chat(usr,span_warning("The assembly is missing electronics."))
 					return
-<<<<<<< HEAD
-				if(src.electronics && istype(src.electronics, /obj/item/weapon/circuitboard/broken))
-					to_chat(usr,"<span class='warning'>The assembly has broken airlock electronics.</span>")
-=======
 				if(src.electronics && istype(src.electronics, /obj/item/circuitboard/broken))
 					to_chat(usr,span_warning("The assembly has broken airlock electronics."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 					return
 				usr << browse(null, "window=windoor_access") //Not sure what this actually does... -Ner
 				playsound(src, W.usesound, 100, 1)

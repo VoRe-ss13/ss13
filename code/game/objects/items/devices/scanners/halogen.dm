@@ -16,10 +16,5 @@
 	if(M.radiation)
 		to_chat(user, span_notice("Radiation Level: [M.radiation]"))
 	else
-<<<<<<< HEAD
-		to_chat(user, "<span class='notice'>No radiation detected.</span>")
-	return
-=======
 		to_chat(user, span_notice("No radiation detected."))
 	return
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))

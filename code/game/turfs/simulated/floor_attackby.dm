@@ -180,13 +180,8 @@
 		make_plating(1)
 		playsound(src, W.usesound, 80, 1)
 		return 1
-<<<<<<< HEAD
-	else if(istype(W, /obj/item/weapon/shovel) && (flooring.flags & TURF_REMOVE_SHOVEL))
-		to_chat(user, "<span class='notice'>You shovel off the [flooring.descriptor].</span>")
-=======
 	else if(istype(W, /obj/item/shovel) && (flooring.flags & TURF_REMOVE_SHOVEL))
 		to_chat(user, span_notice("You shovel off the [flooring.descriptor]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		make_plating(1)
 		playsound(src, 'sound/items/Deconstruct.ogg', 80, 1)
 		return 1

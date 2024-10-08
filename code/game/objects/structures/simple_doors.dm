@@ -167,15 +167,9 @@
 			locked = !locked
 			playsound(src, keysound,100, 1)
 		return
-<<<<<<< HEAD
-	if(istype(W,/obj/item/weapon/pickaxe) && breakable)
-		var/obj/item/weapon/pickaxe/digTool = W
-		visible_message("<span class='danger'>[user] starts digging [src]!</span>")
-=======
 	if(istype(W,/obj/item/pickaxe) && breakable)
 		var/obj/item/pickaxe/digTool = W
 		visible_message(span_danger("[user] starts digging [src]!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(do_after(user,digTool.digspeed*hardness) && src)
 			visible_message(span_danger("[user] finished digging [src]!"))
 			Dismantle()

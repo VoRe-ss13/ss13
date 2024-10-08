@@ -65,13 +65,8 @@
 
 /obj/structure/displaycase/attack_hand(mob/user as mob)
 	if (src.destroyed && src.occupied)
-<<<<<<< HEAD
-		new /obj/item/weapon/gun/energy/captain( src.loc )
-		to_chat(user, "<span class='notice'>You deactivate the hover field built into the case.</span>")
-=======
 		new /obj/item/gun/energy/captain( src.loc )
 		to_chat(user, span_notice("You deactivate the hover field built into the case."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		src.occupied = 0
 		src.add_fingerprint(user)
 		update_icon()

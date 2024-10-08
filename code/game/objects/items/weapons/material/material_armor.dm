@@ -353,13 +353,8 @@ Protectiveness | Armor %
 		qdel(src)
 		return
 
-<<<<<<< HEAD
-	if(istype(O, /obj/item/weapon/tool/wirecutters))
-		to_chat(user, "<span class='notice'>You split the plate down the middle, and joint it at the elbow.</span>")
-=======
 	if(istype(O, /obj/item/tool/wirecutters))
 		to_chat(user, span_notice("You split the plate down the middle, and joint it at the elbow."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		user.drop_from_inventory(src)
 		var/obj/item/clothing/accessory/material/makeshift/armguards/new_armor = new(null, src.material.name)
 		user.put_in_hands(new_armor)

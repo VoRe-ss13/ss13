@@ -215,13 +215,8 @@
 		playsound(loc, 'sound/machines/ding.ogg', 50, 1)
 
 /obj/item/toy/plushie/ipc/attackby(obj/item/I as obj, mob/living/user as mob)
-<<<<<<< HEAD
-	if(istype(I, /obj/item/weapon/material/kitchen/utensil))
-		to_chat(user, "<span class='notice'> You insert the [I] into the toaster. </span>")
-=======
 	if(istype(I, /obj/item/material/kitchen/utensil))
 		to_chat(user, span_notice(" You insert the [I] into the toaster. "))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 		s.set_up(5, 1, src)
 		s.start()
@@ -650,13 +645,8 @@
 		to_chat(user, span_alert("Nothing happens, and '</span>[round(timeleft/10)]<span class='alert'>' appears on a small display."))
 
 /obj/item/toy/nuke/attackby(obj/item/I as obj, mob/living/user as mob)
-<<<<<<< HEAD
-	if(istype(I, /obj/item/weapon/disk/nuclear))
-		to_chat(user, "<span class='alert'>Nice try. Put that disk back where it belongs.</span>")
-=======
 	if(istype(I, /obj/item/disk/nuclear))
 		to_chat(user, span_alert("Nice try. Put that disk back where it belongs."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 /*
  * Toy gibber

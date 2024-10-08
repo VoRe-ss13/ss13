@@ -49,13 +49,8 @@
 				playsound(src, W.usesound, 50, 1)
 				user.show_message(span_notice("You [src.open ? "open" : "close"] the service panel."))
 			return
-<<<<<<< HEAD
-		if (istype(W, /obj/item/device/multitool) && (src.open == 1)&& (!src.l_hacking))
-			user.show_message("<span class='notice'>Now attempting to reset internal memory, please hold.</span>", 1)
-=======
 		if (istype(W, /obj/item/multitool) && (src.open == 1)&& (!src.l_hacking))
 			user.show_message(span_notice("Now attempting to reset internal memory, please hold."), 1)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			src.l_hacking = 1
 			if (do_after(usr, 100))
 				if (prob(40))

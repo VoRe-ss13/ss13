@@ -198,13 +198,8 @@
 		soundloop.stop()
 
 /obj/machinery/shower/attackby(obj/item/I as obj, mob/user as mob)
-<<<<<<< HEAD
-	if(I.type == /obj/item/device/analyzer)
-		to_chat(user, "<span class='notice'>The water temperature seems to be [watertemp].</span>")
-=======
 	if(I.type == /obj/item/analyzer)
 		to_chat(user, span_notice("The water temperature seems to be [watertemp]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	if(I.has_tool_quality(TOOL_WRENCH))
 		var/newtemp = tgui_input_list(user, "What setting would you like to set the temperature valve to?", "Water Temperature Valve", temperature_settings)
 		to_chat(user, span_notice("You begin to adjust the temperature valve with \the [I]."))

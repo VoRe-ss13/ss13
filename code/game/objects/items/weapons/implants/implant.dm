@@ -50,13 +50,8 @@
 /obj/item/weapon/implant/proc/islegal()
 	return 0
 
-<<<<<<< HEAD
-/obj/item/weapon/implant/proc/meltdown()	//breaks it down, making implant unrecongizible
-	to_chat(imp_in, "<span class='warning'>You feel something melting inside [part ? "your [part.name]" : "you"]!</span>")
-=======
 /obj/item/implant/proc/meltdown()	//breaks it down, making implant unrecongizible
 	to_chat(imp_in, span_warning("You feel something melting inside [part ? "your [part.name]" : "you"]!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	if (part)
 		part.take_damage(burn = 15, used_weapon = "Electronics meltdown")
 	else

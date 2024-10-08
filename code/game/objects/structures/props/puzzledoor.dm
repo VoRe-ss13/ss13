@@ -82,13 +82,8 @@
 				user.do_attack_animation(src)
 				user.visible_message(span_danger("\The [user] hits \the [src] with \the [W] with no visible effect."))
 
-<<<<<<< HEAD
-		else if(istype(C, /obj/item/weapon/plastique))
-			to_chat(user, "<span class='danger'>On contacting \the [src], a flash of light envelops \the [C] as it is turned to ash. Oh.</span>")
-=======
 		else if(istype(C, /obj/item/plastique))
 			to_chat(user, span_danger("On contacting \the [src], a flash of light envelops \the [C] as it is turned to ash. Oh."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			qdel(C)
 			return 0
 

@@ -84,13 +84,8 @@
 		user.drop_item()
 		if(W)
 			W.forceMove(loc)
-<<<<<<< HEAD
-	else if(istype(W, /obj/item/weapon/melee/energy/blade))
-		if(emag_act(INFINITY, user, "<span class='danger'>The locker has been sliced open by [user] with \an [W]</span>!", "<span class='danger'>You hear metal being sliced and sparks flying.</span>"))
-=======
 	else if(istype(W, /obj/item/melee/energy/blade))
 		if(emag_act(INFINITY, user, span_danger("The locker has been sliced open by [user] with \an [W]!"), span_danger("You hear metal being sliced and sparks flying.")))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			var/datum/effect/effect/system/spark_spread/spark_system = new /datum/effect/effect/system/spark_spread()
 			spark_system.set_up(5, 0, loc)
 			spark_system.start()

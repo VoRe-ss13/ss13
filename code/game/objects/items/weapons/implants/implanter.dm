@@ -142,13 +142,8 @@
 			to_chat(user, span_warning("Something is already scanned inside the implant!"))
 			return
 		c.scanned = A
-<<<<<<< HEAD
-		if(istype(A, /obj/item/weapon/storage))
-			to_chat(user, "<span class='warning'>You can't store \the [A.name] in this!</span>")
-=======
 		if(istype(A, /obj/item/storage))
 			to_chat(user, span_warning("You can't store \the [A.name] in this!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			c.scanned = null
 			return
 		if(istype(A.loc,/mob/living/carbon/human))

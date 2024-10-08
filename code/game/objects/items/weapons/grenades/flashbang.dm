@@ -27,13 +27,8 @@
 
 	qdel(src)
 
-<<<<<<< HEAD
-/obj/item/weapon/grenade/flashbang/proc/bang(var/turf/T , var/mob/living/carbon/M)					// Added a new proc called 'bang' that takes a location and a person to be banged.
-	to_chat(M, "<span class='danger'>BANG</span>")						// Called during the loop that bangs people in lockers/containers and when banging
-=======
 /obj/item/grenade/flashbang/proc/bang(var/turf/T , var/mob/living/carbon/M)					// Added a new proc called 'bang' that takes a location and a person to be banged.
 	to_chat(M, span_danger("BANG"))						// Called during the loop that bangs people in lockers/containers and when banging
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	playsound(src, 'sound/effects/bang.ogg', 50, 1, 30)		// people in normal view.  Could theroetically be called during other explosions.
 																	// -- Polymorph
 
@@ -88,23 +83,13 @@
 	if(ishuman(M))
 		var/obj/item/organ/internal/eyes/E = H.internal_organs_by_name[O_EYES]
 		if (E && E.damage >= E.min_bruised_damage)
-<<<<<<< HEAD
-			to_chat(M, "<span class='danger'>Your eyes start to burn badly!</span>")
-			if(!banglet && !(istype(src , /obj/item/weapon/grenade/flashbang/clusterbang)))
-=======
 			to_chat(M, span_danger("Your eyes start to burn badly!"))
 			if(!banglet && !(istype(src , /obj/item/grenade/flashbang/clusterbang)))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				if (E.damage >= E.min_broken_damage)
 					to_chat(M, span_danger("You can't see anything!"))
 	if (M.ear_damage >= 15)
-<<<<<<< HEAD
-		to_chat(M, "<span class='danger'>Your ears start to ring badly!</span>")
-		if(!banglet && !(istype(src , /obj/item/weapon/grenade/flashbang/clusterbang)))
-=======
 		to_chat(M, span_danger("Your ears start to ring badly!"))
 		if(!banglet && !(istype(src , /obj/item/grenade/flashbang/clusterbang)))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			if (prob(M.ear_damage - 10 + 5))
 				to_chat(M, span_danger("You can't hear anything!"))
 				M.sdisabilities |= DEAF

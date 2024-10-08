@@ -30,13 +30,8 @@
 	colour = pick("red","purple","jade","black")
 	name = "[colour] lipstick"
 
-<<<<<<< HEAD
-/obj/item/weapon/lipstick/attack_self(mob/user as mob)
-	to_chat(user, "<span class='notice'>You twist \the [src] [open ? "closed" : "open"].</span>")
-=======
 /obj/item/lipstick/attack_self(mob/user as mob)
 	to_chat(user, span_notice("You twist \the [src] [open ? "closed" : "open"]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	open = !open
 	if(open)
 		icon_state = "[initial(icon_state)]_[colour]"

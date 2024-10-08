@@ -216,13 +216,8 @@
 		var/obj/item/device/assembly/timer/tmr = holder.a_left
 		if(!istype(tmr,/obj/item/device/assembly/timer))
 			tmr = holder.a_right
-<<<<<<< HEAD
-		if(!istype(tmr,/obj/item/device/assembly/timer))
-			to_chat(usr, "<span class='notice'>This detonator has no timer.</span>")
-=======
 		if(!istype(tmr,/obj/item/assembly/timer))
 			to_chat(usr, span_notice("This detonator has no timer."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			return
 
 		if(tmr.timing)

@@ -251,13 +251,8 @@
 
 /obj/machinery/casino_prize_dispenser/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(currently_vending)
-<<<<<<< HEAD
-		if(istype(W, /obj/item/weapon/spacecasinocash))
-			to_chat(usr, "<span class='warning'>Please select prize on display with sufficient amount of chips.</span>")
-=======
 		if(istype(W, /obj/item/spacecasinocash))
 			to_chat(usr, span_warning("Please select prize on display with sufficient amount of chips."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		else
 			SStgui.update_uis(src)
 			return // don't smack that machine with your 2 chips
@@ -273,13 +268,8 @@
 		to_chat(usr, "[icon2html(cashmoney, user.client)] <span class='warning'>That is not enough chips.</span>") //CHOMPEdit
 		return 0
 
-<<<<<<< HEAD
-	if(istype(cashmoney, /obj/item/weapon/spacecasinocash))
-		visible_message("<span class='info'>\The [usr] inserts some chips into \the [src].</span>")
-=======
 	if(istype(cashmoney, /obj/item/spacecasinocash))
 		visible_message(span_info("\The [usr] inserts some chips into \the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		cashmoney.worth -= price
 
 		if(cashmoney.worth <= 0)

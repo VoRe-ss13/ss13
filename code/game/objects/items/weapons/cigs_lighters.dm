@@ -469,13 +469,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(M.lit)
 			light(span_notice("[user] lights their [name] with their [W]."))
 
-<<<<<<< HEAD
-	else if(istype(W, /obj/item/device/assembly/igniter))
-		light("<span class='notice'>[user] fiddles with [W], and manages to light their [name] with the power of science.</span>")
-=======
 	else if(istype(W, /obj/item/assembly/igniter))
 		light(span_notice("[user] fiddles with [W], and manages to light their [name] with the power of science."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 
 	user.update_inv_wear_mask(0)
 	user.update_inv_l_hand(0)
@@ -657,13 +652,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(M == user)
 			cig.attackby(src, user)
 		else
-<<<<<<< HEAD
-			if(istype(src, /obj/item/weapon/flame/lighter/zippo))
-				cig.light("<span class='rose'>[user] whips the [name] out and holds it for [M].</span>")
-=======
 			if(istype(src, /obj/item/flame/lighter/zippo))
 				cig.light(span_rose("[user] whips the [name] out and holds it for [M]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			else
 				cig.light(span_notice("[user] holds the [name] out for [M], and lights the [cig.name]."))
 	else

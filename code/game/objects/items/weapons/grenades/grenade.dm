@@ -115,10 +115,5 @@
 	..()
 	return
 
-<<<<<<< HEAD
-/obj/item/weapon/grenade/vendor_action(var/obj/machinery/vending/V)
-	activate(V)
-=======
 /obj/item/grenade/vendor_action(var/obj/machinery/vending/V)
 	activate(V)
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))

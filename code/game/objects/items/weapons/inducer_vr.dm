@@ -118,13 +118,8 @@
 	else
 		recharging = TRUE
 
-<<<<<<< HEAD
-	if(istype(A, /obj/item/weapon/gun/energy) && !charge_guns)
-		to_chat(user, "<span class='alert'>Error: Device is unable to interface with weapons.</span>")
-=======
 	if(istype(A, /obj/item/gun/energy) && !charge_guns)
 		to_chat(user, span_alert("Error: Device is unable to interface with weapons."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		recharging = FALSE
 		return FALSE
 

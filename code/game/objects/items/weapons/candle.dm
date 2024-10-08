@@ -29,15 +29,9 @@
 	if(W.has_tool_quality(TOOL_WELDER))
 		var/obj/item/weapon/weldingtool/WT = W.get_welder()
 		if(WT.isOn()) //Badasses dont get blinded by lighting their candle with a welding tool
-<<<<<<< HEAD
-			light("<span class='notice'>\The [user] casually lights the [src] with [W].</span>")
-	else if(istype(W, /obj/item/weapon/flame/lighter))
-		var/obj/item/weapon/flame/lighter/L = W
-=======
 			light(span_notice("\The [user] casually lights the [src] with [W]."))
 	else if(istype(W, /obj/item/flame/lighter))
 		var/obj/item/flame/lighter/L = W
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(L.lit)
 			light()
 	else if(istype(W, /obj/item/weapon/flame/match))
@@ -50,11 +44,7 @@
 			light()
 
 
-<<<<<<< HEAD
-/obj/item/weapon/flame/candle/proc/light(var/flavor_text = "<span class='notice'>\The [usr] lights the [src].</span>")
-=======
 /obj/item/flame/candle/proc/light(var/flavor_text = span_notice("\The [usr] lights the [src]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	if(!lit)
 		lit = TRUE
 		visible_message(flavor_text)

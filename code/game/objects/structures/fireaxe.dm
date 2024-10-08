@@ -33,13 +33,8 @@
 	//	hasaxe = 1
 
 	if (isrobot(user) || locked)
-<<<<<<< HEAD
-		if(istype(O, /obj/item/device/multitool))
-			to_chat(user, "<span class='warning'>Resetting circuitry...</span>")
-=======
 		if(istype(O, /obj/item/multitool))
 			to_chat(user, span_warning("Resetting circuitry..."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			playsound(src, 'sound/machines/lockreset.ogg', 50, 1)
 			if(do_after(user, 20 * O.toolspeed))
 				locked = 0

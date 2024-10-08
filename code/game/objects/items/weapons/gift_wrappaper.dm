@@ -138,13 +138,8 @@
 				to_chat(user, span_warning("You need more paper!"))
 				return
 			else
-<<<<<<< HEAD
-				if(istype(W, /obj/item/smallDelivery) || istype(W, /obj/item/weapon/gift)) //No gift wrapping gifts!
-					to_chat(user, "<span class='warning'>You can't wrap something that's already wrapped!</span>")
-=======
 				if(istype(W, /obj/item/smallDelivery) || istype(W, /obj/item/gift)) //No gift wrapping gifts!
 					to_chat(user, span_warning("You can't wrap something that's already wrapped!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 					return
 
 				src.amount -= a_used

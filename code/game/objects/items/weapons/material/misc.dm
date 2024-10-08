@@ -211,13 +211,8 @@
 						playsound(src, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 						return
 
-<<<<<<< HEAD
-/obj/item/weapon/material/whip/attack_self(mob/user)
-	user.visible_message("<span class='warning'>\The [user] cracks \the [src]!</span>")
-=======
 /obj/item/material/whip/attack_self(mob/user)
 	user.visible_message(span_warning("\The [user] cracks \the [src]!"))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	playsound(src, 'sound/effects/snap.ogg', 50, 1)
 
 

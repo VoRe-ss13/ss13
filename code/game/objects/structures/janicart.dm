@@ -408,13 +408,8 @@ GLOBAL_LIST_BOILERPLATE(all_janitorial_carts, /obj/structure/janitorialcart)
 			to_chat(user, span_notice("This [callme] is out of water!"))
 	else if(istype(I, /obj/item/key))
 		to_chat(user, "Hold [I] in one of your hands while you drive this [callme].")
-<<<<<<< HEAD
-	else if(istype(I, /obj/item/weapon/storage/bag/trash))
-		to_chat(user, "<span class='notice'>You hook the trashbag onto the [callme].</span>")
-=======
 	else if(istype(I, /obj/item/storage/bag/trash))
 		to_chat(user, span_notice("You hook the trashbag onto the [callme]."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		user.drop_item()
 		I.loc = src
 		mybag = I

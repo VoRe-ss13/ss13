@@ -131,25 +131,15 @@
 			else
 				to_chat(user, span_notice("[src] already has a cell."))
 		else
-<<<<<<< HEAD
-			to_chat(user, "<span class='notice'>This cell is not fitted for [src].</span>")
-	if(istype(W, /obj/item/weapon/tape_roll) || istype(W, /obj/item/taperoll))
-=======
 			to_chat(user, span_notice("This cell is not fitted for [src]."))
 	if(istype(W, /obj/item/tape_roll) || istype(W, /obj/item/taperoll))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(grip_safety && !taped_safety)	//no point letting people wrap tape around the grips of batons without a safety
 			to_chat(user, span_notice("You firmly wrap tape around the baton's grip, disabling the safety system."))
 			playsound(src, 'sound/effects/tape.ogg',25)
 			taped_safety = TRUE
 		else if(grip_safety && taped_safety)
-<<<<<<< HEAD
-			to_chat(user, "<span class='notice'>The grip safety has already been taped down.</span>")
-	if(istype(W, /obj/item/weapon/tool/screwdriver))
-=======
 			to_chat(user, span_notice("The grip safety has already been taped down."))
 	if(istype(W, /obj/item/tool/screwdriver))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		if(taped_safety)
 			to_chat(user, span_notice("You painstakingly scrape away the tape over the grip safety."))
 			taped_safety = FALSE

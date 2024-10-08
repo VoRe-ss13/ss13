@@ -57,24 +57,14 @@
 	name = "dufflebag of holding"
 	var/tilted = 0
 	icon_state = "holdingduffle"
-<<<<<<< HEAD
-	
-/obj/item/weapon/storage/backpack/holding/duffle/Initialize()
-=======
 
 /obj/item/storage/backpack/holding/duffle/Initialize()
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	. = ..()
 	if(prob(50))
 		icon_state = "[icon_state]_tilted"
 		tilted = 1
-<<<<<<< HEAD
-	
-/obj/item/weapon/storage/backpack/holding/duffle/verb/tilt()
-=======
 
 /obj/item/storage/backpack/holding/duffle/verb/tilt()
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	set name = "Adjust Duffelbag Angle"
 	set desc = "Adjust the angle of your dufflebag for cosmetic effect"
 	set category = "Object"
@@ -92,15 +82,9 @@
 	update_icon()
 	usr.update_inv_back()
 
-<<<<<<< HEAD
-/obj/item/weapon/storage/backpack/holding/attackby(obj/item/weapon/W as obj, mob/user as mob)
-	if(istype(W, /obj/item/weapon/storage/backpack/holding))
-		to_chat(user, "<span class='warning'>The Bluespace interfaces of the two devices conflict and malfunction.</span>")
-=======
 /obj/item/storage/backpack/holding/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/storage/backpack/holding))
 		to_chat(user, span_warning("The Bluespace interfaces of the two devices conflict and malfunction."))
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		qdel(W)
 		return
 	. = ..()
@@ -199,24 +183,14 @@
 	var/tilted = 0
 	var/can_tilt = 1
 	max_storage_space = INVENTORY_DUFFLEBAG_SPACE
-<<<<<<< HEAD
-	
-/obj/item/weapon/storage/backpack/dufflebag/Initialize()
-=======
 
 /obj/item/storage/backpack/dufflebag/Initialize()
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	. = ..()
 	if(prob(50))
 		icon_state = "[icon_state]_tilted"
 		tilted = 1
-<<<<<<< HEAD
-	
-/obj/item/weapon/storage/backpack/dufflebag/verb/tilt()
-=======
 
 /obj/item/storage/backpack/dufflebag/verb/tilt()
->>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	set name = "Adjust Duffelbag Angle"
 	set desc = "Adjust the angle of your dufflebag for cosmetic effect"
 	set category = "Object"
