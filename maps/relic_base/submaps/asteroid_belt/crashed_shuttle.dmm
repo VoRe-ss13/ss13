@@ -5,7 +5,7 @@
 "e" = (/obj/structure/shuttle/engine/propulsion{dir = 8; icon_state = "propulsion_r"},/turf/simulated/floor/airless,/area/mine/explored/belt_miner)
 "f" = (/obj/structure/shuttle/engine/heater{icon_state = "heater"; dir = 8},/obj/structure/window/reinforced{dir = 4},/turf/simulated/floor/airless,/area/mine/explored/belt_miner)
 "g" = (/obj/structure/bed/chair/shuttle,/obj/machinery/light{dir = 1},/turf/simulated/floor/airless,/area/mine/explored/belt_miner)
-"h" = (/obj/item/device/radio/intercom{dir = 1; name = "Station Intercom (General)"; pixel_y = 27},/obj/structure/bed/chair/shuttle,/turf/simulated/floor/airless,/area/mine/explored/belt_miner)
+"h" = (/obj/item/radio/intercom{dir = 1; name = "Station Intercom (General)"; pixel_y = 27},/obj/structure/bed/chair/shuttle,/turf/simulated/floor/airless,/area/mine/explored/belt_miner)
 "i" = (/obj/structure/bed/chair/shuttle,/turf/simulated/floor/airless,/area/mine/explored/belt_miner)
 "j" = (/obj/structure/window/reinforced/full,/obj/structure/grille,/turf/simulated/floor/airless,/area/mine/explored/belt_miner)
 "k" = (/obj/sc_away_spawner/belt_normal,/turf/simulated/floor/airless,/area/mine/explored/belt_miner)
