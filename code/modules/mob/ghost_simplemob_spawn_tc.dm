@@ -183,7 +183,7 @@ GLOBAL_LIST_INIT(ghost_spawnable_mobs,list(
 	newPred.ckey = src.ckey
 	newPred.visible_message("<span class='warning'>[newPred] emerges from somewhere!</span>")
 
-	newPred.mob_radio = new /obj/item/device/radio/headset/mob_headset(newPred)
+	newPred.mob_radio = new /obj/item/radio/headset/mob_headset(newPred)
 	newPred.mob_radio.frequency = PUB_FREQ
 	newPred.sight |= SEE_SELF
 	newPred.sight |= SEE_MOBS
