@@ -8,7 +8,7 @@
 
 /mob/proc/movement_delay(oldloc, direct)
 	. = 0
-	if(locate(/obj/item/weapon/grab) in src)
+	if(locate(/obj/item/grab) in src)
 		. += 5
 
 	// CHOMPAdd Start - When crawling, move slow.
@@ -349,11 +349,11 @@
 					my_mob.other_mobs = null
 
 	// Update all the grabs!
-	for (var/obj/item/weapon/grab/G in my_mob)
+	for (var/obj/item/grab/G in my_mob)
 		if (G.state == GRAB_NECK)
 			mob.set_dir(reverse_dir[direct])
 		G.adjust_position()
-	for (var/obj/item/weapon/grab/G in my_mob.grabbed_by)
+	for (var/obj/item/grab/G in my_mob.grabbed_by)
 		G.adjust_position()
 
 	// We're not in the middle of a move anymore
@@ -398,7 +398,7 @@
 			if(!T)
 				return
 			if(mob.check_holy(T))
-				to_chat(mob, "<span class='warning'>You cannot get past holy grounds while you are in this plane of existence!</span>")
+				to_chat(mob, span_warning("You cannot get past holy grounds while you are in this plane of existence!"))
 				return
 			//CHOMPEdit start - add ability to block incorporeal movement for nonghosts
 			else if(!istype(mob, /mob/observer/dead) && T.blocks_nonghost_incorporeal)
@@ -480,7 +480,7 @@
 /* CHOMPedit: Nuking slipping.
 	//Check to see if we slipped
 	if(prob(Process_Spaceslipping(5)) && !buckled)
-		to_chat(src, "<span class='notice'><B>You slipped!</B></span>")
+		to_chat(src, span_notice("<B>You slipped!</B>"))
 		inertia_dir = last_move
 		step(src, src.inertia_dir) // Not using Move for smooth glide here because this is a 'slip' so should be sudden.
 		return 0
