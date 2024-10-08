@@ -49,7 +49,7 @@
 	dir = 4
 	},
 /obj/machinery/power/port_gen/pacman,
-/obj/item/weapon/tool/wrench,
+/obj/item/tool/wrench,
 /turf/simulated/floor/plating,
 /area/surface/outpost/mining_main/exterior{
 	name = "Surface Mines Operations Pad"
@@ -346,7 +346,7 @@
 "Me" = (
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
-/obj/item/weapon/cell/high{
+/obj/item/cell/high{
 	charge = 100;
 	maxcharge = 15000;
 	pixel_x = 2;

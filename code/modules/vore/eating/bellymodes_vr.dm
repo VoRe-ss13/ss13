@@ -161,7 +161,7 @@
 					formatted_message = replacetext(formatted_message, "%prey", M)
 					formatted_message = replacetext(formatted_message, "%countprey", absorbed_count)
 					if(formatted_message)
-						to_chat(M, "<span class='vnotice'>[formatted_message]</span>")
+						to_chat(M, span_vnotice("[formatted_message]"))
 				else
 					if (digest_mode == DM_SELECT)
 						var/datum/digest_mode/selective/DM_S = GLOB.digest_modes[DM_SELECT]
@@ -177,7 +177,7 @@
 					formatted_message = replacetext(formatted_message, "%countprey", living_count)
 					formatted_message = replacetext(formatted_message, "%count", contents.len)
 					if(formatted_message)
-						to_chat(M, "<span class='vnotice'>[formatted_message]</span>")
+						to_chat(M, span_vnotice("[formatted_message]"))
 
 	if(to_update)
 		updateVRPanels()
@@ -287,14 +287,14 @@
 /obj/belly/proc/handle_digesting_item(obj/item/I, touchable_amount) //CHOMPEdit
 	var/did_an_item = FALSE
 	// We always contaminate IDs.
-	if(contaminates || istype(I, /obj/item/weapon/card/id))
+	if(contaminates || istype(I, /obj/item/card/id))
 		I.gurgle_contaminate(src, contamination_flavor, contamination_color)
 
 	switch(item_digest_mode)
 		if(IM_HOLD)
 			items_preserved |= I
 		if(IM_DIGEST_FOOD)
-			if(istype(I,/obj/item/weapon/reagent_containers/food) || istype(I, /obj/item/organ))
+			if(istype(I,/obj/item/reagent_containers/food) || istype(I, /obj/item/organ))
 				var/obj/item/organ/R = I
 				if(istype(R) && R.robotic >= ORGAN_ROBOT)
 					items_preserved |= I
@@ -322,7 +322,7 @@
 							if(!E.vital)
 								vitals_only = FALSE
 								if(!LAZYLEN(E.children))
-									for(var/obj/item/weapon/implant/I as anything in E.implants)
+									for(var/obj/item/implant/I as anything in E.implants)
 										qdel(I)
 									E.droplimb(TRUE, DROPLIMB_EDGE)
 									qdel(E)
@@ -360,8 +360,8 @@
 	digest_alert_prey = replacetext(digest_alert_prey, "%count", contents.len)
 
 	//Send messages
-	to_chat(owner, "<span class='vnotice'>[digest_alert_owner]</span>")
-	to_chat(M, "<span class='vnotice'>[digest_alert_prey]</span>")
+	to_chat(owner, span_vnotice("[digest_alert_owner]"))
+	to_chat(M, span_vnotice("[digest_alert_prey]"))
 
 	if(M.ckey)
 		GLOB.prey_digested_roundstat++
@@ -403,8 +403,8 @@
 			if(L.tiredness <= 105)
 				L.tiredness = (L.tiredness + 6)
 			if(L.tiredness <= 90 && L.tiredness >= 75)
-				to_chat(L, "<span class='warning'>You are about to fall unconscious!</span>")
-				to_chat(owner, "<span class='warning'>[L] is about to fall unconscious!</span>")
+				to_chat(L, span_warning("You are about to fall unconscious!"))
+				to_chat(owner, span_warning("[L] is about to fall unconscious!"))
 		if(drainmode == DR_FAKE && istype(L,/mob/living/carbon/human)) //Slowly bring prey to the edge of sleep without crossing it
 			if(L.tiredness <= 93)
 				L.tiredness = (L.tiredness + 6)
