@@ -69,3 +69,11 @@
   - bugfix: Removed ability for ghosts to make sound with bags.
   - bugfix: fixes some null messaging
   - bugfix: fixes kelpie init again
+2024-10-09:
+  VoRe-bot:
+  - bugfix: mails have colours again
+  - bugfix: Verb vote placed in the correct verb panel location
+  - bugfix: Removed a default object from the junk mail
+  - bugfix: AI shells getting out of sync with the AI during ion storms
+  - rscadd: bluespace disruptor for admin event use
+  - bugfix: Bodycam screen view now updates on move
