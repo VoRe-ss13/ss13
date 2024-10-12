@@ -2439,34 +2439,6 @@
 			break
 	if(!dest_belly) return
 	if(ismob(prey))
-<<<<<<< HEAD
-		var/living_count = 0
-		for(var/mob/living/L in contents)
-			living_count++
-
-		var/autotransfer_owner_message = pick(primary_autotransfer_messages_owner)
-		var/autotransfer_prey_message = pick(primary_autotransfer_messages_prey)
-		if(dest_belly_name == autotransferlocation_secondary)
-			autotransfer_owner_message = pick(secondary_autotransfer_messages_owner)
-			autotransfer_prey_message = pick(secondary_autotransfer_messages_prey)
-
-		autotransfer_owner_message = replacetext(autotransfer_owner_message, "%pred", owner)
-		autotransfer_owner_message = replacetext(autotransfer_owner_message, "%prey", prey)
-		autotransfer_owner_message = replacetext(autotransfer_owner_message, "%belly", lowertext(name))
-		autotransfer_owner_message = replacetext(autotransfer_owner_message, "%countprey", living_count)
-		autotransfer_owner_message = replacetext(autotransfer_owner_message, "%count", contents.len)
-		autotransfer_owner_message = replacetext(autotransfer_owner_message, "%dest", dest_belly_name)
-
-		autotransfer_prey_message = replacetext(autotransfer_prey_message, "%pred", owner)
-		autotransfer_prey_message = replacetext(autotransfer_prey_message, "%prey", prey)
-		autotransfer_prey_message = replacetext(autotransfer_prey_message, "%belly", lowertext(name))
-		autotransfer_prey_message = replacetext(autotransfer_prey_message, "%countprey", living_count)
-		autotransfer_prey_message = replacetext(autotransfer_prey_message, "%count", contents.len)
-		autotransfer_prey_message = replacetext(autotransfer_prey_message, "%dest", dest_belly_name)
-
-		autotransfer_owner_message = "<span class='vwarning'>[autotransfer_owner_message]</span>"
-		autotransfer_prey_message = "<span class='vwarning'>[autotransfer_prey_message]</span>"
-=======
 		var/autotransfer_owner_message
 		var/autotransfer_prey_message
 		if(dest_belly_name == autotransferlocation)
@@ -2475,7 +2447,6 @@
 		else
 			autotransfer_owner_message =  span_vwarning(belly_format_string(secondary_autotransfer_messages_owner, prey, dest = dest_belly_name))
 			autotransfer_prey_message = span_vwarning(belly_format_string(secondary_autotransfer_messages_prey, prey, dest = dest_belly_name))
->>>>>>> 05ce6b2d75 (fix autotransfer dest placeholder (#9164))
 
 		to_chat(prey, autotransfer_prey_message)
 		if(entrance_logs)
