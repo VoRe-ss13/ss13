@@ -147,20 +147,8 @@
 			for(var/mob/living/M in contents)
 				if(M.absorbed)
 					EL = emote_lists[DM_HOLD_ABSORBED]
-<<<<<<< HEAD
-
-					var/raw_message = pick(EL)
-					var/formatted_message
-					formatted_message = replacetext(raw_message, "%belly", lowertext(name))
-					formatted_message = replacetext(formatted_message, "%pred", owner)
-					formatted_message = replacetext(formatted_message, "%prey", M)
-					formatted_message = replacetext(formatted_message, "%countprey", absorbed_count)
-					if(formatted_message)
-						to_chat(M, "<span class='vnotice'>[formatted_message]</span>")
-=======
 					if(LAZYLEN(EL))
 						to_chat(M, span_vnotice(belly_format_string(EL, M, use_absorbed_count = TRUE)))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 				else
 					if (digest_mode == DM_SELECT)
 						var/datum/digest_mode/selective/DM_S = GLOB.digest_modes[DM_SELECT]
@@ -168,20 +156,8 @@
 					else if(digest_mode == DM_DIGEST && !M.digestable)
 						EL = emote_lists[DM_HOLD]					// Use Hold's emote list if we're indigestible
 
-<<<<<<< HEAD
-					var/raw_message = pick(EL)
-					var/formatted_message
-					formatted_message = replacetext(raw_message, "%belly", lowertext(name))
-					formatted_message = replacetext(formatted_message, "%pred", owner)
-					formatted_message = replacetext(formatted_message, "%prey", M)
-					formatted_message = replacetext(formatted_message, "%countprey", living_count)
-					formatted_message = replacetext(formatted_message, "%count", contents.len)
-					if(formatted_message)
-						to_chat(M, "<span class='vnotice'>[formatted_message]</span>")
-=======
 					if(LAZYLEN(EL))
 						to_chat(M, span_vnotice(belly_format_string(EL, M)))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 	if(to_update)
 		updateVRPanels()
@@ -347,13 +323,8 @@
 		compensation += M.getOxyLoss() //How much of the prey's damage was caused by passive crit oxyloss to compensate the lost nutrition.
 
 	//Send messages
-<<<<<<< HEAD
-	to_chat(owner, "<span class='vnotice'>[digest_alert_owner]</span>")
-	to_chat(M, "<span class='vnotice'>[digest_alert_prey]</span>")
-=======
 	to_chat(owner, digest_alert_owner)
 	to_chat(M, digest_alert_prey)
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 	if(M.ckey)
 		GLOB.prey_digested_roundstat++

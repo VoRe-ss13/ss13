@@ -162,11 +162,8 @@ export const VorePanel = () => {
     show_pictures,
     icon_overflow,
     host_mobtype,
-<<<<<<< HEAD
-=======
     unsaved_changes,
     vore_words,
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
   } = data;
 
   const [tabIndex, setTabIndex] = useState(0);

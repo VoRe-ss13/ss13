@@ -16,10 +16,6 @@ export const VoreBellySelectionAndCustomization = (props: {
 }) => {
   const { act } = useBackend();
 
-<<<<<<< HEAD
-  const { our_bellies, selected, show_pictures, host_mobtype, icon_overflow } =
-    props;
-=======
   const {
     our_bellies,
     selected,
@@ -29,7 +25,6 @@ export const VoreBellySelectionAndCustomization = (props: {
     icon_overflow,
     vore_words,
   } = props;
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
   return (
     <Flex>

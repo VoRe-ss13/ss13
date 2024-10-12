@@ -406,17 +406,8 @@
 	if(istype(thing, /mob/observer)) //Ports CHOMPStation PR#3072
 		if(desc) //Ports CHOMPStation PR#4772
 			//Allow ghosts see where they are if they're still getting squished along inside.
-<<<<<<< HEAD
-			var/formatted_desc
-			formatted_desc = replacetext(desc, "%belly", lowertext(name)) //replace with this belly's name
-			formatted_desc = replacetext(formatted_desc, "%pred", owner) //replace with this belly's owner
-			formatted_desc = replacetext(formatted_desc, "%prey", thing) //replace with whatever mob entered into this belly
-			to_chat(thing, "<span class='vnotice'><B>[formatted_desc]</B></span>")
-		return
-=======
 			to_chat(thing, span_vnotice("<B>[belly_format_string(desc, thing)]</B>"))
 
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 	if(OldLoc in contents)
 		return //Someone dropping something (or being stripdigested)
 	if(istype(OldLoc, /mob/observer) || istype(OldLoc, /obj/item/device/mmi)) // Prevent reforming causing a lot of log spam/sounds
@@ -465,15 +456,7 @@
 		//Was there a description text? If so, it's time to format it!
 		if(raw_desc)
 			//Replace placeholder vars
-<<<<<<< HEAD
-			var/formatted_desc
-			formatted_desc = replacetext(raw_desc, "%belly", lowertext(name)) //replace with this belly's name
-			formatted_desc = replacetext(formatted_desc, "%pred", owner) //replace with this belly's owner
-			formatted_desc = replacetext(formatted_desc, "%prey", M) //replace with whatever mob entered into this belly
-			to_chat(M, "<span class='vnotice'><B>[formatted_desc]</B></span>")
-=======
 			to_chat(M, span_vnotice("<B>[belly_format_string(raw_desc, M)]</B>"))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 		var/taste
 		if(can_taste && M.loc == src && (taste = M.get_taste_message(FALSE))) //CHOMPEdit - Prevent indirect tasting
@@ -1225,13 +1208,8 @@
 		handle_absorb_langs(M, owner)
 		GLOB.prey_absorbed_roundstat++
 
-<<<<<<< HEAD
-	to_chat(M, "<span class='vnotice'>[absorb_alert_prey]</span>")
-	to_chat(owner, "<span class='vnotice'>[absorb_alert_owner]</span>")
-=======
 	to_chat(M, span_vnotice("[belly_format_string(absorb_messages_prey, M, use_absorbed_count = TRUE)]"))
 	to_chat(owner, span_vnotice("[belly_format_string(absorb_messages_owner, M, use_absorbed_count = TRUE)]"))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 	if(M.noisy) //Mute drained absorbee hunger if enabled.
 		M.noisy = FALSE
 
@@ -1270,15 +1248,7 @@
 
 	if(absorbed_desc)
 		//Replace placeholder vars
-<<<<<<< HEAD
-		var/formatted_abs_desc
-		formatted_abs_desc = replacetext(absorbed_desc, "%belly", lowertext(name)) //replace with this belly's name
-		formatted_abs_desc = replacetext(formatted_abs_desc, "%pred", owner) //replace with this belly's owner
-		formatted_abs_desc = replacetext(formatted_abs_desc, "%prey", M) //replace with whatever mob entered into this belly
-		to_chat(M, "<span class='vnotice'><B>[formatted_abs_desc]</B></span>")
-=======
 		to_chat(M, span_vnotice("<B>[belly_format_string(absorbed_desc, M)]</B>"))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 	//Update owner
 	owner.updateVRPanel()
@@ -1303,19 +1273,11 @@
 /obj/belly/proc/unabsorb_living(mob/living/M)
 	M.absorbed = FALSE
 	handle_absorb_langs(M, owner)
-<<<<<<< HEAD
-	to_chat(M, "<span class='vnotice'>[unabsorb_alert_prey]</span>")
-	to_chat(owner, "<span class='vnotice'>[unabsorb_alert_owner]</span>")
-
-	if(desc)
-		to_chat(M, "<span class='vnotice'><B>[desc]</B></span>")
-=======
 	to_chat(M, span_vnotice(belly_format_string(unabsorb_messages_prey, M, use_absorbed_count = TRUE)))
 	to_chat(owner, span_vnotice(belly_format_string(unabsorb_messages_owner, M, use_absorbed_count = TRUE)))
 
 	if(desc)
 		to_chat(M, span_vnotice("<B>[belly_format_string(desc, M)]</B>"))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 	//Update owner
 	owner.updateVRPanel()
@@ -1373,50 +1335,10 @@
 
 	R.setClickCooldown(50)
 
-<<<<<<< HEAD
-	var/living_count = 0
-	for(var/mob/living/L in contents)
-		living_count++
-
-	var/escape_attempt_owner_message = pick(escape_attempt_messages_owner)
-	var/escape_attempt_prey_message = pick(escape_attempt_messages_prey)
-	var/escape_fail_owner_message = pick(escape_fail_messages_owner)
-	var/escape_fail_prey_message = pick(escape_fail_messages_prey)
-
-	escape_attempt_owner_message = replacetext(escape_attempt_owner_message, "%pred", owner)
-	escape_attempt_owner_message = replacetext(escape_attempt_owner_message, "%prey", R)
-	escape_attempt_owner_message = replacetext(escape_attempt_owner_message, "%belly", lowertext(name))
-	escape_attempt_owner_message = replacetext(escape_attempt_owner_message, "%countprey", living_count)
-	escape_attempt_owner_message = replacetext(escape_attempt_owner_message, "%count", contents.len)
-
-	escape_attempt_prey_message = replacetext(escape_attempt_prey_message, "%pred", owner)
-	escape_attempt_prey_message = replacetext(escape_attempt_prey_message, "%prey", R)
-	escape_attempt_prey_message = replacetext(escape_attempt_prey_message, "%belly", lowertext(name))
-	escape_attempt_prey_message = replacetext(escape_attempt_prey_message, "%countprey", living_count)
-	escape_attempt_prey_message = replacetext(escape_attempt_prey_message, "%count", contents.len)
-
-	escape_fail_owner_message = replacetext(escape_fail_owner_message, "%pred", owner)
-	escape_fail_owner_message = replacetext(escape_fail_owner_message, "%prey", R)
-	escape_fail_owner_message = replacetext(escape_fail_owner_message, "%belly", lowertext(name))
-	escape_fail_owner_message = replacetext(escape_fail_owner_message, "%countprey", living_count)
-	escape_fail_owner_message = replacetext(escape_fail_owner_message, "%count", contents.len)
-
-	escape_fail_prey_message = replacetext(escape_fail_prey_message, "%pred", owner)
-	escape_fail_prey_message = replacetext(escape_fail_prey_message, "%prey", R)
-	escape_fail_prey_message = replacetext(escape_fail_prey_message, "%belly", lowertext(name))
-	escape_fail_prey_message = replacetext(escape_fail_prey_message, "%countprey", living_count)
-	escape_fail_prey_message = replacetext(escape_fail_prey_message, "%count", contents.len)
-
-	escape_attempt_owner_message = "<span class='vwarning'>[escape_attempt_owner_message]</span>"
-	escape_attempt_prey_message = "<span class='vwarning'>[escape_attempt_prey_message]</span>"
-	escape_fail_owner_message = "<span class='vwarning'>[escape_fail_owner_message]</span>"
-	escape_fail_prey_message = "<span class='vnotice'>[escape_fail_prey_message]</span>"
-=======
 	var/escape_attempt_owner_message = span_vwarning(belly_format_string(escape_attempt_messages_owner, R))
 	var/escape_attempt_prey_message = span_vwarning(belly_format_string(escape_attempt_messages_prey, R))
 	var/escape_fail_owner_message = span_vwarning(belly_format_string(escape_fail_messages_owner, R))
 	var/escape_fail_prey_message = span_vnotice(belly_format_string(escape_fail_messages_prey, R))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 	if(owner.stat) //If owner is stat (dead, KO) we can actually escape
 		escape_attempt_prey_message = span_vwarning("[escape_attempt_prey_message] (will take around [escapetime/10] seconds.)")
@@ -1439,25 +1361,8 @@
 				return
 			return
 
-<<<<<<< HEAD
-	struggle_outer_message = replacetext(struggle_outer_message, "%pred", owner)
-	struggle_outer_message = replacetext(struggle_outer_message, "%prey", R)
-	struggle_outer_message = replacetext(struggle_outer_message, "%belly", lowertext(name))
-	struggle_outer_message = replacetext(struggle_outer_message, "%countprey", living_count)
-	struggle_outer_message = replacetext(struggle_outer_message, "%count", contents.len)
-
-	struggle_user_message = replacetext(struggle_user_message, "%pred", owner)
-	struggle_user_message = replacetext(struggle_user_message, "%prey", R)
-	struggle_user_message = replacetext(struggle_user_message, "%belly", lowertext(name))
-	struggle_user_message = replacetext(struggle_user_message, "%countprey", living_count)
-	struggle_user_message = replacetext(struggle_user_message, "%count", contents.len)
-
-	struggle_outer_message = "<span class='valert'>[struggle_outer_message]</span>"
-	struggle_user_message = "<span class='valert'>[struggle_user_message]</span>"
-=======
 	var/struggle_outer_message = span_valert(belly_format_string(struggle_messages_outside, R))
 	var/struggle_user_message = span_valert(belly_format_string(struggle_messages_inside, R))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 	//CHOMPEdit Start
 	if(private_struggle)
@@ -1493,40 +1398,9 @@
 			to_chat(owner, escape_attempt_owner_message)
 			if(do_after(R, escapetime))
 				if(escapable && C)
-<<<<<<< HEAD
-					var/escape_item_owner_message = pick(escape_item_messages_owner)
-					var/escape_item_prey_message = pick(escape_item_messages_prey)
-					var/escape_item_outside_message = pick(escape_item_messages_outside)
-
-					escape_item_owner_message = replacetext(escape_item_owner_message, "%pred", owner)
-					escape_item_owner_message = replacetext(escape_item_owner_message, "%prey", R)
-					escape_item_owner_message = replacetext(escape_item_owner_message, "%belly", lowertext(name))
-					escape_item_owner_message = replacetext(escape_item_owner_message, "%countprey", living_count)
-					escape_item_owner_message = replacetext(escape_item_owner_message, "%count", contents.len)
-					escape_item_owner_message = replacetext(escape_item_owner_message, "%item", C)
-
-					escape_item_prey_message = replacetext(escape_item_prey_message, "%pred", owner)
-					escape_item_prey_message = replacetext(escape_item_prey_message, "%prey", R)
-					escape_item_prey_message = replacetext(escape_item_prey_message, "%belly", lowertext(name))
-					escape_item_prey_message = replacetext(escape_item_prey_message, "%countprey", living_count)
-					escape_item_prey_message = replacetext(escape_item_prey_message, "%count", contents.len)
-					escape_item_prey_message = replacetext(escape_item_prey_message, "%item", C)
-
-					escape_item_outside_message = replacetext(escape_item_outside_message, "%pred", owner)
-					escape_item_outside_message = replacetext(escape_item_outside_message, "%prey", R)
-					escape_item_outside_message = replacetext(escape_item_outside_message, "%belly", lowertext(name))
-					escape_item_outside_message = replacetext(escape_item_outside_message, "%countprey", living_count)
-					escape_item_outside_message = replacetext(escape_item_outside_message, "%count", contents.len)
-					escape_item_outside_message = replacetext(escape_item_outside_message, "%item", C)
-
-					escape_item_owner_message = "<span class='vwarning'>[escape_item_owner_message]</span>"
-					escape_item_prey_message = "<span class='vwarning'>[escape_item_prey_message]</span>"
-					escape_item_outside_message = "<span class='vwarning'>[escape_item_outside_message]</span>"
-=======
 					var/escape_item_owner_message = span_vwarning(belly_format_string(escape_item_messages_owner, R, item = C))
 					var/escape_item_prey_message = span_vwarning(belly_format_string(escape_item_messages_prey, R, item = C))
 					var/escape_item_outside_message = span_vwarning(belly_format_string(escape_item_messages_outside, R, item = C))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 					release_specific_contents(C)
 					to_chat(R, escape_item_prey_message)
@@ -1542,30 +1416,6 @@
 					var/escape_prey_message = span_vwarning(belly_format_string(escape_messages_prey, R))
 					var/escape_outside_message = span_vwarning(belly_format_string(escape_messages_outside, R))
 
-<<<<<<< HEAD
-					escape_owner_message = replacetext(escape_owner_message, "%pred", owner)
-					escape_owner_message = replacetext(escape_owner_message, "%prey", R)
-					escape_owner_message = replacetext(escape_owner_message, "%belly", lowertext(name))
-					escape_owner_message = replacetext(escape_owner_message, "%countprey", living_count)
-					escape_owner_message = replacetext(escape_owner_message, "%count", contents.len)
-
-					escape_prey_message = replacetext(escape_prey_message, "%pred", owner)
-					escape_prey_message = replacetext(escape_prey_message, "%prey", R)
-					escape_prey_message = replacetext(escape_prey_message, "%belly", lowertext(name))
-					escape_prey_message = replacetext(escape_prey_message, "%countprey", living_count)
-					escape_prey_message = replacetext(escape_prey_message, "%count", contents.len)
-
-					escape_outside_message = replacetext(escape_outside_message, "%pred", owner)
-					escape_outside_message = replacetext(escape_outside_message, "%prey", R)
-					escape_outside_message = replacetext(escape_outside_message, "%belly", lowertext(name))
-					escape_outside_message = replacetext(escape_outside_message, "%countprey", living_count)
-					escape_outside_message = replacetext(escape_outside_message, "%count", contents.len)
-
-					escape_owner_message = "<span class='vwarning'>[escape_owner_message]</span>"
-					escape_prey_message = "<span class='vwarning'>[escape_prey_message]</span>"
-					escape_outside_message = "<span class='vwarning'>[escape_outside_message]</span>"
-=======
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 					release_specific_contents(R)
 					to_chat(R, escape_prey_message)
 					to_chat(owner, escape_owner_message)
@@ -1594,30 +1444,8 @@
 				transferchance = 0
 				transferlocation = null
 				return
-<<<<<<< HEAD
-			var/primary_transfer_owner_message = pick(primary_transfer_messages_owner)
-			var/primary_transfer_prey_message = pick(primary_transfer_messages_prey)
-
-			primary_transfer_owner_message = replacetext(primary_transfer_owner_message, "%pred", owner)
-			primary_transfer_owner_message = replacetext(primary_transfer_owner_message, "%prey", R)
-			primary_transfer_owner_message = replacetext(primary_transfer_owner_message, "%belly", lowertext(name))
-			primary_transfer_owner_message = replacetext(primary_transfer_owner_message, "%countprey", living_count)
-			primary_transfer_owner_message = replacetext(primary_transfer_owner_message, "%count", contents.len)
-			primary_transfer_owner_message = replacetext(primary_transfer_owner_message, "%dest", transferlocation)
-
-			primary_transfer_prey_message = replacetext(primary_transfer_prey_message, "%pred", owner)
-			primary_transfer_prey_message = replacetext(primary_transfer_prey_message, "%prey", R)
-			primary_transfer_prey_message = replacetext(primary_transfer_prey_message, "%belly", lowertext(name))
-			primary_transfer_prey_message = replacetext(primary_transfer_prey_message, "%countprey", living_count)
-			primary_transfer_prey_message = replacetext(primary_transfer_prey_message, "%count", contents.len)
-			primary_transfer_prey_message = replacetext(primary_transfer_prey_message, "%dest", transferlocation)
-
-			primary_transfer_owner_message = "<span class='vwarning'>[primary_transfer_owner_message]</span>"
-			primary_transfer_prey_message = "<span class='vwarning'>[primary_transfer_prey_message]</span>"
-=======
 			var/primary_transfer_owner_message = span_vwarning(belly_format_string(primary_transfer_messages_owner, R, dest = transferlocation))
 			var/primary_transfer_prey_message = span_vwarning(belly_format_string(primary_transfer_messages_prey, R, dest = transferlocation))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 			to_chat(R, primary_transfer_prey_message)
 			to_chat(owner, primary_transfer_owner_message)
@@ -1640,30 +1468,8 @@
 				transferlocation_secondary = null
 				return
 
-<<<<<<< HEAD
-			var/secondary_transfer_owner_message = pick(secondary_transfer_messages_owner)
-			var/secondary_transfer_prey_message = pick(secondary_transfer_messages_prey)
-
-			secondary_transfer_owner_message = replacetext(secondary_transfer_owner_message, "%pred", owner)
-			secondary_transfer_owner_message = replacetext(secondary_transfer_owner_message, "%prey", R)
-			secondary_transfer_owner_message = replacetext(secondary_transfer_owner_message, "%belly", lowertext(name))
-			secondary_transfer_owner_message = replacetext(secondary_transfer_owner_message, "%countprey", living_count)
-			secondary_transfer_owner_message = replacetext(secondary_transfer_owner_message, "%count", contents.len)
-			secondary_transfer_owner_message = replacetext(secondary_transfer_owner_message, "%dest", transferlocation_secondary)
-
-			secondary_transfer_prey_message = replacetext(secondary_transfer_prey_message, "%pred", owner)
-			secondary_transfer_prey_message = replacetext(secondary_transfer_prey_message, "%prey", R)
-			secondary_transfer_prey_message = replacetext(secondary_transfer_prey_message, "%belly", lowertext(name))
-			secondary_transfer_prey_message = replacetext(secondary_transfer_prey_message, "%countprey", living_count)
-			secondary_transfer_prey_message = replacetext(secondary_transfer_prey_message, "%count", contents.len)
-			secondary_transfer_prey_message = replacetext(secondary_transfer_prey_message, "%dest", transferlocation_secondary)
-
-			secondary_transfer_owner_message = "<span class='vwarning'>[secondary_transfer_owner_message]</span>"
-			secondary_transfer_prey_message = "<span class='vwarning'>[secondary_transfer_prey_message]</span>"
-=======
 			var/secondary_transfer_owner_message = span_vwarning(belly_format_string(secondary_transfer_messages_owner, R, dest = transferlocation_secondary))
 			var/secondary_transfer_prey_message = span_vwarning(belly_format_string(secondary_transfer_messages_prey, R, dest = transferlocation_secondary))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 			to_chat(R, secondary_transfer_prey_message)
 			to_chat(owner, secondary_transfer_owner_message)
@@ -1674,28 +1480,8 @@
 			return
 
 		else if(prob(absorbchance) && digest_mode != DM_ABSORB) //After that, let's have it run the absorb chance.
-<<<<<<< HEAD
-			var/absorb_chance_owner_message = pick(absorb_chance_messages_owner)
-			var/absorb_chance_prey_message = pick(absorb_chance_messages_prey)
-
-			absorb_chance_owner_message = replacetext(absorb_chance_owner_message, "%pred", owner)
-			absorb_chance_owner_message = replacetext(absorb_chance_owner_message, "%prey", R)
-			absorb_chance_owner_message = replacetext(absorb_chance_owner_message, "%belly", lowertext(name))
-			absorb_chance_owner_message = replacetext(absorb_chance_owner_message, "%countprey", living_count)
-			absorb_chance_owner_message = replacetext(absorb_chance_owner_message, "%count", contents.len)
-
-			absorb_chance_prey_message = replacetext(absorb_chance_prey_message, "%pred", owner)
-			absorb_chance_prey_message = replacetext(absorb_chance_prey_message, "%prey", R)
-			absorb_chance_prey_message = replacetext(absorb_chance_prey_message, "%belly", lowertext(name))
-			absorb_chance_prey_message = replacetext(absorb_chance_prey_message, "%countprey", living_count)
-			absorb_chance_prey_message = replacetext(absorb_chance_prey_message, "%count", contents.len)
-
-			absorb_chance_owner_message = "<span class='vwarning'>[absorb_chance_owner_message]</span>"
-			absorb_chance_prey_message = "<span class='vwarning'>[absorb_chance_prey_message]</span>"
-=======
 			var/absorb_chance_owner_message = span_vwarning(belly_format_string(absorb_chance_messages_owner, R))
 			var/absorb_chance_prey_message = span_vwarning(belly_format_string(absorb_chance_messages_prey, R))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 			to_chat(R, absorb_chance_prey_message)
 			to_chat(owner, absorb_chance_owner_message)
@@ -1703,56 +1489,16 @@
 			return
 
 		else if(prob(digestchance) && digest_mode != DM_DIGEST) //Then, let's see if it should run the digest chance.
-<<<<<<< HEAD
-			var/digest_chance_owner_message = pick(digest_chance_messages_owner)
-			var/digest_chance_prey_message = pick(digest_chance_messages_prey)
-
-			digest_chance_owner_message = replacetext(digest_chance_owner_message, "%pred", owner)
-			digest_chance_owner_message = replacetext(digest_chance_owner_message, "%prey", R)
-			digest_chance_owner_message = replacetext(digest_chance_owner_message, "%belly", lowertext(name))
-			digest_chance_owner_message = replacetext(digest_chance_owner_message, "%countprey", living_count)
-			digest_chance_owner_message = replacetext(digest_chance_owner_message, "%count", contents.len)
-
-			digest_chance_prey_message = replacetext(digest_chance_prey_message, "%pred", owner)
-			digest_chance_prey_message = replacetext(digest_chance_prey_message, "%prey", R)
-			digest_chance_prey_message = replacetext(digest_chance_prey_message, "%belly", lowertext(name))
-			digest_chance_prey_message = replacetext(digest_chance_prey_message, "%countprey", living_count)
-			digest_chance_prey_message = replacetext(digest_chance_prey_message, "%count", contents.len)
-
-			digest_chance_owner_message = "<span class='vwarning'>[digest_chance_owner_message]</span>"
-			digest_chance_prey_message = "<span class='vwarning'>[digest_chance_prey_message]</span>"
-=======
 			var/digest_chance_owner_message = span_vwarning(belly_format_string(digest_chance_messages_owner, R))
 			var/digest_chance_prey_message = span_vwarning(belly_format_string(digest_chance_messages_prey, R))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 			to_chat(R, digest_chance_prey_message)
 			to_chat(owner, digest_chance_owner_message)
 			digest_mode = DM_DIGEST
 			return
 		else if(prob(selectchance) && digest_mode != DM_SELECT) //Finally, let's see if it should run the selective mode chance.
-<<<<<<< HEAD
-			var/select_chance_owner_message = pick(select_chance_messages_owner)
-			var/select_chance_prey_message = pick(select_chance_messages_prey)
-
-			select_chance_owner_message = replacetext(select_chance_owner_message, "%pred", owner)
-			select_chance_owner_message = replacetext(select_chance_owner_message, "%prey", R)
-			select_chance_owner_message = replacetext(select_chance_owner_message, "%belly", lowertext(name))
-			select_chance_owner_message = replacetext(select_chance_owner_message, "%countprey", living_count)
-			select_chance_owner_message = replacetext(select_chance_owner_message, "%count", contents.len)
-
-			select_chance_prey_message = replacetext(select_chance_prey_message, "%pred", owner)
-			select_chance_prey_message = replacetext(select_chance_prey_message, "%prey", R)
-			select_chance_prey_message = replacetext(select_chance_prey_message, "%belly", lowertext(name))
-			select_chance_prey_message = replacetext(select_chance_prey_message, "%countprey", living_count)
-			select_chance_prey_message = replacetext(select_chance_prey_message, "%count", contents.len)
-
-			select_chance_owner_message = "<span class='vwarning'>[select_chance_owner_message]</span>"
-			select_chance_prey_message = "<span class='vwarning'>[select_chance_prey_message]</span>"
-=======
 			var/select_chance_owner_message = span_vwarning(belly_format_string(select_chance_messages_owner, R))
 			var/select_chance_prey_message = span_vwarning(belly_format_string(select_chance_messages_prey, R))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 			to_chat(R, select_chance_prey_message)
 			to_chat(owner, select_chance_owner_message)
@@ -1770,31 +1516,8 @@
 
 	R.setClickCooldown(50)
 
-<<<<<<< HEAD
-	var/struggle_outer_message = pick(absorbed_struggle_messages_outside)
-	var/struggle_user_message = pick(absorbed_struggle_messages_inside)
-
-	var/absorbed_count = 0
-	for(var/mob/living/L in contents)
-		if(L.absorbed)
-			absorbed_count++
-
-	struggle_outer_message = replacetext(struggle_outer_message, "%pred", owner)
-	struggle_outer_message = replacetext(struggle_outer_message, "%prey", R)
-	struggle_outer_message = replacetext(struggle_outer_message, "%belly", lowertext(name))
-	struggle_outer_message = replacetext(struggle_outer_message, "%countprey", absorbed_count)
-
-	struggle_user_message = replacetext(struggle_user_message, "%pred", owner)
-	struggle_user_message = replacetext(struggle_user_message, "%prey", R)
-	struggle_user_message = replacetext(struggle_user_message, "%belly", lowertext(name))
-	struggle_user_message = replacetext(struggle_user_message, "%countprey", absorbed_count)
-
-	struggle_outer_message = "<span class='valert'>[struggle_outer_message]</span>"
-	struggle_user_message = "<span class='valert'>[struggle_user_message]</span>"
-=======
 	var/struggle_outer_message = span_valert(belly_format_string(absorbed_struggle_messages_outside, R, use_absorbed_count = TRUE))
 	var/struggle_user_message = span_valert(belly_format_string(absorbed_struggle_messages_inside, R, use_absorbed_count = TRUE))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 	//CHOMPEdit Start
 	if(private_struggle)
@@ -1822,70 +1545,16 @@
 	//absorb resists
 	if(escapable || owner.stat) //If the stomach has escapable enabled or the owner is dead/unconscious
 		if(prob(escapechance) || owner.stat) //Let's have it check to see if the prey's escape attempt starts.
-<<<<<<< HEAD
-
-
-			var/living_count = 0
-			for(var/mob/living/L in contents)
-				living_count++
-
-			var/escape_attempt_absorbed_owner_message = pick(escape_attempt_absorbed_messages_owner)
-			var/escape_attempt_absorbed_prey_message = pick(escape_attempt_absorbed_messages_prey)
-
-			escape_attempt_absorbed_owner_message = replacetext(escape_attempt_absorbed_owner_message, "%pred", owner)
-			escape_attempt_absorbed_owner_message = replacetext(escape_attempt_absorbed_owner_message, "%prey", R)
-			escape_attempt_absorbed_owner_message = replacetext(escape_attempt_absorbed_owner_message, "%belly", lowertext(name))
-			escape_attempt_absorbed_owner_message = replacetext(escape_attempt_absorbed_owner_message, "%countprey", living_count)
-			escape_attempt_absorbed_owner_message = replacetext(escape_attempt_absorbed_owner_message, "%count", contents.len)
-
-			escape_attempt_absorbed_prey_message = replacetext(escape_attempt_absorbed_prey_message, "%pred", owner)
-			escape_attempt_absorbed_prey_message = replacetext(escape_attempt_absorbed_prey_message, "%prey", R)
-			escape_attempt_absorbed_prey_message = replacetext(escape_attempt_absorbed_prey_message, "%belly", lowertext(name))
-			escape_attempt_absorbed_prey_message = replacetext(escape_attempt_absorbed_prey_message, "%countprey", living_count)
-			escape_attempt_absorbed_prey_message = replacetext(escape_attempt_absorbed_prey_message, "%count", contents.len)
-
-			escape_attempt_absorbed_owner_message = "<span class='vwarning'>[escape_attempt_absorbed_owner_message]</span>"
-			escape_attempt_absorbed_prey_message = "<span class='vwarning'>[escape_attempt_absorbed_prey_message]</span>"
-=======
 			var/escape_attempt_absorbed_owner_message = span_vwarning(belly_format_string(escape_attempt_absorbed_messages_owner, R))
 			var/escape_attempt_absorbed_prey_message = span_vwarning(belly_format_string(escape_attempt_absorbed_messages_prey, R))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 			to_chat(R, escape_attempt_absorbed_prey_message)
 			to_chat(owner, escape_attempt_absorbed_owner_message)
 			if(do_after(R, escapetime))
 				if((escapable || owner.stat) && (R.loc == src) && prob(escapechance_absorbed)) //Does the escape attempt succeed?
-<<<<<<< HEAD
-					var/escape_absorbed_owner_message = pick(escape_absorbed_messages_owner)
-					var/escape_absorbed_prey_message = pick(escape_absorbed_messages_prey)
-					var/escape_absorbed_outside_message = pick(escape_absorbed_messages_outside)
-
-					escape_absorbed_owner_message = replacetext(escape_absorbed_owner_message, "%pred", owner)
-					escape_absorbed_owner_message = replacetext(escape_absorbed_owner_message, "%prey", R)
-					escape_absorbed_owner_message = replacetext(escape_absorbed_owner_message, "%belly", lowertext(name))
-					escape_absorbed_owner_message = replacetext(escape_absorbed_owner_message, "%countprey", living_count)
-					escape_absorbed_owner_message = replacetext(escape_absorbed_owner_message, "%count", contents.len)
-
-					escape_absorbed_prey_message = replacetext(escape_absorbed_prey_message, "%pred", owner)
-					escape_absorbed_prey_message = replacetext(escape_absorbed_prey_message, "%prey", R)
-					escape_absorbed_prey_message = replacetext(escape_absorbed_prey_message, "%belly", lowertext(name))
-					escape_absorbed_prey_message = replacetext(escape_absorbed_prey_message, "%countprey", living_count)
-					escape_absorbed_prey_message = replacetext(escape_absorbed_prey_message, "%count", contents.len)
-
-					escape_absorbed_outside_message = replacetext(escape_absorbed_outside_message, "%pred", owner)
-					escape_absorbed_outside_message = replacetext(escape_absorbed_outside_message, "%prey", R)
-					escape_absorbed_outside_message = replacetext(escape_absorbed_outside_message, "%belly", lowertext(name))
-					escape_absorbed_outside_message = replacetext(escape_absorbed_outside_message, "%countprey", living_count)
-					escape_absorbed_outside_message = replacetext(escape_absorbed_outside_message, "%count", contents.len)
-
-					escape_absorbed_owner_message = "<span class='vwarning'>[escape_absorbed_owner_message]</span>"
-					escape_absorbed_prey_message = "<span class='vwarning'>[escape_absorbed_prey_message]</span>"
-					escape_absorbed_outside_message = "<span class='vwarning'>[escape_absorbed_outside_message]</span>"
-=======
 					var/escape_absorbed_owner_message = span_vwarning(belly_format_string(escape_absorbed_messages_owner, R))
 					var/escape_absorbed_prey_message = span_vwarning(belly_format_string(escape_absorbed_messages_prey, R))
 					var/escape_absorbed_outside_message = span_vwarning(belly_format_string(escape_absorbed_messages_outside, R))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 					release_specific_contents(R)
 					to_chat(R, escape_absorbed_prey_message)
@@ -1899,29 +1568,8 @@
 				else if(!(R.loc == src)) //Aren't even in the belly. Quietly fail.
 					return
 				else //Belly became inescapable or you failed your roll.
-<<<<<<< HEAD
-
-					var/escape_fail_absorbed_owner_message = pick(escape_fail_absorbed_messages_owner)
-					var/escape_fail_absorbed_prey_message = pick(escape_fail_absorbed_messages_prey)
-
-					escape_fail_absorbed_owner_message = replacetext(escape_fail_absorbed_owner_message, "%pred", owner)
-					escape_fail_absorbed_owner_message = replacetext(escape_fail_absorbed_owner_message, "%prey", R)
-					escape_fail_absorbed_owner_message = replacetext(escape_fail_absorbed_owner_message, "%belly", lowertext(name))
-					escape_fail_absorbed_owner_message = replacetext(escape_fail_absorbed_owner_message, "%countprey", living_count)
-					escape_fail_absorbed_owner_message = replacetext(escape_fail_absorbed_owner_message, "%count", contents.len)
-
-					escape_fail_absorbed_prey_message = replacetext(escape_fail_absorbed_prey_message, "%pred", owner)
-					escape_fail_absorbed_prey_message = replacetext(escape_fail_absorbed_prey_message, "%prey", R)
-					escape_fail_absorbed_prey_message = replacetext(escape_fail_absorbed_prey_message, "%belly", lowertext(name))
-					escape_fail_absorbed_prey_message = replacetext(escape_fail_absorbed_prey_message, "%countprey", living_count)
-					escape_fail_absorbed_prey_message = replacetext(escape_fail_absorbed_prey_message, "%count", contents.len)
-
-					escape_fail_absorbed_owner_message = "<span class='vwarning'>[escape_fail_absorbed_owner_message]</span>"
-					escape_fail_absorbed_prey_message = "<span class='vnotice'>[escape_fail_absorbed_prey_message]</span>"
-=======
 					var/escape_fail_absorbed_owner_message = span_vwarning(belly_format_string(escape_fail_absorbed_messages_owner, R))
 					var/escape_fail_absorbed_prey_message = span_vnotice(belly_format_string(escape_fail_absorbed_messages_prey, R))
->>>>>>> 57240cf280 ([MIRROR] Vore Messages (#9159))
 
 					to_chat(R, escape_fail_absorbed_prey_message)
 					to_chat(owner, escape_fail_absorbed_owner_message)
