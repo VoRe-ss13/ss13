@@ -45,7 +45,7 @@
 		to_chat(player.current, span_danger(span_large("You are \a [nonstandard_role_type]!")))
 		player.special_role = nonstandard_role_type
 		if(nonstandard_role_msg)
-			to_chat(player.current, "<span class='notice'>[nonstandard_role_msg]</span>")
+			to_chat(player.current, span_notice("[nonstandard_role_msg]"))
 		update_icons_added(player)
 	return 1
 

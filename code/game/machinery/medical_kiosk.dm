@@ -40,9 +40,9 @@
 	. = ..()
 	if(istype(user) && Adjacent(user))
 		if(inoperable() || panel_open)
-			to_chat(user, "<span class='warning'>\The [src] seems to be nonfunctional...</span>")
+			to_chat(user, span_warning("\The [src] seems to be nonfunctional..."))
 		else if(active_user && active_user != user)
-			to_chat(user, "<span class='warning'>Another patient has begin using this machine. Please wait for them to finish, or their session to time out.</span>")
+			to_chat(user, span_warning("Another patient has begin using this machine. Please wait for them to finish, or their session to time out."))
 		else
 			start_using(user)
 
@@ -95,7 +95,7 @@
 				to_chat(user, span_boldnotice("<b>Backup scan results:</b>") + "<br>DATABASE ERROR!")
 			else
 				var/scan_report = do_backup_scan(user)
-				to_chat(user, "<span class='notice'><b>Backup scan results:</b></span>"+scan_report)
+				to_chat(user, span_notice("<b>Backup scan results:</b>")+scan_report)
 
 	// Standby
 	suspend()

@@ -49,7 +49,7 @@
 	ghost_query_type = /datum/ghost_query/apprentice
 
 /obj/item/antag_spawner/technomancer_apprentice/attack_self(mob/user)
-	to_chat(user, "<span class='notice'>Teleporter attempting to lock on to your apprentice.</span>")
+	to_chat(user, span_notice("Teleporter attempting to lock on to your apprentice."))
 	request_player()
 
 /obj/item/antag_spawner/technomancer_apprentice/request_player()
@@ -60,7 +60,7 @@
 	..()
 	if(!used)
 		icon_state = "oldshieldoff"
-		visible_message("<span class='warning'>The teleporter failed to find the apprentice.  Perhaps another attempt could be made later?</span>")
+		visible_message(span_warning("The teleporter failed to find the apprentice.  Perhaps another attempt could be made later?"))
 
 /obj/item/antag_spawner/technomancer_apprentice/spawn_antag(client/C, turf/T)
 	sparks.start()
@@ -95,7 +95,7 @@
 	var/drone_type = null
 
 /obj/item/antag_spawner/syndicate_drone/attack_self(mob/user)
-	to_chat(user, "<span class='notice'>Teleporter attempting to lock on to an available unit.</span>")
+	to_chat(user, span_notice("Teleporter attempting to lock on to an available unit."))
 	request_player()
 
 /obj/item/antag_spawner/syndicate_drone/request_player()
@@ -106,7 +106,7 @@
 	..()
 	if(!used)
 		icon_state = "oldshieldoff"
-		visible_message("<span class='warning'>The teleporter failed to find any available.  Perhaps another attempt could be made later?</span>")
+		visible_message(span_warning("The teleporter failed to find any available.  Perhaps another attempt could be made later?"))
 
 /obj/item/antag_spawner/syndicate_drone/spawn_antag(client/C, turf/T)
 	sparks.start()

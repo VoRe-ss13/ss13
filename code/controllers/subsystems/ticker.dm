@@ -76,8 +76,8 @@ var/global/datum/controller/subsystem/ticker/ticker
 			post_game_tick()
 
 /datum/controller/subsystem/ticker/proc/pregame_welcome()
-	to_world("<span class='boldannounce notice'><em>Welcome to the pregame lobby!</em></span>")
-	to_world("<span class='boldannounce notice'>Please set up your character and select ready. The round will start in [pregame_timeleft] seconds.</span>")
+	to_world(span_boldannounce(span_notice("<em>Welcome to the pregame lobby!</em>")))
+	to_world(span_boldannounce(span_notice("Please set up your character and select ready. The round will start in [pregame_timeleft] seconds.")))
 	world << sound('sound/misc/server-ready.ogg', volume = 100)
 
 // Called during GAME_STATE_PREGAME (RUNLEVEL_LOBBY)
@@ -87,7 +87,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 
 	if(start_immediately)
 		pregame_timeleft = 0
-	else if(SSvote.time_remaining)
+	else if(SSvote.active_vote)
 		return // vote still going, wait for it.
 
 	// Time to start the game!
@@ -102,8 +102,8 @@ var/global/datum/controller/subsystem/ticker/ticker
 			fire() // Don't wait for next tick, do it now!
 		return
 
-	if(pregame_timeleft <= CONFIG_GET(number/vote_autogamemode_timeleft) && !SSvote.gamemode_vote_called)
-		SSvote.autogamemode() // Start the game mode vote (if we haven't had one already)
+	//if(pregame_timeleft <= CONFIG_GET(number/vote_autogamemode_timeleft) && !SSvote.gamemode_vote_called) //CHOMPEdit
+		//SSvote.autogamemode() // Start the game mode vote (if we haven't had one already) //CHOMPEdit
 
 // Called during GAME_STATE_SETTING_UP (RUNLEVEL_SETUP)
 /datum/controller/subsystem/ticker/proc/setup_tick(resumed = FALSE)
@@ -111,7 +111,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 	if(!setup_choose_gamemode())
 		// It failed, go back to lobby state and re-send the welcome message
 		pregame_timeleft = CONFIG_GET(number/pregame_time) // CHOMPEdit
-		SSvote.gamemode_vote_called = FALSE // Allow another autogamemode vote
+		// SSvote.gamemode_vote_called = FALSE // Allow another autogamemode vote
 		current_state = GAME_STATE_PREGAME
 		Master.SetRunLevel(RUNLEVEL_LOBBY)
 		pregame_welcome()
@@ -143,7 +143,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 		src.mode = config.pick_mode(master_mode)
 
 	if(!src.mode)
-		to_world("<span class='danger'>Serious error in mode setup! Reverting to pregame lobby.</span>") //Uses setup instead of set up due to computational context.
+		to_world(span_danger("Serious error in mode setup! Reverting to pregame lobby.")) //Uses setup instead of set up due to computational context.
 		return 0
 
 	job_master.ResetOccupations()
@@ -188,8 +188,8 @@ var/global/datum/controller/subsystem/ticker/ticker
 			//Deleting Startpoints but we need the ai point to AI-ize people later
 			if (S.name != "AI")
 				qdel(S)
-		to_world("<span class='boldannounce notice'><em>Enjoy the game!</em></span>")
-		world << sound('sound/AI/welcome.ogg') //CHOMPEdit: Reverted to default welcome from Yawn edit
+		to_world(span_boldannounce(span_notice("<em>Enjoy the game!</em>")))
+		world << sound('sound/AI/welcome.ogg') // Skie
 		//Holiday Round-start stuff	~Carn
 		Holiday_Game_Start()
 
@@ -459,11 +459,11 @@ var/global/datum/controller/subsystem/ticker/ticker
 	if(captainless)
 		for(var/mob/M in player_list)
 			if(!istype(M,/mob/new_player))
-				to_chat(M, "<span class='notice'>Site Management is not forced on anyone.</span>")
+				to_chat(M, span_notice("Site Management is not forced on anyone."))
 
 
 /datum/controller/subsystem/ticker/proc/declare_completion()
-	to_world("<span class='filter_system'><br><br><br><H1>A round of [mode.name] has ended!</H1></span>")
+	to_world(span_filter_system("<br><br><br><H1>A round of [mode.name] has ended!</H1>"))
 	for(var/mob/Player in player_list)
 		if(Player.mind && !isnewplayer(Player))
 			if(Player.stat != DEAD)
@@ -499,7 +499,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 			var/robolist = span_bold("The AI's loyal minions were:") + " "
 			for(var/mob/living/silicon/robot/robo in aiPlayer.connected_robots)
 				robolist += "[robo.name][robo.stat?" (Deactivated), ":", "]"  // VOREStation edit
-			to_world("<span class='filter_system'>[robolist]</span>")
+			to_world(span_filter_system("[robolist]"))
 
 	var/dronecount = 0
 

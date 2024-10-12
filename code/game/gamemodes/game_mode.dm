@@ -570,7 +570,7 @@ var/global/list/additional_antag_types = list()
 	if(!player || !player.current) return
 
 	var/obj_count = 1
-	to_chat(player.current, "<span class='notice'>Your current objectives:</span>")
+	to_chat(player.current, span_notice("Your current objectives:"))
 	for(var/datum/objective/objective in player.objectives)
 		to_chat(player.current, span_bold("Objective #[obj_count]") + ": [objective.explanation_text]")
 		obj_count++
@@ -580,7 +580,7 @@ var/global/list/additional_antag_types = list()
 	set category = "OOC.Game" //CHOMPEdit
 
 	if(!ticker || !ticker.mode)
-		to_chat(usr, "<span class='warning'>Something is terribly wrong; there is no gametype.</span>")
+		to_chat(usr, span_warning("Something is terribly wrong; there is no gametype."))
 		return
 
 	if(master_mode != "secret")
@@ -588,7 +588,7 @@ var/global/list/additional_antag_types = list()
 		if(ticker.mode.round_description)
 			to_chat(usr, span_notice(span_italics("[ticker.mode.round_description]")))
 		if(ticker.mode.extended_round_description)
-			to_chat(usr, "<span class='notice'>[ticker.mode.extended_round_description]</span>")
+			to_chat(usr, span_notice("[ticker.mode.extended_round_description]"))
 	else
 		to_chat(usr, span_notice(span_italics("Shhhh") + ". It's a secret."))
 	return

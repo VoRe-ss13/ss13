@@ -231,19 +231,19 @@
 			return
 	if(istype(W, /obj/item/card/id)||istype(W, /obj/item/pda))
 		if(!check_access(W))
-			to_chat(user, "<span class='warning'>Access Denied.</span>")
+			to_chat(user, span_warning("Access Denied."))
 			return
 		if((!locked) || (isnull(occupant)))
 			return
 		if((occupant.health < -20) && (occupant.stat != 2))
-			to_chat(user, "<span class='warning'>Access Refused.</span>")
+			to_chat(user, span_warning("Access Refused."))
 			return
 		else
 			locked = 0
 			to_chat(user, "System unlocked.")
 	else if(istype(W,/obj/item/reagent_containers/glass))
 		if(LAZYLEN(containers) >= container_limit)
-			to_chat(user, "<span class='warning'>\The [src] has too many containers loaded!</span>")
+			to_chat(user, span_warning("\The [src] has too many containers loaded!"))
 		else if(do_after(user, 1 SECOND))
 			user.visible_message("[user] has loaded \the [W] into \the [src].", "You load \the [W] into \the [src].")
 			containers += W
@@ -252,7 +252,7 @@
 		return
 	else if(W.has_tool_quality(TOOL_WRENCH))
 		if(locked && (anchored || occupant))
-			to_chat(user, "<span class='warning'>Can not do that while [src] is in use.</span>")
+			to_chat(user, span_warning("Can not do that while [src] is in use."))
 		else
 			if(anchored)
 				anchored = FALSE
@@ -268,7 +268,7 @@
 	else if(istype(W, /obj/item/multitool))
 		var/obj/item/multitool/M = W
 		M.connecting = src
-		to_chat(user, "<span class='notice'>You load connection data from [src] to [M].</span>")
+		to_chat(user, span_notice("You load connection data from [src] to [M]."))
 		M.update_icon()
 		return
 	else
