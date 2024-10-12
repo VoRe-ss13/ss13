@@ -3,11 +3,7 @@
 //	default = FALSE
 
 /datum/config_entry/flag/use_jobwhitelist
-<<<<<<< HEAD
-	default = FALSE //TORCHEdit
-=======
 	default = FALSE
->>>>>>> c2d07ac951 (Job whitelist removal (#9163))
 
 // FIXME: Unused
 ///datum/config_entry/flag/emojis
