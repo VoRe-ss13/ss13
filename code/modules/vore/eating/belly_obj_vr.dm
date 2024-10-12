@@ -139,6 +139,7 @@
 	var/tmp/list/items_preserved = list()		// Stuff that wont digest so we shouldn't process it again.
 	var/tmp/recent_sound = FALSE				// Prevent audio spam
 	var/tmp/drainmode = DR_NORMAL				// Simply drains the prey then does nothing.
+	var/tmp/digested_prey_count = 0				// Amount of prey that have been digested
 
 	// Don't forget to watch your commas at the end of each line if you change these.
 	var/list/struggle_messages_outside = list(
@@ -1599,6 +1600,7 @@
 // Default implementation calls M.death() and removes from internal contents.
 // Indigestable items are removed, and M is deleted.
 /obj/belly/proc/digestion_death(mob/living/M)
+	digested_prey_count++
 	add_attack_logs(owner, M, "Digested in [lowertext(name)]")
 
 	//CHOMPEdit Start - Reverts TF on death. This fixes a bug with posibrains or similar, and also makes reforming easier.

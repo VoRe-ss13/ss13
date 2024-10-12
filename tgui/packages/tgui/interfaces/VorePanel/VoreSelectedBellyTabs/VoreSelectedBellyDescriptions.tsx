@@ -65,6 +65,63 @@ export const VoreSelectedBellyDescriptions = (props: {
 
   return (
     <Box>
+<<<<<<< HEAD
+=======
+      {showFormatHelp && (
+        <Dimmer>
+          <Section
+            title="Formatting Help"
+            width={30}
+            height={30}
+            fill
+            buttons={
+              <Button
+                icon="window-close-o"
+                onClick={() => setShowFormatHelp(false)}
+              />
+            }
+            scrollable
+            backgroundColor="black"
+          >
+            <LabeledList>
+              <LabeledList.Item label="%belly">Belly Name</LabeledList.Item>
+              <LabeledList.Item label="%pred">Pred Name</LabeledList.Item>
+              <LabeledList.Item label="%prey">Prey Name</LabeledList.Item>
+              <LabeledList.Item label="%countpreytotal">
+                Number of prey alive, absorbed, and ghosts.
+              </LabeledList.Item>
+              <LabeledList.Item label="%countpreyabsorbed">
+                Number of prey absorbed.
+              </LabeledList.Item>
+              <LabeledList.Item label="%countprey">
+                Number of prey alive or absorbed, depending on whether prey is
+                absorbed.
+              </LabeledList.Item>
+              <LabeledList.Item label="%countghosts">
+                Number of prey ghosts.
+              </LabeledList.Item>
+              <LabeledList.Item label="%count">
+                Number of prey and items, minus ghosts.
+              </LabeledList.Item>
+              <LabeledList.Item label="%digestedprey">
+                Number of prey digested in this belly.
+              </LabeledList.Item>
+              <LabeledList.Item label="%item">
+                Only used in resist messages - item the prey is using to escape.
+              </LabeledList.Item>
+              <LabeledList.Item label="%dest">
+                Only used in transfer messages - belly prey is going to.
+              </LabeledList.Item>
+              {Object.entries(data.vore_words).map(([word, options]) => (
+                <LabeledList.Item key={word} label={word}>
+                  Replaces self with one of these options: {options.join(', ')}
+                </LabeledList.Item>
+              ))}
+            </LabeledList>
+          </Section>
+        </Dimmer>
+      )}
+>>>>>>> 5fa9681786 ([MIRROR] Add digested prey count belly format text (#9206))
       <LabeledList>
         <LabeledList.Item label="Vore Verb">
           <Button onClick={() => act('set_attribute', { attribute: 'b_verb' })}>
