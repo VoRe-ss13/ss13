@@ -1,14 +1,15 @@
 import { BooleanLike } from 'common/react';
+import { useBackend } from 'tgui/backend';
+import { Box, Divider, Flex, Icon, Section, Tabs } from 'tgui/components';
 
-import { useBackend } from '../../../backend';
-import { Box, Divider, Flex, Icon, Section, Tabs } from '../../../components';
 import { digestModeToColor } from './constants';
 import { bellyData, hostMob, selectedData } from './types';
 import { VoreSelectedBelly } from './VoreSelectedBelly';
 
 export const VoreBellySelectionAndCustomization = (props: {
   our_bellies: bellyData[];
-  selected: selectedData;
+  selected: selectedData | null;
+  unsaved_changes: BooleanLike;
   show_pictures: BooleanLike;
   host_mobtype: hostMob;
   icon_overflow: BooleanLike;
@@ -27,15 +28,9 @@ export const VoreBellySelectionAndCustomization = (props: {
   } = props;
 
   return (
-    <Flex>
+    <Flex height={unsaved_changes ? '78%' : '83%'}>
       <Flex.Item shrink>
-        <Section
-          title="My Bellies"
-          scrollable
-          fill
-          height="500px"
-          width="200px"
-        >
+        <Section title="My Bellies" scrollable fill width="200px">
           <Tabs vertical>
             <Tabs.Tab onClick={() => act('newbelly')}>
               New
@@ -73,7 +68,7 @@ export const VoreBellySelectionAndCustomization = (props: {
       </Flex.Item>
       <Flex.Item grow>
         {selected && (
-          <Section title={selected.belly_name}>
+          <Section scrollable fill title={selected.belly_name}>
             <VoreSelectedBelly
               vore_words={vore_words}
               belly={selected}

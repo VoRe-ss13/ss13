@@ -359,7 +359,7 @@
 "Ti" = (
 /obj/structure/closet/crate,
 /obj/random/powercell,
-/obj/item/weapon/tool/screwdriver,
+/obj/item/tool/screwdriver,
 /turf/simulated/floor/plating,
 /area/surface/outpost/shelter)
 "Tr" = (
@@ -386,7 +386,7 @@
 /turf/simulated/floor/plating,
 /area/surface/outpost/shelter)
 "Uo" = (
-/obj/item/weapon/banner/virgov,
+/obj/item/banner/virgov,
 /obj/machinery/light/small,
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
 	frequency = 1380;
@@ -412,14 +412,14 @@
 /turf/simulated/floor/outdoors/dirt/thor/planetuse,
 /area/surface/outside/wilderness/mountains)
 "Vt" = (
-/obj/item/weapon/banner/nt,
+/obj/item/banner/nt,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/surface/outpost/wall/checkpoint)
 "Vu" = (
 /turf/simulated/floor/tiled/steel_dirty,
 /area/surface/outpost/wall/checkpoint)
 "VD" = (
-/obj/item/weapon/banner/virgov,
+/obj/item/banner/virgov,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/surface/outpost/wall/checkpoint)
 "VE" = (
