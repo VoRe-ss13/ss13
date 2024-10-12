@@ -39,3 +39,41 @@
   - rscadd: Not Re-Enabled wormhole event
   - rscadd: Wormholes have a chance to pick a belly as an exit
   - qol: Wormholes won't throw you into Sif anymore
+2024-10-06:
+  VoRe-bot:
+  - bugfix: adds missing vore init check to kelpie
+  - rscadd: new inner thighs marking
+  - balance: Hanner no longer have NO_SCAN.
+  - qol: face of glamour uses a new pref, allow_mimicry
+  - qol: domination no longer checks resleeve lock
+  - qol: morph uses new pref, allow _mimicry,
+  - rscadd: The Grower Pod now shows progress bars when you examine it.
+2024-10-07:
+  VoRe-bot:
+  - qol: fixed a stray pixel on the inner thighs marking
+  - maptweak: Fixes tape spawning in place of recording tape
+  - bugfix: pitcher plant vore excludes
+  - bugfix: runtime flood from graffiti and makes them persist properly
+  - rscadd: Belch chance parameter to the interactions tab of the vorepanel
+  - rscadd: Prey resisting can trigger a belch emote if interactions are set up to
+      allow it.
+  - bugfix: Tooltips in the body scanner now work again.
+  - bugfix: The patient monitor/OR console has a scrollbar that works now.
+  - bugfix: Resleeving console OOC notes no longer overflow and a bunch of other random
+      little things
+  - bugfix: Medical records console has a proper scroller now.
+  - bugfix: icon overflow on mail
+  - bugfix: nulls being passable after the tgui input selection
+  - qol: swapped chest transparency toggle for proteans to make everything but their
+      head stransparent to allow for a metal shell.
+  - bugfix: Removed ability for ghosts to make sound with bags.
+  - bugfix: fixes some null messaging
+  - bugfix: fixes kelpie init again
+2024-10-09:
+  VoRe-bot:
+  - bugfix: mails have colours again
+  - bugfix: Verb vote placed in the correct verb panel location
+  - bugfix: Removed a default object from the junk mail
+  - bugfix: AI shells getting out of sync with the AI during ion storms
+  - rscadd: bluespace disruptor for admin event use
+  - bugfix: Bodycam screen view now updates on move
