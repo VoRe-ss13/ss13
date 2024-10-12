@@ -88,17 +88,6 @@
 
 #define span_chatexport(str) ("<span class='chatexport'>" + str + "</span>")
 
-#define span_wingdings(str) ("<span class='wingdings'>" + str + "</span>") //CHOMPAdd
-
-/* Direct communication spans */
-
-#define span_psay(str) ("<span class='psay'>" + str + "</span>")
-#define span_pemote(str) ("<span class='pemote'>" + str + "</span>")
-
-/* Export spans */
-
-#define span_chatexport(str) ("<span class='chatexport'>" + str + "</span>")
-
 /* Vore messages */
 
 #define span_valert(str) ("<span class='valert'>" + str + "</span>")
