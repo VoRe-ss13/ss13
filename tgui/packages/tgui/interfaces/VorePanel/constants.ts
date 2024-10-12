@@ -28,7 +28,12 @@ export const digestModeToPreyMode = {
   'Encase In Egg': 'being encased in an egg.',
 };
 
+<<<<<<< HEAD
 export const SYNTAX_REGEX = /%belly|%pred|%prey/g;
+=======
+export const SYNTAX_REGEX =
+  /%belly|%pred|%prey|%countpreytotal|%countpreyabsorbed|%countprey|%countghosts|%count|%digestedprey|%ghost|%item|%dest|%goo|%happybelly|%fat|%grip|%cozy|%angry|%acid|%snack|%hot|%snake/g;
+>>>>>>> 5fa9681786 ([MIRROR] Add digested prey count belly format text (#9206))
 export const SYNTAX_COLOR = {
   '%belly': 'average',
   '%pred': 'bad',
