@@ -488,7 +488,7 @@
 /turf/simulated/floor/water/digestive_enzymes,
 /area/redgate/stardog/flesh_abyss/s_int)
 "UJ" = (
-/obj/item/weapon/pickaxe/hand,
+/obj/item/pickaxe/hand,
 /turf/simulated/floor/flesh,
 /area/redgate/stardog/flesh_abyss/stomach)
 "Vh" = (
