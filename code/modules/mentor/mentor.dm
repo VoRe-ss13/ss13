@@ -162,10 +162,10 @@ var/list/mentor_verbs_default = list(
 	var/datum/ticket/T = C.current_ticket // CHOMPedit - Ticket System
 
 	if(T) // CHOMPedit - Ticket System
-		message_mentors("<span class='mentor_channel'>[src] has started replying to [C]'s mentor help.</span>")
+		message_mentors(span_mentor_channel("[src] has started replying to [C]'s mentor help."))
 	var/msg = tgui_input_text(src,"Message:", "Private message to [C]", multiline = TRUE)
 	if (!msg)
-		message_mentors("<span class='mentor_channel'>[src] has cancelled their reply to [C]'s mentor help.</span>")
+		message_mentors(span_mentor_channel("[src] has cancelled their reply to [C]'s mentor help."))
 		return
 	cmd_mentor_pm(whom, msg, T) // CHOMPedit - Ticket System
 
@@ -260,8 +260,8 @@ var/list/mentor_verbs_default = list(
 			src.current_ticket.AddInteraction(interaction_message)
 	// CHOMPedit End
 
-	to_chat(recipient, "<i><span class='mentor'>Mentor-PM from-<b><a href='?mentorhelp_msg=\ref[src]'>[src]</a></b>: [msg]</span></i>")
-	to_chat(src, "<i><span class='mentor'>Mentor-PM to-<b>[recipient]</b>: [msg]</span></i>")
+	to_chat(recipient, span_mentor(span_italics("Mentor-PM from-<b><a href='?mentorhelp_msg=\ref[src]'>[src]</a></b>: [msg]")))
+	to_chat(src, span_mentor(span_italics("Mentor-PM to-<b>[recipient]</b>: [msg]")))
 
 	log_admin("[key_name(src)]->[key_name(recipient)]: [msg]")
 

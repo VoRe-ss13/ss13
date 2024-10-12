@@ -55,10 +55,10 @@
 	var/datum/ticket/T = C.current_ticket // CHOMPedit - Ticket System
 
 	if(T) // CHOMPedit - Ticket System
-		message_admins("<span class='pm'>[key_name_admin(src)] has started replying to [key_name(C, 0, 0)]'s admin help.</span>")
+		message_admins(span_pm("[key_name_admin(src)] has started replying to [key_name(C, 0, 0)]'s admin help."))
 	var/msg = tgui_input_text(src,"Message:", "Private message to [key_name(C, 0, 0)]", multiline = TRUE)
 	if (!msg)
-		message_admins("<span class='pm'>[key_name_admin(src)] has cancelled their reply to [key_name(C, 0, 0)]'s admin help.</span>")
+		message_admins(span_pm("[key_name_admin(src)] has cancelled their reply to [key_name(C, 0, 0)]'s admin help."))
 		return
 	cmd_admin_pm(whom, msg, T) // CHOMPedit - Ticket System
 

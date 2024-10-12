@@ -32,7 +32,7 @@
 		return 1
 
 	if(M.head || M.wear_suit) //Make sure our slots aren't full
-		to_chat(src, "<span class='warning'>We require nothing to be on our head, and we cannot wear any external suits, or shoes.</span>")
+		to_chat(src, span_warning("We require nothing to be on our head, and we cannot wear any external suits, or shoes."))
 		return 0
 
 	var/obj/item/clothing/suit/A = new armor_type(src)
@@ -120,14 +120,14 @@
 
 		if(success)
 			playsound(src, 'sound/effects/splat.ogg', 30, 1)
-			visible_message("<span class='warning'>[src] pulls on their clothes, peeling it off along with parts of their skin attached!</span>",
-			"<span class='notice'>We remove and deform our equipment.</span>")
+			visible_message(span_warning("[src] pulls on their clothes, peeling it off along with parts of their skin attached!"),
+			span_notice("We remove and deform our equipment."))
 		M.mind.changeling.armor_deployed = 0
 		return success
 
 	else
 
-		to_chat(M, "<span class='notice'>We begin growing our new equipment...</span>")
+		to_chat(M, span_notice("We begin growing our new equipment..."))
 
 		var/list/grown_items_list = list()
 
@@ -242,10 +242,10 @@
 	var/mob/living/carbon/human/M = src
 
 	if(M.hands_are_full()) //Make sure our hands aren't full.
-		to_chat(src, "<span class='warning'>Our hands are full.  Drop something first.</span>")
+		to_chat(src, span_warning("Our hands are full.  Drop something first."))
 		return 0
 
-	var/obj/item/weapon/W = new weapon_type(src)
+	var/obj/item/W = new weapon_type(src)
 	src.put_in_hands(W)
 
 	src.mind.changeling.chem_charges -= cost
