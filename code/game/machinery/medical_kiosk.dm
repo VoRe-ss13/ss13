@@ -89,11 +89,7 @@
 	switch(choice)
 		if("Health Scan")
 			var/health_report = tell_health_info(user)
-<<<<<<< HEAD
-			to_chat(user, "<span class='notice'><b>Health report results:</b></span>"+health_report)
-=======
 			to_chat(user, span_boldnotice("Health report results:")+health_report)
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 		if("Backup Scan")
 			if(!our_db)
 				to_chat(user, span_boldnotice("<b>Backup scan results:</b>") + "<br>DATABASE ERROR!")

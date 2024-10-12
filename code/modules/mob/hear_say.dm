@@ -144,11 +144,7 @@
 			message = "[time] [message]"
 		message = "<span class='game say'>[message]</span>"
 		if(speaker && !speaker.client)
-<<<<<<< HEAD
-			message = "<span class='npcsay'>[message]</span>"
-=======
 			message = span_npc_say(message)
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 		else if(speaker && !(get_z(src) == get_z(speaker)))
 			message = "<span class='multizsay'>[message]</span>"
 		to_chat(src, message)
@@ -164,11 +160,7 @@
 			message = "[time] [message]"
 		message = "<span class='game say'>[message]</span>"
 		if(speaker && !speaker.client)
-<<<<<<< HEAD
-			message = "<span class='npcsay'>[message]</span>"
-=======
 			message = span_npc_say(message)
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 		else if(speaker && !(get_z(src) == get_z(speaker)))
 			message = "<span class='multizsay'>[message]</span>"
 		to_chat(src, message)
@@ -344,11 +336,7 @@
 
 	var/rendered = "<span class='game say'><span class='name'>[name]</span> [message]</span>"
 	if(!speaker.client)
-<<<<<<< HEAD
-		rendered = "<span class='npcsay'>[rendered]</span>"
-=======
 		rendered = span_npc_say(rendered)
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 	else
 		if(istype(speaker, /mob/living/silicon/ai))
 			var/mob/living/silicon/ai/source = speaker

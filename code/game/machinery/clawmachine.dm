@@ -125,11 +125,7 @@
 		return
 
 	if(!anchored)
-<<<<<<< HEAD
-		to_chat(user,"<span class='notice'> The machine isn't secured.</span>")
-=======
 		to_chat(user,span_notice("The machine isn't secured."))
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 		return
 
 	var/handled = 0

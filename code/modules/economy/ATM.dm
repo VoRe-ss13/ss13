@@ -140,11 +140,7 @@ log transactions
 			dat += "Card: <a href='?src=\ref[src];choice=insert_card'>[held_card ? held_card.name : "------"]</a><br><br>"
 
 			if(ticks_left_locked_down > 0)
-<<<<<<< HEAD
-				dat += "<span class='alert'>Maximum number of pin attempts exceeded! Access to this ATM has been temporarily disabled.</span>"
-=======
 				dat += span_warning("Maximum number of pin attempts exceeded! Access to this ATM has been temporarily disabled.")
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 			else if(authenticated_account)
 				if(authenticated_account.suspended)
 					dat += span_red(span_bold("Access to this account has been suspended, and the funds within frozen."))

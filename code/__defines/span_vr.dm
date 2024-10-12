@@ -1,10 +1,4 @@
 // Sorted by however I felt like it
-<<<<<<< HEAD
-// We have two other ways of doing this, so why not a third. This one atleast has more span options.
-#define span_ooc(str) ("<span class='ooc'>" + str + "</span>")
-#define span_looc(str) ("<span class='looc'>" + str + "</span>")
-
-=======
 
 // Adds a generic box around whatever message you're sending in chat. Really makes things stand out.
 #define examine_block(str) ("<div class='examine_block'>" + str + "</div>")
@@ -18,7 +12,6 @@
 #define span_rlooc(str) ("<span class='rlooc'>" + str + "</span>")
 
 // Ghostchat filter
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 #define span_deadsay(str) ("<span class='deadsay'>" + str + "</span>")
 #define span_ghostalert(str) ("<span class='ghostalert'>" + str + "</span>")
 
@@ -46,24 +39,12 @@
 // Stop using alert for anything other than announcements! It's filtered under the radio tab
 #define span_alert(str) ("<span class='alert'>" + str + "</span>")
 
-<<<<<<< HEAD
-#define span_binary(str) ("<span class='binarysay'>" + str + "</span>")
-=======
 // Filtered under global languages
 #define span_binarysay(str) ("<span class='binarysay'>" + str + "</span>")
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 #define span_hivemind(str) ("<span class='hivemind'>" + str + "</span>")
 
 // Filtered under local IC!
 #define span_say(str) ("<span class='say'>" + str + "</span>")
-<<<<<<< HEAD
-#define span_alert(str) ("<span class='alert'>" + str + "</span>")
-#define span_ghostalert(str) ("<span class='ghostalert'>" + str + "</span>")
-#define span_npc_say(str) ("<span class='npcsay'>" + str + "</span>")
-
-
-=======
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 #define span_emote(str) ("<span class='emote'>" + str + "</span>")
 #define span_emote_subtle(str) ("<span class='emotesubtle'>" + str + "</span>")
 
@@ -71,8 +52,6 @@
 #define span_npc_say(str) ("<span class='npcsay'>" + str + "</span>")
 #define span_npc_emote(str) ("<span class='npcemote'>" + str + "</span>")
 
-<<<<<<< HEAD
-=======
 // Filtered as messages visible through multiple Z levels
 #define span_multizsay(str) ("<span class='multizsay'>" + str + "</span>")
 
@@ -88,29 +67,11 @@
 #define span_filter_notice(str) ("<span class='filter_notice'>" + str + "</span>")
 
 // Filtered under combat!
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 #define span_attack(str) ("<span class='attack'>" + str + "</span>")
 #define span_moderate(str) ("<span class='moderate'>" + str + "</span>")
 #define span_disarm(str) ("<span class='disarm'>" + str + "</span>")
 #define span_passive(str) ("<span class='passive'>" + str + "</span>")
 #define span_danger(str) ("<span class='danger'>" + str + "</span>")
-<<<<<<< HEAD
-#define span_warning(str) ("<span class='warning'>" + str + "</span>")
-#define span_rose(str) ("<span class='rose'>" + str + "</span>")
-#define span_info(str) ("<span class='info'>" + str + "</span>")
-#define span_notice(str) ("<span class='notice'>" + str + "</span>")
-#define span_alium(str) ("<span class='alium'>" + str + "</span>")
-#define span_cult(str) ("<span class='cult'>" + str + "</span>")
-
-#define span_reflex_shoot(str) ("<span class='reflex_shoot'>" + str + "</span>")
-
-/* Vore messages */
-
-#define span_vdanger(str) ("<span class='vdanger'>" + str + "</span>")
-#define span_vwarning(str) ("<span class='vwarning'>" + str + "</span>")
-#define span_vnotice(str) ("<span class='vnotice'>" + str + "</span>")
-#define span_nif(str) ("<span class='nif'>" + str + "</span>") //CHOMPAdd
-=======
 #define span_bolddanger(str) ("<span class='bolddanger'>" + str + "</span>")
 
 // Filtered under warning messages
@@ -154,7 +115,6 @@
 // Filtered under nif!
 #define span_nif(str) ("<span class='nif'>" + str + "</span>")
 #define span_filter_nif(str) ("<span class='filter_nif'>" + str + "</span>") // Currently not sorted in
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 
 /* Languages */
 // No filter!
@@ -201,9 +161,6 @@
 #define span_maroon(str) ("<span class='maroon'>" + str + "</span>")
 #define span_brown(str) ("<span class='brown'>" + str + "</span>")
 #define span_lightpurple(str) ("<span class='lightpurple'>" + str + "</span>")
-<<<<<<< HEAD
-#define span_darkpink(str) ("<span class='lightpurple'>" + str + "</span>")
-=======
 #define span_darkpink(str) ("<span class='darkpurple'>" + str + "</span>")
 #define span_rose(str) ("<span class='rose'>" + str + "</span>")
 
@@ -275,4 +232,3 @@
 
 // Links!
 #define span_linkify(str) ("<span class='linkify'>" + str + "</span>")
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))

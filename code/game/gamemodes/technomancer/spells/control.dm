@@ -139,11 +139,5 @@
 		if(pay_energy(10 * controlled_mobs.len))
 			move_all(T)
 			adjust_instability(controlled_mobs.len)
-<<<<<<< HEAD
-			to_chat(user, "<span class='notice'>You command your [controlled_mobs.len > 1 ? "entities" : "[controlled_mobs[1]]"] to move \
-			towards \the [T].</span>")
-
-=======
 			to_chat(user, span_notice("You command your [controlled_mobs.len > 1 ? "entities" : "[controlled_mobs[1]]"] to move \
 			towards \the [T]."))
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))

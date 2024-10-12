@@ -706,11 +706,7 @@
 
 	//Don't appear to be in a vore situation
 	else
-<<<<<<< HEAD
-		to_chat(src,"<span class='alert'>You aren't inside anyone, though, is the thing.</span>")
-=======
 		to_chat(src,span_warning("You aren't inside anyone, though, is the thing."))
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 
 //
 // Eating procs depending on who clicked what

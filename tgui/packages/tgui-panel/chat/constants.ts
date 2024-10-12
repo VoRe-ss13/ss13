@@ -113,22 +113,14 @@ export const MESSAGE_TYPES = [
     name: 'Info',
     description: 'Non-urgent messages from the game and items',
     selector:
-<<<<<<< HEAD
-      '.notice:not(.pm), .adminnotice:not(.pm), .info, .sinister, .cult, .infoplain, .announce, .hear, .smallnotice, .holoparasite, .boldnotice',
-=======
       '.notice:not(.pm):not(.mentor), .adminnotice:not(.pm), .info, .sinister, .cult, .alium, .infoplain, .announce, .hear, .smallnotice, .holoparasite, .boldnotice, .suicide, .unconscious',
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
   },
   {
     type: MESSAGE_TYPE_WARNING,
     name: 'Warnings',
     description: 'Urgent messages from the game and items',
     selector:
-<<<<<<< HEAD
-      '.warning:not(.pm), .critical, .userdanger, .italics, .alertsyndie, .warningplain',
-=======
       '.warning:not(.pm):not(.mentor), .boldwarning:not(.pm):not(.mentor), .critical, .userdanger, .alertsyndie, .warningplain, .sinister',
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
   },
   {
     type: MESSAGE_TYPE_DEADCHAT,
@@ -230,11 +222,8 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_DEBUG,
     name: 'Debug Log',
     description: 'DEBUG: SSPlanets subsystem Recover().',
-<<<<<<< HEAD
-=======
     selector:
       '.filter_debuglogs, .debug_error, .debug_warning, .debug_info, .debug_debug, .debug_trace',
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
     admin: true,
   },
 ];

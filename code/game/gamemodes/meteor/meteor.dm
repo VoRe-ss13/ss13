@@ -41,11 +41,7 @@
 	if(survivors)
 		to_world(span_notice(span_bold("The following survived the meteor storm")) + ":[text]")
 	else
-<<<<<<< HEAD
-		to_world("<span class='notice'><B>Nobody survived the meteor storm!</B></span>")
-=======
 		to_world(span_notice(span_bold("Nobody survived the meteor storm!")))
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 
 	feedback_set_details("round_end_result","end - evacuation")
 	feedback_set("round_end_result",survivors)

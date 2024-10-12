@@ -584,21 +584,11 @@ var/global/list/additional_antag_types = list()
 		return
 
 	if(master_mode != "secret")
-<<<<<<< HEAD
-		to_chat(usr, "<span class='notice'><b>The roundtype is [capitalize(ticker.mode.name)]</b></span>")
-		if(ticker.mode.round_description)
-			to_chat(usr, "<span class='notice'><i>[ticker.mode.round_description]</i></span>")
-=======
 		to_chat(usr, span_notice(span_bold("The roundtype is [capitalize(ticker.mode.name)]")))
 		if(ticker.mode.round_description)
 			to_chat(usr, span_notice(span_italics("[ticker.mode.round_description]")))
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 		if(ticker.mode.extended_round_description)
 			to_chat(usr, "<span class='notice'>[ticker.mode.extended_round_description]</span>")
 	else
-<<<<<<< HEAD
-		to_chat(usr, "<span class='notice'><i>Shhhh</i>. It's a secret.</span>")
-=======
 		to_chat(usr, span_notice(span_italics("Shhhh") + ". It's a secret."))
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 	return

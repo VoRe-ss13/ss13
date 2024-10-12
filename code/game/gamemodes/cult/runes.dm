@@ -1084,17 +1084,10 @@ var/list/sacrificed = list()
 		var/obj/item/nullrod/N = locate() in T
 		if(N)
 			for(var/mob/O in viewers(T, null))
-<<<<<<< HEAD
-				O.show_message(text("<span class='warning'><B>[] invokes a talisman at [], but they are unaffected!</B></span>", usr, T), 1)
-		else
-			for(var/mob/O in viewers(T, null))
-				O.show_message(text("<span class='warning'><B>[] invokes a talisman at []</B></span>", usr, T), 1)
-=======
 				O.show_message(span_warning(span_bold("[usr] invokes a talisman at [T], but they are unaffected!")), 1)
 		else
 			for(var/mob/O in viewers(T, null))
 				O.show_message(span_warning(span_bold("[usr] invokes a talisman at [T]")), 1)
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 
 			if(issilicon(T))
 				T.Weaken(15)

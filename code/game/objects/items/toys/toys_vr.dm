@@ -515,11 +515,7 @@
 				sleep(2) // Short delay to match up with the explosion sound
 				shake_camera(M, 2, 1)
 	else
-<<<<<<< HEAD
-		to_chat(user, "<span class='alert'>Nothing happens.</span>")
-=======
 		to_chat(user, span_warning("Nothing happens."))
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 
 /*
  * Garden gnome
@@ -646,19 +642,11 @@
 			icon_state = "nuketoyidle"
 	else
 		var/timeleft = (cooldown - world.time)
-<<<<<<< HEAD
-		to_chat(user, "<span class='alert'>Nothing happens, and '</span>[round(timeleft/10)]<span class='alert'>' appears on a small display.</span>")
-
-/obj/item/toy/nuke/attackby(obj/item/I as obj, mob/living/user as mob)
-	if(istype(I, /obj/item/disk/nuclear))
-		to_chat(user, "<span class='alert'>Nice try. Put that disk back where it belongs.</span>")
-=======
 		to_chat(user, span_warning("Nothing happens, and '</span>[round(timeleft/10)]<span class='alert'>' appears on a small display."))
 
 /obj/item/toy/nuke/attackby(obj/item/I as obj, mob/living/user as mob)
 	if(istype(I, /obj/item/disk/nuclear))
 		to_chat(user, span_warning("Nice try. Put that disk back where it belongs."))
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 
 /*
  * Toy gibber
@@ -689,11 +677,7 @@
 		to_chat(user, "<span class='notice'>You start feeding \the [O] [icon2html(O, user.client)] into \the [src]'s mini-input.</span>")
 		if(do_after(user, 10, target = src))
 			if(O.loc != user)
-<<<<<<< HEAD
-				to_chat(user, "<span class='alert'>\The [O] is too far away to feed into \the [src]!</span>")
-=======
 				to_chat(user, span_warning("\The [O] is too far away to feed into \the [src]!"))
->>>>>>> 14f0302bef ([MIRROR] some more spans (#9170))
 			else
 				user.visible_message("<span class='notice'>You feed \the [O] into \the [src]!</span>","<span class='notice'>[user] feeds \the [O] into \the [src]!</span>")
 				user.unEquip(O)
