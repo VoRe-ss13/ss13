@@ -161,30 +161,6 @@
 			C.tgui_interact(usr, null, ui)
 			return TRUE
 
-<<<<<<< HEAD
-		if("rename_circuit")
-			var/obj/item/integrated_circuit/C = locate(params["ref"]) in contents
-			if(!istype(C))
-				return
-			C.rename_component(usr)
-			return TRUE
-
-		if("scan_circuit")
-			var/obj/item/integrated_circuit/C = locate(params["ref"]) in contents
-			if(!istype(C))
-				return
-			if(istype(held_item, /obj/item/integrated_electronics/debugger))
-				var/obj/item/integrated_electronics/debugger/D = held_item
-				if(D.accepting_refs)
-					D.afterattack(C, usr, TRUE)
-				else
-					to_chat(usr, span_warning("The Debugger's 'ref scanner' needs to be on."))
-			else
-				to_chat(usr, span_warning("You need a multitool/debugger set to 'ref' mode to do that."))
-			return TRUE
-
-=======
->>>>>>> c0228d937b ([MIRROR] Switch circuits to a grid visual coding system (#9173))
 		if("remove_circuit")
 			var/obj/item/integrated_circuit/C = locate(params["ref"]) in contents
 			if(!istype(C))
