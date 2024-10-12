@@ -223,7 +223,7 @@
 
 		var/feedback = english_list(grown_items_list, nothing_text = "nothing", and_text = " and ", comma_text = ", ", final_comma_text = "" )
 
-		to_chat(M, "<span class='notice'>We have grown [feedback].</span>")
+		to_chat(M, span_notice("We have grown [feedback]."))
 
 		if(success)
 			M.mind.changeling.armor_deployed = 1
