@@ -375,9 +375,12 @@ img.icon.bigicon {
 .npcsay,
 .infoplain,
 .oocplain,
-.warningplain,
 .chatexport,
 .body {
+}
+
+.warningplain {
+  font-style: italic;
 }
 
 .hivemind {
@@ -1420,4 +1423,8 @@ $border-width-px: $border-width * 1px;
   font-weight: bold;
   font-family: 'Gabriola', cursive, sans-serif;
   line-height: 0.3;
+}
+
+.wingdings {
+  font-family: Wingdings, Webdings;
 }

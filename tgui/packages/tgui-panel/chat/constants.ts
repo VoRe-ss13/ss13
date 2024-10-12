@@ -113,14 +113,14 @@ export const MESSAGE_TYPES = [
     name: 'Info',
     description: 'Non-urgent messages from the game and items',
     selector:
-      '.notice:not(.pm), .adminnotice:not(.pm), .info, .sinister, .cult, .infoplain, .announce, .hear, .smallnotice, .holoparasite, .boldnotice',
+      '.notice:not(.pm):not(.mentor), .adminnotice:not(.pm), .info, .sinister, .cult, .infoplain, .announce, .hear, .smallnotice, .holoparasite, .boldnotice',
   },
   {
     type: MESSAGE_TYPE_WARNING,
     name: 'Warnings',
     description: 'Urgent messages from the game and items',
     selector:
-      '.warning:not(.pm), .critical, .userdanger, .italics, .alertsyndie, .warningplain',
+      '.warning:not(.pm):not(.mentor), .critical, .userdanger, .alertsyndie, .warningplain',
   },
   {
     type: MESSAGE_TYPE_DEADCHAT,
@@ -209,7 +209,7 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_ADMINLOG,
     name: 'Admin Log',
     description: 'ADMIN LOG: Urist McAdmin has jumped to coordinates X, Y, Z',
-    selector: '.log_message',
+    selector: '.log_message, .filter_adminlog',
     admin: true,
   },
   {
@@ -222,6 +222,7 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_DEBUG,
     name: 'Debug Log',
     description: 'DEBUG: SSPlanets subsystem Recover().',
+    selector: '.filter_debuglogs',
     admin: true,
   },
 ];
