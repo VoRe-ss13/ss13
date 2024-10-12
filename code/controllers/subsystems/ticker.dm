@@ -232,13 +232,8 @@ var/global/datum/controller/subsystem/ticker/ticker
 		end_game_state = END_GAME_MODE_FINISHED // Only do this cleanup once!
 		mode.cleanup()
 		//call a transfer shuttle vote
-<<<<<<< HEAD
-=======
 		to_world(span_danger("The round has ended!"))
 		SSvote.start_vote(new /datum/vote/crew_transfer)
->>>>>>> 18e8928f96 ([MIRROR] Fixes crew transfer votes not starting (#9157))
-		to_world("<span class='danger'>The round has ended!</span>")
-		SSvote.autotransfer()
 
 // Called during GAME_STATE_FINISHED (RUNLEVEL_POSTGAME)
 /datum/controller/subsystem/ticker/proc/post_game_tick()
