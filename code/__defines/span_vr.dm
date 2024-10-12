@@ -45,11 +45,8 @@
 
 #define span_critical(str) ("<span class='critical'>" + str + "</span>")
 #define span_danger(str) ("<span class='danger'>" + str + "</span>")
-<<<<<<< HEAD
-=======
 #define span_bolddanger(str) ("<span class='bolddanger'>" + str + "</span>")
 #define span_userdanger(str) ("<span class='userdanger'>" + str + "</span>")
->>>>>>> dd40869551 ([MIRROR] entertainment cameras now update on move and some cleanup (#9155))
 #define span_warning(str) ("<span class='warning'>" + str + "</span>")
 #define span_rose(str) ("<span class='rose'>" + str + "</span>")
 #define span_info(str) ("<span class='info'>" + str + "</span>")
@@ -57,9 +54,6 @@
 #define span_alium(str) ("<span class='alium'>" + str + "</span>")
 #define span_cult(str) ("<span class='cult'>" + str + "</span>")
 
-<<<<<<< HEAD
-#define span_reflex_shoot(str) ("<span class='reflex_shoot'>" + str + "</span>")
-=======
 #define span_sinister(str) ("<span class='sinister'>" + str + "</span>")
 
 #define span_wingdings(str) ("<span class='wingdings'>" + str + "</span>") //CHOMPAdd
@@ -72,7 +66,6 @@
 /* Export spans */
 
 #define span_chatexport(str) ("<span class='chatexport'>" + str + "</span>")
->>>>>>> dd40869551 ([MIRROR] entertainment cameras now update on move and some cleanup (#9155))
 
 /* Vore messages */
 
