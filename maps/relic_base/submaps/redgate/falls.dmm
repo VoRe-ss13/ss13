@@ -1057,7 +1057,7 @@
 	icon_state = "boat";
 	dir = 8
 	},
-/obj/item/weapon/oar,
+/obj/item/oar,
 /turf/simulated/floor/water/atoll,
 /area/gateway/atoll/falls)
 "jX" = (
@@ -1914,7 +1914,7 @@
 	icon_state = "boat";
 	dir = 4
 	},
-/obj/item/weapon/oar,
+/obj/item/oar,
 /turf/simulated/floor/water/atoll/sunk,
 /area/gateway/atoll/falls)
 "sI" = (
@@ -3322,7 +3322,7 @@
 	icon_state = "boat";
 	dir = 8
 	},
-/obj/item/weapon/oar,
+/obj/item/oar,
 /turf/simulated/floor/water/atoll,
 /area/gateway/atoll/falls)
 "Er" = (
@@ -3418,7 +3418,7 @@
 	icon_state = "boat";
 	dir = 8
 	},
-/obj/item/weapon/oar,
+/obj/item/oar,
 /turf/simulated/floor/water/atoll,
 /area/gateway/atoll/falls)
 "Fg" = (
@@ -5153,7 +5153,7 @@
 	icon_state = "boat";
 	dir = 4
 	},
-/obj/item/weapon/oar,
+/obj/item/oar,
 /turf/simulated/floor/water/atoll,
 /area/gateway/atoll/falls)
 "Vg" = (
@@ -5343,7 +5343,7 @@
 /obj/effect/decal/godray{
 	dir = 1
 	},
-/obj/item/weapon/oar,
+/obj/item/oar,
 /turf/simulated/floor/water/atoll,
 /area/gateway/atoll/falls)
 "WQ" = (
@@ -5364,7 +5364,7 @@
 	icon_state = "boat";
 	dir = 4
 	},
-/obj/item/weapon/oar,
+/obj/item/oar,
 /turf/simulated/floor/water/atoll,
 /area/gateway/atoll/falls)
 "WW" = (
