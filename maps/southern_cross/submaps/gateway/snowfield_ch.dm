@@ -498,7 +498,7 @@
 /obj/item/gun/launcher/scopedrocket/examine(mob/user)
 	. = ..()
 	if(get_dist(user, src) <= 2)
-		. += "<font color='blue'>[rockets.len] / [max_rockets] rockets.</font>"
+		. += span_blue("[rockets.len] / [max_rockets] rockets.")
 
 /obj/item/gun/launcher/scopedrocket/attackby(obj/item/I as obj, mob/user as mob)
 	if(istype(I, /obj/item/ammo_casing/rocket))
@@ -537,9 +537,15 @@
 
 /obj/item/paper/awaygate/snowfield/evacuation_order
 	name = "Order Directives"
+<<<<<<< HEAD
 	info = "<center><B><font size=\"6\">HIGH PRIORITY ORDERS</font></B><BR><BR><BR>ORDERS \
 	TO <B>ALL CLASS 1, 2, 3 PERSONNEL</B><BR>Date of Order : <B>April 10, 1979</B>.</center> <BR><BR><BR>\
 	Directives : <B>Evacuation preparation from Facility. <BR>All related personnel, EXCLUDING 3M personnel \
+=======
+	info = "<center>" + span_bold(span_giganteus("HIGH PRIORITY ORDERS")) + "<BR><BR><BR>ORDERS \
+	TO " + span_bold("ALL CLASS 1, 2, 3 PERSONNEL") + "<BR>Date of Order : " + span_bold("April 10, 1979") + ".</center> <BR><BR><BR>\
+	Directives : " + span_bold("Evacuation preparation from Facility. <BR>All related personnel, EXCLUDING 3M personnel \
+>>>>>>> 04d27e2f73 (clean up snowfield (#9235))
 	must head to Chelyabinsk until 2100, April 10 and await for further directives.<BR>Base MUST \
 	maintain necessary items only. </B><BR><BR>Further directives and details shall be guided by <B>Class 4 \
 	or above personnel.</B>"
@@ -563,9 +569,15 @@
 
 /obj/item/paper/awaygate/snowfield/activation_order
 	name = "High Command Order Directives"
+<<<<<<< HEAD
 	info = "<center><B><font size=\"6\">HIGH PRIORITY ORDERS</font></B><BR><BR><BR>ORDERS \
 	TO <B>ALL CLASS 5, 6 PERSONNEL</B><BR>Date of Order : <B>April 11, 1979</B>.</center> <BR><BR><BR>\
 	Directives : <B>Activation of 'Tunguska.' <BR>All class 5, 6 personnel must have a full search by \
+=======
+	info = "<center>" + span_bold(span_giganteus("HIGH PRIORITY ORDERS")) + "<BR><BR><BR>ORDERS \
+	TO " + span_bold("ALL CLASS 5, 6 PERSONNEL") + "<BR>Date of Order : " + span_bold("April 11, 1979") + ".</center> <BR><BR><BR>\
+	Directives : " + span_bold("Activation of 'Tunguska.' <BR>All class 5, 6 personnel must have a full search by \
+>>>>>>> 04d27e2f73 (clean up snowfield (#9235))
 	Class 4 before entering the operation room. <BR>Any personnel who is not on the operations area shall \
 	be terminated on the spot. Notify to nearest Class 4 and 6 personnel if necessary.</B><BR><BR>Further directives \
 	and details shall be guided by <B>Class 6 Personnel.</B>"
