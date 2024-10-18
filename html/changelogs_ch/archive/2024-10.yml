@@ -103,3 +103,8 @@
       in map ivew.
   - rscadd: hippo_head body marking!
   - bugfix: chomp specific auto transfer dest placeholder
+2024-10-18:
+  VoRe-bot:
+  - qol: Heads of staff now use time instead of whitelists
+  - rscadd: The planet of Tyr, an anomalous valley landing spot. Replacement for valley.
+      Beta stage
