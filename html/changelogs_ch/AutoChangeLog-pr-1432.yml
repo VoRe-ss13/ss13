@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscadd: "Shock collar now has a pretty TGUI interface."
