@@ -1401,7 +1401,7 @@
 	if(!. && error_msg && user)
 		if(!fail_msg)
 			fail_msg = "There is no exposed flesh or thin material [target_zone == BP_HEAD ? "on their head" : "on their body"] to inject into."
-		to_chat(user, span_alert("[fail_msg]"))
+		to_chat(user, span_warning("[fail_msg]"))
 
 /mob/living/carbon/human/print_flavor_text(var/shrink = 1)
 	var/list/equipment = list(src.head,src.wear_mask,src.glasses,src.w_uniform,src.wear_suit,src.gloves,src.shoes)
@@ -1766,7 +1766,7 @@
 // Drag damage is handled in a parent
 /mob/living/carbon/human/dragged(var/mob/living/dragger, var/oldloc)
 	var/area/A = get_area(src)
-	if(lying && !buckled && A.has_gravity() && prob(getBruteLoss() * 200 / maxHealth))
+	if(lying && !buckled && A.get_gravity() && prob(getBruteLoss() * 200 / maxHealth))
 		var/bloodtrail = 1
 		if(species?.flags & NO_BLOOD)
 			bloodtrail = 0

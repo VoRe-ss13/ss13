@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useBackend } from 'tgui/backend';
-import { Box, Button, LabeledList } from 'tgui/components';
+import { Box, Button, Dimmer, LabeledList, Section } from 'tgui/components';
 
 import { SYNTAX_COLOR, SYNTAX_REGEX } from '../constants';
 import { selectedData } from '../types';
@@ -30,7 +30,7 @@ const DescriptionSyntaxHighlighting = (props: { desc: string }) => {
     while ((result = regexCopy.exec(desc)) !== null) {
       elements.push(<>{desc.substring(lastIndex, result.index)}</>);
       elements.push(
-        <Box inline color={SYNTAX_COLOR[result[0]]}>
+        <Box inline color={SYNTAX_COLOR[result[0]] || 'purple'}>
           {result[0]}
         </Box>,
       );
@@ -47,10 +47,12 @@ const DescriptionSyntaxHighlighting = (props: { desc: string }) => {
 
 export const VoreSelectedBellyDescriptions = (props: {
   belly: selectedData;
+  vore_words: Record<string, string[]>;
 }) => {
   const { act } = useBackend();
+  const [showFormatHelp, setShowFormatHelp] = useState(false);
 
-  const { belly } = props;
+  const { belly, vore_words } = props;
   const {
     verb,
     release_verb,
@@ -129,6 +131,12 @@ export const VoreSelectedBellyDescriptions = (props: {
         >
           Edit
         </Button>
+        <Button
+          icon="question"
+          tooltip="Formatting help"
+          onClick={() => setShowFormatHelp(!showFormatHelp)}
+          selected={showFormatHelp}
+        />
       </Box>
       <DescriptionSyntaxHighlighting desc={desc} />
       <Box color="label" mt={2} mb={1}>
