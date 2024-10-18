@@ -1,2 +1,2 @@
-/datum/job/chief_engineer
-	camp_protection = TRUE
+// /datum/job/chief_engineer //TORCHRemoval - We don't need camp protection yet
+	// camp_protection = TRUE //TORCHRemoval

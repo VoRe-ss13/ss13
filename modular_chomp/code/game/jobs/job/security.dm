@@ -1,5 +1,5 @@
-/datum/job/hos
-	camp_protection = TRUE
+// /datum/job/hos //TORCHRemoval - We don't need camp protection yet
+	// camp_protection = TRUE //TORCHRemoval
 
 /datum/job/brigphysician
 	title = JOB_BRIG_PHYSICIAN
