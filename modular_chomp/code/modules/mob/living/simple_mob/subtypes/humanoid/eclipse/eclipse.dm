@@ -231,11 +231,7 @@
 			try_reload()
 			return FALSE
 
-<<<<<<< HEAD
-	visible_message("<span class='danger'><b>\The [src]</b> fires at \the [orig_targ]!</span>")
-=======
 	visible_message(span_danger(span_bold("\The [src]") + " fires at \the [orig_targ]!"))
->>>>>>> a92a42b85b (converts our spans (#9185))
 	shoot(A)
 	if(casingtype)
 		new casingtype(loc)
@@ -381,11 +377,7 @@
 			try_reload()
 			return FALSE
 
-<<<<<<< HEAD
-	visible_message("<span class='danger'><b>\The [src]</b> fires at \the [orig_targ]!</span>")
-=======
 	visible_message(span_danger(span_bold("\The [src]") + " fires at \the [orig_targ]!"))
->>>>>>> a92a42b85b (converts our spans (#9185))
 	shoot(A)
 	if(casingtype)
 		new casingtype(loc)
@@ -698,11 +690,7 @@
 			try_reload()
 			return FALSE
 
-<<<<<<< HEAD
-	visible_message("<span class='danger'><b>\The [src]</b> fires at \the [orig_targ]!</span>")
-=======
 	visible_message(span_danger(span_bold("\The [src]") + " fires at \the [orig_targ]!"))
->>>>>>> a92a42b85b (converts our spans (#9185))
 	shoot(A)
 	if(casingtype)
 		new casingtype(loc)

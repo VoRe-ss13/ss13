@@ -34,10 +34,6 @@
 
 #define span_emote(str) ("<span class='emote'>" + str + "</span>")
 #define span_emote_subtle(str) ("<span class='emotesubtle'>" + str + "</span>")
-<<<<<<< HEAD
-#define span_npc_emote(str) ("<span class='npcemote'>" + str + "</span>")
-
-=======
 #define span_filter_say(str) ("<span class='filter_say'>" + str + "</span>")
 
 // Filtered as NPC messages
@@ -55,41 +51,25 @@
 #define span_body(str) ("<span class='body'>" + str + "</span>")
 
 // Filtered under combat!
->>>>>>> a92a42b85b (converts our spans (#9185))
 #define span_attack(str) ("<span class='attack'>" + str + "</span>")
 #define span_moderate(str) ("<span class='moderate'>" + str + "</span>")
 #define span_disarm(str) ("<span class='disarm'>" + str + "</span>")
 #define span_passive(str) ("<span class='passive'>" + str + "</span>")
-<<<<<<< HEAD
-=======
 #define span_danger(str) ("<span class='danger'>" + str + "</span>")
 #define span_bolddanger(str) ("<span class='bolddanger'>" + str + "</span>")
 #define span_filter_combat(str) ("<span class='filter_combat'>" + str + "</span>")
->>>>>>> a92a42b85b (converts our spans (#9185))
 
 #define span_critical(str) ("<span class='critical'>" + str + "</span>")
 #define span_danger(str) ("<span class='danger'>" + str + "</span>")
 #define span_userdanger(str) ("<span class='userdanger'>" + str + "</span>")
 #define span_warning(str) ("<span class='warning'>" + str + "</span>")
-<<<<<<< HEAD
-#define span_rose(str) ("<span class='rose'>" + str + "</span>")
-=======
 #define span_warningplain(str) ("<span class='warningplain'>" + str + "</span>")
 #define span_boldwarning(str) ("<span class='boldwarning'>" + str + "</span>")
 #define span_filter_warning(str) ("<span class='filter_warning'>" + str + "</span>") // Close to warning plain, maybe replace
 
 // FIltered under info
->>>>>>> a92a42b85b (converts our spans (#9185))
 #define span_info(str) ("<span class='info'>" + str + "</span>")
 #define span_notice(str) ("<span class='notice'>" + str + "</span>")
-<<<<<<< HEAD
-#define span_alium(str) ("<span class='alium'>" + str + "</span>")
-#define span_cult(str) ("<span class='cult'>" + str + "</span>")
-
-#define span_reflex_shoot(str) ("<span class='reflex_shoot'>" + str + "</span>")
-
-#define span_wingdings(str) ("<span class='wingdings'>" + str + "</span>") //CHOMPAdd
-=======
 #define span_filter_notice(str) ("<span class='filter_notice'>" + str + "</span>") // Close to infoplain, maybe replace
 #define span_boldnotice(str) ("<span class='boldnotice'>" + str + "</span>")
 #define span_adminnotice(str) ("<span class='adminnotice'>" + str + "</span>")
@@ -97,7 +77,6 @@
 #define span_cult(str) ("<span class='cult'>" + str + "</span>")
 
 #define span_pnarrate(str) ("<span class='pnarrate'>" + str + "</span>")
->>>>>>> a92a42b85b (converts our spans (#9185))
 
 /* Vore messages */
 
@@ -159,11 +138,6 @@
 #define span_maroon(str) ("<span class='maroon'>" + str + "</span>")
 #define span_brown(str) ("<span class='brown'>" + str + "</span>")
 #define span_lightpurple(str) ("<span class='lightpurple'>" + str + "</span>")
-<<<<<<< HEAD
-#define span_darkpink(str) ("<span class='lightpurple'>" + str + "</span>")
-
-/* System and Debug */
-=======
 #define span_darkpink(str) ("<span class='darkpink'>" + str + "</span>")
 #define span_rose(str) ("<span class='rose'>" + str + "</span>")
 
@@ -173,14 +147,8 @@
 #define span_world(str) ("<span class='world'>" + str + "</span>") // Bold system messages, use this for important world messages to make sure players can't filter them!
 #define span_filter_system(str) ("<span class='filter_system'>" + str + "</span>") // Plain system filter
 #define span_sinister(str) ("<span class='sinister'>" + str + "</span>")
->>>>>>> a92a42b85b (converts our spans (#9185))
 
 #define span_linkOn(str) ("<span class='linkOn'>" + str + "</span>")
-<<<<<<< HEAD
-#define span_filter_system(str) ("<span class='filter_system'>" + str + "</span>")
-#define span_filter_debuglogs(str) ("<span class='filter_debuglogs'>" + str + "</span>")
-
-=======
 #define span_linkOff(str) ("<span class='linkOff'>" + str + "</span>")
 #define span_filter_pray(str) ("<span class='filter_pray'>" + str + "</span>") // (Uses the chat message type directly)
 
@@ -219,7 +187,6 @@
 #define span_event_channel(str) ("<span class='event_channel'>" + str + "</span>")
 #define span_mentor_channel(str) ("<span class='mentor_channel'>" + str + "</span>")
 
->>>>>>> a92a42b85b (converts our spans (#9185))
 /* Byond Sizes */
 
 #define span_small(X) "<font size='1'>[X]</font>"
@@ -230,9 +197,6 @@
 
 #define span_huge(X) "<font size='4'>[X]</font>"
 
-<<<<<<< HEAD
-#define span_giant(X) "<font size='5'>[X]</font>"
-=======
 #define span_giganteus(str) "<font size='6'>" + str + "</font>"
 
 #define span_massive(str) "<font size='7'>" + str + "</font>"
@@ -252,4 +216,3 @@
 
 // Just used downstream
 #define span_wingdings(str) ("<span class='wingdings'>" + str + "</span>")
->>>>>>> a92a42b85b (converts our spans (#9185))

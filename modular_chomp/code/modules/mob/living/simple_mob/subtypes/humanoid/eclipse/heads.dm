@@ -366,8 +366,6 @@
 		var/turf/T = pick(bomb_range)
 		P.launch_projectile(target, BP_TORSO, src)
 		bomb_range -= T
-<<<<<<< HEAD
-=======
 
 /mob/living/simple_mob/mechanical/combat_drone/artillery
 	faction = FACTION_ECLIPSE
@@ -559,4 +557,3 @@
 	sleep(30)
 	var/obj/item/projectile/P = new /obj/item/projectile/beam/lightning(get_turf(src))
 	P.launch_projectile(target, BP_TORSO, src)
->>>>>>> a92a42b85b (converts our spans (#9185))
