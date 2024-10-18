@@ -90,12 +90,12 @@
 /obj/item/reagent_containers/glass/bottle/potion/girljuice
 	name = "girl transformation potion"
 	desc = "A small green bottle containing some pretty pink liquid that claims to turn the drinker into a woman."
-	prefill = list("change_drug_female" = 1) // TORCHEdit - Changed to correct medicine ID after chomp changes
+	prefill = list("change_drug_female" = 1) // CHOMPEdit
 
 /obj/item/reagent_containers/glass/bottle/potion/boyjuice
 	name = "boy transformation potion"
 	desc = "A small green bottle containing some strong blue liquid that claims to turn the drinker into a man."
-	prefill = list("change_drug_male" = 1) // TORCHEdit - Changed to correct medicine ID after chomp changes
+	prefill = list("change_drug_male" = 1) // CHOMPEdit
 
 /obj/item/reagent_containers/glass/bottle/potion/badpolymorph
 	name = "unstable polymorph potion"

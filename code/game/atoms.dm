@@ -571,13 +571,13 @@
 /atom/proc/InsertedContents()
 	return contents
 
-/atom/proc/has_gravity(turf/T)
+/atom/proc/get_gravity(turf/T)
 	if(!T || !isturf(T))
 		T = get_turf(src)
 	if(istype(T, /turf/space)) // Turf never has gravity
 		return FALSE
 	var/area/A = get_area(T)
-	if(A && A.has_gravity())
+	if(A && A.get_gravity())
 		return TRUE
 	return FALSE
 
@@ -674,7 +674,7 @@
 		return
 	var/list/speech_bubble_hearers = list()
 	for(var/mob/M in get_mobs_in_view(7, src))
-		M.show_message(span_npcsay("<span class='name'>[src]</span> [atom_say_verb], \"[message]\""), 2, null, 1)
+		M.show_message(span_npc_say(span_name("[src]") + " [atom_say_verb], \"[message]\""), 2, null, 1)
 		if(M.client)
 			speech_bubble_hearers += M.client
 
