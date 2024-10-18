@@ -71,10 +71,6 @@
 #define span_bolddanger(str) ("<span class='bolddanger'>" + str + "</span>")
 #define span_filter_combat(str) ("<span class='filter_combat'>" + str + "</span>")
 
-#define span_critical(str) ("<span class='critical'>" + str + "</span>")
-#define span_danger(str) ("<span class='danger'>" + str + "</span>")
-#define span_bolddanger(str) ("<span class='bolddanger'>" + str + "</span>")
-
 // Filtered under warning messages
 #define span_critical(str) ("<span class='critical'>" + str + "</span>")
 #define span_userdanger(str) ("<span class='userdanger'>" + str + "</span>")
@@ -201,25 +197,6 @@
 #define span_admin_pm_notice(str) ("<span class='pm notice'>" + str + "</span>")
 #define span_admin_pm_warning(str) ("<span class='pm warning'>" + str + "</span>")
 #define span_filter_pm(str) ("<span class='filter_pm'>" + str + "</span>")
-
-// Mentor pm filter
-#define span_mentor(str) ("<span class='mentor'>" + str + "</span>")
-#define span_mentor_pm_notice(str) ("<span class='mentor notice'>" + str + "</span>")
-#define span_mentor_pm_warning(str) ("<span class='mentor warning'>" + str + "</span>")
-
-/* Adminchat */
-// All of those have their own filter
-#define span_admin_channel(str) ("<span class='admin_channel'>" + str + "</span>")
-#define span_mod_channel(str) ("<span class='mod_channel'>" + str + "</span>")
-#define span_event_channel(str) ("<span class='event_channel'>" + str + "</span>")
-#define span_mentor_channel(str) ("<span class='mentor_channel'>" + str + "</span>")
-
-/* Admin only usage */
-// Admin pm filter
-#define span_pm(str) ("<span class='pm'>" + str + "</span>")
-#define span_adminhelp(str) ("<span class='adminhelp'>" + str + "</span>")
-#define span_admin_pm_notice(str) ("<span class='pm notice'>" + str + "</span>")
-#define span_admin_pm_warning(str) ("<span class='pm warning'>" + str + "</span>")
 
 // Mentor pm filter
 #define span_mentor(str) ("<span class='mentor'>" + str + "</span>")

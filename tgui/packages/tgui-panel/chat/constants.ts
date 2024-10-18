@@ -222,8 +222,6 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_DEBUG,
     name: 'Debug Log',
     description: 'DEBUG: SSPlanets subsystem Recover().',
-    selector:
-      '.filter_debuglogs, .debug_error, .debug_warning, .debug_info, .debug_debug, .debug_trace',
     admin: true,
   },
 ];
