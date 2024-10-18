@@ -4754,11 +4754,7 @@
 #include "modular_chomp\code\game\jobs\job\department.dm"
 #include "modular_chomp\code\game\jobs\job\engineering.dm"
 #include "modular_chomp\code\game\jobs\job\job_goodies.dm"
-<<<<<<< HEAD
-#include "modular_chomp\code\game\jobs\job\job_whitelist_overrides.dm"
-=======
 #include "modular_chomp\code\game\jobs\job\medical.dm"
->>>>>>> a7f6236a11 (Adds anti job camping for heads + Config patch (#9188))
 #include "modular_chomp\code\game\jobs\job\noncrew.dm"
 #include "modular_chomp\code\game\jobs\job\security.dm"
 #include "modular_chomp\code\game\jobs\job\silicon.dm"
