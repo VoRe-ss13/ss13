@@ -194,7 +194,7 @@
 
 
 /mob/living/simple_mob/mechanical/hivebot/swarm/eclipse
-	faction = "eclipse"
+	faction = FACTION_ECLIPSE
 
 
 /mob/living/simple_mob/humanoid/eclipse/head/captain
