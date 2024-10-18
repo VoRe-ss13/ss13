@@ -67,8 +67,6 @@ export const VoreSelectedBellyDescriptions = (props: {
 
   return (
     <Box>
-<<<<<<< HEAD
-=======
       {showFormatHelp && (
         <Dimmer>
           <Section
@@ -123,7 +121,6 @@ export const VoreSelectedBellyDescriptions = (props: {
           </Section>
         </Dimmer>
       )}
->>>>>>> 5fa9681786 ([MIRROR] Add digested prey count belly format text (#9206))
       <Box color="label" mt={1} mb={1}>
         Description:{' '}
         <Button

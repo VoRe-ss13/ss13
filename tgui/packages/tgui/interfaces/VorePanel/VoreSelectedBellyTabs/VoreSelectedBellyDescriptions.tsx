@@ -65,8 +65,6 @@ export const VoreSelectedBellyDescriptions = (props: {
 
   return (
     <Box>
-<<<<<<< HEAD
-=======
       {showFormatHelp && (
         <Dimmer>
           <Section
@@ -121,7 +119,6 @@ export const VoreSelectedBellyDescriptions = (props: {
           </Section>
         </Dimmer>
       )}
->>>>>>> 5fa9681786 ([MIRROR] Add digested prey count belly format text (#9206))
       <LabeledList>
         <LabeledList.Item label="Vore Verb">
           <Button onClick={() => act('set_attribute', { attribute: 'b_verb' })}>
