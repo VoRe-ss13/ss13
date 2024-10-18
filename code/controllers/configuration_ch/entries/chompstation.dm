@@ -3,7 +3,7 @@
 //	default = FALSE
 
 /datum/config_entry/flag/use_jobwhitelist
-	default = FALSE
+	default = FALSE //TORCHEdit
 
 // FIXME: Unused
 ///datum/config_entry/flag/emojis
