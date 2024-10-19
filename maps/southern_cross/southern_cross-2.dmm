@@ -74667,6 +74667,331 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
+<<<<<<< HEAD
+=======
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/starboard)
+"rOq" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/porta_turret/industrial/teleport_defense{
+	req_one_access = list(17)
+	},
+/turf/simulated/floor/tiled/dark,
+/area/tcomm/entrance)
+"rOu" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/construction/firstdeck/construction3)
+"rOG" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/hallway/primary/firstdeck/starboard)
+"rPl" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/storage)
+"rRc" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/starboard)
+"rRh" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/engineering{
+	name = "Construction Area";
+	req_access = list(32)
+	},
+/turf/simulated/floor/plating,
+/area/construction/firstdeck/construction4)
+"rTV" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/alarm{
+	pixel_y = 22
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/hangar/two)
+"rUh" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/storage/emergency_storage/firstdeck/aft_emergency)
+"rUl" = (
+/obj/structure/sign/directions/security{
+	dir = 4
+	},
+/obj/structure/sign/directions/shuttle_bay{
+	pixel_y = 10;
+	dir = 8
+	},
+/turf/simulated/wall,
+/area/construction/firstdeck/construction4)
+"rUr" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/hallway)
+"rUt" = (
+/obj/structure/sign/directions/engineering{
+	pixel_y = 10
+	},
+/obj/structure/sign/directions/cargo,
+/obj/structure/sign/directions/security{
+	pixel_y = -10
+	},
+/turf/simulated/wall/r_wall,
+/area/hallway/primary/firstdeck/ascenter)
+"rUK" = (
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 1;
+	name = "Checkpoint Locker Room"
+	},
+/obj/machinery/door/firedoor/multi_tile{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/teleporter/firstdeck)
+"rVv" = (
+/obj/structure/sign/warning/secure_area,
+/turf/simulated/wall/r_wall,
+/area/tcomm/entrance)
+"rVE" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/brown/bordercorner2{
+	dir = 8
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -22
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/hallway)
+"rWn" = (
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/hallway/primary/firstdeck/aft)
+"rWq" = (
+/obj/structure/sign/directions/bridge{
+	dir = 4;
+	pixel_y = 10
+	},
+/obj/structure/sign/directions/science{
+	dir = 1
+	},
+/turf/simulated/wall,
+/area/construction/firstdeck/construction4)
+"rXy" = (
+/obj/machinery/door/airlock/glass{
+	name = "Research Access"
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/simulated/floor/tiled/steel_grid,
+/area/hallway/secondary/firstdeck/research_access)
+"rXI" = (
+/obj/machinery/iv_drip,
+/obj/item/reagent_containers/blood/prelabeled/OMinus{
+	pixel_y = 6;
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/blood/prelabeled/OMinus{
+	pixel_y = 3;
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/blood/empty{
+	pixel_y = -1;
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/blood/empty{
+	pixel_y = -5;
+	pixel_x = 8
+	},
+/obj/item/storage/quickdraw/syringe_case{
+	pixel_y = 4;
+	pixel_x = -8
+	},
+/obj/structure/closet/walllocker_double/medical/east,
+/turf/simulated/floor/tiled/white,
+/area/shuttle/spacebus)
+"rXV" = (
+/obj/structure/sign/directions/evac{
+	dir = 1
+	},
+/turf/simulated/wall/r_wall,
+/area/hallway/primary/firstdeck/apcenter)
+"rYc" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/glass{
+	name = "Research Access"
+	},
+/obj/machinery/door/firedoor/glass,
+/turf/simulated/floor/tiled/steel_grid,
+/area/hallway/secondary/firstdeck/research_access)
+"rYm" = (
+/turf/simulated/wall,
+/area/maintenance/firstdeck/centralstarboard)
+"rZP" = (
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/door/firedoor/border_only,
+/turf/simulated/floor/plating,
+/area/hallway/secondary/firstdeck/research_access)
+"sal" = (
+/turf/simulated/shuttle/wall,
+/area/shuttle/large_escape_pod1/station)
+"saC" = (
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/teleporter/firstdeck)
+"saD" = (
+/obj/structure/closet/crate,
+/obj/item/storage/belt/champion,
+/obj/item/stack/material/gold{
+	amount = 6
+	},
+/obj/item/stack/material/silver{
+	amount = 6
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/instrument/violin/golden,
+/turf/simulated/floor/tiled/dark,
+/area/security/nuke_storage)
+"sbb" = (
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
+/turf/simulated/floor/tiled/dark,
+/area/hallway/primary/firstdeck/starboard)
+"sbE" = (
+/turf/simulated/floor/tiled/dark,
+/area/hallway/primary/firstdeck/starboard)
+"sbH" = (
+/turf/simulated/wall/r_wall,
+/area/hallway/primary/firstdeck/starboard)
+"sbP" = (
+/turf/unsimulated/mask,
+/area/hallway/primary/firstdeck/starboard)
+"sbU" = (
+/obj/structure/loot_pile/maint/technical,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralstarboard)
+"sbZ" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/purple/bordercorner{
+	dir = 1
+	},
+/obj/machinery/camera/network/research{
+	c_tag = "SCI - First Deck Research Hallway Aft";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/research/firstdeck/hallway)
+"sdp" = (
+/turf/simulated/wall/r_wall,
+/area/hallway/primary/firstdeck/vaultcheckpoint)
+"sdx" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/security{
+	c_tag = "CP - Quantum Pad";
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/teleporter/firstdeck)
+"sdN" = (
+/obj/structure/filingcabinet/chestdrawer,
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
+	},
+>>>>>>> fefa4ed846 (Revert "Fixes some map errors" (#9261))
 /obj/effect/floor_decal/corner/red/border{
 	dir = 8
 	},
@@ -126704,7 +127029,72 @@ jyb
 vNi
 aaa
 aaa
+<<<<<<< HEAD
 aag
+=======
+aHn
+aLh
+aMv
+aRU
+aWn
+aLh
+aHn
+cEg
+dvW
+dVI
+dWq
+dXL
+dYE
+eaE
+eTN
+fxu
+gIx
+hVG
+jzn
+eHM
+moQ
+moQ
+pID
+moQ
+sbP
+sbP
+sbP
+sbP
+xIH
+moQ
+alI
+kcv
+rYm
+fiA
+fiA
+fiA
+fiA
+fiA
+fiA
+dHz
+hvg
+dHz
+dHz
+fiA
+aSu
+bWN
+lIC
+fRp
+aSu
+tvZ
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+>>>>>>> fefa4ed846 (Revert "Fixes some map errors" (#9261))
 aaa
 aaa
 aaa
@@ -126878,7 +127268,60 @@ aaf
 cuR
 cuR
 aaf
+<<<<<<< HEAD
 wWX
+=======
+aHn
+aLh
+aMF
+aSb
+aMF
+aLh
+aHn
+aWk
+aWk
+dVI
+dWr
+dXL
+dYF
+eaF
+ePU
+fyf
+dVK
+hVG
+jAH
+lci
+moQ
+nSk
+pKG
+moQ
+sbP
+sbP
+sbP
+sbP
+sbP
+moQ
+jUv
+fVu
+bjM
+fiA
+hbK
+gAa
+ppt
+eTr
+ppt
+kJV
+uPj
+wHq
+aMP
+dHz
+sal
+wZo
+lIC
+jvo
+sal
+tvZ
+>>>>>>> fefa4ed846 (Revert "Fixes some map errors" (#9261))
 aaa
 aaa
 aaa
@@ -127219,7 +127662,95 @@ xDM
 jOR
 vNi
 aaa
+<<<<<<< HEAD
 aaf
+=======
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+vYi
+aaa
+aaa
+aaa
+aHn
+aLh
+aLh
+aLh
+aLh
+aLh
+aHn
+aaa
+aaa
+dVH
+dWG
+dXL
+dYG
+eaG
+eTN
+fBB
+dVH
+icV
+jBc
+lfT
+moQ
+nVO
+pKG
+moQ
+sbP
+sbP
+sbP
+sbP
+sbP
+moQ
+axo
+fVu
+lrd
+fiA
+ybM
+iEb
+iEb
+iEb
+iEb
+iEb
+taP
+iEb
+uvG
+dHz
+sal
+poW
+lIC
+jMx
+sal
+tvZ
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+>>>>>>> fefa4ed846 (Revert "Fixes some map errors" (#9261))
 aaa
 aaa
 aaa
@@ -127409,6 +127940,54 @@ aaa
 aaa
 aaa
 aaa
+<<<<<<< HEAD
+=======
+vYi
+aaa
+aaa
+dVH
+dWM
+dXL
+dYG
+eaG
+eVu
+fEB
+dVH
+ife
+jAH
+lhC
+moQ
+nZo
+pLm
+moQ
+sbP
+sbP
+sbP
+sbP
+sbP
+moQ
+asx
+bnA
+dLu
+fiA
+bJP
+yks
+tMg
+xgz
+tDq
+exY
+thk
+iEb
+iGI
+dHz
+sal
+qwb
+wnb
+qwb
+sal
+tvZ
+aaa
+>>>>>>> fefa4ed846 (Revert "Fixes some map errors" (#9261))
 aaa
 aaa
 aaa
@@ -127735,7 +128314,70 @@ vNi
 vNi
 vNi
 aaf
+<<<<<<< HEAD
 aag
+=======
+aaa
+aaa
+aaa
+aaa
+aaa
+vYi
+aaa
+aaa
+dVJ
+dWr
+dXL
+dZd
+eaH
+eVQ
+fFB
+gIT
+ihk
+jDc
+lhU
+moQ
+nZZ
+pKG
+moQ
+sbP
+sbP
+sbP
+sbP
+sbP
+moQ
+upc
+wDG
+mGR
+fiA
+vhz
+iEb
+iEb
+iEb
+iEb
+iEb
+npi
+iEb
+uRT
+dHz
+jVV
+sal
+ghB
+sal
+jVV
+tvZ
+vYi
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+>>>>>>> fefa4ed846 (Revert "Fixes some map errors" (#9261))
 aaa
 aaa
 aaa
@@ -127937,6 +128579,7 @@ aaa
 aaf
 aaa
 aaa
+<<<<<<< HEAD
 cBi
 cDb
 cEA
@@ -127990,6 +128633,67 @@ dtw
 vIn
 wlr
 vNi
+=======
+aaa
+aaf
+aaa
+aaa
+aaa
+aaa
+aaa
+aaf
+aaa
+aaa
+dVK
+dWN
+dXL
+dZe
+eaI
+eWc
+fGi
+gIW
+ije
+jDe
+dVs
+moQ
+oat
+pKG
+moQ
+moQ
+moQ
+moQ
+moQ
+moQ
+moQ
+dsS
+mRt
+moQ
+fiA
+kfy
+tYn
+tYn
+tYn
+fwG
+lRR
+ldt
+wYG
+fiA
+fiA
+jVV
+jVV
+jVV
+jVV
+jVV
+tvZ
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+>>>>>>> fefa4ed846 (Revert "Fixes some map errors" (#9261))
 aaa
 aaa
 aaa
