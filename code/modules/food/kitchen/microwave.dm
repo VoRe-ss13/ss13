@@ -357,10 +357,17 @@
 		for (var/O in items_counts)
 			var/N = items_counts[O]
 			if (!(O in items_measures))
+<<<<<<< HEAD
 				dat += {"<B>[capitalize(O)]:</B> [N] [lowertext(O)]\s<BR>"}
 			else
 				if (N==1)
 					dat += {"<B>[capitalize(O)]:</B> [N] [items_measures[O]]<BR>"}
+=======
+				dat += span_bold("[capitalize(O)]:") + " [N] [lowertext(O)]\s<BR>"
+			else
+				if (N==1)
+					dat += span_bold("[capitalize(O)]:") + " [N] [items_measures[O]]<BR>"
+>>>>>>> 7b54a9298d ([MIRROR] some more small things (#9260))
 				else
 					dat += {"<B>[capitalize(O)]:</B> [N] [items_measures_p[O]]<BR>"}
 		for (var/datum/reagent/R in reagents.reagent_list)
