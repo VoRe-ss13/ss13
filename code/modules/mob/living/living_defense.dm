@@ -529,22 +529,6 @@
 /mob/living/proc/reagent_permeability()
 	return 1
 
-/mob/living/proc/handle_actions()
-	//Pretty bad, i'd use picked/dropped instead but the parent calls in these are nonexistent
-	for(var/datum/action/A in actions)
-		if(A.CheckRemoval(src))
-			A.Remove(src)
-	for(var/obj/item/I in src)
-		if(I.action_button_name)
-			if(!I.action)
-				if(I.action_button_is_hands_free)
-					I.action = new/datum/action/item_action/hands_free
-				else
-					I.action = new/datum/action/item_action
-				I.action.name = I.action_button_name
-				I.action.target = I
-			I.action.Grant(src)
-	return
 
 /mob/living/update_action_buttons()
 	if(!hud_used) return

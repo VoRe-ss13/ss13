@@ -22,7 +22,20 @@
 
 
 /obj/screen/movable/MouseDrop(over_object, src_location, over_location, src_control, over_control, params)
+<<<<<<< HEAD
 	var/list/PM = params2list(params)
+=======
+	var/position = mouse_params_to_position(params)
+	if(!position)
+		return
+
+	screen_loc = position
+	moved = screen_loc
+
+/// Takes mouse parmas as input, returns a string representing the appropriate mouse position
+/obj/screen/movable/proc/mouse_params_to_position(params)
+	var/list/modifiers = params2list(params)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 
 	//No screen-loc information? abort.
 	if(!PM || !PM["screen-loc"])
