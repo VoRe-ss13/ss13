@@ -105,6 +105,11 @@ jobs:
           sudo apt install gcc-multilib
           sudo apt install zlib1g-dev:i386 libssl-dev:i386
           ldd librust_g.so
+<<<<<<< HEAD
+=======
+          ldd libbapi_dmm_reader.so
+          ldd libverdigris.so
+>>>>>>> 21b3305c29 (Add bapi-dmm, a rust maploader that goes BRRRRRRR (#9201))
       - name: Unit Tests
         run: |
           tools/ci/install_byond.sh
