@@ -8,6 +8,8 @@
 	var/show_hidden_jobs = 0	//Show jobs that are set to "Never" in preferences
 	var/has_respawned = FALSE	//Determines if we're using RESPAWN_MESSAGE
 	var/datum/browser/panel
+	var/datum/tgui_module/crew_manifest/manifest = null
+	var/datum/tgui_module/late_choices/late_choices_dialog = null
 	universal_speak = 1
 
 	invisibility = 101
@@ -35,6 +37,10 @@
 /mob/new_player/Destroy()
 	if(panel)
 		QDEL_NULL(panel)
+	if(manifest)
+		QDEL_NULL(manifest)
+	if(late_choices_dialog)
+		QDEL_NULL(late_choices_dialog)
 	. = ..()
 
 /mob/new_player/verb/new_player_panel()
@@ -244,37 +250,6 @@
 
 	if(href_list["manifest"])
 		ViewManifest()
-
-	if(href_list["SelectedJob"])
-
-		/* Vorestation Removal Start
-		//Prevents people rejoining as same character.
-		for (var/mob/living/carbon/human/C in mob_list)
-			var/char_name = client.prefs.real_name
-			if(char_name == C.real_name)
-				to_chat(usr, span_notice("There is a character that already exists with the same name - <b>[C.real_name]</b>, please join with a different one, or use Quit the Round with the previous character.")) //VOREStation Edit
-				return
-		*/ //Vorestation Removal End
-
-		if(!CONFIG_GET(flag/enter_allowed)) // CHOMPEdit
-			to_chat(usr, span_notice("There is an administrative lock on entering the game!"))
-			return
-		else if(ticker && ticker.mode && ticker.mode.explosion_in_progress)
-			to_chat(usr, span_danger("The station is currently exploding. Joining would go poorly."))
-			return
-
-		if(!is_alien_whitelisted(src, GLOB.all_species[client.prefs.species]))
-			tgui_alert(src, "You are currently not whitelisted to play [client.prefs.species].")
-			return 0
-
-		var/datum/species/S = GLOB.all_species[client.prefs.species]
-
-		if(!(S.spawn_flags & SPECIES_CAN_JOIN))
-			tgui_alert_async(src,"Your current species, [client.prefs.species], is not available for play on the station.")
-			return 0
-
-		AttemptLateSpawn(href_list["SelectedJob"],client.prefs.spawnpoint)
-		return
 
 	if(href_list["privacy_poll"])
 		establish_db_connection()
@@ -644,6 +619,7 @@
 		global_announcer.autosay("A new[rank ? " [rank]" : " visitor" ] [join_message ? join_message : "has arrived on the station"].", "Arrivals Announcement Computer", channel, zlevels)
 
 /mob/new_player/proc/LateChoices()
+<<<<<<< HEAD
 	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
 
 	var/dat = "<html><body><center>"
@@ -695,6 +671,11 @@
 	dat += "</center>"
 	src << browse(dat, "window=latechoices;size=300x640;can_close=1")
 
+=======
+	if(!late_choices_dialog)
+		late_choices_dialog = new(src)
+	late_choices_dialog.tgui_interact(src)
+>>>>>>> a0379d1b79 ([MIRROR] Convert late spawn UI to TGUI (#9272))
 
 /mob/new_player/proc/create_character(var/turf/T)
 	spawning = 1
@@ -779,13 +760,16 @@
 	return new_character
 
 /mob/new_player/proc/ViewManifest()
-	var/datum/tgui_module/crew_manifest/self_deleting/S = new(src)
-	S.tgui_interact(src)
+	if(!manifest)
+		manifest = new(src)
+	manifest.tgui_interact(src)
 
 /mob/new_player/Move()
 	return 0
 
 /mob/new_player/proc/close_spawn_windows()
+	manifest?.close_ui()
+	late_choices_dialog?.close_ui()
 
 	src << browse(null, "window=latechoices") //closes late choices window
 	src << browse(null, "window=preferences_window") //VOREStation Edit?
