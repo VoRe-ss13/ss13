@@ -1328,11 +1328,7 @@
 /mob/living/proc/display_voreprefs(mob/user)	//Called by Topic() calls on instances of /mob/living (and subtypes) containing vore_prefs as an argument
 	if(!user)
 		CRASH("display_voreprefs() was called without an associated user.")
-<<<<<<< HEAD
-	var/dispvoreprefs = "<b>[src]'s vore preferences</b><br><br><br>"
-=======
 	var/dat = "<br>" + span_bold("[src]'s vore preferences") + "<br><br>"
->>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	if(!client?.prefs?.read_preference(/datum/preference/toggle/show_ooc))
 		dispvoreprefs += "<font color='red'><b>OOC DISABLED</b></font><br>"
 	if(!client?.prefs?.read_preference(/datum/preference/toggle/show_looc))

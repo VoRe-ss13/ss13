@@ -146,11 +146,7 @@ var/list/mob_hat_cache = list()
 /mob/living/silicon/robot/drone/Login()
 	. = ..()
 	if(can_pick_shell)
-<<<<<<< HEAD
-		to_chat(src, "<b>You can select a shell using the 'Robot Commands' > 'Customize Appearance'</b>")
-=======
 		to_chat(src, span_infoplain(span_bold("You can select a shell using the 'Abilities.Silicon' > 'Customize Appearance'")))
->>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 //Redefining some robot procs...
 /mob/living/silicon/robot/drone/SetName(pickedName as text)

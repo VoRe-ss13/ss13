@@ -821,15 +821,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /mob/observer/dead/proc/manifest(mob/user)
 	is_manifest = TRUE
-<<<<<<< HEAD
-	add_verb(src,/mob/observer/dead/proc/toggle_visibility) //CHOMPEdit TGPanel
-	add_verb(src,/mob/observer/dead/proc/ghost_whisper) //CHOMPEdit TGPanel
-	to_chat(src, span_filter_notice("[span_purple("As you are now in the realm of the living, you can whisper to the living with the <b>Spectral Whisper</b> verb, inside the IC tab.")]"))
-=======
 	add_verb(src, /mob/observer/dead/proc/toggle_visibility)
 	add_verb(src, /mob/observer/dead/proc/ghost_whisper)
 	to_chat(src, span_filter_notice(span_purple("As you are now in the realm of the living, you can whisper to the living with the " + span_bold("Spectral Whisper") + " verb, inside the IC tab.")))
->>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	if(plane != PLANE_WORLD)
 		user.visible_message( \
 			span_warning("\The [user] drags ghost, [src], to our plane of reality!"), \

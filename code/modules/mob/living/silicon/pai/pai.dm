@@ -310,15 +310,9 @@
 	canmove = TRUE
 
 	var/turf/T = get_turf(src)
-<<<<<<< HEAD
-	if(istype(T)) T.visible_message(span_filter_notice("<b>[src]</b> folds outwards, expanding into a mobile form."))
-	add_verb(src,/mob/living/silicon/pai/proc/pai_nom) //CHOMPEdit TGPanel
-	add_verb(src,/mob/living/proc/vertical_nom) //CHOMPEdit TGPanel
-=======
 	if(istype(T)) T.visible_message(span_filter_notice(span_bold("[src]") + " folds outwards, expanding into a mobile form."))
 	add_verb(src, /mob/living/silicon/pai/proc/pai_nom)
 	add_verb(src, /mob/living/proc/vertical_nom)
->>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	update_icon()
 
 /mob/living/silicon/pai/verb/fold_up()
