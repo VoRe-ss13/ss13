@@ -77,3 +77,64 @@
   - bugfix: AI shells getting out of sync with the AI during ion storms
   - rscadd: bluespace disruptor for admin event use
   - bugfix: Bodycam screen view now updates on move
+2024-10-13:
+  VoRe-bot:
+  - bugfix: Geneticist now gain PTO
+  - rscadd: Circuit assemblies now use a visual coding system.
+  - qol: better styling of the vorepanel
+  - bugfix: a rare crash condition after reloading bellies
+  - qol: The R&D Console has had a major facelift!
+  - bugfix: The R&D Console will no longer automatically pop open it's UI against
+      your will when it's done building stuff.
+  - refactor: Belly message formatting has been unified into one proc.
+  - rscadd: 'All formatted belly messages can now use a number of new %replacements,
+      which choose from a list of preset words. You can see all of the words that
+      will be used in a new help menu next to the belly description, but this PR adds
+      the following: %goo, %happybelly, %fat, %dick, %boob, %pussy, %grip, %cozy,
+      %angry, %acid, %snack, %hot'
+  - rscadd: For example, %goo will be replaced randomly with "muck", or "goo", or
+      "sludge", or "slime", or another 10 different options - this random replacement
+      happens every time a message is printed, so it's really helpful for idle messages!
+  - bugfix: NanoMap components (air alarm computer, crew monitor) have been much improved.
+  - bugfix: You can now use W/S and Up Arrow/Down Arrow to zoom on a NanoMap.
+  - bugfix: NanoMap zooming should be centered more correctly.
+  - bugfix: Tooltips show up when hovering over icons in a NanoMap.
+  - bugfix: The Atmospherics Control interface occasionally started to scroll weirdly
+      in map ivew.
+  - rscadd: hippo_head body marking!
+  - bugfix: chomp specific auto transfer dest placeholder
+2024-10-18:
+  VoRe-bot:
+  - qol: Heads of staff now use time instead of whitelists
+  - rscadd: The planet of Tyr, an anomalous valley landing spot. Replacement for valley.
+      Beta stage
+2024-10-19:
+  VoRe-bot:
+  - bugfix: Just clicking on a port will no longer crash the circuit UI
+  - qol: Removed broken click to connect ports, UI now expects you to always hold
+      down the mouse button while connecting ports
+  - rscadd: 'The latest and greatest from the hit studio TotallyNotMalware:tm:, Fishy
+      Fishy 905:tm: has been brought to a local NtOS:tm: software repository near
+      you. (It''s a stardew valley fishing minigame!)'
+  - rscadd: A new hidden boss has been added to Tyr,
+  - balance: Some Tyr items and creatures have been altered
+  - bugfix: fixes a tyr softlock, and planetary turf things
+  - qol: moves all belly dmis to datums to get the icon cache path from
+  - rscadd: ATMs now use a fancy new UI
+  - rscadd: Head positions have anti job camping now
+  - rscadd: Shock collar now has a pretty TGUI interface.
+  - rscadd: Added reaction for Paralysing Fluid
+  - rscadd: Added reaction for Numbing Enzyme
+  - rscadd: Added reaction for Deuterium solidification
+  - balance: Reduced the cost of the SMES coil crates. Standard coils are changed
+      75 -> 20. Upgraded coils are changed 90 -> 35
+  - rscadd: VBO_maw23
+  - rscadd: VBOanim_belly8
+  - rscadd: VBOanim_belly9
+  - rscadd: VBOanim_belly10
+  - code_imp: converts our spans
+  - qol: phased kin can now be clicked
+  - code_imp: database query deletion fix
+  - rscadd: Crew Manifest now uses pretty TGUI in lobby and for ghosts.
+  - bugfix: missing subcategory in tyr crafting leading to crafting UI crashes
+  - balance: Adjusted the time needed for various job positions

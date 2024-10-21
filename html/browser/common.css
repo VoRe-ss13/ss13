@@ -157,22 +157,22 @@ h4
 }
 
 .uiTitleWrapper
- {
- 	position:fixed;
- 	top:0px;
- 	left:0px;
- 	right:0px;
- 	z-index: 10
- }
+{
+	position:fixed;
+	top:0px;
+	left:0px;
+	right:0px;
+	z-index: 10
+}
 
- .uiTitleButtons
- {
- 	position:fixed;
- 	top:0px;
- 	right:0px;
- 	height:32px;
- 	z-index:11;
- }
+.uiTitleButtons
+{
+	position:fixed;
+	top:0px;
+	right:0px;
+	height:32px;
+	z-index:11;
+}
 
 .uiTitle.icon
 {
@@ -188,17 +188,17 @@ h4
 	font-family: Verdana, Geneva, sans-serif;
 }
 
-.good
+.good, .green
 {
 	color: #00ff00;
 }
 
-.average
+.average, .orange
 {
 	color: #d09000;
 }
 
-.bad
+.bad, .red
 {
 	color: #ff0000;
 }
@@ -275,6 +275,18 @@ h4
 	position: relative;
 	background: #E9C183;
 	color: #15345A;
+	font-size: 10px;
+	font-style: italic;
+	padding: 2px 4px 0 4px;
+	margin: 4px;
+}
+
+.boldnotice
+{
+	position: relative;
+	background: #E9C183;
+	color: #15345A;
+	font-weight: bold;
 	font-size: 10px;
 	font-style: italic;
 	padding: 2px 4px 0 4px;
@@ -383,4 +395,17 @@ div.notice
 {
 	width: 100%;
 	clear: both;
+}
+
+.italic,
+.italics {
+	font-style: italic;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.underline {
+	text-decoration: underline;
 }

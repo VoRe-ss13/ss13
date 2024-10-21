@@ -388,6 +388,8 @@
 			B.name = "Stomach"
 			B.desc = "It appears to be rather warm and wet. Makes sense, considering it's inside \the [name]."
 			B.can_taste = TRUE
+		else
+			vore_selected = vore_organs[1]
 
 		//CHOMPAdd Start
 		if(soulgem)
@@ -706,7 +708,7 @@
 
 	//Don't appear to be in a vore situation
 	else
-		to_chat(src,span_alert("You aren't inside anyone, though, is the thing."))
+		to_chat(src,span_warning("You aren't inside anyone, though, is the thing."))
 
 //
 // Eating procs depending on who clicked what
