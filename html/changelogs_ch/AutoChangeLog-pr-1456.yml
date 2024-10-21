@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscadd: "Added a new outsider pod called SecondLifeBar with nearly every scene tool."
