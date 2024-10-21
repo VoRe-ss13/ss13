@@ -59,7 +59,7 @@
 	character.custom_link				= pref.custom_link
 
 /datum/category_item/player_setup_item/general/flavor/content(var/mob/user)
-	. += "<b>Flavor:</b><br>"
+	. += span_bold("Flavor:") + "<br>"
 	. += "<a href='?src=\ref[src];flavor_text=open'>Set Flavor Text</a><br/>"
 	. += "<a href='?src=\ref[src];flavour_text_robot=open'>Set Robot Flavor Text</a><br/>"
 	. += "<a href='?src=\ref[src];custom_link=1'>Set Custom Link</a><br/>"
@@ -106,7 +106,7 @@
 /datum/category_item/player_setup_item/general/flavor/proc/SetFlavorText(mob/user)
 	var/HTML = "<body>"
 	HTML += "<tt><center>"
-	HTML += "<b>Set Flavor Text</b> <hr />"
+	HTML += span_bold("Set Flavor Text") + " <hr />"
 	HTML += "Note: This is not *literal* flavor of your character. This is visual description of what they look like. <hr />"
 	HTML += "<br></center>"
 	HTML += "<a href='?src=\ref[src];flavor_text=general'>General:</a> "
@@ -144,7 +144,7 @@
 /datum/category_item/player_setup_item/general/flavor/proc/SetFlavourTextRobot(mob/user)
 	var/HTML = "<body>"
 	HTML += "<tt><center>"
-	HTML += "<b>Set Robot Flavour Text</b> <hr />"
+	HTML += span_bold("Set Robot Flavour Text") + " <hr />"
 	HTML += "<br></center>"
 	HTML += "<a href='?src=\ref[src];flavour_text_robot=Default'>Default:</a> "
 	HTML += TextPreview(pref.flavour_texts_robot["Default"])
