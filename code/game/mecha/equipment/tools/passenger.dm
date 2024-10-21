@@ -37,6 +37,10 @@
 	else
 		to_chat(user, span_info("You stop entering the exosuit."))
 
+/obj/item/mecha_parts/mecha_equipment/tool/passenger/container_resist(var/mob/living)
+	if(occupant == living)
+		eject()
+
 /obj/item/mecha_parts/mecha_equipment/tool/passenger/verb/eject()
 	set name = "Eject"
 	set category = "Exosuit Interface"
