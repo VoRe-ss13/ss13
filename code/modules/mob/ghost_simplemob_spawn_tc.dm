@@ -14,6 +14,7 @@ GLOBAL_LIST_INIT(ghost_spawnable_mobs,list(
 	"Dragon" = /mob/living/simple_mob/vore/aggressive/dragon,
 	"Dragon - V3b" = /mob/living/simple_mob/vore/aggressive/dragon/virgo3b,
 	"Dragon - Giant" = /mob/living/simple_mob/vore/bigdragon/friendly/maintpred,
+	//"Gryphon" = /mob/living/simple_mob/vore/gryphon,//CHOMPedit: more mobs,
 	"Dust Jumper" = /mob/living/simple_mob/vore/alienanimals/dustjumper,
 	"Fennec" = /mob/living/simple_mob/vore/fennec,
 	"Fennix" = /mob/living/simple_mob/vore/fennix,
