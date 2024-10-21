@@ -138,3 +138,21 @@
   - rscadd: Crew Manifest now uses pretty TGUI in lobby and for ghosts.
   - bugfix: missing subcategory in tyr crafting leading to crafting UI crashes
   - balance: Adjusted the time needed for various job positions
+2024-10-21:
+  AzulKitsune:
+  - bugfix: 'fixed the size implant not supporting larger/smaller sizes in dorms.
+
+      :cl:'
+  VoRe-bot:
+  - rscadd: The mechanical vore preferences UI is now in dark mode and is color coded
+      to easily distinguish yes and no
+  - rscadd: Added "salvage items" that can be found with mobs or in specific PoIs
+  - balance: Reduced the amount of guns and weapons found in exploration Pois
+  - rscadd: '%digestedprey in a belly message will give the number of prey digested
+      in that specific belly in the same shift.'
+  - rscadd: TGUI Say now has a slider for how tall you want the window to be by default.
+  - rscadd: TGUI Say can now be disabled just for me/subtle.
+  - maptweak: Fixed area issues and maphelpers in the lone home shuttle
+  - rscadd: You can now modify internal tank settings from the RIG UI.
+  - qol: RIG UI top buttons shifted about and minimized.
+  - rscdel: old assembly UI
