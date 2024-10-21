@@ -541,13 +541,8 @@
 	TO <B>ALL CLASS 1, 2, 3 PERSONNEL</B><BR>Date of Order : <B>April 10, 1979</B>.</center> <BR><BR><BR>\
 	Directives : <B>Evacuation preparation from Facility. <BR>All related personnel, EXCLUDING 3M personnel \
 	must head to Chelyabinsk until 2100, April 10 and await for further directives.<BR>Base MUST \
-<<<<<<< HEAD
-	maintain necessary items only. </B><BR><BR>Further directives and details shall be guided by <B>Class 4 \
-	or above personnel.</B>"
-=======
 	maintain necessary items only.") + "<BR><BR>Further directives and details shall be guided by " + span_bold("Class 4 \
 	or above personnel.")
->>>>>>> 04d27e2f73 (clean up snowfield (#9235))
 
 /obj/item/paper/awaygate/snowfield/evacuation_order2
 	name = "Mid Command Order Directives"
@@ -572,13 +567,8 @@
 	TO <B>ALL CLASS 5, 6 PERSONNEL</B><BR>Date of Order : <B>April 11, 1979</B>.</center> <BR><BR><BR>\
 	Directives : <B>Activation of 'Tunguska.' <BR>All class 5, 6 personnel must have a full search by \
 	Class 4 before entering the operation room. <BR>Any personnel who is not on the operations area shall \
-<<<<<<< HEAD
-	be terminated on the spot. Notify to nearest Class 4 and 6 personnel if necessary.</B><BR><BR>Further directives \
-	and details shall be guided by <B>Class 6 Personnel.</B>"
-=======
 	be terminated on the spot. Notify to nearest Class 4 and 6 personnel if necessary.") + "<BR><BR>Further directives \
 	and details shall be guided by " + span_bold("Class 6 Personnel.")
->>>>>>> 04d27e2f73 (clean up snowfield (#9235))
 
 /obj/item/paper/awaygate/snowfield/interrogation
 	name = "Interrogation note"
