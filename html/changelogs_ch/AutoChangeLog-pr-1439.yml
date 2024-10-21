@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - rscadd: "%digestedprey in a belly message will give the number of prey digested in that specific belly in the same shift."
