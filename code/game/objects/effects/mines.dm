@@ -144,13 +144,9 @@
 	mineitemtype = /obj/item/mine/stun
 
 /obj/effect/mine/stun/explode(var/mob/living/M)
-<<<<<<< HEAD
-	triggered = 1
-=======
 	if(triggered) // Prevents circular mine explosions from two mines detonating eachother
 		return
 	triggered = TRUE
->>>>>>> 387bf752b7 ([MIRROR] add missing triggered and some mirror fixes (#9254))
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread()
 	s.set_up(3, 1, src)
 	s.start()
@@ -165,13 +161,9 @@
 	mineitemtype = /obj/item/mine/n2o
 
 /obj/effect/mine/n2o/explode(var/mob/living/M)
-<<<<<<< HEAD
-	triggered = 1
-=======
 	if(triggered) // Prevents circular mine explosions from two mines detonating eachother
 		return
 	triggered = TRUE
->>>>>>> 387bf752b7 ([MIRROR] add missing triggered and some mirror fixes (#9254))
 	for (var/turf/simulated/floor/target in range(1,src))
 		if(!target.blocks_air)
 			target.assume_gas("nitrous_oxide", 30)
@@ -183,13 +175,9 @@
 	mineitemtype = /obj/item/mine/phoron
 
 /obj/effect/mine/phoron/explode(var/mob/living/M)
-<<<<<<< HEAD
-	triggered = 1
-=======
 	if(triggered) // Prevents circular mine explosions from two mines detonating eachother
 		return
 	triggered = TRUE
->>>>>>> 387bf752b7 ([MIRROR] add missing triggered and some mirror fixes (#9254))
 	for (var/turf/simulated/floor/target in range(1,src))
 		if(!target.blocks_air)
 			target.assume_gas("phoron", 30)
@@ -242,13 +230,9 @@
 	mineitemtype = /obj/item/mine/training
 
 /obj/effect/mine/training/explode(var/mob/living/M)
-<<<<<<< HEAD
-	triggered = 1
-=======
 	if(triggered) // Prevents circular mine explosions from two mines detonating eachother
 		return
 	triggered = TRUE
->>>>>>> 387bf752b7 ([MIRROR] add missing triggered and some mirror fixes (#9254))
 	visible_message("\The [src.name]'s light flashes rapidly as it 'explodes'.")
 	new src.mineitemtype(get_turf(src))
 	spawn(0)
@@ -258,13 +242,9 @@
 	mineitemtype = /obj/item/mine/emp
 
 /obj/effect/mine/emp/explode(var/mob/living/M)
-<<<<<<< HEAD
-	triggered = 1 //ChompEDIT recursing mines
-=======
 	if(triggered) // Prevents circular mine explosions from two mines detonating eachother
 		return
 	triggered = TRUE
->>>>>>> 387bf752b7 ([MIRROR] add missing triggered and some mirror fixes (#9254))
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread()
 	s.set_up(3, 1, src)
 	s.start()
@@ -280,13 +260,9 @@
 	mineitemtype = /obj/item/mine/incendiary
 
 /obj/effect/mine/incendiary/explode(var/mob/living/M)
-<<<<<<< HEAD
-	triggered = 1
-=======
 	if(triggered) // Prevents circular mine explosions from two mines detonating eachother
 		return
 	triggered = TRUE
->>>>>>> 387bf752b7 ([MIRROR] add missing triggered and some mirror fixes (#9254))
 	var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread()
 	s.set_up(3, 1, src)
 	s.start()

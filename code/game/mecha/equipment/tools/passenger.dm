@@ -45,9 +45,6 @@
 
 	if(usr != occupant)
 		return
-<<<<<<< HEAD
-	to_chat(occupant, "You climb out from \the [src].")
-=======
 	if(door_locked)
 		to_chat(occupant, span_notice("\The [src] is locked! You begin operating the emergency unlock mechanism. This will take one minute."))
 		sleep(600)
@@ -59,7 +56,6 @@
 			if (chassis)
 				chassis.visible_message(span_infoplain("The hatch on \the [chassis] unlocks."), span_hear("You hear something latching."))
 	to_chat(occupant, span_info("You climb out from \the [src]."))
->>>>>>> 387bf752b7 ([MIRROR] add missing triggered and some mirror fixes (#9254))
 	go_out()
 	occupant_message("[occupant] disembarked.")
 	log_message("[occupant] disembarked.")
