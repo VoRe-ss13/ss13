@@ -1,4 +1,4 @@
 author: "VoRe-bot"
 delete-after: True
 changes:
-  - rscadd: "ATMs now use a fancy new UI"
+  - qol: "made tyr caverns caverns"
