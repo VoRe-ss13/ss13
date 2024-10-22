@@ -25,6 +25,7 @@
 						/area/mine,
 						/area/vacant/vacant_shop,
 						/area/rnd/research_storage, // This should probably be fixed,
+<<<<<<< HEAD
 						/area/security/riot_control // This should probably be fixed, //TORCHEdit - removing last comma before TORCHRemove
 						/* TORCHRemove Start - We remain on Forbearance here
 						// CHOMPAdd Start for new MAP!
@@ -32,6 +33,9 @@
 						/area/SouthernCrossV2/Evac
 						//CHOMPADD End
 						*/ //TORCHEdit End
+=======
+						/area/security/riot_control, // This should probably be fixed,
+>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276))
 						)
 
 	var/list/exempt_from_apc = typesof(/area/construction,
