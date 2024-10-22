@@ -8,6 +8,11 @@
 	var/show_hidden_jobs = 0	//Show jobs that are set to "Never" in preferences
 	var/has_respawned = FALSE	//Determines if we're using RESPAWN_MESSAGE
 	var/datum/browser/panel
+<<<<<<< HEAD
+=======
+	var/datum/tgui_module/crew_manifest/new_player/manifest_dialog = null
+	var/datum/tgui_module/late_choices/late_choices_dialog = null
+>>>>>>> cc75d76c72 ([MIRROR] Fix crew manifest (#9279))
 	universal_speak = 1
 
 	invisibility = 101
@@ -35,6 +40,13 @@
 /mob/new_player/Destroy()
 	if(panel)
 		QDEL_NULL(panel)
+<<<<<<< HEAD
+=======
+	if(manifest_dialog)
+		QDEL_NULL(manifest_dialog)
+	if(late_choices_dialog)
+		QDEL_NULL(late_choices_dialog)
+>>>>>>> cc75d76c72 ([MIRROR] Fix crew manifest (#9279))
 	. = ..()
 
 /mob/new_player/verb/new_player_panel()
@@ -778,13 +790,24 @@
 	return new_character
 
 /mob/new_player/proc/ViewManifest()
+<<<<<<< HEAD
 	var/datum/tgui_module/crew_manifest/self_deleting/S = new(src)
 	S.tgui_interact(src)
+=======
+	if(!manifest_dialog)
+		manifest_dialog = new(src)
+	manifest_dialog.tgui_interact(src)
+>>>>>>> cc75d76c72 ([MIRROR] Fix crew manifest (#9279))
 
 /mob/new_player/Move()
 	return 0
 
 /mob/new_player/proc/close_spawn_windows()
+<<<<<<< HEAD
+=======
+	manifest_dialog?.close_ui()
+	late_choices_dialog?.close_ui()
+>>>>>>> cc75d76c72 ([MIRROR] Fix crew manifest (#9279))
 
 	src << browse(null, "window=latechoices") //closes late choices window
 	src << browse(null, "window=preferences_window") //VOREStation Edit?
