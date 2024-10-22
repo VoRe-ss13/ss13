@@ -16719,7 +16719,11 @@
 /area/space)
 "foz" = (
 /turf/unsimulated/mask,
+<<<<<<< HEAD:maps/southern_sun/southern_cross-3.dmm
 /area/SouthernCrossV2/Maints/Room_88)
+=======
+/area/hallway/Aft_1_Deck_Stairwell)
+>>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090)):modular_chomp/maps/soluna_nexus/soluna_nexus-3.dmm
 "foO" = (
 /obj/structure/cable/green{
 	d1 = 4;

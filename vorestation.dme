@@ -12,11 +12,8 @@
 // BEGIN_INCLUDE
 #include "code\__byond_version_compat.dm"
 #include "code\__spaceman_dmm.dm"
-#include "code\_away_mission_tests.dm"
 #include "code\_macros.dm"
 #include "code\_macros_vr.dm"
-#include "code\_map_tests.dm"
-#include "code\_unit_tests.dm"
 #include "code\global.dm"
 #include "code\global_init.dm"
 #include "code\global_vr.dm"
@@ -5145,6 +5142,20 @@
 #include "modular_chomp\maps\overmap\om_ships\offmap.dm"
 #include "modular_chomp\maps\overmap\space_pois\space_areas.dm"
 #include "modular_chomp\maps\overmap\space_pois\space_pois.dm"
+<<<<<<< HEAD
+=======
+#include "modular_chomp\maps\southern_cross\items\encryptionkey_sc.dm"
+#include "modular_chomp\maps\southern_cross\items\headset_sc.dm"
+#include "modular_chomp\maps\southern_cross\items\clothing\sc_accessory.dm"
+#include "modular_chomp\maps\southern_cross\items\clothing\sc_suit.dm"
+#include "modular_chomp\maps\southern_cross\items\clothing\sc_under.dm"
+#include "modular_chomp\maps\southern_cross\structures\closets\engineering.dm"
+#include "modular_chomp\maps\southern_cross\structures\closets\medical.dm"
+#include "modular_chomp\maps\southern_cross\structures\closets\misc.dm"
+#include "modular_chomp\maps\southern_cross\structures\closets\research.dm"
+#include "modular_chomp\maps\southern_cross\structures\closets\security.dm"
+#include "modular_chomp\maps\southern_cross\turfs\outdoors.dm"
+>>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090))
 #include "modular_chomp\maps\submaps\engine_submaps\engine.dm"
 #include "modular_chomp\maps\submaps\engine_submaps\engine_areas.dm"
 #include "modular_chomp\maps\submaps\engine_submaps\southern_cross\_engine_submaps.dm"
@@ -5159,4 +5170,9 @@
 #include "modular_chomp\maps\submaps\surface_submaps\wilderness\wilderness.dm"
 #include "modular_chomp\maps\submaps\surface_submaps\wilderness\wilderness_areas.dm"
 #include "modular_chomp\maps\virtual_reality\constructVR.dm"
+<<<<<<< HEAD
+=======
+#include "modular_chomp\maps\~map_system\_map_selection.dm"
+#include "modular_chomp\maps\~map_system\maps.dm"
+>>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090))
 // END_INCLUDE
