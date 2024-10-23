@@ -322,6 +322,13 @@ var/list/global_huds = list(
 		return 0
 
 	mymob.create_mob_hud(src)
+<<<<<<< HEAD
+=======
+	hide_actions_toggle = new()
+	hide_actions_toggle.InitialiseIcon(mymob)
+	// if(mymob.client)
+	// 	hide_actions_toggle.locked = mymob.client.prefs.buttons_locked
+>>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))
 
 	persistant_inventory_update()
 	mymob.reload_fullscreen() // Reload any fullscreen overlays this mob has.
