@@ -3,8 +3,11 @@ var/const/NETWORK_SECOND_DECK  = "Second Deck"
 var/const/NETWORK_FIRST_DECK   = "First Deck"
 var/const/NETWORK_SUPPLY       = "Supply"
 var/const/NETWORK_MAIN_OUTPOST = "Main Outpost"
+<<<<<<< HEAD
 var/const/NETWORK_CARRIER  = "Exploration Carrier" //CHOMPedit: Exploration outpost cameras
 var/const/NETWORK_MAINT_DECK = "Maintenance Deck" // CHOMPEdit - Maintenance deck
+=======
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 //
 // Cameras
@@ -26,12 +29,15 @@ var/const/NETWORK_MAINT_DECK = "Maintenance Deck" // CHOMPEdit - Maintenance dec
 /obj/machinery/camera/network/supply
 	network = list(NETWORK_SUPPLY)
 
+<<<<<<< HEAD
 /obj/machinery/camera/network/carrier //CHOMPedit: Exploration carrier cameras
 	network = list(NETWORK_CARRIER)
 
 /obj/machinery/camera/network/maint_deck // CHOMPEdit - Maintenance deck
 	network = list(NETWORK_MAINT_DECK)
 
+=======
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 // ### Preset machines  ###
 
 
@@ -72,6 +78,7 @@ var/const/NETWORK_MAINT_DECK = "Maintenance Deck" // CHOMPEdit - Maintenance dec
 	listening_level = Z_LEVEL_TRANSIT
 	autolinkers = list("tns_relay")
 
+<<<<<<< HEAD
 /obj/machinery/telecomms/relay/preset/southerncross/explorer //CHOMPedit: Tcomms relay for exploration carrier
 	listening_level = Z_LEVEL_MISC
 	autolinkers = list("exp_relay")
@@ -101,6 +108,8 @@ var/const/NETWORK_MAINT_DECK = "Maintenance Deck" // CHOMPEdit - Maintenance dec
 	autolinkers = list("belt_relay")
 */
 
+=======
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /obj/machinery/telecomms/relay/preset/southerncross/centcomm
 	id = "Centcom Relay"
 	listening_level = Z_LEVEL_CENTCOM
@@ -111,12 +120,19 @@ var/const/NETWORK_MAINT_DECK = "Maintenance Deck" // CHOMPEdit - Maintenance dec
 	id = "Hub"
 	network = "tcommsat"
 	autolinkers = list("hub",
+<<<<<<< HEAD
 		"d1_relay", "d2_relay", "d3_relay", "pnt_relay", "cve_relay", "wld_relay", "tns_relay", "cnt_relay", "explorer", "exp_relay",
 		//"belt_relay", // Chompstation edit - adds belt outpost to relays.	Temp Removal of Belt Relay TFF 15/2/20, Added Valley comn stuff 2/14/2023 Removed it 9/30/2024
 		//"sky_relay", // Sky islands removal due to lack of use
 		"science", "medical", "supply", "service", "common", "command", "engineering", "security", "unused",
 		"hb_relay", "receiverA", "broadcasterA"
 	) //CHOMPedit: Adds "exp_relay"
+=======
+		"d1_relay", "d2_relay", "d3_relay", "pnt_relay", "cve_relay", "wld_relay", "tns_relay", "cnt_relay", "explorer",
+		"science", "medical", "supply", "service", "common", "command", "engineering", "security", "unused",
+		"hb_relay", "receiverA", "broadcasterA"
+	)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /obj/machinery/telecomms/hub/preset/southerncross/centcomm
 	id = "CentCom Hub"
@@ -127,7 +143,11 @@ var/const/NETWORK_MAINT_DECK = "Maintenance Deck" // CHOMPEdit - Maintenance dec
 	)
 
 /obj/machinery/telecomms/receiver/preset_right/southerncross
+<<<<<<< HEAD
 	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, SEC_FREQ, ENT_FREQ, BDCM_FREQ, EXP_FREQ)
+=======
+	freq_listening = list(AI_FREQ, SCI_FREQ, MED_FREQ, SUP_FREQ, SRV_FREQ, COMM_FREQ, ENG_FREQ, SEC_FREQ, ENT_FREQ, EXP_FREQ)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /obj/machinery/telecomms/bus/preset_two/southerncross
 	freq_listening = list(SUP_FREQ, SRV_FREQ, EXP_FREQ)
@@ -146,11 +166,18 @@ var/const/NETWORK_MAINT_DECK = "Maintenance Deck" // CHOMPEdit - Maintenance dec
 		num2text(ENG_FREQ) = list(access_engine_equip, access_atmospherics),
 		num2text(MED_FREQ) = list(access_medical_equip),
 		num2text(MED_I_FREQ)=list(access_medical_equip),
+<<<<<<< HEAD
 		num2text(BDCM_FREQ) =list(access_security),
+=======
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		num2text(SEC_FREQ) = list(access_security),
 		num2text(SEC_I_FREQ)=list(access_security),
 		num2text(SCI_FREQ) = list(access_tox,access_robotics,access_xenobiology),
 		num2text(SUP_FREQ) = list(access_cargo),
 		num2text(SRV_FREQ) = list(access_janitor, access_hydroponics),
 		num2text(EXP_FREQ) = list(access_explorer)
+<<<<<<< HEAD
 	)
+=======
+	)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))

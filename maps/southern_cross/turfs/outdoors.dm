@@ -10,7 +10,10 @@
 #define TEMPERATURE_SIF 243.15 // Roughly -30C / -22F
 #define TEMPERATURE_ALTSIF 225.15
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/outdoors/mud/sif/planetuse
 	oxygen		= MOLES_O2SIF
 	nitrogen	= MOLES_N2SIF
@@ -84,11 +87,14 @@
 	nitrogen	= MOLES_N2SIF
 	temperature	= TEMPERATURE_SIF
 
+<<<<<<< HEAD
 /turf/simulated/open/sif //CHOMP Edit now I'm adding shit here now too. Skylands
 	oxygen		= MOLES_O2SIF
 	nitrogen	= MOLES_N2SIF
 	temperature	= TEMPERATURE_ALTSIF
 
+=======
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 // PoI compatability, to stop active edges.
 // In hindsight it would've been better to do this first instead of making a billion /sif subtypes above,
 // but maybe we can transition to this instead now and over time get rid of the /sif subtypes.
@@ -143,10 +149,13 @@
 	oxygen		= MOLES_O2SIF
 	nitrogen	= MOLES_N2SIF
 	temperature	= TEMPERATURE_ALTSIF
+<<<<<<< HEAD
 /turf/simulated/floor/tiled/asteroid_steel //CHOMP Edit now I'm adding shit here now too. Abandoned temple.
 	oxygen		= MOLES_O2SIF
 	nitrogen	= MOLES_N2SIF
 	temperature	= TEMPERATURE_ALTSIF
+=======
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 // Space mineral tiles are now not the default, so they get demoted to subtype status.
 
@@ -172,6 +181,7 @@
 
 // Step trigger to fall down to planet Sif
 /obj/effect/step_trigger/teleporter/planetary_fall/sif/find_planet()
+<<<<<<< HEAD
 	planet = planet_sif
 
 //CHOMPedit: Changes to sif/planetuse snow to make it work properly as it does on Polaris, it was broken by YW edits.
@@ -220,3 +230,6 @@
 		user.put_in_hands(S)
 		visible_message("[user] scoops up a pile of snow.", "You scoop up a pile of snow.")
 	return
+=======
+	planet = planet_sif
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))

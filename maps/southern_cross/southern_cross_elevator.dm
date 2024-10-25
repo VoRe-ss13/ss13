@@ -5,12 +5,19 @@
 	lift_size_y = 4
 
 /obj/turbolift_map_holder/southern_cross/port
+<<<<<<< HEAD
 	name = "Southern Cross turbolift map placeholder - Port"
 	dir = EAST
 	depth = 3
 
 	areas_to_use = list(
 		/area/turbolift/port_deck_maints, // CHOMPEdit - Maintenance deck
+=======
+	name = "Sothern Cross turbolift map placeholder - Port"
+	dir = EAST
+
+	areas_to_use = list(
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		/area/turbolift/port_deck_one,
 		/area/turbolift/port_deck_two
 		)

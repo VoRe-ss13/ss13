@@ -6,6 +6,7 @@
 
 /obj/item/card/id/platform/Initialize()
 	. = ..()
+<<<<<<< HEAD
 	// access |= access_explorer
 	// access |= access_pilot
 
@@ -29,3 +30,7 @@
 		to_chat(user, "<span class='danger'>\The [src] does not appear to work in VR! This is useless to you!</span>")
 		return
 	. = ..()
+=======
+	access |= access_explorer
+	access |= access_pilot
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))

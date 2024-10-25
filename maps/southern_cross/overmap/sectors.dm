@@ -1,6 +1,7 @@
 // Overmap object for Sif, hanging in the void of space
 /obj/effect/overmap/visitable/planet/Sif
 	name = "Sif"
+<<<<<<< HEAD
 	desc = "Location of Vir civilian colonies."
 	scanner_desc = @{"[i]Registration[/i]: Vir System Authority
 [i]Class[/i]: Colony
@@ -20,6 +21,9 @@
 		"wilderness_n"
 		)
 
+=======
+	map_z = list(Z_LEVEL_SURFACE, Z_LEVEL_SURFACE_MINE, Z_LEVEL_SURFACE_WILD)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	in_space = 0
 	start_x  = 10
 	start_y  = 10
@@ -29,7 +33,11 @@
 	mountain_color = "#735555"
 	ice_color = "FFFFFF"
 	icecaps = "icecaps"
+<<<<<<< HEAD
 	icon_state = "frozen" //CHOMP comment: Not sure what this does at the moment, but we're doing it live.
+=======
+	icon_state = "frozen"
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /obj/effect/overmap/visitable/planet/Sif/Initialize()
 	atmosphere = new(CELL_VOLUME)
@@ -48,6 +56,7 @@
 	tmp.pixel_y = skybox_offset_y
 	return tmp
 
+<<<<<<< HEAD
 /obj/effect/overmap/visitable/sector/Southern_Cross
 	name = "Southern Cross"
 	icon = 'modular_chomp/icons/obj/overmap.dmi'
@@ -57,10 +66,16 @@
 [i]Class[/i]: Installation
 [i]Transponder[/i]: Transmitting (NT), NanoTrasen IFF
 [b]Notice[/b]: NanoTrasen communications station, authorized personnel only"}
+=======
+/obj/effect/overmap/visitable/Southern_Cross
+	name = "Southern Cross"
+	icon_state = "object"
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	base = 1
 	in_space = 1
 	start_x =  10
 	start_y =  10
+<<<<<<< HEAD
 	known = 1 // lets Sectors appear on shuttle navigation for easy finding.
 
 	extra_z_levels = list(Z_LEVEL_TRANSIT, Z_LEVEL_MISC,Z_LEVEL_SURFACE, Z_LEVEL_SURFACE_MINE, Z_LEVEL_SURFACE_WILD) //This should allow for comms to reach people from the station. Basically this defines all the areas of Southern Cross and the Sif local system on the overmap.
@@ -131,6 +146,10 @@
 	//For ships, it's safe to assume they're big enough to not be sneaky
 	else if(istype(AM, /obj/effect/overmap/visitable/ship))
 		atc.msg(message)
+=======
+	map_z = list(Z_LEVEL_STATION_ONE, Z_LEVEL_STATION_TWO, Z_LEVEL_STATION_THREE)
+	extra_z_levels = list(Z_LEVEL_TRANSIT) // Hopefully temporary, so arrivals announcements work.
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /obj/effect/overmap/visitable/planet/Sif/Initialize()
 	. = ..()
