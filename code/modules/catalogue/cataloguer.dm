@@ -368,7 +368,11 @@ GLOBAL_LIST_EMPTY(all_cataloguers)
 
 	if (ismob(usr))
 		var/mob/M = usr
+<<<<<<< HEAD
 		M.update_action_buttons()
+=======
+		M.update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 /obj/item/cataloguer/compact/afterattack(atom/target, mob/user, proximity_flag)
 	if(!deployed)

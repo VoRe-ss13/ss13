@@ -62,8 +62,14 @@
 //
 
 /datum/action/innate/mecha
+<<<<<<< HEAD
 	check_flags = AB_CHECK_RESTRAINED | AB_CHECK_STUNNED | AB_CHECK_ALIVE
+=======
+	check_flags = AB_CHECK_RESTRAINED | AB_CHECK_STUNNED | AB_CHECK_CONSCIOUS
+	background_icon = 'icons/effects/actions_mecha.dmi'
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	button_icon = 'icons/effects/actions_mecha.dmi'
+	overlay_icon = 'icons/effects/actions_mecha.dmi'
 	var/obj/mecha/chassis
 
 /datum/action/innate/mecha/Grant(mob/living/L, obj/mecha/M)
@@ -78,7 +84,11 @@
 
 /datum/action/innate/mecha/mech_toggle_lights/Activate()
 	button_icon_state = "mech_lights_[chassis.lights ? "off" : "on"]"
+<<<<<<< HEAD
 	button.UpdateIcon()
+=======
+	build_all_button_icons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	chassis.lights()
 
 
@@ -89,7 +99,11 @@
 
 /datum/action/innate/mecha/mech_toggle_internals/Activate()
 	button_icon_state = "mech_internals_[chassis.use_internal_tank ? "off" : "on"]"
+<<<<<<< HEAD
 	button.UpdateIcon()
+=======
+	build_all_button_icons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	chassis.internal_tank()
 
 
@@ -118,7 +132,11 @@
 
 /datum/action/innate/mecha/strafe/Activate()
 	button_icon_state = "mech_strafe_[chassis.strafing ? "off" : "on"]"
+<<<<<<< HEAD
 	button.UpdateIcon()
+=======
+	build_all_button_icons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	chassis.strafing()
 
 
@@ -129,7 +147,11 @@
 
 /datum/action/innate/mecha/mech_defence_mode/Activate()
 	button_icon_state = "mech_defense_mode_[chassis.defence_mode ? "off" : "on"]"
+<<<<<<< HEAD
 	button.UpdateIcon()
+=======
+	build_all_button_icons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	chassis.defence_mode()
 
 
@@ -140,7 +162,11 @@
 
 /datum/action/innate/mecha/mech_overload_mode/Activate()
 	button_icon_state = "mech_overload_[chassis.overload ? "off" : "on"]"
+<<<<<<< HEAD
 	button.UpdateIcon()
+=======
+	build_all_button_icons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	chassis.overload()
 
 
@@ -151,7 +177,11 @@
 
 /datum/action/innate/mecha/mech_smoke/Activate()
 	//button_icon_state = "mech_smoke_[chassis.smoke ? "off" : "on"]"
+<<<<<<< HEAD
 	//button.UpdateIcon()	//Dual colors notneeded ATM
+=======
+	//build_all_button_icons()	//Dual colors notneeded ATM
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	chassis.smoke()
 
 
@@ -162,7 +192,11 @@
 
 /datum/action/innate/mecha/mech_zoom/Activate()
 	button_icon_state = "mech_zoom_[chassis.zoom ? "off" : "on"]"
+<<<<<<< HEAD
 	button.UpdateIcon()
+=======
+	build_all_button_icons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	chassis.zoom()
 
 
@@ -173,7 +207,11 @@
 
 /datum/action/innate/mecha/mech_toggle_thrusters/Activate()
 	button_icon_state = "mech_thrusters_[chassis.thrusters ? "off" : "on"]"
+<<<<<<< HEAD
 	button.UpdateIcon()
+=======
+	build_all_button_icons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	chassis.thrusters()
 
 
@@ -198,7 +236,11 @@
 		chassis.occupant_message("You select [chassis.selected]")
 		send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
 		button_icon_state = "mech_cycle_equip_on"
+<<<<<<< HEAD
 		button.UpdateIcon()
+=======
+		build_all_button_icons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 		return
 	var/number = 0
 	for(var/A in available_equipment)
@@ -213,7 +255,11 @@
 				chassis.occupant_message("You switch to [chassis.selected]")
 				button_icon_state = "mech_cycle_equip_on"
 			send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
+<<<<<<< HEAD
 			button.UpdateIcon()
+=======
+			build_all_button_icons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 			return
 
 
@@ -228,7 +274,11 @@
 
 	button_icon_state = "mech_damtype_[chassis.damtype]"
 	playsound(src, 'sound/mecha/mechmove01.ogg', 50, 1)
+<<<<<<< HEAD
 	button.UpdateIcon()
+=======
+	build_all_button_icons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	chassis.query_damtype()
 
 
@@ -239,7 +289,11 @@
 
 /datum/action/innate/mecha/mech_toggle_phasing/Activate()
 	button_icon_state = "mech_phasing_[chassis.phasing ? "off" : "on"]"
+<<<<<<< HEAD
 	button.UpdateIcon()
+=======
+	build_all_button_icons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	chassis.phasing()
 
 
@@ -250,7 +304,11 @@
 
 /datum/action/innate/mecha/mech_toggle_cloaking/Activate()
 	button_icon_state = "mech_phasing_[chassis.cloaked ? "off" : "on"]"
+<<<<<<< HEAD
 	button.UpdateIcon()
+=======
+	build_all_button_icons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	chassis.toggle_cloaking()
 
 

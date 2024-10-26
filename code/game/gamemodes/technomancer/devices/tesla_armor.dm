@@ -57,7 +57,11 @@
 	to_chat(user, span_notice("You [active ? "" : "de"]activate \the [src]."))
 	update_icon()
 	user.update_inv_wear_suit()
+<<<<<<< HEAD
 	user.update_action_buttons()
+=======
+	user.update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 /obj/item/clothing/suit/armor/tesla/update_icon()
 	if(active && ready)
@@ -72,7 +76,11 @@
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
 		H.update_inv_wear_suit(0)
+<<<<<<< HEAD
 		H.update_action_buttons()
+=======
+		H.update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	..()
 
 /obj/item/clothing/suit/armor/tesla/proc/shoot_lightning(mob/target, power)

@@ -83,8 +83,13 @@
 		if (ismob(src.loc)) //should allow masks to update when it is opened/closed
 			var/mob/M = src.loc
 			M.update_inv_wear_mask()
+<<<<<<< HEAD
 		usr.update_action_buttons()
 		
+=======
+		usr.update_mob_action_buttons()
+
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 // Costume Versions Here
 /obj/item/clothing/head/helmet/combat/crusader_costume
 	name = "crusader costume helmet"
@@ -140,4 +145,8 @@
 		if (ismob(src.loc)) //should allow masks to update when it is opened/closed
 			var/mob/M = src.loc
 			M.update_inv_wear_mask()
+<<<<<<< HEAD
 		usr.update_action_buttons()
+=======
+		usr.update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))

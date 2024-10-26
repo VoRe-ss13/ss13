@@ -71,7 +71,11 @@ BLIND     // can't see anything
 		tint = initial(tint)
 		enables_planes = away_planes
 		away_planes = null
+<<<<<<< HEAD
 	user.update_action_buttons()
+=======
+	user.update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	user.recalculate_vis()
 
 /obj/item/clothing/glasses/attack_self(mob/user)
@@ -408,7 +412,11 @@ BLIND     // can't see anything
 			tint = TINT_NONE
 			to_chat(usr, "You push \the [src] up out of your face.")
 		update_clothing_icon()
+<<<<<<< HEAD
 		usr.update_action_buttons()
+=======
+		usr.update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 /obj/item/clothing/glasses/welding/superior
 	name = "superior welding goggles"
@@ -503,7 +511,11 @@ BLIND     // can't see anything
 		user << activation_sound
 		user.recalculate_vis()
 		user.update_inv_glasses()
+<<<<<<< HEAD
 		user.update_action_buttons()
+=======
+		user.update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 /obj/item/clothing/glasses/sunglasses/sechud/aviator/update_icon()
 	if(on)
@@ -623,4 +635,8 @@ BLIND     // can't see anything
 			icon_state = "[initial(icon_state)]up"
 			to_chat(usr, "You push \the [src] up from in front of your eyes.")
 		update_clothing_icon()
+<<<<<<< HEAD
 		usr.update_action_buttons()
+=======
+		usr.update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))

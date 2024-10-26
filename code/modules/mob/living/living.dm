@@ -1041,6 +1041,10 @@
 	if(lying != lying_prev)
 		lying_prev = lying
 		update_transform()
+<<<<<<< HEAD
+=======
+		update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 		//VOREStation Add
 		if(lying && LAZYLEN(buckled_mobs))
 			for(var/mob/living/L as anything in buckled_mobs)

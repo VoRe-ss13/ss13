@@ -1131,7 +1131,11 @@ No. With a teleporter? Just *no*. - Hawk, YW
 		if (ismob(loc)) //should allow masks to update when it is opened/closed
 			var/mob/M = loc
 			M.update_inv_wear_mask()
+<<<<<<< HEAD
 		usr.update_action_buttons()
+=======
+		usr.update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 //Vorrarkul: Theodora Lindt
 /obj/item/clothing/suit/chococoat
@@ -2601,7 +2605,11 @@ Departamental Swimsuits, for general use
 		if (ismob(loc)) //should allow masks to update when it is opened/closed
 			var/mob/M = loc
 			M.update_inv_wear_mask()
+<<<<<<< HEAD
 		usr.update_action_buttons()
+=======
+		usr.update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 /obj/item/clothing/suit/storage/toggle/labcoat/fluff/zeracloak
 	name = "Grand Purple Cloak"

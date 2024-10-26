@@ -485,7 +485,11 @@
 		update_light()
 
 	update_icon(user)
+<<<<<<< HEAD
 	user.update_action_buttons()
+=======
+	user.update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 /obj/item/clothing/head/attack_ai(var/mob/user)
 	if(!mob_wear_hat(user))

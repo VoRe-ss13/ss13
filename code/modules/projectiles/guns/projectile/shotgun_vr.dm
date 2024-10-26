@@ -69,7 +69,11 @@
 		H.update_inv_r_hand()
 
 	playsound(src, 'sound/weapons/targeton.ogg', 50, 1)
+<<<<<<< HEAD
 	user.update_action_buttons()
+=======
+	user.update_mob_action_buttons()
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 /obj/item/gun/projectile/shotgun/compact/verb/verb_toggle_stock(mob/user as mob)
 	set category = "Object"
