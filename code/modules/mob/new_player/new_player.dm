@@ -619,7 +619,6 @@
 		global_announcer.autosay("A new[rank ? " [rank]" : " visitor" ] [join_message ? join_message : "has arrived on the station"].", "Arrivals Announcement Computer", channel, zlevels)
 
 /mob/new_player/proc/LateChoices()
-<<<<<<< HEAD
 	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
 
 	var/dat = "<html><body><center>"
@@ -671,11 +670,6 @@
 	dat += "</center>"
 	src << browse(dat, "window=latechoices;size=300x640;can_close=1")
 
-=======
-	if(!late_choices_dialog)
-		late_choices_dialog = new(src)
-	late_choices_dialog.tgui_interact(src)
->>>>>>> a0379d1b79 ([MIRROR] Convert late spawn UI to TGUI (#9272))
 
 /mob/new_player/proc/create_character(var/turf/T)
 	spawning = 1
