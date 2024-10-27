@@ -1,12 +1,9 @@
-<<<<<<< HEAD:code/_onclick/hud/action.dm
 #define AB_ITEM 1
 #define AB_SPELL 2
 #define AB_INNATE 3
 #define AB_GENERIC 4
 
 
-=======
->>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270)):code/_onclick/hud/action/action.dm
 /datum/action
 	var/name = "Generic Action"
 	var/atom/movable/target = null
@@ -80,7 +77,6 @@
 		button.icon = button_icon
 		button.icon_state = background_icon_state
 
-<<<<<<< HEAD:code/_onclick/hud/action.dm
 /obj/screen/movable/action_button
 	var/datum/action/owner
 	screen_loc = "WEST,NORTH"
@@ -176,24 +172,6 @@
 	var/matrix/M = matrix()
 	M.Translate(x_offset,y_offset)
 	button.transform = M
-=======
-		ApplyIcon(button)
-
-		if(!IsAvailable())
-			button.color = rgb(128, 0, 0, 128)
-		else
-			button.color = rgb(255, 255, 255, 255)
-			return 1
-
-/datum/action/proc/ApplyIcon(obj/screen/movable/action_button/current_button)
-	current_button.cut_overlays()
-	if(button_icon && button_icon_state)
-		var/image/img
-		img = image(button_icon, current_button, button_icon_state)
-		img.pixel_x = 0
-		img.pixel_y = 0
-		current_button.add_overlay(img)
->>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270)):code/_onclick/hud/action/action.dm
 
 //Presets for item actions
 /datum/action/item_action
@@ -231,7 +209,6 @@
 	check_flags = AB_CHECK_CONSCIOUS
 
 
-<<<<<<< HEAD:code/_onclick/hud/action.dm
 
 /datum/action/innate/
 	action_type = AB_INNATE
@@ -240,35 +217,3 @@
 #undef AB_SPELL
 #undef AB_INNATE
 #undef AB_GENERIC
-=======
-/datum/action/innate
-	check_flags = 0
-	var/active = 0
-
-/datum/action/innate/Trigger()
-	if(!..())
-		return 0
-	if(!active)
-		Activate()
-	else
-		Deactivate()
-	return 1
-
-/datum/action/innate/proc/Activate()
-	return
-
-/datum/action/innate/proc/Deactivate()
-	return
-
-//Preset for action that call specific procs (consider innate).
-/datum/action/generic
-	check_flags = 0
-	var/procname
-
-/datum/action/generic/Trigger()
-	if(!..())
-		return 0
-	if(target && procname)
-		call(target, procname)(usr)
-	return 1
->>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270)):code/_onclick/hud/action/action.dm
