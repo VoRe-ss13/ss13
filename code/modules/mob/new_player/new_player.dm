@@ -618,57 +618,9 @@
 		global_announcer.autosay("A new[rank ? " [rank]" : " visitor" ] [join_message ? join_message : "has arrived on the station"].", "Arrivals Announcement Computer", channel, zlevels)
 
 /mob/new_player/proc/LateChoices()
-	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
-
-	var/dat = "<html><body><center>"
-	dat += span_bold("Welcome, [name].<br>")
-	dat += "Round Duration: [roundduration2text()]<br>"
-
-	if(emergency_shuttle) //In case NanoTrasen decides reposess CentCom's shuttles.
-		if(emergency_shuttle.going_to_centcom()) //Shuttle is going to CentCom, not recalled
-			dat += "<font color='red'><b>The station has been evacuated.</b></font><br>"
-		if(emergency_shuttle.online())
-			if (emergency_shuttle.evac)	// Emergency shuttle is past the point of no recall
-				dat += "<font color='red'>The station is currently undergoing evacuation procedures.</font><br>"
-			else						// Crew transfer initiated
-				dat += "<font color='red'>The station is currently undergoing crew transfer procedures.</font><br>"
-
-	dat += "Choose from the following open/valid positions:<br>"
-	dat += "<a href='byond://?src=\ref[src];hidden_jobs=1'>[show_hidden_jobs ? "Hide":"Show"] Hidden Jobs.</a><br>"
-
-	var/deferred = ""
-	for(var/datum/job/job in job_master.occupations)
-		if(job && IsJobAvailable(job.title))
-			// Checks for jobs with minimum age requirements
-			if((job.minimum_character_age || job.min_age_by_species) && (client.prefs.age < job.get_min_age(client.prefs.species, client.prefs.organ_data["brain"])))
-				continue
-			//CHOMPEdit Begin - Check species job bans... (Only used for shadekin)
-			if(job.is_species_banned(client.prefs.species, client.prefs.organ_data["brain"]))
-				continue
-			//CHOMPEdit End
-			// Checks for jobs set to "Never" in preferences	//TODO: Figure out a better way to check for this
-			if(!(client.prefs.GetJobDepartment(job, 1) & job.flag))
-				if(!(client.prefs.GetJobDepartment(job, 2) & job.flag))
-					if(!(client.prefs.GetJobDepartment(job, 3) & job.flag))
-						if(!show_hidden_jobs && job.title != JOB_ALT_ASSISTANT)	// Assistant is always an option
-							continue
-			var/active = 0
-			// Only players with the job assigned and AFK for less than 10 minutes count as active
-			for(var/mob/M in player_list) if(M.mind && M.client && M.mind.assigned_role == job.title && M.client.inactivity <= 10 MINUTES)
-				active++
-
-			var/string = "<a href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions]) (Active: [active])</a><br>"
-
-			if(job.offmap_spawn) //At the bottom
-				deferred += string
-			else
-				dat += string
-
-	dat += deferred
-
-	dat += "</center>"
-	src << browse(dat, "window=latechoices;size=300x640;can_close=1")
-
+	if(!late_choices_dialog)
+		late_choices_dialog = new(src)
+	late_choices_dialog.tgui_interact(src)
 
 /mob/new_player/proc/create_character(var/turf/T)
 	spawning = 1
