@@ -1,4 +1,3 @@
-
 /datum/action
 	var/name = "Generic Action"
 	var/atom/movable/target = null
@@ -72,85 +71,22 @@
 		button.icon = button_icon
 		button.icon_state = background_icon_state
 
-//This is the proc used to update all the action buttons. Properly defined in /mob/living/
-/mob/proc/update_action_buttons()
-	return
+		ApplyIcon(button)
 
-/mob/living/update_action_buttons()
-	if(!hud_used) return
-	if(!client) return
+		if(!IsAvailable())
+			button.color = rgb(128, 0, 0, 128)
+		else
+			button.color = rgb(255, 255, 255, 255)
+			return 1
 
-	if(hud_used.hud_shown != 1)	//Hud toggled to minimal
-		return
-
-	client.screen -= hud_used.hide_actions_toggle
-	for(var/datum/action/A in actions)
-		if(A.button)
-			client.screen -= A.button
-
-	if(hud_used.action_buttons_hidden)
-		if(!hud_used.hide_actions_toggle)
-			hud_used.hide_actions_toggle = new(hud_used)
-			hud_used.hide_actions_toggle.UpdateIcon()
-
-		if(!hud_used.hide_actions_toggle.moved)
-			hud_used.hide_actions_toggle.screen_loc = hud_used.ButtonNumberToScreenCoords(1)
-			//hud_used.SetButtonCoords(hud_used.hide_actions_toggle,1)
-
-		client.screen += hud_used.hide_actions_toggle
-		return
-
-	var/button_number = 0
-	for(var/datum/action/A in actions)
-		button_number++
-		if(A.button == null)
-			var/obj/screen/movable/action_button/N = new(hud_used)
-			N.owner = A
-			A.button = N
-
-		var/obj/screen/movable/action_button/B = A.button
-
-		B.UpdateIcon()
-
-		B.name = A.UpdateName()
-
-		client.screen += B
-
-		if(!B.moved)
-			B.screen_loc = hud_used.ButtonNumberToScreenCoords(button_number)
-			//hud_used.SetButtonCoords(B,button_number)
-
-	if(button_number > 0)
-		if(!hud_used.hide_actions_toggle)
-			hud_used.hide_actions_toggle = new(hud_used)
-			hud_used.hide_actions_toggle.InitialiseIcon(src)
-		if(!hud_used.hide_actions_toggle.moved)
-			hud_used.hide_actions_toggle.screen_loc = hud_used.ButtonNumberToScreenCoords(button_number+1)
-			//hud_used.SetButtonCoords(hud_used.hide_actions_toggle,button_number+1)
-		client.screen += hud_used.hide_actions_toggle
-
-#define AB_WEST_OFFSET 4
-#define AB_NORTH_OFFSET 26
-#define AB_MAX_COLUMNS 10
-
-/datum/hud/proc/ButtonNumberToScreenCoords(var/number) // TODO : Make this zero-indexed for readabilty
-	var/row = round((number-1)/AB_MAX_COLUMNS)
-	var/col = ((number - 1)%(AB_MAX_COLUMNS)) + 1
-	var/coord_col = "+[col-1]"
-	var/coord_col_offset = AB_WEST_OFFSET+2*col
-	var/coord_row = "[-1 - row]"
-	var/coord_row_offset = AB_NORTH_OFFSET
-	return "WEST[coord_col]:[coord_col_offset],NORTH[coord_row]:[coord_row_offset]"
-
-/datum/hud/proc/SetButtonCoords(var/obj/screen/button,var/number)
-	var/row = round((number-1)/AB_MAX_COLUMNS)
-	var/col = ((number - 1)%(AB_MAX_COLUMNS)) + 1
-	var/x_offset = 32*(col-1) + AB_WEST_OFFSET + 2*col
-	var/y_offset = -32*(row+1) + AB_NORTH_OFFSET
-
-	var/matrix/M = matrix()
-	M.Translate(x_offset,y_offset)
-	button.transform = M
+/datum/action/proc/ApplyIcon(obj/screen/movable/action_button/current_button)
+	current_button.cut_overlays()
+	if(button_icon && button_icon_state)
+		var/image/img
+		img = image(button_icon, current_button, button_icon_state)
+		img.pixel_x = 0
+		img.pixel_y = 0
+		current_button.add_overlay(img)
 
 //Presets for item actions
 /datum/action/item_action
@@ -189,4 +125,32 @@
 
 
 /datum/action/innate
-	action_type = AB_INNATE
+	check_flags = 0
+	var/active = 0
+
+/datum/action/innate/Trigger()
+	if(!..())
+		return 0
+	if(!active)
+		Activate()
+	else
+		Deactivate()
+	return 1
+
+/datum/action/innate/proc/Activate()
+	return
+
+/datum/action/innate/proc/Deactivate()
+	return
+
+//Preset for action that call specific procs (consider innate).
+/datum/action/generic
+	check_flags = 0
+	var/procname
+
+/datum/action/generic/Trigger()
+	if(!..())
+		return 0
+	if(target && procname)
+		call(target, procname)(usr)
+	return 1
