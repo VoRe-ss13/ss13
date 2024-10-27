@@ -115,6 +115,11 @@
 
 /obj/item/Initialize(mapload) //CHOMPedit I stg I'm going to overwrite these many uncommented edits.
 	. = ..()
+<<<<<<< HEAD
+=======
+	for(var/path in actions_types)
+		add_item_action(path)
+>>>>>>> 3232c48e9d (Xenoarch order (#9326))
 	if(islist(origin_tech))
 		origin_tech = typelist(NAMEOF(src, origin_tech), origin_tech)
 	if(embed_chance < 0)
