@@ -18,6 +18,7 @@ GLOBAL_LIST_INIT(ghost_spawnable_mobs,list(
 	"Fennec" = /mob/living/simple_mob/vore/fennec,
 	"Fennix" = /mob/living/simple_mob/vore/fennix,
 	"Frog - Giant" = /mob/living/simple_mob/vore/aggressive/frog,
+	//"Gryphon" = /mob/living/simple_mob/vore/gryphon,//CHOMPedit: more mobs,
 	"Jelly Blob" = /mob/living/simple_mob/vore/jelly,
 	"Juvenile Solargrub" = /mob/living/simple_mob/vore/solargrub,
 	"Leopardmander Selection" = list(
