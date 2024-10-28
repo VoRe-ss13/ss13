@@ -4717,7 +4717,6 @@
 #include "maps\southern_cross\structures\closets\security.dm"
 #include "maps\submaps\_helpers.dm"
 #include "maps\submaps\_readme.dm"
-#include "maps\~map_system\maps.dm"
 #include "modular_chomp\code\coalesce_ch.dm"
 #include "modular_chomp\code\global.dm"
 #include "modular_chomp\code\__defines\_planes+layers.dm"
@@ -5142,8 +5141,6 @@
 #include "modular_chomp\maps\overmap\om_ships\offmap.dm"
 #include "modular_chomp\maps\overmap\space_pois\space_areas.dm"
 #include "modular_chomp\maps\overmap\space_pois\space_pois.dm"
-<<<<<<< HEAD
-=======
 #include "modular_chomp\maps\southern_cross\items\encryptionkey_sc.dm"
 #include "modular_chomp\maps\southern_cross\items\headset_sc.dm"
 #include "modular_chomp\maps\southern_cross\items\clothing\sc_accessory.dm"
@@ -5154,8 +5151,6 @@
 #include "modular_chomp\maps\southern_cross\structures\closets\misc.dm"
 #include "modular_chomp\maps\southern_cross\structures\closets\research.dm"
 #include "modular_chomp\maps\southern_cross\structures\closets\security.dm"
-#include "modular_chomp\maps\southern_cross\turfs\outdoors.dm"
->>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090))
 #include "modular_chomp\maps\submaps\engine_submaps\engine.dm"
 #include "modular_chomp\maps\submaps\engine_submaps\engine_areas.dm"
 #include "modular_chomp\maps\submaps\engine_submaps\southern_cross\_engine_submaps.dm"
@@ -5170,9 +5165,6 @@
 #include "modular_chomp\maps\submaps\surface_submaps\wilderness\wilderness.dm"
 #include "modular_chomp\maps\submaps\surface_submaps\wilderness\wilderness_areas.dm"
 #include "modular_chomp\maps\virtual_reality\constructVR.dm"
-<<<<<<< HEAD
-=======
 #include "modular_chomp\maps\~map_system\_map_selection.dm"
 #include "modular_chomp\maps\~map_system\maps.dm"
->>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090))
 // END_INCLUDE

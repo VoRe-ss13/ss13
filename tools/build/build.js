@@ -181,15 +181,8 @@ export const DmMapsIncludeTarget = new Juke.Target({
       //...Juke.glob('_maps/RandomZLevels/**/*.dmm'),
       //...Juke.glob('_maps/shuttles/**/*.dmm'),
       //...Juke.glob('_maps/templates/**/*.dmm'),
-<<<<<<< HEAD
       ...Juke.glob('maps/relic_base/**/*.dmm'), //TORCHEdit - Changing to forbearance
-      ...Juke.glob('maps/southern_cross/**/*.dmm'),
-      ...Juke.glob('maps/submap/**/*.dmm'),
-=======
-      ...Juke.glob('modular_chomp/maps/soluna_nexus/**/*.dmm'),
-      ...Juke.glob('modular_chomp/maps/southern_cross/**/*.dmm'),
       ...Juke.glob('modular_chomp/maps/submap/**/*.dmm'),
->>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090))
     ];
     const content = folders
       .map((file) => file.replace('_maps/', ''))
@@ -208,12 +201,7 @@ export const DmTarget = new Juke.Target({
   inputs: [
     '_maps/map_files/generic/**',
     'maps/**/*.dm',
-<<<<<<< HEAD
     'maps/relic_base/**/*.dmm', // Placed here so it recompiles on map changes //TORCHEdit - Changing to forbearance
-    'maps/southern_cross/**/*.dmm', // Placed here so it recompiles on map changes
-    'maps/submap/**/*.dmm', // Placed here so it recompiles on map changes
-=======
->>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090))
     'code/**',
     'html/**',
     'icons/**',
@@ -223,8 +211,6 @@ export const DmTarget = new Juke.Target({
     'modular_chomp/icons/**',
     'modular_chomp/sound/**',
     'modular_chomp/maps/**/*.dm',
-    'modular_chomp/maps/soluna_nexus/**/*.dmm', // Placed here so it recompiles on map changes
-    'modular_chomp/maps/southern_cross/**/*.dmm', // Placed here so it recompiles on map changes
     'modular_chomp/maps/submap/**/*.dmm', // Placed here so it recompiles on map changes
     `${DME_NAME}.dme`,
     NamedVersionFile,

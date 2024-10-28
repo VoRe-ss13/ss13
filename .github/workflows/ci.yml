@@ -111,11 +111,7 @@ jobs:
     if: ( !contains(github.event.head_commit.message, '[ci skip]') )
     strategy:
       matrix:
-<<<<<<< HEAD
-        map: ['relic_base']
-=======
-        map: ['USE_MAP_SOUTHERN_CROSS', 'USE_MAP_SOLUNA_NEXUS']
->>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090))
+        map: ['USE_MAP_RELIC_BASE']
     # name: Integration Tests (${{ matrix.map }})
     name: Integration Tests
     # needs: ['run_linters', 'dreamchecker']

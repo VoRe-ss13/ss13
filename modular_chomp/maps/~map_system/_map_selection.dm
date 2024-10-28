@@ -5,8 +5,9 @@
 /* FOR LIVE SERVER   */
 /*********************/
 
-#define USE_MAP_SOUTHERN_CROSS
+// #define USE_MAP_SOUTHERN_CROSS
 // #define USE_MAP_SOLUNA_NEXUS
+#define USE_MAP_RELIC_BASE
 
 // Debug
 // #define USE_MAP_MINITEST
@@ -26,6 +27,13 @@
 #ifdef USE_MAP_SOLUNA_NEXUS
 #include "../soluna_nexus/soluna_nexus.dm"
 #endif
+
+//TORCHEdit Start - Add and select Forbearance
+// Relic Base
+#ifdef USE_MAP_RELIC_BASE
+#include "../../relic_base/relicbase.dm"
+#endif
+//TORCHEdit End
 
 #ifdef USE_MAP_MINITEST
 #include "../virgo_minitest/virgo_minitest.dm"

@@ -15235,11 +15235,7 @@
 /area/SouthernCrossV2/Maints/Deck2_Science_StarCorridor1)
 "aTa" = (
 /turf/unsimulated/mask,
-<<<<<<< HEAD:maps/southern_sun/southern_cross-2.dmm
-/area/SouthernCrossV2/Maints/Room_89)
-=======
 /area/hallway/Aft_2_Deck_Stairwell)
->>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090)):modular_chomp/maps/soluna_nexus/soluna_nexus-2.dmm
 "aTb" = (
 /obj/structure/cable/green{
 	d1 = 4;

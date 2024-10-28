@@ -44094,11 +44094,7 @@
 "nxq" = (
 /obj/turbolift_map_holder/southern_cross/port,
 /turf/simulated/floor/plating/eris/under,
-<<<<<<< HEAD:maps/southern_sun/southern_cross-1.dmm
-/area/SouthernCrossV2/Maints/Room_88)
-=======
 /area/hallway/Aft_1_Deck_Stairwell)
->>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090)):modular_chomp/maps/soluna_nexus/soluna_nexus-1.dmm
 "nxr" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -46122,11 +46118,7 @@
 "odp" = (
 /obj/turbolift_map_holder/southern_cross/starboard,
 /turf/simulated/floor/plating/eris/under,
-<<<<<<< HEAD:maps/southern_sun/southern_cross-1.dmm
-/area/SouthernCrossV2/Maints/Room_88)
-=======
 /area/hallway/Aft_1_Deck_Stairwell)
->>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090)):modular_chomp/maps/soluna_nexus/soluna_nexus-1.dmm
 "odq" = (
 /obj/structure/bed/chair/oldsofa/left{
 	dir = 1
@@ -46196,11 +46188,7 @@
 /area/SouthernCrossV2/Maints/Deck1_Cargo_Chamber1)
 "oex" = (
 /turf/simulated/floor/plating/eris/under,
-<<<<<<< HEAD:maps/southern_sun/southern_cross-1.dmm
-/area/SouthernCrossV2/Maints/Room_88)
-=======
 /area/hallway/Aft_1_Deck_Stairwell)
->>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090)):modular_chomp/maps/soluna_nexus/soluna_nexus-1.dmm
 "oeC" = (
 /obj/machinery/camera/network/security{
 	dir = 8;
@@ -53005,11 +52993,7 @@
 "qqZ" = (
 /obj/turbolift_map_holder/southern_cross/center,
 /turf/simulated/floor/plating/eris/under,
-<<<<<<< HEAD:maps/southern_sun/southern_cross-1.dmm
-/area/SouthernCrossV2/Maints/Room_88)
-=======
 /area/hallway/Aft_1_Deck_Stairwell)
->>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090)):modular_chomp/maps/soluna_nexus/soluna_nexus-1.dmm
 "qra" = (
 /obj/machinery/mineral/stacking_unit_console,
 /turf/simulated/wall/r_wall,
@@ -63220,11 +63204,7 @@
 "tWK" = (
 /obj/turbolift_map_holder/southern_cross/aft,
 /turf/simulated/floor/plating/eris/under,
-<<<<<<< HEAD:maps/southern_sun/southern_cross-1.dmm
-/area/SouthernCrossV2/Maints/Room_88)
-=======
 /area/hallway/Aft_1_Deck_Stairwell)
->>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090)):modular_chomp/maps/soluna_nexus/soluna_nexus-1.dmm
 "tWM" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows{
@@ -73884,11 +73864,7 @@
 "xMb" = (
 /obj/turbolift_map_holder/southern_cross/forward,
 /turf/simulated/floor/plating/eris/under,
-<<<<<<< HEAD:maps/southern_sun/southern_cross-1.dmm
-/area/SouthernCrossV2/Maints/Room_88)
-=======
 /area/hallway/Aft_1_Deck_Stairwell)
->>>>>>> dbdb406824 ([MIRROR] Make map selection marginally better and more CI friendly (#9090)):modular_chomp/maps/soluna_nexus/soluna_nexus-1.dmm
 "xMB" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume,
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
