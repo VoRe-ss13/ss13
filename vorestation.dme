@@ -4706,21 +4706,8 @@
 #include "maps\redgate\falls\atoll_decals.dm"
 #include "maps\redgate\falls\atoll_objs.dm"
 #include "maps\redgate\falls\atoll_turfs.dm"
-<<<<<<< HEAD
 #include "maps\relic_base\relicbase.dm"
 #include "maps\relic_base\turfs\outdoors.dm"
-#include "maps\southern_cross\items\encryptionkey_sc.dm"
-#include "maps\southern_cross\items\headset_sc.dm"
-#include "maps\southern_cross\items\clothing\sc_accessory.dm"
-#include "maps\southern_cross\items\clothing\sc_suit.dm"
-#include "maps\southern_cross\items\clothing\sc_under.dm"
-#include "maps\southern_cross\structures\closets\engineering.dm"
-#include "maps\southern_cross\structures\closets\medical.dm"
-#include "maps\southern_cross\structures\closets\misc.dm"
-#include "maps\southern_cross\structures\closets\research.dm"
-#include "maps\southern_cross\structures\closets\security.dm"
-=======
->>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276))
 #include "maps\submaps\_helpers.dm"
 #include "maps\submaps\_readme.dm"
 #include "modular_chomp\code\coalesce_ch.dm"

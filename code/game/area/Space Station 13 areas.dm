@@ -2683,18 +2683,3 @@ var/list/the_station_areas = list (
 	name = "\improper Junker"
 	icon_state = "shuttlered"
 	requires_power = 1
-<<<<<<< HEAD
-
-/* TORCHRemove Start - We remain on Forbearance here
-// CHOMPAdd Start new Map
-/area/SouthernCrossV2/Maints
-	name = "\improper Evac"
-	icon_state = "fsmaint"
-
-/area/SouthernCrossV2/Evac
-	name = "\improper Evac"
-	icon_state = "shuttle2"
-// CHOMPAdd End new Map
-*/ //TORCHRemove End
-=======
->>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276))
