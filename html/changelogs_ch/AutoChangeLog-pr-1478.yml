@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - rscadd: "Overmap helm controls now show the ship in a little map element"
