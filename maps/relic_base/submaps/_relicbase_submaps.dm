@@ -129,7 +129,7 @@
 	mappath = "maps/gateway_vr/variable/honlethhighlands_b.dmm"
 
 
-#include "../../gateway_vr/variable/arynthilake.dm"
+#include "gateway/variable/arynthilake.dm"
 /datum/map_template/thor_lateload/gateway/arynthilake
 	name = "Gateway - Arynthi Lake A"
 	desc = "A grassy surface with some abandoned structures."
