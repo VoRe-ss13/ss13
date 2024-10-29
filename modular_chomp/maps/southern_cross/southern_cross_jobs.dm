@@ -9,19 +9,19 @@ var/const/access_explorer = 43
 
 /datum/access/pilot
 	id = access_pilot
-	desc = "Pilot"
+	desc = JOB_PILOT
 	region = ACCESS_REGION_SUPPLY
 
 /datum/access/explorer
 	id = access_explorer
-	desc = "Explorer"
+	desc = JOB_EXPLORER
 	region = ACCESS_REGION_GENERAL
 
 //SC Jobs
 
 /*
 
-//Will see about getting working later.
+//Will see about getting working later. //CHOMPNote, do not use this
 
 /datum/job/captain
 	title = "Station Director"
@@ -50,46 +50,37 @@ var/const/access_explorer = 43
 	return get_all_station_access()
 */
 
-/datum/department/planetside
-	name = DEPARTMENT_PLANET
-	color = "#555555"
-	sorting_order = 2 // Same as cargo in importance.
-
 /datum/job/pilot
-	title = "Pilot"
+	title = JOB_PILOT
 	flag = PILOT
-	departments = list(DEPARTMENT_PLANET)
+	department = DEPARTMENT_CIVILIAN
 	department_flag = CIVILIAN
 	faction = FACTION_STATION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Head of Personnel"
+	supervisors = "the head of personnel"
 	selection_color = "#515151"
 	economic_modifier = 4
-	access = list(access_pilot, access_cargo, access_mining, access_mining_station)
-	minimal_access = list(access_pilot, access_cargo, access_mining, access_mining_station)
-
+	access = list(access_eva, access_maint_tunnels, access_external_airlocks, access_pilot, access_cargo, access_mining, access_mining_station)
+	minimal_access = list(access_eva, access_maint_tunnels, access_external_airlocks, access_pilot, access_cargo, access_mining, access_mining_station)
 	outfit_type = /decl/hierarchy/outfit/job/pilot
-	job_description = "A Pilot flies one of the shuttles between the Southern Cross and the outpost on Sif."
 
 /datum/job/explorer
-	title = "Explorer"
+	title = JOB_EXPLORER
 	flag = EXPLORER
-	departments = list(DEPARTMENT_RESEARCH, DEPARTMENT_PLANET)
-	department_flag = MEDSCI
+	department = DEPARTMENT_CIVILIAN
+	department_flag = CIVILIAN
 	faction = FACTION_STATION
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Research Director"
-	selection_color =  "#633D63"
+	supervisors = "the explorer leader and the head of personnel"
+	selection_color = "#515151"
 	economic_modifier = 4
 	access = list(access_explorer, access_research)
 	minimal_access = list(access_explorer, access_research)
 	banned_job_species = list(SPECIES_ZADDAT)
 
 	outfit_type = /decl/hierarchy/outfit/job/explorer2
-	job_description = "An Explorer searches for interesting things on the surface of Sif, and returns them to the station."
-
 /*
 	alt_titles = list(
 		JOB_ALT_EXPLORERE_TECHNICIAN = /decl/hierarchy/outfit/job/explorer2/technician,
@@ -97,14 +88,14 @@ var/const/access_explorer = 43
 */
 
 /datum/job/sar
-	title = "Search and Rescue"
+	title = JOB_SEARCH_AND_RESCUE
 	flag = SAR
-	departments = list(DEPARTMENT_PLANET, DEPARTMENT_MEDICAL)
+	department = DEPARTMENT_MEDICAL
 	department_flag = MEDSCI
 	faction = FACTION_STATION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Chief Medical Officer"
+	supervisors = "the chief medical officer"
 	selection_color = "#515151"
 	economic_modifier = 4
 	access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_eva, access_maint_tunnels, access_external_airlocks, access_psychiatrist, access_explorer)
@@ -112,4 +103,4 @@ var/const/access_explorer = 43
 	min_age_by_species = list(SPECIES_PROMETHEAN = 2)
 
 	outfit_type = /decl/hierarchy/outfit/job/medical/sar
-	job_description = "A Search and Rescue operative recovers individuals who are injured or dead on the surface of Sif."
+	job_description = "A " + JOB_SEARCH_AND_RESCUE + " operative recovers individuals who are injured or dead on the surface of Sif."
