@@ -1,19 +1,5 @@
 #define RECOMMENDED_VERSION 513
-// CHOMPedit Start - Tracy
-/proc/prof_init()
-	var/lib
-
-	switch(world.system_type)
-		if(MS_WINDOWS) lib = "prof.dll"
-		if(UNIX) lib = "libprof.so"
-		else CRASH("unsupported platform")
-
-	var/init = call_ext(lib, "init")()
-	if("0" != init) CRASH("[lib] init error: [init]")
-// CHOMPedit End
-
 /world/New()
-	//prof_init() // CHOMPedit - Uncomment to enable Tracy. Requires https://github.com/mafemergency/byond-tracy/
 	world_startup_time = world.timeofday
 	rollover_safety_date = world.realtime - world.timeofday // 00:00 today (ish, since floating point error with world.realtime) of today
 	to_world_log("Map Loading Complete")
@@ -81,7 +67,7 @@
 
 	. = ..()
 
-#if UNIT_TEST
+#ifdef UNIT_TEST
 	log_unit_test("Unit Tests Enabled.  This will destroy the world when testing is complete.")
 	log_unit_test("If you did not intend to enable this please check code/__defines/unit_testing.dm")
 #endif
@@ -103,7 +89,7 @@
 
 	spawn(1)
 		master_controller.setup()
-#if UNIT_TEST
+#ifdef UNIT_TEST
 		initialize_unit_tests()
 #endif
 
