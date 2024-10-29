@@ -12,11 +12,8 @@
 // BEGIN_INCLUDE
 #include "code\__byond_version_compat.dm"
 #include "code\__spaceman_dmm.dm"
-#include "code\_away_mission_tests.dm"
 #include "code\_macros.dm"
 #include "code\_macros_vr.dm"
-#include "code\_map_tests.dm"
-#include "code\_unit_tests.dm"
 #include "code\global.dm"
 #include "code\global_init.dm"
 #include "code\global_vr.dm"
@@ -4710,7 +4707,6 @@
 #include "maps\redgate\falls\atoll_decals.dm"
 #include "maps\redgate\falls\atoll_objs.dm"
 #include "maps\redgate\falls\atoll_turfs.dm"
-#include "maps\relic_base\relicbase.dm"
 #include "maps\relic_base\turfs\outdoors.dm"
 #include "maps\submaps\_helpers.dm"
 #include "maps\submaps\_readme.dm"
@@ -5162,5 +5158,6 @@
 #include "modular_chomp\maps\turfpacks\unsim_turfs\unsim_turfs_tiles.dm"
 #include "modular_chomp\maps\turfpacks\unsim_turfs\unsim_turfs_walls.dm"
 #include "modular_chomp\maps\virtual_reality\constructVR.dm"
+#include "modular_chomp\maps\~map_system\_map_selection.dm"
 #include "modular_chomp\maps\~map_system\maps.dm"
 // END_INCLUDE
