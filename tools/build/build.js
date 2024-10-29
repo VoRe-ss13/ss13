@@ -158,7 +158,7 @@ export const IconCutterTarget = new Juke.Target({
     if(get(ForceRecutParameter))
       return [];
     const folders = [
-      ...Juke.glob(`icons/**/*${CUTTER_SUFFIX}`),
+      ...Juke.glob(`icons/**/*${CUTTER_SUFFIX}`, `modular_chomp/icons/**/*${CUTTER_SUFFIX}`),
     ];
     return folders
       .map((file) => file.replace(`${CUTTER_SUFFIX}`, '.dmi'));
@@ -182,8 +182,7 @@ export const DmMapsIncludeTarget = new Juke.Target({
       //...Juke.glob('_maps/shuttles/**/*.dmm'),
       //...Juke.glob('_maps/templates/**/*.dmm'),
       ...Juke.glob('maps/relic_base/**/*.dmm'), //TORCHEdit - Changing to forbearance
-      ...Juke.glob('maps/southern_cross/**/*.dmm'),
-      ...Juke.glob('maps/submap/**/*.dmm'),
+      ...Juke.glob('modular_chomp/maps/submap/**/*.dmm'),
     ];
     const content = folders
       .map((file) => file.replace('_maps/', ''))
@@ -203,8 +202,6 @@ export const DmTarget = new Juke.Target({
     '_maps/map_files/generic/**',
     'maps/**/*.dm',
     'maps/relic_base/**/*.dmm', // Placed here so it recompiles on map changes //TORCHEdit - Changing to forbearance
-    'maps/southern_cross/**/*.dmm', // Placed here so it recompiles on map changes
-    'maps/submap/**/*.dmm', // Placed here so it recompiles on map changes
     'code/**',
     'html/**',
     'icons/**',
@@ -213,6 +210,8 @@ export const DmTarget = new Juke.Target({
     'modular_chomp/code/**',
     'modular_chomp/icons/**',
     'modular_chomp/sound/**',
+    'modular_chomp/maps/**/*.dm',
+    'modular_chomp/maps/submap/**/*.dmm', // Placed here so it recompiles on map changes
     `${DME_NAME}.dme`,
     NamedVersionFile,
   ],

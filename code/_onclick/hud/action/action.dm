@@ -1,4 +1,3 @@
-
 /datum/action
 	var/name = "Generic Action"
 	var/desc = null
@@ -92,13 +91,7 @@
 		return FALSE
 	return TRUE
 
-/datum/action/proc/CheckRemoval(mob/living/user) // 1 if action is no longer valid for this mob and should be removed
-	return 0
-
 /datum/action/proc/IsAvailable()
-	return Checks()
-
-/datum/action/proc/Checks()// returns 1 if all checks pass
 	if(!owner)
 		return FALSE
 	if(check_flags & AB_CHECK_RESTRAINED)
@@ -195,11 +188,8 @@
 		current_button.appearance_cache = target.appearance
 
 /datum/action/item_action/hands_free
-	check_flags = AB_CHECK_ALIVE|AB_CHECK_INSIDE
+	check_flags = AB_CHECK_CONSCIOUS
 
-#undef AB_WEST_OFFSET
-#undef AB_NORTH_OFFSET
-#undef AB_MAX_COLUMNS
 
 /datum/action/innate
 	check_flags = NONE
