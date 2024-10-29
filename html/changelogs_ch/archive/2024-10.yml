@@ -193,3 +193,16 @@
       show where you will drop them.
   - bugfix: You can actually move action buttons around again and they'll stay there,
       until you shift-click on them.
+2024-10-28:
+  VoRe-bot:
+  - rscadd: Overmap helm controls now show the ship in a little map element
+  - bugfix: Runtime in rig/dropped
+  - qol: Add bapi-dmm, a rust maploader, to reduce init time by 90 seconds.
+  - qol: Moved tracy init to before-world-New.
+  - rscdel: No more pretending to support map rotation
+2024-10-29:
+  VoRe-bot:
+  - bugfix: makes leopardmander maw autotransfer functional
+  - bugfix: Crew manifest not showing up
+  - rscadd: Latejoin UI is now fancy TGUI
+  - qol: Action buttons are slowly getting better.
