@@ -6,11 +6,7 @@
 /obj/item/encryptionkey/explorer
 	name = "explorer radio encryption key"
 	icon_state = "com_cypherkey"
-<<<<<<< HEAD
-	channels = list(CHANNEL_EXPLORATION = 1) // CHOMPEdit
-=======
 	channels = list(CHANNEL_EXPLORATION = 1, CHANNEL_SCIENCE = 1)
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /obj/item/encryptionkey/sar
 	name = "sar's encryption key"

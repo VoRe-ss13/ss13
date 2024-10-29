@@ -6,15 +6,9 @@ var/datum/controller/transfer_controller/transfer_controller
 	var/shift_hard_end = 0 //VOREStation Edit
 	var/shift_last_vote = 0 //VOREStation Edit
 /datum/controller/transfer_controller/New()
-<<<<<<< HEAD
-	timerbuffer = CONFIG_GET(number/vote_autotransfer_initial) // CHOMPEdit
-	shift_hard_end = CONFIG_GET(number/vote_autotransfer_initial) + (CONFIG_GET(number/vote_autotransfer_interval) * CONFIG_GET(number/vote_autotransfer_hard)) //CHOMPStation Edit //Change this "1" to how many extend votes you want there to be. //Note: Fuck you whoever just slapped a number here instead of using the FUCKING CONFIG LIKE ALL THE OTHER NUMBERS HERE
-	shift_last_vote = shift_hard_end - CONFIG_GET(number/vote_autotransfer_interval) //VOREStation Edit // CHOMPEdit
-=======
 	timerbuffer = CONFIG_GET(number/vote_autotransfer_initial)
-	shift_hard_end = CONFIG_GET(number/vote_autotransfer_initial) + (CONFIG_GET(number/vote_autotransfer_interval) * 2) //CHOMPStation Edit //Change this "1" to how many extend votes you want there to be. //Note: Fuck you whoever just slapped a number here instead of using the FUCKING CONFIG LIKE ALL THE OTHER NUMBERS HERE
+	shift_hard_end = CONFIG_GET(number/vote_autotransfer_initial) + (CONFIG_GET(number/vote_autotransfer_interval) * CONFIG_GET(number/vote_autotransfer_hard)) //CHOMPStation Edit //Change this "1" to how many extend votes you want there to be. //Note: Fuck you whoever just slapped a number here instead of using the FUCKING CONFIG LIKE ALL THE OTHER NUMBERS HERE
 	shift_last_vote = shift_hard_end - CONFIG_GET(number/vote_autotransfer_interval) //VOREStation Edit
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	START_PROCESSING(SSprocessing, src)
 
 /datum/controller/transfer_controller/Destroy()

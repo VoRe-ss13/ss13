@@ -83,14 +83,6 @@
 	name = "Pathway"
 	icon_state = "purple"
 
-<<<<<<< HEAD
-// Used to overmap shuttle landing zones so POIs dont override it
-/area/surface/outside/landing/plains
-	name = "Plains"
-	icon_state = "purple"
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/surface/outside/path/plains
 
 /area/surface/outside/wilderness/normal
@@ -106,26 +98,6 @@
 	name = "Mountains"
 	icon_state = "darkred"
 
-<<<<<<< HEAD
-// so POIs don't block landing zones
-/area/surface/outside/landing/wilderness
-	name = "Wilderness"
-	icon_state = "purple"
-
-/* //Sky islands removal, lack of use
-/area/surface/outside/wilderness/skylands
-	name = "Floating Islands"
-	icon_state = "blue"
-
-/area/surface/outside/wilderness/skylands/empty
-	name = "Sky"
-	icon_state = "red"
-	luminosity = 1
-*/
-
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/surface/outside/path/wilderness
 
 // Water
@@ -153,31 +125,16 @@
 
 
 /area/surface/cave
-<<<<<<< HEAD
-	flags = RAD_SHIELDED
-	always_unpowered = TRUE
-
-/area/surface/cave
-	ambience = list('sound/ambience/ambimine.ogg', 'sound/ambience/song_game.ogg', 'sound/music/LRRMenu.ogg', 'sound/music/LRRTrack3.ogg', 'sound/ambience/cave/AmbCaveDebriA.ogg', 'sound/ambience/cave/AmbCaveDebriB.ogg', 'sound/ambience/cave/AmbCaveDebriC.ogg', 'sound/ambience/cave/AmbCaveDebriD.ogg')
-=======
 	flags = RAD_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
 	always_unpowered = TRUE
 
 /area/surface/cave
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 // The bottom half that connects to the outpost and is safer.
 /area/surface/cave/explored/normal
 	name = "Tunnels"
 	icon_state = "explored"
 
-<<<<<<< HEAD
-/area/surface/cave/explored/trader
-	name = "Trader Hideout"
-	icon_state = "hideaway"
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/surface/cave/unexplored/normal
 	name = "Tunnels"
 	icon_state = "unexplored"
@@ -203,54 +160,6 @@
 /area/surface/outpost/shelter
 	name = "Wilderness Shelter"
 
-<<<<<<< HEAD
-/area/surface/outpost/shelter/dorms
-	name = "Wilderness Shelter Dorms"
-	icon_state = "Sleep"
-	soundproofed = TRUE
-	limit_mob_size = FALSE
-	block_suit_sensors = TRUE
-	flags = RAD_SHIELDED
-	block_tracking = TRUE
-
-/area/surface/outpost/shelter/exterior
-	name = "Wilderness Shelter Exterior"
-	icon_state = "exit"
-	ambience = list('sound/ambience/ambimine.ogg', 'sound/ambience/song_game.ogg', 'sound/music/LRRMenu.ogg', 'sound/music/LRRTrack3.ogg', 'sound/ambience/cave/AmbCaveDebriA.ogg', 'sound/ambience/cave/AmbCaveDebriB.ogg', 'sound/ambience/cave/AmbCaveDebriC.ogg', 'sound/ambience/cave/AmbCaveDebriD.ogg')
-	outdoors = OUTDOORS_YES
-
-/area/surface/outpost/shelter/utilityroom
-	name = "Wilderness Shelter Utility Room"
-	icon_state = "substation"
-
-//Valley stuffs, chomps Edit by Jasper, for wilds but stranger.
-/area/surface/outpost/unfinished
-	name = "Unfinished"
-	icon_state = "red"
-
-/area/surface/outside/valley/inner
-	name = "Valley Inner"
-	icon_state = "yellow"
-
-/area/surface/outside/valley/walls
-	name = "Valley Walls"
-	icon_state = "yellow"
-	outdoors = OUTDOORS_NO
-
-/area/surface/outside/valley/edge
-	name = "Valley Edge"
-	icon_state = "yellow"
-
-/area/surface/outside/valley/river
-	name = "Valley River"
-	icon_state = "yellow"
-
-/area/surface/outside/valley/end
-	name = "Valley's End"
-	icon_state = "red"
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 // Main mining outpost
 /area/surface/outpost/mining_main
 	name = "North Mining Outpost"
@@ -271,17 +180,6 @@
 /area/surface/outpost/mining_main/storage
 	name = "North Mining Gear Storage"
 
-<<<<<<< HEAD
-/area/surface/outpost/mining_main/uxstorage
-	name = "North Mining Gear Secondary Storage"
-
-/area/surface/outpost/mining_main/mech_bay
-	name = "North Mining Mech Bay"
-
-/area/surface/outpost/mining_main/emergencystorage
-	name = "\improper North Mining Emergency Storage"
-	flags = RAD_SHIELDED
-=======
 /area/surface/outpost/mining_main/mech_bay
 	name = "North Mining Mech Bay"
 
@@ -292,7 +190,6 @@
 
 /area/surface/outpost/mining_main/emergencystorage
 	name = "\improper North Mining Emergency Storage"
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	icon_state = "emergencystorage"
 	sound_env = SMALL_ENCLOSED
 
@@ -303,47 +200,10 @@
 	name = "North Mining Restroom"
 	sound_env = SMALL_ENCLOSED
 
-<<<<<<< HEAD
-/area/surface/outpost/mining_main/tools
-	name = "North Mining Tool Storage"
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/surface/outpost/mining_main/cave
 	name = "North Mining Outpost Cave"
 	icon_state = "outpost_mine_main"
 
-<<<<<<< HEAD
-//Rust-Engine Outpost CHOMPedit - ksc
-
-/area/surface/outpost/engineering/atmos_room
-	name = "North Atmos Room"
-	icon_state = "atmos"
-
-/area/surface/outpost/engineering/smes
-	name = "North Engineering SMES"
-	icon_state = "substation"
-	ambience = AMBIENCE_SUBSTATION //CHOMP Addition
-
-/area/surface/outpost/engineering/reactor_smes
-	name = "North Engineering Reactor SMES"
-	icon_state = "engine_smes"
-	ambience = AMBIENCE_SUBSTATION //CHOMP Addition
-
-/area/surface/outpost/engineering/storage
-	name = "North Engineering Storage"
-	icon_state = "storage"
-
-/area/surface/outpost/engineering/monitoring
-	name = "North Engineering Monitoring"
-	icon_state = "engine_monitoring"
-
-/area/surface/outpost/engineering/auxiliary_storage
-	name = "North Engineering Auxiliary Storage"
-	icon_state = "emergencystorage"
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 //Research Surface Outpost
 
 /area/surface/outpost/research
@@ -357,24 +217,13 @@
 	name = "\improper Xenoresearch SMES Maintenance"
 	icon_state = "substation"
 	sound_env = SMALL_ENCLOSED
-<<<<<<< HEAD
-	ambience = AMBIENCE_SUBSTATION //CHOMP Addition
-=======
 	ambience = AMBIENCE_SUBSTATION
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/surface/outpost/research/xenoresearch/emergencystorage
 	name = "\improper Xenoresearch Emergency Storage"
 	icon_state = "emergencystorage"
 	sound_env = SMALL_ENCLOSED
 
-<<<<<<< HEAD
-/area/surface/outpost/research/xenoresearch/first_aid //CHOMPstation edit
-	name = "\improper Xenoresearch First-Aid Station"
-	icon_state = "medbay2"
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/surface/outpost/research/xenoresearch/restroom
 	name = "\improper Xenoresearch Restroom"
 	icon_state = "research_restroom"
@@ -398,13 +247,6 @@
 /area/surface/outpost/research/xenoarcheology
 	name = "\improper Xenoarcheology"
 
-<<<<<<< HEAD
-/area/surface/outpost/research/xenoarcheology/exterior
-	name = "\improper xenoarcheology Exterior"
-	icon_state = "exit"
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/surface/outpost/research/xenoarcheology/medical
 	name = "Xenoarcheology First-Aid Station"
 
@@ -412,11 +254,7 @@
 	name = "\improper Xenoarcheology SMES Maintenance"
 	icon_state = "substation"
 	sound_env = SMALL_ENCLOSED
-<<<<<<< HEAD
-	ambience = AMBIENCE_SUBSTATION //CHOMP Addition
-=======
 	ambience = AMBIENCE_SUBSTATION
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/surface/outpost/research/xenoarcheology/emergencystorage
 	name = "\improper Xenoarcheology Emergency Storage"
@@ -459,30 +297,10 @@
 	icon_state = "Sleep"
 	outdoors = OUTDOORS_NO
 
-<<<<<<< HEAD
-/area/surface/outpost/main/laundry
-	name = "\improper Main Outpost Laundry Room"
-
-/area/surface/outpost/main/landing
-	name = "\improper Main Outpost Shuttle Landing"
-	icon_state = "hangar"
-
-/area/surface/outpost/main/gen_room
-	name = "\improper Main Outpost SMES"
-	icon_state = "substation"
-	ambience = AMBIENCE_SUBSTATION //CHOMP Edit
-
-/area/surface/outpost/main/gen_room/smes_left
-	name = "\improper Main Outpost Left Wing SMES"
-
-/area/surface/outpost/main/gen_room/smes_right
-	name = "\improper Main Outpost Right Wing SMES"
-=======
 /area/surface/outpost/main/gen_room
 	name = "\improper Main Outpost SMES"
 	icon_state = "substation"
 	ambience = AMBIENCE_SUBSTATION
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/surface/outpost/main/gen_room/smes
 	name = "\improper Main Outpost Dorm SMES"
@@ -497,19 +315,8 @@
 	icon_state = "toilet"
 	sound_env = SMALL_ENCLOSED
 
-<<<<<<< HEAD
-/area/surface/outpost/main/showers
-	name = "\improper Main Outpost Showers"
-	icon_state = "toilet"
-	sound_env = SMALL_ENCLOSED
-
 /area/surface/outpost/main/gym
 	name = "\improper Main Outpost Gym"
-	icon_state = "fitness"
-=======
-/area/surface/outpost/main/gym
-	name = "\improper Main Outpost Gym"
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/surface/outpost/main/garage
 	name = "\improper Main Outpost Garage"
@@ -519,14 +326,8 @@
 	name = "\improper Main Outpost Crew Quarters"
 	sound_env = MEDIUM_SOFTFLOOR
 
-<<<<<<< HEAD
-/area/surface/outpost/main/tcomm
-	name = "\improper Main Outpost Telecommunications"
-	icon_state = "tcomsatcham"
-=======
 /area/surface/outpost/main/telecomms
 	name = "\improper Main Outpost Telecommunications"
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	music = "signal"
 
 /area/surface/outpost/main/teleporter
@@ -537,20 +338,6 @@
 	name = "\improper Main Outpost First-Aid Station"
 	icon_state = "medbay2"
 
-<<<<<<< HEAD
-/area/surface/outpost/main/search_and_rescue
-	name = "\improper Main Outpost Search and Rescue"
-	icon_state = "medbay2"
-
-/area/surface/outpost/main/exploration
-	name = "\improper Main Outpost Exploration Prep Room"
-	icon_state = "outpost_research"
-
-/area/surface/outpost/main/exploration/containment
-	name = "\improper Main Outpost Fauna Containment"
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/surface/outpost/main/security
 	name = "\improper Main Outpost Security Station"
 	icon_state = "checkpoint1"
@@ -560,117 +347,20 @@
 	icon_state = "teleporter"
 	music = "signal"
 
-<<<<<<< HEAD
-/area/surface/outpost/main/gateway
-	name = "\improper Main Outpost Gateway"
-	icon_state = "teleporter"
-
 /area/surface/outpost/main/corridor
 	name = "\improper Main Outpost Corridor"
-	icon_state = "dk_yellow"
-
-/area/surface/outpost/main/corridor/dorms
-	name = "\improper Main Outpost Dorm Corridor"
-
-/area/surface/outpost/main/corridor/right_lower
-	name = "\improper Main Outpost Right Wing Lower Corridor"
-
-/area/surface/outpost/main/corridor/right_upper
-	name = "\improper Main Outpost Right Wing Upper Corridor"
-
-/area/surface/outpost/main/corridor/left_lower
-	name = "\improper Main Outpost Left Wing Lower Corridor"
-
-/area/surface/outpost/main/corridor/left_upper
-	name = "\improper Main Outpost Left Wing Upper Corridor"
-=======
-/area/surface/outpost/main/corridor
-	name = "\improper Main Outpost Corridor"
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/surface/outpost/main/bar
 	name = "\improper Main Outpost Bar"
 	icon_state = "bar"
-<<<<<<< HEAD
-/*
-/area/surface/outpost/main/dorms
-	name = "\improper Main Outpost Dorms"
-
-/area/surface/outpost/main/dorms/dorm_1
-	name = "\improper Main Outpost Dorm One"
-
-/area/surface/outpost/main/dorms/dorm_2
-	name = "\improper Main Outpost Dorm Two"
-
-/area/surface/outpost/main/dorms/dorm_3
-	name = "\improper Main Outpost Dorm Three"
-
-/area/surface/outpost/main/dorms/dorm_4
-	name = "\improper Main Outpost Dorm Four"
-
-/area/surface/outpost/main/dorms/dorm_5
-	name = "\improper Main Outpost Dorm Five"
-
-/area/surface/outpost/main/dorms/dorm_6
-	name = "\improper Main Outpost Dorm Six"
-*/
-/area/surface/outpost/main/airlock
-	name = "\improper Main Outpost Airlock"
-	icon_state = "red"
-	ambience = AMBIENCE_SIF
-
-/area/surface/outpost/main/airlock/left_one
-	name = "\improper Outpost Left Wing Airlock One"
-
-/area/surface/outpost/main/airlock/left_two
-	name = "\improper Outpost Left Wing Airlock Two"
-
-/area/surface/outpost/main/airlock/left_three
-	name = "\improper Outpost Left Wing Airlock Three"
-
-/area/surface/outpost/main/airlock/right_one
-	name = "\improper Outpost Right Wing Airlock One"
-
-/area/surface/outpost/main/airlock/right_two
-	name = "\improper Outpost Right Wing Airlock Two"
-
-/area/surface/outpost/main/airlock/right_three
-	name = "\improper Outpost Right Wing Airlock Three"
-
-/area/surface/outpost/main/airlock/landing_north
-	name = "\improper Main Outpost North Airlock"
-
-/area/surface/outpost/main/airlock/landing_south
-	name = "\improper Main Outpost South Airlock"
-
-=======
 
 /area/surface/outpost/main/dorms
 	name = "\improper Main Outpost Dorms"
 
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/surface/outpost/main/construction_area
 	name = "\improper Main Outpost Construction Area"
 	icon_state = "construction"
 
-<<<<<<< HEAD
-/area/surface/outpost/main/janitor
-	name = "\improper Main Outpost Custodial Closet"
-	icon_state = "janitor"
-
-/area/surface/outpost/main/emergency_storage
-	flags = RAD_SHIELDED
-	name = "Emergency Storage"
-	icon_state = "emergencystorage"
-
-/area/surface/outpost/main/emergency_storage/one
-	name = "\improper Main Outpost Emergency Storage One"
-
-/area/surface/outpost/main/emergency_storage/two
-	name = "\improper Main Outpost Emergency Storage Two"
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/surface/outpost/wall
 	name = "The Wall"
 	icon_state = "red"
@@ -681,51 +371,6 @@
 	name = "Checkpoint"
 	ambience = AMBIENCE_HIGHSEC
 
-<<<<<<< HEAD
-//Civilian Outpost
-
-/area/surface/outpost/civilian
-	name = "\improper Civilian Outpost"
-	icon_state = "recreation_area"
-
-/area/surface/outpost/civilian/smes
-	name = "\improper Civilian Outpost SMES"
-	icon_state = "substation"
-	ambience = AMBIENCE_ENGINEERING
-
-/area/surface/outpost/civilian/fishing
-	name = "\improper Civilian Outpost Fishing Supplies"
-	icon_state = "storage"
-
-/area/surface/outpost/civilian/pool
-	name = "\improper Civilian Outpost Pool"
-	icon_state = "pool"
-
-/area/surface/outpost/civilian/sauna
-	name = "\improper Civilian Outpost Sauna"
-
-/area/surface/outpost/civilian/emergency_storage
-	flags = RAD_SHIELDED
-	name = "\improper Civilian Outpost Emergency Storage"
-	icon_state = "emergencystorage"
-
-//Security Outpost
-
-/area/surface/outpost/security
-	name = "\improper Security Outpost"
-	icon_state = "checkpoint1"
-
-/area/surface/outpost/security/maa
-	name = "\improper Security Outpost Gear Storage"
-	icon_state = "security"
-
-/area/surface/outpost/security/smes
-	name = "\improper Security Outpost SMES"
-	icon_state = "substation"
-	ambience = AMBIENCE_SUBSTATION //CHOMP Edit
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 //Mining Station
 
 /area/outpost/mining_station
@@ -742,11 +387,7 @@
 /area/outpost/mining_station/gen_station
 	name = "Mining Station Generator Room"
 	icon_state = "substation"
-<<<<<<< HEAD
-	ambience = AMBIENCE_SUBSTATION //CHOMP Edit
-=======
 	ambience = AMBIENCE_SUBSTATION
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/outpost/mining_station/crew_area
 	name = "Mining Station Crew Area"
@@ -760,11 +401,6 @@
 
 /area/outpost/mining_station/dock
 	name = "Mining Station Dock"
-<<<<<<< HEAD
-z
-=======
-
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 //Turbolift
 
 /area/turbolift
@@ -772,11 +408,7 @@ z
 	icon_state = "shuttle"
 	requires_power = 0
 	dynamic_lighting = 1
-<<<<<<< HEAD
-	flags = RAD_SHIELDED
-=======
 	flags = RAD_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/turbolift/start
 	name = "\improper Turbolift Start"
@@ -794,26 +426,12 @@ z
 	base_turf = /turf/simulated/open
 
 // Elevator areas.
-<<<<<<< HEAD
-// CHOMPEdit - Maintenance Deck
-/area/turbolift/port_deck_maints
-	name = "lift (maints deck)"
-	lift_floor_label = "Deck 0"
-	lift_floor_name = "Maintenance Deck"
-	lift_announce_str = "Arriving at Maintenance Deck: Engineering. Power Back Up. Gravity Generator."
-	base_turf = /turf/simulated/floor
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/turbolift/port_deck_one
 	name = "lift (first deck)"
 	lift_floor_label = "Deck 1"
 	lift_floor_name = "Hangar Deck"
 	lift_announce_str = "Arriving at Hangar Deck: Main Hangars.Cargo Delivery. Telecommunications. Auxiliary Shuttle Docks. Escape Pods."
-<<<<<<< HEAD
-=======
 	base_turf = /turf/simulated/floor
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/turbolift/port_deck_two
 	name = "lift (second deck)"
@@ -871,19 +489,10 @@ z
 /area/engineering/auxiliary_engineering
 	name = "\improper Auxiliary Engineering Station"
 	sound_env = SMALL_ENCLOSED
-<<<<<<< HEAD
-/*
-//KSC - CHOMPStation Edit 1/19/21 - Moving this to the second-deck
-/area/crew_quarters/firstdeck/gym
-	name = "\improper Station Gym"
-	icon_state = "fitness"
-*/
-=======
 
 /area/crew_quarters/firstdeck/gym
 	name = "\improper Station Gym"
 	icon_state = "fitness"
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/construction/firstdeck/
 	name = "\improper Engineering Construction Area"
@@ -980,41 +589,20 @@ z
 /area/hallway/primary/firstdeck/auxdockaft
 	name = "\improper First Deck Aft Auxiliary Dock"
 	icon_state = "docking_hallway"
-<<<<<<< HEAD
-	forbid_events = TRUE
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/hallway/primary/firstdeck/auxdockfore
 	name = "\improper First Deck Fore Auxiliary Dock"
 	icon_state = "docking_hallway"
 
-<<<<<<< HEAD
-//CHOMPStation Edit. Two new areas for the vault.
-/area/hallway/primary/firstdeck/vaultcheckpoint
-    name = "\improper Vault Checkpoint"
-    icon_state = "nuke_storage"
-
-/area/hallway/primary/firstdeck/vaultlobby
-    name = "\improper Vault Lobby"
-    icon_state = "nuke_storage"
-
-//CHOMPStation Edit Start TFF 4/5/20 - One of these ain't the same thing, bruh. Escape Pod 1, Escape Pod 2, Research Access Hallway.
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/hallway/secondary/escape/firstdeck/ep_port
 	name = "\improper Large Escape Pod 2 Port"
 	icon_state = "escape_pod"
 
-<<<<<<< HEAD
-/area/hallway/secondary/escape/firstdeck/ep_starboard
-=======
 /area/hallway/secondary/escape/firstdeck/ep_starboard1
 	name = "\improper First Deck Research Access Hallway"
 	icon_state = "escape_pod"
 
 /area/hallway/secondary/escape/firstdeck/ep_starboard2
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	name = "\improper Large Escape Pod 2 Starboard"
 	icon_state = "escape_pod"
 
@@ -1026,61 +614,33 @@ z
 	name = "\improper Escape Pods Aft Starboard"
 	icon_state = "escape_pod"
 
-<<<<<<< HEAD
-/area/hallway/secondary/firstdeck/research_access
-	name = "\improper First Deck Research Access Hallway"
-	icon_state = "hallS"
-//CHOMPStation Edit End
-/* Moving hangars to Space Station 13 areas.dm
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/hangar
 	name = "\improper First Deck Hangar"
 	icon_state = "hangar"
 	sound_env = LARGE_ENCLOSED
-<<<<<<< HEAD
-=======
 	ambience = AMBIENCE_HANGAR
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/hangar/one
 	name = "\improper Hangar One"
 
-<<<<<<< HEAD
-/area/hangar/lockerroomone
-	name = "\improper Exploration Locker Room One"
-=======
 /area/hangar/onecontrol
 	name = "\improper Hangar One Control Room"
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	icon_state = "hangarcontrol"
 
 /area/hangar/two
 	name = "\improper Hangar Two"
 
-<<<<<<< HEAD
-/area/hangar/lockerroomtwo
-	name = "\improper Exploration Locker Room Two"
-=======
 /area/hangar/twocontrol
 	name = "\improper Hangar Two Control Room"
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	icon_state = "hangarcontrol"
 
 /area/hangar/three
 	name = "\improper Hangar Three"
 
-<<<<<<< HEAD
-/area/hangar/lockerroomthree
-	name = "\improper Exploration Locker Room Three"
-	icon_state = "hangarcontrol"
-*/
-=======
 /area/hangar/threecontrol
 	name = "\improper Hangar Three Control Room"
 	icon_state = "hangarcontrol"
 
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/security/checkpoint3
 	name = "\improper Security - Auxiliary Checkpoint"
 	icon_state = "security"
@@ -1089,14 +649,6 @@ z
 	name = "\improper First-Aid Station"
 	icon_state = "medbay2"
 
-<<<<<<< HEAD
-//CHOMPedit begin 7/9/23, adds chem distillery
-/area/medical/distillery
-	name ="\improper Chemistry Distillery"
-	icon_state = "chem"
-//CHOMPedit end
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/medical/first_aid_station/firstdeck/
 	name = "\improper First Deck First-Aid Station"
 
@@ -1123,17 +675,9 @@ z
 /area/storage/emergency_storage/firstdeck/fs_emergency
 	name = "First Deck Fore Starboard Emergency Storage"
 
-<<<<<<< HEAD
-//CHOMPStation Edit Start 10/5/20 TFF - Change Pilot EVA to Auxillary EVA
-/area/ai_monitored/storage/eva/aux
-	name = "Auxiliary EVA Storage"
-	icon_state = "eva"
-//Chompstation Edit End
-=======
 /area/ai_monitored/storage/eva/pilot
 	name = "Pilot EVA Storage"
 	icon_state = "eva"
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/tcomm/
 	icon_state = "tcomsatcham"
@@ -1167,27 +711,10 @@ z
 	name = "\improper Mining Locker Room"
 	icon_state = "mining"
 
-<<<<<<< HEAD
-//ChompStation Edit Start - New Teleporter Bay for station to SIF travel
-
-/area/teleporter/firstdeck
-	icon_state = "red"
-	name = "Teleporter Bay Core"
-
-/area/teleporter/firstdeck/prep
-	name = "Teleporter Bay Prep"
-
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 //Deck Two (Z-2)
 
 /area/maintenance/substation/atmospherics
 	name = "Atmospherics Substation"
-<<<<<<< HEAD
-	ambience = AMBIENCE_SUBSTATION //CHOMP Addition
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/maintenance/emergencyeva
 	name = "\improper Emergency EVA Maintenance"
@@ -1195,20 +722,6 @@ z
 
 /area/maintenance/substation/central // n/a
 	name = "Central Substation"
-<<<<<<< HEAD
-	ambience = AMBIENCE_SUBSTATION //CHOMP Addition
-
-//CHOMPStation Edit Start TFF 6/2/20 - Added substation
-
-/area/maintenance/substation/dorms
-	name = "Substation"
-	icon_state = "substation"
-	sound_env = SMALL_ENCLOSED
-	ambience = AMBIENCE_SUBSTATION //CHOMP Addition
-
-//CHOMPStation Edit End
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/maintenance/robotics
 	name = "Robotics Maintenance"
@@ -1225,46 +738,13 @@ z
 /area/construction/seconddeck/construction1
 	name = "\improper Second Deck Engineering Construction Area 1"
 
-<<<<<<< HEAD
-=======
 /area/construction/seconddeck/construction2
 	name = "\improper Abandoned Locker Room"
 
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/crew_quarters/seconddeck/locker
 	name = "\improper Locker Room"
 	icon_state = "locker"
 
-<<<<<<< HEAD
-//CHOMPStation Edit Start KSC 1/19/21 - Added area for new GYM
-
-/area/crew_quarters/seconddeck/gym
-	name = "\improper Station Gym"
-	icon_state = "fitness"
-
-//CHOMPstation Edit 8/8/22 - Added a Art Gallery and some missing areas Kassc wanted me to add
-/area/crew_quarters/seconddeck/artgallery
-	name = "\improper Art Gallery"
-	icon_state = "art"
-
-/area/crew_quarters/seconddeck/artsupplies
-	name = "\improper Art Supplies"
-	icon_state = "artsupply"
-
-/area/crew_quarters/seconddeck/gameroom
-	name = "\improper Game Room"
-	icon_state = "gaming"
-
-//CHOMPstation Edit 8/27/22 - VR Room for station baby~
-/area/crew_quarters/thirddeck/vrroom
-	name = "\improper Virtual Reality Room"
-	icon_state = "gaming"
-	flags = RAD_SHIELDED //Depending on the video game, you might still get figuative cancer
-
-//CHOMPStation Edit End
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/crew_quarters/seconddeck/locker/locker_toilet
 	name = "\improper Locker Toilets"
 	icon_state = "toilet"
@@ -1284,19 +764,13 @@ z
 	name = "\improper Command - HoP's Office"
 	icon_state = "head_quarters"
 	holomap_color = HOLOMAP_AREACOLOR_COMMAND
-<<<<<<< HEAD
-=======
 	flags = AREA_FLAG_IS_NOT_PERSISTENT
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/crew_quarters/heads/sc/hor
 	name = "\improper Research - RD's Office"
 	icon_state = "head_quarters"
 	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
-<<<<<<< HEAD
-=======
 	flags = AREA_FLAG_IS_NOT_PERSISTENT
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/crew_quarters/heads/sc/chief
 	name = "\improper Engineering - CE's Office"
@@ -1312,10 +786,7 @@ z
 	name = "\improper Medbay - CMO's Office"
 	icon_state = "head_quarters"
 	holomap_color = HOLOMAP_AREACOLOR_MEDICAL
-<<<<<<< HEAD
-=======
 	flags = AREA_FLAG_IS_NOT_PERSISTENT
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/engineering/engineer_eva
 	name = "\improper Engineering EVA"
@@ -1463,13 +934,6 @@ z
 	name = "\improper Cargo Locker Room"
 	icon_state = "quart"
 
-<<<<<<< HEAD
-/area/security/security_hallway
-	name = "\improper Security Hallway"
-	icon_state = "security"
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 //Deck Three (Z-3)
 
 /area/ai
@@ -1540,64 +1004,6 @@ z
 	name = "\improper Third Deck Starboard Hallway"
 	icon_state = "hallS"
 
-<<<<<<< HEAD
-//CHOMPStation Edit Start TFF 6/2/20 KC - Added new hallway for dorms. 11/20/20 KC - Added more areas for gateway and halls.
-
-/area/hallway/primary/thirddeck/aftportcentral
-	name = "\improper Third Deck Central Aft Port Hallway"
-	icon_state = "hallC"
-
-/area/hallway/primary/thirddeck/aftstarboardcentral
-	name = "\improper Third Deck Central Aft Starboard Hallway"
-	icon_state = "hallC"
-
-/area/hallway/primary/thirddeck/stationgateway
-	name = "\improper Third Deck Central Gateway"
-	icon_state = "teleporter"
-
-/area/hallway/primary/thirddeck/aft
-	name = "\improper Third Deck Aft Hallway"
-	icon_state = "hallA"
-
-/area/hallway/primary/thirddeck/aftdoorm
-	name = "\improper Third Deck Aft Doorm Hallway"
-	icon_state = "docking_hallway"
-
-/area/maintenance/thirddeck/dormsport
-	name = "Third Deck Aft Starboard Maintenance"
-	icon_state = "asmaint"
-
-/area/maintenance/thirddeck/dormsstarboard
-	name = "Third Deck Aft Starboard Maintenance"
-	icon_state = "asmaint"
-
-//CHOMPedit Giving a maint bar its own APC
-/area/maintenance/thirddeck/dormsstarboard/maintbar
-	name = "Third Deck Aft Starboard Speakeasy"
-	icon_state = "asmaint"
-//CHOMPedit end
-/area/maintenance/thirddeck/dormsaft
-	name = "Third Deck Aft Starboard Maintenance"
-	icon_state = "asmaint"
-
-/area/maintenance/thirddeck/hiddenkitchen
-	name = "Third Deck Hidden Kitchen"
-	icon_state = "asmaint"
-
-/area/maintenance/thirddeck/dormsatmos
-	name = "Third Deck Dorm's Atmospherics"
-	icon_state = "asmaint"
-
-//CHOMPStation Edit Start TFF 6/2/20 KC - Added new First Aid station.
-
-/area/medical/first_aid_station/thirddeck
-	name = "\improper Center Thirddeck First-Aid Station"
-	icon_state = "medbay2"
-
-//CHOMPStation Edit End
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /area/maintenance/thirddeck/aftstarboard
 	name = "Third Deck Aft Starboard Maintenance"
 	icon_state = "asmaint"
@@ -1660,10 +1066,7 @@ z
 	name = "\improper Third Deck Plating"
 	dynamic_lighting = 0
 	ambience = AMBIENCE_SPACE
-<<<<<<< HEAD
-=======
 	flags = AREA_FLAG_IS_NOT_PERSISTENT
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 // Shuttles
 
@@ -1671,18 +1074,11 @@ z
 
 /area/shuttle/response_ship
 	name = "\improper Response Team Ship"
-<<<<<<< HEAD
-	icon_state = "shuttlered"
-=======
 	icon_state = "centcom"
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	requires_power = 0
 	flags = RAD_SHIELDED
 	ambience = AMBIENCE_HIGHSEC
 
-<<<<<<< HEAD
-/* Chompstation Edit - Removing Shuttle 1 & 2
-=======
 /area/shuttle/response_ship/start
 	name = "\improper Response Team Base"
 	icon_state = "shuttlered"
@@ -1734,7 +1130,6 @@ z
 	icon_state = "shuttlered"
 	base_turf = /turf/space
 
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 //Shuttle One
 
 /area/shuttle/shuttle1
@@ -1745,14 +1140,8 @@ z
 	flags = RAD_SHIELDED
 
 /area/shuttle/shuttle1/start
-<<<<<<< HEAD
-	name = "\improper Hangar One"
-	icon_state = "shuttlered"
-	base_turf = /turf/simulated/floor/reinforced
-=======
 	name = "Shuttle One"
 	icon_state = "shuttlered"
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/shuttle/shuttle1/arrivals_dock
 	name = "\improper docked with Southern Cross"
@@ -1801,14 +1190,8 @@ z
 	flags = RAD_SHIELDED
 
 /area/shuttle/shuttle2/start
-<<<<<<< HEAD
-	name = "\improper Hangar Two"
-	icon_state = "shuttlered"
-	base_turf = /turf/simulated/floor/reinforced
-=======
 	name = "Shuttle Two"
 	icon_state = "shuttlered"
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /area/shuttle/shuttle2/arrivals_dock
 	name = "\improper docked with Southern Cross"
@@ -1847,21 +1230,6 @@ z
 	icon_state = "shuttlered"
 	base_turf = /turf/simulated/sky/moving
 
-<<<<<<< HEAD
-End Chompstation Edit*/
-
-// Centcom Transport Shuttle
-/area/shuttle/transport1
-	icon_state = "shuttle"
-	name = "\improper Transport Shuttle"
-
-// Centcom Admin Shuttle
-
-/area/shuttle/administration
-	name = "\improper Administration Shuttle"
-	icon_state = "shuttlered"
-
-=======
 // Centcom Transport Shuttle
 /area/shuttle/transport1/centcom
 	icon_state = "shuttle"
@@ -1881,7 +1249,6 @@ End Chompstation Edit*/
 	name = "\improper Administration Shuttle Station"
 	icon_state = "shuttlered2"
 
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 //Merc
 
 /area/syndicate_mothership
@@ -2019,11 +1386,6 @@ End Chompstation Edit*/
 	name = "\improper Clan Dojo"
 	dynamic_lighting = 0
 
-<<<<<<< HEAD
-/area/shuttle/ninja
-	name = "\improper Ninja Shuttle"
-	icon_state = "shuttlered"
-=======
 /area/ninja_dojo/start
 	name = "\improper Clan Dojo"
 	icon_state = "shuttlered"
@@ -2074,7 +1436,6 @@ End Chompstation Edit*/
 	name = "\improper docked with Southern Cross"
 	icon_state = "shuttle"
 	dynamic_lighting = 0
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 //Trade Ship
 
@@ -2087,8 +1448,6 @@ End Chompstation Edit*/
 /area/shuttle/merchant/away
 	name = "\improper Merchant Vessel - Away"
 
-<<<<<<< HEAD
-=======
 
 // Main escape shuttle
 
@@ -2098,7 +1457,6 @@ End Chompstation Edit*/
 	icon_state = "shuttle"
 	dynamic_lighting = 0
 
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 //Small Escape Pods
 
 /area/shuttle/escape_pod1
@@ -2256,323 +1614,6 @@ End Chompstation Edit*/
 /area/shuttle/cryo/transit
 	icon_state = "shuttle"
 
-<<<<<<< HEAD
-// Fishing CHOMPstation edit
-
-/area/surface/outpost/fishing
-	name = "\improper Fishing Outpost"
-	icon_state = "recreation_area"
-
-/area/surface/outpost/fishing/smes
-	name = "\improper Fishing SMES Maintenance"
-	icon_state = "substation"
-	ambience = AMBIENCE_SUBSTATION //CHOMP Addition
-
-//Shuttle 3 CHOMPedit
-
-/area/shuttle/shuttle3
-	name = "\improper Hangar Deck"
-	icon_state = "yellow"
-	requires_power = 0
-	dynamic_lighting = 1
-	flags = RAD_SHIELDED
-
-/area/shuttle/shuttle3/start
-	name = "\improper Expedition Hangar One"
-	icon_state = "shuttlered"
-	base_turf = /turf/simulated/floor/reinforced
-
-/area/shuttle/shuttle3/seconddeck
-	name = "south of second deck"
-	icon_state = "south"
-
-/area/shuttle/shuttle3/stationhangar3
-	name = "\improper Hangar Three"
-	icon_state = "shuttlered"
-	base_turf = /turf/simulated/floor/reinforced
-
-/area/shuttle/shuttle3/mining
-	name = "wilderness site"
-	icon_state = "shuttlered"
-
-/area/shuttle/shuttle3/transit
-	name = "transit"
-	icon_state = "shuttlered"
-	base_turf = /turf/space/transit/north
-
-/area/shuttle/shuttle3/orbit
-	name = "in orbit of Sif"
-	icon_state = "shuttlegrn"
-	base_turf = /turf/space
-
-/area/shuttle/shuttle3/sky
-	name = "hovering over skies of sif"
-	icon_state = "shuttlegrn"
-	base_turf = /turf/simulated/sky
-
-/area/shuttle/shuttle3/sky_transit
-	name = "in flight over sif"
-	icon_state = "shuttlered"
-	base_turf = /turf/simulated/sky/moving
-
-//CHOMPedit: Exploration outpost ferry shuttle
-
-/area/shuttle/expoutpost/site
-	name = "\improper Exploration Sling"
-	icon_state = "shuttle2"
-
-/area/shuttle/expoutpost/station
-	name = "\improper Exploration Sling"
-	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/reinforced/airless
-
-//CHOMPedit: New Explo Carrier Areas.
-
-/area/expoutpost/stationshuttle
-	name = "\improper Station Shuttle to Exploration Carrier"
-
-// Bow
-
-/area/expoutpost/portbowairlock
-	name = "\improper Port Bow Airlock"
-
-/area/expoutpost/starboardbowairlock
-	name = "\improper Starboard Bow Airlock"
-
-/area/expoutpost/eva
-	name = "\improper EVA"
-
-/area/expoutpost/botany
-	name = "\improper Botany Lab"
-
-/area/expoutpost/washroom
-	name = "\improper Washroom"
-
-/area/expoutpost/civaccesshallway
-	name = "\improper Civilian Access Hallway"
-
-/area/expoutpost/janitorial
-	name = "\improper Janitorial Closet"
-
-/area/expoutpost/kitchen
-	name = "\improper Kitchen"
-
-/area/expoutpost/restrooms
-	name = "\improper Restrooms"
-
-/area/expoutpost/portbowhallway
-	name = "\improper Port Bow Hallway"
-
-/area/expoutpost/bar
-	name = "\improper Bar"
-	flags = RAD_SHIELDED
-
-/area/expoutpost/starbowhallway
-	name = "\improper Starboard Bow Hallway"
-
-/area/expoutpost/suite1
-	name = "\improper Suite One"
-	flags = RAD_SHIELDED
-
-/area/expoutpost/suite2
-	name = "\improper Suite Two"
-	flags = RAD_SHIELDED
-
-/area/expoutpost/pathfinderroom
-	name = "\improper Pathfinder's Ready-Room"
-	flags = RAD_SHIELDED
-
-/area/expoutpost/commanderroom
-	name = "\improper Security Commander's Ready-Room"
-	flags = RAD_SHIELDED
-
-/area/expoutpost/portqpadjunction
-	name = "\improper Port Q-Pad Junction"
-
-/area/expoutpost/starqpadjunction
-	name = "\improper Starboard Q-Pad Junction"
-
-/area/expoutpost/slingcarrierdock
-	name = "\improper Sling Carrier Dock"
-
-/area/expoutpost/stationqpad
-	name ="\improper Station Q-Pad Junction"
-
-/area/expoutpost/secbowcheckpoint
-	name = "\improper Security Bow Checkpoint"
-
-// Midship
-
-/area/expoutpost/staginghangar
-	name = "\improper Staging Hangar"
-
-// Stern
-
-/area/expoutpost/uppersternhallway
-	name = "\improper Upper Stern Hallway"
-
-/area/expoutpost/medbaylobby
-	name = "\improper Medbay Lobby"
-
-/area/expoutpost/medicalbay
-	name = "\improper Medical Bay"
-
-/area/expoutpost/surgical1
-	name = "\improper Surgical Theatre One"
-
-/area/expoutpost/midsternhallway
-	name = "\improper Middle Stern Hallway"
-
-/area/expoutpost/exploarmory
-	name = "\improper Exploration Armory"
-
-/area/expoutpost/explobriefroom
-	name = "\improper Exploration Briefing Room"
-
-/area/expoutpost/explodorm1
-	name = "\improper Exploration Dorm One"
-	flags = RAD_SHIELDED
-
-/area/expoutpost/explodorm2
-	name = "\improper Exploration Dorm Two"
-	flags = RAD_SHIELDED
-
-/area/expoutpost/breakroom
-	name = "\improper Public Breakroom"
-
-/area/expoutpost/cic
-	name = "\improper Combat Information Center"
-
-/area/expoutpost/secoffice
-	name = "\improper Security Office"
-
-/area/expoutpost/gatewayeva
-	name = "\improper Gateway EVA"
-
-/area/expoutpost/gateway
-	name = "\improper Gateway"
-
-/area/expoutpost/secarmory
-	name = "\improper Security Armory"
-
-/area/expoutpost/miningfoyer
-	name = "\improper Mining Foyer"
-
-/area/expoutpost/reactoraccess
-	name = "\improper Reactor Access"
-
-/area/expoutpost/reactorcr
-	name = "\improper Reactor Control Room"
-
-/area/expoutpost/reactorroom
-	name = "\improper Fusion Reactor"
-
-/area/expoutpost/rndlobby
-	name = "\improper R&D Lobby"
-
-/area/expoutpost/rnd
-	name = "\improper Research and Development"
-
-/area/expoutpost/engoffice
-	name = "\improper Engineering Office"
-
-/area/expoutpost/engstorage
-	name = "\improper Engineering Equipment Room"
-
-/area/expoutpost/atmospherics
-	name = "\improper Atmospherics"
-
-/area/expoutpost/secureaccess
-	name = "\improper Secure Access Corridor"
-
-/area/expoutpost/techstorage
-	name = "\improper Technical Storage"
-
-/area/expoutpost/aicore
-	name = "\improper Auxiliary AI Core"
-
-/area/expoutpost/telecomms
-	name = "\improper Ship Telecomms"
-
-/area/expoutpost/disposals
-	name = "\improper Disposals Sorting"
-
-/area/expoutpost/lowersternhallway
-	name = "\improper Lower Stern Hallway"
-
-/area/expoutpost/portfuelstorage
-	name = "\improper Port Fuel Storage"
-
-/area/expoutpost/starfuelstorage
-	name = "\improper Starboard Fuel Storage"
-
-// Maints
-
-/area/expoutpost/portuppermaint
-	name = "\improper Port Upper Maintenance"
-
-/area/expoutpost/staruppermaint
-	name = "\improper Starboard Upper Maintenance"
-
-/area/expoutpost/portexplomaint
-	name = "\improper Port Exploration Maintenance"
-
-/area/expoutpost/starsciencemaint
-	name = "\improper Starboard Science Maintenance"
-
-/area/expoutpost/portlowermaint
-	name = "\improper Port Lower Maintenance"
-
-/area/expoutpost/starlowermaint
-	name = "\improper Starboard Lower Maintenance"
-
-/area/expoutpost/portsternairlock
-	name = "\improper Port Stern Airlock"
-
-/area/expoutpost/starsternairlock
-	name = "\improper Starboard Stern Airlock"
-
-// Hangars
-
-/area/expoutpost/hangarone
-	name = "\improper Exploration Carrier Hangar One"
-	icon_state = "hangar"
-
-/area/expoutpost/hangartwo
-	name = "\improper Exploration Carrier Hangar Two"
-	icon_state = "hangar"
-
-/area/expoutpost/hangarthree
-	name = "\improper Exploration Carrier Hangar Three"
-	icon_state = "hangar"
-
-/area/expoutpost/hangarfour
-	name = "\improper Exploration Carrier Hangar Four"
-	icon_state = "hangar"
-
-/area/expoutpost/hangarfive
-	name = "\improper Exploration Carrier Hangar Five"
-	icon_state = "hangar"
-
-/area/expoutpost/hangarsix
-	name = "\improper Exploration Carrier Hangar Six"
-	icon_state = "hangar"
-
-//CHOMPedit: Exploration backup shuttle. For now this is a placeholder for future expedition content.
-
-/area/shuttle/shuttlebackup
-	name = "\improper Hangar Deck"
-	icon_state = "yellow"
-	requires_power = 0
-	dynamic_lighting = 1
-	flags = RAD_SHIELDED
-
-/area/shuttle/shuttlebackup/start
-	name = "\improper Expedition Backup Shuttle Docks"
-	icon_state = "shuttlered"
-
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 // Misc
 
 /area/wreck/ufoship
@@ -2584,154 +1625,3 @@ End Chompstation Edit*/
 	name = "\improper Wreck"
 	icon_state = "storage"
 	ambience = AMBIENCE_RUINS
-<<<<<<< HEAD
-
-/area/shuttle/overmap/sif
-	name = "wilderness site"
-	icon_state = "shuttlered"
-
-//Temp Removal TFF 15/2/20
-/*
-// CHOMP-Edit: This is the Belt Mining addition
-// Belt Mining Areas
-/area/mine/unexplored/belt_miner
-	name = "\improper Belt Mining"
-	base_turf = /turf/space
-/area/mine/explored/belt_miner
-	name = "\improper Belt Mining"
-	base_turf = /turf/space
-
-// Belt Mining outpost areas
-/area/outpost/mining_main/passage
-	name = "\improper Mining Outpost Passage"
-/area/outpost/mining_main/hangar
-	name = "\improper Mining Outpost Belt Miner Hangar"
-/area/outpost/mining_main/belt_outpost // Master area for "Belt Outpost", all sub-areas follow this one's preset
-	name = "\improper Belt Mining Outpost"
-	sound_env = ASTEROID
-	forced_ambience = list('sound/ambience/ruins/ruins1.ogg')
-	lightswitch = 0
-/area/outpost/mining_main/belt_outpost/airlock
-	name = "\improper Belt Mining Airlock"
-/area/outpost/mining_main/belt_outpost/dorms
-	name = "\improper Belt Mining Dorms"
-	forced_ambience = list('sound/ambience/generic/generic1.ogg')
-/area/outpost/mining_main/belt_outpost/substation
-	name = "\improper Belt Mining Substation"
-	ambience = list('sound/ambience/engineering/engineering1.ogg')
-/area/outpost/mining_main/belt_outpost/atmos
-	name = "\improper Belt Mining Atmos"
-	ambience = list('sound/ambience/ambiatm1.ogg')
-/area/outpost/mining_main/belt_outpost/solars
-	name = "\improper Belt Mining Solars"
-/area/outpost/mining_main/belt_outpost/tank_storage
-	name = "\improper Belt Mining Tank Holding and Console Access"
-
-// Belter 2.0 Areas!
-/area/shuttle/beltferry/station
-	name = "Belter M2.0 Landed"
-	icon_state = "shuttle2"
-	base_turf = /turf/simulated/floor/reinforced
-
-/area/shuttle/beltferry/belt // This is our "dock" area for the Belter M2.0
-	name = "Belter M2.0 Holding Position"
-	icon_state = "shuttle2"
-	base_turf = /turf/space
-
-/area/shuttle/beltferry/transit // Transit Area - the in-between.
-	name = "Belter M2.0 Transit"
-	icon_state = "shuttle2"
-*/
-// CHOMPAdd Start - Maintenance Deck Areas
-/area/maintenance/abcargo
-	name = "Abandoned Cargo"
-	icon_state = "maint_cargo"
-
-/area/maintenance/abmedical
-	name = "Abandoned Medical"
-	icon_state = "maint_medbay"
-
-/area/maintenance/abfirstaid
-	name = "Abandoned First Aid Station"
-	icon_state = "maint_medbay"
-
-/area/maintenance/abchemistry
-	name = "Abandoned Chemistry"
-	icon_state = "maint_medbay"
-
-/area/maintenance/abscience
-	name = "Abandoned Science"
-	icon_state = "asmaint"
-
-/area/maintenance/absgenetics
-	name = "Abandoned Genetics"
-	icon_state = "asmaint"
-
-/area/maintenance/thrift
-	name = "Abandoned Thrift Store"
-	icon_state = "mid_civilian_hallway"
-
-/area/maintenance/abtheatre
-	name = "Abandoned Theatre"
-	icon_state = "Theatre"
-	sound_env = LARGE_SOFTFLOOR
-
-/area/maintenance/ragecage
-	name = "Rage Cage"
-	icon_state = "nuke_storage"
-
-/area/engineering/lowlobby
-	name = "Engineering Deck 0 Lobby"
-	icon_state = "maint_pumpstation"
-
-/area/engineering/backuppowerlobby
-	name = "Engineering Backup Power Lobby"
-	icon_state = "engineering"
-
-/area/engineering/backuppower
-	name = "Engineering Backup Power"
-	icon_state = "engineering"
-
-/area/maintenance/substation/gravgen
-	name = "Gravity Generator Substation"
-	icon_state = "engineering"
-
-/area/maintenance/engineering/gravgen
-	name = "Gravity Generator Maintenance"
-
-/area/maintenance/fieldhallway
-	name = "Maintenance Deck Field Hallway"
-/area/maintenance/fieldthrift
-	name = "Maintenance Deck Thrift Store Hallway"
-
-/area/maintenance/abhydroponicssupp
-	name = "Abandoned Botany Supplies"
-
-/area/maintenance/abhydroponics
-	name = "Abandoned Botany"
-
-/area/maintenance/smoleroom
-	name = "Smole Room"
-
-/area/maintenance/janitoral
-	name = "Maintenance Deck Janitoral"
-
-/area/maintenance/lookout
-	name = "Maintenance Deck Lookout"
-
-/area/maintenance/bar/dorms
-	name = "Maintenance Bar Dorms"
-	icon_state = "Sleep"
-	soundproofed = TRUE
-	limit_mob_size = FALSE
-	block_suit_sensors = TRUE
-	flags = RAD_SHIELDED
-	block_tracking = TRUE
-
-/area/maintenance/bar/dorms/dorm_1
-	name = "Maintenance Deck Bar Dorms 1"
-
-/area/maintenance/bar/dorms/dorm_2
-	name = "Maintenance Deck Bar Dorms 2"
-=======
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))

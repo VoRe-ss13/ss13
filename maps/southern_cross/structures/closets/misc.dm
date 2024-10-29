@@ -28,13 +28,8 @@
 	req_one_access = list(access_explorer,access_brig)
 
 	starts_with = list(
-<<<<<<< HEAD
-		/obj/item/gun/energy/locked/phasegun = 2,
-		/obj/item/gun/energy/locked/phasegun/pistol,
-=======
 		/obj/item/gun/energy/phasegun = 2,
 		/obj/item/gun/energy/phasegun/pistol,
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		/obj/item/cell/device/weapon = 2,
 		/obj/item/clothing/accessory/permit/gun/planetside)
 
@@ -50,30 +45,16 @@
 		/obj/item/clothing/head/helmet/explorer,
 		/obj/item/clothing/suit/storage/hooded/explorer,
 		/obj/item/clothing/mask/gas/explorer,
-<<<<<<< HEAD
-		/obj/item/storage/belt/explorer, //CHOMPADD
 		/obj/item/clothing/shoes/boots/winter/explorer,
 		/obj/item/clothing/gloves/black,
 		/obj/item/radio/headset/explorer,
-		/obj/item/radio/headset/explorer/alt, //CHOMPADD
-=======
-		/obj/item/clothing/shoes/boots/winter/explorer,
-		/obj/item/clothing/gloves/black,
-		/obj/item/radio/headset/explorer,
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		/obj/item/flashlight,
 		/obj/item/gps/explorer,
 		/obj/item/storage/box/flare,
 		/obj/item/geiger,
 		/obj/item/cell/device,
-<<<<<<< HEAD
-		/obj/item/stack/marker_beacon/thirty,
-		/obj/item/reagent_containers/food/snacks/liquidfood, //CHOMPADD
-		/obj/item/reagent_containers/food/snacks/liquidprotein, //CHOMPADD
-=======
 		/obj/item/radio,
 		/obj/item/stack/marker_beacon/thirty,
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		/obj/item/cataloguer
 		)
 
@@ -82,18 +63,12 @@
 		starts_with += /obj/item/storage/backpack
 	else
 		starts_with += /obj/item/storage/backpack/satchel/norm
-<<<<<<< HEAD
-=======
 	/* VOREStation Removal - Always give both
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	if(prob(75))
 		starts_with += /obj/item/material/knife/tacknife/survival
 	else
 		starts_with += /obj/item/material/knife/machete
-<<<<<<< HEAD
-=======
 	*/ //VOREStation Removal End
->>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	return ..()
 
 //SAR Lockers
