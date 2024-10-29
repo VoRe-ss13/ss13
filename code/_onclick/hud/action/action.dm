@@ -1,14 +1,6 @@
 
 /datum/action
 	var/name = "Generic Action"
-<<<<<<< HEAD
-	var/action_type = AB_ITEM
-	var/procname = null
-	var/atom/movable/target = null
-	var/check_flags = 0
-	var/processing = 0
-	var/active = 0
-=======
 	var/desc = null
 
 	var/atom/movable/target = null
@@ -16,7 +8,6 @@
 	var/check_flags = NONE
 	var/processing = FALSE
 
->>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))
 	var/obj/screen/movable/action_button/button = null
 
 	var/button_icon = 'icons/mob/actions.dmi'
@@ -29,10 +20,6 @@
 
 	var/mob/owner
 
-<<<<<<< HEAD
-/datum/action/New(var/Target)
-	target = Target
-=======
 /datum/action/New(Target)
 	link_to(Target)
 	button = new
@@ -45,7 +32,6 @@
 /datum/action/proc/link_to(Target)
 	target = Target
 	RegisterSignal(Target, COMSIG_ATOM_UPDATED_ICON, .proc/OnUpdatedIcon)
->>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))
 
 /datum/action/Destroy()
 	if(owner)
@@ -54,58 +40,6 @@
 	QDEL_NULL(button)
 	return ..()
 
-<<<<<<< HEAD
-/datum/action/proc/Grant(mob/living/T)
-	if(owner)
-		if(owner == T)
-			return
-		Remove(owner)
-	owner = T
-	owner.actions.Add(src)
-	owner.update_action_buttons()
-	return
-
-/datum/action/proc/Remove(mob/living/T)
-	if(button)
-		if(T.client)
-			T.client.screen -= button
-		QDEL_NULL(button)
-	T.actions.Remove(src)
-	T.update_action_buttons()
-	owner = null
-	return
-
-/datum/action/proc/Trigger()
-	if(!Checks())
-		return
-	switch(action_type)
-		if(AB_ITEM)
-			if(target)
-				var/obj/item/item = target
-				item.ui_action_click()
-		//if(AB_SPELL)
-		//	if(target)
-		//		var/obj/effect/proc_holder/spell = target
-		//		spell.Click()
-		if(AB_INNATE)
-			if(!active)
-				Activate()
-			else
-				Deactivate()
-		if(AB_GENERIC)
-			if(target && procname)
-				call(target,procname)(usr)
-	return
-
-/datum/action/proc/Activate()
-	return
-
-/datum/action/proc/Deactivate()
-	return
-
-/datum/action/process()
-	return
-=======
 /datum/action/proc/Grant(mob/M)
 	if(M)
 		if(owner)
@@ -157,7 +91,6 @@
 	if(SEND_SIGNAL(src, COMSIG_ACTION_TRIGGER, src) & COMPONENT_ACTION_BLOCK_TRIGGER)
 		return FALSE
 	return TRUE
->>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))
 
 /datum/action/proc/CheckRemoval(mob/living/user) // 1 if action is no longer valid for this mob and should be removed
 	return 0
@@ -176,106 +109,6 @@
 			return FALSE
 	if(check_flags & AB_CHECK_LYING)
 		if(owner.lying)
-<<<<<<< HEAD
-			return 0
-	if(check_flags & AB_CHECK_ALIVE)
-		if(owner.stat)
-			return 0
-	if(check_flags & AB_CHECK_INSIDE)
-		if(!(target in owner))
-			return 0
-	return 1
-
-/datum/action/proc/UpdateName()
-	return name
-
-//This is the proc used to update all the action buttons. Properly defined in /mob/living/
-/mob/proc/update_action_buttons()
-	return
-
-/mob/living/update_action_buttons()
-	if(!hud_used) return
-	if(!client) return
-
-	if(hud_used.hud_shown != 1)	//Hud toggled to minimal
-		return
-
-	client.screen -= hud_used.hide_actions_toggle
-	for(var/datum/action/A in actions)
-		if(A.button)
-			client.screen -= A.button
-
-	if(hud_used.action_buttons_hidden)
-		if(!hud_used.hide_actions_toggle)
-			hud_used.hide_actions_toggle = new(hud_used)
-			hud_used.hide_actions_toggle.UpdateIcon()
-
-		if(!hud_used.hide_actions_toggle.moved)
-			hud_used.hide_actions_toggle.screen_loc = hud_used.ButtonNumberToScreenCoords(1)
-			//hud_used.SetButtonCoords(hud_used.hide_actions_toggle,1)
-
-		client.screen += hud_used.hide_actions_toggle
-		return
-
-	var/button_number = 0
-	for(var/datum/action/A in actions)
-		button_number++
-		if(A.button == null)
-			var/obj/screen/movable/action_button/N = new(hud_used)
-			N.owner = A
-			A.button = N
-
-		var/obj/screen/movable/action_button/B = A.button
-
-		B.UpdateIcon()
-
-		B.name = A.UpdateName()
-
-		client.screen += B
-
-		if(!B.moved)
-			B.screen_loc = hud_used.ButtonNumberToScreenCoords(button_number)
-			//hud_used.SetButtonCoords(B,button_number)
-
-	if(button_number > 0)
-		if(!hud_used.hide_actions_toggle)
-			hud_used.hide_actions_toggle = new(hud_used)
-			hud_used.hide_actions_toggle.InitialiseIcon(src)
-		if(!hud_used.hide_actions_toggle.moved)
-			hud_used.hide_actions_toggle.screen_loc = hud_used.ButtonNumberToScreenCoords(button_number+1)
-			//hud_used.SetButtonCoords(hud_used.hide_actions_toggle,button_number+1)
-		client.screen += hud_used.hide_actions_toggle
-
-#define AB_WEST_OFFSET 4
-#define AB_NORTH_OFFSET 26
-#define AB_MAX_COLUMNS 10
-
-/datum/hud/proc/ButtonNumberToScreenCoords(var/number) // TODO : Make this zero-indexed for readabilty
-	var/row = round((number-1)/AB_MAX_COLUMNS)
-	var/col = ((number - 1)%(AB_MAX_COLUMNS)) + 1
-	var/coord_col = "+[col-1]"
-	var/coord_col_offset = AB_WEST_OFFSET+2*col
-	var/coord_row = "[-1 - row]"
-	var/coord_row_offset = AB_NORTH_OFFSET
-	return "WEST[coord_col]:[coord_col_offset],NORTH[coord_row]:[coord_row_offset]"
-
-/datum/hud/proc/SetButtonCoords(var/obj/screen/button,var/number)
-	var/row = round((number-1)/AB_MAX_COLUMNS)
-	var/col = ((number - 1)%(AB_MAX_COLUMNS)) + 1
-	var/x_offset = 32*(col-1) + AB_WEST_OFFSET + 2*col
-	var/y_offset = -32*(row+1) + AB_NORTH_OFFSET
-
-	var/matrix/M = matrix()
-	M.Translate(x_offset,y_offset)
-	button.transform = M
-
-//Presets for item actions
-/datum/action/item_action
-	check_flags = AB_CHECK_RESTRAINED|AB_CHECK_STUNNED|AB_CHECK_LYING|AB_CHECK_ALIVE|AB_CHECK_INSIDE
-
-/datum/action/item_action/CheckRemoval(mob/living/user)
-	return !(target in user)
-=======
 			return FALSE
 	if(check_flags & AB_CHECK_CONSCIOUS)
 		if(owner.stat)
@@ -360,7 +193,6 @@
 		current_button.cut_overlays()
 		current_button.add_overlay(ma)
 		current_button.appearance_cache = target.appearance
->>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))
 
 /datum/action/item_action/hands_free
 	check_flags = AB_CHECK_ALIVE|AB_CHECK_INSIDE
@@ -370,9 +202,6 @@
 #undef AB_MAX_COLUMNS
 
 /datum/action/innate
-<<<<<<< HEAD
-	action_type = AB_INNATE
-=======
 	check_flags = NONE
 	var/active = 0
 
@@ -433,4 +262,3 @@
 		UpdateButtonIcon()
 		if(next_use_time > world.time)
 			START_PROCESSING(SSfastprocess, src)
->>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))

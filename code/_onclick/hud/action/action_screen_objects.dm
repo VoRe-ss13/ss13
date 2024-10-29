@@ -1,13 +1,8 @@
 
 /obj/screen/movable/action_button
-<<<<<<< HEAD
-	var/datum/action/owner
-	screen_loc = "WEST,NORTH"
-=======
 	var/datum/action/linked_action
 	var/actiontooltipstyle = ""
 	screen_loc = null
->>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))
 
 	var/button_icon_state
 	var/appearance_cache
@@ -50,36 +45,6 @@
 			to_chat(usr, span_warning("Action button \"[name]\" is locked, unlock it first."))
 			return TRUE
 		moved = FALSE
-<<<<<<< HEAD
-		owner?.owner?.update_action_buttons()
-		return 1
-	if(!usr.checkClickCooldown())
-		return
-	owner.Trigger()
-	return 1
-
-/obj/screen/movable/action_button/proc/UpdateIcon()
-	if(!owner)
-		return
-	icon = owner.button_icon
-	icon_state = owner.background_icon_state
-
-	cut_overlays()
-	var/image/img
-	if(owner.action_type == AB_ITEM && owner.target)
-		var/obj/item/I = owner.target
-		img = image(I.icon, src , I.icon_state)
-	else if(owner.button_icon && owner.button_icon_state)
-		img = image(owner.button_icon,src,owner.button_icon_state)
-	img.pixel_x = 0
-	img.pixel_y = 0
-	add_overlay(img)
-
-	if(!owner.IsAvailable())
-		color = rgb(128,0,0,128)
-	else
-		color = rgb(255,255,255,255)
-=======
 		usr.update_action_buttons()
 		return TRUE
 	if(LAZYACCESS(modifiers, CTRL_CLICK))
@@ -93,7 +58,6 @@
 	usr.setClickCooldown(1)
 	linked_action.Trigger()
 	return TRUE
->>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))
 
 //Hide/Show Action Buttons ... Button
 /obj/screen/movable/action_button/hide_toggle
@@ -173,16 +137,6 @@
 		icon_state = "bg_alien"
 	else
 		icon_state = "bg_default"
-<<<<<<< HEAD
-	UpdateIcon()
-	return
-
-/obj/screen/movable/action_button/hide_toggle/UpdateIcon()
-	cut_overlays()
-	var/image/img = image(icon,src,hidden?"show":"hide")
-	add_overlay(img)
-	return
-=======
 	update_icon()
 
 /obj/screen/movable/action_button/hide_toggle/update_icon()
@@ -283,4 +237,3 @@
 #undef AB_WEST_OFFSET
 #undef AB_NORTH_OFFSET
 #undef AB_MAX_COLUMNS
->>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))
