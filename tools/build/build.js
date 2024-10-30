@@ -181,7 +181,13 @@ export const DmMapsIncludeTarget = new Juke.Target({
       //...Juke.glob('_maps/RandomZLevels/**/*.dmm'),
       //...Juke.glob('_maps/shuttles/**/*.dmm'),
       //...Juke.glob('_maps/templates/**/*.dmm'),
+<<<<<<< HEAD
       ...Juke.glob('maps/relic_base/**/*.dmm'), //TORCHEdit - Changing to forbearance
+=======
+      ...Juke.glob('modular_chomp/maps/soluna_nexus/**/*.dmm'),
+      ...Juke.glob('modular_chomp/maps/southern_cross/**/*.dmm'),
+      ...Juke.glob('modular_chomp/maps/relic_base/**/*.dmm'),
+>>>>>>> a2d798a978 (Map fixes relic1.0 (#9370))
       ...Juke.glob('modular_chomp/maps/submap/**/*.dmm'),
     ];
     const content = folders
@@ -211,6 +217,12 @@ export const DmTarget = new Juke.Target({
     'modular_chomp/icons/**',
     'modular_chomp/sound/**',
     'modular_chomp/maps/**/*.dm',
+<<<<<<< HEAD
+=======
+    'modular_chomp/maps/soluna_nexus/**/*.dmm', // Placed here so it recompiles on map changes
+    'modular_chomp/maps/southern_cross/**/*.dmm', // Placed here so it recompiles on map changes
+    'modular_chomp/maps/relic_base/**/*.dmm', // Placed here so it recompiles on map changes
+>>>>>>> a2d798a978 (Map fixes relic1.0 (#9370))
     'modular_chomp/maps/submap/**/*.dmm', // Placed here so it recompiles on map changes
     `${DME_NAME}.dme`,
     NamedVersionFile,
