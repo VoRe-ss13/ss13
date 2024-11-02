@@ -9,7 +9,7 @@ on:
     branches:
       - master
     paths:
-      - 'modular_chomp/maps/**'
+      - 'maps/**'
   workflow_dispatch:
 
 permissions: {}
