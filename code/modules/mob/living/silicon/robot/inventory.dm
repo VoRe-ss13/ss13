@@ -21,12 +21,8 @@
 /mob/living/silicon/robot/proc/uneq_specific(obj/item/I)
 	if(!istype(I))
 		return
-<<<<<<< HEAD
-	if(module_state_1 == module_active)
-=======
 
 	if(module_state_1 == I)
->>>>>>> c85c19567e ([MIRROR] Replace most legacy robot interfaces with a unified interface (#9323))
 		if(istype(module_state_1,/obj/item/borg/sight))
 			sight_mode &= ~module_state_1:sight_mode
 		if (client)
