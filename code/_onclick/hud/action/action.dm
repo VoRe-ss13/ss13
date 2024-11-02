@@ -132,27 +132,21 @@
 
 /// Whether our action is currently available to use or not
 /datum/action/proc/IsAvailable()
-	return Checks()
-
-/datum/action/proc/Checks()// returns 1 if all checks pass
 	if(!owner)
-		return 0
+		return FALSE
 	if(check_flags & AB_CHECK_RESTRAINED)
 		if(owner.restrained())
-			return 0
+			return FALSE
 	if(check_flags & AB_CHECK_STUNNED)
 		if(owner.stunned)
-			return 0
+			return FALSE
 	if(check_flags & AB_CHECK_LYING)
 		if(owner.lying)
-			return 0
-	if(check_flags & AB_CHECK_ALIVE)
+			return FALSE
+	if(check_flags & AB_CHECK_CONSCIOUS)
 		if(owner.stat)
-			return 0
-	if(check_flags & AB_CHECK_INSIDE)
-		if(!(target in owner))
-			return 0
-	return 1
+			return FALSE
+	return TRUE
 
 /// Builds / updates all buttons we have shared or given out
 /datum/action/proc/build_all_button_icons(update_flags = ALL, force)

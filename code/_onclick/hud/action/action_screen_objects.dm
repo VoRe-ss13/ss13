@@ -45,6 +45,9 @@
 	return TRUE
 
 /obj/screen/movable/action_button/Click(location,control,params)
+	if(!can_use(usr))
+		return
+
 	var/list/modifiers = params2list(params)
 	if(LAZYACCESS(modifiers, SHIFT_CLICK))
 		var/datum/hud/our_hud = usr.hud_used

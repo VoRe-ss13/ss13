@@ -320,8 +320,7 @@
 	w_class = ITEMSIZE_SMALL
 	body_parts_covered = FACE
 	icon_state = "papermask"
-	action_button_name = "Redraw Design"
-	action_button_is_hands_free = TRUE
+	actions_types = list(/datum/action/item_action/hands_free/redraw_design)
 	var/list/papermask_designs = list()
 
 /obj/item/clothing/mask/paper/Initialize(mapload)
@@ -384,8 +383,7 @@
 	w_class = ITEMSIZE_SMALL
 	body_parts_covered = FACE
 	icon_state = "joy"
-	action_button_name = "Redraw Design"
-	action_button_is_hands_free = TRUE
+	actions_types = list(/datum/action/item_action/hands_free/redraw_design)
 	var/static/list/joymask_designs = list()
 
 

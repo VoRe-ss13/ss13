@@ -13,7 +13,7 @@
 	preserve_item = 1
 	var/magpulse = 0
 	var/icon_base = "magboots"
-	action_button_name = "Toggle Magboots"
+	actions_types = list(/datum/action/item_action/toggle_magboots)
 	var/obj/item/clothing/shoes/shoes = null	//Undershoes
 	var/mob/living/carbon/human/wearer = null	//For shoe procs
 	step_volume_mod = 1.3
@@ -93,7 +93,7 @@
 	species_restricted = list(SPECIES_VOX)
 	armor = list (melee = 40, bullet = 10, laser = 10, energy = 20, bomb = 20, bio = 10, rad = 20) //values of workboots and heavy duty engineering gloves, it's the only option that will ever be taken so may as well give the turkeys some protection //ChompEdit
 
-	action_button_name = "Toggle the magclaws"
+	actions_types = list(/datum/action/item_action/toggle_magclaws)
 
 /obj/item/clothing/shoes/magboots/vox/attack_self(mob/user)
 	if(src.magpulse)

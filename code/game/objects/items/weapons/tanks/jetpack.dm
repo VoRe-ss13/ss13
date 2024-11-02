@@ -17,7 +17,7 @@
 	var/on = 0.0
 	var/stabilization_on = 0
 	var/volume_rate = 500              //Needed for borg jetpack transfer
-	action_button_name = "Toggle Jetpack"
+	actions_types = list(/datum/action/item_action/toggle_jetpack)
 
 /obj/item/tank/jetpack/New()
 	..()
@@ -81,7 +81,7 @@
 	fuel.remove(num)
 	return 1
 
-/obj/item/tank/jetpack/ui_action_click()
+/obj/item/tank/jetpack/ui_action_click(mob/user, actiontype)
 	toggle()
 
 /obj/item/tank/jetpack/void

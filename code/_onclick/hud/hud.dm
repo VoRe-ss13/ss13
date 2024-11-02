@@ -342,6 +342,10 @@ var/list/global_huds = list(
 		return 0
 
 	mymob.create_mob_hud(src)
+	hide_actions_toggle = new()
+	hide_actions_toggle.InitialiseIcon(mymob)
+	// if(mymob.client)
+	// 	hide_actions_toggle.locked = mymob.client.prefs.buttons_locked
 
 	// Past this point, mymob.hud_used is set
 
@@ -354,7 +358,7 @@ var/list/global_huds = list(
 
 	persistant_inventory_update()
 	mymob.reload_fullscreen() // Reload any fullscreen overlays this mob has.
-	mymob.update_action_buttons()
+	mymob.update_action_buttons(TRUE)
 	reorganize_alerts()
 
 /mob/proc/create_mob_hud(datum/hud/HUD, apply_to_client = TRUE)
@@ -442,7 +446,7 @@ var/list/global_huds = list(
 
 	hud_used.hidden_inventory_update()
 	hud_used.persistant_inventory_update()
-	update_action_buttons()
+	update_action_buttons(TRUE)
 	hud_used.reorganize_alerts()
 	return TRUE
 
@@ -502,7 +506,7 @@ var/list/global_huds = list(
 
 	hud_used.hidden_inventory_update()
 	hud_used.persistant_inventory_update()
-	update_action_buttons()
+	update_action_buttons(TRUE)
 
 /mob/proc/add_click_catcher()
 	client.screen += client.void

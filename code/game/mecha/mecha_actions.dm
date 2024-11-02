@@ -68,6 +68,10 @@
 	overlay_icon = 'icons/effects/actions_mecha.dmi'
 	var/obj/mecha/chassis
 
+/datum/action/innate/mecha/Destroy()
+	chassis = null
+	return ..()
+
 /datum/action/innate/mecha/Grant(mob/living/L, obj/mecha/M)
 	if(M)
 		chassis = M
