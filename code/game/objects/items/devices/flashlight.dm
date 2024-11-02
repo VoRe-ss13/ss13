@@ -102,11 +102,7 @@
 		STOP_PROCESSING(SSobj, src)
 	playsound(src, 'sound/weapons/empty.ogg', 15, 1, -3) // VOREStation Edit
 	update_brightness()
-<<<<<<< HEAD
-	user.update_action_buttons()
-=======
 	user.update_mob_action_buttons()
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	return 1
 
 /obj/item/flashlight/emp_act(severity)

@@ -216,8 +216,6 @@ var/list/global_huds = list(
 		mymob.hud_used = null
 
 	QDEL_NULL_LIST(minihuds)
-<<<<<<< HEAD
-=======
 
 	// Actions
 	QDEL_NULL(toggle_palette)
@@ -227,7 +225,6 @@ var/list/global_huds = list(
 	QDEL_NULL(listed_actions)
 	QDEL_LIST(floating_actions)
 
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	grab_intent = null
 	hurt_intent = null
 	disarm_intent = null
@@ -345,8 +342,6 @@ var/list/global_huds = list(
 		return 0
 
 	mymob.create_mob_hud(src)
-<<<<<<< HEAD
-=======
 
 	// Past this point, mymob.hud_used is set
 
@@ -356,7 +351,6 @@ var/list/global_huds = list(
 	palette_down.set_hud(src)
 	palette_up = new()
 	palette_up.set_hud(src)
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 	persistant_inventory_update()
 	mymob.reload_fullscreen() // Reload any fullscreen overlays this mob has.
@@ -444,10 +438,7 @@ var/list/global_huds = list(
 
 		hud_used?.action_intent.screen_loc = ui_acti //Restore intent selection to the original position
 		client.screen += zone_sel				//This one is a special snowflake
-<<<<<<< HEAD
-=======
 		client.screen += hud_used.toggle_palette
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 	hud_used.hidden_inventory_update()
 	hud_used.persistant_inventory_update()

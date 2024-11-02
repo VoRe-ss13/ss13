@@ -1,25 +1,11 @@
-<<<<<<< HEAD
-
-=======
 /**
  * # Action system
  *
  * A simple base for an modular behavior attached to atom or datum.
  */
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 /datum/action
 	/// The name of the action
 	var/name = "Generic Action"
-<<<<<<< HEAD
-	var/action_type = AB_ITEM
-	var/procname = null
-	var/atom/movable/target = null
-	var/check_flags = 0
-	var/processing = 0
-	var/active = 0
-	var/obj/screen/movable/action_button/button = null
-	var/button_icon = 'icons/mob/actions.dmi'
-=======
 	/// The description of what the action does, shown in button tooltips
 	var/desc
 	/// The target the action is attached to. If the target datum is deleted, the action is as well.
@@ -53,15 +39,10 @@
 	/// This is the file for the icon that appears on the button
 	var/button_icon = 'icons/mob/actions.dmi'
 	/// This is the icon state for the icon that appears on the button
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	var/button_icon_state = "default"
 	var/background_icon_state = "bg_default"
 	var/mob/living/owner
 
-<<<<<<< HEAD
-/datum/action/New(var/Target)
-	target = Target
-=======
 	/// This is the file for any FOREGROUND overlay icons on the button (such as borders)
 	var/overlay_icon = 'icons/mob/actions/backgrounds.dmi'
 	/// This is the icon state for any FOREGROUND overlay icons on the button (such as borders)
@@ -80,7 +61,6 @@
 
 	// if(istype(target, /datum/mind))
 	// 	RegisterSignal(target, COMSIG_MIND_TRANSFERRED, .proc/on_target_mind_swapped)
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 /datum/action/Destroy()
 	if(owner)
@@ -89,11 +69,6 @@
 	QDEL_LIST_ASSOC_VAL(viewers)
 	return ..()
 
-<<<<<<< HEAD
-/datum/action/proc/Grant(mob/living/T)
-	if(owner)
-		if(owner == T)
-=======
 
 /// Signal proc that clears any references based on the owner or target deleting
 /// If the owner's deleted, we will simply remove from them, but if the target's deleted, we will self-delete
@@ -111,7 +86,6 @@
 		return
 	if(owner)
 		if(owner == grant_to)
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 			return
 		Remove(owner)
 	owner = T
@@ -119,51 +93,6 @@
 	owner.update_action_buttons()
 	return
 
-<<<<<<< HEAD
-/datum/action/proc/Remove(mob/living/T)
-	if(button)
-		if(T.client)
-			T.client.screen -= button
-		QDEL_NULL(button)
-	T.actions.Remove(src)
-	T.update_action_buttons()
-	owner = null
-	return
-
-/datum/action/proc/Trigger()
-	if(!Checks())
-		return
-	switch(action_type)
-		if(AB_ITEM)
-			if(target)
-				var/obj/item/item = target
-				item.ui_action_click()
-		//if(AB_SPELL)
-		//	if(target)
-		//		var/obj/effect/proc_holder/spell = target
-		//		spell.Click()
-		if(AB_INNATE)
-			if(!active)
-				Activate()
-			else
-				Deactivate()
-		if(AB_GENERIC)
-			if(target && procname)
-				call(target,procname)(usr)
-	return
-
-/datum/action/proc/Activate()
-	return
-
-/datum/action/proc/Deactivate()
-	return
-
-/datum/action/process()
-	return
-
-/datum/action/proc/CheckRemoval(mob/living/user) // 1 if action is no longer valid for this mob and should be removed
-	return 0
-=======
 	SEND_SIGNAL(src, COMSIG_ACTION_GRANTED, grant_to)
 	SEND_SIGNAL(grant_to, COMSIG_MOB_GRANTED_ACTION, src)
 	owner = grant_to
@@ -200,7 +129,6 @@
 	if(SEND_SIGNAL(src, COMSIG_ACTION_TRIGGER, src) & COMPONENT_ACTION_BLOCK_TRIGGER)
 		return FALSE
 	return TRUE
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 /// Whether our action is currently available to use or not
 /datum/action/proc/IsAvailable()
@@ -226,107 +154,6 @@
 			return 0
 	return 1
 
-<<<<<<< HEAD
-/datum/action/proc/UpdateName()
-	return name
-
-//This is the proc used to update all the action buttons. Properly defined in /mob/living/
-/mob/proc/update_action_buttons()
-	return
-
-/mob/living/update_action_buttons()
-	if(!hud_used) return
-	if(!client) return
-
-	if(hud_used.hud_shown != 1)	//Hud toggled to minimal
-		return
-
-	client.screen -= hud_used.hide_actions_toggle
-	for(var/datum/action/A in actions)
-		if(A.button)
-			client.screen -= A.button
-
-	if(hud_used.action_buttons_hidden)
-		if(!hud_used.hide_actions_toggle)
-			hud_used.hide_actions_toggle = new(hud_used)
-			hud_used.hide_actions_toggle.UpdateIcon()
-
-		if(!hud_used.hide_actions_toggle.moved)
-			hud_used.hide_actions_toggle.screen_loc = hud_used.ButtonNumberToScreenCoords(1)
-			//hud_used.SetButtonCoords(hud_used.hide_actions_toggle,1)
-
-		client.screen += hud_used.hide_actions_toggle
-		return
-
-	var/button_number = 0
-	for(var/datum/action/A in actions)
-		button_number++
-		if(A.button == null)
-			var/obj/screen/movable/action_button/N = new(hud_used)
-			N.owner = A
-			A.button = N
-
-		var/obj/screen/movable/action_button/B = A.button
-
-		B.UpdateIcon()
-
-		B.name = A.UpdateName()
-
-		client.screen += B
-
-		if(!B.moved)
-			B.screen_loc = hud_used.ButtonNumberToScreenCoords(button_number)
-			//hud_used.SetButtonCoords(B,button_number)
-
-	if(button_number > 0)
-		if(!hud_used.hide_actions_toggle)
-			hud_used.hide_actions_toggle = new(hud_used)
-			hud_used.hide_actions_toggle.InitialiseIcon(src)
-		if(!hud_used.hide_actions_toggle.moved)
-			hud_used.hide_actions_toggle.screen_loc = hud_used.ButtonNumberToScreenCoords(button_number+1)
-			//hud_used.SetButtonCoords(hud_used.hide_actions_toggle,button_number+1)
-		client.screen += hud_used.hide_actions_toggle
-
-#define AB_WEST_OFFSET 4
-#define AB_NORTH_OFFSET 26
-#define AB_MAX_COLUMNS 10
-
-/datum/hud/proc/ButtonNumberToScreenCoords(var/number) // TODO : Make this zero-indexed for readabilty
-	var/row = round((number-1)/AB_MAX_COLUMNS)
-	var/col = ((number - 1)%(AB_MAX_COLUMNS)) + 1
-	var/coord_col = "+[col-1]"
-	var/coord_col_offset = AB_WEST_OFFSET+2*col
-	var/coord_row = "[-1 - row]"
-	var/coord_row_offset = AB_NORTH_OFFSET
-	return "WEST[coord_col]:[coord_col_offset],NORTH[coord_row]:[coord_row_offset]"
-
-/datum/hud/proc/SetButtonCoords(var/obj/screen/button,var/number)
-	var/row = round((number-1)/AB_MAX_COLUMNS)
-	var/col = ((number - 1)%(AB_MAX_COLUMNS)) + 1
-	var/x_offset = 32*(col-1) + AB_WEST_OFFSET + 2*col
-	var/y_offset = -32*(row+1) + AB_NORTH_OFFSET
-
-	var/matrix/M = matrix()
-	M.Translate(x_offset,y_offset)
-	button.transform = M
-
-//Presets for item actions
-/datum/action/item_action
-	check_flags = AB_CHECK_RESTRAINED|AB_CHECK_STUNNED|AB_CHECK_LYING|AB_CHECK_ALIVE|AB_CHECK_INSIDE
-
-/datum/action/item_action/CheckRemoval(mob/living/user)
-	return !(target in user)
-
-/datum/action/item_action/hands_free
-	check_flags = AB_CHECK_ALIVE|AB_CHECK_INSIDE
-
-#undef AB_WEST_OFFSET
-#undef AB_NORTH_OFFSET
-#undef AB_MAX_COLUMNS
-
-/datum/action/innate
-	action_type = AB_INNATE
-=======
 /// Builds / updates all buttons we have shared or given out
 /datum/action/proc/build_all_button_icons(update_flags = ALL, force)
 	for(var/datum/hud/hud as anything in viewers)
@@ -531,4 +358,3 @@
 /// Checks if our action is actively selected. Used for selecting icons primarily.
 /datum/action/proc/is_action_active(obj/screen/movable/action_button/current_button)
 	return FALSE
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))

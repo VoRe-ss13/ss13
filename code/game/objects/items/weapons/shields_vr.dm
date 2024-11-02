@@ -64,11 +64,7 @@
 		set_light(0)
 		light_applied = 0
 	update_icon(user)
-<<<<<<< HEAD
-	user.update_action_buttons()
-=======
 	user.update_mob_action_buttons()
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	playsound(src, 'sound/weapons/empty.ogg', 15, 1, -3)
 
 /obj/item/shield/riot/explorer/update_icon()

@@ -115,15 +115,10 @@
 
 /obj/item/Initialize(mapload) //CHOMPedit I stg I'm going to overwrite these many uncommented edits.
 	. = ..()
-<<<<<<< HEAD
-	if(islist(origin_tech))
-		origin_tech = typelist(NAMEOF(src, origin_tech), origin_tech)
-=======
 	for(var/path in actions_types)
 		add_item_action(path)
 	/* if(islist(origin_tech)) // CHOMPAdded section, removed because it has a major flaw. If an item has a different origin list than the other items of the same type, they coulf all get that modified list
 		origin_tech = typelist(NAMEOF(src, origin_tech), origin_tech) */
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	if(embed_chance < 0)
 		if(sharp)
 			embed_chance = max(5, round(force/w_class))
@@ -144,14 +139,11 @@
 		m.update_inv_r_hand()
 		m.update_inv_l_hand()
 		src.loc = null
-<<<<<<< HEAD
-=======
 
 	// Handle celaning up our actions list
 	for(var/datum/action/action as anything in actions)
 		remove_item_action(action)
 
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	return ..()
 
 
@@ -393,12 +385,9 @@
 	if(zoom)
 		zoom() //binoculars, scope, etc
 	appearance_flags &= ~NO_CLIENT_COLOR
-<<<<<<< HEAD
-=======
 	// Remove any item actions we temporary gave out.
 	for(var/datum/action/action_item_has as anything in actions)
 		action_item_has.Remove(user)
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 // called just as an item is picked up (loc is not yet changed)
 /obj/item/proc/pickup(mob/user)
@@ -424,12 +413,9 @@
 // for items that can be placed in multiple slots
 // note this isn't called during the initial dressing of a player
 /obj/item/proc/equipped(var/mob/user, var/slot)
-<<<<<<< HEAD
-=======
 	// Give out actions our item has to people who equip it.
 	for(var/datum/action/action as anything in actions)
 		give_item_action(action, user, slot)
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	hud_layerise()
 	user.position_hud_item(src,slot)
 	if(user.client)	user.client.screen |= src
@@ -444,8 +430,6 @@
 			playsound(src, pickup_sound, 20, preference = /datum/preference/toggle/pickup_sounds)
 	return
 
-<<<<<<< HEAD
-=======
 /// Gives one of our item actions to a mob, when equipped to a certain slot
 /obj/item/proc/give_item_action(datum/action/action, mob/to_who, slot)
 	// Some items only give their actions buttons when in a specific slot.
@@ -464,7 +448,6 @@
 		return FALSE
 	return TRUE
 
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 // As above but for items being equipped to an active module on a robot.
 /obj/item/proc/equipped_robot(var/mob/user)
 	return

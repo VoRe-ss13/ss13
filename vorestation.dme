@@ -293,13 +293,10 @@
 #include "code\_onclick\hud\action\action_group_helpers.dm"
 #include "code\_onclick\hud\action\action_item_overlay.dm"
 #include "code\_onclick\hud\action\action_screen_objects.dm"
-<<<<<<< HEAD
-=======
 #include "code\_onclick\hud\action\innate_action.dm"
 #include "code\_onclick\hud\action\item_action.dm"
 #include "code\_onclick\hud\action\positioning.dm"
 #include "code\_onclick\hud\action\types\item.dm"
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 #include "code\ATMOSPHERICS\_atmos_setup.dm"
 #include "code\ATMOSPHERICS\_atmospherics_helpers.dm"
 #include "code\ATMOSPHERICS\atmospherics.dm"

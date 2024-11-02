@@ -1,9 +1,6 @@
 /mob/living/death(gibbed)
 	clear_fullscreens()
-<<<<<<< HEAD
-=======
 	update_mob_action_buttons()
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 	if(ai_holder)
 		ai_holder.go_sleep()
 

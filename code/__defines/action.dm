@@ -1,15 +1,6 @@
 #define AB_CHECK_RESTRAINED 1
 #define AB_CHECK_STUNNED 2
 #define AB_CHECK_LYING 4
-<<<<<<< HEAD
-#define AB_CHECK_ALIVE 8
-#define AB_CHECK_INSIDE 16
-
-#define AB_ITEM 1
-#define AB_SPELL 2
-#define AB_INNATE 3
-#define AB_GENERIC 4
-=======
 #define AB_CHECK_CONSCIOUS 8
 
 ///Action button triggered with right click
@@ -24,4 +15,3 @@
 #define UPDATE_BUTTON_BACKGROUND (1<<2)
 #define UPDATE_BUTTON_OVERLAY (1<<3)
 #define UPDATE_BUTTON_STATUS (1<<4)
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))

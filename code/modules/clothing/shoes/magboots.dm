@@ -42,11 +42,7 @@
 		playsound(src, 'sound/effects/magnetclamp.ogg', 20)
 		to_chat(user, "You enable the mag-pulse traction system.")
 	user.update_inv_shoes()	//so our mob-overlays update
-<<<<<<< HEAD
-	user.update_action_buttons()
-=======
 	user.update_mob_action_buttons()
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 /obj/item/clothing/shoes/magboots/mob_can_equip(mob/user, slot, disable_warning = FALSE)
 	var/mob/living/carbon/human/H = user
@@ -118,11 +114,7 @@
 		magpulse = 1
 		canremove = FALSE	//kinda hard to take off magclaws when you are gripping them tightly.
 		to_chat(user, "You dig your claws deeply into the flooring, bracing yourself.")
-<<<<<<< HEAD
-	user.update_action_buttons()
-=======
 	user.update_mob_action_buttons()
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 //In case they somehow come off while enabled.
 /obj/item/clothing/shoes/magboots/vox/dropped(mob/user as mob)

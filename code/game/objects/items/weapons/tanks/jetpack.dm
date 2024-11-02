@@ -55,11 +55,7 @@
 	if (ismob(usr))
 		var/mob/M = usr
 		M.update_inv_back()
-<<<<<<< HEAD
-		M.update_action_buttons()
-=======
 		M.update_mob_action_buttons()
->>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 
 	to_chat(usr, "You toggle the thrusters [on? "on":"off"].")
 
