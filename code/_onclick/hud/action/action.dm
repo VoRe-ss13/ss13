@@ -40,8 +40,6 @@
 	var/button_icon = 'icons/mob/actions.dmi'
 	/// This is the icon state for the icon that appears on the button
 	var/button_icon_state = "default"
-	var/background_icon_state = "bg_default"
-	var/mob/living/owner
 
 	/// This is the file for any FOREGROUND overlay icons on the button (such as borders)
 	var/overlay_icon = 'icons/mob/actions/backgrounds.dmi'
@@ -88,10 +86,6 @@
 		if(owner == grant_to)
 			return
 		Remove(owner)
-	owner = T
-	owner.actions.Add(src)
-	owner.update_action_buttons()
-	return
 
 	SEND_SIGNAL(src, COMSIG_ACTION_GRANTED, grant_to)
 	SEND_SIGNAL(grant_to, COMSIG_MOB_GRANTED_ACTION, src)
