@@ -238,7 +238,6 @@
 #include "code\_helpers\weakref.dm"
 #include "code\_helpers\widelists_ch.dm"
 #include "code\_helpers\graphs\astar_ch.dm"
-#include "code\_helpers\weakref.dm"
 #include "code\_helpers\icons\flatten.dm"
 #include "code\_helpers\logging\debug.dm"
 #include "code\_helpers\logging\ui.dm"
