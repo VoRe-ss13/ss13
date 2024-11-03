@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - maptweak: "Fixes viro airlock and genetics disposals."
