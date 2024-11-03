@@ -25,13 +25,7 @@
 						/area/mine,
 						/area/vacant/vacant_shop,
 						/area/rnd/research_storage, // This should probably be fixed,
-						/area/security/riot_control // This should probably be fixed, //TORCHEdit - removing last comma before TORCHRemove
-						/* TORCHRemove Start - We remain on Forbearance here
-						// CHOMPAdd Start for new MAP!
-						/area/SouthernCrossV2/Maints,
-						/area/SouthernCrossV2/Evac
-						//CHOMPADD End
-						*/ //TORCHEdit End
+						/area/security/riot_control, // This should probably be fixed,
 						)
 
 	var/list/exempt_from_apc = typesof(/area/construction,

@@ -32,7 +32,7 @@
 	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	min_pressure_protection = 0 * ONE_ATMOSPHERE
 	max_pressure_protection = 10 * ONE_ATMOSPHERE
-	action_button_name = "Toggle Helmet"
+	actions_types = list(/datum/action/item_action/toggle_helmet)
 	species_restricted = list("Human", SPECIES_SKRELL, "Promethean")
 	sprite_sheets = VR_SPECIES_SPRITE_SHEETS_SUIT_MOB
 	sprite_sheets_obj = VR_SPECIES_SPRITE_SHEETS_SUIT_ITEM
@@ -91,11 +91,11 @@
 			boots.canremove = FALSE
 
 	if(helmet)
-		if(H.head)
-			to_chat(M, "You are unable to deploy your suit's helmet as \the [H.head] is in the way.")
-		else if (H.equip_to_slot_if_possible(helmet, slot_head))
+		if(H.equip_to_slot_if_possible(helmet, slot_head))
 			to_chat(M, "Your suit's helmet deploys with a hiss.")
 			helmet.canremove = FALSE
+		else
+			to_chat(M, "You are unable to deploy your suit's helmet[H.head ? " because [H.head] is in the way." : ""].")
 
 	if(tank)
 		if(H.s_store) //In case someone finds a way.
@@ -190,13 +190,12 @@
 		helmet.forceMove(src)
 		playsound(src.loc, 'sound/machines/click2.ogg', 75, 1)
 	else
-		if(H.head)
-			to_chat(H, span_danger("You cannot deploy your helmet while wearing \the [H.head]."))
-			return
 		if(H.equip_to_slot_if_possible(helmet, slot_head))
 			helmet.canremove = FALSE
 			to_chat(H, span_info("You deploy your suit helmet, sealing you off from the world."))
 			playsound(src.loc, 'sound/machines/click2.ogg', 75, 1)
+		else
+			to_chat(H, span_danger("You cannot deploy your helmet[H.head ? " while wearing \the [H.head]." : ""]"))
 
 /obj/item/clothing/suit/space/void/AltClick(mob/living/user)
 	eject_tank()
