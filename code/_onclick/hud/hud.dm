@@ -342,10 +342,6 @@ var/list/global_huds = list(
 		return 0
 
 	mymob.create_mob_hud(src)
-	hide_actions_toggle = new()
-	hide_actions_toggle.InitialiseIcon(mymob)
-	// if(mymob.client)
-	// 	hide_actions_toggle.locked = mymob.client.prefs.buttons_locked
 
 	// Past this point, mymob.hud_used is set
 
