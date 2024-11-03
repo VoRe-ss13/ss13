@@ -1,0 +1,12 @@
+2024-11-03:
+  VoRe-bot:
+  - maptweak: Fixes viro airlock and genetics disposals.
+  - qol: The autolathe UI has been redesigned and optimized.
+  - rscadd: Legacy robot UIs replaced with Robotact, a new all-in-one UI for all things
+      robot.
+  - rscadd: Action buttons are now able to be grouped and sorted under the new Action
+      Palette.
+  - maptweak: Candles, cobwebs, spiders, and candy all over the map.
+  - qol: Statpanel now uses /tg/'s latest styles and can have it's font size adjusted.
+  - rscadd: You can now deploy hardsuit helms over top of your normal headwear, the
+      same as magboots.
