@@ -460,6 +460,7 @@
 
 	var/light_overlay = "helmet_light"
 	var/image/helmet_light
+	var/overhead = 0			//Used by spacesuit helmets
 
 	sprite_sheets = list(
 		SPECIES_TESHARI = 'icons/inventory/head/mob_teshari.dmi',
@@ -485,7 +486,7 @@
 		update_light()
 
 	update_icon(user)
-	user.update_action_buttons()
+	user.update_mob_action_buttons()
 
 /obj/item/clothing/head/attack_ai(var/mob/user)
 	if(!mob_wear_hat(user))
