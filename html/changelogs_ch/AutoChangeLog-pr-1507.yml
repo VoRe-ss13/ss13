@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - qol: "Statpanel now uses /tg/'s latest styles and can have it's font size adjusted."
