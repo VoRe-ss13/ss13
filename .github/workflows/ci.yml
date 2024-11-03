@@ -80,11 +80,7 @@ jobs:
 
   dreamchecker:
     name: DreamChecker
-<<<<<<< HEAD
-    runs-on: ubuntu-20.04
-=======
     runs-on: ubuntu-22.04
->>>>>>> a2d798a978 (Map fixes relic1.0 (#9370))
     steps:
       - uses: actions/checkout@v4
 
@@ -115,11 +111,7 @@ jobs:
     if: ( !contains(github.event.head_commit.message, '[ci skip]') )
     strategy:
       matrix:
-<<<<<<< HEAD
-        map: ['USE_MAP_RELIC_BASE']
-=======
         map: ['USE_MAP_SOUTHERN_CROSS', 'USE_MAP_SOLUNA_NEXUS', 'USE_MAP_RELIC_BASE']
->>>>>>> a2d798a978 (Map fixes relic1.0 (#9370))
     # name: Integration Tests (${{ matrix.map }})
     name: Integration Tests
     # needs: ['run_linters', 'dreamchecker']
@@ -185,8 +177,4 @@ jobs:
     steps:
       - name: Report Success
         run: |
-<<<<<<< HEAD
           echo "Jobs Successful!"
-=======
-          echo "Jobs Successful!"
->>>>>>> a2d798a978 (Map fixes relic1.0 (#9370))

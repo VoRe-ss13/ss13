@@ -341,11 +341,7 @@
 	load_method = SINGLE_CASING
 	max_shells = 1 //literally just a barrel
 
-<<<<<<< HEAD
-	var/list/ammo_types = list( 	//TORCHEdit - Changes list from global to local. This fixes runtime caused by New() if the weapon is placed on map load
-=======
 	var/list/ammo_types = list(    //CHOMPEdit why is this global?
->>>>>>> a2d798a978 (Map fixes relic1.0 (#9370))
 		/obj/item/ammo_casing/a357              = ".357",
 		/obj/item/ammo_casing/a9mm		        = "9mm",
 		/obj/item/ammo_casing/a45				= ".45",

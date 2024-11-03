@@ -126,10 +126,6 @@ GLOBAL_LIST_INIT(grass_animals,list(
 	"smokestar" = list(
 		/mob/living/simple_mob/vore/smokestar/drider = 1
 		),
-<<<<<<< HEAD
-//TORCHEdit Begin
-=======
->>>>>>> a2d798a978 (Map fixes relic1.0 (#9370))
 	"thor_real" = list(
 		/mob/living/simple_mob/vore/aggressive/frog = 5,
 		/mob/living/simple_mob/animal/sif/glitterfly = 35,
@@ -144,10 +140,6 @@ GLOBAL_LIST_INIT(grass_animals,list(
 		/mob/living/simple_mob/vore/aggressive/rat = 5,
 		/mob/living/simple_mob/vore/horse/big = 10
 		),
-<<<<<<< HEAD
-//TORCHEdit End
-=======
->>>>>>> a2d798a978 (Map fixes relic1.0 (#9370))
 ))
 
 GLOBAL_LIST_INIT(grass_grass,list(
@@ -233,10 +225,6 @@ GLOBAL_LIST_INIT(grass_grass,list(
 		/obj/structure/flora/ausbushes/sparsegrass,
 		/obj/structure/flora/ausbushes/fullgrass
 		),
-<<<<<<< HEAD
-//TORCHEdit Begin
-=======
->>>>>>> a2d798a978 (Map fixes relic1.0 (#9370))
 	"thor_real" = list(
 		/obj/structure/flora/ausbushes/sparsegrass,
 		/obj/structure/flora/ausbushes/fullgrass,
@@ -251,10 +239,6 @@ GLOBAL_LIST_INIT(grass_grass,list(
 		/obj/structure/flora/tree/jungle,
 		/obj/structure/flora/ausbushes/leafybush,
 		)
-<<<<<<< HEAD
-//TORCHEdit End
-=======
->>>>>>> a2d798a978 (Map fixes relic1.0 (#9370))
 ))
 
 GLOBAL_LIST_INIT(grass_trees, list(
@@ -268,11 +252,7 @@ GLOBAL_LIST_INIT(grass_trees, list(
 		/obj/structure/flora/tree/jungle_small,
 		/obj/structure/flora/tree/jungle
 		),
-<<<<<<< HEAD
-	"seasonalautumn" = list(	//TORCHEdit - Fixing wrong list name. We should eventually PR this upstream, but rn I'm fixing this as an edit to fix a runtime asap
-=======
 	"seasonalautumn" = list(
->>>>>>> a2d798a978 (Map fixes relic1.0 (#9370))
 		/obj/structure/flora/tree/bigtree
 		),
 	"seasonalwinter" = list(

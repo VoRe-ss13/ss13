@@ -244,13 +244,7 @@
 
 // CHOMPEdit: New Planet Ambience
 #define AMBIENCE_THOR list(\
-<<<<<<< HEAD
-	'sound/ambience/thor/birds_stinger1.ogg',\
-	'sound/ambience/thor/birds_stinger2.ogg',\
-	'sound/ambience/thor/birds_stinger3.ogg'\
-=======
 	'modular_chomp/sound/ambience/thor/birds_stinger1.ogg',\
 	'modular_chomp/sound/ambience/thor/birds_stinger2.ogg',\
 	'modular_chomp/sound/ambience/thor/birds_stinger3.ogg'\
->>>>>>> a2d798a978 (Map fixes relic1.0 (#9370))
 )
