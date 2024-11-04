@@ -526,13 +526,13 @@
 
 /client/verb/character_setup()
 	set name = "Character Setup"
-	set category = "Preferences.Character" //CHOMPEdit
+	set category = "Preferences.Character"
 	if(prefs)
 		prefs.ShowChoices(usr)
 
 /client/verb/game_options()
 	set name = "Game Options"
-	set category = "Preferences.Game" //CHOMPEdit
+	set category = "Preferences.Game"
 	if(prefs)
 		prefs.tgui_interact(usr)
 
@@ -634,7 +634,7 @@
 
 /client/verb/toggle_fullscreen()
 	set name = "Toggle Fullscreen"
-	set category = "OOC.Client Settings" //CHOMPEdit
+	set category = "OOC.Client Settings"
 
 	fullscreen = !fullscreen
 
@@ -656,7 +656,7 @@
 /*CHOMPRemove Start, we use TGPanel
 /client/verb/toggle_verb_panel()
 	set name = "Toggle Verbs"
-	set category = "OOC.Client Settings" //CHOMPEdit
+	set category = "OOC.Client Settings"
 
 	show_verb_panel = !show_verb_panel
 
@@ -666,7 +666,7 @@
 /*
 /client/verb/toggle_status_bar()
 	set name = "Toggle Status Bar"
-	set category = "OOC.Client Settings" //CHOMPEdit
+	set category = "OOC.Client Settings"
 
 	show_status_bar = !show_status_bar
 
@@ -676,6 +676,26 @@
 		winset(usr, "input", "is-visible=false")
 */
 
+<<<<<<< HEAD
+=======
+/client/verb/show_active_playtime()
+	set name = "Active Playtime"
+	set category = "OOC.Game"
+
+	if(!play_hours.len)
+		to_chat(src, span_warning("Persistent playtime disabled!"))
+		return
+
+	var/department_hours = ""
+	for(var/play_hour in play_hours)
+		if(!isnum(play_hour) && isnum(play_hours[play_hour]))
+			department_hours += "<br>\t[capitalize(play_hour)]: [play_hours[play_hour]]"
+	if(!department_hours)
+		to_chat(src, span_warning("No recorded playtime found!"))
+		return
+	to_chat(src, span_info("Your department hours:" + department_hours))
+
+>>>>>>> f72f2f8c89 ([MIRROR] Server maint subsystem (#9408))
 /// compiles a full list of verbs and sends it to the browser
 /client/proc/init_verbs()
 	if(IsAdminAdvancedProcCall())
