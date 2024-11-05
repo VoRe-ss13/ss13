@@ -38,6 +38,7 @@ export const VorePanel = (props) => {
   return (
     <Window width={890} height={660} theme="abstract">
       <Window.Content>
+<<<<<<< HEAD
         {(data.unsaved_changes && (
           <NoticeBox danger>
             <Flex>
@@ -74,6 +75,58 @@ export const VorePanel = (props) => {
           </Tabs.Tab>
         </Tabs>
         {tabs[tabIndex] || 'Error'}
+=======
+        <Stack fill vertical>
+          <Stack.Item>
+            {(data.unsaved_changes && (
+              <NoticeBox danger>
+                <Flex>
+                  <Flex.Item basis="90%">Warning: Unsaved Changes!</Flex.Item>
+                  <Flex.Item>
+                    <Button icon="save" onClick={() => act('saveprefs')}>
+                      Save Prefs
+                    </Button>
+                  </Flex.Item>
+                  <Flex.Item>
+                    <Button
+                      icon="download"
+                      onClick={() => {
+                        act('saveprefs');
+                        act('exportpanel');
+                      }}
+                    >
+                      Save Prefs & Export Selected Belly
+                    </Button>
+                  </Flex.Item>
+                </Flex>
+              </NoticeBox>
+            )) ||
+              ''}
+          </Stack.Item>
+          <Stack.Item basis={inside?.desc?.length || 0 > 500 ? '30%' : '20%'}>
+            <VoreInsidePanel inside={inside} show_pictures={show_pictures} />
+          </Stack.Item>
+          <Stack.Item>
+            <Tabs>
+              <Tabs.Tab
+                selected={tabIndex === 0}
+                onClick={() => setTabIndex(0)}
+              >
+                Bellies
+                <Icon name="list" ml={0.5} />
+              </Tabs.Tab>
+              <Tabs.Tab
+                selected={tabIndex === 1}
+                onClick={() => setTabIndex(1)}
+              >
+                Preferences
+                <Icon name="user-cog" ml={0.5} />
+              </Tabs.Tab>
+            </Tabs>
+          </Stack.Item>
+          <Stack.Item grow>{tabs[tabIndex] || 'Error'}</Stack.Item>
+        </Stack>
+>>>>>>> 183f08abb5 ([MIRROR] fix the vorepanel (#9415))
       </Window.Content>
     </Window>
   );
