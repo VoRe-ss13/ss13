@@ -285,6 +285,7 @@
 	message_admins(span_blue("[ckey] creating an admin explosion at [epicenter.loc]."))
 	feedback_add_details("admin_verb","DB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+<<<<<<< HEAD
 /client/proc/give_disease2(mob/T as mob in mob_list) // -- Giacom
 	set category = "Fun.Event Kit" //CHOMPEdit
 	set name = "Give Disease"
@@ -316,6 +317,8 @@
 	log_admin("[key_name(usr)] gave [key_name(T)] a [greater] disease2 with infection chance [D.infectionchance].")
 	message_admins(span_blue("[key_name_admin(usr)] gave [key_name(T)] a [greater] disease2 with infection chance [D.infectionchance]."), 1)
 
+=======
+>>>>>>> 6c05f5da45 ([MIRROR] Better Viro (#9421))
 /client/proc/admin_give_modifier(var/mob/living/L)
 	set category = "Debug.Game" //CHOMPEdit
 	set name = "Give Modifier"
