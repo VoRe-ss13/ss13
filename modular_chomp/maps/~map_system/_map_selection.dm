@@ -30,7 +30,7 @@
 
 // Relic Base
 #ifdef USE_MAP_RELIC_BASE
-#include "../relic_base/relicbase.dm"
+#include "../../../maps/relic_base/relicbase.dm"
 #endif
 
 #ifdef USE_MAP_MINITEST
