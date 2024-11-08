@@ -17,10 +17,10 @@
 #include "../overmap/space/fueldepot.dmm"
 #include "../overmap/planets/thor/thor.dmm" //The datum is in southern_cross_defines.dm
 #include "../overmap/planets/tyr/tyr.dmm"
-#include "gateway/BaseBlep.dmm"
-#include "gateway/maddnesslab.dmm"
-#include "gateway/snowfield.dmm"
-#include "gateway/hiddeneclipse.dmm"
+#include 'gateway/BaseBlep.dmm'
+#include 'gateway/maddnesslab.dmm'
+#include 'gateway/snowfield.dmm'
+#include 'gateway/hiddeneclipse.dmm'
 #include "modular_chomp/maps/virtual_reality/constructVR.dmm"
 #endif
 
@@ -103,13 +103,13 @@
 /datum/map_template/sc_lateload/thor
 	name = "Thor Surface"
 	desc = "The jungle like surface of Sif's moon"
-	mappath = 'modular_chomp/maps/southern_cross/overmap/planets/thor/thor.dmm'
+	mappath = "modular_chomp/maps/southern_cross/overmap/planets/thor/thor.dmm"
 	associated_map_datum = /datum/planet/thor
 
 /datum/map_template/sc_lateload/tyr
 	name = "Desert Valley"
 	desc = "An anomalous valley within tyr"
-	mappath = 'modular_chomp/maps/southern_cross/overmap/planets/tyr/tyr.dmm'
+	mappath = "modular_chomp/maps/southern_cross/overmap/planets/tyr/tyr.dmm"
 	associated_map_datum = /datum/planet/tyr
 
 
