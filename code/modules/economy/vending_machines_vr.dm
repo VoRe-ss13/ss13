@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Tweaked existing vendors
 /obj/machinery/vending/hydroseeds/New()
 	products += list(/obj/item/seeds/shrinkshroom = 3,/obj/item/seeds/megashroom = 3)
@@ -36,6 +37,8 @@
 	products += list(/obj/item/bodybag/cryobag = 4)
 	..()
 
+=======
+>>>>>>> e1018db650 ([MIRROR] cleanup vendor lists (#9446))
 // Food Machines (for event/away maps)
 
 //I want this not just as part of the zoo. ;v
