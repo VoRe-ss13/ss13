@@ -676,8 +676,6 @@
 		winset(usr, "input", "is-visible=false")
 */
 
-<<<<<<< HEAD
-=======
 /client/verb/show_active_playtime()
 	set name = "Active Playtime"
 	set category = "OOC.Game"
@@ -695,7 +693,6 @@
 		return
 	to_chat(src, span_info("Your department hours:" + department_hours))
 
->>>>>>> f72f2f8c89 ([MIRROR] Server maint subsystem (#9408))
 /// compiles a full list of verbs and sends it to the browser
 /client/proc/init_verbs()
 	if(IsAdminAdvancedProcCall())
