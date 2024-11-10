@@ -126,7 +126,6 @@ GLOBAL_LIST_INIT(grass_animals,list(
 	"smokestar" = list(
 		/mob/living/simple_mob/vore/smokestar/drider = 1
 		),
-//TORCHEdit Begin
 	"thor_real" = list(
 		/mob/living/simple_mob/vore/aggressive/frog = 5,
 		/mob/living/simple_mob/animal/sif/glitterfly = 35,
@@ -141,7 +140,6 @@ GLOBAL_LIST_INIT(grass_animals,list(
 		/mob/living/simple_mob/vore/aggressive/rat = 5,
 		/mob/living/simple_mob/vore/horse/big = 10
 		),
-//TORCHEdit End
 ))
 
 GLOBAL_LIST_INIT(grass_grass,list(
@@ -227,7 +225,6 @@ GLOBAL_LIST_INIT(grass_grass,list(
 		/obj/structure/flora/ausbushes/sparsegrass,
 		/obj/structure/flora/ausbushes/fullgrass
 		),
-//TORCHEdit Begin
 	"thor_real" = list(
 		/obj/structure/flora/ausbushes/sparsegrass,
 		/obj/structure/flora/ausbushes/fullgrass,
@@ -242,7 +239,6 @@ GLOBAL_LIST_INIT(grass_grass,list(
 		/obj/structure/flora/tree/jungle,
 		/obj/structure/flora/ausbushes/leafybush,
 		)
-//TORCHEdit End
 ))
 
 GLOBAL_LIST_INIT(grass_trees, list(
@@ -256,7 +252,7 @@ GLOBAL_LIST_INIT(grass_trees, list(
 		/obj/structure/flora/tree/jungle_small,
 		/obj/structure/flora/tree/jungle
 		),
-	"seasonalautumn" = list(	//TORCHEdit - Fixing wrong list name. We should eventually PR this upstream, but rn I'm fixing this as an edit to fix a runtime asap
+	"seasonalautumn" = list(
 		/obj/structure/flora/tree/bigtree
 		),
 	"seasonalwinter" = list(

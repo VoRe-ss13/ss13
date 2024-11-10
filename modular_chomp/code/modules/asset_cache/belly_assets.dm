@@ -169,6 +169,9 @@
 /datum/belly_overlays/vbo_synth2
 	belly_icon = 'modular_chomp/icons/mob/vore_fullscreens/VBO_synth2.dmi'
 
+/datum/belly_overlays/vbo_trash
+	belly_icon = 'modular_chomp/icons/mob/vore_fullscreens/VBO_trash.dmi'
+
 /datum/belly_overlays/vbo_vines
 	belly_icon = 'modular_chomp/icons/mob/vore_fullscreens/VBO_vines.dmi'
 
@@ -226,6 +229,9 @@
 /datum/belly_overlays/a_tumby
 	belly_icon = 'modular_chomp/icons/mob/vore_fullscreens/a_tumby.dmi'
 
+/datum/belly_overlays/another_tumby
+	belly_icon = 'modular_chomp/icons/mob/vore_fullscreens/another_tumby.dmi'
+
 /datum/belly_overlays/base
 	belly_icon = 'modular_chomp/icons/mob/vore_fullscreens/base.dmi'
 
@@ -249,3 +255,10 @@
 
 /datum/belly_overlays/yet_another_tumby
 	belly_icon = 'modular_chomp/icons/mob/vore_fullscreens/yet_another_tumby.dmi'
+
+//Compatibility assets due to renames...
+/datum/belly_overlays/anim_belly
+	belly_icon = 'modular_chomp/icons/mob/vore_fullscreens/VBOanim_belly1.dmi'
+
+/datum/belly_overlays/a_anim_belly
+	belly_icon = 'modular_chomp/icons/mob/vore_fullscreens/VBOanim_belly1.dmi'
