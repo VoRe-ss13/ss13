@@ -28,12 +28,10 @@
 #include "../soluna_nexus/soluna_nexus.dm"
 #endif
 
-//TORCHEdit Start - Add and select Forbearance //TODO - Decide about moving relic_base to modular_chomp or not
 // Relic Base
 #ifdef USE_MAP_RELIC_BASE
 #include "../../../maps/relic_base/relicbase.dm"
 #endif
-//TORCHEdit End
 
 #ifdef USE_MAP_MINITEST
 #include "../virgo_minitest/virgo_minitest.dm"
