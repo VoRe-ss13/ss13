@@ -248,11 +248,20 @@
 				else
 					dat += span_warning("Unknown substance[(unknown > 1)?"s":""] found in subject's dermis.")
 					dat += "<br>"
+<<<<<<< HEAD
 		if(C.virus2.len)
 			for (var/ID in C.virus2)
 				if (ID in virusDB)
 					var/datum/data/record/V = virusDB[ID]
 					dat += span_warning("Warning: Pathogen [V.fields["name"]] detected in subject's blood. Known antigen : [V.fields["antigen"]]")
+=======
+		if(LAZYLEN(C.resistances))
+			for (var/datum/disease/virus in C.GetViruses())
+				if(virus.visibility_flags & HIDDEN_SCANNER || virus.visibility_flags & HIDDEN_PANDEMIC)
+					continue
+				if(virus.discovered)
+					dat += span_warning("Warning: [virus.name] detected in subject's blood.")
+>>>>>>> 756abe1f24 ([MIRROR] Virology Patch 1 (#9449))
 					dat += "<br>"
 				else
 					dat += span_warning("Warning: Unknown pathogen detected in subject's blood.")
