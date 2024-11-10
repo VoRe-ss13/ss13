@@ -455,8 +455,6 @@
 			radio_text += ", "
 
 	radio_desc = radio_text
-<<<<<<< HEAD
-=======
 
 /obj/item/radio/headset/mob_headset/receive_range(freq, level)
 	if(ismob(src.loc))
@@ -954,4 +952,3 @@
 	if (disabledAi)
 		return -1 //Transciever Disabled.
 	return ..(freq, level, 1)
->>>>>>> 9d6b197bf4 ([MIRROR] Syndicate Headset Icons (#9447))
