@@ -22249,6 +22249,11 @@
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
+/obj/machinery/button/remote/airlock/release{
+	pixel_y = -4;
+	pixel_x = 33;
+	id = "dorm7"
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_7)
 "aMA" = (
@@ -22316,6 +22321,11 @@
 	pixel_x = -26;
 	pixel_y = -4;
 	specialfunctions = 4
+	},
+/obj/machinery/button/remote/airlock/release{
+	pixel_y = -4;
+	pixel_x = -33;
+	id = "dorm8"
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_8)
@@ -23372,6 +23382,11 @@
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
+/obj/machinery/button/remote/airlock/release{
+	pixel_y = -4;
+	pixel_x = 33;
+	id = "dorm5"
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_5)
 "aOI" = (
@@ -23435,6 +23450,11 @@
 	pixel_x = -26;
 	pixel_y = -4;
 	specialfunctions = 4
+	},
+/obj/machinery/button/remote/airlock/release{
+	pixel_y = -4;
+	pixel_x = -33;
+	id = "dorm6"
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_6)
@@ -24528,6 +24548,11 @@
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
+/obj/machinery/button/remote/airlock/release{
+	pixel_y = -4;
+	pixel_x = 33;
+	id = "dorm3"
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_3)
 "aQI" = (
@@ -24595,6 +24620,11 @@
 	pixel_x = -26;
 	pixel_y = -4;
 	specialfunctions = 4
+	},
+/obj/machinery/button/remote/airlock/release{
+	pixel_y = -4;
+	pixel_x = -33;
+	id = "dorm4"
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_4)
@@ -25608,6 +25638,11 @@
 /obj/structure/cable/orange{
 	icon_state = "1-2"
 	},
+/obj/machinery/button/remote/airlock/release{
+	pixel_y = -4;
+	pixel_x = 33;
+	id = "dorm1"
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_1)
 "aSV" = (
@@ -25617,6 +25652,11 @@
 	pixel_x = -26;
 	pixel_y = -4;
 	specialfunctions = 4
+	},
+/obj/machinery/button/remote/airlock/release{
+	pixel_y = -4;
+	pixel_x = -33;
+	id = "dorm2"
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/sleep/Dorm_2)
