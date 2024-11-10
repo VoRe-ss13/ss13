@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - balance: "red crowbar: 6 -> 10 damage"
