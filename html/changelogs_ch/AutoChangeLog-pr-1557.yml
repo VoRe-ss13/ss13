@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - bugfix: "Vore panel no longer overflows when inside panel description is really long."
