@@ -56042,25 +56042,6 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/hallway/For_3_Deck_Stairwell)
-<<<<<<< HEAD
-"rMJ" = (
-/obj/machinery/disease2/incubator,
-/obj/machinery/light{
-	dir = 4;
-	name = "1E-light fixture"
-	},
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white{
-	color = "#8bbbd5"
-	},
-/area/medical/Virology)
-=======
->>>>>>> 6c05f5da45 ([MIRROR] Better Viro (#9421))
 "rMZ" = (
 /obj/structure/table/marble,
 /obj/machinery/chemical_dispenser/bar_soft/full{
