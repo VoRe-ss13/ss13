@@ -70,7 +70,7 @@
 
 	if(href_list["irc_msg"])
 		if(!holder && received_irc_pm < world.time - 6000) //Worse they can do is spam IRC for 10 minutes
-			to_chat(usr, span_warning("You are no longer able to use this, it's been more than 10 minutes since an admin on IRC has responded to you"))
+			to_chat(src, span_warning("You are no longer able to use this, it's been more than 10 minutes since an admin on IRC has responded to you"))
 			return
 		if(mute_irc)
 			to_chat(usr, span_warning("You cannot use this as your client has been muted from sending messages to the admins on IRC"))
@@ -670,7 +670,7 @@
 
 	show_verb_panel = !show_verb_panel
 
-	to_chat(usr, "Your verbs are now [show_verb_panel ? "on" : "off. To turn them back on, type 'toggle-verbs' into the command bar."].")
+	to_chat(src, "Your verbs are now [show_verb_panel ? "on" : "off. To turn them back on, type 'toggle-verbs' into the command bar."].")
 *///CHOMPRemove End
 
 /*
