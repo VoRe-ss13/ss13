@@ -4445,10 +4445,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/candybowl/engineering{
-	pixel_x = 15;
-	pixel_y = -10
-	},
 /turf/simulated/floor/carpet,
 /area/engineering/break_room)
 "aly" = (
@@ -5398,7 +5394,6 @@
 /obj/effect/floor_decal/corner/yellow/border{
 	dir = 4
 	},
-/obj/effect/landmark/carved_pumpkin_spawn,
 /turf/simulated/floor/tiled,
 /area/engineering/foyer)
 "apb" = (
@@ -9268,7 +9263,6 @@
 /obj/effect/floor_decal/corner/yellow/bordercorner{
 	dir = 1
 	},
-/obj/effect/landmark/carved_pumpkin_spawn,
 /turf/simulated/floor/tiled,
 /area/engineering/foyer)
 "aBp" = (
@@ -17967,10 +17961,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/hallway/primary/seconddeck/fpcenter)
-"bda" = (
-/obj/effect/landmark/carved_pumpkin_spawn,
-/turf/simulated/floor/wood,
-/area/crew_quarters/cafeteria)
 "bdb" = (
 /obj/machinery/computer/timeclock/premade/east,
 /turf/simulated/floor/tiled/dark,
@@ -19014,7 +19004,6 @@
 /obj/machinery/camera/network/second_deck{
 	c_tag = "Second Deck - Center Stair Access"
 	},
-/obj/effect/landmark/carved_pumpkin_spawn,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/stairwell)
 "bgF" = (
@@ -20857,7 +20846,6 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
-/obj/structure/candybowl/medical,
 /turf/simulated/floor/tiled/white,
 /area/medical/reception)
 "blS" = (
@@ -22078,7 +22066,6 @@
 	dir = 8
 	},
 /obj/item/stool/padded,
-/obj/effect/landmark/carved_pumpkin_spawn,
 /turf/simulated/floor/tiled/white,
 /area/medical/foyer)
 "bpo" = (
@@ -22586,8 +22573,6 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 10
 	},
-/obj/effect/spider/stickyweb,
-/obj/item/toy/plushie/spider,
 /turf/simulated/floor/tiled/white,
 /area/medical/foyer)
 "brg" = (
@@ -24758,7 +24743,6 @@
 	},
 /obj/item/mail/blank,
 /obj/item/mail/blank,
-/obj/structure/candybowl/cargo,
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "bxA" = (
@@ -28637,6 +28621,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 10
 	},
+/obj/structure/bed/chair/office/dark{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "bIP" = (
@@ -30531,7 +30518,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 4
 	},
-/obj/effect/landmark/carved_pumpkin_spawn,
 /turf/simulated/floor/tiled,
 /area/security/lobby)
 "bPZ" = (
@@ -31188,7 +31174,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
-/obj/structure/candybowl/security,
 /turf/simulated/floor/tiled,
 /area/security/lobby)
 "bSF" = (
@@ -32603,7 +32588,6 @@
 	pixel_x = -2;
 	pixel_y = -2
 	},
-/obj/item/flame/candle/everburn,
 /turf/simulated/floor/wood,
 /area/crew_quarters/cafeteria)
 "bWR" = (
@@ -33701,7 +33685,6 @@
 /obj/effect/floor_decal/corner/red/border{
 	dir = 10
 	},
-/obj/effect/landmark/carved_pumpkin_spawn,
 /turf/simulated/floor/tiled,
 /area/security/lobby)
 "cbk" = (
@@ -36128,7 +36111,6 @@
 	pixel_x = -5;
 	pixel_y = -2
 	},
-/obj/item/flame/candle/everburn,
 /turf/simulated/floor/wood,
 /area/crew_quarters/cafeteria)
 "chY" = (
@@ -37878,11 +37860,11 @@
 /area/hallway/primary/seconddeck/aft)
 "cnF" = (
 /obj/structure/table/marble,
+/obj/item/reagent_containers/food/snacks/pie,
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
-/obj/item/reagent_containers/food/snacks/sliceable/pumpkinpie,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/cafeteria)
 "cnI" = (
@@ -45485,7 +45467,6 @@
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 8
 	},
-/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "dyd" = (
@@ -47450,7 +47431,6 @@
 /obj/effect/floor_decal/corner/brown/bordercorner{
 	dir = 1
 	},
-/obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "eEU" = (
@@ -48039,18 +48019,12 @@
 /turf/simulated/wall,
 /area/rnd/storage)
 "eNU" = (
-/obj/structure/table/glass,
 /obj/structure/reagent_dispensers/virusfood{
 	pixel_x = 30
 	},
-/obj/item/reagent_containers/glass/beaker/large,
 /obj/machinery/camera/network/medbay{
 	c_tag = "MED - Virology Starboard";
 	dir = 8
-	},
-/obj/item/storage/box/monkeycubes{
-	pixel_x = -7;
-	pixel_y = -3
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -49222,6 +49196,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 4
 	},
+/obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "fva" = (
@@ -50251,8 +50226,6 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
 	},
-/obj/structure/table/standard,
-/obj/item/reagent_containers/spray/cleaner,
 /obj/machinery/vending/wallmed1{
 	dir = 4;
 	pixel_x = -25
@@ -52044,7 +52017,6 @@
 /obj/machinery/atm{
 	pixel_y = 30
 	},
-/obj/effect/landmark/carved_pumpkin_spawn,
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "gQB" = (
@@ -55053,12 +55025,10 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/dockhallway)
 "iqP" = (
-/obj/machinery/computer/diseasesplicer{
-	dir = 1
-	},
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/blue/border,
 /obj/machinery/light,
+/obj/machinery/computer/pandemic,
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "iqT" = (
@@ -56230,8 +56200,6 @@
 /area/hallway/primary/seconddeck/dockhallway)
 "iYU" = (
 /obj/structure/closet/crate/freezer,
-/obj/item/virusdish/random,
-/obj/item/virusdish/random,
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "north bump";
@@ -56251,6 +56219,11 @@
 	pixel_x = 12;
 	pixel_y = 25
 	},
+/obj/item/reagent_containers/glass/bottle/culture/cold{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/glass/bottle/culture/flu,
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "iYZ" = (
@@ -56301,9 +56274,9 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/secondary/docking_hallway2)
 "iZI" = (
-/obj/machinery/computer/centrifuge,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/blue/border,
+/obj/machinery/computer/pandemic,
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "iZV" = (
@@ -56755,6 +56728,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 4
 	},
+/obj/structure/bed/chair/office/dark,
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "jjV" = (
@@ -61498,7 +61472,6 @@
 	pixel_x = 2
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/candybowl,
 /turf/simulated/floor/wood,
 /area/crew_quarters/cafeteria)
 "lRG" = (
@@ -61768,8 +61741,6 @@
 	layer = 4;
 	pixel_x = -32
 	},
-/obj/effect/spider/stickyweb,
-/obj/item/toy/plushie/spider,
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "lWH" = (
@@ -63313,13 +63284,9 @@
 /obj/effect/floor_decal/corner/purple/bordercorner{
 	dir = 1
 	},
-/obj/structure/flora/skeleton{
-	pixel_y = 14
-	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research_foyer)
 "mSO" = (
-/obj/structure/bed/chair/office/dark,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -63480,8 +63447,6 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 5
 	},
-/obj/effect/landmark/carved_pumpkin_spawn,
-/obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/white,
 /area/rnd/research_foyer)
 "mVG" = (
@@ -63833,13 +63798,18 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
 "ngg" = (
-/obj/machinery/disease2/incubator,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
 	},
+/obj/structure/table/glass,
+/obj/item/storage/fancy/vials,
+/obj/item/storage/lockbox/vials,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
+/obj/item/reagent_containers/syringe/antiviral,
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "nhc" = (
@@ -64337,10 +64307,6 @@
 	pixel_x = -12;
 	id = "sc-ChimeMed";
 	name = "Medbay Doorbell"
-	},
-/obj/item/flame/candle/everburn{
-	pixel_x = 1;
-	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/foyer)
@@ -65160,10 +65126,6 @@
 /obj/machinery/door/window/eastleft{
 	name = "Robotics Desk";
 	req_access = list(29)
-	},
-/obj/item/flame/candle/everburn{
-	pixel_x = -6;
-	pixel_y = 10
 	},
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
@@ -66590,7 +66552,6 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 6
 	},
-/obj/structure/candybowl/science,
 /turf/simulated/floor/tiled/white,
 /area/rnd/lab)
 "oJW" = (
@@ -66617,7 +66578,6 @@
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 9
 	},
-/obj/effect/landmark/carved_pumpkin_spawn,
 /turf/simulated/floor/tiled/white,
 /area/rnd/research_foyer)
 "oKu" = (
@@ -69697,7 +69657,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/research)
 "qrI" = (
-/obj/machinery/disease2/isolator,
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/machinery/light,
@@ -69710,6 +69669,12 @@
 	},
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
+	},
+/obj/structure/table/glass,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/storage/box/monkeycubes{
+	pixel_x = -7;
+	pixel_y = -3
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
@@ -72225,10 +72190,6 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
 	},
-/obj/structure/flora/skeleton{
-	pixel_y = 0;
-	pixel_x = -5
-	},
 /turf/simulated/floor/tiled/white,
 /area/medical/foyer)
 "rXY" = (
@@ -74640,9 +74601,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay)
 "tpy" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 4
 	},
@@ -75236,18 +75194,12 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 1
 	},
-/obj/structure/table/standard,
-/obj/item/storage/lockbox/vials,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/reagent_containers/syringe/antiviral,
-/obj/item/storage/fancy/vials,
-/obj/item/antibody_scanner,
-/obj/item/antibody_scanner,
 /obj/item/radio/intercom/department/medbay{
 	dir = 1;
 	pixel_y = 21
 	},
+/obj/structure/table/standard,
+/obj/item/reagent_containers/spray/cleaner,
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "tKB" = (
@@ -80324,12 +80276,17 @@
 /turf/simulated/floor/plating,
 /area/maintenance/medbay_fore)
 "wZh" = (
-/obj/machinery/disease2/diseaseanalyser,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 6
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 6
+	},
+/obj/structure/table/glass,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/storage/box/monkeycubes{
+	pixel_x = -7;
+	pixel_y = -3
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
@@ -114262,7 +114219,7 @@ bOd
 bVw
 qgm
 sYg
-bda
+crq
 crq
 crq
 tge
