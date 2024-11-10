@@ -446,12 +446,7 @@
 		blob.mob_radio = R
 		R.forceMove(blob)
 	if(wear_id)
-<<<<<<< HEAD
-		blob.myid = wear_id
-		wear_id.forceMove(blob)
-=======
 		blob.myid = wear_id.GetID()
->>>>>>> f24b9085b6 (don't force move (#9430))
 //ChompAdd End
 	//Mail them to nullspace
 	moveToNullspace()
