@@ -136,7 +136,7 @@ SUBSYSTEM_DEF(statpanels)
 
 	target.stat_panel.send_message("update_stat", list(
 		global_data = global_data,
-		ping_str = "Ping: [round(target.lastping, 1)]ms (Average: [round(target.avgping, 1)]ms)", // CHOMPEdit
+		ping_str = "Ping: [round(target.lastping, 1)]ms (Average: [round(target.avgping, 1)]ms)",
 		other_str = target.mob?.get_status_tab_items(),
 	))
 
@@ -173,6 +173,10 @@ SUBSYSTEM_DEF(statpanels)
 	target.stat_panel.send_message("update_examine", examine_update)
 
 /datum/controller/subsystem/statpanels/proc/set_tickets_tab(client/target)
+	/* CHOMPRemove Start, our tickets are handled differently
+	var/list/tickets = list()
+	if(check_rights(R_ADMIN|R_SERVER|R_MOD,FALSE,target)) //Prevents non-staff from opening the list of ahelp tickets
+	*/// CHOMPRemove End
 	var/list/tickets = GLOB.tickets.stat_entry(target) // CHOMPEdit
 	target.stat_panel.send_message("update_tickets", tickets)
 
