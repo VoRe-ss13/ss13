@@ -253,12 +253,6 @@ var/const/CE_STABLE_THRESHOLD = 0.5
 
 	//set reagent data
 	B.data["donor"] = src
-<<<<<<< HEAD
-	if (!B.data["virus2"])
-		B.data["virus2"] = list()
-	B.data["virus2"] |= virus_copylist(src.virus2)
-	B.data["antibodies"] = src.antibodies
-=======
 	if(!B.data["viruses"])
 		B.data["viruses"] = list()
 
@@ -272,7 +266,6 @@ var/const/CE_STABLE_THRESHOLD = 0.5
 
 	if(B.data["resistances"])
 		B.data["resistances"] |= GetResistances()
->>>>>>> 3229cdc27b ([MIRROR] Fixes non-contagious diseases not transferring on blood (#9458))
 	B.data["blood_DNA"] = copytext(src.dna.unique_enzymes,1,0)
 	B.data["blood_type"] = copytext(src.dna.b_type,1,0)
 
