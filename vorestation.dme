@@ -1009,6 +1009,7 @@
 #include "code\game\machinery\CableLayer.dm"
 #include "code\game\machinery\cell_charger.dm"
 #include "code\game\machinery\cloning.dm"
+#include "code\game\machinery\contraband_scanner.dm"
 #include "code\game\machinery\cryo.dm"
 #include "code\game\machinery\cryopod.dm"
 #include "code\game\machinery\cryopod_vr.dm"
