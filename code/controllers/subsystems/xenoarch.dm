@@ -40,7 +40,6 @@ SUBSYSTEM_DEF(xenoarch)
 		if((M.z in using_map.xenoarch_exempt_levels) || !prob(XENOARCH_SPAWN_CHANCE))
 			continue
 
-
 		var/farEnough = 1
 		for(var/turf/T as anything in digsite_spawning_turfs)
 			if(T in range(5, M))
