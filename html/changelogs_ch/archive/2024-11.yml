@@ -86,3 +86,10 @@
   - qol: restored syndie headset sprites
   - bugfix: playtime db writes
   - qol: bliss no longer forces crawling
+2024-11-12:
+  VoRe-bot:
+  - rscadd: added lockpicks, for opening simple_doors
+  - qol: removed the redundant name/desc customize proc from the plain choker (just
+      use name/desc gear tweaks instead)
+  - rscadd: added contraband scanner machine, which can sound an alarm if you walk
+      over it whilst carrying an illegal item
