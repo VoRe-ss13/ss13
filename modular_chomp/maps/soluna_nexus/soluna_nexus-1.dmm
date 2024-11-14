@@ -242,15 +242,21 @@
 /turf/simulated/floor/glass,
 /area/hallway/Port_1Deck_Atrium)
 "abh" = (
+<<<<<<< HEAD
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume,
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
+=======
+/obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 	frequency = 1380;
-	id_tag = "sc-D1_L5A3_airlock";
-	pixel_y = 24
+	id_tag = "arrivals_dock_north_airlock";
+	master_tag = "arrivals_dock";
+	pixel_y = 27;
+	req_one_access = list(13)
 	},
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock5)
@@ -1035,10 +1041,9 @@
 "afw" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	frequency = 1380;
-	id_tag = "arrivals_dock_north_airlock";
-	master_tag = "arrivals_dock";
 	pixel_y = 27;
-	req_one_access = list(13)
+	req_one_access = list(13);
+	id_tag = "SC-docklane31"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock3)
@@ -1423,8 +1428,39 @@
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/Custodial_Office)
 "aht" = (
-/obj/machinery/autolathe,
-/obj/effect/floor_decal/milspec/color/purple,
+/obj/machinery/chemical_dispenser/full{
+	pixel_y = 18
+	},
+/obj/item/reagent_containers/chem_disp_cartridge/carbon{
+	pixel_y = 9;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/chem_disp_cartridge/oxygen{
+	pixel_y = 9;
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/chem_disp_cartridge/sugar{
+	pixel_y = 9;
+	pixel_x = 1
+	},
+/obj/item/reagent_containers/chem_disp_cartridge/water{
+	pixel_y = 9;
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/chem_disp_cartridge/nitrogen{
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/chem_disp_cartridge/iron{
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/chem_disp_cartridge/silicon{
+	pixel_x = 1
+	},
+/obj/item/reagent_containers/chem_disp_cartridge/potassium{
+	pixel_x = 5
+	},
+/obj/structure/table/reinforced,
+/obj/effect/floor_decal/milspec/color/white,
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/ursula)
 "ahx" = (
@@ -4790,6 +4826,11 @@
 "aCL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/reagent_dispensers/watertank/high,
+/obj/machinery/light/spot{
+	dir = 4;
+	color = "#ccc9ff";
+	desc = "An extra bright lighting fixture."
+	},
 /turf/simulated/floor/tiled/hydro,
 /area/rnd/Xenobotany_Lab)
 "aCO" = (
@@ -6127,16 +6168,13 @@
 /turf/simulated/floor/tiled/dark,
 /area/rnd/PA_Chamber)
 "aMP" = (
-/obj/structure/closet/secure_closet/guncabinet/phase{
-	req_one_access = list(7,47)
-	},
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 5
 	},
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 5
 	},
-/obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/mineral/equipment_vendor/survey,
 /turf/simulated/floor/tiled/dark,
 /area/rnd/Research_Ship_Bay)
 "aMU" = (
@@ -6991,9 +7029,7 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/Xenobotany_Lab)
 "aSU" = (
-/obj/machinery/mineral/unloading_machine{
-	icon_state = "unloader-corner"
-	},
+/obj/machinery/mineral/unloading_machine,
 /turf/simulated/floor/plating,
 /area/quartermaster/Mining_Ship_Bay)
 "aTg" = (
@@ -7661,6 +7697,23 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/hallway/For_Transit_Foyer)
+"aXg" = (
+/obj/machinery/camera/network/security{
+	c_tag = "D1-Har-5th Dock3";
+	network = list("Harbor");
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/white/bordercorner{
+	dir = 4
+	},
+/obj/machinery/status_display{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled,
+/area/harbor/Dock5)
 "aXm" = (
 /obj/machinery/ai_status_display,
 /obj/structure/disposalpipe/segment{
@@ -7897,6 +7950,20 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/maintenance/Deck1_Security_PortCorridor2)
+<<<<<<< HEAD
+=======
+"baS" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 1
+	},
+/obj/effect/map_helper/airlock/atmos/chamber_pump,
+/obj/effect/floor_decal/steeldecal/steel_decals_central2{
+	dir = 4;
+	color = "#989898"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/harbor/Dock5)
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 "baX" = (
 /obj/effect/catwalk_plated,
 /obj/machinery/light,
@@ -7975,6 +8042,24 @@
 "bci" = (
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Security_PortCorridor1)
+"bck" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/grille,
+/obj/structure/window/titanium,
+/obj/structure/window/titanium{
+	dir = 1
+	},
+/obj/structure/window/titanium{
+	dir = 4
+	},
+/obj/structure/cable/white{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/harbor/Dock5)
 "bco" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -8638,15 +8723,18 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/Deck1_AftStar1_Corridor1)
 "bot" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/industrial/arrows,
-/obj/effect/floor_decal/industrial/arrows{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 6
 	},
-/obj/machinery/door/airlock/angled_bay/external/glass/red,
-/obj/effect/map_helper/airlock/door/ext_door,
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/tiled/techmaint,
+/obj/machinery/airlock_sensor{
+	pixel_y = 24
+	},
+/obj/effect/map_helper/airlock/sensor/chamber_sensor,
+/obj/effect/floor_decal/steeldecal/steel_decals_central2{
+	dir = 4;
+	color = "#989898"
+	},
+/turf/simulated/floor/tiled/dark,
 /area/harbor/Dock5)
 "boC" = (
 /obj/structure/disposalpipe/segment{
@@ -8977,20 +9065,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_ForStar_Corridor2)
 "buo" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/industrial/arrows,
-/obj/effect/floor_decal/industrial/arrows{
-	dir = 1
+/obj/structure/bed/chair{
+	dir = 4
 	},
-/obj/machinery/door/airlock/angled_bay/external/glass,
-/obj/effect/map_helper/airlock/door/int_door,
-/obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/structure/cable/white{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/dark,
 /area/harbor/Dock5)
 "buw" = (
 /obj/effect/floor_decal/rust,
@@ -9025,9 +9103,13 @@
 /turf/simulated/floor/tiled,
 /area/hallway/ForStar_1_Deck_Observatory)
 "buZ" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/manifold/hidden,
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 /obj/effect/floor_decal/steeldecal/steel_decals_central2{
 	dir = 8;
 	color = "#989898"
@@ -9394,7 +9476,15 @@
 /area/rnd/Xenobotany_Isolation_Chamber)
 "bBM" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
+<<<<<<< HEAD
 	dir = 4
+=======
+	dir = 1
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central2{
+	dir = 8;
+	color = "#989898"
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 	},
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock5)
@@ -9515,10 +9605,9 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	dir = 1;
 	frequency = 1380;
-	id_tag = "escape_dock_ssouth_airlock";
-	master_tag = "escape_dock";
 	pixel_y = -27;
-	req_one_access = list(13)
+	req_one_access = list(13);
+	id_tag = "SC-docklane22"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock2)
@@ -9688,27 +9777,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/Deck1_AftStar1_Corridor2)
 "bFI" = (
-/obj/machinery/hologram/holopad,
-/obj/effect/floor_decal/shuttle/blue{
-	pixel_x = -1;
-	pixel_y = 1
-	},
-/obj/structure/cable/white{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable/white{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	dir = 1;
-	color = "#989898"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/harbor/Dock5)
+/obj/effect/gibspawner/robot,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_AftPort_Chamber3)
 "bFJ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/dark,
@@ -9803,8 +9874,7 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/maintenance/engi{
-	name = "Harbor Substation";
-	req_one_access = null
+	name = "Harbor Substation"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/Harbor_Substation)
@@ -13019,15 +13089,21 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/Xenobotany_Isolation_Chamber)
 "cOQ" = (
+<<<<<<< HEAD
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume,
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
+=======
+/obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 	frequency = 1380;
-	id_tag = "sc-D1_L5A1_airlock";
-	pixel_y = 24
+	id_tag = "escape_dock_snorth_airlock";
+	master_tag = "escape_dock";
+	pixel_y = 27;
+	req_one_access = list(13)
 	},
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock5)
@@ -14137,21 +14213,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_AftPort_Chamber2)
 "dgp" = (
-/obj/machinery/light{
-	dir = 8;
-	layer = 3
-	},
-/obj/structure/cable/white{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	dir = 1;
-	color = "#989898"
-	},
-/turf/simulated/floor/tiled/dark,
-/area/harbor/Dock5)
+/obj/structure/sign/warning/vacuum,
+/turf/simulated/wall/r_wall,
+/area/harbor/Ship_Bay2)
 "dgA" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
@@ -14208,13 +14272,25 @@
 /turf/simulated/floor/glass/reinforced,
 /area/hallway/AftPort_1_Deck_Observatory)
 "dhx" = (
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/arrows{
 	dir = 4
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central5{
-	dir = 1
+/obj/machinery/door/airlock/angled_bay/external/glass{
+	dir = 4
 	},
-/turf/simulated/floor/tiled,
+/obj/effect/map_helper/airlock/door/int_door,
+/obj/machinery/access_button{
+	dir = 1;
+	pixel_y = -24
+	},
+/obj/effect/map_helper/airlock/button/int_button{
+	pixel_y = -14
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/harbor/Dock5)
 "dhy" = (
 /obj/structure/table/rack/shelf/steel,
@@ -14644,8 +14720,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Science_AftCorridor1)
 "dpe" = (
-/obj/machinery/chem_master,
-/obj/effect/floor_decal/milspec/color/purple,
+/obj/effect/floor_decal/milspec/color/white,
+/obj/machinery/sleeper{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/ursula)
 "dpD" = (
@@ -15967,13 +16045,18 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_AftStar1_Corridor2)
 "dLR" = (
-/obj/machinery/light/small/emergency{
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/grille,
+/obj/structure/window/titanium{
+	dir = 4
+	},
+/obj/structure/window/titanium{
 	dir = 8
 	},
-/obj/structure/lattice,
-/obj/machinery/shield_diffuser,
-/turf/space,
-/area/space)
+/obj/structure/window/titanium,
+/turf/simulated/floor/plating,
+/area/harbor/Dock5)
 "dLV" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/red{
@@ -18161,21 +18244,9 @@
 	pixel_y = -2;
 	pixel_x = -6
 	},
-/obj/item/stock_parts/manipulator/nano{
-	pixel_y = 2;
-	pixel_x = 4
-	},
 /obj/item/stock_parts/matter_bin/adv{
 	pixel_y = -7;
 	pixel_x = -6
-	},
-/obj/item/stock_parts/scanning_module/omni{
-	pixel_y = -4;
-	pixel_x = 6
-	},
-/obj/item/stock_parts/scanning_module/omni{
-	pixel_y = -6;
-	pixel_x = 2
 	},
 /obj/structure/closet/crate/nanotrasen{
 	dir = 2;
@@ -18184,6 +18255,14 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/stock_parts/scanning_module/adv{
+	pixel_y = -9
+	},
+/obj/item/stock_parts/scanning_module/adv{
+	pixel_y = -6;
+	pixel_x = 4
+	},
+/obj/item/stock_parts/manipulator/hyper,
 /turf/simulated/floor,
 /area/maintenance/Telecomms_Substation)
 "eaQ" = (
@@ -19223,6 +19302,15 @@
 "ett" = (
 /turf/simulated/floor/tiled/white,
 /area/harbor/Dock2)
+"etu" = (
+/obj/structure/cable/white{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/sign/warning/vacuum,
+/turf/simulated/wall/r_wall,
+/area/quartermaster/Mining_Ship_Bay)
 "etG" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/portable_atmospherics/canister/empty,
@@ -19514,6 +19602,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/Depot2)
+"ezN" = (
+/obj/effect/gibspawner/human,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_AftPort_Chamber3)
 "eAa" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/firedoor/glass,
@@ -19790,10 +19882,9 @@
 "eEX" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	frequency = 1380;
-	id_tag = "escape_dock_snorth_airlock";
-	master_tag = "escape_dock";
 	pixel_y = 27;
-	req_one_access = list(13)
+	req_one_access = list(13);
+	id_tag = "SC-docklane21"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock2)
@@ -22555,6 +22646,14 @@
 /obj/effect/floor_decal/corner/lightgrey/border,
 /turf/simulated/floor/tiled,
 /area/hallway/Central_1_Deck_Hall)
+"fEw" = (
+/obj/machinery/light/spot{
+	dir = 8;
+	color = "#ccc9ff";
+	desc = "An extra bright lighting fixture."
+	},
+/turf/simulated/floor/tiled/hydro,
+/area/rnd/Xenobotany_Lab)
 "fEB" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -24720,6 +24819,10 @@
 	},
 /turf/simulated/floor/tiled/hydro,
 /area/rnd/Xenobotany_Lab)
+"gnx" = (
+/obj/structure/sign/warning/vacuum,
+/turf/simulated/wall/r_wall,
+/area/rnd/Research_Ship_Bay)
 "gnM" = (
 /obj/machinery/door/firedoor/glass/hidden/steel,
 /obj/structure/sign/securearea{
@@ -25080,26 +25183,26 @@
 /obj/structure/table/steel,
 /turf/simulated/floor/plating,
 /area/engineering/Telecomms_Foyer)
+"gvf" = (
+/obj/machinery/light/small/emergency{
+	dir = 4
+	},
+/obj/structure/cable/white{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/airless,
+/area/harbor/Dock5)
 "gvu" = (
 /obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/ab_Hydroponics)
 "gvO" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/industrial/arrows,
-/obj/effect/floor_decal/industrial/arrows{
-	dir = 1
-	},
-/obj/machinery/door/airlock/angled_bay/external/glass,
-/obj/machinery/access_button{
-	dir = 8;
-	pixel_x = 24
-	},
-/obj/effect/map_helper/airlock/door/int_door,
-/obj/effect/map_helper/airlock/button/int_button{
-	pixel_y = -14
-	},
-/turf/simulated/floor/tiled/techmaint,
+/obj/effect/floor_decal/borderfloor/corner,
+/obj/effect/floor_decal/corner/white/bordercorner,
+/turf/simulated/floor/tiled,
 /area/harbor/Dock5)
 "gwS" = (
 /obj/structure/disposalpipe/segment,
@@ -25141,6 +25244,24 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Security_PortCorridor2)
+"gxb" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/grille,
+/obj/structure/window/titanium,
+/obj/structure/window/titanium{
+	dir = 1
+	},
+/obj/structure/window/titanium{
+	dir = 8
+	},
+/obj/structure/cable/white{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/harbor/Dock5)
 "gxg" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows,
@@ -26858,14 +26979,9 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/quartermaster/Supply_Ship_Bay)
 "hcU" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/industrial/arrows/yellow,
-/obj/effect/floor_decal/industrial/arrows/yellow{
-	dir = 1
-	},
-/obj/structure/closet/crate/mimic/airlock/safe,
-/turf/simulated/floor/tiled/techmaint,
-/area/maintenance/Deck1_AftPort_Chamber3)
+/obj/structure/sign/warning/vacuum,
+/turf/simulated/wall/r_wall,
+/area/harbor/Ship_Bay1)
 "hdB" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/portable_atmospherics/canister/empty,
@@ -28203,10 +28319,7 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/machinery/mineral/equipment_vendor{
-	dir = 8;
-	pixel_x = 4
-	},
+/obj/machinery/mineral/equipment_vendor,
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/echidna)
 "hDJ" = (
@@ -29346,6 +29459,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/For_Locker_Room)
+"icj" = (
+/obj/structure/cable/white{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/wall/r_wall,
+/area/harbor/Dock5)
 "icl" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/green{
@@ -30307,6 +30428,17 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/maintenance/Deck1_ForStar_Chamber2)
+"iro" = (
+/obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
+	dir = 1;
+	frequency = 1380;
+	id_tag = "escape_dock_ssouth_airlock";
+	master_tag = "escape_dock";
+	pixel_y = -27;
+	req_one_access = list(13)
+	},
+/turf/simulated/floor/tiled/dark,
+/area/harbor/Dock5)
 "irz" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -30349,7 +30481,14 @@
 /obj/effect/floor_decal/corner/purple/diagonal{
 	dir = 4
 	},
-/obj/item/toy/toy_xeno,
+/obj/item/toy/toy_xeno{
+	pixel_x = -1;
+	pixel_y = 4
+	},
+/obj/item/storage/box/syringes{
+	pixel_y = -1;
+	pixel_x = -5
+	},
 /turf/simulated/floor/tiled/dark,
 /area/rnd/Xenobiology_Lab)
 "isE" = (
@@ -30567,6 +30706,16 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/harbor/Ship_Bay4)
+"iwp" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 1
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central2{
+	dir = 4;
+	color = "#989898"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/harbor/Dock5)
 "iwx" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/plating,
@@ -30870,15 +31019,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/quartermaster/Mining_Ship_Bay)
 "iDD" = (
-/obj/machinery/airlock_sensor{
-	pixel_y = 24
-	},
-/obj/effect/map_helper/airlock/sensor/chamber_sensor,
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	dir = 4;
-	color = "#989898"
-	},
-/turf/simulated/floor/tiled/dark,
+/obj/structure/lattice,
+/turf/space,
 /area/harbor/Dock5)
 "iDI" = (
 /obj/machinery/door/firedoor/border_only,
@@ -32274,6 +32416,10 @@
 "jiG" = (
 /obj/random/contraband,
 /obj/random/junk,
+/obj/structure/closet/crate/mimic/safe,
+/obj/random/maintenance/cargo,
+/obj/item/bone/ribs,
+/obj/item/bone/skull/tajaran,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_AftPort_Chamber3)
 "jje" = (
@@ -32360,8 +32506,19 @@
 /turf/simulated/floor/tiled/white,
 /area/rnd/PA_Chamber)
 "jlA" = (
-/obj/structure/lattice,
-/turf/simulated/floor/airless,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/grille,
+/obj/structure/window/titanium{
+	dir = 4
+	},
+/obj/structure/window/titanium{
+	dir = 8
+	},
+/obj/structure/window/titanium{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
 /area/harbor/Dock5)
 "jlD" = (
 /obj/machinery/power/apc/super/critical{
@@ -33006,6 +33163,17 @@
 "jww" = (
 /turf/simulated/floor/glass,
 /area/hallway/Star_1Deck_Atrium)
+"jwO" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 1
+	},
+/obj/effect/map_helper/airlock/atmos/chamber_pump,
+/obj/effect/floor_decal/steeldecal/steel_decals_central2{
+	dir = 8;
+	color = "#989898"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/harbor/Dock5)
 "jxi" = (
 /obj/structure/closet/cabinet,
 /obj/item/storage/box/donkpockets,
@@ -33365,6 +33533,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Harbor_Substation)
 "jEu" = (
+<<<<<<< HEAD
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows{
 	dir = 8
@@ -33380,6 +33549,11 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
+=======
+/obj/structure/lattice,
+/obj/machinery/shield_diffuser,
+/turf/space,
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 /area/harbor/Dock5)
 "jEw" = (
 /obj/structure/closet/walllocker_double/kitchen/east{
@@ -35519,10 +35693,9 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	dir = 1;
 	frequency = 1380;
-	id_tag = "arrivals_dock_south_airlock";
-	master_tag = "arrivals_dock";
 	pixel_y = -27;
-	req_one_access = list(13)
+	req_one_access = list(13);
+	id_tag = "SC-docklane32"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock3)
@@ -35690,7 +35863,7 @@
 /turf/simulated/floor/tiled,
 /area/harbor/Dock1)
 "kwE" = (
-/obj/effect/floor_decal/milspec/color/purple,
+/obj/effect/floor_decal/milspec/color/white,
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/ursula)
 "kwI" = (
@@ -35899,15 +36072,14 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/Supply_Ship_Bay)
 "kAW" = (
-/obj/effect/shuttle_landmark{
-	base_area = /area/space;
-	base_turf = /turf/space;
-	docking_controller = "sc-D1_L5A2_airlock";
-	landmark_tag = "sc-D1_L5A2";
-	name = "Docking Lane 5 Airlock 2"
+/obj/structure/cable/white{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/space,
-/area/space)
+/obj/machinery/atmospherics/pipe/manifold/hidden,
+/turf/simulated/floor/tiled,
+/area/harbor/Dock5)
 "kBb" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -36056,6 +36228,18 @@
 "kEx" = (
 /turf/simulated/floor/water/indoors,
 /area/hallway/Star_1Deck_Atrium)
+"kED" = (
+/obj/machinery/light/small/emergency{
+	dir = 8
+	},
+/obj/structure/cable/white{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/airless,
+/area/harbor/Dock5)
 "kEE" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/random/trash,
@@ -38782,6 +38966,20 @@
 	},
 /turf/simulated/floor,
 /area/maintenance/Deck1_Cargo_Chamber1)
+"lBW" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 10
+	},
+/obj/machinery/airlock_sensor{
+	pixel_y = 24
+	},
+/obj/effect/map_helper/airlock/sensor/chamber_sensor,
+/obj/effect/floor_decal/steeldecal/steel_decals_central2{
+	dir = 8;
+	color = "#989898"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/harbor/Dock5)
 "lBY" = (
 /obj/structure/table,
 /obj/random/maintenance/morestuff,
@@ -38954,16 +39152,24 @@
 	},
 /area/maintenance/ab_Kitchen)
 "lFn" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/grille,
+/obj/structure/window/titanium,
+/obj/structure/window/titanium{
+	dir = 1
+	},
 /obj/structure/cable/white{
-	d1 = 4;
+	d1 = 1;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "1-8"
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	dir = 1;
-	color = "#989898"
+/obj/structure/cable/white{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/plating,
 /area/harbor/Dock5)
 "lFr" = (
 /obj/structure/cable{
@@ -39027,12 +39233,12 @@
 /area/harbor/Dock4)
 "lGZ" = (
 /obj/structure/cable/white{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/effect/catwalk_plated/white,
-/turf/simulated/floor/airless,
+/obj/structure/table/bench/sifwooden/padded,
+/turf/simulated/floor/tiled/dark,
 /area/harbor/Dock5)
 "lHc" = (
 /obj/machinery/hologram/holopad,
@@ -39385,8 +39591,10 @@
 /obj/machinery/newscaster{
 	pixel_y = 28
 	},
-/obj/machinery/light{
-	dir = 1
+/obj/machinery/light/spot{
+	dir = 1;
+	color = "#ccc9ff";
+	desc = "An extra bright lighting fixture."
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/Xenobotany_Lab)
@@ -40253,6 +40461,33 @@
 	},
 /turf/simulated/floor/tiled,
 /area/security/Quantum_Pad_Checkpoint)
+<<<<<<< HEAD
+=======
+"lZN" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 4
+	},
+/obj/machinery/door/airlock/angled_bay/external/glass{
+	dir = 4
+	},
+/obj/effect/map_helper/airlock/door/int_door,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/machinery/access_button{
+	dir = 1;
+	pixel_y = -24
+	},
+/obj/effect/map_helper/airlock/button/int_button{
+	pixel_y = -14
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/harbor/Dock5)
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 "lZO" = (
 /obj/structure/table/standard,
 /obj/effect/floor_decal/borderfloorblack{
@@ -40751,10 +40986,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Cargo_Chamber1)
 "mkx" = (
-/obj/machinery/airlock_sensor{
-	pixel_y = 24
-	},
-/obj/effect/map_helper/airlock/sensor/chamber_sensor,
+/obj/machinery/atmospherics/unary/vent_pump/high_volume,
+/obj/effect/map_helper/airlock/atmos/chamber_pump,
 /obj/effect/floor_decal/steeldecal/steel_decals_central2{
 	dir = 8;
 	color = "#989898"
@@ -40807,26 +41040,16 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/Depot2)
 "mlW" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/industrial/arrows{
-	dir = 8
+/obj/effect/floor_decal/borderfloor/corner{
+	dir = 1
 	},
-/obj/effect/floor_decal/industrial/arrows{
-	dir = 4
+/obj/effect/floor_decal/corner/white/bordercorner{
+	dir = 1
 	},
-/obj/machinery/door/airlock/angled_bay/external/glass{
-	dir = 4
+/obj/machinery/ai_status_display{
+	pixel_x = -32
 	},
-/obj/machinery/access_button{
-	dir = 1;
-	pixel_y = -24
-	},
-/obj/effect/map_helper/airlock/door/ext_door,
-/obj/effect/map_helper/airlock/button/ext_button{
-	pixel_y = -14
-	},
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled,
 /area/harbor/Dock5)
 "mma" = (
 /obj/structure/cable/green{
@@ -40845,6 +41068,17 @@
 "mmk" = (
 /obj/structure/sign/warning/nosmoking_2,
 /turf/simulated/wall/r_wall,
+/area/harbor/Dock5)
+"mmB" = (
+/obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
+	dir = 1;
+	frequency = 1380;
+	id_tag = "arrivals_dock_south_airlock";
+	master_tag = "arrivals_dock";
+	pixel_y = -27;
+	req_one_access = list(13)
+	},
+/turf/simulated/floor/tiled/dark,
 /area/harbor/Dock5)
 "mmI" = (
 /obj/structure/table/standard,
@@ -42757,23 +42991,9 @@
 /turf/simulated/floor/tiled/yellow,
 /area/shuttle/ursula)
 "mPv" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/industrial/arrows,
-/obj/effect/floor_decal/industrial/arrows{
-	dir = 1
-	},
-/obj/machinery/door/airlock/angled_bay/external/glass/red,
-/obj/machinery/access_button{
-	dir = 8;
-	pixel_x = 24
-	},
-/obj/effect/map_helper/airlock/door/ext_door,
-/obj/effect/map_helper/airlock/button/ext_button{
-	pixel_y = -14
-	},
-/obj/machinery/shield_diffuser,
-/turf/simulated/floor/tiled/techmaint,
-/area/harbor/Dock5)
+/obj/structure/sign/warning/vacuum,
+/turf/simulated/wall/r_wall,
+/area/quartermaster/Supply_Ship_Bay)
 "mPC" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -43074,11 +43294,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/ab_StripBar)
 "mVX" = (
-/obj/machinery/chemical_dispenser/full{
-	pixel_y = 5
-	},
-/obj/structure/table/darkglass,
-/obj/effect/floor_decal/milspec/color/purple,
+/obj/effect/floor_decal/milspec/color/white,
+/obj/machinery/sleep_console,
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/ursula)
 "mWc" = (
@@ -43103,9 +43320,6 @@
 /turf/simulated/floor/tiled,
 /area/rnd/Observation_Hall)
 "mWi" = (
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	dir = 8
-	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central5{
 	dir = 1
 	},
@@ -44537,6 +44751,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_ForPort_Corridor1)
 "nBS" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
@@ -44545,6 +44760,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/harbor/Dock5)
+=======
+/obj/structure/cable/white{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/sign/warning/vacuum,
+/turf/simulated/wall/r_wall,
+/area/rnd/Research_Ship_Bay)
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 "nBU" = (
 /obj/structure/table/rack{
 	dir = 8;
@@ -47654,6 +47879,10 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/harbor/Dock4)
+"oAk" = (
+/obj/structure/sign/warning/vacuum,
+/turf/simulated/wall/r_wall,
+/area/quartermaster/Mining_Ship_Bay)
 "oAw" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
@@ -48659,13 +48888,14 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_AftPort_Chamber2)
 "oRK" = (
-/obj/machinery/light/small/emergency{
-	dir = 4
+/obj/structure/cable/white{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/structure/lattice,
-/obj/machinery/shield_diffuser,
-/turf/space,
-/area/space)
+/obj/structure/sign/warning/vacuum,
+/turf/simulated/wall/r_wall,
+/area/security/Exploration_Ship_Bay)
 "oSc" = (
 /obj/structure/table/woodentable,
 /obj/item/deck/wizoff{
@@ -48714,6 +48944,14 @@
 /turf/simulated/floor/tiled/dark,
 /area/quartermaster/Depot1)
 "oSV" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 9
+	},
+/obj/machinery/airlock_sensor{
+	pixel_y = -24;
+	dir = 1
+	},
+/obj/effect/map_helper/airlock/sensor/chamber_sensor,
 /obj/effect/floor_decal/steeldecal/steel_decals_central2{
 	dir = 8;
 	color = "#989898"
@@ -49546,6 +49784,12 @@
 /obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Security_StarCorridor3)
+"pgE" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/harbor/Dock5)
 "pgI" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -50783,16 +51027,30 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/Deck1_AftPort_Corridor3)
 "pyv" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden,
 /obj/structure/cable/white{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	color = "#989898"
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/turf/simulated/floor/tiled,
+/area/harbor/Dock5)
+"pyD" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 8
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 4
+	},
+/obj/machinery/door/airlock/angled_bay/external/glass{
+	dir = 4
+	},
+/obj/effect/map_helper/airlock/door/int_door,
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
 /area/harbor/Dock5)
 "pzk" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -51197,14 +51455,8 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Cargo_Corridor3)
 "pHp" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/industrial/arrows,
-/obj/effect/floor_decal/industrial/arrows{
-	dir = 1
-	},
-/obj/machinery/door/airlock/angled_bay/external/glass,
-/obj/effect/map_helper/airlock/door/int_door,
-/turf/simulated/floor/tiled/techmaint,
+/obj/structure/table/bench/sifwooden/padded,
+/turf/simulated/floor/tiled/dark,
 /area/harbor/Dock5)
 "pHw" = (
 /obj/machinery/light/small{
@@ -51538,9 +51790,32 @@
 /turf/simulated/floor/tiled,
 /area/hallway/Port_1Deck_Atrium)
 "pML" = (
+<<<<<<< HEAD
 /obj/structure/closet/crate/mimic/closet/safe,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_AftPort_Chamber3)
+=======
+/obj/structure/cable/white{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled,
+/area/harbor/Dock5)
+"pNg" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/grille,
+/obj/structure/window/titanium,
+/obj/structure/window/titanium{
+	dir = 1
+	},
+/obj/structure/window/titanium{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/hallway/AftStar_1_Deck_Observatory)
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 "pNX" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -55125,6 +55400,16 @@
 /obj/machinery/vending/weeb,
 /turf/simulated/floor/tiled/dark,
 /area/maintenance/Market_Stall_6)
+"qWw" = (
+/obj/machinery/shield_diffuser,
+/obj/structure/cable/white{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/airless,
+/area/harbor/Dock5)
 "qWy" = (
 /obj/structure/table/rack/shelf/steel,
 /obj/fiftyspawner/steel,
@@ -55630,19 +55915,17 @@
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/needle)
 "rdk" = (
-/obj/machinery/airlock_sensor{
-	pixel_x = -24;
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/grille,
+/obj/structure/window/titanium,
+/obj/structure/window/titanium{
+	dir = 1
+	},
+/obj/structure/window/titanium{
 	dir = 4
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 4
-	},
-/obj/effect/map_helper/airlock/atmos/chamber_pump,
-/obj/effect/map_helper/airlock/sensor/chamber_sensor,
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	color = "#989898"
-	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/plating,
 /area/harbor/Dock5)
 "rdl" = (
 /obj/structure/cable{
@@ -56421,9 +56704,16 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Security_StarCorridor2)
 "rsk" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 8
 	},
+=======
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
+	},
+/obj/machinery/light,
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock5)
 "rsp" = (
@@ -58532,7 +58822,7 @@
 /obj/structure/closet/walllocker_double/hydrant/south,
 /obj/item/storage/firstaid/o2,
 /obj/item/storage/firstaid/regular,
-/obj/effect/floor_decal/milspec/color/purple,
+/obj/effect/floor_decal/milspec/color/white,
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/ursula)
 "sdO" = (
@@ -58938,8 +59228,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock1)
 "slm" = (
-/obj/machinery/mineral/equipment_vendor/survey,
-/obj/effect/floor_decal/milspec/color/purple,
+/obj/machinery/chem_master,
+/obj/effect/floor_decal/milspec/color/white,
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/ursula)
 "slH" = (
@@ -59200,6 +59490,27 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_AftPort_Chamber1)
+"ssn" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/arrows{
+	dir = 4
+	},
+/obj/machinery/door/airlock/angled_bay/external/glass{
+	dir = 4
+	},
+/obj/effect/map_helper/airlock/door/ext_door,
+/obj/machinery/access_button{
+	pixel_y = 24
+	},
+/obj/effect/map_helper/airlock/button/ext_button{
+	pixel_y = -14
+	},
+/obj/machinery/shield_diffuser,
+/turf/simulated/floor/tiled/techmaint,
+/area/harbor/Dock5)
 "ssD" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -59284,10 +59595,9 @@
 "suH" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	frequency = 1380;
-	id_tag = "escape_dock_north_airlock";
-	master_tag = "escape_dock";
 	pixel_y = 27;
-	req_one_access = list(13)
+	req_one_access = list(13);
+	id_tag = "SC-docklane11"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock1)
@@ -59813,9 +60123,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
+<<<<<<< HEAD
 /obj/effect/floor_decal/steeldecal/steel_decals_central2{
 	dir = 8
 	},
+=======
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 /turf/simulated/floor/tiled,
 /area/harbor/Dock5)
 "sEl" = (
@@ -60509,10 +60822,6 @@
 /area/hallway/Stairwell_Port)
 "sPh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
-/obj/machinery/camera/network/security{
-	c_tag = "D1-Har-5th Dock3";
-	network = list("Harbor")
-	},
 /obj/structure/cable/white{
 	d1 = 1;
 	d2 = 2;
@@ -60606,18 +60915,11 @@
 /turf/simulated/floor/plating,
 /area/harbor/Ship_Bay3)
 "sRF" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 4
 	},
-/obj/effect/map_helper/airlock/atmos/chamber_pump,
-/obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
-	id_tag = "sc-D1_L5A2_airlock";
-	pixel_x = 24;
-	dir = 8
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	color = "#989898"
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock5)
@@ -62452,6 +62754,16 @@
 	},
 /turf/simulated/floor/tiled,
 /area/harbor/Dock2)
+"tAl" = (
+/obj/machinery/shield_diffuser,
+/obj/structure/cable/white{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/airless,
+/area/harbor/Dock5)
 "tAq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
@@ -62591,9 +62903,13 @@
 /turf/simulated/shuttle/floor,
 /area/shuttle/escape_pod2/station)
 "tCF" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
+=======
+/obj/machinery/atmospherics/pipe/manifold/hidden,
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 /obj/effect/floor_decal/steeldecal/steel_decals_central2{
 	dir = 4;
 	color = "#989898"
@@ -63107,7 +63423,7 @@
 	pixel_x = -5;
 	pixel_y = 5
 	},
-/obj/effect/floor_decal/milspec/color/purple,
+/obj/effect/floor_decal/milspec/color/white,
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/ursula)
 "tNb" = (
@@ -64434,7 +64750,14 @@
 /turf/simulated/floor/tiled,
 /area/engineering/GravGen_Room)
 "ulv" = (
-/obj/structure/closet/crate/mimic/safe,
+/obj/structure/closet/crate/mimic/closet/safe,
+/obj/random/contraband,
+/obj/random/contraband/nofail,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/maintenance/clean,
+/obj/item/bone,
+/obj/item/bone/skull,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_AftPort_Chamber3)
 "ulX" = (
@@ -65107,6 +65430,16 @@
 /obj/machinery/door/airlock/maintenance/common,
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/Deck1_ForStar_Corridor2)
+"uyD" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/arrows/yellow,
+/obj/effect/floor_decal/industrial/arrows/yellow{
+	dir = 1
+	},
+/obj/structure/closet/crate/mimic/airlock/safe,
+/obj/item/tape/police,
+/turf/simulated/floor/tiled/techmaint,
+/area/maintenance/Deck1_AftPort_Chamber3)
 "uyN" = (
 /obj/effect/floor_decal/corner/brown/diagonal{
 	dir = 4
@@ -65682,10 +66015,9 @@
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	dir = 1;
 	frequency = 1380;
-	id_tag = "escape_dock_south_airlock";
-	master_tag = "escape_dock";
 	pixel_y = -27;
-	req_one_access = list(13)
+	req_one_access = list(13);
+	id_tag = "SC-docklane12"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock1)
@@ -65828,8 +66160,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/maintenance/engi{
-	name = "Harbor Substation";
-	req_one_access = null
+	name = "Harbor Substation"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -66786,14 +67117,10 @@
 /turf/simulated/shuttle/floor/darkred,
 /area/shuttle/expoutpost/station)
 "vet" = (
+/obj/effect/floor_decal/milspec/color/white,
 /obj/structure/bed/chair/bay/comfy/purple{
-	dir = 1
+	dir = 4
 	},
-/obj/structure/closet/walllocker/emerglocker{
-	pixel_x = 24;
-	pixel_y = 32
-	},
-/obj/effect/floor_decal/milspec/color/purple,
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/ursula)
 "vew" = (
@@ -67164,6 +67491,16 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/rnd/Xenobiology_Lab)
+"viM" = (
+/obj/structure/closet/emcloset,
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#DDFFD3"
+	},
+/turf/simulated/floor/tiled/steel_ridged{
+	color = "#989898"
+	},
+/area/harbor/Dock5)
 "viW" = (
 /obj/item/holosign_creator,
 /obj/structure/table/steel,
@@ -67696,6 +68033,16 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Ship_Bay2)
+"vrz" = (
+/obj/structure/closet/emcloset,
+/obj/machinery/light{
+	dir = 8;
+	pixel_x = 6
+	},
+/turf/simulated/floor/tiled/steel_ridged{
+	color = "#989898"
+	},
+/area/harbor/Dock5)
 "vrX" = (
 /obj/random/trash,
 /turf/simulated/floor/plating,
@@ -68431,6 +68778,18 @@
 	},
 /turf/simulated/floor/plating,
 /area/rnd/PA_Chamber)
+<<<<<<< HEAD
+=======
+"vCE" = (
+/obj/machinery/atmospherics/unary/vent_pump/high_volume,
+/obj/effect/map_helper/airlock/atmos/chamber_pump,
+/obj/effect/floor_decal/steeldecal/steel_decals_central2{
+	dir = 4;
+	color = "#989898"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/harbor/Dock5)
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 "vCF" = (
 /obj/effect/landmark{
 	name = "blobstart"
@@ -68653,6 +69012,7 @@
 /obj/random/maintenance/engineering,
 /obj/random/trash,
 /obj/random/junk,
+/obj/effect/gibspawner/human,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_AftPort_Chamber3)
 "vFJ" = (
@@ -68828,6 +69188,20 @@
 	},
 /turf/simulated/floor/tiled/hydro,
 /area/rnd/Xenobotany_Isolation_Chamber)
+"vJG" = (
+/obj/machinery/atmospheric_field_generator/perma/underdoors{
+	color = "Yellow"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/blast/angled{
+	id = "sc-GCtransitgate2";
+	name = "Primary Docking Gate"
+	},
+/obj/structure/sign/warning/vacuum{
+	pixel_x = -32
+	},
+/turf/simulated/floor/plating,
+/area/harbor/Ship_Bay2)
 "vJS" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -69394,7 +69768,12 @@
 	},
 /obj/item/tank/phoron,
 /obj/item/tank/phoron,
-/obj/effect/floor_decal/milspec/color/purple,
+/obj/item/roller{
+	pixel_y = 7
+	},
+/obj/item/roller{
+	pixel_y = 3
+	},
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/ursula)
 "vTY" = (
@@ -69449,7 +69828,7 @@
 /obj/machinery/atmospherics/binary/passive_gate{
 	regulate_mode = 0;
 	unlocked = 1;
-	dir = 8
+	dir = 4
 	},
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/plating,
@@ -70149,6 +70528,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/Public_EVA)
+"wgr" = (
+/obj/effect/floor_decal/borderfloorwhite{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 1
+	},
+/obj/machinery/light/spot{
+	color = "#ccc9ff";
+	desc = "An extra bright lighting fixture."
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/Xenobotany_Lab)
 "wgs" = (
 /obj/structure/disposalpipe/junction,
 /turf/simulated/floor/tiled,
@@ -70546,6 +70938,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/atmospherics/pipe/manifold4w/hidden,
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 /turf/simulated/floor/tiled,
 /area/harbor/Dock5)
 "wpY" = (
@@ -71418,6 +71814,14 @@
 /turf/simulated/floor/reinforced/airless,
 /area/maintenance/Deck1_Security_StarCorridor3)
 "wHM" = (
+/obj/machinery/atmospherics/pipe/simple/hidden{
+	dir = 5
+	},
+/obj/machinery/airlock_sensor{
+	pixel_y = -24;
+	dir = 1
+	},
+/obj/effect/map_helper/airlock/sensor/chamber_sensor,
 /obj/effect/floor_decal/steeldecal/steel_decals_central2{
 	dir = 4;
 	color = "#989898"
@@ -73716,6 +74120,15 @@
 /obj/machinery/light_construct,
 /turf/simulated/floor/plating,
 /area/maintenance/ab_CardTrading)
+"xvj" = (
+/obj/structure/cable/white{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/sign/warning/vacuum,
+/turf/simulated/wall/r_wall,
+/area/quartermaster/Supply_Ship_Bay)
 "xvs" = (
 /obj/effect/floor_decal/industrial/stand_clear/blue,
 /turf/simulated/floor/tiled/monotile{
@@ -73915,6 +74328,10 @@
 "xAc" = (
 /turf/simulated/floor/glass/reinforced,
 /area/hallway/Port_1Deck_Central_Corridor_1)
+"xAL" = (
+/obj/effect/catwalk_plated/white,
+/turf/simulated/floor/airless,
+/area/harbor/Dock5)
 "xBj" = (
 /obj/effect/floor_decal/industrial/loading/blue{
 	dir = 8
@@ -74691,6 +75108,20 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/Port_1Deck_Atrium)
+"xSj" = (
+/obj/machinery/atmospheric_field_generator/perma/underdoors{
+	color = "Yellow"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/blast/angled{
+	id = "sc-GCtransitgate1";
+	name = "Primary Docking Gate"
+	},
+/obj/structure/sign/warning/vacuum{
+	pixel_x = 32
+	},
+/turf/simulated/floor/plating,
+/area/harbor/Ship_Bay1)
 "xSm" = (
 /obj/effect/shuttle_landmark{
 	base_area = /area/space;
@@ -75778,9 +76209,6 @@
 "yjP" = (
 /obj/structure/table/glass,
 /obj/item/clipboard,
-/obj/machinery/light{
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -85320,7 +85748,7 @@ rqS
 aNX
 aNX
 aNX
-rqS
+xvj
 gNJ
 myq
 iFw
@@ -86293,7 +86721,7 @@ aaa
 iFw
 yhq
 tdK
-cSw
+etu
 cSw
 cSw
 cSw
@@ -88416,7 +88844,7 @@ bMN
 aDR
 ani
 agF
-agF
+mPv
 agF
 akd
 aaa
@@ -90421,7 +90849,7 @@ aaa
 aaa
 szS
 sZQ
-sZQ
+oAk
 sZQ
 aiB
 aiB
@@ -99311,7 +99739,7 @@ uDE
 uDE
 uDE
 uDE
-uDE
+hcU
 uDE
 akd
 aaa
@@ -102081,11 +102509,11 @@ bGi
 auk
 lZZ
 lZZ
+lZZ
+lZZ
+lZZ
+lZZ
 rne
-lZZ
-lZZ
-lZZ
-lZZ
 lZZ
 lZZ
 lZZ
@@ -102342,7 +102770,7 @@ ulv
 neE
 neE
 lZZ
-pML
+neE
 neE
 wyq
 lZZ
@@ -102597,9 +103025,9 @@ bGi
 auk
 lZZ
 eJN
-neE
+ezN
 kai
-rne
+lZZ
 neE
 kUS
 tUi
@@ -103113,11 +103541,11 @@ htL
 auk
 lZZ
 lZZ
+uyD
+lZZ
+lZZ
+lZZ
 rne
-lZZ
-lZZ
-lZZ
-lZZ
 lZZ
 lZZ
 lZZ
@@ -103522,7 +103950,7 @@ iFw
 aCB
 eLm
 dKC
-dKC
+oRK
 tag
 ebf
 ebf
@@ -103629,9 +104057,9 @@ fiB
 auk
 lZZ
 mLC
-neE
+bFI
 kai
-rZA
+lZZ
 neE
 kai
 neE
@@ -103955,7 +104383,7 @@ aKi
 aKi
 pUe
 lzJ
-chQ
+xSj
 ekA
 iKg
 aaa
@@ -104146,7 +104574,7 @@ auk
 lZZ
 lZZ
 lZZ
-hcU
+rne
 lZZ
 lZZ
 lZZ
@@ -104225,6 +104653,7 @@ aaa
 aaa
 aaa
 szS
+<<<<<<< HEAD
 agL
 wXp
 wXp
@@ -104237,6 +104666,19 @@ aaa
 aaa
 aaa
 aaa
+=======
+oya
+ssn
+wXp
+oya
+aaa
+aaa
+aaa
+oya
+wXp
+jEb
+oya
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 aaa
 aaa
 aaa
@@ -104483,6 +104925,7 @@ agL
 agL
 agL
 kSE
+<<<<<<< HEAD
 agL
 iDD
 jLb
@@ -104495,9 +104938,22 @@ aaa
 aaa
 aaa
 aaa
+=======
+xiM
+vCE
+wHM
+xiM
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 aaa
 aaa
 aaa
+xiM
+bot
+baS
+xiM
+jEu
+jEu
+iDD
 aaa
 aaa
 aaa
@@ -104744,18 +105200,22 @@ bap
 agL
 cOQ
 rsk
+rdk
+aaa
+aaa
+aaa
+rdk
+sRF
+iro
 xiM
+<<<<<<< HEAD
 agL
 jlA
+=======
+xAL
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 fZW
-iFw
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+jEu
 aaa
 aaa
 aaa
@@ -104999,21 +105459,28 @@ sQR
 sQR
 gjp
 dVV
+<<<<<<< HEAD
 agL
 oSV
 buZ
 oSV
 agL
+=======
+xiM
+mkx
+buZ
+kSE
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 jlA
-lGZ
-oRK
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+wEr
+dLR
+kSE
+bBM
+jwO
+xiM
+gvf
+qWw
+jEu
 aaa
 aaa
 aaa
@@ -105259,6 +105726,7 @@ ebd
 aJT
 elp
 dXe
+<<<<<<< HEAD
 jEu
 mOX
 kSE
@@ -105269,6 +105737,18 @@ aaa
 aaa
 aaa
 aaa
+=======
+lZN
+kSE
+buo
+vrz
+buo
+kSE
+pyD
+dhx
+kSE
+icj
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 aaa
 aaa
 aaa
@@ -105516,18 +105996,23 @@ bKR
 pdf
 dNN
 bBx
+<<<<<<< HEAD
 dhx
 nBS
 wga
+=======
+mWi
+sEk
+ebd
+mdY
+mdY
+mdY
+mlW
+sEk
+pdf
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 pHp
-rdk
-dgp
-bot
-aaa
-aaa
-aaa
-aaa
-aaa
+gxb
 aaa
 aaa
 aaa
@@ -105776,16 +106261,20 @@ fIm
 bry
 sPh
 wpV
+<<<<<<< HEAD
 ojM
 buo
+=======
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 pyv
-bFI
-bot
-aaa
+pyv
+pyv
+pyv
+pyv
 kAW
-aaa
-aaa
-aaa
+pML
+lGZ
+lFn
 aaa
 aaa
 aaa
@@ -106036,14 +106525,14 @@ mWi
 sEk
 wEr
 gvO
-sRF
-lFn
-mPv
-aaa
-aaa
-aaa
-aaa
-aaa
+fHt
+fHt
+fHt
+aXg
+sEk
+pdf
+pHp
+bck
 aaa
 aaa
 aaa
@@ -106294,6 +106783,7 @@ dXe
 jEu
 pBU
 kSE
+<<<<<<< HEAD
 agL
 xkT
 agL
@@ -106301,6 +106791,16 @@ aaa
 aaa
 aaa
 aaa
+=======
+pgE
+viM
+pgE
+kSE
+pyD
+dhx
+kSE
+icj
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 aaa
 aaa
 aaa
@@ -106547,21 +107047,28 @@ fOX
 fOX
 tcF
 dVV
+<<<<<<< HEAD
 agL
 wHM
 tCF
 wHM
 agL
+=======
+xiM
+vCE
+tCF
+kSE
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 jlA
-lGZ
+wEr
 dLR
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+kSE
+iwp
+baS
+xiM
+kED
+tAl
+jEu
 aaa
 aaa
 aaa
@@ -106807,19 +107314,23 @@ pCF
 lvp
 agL
 abh
-bBM
+rsk
+oya
+aaa
+aaa
+aaa
+oya
+sRF
+mmB
 xiM
+<<<<<<< HEAD
 agL
 jlA
+=======
+xAL
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 deu
-iFw
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+jEu
 aaa
 aaa
 aaa
@@ -107067,6 +107578,7 @@ agL
 mkx
 viE
 oSV
+<<<<<<< HEAD
 agL
 iFw
 iFw
@@ -107075,9 +107587,19 @@ aaa
 aaa
 aaa
 aaa
+=======
+xiM
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 aaa
 aaa
 aaa
+xiM
+lBW
+jwO
+xiM
+jEu
+jEu
+iDD
 aaa
 aaa
 aaa
@@ -107321,6 +107843,7 @@ aaa
 aaa
 aaa
 szS
+<<<<<<< HEAD
 agL
 wXp
 wXp
@@ -107330,9 +107853,19 @@ akd
 aaa
 aaa
 aaa
+=======
+mZW
+ssn
+wXp
+mZW
+>>>>>>> 1582b2f32b (Soluna Nexus map fix 1.6 (#9476))
 aaa
 aaa
 aaa
+mZW
+wXp
+jEb
+mZW
 aaa
 aaa
 aaa
@@ -107567,7 +108100,7 @@ aVW
 aVW
 jot
 noM
-adk
+vJG
 rXy
 iKg
 aaa
@@ -107650,7 +108183,7 @@ iFw
 aCB
 eLm
 dKC
-dKC
+oRK
 jLi
 ebf
 ebf
@@ -112211,7 +112744,7 @@ eab
 eab
 eab
 eab
-eab
+dgp
 eab
 akd
 aaa
@@ -117571,7 +118104,7 @@ mMe
 asJ
 asJ
 asJ
-asJ
+gnx
 asJ
 akd
 aaa
@@ -120359,8 +120892,8 @@ eyJ
 gKh
 gnw
 aLh
-aLh
 hSi
+fEw
 cgH
 aLh
 xfQ
@@ -120617,9 +121150,9 @@ eyJ
 dDV
 aLh
 ams
-aSb
 sgQ
-aSb
+sgQ
+sgQ
 iTK
 kuY
 cCp
@@ -121699,7 +122232,7 @@ wLZ
 wLZ
 bHO
 dWb
-dWT
+nBS
 dHz
 jbn
 iFw
@@ -122170,7 +122703,7 @@ aMF
 aSb
 dDV
 vFg
-aPE
+wgr
 duN
 wqU
 rPJ
@@ -122423,9 +122956,9 @@ dYZ
 eyu
 aHn
 uSq
-aSb
 cVw
-aSb
+cVw
+cVw
 adn
 imW
 tGc
