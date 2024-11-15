@@ -13,7 +13,7 @@
 /area/engineering/Solar_Array_AftPort)
 "aac" = (
 /turf/simulated/wall/r_wall,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "aad" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -101,7 +101,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "aak" = (
 /obj/machinery/status_display{
 	layer = 4;
@@ -384,7 +384,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "aea" = (
 /obj/effect/floor_decal/borderfloorblack/corner,
 /obj/effect/floor_decal/corner/purple/bordercorner,
@@ -421,7 +421,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "aej" = (
 /obj/structure/transit_tube{
 	icon_state = "N-S-Pass"
@@ -491,7 +491,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "agd" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -510,7 +510,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "agg" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 4
@@ -539,7 +539,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/water/deep/pool,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "agw" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -755,7 +755,7 @@
 	on = 0
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "akK" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
@@ -800,7 +800,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "amn" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -860,7 +860,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "ank" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -905,7 +905,7 @@
 	},
 /obj/item/bedsheet/rainbowdouble,
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "aoz" = (
 /obj/machinery/atmospherics/trinary/mixer/m_mixer,
 /turf/simulated/floor/plating,
@@ -1067,7 +1067,7 @@
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/carpet/purcarpet,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "art" = (
 /obj/effect/floor_decal/corner/red/full{
 	dir = 8
@@ -1165,7 +1165,7 @@
 /obj/machinery/door/window/westright,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "atl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -1594,7 +1594,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "aAM" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -1618,7 +1618,7 @@
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "aAV" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/structure/sign/poster/custom{
@@ -1738,7 +1738,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "aDn" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -1758,7 +1758,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "aDu" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 1
@@ -1791,7 +1791,7 @@
 /obj/machinery/door/window/southright,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "aDY" = (
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor/glass/turfpack/airless,
@@ -1985,7 +1985,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "aHI" = (
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
@@ -2021,7 +2021,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "aIP" = (
 /obj/structure/table/standard,
 /obj/structure/bedsheetbin,
@@ -2151,7 +2151,7 @@
 /area/hallway/Star_Breakroom)
 "aKm" = (
 /turf/simulated/wall,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "aKr" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -2239,7 +2239,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "aMs" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/shuttle/blue{
@@ -2254,7 +2254,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/carpet,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "aMw" = (
 /obj/structure/bed/chair/oldsofa{
 	dir = 8
@@ -2297,7 +2297,7 @@
 	name = "Dorm six"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "aNp" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -2368,7 +2368,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "aOO" = (
 /obj/structure/railing,
 /obj/structure/railing{
@@ -2401,7 +2401,7 @@
 /area/maintenance/Deck3_Engineering_AftStarCorridor1)
 "aPF" = (
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "aPH" = (
 /obj/random/junk,
 /turf/simulated/floor/plating,
@@ -2422,7 +2422,7 @@
 /obj/item/toy/plushie/teshari/_yw,
 /obj/item/bedsheet/mimedouble,
 /turf/simulated/floor/wood/alt/broken,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "aQw" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -2439,7 +2439,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "aRl" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -2582,7 +2582,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "aUR" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -2889,7 +2889,7 @@
 /area/bridge/HoP_Office)
 "aYM" = (
 /turf/simulated/floor/tiled/freezer,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "aYS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -2939,7 +2939,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "aZQ" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
@@ -3177,7 +3177,7 @@
 /obj/structure/bed/double/padded,
 /obj/item/bedsheet/rddouble,
 /turf/simulated/floor/carpet/blue,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "beu" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/green,
 /obj/machinery/light,
@@ -3202,7 +3202,7 @@
 /area/space)
 "beU" = (
 /turf/simulated/floor/wood/alt/broken,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "bfC" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/random/trash,
@@ -3223,7 +3223,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "bge" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/random/trash,
@@ -3283,7 +3283,7 @@
 "bhn" = (
 /obj/structure/bed/double/padded,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "bhy" = (
 /obj/machinery/atmospherics/pipe/simple/visible/universal{
 	dir = 4
@@ -3623,7 +3623,7 @@
 /obj/machinery/door/window/southright,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "bmj" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -4144,7 +4144,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "byb" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/green{
@@ -4267,7 +4267,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "bzD" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/machinery/light/small{
@@ -4387,7 +4387,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "bCC" = (
 /obj/random/trash,
 /obj/structure/railing/grey{
@@ -4402,7 +4402,7 @@
 /area/engineering/Atmospherics_Chamber)
 "bCO" = (
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "bCP" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central2{
 	dir = 4
@@ -4701,7 +4701,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "bIP" = (
 /obj/random/trash,
 /turf/simulated/floor/plating,
@@ -4854,7 +4854,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "bLc" = (
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
@@ -4864,7 +4864,7 @@
 	},
 /obj/item/bikehorn/rubberducky,
 /turf/simulated/floor/water/deep/pool,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "bLk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -4913,7 +4913,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "bLC" = (
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/airless,
@@ -4943,11 +4943,11 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/geo,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "bLY" = (
 /obj/item/stool/padded,
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "bMd" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
@@ -5097,7 +5097,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "bOD" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -5170,7 +5170,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "bQC" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -5290,7 +5290,7 @@
 	pixel_y = 4
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "bSi" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/wood/sif,
@@ -5418,7 +5418,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "bUf" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/light_switch{
@@ -5700,7 +5700,7 @@
 	pixel_x = -7
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "bZu" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5749,7 +5749,7 @@
 	pixel_y = 22
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "caL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark,
@@ -5872,7 +5872,7 @@
 	name = "Dorm five"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "ccI" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -5943,14 +5943,14 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "cds" = (
 /obj/item/bedsheet/rd,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "cej" = (
 /obj/random/trash_pile,
 /obj/random/trash,
@@ -6073,7 +6073,7 @@
 	id = "sc-WTDorm5"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "cgG" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/disposalpipe/segment,
@@ -6224,7 +6224,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "cjg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -6284,7 +6284,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "ckk" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/borderfloorblack{
@@ -6380,7 +6380,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "ckO" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -6557,7 +6557,7 @@
 	on = 0
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "cnW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -6607,7 +6607,7 @@
 "cpd" = (
 /obj/structure/closet/secure_closet/engineering_chief_wardrobe,
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "cpl" = (
 /obj/machinery/firealarm{
 	pixel_y = 25
@@ -6619,7 +6619,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "cpp" = (
 /obj/effect/floor_decal/industrial/warning/color{
 	dir = 1
@@ -6760,7 +6760,7 @@
 	pixel_x = -7
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "crR" = (
 /obj/structure/bed/chair/office/dark,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -6785,7 +6785,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "csr" = (
 /obj/structure/cable/white{
 	d1 = 2;
@@ -6825,7 +6825,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "ctq" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/random/trash,
@@ -7070,7 +7070,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "cxF" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -7114,10 +7114,10 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/geo,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "cyo" = (
 /turf/simulated/wall,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "cyx" = (
 /obj/effect/floor_decal/industrial/arrows/red{
 	dir = 4
@@ -7198,7 +7198,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "czN" = (
 /obj/structure/bed/chair/sofa/left/green{
 	dir = 4
@@ -7211,7 +7211,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "czX" = (
 /obj/structure/urinal{
 	dir = 8;
@@ -7438,7 +7438,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "cEp" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -7462,13 +7462,13 @@
 	},
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "cEE" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "cEG" = (
 /turf/simulated/wall,
 /area/crew_quarters/Chomp_Stage)
@@ -7508,7 +7508,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "cEX" = (
 /obj/structure/railing{
 	dir = 8
@@ -7615,7 +7615,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "cGT" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/red{
@@ -7721,7 +7721,7 @@
 /area/bridge/Control_Atrium)
 "cHm" = (
 /turf/simulated/floor/tiled/freezer,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "cHn" = (
 /obj/machinery/light{
 	dir = 4
@@ -7841,7 +7841,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "cKh" = (
 /turf/simulated/wall,
 /area/medical/Stairwell)
@@ -7855,7 +7855,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "cKv" = (
 /obj/machinery/ai_status_display,
 /turf/simulated/wall,
@@ -7877,7 +7877,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "cKI" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -8089,7 +8089,7 @@
 /area/maintenance/Deck3_Center_Port)
 "cNT" = (
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "cNZ" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
@@ -8137,7 +8137,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "cOx" = (
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor/glass/turfpack/airless,
@@ -8156,7 +8156,7 @@
 "cOH" = (
 /obj/machinery/light_construct,
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "cOS" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
@@ -8447,7 +8447,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "cTQ" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -8469,7 +8469,7 @@
 /area/maintenance/Deck3_Medical_PortChamber2)
 "cUy" = (
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "cUU" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -8628,7 +8628,7 @@
 /obj/structure/table/bench/marble,
 /obj/structure/flora/pottedplant/bamboo,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "cYb" = (
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/glass/reinforced,
@@ -8717,7 +8717,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "cZJ" = (
 /obj/structure/table/sifwoodentable,
 /obj/item/storage/briefcase/clutch{
@@ -8897,7 +8897,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "dcT" = (
 /obj/machinery/alarm{
 	pixel_y = 25
@@ -9423,7 +9423,7 @@
 	on = 0
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "dmt" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -9573,7 +9573,7 @@
 /obj/structure/bed/padded,
 /obj/item/bedsheet/green,
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "doY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -9640,7 +9640,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "dqY" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
@@ -9851,7 +9851,7 @@
 	pixel_y = 18
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "dwu" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -9988,7 +9988,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "dza" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10000,7 +10000,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "dzc" = (
 /obj/structure/table/wooden_reinforced,
 /obj/item/flashlight/lamp{
@@ -10010,7 +10010,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "dzj" = (
 /obj/structure/table/rack/shelf/steel,
 /obj/item/suit_cooling_unit{
@@ -10289,13 +10289,13 @@
 "dCB" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "dCF" = (
 /obj/structure/toilet{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "dDr" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10311,7 +10311,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "dDx" = (
 /turf/simulated/wall,
 /area/engineering/Deck3_2_Corridor)
@@ -10350,7 +10350,7 @@
 	pixel_y = -4
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "dEh" = (
 /obj/structure/sign/flag/vir/left,
 /obj/structure/cable/white{
@@ -10445,7 +10445,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "dFh" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 4
@@ -10633,7 +10633,7 @@
 	},
 /obj/effect/floor_decal/spline/fancy,
 /turf/simulated/floor/carpet/blue,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "dIo" = (
 /obj/effect/floor_decal/corner/blue/full{
 	dir = 4
@@ -10678,7 +10678,7 @@
 	pixel_x = -26
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "dJY" = (
 /obj/machinery/atmospherics/unary/freezer{
 	icon_state = "freezer"
@@ -11149,7 +11149,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "dRo" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -11263,7 +11263,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "dSP" = (
 /obj/structure/table/sifwoodentable,
 /obj/item/flashlight/lamp{
@@ -11279,7 +11279,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "dSS" = (
 /obj/effect/floor_decal/industrial/arrows/blue,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -11656,7 +11656,7 @@
 	pixel_y = 18
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "dXf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -11679,7 +11679,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "dXp" = (
 /obj/item/storage/toolbox/lunchbox/heart/filled{
 	name = "Stayc's lunchbox";
@@ -11740,7 +11740,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "dYf" = (
 /obj/machinery/door/firedoor/multi_tile/glass,
 /obj/effect/floor_decal/industrial/arrows/blue,
@@ -11765,7 +11765,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "dYx" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -11915,7 +11915,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "dZX" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
@@ -12313,7 +12313,7 @@
 	on = 0
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "eeV" = (
 /obj/structure/table/steel,
 /obj/item/storage/box/donkpockets/pizza{
@@ -12445,13 +12445,13 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "ehc" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "ehd" = (
 /obj/structure/closet/emcloset,
 /obj/effect/floor_decal/techfloor/corner{
@@ -12471,7 +12471,7 @@
 /area/engineering/Engine2_Chamber)
 "ehj" = (
 /turf/simulated/wall/r_wall,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "ehq" = (
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/plating,
@@ -12718,7 +12718,7 @@
 	},
 /obj/effect/landmark/start/captain,
 /turf/simulated/floor/carpet/blue2,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "elF" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
@@ -12791,7 +12791,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "emy" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/shuttle/blue{
@@ -12848,7 +12848,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "enk" = (
 /obj/random/junk,
 /obj/machinery/atmospherics/pipe/manifold/hidden/cyan,
@@ -12928,7 +12928,7 @@
 /area/crew_quarters/Chomp_Lounge)
 "epw" = (
 /turf/simulated/wall,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "epU" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/manifold/visible/green,
@@ -13073,7 +13073,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "esL" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -13092,7 +13092,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "eta" = (
 /obj/structure/sign/securearea{
 	icon_state = "radiation_small";
@@ -13337,7 +13337,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "exc" = (
 /obj/effect/floor_decal/techfloor/orange/corner,
 /obj/structure/cable/cyan{
@@ -13358,7 +13358,7 @@
 	name = "Dorm two"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "exA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
@@ -13430,7 +13430,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "eyr" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -13715,7 +13715,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "eDf" = (
 /obj/item/stack/material/cardboard{
 	amount = 25
@@ -13786,11 +13786,11 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "eDM" = (
 /obj/structure/coatrack,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "eDT" = (
 /obj/machinery/cell_charger{
 	pixel_y = 11
@@ -14043,7 +14043,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "eHT" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -14101,7 +14101,7 @@
 "eIE" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "eIM" = (
 /obj/structure/table/woodentable,
 /obj/effect/floor_decal/spline/fancy/wood,
@@ -14111,7 +14111,7 @@
 /obj/structure/table/sifwoodentable,
 /obj/item/trash/chips/bbq,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "eJa" = (
 /obj/structure/table/standard,
 /obj/item/reagent_containers/glass/bucket{
@@ -14227,7 +14227,7 @@
 	pixel_x = 11
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "eKJ" = (
 /obj/machinery/light,
 /obj/structure/table/glass,
@@ -14324,7 +14324,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "eLV" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /obj/structure/window/reinforced{
@@ -14789,10 +14789,10 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/geo,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "eQQ" = (
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "eQT" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -14855,7 +14855,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "eRB" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green{
 	dir = 4
@@ -14873,12 +14873,12 @@
 /area/medical/Virology)
 "eRQ" = (
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "eSf" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/red,
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "eSk" = (
 /obj/structure/table/wooden_reinforced,
 /obj/item/camera{
@@ -14899,7 +14899,7 @@
 	pixel_x = 25
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "eSu" = (
 /turf/simulated/wall/r_wall,
 /area/harbor/Star_3_Deck_Airlock_Access)
@@ -14971,7 +14971,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "eTa" = (
 /obj/random/trash,
 /turf/simulated/floor/plating,
@@ -15161,7 +15161,7 @@
 "eUt" = (
 /obj/machinery/light,
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "eUC" = (
 /obj/machinery/door/window/northright{
 	dir = 4;
@@ -15257,7 +15257,7 @@
 "eVd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "eVh" = (
 /obj/structure/sign/directions/engineering/atmospherics{
 	pixel_y = -9;
@@ -15455,7 +15455,7 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "eXN" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -15464,7 +15464,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "eXU" = (
 /obj/machinery/computer/security/engineering,
 /obj/effect/floor_decal/borderfloor{
@@ -15764,7 +15764,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "fbp" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -15874,7 +15874,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "fcv" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -15882,7 +15882,7 @@
 	id = "sc-WThead5"
 	},
 /turf/simulated/floor/plating,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "fcB" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
@@ -15981,7 +15981,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "fdM" = (
 /obj/structure/railing/grey{
 	color = "yellow"
@@ -16062,7 +16062,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "feP" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -16445,7 +16445,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "fke" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/catwalk_plated/techmaint,
@@ -16579,7 +16579,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "flM" = (
 /obj/structure/extinguisher_cabinet{
 	dir = 4;
@@ -16642,7 +16642,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "fmC" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/carpet/brown,
@@ -16941,13 +16941,13 @@
 	layer = 3
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "fpQ" = (
 /obj/effect/floor_decal/spline/fancy{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "fqj" = (
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
 /obj/effect/floor_decal/industrial/outline/blue,
@@ -17102,7 +17102,7 @@
 "frB" = (
 /obj/item/bedsheet/pirate,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "frG" = (
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -17744,7 +17744,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "fBQ" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -17882,7 +17882,7 @@
 "fDg" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "fDu" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/machinery/light/small{
@@ -17896,7 +17896,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "fDV" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -17923,7 +17923,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "fDX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -17938,7 +17938,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "fDZ" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/machinery/button/remote/airlock{
@@ -17949,7 +17949,7 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "fEm" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
@@ -17964,7 +17964,7 @@
 	pixel_y = -23
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "fEI" = (
 /obj/structure/railing{
 	dir = 1
@@ -17981,7 +17981,7 @@
 	name = "1E-emergency suit storage"
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "fFn" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -18077,7 +18077,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "fGy" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -18101,7 +18101,7 @@
 /area/harbor/For_3_Deck_Airlock_Access_1)
 "fGB" = (
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "fGE" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/borderfloor{
@@ -18419,7 +18419,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "fKI" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -18490,7 +18490,7 @@
 	pixel_x = -7
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "fLj" = (
 /turf/simulated/floor/glass,
 /area/bridge/Control_Atrium)
@@ -18732,7 +18732,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "fPj" = (
 /obj/machinery/door/firedoor/glass/hidden/steel,
 /obj/machinery/door/airlock/angled_bay/elevator/glass,
@@ -19345,7 +19345,7 @@
 	dir = 5
 	},
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "fZH" = (
 /obj/structure/table/standard,
 /obj/item/toy/figure/gardener,
@@ -19643,7 +19643,7 @@
 	pixel_y = 25
 	},
 /turf/simulated/floor/wood/alt,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "gdr" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/red{
@@ -19692,7 +19692,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/alt/tile,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "ger" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -19875,7 +19875,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "gir" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -19999,7 +19999,7 @@
 	pixel_x = -7
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "gjT" = (
 /obj/machinery/button/remote/airlock{
 	dir = 8;
@@ -20105,7 +20105,7 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "glK" = (
 /obj/machinery/light{
 	dir = 8;
@@ -20115,7 +20115,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "gmb" = (
 /turf/simulated/wall/r_wall,
 /area/medical/Genetics_Lab)
@@ -20199,7 +20199,7 @@
 "gnw" = (
 /obj/effect/floor_decal/spline/fancy,
 /turf/simulated/floor/carpet/geo,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "gnG" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 1
@@ -20267,7 +20267,7 @@
 	},
 /obj/machinery/door/airlock/maintenance/common,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "gpg" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -20304,7 +20304,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "gpF" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -20347,7 +20347,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "gpR" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -20576,7 +20576,7 @@
 /area/medical/Restrooms)
 "gsS" = (
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "gtn" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -20681,7 +20681,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "guP" = (
 /obj/effect/floor_decal/borderfloorwhite/corner2{
 	dir = 1
@@ -21241,7 +21241,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "gFX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -21466,7 +21466,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "gJa" = (
 /obj/item/paper_bin{
 	pixel_x = 5
@@ -21607,7 +21607,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "gKC" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
@@ -21748,7 +21748,7 @@
 /area/engineering/Engine2_Access_Hall)
 "gMj" = (
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "gMn" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -21863,7 +21863,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "gOc" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -21972,7 +21972,7 @@
 /area/engineering/Solar_Control_AftPort)
 "gQA" = (
 /turf/simulated/floor/carpet/blue2,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "gQD" = (
 /obj/machinery/portable_atmospherics/powered/pump,
 /turf/simulated/floor/plating,
@@ -22004,7 +22004,7 @@
 "gRc" = (
 /obj/item/bedsheet/orangedouble,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "gRp" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -22015,7 +22015,7 @@
 "gRN" = (
 /obj/effect/floor_decal/spline/fancy,
 /turf/simulated/floor/carpet/purcarpet,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "gRR" = (
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/machinery/light/small{
@@ -22098,7 +22098,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "gTb" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/firstaid/o2{
@@ -22329,7 +22329,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "gWP" = (
 /obj/structure/cable/white{
 	d1 = 2;
@@ -22337,7 +22337,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/wall/r_wall,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "gWR" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -22501,7 +22501,7 @@
 	pixel_y = 18
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "gYY" = (
 /obj/random/trash_pile,
 /obj/random/junk,
@@ -22513,7 +22513,7 @@
 /area/maintenance/Deck3_Engineering_AftStarCorridor1)
 "gZt" = (
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "gZx" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/borderfloorwhite/corner{
@@ -22646,7 +22646,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "heC" = (
 /obj/machinery/power/emitter,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -22752,7 +22752,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "hgu" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -22913,7 +22913,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "hjg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -23013,7 +23013,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "hlx" = (
 /obj/item/paper_bin{
 	pixel_x = 5
@@ -23101,7 +23101,7 @@
 	pixel_x = 22
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "hml" = (
 /obj/structure/closet/emcloset,
 /obj/item/toy/chainsaw,
@@ -23254,7 +23254,7 @@
 	name = "Dorm three"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "hpy" = (
 /obj/structure/cable/pink{
 	d1 = 1;
@@ -23270,7 +23270,7 @@
 	name = "1W-emergency suit storage"
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "hpG" = (
 /obj/structure/transit_tube{
 	icon_state = "N-SW"
@@ -23325,7 +23325,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "hrB" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -23590,7 +23590,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "hwm" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -23743,7 +23743,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "hzi" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/machinery/light{
@@ -23786,7 +23786,7 @@
 	name = "Dorm nine"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "hAa" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -24121,7 +24121,7 @@
 /obj/structure/curtain/open/shower,
 /obj/structure/window/reinforced/tinted/frosted,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "hEO" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -24139,7 +24139,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "hES" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
@@ -24259,7 +24259,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "hHO" = (
 /obj/machinery/floodlight,
 /turf/simulated/floor/plating,
@@ -24309,7 +24309,7 @@
 	pixel_y = 3
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "hJb" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -24646,7 +24646,7 @@
 /obj/structure/bed/chair/bay/chair/padded/red/bignest,
 /obj/effect/floor_decal/spline/fancy,
 /turf/simulated/floor/carpet/blue,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "hNh" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/effect/floor_decal/spline/fancy/wood/corner{
@@ -24881,7 +24881,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "hQQ" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/light/small{
@@ -25047,7 +25047,7 @@
 /obj/machinery/door/window/southright,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "hTA" = (
 /obj/random/trash,
 /turf/simulated/floor/plating,
@@ -25113,7 +25113,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "hUU" = (
 /obj/random/trash,
 /turf/simulated/floor/plating,
@@ -25208,7 +25208,7 @@
 	name = "1W-entertainment monitor"
 	},
 /turf/simulated/floor/carpet,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "hWk" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
@@ -25239,7 +25239,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "hXb" = (
 /obj/structure/railing/grey{
 	dir = 1
@@ -25319,7 +25319,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "hYI" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -25390,7 +25390,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "hZD" = (
 /obj/structure/bed/chair/comfy/purp,
 /obj/machinery/computer/security/telescreen/entertainment{
@@ -25399,7 +25399,7 @@
 	name = "1W-entertainment monitor"
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "hZJ" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -25599,7 +25599,7 @@
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "icC" = (
 /obj/structure/bed/chair/oldsofa{
 	dir = 4
@@ -25741,7 +25741,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "idM" = (
 /obj/machinery/vending/loadout/clothing,
 /obj/structure/cable/green{
@@ -25807,7 +25807,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "ier" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -25842,7 +25842,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "ieM" = (
 /turf/simulated/floor/wood/alt/tile,
 /area/crew_quarters/Public_Garden)
@@ -25897,7 +25897,7 @@
 	dir = 10
 	},
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "ifH" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/bathrobe,
@@ -25949,7 +25949,7 @@
 "igz" = (
 /obj/structure/closet/secure_closet/CMO_wardrobe,
 /turf/simulated/floor/wood/alt/tile,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "igE" = (
 /obj/effect/floor_decal/industrial/outline/cut_corners/yellow,
 /turf/simulated/floor/tiled/dark,
@@ -25957,9 +25957,6 @@
 "igM" = (
 /obj/machinery/appliance/cooker/oven,
 /turf/simulated/floor/tiled/white,
-<<<<<<< HEAD
-/area/crew_quarters/sleeping/Dormitory_06)
-=======
 /area/crew_quarters/sleep/Dormitory_06)
 "ihf" = (
 /obj/machinery/door/firedoor/border_only,
@@ -25982,7 +25979,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/engineering/Construction_Area)
->>>>>>> 9298388580 (Soluna Nexus Map fixes 1.5 (#9471))
 "ihl" = (
 /obj/structure/table/standard,
 /obj/item/measuring_tape,
@@ -26156,7 +26152,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "ikc" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -26168,7 +26164,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "ikG" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -26250,7 +26246,7 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "imB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4
@@ -26647,7 +26643,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "its" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/green{
@@ -26985,7 +26981,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "izb" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
@@ -27098,7 +27094,7 @@
 "iAp" = (
 /obj/structure/bed/chair/comfy/purp,
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "iAw" = (
 /obj/machinery/door/firedoor/glass/hidden/steel{
 	dir = 2
@@ -27164,7 +27160,7 @@
 	pixel_x = -22
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "iBe" = (
 /obj/machinery/shower{
 	pixel_y = 16
@@ -27205,7 +27201,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "iBl" = (
 /obj/structure/sign/department/shield{
 	desc = "Sign of some important station compartment."
@@ -27240,7 +27236,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "iBP" = (
 /obj/structure/bed/double/padded,
 /obj/item/bedsheet/medical{
@@ -27372,7 +27368,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "iEn" = (
 /obj/structure/table/rack/shelf,
 /obj/item/bee_smoker{
@@ -27461,9 +27457,6 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-<<<<<<< HEAD
-/area/crew_quarters/sleeping/Dormitory_06)
-=======
 /area/crew_quarters/sleep/Dormitory_06)
 "iFS" = (
 /obj/machinery/door/firedoor/border_only,
@@ -27486,7 +27479,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/harbor/For_3_Deck_Airlock_Access_2)
->>>>>>> 9298388580 (Soluna Nexus Map fixes 1.5 (#9471))
 "iGr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -27576,7 +27568,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "iIs" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -27628,7 +27620,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "iIA" = (
 /obj/machinery/power/tracker,
 /obj/structure/cable/yellow{
@@ -27713,7 +27705,7 @@
 	name = "1N-emergency suit storage"
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "iJM" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows{
@@ -27928,7 +27920,7 @@
 	pixel_y = 25
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "iNs" = (
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/plating,
@@ -27937,7 +27929,7 @@
 /obj/item/toy/plushie/teshari/y_yw,
 /obj/item/bedsheet/orangedouble,
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "iNH" = (
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Medical_StarCorridor1)
@@ -27985,7 +27977,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "iOs" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/shuttle/blue{
@@ -28003,7 +27995,7 @@
 /obj/structure/bed/double/padded,
 /obj/item/bedsheet/orangedouble,
 /turf/simulated/floor/carpet/tealcarpet,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "iPa" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
@@ -28093,7 +28085,7 @@
 /obj/structure/curtain/open/shower,
 /obj/structure/window/reinforced/tinted/frosted,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "iRi" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/structure/disposalpipe/segment,
@@ -28116,7 +28108,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "iRJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -28416,7 +28408,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "iVU" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/grille,
@@ -28448,7 +28440,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "iWj" = (
 /obj/machinery/light{
 	dir = 4
@@ -28511,7 +28503,7 @@
 "iXp" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "iXz" = (
 /obj/structure/bed/chair/comfy/brown{
 	dir = 1
@@ -28614,7 +28606,7 @@
 	},
 /obj/item/bedsheet/captaindouble,
 /turf/simulated/floor/carpet/blue2,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "iYO" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -28636,7 +28628,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "iZQ" = (
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/corner/blue/bordercorner,
@@ -28839,7 +28831,7 @@
 /area/medical/Deck3_Corridor)
 "jdl" = (
 /turf/simulated/wall/r_wall,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "jdp" = (
 /obj/structure/cable/pink{
 	d1 = 4;
@@ -29061,7 +29053,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "jhC" = (
 /obj/item/cell/device/weapon{
 	pixel_y = 6
@@ -29210,7 +29202,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "jji" = (
 /obj/structure/closet/emcloset,
 /obj/machinery/light{
@@ -29358,7 +29350,7 @@
 	pixel_y = 18
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "jlt" = (
 /obj/machinery/alarm{
 	pixel_y = 22
@@ -29400,7 +29392,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "jlQ" = (
 /obj/structure/railing/grey{
 	color = "yellow"
@@ -29437,7 +29429,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "jnA" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
@@ -29534,7 +29526,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "jpq" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -29693,7 +29685,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "jra" = (
 /obj/item/modular_computer/console/preset/sysadmin{
 	dir = 1
@@ -29836,7 +29828,7 @@
 	name = "Poppy's bed"
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "jun" = (
 /obj/structure/table/glass,
 /obj/item/defib_kit/loaded,
@@ -30007,7 +29999,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "jwm" = (
 /obj/machinery/pointdefense{
 	id_tag = "PD Secondary"
@@ -30144,7 +30136,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "jyH" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -30305,7 +30297,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "jCc" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -30322,7 +30314,7 @@
 	pixel_x = -22
 	},
 /turf/simulated/floor/carpet,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "jCH" = (
 /obj/structure/table/steel,
 /obj/item/stack/cable_coil/yellow{
@@ -30407,7 +30399,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "jDJ" = (
 /obj/structure/window/plastitanium{
 	color = "white";
@@ -30446,7 +30438,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "jEr" = (
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
 /obj/machinery/light,
@@ -30588,7 +30580,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "jGj" = (
 /turf/simulated/floor,
 /area/engineering/Atmospherics_Substation)
@@ -30692,7 +30684,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "jHs" = (
 /obj/effect/floor_decal/industrial/arrows/blue,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -30844,7 +30836,7 @@
 	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "jIz" = (
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -31076,7 +31068,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "jNz" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -31106,7 +31098,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "jOl" = (
 /obj/structure/sign/department/virology{
 	desc = "Sign of some important station compartment."
@@ -31325,7 +31317,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "jTu" = (
 /turf/simulated/wall,
 /area/maintenance/Deck3_Dorms_AftPortChamber1)
@@ -31355,16 +31347,16 @@
 	pixel_x = 15
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "jUh" = (
 /obj/structure/bed/double/padded,
 /obj/item/bedsheet/browndouble,
 /obj/machinery/light,
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "jUj" = (
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "jUv" = (
 /obj/machinery/floodlight,
 /turf/simulated/floor/plating,
@@ -31424,7 +31416,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "jVA" = (
 /obj/structure/bed/chair/office/light,
 /obj/structure/disposalpipe/segment{
@@ -31435,7 +31427,7 @@
 "jVD" = (
 /obj/machinery/suit_cycler/captain,
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "jVO" = (
 /obj/structure/cable/pink{
 	d1 = 1;
@@ -31627,7 +31619,7 @@
 	pixel_y = 8
 	},
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "jYe" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -31645,7 +31637,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "jYL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -31692,7 +31684,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "jZn" = (
 /obj/structure/table/glass,
 /obj/structure/reagent_dispensers/virusfood{
@@ -31732,7 +31724,7 @@
 	pixel_y = -23
 	},
 /turf/simulated/floor/carpet,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "jZX" = (
 /obj/structure/table/rack/shelf/steel,
 /obj/random/maintenance/engineering,
@@ -31770,7 +31762,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "kaJ" = (
 /obj/machinery/ai_status_display,
 /turf/simulated/wall/r_wall,
@@ -31829,7 +31821,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "kbV" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/borderfloorblack,
@@ -32229,7 +32221,7 @@
 	dir = 1
 	},
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "kix" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
@@ -32280,7 +32272,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "kjb" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -32722,7 +32714,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "kqu" = (
 /obj/structure/table/rack/shelf/steel,
 /obj/item/radio/off{
@@ -32869,7 +32861,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/alt,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "ksg" = (
 /obj/random/junk,
 /turf/simulated/floor/plating,
@@ -33065,7 +33057,7 @@
 "kvs" = (
 /obj/item/toy/plushie/teshari/b_yw,
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "kvM" = (
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	frequency = 1381;
@@ -33287,7 +33279,7 @@
 	id = "sc-WTDorm8"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "kAt" = (
 /obj/structure/bed/chair/sofa/right/teal{
 	dir = 8
@@ -33316,7 +33308,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/carpet/blue,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "kAw" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/black{
 	dir = 4
@@ -33352,7 +33344,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "kAF" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/green{
@@ -33440,7 +33432,7 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "kCd" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -33754,7 +33746,7 @@
 	pixel_y = 7
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "kHW" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -34231,11 +34223,11 @@
 	dir = 8
 	},
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "kQd" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "kQe" = (
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
 	frequency = 1381;
@@ -34268,7 +34260,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "kQJ" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 9
@@ -34290,7 +34282,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "kRw" = (
 /obj/structure/window/reinforced{
 	dir = 1;
@@ -34388,7 +34380,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "kSB" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/shuttle/blue{
@@ -34655,7 +34647,7 @@
 	pixel_x = -3
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "kWj" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -34762,7 +34754,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "kXV" = (
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1
@@ -34772,7 +34764,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "kXZ" = (
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -34915,7 +34907,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "laA" = (
 /obj/machinery/door/firedoor/glass/hidden/steel{
 	dir = 1
@@ -34985,7 +34977,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "lbg" = (
 /obj/structure/table/steel,
 /obj/random/soap,
@@ -35236,7 +35228,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "lfF" = (
 /obj/machinery/doorbell_chime{
 	id_tag = "sc-ChimeEng"
@@ -35256,7 +35248,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "lgC" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -35320,7 +35312,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "lht" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -35328,7 +35320,7 @@
 	id = "sc-WThead2"
 	},
 /turf/simulated/floor/plating,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "lhB" = (
 /obj/structure/cable/white{
 	d1 = 2;
@@ -35426,7 +35418,7 @@
 	pixel_y = 12
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "ljr" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -35449,7 +35441,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "ljt" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -35544,7 +35536,7 @@
 	id = "sc-WTDorm1"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "lkB" = (
 /obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 8
@@ -35734,7 +35726,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "lnT" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -35767,7 +35759,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "lot" = (
 /turf/simulated/wall,
 /area/maintenance/Deck3_Dorms_ForPort_Chamber1)
@@ -35796,7 +35788,7 @@
 	name = "Dorm seven"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "loO" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -36008,7 +36000,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "lsI" = (
 /obj/structure/transit_tube{
 	icon_state = "N-SE"
@@ -36037,7 +36029,7 @@
 	id = "sc-WTDorm3"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "lsW" = (
 /obj/machinery/light{
 	dir = 1
@@ -36082,7 +36074,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "lun" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 6
@@ -36233,7 +36225,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "lxl" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /turf/simulated/floor/plating,
@@ -36461,7 +36453,7 @@
 "lzT" = (
 /obj/structure/table/sifwoodentable,
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "lzX" = (
 /obj/structure/table/rack/holorack,
 /obj/item/dnainjector{
@@ -36519,14 +36511,14 @@
 /area/maintenance/Deck3_Dorms_ForStarChamber1)
 "lAw" = (
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "lAx" = (
 /obj/structure/table/bench/sifwooden,
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 1
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "lAP" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/beakers{
@@ -36595,7 +36587,7 @@
 /area/maintenance/Deck3_Center_Star)
 "lCh" = (
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "lCs" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -36621,7 +36613,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "lCG" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /obj/structure/railing/grey,
@@ -36637,7 +36629,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "lCT" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/borderfloorblack{
@@ -36845,7 +36837,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "lFA" = (
 /obj/item/radio/intercom/department/medbay{
 	dir = 8;
@@ -37060,7 +37052,7 @@
 	pixel_y = 18
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "lIN" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -37561,7 +37553,7 @@
 "lPo" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "lPq" = (
 /obj/structure/railing/grey{
 	dir = 4
@@ -37732,7 +37724,7 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "lRV" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 4
@@ -37913,7 +37905,7 @@
 	pixel_y = 12
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "lUB" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/white,
@@ -37934,7 +37926,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "lUK" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/green{
@@ -37979,7 +37971,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "lVc" = (
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 8
@@ -38094,7 +38086,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "lVI" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/plating,
@@ -38109,7 +38101,7 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/wood/alt,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "lVT" = (
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -38190,7 +38182,7 @@
 	name = "Dorm eight"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "lWB" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -38352,7 +38344,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "lYL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -38412,7 +38404,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "lZW" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -38554,7 +38546,7 @@
 "maO" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "mbm" = (
 /obj/structure/railing/grey{
 	color = "yellow"
@@ -38607,7 +38599,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/geo,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "mbS" = (
 /obj/machinery/alarm{
 	pixel_y = 22
@@ -38672,7 +38664,7 @@
 	pixel_x = -22
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "mde" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/structure/disposalpipe/segment{
@@ -38776,7 +38768,7 @@
 	},
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "meR" = (
 /obj/structure/table/glass,
 /obj/machinery/light{
@@ -38896,11 +38888,11 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "mhm" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt/tile,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "mhn" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /obj/machinery/alarm{
@@ -39053,7 +39045,7 @@
 	pixel_x = -7
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "miH" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -39125,7 +39117,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "mjz" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -39217,7 +39209,7 @@
 	pixel_y = 25
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "mkp" = (
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -39305,7 +39297,7 @@
 	name = "Dorm ten"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "mkJ" = (
 /obj/structure/table/standard,
 /obj/random/maintenance/clean,
@@ -39335,7 +39327,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "mly" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -39382,7 +39374,7 @@
 	pixel_y = 12
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "mlW" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -39480,7 +39472,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "mmX" = (
 /obj/structure/transit_tube{
 	icon_state = "W-SE"
@@ -39527,7 +39519,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "mnq" = (
 /obj/structure/railing{
 	dir = 1
@@ -39754,7 +39746,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "mqH" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -39768,14 +39760,14 @@
 	dir = 5
 	},
 /turf/simulated/floor/wood/alt,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "mqI" = (
 /turf/simulated/wall/r_wall,
 /area/engineering/Engine2_Waste_Handling)
 "mqS" = (
 /obj/item/bedsheet/mimedouble,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "mre" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -40043,7 +40035,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "mvR" = (
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/machinery/atmospherics/binary/pump/high_power/on{
@@ -40066,7 +40058,7 @@
 	pixel_y = 12
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "mwU" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -40083,7 +40075,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "mwZ" = (
 /obj/structure/cable/pink{
 	d1 = 4;
@@ -40100,7 +40092,7 @@
 "mxa" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "mxe" = (
 /obj/structure/table/woodentable,
 /obj/item/reagent_containers/food/snacks/chips,
@@ -40137,7 +40129,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "mxJ" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/green{
@@ -40224,7 +40216,7 @@
 /area/engineering/Engine2_Chamber)
 "mAu" = (
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "mAN" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -40240,7 +40232,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "mAV" = (
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /obj/machinery/atmospherics/portables_connector{
@@ -40340,7 +40332,7 @@
 	pixel_x = -22
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "mCr" = (
 /turf/simulated/wall,
 /area/engineering/Airlock_Access)
@@ -40371,7 +40363,7 @@
 	pixel_y = 6
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "mCS" = (
 /obj/structure/table/steel,
 /obj/machinery/cell_charger{
@@ -40400,7 +40392,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "mDg" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -40480,7 +40472,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "mEf" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden,
 /obj/effect/catwalk_plated,
@@ -40498,7 +40490,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "mEx" = (
 /obj/structure/lattice,
 /obj/structure/railing/grey{
@@ -40812,7 +40804,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "mKx" = (
 /obj/machinery/alarm{
 	pixel_y = 22
@@ -40846,7 +40838,7 @@
 /area/medical/Patient_4)
 "mKL" = (
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "mKT" = (
 /obj/machinery/shower{
 	pixel_y = 16
@@ -40863,7 +40855,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "mKX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -40938,7 +40930,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "mLZ" = (
 /obj/structure/closet/secure_closet/psych,
 /turf/simulated/floor/carpet/sblucarpet,
@@ -41109,7 +41101,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "mPf" = (
 /obj/machinery/door/firedoor/multi_tile/glass{
 	dir = 1
@@ -41231,7 +41223,7 @@
 	name = "station director's locker"
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "mSu" = (
 /obj/machinery/media/jukebox,
 /obj/structure/sign/securearea{
@@ -41304,7 +41296,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "mUl" = (
 /obj/machinery/cell_charger{
 	pixel_y = 11
@@ -41393,7 +41385,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "mWq" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -41437,7 +41429,7 @@
 	id = "sc-WTDorm9"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "mXj" = (
 /obj/machinery/cell_charger{
 	pixel_y = 11
@@ -41737,7 +41729,7 @@
 /area/engineering/Engine1_Chamber)
 "naP" = (
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "naW" = (
 /obj/machinery/light{
 	dir = 1
@@ -41790,7 +41782,7 @@
 "nbk" = (
 /obj/random/contraband,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "nbo" = (
 /obj/effect/floor_decal/industrial/warning/color,
 /turf/simulated/floor/reinforced/airless,
@@ -42195,7 +42187,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "nic" = (
 /turf/simulated/floor/reinforced/airless,
 /area/bridge/AI_Core_Chamber)
@@ -42270,7 +42262,7 @@
 	pixel_x = 20
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "njd" = (
 /obj/machinery/light{
 	dir = 8
@@ -42534,7 +42526,7 @@
 	pixel_x = -22
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "nnB" = (
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
@@ -42544,7 +42536,7 @@
 "nom" = (
 /obj/structure/closet/secure_closet/hos_wardrobe,
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "noy" = (
 /obj/structure/table/standard,
 /obj/random/maintenance/morestuff,
@@ -42570,7 +42562,7 @@
 	id = "sc-WThead4"
 	},
 /turf/simulated/floor/plating,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "npv" = (
 /obj/structure/sink{
 	pixel_y = 16
@@ -42684,7 +42676,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "nrn" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -42838,7 +42830,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/turcarpet,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "nsX" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -43406,7 +43398,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "nCA" = (
 /obj/machinery/vending/wallmed1{
 	dir = 4;
@@ -43439,7 +43431,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "nCY" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -43641,7 +43633,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "nGg" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -43681,13 +43673,13 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "nGl" = (
 /obj/effect/floor_decal/spline/fancy{
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "nGm" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/red{
@@ -44021,7 +44013,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "nLS" = (
 /obj/structure/bed/chair/comfy/orange{
 	dir = 1
@@ -44032,7 +44024,7 @@
 	},
 /obj/effect/floor_decal/spline/fancy,
 /turf/simulated/floor/carpet/tealcarpet,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "nLX" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 10
@@ -44104,7 +44096,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "nMy" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
@@ -44173,7 +44165,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "nNF" = (
 /obj/structure/ladder{
 	pixel_y = 3
@@ -44289,7 +44281,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "nQB" = (
 /turf/simulated/wall/r_wall,
 /area/engineering/Solar_Control_AftStar)
@@ -44379,7 +44371,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "nRP" = (
 /obj/structure/table/rack/steel,
 /obj/random/maintenance/cargo,
@@ -44597,7 +44589,7 @@
 	pixel_x = 2
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "nVa" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -44611,7 +44603,7 @@
 	pixel_y = 12
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "nVn" = (
 /obj/structure/table/standard,
 /obj/structure/flora/pottedplant/smallcactus{
@@ -44678,7 +44670,7 @@
 "nWh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "nWk" = (
 /obj/structure/table/woodentable,
 /obj/item/toy/snake_popper,
@@ -44868,7 +44860,7 @@
 /obj/machinery/door/window/southright,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "nZm" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -44891,7 +44883,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "nZG" = (
 /obj/structure/table/standard,
 /obj/fiftyspawner/steel,
@@ -45139,7 +45131,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/wall/r_wall,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "odE" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -45297,7 +45289,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "ofT" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -45344,7 +45336,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "ogh" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -45512,7 +45504,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/water/deep/pool,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "oiQ" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -45773,7 +45765,7 @@
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/carpet/tealcarpet,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "omJ" = (
 /obj/machinery/atmospherics/valve/digital{
 	dir = 4;
@@ -45884,7 +45876,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "oot" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -45925,7 +45917,7 @@
 /area/medical/Stairwell)
 "ooS" = (
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "ooU" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -46201,7 +46193,7 @@
 	pixel_x = -22
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "osV" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/catwalk_plated/techmaint,
@@ -46305,7 +46297,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "ouJ" = (
 /turf/simulated/wall,
 /area/maintenance/Deck3_Medical_ForChamber2)
@@ -46350,7 +46342,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "ouY" = (
 /obj/structure/dispenser,
 /turf/simulated/floor/plating,
@@ -46443,7 +46435,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "owr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -46523,7 +46515,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "oxh" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -46534,7 +46526,7 @@
 "oxk" = (
 /obj/machinery/light,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "oxp" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
@@ -46582,7 +46574,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "oxN" = (
 /obj/random/trash,
 /turf/simulated/floor/plating,
@@ -46622,7 +46614,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "ozl" = (
 /obj/machinery/light{
 	dir = 4
@@ -46711,9 +46703,6 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-<<<<<<< HEAD
-/area/crew_quarters/sleeping/Dormitory_05)
-=======
 /area/crew_quarters/sleep/Dormitory_05)
 "oAu" = (
 /obj/machinery/door/firedoor/border_only,
@@ -46736,7 +46725,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Bridge_ForStarCorridor2)
->>>>>>> 9298388580 (Soluna Nexus Map fixes 1.5 (#9471))
 "oAF" = (
 /turf/simulated/wall,
 /area/maintenance/Deck3_Engineering_StarChamber1)
@@ -46871,7 +46859,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "oDC" = (
 /obj/structure/cable/white{
 	d1 = 4;
@@ -46925,7 +46913,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "oEO" = (
 /obj/effect/floor_decal/steeldecal/steel_decals10{
 	dir = 4
@@ -46935,7 +46923,7 @@
 /obj/structure/curtain/open/shower,
 /obj/structure/window/reinforced/tinted/frosted,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "oEP" = (
 /obj/structure/railing{
 	dir = 1
@@ -46966,7 +46954,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "oGh" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/grille,
@@ -47006,7 +46994,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "oGN" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 10
@@ -47153,7 +47141,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "oJi" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -47284,7 +47272,7 @@
 	pixel_x = 6
 	},
 /turf/simulated/floor/wood/alt,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "oKA" = (
 /obj/structure/bed/chair/comfy/orange,
 /obj/machinery/alarm{
@@ -47295,7 +47283,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "oKM" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/machinery/door/firedoor/border_only,
@@ -47807,7 +47795,7 @@
 "oTf" = (
 /obj/item/bedsheet/cosmos,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "oTk" = (
 /obj/structure/table/standard,
 /obj/structure/cable/green{
@@ -47829,7 +47817,7 @@
 "oTq" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "oTG" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -47861,9 +47849,6 @@
 	pixel_x = -26
 	},
 /turf/simulated/floor/wood/alt/tile,
-<<<<<<< HEAD
-/area/bridge/sleeping/CMO_Quarters)
-=======
 /area/bridge/sleep/CMO_Quarters)
 "oUw" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -47878,7 +47863,6 @@
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/plating,
 /area/engineering/Construction_Area)
->>>>>>> 9298388580 (Soluna Nexus Map fixes 1.5 (#9471))
 "oUA" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -47907,7 +47891,7 @@
 "oUS" = (
 /obj/structure/table/sifwoodentable,
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "oUT" = (
 /obj/item/toy/figure/station{
 	pixel_x = -1;
@@ -48156,7 +48140,7 @@
 "oYt" = (
 /obj/machinery/light,
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "oYu" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -48171,7 +48155,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "oYQ" = (
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
@@ -48209,11 +48193,11 @@
 /obj/machinery/door/window/northright,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "oZi" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "oZu" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
@@ -48231,7 +48215,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "oZK" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -48294,7 +48278,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "pau" = (
 /obj/structure/railing{
 	dir = 1
@@ -48359,7 +48343,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "pbl" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/bridge/Server_Room)
@@ -48399,7 +48383,7 @@
 /area/medical/Patient_2)
 "pcr" = (
 /turf/simulated/wall/r_wall,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "pcM" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -48795,7 +48779,7 @@
 "pkj" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "pkl" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -48847,7 +48831,7 @@
 /area/harbor/Port_3_Deck_Airlock_Access)
 "pkQ" = (
 /turf/simulated/floor/wood/alt/broken,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "pkS" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -48863,7 +48847,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "pld" = (
 /obj/structure/table/steel,
 /obj/item/stack/cable_coil/yellow{
@@ -48901,7 +48885,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/carpet/blue,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "plS" = (
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
@@ -48991,7 +48975,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "pmU" = (
 /obj/effect/floor_decal/industrial/arrows/yellow{
 	dir = 1
@@ -49044,7 +49028,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "poc" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -49159,10 +49143,10 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "pro" = (
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "prA" = (
 /obj/machinery/cell_charger{
 	pixel_y = 11
@@ -49205,7 +49189,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "prP" = (
 /obj/effect/floor_decal/industrial/warning/color{
 	dir = 10
@@ -49562,7 +49546,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "pwS" = (
 /obj/structure/table/rack/shelf/steel,
 /obj/item/storage/toolbox/mechanical{
@@ -49630,7 +49614,7 @@
 	},
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "pxy" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/shuttle/blue{
@@ -49880,7 +49864,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "pAp" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -49942,7 +49926,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "pAE" = (
 /turf/simulated/wall,
 /area/maintenance/Deck3_Medical_AftCorridor1)
@@ -50163,7 +50147,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "pFB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -50271,7 +50255,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "pGG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -50324,7 +50308,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "pHp" = (
 /obj/machinery/shower{
 	pixel_y = 16
@@ -50338,7 +50322,7 @@
 /obj/machinery/door/window/southleft,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "pHw" = (
 /obj/structure/railing{
 	dir = 1
@@ -50497,7 +50481,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "pKH" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/visible/red,
@@ -50559,7 +50543,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "pLY" = (
 /obj/item/storage/toolbox/lunchbox/nt/filled,
 /obj/machinery/light{
@@ -50600,7 +50584,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "pMu" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
@@ -50924,7 +50908,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/alt,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "pRL" = (
 /obj/structure/bed/chair/oldsofa/left{
 	dir = 8
@@ -51121,14 +51105,14 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "pVD" = (
 /obj/structure/table/darkglass,
 /obj/item/flashlight/lantern{
 	pixel_y = 9
 	},
 /turf/simulated/floor/carpet/geo,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "pVE" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -51154,7 +51138,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "pVN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -51355,7 +51339,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "pYa" = (
 /obj/machinery/door/firedoor/glass/hidden/steel{
 	dir = 8
@@ -51558,7 +51542,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "qcT" = (
 /obj/structure/table/steel,
 /obj/machinery/microwave{
@@ -51607,7 +51591,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "qdr" = (
 /obj/effect/graffitispawner,
 /obj/random/trash_pile,
@@ -51669,7 +51653,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "qfa" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -51838,7 +51822,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "qhq" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -52041,7 +52025,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "qiV" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume,
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
@@ -52335,7 +52319,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "qng" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -52373,7 +52357,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "qnU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
@@ -52538,7 +52522,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "qru" = (
 /obj/machinery/pipedispenser/disposal,
 /obj/machinery/light,
@@ -53146,7 +53130,7 @@
 "qAM" = (
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/carpet/gaycarpet,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "qBa" = (
 /obj/structure/railing,
 /obj/machinery/light{
@@ -53242,7 +53226,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "qCS" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -53385,7 +53369,7 @@
 	pixel_x = -7
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "qGo" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -53449,7 +53433,7 @@
 	pixel_x = -7
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "qHV" = (
 /obj/machinery/alarm{
 	pixel_y = 22
@@ -53694,7 +53678,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "qKL" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -53721,7 +53705,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "qKZ" = (
 /obj/structure/bed/chair/backed_grey{
 	color = "grey";
@@ -54068,7 +54052,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "qQZ" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/plating,
@@ -54157,7 +54141,7 @@
 /obj/machinery/door/window/eastleft,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "qSt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -54201,7 +54185,7 @@
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "qTj" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -54272,7 +54256,7 @@
 	dir = 4
 	},
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "qUq" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -54793,7 +54777,7 @@
 	on = 0
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "rcU" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -54841,7 +54825,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "rdO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/black,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -55143,7 +55127,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "rin" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -55194,7 +55178,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "riY" = (
 /obj/effect/floor_decal/industrial/warning/color{
 	dir = 6
@@ -55213,7 +55197,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "rjA" = (
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Medical_ForPortChamber2)
@@ -55353,7 +55337,7 @@
 	name = "1W-emergency suit storage"
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "rmA" = (
 /obj/structure/window/plastitanium{
 	color = "white";
@@ -55442,7 +55426,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "rnm" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/effect/floor_decal/borderfloor{
@@ -55571,7 +55555,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "rpi" = (
 /obj/machinery/station_map{
 	dir = 1;
@@ -55953,7 +55937,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "rul" = (
 /turf/simulated/wall/r_wall,
 /area/maintenance/Deck3_Bridge_AftStarCorridor1)
@@ -56081,7 +56065,7 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "rvK" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -56099,7 +56083,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "rvL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/milspec/raised,
@@ -56118,7 +56102,7 @@
 "rwU" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "rwX" = (
 /obj/structure/sign/levels/engineering/solars{
 	dir = 1;
@@ -56203,7 +56187,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "rxv" = (
 /obj/structure/closet/secure_closet/personal/patient,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -56246,7 +56230,7 @@
 	},
 /obj/structure/table/bench/marble,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "rys" = (
 /obj/structure/disposalpipe/junction{
 	dir = 4;
@@ -56260,7 +56244,7 @@
 "ryB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "ryK" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -56296,7 +56280,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "rzc" = (
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/suit/straight_jacket{
@@ -56339,7 +56323,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "rzA" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/black,
 /obj/machinery/meter,
@@ -56460,7 +56444,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "rDo" = (
 /obj/machinery/computer/timeclock/premade/north,
 /turf/simulated/floor/wood/sif,
@@ -56564,7 +56548,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "rGl" = (
 /obj/machinery/light{
 	dir = 1
@@ -56572,7 +56556,7 @@
 /obj/structure/table/sifwoodentable,
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "rGv" = (
 /obj/structure/table/woodentable,
 /obj/effect/floor_decal/spline/fancy/wood{
@@ -56620,14 +56604,14 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "rHD" = (
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 22
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "rHG" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden{
 	dir = 4
@@ -56677,7 +56661,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "rIf" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/effect/floor_decal/borderfloor{
@@ -56882,7 +56866,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "rLI" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -57009,7 +56993,7 @@
 	id = "sc-WTDorm4"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "rNM" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -57039,14 +57023,14 @@
 "rNN" = (
 /obj/item/grenade/confetti/party_ball,
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "rNS" = (
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 22
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "rNY" = (
 /obj/machinery/light{
 	dir = 4
@@ -57066,9 +57050,6 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue2,
-<<<<<<< HEAD
-/area/bridge/sleeping/Captain_Quarters)
-=======
 /area/bridge/sleep/Captain_Quarters)
 "rPk" = (
 /obj/machinery/door/firedoor/border_only,
@@ -57090,7 +57071,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/medical/Lounge)
->>>>>>> 9298388580 (Soluna Nexus Map fixes 1.5 (#9471))
 "rPo" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -57131,7 +57111,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "rQJ" = (
 /obj/random/trash,
 /turf/simulated/floor,
@@ -57249,7 +57229,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "rTF" = (
 /obj/structure/window/plastitanium{
 	color = "white";
@@ -57298,7 +57278,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "rUr" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/suit_cycler/engineering{
@@ -57561,7 +57541,7 @@
 	pixel_x = -7
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "rYu" = (
 /obj/structure/lattice,
 /turf/simulated/open,
@@ -57618,7 +57598,7 @@
 "rZf" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "rZh" = (
 /obj/effect/landmark/event_spawn/morphspawn,
 /turf/simulated/floor/plating,
@@ -57802,7 +57782,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "scL" = (
 /obj/structure/bed/chair/comfy/beige,
 /obj/effect/floor_decal/borderfloorblack{
@@ -57869,7 +57849,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "sdO" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -58126,7 +58106,7 @@
 /area/bridge/Leisure_Room)
 "shV" = (
 /turf/simulated/wall,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "siv" = (
 /obj/structure/railing,
 /obj/machinery/light{
@@ -58315,7 +58295,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "slG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -58377,7 +58357,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "smo" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/shuttle/blue{
@@ -58582,7 +58562,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "soZ" = (
 /obj/effect/floor_decal/corner/purple/full,
 /obj/effect/floor_decal/corner/orange{
@@ -58786,7 +58766,7 @@
 /area/engineering/Engine3_Control_Room)
 "sqX" = (
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "sra" = (
 /obj/effect/floor_decal/industrial/warning/color{
 	dir = 4
@@ -58908,7 +58888,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "suc" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/camera/network/research{
@@ -59003,7 +58983,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "svm" = (
 /obj/structure/bed/chair/office/dark,
 /obj/effect/landmark/start{
@@ -59027,7 +59007,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "svw" = (
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/paleblue/border,
@@ -59188,7 +59168,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/turcarpet,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "syp" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -59295,7 +59275,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/carpet/geo,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "sAM" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/bluegrid,
@@ -59424,7 +59404,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "sDx" = (
 /obj/effect/floor_decal/steeldecal/steel_decals_central2{
 	dir = 8
@@ -59445,7 +59425,7 @@
 /area/maintenance/Deck3_Medical_AftPortCorridor1)
 "sEc" = (
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "sEd" = (
 /obj/structure/bed/chair/office/light,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -59625,7 +59605,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "sGm" = (
 /obj/random/junk,
 /turf/simulated/floor/plating,
@@ -59696,7 +59676,7 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "sHc" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/red{
@@ -59732,7 +59712,7 @@
 "sHv" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "sIi" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -59796,7 +59776,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "sIA" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -59864,7 +59844,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "sJF" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/grille,
@@ -60156,7 +60136,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "sNB" = (
 /obj/structure/table/steel,
 /obj/item/binoculars,
@@ -60282,7 +60262,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt/tile,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "sPM" = (
 /obj/structure/bed/chair/sofa/right/yellow{
 	dir = 8
@@ -60311,7 +60291,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/carpet/turcarpet,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "sPW" = (
 /obj/structure/closet/l3closet/medical,
 /obj/machinery/camera/network/research{
@@ -60358,7 +60338,7 @@
 	dir = 9
 	},
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "sQS" = (
 /obj/effect/floor_decal/carpet/blue{
 	dir = 4
@@ -60382,7 +60362,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "sRw" = (
 /obj/structure/table/woodentable,
 /obj/item/starcaster_news,
@@ -60576,7 +60556,7 @@
 	id = "sc-WTDorm2"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "sUF" = (
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1
@@ -60586,7 +60566,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "sUG" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 9
@@ -60632,7 +60612,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "sVK" = (
 /turf/simulated/open,
 /area/maintenance/Deck3_Dorms_ForCorridor1)
@@ -60723,7 +60703,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "sXJ" = (
 /obj/machinery/camera/network/research{
 	c_tag = "D3-Med-Stairwell2";
@@ -60840,7 +60820,7 @@
 	id = "sc-WTDorm10"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "tag" = (
 /obj/structure/bed/chair/sofa/orange{
 	dir = 1
@@ -61134,7 +61114,7 @@
 	name = "Dorm four"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "tdX" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -61203,7 +61183,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "tfe" = (
 /obj/machinery/vending/wardrobe/engidrobe,
 /obj/machinery/light{
@@ -61226,7 +61206,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "tfl" = (
 /obj/structure/sign/warning/airlock,
 /turf/simulated/wall/r_wall,
@@ -61410,7 +61390,7 @@
 	id = "sc-WTDorm7"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "tgI" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/plating,
@@ -61431,7 +61411,7 @@
 "thf" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "thw" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -61467,7 +61447,7 @@
 /obj/machinery/door/window/westright,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "thC" = (
 /obj/structure/table/rack/shelf,
 /obj/item/towel/random{
@@ -61494,7 +61474,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "thN" = (
 /obj/structure/table/rack/shelf,
 /obj/item/towel/random{
@@ -61525,7 +61505,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "thU" = (
 /obj/machinery/light{
 	dir = 4
@@ -61572,7 +61552,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "tiB" = (
 /obj/structure/sign/directions/engineering/solars{
 	dir = 8
@@ -61655,7 +61635,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/water/deep/pool,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "tkg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 9
@@ -61685,7 +61665,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "tkJ" = (
 /obj/structure/lattice,
 /turf/simulated/open,
@@ -61753,7 +61733,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "tlm" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden{
@@ -61874,7 +61854,7 @@
 /obj/machinery/door/window/eastright,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "tnc" = (
 /obj/machinery/shower{
 	pixel_y = 16
@@ -61888,7 +61868,7 @@
 /obj/machinery/door/window/southleft,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "tno" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/wood/alt,
@@ -61938,7 +61918,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "toJ" = (
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
@@ -61968,7 +61948,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "tpf" = (
 /obj/effect/floor_decal/industrial/arrows/blue{
 	dir = 4
@@ -62034,7 +62014,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "tpU" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced,
@@ -62187,7 +62167,7 @@
 /obj/structure/bed/chair/bay/chair/padded/red/smallnest,
 /obj/item/digestion_remains/skull/teshari,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "tvp" = (
 /obj/structure/cable/pink{
 	d1 = 1;
@@ -62238,7 +62218,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "tvL" = (
 /obj/structure/table/reinforced,
 /obj/item/folder/yellow,
@@ -62595,7 +62575,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blue,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "tDd" = (
 /obj/machinery/vending/loadout/clothing,
 /obj/machinery/light{
@@ -62736,7 +62716,7 @@
 "tFO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "tFP" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -63028,7 +63008,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "tLi" = (
 /obj/effect/floor_decal/corner/black/full{
 	dir = 1
@@ -63158,7 +63138,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "tMf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -63208,7 +63188,7 @@
 /area/medical/Autoresleeving)
 "tMW" = (
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "tNl" = (
 /obj/random/trash,
 /obj/random/junk,
@@ -63245,7 +63225,7 @@
 	pixel_y = 18
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "tOm" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -63326,7 +63306,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "tQk" = (
 /obj/structure/closet/emergsuit_wall{
 	dir = 1;
@@ -63535,7 +63515,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "tSG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -63741,7 +63721,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "tWL" = (
 /obj/random/trash,
 /obj/machinery/atmospherics/binary/pump/high_power,
@@ -63755,7 +63735,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "tWU" = (
 /obj/machinery/ai_status_display{
 	name = "1N-AI display";
@@ -63770,7 +63750,7 @@
 /area/crew_quarters/Chomp_Lounge)
 "tWX" = (
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "tWY" = (
 /obj/structure/table/rack/shelf,
 /obj/item/towel/random{
@@ -63801,7 +63781,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "tXb" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/yellow{
@@ -63898,7 +63878,7 @@
 "tYr" = (
 /obj/item/toy/plushie/teshari/w_yw,
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "tYv" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /obj/effect/floor_decal/borderfloor{
@@ -64000,7 +63980,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "tZQ" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/green,
 /turf/simulated/floor/plating,
@@ -64092,7 +64072,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "ucG" = (
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/tiled/steel_ridged,
@@ -64338,7 +64318,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "ufx" = (
 /obj/structure/closet/l3closet/medical,
 /obj/effect/floor_decal/borderfloorblack{
@@ -64384,7 +64364,7 @@
 /obj/machinery/door/window/northright,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "ugq" = (
 /obj/structure/bed/double/padded,
 /obj/structure/bed/double/padded{
@@ -64395,9 +64375,6 @@
 	pixel_y = -25
 	},
 /turf/simulated/floor/carpet/geo,
-<<<<<<< HEAD
-/area/crew_quarters/sleeping/Dormitory_10)
-=======
 /area/crew_quarters/sleep/Dormitory_10)
 "ugI" = (
 /obj/machinery/door/firedoor/border_only,
@@ -64418,7 +64395,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/harbor/Port_3_Deck_Airlock_Access)
->>>>>>> 9298388580 (Soluna Nexus Map fixes 1.5 (#9471))
 "ugN" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -64526,7 +64502,7 @@
 "uiC" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "uiG" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -64538,7 +64514,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "uiK" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -64642,7 +64618,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "ukQ" = (
 /obj/structure/bed/chair/backed_grey{
 	color = "grey";
@@ -64816,7 +64792,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/alt,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "unv" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
@@ -64865,7 +64841,7 @@
 /obj/structure/bed/double/padded,
 /obj/item/bedsheet/hosdouble,
 /turf/simulated/floor/carpet/gaycarpet,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "uoq" = (
 /obj/item/material/ashtray/glass,
 /obj/structure/table/steel,
@@ -65043,7 +65019,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "urA" = (
 /obj/structure/table/standard,
 /obj/item/starcaster_news,
@@ -65084,7 +65060,7 @@
 	name = "1W-emergency suit storage"
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "usd" = (
 /obj/machinery/pointdefense{
 	id_tag = "PD Secondary"
@@ -65198,7 +65174,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "utB" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
@@ -65237,7 +65213,7 @@
 	},
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "uul" = (
 /obj/item/bedsheet/greendouble{
 	pixel_y = 33
@@ -65384,14 +65360,14 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "uvS" = (
 /obj/structure/closet/wardrobe/captain{
 	name = "station director's wardrobe"
 	},
 /obj/item/storage/lockbox/medal,
 /turf/simulated/floor/wood/alt/parquet,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "uwl" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -65441,7 +65417,7 @@
 	dir = 6
 	},
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "uxn" = (
 /obj/machinery/door/firedoor/glass/hidden/steel{
 	dir = 1
@@ -65591,7 +65567,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/alt/tile,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "uzx" = (
 /obj/machinery/alarm{
 	pixel_y = 22
@@ -65641,14 +65617,14 @@
 "uAl" = (
 /obj/item/bedsheet/mime,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "uAw" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "uAA" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -65783,7 +65759,7 @@
 /area/hallway/Central_3_Deck_Hall)
 "uCu" = (
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "uDe" = (
 /turf/simulated/floor/carpet/brown,
 /area/crew_quarters/Chomp_Stage)
@@ -65792,7 +65768,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "uDp" = (
 /obj/machinery/light{
 	dir = 4
@@ -65967,7 +65943,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/wall/r_wall,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "uEX" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 8
@@ -66145,7 +66121,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/turcarpet,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "uJV" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/green{
@@ -66332,7 +66308,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/carpet/blue2,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "uMG" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/effect/floor_decal/spline/fancy/wood/corner,
@@ -66386,7 +66362,7 @@
 	pixel_x = -7
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "uNy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -66443,7 +66419,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "uNS" = (
 /turf/simulated/wall,
 /area/crew_quarters/Chomp_Lounge)
@@ -66507,7 +66483,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "uOJ" = (
 /obj/structure/bed/chair/backed_grey{
 	color = "grey";
@@ -66584,7 +66560,7 @@
 	pixel_x = 22
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "uQC" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/red{
@@ -66708,7 +66684,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "uRB" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
@@ -66788,7 +66764,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals10,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "uSw" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -66796,7 +66772,7 @@
 	id = "sc-WTDorm6"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "uSF" = (
 /turf/simulated/wall/r_wall,
 /area/crew_quarters/Dorm_Foyer)
@@ -67017,7 +66993,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "uVF" = (
 /obj/structure/sign/warning/airlock,
 /turf/simulated/wall/r_wall,
@@ -67200,7 +67176,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "uYm" = (
 /obj/machinery/button/remote/airlock{
 	id = "sc-DBdorm4";
@@ -67209,14 +67185,14 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "uYr" = (
 /obj/item/stool/padded,
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "uYu" = (
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
@@ -67320,7 +67296,7 @@
 	pixel_x = 5
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "uZK" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
 /obj/machinery/camera/network/security{
@@ -67359,7 +67335,7 @@
 	name = "1W-emergency suit storage"
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vag" = (
 /obj/structure/bed/chair/oldsofa/left,
 /obj/machinery/button/remote/airlock{
@@ -67372,7 +67348,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vao" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/door/firedoor/glass,
@@ -67437,7 +67413,7 @@
 "vaD" = (
 /obj/machinery/appliance/cooker/oven,
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vaG" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -67471,7 +67447,7 @@
 	pixel_x = -4
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vbo" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/black{
 	dir = 4
@@ -67489,7 +67465,7 @@
 	pixel_y = 19
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vbN" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -67559,9 +67535,6 @@
 	pixel_x = -7
 	},
 /turf/simulated/floor/wood/alt/tile,
-<<<<<<< HEAD
-/area/bridge/sleeping/CMO_Quarters)
-=======
 /area/bridge/sleep/CMO_Quarters)
 "vcV" = (
 /obj/machinery/door/firedoor/glass,
@@ -67576,7 +67549,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/medical/Virology)
->>>>>>> 9298388580 (Soluna Nexus Map fixes 1.5 (#9471))
 "vdi" = (
 /obj/machinery/power/rad_collector,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -67647,7 +67619,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "vex" = (
 /obj/structure/cable/pink{
 	d1 = 4;
@@ -67748,7 +67720,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "vgC" = (
 /obj/structure/sink{
 	dir = 1;
@@ -67857,7 +67829,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "vhy" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/green{
@@ -67937,7 +67909,7 @@
 "viM" = (
 /obj/structure/closet/secure_closet/RD_wardrobe,
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "viP" = (
 /obj/random/mainttoyloot,
 /turf/simulated/floor/plating,
@@ -67974,7 +67946,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/purcarpet,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "vjD" = (
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Center_Star)
@@ -68168,7 +68140,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "vmE" = (
 /obj/effect/floor_decal/industrial/warning/color,
 /obj/machinery/atmospherics/pipe/manifold/visible/black{
@@ -68191,7 +68163,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "vmS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -68270,7 +68242,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "voq" = (
 /obj/structure/table/woodentable,
 /obj/machinery/computer/security/telescreen/entertainment{
@@ -68279,7 +68251,7 @@
 	pixel_y = -4
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "voL" = (
 /obj/structure/table/rack/steel,
 /obj/random/maintenance/cargo,
@@ -68322,7 +68294,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "vpl" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -68360,7 +68332,7 @@
 	on = 0
 	},
 /turf/simulated/floor/carpet/blue,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "vqh" = (
 /obj/random/trash_pile,
 /obj/random/junk,
@@ -68395,7 +68367,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "vqw" = (
 /obj/machinery/camera/network/security{
 	c_tag = "D3-Dmc-Observatory2";
@@ -68429,9 +68401,6 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-<<<<<<< HEAD
-/area/crew_quarters/sleeping/Dormitory_05)
-=======
 /area/crew_quarters/sleep/Dormitory_05)
 "vrk" = (
 /obj/machinery/door/firedoor/border_only,
@@ -68446,7 +68415,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Dorms_ForPort_Corridor1)
->>>>>>> 9298388580 (Soluna Nexus Map fixes 1.5 (#9471))
 "vrt" = (
 /obj/structure/table/standard,
 /obj/random/coin/sometimes,
@@ -68562,7 +68530,7 @@
 	},
 /obj/effect/floor_decal/spline/plain,
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vtd" = (
 /obj/machinery/alarm{
 	pixel_y = 22
@@ -68584,7 +68552,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "vto" = (
 /obj/structure/table/steel,
 /obj/random/maintenance/engineering,
@@ -68620,7 +68588,7 @@
 "vum" = (
 /obj/effect/floor_decal/spline/plain,
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vus" = (
 /obj/structure/railing{
 	dir = 8
@@ -68639,7 +68607,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "vve" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -68664,7 +68632,7 @@
 	},
 /obj/effect/floor_decal/spline/plain,
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vvG" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -68696,7 +68664,7 @@
 /area/engineering/Engine_Tech_Storage)
 "vvI" = (
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "vvM" = (
 /obj/structure/sink{
 	pixel_y = 14
@@ -68730,7 +68698,7 @@
 /area/engineering/Atmospherics_Chamber)
 "vwC" = (
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "vwH" = (
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
@@ -68854,7 +68822,7 @@
 	id = "sc-WThead3"
 	},
 /turf/simulated/floor/plating,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "vyw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -68939,7 +68907,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "vAk" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -69104,7 +69072,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "vBM" = (
 /obj/structure/sign/nosmoking_1,
 /turf/simulated/wall,
@@ -69187,7 +69155,7 @@
 /obj/structure/table/marble,
 /obj/machinery/light,
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "vDn" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -69320,7 +69288,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "vEG" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 10
@@ -69341,7 +69309,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "vFa" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows{
@@ -69408,11 +69376,11 @@
 	pixel_x = -22
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "vFA" = (
 /obj/structure/closet/lawcloset,
 /turf/simulated/floor/wood/alt,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "vGg" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 1
@@ -69473,7 +69441,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "vHB" = (
 /obj/structure/bed/chair/sofa/corner/green{
 	dir = 4
@@ -69580,7 +69548,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "vIQ" = (
 /obj/item/stool/padded{
 	dir = 1
@@ -69590,9 +69558,6 @@
 	pixel_x = 22
 	},
 /turf/simulated/floor/wood/sif,
-<<<<<<< HEAD
-/area/crew_quarters/sleeping/Dormitory_04)
-=======
 /area/crew_quarters/sleep/Dormitory_04)
 "vIZ" = (
 /obj/machinery/door/firedoor/border_only,
@@ -69615,7 +69580,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/engineering/Atmospherics_Chamber)
->>>>>>> 9298388580 (Soluna Nexus Map fixes 1.5 (#9471))
 "vJa" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -69662,7 +69626,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "vJf" = (
 /obj/structure/bed/chair/oldsofa/right{
 	dir = 4
@@ -69677,7 +69641,7 @@
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/carpet/gaycarpet,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vJr" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -69741,7 +69705,7 @@
 /area/medical/Virology)
 "vJX" = (
 /turf/simulated/floor/carpet/gaycarpet,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vJY" = (
 /obj/machinery/power/smes/buildable{
 	RCon_tag = "Engine - Secondary Core";
@@ -69895,7 +69859,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vMm" = (
 /obj/structure/table/standard,
 /obj/random/medical/pillbottle,
@@ -69979,7 +69943,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vNu" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
@@ -70027,7 +69991,7 @@
 /obj/structure/flora/pottedplant/flower,
 /obj/structure/table/bench/marble,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "vOj" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/green{
@@ -70110,7 +70074,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "vPX" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -70271,7 +70235,7 @@
 	name = "1N-emergency suit storage"
 	},
 /turf/simulated/floor/carpet/turcarpet,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "vSL" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/simulated/floor/wood/sif,
@@ -70281,7 +70245,7 @@
 	pixel_y = 12
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "vTg" = (
 /obj/random/trash_pile,
 /obj/random/junk,
@@ -70342,7 +70306,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "vTY" = (
 /obj/effect/floor_decal/corner/blue/diagonal{
 	dir = 4
@@ -70531,7 +70495,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vXl" = (
 /obj/structure/table/woodentable,
 /obj/item/radio/intercom{
@@ -70539,7 +70503,7 @@
 	pixel_x = 22
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "vXz" = (
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/glass/reinforced,
@@ -70575,7 +70539,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "vXP" = (
 /obj/machinery/clonepod/transhuman/full,
 /turf/simulated/floor/tiled/white{
@@ -70654,7 +70618,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "vZm" = (
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Dorms_ForStarChamber2)
@@ -70731,7 +70695,7 @@
 /obj/structure/bed/double/padded,
 /obj/item/bedsheet/purpledouble,
 /turf/simulated/floor/carpet/oracarpet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "wat" = (
 /obj/structure/reagent_dispensers/foam,
 /turf/simulated/floor/plating,
@@ -71152,7 +71116,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "wgt" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -71218,15 +71182,12 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "whO" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-<<<<<<< HEAD
-/area/crew_quarters/sleeping/Dormitory_01)
-=======
 /area/crew_quarters/sleep/Dormitory_01)
 "whR" = (
 /obj/machinery/door/firedoor/border_only,
@@ -71248,7 +71209,6 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/plating,
 /area/bridge/AI_Core_Chamber)
->>>>>>> 9298388580 (Soluna Nexus Map fixes 1.5 (#9471))
 "wik" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/grass,
@@ -71283,7 +71243,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "wja" = (
 /obj/machinery/iv_drip,
 /obj/machinery/power/apc{
@@ -71321,7 +71281,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "wjh" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -71357,7 +71317,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "wjL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -71402,7 +71362,7 @@
 	pixel_x = 22
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "wlj" = (
 /obj/structure/railing/grey{
 	color = "yellow"
@@ -71433,7 +71393,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "wma" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -71596,7 +71556,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "woS" = (
 /obj/machinery/atmospherics/pipe/manifold4w/visible/yellow,
 /turf/simulated/floor/plating,
@@ -71684,7 +71644,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/carpet,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "wqg" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
@@ -71967,13 +71927,13 @@
 	dir = 5
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "wtR" = (
 /obj/structure/bed/chair/wood{
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "wuc" = (
 /obj/effect/landmark{
 	name = "maint_pred"
@@ -72003,7 +71963,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "wuJ" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -72196,7 +72156,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/alt/broken,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "wyT" = (
 /obj/effect/floor_decal/spline/fancy{
 	dir = 5
@@ -72243,7 +72203,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/carpet/blue,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "wzO" = (
 /obj/structure/reagent_dispensers/foam,
 /turf/simulated/floor/plating,
@@ -72336,7 +72296,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "wBu" = (
 /obj/structure/table/wooden_reinforced,
 /obj/item/retail_scanner/command{
@@ -72363,7 +72323,7 @@
 /obj/machinery/door/window/westright,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "wBF" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/structure/cable/yellow{
@@ -72564,7 +72524,7 @@
 "wFk" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "wFl" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -72573,7 +72533,7 @@
 /area/engineering/Engine2_Access_Hall)
 "wFm" = (
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "wFq" = (
 /obj/machinery/disposal/wall{
 	dir = 1;
@@ -72584,7 +72544,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "wFC" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
@@ -72611,7 +72571,7 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "wGk" = (
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 8
@@ -72656,7 +72616,7 @@
 "wGL" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "wGS" = (
 /obj/effect/floor_decal/borderfloor/corner2{
 	dir = 1
@@ -72666,7 +72626,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "wGW" = (
 /obj/structure/table/wooden_reinforced,
 /obj/effect/floor_decal/spline/fancy{
@@ -72677,7 +72637,7 @@
 "wGX" = (
 /obj/structure/bed/chair/bay/chair/padded/red/smallnest,
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "wHk" = (
 /obj/structure/railing,
 /obj/structure/lattice,
@@ -72692,7 +72652,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "wHO" = (
 /obj/structure/reagent_dispensers/foam,
 /turf/simulated/floor/plating,
@@ -72723,7 +72683,7 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "wIm" = (
 /obj/machinery/sleeper{
 	dir = 8
@@ -72771,7 +72731,7 @@
 "wJd" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "wJg" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -72828,7 +72788,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "wJE" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -72876,7 +72836,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "wKG" = (
 /obj/structure/bed/chair/oldsofa{
 	dir = 8
@@ -72906,7 +72866,7 @@
 	pixel_y = 25
 	},
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "wLz" = (
 /obj/structure/table/steel,
 /obj/item/storage/box/flare{
@@ -73189,7 +73149,7 @@
 	id = "sc-WThead1"
 	},
 /turf/simulated/floor/plating,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "wOi" = (
 /obj/structure/railing/grey{
 	dir = 4
@@ -73257,7 +73217,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blue,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "wPJ" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 4
@@ -73289,7 +73249,7 @@
 	},
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "wQh" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -73302,7 +73262,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "wQH" = (
 /obj/effect/floor_decal/industrial/warning{
 	layer = 3
@@ -73315,7 +73275,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/carpet/turcarpet,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "wRh" = (
 /obj/structure/bed/chair/oldsofa{
 	dir = 1
@@ -73348,7 +73308,7 @@
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/wood/alt,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "wRt" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -73558,7 +73518,7 @@
 "wSI" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "wSU" = (
 /obj/machinery/portable_atmospherics/canister/phoron,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -73640,7 +73600,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "wTu" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 6
@@ -73659,7 +73619,7 @@
 	},
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "wUh" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -73698,7 +73658,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "wUB" = (
 /obj/structure/cable/yellow{
 	d1 = 2;
@@ -73753,7 +73713,7 @@
 /obj/machinery/door/window/northright,
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "wUV" = (
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 4
@@ -73786,7 +73746,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "wVz" = (
 /obj/structure/table/woodentable,
 /obj/item/toy/eight_ball,
@@ -73832,7 +73792,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/sif,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "wWb" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -73959,7 +73919,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "wYO" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -74096,7 +74056,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "xam" = (
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/wood/alt,
@@ -74187,7 +74147,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "xbD" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/plating,
@@ -74228,7 +74188,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "xce" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /obj/structure/cable/green{
@@ -74246,7 +74206,7 @@
 /area/crew_quarters/Dorm_Corridor_4)
 "xco" = (
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "xcG" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -74278,7 +74238,7 @@
 	pixel_y = 12
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "xdf" = (
 /obj/machinery/pointdefense_control{
 	id_tag = "PD Primary"
@@ -74379,7 +74339,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "xes" = (
 /obj/effect/floor_decal/industrial/warning/color{
 	dir = 9
@@ -74424,7 +74384,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "xeQ" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/grille,
@@ -74477,7 +74437,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/carpet/tealcarpet,
-/area/bridge/sleeping/Secretary_Quarters)
+/area/bridge/sleep/Secretary_Quarters)
 "xgb" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -74539,7 +74499,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_09)
+/area/crew_quarters/sleep/Dormitory_09)
 "xgH" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/effect/floor_decal/corner/white{
@@ -74576,7 +74536,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/gaycarpet,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "xgV" = (
 /obj/machinery/space_heater,
 /obj/machinery/light/small{
@@ -74731,7 +74691,7 @@
 /area/medical/Resleeving)
 "xjF" = (
 /turf/simulated/wall,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "xjG" = (
 /obj/item/modular_computer/console/preset/civilian,
 /obj/effect/floor_decal/borderfloorblack{
@@ -74834,7 +74794,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "xlk" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -74914,7 +74874,7 @@
 	pixel_y = 18
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "xml" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/toolbox/emergency{
@@ -74993,7 +74953,7 @@
 	on = 0
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "xnq" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -75326,7 +75286,7 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "xrZ" = (
 /turf/simulated/wall,
 /area/medical/Restrooms)
@@ -75335,7 +75295,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "xso" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -75522,7 +75482,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "xvr" = (
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /obj/machinery/atmospherics/portables_connector{
@@ -75589,7 +75549,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "xwj" = (
 /turf/simulated/wall,
 /area/maintenance/Deck3_Dorms_ForPort_Corridor1)
@@ -75615,7 +75575,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/RD_Quarters)
+/area/bridge/sleep/RD_Quarters)
 "xwQ" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/simple/visible/green{
@@ -75636,7 +75596,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "xxk" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -75659,9 +75619,6 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/wood/sif,
-<<<<<<< HEAD
-/area/crew_quarters/sleeping/Dormitory_07)
-=======
 /area/crew_quarters/sleep/Dormitory_07)
 "xxm" = (
 /obj/machinery/door/firedoor/border_only,
@@ -75678,7 +75635,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/Dorm_Corridor_1)
->>>>>>> 9298388580 (Soluna Nexus Map fixes 1.5 (#9471))
 "xxD" = (
 /obj/structure/sink{
 	dir = 8;
@@ -75693,7 +75649,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_08)
+/area/crew_quarters/sleep/Dormitory_08)
 "xxJ" = (
 /obj/machinery/light{
 	dir = 8;
@@ -75703,7 +75659,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "xyc" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -75718,7 +75674,7 @@
 /area/medical/Virology)
 "xyg" = (
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "xym" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/catwalk_plated/techmaint,
@@ -75729,7 +75685,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "xyB" = (
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/shuttle/blue{
@@ -75787,7 +75743,7 @@
 	pixel_y = -4
 	},
 /turf/simulated/floor/carpet/blue,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "xzy" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -75923,7 +75879,7 @@
 	pixel_y = -2
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "xBS" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -76073,9 +76029,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
-<<<<<<< HEAD
-/area/bridge/sleeping/Secretary_Quarters)
-=======
 /area/bridge/sleep/Secretary_Quarters)
 "xEe" = (
 /obj/machinery/door/firedoor/glass,
@@ -76092,7 +76045,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/hallway/Central_3_Deck_Hall)
->>>>>>> 9298388580 (Soluna Nexus Map fixes 1.5 (#9471))
 "xEs" = (
 /obj/structure/railing{
 	dir = 1
@@ -76144,7 +76096,7 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/wood/sif,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "xFd" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -76269,7 +76221,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "xHM" = (
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -76389,7 +76341,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/carpet/blue,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "xIR" = (
 /obj/structure/bed/chair/sofa/corner/brown{
 	dir = 8
@@ -76597,16 +76549,16 @@
 	layer = 3
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "xKX" = (
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "xLd" = (
 /obj/structure/toilet{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "xLu" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/machinery/alarm{
@@ -76658,7 +76610,7 @@
 "xLV" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "xMa" = (
 /obj/structure/sink{
 	dir = 4;
@@ -76673,15 +76625,15 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "xMf" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "xMh" = (
 /obj/structure/bed/chair/bay/chair/padded/red/bignest,
 /turf/simulated/floor/carpet/gaycarpet,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "xMi" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/random/trash,
@@ -76715,7 +76667,7 @@
 "xMw" = (
 /obj/structure/bed/padded,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "xMx" = (
 /obj/effect/catwalk_plated/techmaint,
 /obj/machinery/light/small{
@@ -76728,7 +76680,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood/alt,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "xMO" = (
 /obj/machinery/atmospherics/valve/shutoff{
 	dir = 4
@@ -76771,7 +76723,7 @@
 "xNr" = (
 /obj/machinery/light,
 /turf/simulated/floor/carpet/gaycarpet,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "xNt" = (
 /obj/structure/dispenser/oxygen,
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -76805,7 +76757,7 @@
 	},
 /obj/machinery/door/airlock/maintenance/common,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "xNU" = (
 /obj/effect/floor_decal/industrial/arrows/blue{
 	dir = 4
@@ -76983,7 +76935,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/kafel_full,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "xPM" = (
 /turf/simulated/floor/glass/reinforced,
 /area/maintenance/Deck3_Medical_ForStarChamber3)
@@ -77004,7 +76956,7 @@
 "xQf" = (
 /obj/structure/bed/chair/bay/chair/padded/red/bignest,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "xQs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
@@ -77091,7 +77043,7 @@
 "xRf" = (
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "xRo" = (
 /obj/machinery/light{
 	dir = 8;
@@ -77099,14 +77051,14 @@
 	},
 /obj/effect/floor_decal/spline/fancy,
 /turf/simulated/floor/carpet/turcarpet,
-/area/bridge/sleeping/CE_Quarters)
+/area/bridge/sleep/CE_Quarters)
 "xRu" = (
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Medical_ForChamber2)
 "xRv" = (
 /obj/effect/floor_decal/spline/fancy/wood,
 /turf/simulated/floor/carpet,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "xRB" = (
 /obj/machinery/atmospherics/pipe/simple/visible/green,
 /turf/simulated/floor,
@@ -77133,7 +77085,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/carpet/blue,
-/area/crew_quarters/sleeping/Dormitory_07)
+/area/crew_quarters/sleep/Dormitory_07)
 "xSr" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -77262,7 +77214,7 @@
 /area/engineering/Solar_Array_AftStar)
 "xUR" = (
 /turf/simulated/wall,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "xUT" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -77282,7 +77234,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "xVf" = (
 /obj/structure/bed/chair/sofa/corner/orange{
 	dir = 8
@@ -77378,7 +77330,7 @@
 	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/wood/alt/panel,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "xWc" = (
 /obj/machinery/camera/network/research{
 	c_tag = "D3-Med-Virology1";
@@ -77393,7 +77345,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/crew_quarters/sleeping/Dormitory_02)
+/area/crew_quarters/sleep/Dormitory_02)
 "xWk" = (
 /obj/structure/bed/double/padded,
 /obj/structure/cable/green{
@@ -77403,7 +77355,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_12)
+/area/crew_quarters/sleep/Dormitory_12)
 "xWm" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/arrows/yellow,
@@ -77423,7 +77375,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_05)
+/area/crew_quarters/sleep/Dormitory_05)
 "xWn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -77534,7 +77486,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/bridge/sleeping/CMO_Quarters)
+/area/bridge/sleep/CMO_Quarters)
 "xXQ" = (
 /obj/item/tool/wrench,
 /obj/structure/table/glass,
@@ -77594,7 +77546,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/carpet/blue2,
-/area/crew_quarters/sleeping/Dormitory_06)
+/area/crew_quarters/sleep/Dormitory_06)
 "xZb" = (
 /obj/structure/sink{
 	dir = 8;
@@ -77610,7 +77562,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/kafel_full/white,
-/area/bridge/sleeping/HoS_Quarters)
+/area/bridge/sleep/HoS_Quarters)
 "xZl" = (
 /turf/simulated/wall,
 /area/crew_quarters/Chomp_Dinner_1)
@@ -77652,7 +77604,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/carpet/geo,
-/area/crew_quarters/sleeping/Dormitory_10)
+/area/crew_quarters/sleep/Dormitory_10)
 "yaQ" = (
 /obj/structure/railing/grey{
 	color = "yellow";
@@ -77803,7 +77755,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/carpet/blucarpet,
-/area/crew_quarters/sleeping/Dormitory_04)
+/area/crew_quarters/sleep/Dormitory_04)
 "ycV" = (
 /obj/random/trash,
 /turf/simulated/floor/plating,
@@ -77870,7 +77822,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
-/area/bridge/sleeping/Captain_Quarters)
+/area/bridge/sleep/Captain_Quarters)
 "yed" = (
 /obj/machinery/the_singularitygen,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -77903,7 +77855,7 @@
 	name = "Dorm one"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "yeT" = (
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
@@ -77942,7 +77894,7 @@
 /area/engineering/Atmospherics_Chamber)
 "yfh" = (
 /turf/simulated/floor/wood/alt/parquet,
-/area/crew_quarters/sleeping/Dormitory_03)
+/area/crew_quarters/sleep/Dormitory_03)
 "yfm" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/grille,
@@ -78122,7 +78074,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/alt/tile,
-/area/crew_quarters/sleeping/Dormitory_01)
+/area/crew_quarters/sleep/Dormitory_01)
 "yiM" = (
 /obj/structure/cable/pink{
 	d1 = 4;
@@ -78388,7 +78340,7 @@
 "ylL" = (
 /obj/structure/bed/chair/bay/chair/padded/red/smallnest,
 /turf/simulated/floor/plating,
-/area/crew_quarters/sleeping/Dormitory_11)
+/area/crew_quarters/sleep/Dormitory_11)
 "ylV" = (
 /obj/item/modular_computer/console/preset/ert,
 /obj/machinery/light{
