@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - bugfix: "adds missing arguments to recursive_content_check()"

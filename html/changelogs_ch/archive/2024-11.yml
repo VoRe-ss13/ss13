@@ -93,3 +93,8 @@
       use name/desc gear tweaks instead)
   - rscadd: added contraband scanner machine, which can sound an alarm if you walk
       over it whilst carrying an illegal item
+2024-11-16:
+  VoRe-bot:
+  - bugfix: adds missing arguments to recursive_content_check()
+  - rscadd: Angel Halo hat in headgear loadout
+  - maptweak: fixes the sleep areas on SN to use the global defines
