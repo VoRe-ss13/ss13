@@ -98,3 +98,6 @@
   - bugfix: adds missing arguments to recursive_content_check()
   - rscadd: Angel Halo hat in headgear loadout
   - maptweak: fixes the sleep areas on SN to use the global defines
+2024-11-18:
+  VoRe-bot:
+  - rscadd: Added and altered some things on Tyr
