@@ -12,12 +12,8 @@ These are just guidelines, not rules, use your best judgment and feel free to pr
 
 [How Can I Contribute?](#how-can-i-contribute)
   * [Your First Code Contribution](#your-first-code-contribution)
-<<<<<<< HEAD
-  * [TORCHStation Coding Standards](#chomp-station-coding-standards)
-=======
-  * [Chomp Station Map Edits](#chomp-station-map-edits)
-  * [Chomp Station Coding Standards](#chomp-station-coding-standards)
->>>>>>> 9942e48aeb (CONTRIBUTING.md update (#9483))
+  * [TORCHStation Map Edits](#torchstation-map-edits)
+  * [TORCHStation Coding Standards](#torchstation-coding-standards)
   * [Pull Requests](#pull-requests)
   * [Git Commit Messages](#git-commit-messages)
 
@@ -39,10 +35,10 @@ Unsure where to begin contributing to TORCHStation? You can start by looking thr
 
 ### TORCHStation Map Edits
 
-* Our base map files are in [modular_chomp/maps/].
-* Our stationary overmap location files are in [modular_chomp/maps/southern_cross/overmap/].
-* Our random overmap POI files are in [modular_chomp/maps/overmap/].
-* Our surface POI map files (Wilderness, plains, ...) are in [modular_chomp/maps/submaps/surface_submaps/].
+* Our base map files are in [maps/relic_base/].
+* Our stationary overmap location files are in [maps/relic_base/overmap/].
+* We use Chomp's random overmap POI files that are in [modular_chomp/maps/overmap/].
+* We use Chomp's surface POI map files (Wilderness, plains, ...) that are in [modular_chomp/maps/submaps/surface_submaps/].
 * Map changes must be in tgm format. See the [Mapmerge2 Readme](../tools/mapmerge2/readme.md) for details, or use [StrongDMM](../tools/StrongDMM/README.md) which can automatically save maps as tgm.
 * PoIs or map templates placed during generation (Mining, plains, wilderness, space...) are generally fair game for editing or creating anew.
 * Maps that are placed permanently (Station, planetary locations) must be subject to discussion. To prevent wasted time, discuss these with the community and staff
@@ -50,11 +46,7 @@ Unsure where to begin contributing to TORCHStation? You can start by looking thr
 * Entire new station designs MUST be discussed with the community and the staff. Post a floor plan or basic design before committing effort in discord to prevent wasted time. 
 * For new atmospherics settings, subtypes of turfs for all turfs can be created with the [turfpacks](../modular_chomp/maps/~turfpacks/turfpacks.dm) system quickly and easily.
 
-<<<<<<< HEAD
-### TORCHStation Coding Standards
-=======
-## Chomp Station Coding Standards
->>>>>>> 9942e48aeb (CONTRIBUTING.md update (#9483))
+## TORCHStation Coding Standards
 
 ### General
 * **DO NOT** create joke or meme PRs. The Github is intended to be a sterile location for reviewing technical content.
@@ -63,24 +55,18 @@ Unsure where to begin contributing to TORCHStation? You can start by looking thr
     * If you have ckey locked content from our upstream and would like to make it available to all here, please contact us.
 * we **DO NOT** allow any 'naming' in our coded content. this includes shoutouts, naming a player as an owner or otherwise. All descriptions, names, lore-texts must be free of an individual's name. NPC naming is permitted.
 
-<<<<<<< HEAD
-In an effort to make contributing easier to do, Black Major has started a modularity folder, https://github.com/VoRe-ss13/ss13/tree/master/modular_chomp.
-Ideally, any content that can be written that is wholelly independant of vorestation's content, should be
-included in this modularity folder, and put into the associated folder that it would have appeared in among the standard files.
-=======
 ### Codewriting
-* Where possible, add changes to the modular_chomp/ subdirectory.
-* For edits to upstream code (Code not inside /modular_chomp)
-    * For single line edits, add "//ChompEDIT - description" at the end of the line.
-    * For block edits, encapsulate your edit with "//ChompEDIT START - explanation" and "//ChompEDIT END".
-    * For removals, comment out the upstream code and append "//ChompEDIT REMOVE - explanation"
-    * For block removals, use "/\*" and "\*/" with "//ChompEDIT REMOVE - explanations"
-* **DO NOT** edit upstream .dmi (icon) files. Add icon changes in a new file in the /modular_chomp folder and override the object's "icon" and "icon_state" variables. 
+* Where possible, add changes to new files, and any new file should have "_tc" at the end. The only exception to this rule is for files created within [maps/relic_base/] folder.
+* For edits to upstream code (Code not inside /maps/relic_base/)
+    * For single line edits, add "//TORCHEdit - description" at the end of the line.
+    * For block edits, encapsulate your edit with "//TORCHEdit Start - explanation" and "//TORCHEdit End".
+    * For removals, comment out the upstream code and append "//TORCHEdit Remove - explanation"
+    * For block removals, use "/\*" and "\*/" with "//TORCHEdit Remove - explanations"
+* **DO NOT** edit upstream .dmi (icon) files. Add icon changes in a new file in the /modular_chomp folder and override the object's "icon" and "icon_state" variables.
 * **DO NOT** edit anything in the upstream /maps folder 
 * Avoid the use of the 'usr' variable where possible. Use src or have the proc chain give the user's reference.
 * Use defines where they exist, e.g. string names of jobs, factions, ect. 
-* Where possible and applicable, send bugfixes to Virgo (Our upstream) to fix at the source. this is not enforced, however.
->>>>>>> 9942e48aeb (CONTRIBUTING.md update (#9483))
+* Where possible and applicable, send bugfixes to Virgo and Chomp (Our upstreams) to fix at the source. This is not enforced, however.
 
 ### Scene devices
 * A scene device or tool is considered any object or coded mechanic designed primarily to service roleplay scenes in-game. Usually, but not limited to roleplay of a private nature.
@@ -98,7 +84,6 @@ included in this modularity folder, and put into the associated folder that it w
 * Your submission must pass CI checking. The checks are important, prevent many common mistakes, and even experienced coders get caught by it sometimes. If you think there is a bug in CI, open an issue. (One known CI issue is comments in the middle of multi-line lists, just don't do it)
 * You can create a WIP PR, and if so, please mark it with [WIP] in the title **and make it a draft pr** so it can be labeled appropriately. These can't sit forever, though.
 * If your pull request has many no-conflict merge commits ('merge from master' into your PR branch), it cannot be merged. Squash and make a new PR/forcepush to your PR branch.
-* PRs here are squash-merged into a single commit onto Master
 
 ### Git Commit Messages
 
@@ -109,8 +94,8 @@ included in this modularity folder, and put into the associated folder that it w
 ### Early porting
 
 * You may earlyport.
-* Follow standard chompcomments incase upstream ends up closing their PR for any reason.
-* If it does get merged upstream and the mirror appears on our repo, you are responsible for unfucking the comments situation, because it'll have to say VORE edits instead of CHOMP edits.
+* Follow standard torchcomments incase upstream ends up closing their PR for any reason.
+* If it does get merged upstream and the mirror appears on our repo, you are responsible for fixing the comments situation, because it'll have to say VORE or CHOMP edits instead of TORCH edits.
 
 ## Licensing
 TORCHStation13 is licensed under the GNU Affero General Public License version 3, which can be found in full in LICENSE-AGPL3.txt.
