@@ -203,7 +203,7 @@ export const DmTarget = new Juke.Target({
   inputs: [
     '_maps/map_files/generic/**',
     'maps/**/*.dm',
-    // 'maps/relic_base/**/*.dmm', // Placed here so it recompiles on map changes //TORCHEdit - Changing to forbearance
+    'maps/relic_base/**/*.dmm', // Placed here so it recompiles on map changes //TORCHEdit
     'code/**',
     'html/**',
     'icons/**',
