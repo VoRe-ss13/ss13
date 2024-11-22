@@ -39,7 +39,7 @@
 /datum/tgs_chat_command/manifest/Run(datum/tgs_chat_user/sender, params)
 	if(CONFIG_GET(flag/nodebot_enabled))
 		ManifestToHtml()
-		return "http://manifest.torchstation13.net/"
+		return "http://manifest.torchstation13.net/" //TORCHEdit - Torch links
 	else
 		var/outp = "Crew Manifest:"
 		var/list/total = list()

@@ -1547,22 +1547,22 @@
 /area/sc_away/fueldepotspawn)
 "EO" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/device/bluespaceradio/southerncross_prelinked{
+/obj/item/bluespaceradio/southerncross_prelinked{
 	pixel_x = -8
 	},
-/obj/item/device/spaceflare{
+/obj/item/spaceflare{
 	pixel_y = 12;
 	pixel_x = 4
 	},
-/obj/item/device/spaceflare{
+/obj/item/spaceflare{
 	pixel_y = 0;
 	pixel_x = 4
 	},
-/obj/item/device/spaceflare{
+/obj/item/spaceflare{
 	pixel_y = 4;
 	pixel_x = 4
 	},
-/obj/item/device/spaceflare{
+/obj/item/spaceflare{
 	pixel_y = 8;
 	pixel_x = 4
 	},

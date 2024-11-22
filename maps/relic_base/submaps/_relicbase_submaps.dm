@@ -129,26 +129,26 @@
 	mappath = "maps/gateway_vr/variable/honlethhighlands_b.dmm"
 
 
-#include "gateway/variable/arynthilake.dm"
+#include "../../gateway_vr/variable/arynthilake.dm"
 /datum/map_template/thor_lateload/gateway/arynthilake
 	name = "Gateway - Arynthi Lake A"
 	desc = "A grassy surface with some abandoned structures."
-	mappath = "maps/relic_base/submaps/gateway/variable/arynthilake_a.dmm"
+	mappath = "maps/gateway_vr/variable/arynthilake_a.dmm"
 
 /datum/map_template/thor_lateload/gateway/arynthilakeunderground
 	name = "Gateway - Arynthi Lake Underground A"
 	desc = "A grassy surface with some abandoned structures."
-	mappath = "maps/relic_base/submaps/gateway/variable/arynthilakeunderground_a.dmm"
+	mappath = "maps/gateway_vr/variable/arynthilakeunderground_a.dmm"
 
 /datum/map_template/thor_lateload/gateway/arynthilake_b
 	name = "Gateway - Arynthi Lake B"
 	desc = "A grassy surface with some abandoned structures."
-	mappath = "maps/relic_base/submaps/gateway/variable/arynthilake_b.dmm"
+	mappath = "maps/gateway_vr/variable/arynthilake_b.dmm"
 
 /datum/map_template/thor_lateload/gateway/arynthilakeunderground_b
 	name = "Gateway - Arynthi Lake Underground B"
 	desc = "A grassy surface with some abandoned structures."
-	mappath = "maps/relic_base/submaps/gateway/variable/arynthilakeunderground_b.dmm"
+	mappath = "maps/gateway_vr/variable/arynthilakeunderground_b.dmm"
 
 #include "../../gateway_vr/wildwest.dm"
 /datum/map_template/thor_lateload/gateway/wildwest
