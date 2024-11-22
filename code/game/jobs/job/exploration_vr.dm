@@ -131,8 +131,8 @@
 	economic_modifier = 6
 	minimal_player_age = 3
 	pto_type = PTO_EXPLORATION
-	access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_eva, access_maint_tunnels, access_external_airlocks, access_pilot, access_explorer)
-	minimal_access = list(access_medical, access_medical_equip, access_morgue, access_pilot)
+	access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_eva, access_maint_tunnels, access_external_airlocks, access_pilot, access_explorer) //TORCHEdit - Keeping Field Medic frankly OP access to help with low pop
+	minimal_access = list(access_medical, access_medical_equip, access_morgue, access_pilot) //TORCHEdit - Keep FM old access
 	outfit_type = /decl/hierarchy/outfit/job/medical/sar
 	job_description = "A " + JOB_FIELD_MEDIC + " works as the field doctor of expedition teams."
 	alt_titles = list(JOB_ALT_EXPEDITION_MEDIC = /datum/alt_title/expedition_medic, JOB_ALT_OFFSITE_MEDIC = /datum/alt_title/offsite_medic)

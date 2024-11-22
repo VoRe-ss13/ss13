@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - qol: "OOC Escape now works for most Mind Binder and Body Snatcher interactions"
