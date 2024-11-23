@@ -104,3 +104,26 @@
 2024-11-19:
   VoRe-bot:
   - rscadd: added "salvage technician" alt title for engineer
+2024-11-23:
+  VoRe-bot:
+  - qol: refactored rings, knuckledusters, bracelets, and watches into glove-attached
+      accessories (they can still be worn by themselves!)
+  - qol: bracelets are now worn on your hands/wrists rather than being in the neck
+      slot
+  - rscadd: Mind binded monkey/mob cubes gain control of the rehydrated mob
+  - rscadd: Monkey/mob cubes when eaten can vore the rehydrated mob if spont pred
+      and food vore are enabled
+  - rscadd: Mind binded cigs/cigars correctly turn into cig butts when burnt out or
+      used in an ashtray
+  - qol: climbing and swimming traits can now modify your speed of climbing and swimming
+      between z-levels, in addition to their standard functions
+  - rscadd: added "pro swimmer" trait, which increases your movespeed in water and
+      reduces time to traverse between water z-levels when swimming
+  - qol: akula now have 50% reduced z-swim time, as if they had the pro-swimmer trait
+  - qol: tajara and vasilissans now have 25% reduced ladder/climbing time, as if they
+      had the amateur climber trait
+  - qol: OOC Escape now works for most Mind Binder and Body Snatcher interactions
+  purplefoxy27:
+  - bugfix: Better error handling in bapi-dmm
+  - bugfix: loadout food items with improper names can now be properly loaded
+  - bugfix: fix arrivals and escape tram dock controllers
