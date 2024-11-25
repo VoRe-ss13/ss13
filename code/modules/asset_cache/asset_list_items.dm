@@ -532,7 +532,7 @@
 		// "soluna_nexus_nanomap_z6.png"		= 'icons/_nanomaps/soluna_nexus_nanomap_z6.png',
 		// "soluna_nexus_nanomap_z7.png"		= 'icons/_nanomaps/soluna_nexus_nanomap_z7.png',
 		// "soluna_nexus_nanomap_z8.png"		= 'icons/_nanomaps/soluna_nexus_nanomap_z8.png',
-		// "soluna_nexus_nanomap_z9.png"		= 'icons/_nanomaps/southern_cross_nanomap_z10.png',
+		// "soluna_nexus_nanomap_z9.png"		= 'icons/_nanomaps/southern_cross_nanomap_z10.png', //TORCHEdit end
 
 		"relicbase_nanomap_z1.png"			= 'icons/_nanomaps/relicbase_nanomap_z1.png',
 		"relicbase_nanomap_z2.png"			= 'icons/_nanomaps/relicbase_nanomap_z2.png',
@@ -547,5 +547,5 @@
 		"relicbase_nanomap_z11.png"		= 'icons/_nanomaps/relicbase_nanomap_z11.png',
 		"relicbase_nanomap_z12.png"		= 'icons/_nanomaps/relicbase_nanomap_z12.png',
 		"relicbase_nanomap_z13.png"		= 'icons/_nanomaps/relicbase_nanomap_z13.png',
-		// CHOMP Edit End //TORCHEdit end
+		// CHOMP Edit End
 	)
