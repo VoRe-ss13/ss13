@@ -127,3 +127,13 @@
   - bugfix: Better error handling in bapi-dmm
   - bugfix: loadout food items with improper names can now be properly loaded
   - bugfix: fix arrivals and escape tram dock controllers
+2024-11-26:
+  VoRe-bot:
+  - refactor: min account age for head roles --> 31 days
+  - bugfix: VR avatars no longer get mail from cargo
+  - bugfix: fixed a floating APC on spider chapel
+  - rscadd: crocodile_upperjaw-head
+  - rscadd: VBO_maw26
+  - bugfix: hippo_head-head
+  - bugfix: trex_upperjaw-head
+  - bugfix: Lighting is slightly faster to calculate

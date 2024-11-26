@@ -1,8 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - rscadd: "crocodile_upperjaw-head"
-  - rscadd: "crocodile_upperjaw-head"
-  - rscadd: "VBO_maw26"
-  - bugfix: "hippo_head-head"
-  - bugfix: "trex_upperjaw-head"
