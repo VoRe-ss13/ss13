@@ -48,5 +48,29 @@ generic_filth = TRUE means when the decal is saved, it will be switched out for 
 	icon = 'icons/mob/hud.dmi'
 	mouse_opacity = 0
 
+<<<<<<< HEAD
 /obj/effect/decal/jan_hud/Initialize()
 	src.icon_state = "janhud[rand(1,9)]"
+=======
+/obj/effect/decal/cleanable/update_icon()
+	// Overrides should not inheret from this, and instead replace it entirely to match this in some form.
+	// add_janitor_hud_overlay() does not pre-cut overlays, so cut_overlays() must be called first.
+	// This is so it may be used with update_icon() overrides that use overlays, while adding the janitor overlay at the end.
+	cut_overlays()
+	add_janitor_hud_overlay()
+
+
+/obj/effect/decal/cleanable/proc/add_janitor_hud_overlay()
+	// This was original a seperate object that followed the grime, it got stuck in everything you can imagine!
+	// It also likely doubled the memory use of every cleanable decal on station...
+	var/image/hud = image('icons/mob/hud.dmi', src, "janhud[rand(1,9)]")
+	hud.appearance_flags = (RESET_COLOR|PIXEL_SCALE|KEEP_APART)
+	hud.plane = PLANE_JANHUD
+	hud.layer = BELOW_MOB_LAYER
+	hud.mouse_opacity = 0
+	//HUD VARIANT: Allows the hud to show up with it's normal alpha, even if the 'dirty thing' it's attached to has a low alpha (ex: dirt). If you want to disable it, simply comment out the lines between the 'HUD VARIANT' tag!
+	//hud.appearance_flags = RESET_ALPHA // CHOMPRemove
+	//hud.alpha = 255 // CHOMPRemove
+	//HUD VARIANT end
+	add_overlay(hud)
+>>>>>>> 0473c33bcc (jan hud less visible (#9571))
