@@ -17,6 +17,13 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_COMPREHENSIVE_SURVIVAL
 	backpack_contents = list(/obj/item/clothing/accessory/permit/gun/planetside = 1)
 
+<<<<<<< HEAD
+=======
+	headset = /obj/item/radio/headset/explorer
+	headset_alt = /obj/item/radio/headset/alt/explorer
+	headset_earbud = /obj/item/radio/headset/explorer
+
+>>>>>>> de4a4bb0b0 (bunch of headset changes (#9573))
 /decl/hierarchy/outfit/job/explorer2/post_equip(mob/living/carbon/human/H)
 	..()
 	for(var/obj/item/clothing/accessory/permit/gun/planetside/permit in H.back.contents)
@@ -61,6 +68,12 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	id_pda_assignment = JOB_FIELD_MEDIC //VOREStation Edit
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL|OUTFIT_COMPREHENSIVE_SURVIVAL
 
+<<<<<<< HEAD
+=======
+	headset = /obj/item/radio/headset/sar
+	headset_alt = /obj/item/radio/headset/alt/sar
+	headset_earbud = /obj/item/radio/headset/sar
+>>>>>>> de4a4bb0b0 (bunch of headset changes (#9573))
 
 /decl/hierarchy/outfit/job/explorer2
 	name = OUTFIT_JOB_NAME(JOB_EXPLORER)
@@ -121,6 +134,13 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	id_pda_assignment = JOB_FIELD_MEDIC //VOREStation Edit
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL|OUTFIT_COMPREHENSIVE_SURVIVAL
 
+<<<<<<< HEAD
+=======
+	headset = /obj/item/radio/headset/sar
+	headset_alt = /obj/item/radio/headset/alt/sar
+	headset_earbud = /obj/item/radio/headset/sar
+
+>>>>>>> de4a4bb0b0 (bunch of headset changes (#9573))
 
 /decl/hierarchy/outfit/job/pathfinder
 	name = OUTFIT_JOB_NAME(JOB_PATHFINDER)
@@ -135,6 +155,13 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL|OUTFIT_COMPREHENSIVE_SURVIVAL
 	backpack_contents = list(/obj/item/clothing/accessory/permit/gun/planetside = 1)
 
+<<<<<<< HEAD
+=======
+	headset = /obj/item/radio/headset/explorer
+	headset_alt = /obj/item/radio/headset/alt/explorer
+	headset_earbud = /obj/item/radio/headset/explorer
+
+>>>>>>> de4a4bb0b0 (bunch of headset changes (#9573))
 /decl/hierarchy/outfit/job/pathfinder/post_equip(mob/living/carbon/human/H)
 	..()
 	for(var/obj/item/clothing/accessory/permit/gun/planetside/permit in H.back.contents)
