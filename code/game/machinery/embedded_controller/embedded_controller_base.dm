@@ -41,14 +41,9 @@
 	if(LAZYLEN(valid_actions))
 		if(action in valid_actions)
 			program.receive_user_command(action)
-<<<<<<< HEAD
-	if(usr)
-		add_fingerprint(usr)
-=======
 			return TRUE
 	if(ui.user)
 		add_fingerprint(ui.user)
->>>>>>> 67fe8c3c8e ([MIRROR] Airlock Construction (#9580))
 
 /obj/machinery/embedded_controller/process()
 	if(program)
