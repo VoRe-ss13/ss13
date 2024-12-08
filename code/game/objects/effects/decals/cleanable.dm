@@ -38,18 +38,7 @@ generic_filth = TRUE means when the decal is saved, it will be switched out for 
 		src.icon_state = pick(src.random_icon_states)
 	..()
 
-/obj/effect/decal/jan_hud
-	plane = PLANE_JANHUD
-	layer = BELOW_MOB_LAYER
-	vis_flags = VIS_HIDE
-	persist_storable = FALSE
-	icon = 'icons/mob/hud.dmi'
-	mouse_opacity = 0
 
-<<<<<<< HEAD
-/obj/effect/decal/jan_hud/Initialize()
-	src.icon_state = "janhud[rand(1,9)]"
-=======
 /obj/effect/decal/cleanable/update_icon()
 	// Overrides should not inheret from this, and instead replace it entirely to match this in some form.
 	// add_janitor_hud_overlay() does not pre-cut overlays, so cut_overlays() must be called first.
@@ -71,4 +60,3 @@ generic_filth = TRUE means when the decal is saved, it will be switched out for 
 	//hud.alpha = 255 // CHOMPRemove
 	//HUD VARIANT end
 	add_overlay(hud)
->>>>>>> 0473c33bcc (jan hud less visible (#9571))
