@@ -973,11 +973,7 @@
 #include "code\game\jobs\job\engineering.dm"
 #include "code\game\jobs\job\exploration.dm"
 #include "code\game\jobs\job\job.dm"
-<<<<<<< HEAD
 #include "code\game\jobs\job\job_tc.dm"
-#include "code\game\jobs\job\job_vr.dm"
-=======
->>>>>>> c94594fe77 ([MIRROR] Jobs _vr files crunch (#9541))
 #include "code\game\jobs\job\medical.dm"
 #include "code\game\jobs\job\medical_ch.dm"
 #include "code\game\jobs\job\offduty.dm"
