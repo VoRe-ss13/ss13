@@ -10,7 +10,6 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	name = OUTFIT_JOB_NAME("Explorer")
 	shoes = /obj/item/clothing/shoes/boots/winter/explorer
 	uniform = /obj/item/clothing/under/explorer
-	l_ear = /obj/item/radio/headset/explorer
 	id_slot = slot_wear_id
 	pda_slot = slot_l_store
 	pda_type = /obj/item/pda/explorer //VORESTation Edit - Better Brown
@@ -47,7 +46,6 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	suit = /obj/item/clothing/suit/storage/toggle/bomber/pilot
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/fakesunglasses/aviator
-	l_ear = /obj/item/radio/headset/alt/pilot
 	uniform_accessories = list(/obj/item/clothing/accessory/storage/webbing/pilot1 = 1)
 	id_slot = slot_wear_id
 	pda_slot = slot_belt
@@ -65,7 +63,6 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	uniform = /obj/item/clothing/under/utility/blue
 	//suit = /obj/item/clothing/suit/storage/hooded/wintercoat/medical/sar //VOREStation Edit
 	shoes = /obj/item/clothing/shoes/boots/winter/explorer
-	l_ear = /obj/item/radio/headset/sar
 	l_hand = /obj/item/storage/firstaid/regular
 	belt = /obj/item/storage/belt/medical/emt
 	pda_slot = slot_l_store
