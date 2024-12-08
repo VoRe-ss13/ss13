@@ -12,7 +12,6 @@ generic_filth = TRUE means when the decal is saved, it will be switched out for 
 	var/generic_filth = FALSE
 	var/age = 0
 	var/list/random_icon_states = list()
-	var/obj/effect/decal/jan_hud/jan_icon = null
 
 /obj/effect/decal/cleanable/Initialize(var/mapload, var/_age)
 	if(!isnull(_age))
@@ -21,12 +20,11 @@ generic_filth = TRUE means when the decal is saved, it will be switched out for 
 		src.icon_state = pick(src.random_icon_states)
 	if(!mapload || !CONFIG_GET(flag/persistence_ignore_mapload))
 		SSpersistence.track_value(src, /datum/persistent/filth)
-	jan_icon = new/obj/effect/decal/jan_hud(src.loc)
 	. = ..()
+	update_icon()
 
 /obj/effect/decal/cleanable/Destroy()
 	SSpersistence.forget_value(src, /datum/persistent/filth)
-	QDEL_NULL(jan_icon)
 	. = ..()
 
 /obj/effect/decal/cleanable/clean_blood(var/ignore = 0)
