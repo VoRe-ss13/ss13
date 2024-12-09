@@ -1,5 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - qol: "capped the max hallucinations space ghosts can inflict with their attacks, and reduced the amount applied"
-  - qol: "adjusted mining spawns on SD asteroids"
