@@ -16,3 +16,59 @@
   - rscadd: '*caw'
   - sound: sound/voice/caw.ogg
   - rscdel: The skill system is OUTTA HERE
+2024-12-09:
+  VoRe-bot:
+  - bugfix: liquid transfer not working when the partner's vorgan had no reagent datum
+      before
+  - bugfix: 'limit check respecting the belly reagent limit, not the character limit
+
+      fix reagent transfer between borgs and simple mobs'
+  - maptweak: Added some lights in darker areas of medical
+  - maptweak: Fixed the genetics sorter so the lab is no longer a dumping ground and
+      deliveries will now work
+  - maptweak: Added a bottle of Adranol pills and a bottle of Mutagen to give some
+      starting chems and hints for viro. Also added some phoron and a grinder for
+      same reason.
+  - maptweak: Added the sign by viro disposals reminding people that it goes into
+      space
+  - maptweak: Added the viro requests console back into viro
+  - maptweak: Fixed the chemistry tables
+  - maptweak: Finally moved Erik's Lungs out of the way
+  - maptweak: Added a flu culture to the maints loot with the cold culture
+  - maptweak: Adds droppers to viro
+  - maptweak: Replaced the chem dispenser in xenobotany with 2 bottles of Diethylamine
+      and 2 bottles of Mutagen
+  - maptweak: Removed xenobiology's chem dispenser and halved the starting phoron
+      stacks
+  - maptweak: Removed the chem master and dispenser from the science ship and replaced
+      it with an RnD console and Destructive analyser
+  - maptweak: Removed the chemistry lab in xenoarch - the lab already has a massive
+      coolant supply. Added a sulphuric acid dispenser in its place
+  - maptweak: Removes the crew monitor from xenoarch
+  - rscadd: Microwave UI now tells you what it's going to make... or at least try
+      to make
+  - rscadd: You can now de and reconstruct all parts of an airlock.
+  - rscadd: Ability to set tags on different airlock parts (button, sensor, vent pumps)
+      with a multitool.
+  - qol: capped the max hallucinations space ghosts can inflict with their attacks,
+      and reduced the amount applied
+  - qol: adjusted mining spawns on SD asteroids
+  - bugfix: pilot, explorer and centcomm headset types having different functions
+  - qol: Strange Rocks can now generate Research Samples when broken apart.
+  - rscadd: pAI cards put into a machine are allowed to attack_ai() their machine
+  - qol: ZAS refactored a bit.
+  - bugfix: ai robot module list
+  - bugfix: some headset code from the refactor
+  - qol: cleaned up _vr files for jobs, moved cargo jobs into their own base dm.
+  - qol: Blender UI opens even when there's only one choice
+  - rscadd: Basic appliances (the mixer only I think?) now has a radial menu
+  - rscadd: Power/safety/change output buttons for cookers
+  - bugfix: Radial menus now layer properly
+  - refactor: Radial menus updated to /tg/ latest
+  - rscadd: dragon_upperjaw
+  - rscadd: dragon_lowerjaw
+  - rscadd: hippo_upperjaw
+  - rscadd: hippo_lowerjaw
+  - bugfix: VBO_maw26.dmi
+  - bugfix: fixed talon headset options, and headset options for a bunch of event
+      outfits
