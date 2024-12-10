@@ -68,6 +68,12 @@
 	else
 		update_icon()
 
+/mob/living/simple_mob/protean_blob/proc/nano_assimilate()
+	set name = "Assimilate Host"
+	set desc = "Allows a protean to assimilate a latched host, allowing them to devour them right away."
+	set hidden = 1
+	humanform.nano_assimilate()
+
 /mob/living/simple_mob/protean_blob/Login()
 	. = ..()
 	copy_from_prefs_vr(bellies = FALSE) //Load vore prefs

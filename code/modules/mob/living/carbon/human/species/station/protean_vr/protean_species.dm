@@ -94,7 +94,16 @@
 		/mob/living/carbon/human/proc/nano_partswap,
 		/mob/living/carbon/human/proc/nano_metalnom,
 		/mob/living/carbon/human/proc/nano_blobform,
+<<<<<<< HEAD
 		/mob/living/carbon/human/proc/nano_set_size,
+=======
+		/mob/living/carbon/human/proc/nano_rig_transform,
+		/mob/living/carbon/human/proc/nano_copy_body,
+		/mob/living/carbon/human/proc/appearance_switch,
+		/mob/living/carbon/human/proc/nano_latch,
+		/mob/living/carbon/human/proc/nano_assimilate,
+		/mob/living/proc/set_size,
+>>>>>>> f349654dd1 ([MIRROR] protean host assimilation (#9610))
 		/mob/living/carbon/human/proc/nano_change_fitting, //These verbs are displayed normally,
 		/mob/living/carbon/human/proc/shapeshifter_select_hair,
 		/mob/living/carbon/human/proc/shapeshifter_select_hair_colors,
@@ -172,6 +181,7 @@
 
 /datum/species/protean/handle_death(var/mob/living/carbon/human/H)
 	if(!H)
+<<<<<<< HEAD
 		return // Iono!
 
 	if(H.temporary_form)
@@ -184,6 +194,26 @@
 	spawn(1)
 		if(H)
 			H.gib()
+=======
+		return //No body?
+	if(OurRig)
+		if(OurRig.dead)
+			return
+		OurRig.dead = 1
+	var/mob/temp = H
+	if(H.temporary_form)
+		temp = H.temporary_form
+	playsound(temp, 'sound/voice/borg_deathsound.ogg', 50, 1)
+	temp.visible_message(span_bold("[temp.name]") + " shudders and retreats inwards, coalescing into a single core componant!")
+	to_chat(temp, span_warning("You've died as a Protean! While dead, you will be locked to your core RIG control module until you can be repaired. Instructions to your revival can be found in the Examine tab when examining your module."))
+	if(OurRig)
+		if(H.temporary_form)
+			if(!istype(H.temporary_form.loc, /obj/item/rig/protean))
+				H.nano_rig_transform(1)
+		else
+			H.nano_rig_transform(1)
+	pseudodead = 1
+>>>>>>> f349654dd1 ([MIRROR] protean host assimilation (#9610))
 
 /datum/species/protean/handle_environment_special(var/mob/living/carbon/human/H)
 	if((H.getActualBruteLoss() + H.getActualFireLoss()) > H.maxHealth*0.5 && isturf(H.loc)) //So, only if we're not a blob (we're in nullspace) or in someone (or a locker, really, but whatever)
