@@ -280,10 +280,18 @@
 ////
 //  Change size
 ////
+<<<<<<< HEAD
 /mob/living/carbon/human/proc/nano_set_size()
 	set name = "Adjust Volume"
 	set category = "Abilities"
 	set hidden = TRUE
+=======
+/mob/living/carbon/human/proc/nano_rig_transform(var/forced, var/devour = FALSE)
+	set name = "Modify Form - Hardsuit"
+	set desc = "Allows a protean to retract its mass into its hardsuit module at will."
+	//set category = "Abilities.Protean"
+	set hidden = 1
+>>>>>>> b6bb12d09e ([MIRROR] fix protean rig noms (#9618))
 
 	var/mob/living/user = temporary_form || src
 
@@ -293,10 +301,52 @@
 		to_chat(user,span_warning("You don't have a working refactory module!"))
 		return
 
+<<<<<<< HEAD
 	var/nagmessage = "Adjust your mass to be a size between 25 to 200% (or between 1 to 600% in dorms area). Up-sizing consumes metal, downsizing returns metal."
 	var/new_size = tgui_input_number(user, nagmessage, "Pick a Size", user.size_multiplier*100, 600, 1)
 	if(!new_size || !size_range_check(new_size))
 		return
+=======
+		if(istype(src.species, /datum/species/protean))
+			var/datum/species/protean/S = src.species
+			var/mob/living/simple_mob/protean_blob/P = temporary_form
+			if(S.OurRig) //Do we even have a RIG?
+				if(P.loc == S.OurRig)	//we're inside our own RIG
+					var/mob/wearer = S.OurRig.wearer
+					if(ismob(S.OurRig.loc))
+						var/mob/m = S.OurRig.loc
+						m.drop_from_inventory(S.OurRig)
+					if(wearer && devour) //We're being worn. Engulf em', if prefs align.. otherwise just drop off.
+						if(P.can_be_drop_pred && wearer.devourable && wearer.can_be_drop_prey && P.vore_selected)
+							perform_the_nom(P,wearer,P,P.vore_selected,1)
+						else
+							to_chat(P, span_vwarning("You can't assimilate your current host."))
+					P.forceMove(get_turf(S.OurRig))
+					S.OurRig.forceMove(src)
+					S.OurRig.myprotean = src
+					src.equip_to_slot_if_possible(S.OurRig, slot_back)
+					S.OurRig.Moved()
+					P.has_hands = 1
+				else	//We're not in our own RIG
+					if(P.stat || P.resting && !forced)
+						to_chat(P,span_warning("You can only do this while not stunned."))
+					else
+						if(P.l_hand)
+							P.drop_l_hand()
+						if(P.r_hand)
+							P.drop_r_hand()
+						P.has_hands = 0
+						S.OurRig.myprotean = P
+						src.drop_from_inventory(S.OurRig)
+						P.forceMove(S.OurRig)
+						S.OurRig.canremove = 1
+				P.reset_view()
+			else	//Make one if not
+				to_chat(temporary_form, span_warning("Somehow, your RIG got disconnected from your species. This may have been caused by an admin heal. A new one has been created for you, contact a coder."))
+				new /obj/item/rig/protean(src,src)
+	else
+		to_chat(protie, span_warning("You must remain still to condense!"))
+>>>>>>> b6bb12d09e ([MIRROR] fix protean rig noms (#9618))
 
 	var/size_factor = new_size/100
 
@@ -322,7 +372,77 @@
 		if(actually_added != cost)
 			to_chat(user,span_warning("Unfortunately, [cost-actually_added] steel was lost due to lack of storage space."))
 
+<<<<<<< HEAD
 	user.visible_message(span_notice("Black mist swirls around [user] as they change size."))
+=======
+/mob/living/carbon/human/proc/nano_latch()
+	set name = "Latch/Unlatch host"
+	set desc = "Allows a protean to forcibly latch or unlatch from a host."
+	//set category = "Abilities.Protean"
+	set hidden = 1
+	var/mob/living/protie = src
+	var/mob/living/carbon/human/target
+	var/datum/species/protean/S = src.species
+	if(nano_dead_check(src))
+		return
+	if(temporary_form)
+		protie = temporary_form
+		if(protie.loc == S.OurRig)
+			target = S.OurRig.wearer
+			if(target)
+				target.drop_from_inventory(S.OurRig)
+				to_chat(protie, span_notice("You detach from your host."))
+			else
+				to_chat(protie, span_warning("You aren't being worn, dummy."))
+			return
+	var/obj/held_item = protie.get_active_hand()
+	if(istype(held_item,/obj/item/grab))
+		var/obj/item/grab/G = held_item
+		if(istype(G.affecting, /mob/living/carbon/human))
+			target = G.affecting
+			if(istype(target.species, /datum/species/protean))
+				to_chat(protie, span_danger("You can't latch onto a fellow Protean!"))
+				return
+			if(G.loc == protie && G.state >= GRAB_AGGRESSIVE)
+				protie.visible_message(span_warning("[protie] is attempting to latch onto [target]!"), span_danger("You attempt to latch onto [target]!"))
+				if(do_after(protie, 50, target,exclusive = TASK_ALL_EXCLUSIVE))
+					if(G.loc == protie && G.state >= GRAB_AGGRESSIVE)
+						target.drop_from_inventory(target.back)
+						protie.visible_message(span_danger("[protie] latched onto [target]!"), span_danger("You latch yourself onto [target]!"))
+						target.Weaken(3)
+						nano_rig_transform(1)
+						spawn(5)	//Have to give time for the above proc to resolve
+						//S.OurRig.forceMove(target)
+						target.equip_to_slot(S.OurRig, slot_back)
+						S.OurRig.Moved()
+						spawn(1)	//Same here :(
+						S.OurRig.wearer = target
+			else
+				to_chat(protie, span_warning("You need a more aggressive grab to do this!"))
+		else
+			to_chat(protie, span_warning("You can only latch onto humanoid mobs!"))
+	else
+		to_chat(protie, span_warning("You need to be grabbing a humanoid mob aggressively to latch onto them."))
+
+/mob/living/carbon/human/proc/nano_assimilate()
+	set name = "Assimilate Host"
+	set desc = "Allows a protean to assimilate a latched host, allowing them to devour them right away."
+	set hidden = 1
+
+	var/mob/living/protie = src
+	var/mob/living/carbon/human/target
+	var/datum/species/protean/S = src.species
+	if(nano_dead_check(src))
+		return
+	if(temporary_form)
+		protie = temporary_form
+		if(protie.loc == S.OurRig)
+			target = S.OurRig.wearer
+			if(!target)
+				to_chat(protie, span_vwarning("You need a host to assimilate."))
+				return
+			nano_rig_transform(TRUE, TRUE)
+>>>>>>> b6bb12d09e ([MIRROR] fix protean rig noms (#9618))
 
 /// /// /// A helper to reuse
 /mob/living/proc/nano_get_refactory(obj/item/organ/internal/nano/refactory/R)
