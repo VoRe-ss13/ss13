@@ -432,6 +432,7 @@
 		visible_message(span_danger("The [src]'s gauntlet glows silver!"))
 		addtimer(CALLBACK(src, PROC_REF(gravity_pull), A), 1 SECOND, TIMER_DELETE_ME)
 
+<<<<<<< HEAD
 /mob/living/simple_mob/humanoid/eclipse/head/tyrlead/proc/fullsummon(atom/target) //Summons a wall whilst the boss tries to enjoy their meal
 	visible_message(span_warning("\The [src] calls in drone support!"))
 	new /mob/living/simple_mob/mechanical/combat_drone/artillery (src.loc)
@@ -439,6 +440,25 @@
 	new /mob/living/simple_mob/mechanical/combat_drone/artillery (src.loc)
 	sleep(30)
 	new /mob/living/simple_mob/mechanical/combat_drone/artillery (src.loc)
+=======
+/mob/living/simple_mob/humanoid/eclipse/head/medical //noodl
+	name = "Eclipse Chief Medical Officer"
+	health = 150
+	maxHealth = 150
+	special_attack_cooldown = 5 SECONDS
+	special_attack_min_range = 0
+	special_attack_max_range = 7
+	melee_damage_lower = 15 //Durasteel fireaxe
+	melee_damage_upper = 15
+	attack_armor_pen = 60
+	projectiletype = null
+	var/cloaked_alpha = 45			// Lower = Harder to see.
+	var/cloak_cooldown = 5 SECONDS	// Amount of time needed to re-cloak after losing it.
+	var/last_uncloak = 0			// world.time
+	var/poison_type = REAGENT_ID_STOXIN
+	var/poison_per_bite = 8
+	var/poison_chance = 80
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /mob/living/simple_mob/humanoid/eclipse/head/tyrlead/proc/mech_two(atom/target) //Forces the mecha user in a strange dance, being forced out, likly dodging one projectile and getting back in
 	var/obj/mecha/M = target

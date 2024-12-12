@@ -1,10 +1,17 @@
 GLOBAL_LIST_EMPTY(archive_diseases)
 
 GLOBAL_LIST_INIT(advance_cures, list(
+<<<<<<< HEAD
 	"sodiumchloride", "sugar", "orangejuice",
 	"spaceacillin", "glucose", "ethanol",
 	"dyloteane", "impedrezene", "hepanephrodaxon",
 	"gold", "silver"
+=======
+	REAGENT_ID_SODIUMCHLORIDE, REAGENT_ID_SUGAR, REAGENT_ID_ORANGEJUICE,
+	REAGENT_ID_SPACEACILLIN, REAGENT_ID_GLUCOSE, REAGENT_ID_ETHANOL,
+	REAGENT_ID_LEPORAZINE, REAGENT_ID_IMPEDREZENE, REAGENT_ID_HEPANEPHRODAXON,
+	REAGENT_ID_SILVER, REAGENT_ID_GOLD
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 ))
 
 /datum/disease/advance
