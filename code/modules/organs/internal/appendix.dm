@@ -7,6 +7,7 @@
 	var/inflame_progress = 0
 
 /mob/living/carbon/human/proc/appendicitis()
+<<<<<<< HEAD
 	if(stat == DEAD)
 		return 0
 	var/obj/item/organ/internal/appendix/A = internal_organs_by_name[O_APPENDIX]
@@ -15,6 +16,11 @@
 		return 1
 	return 0
 
+=======
+	return ForceContractDisease(new /datum/disease/appendicitis)
+
+/*
+>>>>>>> 65b20a4d5c ([MIRROR] Virology Hotfix #5 (#9620))
 /obj/item/organ/internal/appendix/process()
 	..()
 
