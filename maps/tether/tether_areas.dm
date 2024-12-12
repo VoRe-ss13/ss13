@@ -997,36 +997,49 @@
 	icon_state = "recreation_area_restroom"
 	sound_env = SMALL_ENCLOSED
 
+/area/crew_quarters/sleep
+	flags = RAD_SHIELDED | AREA_SOUNDPROOF | AREA_ALLOW_LARGE_SIZE | AREA_BLOCK_SUIT_SENSORS | AREA_BLOCK_TRACKING | AREA_FORBID_EVENTS | AREA_FORBID_SINGULO
+
 /area/crew_quarters/sleep/maintDorm1
 	name = "\improper Construction Dorm 1"
 	icon_state = "Sleep"
+<<<<<<< HEAD
 	flags = RAD_SHIELDED
 	soundproofed = TRUE
 	limit_mob_size = FALSE
 	block_suit_sensors = TRUE
 	block_tracking = TRUE
+=======
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /area/crew_quarters/sleep/maintDorm2
 	name = "\improper Construction Dorm 2"
 	icon_state = "Sleep"
+<<<<<<< HEAD
 	flags = RAD_SHIELDED
 	soundproofed = TRUE
 	limit_mob_size = FALSE
 	block_suit_sensors = TRUE
 	block_tracking = TRUE
+=======
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /area/crew_quarters/sleep/maintDorm3
 	name = "\improper Construction Dorm 3"
 	icon_state = "Sleep"
+<<<<<<< HEAD
 	flags = RAD_SHIELDED
 	soundproofed = TRUE
 	limit_mob_size = FALSE
 	block_suit_sensors = TRUE
 	block_tracking = TRUE
+=======
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /area/crew_quarters/sleep/maintDorm4
 	name = "\improper Construction Dorm 4"
 	icon_state = "Sleep"
+<<<<<<< HEAD
 	flags = RAD_SHIELDED
 	soundproofed = TRUE
 	limit_mob_size = FALSE
@@ -1186,6 +1199,52 @@
 	limit_mob_size = FALSE
 	block_suit_sensors = TRUE
 	block_tracking = TRUE
+=======
+
+/area/crew_quarters/sleep/vistor_room_1
+
+/area/crew_quarters/sleep/vistor_room_2
+
+/area/crew_quarters/sleep/vistor_room_3
+
+/area/crew_quarters/sleep/vistor_room_4
+
+/area/crew_quarters/sleep/vistor_room_5
+
+/area/crew_quarters/sleep/vistor_room_6
+
+/area/crew_quarters/sleep/vistor_room_7
+
+/area/crew_quarters/sleep/vistor_room_8
+
+/area/crew_quarters/sleep/vistor_room_9
+
+/area/crew_quarters/sleep/vistor_room_10
+
+/area/crew_quarters/sleep/vistor_room_11
+
+/area/crew_quarters/sleep/vistor_room_12
+
+/area/crew_quarters/sleep/Dorm_1
+
+/area/crew_quarters/sleep/Dorm_2
+
+/area/crew_quarters/sleep/Dorm_3
+
+/area/crew_quarters/sleep/Dorm_4
+
+/area/crew_quarters/sleep/Dorm_5
+
+/area/crew_quarters/sleep/Dorm_6
+
+/area/crew_quarters/sleep/Dorm_7
+
+/area/crew_quarters/sleep/Dorm_8
+
+/area/crew_quarters/sleep/Dorm_9
+
+/area/crew_quarters/sleep/Dorm_10
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /area/crew_quarters/sleep/Dorm_1/holo
 	name = "\improper Dorm 1 Holodeck"
@@ -1207,36 +1266,46 @@
 	name = "\improper Visitor Lodging 1"
 	icon_state = "dk_yellow"
 	lightswitch = 0
+<<<<<<< HEAD
 	flags = RAD_SHIELDED | BLUE_SHIELDED
 	soundproofed = TRUE
 	limit_mob_size = FALSE
 	block_suit_sensors = TRUE
 	block_tracking = TRUE
+=======
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /area/crew_quarters/sleep/spacedorm2
 	name = "\improper Visitor Lodging 2"
 	icon_state = "dk_yellow"
 	lightswitch = 0
+<<<<<<< HEAD
 	flags = RAD_SHIELDED | BLUE_SHIELDED
 	soundproofed = TRUE
 	limit_mob_size = FALSE
 	block_suit_sensors = TRUE
 	block_tracking = TRUE
+=======
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /area/crew_quarters/sleep/spacedorm3
 	name = "\improper Visitor Lodging 3"
 	icon_state = "dk_yellow"
 	lightswitch = 0
+<<<<<<< HEAD
 	flags = RAD_SHIELDED | BLUE_SHIELDED
 	soundproofed = TRUE
 	limit_mob_size = FALSE
 	block_suit_sensors = TRUE
 	block_tracking = TRUE
+=======
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /area/crew_quarters/sleep/spacedorm4
 	name = "\improper Visitor Lodging 4"
 	icon_state = "dk_yellow"
 	lightswitch = 0
+<<<<<<< HEAD
 	flags = RAD_SHIELDED | BLUE_SHIELDED
 	soundproofed = TRUE
 	limit_mob_size = FALSE
@@ -1314,6 +1383,39 @@
 	limit_mob_size = FALSE
 	block_suit_sensors = TRUE
 	block_tracking = TRUE
+=======
+
+/area/holodeck/holodorm
+	flags = RAD_SHIELDED | BLUE_SHIELDED | AREA_SOUNDPROOF | AREA_ALLOW_LARGE_SIZE | AREA_BLOCK_SUIT_SENSORS | AREA_BLOCK_TRACKING | AREA_FORBID_EVENTS | AREA_FORBID_SINGULO
+
+
+/area/holodeck/holodorm/source_basic
+	name = "\improper Holodeck Source"
+
+/area/holodeck/holodorm/source_desert
+	name = "\improper Holodeck Source"
+
+/area/holodeck/holodorm/source_seating
+	name = "\improper Holodeck Source"
+
+/area/holodeck/holodorm/source_beach
+	name = "\improper Holodeck Source"
+
+/area/holodeck/holodorm/source_garden
+	name = "\improper Holodeck Source"
+
+/area/holodeck/holodorm/source_boxing
+	name = "\improper Holodeck Source"
+
+/area/holodeck/holodorm/source_snow
+	name = "\improper Holodeck Source"
+
+/area/holodeck/holodorm/source_space
+	name = "\improper Holodeck Source"
+
+/area/holodeck/holodorm/source_off
+	name = "\improper Holodeck Source"
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /area/ai_core_foyer
 	name = "\improper AI Core Access"
