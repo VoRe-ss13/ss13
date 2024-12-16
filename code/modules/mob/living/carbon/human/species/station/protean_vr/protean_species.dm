@@ -94,16 +94,12 @@
 		/mob/living/carbon/human/proc/nano_partswap,
 		/mob/living/carbon/human/proc/nano_metalnom,
 		/mob/living/carbon/human/proc/nano_blobform,
-<<<<<<< HEAD
-		/mob/living/carbon/human/proc/nano_set_size,
-=======
 		/mob/living/carbon/human/proc/nano_rig_transform,
 		/mob/living/carbon/human/proc/nano_copy_body,
 		/mob/living/carbon/human/proc/appearance_switch,
 		/mob/living/carbon/human/proc/nano_latch,
 		/mob/living/carbon/human/proc/nano_assimilate,
 		/mob/living/proc/set_size,
->>>>>>> f349654dd1 ([MIRROR] protean host assimilation (#9610))
 		/mob/living/carbon/human/proc/nano_change_fitting, //These verbs are displayed normally,
 		/mob/living/carbon/human/proc/shapeshifter_select_hair,
 		/mob/living/carbon/human/proc/shapeshifter_select_hair_colors,
@@ -181,20 +177,6 @@
 
 /datum/species/protean/handle_death(var/mob/living/carbon/human/H)
 	if(!H)
-<<<<<<< HEAD
-		return // Iono!
-
-	if(H.temporary_form)
-		H.forceMove(H.temporary_form.drop_location())
-		H.ckey = H.temporary_form.ckey
-		QDEL_NULL(H.temporary_form)
-
-	to_chat(H, span_warning("You died as a Protean. Please sit out of the round for at least 60 minutes before respawning, to represent the time it would take to ship a new-you to the station."))
-
-	spawn(1)
-		if(H)
-			H.gib()
-=======
 		return //No body?
 	if(OurRig)
 		if(OurRig.dead)
@@ -213,7 +195,6 @@
 		else
 			H.nano_rig_transform(1)
 	pseudodead = 1
->>>>>>> f349654dd1 ([MIRROR] protean host assimilation (#9610))
 
 /datum/species/protean/handle_environment_special(var/mob/living/carbon/human/H)
 	if((H.getActualBruteLoss() + H.getActualFireLoss()) > H.maxHealth*0.5 && isturf(H.loc)) //So, only if we're not a blob (we're in nullspace) or in someone (or a locker, really, but whatever)

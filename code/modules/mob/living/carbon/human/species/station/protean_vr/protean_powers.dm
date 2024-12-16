@@ -430,8 +430,6 @@
 	icon_state = "metal"
 	to_call = /mob/living/carbon/human/proc/nano_metalnom
 
-<<<<<<< HEAD
-=======
 /obj/effect/protean_ability/hardsuit
 	ability_name = "Hardsuit Transform"
 	desc = "Coalesce your nanite swarm into their control module, allowing others to wear you."
@@ -462,5 +460,4 @@
 	icon_state = "copy_form"
 	to_call = /mob/living/carbon/human/proc/nano_copy_body
 
->>>>>>> f349654dd1 ([MIRROR] protean host assimilation (#9610))
 #undef PER_LIMB_STEEL_COST
