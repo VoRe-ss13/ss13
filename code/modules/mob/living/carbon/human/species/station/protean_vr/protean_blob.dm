@@ -255,9 +255,35 @@
 			healing = null
 
 /mob/living/simple_mob/protean_blob/lay_down()
+<<<<<<< HEAD
 	..()
 	if(resting)
 		animate(src,alpha = 40,time = 1 SECOND)
+=======
+	if(hiding)
+		to_chat(src, span_warning("You can't rest while hiding."))
+		return
+	var/obj/item/rig/rig = src.get_rig()
+	if(rig)
+		rig.force_rest(src)
+		return
+	..()
+
+/mob/living/simple_mob/protean_blob/verb/prot_hide()
+	set name = "Hide Self"
+	set desc = "Disperses your mass into a thin veil, making a trap to snatch prey with, or simply hide."
+	set category = "Abilities.Protean"
+
+	if(resting)
+		to_chat(src, span_warning("You can't hide while resting."))
+		return
+
+	if(!hiding)
+		cut_overlays()
+		icon = 'icons/mob/species/protean/protean.dmi'
+		icon_state = "hide"
+		sleep(7)
+>>>>>>> fe044be07e ([MIRROR] interlock protean hiding and resting (#9637))
 		mouse_opacity = 0
 		plane = ABOVE_OBJ_PLANE
 	else
