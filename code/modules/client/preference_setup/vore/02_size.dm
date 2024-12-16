@@ -289,7 +289,7 @@
 			oursound = get_species_sound(select_default_species_sound(pref))["cough"]
 			S = sound(pick(oursound))
 		if(pref.species_sound == "None" || oursound == null)
-			to_chat(user, "<span class='warning'>This set does not have cough sounds!</span>")
+			to_chat(user, span_warning("This set does not have cough sounds!"))
 			return TOPIC_REFRESH
 		S.frequency = pick(pref.voice_freq)
 		S.volume = 20
@@ -304,7 +304,7 @@
 			oursound = get_species_sound(select_default_species_sound(pref))["sneeze"]
 			S = sound(pick(oursound))
 		if(pref.species_sound == "None" || oursound == null)
-			to_chat(user, "<span class='warning'>This set does not have sneeze sounds!</span>")
+			to_chat(user, span_warning("This set does not have sneeze sounds!"))
 			return TOPIC_REFRESH
 		S.frequency = pick(pref.voice_freq)
 		S.volume = 20
@@ -319,7 +319,7 @@
 			oursound = get_species_sound(select_default_species_sound(pref))["scream"]
 			S = sound(pick(oursound))
 		if(pref.species_sound == "None" || oursound == null)
-			to_chat(user, "<span class='warning'>This set does not have scream sounds!</span>")
+			to_chat(user, span_warning("This set does not have scream sounds!"))
 			return TOPIC_REFRESH
 		S.frequency = pick(pref.voice_freq)
 		S.volume = 20
@@ -334,7 +334,7 @@
 			oursound = get_species_sound(select_default_species_sound(pref))["pain"]
 			S = sound(pick(oursound))
 		if(pref.species_sound == "None" || oursound == null)
-			to_chat(user, "<span class='warning'>This set does not have pain sounds!</span>")
+			to_chat(user, span_warning("This set does not have pain sounds!"))
 			return TOPIC_REFRESH
 		S.frequency = pick(pref.voice_freq)
 		S.volume = 20
@@ -349,7 +349,7 @@
 			oursound = get_species_sound(select_default_species_sound(pref))["gasp"]
 			S = sound(pick(oursound))
 		if(pref.species_sound == "None" || oursound == null)
-			to_chat(user, "<span class='warning'>This set does not have gasp sounds!</span>")
+			to_chat(user, span_warning("This set does not have gasp sounds!"))
 			return TOPIC_REFRESH
 		S.frequency = pick(pref.voice_freq)
 		S.volume = 20
@@ -364,7 +364,7 @@
 			oursound = get_species_sound(select_default_species_sound(pref))["death"]
 			S = sound(pick(oursound))
 		if(pref.species_sound == "None" || oursound == null)
-			to_chat(user, "<span class='warning'>This set does not have death sounds!</span>")
+			to_chat(user, span_warning("This set does not have death sounds!"))
 			return TOPIC_REFRESH
 		S.frequency = pick(pref.voice_freq)
 		S.volume = 20
