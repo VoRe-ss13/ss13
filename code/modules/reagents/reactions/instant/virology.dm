@@ -47,13 +47,6 @@
 	required_reagents = list(REAGENT_ID_SIZEOXADONE = 1, REAGENT_ID_PHORONVIRUSFOOD = 1)
 	result_amount = 2
 
-/decl/chemical_reaction/instant/virus_food_size
-	name = "sizeoxadone virus food"
-	id = "sizeoxadonevirusfood"
-	result = "sizevirusfood"
-	required_reagents = list("sizeoxadone" = 1, "phoronvirusfood" = 1)
-	result_amount = 2
-
 /decl/chemical_reaction/instant/mix_virus
 	name = "Mix Virus"
 	id = "mixvirus"
