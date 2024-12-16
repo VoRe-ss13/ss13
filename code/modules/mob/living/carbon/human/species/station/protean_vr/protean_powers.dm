@@ -8,14 +8,6 @@
 	set category = "Abilities"
 	set hidden = TRUE
 
-<<<<<<< HEAD
-	if(stat)
-		to_chat(src,span_warning("You must be awake and standing to perform this action!"))
-		return
-
-	if(!isturf(loc))
-		to_chat(src,span_warning("You need more space to perform this action!"))
-=======
 	var/mob/living/protie = src
 	if(temporary_form)
 		protie = temporary_form
@@ -28,38 +20,24 @@
 
 	if(!isturf(protie.loc))
 		to_chat(protie,span_warning("You need more space to perform this action!"))
->>>>>>> 81d3927a6d ([MIRROR] Fix 516 again and set cache_lifespan according to modern tg (#9599))
 		return
 
 	var/obj/item/organ/internal/nano/refactory/refactory = nano_get_refactory()
 	//Missing the organ that does this
 	if(!istype(refactory))
-<<<<<<< HEAD
-		to_chat(src,span_warning("You don't have a working refactory module!"))
-		return
-
-	var/choice = tgui_input_list(src,"Pick the bodypart to change:", "Refactor - One Bodypart", species.has_limbs)
-=======
 		to_chat(protie,span_warning("You don't have a working refactory module!"))
 		return
 
 	var/choice = tgui_input_list(protie,"Pick the bodypart to change:", "Refactor - One Bodypart", species.has_limbs)
->>>>>>> 81d3927a6d ([MIRROR] Fix 516 again and set cache_lifespan according to modern tg (#9599))
 	if(!choice)
 		return
 
 	//Organ is missing, needs restoring
 	if(!organs_by_name[choice] || istype(organs_by_name[choice], /obj/item/organ/external/stump)) //allows limb stumps to regenerate like removed limbs.
 		if(refactory.get_stored_material(MAT_STEEL) < PER_LIMB_STEEL_COST)
-<<<<<<< HEAD
-			to_chat(src,span_warning("You're missing that limb, and need to store at least [PER_LIMB_STEEL_COST] steel to regenerate it."))
-			return
-		var/regen = tgui_alert(src,"That limb is missing, do you want to regenerate it in exchange for [PER_LIMB_STEEL_COST] steel?","Regenerate limb?",list("Yes","No"))
-=======
 			to_chat(protie,span_warning("You're missing that limb, and need to store at least [PER_LIMB_STEEL_COST] steel to regenerate it."))
 			return
 		var/regen = tgui_alert(protie,"That limb is missing, do you want to regenerate it in exchange for [PER_LIMB_STEEL_COST] steel?","Regenerate limb?",list("Yes","No"))
->>>>>>> 81d3927a6d ([MIRROR] Fix 516 again and set cache_lifespan according to modern tg (#9599))
 		if(regen != "Yes")
 			return
 		if(!refactory.use_stored_material(MAT_STEEL,PER_LIMB_STEEL_COST))
@@ -96,11 +74,7 @@
 		usable_manufacturers[company] = M
 	if(!usable_manufacturers.len)
 		return
-<<<<<<< HEAD
-	var/manu_choice = tgui_input_list(src, "Which manufacturer do you wish to mimic for this limb?", "Manufacturer for [choice]", usable_manufacturers)
-=======
 	var/manu_choice = tgui_input_list(protie, "Which manufacturer do you wish to mimic for this limb?", "Manufacturer for [choice]", usable_manufacturers)
->>>>>>> 81d3927a6d ([MIRROR] Fix 516 again and set cache_lifespan according to modern tg (#9599))
 
 	if(!manu_choice)
 		return //Changed mind
@@ -113,113 +87,6 @@
 	visible_message(span_infoplain(span_bold("[src]") + "'s [choice] loses its shape, then reforms."))
 	update_icons_body()
 
-<<<<<<< HEAD
-////
-//  Full Refactor
-////
-/mob/living/carbon/human/proc/nano_regenerate() //fixed the proc, it used to leave active_regen true.
-	set name = "Ref - Whole Body"
-	set desc = "Allows you to regrow limbs and replace organs, given you have enough materials."
-	set category = "Abilities"
-	set hidden = TRUE
-
-	if(stat)
-		to_chat(src,span_warning("You must be awake and standing to perform this action!"))
-		return
-
-	if(!isturf(loc))
-		to_chat(src,span_warning("You need more space to perform this action!"))
-		return
-
-	var/obj/item/organ/internal/nano/refactory/refactory = nano_get_refactory()
-	//Missing the organ that does this
-	if(!istype(refactory))
-		to_chat(src,span_warning("You don't have a working refactory module!"))
-		return
-
-	//Already regenerating
-	if(active_regen)
-		to_chat(src, span_warning("You are already refactoring!"))
-		return
-
-	var/swap_not_rebuild = tgui_alert(src,"Do you want to rebuild, or reshape?","Rebuild or Reshape",list("Reshape","Cancel","Rebuild"))
-	if(!swap_not_rebuild || swap_not_rebuild == "Cancel")
-		return
-	if(swap_not_rebuild == "Reshape")
-		var/list/usable_manufacturers = list()
-		for(var/company in chargen_robolimbs)
-			var/datum/robolimb/M = chargen_robolimbs[company]
-			if(!(BP_TORSO in M.parts))
-				continue
-			if(species?.base_species in M.species_cannot_use)
-				continue
-			if(M.whitelisted_to && !(ckey in M.whitelisted_to))
-				continue
-			usable_manufacturers[company] = M
-		if(!usable_manufacturers.len)
-			return
-		var/manu_choice = tgui_input_list(src, "Which manufacturer do you wish to mimic?", "Manufacturer", usable_manufacturers)
-
-		if(!manu_choice)
-			return //Changed mind
-		if(!organs_by_name[BP_TORSO])
-			return //Ain't got a torso!
-
-		var/obj/item/organ/external/torso = organs_by_name[BP_TORSO]
-		to_chat(src, span_danger("Remain still while the process takes place! It will take 5 seconds."))
-		visible_message(span_infoplain(span_bold("[src]") + "'s form collapses into an amorphous blob of black ichor..."))
-
-		var/mob/living/simple_mob/protean_blob/blob = nano_intoblob()
-		active_regen = TRUE
-		if(do_after(blob,5 SECONDS))
-			synthetic = usable_manufacturers[manu_choice]
-			torso.robotize(manu_choice) //Will cascade to all other organs.
-			regenerate_icons()
-			visible_message(span_infoplain(span_bold("[src]") + "'s form reshapes into a new one..."))
-		active_regen = FALSE
-		nano_outofblob(blob)
-		return
-
-	//Not enough resources (AND spends the resources, should be the last check)
-	if(!refactory.use_stored_material(MAT_STEEL,refactory.max_storage))
-		to_chat(src, span_warning("You need to be maxed out on normal metal to do this!"))
-		return
-
-	var/delay_length = round(active_regen_delay * species.active_regen_mult)
-	to_chat(src, span_danger("Remain still while the process takes place! It will take [delay_length/10] seconds."))
-	visible_message(span_infoplain(span_bold("[src]") + "'s form begins to shift and ripple as if made of oil..."))
-	active_regen = TRUE
-
-	var/mob/living/simple_mob/protean_blob/blob = nano_intoblob()
-	if(do_after(blob, delay_length, null, 0))
-		if(stat != DEAD && refactory)
-			var/list/holder = refactory.materials
-			species.create_organs(src)
-			var/obj/item/organ/external/torso = organs_by_name[BP_TORSO]
-			torso.robotize() //synthetic wasn't defined here.
-			LAZYCLEARLIST(blood_DNA)
-			LAZYCLEARLIST(feet_blood_DNA)
-			blood_color = null
-			feet_blood_color = null
-			regenerate_icons() //Probably worth it, yeah.
-			var/obj/item/organ/internal/nano/refactory/new_refactory = locate() in internal_organs
-			if(!new_refactory)
-				log_debug("[src] protean-regen'd but lacked a refactory when done.")
-			else
-				new_refactory.materials = holder
-			to_chat(src, span_notice("Your refactoring is complete.")) //Guarantees the message shows no matter how bad the timing.
-			to_chat(blob, span_notice("Your refactoring is complete!"))
-		else
-			to_chat(src,  span_critical("Your refactoring has failed."))
-			to_chat(blob, span_critical("Your refactoring has failed!"))
-	else
-		to_chat(src,  span_critical("Your refactoring is interrupted."))
-		to_chat(blob, span_critical("Your refactoring is interrupted!"))
-	active_regen = FALSE
-	nano_outofblob(blob)
-
-
-=======
 /mob/living/carbon/human/proc/nano_regenerate()
 	set name = "Total Reassembly"
 	set desc = "Fully repair yourself or reload your appearance from whatever character slot you have loaded."
@@ -336,17 +203,12 @@
 			species?:OurRig = Rig	//Get a reference to our Rig and put it back after reassembling
 			protie.visible_message(span_notify("[protie] adopts the form of [victim]!"), span_danger("You have reassembled into [victim]."))
 
->>>>>>> 81d3927a6d ([MIRROR] Fix 516 again and set cache_lifespan according to modern tg (#9599))
 ////
 //  Storing metal
 ////
 /mob/living/carbon/human/proc/nano_metalnom()
 	set name = "Ref - Store Metals"
 	set desc = "If you're holding a stack of material, you can consume some and store it for later."
-<<<<<<< HEAD
-	set category = "Abilities"
-	set hidden = TRUE
-=======
 	//set category = "Abilities.Protean"
 	set hidden = 1
 
@@ -356,26 +218,16 @@
 	if(nano_dead_check(protie))
 		to_chat(protie, span_warning("You need to be repaired first before you can act!"))
 		return
->>>>>>> 81d3927a6d ([MIRROR] Fix 516 again and set cache_lifespan according to modern tg (#9599))
 
 	var/obj/item/organ/internal/nano/refactory/refactory = nano_get_refactory()
 	//Missing the organ that does this
 	if(!istype(refactory))
-<<<<<<< HEAD
-		to_chat(src,span_warning("You don't have a working refactory module!"))
-		return
-
-	var/held = get_active_hand()
-	if(!istype(held,/obj/item/stack/material))
-		to_chat(src,span_warning("You aren't holding a stack of materials in your active hand...!"))
-=======
 		to_chat(protie,span_warning("You don't have a working refactory module!"))
 		return
 
 	var/held = protie.get_active_hand()
 	if(!istype(held,/obj/item/stack/material))
 		to_chat(protie,span_warning("You aren't holding a stack of materials in your active hand!"))
->>>>>>> 81d3927a6d ([MIRROR] Fix 516 again and set cache_lifespan according to modern tg (#9599))
 		return
 
 	var/obj/item/stack/material/matstack = held
@@ -384,33 +236,16 @@
 	for(var/material in PROTEAN_EDIBLE_MATERIALS)
 		if(material == substance) allowed = TRUE
 	if(!allowed)
-<<<<<<< HEAD
-		to_chat(src,span_warning("You can't process [substance]!"))
-		return //Only a few things matter, the rest are best not cluttering the lists.
-
-	var/howmuch = tgui_input_number(src,"How much do you want to store? (0-[matstack.get_amount()])","Select amount",null,matstack.get_amount(),0)
-	if(!howmuch || matstack != get_active_hand() || howmuch > matstack.get_amount())
-=======
 		to_chat(protie,span_warning("You can't process [substance]!"))
 		return
 
 	var/howmuch = tgui_input_number(protie,"How much do you want to store? (0-[matstack.get_amount()])","Select amount",null,matstack.get_amount())
 	if(!howmuch || matstack != protie.get_active_hand() || howmuch > matstack.get_amount())
->>>>>>> 81d3927a6d ([MIRROR] Fix 516 again and set cache_lifespan according to modern tg (#9599))
 		return //Quietly fail
 
 	var/actually_added = refactory.add_stored_material(substance,howmuch*matstack.perunit)
 	matstack.use(CEILING((actually_added/matstack.perunit), 1))
 	if(actually_added && actually_added < howmuch)
-<<<<<<< HEAD
-		to_chat(src,span_warning("Your refactory module is now full, so only [actually_added] units were stored."))
-		visible_message(span_notice("[src] nibbles some of the [substance] right off the stack!"))
-	else if(actually_added)
-		to_chat(src,span_notice("You store [actually_added] units of [substance]."))
-		visible_message(span_notice("[src] devours some of the [substance] right off the stack!"))
-	else
-		to_chat(src,span_notice("You're completely capped out on [substance]!"))
-=======
 		to_chat(protie,span_warning("Your refactory module is now full, so only [actually_added] units were stored."))
 		visible_message(span_notice("[protie] nibbles some of the [substance] right off the stack!"))
 	else if(actually_added)
@@ -418,7 +253,6 @@
 		visible_message(span_notice("[protie] devours some of the [substance] right off the stack!"))
 	else
 		to_chat(protie,span_notice("You're completely capped out on [substance]!"))
->>>>>>> 81d3927a6d ([MIRROR] Fix 516 again and set cache_lifespan according to modern tg (#9599))
 
 ////
 //  Blob Form
@@ -475,46 +309,6 @@
 	set category = "Abilities"
 	set hidden = TRUE
 
-<<<<<<< HEAD
-	var/mob/living/user = temporary_form || src
-
-	var/obj/item/organ/internal/nano/refactory/refactory = nano_get_refactory()
-	//Missing the organ that does this
-	if(!istype(refactory))
-		to_chat(user,span_warning("You don't have a working refactory module!"))
-		return
-
-	var/nagmessage = "Adjust your mass to be a size between 25 to 200% (or between 1 to 600% in dorms area). Up-sizing consumes metal, downsizing returns metal."
-	var/new_size = tgui_input_number(user, nagmessage, "Pick a Size", user.size_multiplier*100, 600, 1)
-	if(!new_size || !size_range_check(new_size))
-		return
-
-	var/size_factor = new_size/100
-
-	//Will be: -1.75 for 200->25, and 1.75 for 25->200
-	var/sizediff = size_factor - user.size_multiplier
-
-	//Negative if shrinking, positive if growing
-	//Will be (PLSC*2)*-1.75 to 1.75
-	//For 2000 PLSC that's -7000 to 7000
-	var/cost = (PER_LIMB_STEEL_COST*2)*sizediff
-
-	//Sizing up
-	if(cost > 0)
-		if(refactory.use_stored_material(MAT_STEEL,cost))
-			user.resize(size_factor, ignore_prefs = TRUE)
-		else
-			to_chat(user,span_warning("That size change would cost [cost] steel, which you don't have."))
-	//Sizing down (or not at all)
-	else if(cost <= 0)
-		cost = abs(cost)
-		var/actually_added = refactory.add_stored_material(MAT_STEEL,cost)
-		user.resize(size_factor, ignore_prefs = TRUE)
-		if(actually_added != cost)
-			to_chat(user,span_warning("Unfortunately, [cost-actually_added] steel was lost due to lack of storage space."))
-
-	user.visible_message(span_notice("Black mist swirls around [user] as they change size."))
-=======
 	var/mob/living/protie = src
 	if(temporary_form)
 		protie = temporary_form
@@ -791,7 +585,6 @@
 			to_chat(protie, span_warning("You can only latch onto humanoid mobs!"))
 	else
 		to_chat(protie, span_warning("You need to be grabbing a humanoid mob aggressively to latch onto them."))
->>>>>>> 81d3927a6d ([MIRROR] Fix 516 again and set cache_lifespan according to modern tg (#9599))
 
 /// /// /// A helper to reuse
 /mob/living/proc/nano_get_refactory(obj/item/organ/internal/nano/refactory/R)
@@ -809,8 +602,6 @@
 /mob/living/carbon/human/nano_get_refactory()
 	return ..(locate(/obj/item/organ/internal/nano/refactory) in internal_organs)
 
-<<<<<<< HEAD
-=======
 //I hate this whole bit but I want proteans to be able to "die" and still be "alive" in their blob as a suit
 /mob/living/carbon/human/proc/nano_dead_check(var/mob/living/protie)
 	if(istype(src.species, /datum/species/protean))
@@ -818,7 +609,6 @@
 		if(S.pseudodead)
 			return 1
 	return 0
->>>>>>> 81d3927a6d ([MIRROR] Fix 516 again and set cache_lifespan according to modern tg (#9599))
 
 
 /// /// /// Ability objects for stat panel
