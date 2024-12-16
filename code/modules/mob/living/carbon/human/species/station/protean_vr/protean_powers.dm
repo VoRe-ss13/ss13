@@ -1,3 +1,4 @@
+//TODO: Replace ventcrawl with morphing. /mob/living/simple_mob/vore/hostile/morph
 #define PER_LIMB_STEEL_COST SHEET_MATERIAL_AMOUNT
 ////
 //  One-part Refactor
@@ -5,8 +6,8 @@
 /mob/living/carbon/human/proc/nano_partswap()
 	set name = "Ref - Single Limb"
 	set desc = "Allows you to replace and reshape your limbs as you see fit."
-	set category = "Abilities"
-	set hidden = TRUE
+	//set category = "Abilities.Protean"
+	set hidden = 1
 
 	var/mob/living/protie = src
 	if(temporary_form)
@@ -46,10 +47,13 @@
 			var/obj/item/organ/external/oldlimb = organs_by_name[choice]
 			oldlimb.removed()
 			qdel(oldlimb)
-
-		var/mob/living/simple_mob/protean_blob/blob = nano_intoblob()
-		active_regen = TRUE
-		if(do_after(blob,5 SECONDS))
+		var/mob/living/simple_mob/protean_blob/blob
+		if(!temporary_form)
+			blob = nano_intoblob()
+		else
+			blob = temporary_form
+		active_regen = 1
+		if(do_after(blob,50,exclusive = TASK_ALL_EXCLUSIVE))
 			var/list/limblist = species.has_limbs[choice]
 			var/limbpath = limblist["path"]
 			var/obj/item/organ/external/new_eo = new limbpath(src)
@@ -57,8 +61,7 @@
 			new_eo.robotize(synthetic ? synthetic.company : null) //Use the base we started with
 			new_eo.sync_colour_to_human(src)
 			regenerate_icons()
-		active_regen = FALSE
-		nano_outofblob(blob)
+		active_regen = 0
 		return
 
 	//Organ exists, let's reshape it
@@ -84,7 +87,6 @@
 		return //Lost it meanwhile
 
 	eo.robotize(manu_choice)
-	visible_message(span_infoplain(span_bold("[src]") + "'s [choice] loses its shape, then reforms."))
 	update_icons_body()
 
 /mob/living/carbon/human/proc/nano_regenerate()
@@ -232,9 +234,9 @@
 
 	var/obj/item/stack/material/matstack = held
 	var/substance = matstack.material.name
-	var allowed = FALSE
+	var allowed = 0
 	for(var/material in PROTEAN_EDIBLE_MATERIALS)
-		if(material == substance) allowed = TRUE
+		if(material == substance) allowed = 1
 	if(!allowed)
 		to_chat(protie,span_warning("You can't process [substance]!"))
 		return
@@ -257,22 +259,27 @@
 ////
 //  Blob Form
 ////
-/mob/living/carbon/human/proc/nano_blobform()
+/mob/living/carbon/human/proc/nano_blobform(var/forced)
 	set name = "Toggle Blobform"
 	set desc = "Switch between amorphous and humanoid forms."
-	set category = "Abilities"
-	set hidden = TRUE
+	//set category = "Abilities.Protean"
+	set hidden = 1
 
+	if(nano_dead_check(src))
+		return
+	if(forced)
+		if(temporary_form)
+			nano_outofblob(temporary_form, forced)
+		else
+			nano_intoblob(forced)
+		return
 	var/atom/movable/to_locate = temporary_form || src
-	if(!isturf(to_locate.loc))
+	if(!isturf(to_locate.loc) && !forced)
 		to_chat(to_locate,span_warning("You need more space to perform this action!"))
 		return
-
 	//Blob form
 	if(temporary_form)
-		if(health < maxHealth*0.5)
-			to_chat(temporary_form,span_warning("You need to regenerate more nanites first!"))
-		else if(temporary_form.stat)
+		if(temporary_form.stat)
 			to_chat(temporary_form,span_warning("You can only do this while not stunned."))
 		else
 			nano_outofblob(temporary_form)
@@ -280,6 +287,9 @@
 	//Human form
 	else if(stat)
 		to_chat(src,span_warning("You can only do this while not stunned."))
+		return
+	else if(handcuffed)
+		to_chat(src, span_warning("You can't do this while handcuffed!"))
 		return
 	else
 		nano_intoblob()
@@ -290,24 +300,25 @@
 /mob/living/carbon/human/proc/nano_change_fitting()
 	set name = "Change Species Fit"
 	set desc = "Tweak your shape to change what suits you fit into (and their sprites!)."
-	set category = "Abilities"
+	set category = "Abilities.Protean"
 
 	if(stat)
 		to_chat(src,span_warning("You must be awake and standing to perform this action!"))
 		return
 
-	var/new_species = tgui_input_list(src, "Please select a species to emulate.", "Shapeshifter Body", GLOB.playable_species)
+	var/new_species = tgui_input_list(src, "Please select a species to emulate.", "Shapeshifter Body", list(species?.vanity_base_fit)|species?.get_valid_shapeshifter_forms())
 	if(new_species)
 		species?.base_species = new_species // Really though you better have a species
 		regenerate_icons() //Expensive, but we need to recrunch all the icons we're wearing
 
 ////
-//  Change size
+//	Rig Transform
 ////
-/mob/living/carbon/human/proc/nano_set_size()
-	set name = "Adjust Volume"
-	set category = "Abilities"
-	set hidden = TRUE
+/mob/living/carbon/human/proc/nano_rig_transform(var/forced)
+	set name = "Modify Form - Hardsuit"
+	set desc = "Allows a protean to retract its mass into its hardsuit module at will."
+	//set category = "Abilities.Protean"
+	set hidden = 1
 
 	var/mob/living/protie = src
 	if(temporary_form)
@@ -610,6 +621,10 @@
 			return 1
 	return 0
 
+/mob/living/carbon/human/proc/nano_set_dead(var/num)
+	if(istype(src.species, /datum/species/protean))
+		var/datum/species/protean/S = src.species
+		S.pseudodead = num
 
 /// /// /// Ability objects for stat panel
 /obj/effect/protean_ability
@@ -640,20 +655,20 @@
 /obj/effect/protean_ability/proc/do_ability(var/mob/living/L)
 	if(istype(L))
 		call(L,to_call)()
-	return FALSE
+	return 0
 
 /// The actual abilities
 /obj/effect/protean_ability/into_blob
 	ability_name = "Toggle Blobform"
-	desc = "Discard your shape entirely, changing to a low-energy blob that can fit into small spaces. You'll consume steel to repair yourself in this form."
+	desc = "Discard your shape entirely, changing to a low-energy blob. You'll consume steel to repair yourself in this form."
 	icon_state = "blob"
 	to_call = /mob/living/carbon/human/proc/nano_blobform
 
 /obj/effect/protean_ability/change_volume
 	ability_name = "Change Volume"
-	desc = "Alter your size by consuming steel to produce additional nanites, or regain steel by reducing your size and reclaiming them."
+	desc = "Alter your size between 25% and 200%."
 	icon_state = "volume"
-	to_call = /mob/living/carbon/human/proc/nano_set_size
+	to_call = /mob/living/proc/set_size
 
 /obj/effect/protean_ability/reform_limb
 	ability_name = "Ref - Single Limb"
@@ -662,15 +677,80 @@
 	to_call = /mob/living/carbon/human/proc/nano_partswap
 
 /obj/effect/protean_ability/reform_body
-	ability_name = "Ref - Whole Body"
-	desc = "Rebuild your entire body into whatever design you want, assuming you have 10,000 metal."
+	ability_name = "Total Reassembly"
+	desc = "Fully repair yourself or reload your appearance from whatever character slot you have loaded."
 	icon_state = "body"
 	to_call = /mob/living/carbon/human/proc/nano_regenerate
 
 /obj/effect/protean_ability/metal_nom
 	ability_name = "Ref - Store Metals"
-	desc = "Store the metal you're holding. Your refactory can only store steel, and all other metals will be converted into nanites ASAP for various effects."
+	desc = "Store the metal you're holding. Your refactory can only store steel."
 	icon_state = "metal"
 	to_call = /mob/living/carbon/human/proc/nano_metalnom
 
+/obj/effect/protean_ability/hardsuit
+	ability_name = "Hardsuit Transform"
+	desc = "Coalesce your nanite swarm into their control module, allowing others to wear you."
+	icon_state = "rig"
+	to_call = /mob/living/carbon/human/proc/nano_rig_transform
+
+/obj/effect/protean_ability/appearance_switch
+	ability_name = "Blob Appearance"
+	desc = "Toggle your blob appearance. Also affects your worn appearance."
+	icon_state = "switch"
+	to_call = /mob/living/carbon/human/proc/appearance_switch
+
+/obj/effect/protean_ability/latch_host
+	ability_name = "Latch Host"
+	desc = "Forcibly latch or unlatch your RIG from a host mob."
+	icon_state = "latch"
+	to_call = /mob/living/carbon/human/proc/nano_latch
+
+/obj/effect/protean_ability/copy_form
+	ability_name = "Copy Form"
+	desc = "If you are aggressively grabbing someone, with their consent, you can turn into a copy of them. (Without their name)."
+	icon_state = "copy_form"
+	to_call = /mob/living/carbon/human/proc/nano_copy_body
+
 #undef PER_LIMB_STEEL_COST
+
+/mob/living/carbon/human/proc/chest_transparency_toggle()
+	set name = "transparency toggle (chest only)"
+	set category = "Abilities.Protean"
+	if(stat || world.time < last_special)
+		return
+	last_special = world.time + 50
+	for(var/obj/item/organ/external/proteanlimbs as anything in src.organs)
+		if(proteanlimbs.organ_tag == BP_HEAD)
+			continue
+		proteanlimbs.transparent = !proteanlimbs.transparent
+	visible_message(span_notice("\The [src]'s internal composition seems to change."))
+	update_icons_body()
+	update_hair()
+
+/obj/effect/protean_ability/chest_transparency
+	ability_name = "body transparency toggle (All but head)"
+	desc = "Makes everything but your head transparent!"
+	icon = 'icons/obj/slimeborg/slimecore.dmi'
+	icon_state = "core"
+	to_call = /mob/living/carbon/human/proc/chest_transparency_toggle
+
+/mob/living/carbon/human/proc/transparency_toggle()
+	set name = "Toggle Transparency"
+	set category = "Abilities.Protean"
+	if(stat || world.time < last_special)
+		return
+	last_special = world.time + 50
+	for(var/obj/item/organ/external/proteanlimbs as anything in src.organs)
+		proteanlimbs.transparent = !proteanlimbs.transparent
+
+	visible_message(span_notice("\The [src]'s internal composition seems to change."))
+	update_icons_body()
+	update_hair()
+
+/obj/effect/protean_ability/transparency_for_entire_body
+	ability_name = "Toggle Transparency"
+	desc = "transparency toggle for your entire body"
+	icon = 'icons/obj/slimeborg/slimecore.dmi'
+	icon_state = "core"
+	to_call = /mob/living/carbon/human/proc/transparency_toggle
