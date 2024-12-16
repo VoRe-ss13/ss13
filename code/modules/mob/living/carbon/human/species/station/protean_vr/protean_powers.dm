@@ -280,18 +280,11 @@
 ////
 //  Change size
 ////
-<<<<<<< HEAD
-/mob/living/carbon/human/proc/nano_set_size()
-	set name = "Adjust Volume"
-	set category = "Abilities"
-	set hidden = TRUE
-=======
 /mob/living/carbon/human/proc/nano_rig_transform(var/forced, var/devour = FALSE)
 	set name = "Modify Form - Hardsuit"
 	set desc = "Allows a protean to retract its mass into its hardsuit module at will."
 	//set category = "Abilities.Protean"
 	set hidden = 1
->>>>>>> b6bb12d09e ([MIRROR] fix protean rig noms (#9618))
 
 	var/mob/living/user = temporary_form || src
 
@@ -301,12 +294,6 @@
 		to_chat(user,span_warning("You don't have a working refactory module!"))
 		return
 
-<<<<<<< HEAD
-	var/nagmessage = "Adjust your mass to be a size between 25 to 200% (or between 1 to 600% in dorms area). Up-sizing consumes metal, downsizing returns metal."
-	var/new_size = tgui_input_number(user, nagmessage, "Pick a Size", user.size_multiplier*100, 600, 1)
-	if(!new_size || !size_range_check(new_size))
-		return
-=======
 		if(istype(src.species, /datum/species/protean))
 			var/datum/species/protean/S = src.species
 			var/mob/living/simple_mob/protean_blob/P = temporary_form
@@ -346,7 +333,6 @@
 				new /obj/item/rig/protean(src,src)
 	else
 		to_chat(protie, span_warning("You must remain still to condense!"))
->>>>>>> b6bb12d09e ([MIRROR] fix protean rig noms (#9618))
 
 	var/size_factor = new_size/100
 
@@ -372,9 +358,6 @@
 		if(actually_added != cost)
 			to_chat(user,span_warning("Unfortunately, [cost-actually_added] steel was lost due to lack of storage space."))
 
-<<<<<<< HEAD
-	user.visible_message(span_notice("Black mist swirls around [user] as they change size."))
-=======
 /mob/living/carbon/human/proc/nano_latch()
 	set name = "Latch/Unlatch host"
 	set desc = "Allows a protean to forcibly latch or unlatch from a host."
@@ -442,7 +425,6 @@
 				to_chat(protie, span_vwarning("You need a host to assimilate."))
 				return
 			nano_rig_transform(TRUE, TRUE)
->>>>>>> b6bb12d09e ([MIRROR] fix protean rig noms (#9618))
 
 /// /// /// A helper to reuse
 /mob/living/proc/nano_get_refactory(obj/item/organ/internal/nano/refactory/R)
