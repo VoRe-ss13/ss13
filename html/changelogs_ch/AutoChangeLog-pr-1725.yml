@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscadd: "maint lurkers, pAIs, and simplemobs now show in the chardir"
