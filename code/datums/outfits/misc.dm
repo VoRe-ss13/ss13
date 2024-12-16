@@ -63,9 +63,6 @@
 /decl/hierarchy/outfit/zaddat
 	name = "Zaddat Suit"
 	suit = /obj/item/clothing/suit/space/void/zaddat/
-<<<<<<< HEAD
-	mask = /obj/item/clothing/mask/gas/zaddat
-=======
 	mask = /obj/item/clothing/mask/gas/zaddat
 
 /decl/hierarchy/outfit/maint_lurker
@@ -94,4 +91,3 @@
 	..()
 	if(H.backbag == 1)
 		H.equip_to_slot_or_del(new /obj/item/spacecash/c200(H), slot_l_hand)
->>>>>>> f297a5ce7c ([MIRROR] Lurker Outfit Fixes (#9614))
