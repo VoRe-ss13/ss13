@@ -116,13 +116,6 @@
 /obj/item/reagent_containers/chem_disp_cartridge/lemon
 	spawn_reagent = REAGENT_ID_LEMONJUICE
 /obj/item/reagent_containers/chem_disp_cartridge/grapesoda
-<<<<<<< HEAD
-	spawn_reagent = "grapesoda"
-
-// Bar, coffee
-/obj/item/reagent_containers/chem_disp_cartridge/coffee
-	spawn_reagent = "coffee"
-=======
 	spawn_reagent = REAGENT_ID_GRAPESODA
 /obj/item/reagent_containers/chem_disp_cartridge/pineapple
 	spawn_reagent = REAGENT_ID_PINEAPPLEJUICE
@@ -132,7 +125,6 @@
 	spawn_reagent = REAGENT_ID_COFFEE
 /obj/item/reagent_containers/chem_disp_cartridge/drip_coffee
 	spawn_reagent = REAGENT_ID_DRIPCOFFEE
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 /obj/item/reagent_containers/chem_disp_cartridge/cafe_latte
 	spawn_reagent = REAGENT_ID_CAFELATTE
 /obj/item/reagent_containers/chem_disp_cartridge/soy_latte
@@ -140,13 +132,9 @@
 /obj/item/reagent_containers/chem_disp_cartridge/hot_coco
 	spawn_reagent = REAGENT_ID_HOTCOCO
 /obj/item/reagent_containers/chem_disp_cartridge/milk
-<<<<<<< HEAD
-	spawn_reagent = "milk"
-=======
 	spawn_reagent = REAGENT_ID_MILK
 /obj/item/reagent_containers/chem_disp_cartridge/milk_foam
 	spawn_reagent = REAGENT_ID_MILKFOAM
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 /obj/item/reagent_containers/chem_disp_cartridge/cream
 	spawn_reagent = REAGENT_ID_CREAM
 /obj/item/reagent_containers/chem_disp_cartridge/mint
@@ -162,8 +150,6 @@
 /obj/item/reagent_containers/chem_disp_cartridge/decafchai
 	spawn_reagent = REAGENT_ID_CHAITEADECAF
 
-<<<<<<< HEAD
-=======
 // syrups
 /obj/item/reagent_containers/chem_disp_cartridge/syrup_pumpkin
 	spawn_reagent = REAGENT_ID_SYRUPPUMPKIN
@@ -206,7 +192,6 @@
 /obj/item/reagent_containers/chem_disp_cartridge/syrup_birthday
 	spawn_reagent = REAGENT_ID_SYRUPBIRTHDAY
 
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 // ERT
 /obj/item/reagent_containers/chem_disp_cartridge/inaprov
 	spawn_reagent = REAGENT_ID_INAPROVALINE

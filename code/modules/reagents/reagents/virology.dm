@@ -46,12 +46,9 @@
 	id = REAGENT_ID_WEAKPHORONVIRUSFOOD
 	description = "Mutates viruses when mixed in blood. This one seems to have been weakened, but still strong."
 	color = "#CEC3C6"
-<<<<<<< HEAD
-=======
 
 /datum/reagent/toxin/phoron/phoronvirusfood/sizevirusfood
 	name = REAGENT_SIZEVIRUSFOOD
 	id = REAGENT_ID_SIZEVIRUSFOOD
 	description = "Mutates virus when mixed in blood. This is a strange size mix..."
 	color = "#88AFDD"
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))

@@ -82,8 +82,6 @@
 	required_reagents = list(REAGENT_ID_ICE = 1, REAGENT_ID_COFFEE = 2)
 	result_amount = 3
 
-<<<<<<< HEAD
-=======
 /decl/chemical_reaction/instant/drinks/icecoffee/alt
 	name = "Iced Drip Coffee"
 	id = REAGENT_ID_ICECOFFEE
@@ -168,7 +166,6 @@
 	required_reagents = list(REAGENT_ID_CREAM = 2, REAGENT_ID_COFFEE = 1)
 	result_amount = 3
 
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 /decl/chemical_reaction/instant/drinks/nuka_cola
 	name = "Nuclear Cola"
 	id = REAGENT_ID_NUKACOLA
@@ -583,17 +580,10 @@
 	result_amount = 2
 
 /decl/chemical_reaction/instant/drinks/cafe_latte
-<<<<<<< HEAD
-	name = "Cafe Latte"
-	id = "cafe_latte"
-	result = "cafe_latte"
-	required_reagents = list("coffee" = 1, "milk" = 1)
-=======
 	name = REAGENT_CAFELATTE
 	id = REAGENT_ID_CAFELATTE
 	result = REAGENT_ID_CAFELATTE
 	required_reagents = list(REAGENT_ID_FLATWHITE = 1, REAGENT_ID_MILK = 1)
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	result_amount = 2
 
 /decl/chemical_reaction/instant/drinks/acidspit

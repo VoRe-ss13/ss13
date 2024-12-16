@@ -40,8 +40,6 @@
 	required_reagents = list(REAGENT_ID_INAPROVALINE = 1, REAGENT_ID_MUTAGENVIRUSFOOD = 1)
 	result_amount = 2
 
-<<<<<<< HEAD
-=======
 /decl/chemical_reaction/instant/virus_food_size
 	name = REAGENT_SIZEVIRUSFOOD
 	id = "sizeoxadonevirusfood"
@@ -49,7 +47,6 @@
 	required_reagents = list(REAGENT_ID_SIZEOXADONE = 1, REAGENT_ID_PHORONVIRUSFOOD = 1)
 	result_amount = 2
 
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 /decl/chemical_reaction/instant/mix_virus
 	name = "Mix Virus"
 	id = "mixvirus"
@@ -121,8 +118,6 @@
 	level_min = 1
 	level_max = 1
 
-<<<<<<< HEAD
-=======
 /decl/chemical_reaction/instant/mix_virus/picky/size
 	name = "Mix Virus Size"
 	id = "mixvirussize"
@@ -134,7 +129,6 @@
 		/datum/symptom/size/shrink
 	)
 
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 /decl/chemical_reaction/instant/mix_virus/rem_virus
 	name = "Devolve Virus"
 	id = "remvirus"

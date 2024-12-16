@@ -343,10 +343,7 @@
 	taste_description = "sweetness"
 	nutriment_factor = 10
 	color = "#FFFF00"
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_HONEY
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/reagent/nutriment/honey/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -377,10 +374,7 @@
 	nutriment_factor = 10
 	color = "#FFFFFF"
 	allergen_type = ALLERGEN_EGGS	//Mayo is made from eggs
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_MAYO
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/reagent/nutriment/yeast
 	name = REAGENT_YEAST
@@ -444,10 +438,7 @@
 	nutriment_factor = 5
 	color = "#302000"
 	allergen_type = ALLERGEN_CHOCOLATE
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_COCO
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/reagent/nutriment/chocolate
 	name = REAGENT_CHOCOLATE
@@ -458,10 +449,7 @@
 	nutriment_factor = 5
 	taste_mult = 1.3
 	allergen_type = ALLERGEN_CHOCOLATE
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_CHOCOLATE
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/reagent/nutriment/instantjuice
 	name = REAGENT_INSTANTJUICE
@@ -537,10 +525,7 @@
 	reagent_state = LIQUID
 	nutriment_factor = 5
 	color = "#E3BD00"
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_MUSTARD
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/reagent/nutriment/barbecue
 	name = REAGENT_BARBECUE
@@ -550,10 +535,7 @@
 	reagent_state = LIQUID
 	nutriment_factor = 5
 	color = "#4F330F"
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_BARBECUE
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/reagent/nutriment/rice
 	name = REAGENT_RICE
@@ -596,10 +578,7 @@
 	reagent_state = LIQUID
 	nutriment_factor = 2
 	color = "#0F0A00"
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_VANILLA
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/reagent/nutriment/durian
 	name = REAGENT_DURIANPASTE
@@ -1018,10 +997,7 @@
 	glass_name = "banana juice"
 	glass_desc = "The raw essence of a banana. HONK!"
 	allergen_type = ALLERGEN_FRUIT //Bananas are fruit
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_BANANA
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/reagent/drink/juice/berry
 	name = REAGENT_BERRYJUICE
@@ -1243,11 +1219,7 @@
 	glass_desc = "White and nutritious goodness!"
 
 	cup_icon_state = "cup_cream"
-<<<<<<< HEAD
-	cup_name = "cup of milk"
-=======
 	cup_name = REAGENT_ID_MILK
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	cup_desc = "White and nutritious goodness!"
 	allergen_type = ALLERGEN_DAIRY //Milk is dairy
 
@@ -1295,11 +1267,7 @@
 	glass_desc = "Ewwww..."
 
 	cup_icon_state = "cup_cream"
-<<<<<<< HEAD
-	cup_name = "cup of cream"
-=======
 	cup_name = REAGENT_ID_CREAM
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	cup_desc = "Ewwww..."
 	allergen_type = ALLERGEN_DAIRY //Cream is dairy
 
@@ -1314,12 +1282,6 @@
 	glass_desc = "White and nutritious soy goodness!"
 
 	cup_icon_state = "cup_cream"
-<<<<<<< HEAD
-	cup_name = "cup of milk"
-	cup_desc = "White and nutritious goodness!"
-	allergen_type = ALLERGEN_BEANS //Would be made from soy beans
-
-=======
 	cup_name = REAGENT_ID_MILK
 	cup_desc = "White and nutritious goodness!"
 	allergen_type = ALLERGEN_BEANS //Would be made from soy beans
@@ -1340,7 +1302,6 @@
 	allergen_type = ALLERGEN_DAIRY //Cream is dairy
 
 
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 /datum/reagent/drink/tea
 	name = REAGENT_TEA
 	id = REAGENT_ID_TEA
@@ -1356,11 +1317,7 @@
 	glass_desc = "Tasty black tea, it has antioxidants, it's good for you!"
 
 	cup_icon_state = "cup_tea"
-<<<<<<< HEAD
-	cup_name = "cup of tea"
-=======
 	cup_name = REAGENT_ID_TEA
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	cup_desc = "Tasty black tea, it has antioxidants, it's good for you!"
 	allergen_type = ALLERGEN_STIMULANT //Black tea strong enough to have significant caffeine content
 
@@ -1425,12 +1382,7 @@
 	name = REAGENT_ICETEADECAF
 	id = REAGENT_ID_ICETEADECAF
 	glass_name = "decaf iced tea"
-<<<<<<< HEAD
-	cup_name = "cup of decaf iced tea"
-	id = "iceteadecaf"
-=======
 	cup_name = "decaf iced tea"
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	adj_dizzy = 0
 	adj_drowsy = 0
 	adj_sleepy = 0
@@ -1453,12 +1405,7 @@
 	name = REAGENT_MINTTEADECAF
 	id = REAGENT_ID_MINTTEADECAF
 	glass_name = "decaf mint tea"
-<<<<<<< HEAD
-	cup_name = "cup of decaf mint tea"
-	id = "mintteadecaf"
-=======
 	cup_name = "decaf mint tea"
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	adj_dizzy = 0
 	adj_drowsy = 0
 	adj_sleepy = 0
@@ -1482,12 +1429,7 @@
 	name = REAGENT_LEMONTEADECAF
 	id = REAGENT_ID_LEMONTEADECAF
 	glass_name = "decaf lemon tea"
-<<<<<<< HEAD
-	cup_name = "cup of decaf lemon tea"
-	id = "lemonteadecaf"
-=======
 	cup_name = "decaf lemon tea"
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	adj_dizzy = 0
 	adj_drowsy = 0
 	adj_sleepy = 0
@@ -1511,12 +1453,7 @@
 	name = REAGENT_LIMETEADECAF
 	id = REAGENT_ID_LIMETEADECAF
 	glass_name = "decaf lime tea"
-<<<<<<< HEAD
-	cup_name = "cup of decaf lime tea"
-	id = "limeteadecaf"
-=======
 	cup_name = "decaf lime tea"
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	adj_dizzy = 0
 	adj_drowsy = 0
 	adj_sleepy = 0
@@ -1540,12 +1477,7 @@
 	name = REAGENT_ORANGETEADECAF
 	id = REAGENT_ID_ORANGETEADECAF
 	glass_name = "decaf orange tea"
-<<<<<<< HEAD
-	cup_name = "cup of decaf orange tea"
-	id = "orangeteadecaf"
-=======
 	cup_name = "decaf orange tea"
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	adj_dizzy = 0
 	adj_drowsy = 0
 	adj_sleepy = 0
@@ -1569,12 +1501,7 @@
 	name = REAGENT_BERRYTEADECAF
 	id = REAGENT_ID_BERRYTEADECAF
 	glass_name = "decaf berry tea"
-<<<<<<< HEAD
-	cup_name = "cup of decaf berry tea"
-	id = "berryteadecaf"
-=======
 	cup_name = "decaf berry tea"
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	adj_dizzy = 0
 	adj_drowsy = 0
 	adj_sleepy = 0
@@ -1611,12 +1538,7 @@
 	name = REAGENT_CHAITEADECAF
 	id = REAGENT_ID_CHAITEADECAF
 	glass_name = "decaf chai tea"
-<<<<<<< HEAD
-	cup_name = "cup of decaf chai tea"
-	id = "chaiteadecaf"
-=======
 	cup_name = "decaf chai tea"
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	adj_dizzy = 0
 	adj_drowsy = 0
 	adj_sleepy = 0
@@ -1636,11 +1558,7 @@
 	overdose = 45
 
 	cup_icon_state = "cup_coffee"
-<<<<<<< HEAD
-	cup_name = "cup of coffee"
-=======
 	cup_name = REAGENT_ID_COFFEE
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	cup_desc = "Don't drop it, or you'll send scalding liquid and ceramic shards everywhere."
 
 	glass_name = REAGENT_ID_COFFEE
@@ -1753,11 +1671,7 @@
 	adj_temp = 25
 
 	cup_icon_state = "cup_coffee"
-<<<<<<< HEAD
-	cup_name = "cup of decaf"
-=======
 	cup_name = REAGENT_ID_DECAF
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	cup_desc = "Just as bitter as regular coffee, but it won't keep you up at night!" // CHOMPEdit - In defense of decaf coffee
 
 	glass_name = "decaf coffee"
@@ -1782,8 +1696,6 @@
 	cup_desc = "Made with love! And cocoa beans."
 	allergen_type = ALLERGEN_CHOCOLATE
 
-<<<<<<< HEAD
-=======
 /datum/reagent/drink/coffee/blackeye
 	name = REAGENT_BLACKEYE
 	id = REAGENT_ID_BLACKEYE
@@ -1960,7 +1872,6 @@
 	cup_desc = "A very sweet espresso topped with a lot of whipped cream."
 	allergen_type = ALLERGEN_COFFEE
 
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 /datum/reagent/drink/soda/sodawater
 	name = REAGENT_SODAWATER
 	id = REAGENT_ID_SODAWATER
@@ -1995,10 +1906,7 @@
 	description = "It tastes strange but at least the quinine keeps the Space Malaria at bay."
 	taste_description = "tart and fresh"
 	color = "#619494"
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_TONIC
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 	adj_dizzy = -5
 	adj_drowsy = -3
@@ -2016,10 +1924,7 @@
 	nutriment_factor = 1.5 //CHOMPStation addition
 	color = "#FFFF00"
 	adj_temp = -5
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_LEMONADE
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 	glass_name = REAGENT_ID_LEMONADE
 	glass_desc = "Oh the nostalgia..."
@@ -2034,10 +1939,7 @@
 	nutriment_factor = 1.5 //CHOMPStation addition
 	color = "#FFB3BB"
 	adj_temp = -5
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_MELONADE
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 	glass_name = REAGENT_ID_MELONADE
 	glass_desc = "Oh the.. nostalgia?"
@@ -2052,10 +1954,7 @@
 	nutriment_factor = 1.5 //CHOMPStation addition
 	color = "#FFD1B3"
 	adj_temp = -5
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_APPLEADE
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 	glass_name = REAGENT_ID_APPLEADE
 	glass_desc = "Applejuice, improved."
@@ -2070,10 +1969,7 @@
 	nutriment_factor = 5 //CHOMPStation addition
 	color = "#FFFF00"
 	adj_temp = -5
-<<<<<<< HEAD
-=======
 	cup_prefix = REAGENT_ID_PINEAPPLEADE
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 	glass_name = REAGENT_ID_PINEAPPLEADE
 	glass_desc = "Pineapple, juiced up."
@@ -2877,8 +2773,6 @@
 	glass_special = list(DRINK_FIZZ)
 	allergen_type = ALLERGEN_FRUIT //made with several fruit juices
 
-<<<<<<< HEAD
-=======
 /datum/reagent/drink/syrup
 	name = REAGENT_SYRUP
 	id = REAGENT_ID_SYRUP
@@ -3065,7 +2959,6 @@
 	taste_description = "far too much sugar"
 	color = "#ff00e6"
 	cup_prefix = "birthday cake"
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /* Alcohol */
 

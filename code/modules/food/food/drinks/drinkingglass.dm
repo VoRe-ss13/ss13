@@ -165,12 +165,6 @@
 
 /obj/item/reagent_containers/food/drinks/drinkingglass/fitnessflask/proteinshake/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	reagents.add_reagent("nutriment", 30)
-	reagents.add_reagent("iron", 10)
-	reagents.add_reagent("protein", 15)
-	reagents.add_reagent("water", 45)
-=======
 	reagents.add_reagent(REAGENT_ID_NUTRIMENT, 30)
 	reagents.add_reagent(REAGENT_ID_IRON, 10)
 	reagents.add_reagent(REAGENT_ID_PROTEIN, 15)
@@ -331,4 +325,3 @@
 		price_tag = R.price_tag
 	else
 		price_tag = null
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))

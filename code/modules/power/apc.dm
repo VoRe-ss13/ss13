@@ -684,11 +684,7 @@ GLOBAL_LIST_EMPTY(apcs)
 			to_chat(user, span_notice("The [name] looks too sturdy to bash open with \the [W.name]."))
 
 // attack with hand - remove cell (if cover open) or interact with the APC
-<<<<<<< HEAD
-/obj/machinery/power/apc/verb/togglelock(mob/user as mob)
-=======
 /obj/machinery/power/apc/proc/togglelock(mob/user)
->>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	if(emagged)
 		to_chat(user, "The panel is unresponsive.")
 	else if(opened)
