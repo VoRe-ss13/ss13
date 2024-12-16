@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - code_imp: "converts the remaining old spans to defines"
