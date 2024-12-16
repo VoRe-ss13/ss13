@@ -200,9 +200,5 @@
 
 	message_chat_rolerequest(message_color, ping_name, reason, role)
 	last_fax_role_request = world.time
-<<<<<<< HEAD
-	to_chat(L, "<span class='notice'>Your request was transmitted.</span>")
-*/
-=======
 	to_chat(L, span_notice("Your request was transmitted."))
->>>>>>> fe4b5ec2cb (finish up the spans (#9605))
+*/
