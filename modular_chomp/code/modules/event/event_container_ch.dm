@@ -131,13 +131,8 @@
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Jellyfish Migration",			/datum/event/jellyfish_migration,		5,		list(ASSIGNMENT_ANY = 1, ASSIGNMENT_SECURITY = 5, ASSIGNMENT_MEDICAL = 3), 1),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Meaty Ores Wave",				/datum/event/meteor_wave/meatyores,		-90,	list(ASSIGNMENT_ENGINEER = 50, ASSIGNMENT_MEDICAL = 10, ASSIGNMENT_ANY = 1),	1, min_jobs = list(ASSIGNMENT_ENGINEER = 1)),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Meteor Wave",					/datum/event/meteor_wave,				-90,	list(ASSIGNMENT_ENGINEER = 50, ASSIGNMENT_MEDICAL = 10, ASSIGNMENT_ANY = 1),	1, min_jobs = list(ASSIGNMENT_ENGINEER = 1)),
-<<<<<<< HEAD
-		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Spacefish Swarm",				/datum/event/spacefish_migration,		10,		list(ASSIGNMENT_SECURITY = 5, ASSIGNMENT_MEDICAL = 3), 1, min_jobs = list(ASSIGNMENT_SECURITY = 3)),
-		// new /datum/event_meta(EVENT_LEVEL_MAJOR, "Space Vines",					/datum/event/spacevine, 				20,		list(ASSIGNMENT_ENGINEER = 15), 1), // TORCHEdit Start - Disable space vines until we revise its spawn areas
-=======
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Spacefish Swarm",				/datum/event/spacefish_migration,		10,		list(ASSIGNMENT_SECURITY = 5, ASSIGNMENT_MEDICAL = 3), 1, min_jobs = list(ASSIGNMENT_SECURITY = 1)),
-		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Space Vines",					/datum/event/spacevine, 				20,		list(ASSIGNMENT_ENGINEER = 15), 1),
->>>>>>> dc4c515c8b (Random Event Fixes (#9582))
+		// new /datum/event_meta(EVENT_LEVEL_MAJOR, "Space Vines",					/datum/event/spacevine, 				20,		list(ASSIGNMENT_ENGINEER = 15), 1), // TORCHEdit Start - Disable space vines until we revise its spawn areas
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Supply Demand",				/datum/event/supply_demand,				0,		list(ASSIGNMENT_ANY = 5, ASSIGNMENT_SCIENCE = 15, ASSIGNMENT_GARDENER = 10, ASSIGNMENT_ENGINEER = 10, ASSIGNMENT_MEDICAL = 15), 1, min_jobs = list(ASSIGNMENT_CARGO = 1)),
 	)
 	add_disabled_events(list(
