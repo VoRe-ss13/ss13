@@ -271,6 +271,7 @@
 	id = REAGENT_ID_GLUCOSE
 	taste_description = "sweetness"
 	color = "#FFFFFF"
+	cup_prefix = "sweetened"
 
 	injectable = 1
 
@@ -314,6 +315,7 @@
 	color = "#EDB91F"
 	taste_description = "cheese"
 	allergen_type = ALLERGEN_DAIRY //Cheese is made from dairy
+	cup_prefix = "cheesy"
 
 /datum/reagent/nutriment/protein/egg
 	name = REAGENT_EGG
@@ -321,6 +323,7 @@
 	taste_description = "egg"
 	color = "#FFFFAA"
 	allergen_type = ALLERGEN_EGGS //Eggs contain egg
+	cup_prefix = "eggy"
 
 /datum/reagent/nutriment/protein/murk
 	name = REAGENT_MURK_PROTEIN
@@ -465,6 +468,7 @@
 	description = "Dehydrated, powdered grape juice."
 	taste_description = "dry grapes"
 	color = "#863333"
+	cup_prefix = "grape"
 
 /datum/reagent/nutriment/instantjuice/orange
 	name = REAGENT_INSTANTORANGE
@@ -472,6 +476,7 @@
 	description = "Dehydrated, powdered orange juice."
 	taste_description = "dry oranges"
 	color = "#e78108"
+	cup_prefix = "orange"
 
 /datum/reagent/nutriment/instantjuice/watermelon
 	name = REAGENT_INSTANTWATERMELON
@@ -479,6 +484,7 @@
 	description = "Dehydrated, powdered watermelon juice."
 	taste_description = "dry sweet watermelon"
 	color = "#b83333"
+	cup_prefix = "melon"
 
 /datum/reagent/nutriment/instantjuice/apple
 	name = REAGENT_INSTANTAPPLE
@@ -486,6 +492,7 @@
 	description = "Dehydrated, powdered apple juice."
 	taste_description = "dry sweet apples"
 	color = "#c07c40"
+	cup_prefix = "apple"
 
 /datum/reagent/nutriment/soysauce
 	name = REAGENT_SOYSAUCE
@@ -497,6 +504,7 @@
 	nutriment_factor = 2
 	color = "#792300"
 	allergen_type = ALLERGEN_BEANS //Soy (beans)
+	cup_prefix = "umami"
 
 /datum/reagent/nutriment/vinegar
 	name = REAGENT_VINEGAR
@@ -506,6 +514,7 @@
 	reagent_state = LIQUID
 	nutriment_factor = 5
 	color = "#54410C"
+	cup_prefix = "acidic"
 
 /datum/reagent/nutriment/ketchup
 	name = REAGENT_KETCHUP
@@ -516,6 +525,7 @@
 	nutriment_factor = 5
 	color = "#731008"
 	allergen_type = ALLERGEN_FRUIT 	//Tomatoes are a fruit.
+	cup_prefix = "tomato"
 
 /datum/reagent/nutriment/mustard
 	name = REAGENT_MUSTARD
@@ -568,6 +578,7 @@
 	nutriment_factor = 30
 	color = "#4F3500"
 	allergen_type = ALLERGEN_SEEDS //Peanuts(seeds)
+	cup_prefix = "peanut butter"
 
 /datum/reagent/nutriment/vanilla
 	name = REAGENT_VANILLA
@@ -625,6 +636,7 @@
 	taste_description = "sugar"
 	nutriment_factor = 1
 	color = "#FF00FF"
+	cup_prefix = "sprinkled"
 
 /datum/reagent/nutriment/mint
 	name = REAGENT_MINT
@@ -633,6 +645,7 @@
 	taste_description = "mint"
 	reagent_state = LIQUID
 	color = "#CF3600"
+	cup_prefix = "minty"
 
 /datum/reagent/lipozine // The anti-nutriment.
 	name = REAGENT_LIPOZINE
@@ -657,6 +670,7 @@
 	color = "#FFFFFF"
 	overdose = REAGENTS_OVERDOSE
 	ingest_met = REM
+	cup_prefix = "salty"
 
 /datum/reagent/sodiumchloride/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -676,6 +690,7 @@
 	reagent_state = SOLID
 	ingest_met = REM
 	color = "#000000"
+	cup_prefix = "peppery"
 
 /datum/reagent/enzyme
 	name = REAGENT_ENZYME
@@ -693,6 +708,7 @@
 	description = "An exotic blend of spices for cooking. Definitely not worms."
 	reagent_state = SOLID
 	color = "#e08702"
+	cup_prefix = "spicy"
 
 /datum/reagent/browniemix
 	name = REAGENT_BROWNIEMIX
@@ -766,6 +782,7 @@
 	reagent_state = LIQUID
 	ingest_met = REM
 	color = "#B31008"
+	cup_prefix = "hot"
 
 /datum/reagent/capsaicin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
@@ -805,6 +822,7 @@
 	touch_met = 50 // Get rid of it quickly
 	ingest_met = REM
 	color = "#B31008"
+	cup_prefix = "dangerously hot"
 
 /datum/reagent/condensedcapsaicin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
@@ -1009,6 +1027,7 @@
 	glass_name = "berry juice"
 	glass_desc = "Berry juice. Or maybe it's jam. Who cares?"
 	allergen_type = ALLERGEN_FRUIT //Berries are fruit
+	cup_prefix = "berry"
 
 /datum/reagent/drink/juice/pineapple
 	name = REAGENT_PINEAPPLEJUICE
@@ -1020,6 +1039,7 @@
 	glass_name = "pineapple juice"
 	glass_desc = "Pineapple juice. Or maybe it's spineapple. Who cares?"
 	allergen_type = ALLERGEN_FRUIT //Pineapples are fruit
+	cup_prefix = "pineapple"
 
 /datum/reagent/drink/juice/carrot
 	name = REAGENT_CARROTJUICE
@@ -1031,6 +1051,7 @@
 	glass_name = "carrot juice"
 	glass_desc = "It is just like a carrot but without crunching."
 	allergen_type = ALLERGEN_VEGETABLE //Carrots are vegetables
+	cup_prefix = "carrot"
 
 /datum/reagent/drink/juice/carrot/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -1045,6 +1066,7 @@
 
 	glass_name = "lettuce juice"
 	glass_desc = "This is just lettuce water. Fresh but boring."
+	cup_prefix = "lettuce"
 
 /datum/reagent/drink/juice
 	name = REAGENT_GRAPEJUICE
@@ -1057,6 +1079,7 @@
 	glass_name = "grape juice"
 	glass_desc = "It's grrrrrape!"
 	allergen_type = ALLERGEN_FRUIT //Grapes are fruit
+	cup_prefix = "grape"
 
 /datum/reagent/drink/juice/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -1091,6 +1114,7 @@
 	glass_name = "lemon juice"
 	glass_desc = "Sour..."
 	allergen_type = ALLERGEN_FRUIT //Lemons are fruit
+	cup_prefix = "lemon"
 
 
 /datum/reagent/drink/juice/apple
@@ -1104,6 +1128,7 @@
 	glass_name = "apple juice"
 	glass_desc = "An earth favorite."
 	allergen_type = ALLERGEN_FRUIT //Apples are fruit
+	cup_prefix = "apple"
 
 /datum/reagent/drink/juice/lime
 	name = REAGENT_LIMEJUICE
@@ -1116,6 +1141,7 @@
 	glass_name = "lime juice"
 	glass_desc = "A glass of sweet-sour lime juice"
 	allergen_type = ALLERGEN_FRUIT //Limes are fruit
+	cup_prefix = "lime"
 
 /datum/reagent/drink/juice/lime/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -1133,6 +1159,7 @@
 	glass_name = "orange juice"
 	glass_desc = "Vitamins! Yay!"
 	allergen_type = ALLERGEN_FRUIT //Oranges are fruit
+	cup_prefix = "orange"
 
 /datum/reagent/drink/juice/orange/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -1150,6 +1177,7 @@
 
 	glass_name = "poison berry juice"
 	glass_desc = "A glass of deadly juice."
+	cup_prefix = "poison"
 
 /datum/reagent/drink/juice/potato
 	name = REAGENT_POTATOJUICE
@@ -1163,6 +1191,7 @@
 	glass_name = "potato juice"
 	glass_desc = "Juice from a potato. Bleh."
 	allergen_type = ALLERGEN_VEGETABLE //Potatoes are vegetables
+	cup_prefix = "potato"
 
 /datum/reagent/drink/juice/turnip
 	name = REAGENT_TURNIPJUICE
@@ -1176,6 +1205,7 @@
 	glass_name = "turnip juice"
 	glass_desc = "Juice of the turnip. A step below the potato."
 	allergen_type = ALLERGEN_VEGETABLE //Turnips are vegetables
+	cup_prefix = "turnip"
 
 /datum/reagent/drink/juice/tomato
 	name = REAGENT_TOMATOJUICE
@@ -1184,6 +1214,7 @@
 	taste_description = "tomatoes"
 	color = "#731008"
 	sugary = FALSE
+	cup_prefix = "tomato"
 
 	glass_name = "tomato juice"
 	glass_desc = "Are you sure this is tomato juice?"
@@ -1201,6 +1232,7 @@
 	description = "Delicious juice made from watermelon."
 	taste_description = "sweet watermelon"
 	color = "#B83333"
+	cup_prefix = "melon"
 
 	glass_name = "watermelon juice"
 	glass_desc = "Delicious juice made from watermelon."
@@ -1231,7 +1263,7 @@
 	color = "#74533b"
 
 	cup_icon_state = "cup_brown"
-	cup_name = "cup of chocolate milk"
+	cup_name = "chocolate milk"
 	cup_desc = "Deliciously fattening!"
 
 	glass_name = "chocolate milk"
@@ -1339,7 +1371,7 @@
 	glass_name = "cup of decaf tea"
 	glass_desc = "Tasty black tea, it has antioxidants, it's good for you, and won't keep you up at night!"
 
-	cup_name = "cup of decaf tea"
+	cup_name = "decaf tea"
 	cup_desc = "Tasty black tea, it has antioxidants, it's good for you, and won't keep you up at night!"
 	allergen_type = null //Certified cat-safe!
 
@@ -1357,7 +1389,7 @@
 	glass_special = list(DRINK_ICE)
 
 	cup_icon_state = "cup_tea"
-	cup_name = "cup of iced tea"
+	cup_name = "iced tea"
 	cup_desc = "No relation to a certain rap artist/ actor."
 
 /datum/reagent/drink/tea/icetea/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
@@ -1398,7 +1430,7 @@
 	glass_name = "mint tea"
 	glass_desc = "A tasty mixture of mint and tea. It's apparently good for you!"
 
-	cup_name = "cup of mint tea"
+	cup_name = "mint tea"
 	cup_desc = "A tasty mixture of mint and tea. It's apparently good for you!"
 
 /datum/reagent/drink/tea/minttea/decaf
@@ -1421,7 +1453,7 @@
 	glass_name = "lemon tea"
 	glass_desc = "A tasty mixture of lemon and tea. It's apparently good for you!"
 
-	cup_name = "cup of lemon tea"
+	cup_name = "lemon tea"
 	cup_desc = "A tasty mixture of lemon and tea. It's apparently good for you!"
 	allergen_type = ALLERGEN_FRUIT | ALLERGEN_STIMULANT //Made with lemon juice, still tea
 
@@ -1445,7 +1477,7 @@
 	glass_name = "lime tea"
 	glass_desc = "A tasty mixture of lime and tea. It's apparently good for you!"
 
-	cup_name = "cup of lime tea"
+	cup_name = "lime tea"
 	cup_desc = "A tasty mixture of lime and tea. It's apparently good for you!"
 	allergen_type = ALLERGEN_FRUIT | ALLERGEN_STIMULANT //Made with lime juice, still tea
 
@@ -1469,7 +1501,7 @@
 	glass_name = "orange tea"
 	glass_desc = "A tasty mixture of orange and tea. It's apparently good for you!"
 
-	cup_name = "cup of orange tea"
+	cup_name = "orange tea"
 	cup_desc = "A tasty mixture of orange and tea. It's apparently good for you!"
 	allergen_type = ALLERGEN_FRUIT | ALLERGEN_STIMULANT //Made with orange juice, still tea
 
@@ -1493,7 +1525,7 @@
 	glass_name = "berry tea"
 	glass_desc = "A tasty mixture of berries and tea. It's apparently good for you!"
 
-	cup_name = "cup of berry tea"
+	cup_name = "berry tea"
 	cup_desc = "A tasty mixture of berries and tea. It's apparently good for you!"
 	allergen_type = ALLERGEN_FRUIT | ALLERGEN_STIMULANT //Made with berry juice, still tea
 
@@ -1517,7 +1549,7 @@
 	glass_name = "green tea"
 	glass_desc = "A subtle blend of green tea. It's apparently good for you!"
 
-	cup_name = "cup of green tea"
+	cup_name = "green tea"
 	cup_desc = "A subtle blend of green tea. It's apparently good for you!"
 
 /datum/reagent/drink/tea/chaitea
@@ -1530,7 +1562,7 @@
 	glass_name = "chai tea"
 	glass_desc = "A milky tea spiced with cinnamon and cloves."
 
-	cup_name = "cup of chai tea"
+	cup_name = "chai tea"
 	cup_desc = "A milky tea spiced with cinnamon and cloves."
 	allergen_type = ALLERGEN_STIMULANT|ALLERGEN_DAIRY //Made with milk and tea.
 
@@ -1633,7 +1665,7 @@
 	glass_name = "soy latte"
 
 	cup_icon_state = "cup_latte"
-	cup_name = "cup of soy latte"
+	cup_name = "soy latte"
 	cup_desc = "A nice and refreshing beverage while you are reading."
 	allergen_type = ALLERGEN_COFFEE|ALLERGEN_BEANS 	//Soy(beans) and coffee
 
@@ -1653,7 +1685,7 @@
 	glass_desc = "A nice, strong and refreshing beverage while you are reading."
 
 	cup_icon_state = "cup_latte"
-	cup_name = "cup of cafe latte"
+	cup_name = "cafe latte"
 	cup_desc = "A nice and refreshing beverage while you are reading."
 	allergen_type = ALLERGEN_COFFEE|ALLERGEN_DAIRY //Cream and coffee
 
@@ -1692,7 +1724,7 @@
 	glass_desc = "Made with love! And cocoa beans."
 
 	cup_icon_state = "cup_coco"
-	cup_name = "cup of hot chocolate"
+	cup_name = "hot chocolate"
 	cup_desc = "Made with love! And cocoa beans."
 	allergen_type = ALLERGEN_CHOCOLATE
 
@@ -1881,6 +1913,7 @@
 	adj_dizzy = -5
 	adj_drowsy = -3
 	adj_temp = -5
+	cup_prefix = "fizzy"
 
 	glass_name = "soda water"
 	glass_desc = "Soda water. Why not make a scotch and soda?"
@@ -1894,6 +1927,7 @@
 	nutriment_factor = 1.5 //CHOMPStation addition
 	color = "#421C52"
 	adj_drowsy = -3
+	cup_prefix = "grape soda"
 
 	glass_name = "grape soda"
 	glass_desc = "Looks like a delicious drink!"

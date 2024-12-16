@@ -192,6 +192,48 @@
 /obj/item/reagent_containers/chem_disp_cartridge/syrup_birthday
 	spawn_reagent = REAGENT_ID_SYRUPBIRTHDAY
 
+// syrups
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_pumpkin
+	spawn_reagent = "syrup_pumpkin"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_caramel
+	spawn_reagent = "syrup_caramel"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_scaramel
+	spawn_reagent = "syrup_salted_caramel"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_irish
+	spawn_reagent = "syrup_irish"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_almond
+	spawn_reagent = "syrup_almond"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_cinnamon
+	spawn_reagent = "syrup_cinnamon"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_pistachio
+	spawn_reagent = "syrup_pistachio"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_vanilla
+	spawn_reagent = "syrup_vanilla"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_toffee
+	spawn_reagent = "syrup_toffee"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_cherry
+	spawn_reagent = "syrup_cherry"
+/obj/item/reagent_containers/chem_disp_cartridge/grenadine
+	spawn_reagent = "grenadine"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_butterscotch
+	spawn_reagent = "syrup_butterscotch"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_chocolate
+	spawn_reagent = "syrup_chocolate"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_wchocolate
+	spawn_reagent = "syrup_white_chocolate"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_strawberry
+	spawn_reagent = "syrup_strawberry"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_coconut
+	spawn_reagent = "syrup_coconut"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_ginger
+	spawn_reagent = "syrup_ginger"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_gingerbread
+	spawn_reagent = "syrup_gingerbread"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_peppermint
+	spawn_reagent = "syrup_peppermint"
+/obj/item/reagent_containers/chem_disp_cartridge/syrup_birthday
+	spawn_reagent = "syrup_birthday"
+
 // ERT
 /obj/item/reagent_containers/chem_disp_cartridge/inaprov
 	spawn_reagent = REAGENT_ID_INAPROVALINE

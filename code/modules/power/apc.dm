@@ -872,7 +872,7 @@ GLOBAL_LIST_EMPTY(apcs)
 //			to_world("[area.power_equip]")
 	area.power_change()
 
-/obj/machinery/power/apc/proc/can_use(mob/user as mob, var/loud = 0) //used by attack_hand() and Topic()
+/obj/machinery/power/apc/proc/can_use(mob/user, var/loud = 0) //used by attack_hand() and Topic()
 	if(!user.client)
 		return 0
 	if(isobserver(user) && is_admin(user)) //This is to allow nanoUI interaction by ghost admins.

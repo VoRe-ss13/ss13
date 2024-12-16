@@ -236,6 +236,13 @@ GLOBAL_LIST_INIT(advance_cures, list(
 		Refresh(1)
 	return
 
+/datum/disease/advance/proc/PickyEvolve(var/list/datum/symptom/D)
+	var/s = safepick(D)
+	if(s)
+		AddSymptom(new s)
+		Refresh(1)
+	return
+
 // Randomly remove a symptom.
 /datum/disease/advance/proc/Devolve()
 	if(length(symptoms) > 1)
