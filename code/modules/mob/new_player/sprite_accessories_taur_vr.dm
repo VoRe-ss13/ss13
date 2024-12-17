@@ -662,7 +662,7 @@
 	name = "Alraune (dual color)"
 	icon_state = "alraunecolor_s"
 	ani_state = "alraunecolor_closed_s"
-	ckeys_allowed = null
+	//ckeys_allowed = null
 	do_colouration = 1
 	extra_overlay = "alraunecolor_markings"
 	extra_overlay_w = "alraunecolor_closed_markings"
@@ -792,7 +792,7 @@
 	name = "Long Lizard Tail (Roiz Lizden)"
 	icon_state = "roiz_tail_s"
 	do_colouration = 0
-	ckeys_allowed = list("spoopylizz")
+	//ckeys_allowed = list("spoopylizz")
 	hide_body_parts = null
 	clip_mask_icon = null
 	clip_mask_state = null
@@ -803,27 +803,27 @@
 	icon_state = "orcamermaid_s"
 	can_ride = 1
 	do_colouration = 0
-	ckeys_allowed = list("grallstonefist")
+	//ckeys_allowed = list("grallstonefist")
 
 //wickedtemp: Chakat Tempest
 /datum/sprite_accessory/tail/taur/feline/tempest
 	name = "Feline (wickedtemp) (Taur)"
 	icon_state = "tempest_s"
-	ckeys_allowed = list("wickedtemp")
+	//ckeys_allowed = list("wickedtemp")
 	can_loaf = FALSE
 
 //silencedmp5a5: Serdykov Antoz
 /datum/sprite_accessory/tail/taur/wolf/serdy
 	name = "CyberSerdy (silencedmp5a5) (Taur)"
 	icon_state = "serdy_s"
-	ckeys_allowed = list("silencedmp5a5")
+	//ckeys_allowed = list("silencedmp5a5")
 	can_loaf = FALSE
 
 //liquidfirefly: Ariana Scol
 /datum/sprite_accessory/tail/taur/centipede
 	name = "Centipede (liquidfirefly) (Taur)"
 	icon_state = "ariana_s"
-	ckeys_allowed = list("liquidfirefly")
+	//ckeys_allowed = list("liquidfirefly")
 	do_colouration = 0
 
 	msg_owner_disarm_run = "You quickly push %prey to the ground with your leg!"
@@ -846,7 +846,7 @@
 	name = "Alraune (natje) (Taur)"
 	icon_state = "alraune_s"
 	ani_state = "alraune_closed_s"
-	ckeys_allowed = list("natje")
+	//ckeys_allowed = list("natje")
 	do_colouration = 0
 	can_ride = 0
 	clip_mask_state = "taur_clip_mask_alraune"

@@ -45,7 +45,7 @@ GLOBAL_LIST_INIT(fancy_sprite_accessory_color_channel_names, list("Primary", "Se
 	var/color_blend_mode = ICON_MULTIPLY	// If checked.
 
 	// Ckey of person allowed to use this, if defined.
-	var/list/ckeys_allowed = null
+	var/list///ckeys_allowed = null
 
 	/// Should this sprite block emissives?
 	var/em_block = FALSE

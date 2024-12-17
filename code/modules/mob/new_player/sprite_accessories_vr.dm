@@ -14,7 +14,7 @@
 	icon_add = 'icons/mob/human_face_vr_add.dmi'
 	icon_state = "hair_astolfo"
 
-/* //Chomp REMOVE - No ckeys_allowed allowed
+/* //Chomp REMOVE - No //////ckeys_allowed allowed
 /datum/sprite_accessory/hair/awoohair
 	name = "Shoulder-length Messy"
 	icon = 'icons/mob/human_face_vr.dmi'
@@ -25,14 +25,14 @@
 	name = "Citheronia Hair (Kira72)"
 	icon = 'icons/mob/human_face_vr.dmi'
 	icon_state = "citheronia_hair"
-	ckeys_allowed = list("Kira72")
+	//ckeys_allowed = list("Kira72")
 	do_colouration = 0
 
 /datum/sprite_accessory/hair/taramaw
 	name = "Hairmaw (Liquidfirefly)"
 	icon = 'icons/mob/human_face_vr.dmi'
 	icon_state = "maw_hair"
-	ckeys_allowed = list("liquidfirefly")
+	//ckeys_allowed = list("liquidfirefly")
 	do_colouration = 0
 */ //Chomp REMOVE END
 
@@ -473,7 +473,7 @@
 	icon = 'icons/mob/human_face_vr.dmi'
 	icon_add = 'icons/mob/human_face_vr_add.dmi'
 	icon_state = "shadekin_rivyr"
-	ckeys_allowed = list("verysoft")
+	//ckeys_allowed = list("verysoft")
 	species_allowed = list(SPECIES_SHADEKIN, SPECIES_SHADEKIN_CREW)
 	gender = NEUTER */ //Chomp REMOVE END
 
@@ -583,11 +583,11 @@
 	var/ignores_lighting = 0 // Whether or not this hair accessory will ignore lighting and glow in the dark.
 	color_blend_mode = ICON_ADD // Only appliciable if do_coloration = 1
 	var/desc = DEVELOPER_WARNING_NAME
-/* //Chomp REMOVE - No ckeys_allowed allowed
+/* //Chomp REMOVE - No //ckeys_allowed allowed
 /datum/sprite_accessory/hair_accessory/verie_hair_glow
 	name = "veries hair glow"
 	desc = ""
 	icon_state = "verie_hair_glow"
 	ignores_lighting = 1
-	//ckeys_allowed = list("vitoras") // This probably won't come into play EVER but better safe than sorry
+	////ckeys_allowed = list("vitoras") // This probably won't come into play EVER but better safe than sorry
 */ //Chomp REMOVE END
