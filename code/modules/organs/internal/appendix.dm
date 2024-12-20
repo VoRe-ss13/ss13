@@ -42,7 +42,7 @@
 			owner.adjustToxLoss(25)
 			groin.wounds += W
 			inflamed = 1
-
+*/
 /obj/item/organ/internal/appendix/removed()
 	if(inflamed)
 		icon_state = "[initial(icon_state)]inflamed"
