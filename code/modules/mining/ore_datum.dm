@@ -23,11 +23,7 @@
 		display_name = name
 
 /ore/uranium
-<<<<<<< HEAD
-	name = "uranium"
-=======
 	name = ORE_URANIUM
->>>>>>> 6db5a51dfc (Uranium hf (#9629))
 	display_name = "pitchblende"
 	smelts_to = MAT_URANIUM
 	result_amount = 5
