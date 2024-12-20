@@ -1927,13 +1927,8 @@
 
 /obj/item/reagent_containers/food/snacks/badrecipe/Initialize()
 	. = ..()
-<<<<<<< HEAD
-	reagents.add_reagent("toxin", 1)
-	reagents.add_reagent("carbon", 3)
-=======
 	reagents.add_reagent(REAGENT_ID_SALMONELLA, 1)
 	reagents.add_reagent(REAGENT_ID_CARBON, 3)
->>>>>>> 65b20a4d5c ([MIRROR] Virology Hotfix #5 (#9620))
 
 /obj/item/reagent_containers/food/snacks/meatsteak
 	name = "Meat steak"
