@@ -2118,11 +2118,6 @@
 		apply_hud(LIFE_HUD, holder)
 
 	if (BITTEST(hud_updateflag, STATUS_HUD))
-		var/foundVirus = 0
-		for (var/datum/disease/D in GetViruses())
-			if(D.discovered)
-				foundVirus = 1
-				break
 
 		var/image/holder = grab_hud(STATUS_HUD)
 		var/image/holder2 = grab_hud(STATUS_HUD_OOC)
@@ -2131,7 +2126,7 @@
 		else if(stat == DEAD)
 			holder.icon_state = "huddead"
 			holder2.icon_state = "huddead"
-		else if(foundVirus)
+		else if(has_virus())
 			holder.icon_state = "hudill"
 /* Start Chomp edit
 		else if(has_brain_worms())
@@ -2144,10 +2139,8 @@
 End Chomp edit */
 		else
 			holder.icon_state = "hudhealthy"
-			if(viruses.len)
-				for(var/datum/disease/D in GetViruses())
-					if(D.discovered)
-						holder2.icon_state = "hudill"
+			if(has_virus())
+				holder2.icon_state = "hudill"
 			else
 				holder2.icon_state = "hudhealthy"
 		if(block_hud)
@@ -2276,6 +2269,15 @@ End Chomp edit */
 		return // Still no brain.
 
 	brain.tick_defib_timer()
+
+/mob/living/carbon/human/proc/has_virus()
+	for(var/thing in viruses)
+		var/datum/disease/D = thing
+		if(!D.discovered)
+			continue
+		if((!(D.visibility_flags & HIDDEN_SCANNER)) && (D.severity != NONTHREAT))
+			return TRUE
+	return FALSE
 
 #undef HUMAN_MAX_OXYLOSS
 #undef HUMAN_CRIT_MAX_OXYLOSS
