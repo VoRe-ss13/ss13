@@ -1,4 +1,4 @@
 author: "VoRe-bot"
 delete-after: True
 changes:
-  - rscadd: "More things to Tyr"
+  - bugfix: "Export chatlog works under 516"
