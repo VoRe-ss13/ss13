@@ -104,3 +104,15 @@
   - rscdel: purged the old busyspace module and replaced its contents entirely
   - rscadd: maint lurkers, pAIs, and simplemobs now show in the chardir
   - code_imp: converts the remaining old spans to defines
+2024-12-21:
+  VoRe-bot:
+  - bugfix: Export chatlog works under 516
+  - rscadd: Dullahan engineer chassis code and scaling issue.
+  - bugfix: proteans can no longer hide and rest. You only can do one or the other
+  - rscadd: adds descriptions to supply packs that are visible in the terminal when
+      viewing the pack info
+  - qol: changes the 'C' icon in the terminal to show "Info"
+  - qol: fixes a few stray crate access restrictions that were wrongly assigned compared
+      to others
+  - qol: cleans up some duplicate supply pack defs
+  - bugfix: pitchblende using the wrong name
