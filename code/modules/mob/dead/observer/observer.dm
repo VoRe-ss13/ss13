@@ -454,7 +454,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	//RS Port #658 Start
 	var/area/A = get_area(destination)
+<<<<<<< HEAD
 	if(A.flag_check(AREA_BLOCK_GHOSTS))
+=======
+	if(A?.flag_check(AREA_BLOCK_GHOSTS) && !isbelly(destination) && !admin_ghosted)
+>>>>>>> 798918f6d6 ([MIRROR] More area flag option fixes (#9684))
 		to_chat(src,span_warning("Sorry, that area does not allow ghosts."))
 		if(following)
 			stop_following()
