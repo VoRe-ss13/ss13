@@ -116,3 +116,14 @@
       to others
   - qol: cleans up some duplicate supply pack defs
   - bugfix: pitchblende using the wrong name
+2024-12-23:
+  VoRe-bot:
+  - bugfix: fixed exploit allowing vr users to escape into the real world
+  - qol: 516 clients are served an Edge-optimized bundle.
+  - bugfix: paralysis toxin now commits paralysis.
+  - bugfix: 516 chat flickering
+  - admin: fix admin resize
+  - rscadd: Added sloog ears
+  - rscadd: Added sloog shell
+  - rscadd: Added sloog taur body
+  - rscadd: Added sloog head
