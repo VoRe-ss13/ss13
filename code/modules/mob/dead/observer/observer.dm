@@ -211,7 +211,7 @@ Works together with spawning an observer, noted above.
 	if(!isturf(loc))
 		return
 	var/area/A = get_area(src)
-	if(A.flag_check(AREA_BLOCK_GHOSTS))
+	if(A.flag_check(AREA_BLOCK_GHOSTS) && !isbelly(loc))
 		to_chat(src, span_warning("Ghosts can't enter this location."))
 		return_to_spawn()
 

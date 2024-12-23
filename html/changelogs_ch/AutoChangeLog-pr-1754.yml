@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - bugfix: "fixed exploit allowing vr users to escape into the real world"
