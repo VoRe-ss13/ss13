@@ -178,12 +178,21 @@ GLOBAL_LIST_INIT(digest_modes, list())
 /datum/digest_mode/drain/sizesteal/process_mob(obj/belly/B, mob/living/L)
 	if(L.size_multiplier > B.shrink_grow_size && B.owner.size_multiplier < 2) //Grow until either pred is large or prey is small.
 		B.owner.resize(B.owner.size_multiplier + 0.01) //Grow by 1% per tick.
+<<<<<<< HEAD
 		if(B.owner.size_multiplier >= 2) //CHOMPEdit - Adds some feedback so the pred knows they can't grow anymore.
 			to_chat(B.owner, span_notice("You feel you have grown as much as you can."))
 		L.resize(L.size_multiplier - 0.01) //Shrink by 1% per tick
 		if(L.size_multiplier <= B.shrink_grow_size) //CHOMPEdit - Adds some feedback so the pred knows their prey has stopped shrinking.
 			to_chat(B.owner, span_notice("You feel [L] get as small as you would like within your [lowertext(B.name)]."))
 		B.owner.update_fullness() //CHOMPEdit - This is run whenever a belly's contents are changed.
+=======
+		if(B.owner.size_multiplier >= 2) // Adds some feedback so the pred knows they can't grow anymore.
+			to_chat(B.owner, span_vnotice("You feel you have grown as much as you can."))
+		L.resize(L.size_multiplier - 0.01) //Shrink by 1% per tick
+		if(L.size_multiplier <= B.shrink_grow_size) // Adds some feedback so the pred knows their prey has stopped shrinking.
+			to_chat(B.owner, span_vnotice("You feel [L] get as small as you would like within your [lowertext(B.name)]."))
+		B.owner.update_fullness()
+>>>>>>> f728ad5760 ([MIRROR] sort those under belly messages too (#9717))
 		. = ..()
 
 /datum/digest_mode/heal
