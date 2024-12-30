@@ -40,6 +40,7 @@
 #include "code\__defines\appearance.dm"
 #include "code\__defines\assemblies.dm"
 #include "code\__defines\assert.dm"
+#include "code\__defines\assets.dm"
 #include "code\__defines\atmos.dm"
 #include "code\__defines\atoms_movable.dm"
 #include "code\__defines\atoms_movable_ch.dm"
@@ -2120,6 +2121,20 @@
 #include "code\modules\asset_cache\assets\preferences.dm"
 #include "code\modules\asset_cache\assets\tgfont.dm"
 #include "code\modules\asset_cache\assets\tgui.dm"
+<<<<<<< HEAD
+=======
+#include "code\modules\asset_cache\assets\spritesheets\chat.dm"
+#include "code\modules\asset_cache\assets\spritesheets\chem_master.dm"
+#include "code\modules\asset_cache\assets\spritesheets\kitchen_recipes.dm"
+#include "code\modules\asset_cache\assets\spritesheets\nanomaps.dm"
+#include "code\modules\asset_cache\assets\spritesheets\pipes.dm"
+#include "code\modules\asset_cache\assets\spritesheets\robot_icons.dm"
+#include "code\modules\asset_cache\assets\spritesheets\stacks.dm"
+#include "code\modules\asset_cache\assets\spritesheets\vending.dm"
+#include "code\modules\asset_cache\assets\spritesheets\vore.dm"
+#include "code\modules\asset_cache\iconforge\batched_spritesheet.dm"
+#include "code\modules\asset_cache\iconforge\universal_icon.dm"
+>>>>>>> 3771982275 ([Manual Port] manually ports icon forge from Virgo (#9731))
 #include "code\modules\asset_cache\transports\asset_transport.dm"
 #include "code\modules\asset_cache\transports\webroot_transport.dm"
 #include "code\modules\awaymissions\bluespaceartillery.dm"
