@@ -129,9 +129,6 @@
 	sprite_icon = 'icons/mob/robot/standard_large.dmi'
 
 		// None yet
-<<<<<<< HEAD
-*/
-=======
 */
 
 /datum/robot_sprite/dogborg/tall/standard
@@ -148,4 +145,3 @@
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
->>>>>>> 86acad39cb ([MIRROR] bug fixes for dullahans.. got rid of has_custom open/eyelight  to hopefully fix it. (#9735))

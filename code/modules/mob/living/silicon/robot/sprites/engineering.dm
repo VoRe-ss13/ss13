@@ -216,8 +216,6 @@
 	has_custom_open_sprites = TRUE
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
-<<<<<<< HEAD
-=======
 
 /datum/robot_sprite/dogborg/tall/engineering/dullahanv3
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
@@ -229,4 +227,3 @@
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
->>>>>>> 86acad39cb ([MIRROR] bug fixes for dullahans.. got rid of has_custom open/eyelight  to hopefully fix it. (#9735))
