@@ -194,7 +194,7 @@
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
 
-/datum/robot_sprite/dogborg/tall/mining/k4t_alt1
+/datum/robot_sprite/dogborg/tall/janitor/k4t_alt1
 	name = "K4T Alt"
 	sprite_icon_state = "k4t_alt1"
 	has_eye_light_sprites = TRUE
