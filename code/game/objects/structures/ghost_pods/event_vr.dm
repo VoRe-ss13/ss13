@@ -130,7 +130,7 @@
 	icon_state_opened = "redgate_hole"
 
 /obj/structure/ghost_pod/ghost_activated/maintpred/redgate/Initialize()
-	..()
+	. = ..()
 	if(!(src in active_ghost_pods))
 		active_ghost_pods += src
 
@@ -209,6 +209,6 @@
 	qdel(src)
 
 /obj/structure/ghost_pod/ghost_activated/maint_lurker/Initialize()
-	..()
+	. = ..()
 	if(!(src in active_ghost_pods))
 		active_ghost_pods += src
