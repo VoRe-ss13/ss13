@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - refactor: "Sorted assets into their own files for cleanliness."
