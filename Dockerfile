@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-FROM i386/ubuntu:xenial as base
-=======
 FROM ubuntu:24.04 AS base
->>>>>>> 9185d92ace (eary port for us (#9762))
-
-ARG BYOND_MAJOR=515
-ARG BYOND_MINOR=1640
 
 RUN dpkg --add-architecture i386 \
 	&& apt-get update \
