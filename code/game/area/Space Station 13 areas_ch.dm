@@ -1,6 +1,6 @@
 /area/surface/outpost/main/dorms
 	name = "\improper Main Outpost Dorms"
-	flags = RAD_SHIELDED | AREA_SOUNDPROOF | AREA_FORBID_EVENTS | AREA_ALLOW_LARGE_SIZE | AREA_BLOCK_SUIT_SENSORS | AREA_BLOCK_TRACKING
+	flags = RAD_SHIELDED | AREA_SOUNDPROOF | AREA_FORBID_EVENTS | AREA_ALLOW_LARGE_SIZE | AREA_BLOCK_SUIT_SENSORS | AREA_BLOCK_TRACKING | AREA_FORBID_SINGULO | AREA_ALLOW_CLOCKOUT
 
 /area/surface/outpost/main/dorms/dorm_1
 	name = "\improper Main Outpost Dorm One"
@@ -20,11 +20,17 @@
 /area/surface/outpost/main/dorms/dorm_6
 	name = "\improper Main Outpost Dorm Six"
 
+/area/library
+	flags = AREA_ALLOW_CLOCKOUT
+
+/area/crew_quarters
+	flags = AREA_ALLOW_CLOCKOUT
+
 /area/crew_quarters/cafeteria
-	flags = RAD_SHIELDED
+	flags = RAD_SHIELDED | AREA_ALLOW_CLOCKOUT
 
 /area/crew_quarters/coffee_shop
-	flags = RAD_SHIELDED
+	flags = RAD_SHIELDED | AREA_ALLOW_CLOCKOUT
 
 /area/crew_quarters/kitchen
 	flags = RAD_SHIELDED
@@ -33,7 +39,7 @@
 	flags = RAD_SHIELDED
 
 /area/crew_quarters/sleep
-	flags = RAD_SHIELDED | AREA_SOUNDPROOF | AREA_FORBID_EVENTS | AREA_ALLOW_LARGE_SIZE | AREA_BLOCK_SUIT_SENSORS | AREA_BLOCK_TRACKING | AREA_FORBID_SINGULO
+	flags = RAD_SHIELDED | AREA_SOUNDPROOF | AREA_FORBID_EVENTS | AREA_ALLOW_LARGE_SIZE | AREA_BLOCK_SUIT_SENSORS | AREA_BLOCK_TRACKING | AREA_FORBID_SINGULO | AREA_ALLOW_CLOCKOUT
 
 /area/crew_quarters/sleep/vistor_room_1
 
@@ -61,7 +67,7 @@
 
 /area/medical/cryo/autoresleeve
 	name = "\improper Medical Autoresleeving"
-	flags = AREA_FORBID_EVENTS
+	flags = AREA_FORBID_EVENTS | AREA_ALLOW_CLOCKOUT
 
 /area/rnd/research/particleaccelerator
 	name = "\improper Particle Accelerator Lab"
@@ -72,7 +78,7 @@
 	icon_state = "blue"
 	requires_power = 0
 	ambience = AMBIENCE_OTHERWORLDLY
-	flags = RAD_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT | BLUE_SHIELDED | AREA_ALLOW_LARGE_SIZE | AREA_LIMIT_DARK_RESPITE
+	flags = RAD_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT | BLUE_SHIELDED | AREA_ALLOW_LARGE_SIZE | AREA_LIMIT_DARK_RESPITE | AREA_ALLOW_CLOCKOUT
 
 /area/security/nuke_storage
 	flags = PHASE_SHIELDED
