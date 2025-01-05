@@ -13,13 +13,23 @@
 
 /mob/living/Bump(atom/movable/AM)
 	//. = ..()
+<<<<<<< HEAD
 	if(istype(AM, /mob/living))
 		if(buckled != AM && (((confused || is_blind()) && stat == CONSCIOUS && prob(50) && m_intent=="run") || flying && flight_vore))
 			AM.stumble_into(src)
+=======
+	if(isliving(AM))
+		// CHOMPEdit Start
+		var/mob/living/L = AM
+		if(!L.is_incorporeal())
+			if(buckled != AM && (((confused || is_blind()) && stat == CONSCIOUS && prob(50) && m_intent==I_RUN) || flying && flight_vore))
+				AM.stumble_into(src)
+		// CHOMPEdit End
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 	return ..()
 // Because flips toggle density
 /mob/living/Crossed(var/atom/movable/AM)
-	if(istype(AM, /mob/living) && isturf(loc) && AM != src)
+	if(isliving(AM) && isturf(loc) && AM != src)
 		var/mob/living/AMV = AM
 		if(AMV.buckled != src && (((AMV.confused || AMV.is_blind()) && AMV.stat == CONSCIOUS && prob(50) && AMV.m_intent=="run") || AMV.flying && AMV.flight_vore))
 			stumble_into(AMV)
