@@ -11,7 +11,12 @@
 	var/datum/artifact_find/artifact_find
 	var/last_act = 0
 
+<<<<<<< HEAD
 /obj/structure/boulder/New()
+=======
+/obj/structure/boulder/Initialize()
+	. = ..()
+>>>>>>> 4d0df72be2 ([MIRROR] just some init fixes (#9794))
 	icon_state = "boulder[rand(1,4)]"
 	excavation_level = rand(5, 50)
 

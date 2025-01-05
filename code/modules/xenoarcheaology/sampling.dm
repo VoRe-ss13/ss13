@@ -8,7 +8,12 @@
 	sharp = TRUE
 	var/datum/geosample/geological_data
 
+<<<<<<< HEAD
 /obj/item/rocksliver/New()
+=======
+/obj/item/rocksliver/Initialize()
+	. = ..()
+>>>>>>> 4d0df72be2 ([MIRROR] just some init fixes (#9794))
 	icon_state = "sliver[rand(1, 3)]"
 	randpixel_xy()
 

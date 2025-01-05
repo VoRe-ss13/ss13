@@ -4,8 +4,13 @@
 	icon_state = "crystal"
 	density = TRUE
 
+<<<<<<< HEAD
 /obj/structure/crystal/New()
 	..()
+=======
+/obj/structure/crystal/Initialize()
+	. = ..()
+>>>>>>> 4d0df72be2 ([MIRROR] just some init fixes (#9794))
 
 	icon_state = pick("ano70","ano80")
 

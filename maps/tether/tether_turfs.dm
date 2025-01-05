@@ -167,6 +167,7 @@ VIRGO3B_TURF_CREATE(/turf/simulated/mineral/floor)
 	name = "bluespace"
 	icon = 'icons/turf/space_vr.dmi'
 	icon_state = "bluespace"
+
 /turf/space/bluespace/Initialize()
 	..()
 	icon = 'icons/turf/space_vr.dmi'
@@ -177,8 +178,13 @@ VIRGO3B_TURF_CREATE(/turf/simulated/mineral/floor)
 	name = "sand transit"
 	icon = 'icons/turf/transit_vr.dmi'
 	icon_state = "desert_ns"
+
 /turf/space/sandyscroll/Initialize()
+<<<<<<< HEAD
 	..()
+=======
+	. = ..()
+>>>>>>> 4d0df72be2 ([MIRROR] just some init fixes (#9794))
 	icon_state = "desert_ns"
 
 //Sky stuff!
