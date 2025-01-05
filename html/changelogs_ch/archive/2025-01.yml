@@ -1,0 +1,27 @@
+2025-01-04:
+  VoRe-bot:
+  - rscadd: 'Added keybinds from TGstation to engineering (Ctrl-click: Toggle, Alt-click:
+      Max)'
+  - bugfix: apparently some fire issues
+  - rscadd: Assorted Event mobs
+  - rscadd: Some Event related turfs
+  - rscadd: Event mob related sounds
+  - rscadd: A bunch of related icons
+  - bugfix: 516 webroot css assets not working
+  - rscadd: colorable no-antennae moth wings
+  - bugfix: Deathhead moth wings no longer visually clip in and out due to random
+      frame
+  - rscadd: 'Added new materials to the biogenerator list: Diethylamine, Unstable
+      Mutagen, Plant-B-Gone, Table Salt, Soy Sauce, Flora Disk, Floral Somatoray,
+      Kudzu Seeds, Random Exotic Seeds'
+  - balance: Lowered the costs of the fertilisers and botany materials to make them
+      easier to obtain. After all, the department uses these a lot.
+  - rscadd: Timeclock app to the set of default PDA applications
+  - rscadd: AREA_ALLOW_CLOCKOUT flag for setting which areas allow players to clock
+      out using the pda timeclock
+  - rscadd: Added /effect/instantboom and subtypes for eventmins.
+  - bugfix: record updates being applied without consent on ui close
+  - bugfix: adds modules to med solgov hardsuit, due to it using the wrong obj path.
+  - refactor: Sorted assets into their own files for cleanliness.
+  - qol: Fire is a proper danger now
+  - rscadd: Electrical Fire event
