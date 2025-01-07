@@ -27,8 +27,14 @@
 
 	wreckage = /obj/effect/decal/mecha_wreckage/gunpod
 
+<<<<<<< HEAD
 	stomp_sound = 'sound/machines/generator/generator_end.ogg'
 	swivel_sound = 'sound/machines/hiss.ogg'
+=======
+	stomp_sound = 'sound/mecha/fighter/engine_mid_fighter_move.ogg'
+	stomp_sound_2 = 'sound/mecha/fighter/engine_mid_fighter_move.ogg' // CHOMPedit: Fix for additional move sound on Chomp mecha.
+	swivel_sound = 'sound/mecha/fighter/engine_mid_boost_01.ogg'
+>>>>>>> f82b55198d (Exosuit Fighter Movesound Fix (#9819))
 
 	bound_height = 64
 	bound_width = 64
