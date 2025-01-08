@@ -16,6 +16,7 @@
 >>>>>>> 4d0df72be2 ([MIRROR] just some init fixes (#9794))
 	icon_state = "sliver[rand(1, 3)]"
 	randpixel_xy()
+	. = ..()
 
 /datum/geosample
 	var/age = 0

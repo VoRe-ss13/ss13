@@ -19,6 +19,7 @@
 >>>>>>> 4d0df72be2 ([MIRROR] just some init fixes (#9794))
 	icon_state = "boulder[rand(1,4)]"
 	excavation_level = rand(5, 50)
+	. = ..()
 
 /obj/structure/boulder/attackby(var/obj/item/I, var/mob/user)
 	if(istype(I, /obj/item/core_sampler))
