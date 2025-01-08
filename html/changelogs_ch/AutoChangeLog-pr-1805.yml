@@ -1,5 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - qol: "Fire is a proper danger now"
-  - rscadd: "Electrical Fire event"
