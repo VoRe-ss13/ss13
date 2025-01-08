@@ -269,11 +269,7 @@
 		H.custom_heat = dna.custom_heat
 		H.custom_cold = dna.custom_cold
 		var/datum/species/S = H.species
-<<<<<<< HEAD
-		S.produceCopy(dna.species_traits, H, dna.base_species)
-=======
 		S.produceCopy(dna.species_traits, H, dna.base_species/*, FALSE*/) // Traitgenes edit - reset_dna flag required, or genes get reset on resleeve
->>>>>>> 9064a83dc2 ([MIRROR] fix an issue with multi borg module registering (#9795))
 		// VOREStation Edit End
 
 		H.species.blood_reagents = dna.blood_reagents
