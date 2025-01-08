@@ -18,17 +18,12 @@
 /mob/living/Bump(atom/movable/AM)
 	//. = ..()
 	if(istype(AM, /mob/living))
-<<<<<<< HEAD
-		if(buckled != AM && (((confused || is_blind()) && stat == CONSCIOUS && prob(50) && m_intent=="run") || flying && flight_vore))
-			AM.stumble_into(src)
-=======
 		// CHOMPEdit Start
 		var/mob/living/L = AM
 		if(!L.is_incorporeal())
 			if(buckled != AM && (((confused || is_blind()) && stat == CONSCIOUS && prob(50) && m_intent==I_RUN) || flying && flight_vore))
 				AM.stumble_into(src)
 		// CHOMPEdit End
->>>>>>> 4f51cf1044 (Fix multiple KIN exploits (#9786))
 	return ..()
 // Because flips toggle density
 /mob/living/Crossed(var/atom/movable/AM)
