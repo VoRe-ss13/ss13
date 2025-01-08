@@ -14,13 +14,8 @@
 	active_power_usage = 2000
 	idle_power_usage = 1000
 
-<<<<<<< HEAD
-/obj/machinery/auto_cloner/New()
-	..()
-=======
 /obj/machinery/auto_cloner/Initialize(mapload)
 	. = ..()
->>>>>>> 4d0df72be2 ([MIRROR] just some init fixes (#9794))
 
 	time_per_spawn = rand(1200,3600)
 
@@ -43,7 +38,6 @@
 		/mob/living/simple_mob/animal/passive/crab,
 		/mob/living/simple_mob/animal/passive/mouse,
 		/mob/living/simple_mob/animal/goat)
-	. = ..()
 
 //todo: how the hell is the asteroid permanently powered?
 /obj/machinery/auto_cloner/process()
