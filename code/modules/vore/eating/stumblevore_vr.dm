@@ -34,7 +34,7 @@
 /mob/living/Crossed(var/atom/movable/AM)
 	if(istype(AM, /mob/living) && isturf(loc) && AM != src)
 		var/mob/living/AMV = AM
-		if(AMV.buckled != src && (((AMV.confused || AMV.is_blind()) && AMV.stat == CONSCIOUS && prob(50) && AMV.m_intent=="run") || AMV.flying && AMV.flight_vore))
+		if(AMV.buckled != src && (((AMV.confused || AMV.is_blind()) && AMV.stat == CONSCIOUS && prob(50) && AMV.m_intent==I_RUN) || AMV.flying && AMV.flight_vore))
 			stumble_into(AMV)
 	..()
 
