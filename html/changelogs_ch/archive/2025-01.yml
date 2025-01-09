@@ -25,3 +25,24 @@
   - refactor: Sorted assets into their own files for cleanliness.
   - qol: Fire is a proper danger now
   - rscadd: Electrical Fire event
+2025-01-09:
+  VoRe-bot:
+  - bugfix: Drones now use robotact
+  - bugfix: A few byond:// hrefs for 516
+  - qol: Reverts marish to audible condition. Happy marring!
+  - rscadd: Similar keybinds to the recent pump additions are now on most atmospheric
+      devices.
+  - bugfix: Fixes issue where using the keybind on a pump would not update the icon.
+  - bugfix: Vepr Cell fix
+  - maptweak: Patient rooms in medbay now have rad-shielding.
+  - bugfix: fixed sample containers being able to hold more samples if you use the
+      scoop functions
+  - qol: added consolidated versions of the campbell tattoos and modular longsock
+      markings
+  - rscadd: icon states for the black half-mask on vulp-base icons
+  - bugfix: fixed small rpator miner/cargo sprites.
+  - bugfix: a potential runtime
+  - bugfix: fixed t-12 and  SR-25 Carbine ammo
+  - rscadd: Added more stuff to Tyr
+  - rscadd: Some bonu stuff for wilderness
+  - bugfix: bonfire examine
