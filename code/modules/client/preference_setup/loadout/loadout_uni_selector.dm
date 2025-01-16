@@ -229,7 +229,12 @@
 		"TG&C bodyguard's skirt"=/obj/item/clothing/under/rank/bodyguard_skirt,
 		"TG&C bodyguard's turtleneck"=/obj/item/clothing/under/rank/bodyguard_turtleneck,
 		"TG&C bodyguard's turtleneck w/ skirt"=/obj/item/clothing/under/rank/bodyguard_turtleskirt,
+<<<<<<< HEAD
 		"TG&C gorka suit"=/obj/item/clothing/under/rank/neo_sec_gorka
+=======
+		"TG&C gorka suit"=/obj/item/clothing/under/rank/neo_gorka/sec,
+		"ACE security undersuit"=/obj/item/clothing/under/rank/security/aces
+>>>>>>> 5bfab5b056 ([MIRROR] ACE Security Outfit (#9878))
 	)
 	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(selector_uniforms))
 
