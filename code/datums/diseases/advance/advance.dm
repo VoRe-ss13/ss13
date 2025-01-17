@@ -13,6 +13,10 @@ GLOBAL_LIST_INIT(advance_cures, list(
 	form = "Advance Disease"
 	agent = "advance microbes"
 	max_stages = 5
+<<<<<<< HEAD
+=======
+	disease_flags = CURABLE|CAN_CARRY|CAN_RESIST|CAN_NOT_POPULATE
+>>>>>>> c91163cfe5 ([MIRROR] Virology Hotix (#9899))
 	spread_text = "Unknown"
 	viable_mobtypes = list(/mob/living/carbon/human)
 
