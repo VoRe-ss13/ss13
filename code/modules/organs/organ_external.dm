@@ -418,17 +418,35 @@
 				droplimb(TRUE, DROPLIMB_EDGE)
 			else if (robotic >= ORGAN_NANOFORM && damage >= max_damage)
 				droplimb(TRUE, DROPLIMB_BURN)
-			//VOREStation Add End
-			//VOREStation Edit - We have special droplimb handling for prom/proteans
-			else if(edge_eligible && brute >= max_damage / DROPLIMB_THRESHOLD_EDGE && prob(brute))
+
+			//Math:
+			//Edge w/ 10 damage on an 80 hp limb. First hit: Prob(10) && Prob(12.5) = 1.25% Second hit: Prob(10) && Prob(25) = 2.5, etc up to 10.
+			//Edge w/ 20 damage on an 80 hp limb. First hit: Prob(20) && Prob(25)= 5% Second hit: Prob(20) && Prob(50)=10%, etc up to max 20.
+			else if(edge_eligible && brute >= max_damage / DROPLIMB_THRESHOLD_EDGE && prob(brute) && prob(damage_factor))
 				droplimb(0, DROPLIMB_EDGE)
-			else if((burn >= max_damage / DROPLIMB_THRESHOLD_DESTROY) && prob(burn*0.33))
+
+			//Math:
+			//Burn w/ 25dmg on an 80 hp limb. First hit: Prob(18.75) && Prob(31.25) = ~6% Second Hit: Prob(18.75) && Prob (62.5) =~12, etc up to 18.75
+			//Burn w/ 25dmg on a 50 hp limb. First hit: Prob(18.75) && Prob(50) = ~9% Second hit: 18.75%
+			else if((burn >= max_damage / DROPLIMB_THRESHOLD_DESTROY) && prob(burn*0.75) && prob(damage_factor))
 				droplimb(0, DROPLIMB_BURN)
-			else if((brute >= max_damage / DROPLIMB_THRESHOLD_DESTROY && prob(brute)))
+
+			//Brute it special. It gets both a chance to destroy AND a chance to knock a limb off!
+			//Math:
+			//Brute w/ 25dmg on an 80 hp limb. First hit: Prob(25) && Prob (31.25) = ~8% Second Hit: ~16% etc up to 25%
+			//Brute w/ 25dmg on a 50 hp limb. First hit: Prob(25) && Prob (50) = 12.5 Second hit: 25%
+			else if((brute >= max_damage / DROPLIMB_THRESHOLD_DESTROY && prob(brute)) && prob(damage_factor))
 				droplimb(0, DROPLIMB_BLUNT)
-			//VOREStation Edit End
-			else if(brute >= max_damage / DROPLIMB_THRESHOLD_TEAROFF && prob(brute*0.33))
+
+			//This is where brute gets it SECOND chance to affect the limb! Much lower probability.
+			//This means you can add this to the above to get brute damage's TRUE drop chance IF the damage is high enough to hit BOTH the DROPLIMB_THRESHOLD_DESTROY & the DROPLIMB_THRESHOLD_TEAROFF
+			//Ex: If it hits
+			//Math:
+			//Brute w/ 25dmg on an 80 hp limb. First hit:  Prob(8.25) && Prob(31.25) = ~2.6% Second Hit: Prob(8.25) && Prob(62.5) = 5%. (This can't ACTUALLY happen with 25 damage with the current numbers, but it's an example to keep it similar to the above.)
+			//Brute w/ 25dmg on a 50 hp limb. First hit: Prob(8.25) && Prob (50) = ~4% Second hit: 8.25%
+			else if(brute >= max_damage / DROPLIMB_THRESHOLD_TEAROFF && prob(brute*0.33) && prob(damage_factor))
 				droplimb(0, DROPLIMB_EDGE)
+
 			else if(spread_dam && owner && parent && (brute_overflow || burn_overflow) && (brute_overflow >= 5 || burn_overflow >= 5) && !permutation) //No infinite damage loops.
 				var/brute_third = brute_overflow * 0.33
 				var/burn_third = burn_overflow * 0.33
