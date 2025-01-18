@@ -1046,7 +1046,7 @@
 	else
 		activate(user)
 
-	if(istype(user,/mob/living/carbon/human))
+	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		H.update_inv_l_hand()
 		H.update_inv_r_hand()
@@ -1569,8 +1569,8 @@ End CHOMP Removal*/
 	icon_state = "ceph_d6[result]"
 
 /obj/item/dice/loaded/ceph/Initialize()
-	icon_state = "ceph_d6[rand(1,sides)]"
 	. = ..()
+	icon_state = "ceph_d6[rand(1,sides)]"
 
 
 //abc123: Mira Nesyne
@@ -1580,3 +1580,11 @@ End CHOMP Removal*/
 
 	icon = 'icons/inventory/accessory/item.dmi'
 	icon_state = "silver"
+
+//beeholddrbeesphb: Evelynn
+/obj/item/laser_pointer/evelynn_fluff
+	name = "Evelynn's Laser Pointer"
+	desc = "A small, furry, and fluffy toy that looks like a bee. It has laser eyes. Upon firing, the lasers make a buzzing noise."
+	icon = 'icons/vore/custom_items_vr.dmi'
+	icon_state = "evelynn"
+	pointer_icon_state = "purple_laser"
