@@ -3,11 +3,6 @@
 ****************************************************/
 
 //These control the damage thresholds for the various ways of removing limbs
-<<<<<<< HEAD
-#define DROPLIMB_THRESHOLD_EDGE 5
-#define DROPLIMB_THRESHOLD_TEAROFF 2
-#define DROPLIMB_THRESHOLD_DESTROY 1
-=======
 /// <summary>
 /// Arms and legs have 80 damage, which is a good baseline to go off of.
 /// The droplimb_threshold is "Divide the limb's max health by this number"
@@ -16,7 +11,6 @@
 /// </summary>
 #define DROPLIMB_THRESHOLD_EDGE 5 //For limb of 80(arm/leg) requires 16 or more damage to cut off.
 #define DROPLIMB_THRESHOLD_DESTROY 3.34 //Requires 24 damage or more to DESTROY a arm/leg with a blunt object. Blunt is going to DESTROY over just knocking something off!
->>>>>>> f5de4689e8 ([MIRROR] Revamps limb-loss code (#9800))
 
 /obj/item/organ/external
 	name = "external"
@@ -373,15 +367,6 @@
 
 	//If limb took enough damage, try to cut or tear it off
 	if(owner && loc == owner && !is_stump())
-<<<<<<< HEAD
-		if(!cannot_amputate && CONFIG_GET(flag/limbs_can_break) && (brute_dam + burn_dam) >= (max_damage * CONFIG_GET(number/organ_health_multiplier)))
-			//organs can come off in three cases
-			//1. If the damage source is edge_eligible and the brute damage dealt exceeds the edge threshold, then the organ is cut off.
-			//2. If the damage amount dealt exceeds the disintegrate threshold, the organ is completely obliterated.
-			//3. If the organ has already reached or would be put over it's max damage amount (currently redundant),
-			//   and the brute damage dealt exceeds the tearoff threshold, the organ is torn off.
-
-=======
 		/// <summary>
 		/// This determines if the limb is ELIGIBLE to be chopped off or not.
 		/// It checks if it's amputatable, if the config setting is set, then continues down the proc.
@@ -401,7 +386,6 @@
 			// Max_damage of 80 and brute_dam of 80? || Factor = 100 Max_damage of 80 and brute_dam of 40? Factor = 50 || Max_damage of 80 and brute_dam of 5? Factor = 5
 			// This lowers our chances of having our limb removed when it has less damage. The more damaged the limb, the higher the chance it falls off!
 
->>>>>>> f5de4689e8 ([MIRROR] Revamps limb-loss code (#9800))
 			//Check edge eligibility
 			var/edge_eligible = FALSE
 			if(edge)
@@ -412,53 +396,6 @@
 				else
 					edge_eligible = 1
 
-<<<<<<< HEAD
-			//VOREStation Add
-			if(nonsolid && damage >= max_damage)
-				droplimb(TRUE, DROPLIMB_EDGE)
-			else if (robotic >= ORGAN_NANOFORM && damage >= max_damage)
-				droplimb(TRUE, DROPLIMB_BURN)
-
-			//Math:
-			//Edge w/ 10 damage on an 80 hp limb. First hit: Prob(10) && Prob(12.5) = 1.25% Second hit: Prob(10) && Prob(25) = 2.5, etc up to 10.
-			//Edge w/ 20 damage on an 80 hp limb. First hit: Prob(20) && Prob(25)= 5% Second hit: Prob(20) && Prob(50)=10%, etc up to max 20.
-			else if(edge_eligible && brute >= max_damage / DROPLIMB_THRESHOLD_EDGE && prob(brute) && prob(damage_factor))
-				droplimb(0, DROPLIMB_EDGE)
-
-			//Math:
-			//Burn w/ 25dmg on an 80 hp limb. First hit: Prob(18.75) && Prob(31.25) = ~6% Second Hit: Prob(18.75) && Prob (62.5) =~12, etc up to 18.75
-			//Burn w/ 25dmg on a 50 hp limb. First hit: Prob(18.75) && Prob(50) = ~9% Second hit: 18.75%
-			else if((burn >= max_damage / DROPLIMB_THRESHOLD_DESTROY) && prob(burn*0.75) && prob(damage_factor))
-				droplimb(0, DROPLIMB_BURN)
-
-			//Brute it special. It gets both a chance to destroy AND a chance to knock a limb off!
-			//Math:
-			//Brute w/ 25dmg on an 80 hp limb. First hit: Prob(25) && Prob (31.25) = ~8% Second Hit: ~16% etc up to 25%
-			//Brute w/ 25dmg on a 50 hp limb. First hit: Prob(25) && Prob (50) = 12.5 Second hit: 25%
-			else if((brute >= max_damage / DROPLIMB_THRESHOLD_DESTROY && prob(brute)) && prob(damage_factor))
-				droplimb(0, DROPLIMB_BLUNT)
-
-			//This is where brute gets it SECOND chance to affect the limb! Much lower probability.
-			//This means you can add this to the above to get brute damage's TRUE drop chance IF the damage is high enough to hit BOTH the DROPLIMB_THRESHOLD_DESTROY & the DROPLIMB_THRESHOLD_TEAROFF
-			//Ex: If it hits
-			//Math:
-			//Brute w/ 25dmg on an 80 hp limb. First hit:  Prob(8.25) && Prob(31.25) = ~2.6% Second Hit: Prob(8.25) && Prob(62.5) = 5%. (This can't ACTUALLY happen with 25 damage with the current numbers, but it's an example to keep it similar to the above.)
-			//Brute w/ 25dmg on a 50 hp limb. First hit: Prob(8.25) && Prob (50) = ~4% Second hit: 8.25%
-			else if(brute >= max_damage / DROPLIMB_THRESHOLD_TEAROFF && prob(brute*0.33) && prob(damage_factor))
-				droplimb(0, DROPLIMB_EDGE)
-
-			else if(spread_dam && owner && parent && (brute_overflow || burn_overflow) && (brute_overflow >= 5 || burn_overflow >= 5) && !permutation) //No infinite damage loops.
-				var/brute_third = brute_overflow * 0.33
-				var/burn_third = burn_overflow * 0.33
-				if(children && children.len)
-					var/brute_on_children = brute_third / children.len
-					var/burn_on_children = burn_third / children.len
-					spawn()
-						for(var/obj/item/organ/external/C in children)
-							if(!C.is_stump())
-								C.take_damage(brute_on_children, burn_on_children, 0, 0, null, forbidden_limbs, 1) //Splits the damage to each individual 'child', incase multiple exist.
-				parent.take_damage(brute_third, burn_third, 0, 0, null, forbidden_limbs, 1)
-=======
 			// Due to the afformentioned damage creep, projectile damage is halved.
 			// UNLESS The projectile does over the limb's max damage in the first place, then you're in danger of it going bye bye.
 			if(projectile && (brute + burn) < max_damage)
@@ -513,7 +450,6 @@
 								if(!C.is_stump())
 									C.take_damage(brute_on_children, burn_on_children, FALSE, FALSE, null, forbidden_limbs, 1) //Splits the damage to each individual 'child', incase multiple exist.
 					parent.take_damage(brute_third, burn_third, FALSE, FALSE, null, forbidden_limbs, 1)
->>>>>>> f5de4689e8 ([MIRROR] Revamps limb-loss code (#9800))
 
 	return update_icon()
 
