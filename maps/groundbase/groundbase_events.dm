@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-#define ASSIGNMENT_ANY "Any"
-#define ASSIGNMENT_AI "AI"
-#define ASSIGNMENT_CYBORG "Cyborg"
-#define ASSIGNMENT_ENGINEER "Engineer"
-#define ASSIGNMENT_GARDENER "Botanist"
-#define ASSIGNMENT_JANITOR "Janitor"
-#define ASSIGNMENT_MEDICAL "Medical"
-#define ASSIGNMENT_SCIENTIST "Scientist"
-#define ASSIGNMENT_SECURITY "Security"
-=======
->>>>>>> 4d6d5e462b ([MIRROR] Events (#9841))
 
 //
 // VOREStation overrides to the default event manager configuration.
