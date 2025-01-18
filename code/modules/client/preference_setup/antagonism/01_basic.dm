@@ -1,5 +1,3 @@
-var/global/list/uplink_locations = list("PDA", "Headset", "None")
-
 /datum/category_item/player_setup_item/antagonism/basic
 	name = "Basic"
 	sort_order = 1
@@ -7,13 +5,11 @@ var/global/list/uplink_locations = list("PDA", "Headset", "None")
 	var/datum/paiCandidate/candidate
 
 /datum/category_item/player_setup_item/antagonism/basic/load_character(list/save_data)
-	pref.uplinklocation = save_data["uplinklocation"]
 	pref.exploit_record = save_data["exploit_record"]
 	pref.antag_faction  = save_data["antag_faction"]
 	pref.antag_vis      = save_data["antag_vis"]
 
 /datum/category_item/player_setup_item/antagonism/basic/save_character(list/save_data)
-	save_data["uplinklocation"] = pref.uplinklocation
 	save_data["exploit_record"] = pref.exploit_record
 	save_data["antag_faction"]  = pref.antag_faction
 	save_data["antag_vis"]      = pref.antag_vis
@@ -42,7 +38,6 @@ var/global/list/uplink_locations = list("PDA", "Headset", "None")
 	candidate.savefile_save(preference_mob())
 
 /datum/category_item/player_setup_item/antagonism/basic/sanitize_character()
-	pref.uplinklocation	= sanitize_inlist(pref.uplinklocation, uplink_locations, initial(pref.uplinklocation))
 	if(!pref.antag_faction) pref.antag_faction = "None"
 	if(!pref.antag_vis) pref.antag_vis = "Hidden"
 
@@ -55,7 +50,7 @@ var/global/list/uplink_locations = list("PDA", "Headset", "None")
 /datum/category_item/player_setup_item/antagonism/basic/content(var/mob/user)
 	. += "Faction: <a href='byond://?src=\ref[src];antagfaction=1'>[pref.antag_faction]</a><br/>"
 	. += "Visibility: <a href='byond://?src=\ref[src];antagvis=1'>[pref.antag_vis]</a><br/>"
-	. +=span_bold("Uplink Type : <a href='byond://?src=\ref[src];antagtask=1'>[pref.uplinklocation]</a>")
+	. += span_bold("Uplink Type:") + " <a href='byond://?src=\ref[src];antagtask=1'>[pref.read_preference(/datum/preference/choiced/uplinklocation)]</a>"
 	. +="<br>"
 	. +=span_bold("Exploitable information:") + "<br>"
 	if(jobban_isbanned(user, "Records"))
@@ -73,8 +68,10 @@ var/global/list/uplink_locations = list("PDA", "Headset", "None")
 	. += "OOC Comments: <a href='byond://?src=\ref[src];option=ooc'>[candidate.comments ? TextPreview(candidate.comments, 40) : "None Set"]</a><br>"
 
 /datum/category_item/player_setup_item/antagonism/basic/OnTopic(var/href,var/list/href_list, var/mob/user)
-	if (href_list["antagtask"])
-		pref.uplinklocation = next_in_list(pref.uplinklocation, uplink_locations)
+	if(href_list["uplinklocation"])
+		var/new_uplinklocation = tgui_input_list(user, "Choose your uplink location:", "Character Preference", GLOB.uplink_locations, pref.read_preference(/datum/preference/choiced/uplinklocation))
+		if(new_uplinklocation && CanUseTopic(user))
+			pref.update_preference_by_type(/datum/preference/choiced/uplinklocation, new_uplinklocation)
 		return TOPIC_REFRESH
 
 	if(href_list["exploitable_record"])

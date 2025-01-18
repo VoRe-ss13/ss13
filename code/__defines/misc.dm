@@ -29,6 +29,7 @@
 
 // For the client FPS pref and anywhere else
 #define MAX_CLIENT_FPS	200
+#define RECOMMENDED_FPS	100
 
 // Some arbitrary defines to be used by self-pruning global lists. (see master_controller)
 #define MAX_GEAR_COST 15 // Used in chargen for accessory loadout limit.
@@ -218,6 +219,7 @@
 // These are mostly for the department guessing code and event system.
 #define DEPARTMENT_UNKNOWN			"Unknown"
 #define DEPARTMENT_EVERYONE			"Everyone"
+#define DEPARTMENT_ANY				"Any" // Used for events
 
 // Canonical spellings of TSCs, so typos never have to happen again due to human error.
 #define TSC_NT		"NanoTrasen"
