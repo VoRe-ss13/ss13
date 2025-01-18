@@ -717,6 +717,12 @@
 		src.forceMove(get_turf(F))
 		log_and_message_admins("[key_name(src)] used the OOC escape button to get out of a food item.")
 
+	else if(src.alerts["leashed"])
+		var/obj/screen/alert/leash_pet/pet_alert = src.alerts["leashed"]
+		var/obj/item/leash/owner = pet_alert.master
+		owner.clear_leash()
+		log_and_message_admins("[key_name(src)] used the OOC escape button to get out of a leash.")
+
 	//Don't appear to be in a vore situation
 	else
 		to_chat(src,span_warning("You aren't inside anyone, though, is the thing."))
@@ -929,8 +935,23 @@
     gas = list(
         GAS_N2 = 100)
 
+//CHOMPEdit Start - for CO2 breathers
+/datum/gas_mixture/belly_air/carbon_dioxide_breather
+    volume = 2500
+    temperature = 293.150
+    total_moles = 104
+
+/datum/gas_mixture/carbon_dioxide_breather/New()
+    . = ..()
+    gas = list(
+        GAS_CO2 = 100)
+//CHOMPEdit End
 
 /mob/living/proc/feed_grabbed_to_self_falling_nom(var/mob/living/user, var/mob/living/prey)
+	// CHOMPAdd Start
+	if(user.is_incorporeal())
+		return FALSE
+	// CHOMPAdd End
 	var/belly = user.vore_selected
 	return perform_the_nom(user, prey, user, belly, delay = 1) //1/10th of a second is probably fine.
 
