@@ -1,12 +1,3 @@
-#define ASSIGNMENT_ANY "Any"
-#define ASSIGNMENT_AI "AI"
-#define ASSIGNMENT_CYBORG "Cyborg"
-#define ASSIGNMENT_ENGINEER "Engineer"
-#define ASSIGNMENT_GARDENER "Gardener"
-#define ASSIGNMENT_JANITOR "Janitor"
-#define ASSIGNMENT_MEDICAL "Medical"
-#define ASSIGNMENT_SCIENTIST "Scientist"
-#define ASSIGNMENT_SECURITY "Security"
 
 var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT_LEVEL_MODERATE = "Moderate", EVENT_LEVEL_MAJOR = "Major")
 
@@ -143,22 +134,22 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 	available_events = list(
 		// Severity level, event name, even type, base weight, role weights, one shot, min weight, max weight. Last two only used if set and non-zero
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Nothing",			/datum/event/nothing,			100),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "APC Damage",		/datum/event/apc_damage,		20, 	list(ASSIGNMENT_ENGINEER = 20)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brand Intelligence",/datum/event/brand_intelligence,20, 	list(ASSIGNMENT_JANITOR = 25),	1),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Camera Damage",		/datum/event/camera_damage,		20, 	list(ASSIGNMENT_ENGINEER = 20)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "APC Damage",		/datum/event/apc_damage,		20, 	list(DEPARTMENT_ENGINEERING = 20)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Brand Intelligence",/datum/event/brand_intelligence,20, 	list(JOB_JANITOR = 25),	1),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Camera Damage",		/datum/event/camera_damage,		20, 	list(DEPARTMENT_ENGINEERING = 20)),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Economic News",		/datum/event/economic_event,	300),
 <<<<<<< HEAD
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Lost Spiders",		/datum/event/spider_migration, 	20, 	list(ASSIGNMENT_SECURITY = 10), 1),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Money Hacker",		/datum/event/money_hacker, 		0, 		list(ASSIGNMENT_ANY = 4), 1, 10, 25),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Money Lotto",		/datum/event/money_lotto, 		0, 		list(ASSIGNMENT_ANY = 1), 1, 5, 15),
 		//new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Mundane News", 		/datum/event/mundane_news, 		300),
-		//new /datum/event_meta(EVENT_LEVEL_MUNDANE, "PDA Spam",			/datum/event/pda_spam, 			0, 		list(ASSIGNMENT_ANY = 4), 0, 25, 50),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Shipping Error",	/datum/event/shipping_error	, 	30, 	list(ASSIGNMENT_ANY = 2), 0),
-//YW Change		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Space Dust",		/datum/event/dust	, 			60, 	list(ASSIGNMENT_ENGINEER = 20), 0, 0, 50),
+		//new /datum/event_meta(EVENT_LEVEL_MUNDANE, "PDA Spam",			/datum/event/pda_spam, 			0, 		list(DEPARTMENT_ANY = 4), 0, 25, 50),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Shipping Error",	/datum/event/shipping_error	, 	30, 	list(DEPARTMENT_ANY = 2), 0),
+//YW Change		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Space Dust",		/datum/event/dust	, 			60, 	list(DEPARTMENT_ENGINEERING = 20), 0, 0, 50),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Trivial News",		/datum/event/trivial_news, 		400),
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Lore News",			/datum/event/lore_news, 		400),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Vermin Infestation",/datum/event/infestation, 		100,	list(ASSIGNMENT_JANITOR = 100)),
-		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Wallrot",			/datum/event/wallrot, 			0,		list(ASSIGNMENT_ENGINEER = 30, ASSIGNMENT_GARDENER = 50)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Vermin Infestation",/datum/event/infestation, 		100,	list(JOB_JANITOR = 100)),
+		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Wallrot",			/datum/event/wallrot, 			0,		list(DEPARTMENT_ENGINEERING = 30, JOB_BOTANIST = 50)),
 //CHOMPedit: Disabling until fixed		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Aurora Caelus",		/datum/event/aurora_caelus,		2,		list(), 1),
 =======
 		new /datum/event_meta(EVENT_LEVEL_MUNDANE, "Lost Carp",			/datum/event/carp_migration, 	20, 	list(DEPARTMENT_SECURITY = 10), 1),
@@ -235,14 +226,3 @@ var/global/list/severity_to_string = list(EVENT_LEVEL_MUNDANE = "Mundane", EVENT
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Space Vines",			/datum/event/spacevine, 		20,	list(DEPARTMENT_ENGINEERING = 15), 1),
 >>>>>>> 4d6d5e462b ([MIRROR] Events (#9841))
 	)
-
-
-#undef ASSIGNMENT_ANY
-#undef ASSIGNMENT_AI
-#undef ASSIGNMENT_CYBORG
-#undef ASSIGNMENT_ENGINEER
-#undef ASSIGNMENT_GARDENER
-#undef ASSIGNMENT_JANITOR
-#undef ASSIGNMENT_MEDICAL
-#undef ASSIGNMENT_SCIENTIST
-#undef ASSIGNMENT_SECURITY

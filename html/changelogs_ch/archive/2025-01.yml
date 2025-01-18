@@ -46,3 +46,7 @@
   - rscadd: Added more stuff to Tyr
   - rscadd: Some bonu stuff for wilderness
   - bugfix: bonfire examine
+2025-01-12:
+  VoRe-bot:
+  - qol: adds mirrors to all resleeving and autoresleeving rooms
+  - qol: Tgui-say colors adjusted for better contrast
