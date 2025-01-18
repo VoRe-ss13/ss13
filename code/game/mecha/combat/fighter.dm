@@ -138,17 +138,10 @@
 //Modified phazon code
 /obj/mecha/combat/fighter/Topic(href, href_list)
 	..()
-<<<<<<< HEAD
-	if (href_list["toggle_stabilization"])
-		stabilization_enabled = !stabilization_enabled
-		send_byjax(src.occupant,"exosuit.browser","stabilization_command","[stabilization_enabled?"Dis":"En"]able thruster stabilization")
-		src.occupant_message(span_notice("Thruster stabilization [stabilization_enabled? "enabled" : "disabled"]."))
-=======
 	if (href_list["toggle_landing_gear"])
 		landing_gear_raised = !landing_gear_raised
 		send_byjax(src.occupant,"exosuit.browser","landing_gear_command","[landing_gear_raised?"Raise":"Lower"] landing gear")
 		src.occupant_message(span_notice("Landing gear [landing_gear_raised? "raised" : "lowered"]."))
->>>>>>> e1f4380716 ([MIRROR] Fighter Update 2 (#9858))
 		return
 
 /obj/mecha/combat/fighter/get_commands()
@@ -453,14 +446,10 @@
 
 	ground_capable = TRUE
 
-<<<<<<< HEAD
-/obj/mecha/combat/fighter/pinnace/loaded/Initialize() //Loaded version with gans
-=======
 	health = 200
 	maxhealth = 200
 
 /obj/mecha/combat/fighter/pinnace/loaded/Initialize() //Loaded version with guns
->>>>>>> e1f4380716 ([MIRROR] Fighter Update 2 (#9858))
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	ME.attach(src)
