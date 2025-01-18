@@ -1880,7 +1880,7 @@ Departamental Swimsuits, for general use
 	if(!..())
 		return 0
 
-	if(istype(M,/mob/living/carbon/human))
+	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(!(H.get_species() == SPECIES_PROMETHEAN))	//Only wearable by slimes, since species_restricted actually checks bodytype, not species
 			return 0
@@ -2304,7 +2304,7 @@ Departamental Swimsuits, for general use
 	set name = "Swap color"
 	set category = "Object"
 	set src in usr
-	if(!istype(usr, /mob/living)) return
+	if(!isliving(usr)) return
 	if(usr.stat) return
 
 	colorswap(usr)
@@ -2689,4 +2689,15 @@ End CHOMP Removal*/
 	icon_state = "valkhorns"
 	icon_override = 'icons/vore/custom_clothes_vr.dmi'
 	item_state = "valkhorns_onmob"
+
+//sixberry: Thistle
+
+/obj/item/clothing/head/fluff/memory_crown
+    name = "Memory Crown"
+    desc = "A thorned crown sporting numerous amethyst inserts, all of which seem to glow faintly in the dark.  Just holding it makes you feel as though you've forgotten something unpleasant."
+    icon = 'icons/vore/custom_clothes_vr.dmi'
+    icon_state = "memorycrown"
+    icon_override = 'icons/vore/custom_clothes_vr.dmi'
+    item_state = "memorycrown_onmob"
+    slot_flags = SLOT_HEAD
 */ //Chomp REMOVE END
