@@ -2222,13 +2222,6 @@
 #include "code\modules\client\preference_setup\general\04_equipment.dm"
 #include "code\modules\client\preference_setup\general\05_background.dm"
 #include "code\modules\client\preference_setup\general\06_flavor.dm"
-<<<<<<< HEAD
-#include "code\modules\client\preference_setup\global\01_ui.dm"
-#include "code\modules\client\preference_setup\global\02_settings.dm"
-#include "code\modules\client\preference_setup\global\03_pai.dm"
-#include "code\modules\client\preference_setup\global\04_ooc.dm"
-=======
->>>>>>> f68a9f4f1d ([MIRROR] Clean Up Global Tab (#9848))
 #include "code\modules\client\preference_setup\loadout\gear_tweaks.dm"
 #include "code\modules\client\preference_setup\loadout\gear_tweaks_vr.dm"
 #include "code\modules\client\preference_setup\loadout\loadout.dm"
