@@ -1,6 +1,10 @@
 /mob/living/proc/CanStumbleVore(mob/living/target)
 	if(!can_be_drop_pred)
 		return FALSE
+	// CHOMPAdd Start
+	if(is_incorporeal() || target.is_incorporeal())
+		return FALSE
+	// CHOMPAdd End
 	if(!is_vore_predator(src))
 		return FALSE
 	if(!target.devourable)
@@ -31,7 +35,7 @@
 /mob/living/Crossed(var/atom/movable/AM)
 	if(isliving(AM) && isturf(loc) && AM != src)
 		var/mob/living/AMV = AM
-		if(AMV.buckled != src && (((AMV.confused || AMV.is_blind()) && AMV.stat == CONSCIOUS && prob(50) && AMV.m_intent=="run") || AMV.flying && AMV.flight_vore))
+		if(AMV.buckled != src && (((AMV.confused || AMV.is_blind()) && AMV.stat == CONSCIOUS && prob(50) && AMV.m_intent==I_RUN) || AMV.flying && AMV.flight_vore))
 			stumble_into(AMV)
 	..()
 
