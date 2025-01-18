@@ -2131,8 +2131,6 @@
 	..()
 	feedback_inc("mecha_janus_created",1)
 	return
-<<<<<<< HEAD
-=======
 
 //Fighters
 
@@ -2701,4 +2699,3 @@
 	..()
 	feedback_inc("mecha_fighter_baron_created",1)
 	return
->>>>>>> b2f709659f ([MIRROR] fix new mech construction (#9850))
