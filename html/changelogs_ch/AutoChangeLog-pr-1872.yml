@@ -1,4 +1,4 @@
 author: "VoRe-bot"
 delete-after: True
 changes:
-  - bugfix: "bonfire examine"
+  - bugfix: "arc vial projectiles not working"
