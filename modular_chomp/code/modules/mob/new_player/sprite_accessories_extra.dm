@@ -262,6 +262,29 @@
 	body_parts = list(BP_HEAD)
 	color_blend_mode = ICON_MULTIPLY
 
+<<<<<<< HEAD
+=======
+/datum/sprite_accessory/marking/ch/bovine_snout
+	name = "Bovine Snout"
+	icon_state = "bovine_snout"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/bovine_nose
+	name = "Bovine Nose"
+	icon_state = "bovine_nose"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/smallchubbybelly
+	name = "Chubby Belly, Small"
+	icon_state = "smallchubbybelly"
+	body_parts = list(BP_TORSO,BP_GROIN)
+	hide_body_parts = list(BP_L_HAND,BP_R_HAND)
+	color_blend_mode = ICON_MULTIPLY
+
+
+>>>>>>> 011057241f (Further Improves my Chubby Belly, Small, and Bovine Sprites! emoji. (#9911))
 /datum/sprite_accessory/marking/ch/sloog_head
 	name = "sloog head"
 	icon = 'modular_chomp/icons/mob/human_races/sprite_accessories/sloog.dmi'
