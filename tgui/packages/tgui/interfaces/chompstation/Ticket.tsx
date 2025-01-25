@@ -1,9 +1,15 @@
 /* eslint react/no-danger: "off" */
 import { KEY } from 'common/keys';
+<<<<<<< HEAD
 import { round, toFixed } from 'common/math';
 import { useState } from 'react';
 
 import { useBackend } from '../../backend';
+=======
+import { RefObject, useEffect, useRef, useState } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+>>>>>>> 331c65df39 (improves ticket chat (#9927))
 import {
   Box,
   Button,
@@ -61,6 +67,28 @@ window.addEventListener('keydown', (event) => {
 export const Ticket = (props) => {
   const { act, data } = useBackend<Data>();
   const [ticketChat, setTicketChat] = useState('');
+
+  const messagesEndRef: RefObject<HTMLDivElement> = useRef(null);
+
+  useEffect(() => {
+    const scroll = messagesEndRef.current;
+    if (scroll) {
+      scroll.scrollTop = scroll.scrollHeight;
+    }
+  }, []);
+
+  useEffect(() => {
+    const scroll = messagesEndRef.current;
+    if (scroll) {
+      const height = scroll.scrollHeight;
+      const bottom = scroll.scrollTop + scroll.offsetHeight;
+      const scrollTracking = Math.abs(height - bottom) < 24;
+      if (scrollTracking) {
+        scroll.scrollTop = scroll.scrollHeight;
+      }
+    }
+  });
+
   const {
     id,
     name,
@@ -128,11 +156,38 @@ export const Ticket = (props) => {
                 ))}
             </Flex.Item>
             <Divider />
+<<<<<<< HEAD
             <Flex.Item>
               <Flex>
                 <Flex.Item grow>
                   <Input
                     autoFocus
+=======
+          </Stack.Item>
+          <Stack.Item grow>
+            <Section scrollable ref={messagesEndRef} fill>
+              <Stack direction="column">
+                <Stack.Item>
+                  {Object.keys(log)
+                    .slice(0)
+                    .map((L, i) => (
+                      <div
+                        key={i}
+                        dangerouslySetInnerHTML={{ __html: log[L] }}
+                      />
+                    ))}
+                </Stack.Item>
+              </Stack>
+            </Section>
+          </Stack.Item>
+          <Stack.Item>
+            <Section fill>
+              <Stack fill>
+                <Stack.Item grow>
+                  <Input
+                    autoFocus
+                    updateOnPropsChange
+>>>>>>> 331c65df39 (improves ticket chat (#9927))
                     autoSelect
                     fluid
                     placeholder="Enter a message..."
@@ -148,8 +203,13 @@ export const Ticket = (props) => {
                       }
                     }}
                   />
+<<<<<<< HEAD
                 </Flex.Item>
                 <Flex.Item>
+=======
+                </Stack.Item>
+                <Stack.Item>
+>>>>>>> 331c65df39 (improves ticket chat (#9927))
                   <Button
                     onClick={() => {
                       act('send_msg', {
@@ -161,11 +221,19 @@ export const Ticket = (props) => {
                   >
                     Send
                   </Button>
+<<<<<<< HEAD
                 </Flex.Item>
               </Flex>
             </Flex.Item>
           </Flex>
         </Section>
+=======
+                </Stack.Item>
+              </Stack>
+            </Section>
+          </Stack.Item>
+        </Stack>
+>>>>>>> 331c65df39 (improves ticket chat (#9927))
       </Window.Content>
     </Window>
   );
