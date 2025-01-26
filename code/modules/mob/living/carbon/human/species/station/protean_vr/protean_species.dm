@@ -132,9 +132,6 @@
 		"dragon_hornsPointy" = "#FFFFFF",
 		"dragon_eyesNormal" = "#FFFFFF"
 	)
-<<<<<<< HEAD
-
-=======
 	// CHOMPEdit Start
 	var/list/dullahan_overlays = list(
 		"dullahanbody" = "#FFFFFF",
@@ -146,7 +143,6 @@
 		// loads the icons from the DMI file in that order on spawn. they are overlay 1-6.
 	)
 	// CHOMPEdit End
->>>>>>> 590fb55972 (protean dullahan string import and export for colors/overlays selected and code rehaul.  [Needs Review] (#9870))
 	var/pseudodead = 0
 
 /datum/species/protean/New()

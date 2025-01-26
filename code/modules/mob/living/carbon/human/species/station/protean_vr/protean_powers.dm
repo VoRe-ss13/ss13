@@ -531,8 +531,6 @@
 					S.dragon_overlays[6] = choice
 					S.dragon_overlays[S.dragon_overlays[6]] = new_color
 			S.blob_appearance = "dragon"
-<<<<<<< HEAD
-=======
 		// CHOMPEdit Start
 		if("dullahan")
 			var/list/options = list("Metalshell","Eyes","Decals","Import","Export")
@@ -656,7 +654,6 @@
 					to_chat(protie, span_notice("Exported style string is \" [output_style] \". Use this to get the same style in the future with import style"))
 			S.blob_appearance = "dullahan"
 			// CHOMPEdit End
->>>>>>> 590fb55972 (protean dullahan string import and export for colors/overlays selected and code rehaul.  [Needs Review] (#9870))
 		if("Primary")
 			var/new_color = input("Pick primary color:","Protean Primary", "#FF0000") as null|color
 			if(!new_color)
