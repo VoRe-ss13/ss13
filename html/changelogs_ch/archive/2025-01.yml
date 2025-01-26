@@ -50,3 +50,60 @@
   VoRe-bot:
   - qol: adds mirrors to all resleeving and autoresleeving rooms
   - qol: Tgui-say colors adjusted for better contrast
+2025-01-19:
+  VoRe-bot:
+  - rscadd: Removed Starhunter Challenge, put functional eclipse boss thing in its
+      place
+  - bugfix: runtimes when spam upgrading griders
+  - bugfix: catslugs can now actually use wawa
+  - bugfix: lingering fire now caps out at the fire max temp
+  - rscadd: Exosuit Fighters now have exclusive hull and armor types, with a faster
+      top speed at the cost of reduced durability.
+  - rscadd: Exosuit Fighters now have collision mechanics. Fly responsibly.
+  - rscadd: Exosuit Fighters have new enter sound effects and a special collision
+      effect.
+  - rscadd: Pinnace has been rebalanced into a weak, entry-level fighter. Has reduced
+      health compared to other fighters, but can mount weapons and fly in atmosphere.
+  - bugfix: sheet snatcher being able to have larger than the capacity would allow
+      stacks inserted when being close to full and getting a new type
+  - rscadd: added full chest fluff (vulp) and inner arms markings
+  - rscadd: Added malignant organs, dangerous organs gotten through radiation and
+      random events needing surgery to remove.
+  - rscadd: Added engineered organs, applying organ lattices in mobs to be mutated
+      once fully grown.
+  - rscadd: Exotic organs can be sold via cargo. Freezer crate recommended.
+  - rscadd: Freezer crate for cargo has been added under the supply tab.
+  - bugfix: fixed the protean dullahan rest sprite for boob plate version
+  - bugfix: missing overrides in some robot guns
+  - rscdel: removed vestigial Global tab in Character Setup, merged remaining pAI
+      setup functionality into Special Roles tab
+  - rscadd: Added new sprite option for zorgoia simplemob.
+  - bugfix: an issue where crawling could reset table passing continuously
+  - image: smolraptors can curl up when resting; and miner lost its purple collar.
+  - bugfix: Rejuvenante not updating a destroyed robot sprite
+  - rscadd: Remove alien vests from tyr and added tyr version. Sprites WIP
+  - rscadd: Event BH mecha that spams random fire.
+  - balance: Tyr alien weapons are a smidhe better
+  - bugfix: Janus uses the right projectiles for phase 3 now
+  - bugfix: tyr spawn not being protected
+  - rscadd: protean borg (dullahan)
+  - rscadd: dullahan command sprite thats job locked to protean / command only.
+  - bugfix: fixed sloog head not coloring right.
+  - rscadd: Toggle verbs for growing/shrinking traits
+  - code_imp: Massive overhaul to the backend of character creation. Any visible changes
+      are considered bugs.
+  - rscadd: Fighter Exosuits now have landing gear.
+  - rscadd: Science can now build and assemble the Pinnace and Baron Fighter Exosuits.
+  - code_imp: cleans up event defines
+  - bugfix: an issue where the crafting ui could get stuck in a busy state if closed
+      during crafting
+  - qol: altered gorka uniforms for less icon states and easier adding of new types,
+      added plain, service, and janitor subtypes
+  - rscadd: added 'can_remove' bool to accessories, which defaults to TRUE and does
+      exactly what it sounds like
+  - bugfix: reagents effects applying to the wrong mob types
+  - bugfix: Fixed exosuit fighters having an additional 'stomp' stepsound.
+  - bugfix: arc vial projectiles not working
+  - rscadd: CO2 Breather trait, CO2 tanks, and loadout double-tanks.
+  - qol: renamed antagonism tag and hid most of the options there as they're not relevant
+      for our purposes

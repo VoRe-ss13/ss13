@@ -408,7 +408,8 @@
 			"teppi" = image(icon = 'icons/mob/species/protean/protean64x64.dmi', icon_state = "teppi", pixel_x = -16),
 			"panther" = image(icon = 'icons/mob/species/protean/protean64x64.dmi', icon_state = "panther", pixel_x = -16),
 			"robodrgn" = image(icon = 'icons/mob/species/protean/protean128x64.dmi', icon_state = "robodrgn", pixel_x = -48),
-			"Dragon" = image(icon = 'icons/mob/bigdragon_small.dmi', icon_state = "dragon_small")
+			"Dragon" = image(icon = 'icons/mob/bigdragon_small.dmi', icon_state = "dragon_small"),
+			"dullahan" = image(icon = 'modular_chomp/icons/mob/dullahanborg/dullahanicon.dmi', icon_state = "proticon")
 			//CHOMPEnable End
 			)
 	var/blobstyle = show_radial_menu(protie, protie, icon_choices, require_near = TRUE, tooltips = FALSE)
@@ -698,7 +699,7 @@
 	var/obj/held_item = protie.get_active_hand()
 	if(istype(held_item,/obj/item/grab))
 		var/obj/item/grab/G = held_item
-		if(istype(G.affecting, /mob/living/carbon/human))
+		if(ishuman(G.affecting))
 			target = G.affecting
 			if(istype(target.species, /datum/species/protean))
 				to_chat(protie, span_danger("You can't latch onto a fellow Protean!"))
