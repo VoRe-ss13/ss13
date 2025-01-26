@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - bugfix: "Fixes advanced diseases being uncurable"
+  - qol: "Changed the name of advanced Cold and Flu to Engineered Cold and Engineered Flu"
