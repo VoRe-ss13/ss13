@@ -104,14 +104,14 @@
 		var/datum/db_query/query = SSdbcore.NewQuery("UPDATE erro_player SET discord_id = :t_discord_id WHERE ckey = :t_ckey", list("t_discord_id" = sql_discord, "t_ckey" = sql_ckey)) //CHOMPEdit TGSQL
 		if(query.Execute())
 			to_chat(src, span_notice("Registration complete! Thank you for taking the time to register your Discord ID."))
-			log_and_message_admins("[ckey] has registered their Discord ID. Their Discord snowflake ID is: [their_id]") //YW EDIT
+			log_and_message_admins("[ckey] has registered their Discord ID. Their Discord snowflake ID is: [their_id]", src) //YW EDIT
 			admin_chat_message(message = "[ckey] has registered their Discord ID. Their Discord is: <@[their_id]>", color = "#4eff22") //YW EDIT
 			notes_add(ckey, "Discord ID: [their_id]")
 			world.VgsAddMemberRole(their_id)
 			qdel(query) //CHOMPEdit TGSQL
 		else
 			to_chat(src, span_warning("There was an error registering your Discord ID in the database. Contact an administrator."))
-			log_and_message_admins("[ckey] failed to register their Discord ID. Their Discord snowflake ID is: [their_id]. Is the database connected?")
+			log_and_message_admins("[ckey] failed to register their Discord ID. Their Discord snowflake ID is: [their_id]. Is the database connected?", src)
 			qdel(query) //CHOMPEdit TGSQL
 		return
 	//VOREStation Add End
@@ -292,12 +292,13 @@
 		void = new()
 	screen += void
 
-	//disabled because we don't use the ingame changelog system any more // CHOMPEdit: Enabled because we do
+	// CHOMPAdd Start
 	if((prefs.lastchangelog != changelog_hash) && isnewplayer(src.mob)) //bolds the changelog button on the interface so we know there are updates.
 		to_chat(src, span_info("You have unread updates in the changelog."))
 		winset(src, "rpane.changelog", "background-color=#eaeaea;font-style=bold")
-		if(CONFIG_GET(flag/aggressive_changelog)) // CHOMPEdit
+		if(CONFIG_GET(flag/aggressive_changelog))
 			src.changes()
+	// CHOMPAdd End
 
 	if(CONFIG_GET(flag/paranoia_logging))
 		var/alert = FALSE //VOREStation Edit start.
@@ -449,7 +450,7 @@
 
 				//Log it
 				if(CONFIG_GET(flag/paranoia_logging)) //We don't block, but we want paranoia log messages
-					log_and_message_admins("[key] at [address] has bad IP reputation: [ip_reputation]. Will be kicked if enabled in config.")
+					log_and_message_admins("[key] at [address] has bad IP reputation: [ip_reputation]. Will be kicked if enabled in config.", null)
 				else //We just log it
 					log_admin("[key] at [address] has bad IP reputation: [ip_reputation]. Will be kicked if enabled in config.")
 
