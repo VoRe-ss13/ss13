@@ -253,9 +253,35 @@ export const TicketsPanel = (props) => {
                       ))}
                   </Flex.Item>
                   <Divider />
+<<<<<<< HEAD
                   <Flex.Item>
                     <Flex>
                       <Flex.Item grow>
+=======
+                </Stack.Item>
+                <Stack.Item grow>
+                  <Section fill ref={messagesEndRef} scrollable>
+                    <Stack fill direction="column">
+                      <Stack.Item grow>
+                        {Object.keys(selected_ticket.log)
+                          .slice(0)
+                          .map((L, i) => (
+                            <div
+                              key={i}
+                              dangerouslySetInnerHTML={{
+                                __html: selected_ticket.log[L],
+                              }}
+                            />
+                          ))}
+                      </Stack.Item>
+                    </Stack>
+                  </Section>
+                </Stack.Item>
+                <Stack.Item>
+                  <Section fill>
+                    <Stack fill>
+                      <Stack.Item grow>
+>>>>>>> f1746421d9 (just a tiny style change (#9928))
                         <Input
                           autoFocus
                           autoSelect
