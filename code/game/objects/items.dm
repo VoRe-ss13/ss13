@@ -379,7 +379,8 @@
 		playsound(src, drop_sound, 30, preference = /datum/preference/toggle/drop_sounds)
 
 // apparently called whenever an item is removed from a slot, container, or anything else.
-/obj/item/proc/dropped(mob/user as mob)
+/obj/item/proc/dropped(mob/user)
+	SHOULD_CALL_PARENT(TRUE)
 	if(zoom)
 		zoom() //binoculars, scope, etc
 	appearance_flags &= ~NO_CLIENT_COLOR
@@ -798,7 +799,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	var/cannotzoom
 
-	if((M.stat && !zoom) || !(istype(M,/mob/living/carbon/human)))
+	if((M.stat && !zoom) || !(ishuman(M)))
 		to_chat(M, span_filter_notice("You are unable to focus through the [devicename]."))
 		cannotzoom = 1
 	else if(!zoom && (global_hud.darkMask[1] in M.client.screen))

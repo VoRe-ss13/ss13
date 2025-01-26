@@ -23,7 +23,8 @@
 	STOP_PROCESSING(SSobj, src)
 	..()
 
-/obj/item/deadringer/dropped()
+/obj/item/deadringer/dropped(mob/user)
+	..()
 	if(timer > 20)
 		reveal()
 		watchowner = null
@@ -31,7 +32,7 @@
 
 /obj/item/deadringer/attack_self(var/mob/living/user as mob)
 	var/mob/living/H = src.loc
-	if (!istype(H, /mob/living/carbon/human))
+	if (!ishuman(H))
 		to_chat(H, span_blue("You have no clue what to do with this thing."))
 		return
 	if(!activated)

@@ -31,7 +31,7 @@
 	else
 		forceMove(locate(1,1,1))
 	//CHOMPEdit End
-	flags |= ATOM_INITIALIZED // Explicitly don't use Initialize().  New players join super early and use New() //CHOMPEdit
+	flags |= ATOM_INITIALIZED // Explicitly don't use Initialize().  New players join super early and use New()
 
 
 /mob/new_player/Destroy()
@@ -112,7 +112,7 @@
 			output += "<p><b><a href='byond://?src=\ref[src];open_station_news=1'>Show [using_map.station_name] News<br>(NEW!)</A></b></p>" //ChompEDIT - fixed height
 
 	//ChompEDIT start: Show Changelog
-	if(client.prefs.lastchangelog == changelog_hash)
+	if(client?.prefs?.lastchangelog == changelog_hash)
 		output += "<p><a href='byond://?src=\ref[src];open_changelog=1'>Show Changelog</A><br><i>No Changes</i></p>"
 	else
 		output += "<p><b><a href='byond://?src=\ref[src];open_changelog=1'>Show Changelog</A><br>(NEW!)</b></p>"
@@ -155,11 +155,13 @@
 		var/datum/job/refJob = null
 		for(var/mob/new_player/player in player_list)
 			refJob = player.client.prefs.get_highest_job()
-			if(player.client.prefs.obfuscate_key && player.client.prefs.obfuscate_job)
+			var/obfuscate_key = player.client.prefs.read_preference(/datum/preference/toggle/obfuscate_key)
+			var/obfuscate_job = player.client.prefs.read_preference(/datum/preference/toggle/obfuscate_job)
+			if(obfuscate_key && obfuscate_job)
 				. += "Anonymous User [player.ready ? "Ready!" : null]"
-			else if(player.client.prefs.obfuscate_key)
+			else if(obfuscate_key)
 				. += "Anonymous User [player.ready ? "(Playing as: [refJob ? refJob.title : "Unknown"])" : null]"
-			else if(player.client.prefs.obfuscate_job)
+			else if(obfuscate_job)
 				. += "[player.key] [player.ready ? "Ready!" : null]"
 			else
 				. += "[player.key] [player.ready ? "(Playing as: [refJob ? refJob.title : "Unknown"])" : null]"
@@ -210,7 +212,7 @@
 
 			announce_ghost_joinleave(src)
 
-			if(client.prefs.be_random_name)
+			if(client.prefs.read_preference(/datum/preference/toggle/human/name_is_always_random))
 				client.prefs.real_name = random_name(client.prefs.identifying_gender)
 			observer.real_name = client.prefs.real_name
 			observer.name = observer.real_name
