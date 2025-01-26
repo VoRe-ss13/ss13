@@ -172,7 +172,7 @@
 //Otherwise, if you want handle_click_empty() to be called, check in consume_next_projectile() and return null there.
 /obj/item/gun/proc/special_check(var/mob/user)
 
-	if(!istype(user, /mob/living))
+	if(!isliving(user))
 		return 0
 	if(!user.IsAdvancedToolUser())
 		return 0
@@ -739,7 +739,7 @@
 
 		in_chamber.on_hit(M)
 		if(in_chamber.damage_type != HALLOSS && !in_chamber.nodamage)
-			log_and_message_admins("[key_name(user)] commited suicide using \a [src]")
+			log_and_message_admins("commited suicide using \a [src]", user)
 			user.apply_damage(in_chamber.damage*2.5, in_chamber.damage_type, "head", used_weapon = "Point blank shot in the mouth with \a [in_chamber]", sharp = TRUE)
 			user.death()
 		else if(in_chamber.damage_type == HALLOSS)
