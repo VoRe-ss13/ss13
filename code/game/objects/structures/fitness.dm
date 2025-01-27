@@ -1,7 +1,12 @@
 /obj/structure/fitness
 	icon = 'icons/obj/stationobjs.dmi'
 	anchored = TRUE
+<<<<<<< HEAD
 	var/being_used = 0
+=======
+	var/fitness_being_used = 0
+	var/weightloss_power = 1
+>>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 
 /obj/structure/fitness/punchingbag
 	name = "punching bag"
@@ -54,11 +59,11 @@
 	if(user.weight < 70) //CHOMPAdd Begin Add weight loss to old fitness equipment
 		to_chat(user, span_notice("You're too skinny to risk losing any more weight!"))
 		return //CHOMPAdd End
-	if(being_used)
+	if(fitness_being_used)
 		to_chat(user, span_warning("The weight machine is already in use by somebody else."))
 		return
 	else
-		being_used = 1
+		fitness_being_used = 1
 		playsound(src, 'sound/effects/weightlifter.ogg', 50, 1)
 		user.set_dir(SOUTH)
 		flick("[icon_state]_[weight]", src)
@@ -67,7 +72,7 @@
 			user.adjust_nutrition(weight * -10)
 			user.weight -= 0.1 * weight * (0.01 * user.weight_loss) // CHOMPAdd Add weight loss to old fitness equipment
 			to_chat(user, span_notice("You lift the weights [qualifiers[weight]]."))
-			being_used = 0
+			fitness_being_used = 0
 		else
 			to_chat(user, span_notice("Against your previous judgement, perhaps working out is not for you."))
-			being_used = 0
+			fitness_being_used = 0
