@@ -1067,3 +1067,390 @@
 	name = "Lleill tail, Small"
 	icon_state = "tail3"
 	extra_overlay = "tail3_marking"
+<<<<<<< HEAD
+=======
+
+/datum/sprite_accessory/tail/altevian
+	name = "Altevian Tail"
+	icon_state = "altevian"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	lower_layer_dirs = list(SOUTH, WEST)
+
+/datum/sprite_accessory/tail/shark_finless
+	name = "shark tail, finless (colorable)"
+	desc = ""
+	icon_state = "sharktail_finless"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/tentacle
+	name = "Tentacle, colorable (vwag)"
+	desc = ""
+	icon_state = "tentacle"
+	ani_state = "tentacle_w"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/teshbeethorax
+	name = "Teshari bee thorax"
+	desc = ""
+	icon_state = "beethorax_tesh"
+
+/datum/sprite_accessory/tail/teshbuggo
+	name = "Teshari bug abdomen, colorable"
+	desc = ""
+	icon_state = "teshbug_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/teshbuggobee
+	name = "Teshari bug abdomen, bee top, dual-colorable"
+	desc = ""
+	icon_state = "teshbug_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshbee_markings"
+
+/datum/sprite_accessory/tail/teshbeefull
+	name = "Teshari bug abdomen, bee full, dual-colorable"
+	desc = ""
+	icon_state = "teshbug_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshbeefull_markings"
+
+/datum/sprite_accessory/tail/teshbuggounder
+	name = "Teshari bug abdomen, underside, dual-colorable"
+	desc = ""
+	icon_state = "teshbug_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshunder_markings"
+
+/datum/sprite_accessory/tail/teshbuggofirefly
+	name = "Teshari bug abdomen, firefly, dual-colorable"
+	desc = ""
+	icon_state = "teshbug_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshfirefly_markings"
+
+/datum/sprite_accessory/tail/fatteshbuggo
+	name = "Teshari fat bug abdomen, colorable"
+	desc = ""
+	icon_state = "teshbugfat_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/fatteshbuggobee
+	name = "Teshari fat bug abdomen, bee top, dual-colorable"
+	desc = ""
+	icon_state = "teshbugfat_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshfatbee_markings"
+
+/datum/sprite_accessory/tail/fatteshbeefull
+	name = "Teshari fat bug abdomen, bee full, dual-colorable"
+	desc = ""
+	icon_state = "teshbugfat_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshfatbeefull_markings"
+
+/datum/sprite_accessory/tail/fatteshbuggounder
+	name = "Teshari fat bug abdomen, underside, dual-colorable"
+	desc = ""
+	icon_state = "teshbugfat_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshfatunder_markings"
+
+/datum/sprite_accessory/tail/fatteshbuggofirefly
+	name = "Teshari fat bug abdomen, firefly, dual-colorable"
+	desc = ""
+	icon_state = "teshbugfat_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshfatfirefly_markings"
+
+/datum/sprite_accessory/tail/synthetic_stilt_legs
+	name = "synthetic stilt-legs, colorable"
+	desc = ""
+	icon_state = "synth_stilts"
+	color_blend_mode = ICON_MULTIPLY
+	do_colouration = 1
+	extra_overlay = "synth_stilts_marking"
+	hide_body_parts = list(BP_L_LEG, BP_L_FOOT, BP_R_LEG, BP_R_FOOT) //Exclude pelvis just in case.
+	clip_mask_icon = 'icons/mob/human_races/sprite_accessories/taurs.dmi'
+	clip_mask_state = "taur_clip_mask_def" //Used to clip off the lower part of suits & uniforms.
+
+/datum/sprite_accessory/tail/blade_like_tail
+	name = "Blade-like Tail"
+	icon_state = "blade-like-tail"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/sectdrone_tail
+	name = "Sect Drone Tail (To use with bodytype-marking)"
+	icon_state = "sectdrone_tail"
+	extra_overlay = "sectdrone_tail_mark"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/satyrtail
+	name = "goat legs with tail, colorable"
+	desc = ""
+	icon_state = "satyr"
+	color_blend_mode = ICON_MULTIPLY
+	do_colouration = 1
+	hide_body_parts = list(BP_L_LEG, BP_L_FOOT, BP_R_LEG, BP_R_FOOT) //Exclude pelvis just in case.
+	clip_mask_icon = 'icons/mob/human_races/sprite_accessories/taurs.dmi'
+	clip_mask_state = "taur_clip_mask_def" //Used to clip off the lower part of suits & uniforms.
+	extra_overlay = "horse" //I can't believe this works.
+
+/datum/sprite_accessory/tail/turkey //Would have been a really good thing for Thanksgiving probably but I'm not going to wait that long.
+	name = "turkey"
+	desc = ""
+	icon_state = "turkey"
+
+/datum/sprite_accessory/tail/shark_markings
+	name = "akula tail, colorable, tail and fins"
+	desc = ""
+	icon_state = "sharktail"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "sharktail_markings"
+
+/datum/sprite_accessory/tail/shark_stripes
+	name = "akula tail, colorable, stripe"
+	desc = ""
+	icon_state = "sharktail"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "sharktail_stripemarkings"
+
+/datum/sprite_accessory/tail/shark_tips
+	name = "akula tail, colorable, tips"
+	desc = ""
+	icon_state = "sharktail"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "sharktail_tipmarkings"
+
+/datum/sprite_accessory/tail/narrow_tail
+	name = "feathered narrow tail, colorable"
+	desc = ""
+	icon_state = "narrowtail"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/narrow_tail2
+	name = "feathered narrow tail, 2 colors"
+	desc = ""
+	icon_state = "narrowtail_2color"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "narrowtail_2color-1"
+
+// Dino Tails
+
+/datum/sprite_accessory/tail/clubtail
+	name = "dino clubtail, colorable"
+	desc = ""
+	icon_state = "clubtail"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "clubtail-1"
+
+/datum/sprite_accessory/tail/spiketail
+	name = "dino spiketail, colorable"
+	desc = ""
+	icon_state = "spiketail"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "spiketail-1"
+
+/datum/sprite_accessory/tail/kururak
+	name = "kururak tail"
+	desc = ""
+	icon_state = "kururak"
+
+//LONG TAILS ARE NOT TAUR BUTTS >:O
+/datum/sprite_accessory/tail/longtail
+	name = DEVELOPER_WARNING_NAME
+	icon = 'icons/mob/human_races/sprite_accessories/taurs.dmi'
+	offset_x = -16
+	do_colouration = 1 // Yes color, using tail color
+	color_blend_mode = ICON_MULTIPLY  // The sprites for taurs are designed for ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/longtail/shadekin_tail
+	name = "Shadekin Tail"
+	icon_state = "shadekin_s"
+
+/datum/sprite_accessory/tail/longtail/shadekin_tail/shadekin_tail_2c
+	name = "Shadekin Tail (dual color)"
+	extra_overlay = "shadekin_markings"
+
+/datum/sprite_accessory/tail/longtail/shadekin_tail/shadekin_tail_long
+	name = "Shadekin Long Tail"
+	icon_state = "shadekin_long_s"
+
+/datum/sprite_accessory/tail/longtail/zaprat
+	name = "bolt-shaped tail, dual color"
+	icon = 'icons/mob/human_races/sprite_accessories/taurs.dmi'
+	icon_state = "zaprat_s"
+	extra_overlay = "zaprat_markings"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/longtail/zaprat/heart
+	name = "heart-bolt-shaped tail, dual color"
+	icon_state = "zaprat_heart_s"
+	extra_overlay = "zaprat_heart_markings"
+
+/datum/sprite_accessory/tail/longtail/kaiju_tail_a_long
+	name = "Kaiju tail A, dual color"
+	icon_state = "kaiju_long_a"
+	extra_overlay = "kaiju_long_a_spikes"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/tail/longtail/kaiju_tail_a_long_glow
+	name = "Kaiju tail A, dual color, glow"
+	icon_state = "kaiju_long_a"
+	extra_overlay = "kaiju_long_a_spikes"
+	extra_overlay2 = "kaiju_long_a_spikes_glow"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+//RS backport tails
+
+/datum/sprite_accessory/tail/longtail/flagtail
+	name = "Flagtail"
+	icon = 'icons/rogue-star/tails_64x32_rs.dmi'
+	icon_state = "flagtail"
+	extra_overlay = "flagtail-1"
+	extra_overlay2 = "flagtail-2"
+
+/datum/sprite_accessory/tail/longtail/chonksqrl
+	name = "Squirrel (Big)"
+	icon = 'icons/rogue-star/tails_64x32_rs.dmi'
+	icon_state = "chonksqrl"
+	extra_overlay = "chonksqrl-m1"
+	extra_overlay2 = "chonksqrl-m2"
+
+/* // Exclusive Tails // CHOMPRemove start
+
+/datum/sprite_accessory/tail/peacocktail_red //this is ckey locked for now, but prettiebyrd wants these tails to be unlocked at a later date
+	name = "Peacock tail (vwag)"
+	desc = ""
+	icon = 'icons/mob/human_races/sprite_accessories/tails.dmi'
+	icon_state = "peacocktail_red"
+	ani_state = "peacocktail_red_w"
+	ckeys_allowed = list("prettiebyrd")
+
+/datum/sprite_accessory/tail/peacocktail //ditto
+	name = "Peacock tail, colorable (vwag)"
+	desc = ""
+	icon = 'icons/mob/human_races/sprite_accessories/tails.dmi'
+	icon_state = "peacocktail"
+	ani_state = "peacocktail_w"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	ckeys_allowed = list("prettiebyrd")
+
+/datum/sprite_accessory/tail/perrin_tentacles
+	name = "octopus tentacles"
+	desc = ""
+	icon_state = "perrintentacles"
+	ckeys_allowed = list("codeme", "siennaathens")
+
+/datum/sprite_accessory/tail/kara //SatinIsle fluff item
+	name = "Pterokara Tail"
+	icon = 'icons/mob/human_races/sprite_accessories/tails.dmi'
+	icon_state = "kara_tail"
+	ckeys_allowed = list("satinisle")
+
+/datum/sprite_accessory/tail/molenar_kitsune
+	name = "quintail kitsune tails (Molenar)"
+	desc = ""
+	icon_state = "molenar-kitsune"
+	ckeys_allowed = list("molenar")
+
+/datum/sprite_accessory/tail/miria_fluffdragon
+	name = "fluffdragon tail (Miria Masters)"
+	desc = ""
+	icon_state = "miria-fluffdragontail"
+	ckeys_allowed = list("miriamasters")
+
+/datum/sprite_accessory/tail/miria_kitsune
+	name = "Black kitsune tails (Miria Masters)"
+	desc = ""
+	icon_state = "miria-kitsunetail"
+	ckeys_allowed = list("miriamasters")
+
+/datum/sprite_accessory/tail/molenar_deathclaw
+	name = "deathclaw bits (Molenar)"
+	desc = ""
+	icon_state = "molenar-deathclaw"
+	ckeys_allowed = list("molenar","silvertalismen","jertheace")
+
+/datum/sprite_accessory/tail/runac
+	name = "fennecsune tails (Runac)"
+	desc = ""
+	icon_state = "runac"
+	ckeys_allowed = list("rebcom1807")
+
+/datum/sprite_accessory/tail/reika //Leaving this since it was too hard to split the wings from the tail.
+	name = "fox tail (+ beewings) (Reika)"
+	desc = ""
+	icon_state = "reika"
+	ckeys_allowed = list("rikaru19xjenkins")
+
+/datum/sprite_accessory/tail/rosey
+	name = "tritail kitsune tails (Rosey)"
+	desc = ""
+	icon_state = "rosey_three"
+	ckeys_allowed = list("joey4298")
+
+/datum/sprite_accessory/tail/rosey2
+	name = "pentatail kitsune tails (Rosey)" //I predict seven tails next. ~CK
+	desc = ""
+	icon_state = "rosey_five"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	ckeys_allowed = list("joey4298")
+
+/datum/sprite_accessory/tail/scree
+	name = "green taj tail (Scree)"
+	desc = ""
+	icon_state = "scree"
+	ckeys_allowed = list("scree")
+
+/datum/sprite_accessory/tail/aronai
+	name = "aronai tail (Aronai)"
+	desc = ""
+	icon_state = "aronai"
+	ckeys_allowed = list("arokha")
+
+/datum/sprite_accessory/tail/cabletail
+    name = "cabletail"
+    desc = "cabletail"
+    icon_state = "cabletail"
+    ckeys_allowed = list("tucker0666")
+
+/datum/sprite_accessory/tail/featherfluff_tail
+    name = "featherfluff_tail"
+    desc = ""
+    icon_state = "featherfluff_tail"
+    ckeys_allowed = list("tucker0666")
+
+/datum/sprite_accessory/tail/holly
+	name = "tigress tail (Holly)"
+	desc = ""
+	icon_state = "tigresstail"
+	ckeys_allowed = list("hoodoo")
+*/// CHOMPRemove End
+>>>>>>> 38ccf4f9a8 ([MIRROR] Marking Fix (#9959))

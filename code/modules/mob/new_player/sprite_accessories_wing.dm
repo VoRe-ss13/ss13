@@ -158,3 +158,173 @@
 	icon_state = "mantisarms_s"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
+<<<<<<< HEAD
+=======
+	extra_overlay = "drago_wing_2"
+
+/datum/sprite_accessory/wing/aeromorph_flat
+	name = "aeromorph wings, flat"
+	desc = ""
+	icon_state = "aeromorph_flat"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "aeromorph_flat_1"
+	extra_overlay2 = "aeromorph_flat_2"
+
+/datum/sprite_accessory/wing/teshbee
+	name = "Teshari bee wings"
+	desc = ""
+	icon = 'icons/mob/human_races/sprite_accessories/wings.dmi'
+	icon_state = "beewings_tesh"
+
+/datum/sprite_accessory/wing/teshdragonfly
+	name = "Teshari dragonfly wings"
+	desc = ""
+	icon = 'icons/mob/human_races/sprite_accessories/wings.dmi'
+	icon_state = "dragonfly_tesh"
+
+/datum/sprite_accessory/wing/snail_shell
+	name = "snail shell, colorable"
+	desc = ""
+	icon_state = "snail_shell"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "snail_shell_markings"
+
+/datum/sprite_accessory/wing/sectdrone_wing //We should some day make a variable to make some wings not be able to fly
+	name = "Sect drone wings (To use with bodytype marking)"
+	desc = ""
+	icon = 'icons/mob/human_races/sprite_accessories/wings.dmi'
+	icon_state = "sectdrone_wing"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/wing/winglets //smol wingarms at the elbow
+	name = "feathered winglets"
+	desc = ""
+	icon_state = "winglets"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/wing/wingarms_speckles
+	name = "wingarms, speckled"
+	desc = ""
+	icon_state = "wingarms_speckles"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "wingarms_speckles-speckles"
+
+/datum/sprite_accessory/wing/wingarms_2tone
+	name = "wingarms, 2 colors"
+	desc = ""
+	icon_state = "wingarms_2tone"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "wingarms_2tone-1"
+
+/datum/sprite_accessory/wing/feather2_speckles
+	name = "large feathered wings, speckled"
+	desc = ""
+	icon_state = "feather2_speckles"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "feather2_speckles-speckles"
+
+/datum/sprite_accessory/wing/feather2_tricolor
+	name = "large feathered wings, tricolor"
+	desc = ""
+	icon_state = "feather2_tricolor"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "feather2_tricolor-1"
+	extra_overlay2 = "feather2_tricolor-2"
+
+/datum/sprite_accessory/wing/speckled_tricolor
+	name = "large speckled leather wings, tricolor"
+	desc = ""
+	// not ckey locked, just couldn't think of a better icon state name
+	icon_state = "shadow_tricolor"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "shadow_tricolor-1"
+	extra_overlay2 = "shadow_tricolor-2"
+
+/datum/sprite_accessory/wing/speckled_tricolor
+	name = "large speckled leather wings, tricolor, sparkling"
+	desc = ""
+	// not ckey locked, just couldn't think of a better icon state name
+	icon_state = "shadow_tricolor"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "shadow_tricolor-1"
+	extra_overlay2 = "shadow_tricolor-2-sparkle"
+
+// dino wings
+/datum/sprite_accessory/wing/pterodactyl_wings
+	name = "pterodactyl wings"
+	desc = ""
+	icon_state = "pterodactyl_wing_frame"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "pterodactyl_wing_membrane"
+
+/datum/sprite_accessory/wing/kaiju_spines_a
+	name = "kaiju spines A, colorable"
+	desc = ""
+	icon_state = "kaiju_spikes_a"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/wing/kaiju_spines_a_glow
+	name = "kaiju spines A, colorable, glow"
+	desc = ""
+	icon_state = "kaiju_spikes_a"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "kaiju_spikes_a_glow"
+
+/* //exclusive wings // CHOMPRemove Start
+/datum/sprite_accessory/wing/kara
+	name = "Pterokara wings"
+	desc = ""
+	icon = 'icons/mob/human_races/sprite_accessories/wings.dmi'
+	icon_state = "feathered_kara"
+	ckeys_allowed = list("satinisle")
+
+/datum/sprite_accessory/wing/sepulchre
+	name = "demon wings (Sepulchre)"
+	desc = ""
+	icon_state = "sepulchre_wings"
+	ckeys_allowed = list("sepulchre")
+
+/datum/sprite_accessory/wing/miria_fluffdragon
+	name = "fluffdragon wings (Miria Masters)"
+	desc = ""
+	icon_state = "miria-fluffdragontail"
+	ckeys_allowed = list("miriamasters")
+
+/datum/sprite_accessory/wing/scree
+	name = "green taj wings (Scree)"
+	desc = ""
+	icon_state = "scree-wings"
+	ckeys_allowed = list("scree")
+
+/datum/sprite_accessory/wing/kerena
+	name = "wingwolf wings (Kerena)"
+	desc = ""
+	icon_state = "kerena-wings"
+	ckeys_allowed = list("somekindofpony")
+
+/datum/sprite_accessory/wing/shock //Unable to split the tail from the wings in the sprite, so let's just classify it as wings.
+	name = "pharoah hound tail (Shock Diamond)"
+	desc = ""
+	icon_state = "shock"
+	ckeys_allowed = list("icowom")
+
+/datum/sprite_accessory/wing/citheroniamoth
+	name = "citheronia wings"
+	desc = ""
+	icon_state = "citheronia_wings"
+	ckeys_allowed = list("kira72")
+*/// CHOMPRemove End
+>>>>>>> 38ccf4f9a8 ([MIRROR] Marking Fix (#9959))
