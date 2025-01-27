@@ -90,6 +90,13 @@
 			icon = 'icons/obj/xenoarchaeology.dmi'
 			item_type = "instrument"
 			icon_state = "instrument"
+<<<<<<< HEAD
+=======
+			var/possible_object_paths = list()
+			possible_object_paths += subtypesof(/obj/item/instrument)
+			var/new_instrument = pick(possible_object_paths)
+			new_item = new new_instrument(src.loc)
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 			if(prob(30))
 				become_anomalous = TRUE
 			if(prob(30))
@@ -100,7 +107,14 @@
 				"You wonder what kind of music was made with it")]."
 		if(ARCHAEO_KNIFE)
 			item_type = "[pick("bladed knife","serrated blade","sharp cutting implement")]"
+<<<<<<< HEAD
 			new_item = new /obj/item/material/knife(src.loc)
+=======
+			var/possible_object_paths = list(/obj/item/material/knife) //As far as I can tell, this is more 'random' than using typesof, as it just picks a random one vs going down the list with a prob (as seen below)
+			possible_object_paths += subtypesof(/obj/item/material/knife)
+			var/obj/item/material/knife/new_knife = pick(possible_object_paths)
+			new_item = new new_knife(src.loc)
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 			additional_desc = "[pick("It doesn't look safe.",\
 			"It looks wickedly jagged",\
 			"There appear to be [pick("dark red","dark purple","dark green","dark blue")] stains along the edges")]."
@@ -119,7 +133,14 @@
 			apply_image_decorations = TRUE
 		if(ARCHAEO_HANDCUFFS)
 			item_type = "handcuffs"
+<<<<<<< HEAD
 			new_item = new /obj/item/handcuffs(src.loc)
+=======
+			var/possible_object_paths = list(/obj/item/handcuffs)
+			possible_object_paths += subtypesof(/obj/item/handcuffs)
+			var/new_cuffs = pick(possible_object_paths)
+			new_item = new new_cuffs(src.loc)
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 			additional_desc = "[pick("They appear to be for securing two things together","Looks kinky","Doesn't seem like a children's toy")]."
 		if(ARCHAEO_BEARTRAP)
 			item_type = "[pick("wicked","evil","byzantine","dangerous")] looking [pick("device","contraption","thing","trap")]"
@@ -132,7 +153,14 @@
 			"There appear to be [pick("dark red","dark purple","dark green","dark blue")] stains along part of it")]."
 		if(ARCHAEO_LIGHTER)
 			item_type = "[pick("cylinder","tank","chamber")]"
+<<<<<<< HEAD
 			new_item = new /obj/item/flame/lighter(src.loc)
+=======
+			var/possible_object_paths = list()
+			possible_object_paths += subtypesof(/obj/item/flame)
+			var/new_lighter = pick(possible_object_paths)
+			new_item = new new_lighter(src.loc)
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 			additional_desc = "There is a tiny device attached."
 			if(prob(30))
 				apply_image_decorations = TRUE
@@ -150,16 +178,24 @@
 				apply_image_decorations = TRUE
 		if(ARCHAEO_GASTANK)
 			item_type = "[pick("cylinder","tank","chamber")]"
+<<<<<<< HEAD
 			if(prob(25))
 				new_item = new /obj/item/tank/air(src.loc)
 			else if(prob(50))
 				new_item = new /obj/item/tank/anesthetic(src.loc)
 			else
 				new_item = new /obj/item/tank/phoron(src.loc)
+=======
+			var/possible_object_paths = list()
+			possible_object_paths += subtypesof(/obj/item/tank)
+			var/new_tank = pick(possible_object_paths)
+			new_item = new new_tank(src.loc)
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 			icon_state = pick("oxygen","oxygen_fr","oxygen_f","phoron","anesthetic")
 			additional_desc = "It [pick("gloops","sloshes")] slightly when you shake it."
 		if(ARCHAEO_TOOL)
 			item_type = "tool"
+<<<<<<< HEAD
 			if(prob(25))
 				new_item = new /obj/item/tool/wrench(src.loc)
 			else if(prob(25))
@@ -169,11 +205,20 @@
 			if(prob(40))
 				new_item.color = rgb(rand(0,255),rand(0,255),rand(0,255))
 				apply_image_decorations = TRUE
+=======
+			var/possible_object_paths = list()
+			possible_object_paths += subtypesof(/obj/item/tool)
+			var/new_tool = pick(possible_object_paths)
+			new_item = new new_tool(src.loc)
+			new_item.color = rgb(rand(0,255),rand(0,255),rand(0,255))
+			apply_image_decorations = TRUE
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 			additional_desc = "[pick("It doesn't look safe.",\
 			"You wonder what it was used for",\
 			"There appear to be [pick("dark red","dark purple","dark green","dark blue")] stains on it")]."
 		if(ARCHAEO_METAL)
 			apply_material_decorations = FALSE
+<<<<<<< HEAD
 			var/list/possible_spawns = list()
 			possible_spawns += /obj/item/stack/material/steel
 			possible_spawns += /obj/item/stack/material/plasteel
@@ -188,6 +233,23 @@
 
 			var/new_type = pick(possible_spawns)
 			new_item = new new_type(src.loc)
+=======
+			var/possible_object_paths = list()
+			possible_object_paths += subtypesof(/obj/item/stack/material)
+			//I looked through the code for any materials that should be banned...Most of the "DO NOT EVER GIVE THESE TO ANYONE EVER" materials are only in their /datum form and the ones that have sheets spawn in as normal sheets (ex: hull datums) so...This is here in case it's needed in the future.
+			var/list/banned_sheet_materials = list(
+				// Include if you enable in the .dme /obj/item/stack/material/debug
+				)
+			var/new_metal = /obj/item/stack/material/supermatter
+			for(var/x=1;x<=10;x++) //You got 10 chances to hit a metal that is NOT banned.
+				var/picked_metal = pick(possible_object_paths) //We select
+				if(picked_metal in banned_sheet_materials)
+					continue
+				else
+					new_metal = picked_metal
+					break
+			new_item = new new_metal(src.loc)
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 			new_item:amount = rand(5,45)
 		if(ARCHAEO_PEN)
 			if(prob(75))
@@ -297,6 +359,7 @@
 			item_type = new_item.name
 		if(ARCHAEO_LASER)
 			//energy gun
+<<<<<<< HEAD
 			var/spawn_type = pick(\
 			/obj/item/gun/energy/laser/practice/xenoarch,\
 			/obj/item/gun/energy/laser/xenoarch,\
@@ -321,6 +384,19 @@
 					LAZYSET(new_gun.origin_tech, TECH_ARCANE, 1)
 				else
 					new_gun.power_supply.charge = 0
+=======
+			var/obj/item/gun/energy/new_gun = new /obj/item/gun/energy/laser/xenoarch(src.loc)
+			var/possible_laser_paths = list()
+			possible_laser_paths += subtypesof(/obj/item/projectile/beam)
+			// possible_laser_paths += /obj/item/projectile/animate //Funny 'turns object into mimic' beam. Currently unticked in the .dme, but here in case it gets toggled!
+			possible_laser_paths += /obj/item/projectile/ion
+			possible_laser_paths += subtypesof(/obj/item/projectile/energy/floramut)
+			var/new_laser = pick(possible_laser_paths)
+			new_gun.projectile_type = new_laser
+			new_item = new_gun
+			new_item.icon_state = "egun[rand(1,18)]"
+			new_gun.desc = "This is an antique energy weapon, you're not sure if it will fire or not."
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 
 			item_type = "gun"
 		if(ARCHAEO_GUN)
@@ -328,7 +404,23 @@
 			var/obj/item/gun/projectile/new_gun = new /obj/item/gun/projectile/revolver(src.loc)
 			new_item = new_gun
 			new_item.icon_state = "gun[rand(1,7)]"
+<<<<<<< HEAD
 			new_item.icon = 'icons/obj/xenoarchaeology.dmi'
+=======
+			item_type = "gun"
+			//There is no 'global list of all the gun caliber types' so...Whatever. This will have to do. (Side note: After further review, making it a global list would result in the gun requiring unobtainable calibers, so this is ideal.)
+			//When someone does make a global list of all the calibers, replace the below with it.
+			new_gun.caliber = "[pick(".357", "12g", ".38", "7.62mm", ".38", "9mm", "10mm", ".45", "5.45mm", "7.62mm")]" //A list of gun calibers that are obtainable.
+			additional_desc = "[pick("A dusty engraving on the side says" + span_bold("[new_gun.caliber]") + " The ammo slot seems like it'd only fit single shells at a time.",\
+			"The gun's barrel has " + span_bold("[new_gun.caliber]") + " barely visible on it. The ammo slot seems like it'd only fit single shells at a time.")]"
+			var/possible_bullet_paths = list()
+			possible_bullet_paths += subtypesof(/obj/item/projectile/bullet) //As funny as it would be to have your pistol shoot pulse rifle rounds, sorry.
+			//You COULD add a bullet blacklist here. Look at the material code below if you want an example of how to do so.
+			//During testing I found nothing EXTRAORDINARILY gamebreaking (although supermatter fuel rod gun rounds were VERY comical, but still obtainable in game)
+			//But maybe someone will add in a projectile/bullet/admin_instakills_you that needs to be blacklisted!
+			var/new_bullet = pick(possible_bullet_paths)
+			new_gun.projectile_type = new_bullet //Instead, you can get anything from chem darts to rifle rounds to everything in between.
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 
 			//33% chance to be able to reload the gun with human ammunition
 			if(prob(66))
@@ -410,6 +502,21 @@
 			"The mouth is wide open in a death rictus, the victim would appear to have died screaming.")
 			apply_image_decorations = FALSE
 			apply_material_decorations = FALSE
+<<<<<<< HEAD
+=======
+
+			//We get a list of random internal organs and spawn it. Yes. You can get a still beating heart. Xenoarch is spooky.
+			var/possible_object_paths = list()
+			possible_object_paths += subtypesof(/obj/item/organ/internal)
+
+			//BLACKLIST BELOW
+			possible_object_paths -= list(/obj/item/organ/internal/mmi_holder, /obj/item/organ/internal/stack/vox)
+			//BLACKLIST ABOVE
+
+			var/new_organ = pick(possible_object_paths)
+			new_item = new new_organ(src.loc)
+
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 		if(ARCHAEO_REMAINS_ROBOT)
 			//robot remains
 			apply_prefix = FALSE
@@ -508,10 +615,27 @@
 				/obj/vehicle/boat,
 				/obj/vehicle/boat/dragon
 				)
+<<<<<<< HEAD
 			if(prob(30))
 				new /obj/item/oar(src.loc, new_boat_mat)
 			var/new_type = pick(alien_stuff)
 			new_item = new new_type(src.loc, new_boat_mat)
+=======
+			apply_prefix = FALSE
+			var/possible_object_paths = list()
+			possible_object_paths += subtypesof(/datum/material)
+			var/new_boat_mat = "MAT_STEEL"
+			for(var/x=1;x<=5;x++) //You got 5 chances to hit a metal that is NOT banned.
+				var/datum/material/picked_metal = pick(possible_object_paths) //We select
+				if(picked_metal in banned_materials)
+					continue
+				else
+					new_boat_mat = "[picked_metal.name]" //set_material requires NAME.
+					break
+			new /obj/item/oar(src.loc, new_boat_mat)
+			var/obj/vehicle/boat/new_boat = pick(boat_types)
+			new_item = new new_boat(src.loc, new_boat_mat)
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 			item_type = new_item.name
 
 		if(ARCHAEO_IMPERION_CIRCUIT)
@@ -594,6 +718,7 @@
 			item_type = new_item.name
 
 	if(istype(new_item, /obj/item/material))
+<<<<<<< HEAD
 		var/new_item_mat = pickweight(list(
 			MAT_STEEL = 80,
 			MAT_WOOD = 20,
@@ -612,6 +737,18 @@
 			MAT_MORPHIUM = 2,
 			MAT_SUPERMATTER = 1
 			))
+=======
+		var/possible_object_paths = list()
+		possible_object_paths += subtypesof(/datum/material)
+		var/new_item_mat = "MAT_STEEL"
+		for(var/x=1;x<=5;x++) //You got 5 chances to hit a metal that is NOT banned.
+			var/datum/material/picked_metal = pick(possible_object_paths) //We select
+			if(picked_metal in banned_materials)
+				continue
+			else
+				new_item_mat = "[picked_metal.name]" //set_material requires NAME.
+				break
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 		var/obj/item/material/MW = new_item
 		MW.applies_material_colour = TRUE
 		MW.set_material(new_item_mat)
@@ -622,6 +759,59 @@
 		else
 			MW.force *= 0.3
 
+<<<<<<< HEAD
+=======
+	if(istype(secondary_item, /obj/item/material))
+		var/possible_object_paths = list()
+		possible_object_paths += subtypesof(/datum/material)
+		var/new_item_mat = "MAT_STEEL"
+		for(var/x=1;x<=5;x++)
+			var/datum/material/picked_metal = pick(possible_object_paths)
+			if(picked_metal in banned_materials)
+				continue
+			else
+				new_item_mat = "[picked_metal.name]"
+				break
+		var/obj/item/material/MW = secondary_item
+		MW.applies_material_colour = TRUE
+		MW.set_material(new_item_mat)
+		if(istype(MW, /obj/item/material/twohanded))
+			var/obj/item/material/twohanded/TH = MW
+			TH.force_unwielded *= 0.7
+			TH.force_wielded *= 0.5
+		else
+			MW.force *= 0.3
+
+	//Why is ring/material and item/material two different things (and have the same /datum/material var) instead of datum/material being on /obj ? Hell if I know. Someone should fix that eventually. Outside of the scope of this PR.
+	if(istype(new_item, /obj/item/clothing/accessory/ring/material))
+		var/possible_object_paths = list()
+		possible_object_paths += subtypesof(/datum/material)
+		var/new_item_mat = "MAT_STEEL"
+		for(var/x=1;x<=5;x++) //You got 5 chances to hit a metal that is NOT banned.
+			var/datum/material/picked_metal = pick(possible_object_paths) //We select
+			if(picked_metal in banned_materials)
+				continue
+			else
+				new_item_mat = "[picked_metal.name]" //set_material requires NAME.
+				break
+		var/obj/item/clothing/accessory/ring/material/MW = new_item
+		MW.set_material(new_item_mat)
+
+	if(istype(secondary_item, /obj/item/clothing/accessory/ring/material))
+		var/possible_object_paths = list()
+		possible_object_paths += subtypesof(/datum/material)
+		var/new_item_mat = "MAT_STEEL"
+		for(var/x=1;x<=5;x++)
+			var/datum/material/picked_metal = pick(possible_object_paths)
+			if(picked_metal in banned_materials)
+				continue
+			else
+				new_item_mat = "[picked_metal.name]"
+				break
+		var/obj/item/clothing/accessory/ring/material/MW = secondary_item
+		MW.set_material(new_item_mat)
+
+>>>>>>> d0b9e0bfdd ([MIRROR] Makes xenoarch add things to lists not dumbly (#9961))
 	var/decorations = ""
 	if(apply_material_decorations)
 		source_material = pick("cordite","quadrinium","steel","titanium","aluminium","ferritic-alloy","plasteel","duranium")
