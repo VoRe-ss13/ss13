@@ -21,8 +21,8 @@
 	var/last_activation = 0
 
 /datum/artifact_effect/Destroy()
-	if(master)
-		master = null
+	master = null //Master still exists even if our effect gets destroyed. No need to qdel_null.
+	qdel_null(active_effect)
 	..()
 
 /datum/artifact_effect/proc/get_master_holder()	// Return the effectmaster's holder, if it is set to an effectmaster. Otherwise, master is the target object.
@@ -113,6 +113,7 @@
 /datum/artifact_effect/proc/getDescription()
 	. = "<b>"
 	switch(effect_type)
+<<<<<<< HEAD
 		if(EFFECT_ENERGY)
 			. += "Concentrated energy emissions"
 		if(EFFECT_PSIONIC)
@@ -127,6 +128,56 @@
 			. += "Interdimensional/bluespace? phasing"
 		if(EFFECT_SYNTH)
 			. += "Atomic synthesis"
+=======
+		if(EFFECT_UNKNOWN)
+			. += span_bold("have an unknown effect") //Should never happen but you know, whatever. Failsafe.
+		if(EFFECT_ANIMATE)
+			. += span_bold("have intermittent movement either towards or away from an individual")
+		if(EFFECT_FEELINGS)
+			. += span_bold("cause subjects to feel a certain way")
+		if(EFFECT_CELL)
+			. += span_bold("charges or drains electronic devices in range")
+		if(EFFECT_TEMPERATURE)
+			. += span_bold("adjust the thermal energy in an area")
+		/* //Not Yet Implemented
+		if(EFFECT_DNASWITCH)
+			. += "scramble the DNA of a subject, resulting in rampant genetic mutation"
+		*/
+		if(EFFECT_ELECTIC_FIELD)
+			. += "discharge concentrated electrical energy"
+		if(EFFECT_EMP)
+			. += "discharge electromagnetic energy"
+		if(EFFECT_FEYSIGHT)
+			. += "invoke visions in subjects" //spooky.
+		if(EFFECT_FORCEFIELD)
+			. += "create a forcefield within a short range"
+		if(EFFECT_GAIA)
+			. += "transfer healing energies to nearby flora"
+		if(EFFECT_GAS)
+			. += "emits gas of some type"
+		if(EFFECT_GRAVIATIONAL_WAVES)
+			. += "create local gravitational distortions"
+		if(EFFECT_HEALTH)
+			. += "transfer energies into subjects, harming or healing them"
+		if(EFFECT_POLTERGEIST)
+			. += "cause local movement phenomena"
+		if(EFFECT_RADIATE)
+			. += "transfer high energy gamma rays into subjects"
+		if(EFFECT_RESURRECT)
+			. += "transfer the lifeforce from one entity to another, potentially allowing the ressurection of deceased entities"
+		if(EFFECT_ROBOT_HEALTH)
+			. += "transfer energies into synthetic lifeforms, harming or healing them"
+		if(EFFECT_SLEEPY)
+			. += "invoke drowsiness in subjects"
+		if(EFFECT_STUN)
+			. += "discharge non-lethal amounts of energy into subjects"
+		if(EFFECT_TELEPORT)
+			. += "displace subjects using bluespace phenomena"
+		if(EFFECT_VAMPIRE)
+			. += "drain the blood of subjects, creating creatures or anomalous artifacts in the process"
+		if(EFFECT_DNASWITCH)
+			. += "mutate the cells of the organism that touches it, resulting in rampant mutations"
+>>>>>>> 51aa7b87d0 ([MIRROR] Some misc xenoarch fixes (#9960))
 		else
 			. += "Low level energy emissions"
 

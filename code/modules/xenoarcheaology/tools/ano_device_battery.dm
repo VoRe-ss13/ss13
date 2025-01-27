@@ -5,7 +5,10 @@
 	var/datum/artifact_effect/battery_effect
 	var/capacity = 500
 	var/stored_charge = 0
-	var/effect_id = ""
+
+/obj/item/anobattery/Destroy()
+	battery_effect = null
+	..()
 
 /obj/item/anobattery/advanced
 	name = "advanced anomaly battery"
@@ -42,6 +45,19 @@
 	..()
 	START_PROCESSING(SSobj, src)
 
+<<<<<<< HEAD
+=======
+/obj/item/anodevice/Destroy()
+	inserted_battery = null
+	archived_loc = null
+	last_user_touched = null
+	..()
+
+/obj/item/anodevice/equipped(var/mob/user, var/slot)
+	last_user_touched = user
+	..()
+
+>>>>>>> 51aa7b87d0 ([MIRROR] Some misc xenoarch fixes (#9960))
 /obj/item/anodevice/attackby(var/obj/I as obj, var/mob/user as mob)
 	if(istype(I, /obj/item/anobattery))
 		if(!inserted_battery)
