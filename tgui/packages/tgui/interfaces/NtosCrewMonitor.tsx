@@ -1,7 +1,12 @@
 import { useState } from 'react';
+import { NtosWindow } from 'tgui/layouts';
 
+<<<<<<< HEAD
 import { NtosWindow } from '../layouts';
 import { CrewMonitorContent } from './CrewMonitor';
+=======
+import { CrewMonitorContent } from './CrewMonitor/CrewMonitorContent';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 export const NtosCrewMonitor = () => {
   const [tabIndex, setTabIndex] = useState<number>(0);

@@ -1,9 +1,15 @@
 /* eslint react/no-danger: "off" */
+<<<<<<< HEAD
 import { KEY } from 'common/keys';
 import { round, toFixed } from 'common/math';
 import { useState } from 'react';
 
 import { useBackend } from '../../backend';
+=======
+import { RefObject, useEffect, useRef, useState } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 import {
   Box,
   Button,
@@ -12,8 +18,15 @@ import {
   Input,
   LabeledList,
   Section,
+<<<<<<< HEAD
 } from '../../components';
 import { Window } from '../../layouts';
+=======
+  Stack,
+} from 'tgui-core/components';
+import { KEY } from 'tgui-core/keys';
+import { round, toFixed } from 'tgui-core/math';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 const Level = {
   0: 'Adminhelp',

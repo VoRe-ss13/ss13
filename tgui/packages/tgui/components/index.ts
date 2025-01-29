@@ -4,6 +4,7 @@
  * @license MIT
  */
 
+<<<<<<< HEAD
 export { AnimatedNumber } from './AnimatedNumber';
 export { Autofocus } from './Autofocus';
 export { Box } from './Box';
@@ -38,3 +39,8 @@ export { Table } from './Table';
 export { Tabs } from './Tabs';
 export { TextArea } from './TextArea';
 export { Tooltip } from './Tooltip';
+=======
+export { Interactive } from './Interactive';
+export { NanoMap } from './NanoMap';
+export { Pointer } from './Pointer';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))

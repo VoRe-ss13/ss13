@@ -1,5 +1,3 @@
-import { toFixed } from 'common/math';
-import { BooleanLike } from 'common/react';
 import { useBackend } from 'tgui/backend';
 import {
   Box,
@@ -8,10 +6,18 @@ import {
   LabeledList,
   NoticeBox,
   Section,
+<<<<<<< HEAD
 } from 'tgui/components';
 import { formatTime } from 'tgui/format';
 
 import { RankIcon } from '../../../common/RankIcon';
+=======
+  Stack,
+} from 'tgui-core/components';
+import { formatTime } from 'tgui-core/format';
+import { toFixed } from 'tgui-core/math';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 type Data = {
   card: string | null;
