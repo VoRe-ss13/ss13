@@ -262,11 +262,30 @@
 	body_parts = list(BP_HEAD)
 	color_blend_mode = ICON_MULTIPLY
 
+/datum/sprite_accessory/marking/ch/cow_head
+	name = "Cow Snout"
+	icon_state = "cow_head"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/cow_nose
+	name = "Cow Nose"
+	icon_state = "cow_nose"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/smallchubbybelly
+	name = "Belly Small"
+	icon_state = "smallchubbybelly"
+	body_parts = list(BP_TORSO)
+	color_blend_mode = ICON_MULTIPLY
+
 /datum/sprite_accessory/marking/ch/sloog_head
 	name = "sloog head"
 	icon = 'modular_chomp/icons/mob/human_races/sprite_accessories/sloog.dmi'
 	icon_state = "slooghead"
 	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
 	// placed in seperate dmi till normal one is functional.
 
 

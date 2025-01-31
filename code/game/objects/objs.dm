@@ -39,16 +39,14 @@
 			m.visible_message(span_notice("\The [m] tumbles out of \the [src]!"))
 	//VOREStation Add End
 
-	//CHOMPAdd Start possessed item cleanup
 	if(istype(src, /obj/item))
 		var/obj/item/I = src
 		if(I.possessed_voice && I.possessed_voice.len)
 			for(var/mob/living/voice/V in I.possessed_voice)
 				if(!V.tf_mob_holder)
 					V.ghostize(0)
-					V.stat = DEAD //CHOMPAdd - Helps with autosleeving
-					V.Destroy()
-	//CHOMPAdd End
+					V.stat = DEAD
+					qdel(V)
 
 	return ..()
 
@@ -113,7 +111,7 @@
 			if ((M.client && M.machine == src))
 				is_in_use = 1
 				src.attack_hand(M)
-		if (istype(usr, /mob/living/silicon/ai) || istype(usr, /mob/living/silicon/robot))
+		if (isAI(usr) || isrobot(usr))
 			if (!(usr in nearby))
 				if (usr.client && usr.machine==src) // && M.machine == src is omitted because if we triggered this by using the dialog, it doesn't matter if our machine changed in between triggering it and this - the dialog is probably still supposed to refresh.
 					is_in_use = 1
@@ -121,7 +119,7 @@
 
 		// check for TK users
 
-		if (istype(usr, /mob/living/carbon/human))
+		if (ishuman(usr))
 			var/mob/living/carbon/human/H = usr
 			if(H.get_type_in_hands(/obj/item/tk_grab))
 				if(!(H in nearby))
