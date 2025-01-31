@@ -174,8 +174,13 @@
 	attack_verb = list("drilled")
 
 /obj/item/pickaxe/excavationdrill/attack_self(mob/user as mob)
+<<<<<<< HEAD
 	var/depth = tgui_input_number(usr, "Put the desired depth (1-30 centimeters).", "Set Depth", 30, 30, 1)
 	if(depth>30 || depth<1)
+=======
+	var/depth = tgui_input_number(user, "Put the desired depth (1-60 centimeters).", "Set Depth", excavation_amount, 60, 1)
+	if(depth>60 || depth<1)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		to_chat(user, span_notice("Invalid depth."))
 		return
 	excavation_amount = depth
