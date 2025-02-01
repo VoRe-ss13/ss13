@@ -475,6 +475,22 @@
 	extra_overlay = "tesharilowinner"
 	//species_allowed = list(SPECIES_TESHARI, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 
+/datum/sprite_accessory/ears/tesh_pattern_ear_male
+	name = "Teshari male ear pattern (colorable)"
+	desc = ""
+	icon_state = "teshari"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshari_male_pattern"
+
+/datum/sprite_accessory/ears/tesh_pattern_ear_female
+	name = "Teshari female ear pattern (colorable)"
+	desc = ""
+	icon_state = "teshari"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshari_female_pattern"
+
 /datum/sprite_accessory/ears/inkling
 	name = "colorable mature inkling hair"
 	desc = ""
