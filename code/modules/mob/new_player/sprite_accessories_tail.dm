@@ -320,7 +320,7 @@
 	color_blend_mode = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/sneptail
-	name = "Snep/Furry Tail (vwag)"
+	name = "Snep/Furry Tail (vwag) (old)"
 	desc = ""
 	icon_state = "sneptail"
 	ani_state = "sneptail_w"
@@ -329,6 +329,18 @@
 	extra_overlay = "sneptail_mark"
 	extra_overlay_w = "sneptail_mark_w"
 
+<<<<<<< HEAD
+=======
+/datum/sprite_accessory/tail/sneptail_new //From Skyrat
+	name = "Snep/Furry Tail (vwag) (new)"
+	desc = ""
+	icon_state = "sneptail_new"
+	ani_state = "sneptail_new_w"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "sneptail_new_mark"
+	extra_overlay_w = "sneptail_new_mark_w"
+>>>>>>> dbebd60d68 ([MIRROR] Adds new  sneptail (#10046))
 
 /datum/sprite_accessory/tail/tiger_new
 	name = "tiger tail (vwag)"
