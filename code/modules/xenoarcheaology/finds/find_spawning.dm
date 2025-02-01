@@ -297,6 +297,7 @@
 			item_type = new_item.name
 		if(ARCHAEO_LASER)
 			//energy gun
+<<<<<<< HEAD
 			var/spawn_type = pick(\
 			/obj/item/gun/energy/laser/practice/xenoarch,\
 			/obj/item/gun/energy/laser/xenoarch,\
@@ -323,12 +324,58 @@
 					new_gun.power_supply.charge = 0
 
 			item_type = "gun"
+=======
+			var/obj/item/gun/energy/new_gun = new /obj/item/gun/energy/laser/xenoarch(src.loc)
+			var/possible_laser_paths = list()
+			possible_laser_paths += subtypesof(/obj/item/projectile/beam)
+			// possible_laser_paths += /obj/item/projectile/animate //Funny 'turns object into mimic' beam. Currently unticked in the .dme, but here in case it gets toggled!
+			possible_laser_paths += /obj/item/projectile/ion
+			possible_laser_paths += subtypesof(/obj/item/projectile/energy/floramut)
+			// THE BLACKLIST
+			possible_laser_paths -= list(/obj/item/projectile/beam/pulse, /obj/item/projectile/beam/pulse/heavy)
+			var/new_laser = pick(possible_laser_paths)
+			new_gun.projectile_type = new_laser
+			new_item = new_gun
+			new_item.icon_state = "egun[rand(1,18)]"
+			new_gun.desc = "This is an antique energy weapon."
+
+			//10% chance to have an unchargeable cell
+			//15% chance to gain a random amount of starting energy, otherwise start with an empty cell
+			if(prob(10))
+				new_gun.power_supply.maxcharge = 0
+				LAZYSET(new_gun.origin_tech, TECH_ARCANE, rand(0, 1))
+			if(prob(15))
+				new_gun.power_supply.charge = rand(0, new_gun.power_supply.maxcharge)
+				LAZYSET(new_gun.origin_tech, TECH_ARCANE, 1)
+			else
+				new_gun.power_supply.charge = 0
+			item_type = "Relic Laser Gun"
+
+
+		/// Artifact type gun that requires a random caliber and selects a random bullet type it shoots out!.
+>>>>>>> b3541a5384 ([MIRROR] More xenoarch tweaks (#10036))
 		if(ARCHAEO_GUN)
 			//revolver
 			var/obj/item/gun/projectile/new_gun = new /obj/item/gun/projectile/revolver(src.loc)
 			new_item = new_gun
 			new_item.icon_state = "gun[rand(1,7)]"
+<<<<<<< HEAD
 			new_item.icon = 'icons/obj/xenoarchaeology.dmi'
+=======
+			item_type = "Relic Gun"
+			//There is no 'global list of all the gun caliber types' so...Whatever. This will have to do. (Side note: After further review, making it a global list would result in the gun requiring unobtainable calibers, so this is ideal.)
+			//When someone does make a global list of all the calibers, replace the below with it.
+			new_gun.caliber = "[pick(".357", "12g", ".38", "7.62mm", ".38", "9mm", "10mm", ".45", "5.45mm", "7.62mm")]" //A list of gun calibers that are obtainable.
+			additional_desc = "[pick("A dusty engraving on the side says" + span_bold("[new_gun.caliber]") + " The ammo slot seems like it'd only fit single shells at a time.",\
+			"The gun's barrel has " + span_bold("[new_gun.caliber]") + " barely visible on it. The ammo slot seems like it'd only fit single shells at a time.")]"
+			var/possible_bullet_paths = list()
+			possible_bullet_paths += subtypesof(/obj/item/projectile/bullet) //As funny as it would be to have your pistol shoot pulse rifle rounds, sorry.
+			//You COULD add a bullet blacklist here. Look at the material code below if you want an example of how to do so.
+			//During testing I found nothing EXTRAORDINARILY gamebreaking (although supermatter fuel rod gun rounds were VERY comical, but still obtainable in game)
+			//But maybe someone will add in a projectile/bullet/admin_instakills_you that needs to be blacklisted!
+			var/new_bullet = pick(possible_bullet_paths)
+			new_gun.projectile_type = new_bullet //Instead, you can get anything from chem darts to rifle rounds to everything in between.
+>>>>>>> b3541a5384 ([MIRROR] More xenoarch tweaks (#10036))
 
 			//33% chance to be able to reload the gun with human ammunition
 			if(prob(66))
@@ -398,7 +445,11 @@
 		if(ARCHAEO_REMAINS_HUMANOID)
 			//humanoid remains
 			apply_prefix = FALSE
+<<<<<<< HEAD
 			item_type = "humanoid [pick("remains","skeleton")]"
+=======
+			item_type = "humanoid organ"
+>>>>>>> b3541a5384 ([MIRROR] More xenoarch tweaks (#10036))
 			icon = 'icons/effects/blood.dmi'
 			icon_state = "remains"
 			additional_desc = pick("They appear almost human.",\
