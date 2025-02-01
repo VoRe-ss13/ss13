@@ -1,9 +1,56 @@
+<<<<<<< HEAD
 /datum/sprite_accessory/tail
     var/vore_tail_sprite_variant = ""
     var/belly_variant_when_loaf = FALSE
     var/fullness_icons = 0
     var/struggle_anim = FALSE
     var/bellies_icon_path = 'modular_chomp/icons/mob/vore/Taur_Bellies.dmi' //CHOMPEdit
+=======
+/datum/sprite_accessory/tail/taur
+	name = DEVELOPER_WARNING_NAME
+	icon = 'icons/mob/human_races/sprite_accessories/taurs.dmi'
+	do_colouration = 1 // Yes color, using tail color
+	color_blend_mode = ICON_MULTIPLY  // The sprites for taurs are designed for ICON_MULTIPLY
+
+	var/can_ride = TRUE			//whether we're real rideable taur or just in that category
+	offset_x = -16
+	em_block = TRUE
+
+	var/icon/suit_sprites = null //File for suit sprites, if any.
+	var/icon/under_sprites = null
+
+	var/icon_sprite_tag			// This is where we put stuff like _Horse, so we can assign icons easier.
+
+	//Could do nested lists but it started becoming a nightmare. It'd be more fun for lookups of a_intent and m_intent, but then subtypes need to
+	//duplicate all the messages, and it starts getting awkward. These are singletons, anyway!
+
+	//Messages to owner when stepping on/over
+	var/msg_owner_help_walk		= "You carefully step over %prey."
+	var/msg_owner_help_run		= "You carefully step over %prey."
+	var/msg_owner_harm_walk		= "You methodically place your foot down upon %prey's body, slowly applying pressure, crushing them against the floor below!"
+	var/msg_owner_harm_run		= "You carelessly step down onto %prey, crushing them!"
+	var/msg_owner_disarm_walk	= "You firmly push your foot down on %prey, painfully but harmlessly pinning them to the ground!"
+	var/msg_owner_disarm_run	= "You quickly push %prey to the ground with your foot!"
+	var/msg_owner_grab_fail		= "You step down onto %prey, squishing them and forcing them down to the ground!"
+	var/msg_owner_grab_success	= "You pin %prey down onto the floor with your foot and curl your toes up around their body, trapping them inbetween them!"
+
+	//Messages to prey when stepping on/over
+	var/msg_prey_help_walk		= "%owner steps over you carefully!"
+	var/msg_prey_help_run		= "%owner steps over you carefully!"
+	var/msg_prey_harm_walk		= "%owner methodically places their foot upon your body, slowly applying pressure, crushing you against the floor below!"
+	var/msg_prey_harm_run		= "%owner steps carelessly on your body, crushing you!"
+	var/msg_prey_disarm_walk	= "%owner firmly pushes their foot down on you, quite painfully but harmlessly pinning you to the ground!"
+	var/msg_prey_disarm_run		= "%owner pushes you down to the ground with their foot!"
+	var/msg_prey_grab_fail		= "%owner steps down and squishes you with their foot, forcing you down to the ground!"
+	var/msg_prey_grab_success	= "%owner pins you down to the floor with their foot and curls their toes up around your body, trapping you inbetween them!"
+
+	//Messages for smalls moving under larges
+	var/msg_owner_stepunder		= "%owner runs between your legs." //Weird becuase in the case this is used, %owner is the 'bumper' (src)
+	var/msg_prey_stepunder		= "You run between %prey's legs." //Same, inverse
+	hide_body_parts	= list(BP_L_LEG, BP_L_FOOT, BP_R_LEG, BP_R_FOOT) //Exclude pelvis just in case.
+	icon = 'icons/mob/human_races/sprite_accessories/taurs.dmi'
+	clip_mask_state = "taur_clip_mask_def" //Used to clip off the lower part of suits & uniforms.
+>>>>>>> 0872bdde46 ([MIRROR] Let taurs be ridden again (#10030))
 
 /datum/riding/taur
 	keytype = /obj/item/material/twohanded/riding_crop // Crack!
