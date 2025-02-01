@@ -278,7 +278,12 @@
 						candidate_alarm.critwarn = TRUE // Tell the fire alarm we're warning engineering
 			critwarn = 1
 		// CHOMPEdit End
+<<<<<<< HEAD
 	else if(damage >= damage_archived) // The damage is still going up
+=======
+		safe_warned = FALSE
+	else if(damage > 0 && damage >= damage_archived) // The damage is still going up
+>>>>>>> 7ae39b09aa ([MIRROR] another sm alarm fix (#10041))
 		// CHOMPEdit: Looping Alarms - we're not making a proc for initiating the alarms in this case.
 		if(!engwarn)
 			if(src.z in using_map.station_levels)
