@@ -15,8 +15,7 @@
 	var/extra_overlay2
 	var/desc = DEVELOPER_WARNING_NAME
 	em_block = TRUE
-
-	//species_allowed = list(SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
+	species_allowed = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_TAJARAN, SPECIES_TESHARI, SPECIES_NEVREAN, SPECIES_AKULA, SPECIES_SERGAL, SPECIES_FENNEC, SPECIES_ZORREN_HIGH, SPECIES_VULPKANIN, SPECIES_XENOCHIMERA, SPECIES_XENOHYBRID, SPECIES_VASILISSAN, SPECIES_RAPALA, SPECIES_PROTEAN, SPECIES_ALRAUNE, SPECIES_WEREBEAST, SPECIES_SHADEKIN, SPECIES_SHADEKIN_CREW, SPECIES_ALTEVIAN, SPECIES_LLEILL, SPECIES_HANNER)
 
 /**
  * Gets the number of color channels we have.
@@ -30,20 +29,51 @@
 	if(extra_overlay2)
 		. += 1
 
+// Species-unique ears
+
 /datum/sprite_accessory/ears/shadekin
 	name = "Shadekin Ears, colorable"
 	desc = ""
 	icon_state = "shadekin"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
-	//species_allowed = list() // SPECIES_SHADEKIN, SPECIES_SHADEKIN_CREW			//Removing Polaris whitelits, ones we need are defined in our files
+	species_allowed = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_TAJARAN, SPECIES_TESHARI, SPECIES_NEVREAN, SPECIES_AKULA, SPECIES_SERGAL, SPECIES_FENNEC, SPECIES_ZORREN_HIGH, SPECIES_VULPKANIN, SPECIES_XENOCHIMERA, SPECIES_XENOHYBRID, SPECIES_VASILISSAN, SPECIES_RAPALA, SPECIES_PROTEAN, SPECIES_ALRAUNE, SPECIES_WEREBEAST, SPECIES_SHADEKIN, SPECIES_SHADEKIN_CREW) //Chompstation Edit, cute fluffy ears for all
+
+/datum/sprite_accessory/ears/shadekin/round
+	name = "Shadekin Ears Round, colorable"
+	desc = ""
+	icon = 'icons/mob/vore/ears_32x64.dmi'
+	icon_state = "shadekin-round"
+	do_colouration = 1
+	extra_overlay = "shadekin-round-inner"
+
+/datum/sprite_accessory/ears/lleill
+	name = "Lleill Ears, colorable"
+	desc = ""
+	icon = 'icons/mob/vore/ears_32x64.dmi'
+	icon_state = "lleill"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "lleill-antlers"
+	species_allowed = list(SPECIES_LLEILL, SPECIES_HANNER)
+
+/datum/sprite_accessory/ears/lleill/curled
+	name = "Lleill Ears Curled, colorable"
+	icon_state = "lleill2"
+	extra_overlay = "lleill2-antlers"
+
+/datum/sprite_accessory/ears/lleill/tall
+	name = "Lleill Ears Tall, colorable"
+	icon_state = "lleill3"
+	extra_overlay = "lleill3-antlers"
+
+// Ears avaliable to anyone
 
 /datum/sprite_accessory/ears/taj_ears
 	name = "Tajaran Ears"
 	icon_state = "ears_plain"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
-	//species_allowed = list(SPECIES_TAJARAN, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 	extra_overlay = "ears_plain-inner"
 
 /datum/sprite_accessory/ears/taj_ears_tall
@@ -51,11 +81,39 @@
 	icon_state = "msai_plain"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
-	//species_allowed = list(SPECIES_TAJARAN, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 	extra_overlay = "msai_plain-inner"
 
+/datum/sprite_accessory/ears/alien_slug
+	name = "Alien slug antennae"
+	desc = ""
+	icon_state = "alien_slug"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/alt_ram_horns
+	name = "Solid ram horns"
+	desc = ""
+	icon_state = "ram_horns_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/hyena
+	name = "hyena ears, dual-color"
+	desc = ""
+	icon_state = "hyena"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "hyena-inner"
+
+/datum/sprite_accessory/ears/moth
+	name = "moth antennae"
+	desc = ""
+	icon_state = "moth"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/squirrel_orange
-	name = "squirel, orange"
+	name = "squirrel, orange"
 	desc = ""
 	icon_state = "squirrel-orange"
 
@@ -111,6 +169,15 @@
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/antennae_eye
+	name = "antennae eye, colorable"
+	desc = ""
+	icon_state = "antennae"
+	extra_overlay = "antennae_eye_1"
+	extra_overlay2 = "antennae_eye_2"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/curly_bug
 	name = "curly antennae, colorable"
 	desc = ""
@@ -136,6 +203,13 @@
 	name = "left synth, colorable"
 	desc = ""
 	icon_state = "left_robot_antennae"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/dangles_robot
+	name = "synth dangle antennae, colorable"
+	desc = ""
+	icon_state = "dangleantennae_robot"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 
@@ -174,6 +248,37 @@
 	name = "dragon horns, colorable"
 	desc = ""
 	icon_state = "dragon-horns"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/hopeful_horns
+	name = "hopeful horns, colorable"
+	desc = ""
+	icon_state = "hopefulhorns"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/highrise_horns
+	name = "high-rise horns, colorable"
+	desc = ""
+	icon = 'icons/mob/vore/ears_32x64.dmi'
+	icon_state = "highrisehorns"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/whos_horns
+	name = "who's horns, colorable"
+	desc = ""
+	icon = 'icons/mob/vore/ears_32x64.dmi'
+	icon_state = "whoshorns"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/paintedpoints_horns
+	name = "painted points horns, colorable"
+	desc = ""
+	icon = 'icons/mob/vore/ears_32x64.dmi'
+	icon_state = "paintedpoints"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 
@@ -256,6 +361,13 @@
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 
+/datum/sprite_accessory/ears/tajaran_standard
+	name = "tajaran, colorable"
+	desc = ""
+	icon_state = "ears_tajaran_standard"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/kittyhc
 	name = "kitty, colorable"
 	desc = ""
@@ -264,10 +376,27 @@
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "kittyinner"
 
+/datum/sprite_accessory/ears/catbig
+	name = "cat, big, colorable"
+	desc = ""
+	icon_state = "catbig"
+	extra_overlay = "catbig-inner"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
 /datum/sprite_accessory/ears/bunnyhc
 	name = "bunny, colorable"
 	desc = ""
 	icon_state = "bunny"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/hare
+	name = "hare, colorable"
+	desc = ""
+	icon_state = "hare"
+	extra_overlay = "hare-inner"
+	extra_overlay2 = "hare-tips"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 
@@ -305,6 +434,14 @@
 	name = "deer ears"
 	desc = ""
 	icon_state = "deer"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/deeralt
+	name = "deer ears, alt"
+	desc = ""
+	icon_state = "deer_alt"
+	extra_overlay = "deer_alt-inner"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 
@@ -363,14 +500,12 @@
 	icon_state = "elfs"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
-	//species_allowed = list(SPECIES_HUMAN, SPECIES_HUMAN_VATBORN, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 
 /datum/sprite_accessory/ears/elfs2
 	name = "pointed ears"
 	desc = ""
 	icon_state = "ears_pointy"
 	do_colouration = 1
-	//species_allowed = list(SPECIES_HUMAN, SPECIES_HUMAN_VATBORN, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 
 /datum/sprite_accessory/ears/elfs3
 	name = "pointed ears (down)"
@@ -378,7 +513,6 @@
 	icon_state = "ears_pointy_down"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
-	//species_allowed = list(SPECIES_HUMAN, SPECIES_HUMAN_VATBORN, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 
 /datum/sprite_accessory/ears/elfs4
 	name = "pointed ears (long)"
@@ -386,7 +520,6 @@
 	icon_state = "ears_pointy_long"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
-	//species_allowed = list(SPECIES_HUMAN, SPECIES_HUMAN_VATBORN, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 
 /datum/sprite_accessory/ears/elfs5
 	name = "pointed ears (long, down)"
@@ -394,7 +527,6 @@
 	icon_state = "ears_pointy_long_down"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
-	//species_allowed = list(SPECIES_HUMAN, SPECIES_HUMAN_VATBORN, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 
 /datum/sprite_accessory/ears/sleek
 	name = "sleek ears"
@@ -418,6 +550,10 @@
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "vulp-inner"
 
+/datum/sprite_accessory/ears/vulp/tri
+	name = "vulpkanin, tri-color (tips)"
+	extra_overlay2 = "vulp-tips"
+
 /datum/sprite_accessory/ears/vulp_short
 	name = "vulpkanin short"
 	desc = ""
@@ -433,6 +569,10 @@
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "vulp_terrier-inner"
 
+/datum/sprite_accessory/ears/vulp_short_dc/tri
+	name = "vulpkanin short, tri-color (tips)"
+	extra_overlay2 = "vulp_terrier-tips"
+
 /datum/sprite_accessory/ears/vulp_jackal
 	name = "vulpkanin thin, dual-color"
 	desc = ""
@@ -440,6 +580,26 @@
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "vulp_jackal-inner"
+	extra_overlay2 = "vulp_jackal-tips"
+
+/datum/sprite_accessory/ears/vulp_jackal/tri
+	name = "vulpkanin thin, tri-color (tips)"
+	extra_overlay2 = "vulp_jackal-tips"
+
+/datum/sprite_accessory/ears/fox
+	name = "fox ears"
+	desc = ""
+	icon_state = "fox"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "fox-inner"
+
+/datum/sprite_accessory/ears/dog_floppy
+	name = "floppy dog ears, colorable"
+	desc = ""
+	icon_state = "dog_flop"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
 
 /datum/sprite_accessory/ears/bunny_floppy
 	name = "floopy bunny ears (colorable)"
@@ -455,7 +615,6 @@
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "teshariinner"
-	//species_allowed = list(SPECIES_TESHARI, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 
 /datum/sprite_accessory/ears/tesharihigh
 	name = "Teshari upper ears (colorable fluff)"
@@ -464,7 +623,6 @@
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "tesharihighinner"
-	//species_allowed = list(SPECIES_TESHARI, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 
 /datum/sprite_accessory/ears/tesharilow
 	name = "Teshari lower ears (colorable fluff)"
@@ -473,7 +631,6 @@
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "tesharilowinner"
-	//species_allowed = list(SPECIES_TESHARI, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 
 /datum/sprite_accessory/ears/inkling
 	name = "colorable mature inkling hair"
@@ -490,7 +647,14 @@
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 
-// Special snowflake ears go below here.
+/datum/sprite_accessory/ears/cobra_hood
+	name = "Cobra hood (large)"
+	desc = ""
+	icon_state = "cobra_hood"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "cobra_hood-inner"
+
 /datum/sprite_accessory/ears/elf_caprine_colorable
 	name = "Caprine horns with pointy ears, colorable"
 	desc = ""
