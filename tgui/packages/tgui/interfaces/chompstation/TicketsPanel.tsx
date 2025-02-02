@@ -1,16 +1,8 @@
 /* eslint react/no-danger: "off" */
 import { KEY } from 'common/keys';
-<<<<<<< HEAD
-import { round, toFixed } from 'common/math';
-import { useState } from 'react';
-
-import { BooleanLike } from '../../../common/react';
-import { useBackend } from '../../backend';
-=======
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
->>>>>>> 331c65df39 (improves ticket chat (#9927))
 import {
   Box,
   Button,
@@ -197,111 +189,81 @@ export const TicketsPanel = (props) => {
           </Stack.Item>
           <Stack.Item grow>
             {(selected_ticket && (
-              <Section
-                title={'Ticket #' + selected_ticket.id}
-                buttons={
-                  <Box nowrap>
-                    <Button
-                      icon="arrow-up"
-                      onClick={() => act('undock_ticket')}
-                    >
-                      Undock
-                    </Button>
-                    <Button icon="pen" onClick={() => act('retitle_ticket')}>
-                      Rename Ticket
-                    </Button>
-                    <Button onClick={() => act('legacy')}>Legacy UI</Button>
-                    <Button color={LevelColor[selected_ticket.level]}>
-                      {Level[selected_ticket.level]}
-                    </Button>
-                  </Box>
-                }
-              >
-                <LabeledList>
-                  <LabeledList.Item label="Ticket ID">
-                    #{selected_ticket.id}:
-                    <div
-                      dangerouslySetInnerHTML={{ __html: selected_ticket.name }}
-                    />
-                  </LabeledList.Item>
-                  <LabeledList.Item label="Type">
-                    {Level[selected_ticket.level]}
-                  </LabeledList.Item>
-                  <LabeledList.Item label="State">
-                    {State[selected_ticket.state]}
-                  </LabeledList.Item>
-                  <LabeledList.Item label="Assignee">
-                    {selected_ticket.handler}
-                  </LabeledList.Item>
-                  {State[selected_ticket.state] === State.open ? (
-                    <LabeledList.Item label="Opened At">
-                      {selected_ticket.opened_at_date +
-                        ' (' +
-                        toFixed(
-                          round((selected_ticket.opened_at / 600) * 10, 0) / 10,
-                          1,
-                        ) +
-                        ' minutes ago.)'}
-                    </LabeledList.Item>
-                  ) : (
-                    <LabeledList.Item label="Closed At">
-                      {selected_ticket.closed_at_date +
-                        ' (' +
-                        toFixed(
-                          round((selected_ticket.closed_at / 600) * 10, 0) / 10,
-                          1,
-                        ) +
-                        ' minutes ago.)'}
-                      <Button onClick={() => act('reopen_ticket')}>
-                        Reopen
-                      </Button>
-                    </LabeledList.Item>
-                  )}
-                  <LabeledList.Item label="Actions">
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: selected_ticket.actions,
-                      }}
-                    />
-                  </LabeledList.Item>
-                  <LabeledList.Item label="Log" />
-                </LabeledList>
-                <Divider />
-                <Flex direction="column">
-                  <Flex.Item maxWidth={'500px'}>
-                    {Object.keys(selected_ticket.log)
-                      .slice(0)
-                      .map((L, i) => (
+              <Stack fill vertical>
+                <Stack.Item>
+                  <Section
+                    title={'Ticket #' + selected_ticket.id}
+                    buttons={
+                      <Box nowrap>
+                        <Button
+                          icon="arrow-up"
+                          onClick={() => act('undock_ticket')}
+                        >
+                          Undock
+                        </Button>
+                        <Button
+                          icon="pen"
+                          onClick={() => act('retitle_ticket')}
+                        >
+                          Rename Ticket
+                        </Button>
+                        <Button onClick={() => act('legacy')}>Legacy UI</Button>
+                        <Button color={LevelColor[selected_ticket.level]}>
+                          {Level[selected_ticket.level]}
+                        </Button>
+                      </Box>
+                    }
+                  >
+                    <LabeledList>
+                      <LabeledList.Item label="Ticket ID">
+                        #{selected_ticket.id}:
                         <div
-                          key={i}
                           dangerouslySetInnerHTML={{
-                            __html: selected_ticket.log[L],
+                            __html: selected_ticket.name,
                           }}
                         />
-                      ))}
-                  </Flex.Item>
-                  <Divider />
-                  <Flex.Item>
-                    <Flex>
-                      <Flex.Item grow>
-                        <Input
-                          autoFocus
-                          autoSelect
-                          fluid
-                          placeholder="Enter a message..."
-                          value={ticketChat}
-                          onInput={(e, value: string) => setTicketChat(value)}
-                          onKeyDown={(e) => {
-                            if (KEY.Enter === e.key) {
-                              act('send_msg', { msg: ticketChat });
-                              setTicketChat('');
-                            }
+                      </LabeledList.Item>
+                      <LabeledList.Item label="Type">
+                        {Level[selected_ticket.level]}
+                      </LabeledList.Item>
+                      <LabeledList.Item label="State">
+                        {State[selected_ticket.state]}
+                      </LabeledList.Item>
+                      <LabeledList.Item label="Assignee">
+                        {selected_ticket.handler}
+                      </LabeledList.Item>
+                      {State[selected_ticket.state] === State.open ? (
+                        <LabeledList.Item label="Opened At">
+                          {selected_ticket.opened_at_date +
+                            ' (' +
+                            toFixed(
+                              round((selected_ticket.opened_at / 600) * 10, 0) /
+                                10,
+                              1,
+                            ) +
+                            ' minutes ago.)'}
+                        </LabeledList.Item>
+                      ) : (
+                        <LabeledList.Item label="Closed At">
+                          {selected_ticket.closed_at_date +
+                            ' (' +
+                            toFixed(
+                              round((selected_ticket.closed_at / 600) * 10, 0) /
+                                10,
+                              1,
+                            ) +
+                            ' minutes ago.)'}
+                          <Button onClick={() => act('reopen_ticket')}>
+                            Reopen
+                          </Button>
+                        </LabeledList.Item>
+                      )}
+                      <LabeledList.Item label="Actions">
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: selected_ticket.actions,
                           }}
                         />
-<<<<<<< HEAD
-                      </Flex.Item>
-                      <Flex.Item>
-=======
                       </LabeledList.Item>
                       <LabeledList.Item label="Log" />
                     </LabeledList>
@@ -347,7 +309,6 @@ export const TicketsPanel = (props) => {
                         />
                       </Stack.Item>
                       <Stack.Item>
->>>>>>> 331c65df39 (improves ticket chat (#9927))
                         <Button
                           onClick={() => {
                             act('send_msg', { msg: ticketChat });
@@ -356,19 +317,11 @@ export const TicketsPanel = (props) => {
                         >
                           Send
                         </Button>
-<<<<<<< HEAD
-                      </Flex.Item>
-                    </Flex>
-                  </Flex.Item>
-                </Flex>
-              </Section>
-=======
                       </Stack.Item>
                     </Stack>
                   </Section>
                 </Stack.Item>
               </Stack>
->>>>>>> 331c65df39 (improves ticket chat (#9927))
             )) || (
               <Section
                 title="No ticket selected"

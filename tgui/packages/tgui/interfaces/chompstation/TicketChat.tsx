@@ -1,14 +1,8 @@
 /* eslint react/no-danger: "off" */
 import { KEY } from 'common/keys';
-<<<<<<< HEAD
-import { useState } from 'react';
-
-import { useBackend } from '../../backend';
-=======
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
->>>>>>> 331c65df39 (improves ticket chat (#9927))
 import {
   Box,
   Button,
@@ -78,35 +72,6 @@ export const TicketChat = (props) => {
   return (
     <Window width={900} height={600}>
       <Window.Content>
-<<<<<<< HEAD
-        <Section
-          title={'Ticket #' + id}
-          buttons={
-            <Box nowrap>
-              <Button color={LevelColor[level]}>{Level[level]}</Button>
-            </Box>
-          }
-        >
-          <LabeledList>
-            <LabeledList.Item label="Assignee">{handler}</LabeledList.Item>
-            <LabeledList.Item label="Log" />
-          </LabeledList>
-          <Divider />
-          <Flex direction="column">
-            <Flex.Item>
-              {Object.keys(log)
-                .slice(0)
-                .map((L, i) => (
-                  <div key={i} dangerouslySetInnerHTML={{ __html: log[L] }} />
-                ))}
-            </Flex.Item>
-            <Divider />
-            <Flex.Item>
-              <Flex>
-                <Flex.Item grow>
-                  <Input
-                    autoFocus
-=======
         <Stack fill vertical>
           <Stack.Item>
             <Section
@@ -145,7 +110,6 @@ export const TicketChat = (props) => {
                   <Input
                     autoFocus
                     updateOnPropsChange
->>>>>>> 331c65df39 (improves ticket chat (#9927))
                     autoSelect
                     fluid
                     placeholder="Enter a message..."
@@ -158,13 +122,8 @@ export const TicketChat = (props) => {
                       }
                     }}
                   />
-<<<<<<< HEAD
-                </Flex.Item>
-                <Flex.Item>
-=======
                 </Stack.Item>
                 <Stack.Item>
->>>>>>> 331c65df39 (improves ticket chat (#9927))
                   <Button
                     onClick={() => {
                       act('send_msg', { msg: ticketChat });
@@ -173,19 +132,11 @@ export const TicketChat = (props) => {
                   >
                     Send
                   </Button>
-<<<<<<< HEAD
-                </Flex.Item>
-              </Flex>
-            </Flex.Item>
-          </Flex>
-        </Section>
-=======
                 </Stack.Item>
               </Stack>
             </Section>
           </Stack.Item>
         </Stack>
->>>>>>> 331c65df39 (improves ticket chat (#9927))
       </Window.Content>
     </Window>
   );
