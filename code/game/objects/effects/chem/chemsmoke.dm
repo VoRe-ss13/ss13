@@ -7,10 +7,9 @@
 	time_to_live = 300
 	pass_flags = PASSTABLE | PASSGRILLE | PASSGLASS //PASSGLASS is fine here, it's just so the visual effect can "flow" around glass
 
-/obj/effect/effect/smoke/chem/New()
-	..()
+/obj/effect/effect/smoke/chem/Initialize()
+	. = ..()
 	create_reagents(500)
-	return
 
 /obj/effect/effect/smoke/chem/Destroy()
 	walk(src, 0) // Because we might have called walk_to, we must stop the walk loop or BYOND keeps an internal reference to us forever.
@@ -46,6 +45,14 @@
 	..()
 	chemholder = new/obj()
 	chemholder.create_reagents(500)
+
+/datum/effect/effect/system/smoke_spread/chem/Destroy()
+	QDEL_NULL(chemholder)
+	if(targetTurfs)
+		targetTurfs.Cut()
+	if(wallList)
+		wallList.Cut()
+	. = ..()
 
 //Sets up the chem smoke effect
 // Calculates the max range smoke can travel, then gets all turfs in that view range.
@@ -191,16 +198,14 @@
 	..(T, I, dist, spores)
 
 /datum/effect/effect/system/smoke_spread/chem/proc/fadeOut(var/atom/A, var/frames = 16) // Fades out the smoke smoothly using it's alpha variable.
+	A.set_opacity(0)		// lighting and view range updates
 	if(A.alpha == 0) //Handle already transparent case
+		qdel(A)
 		return
 	if(frames == 0)
 		frames = 1 //We will just assume that by 0 frames, the coder meant "during one frame".
-	var/step = A.alpha / frames
-	for(var/i = 0, i < frames, i++)
-		A.alpha -= step
-		sleep(world.tick_lag)
-	return
-
+	animate(A, alpha = 0, time = frames)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), A), frames, TIMER_UNIQUE)
 
 /datum/effect/effect/system/smoke_spread/chem/proc/smokeFlow() // Smoke pathfinder. Uses a flood fill method based on zones to quickly check what turfs the smoke (airflow) can actually reach.
 
