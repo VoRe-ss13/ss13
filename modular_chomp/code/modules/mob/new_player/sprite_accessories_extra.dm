@@ -262,8 +262,6 @@
 	body_parts = list(BP_HEAD)
 	color_blend_mode = ICON_MULTIPLY
 
-<<<<<<< HEAD
-=======
 /datum/sprite_accessory/marking/ch/bovine_snout
 	name = "Bovine Snout"
 	icon_state = "bovine_snout"
@@ -283,7 +281,6 @@
 	color_blend_mode = ICON_MULTIPLY
 
 
->>>>>>> b9094ed9f2 (Improvements to hippo upper and lower jaw, bovine snout and bovine no… (#9913))
 /datum/sprite_accessory/marking/ch/sloog_head
 	name = "sloog head"
 	icon = 'modular_chomp/icons/mob/human_races/sprite_accessories/sloog.dmi'
