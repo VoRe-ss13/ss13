@@ -401,8 +401,13 @@
 
 	if(usr.incapacitated())
 		return
+<<<<<<< HEAD
 	if(ishuman(usr) || isrobot(usr))
 		switch(input(user,"Choose what to do","Wheel Of Fortune") in list("Spin the Wheel! (Not Lottery)", "Set the interval", "Cancel"))
+=======
+	if(ishuman(user) || isrobot(user))
+		switch(tgui_input_list(user,"Choose what to do","Wheel Of Fortune", list("Spin the Wheel! (Not Lottery)", "Set the interval", "Cancel")))
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 			if("Cancel")
 				return
 			if("Spin the Wheel! (Not Lottery)")
@@ -430,8 +435,13 @@
 			return
 		else
 			to_chat(user, span_warning("Proper access, allowed staff controls."))
+<<<<<<< HEAD
 			if(ishuman(usr) || isrobot(usr))
 				switch(input(user,"Choose what to do (Management)","Wheel Of Fortune (Management)") in list("Spin the Lottery Wheel!", "Toggle Lottery Sales", "Toggle Public Spins", "Reset Lottery", "Cancel"))
+=======
+			if(ishuman(user) || isrobot(user))
+				switch(tgui_input_list(user,"Choose what to do (Management)","Wheel Of Fortune (Management)", list("Spin the Lottery Wheel!", "Toggle Lottery Sales", "Toggle Public Spins", "Reset Lottery", "Cancel")))
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 					if("Cancel")
 						return
 					if("Spin the Lottery Wheel!")
@@ -578,8 +588,13 @@
 		to_chat(user,span_notice("The SPASM is disabled."))
 		return
 
+<<<<<<< HEAD
 	if(ishuman(usr) || isrobot(usr))
 		switch(input(user,"Choose what to do","SPASM") in list("Show selected Prize", "Select Prize", "Become Prize (Please examine yourself first)", "Cancel"))
+=======
+	if(ishuman(user) || isrobot(user))
+		switch(tgui_input_list(user,"Choose what to do","SPASM", list("Show selected Prize", "Select Prize", "Become Prize (Please examine yourself first)", "Cancel")))
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 			if("Cancel")
 				return
 			if("Show selected Prize")
@@ -691,8 +706,13 @@
 			return
 		else
 			to_chat(user, span_warning("Proper access, allowed staff controls."))
+<<<<<<< HEAD
 			if(ishuman(usr) || isrobot(usr))
 				switch(input(user,"Choose what to do (Management)","SPASM (Management)") in list("Toggle Sentient Prize Sales", "Wipe Selected Prize Entry", "Change Prize Value", "Cancel"))
+=======
+			if(ishuman(user) || isrobot(user))
+				switch(tgui_input_list(user,"Choose what to do (Management)","SPASM (Management)", list("Toggle Sentient Prize Sales", "Wipe Selected Prize Entry", "Change Prize Value", "Cancel")))
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 					if("Cancel")
 						return
 

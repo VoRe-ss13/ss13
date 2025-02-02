@@ -884,19 +884,31 @@
 		remove_verb(src, /mob/living/carbon/human/proc/morph)
 		return
 
+<<<<<<< HEAD
 	var/new_facial = input(usr, "Please select facial hair color.", "Character Generation",rgb(r_facial,g_facial,b_facial)) as color
+=======
+	var/new_facial = tgui_color_picker(src, "Please select facial hair color.", "Character Generation",rgb(r_facial,g_facial,b_facial))
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 	if(new_facial)
 		r_facial = hex2num(copytext(new_facial, 2, 4))
 		g_facial = hex2num(copytext(new_facial, 4, 6))
 		b_facial = hex2num(copytext(new_facial, 6, 8))
 
+<<<<<<< HEAD
 	var/new_hair = input(usr, "Please select hair color.", "Character Generation",rgb(r_hair,g_hair,b_hair)) as color
+=======
+	var/new_hair = tgui_color_picker(src, "Please select hair color.", "Character Generation",rgb(r_hair,g_hair,b_hair))
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 	if(new_facial)
 		r_hair = hex2num(copytext(new_hair, 2, 4))
 		g_hair = hex2num(copytext(new_hair, 4, 6))
 		b_hair = hex2num(copytext(new_hair, 6, 8))
 
+<<<<<<< HEAD
 	var/new_eyes = input(usr, "Please select eye color.", "Character Generation",rgb(r_eyes,g_eyes,b_eyes)) as color
+=======
+	var/new_eyes = tgui_color_picker(src, "Please select eye color.", "Character Generation",rgb(r_eyes,g_eyes,b_eyes))
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 	if(new_eyes)
 		r_eyes = hex2num(copytext(new_eyes, 2, 4))
 		g_eyes = hex2num(copytext(new_eyes, 4, 6))
@@ -1079,7 +1091,11 @@
 	set name = "sim"
 	set background = 1
 
+<<<<<<< HEAD
 	var/damage = input(usr, "Wound damage","Wound damage") as num
+=======
+	var/damage = tgui_input_number(src, "Wound damage","Wound damage")
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 
 	var/germs = 0
 	var/tdamage = 0
