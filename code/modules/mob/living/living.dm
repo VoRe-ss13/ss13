@@ -744,10 +744,17 @@
 	return
 
 
+<<<<<<< HEAD
 /mob/living/verb/Examine_OOC() //ChompEDIT - proc --> verb
+=======
+/mob/living/verb/Examine_OOC()
+>>>>>>> 5394d73f31 ([MIRROR] splits verb and proc (#10054))
 	set name = "Examine Meta-Info (OOC)"
 	set category = "OOC.Game"
 	set src in view()
+	do_examine_ooc(usr)
+
+/mob/living/proc/do_examine_ooc(mob/user)
 	//VOREStation Edit Start - Making it so SSD people have prefs with fallback to original style.
 	if(CONFIG_GET(flag/allow_metadata))
 		if(ooc_notes)

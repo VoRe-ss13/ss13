@@ -1330,7 +1330,11 @@
 	if(href_list["vore_prefs"])
 		display_voreprefs(usr)
 	if(href_list["ooc_notes"])
+<<<<<<< HEAD
 		src.Examine_OOC()
+=======
+		do_examine_ooc(usr)
+>>>>>>> 5394d73f31 ([MIRROR] splits verb and proc (#10054))
 	if(href_list["edit_ooc_notes"])
 		if(usr == src)
 			set_metainfo_panel(usr) //ChompEDIT - usr arg
