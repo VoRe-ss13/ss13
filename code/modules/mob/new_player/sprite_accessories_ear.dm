@@ -704,8 +704,6 @@
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "zorgoia_inner"
 	extra_overlay2 = "zorgoia_tips"
-<<<<<<< HEAD
-=======
 
 
 
@@ -1218,4 +1216,3 @@
     icon_state = "pipears"
     ckeys_allowed = list("phoaly")
 	*/ //CHOMPRemove END
->>>>>>> 38ccf4f9a8 ([MIRROR] Marking Fix (#9959))

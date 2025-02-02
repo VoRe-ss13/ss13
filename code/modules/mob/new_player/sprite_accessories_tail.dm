@@ -1317,8 +1317,6 @@
 	name = "Lleill tail, Small"
 	icon_state = "tail3"
 	extra_overlay = "tail3_marking"
-<<<<<<< HEAD
-=======
 
 /datum/sprite_accessory/tail/altevian
 	name = "Altevian Tail"
@@ -1703,4 +1701,3 @@
 	icon_state = "tigresstail"
 	ckeys_allowed = list("hoodoo")
 */// CHOMPRemove End
->>>>>>> 38ccf4f9a8 ([MIRROR] Marking Fix (#9959))
