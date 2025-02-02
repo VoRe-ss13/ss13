@@ -98,62 +98,53 @@ export const Ticket = (props) => {
   } = data;
   return (
     <Window width={900} height={600}>
-      <Window.Content scrollable>
-        <Section
-          title={'Ticket #' + id}
-          buttons={
-            <Box nowrap>
-              <Button icon="pen" onClick={() => act('retitle')}>
-                Rename Ticket
-              </Button>
-              <Button onClick={() => act('legacy')}>Legacy UI</Button>
-              <Button color={LevelColor[level]}>{Level[level]}</Button>
-            </Box>
-          }
-        >
-          <LabeledList>
-            <LabeledList.Item label="Ticket ID">
-              #{id}: <div dangerouslySetInnerHTML={{ __html: name }} />
-            </LabeledList.Item>
-            <LabeledList.Item label="Type">{Level[level]}</LabeledList.Item>
-            <LabeledList.Item label="State">{State[state]}</LabeledList.Item>
-            <LabeledList.Item label="Assignee">{handler}</LabeledList.Item>
-            {State[state] === State.open ? (
-              <LabeledList.Item label="Opened At">
-                {opened_at_date +
-                  ' (' +
-                  toFixed(round((opened_at / 600) * 10, 0) / 10, 1) +
-                  ' minutes ago.)'}
-              </LabeledList.Item>
-            ) : (
-              <LabeledList.Item label="Closed At">
-                {closed_at_date +
-                  ' (' +
-                  toFixed(round((closed_at / 600) * 10, 0) / 10, 1) +
-                  ' minutes ago.)'}
-                <Button onClick={() => act('reopen')}>Reopen</Button>
-              </LabeledList.Item>
-            )}
-            <LabeledList.Item label="Actions">
-              <div dangerouslySetInnerHTML={{ __html: actions }} />
-            </LabeledList.Item>
-            <LabeledList.Item label="Log" />
-          </LabeledList>
-          <Divider />
-          <Flex direction="column">
-            <Flex.Item>
-              {Object.keys(log)
-                .slice(0)
-                .map((L, i) => (
-                  <div key={i} dangerouslySetInnerHTML={{ __html: log[L] }} />
-                ))}
-            </Flex.Item>
+      <Window.Content>
+        <Stack fill vertical>
+          <Stack.Item>
+            <Section
+              title={'Ticket #' + id}
+              buttons={
+                <Box nowrap>
+                  <Button icon="pen" onClick={() => act('retitle')}>
+                    Rename Ticket
+                  </Button>
+                  <Button onClick={() => act('legacy')}>Legacy UI</Button>
+                  <Button color={LevelColor[level]}>{Level[level]}</Button>
+                </Box>
+              }
+            >
+              <LabeledList>
+                <LabeledList.Item label="Ticket ID">
+                  #{id}: <div dangerouslySetInnerHTML={{ __html: name }} />
+                </LabeledList.Item>
+                <LabeledList.Item label="Type">{Level[level]}</LabeledList.Item>
+                <LabeledList.Item label="State">
+                  {State[state]}
+                </LabeledList.Item>
+                <LabeledList.Item label="Assignee">{handler}</LabeledList.Item>
+                {State[state] === State.open ? (
+                  <LabeledList.Item label="Opened At">
+                    {opened_at_date +
+                      ' (' +
+                      toFixed(round((opened_at / 600) * 10, 0) / 10, 1) +
+                      ' minutes ago.)'}
+                  </LabeledList.Item>
+                ) : (
+                  <LabeledList.Item label="Closed At">
+                    {closed_at_date +
+                      ' (' +
+                      toFixed(round((closed_at / 600) * 10, 0) / 10, 1) +
+                      ' minutes ago.)'}
+                    <Button onClick={() => act('reopen')}>Reopen</Button>
+                  </LabeledList.Item>
+                )}
+                <LabeledList.Item label="Actions">
+                  <div dangerouslySetInnerHTML={{ __html: actions }} />
+                </LabeledList.Item>
+                <LabeledList.Item label="Log" />
+              </LabeledList>
+            </Section>
             <Divider />
-<<<<<<< HEAD
-            <Flex.Item>
-              <Flex>
-                <Flex.Item grow>
-=======
           </Stack.Item>
           <Stack.Item grow>
             <Section scrollable ref={messagesEndRef} fill>
@@ -175,7 +166,6 @@ export const Ticket = (props) => {
             <Section fill>
               <Stack fill>
                 <Stack.Item grow>
->>>>>>> f1746421d9 (just a tiny style change (#9928))
                   <Input
                     autoFocus
                     updateOnPropsChange
