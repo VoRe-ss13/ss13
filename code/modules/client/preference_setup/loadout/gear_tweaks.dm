@@ -599,8 +599,6 @@ var/datum/gear_tweak/custom_desc/gear_tweak_free_desc = new()
 /datum/gear_tweak/implant_location/get_metadata(var/user, var/metadata)
 	return (tgui_input_list(user, "Select a bodypart for the implant to be implanted inside.", "Implant Location", bodypart_names_to_tokens || bodypart_tokens_to_names[BP_TORSO]))
 
-<<<<<<< HEAD
-=======
 /datum/gear_tweak/collar_tag/get_contents(var/metadata)
 	return "Tag: [metadata]"
 
@@ -616,5 +614,4 @@ var/datum/gear_tweak/custom_desc/gear_tweak_free_desc = new()
 	else
 		C.initialize_tag(metadata)
 
->>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 #undef LOADOUT_BAN_STRING
