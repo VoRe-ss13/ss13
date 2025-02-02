@@ -3170,7 +3170,6 @@
 #include "code\modules\mob\living\login.dm"
 #include "code\modules\mob\living\logout.dm"
 #include "code\modules\mob\living\ooc_notes.dm"
-#include "code\modules\mob\living\private_notes.dm"
 #include "code\modules\mob\living\organs.dm"
 #include "code\modules\mob\living\private_notes.dm"
 #include "code\modules\mob\living\riding.dm"
@@ -3749,28 +3748,15 @@
 #include "code\modules\mob\new_player\sprite_accessories_ear.dm"
 #include "code\modules\mob\new_player\sprite_accessories_ear_ch.dm"
 #include "code\modules\mob\new_player\sprite_accessories_extra_ch.dm"
-<<<<<<< HEAD
-#include "code\modules\mob\new_player\sprite_accessories_extra_vr.dm"
-#include "code\modules\mob\new_player\sprite_accessories_tail.dm"
-#include "code\modules\mob\new_player\sprite_accessories_tail_ch.dm"
-#include "code\modules\mob\new_player\sprite_accessories_tail_vr.dm"
-=======
 #include "code\modules\mob\new_player\sprite_accessories_hair.dm"
 #include "code\modules\mob\new_player\sprite_accessories_hair_extra.dm"
 #include "code\modules\mob\new_player\sprite_accessories_markings.dm"
 #include "code\modules\mob\new_player\sprite_accessories_tail.dm"
 #include "code\modules\mob\new_player\sprite_accessories_tail_ch.dm"
->>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 #include "code\modules\mob\new_player\sprite_accessories_taur.dm"
 #include "code\modules\mob\new_player\sprite_accessories_wing.dm"
-<<<<<<< HEAD
-#include "code\modules\mob\new_player\sprite_accessories_wing_large_vr.dm"
-#include "code\modules\mob\new_player\sprite_accessories_wing_vr.dm"
-=======
 #include "code\modules\mob\new_player\sprite_accessories_wing_large.dm"
->>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 #include "code\modules\mob\new_player\sprite_accessories_yw.dm"
-#include "code\modules\mob\new_player\sprite_accessories_wing_large.dm"
 #include "code\modules\modular_computers\laptop_vendor.dm"
 #include "code\modules\modular_computers\computers\modular_computer\core.dm"
 #include "code\modules\modular_computers\computers\modular_computer\damage.dm"

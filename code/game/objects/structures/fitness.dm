@@ -1,12 +1,8 @@
 /obj/structure/fitness
 	icon = 'icons/obj/stationobjs.dmi'
 	anchored = TRUE
-<<<<<<< HEAD
-	var/being_used = 0
-=======
 	var/fitness_being_used = 0
 	var/weightloss_power = 1
->>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 
 /obj/structure/fitness/punchingbag
 	name = "punching bag"
