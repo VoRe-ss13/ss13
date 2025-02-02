@@ -239,15 +239,16 @@
 
 	dellog += "</ol>"
 
-	usr << browse(dellog.Join(), "window=dellog")
+	usr << browse("<html>[dellog.Join()]</html>", "window=dellog")
 
 /client/proc/cmd_display_init_log()
 	set category = "Debug.Investigate"
 	set name = "Display Initialize() Log"
 	set desc = "Displays a list of things that didn't handle Initialize() properly"
 
-	if(!check_rights(R_DEBUG))	return
-	src << browse(replacetext(SSatoms.InitLog(), "\n", "<br>"), "window=initlog")
+	if(!check_rights(R_DEBUG))
+		return
+	src << browse("<html>[replacetext(SSatoms.InitLog(), "\n", "<br>")]</html>", "window=initlog")
 
 /*
 /client/proc/cmd_display_overlay_log()
@@ -268,7 +269,7 @@
 		lines += "[entry] => [num2text(data[STAT_ENTRY_TIME], 10)]ms ([data[STAT_ENTRY_COUNT]]) (avg:[num2text(data[STAT_ENTRY_TIME]/(data[STAT_ENTRY_COUNT] || 1), 99)])"
 
 	if (user)
-		user << browse("<ol><li>[lines.Join("</li><li>")]</li></ol>", "window=[url_encode("stats:\ref[stats]")]")
+		user << browse("<html><ol><li>[lines.Join("</li><li>")]</li></ol></html>", "window=[url_encode("stats:\ref[stats]")]")
 	else
 		. = lines.Join("\n")
 
