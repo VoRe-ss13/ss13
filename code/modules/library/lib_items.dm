@@ -209,13 +209,9 @@ Book Cart End
 
 /// Proc that handles sending the book information to the user, as well as some housekeeping stuff.
 /obj/item/book/proc/display_content(mob/living/user)
-<<<<<<< HEAD
-	user << browse("<TT><I>Penned by [author].</I></TT> <BR>" + "[dat]", "window=book")
-=======
 	if(!findtext(dat, regex("^<html")))
 		dat = "<html>[dat]</html>"
 	user << browse(replacetext(dat, "<html>", "<html><TT><I>Penned by [author].</I></TT> <BR>"), "window=book")
->>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 
 /obj/item/book/attackby(obj/item/W as obj, mob/user as mob)
 	if(carved)
