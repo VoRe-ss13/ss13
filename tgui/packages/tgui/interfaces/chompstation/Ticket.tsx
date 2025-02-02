@@ -1,19 +1,18 @@
 /* eslint react/no-danger: "off" */
 import { KEY } from 'common/keys';
-import { round, toFixed } from 'common/math';
-import { useState } from 'react';
-
-import { useBackend } from '../../backend';
+import { RefObject, useEffect, useRef, useState } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
 import {
   Box,
   Button,
   Divider,
-  Flex,
   Input,
   LabeledList,
   Section,
-} from '../../components';
-import { Window } from '../../layouts';
+  Stack,
+} from 'tgui-core/components';
+import { round, toFixed } from 'tgui-core/math';
 
 const Level = {
   0: 'Adminhelp',
@@ -61,6 +60,28 @@ window.addEventListener('keydown', (event) => {
 export const Ticket = (props) => {
   const { act, data } = useBackend<Data>();
   const [ticketChat, setTicketChat] = useState('');
+
+  const messagesEndRef: RefObject<HTMLDivElement> = useRef(null);
+
+  useEffect(() => {
+    const scroll = messagesEndRef.current;
+    if (scroll) {
+      scroll.scrollTop = scroll.scrollHeight;
+    }
+  }, []);
+
+  useEffect(() => {
+    const scroll = messagesEndRef.current;
+    if (scroll) {
+      const height = scroll.scrollHeight;
+      const bottom = scroll.scrollTop + scroll.offsetHeight;
+      const scrollTracking = Math.abs(height - bottom) < 24;
+      if (scrollTracking) {
+        scroll.scrollTop = scroll.scrollHeight;
+      }
+    }
+  });
+
   const {
     id,
     name,
@@ -157,6 +178,7 @@ export const Ticket = (props) => {
 >>>>>>> f1746421d9 (just a tiny style change (#9928))
                   <Input
                     autoFocus
+                    updateOnPropsChange
                     autoSelect
                     fluid
                     placeholder="Enter a message..."
@@ -172,8 +194,8 @@ export const Ticket = (props) => {
                       }
                     }}
                   />
-                </Flex.Item>
-                <Flex.Item>
+                </Stack.Item>
+                <Stack.Item>
                   <Button
                     onClick={() => {
                       act('send_msg', {
@@ -185,11 +207,11 @@ export const Ticket = (props) => {
                   >
                     Send
                   </Button>
-                </Flex.Item>
-              </Flex>
-            </Flex.Item>
-          </Flex>
-        </Section>
+                </Stack.Item>
+              </Stack>
+            </Section>
+          </Stack.Item>
+        </Stack>
       </Window.Content>
     </Window>
   );

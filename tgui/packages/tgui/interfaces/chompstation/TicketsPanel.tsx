@@ -1,23 +1,22 @@
 /* eslint react/no-danger: "off" */
 import { KEY } from 'common/keys';
-import { round, toFixed } from 'common/math';
-import { useState } from 'react';
-
-import { BooleanLike } from '../../../common/react';
-import { useBackend } from '../../backend';
+import { RefObject, useEffect, useRef, useState } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
 import {
   Box,
   Button,
   Divider,
   Dropdown,
-  Flex,
   Icon,
   Input,
   LabeledList,
   Section,
+  Stack,
   Tabs,
-} from '../../components';
-import { Window } from '../../layouts';
+} from 'tgui-core/components';
+import { round, toFixed } from 'tgui-core/math';
+import { BooleanLike } from 'tgui-core/react';
 
 const Level = {
   0: 'Admin',
@@ -102,12 +101,33 @@ export const TicketsPanel = (props) => {
 
   const [ticketChat, setTicketChat] = useState('');
 
+  const messagesEndRef: RefObject<HTMLDivElement> = useRef(null);
+
+  useEffect(() => {
+    const scroll = messagesEndRef.current;
+    if (scroll) {
+      scroll.scrollTop = scroll.scrollHeight;
+    }
+  }, []);
+
+  useEffect(() => {
+    const scroll = messagesEndRef.current;
+    if (scroll) {
+      const height = scroll.scrollHeight;
+      const bottom = scroll.scrollTop + scroll.offsetHeight;
+      const scrollTracking = Math.abs(height - bottom) < 24;
+      if (scrollTracking) {
+        scroll.scrollTop = scroll.scrollHeight;
+      }
+    }
+  });
+
   let filtered_tickets = getFilteredTickets(tickets, stateFilter, levelFilter);
   return (
     <Window width={1000} height={600}>
       <Window.Content>
-        <Flex>
-          <Flex.Item shrink>
+        <Stack fill>
+          <Stack.Item shrink>
             <Section title="Filter">
               <Dropdown
                 width="100%"
@@ -166,8 +186,8 @@ export const TicketsPanel = (props) => {
                 ))}
               </Tabs>
             </Section>
-          </Flex.Item>
-          <Flex.Item grow>
+          </Stack.Item>
+          <Stack.Item grow>
             {(selected_ticket && (
               <Section
                 title={'Ticket #' + selected_ticket.id}
@@ -286,6 +306,7 @@ export const TicketsPanel = (props) => {
                           autoFocus
                           autoSelect
                           fluid
+                          updateOnPropsChange
                           placeholder="Enter a message..."
                           value={ticketChat}
                           onInput={(e, value: string) => setTicketChat(value)}
@@ -296,8 +317,8 @@ export const TicketsPanel = (props) => {
                             }
                           }}
                         />
-                      </Flex.Item>
-                      <Flex.Item>
+                      </Stack.Item>
+                      <Stack.Item>
                         <Button
                           onClick={() => {
                             act('send_msg', { msg: ticketChat });
@@ -306,11 +327,11 @@ export const TicketsPanel = (props) => {
                         >
                           Send
                         </Button>
-                      </Flex.Item>
-                    </Flex>
-                  </Flex.Item>
-                </Flex>
-              </Section>
+                      </Stack.Item>
+                    </Stack>
+                  </Section>
+                </Stack.Item>
+              </Stack>
             )) || (
               <Section
                 title="No ticket selected"
@@ -337,8 +358,8 @@ export const TicketsPanel = (props) => {
                 Please select a ticket on the left to view its details.
               </Section>
             )}
-          </Flex.Item>
-        </Flex>
+          </Stack.Item>
+        </Stack>
       </Window.Content>
     </Window>
   );

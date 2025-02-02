@@ -27,6 +27,7 @@ var/list/preferences_datums = list()
 	var/backbag = 2						//backpack type
 	var/pdachoice = 1					//PDA type
 	//var/shoe_hater = FALSE				//RS ADD - if true, will spawn with no shoes //CHOMPRemove, remove RS No shoes
+	var/no_jacket = FALSE				//if true, will not spawn with outfit's jacket/outer layer
 	var/h_style = "Bald"				//Hair type
 	var/grad_style = "none"				//Gradient style
 	var/f_style = "Shaved"				//Face hair type
@@ -213,7 +214,7 @@ var/list/preferences_datums = list()
 	dat += "<br><HR></center>"
 	dat += player_setup.content(user)
 
-	dat += "</html></body>"
+	dat += "</body></html>"
 	//user << browse(dat, "window=preferences;size=635x736")
 	winshow(user, "preferences_window", TRUE)
 	var/datum/browser/popup = new(user, "preferences_browser", "Character Setup", 800, 800)

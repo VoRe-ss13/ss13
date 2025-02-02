@@ -1,0 +1,6 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscadd: "Adds Catborgs"
+  - rscadd: "Adds Kittyborgs"
+  - rscadd: "Adds a Gryphonborg"
