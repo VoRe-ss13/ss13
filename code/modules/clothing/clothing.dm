@@ -61,7 +61,7 @@
 	if(enables_planes)
 		user.recalculate_vis()
 
-/obj/item/clothing/dropped(var/mob/user)
+/obj/item/clothing/dropped(mob/user)
 	..()
 	if(enables_planes)
 		user.recalculate_vis()
@@ -177,7 +177,7 @@
 	if(usr.stat || usr.restrained() || usr.incapacitated())
 		return
 
-	var/new_color = input(usr, "Pick a new color", "Color", color) as color|null
+	var/new_color = tgui_color_picker(usr, "Pick a new color", "Color", color)
 
 	if(new_color && (new_color != color))
 		color = new_color
@@ -380,7 +380,7 @@
 	var/mob/living/carbon/human/H = user
 
 	if(slot && slot == slot_gloves)
-		var/obj/item/clothing/gloves/G = H.gloves
+		var/obj/item/clothing/G = H.gloves
 		if(istype(G))
 			ring = H.gloves
 			if(ring.glove_level >= src.glove_level)
@@ -406,7 +406,7 @@
 	wearer = H //TODO clean this when magboots are cleaned
 	return 1
 
-/obj/item/clothing/gloves/dropped()
+/obj/item/clothing/gloves/dropped(mob/user)
 	..()
 
 	if(!wearer)

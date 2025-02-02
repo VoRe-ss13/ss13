@@ -13,12 +13,11 @@ import {
   Box,
   Button,
   Divider,
-  Flex,
   Input,
   LabeledList,
   Section,
-} from '../../components';
-import { Window } from '../../layouts';
+  Stack,
+} from 'tgui-core/components';
 
 const Level = {
   0: 'Adminhelp',

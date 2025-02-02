@@ -16,14 +16,15 @@ import {
   Button,
   Divider,
   Dropdown,
-  Flex,
   Icon,
   Input,
   LabeledList,
   Section,
+  Stack,
   Tabs,
-} from '../../components';
-import { Window } from '../../layouts';
+} from 'tgui-core/components';
+import { round, toFixed } from 'tgui-core/math';
+import { BooleanLike } from 'tgui-core/react';
 
 const Level = {
   0: 'Admin',
@@ -133,8 +134,8 @@ export const TicketsPanel = (props) => {
   return (
     <Window width={1000} height={600}>
       <Window.Content>
-        <Flex>
-          <Flex.Item shrink>
+        <Stack fill>
+          <Stack.Item shrink>
             <Section title="Filter">
               <Dropdown
                 width="100%"
@@ -193,8 +194,8 @@ export const TicketsPanel = (props) => {
                 ))}
               </Tabs>
             </Section>
-          </Flex.Item>
-          <Flex.Item grow>
+          </Stack.Item>
+          <Stack.Item grow>
             {(selected_ticket && (
               <Section
                 title={'Ticket #' + selected_ticket.id}
@@ -394,8 +395,8 @@ export const TicketsPanel = (props) => {
                 Please select a ticket on the left to view its details.
               </Section>
             )}
-          </Flex.Item>
-        </Flex>
+          </Stack.Item>
+        </Stack>
       </Window.Content>
     </Window>
   );

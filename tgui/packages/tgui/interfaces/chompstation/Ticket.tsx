@@ -14,12 +14,12 @@ import {
   Box,
   Button,
   Divider,
-  Flex,
   Input,
   LabeledList,
   Section,
-} from '../../components';
-import { Window } from '../../layouts';
+  Stack,
+} from 'tgui-core/components';
+import { round, toFixed } from 'tgui-core/math';
 
 const Level = {
   0: 'Adminhelp',
