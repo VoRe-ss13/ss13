@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { filter, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { useState } from 'react';
+=======
+import { useState } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Section, Stack } from 'tgui-core/components';
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 import { useBackend } from '../../backend';
 import { Box, Button, Section, Stack } from '../../components';
@@ -13,15 +19,19 @@ export const SupplyConsoleMenuOrder = (props) => {
 
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  const viewingPacks: supplyPack[] = flow([
-    (supply_packs: supplyPack[]) =>
-      filter(supply_packs, (val) => val.group === activeCategory),
-    (supply_packs: supplyPack[]) =>
-      filter(supply_packs, (val) => !val.contraband || !!contraband),
-    (supply_packs: supplyPack[]) => sortBy(supply_packs, (val) => val.name),
-    (supply_packs: supplyPack[]) =>
-      sortBy(supply_packs, (val) => val.cost > supply_points),
-  ])(supply_packs);
+  function sortPack(a: supplyPack, b: supplyPack) {
+    if (a.cost < supply_points && b.cost > supply_points) return -1;
+    if (a.cost > supply_points && b.cost < supply_points) return 1;
+
+    return a.name.localeCompare(b.name);
+  }
+
+  const viewingPacks: supplyPack[] = supply_packs
+    .filter(
+      (pack) =>
+        (pack.group === activeCategory && !pack.contraband) || !!contraband,
+    )
+    .sort((a, b) => sortPack(a, b));
 
   // const viewingPacks = sortBy(val => val.name)(supply_packs).filter(val => val.group === activeCategory);
 

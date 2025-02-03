@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import { filter, sortBy } from 'common/collections';
 import { BooleanLike } from 'common/react';
 
 import { useBackend, useSharedState } from '../backend';
+=======
+import { useBackend, useSharedState } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import {
   Box,
   Button,
@@ -96,17 +101,18 @@ const ICPrinterCategories = (props) => {
     '',
   );
 
-  const selectedCategory = filter(
-    categories,
+  const selectedCategory = categories.filter(
     (cat: category) => cat.name === categoryTarget,
   )[0];
+
+  categories.sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <Section fill title="Circuits">
       <Stack fill>
         <Stack.Item mr={2} basis="20%">
           <Tabs vertical>
-            {sortBy(categories, (cat: category) => cat.name).map((cat) => (
+            {categories.map((cat) => (
               <Tabs.Tab
                 selected={categoryTarget === cat.name}
                 onClick={() => setcategoryTarget(cat.name)}
@@ -121,8 +127,9 @@ const ICPrinterCategories = (props) => {
           {selectedCategory ? (
             <Section fill scrollable>
               <LabeledList>
-                {sortBy(selectedCategory.items, (item: item) => item.name).map(
-                  (item) => (
+                {selectedCategory.items
+                  .sort((a, b) => a.name.localeCompare(b.name))
+                  .map((item) => (
                     <LabeledList.Item
                       key={item.name}
                       label={item.name}
@@ -139,8 +146,7 @@ const ICPrinterCategories = (props) => {
                     >
                       {item.desc}
                     </LabeledList.Item>
-                  ),
-                )}
+                  ))}
               </LabeledList>
             </Section>
           ) : (

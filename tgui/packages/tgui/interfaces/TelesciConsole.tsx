@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import { sortBy } from 'common/collections';
 import { BooleanLike } from 'common/react';
 
 import { useBackend } from '../backend';
+=======
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import {
   AnimatedNumber,
   Box,
@@ -74,6 +79,10 @@ export const TelesciConsoleContent = (props) => {
     lastTeleData,
   } = data;
 
+  if (sectorOptions) {
+    sectorOptions.sort();
+  }
+
   return (
     <Section
       title="Telepad Controls"
@@ -121,7 +130,7 @@ export const TelesciConsoleContent = (props) => {
         </LabeledList.Item>
         <LabeledList.Item label="Sector">
           {sectorOptions &&
-            sortBy(sectorOptions, (v) => v).map((z) => (
+            sectorOptions.map((z) => (
               <Button
                 key={z}
                 icon="check-circle"

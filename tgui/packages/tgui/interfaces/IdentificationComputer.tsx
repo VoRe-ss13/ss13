@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 import { sortBy } from 'common/collections';
 import { BooleanLike } from 'common/react';
 import { decodeHtmlEntities } from 'common/string';
+=======
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { Fragment } from 'react';
 
 import { useBackend } from '../backend';
@@ -274,13 +277,26 @@ export const IdentificationComputerRegions = (props: { actName: string }) => {
 
   const { regions } = data;
 
+  if (regions) {
+    regions.sort((a, b) => a.name.localeCompare(b.name));
+
+    for (let region of regions) {
+      region.accesses.sort((a, b) => a.desc.localeCompare(b.desc));
+    }
+  }
+
   return (
     <Flex wrap="wrap" spacing={1}>
       {regions &&
+<<<<<<< HEAD
         sortBy(regions, (r) => r.name).map((region) => (
           <Flex.Item mb={1} basis="content" grow={1} key={region.name}>
+=======
+        regions.map((region) => (
+          <Stack.Item mb={1} basis="content" grow key={region.name}>
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
             <Section title={region.name} height="100%">
-              {sortBy(region.accesses, (a) => a.desc).map((access) => (
+              {region.accesses.map((access) => (
                 <Box key={access.ref}>
                   <Button
                     fluid

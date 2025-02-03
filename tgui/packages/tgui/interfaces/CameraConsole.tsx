@@ -1,12 +1,28 @@
+<<<<<<< HEAD
 import { filter, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { BooleanLike, classes } from 'common/react';
 import { createSearch } from 'common/string';
+=======
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Button, Dropdown, Flex, Input, Section } from 'tgui/components';
 import { Window } from 'tgui/layouts';
+<<<<<<< HEAD
 import { ByondUi } from 'tgui-core/components';
+=======
+import {
+  Button,
+  ByondUi,
+  Dropdown,
+  Input,
+  Section,
+  Stack,
+} from 'tgui-core/components';
+import { BooleanLike, classes } from 'tgui-core/react';
+import { createSearch } from 'tgui-core/string';
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 type activeCamera = { name: string; status: BooleanLike } | null;
 
@@ -51,31 +67,24 @@ export const selectCameras = (
   networkFilter: string = '',
 ): camera[] => {
   const testSearch = createSearch(searchText, (camera: camera) => camera.name);
-  return flow([
-    (cameras: camera[]) =>
-      // Null camera filter
-      filter(cameras, (camera) => notEmpty(camera?.name)),
-    (cameras: camera[]) => {
-      // Optional search term
+
+  return cameras
+    .filter((camera) => notEmpty(camera?.name))
+    .filter((camera) => {
       if (!searchText) {
-        return cameras;
+        return true;
       } else {
-        return filter(cameras, testSearch);
+        return testSearch(camera);
       }
-    },
-    (cameras: camera[]) => {
-      // Optional network filter
+    })
+    .filter((camera) => {
       if (!networkFilter) {
-        return cameras;
+        return true;
       } else {
-        return filter(cameras, (camera) =>
-          camera.networks.includes(networkFilter),
-        );
+        return camera.networks.includes(networkFilter);
       }
-    },
-    // Slightly expensive, but way better than sorting in BYOND
-    (cameras: camera[]) => sortBy(cameras, (camera) => camera.name),
-  ])(cameras);
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
 };
 
 export const CameraConsole = (props) => {

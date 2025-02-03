@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 import { map, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
+=======
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { useState } from 'react';
 
 import { useBackend } from '../../backend';
@@ -33,6 +36,7 @@ export const PowerMonitorFocus = (props: { focus: sensor }) => {
     ...history.supply,
     ...history.demand,
   );
+
   // Process area data
   const areas: area[] = flow([
     (areas: area[]) =>
@@ -45,24 +49,24 @@ export const PowerMonitorFocus = (props: { focus: sensor }) => {
       if (sortByField !== 'name') {
         return areas;
       } else {
-        return sortBy(areas, (area) => area.name);
+        return areas.sort((a, b) => a.name.localeCompare(b.name));
       }
     },
     (areas: area[]) => {
       if (sortByField !== 'charge') {
         return areas;
       } else {
-        return sortBy(areas, (area) => -area.charge);
+        return areas.sort((a, b) => b.charge - a.charge);
       }
     },
     (areas: area[]) => {
       if (sortByField !== 'draw') {
         return areas;
       } else {
-        return sortBy(
-          areas,
-          (area) => -powerRank(area.load),
-          (area) => -parseFloat(area.load),
+        return areas.sort(
+          (a, b) =>
+            powerRank(b.load) - powerRank(a.load) ||
+            parseFloat(b.load) - parseFloat(a.load),
         );
       }
     },
@@ -70,17 +74,18 @@ export const PowerMonitorFocus = (props: { focus: sensor }) => {
       if (sortByField !== 'problems') {
         return areas;
       } else {
-        return sortBy(
-          areas,
-          (area) => area.eqp,
-          (area) => area.lgt,
-          (area) => area.env,
-          (area) => area.charge,
-          (area) => area.name,
+        return areas.sort(
+          (a, b) =>
+            a.eqp - b.eqp ||
+            a.lgt - b.lgt ||
+            a.env - b.env ||
+            a.charge - b.charge ||
+            a.name.localeCompare(b.name),
         );
       }
     },
   ])(focus.areas);
+
   return (
     <>
       <Section

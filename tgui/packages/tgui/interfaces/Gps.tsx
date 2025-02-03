@@ -1,16 +1,19 @@
 // Currently not used!
 
+<<<<<<< HEAD
 import { map, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { clamp } from 'common/math';
 import { BooleanLike } from 'common/react';
+=======
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { vecLength, vecSubtract } from 'common/vector';
 
 import { useBackend } from '../backend';
 import { Box, Button, Icon, LabeledList, Section, Table } from '../components';
 import { Window } from '../layouts';
 
-const coordsToVec = (coords) => map(coords.split(', '), parseFloat);
+const coordsToVec = (coords: string) => coords.split(', ').map(parseFloat);
 
 type Data = {
   currentArea: string;
@@ -25,16 +28,25 @@ type Data = {
 type signal = {
   entrytag: string;
   coords: string;
-  dist: number;
+  dist?: number;
   degrees: number;
 };
+
+function sortSignal(a: signal, b: signal) {
+  if (a.dist === undefined && b.dist === undefined) return 0;
+  if (a.dist === undefined) return 1;
+  if (b.dist === undefined) return -1;
+  if (a.dist < b.dist) return -1;
+  if (a.dist > b.dist) return 1;
+  else return a.entrytag.localeCompare(b.entrytag);
+}
 
 export const Gps = (props) => {
   const { act, data } = useBackend<Data>();
   const { currentArea, currentCoords, globalmode, power, tag, updating } = data;
   const signals: signal[] = flow([
     (signals: signal[]) =>
-      map(signals, (signal, index) => {
+      signals.map((signal, index) => {
         // Calculate distance to the target. BYOND distance is capped to 127,
         // that's why we roll our own calculations here.
         const dist =
@@ -49,14 +61,7 @@ export const Gps = (props) => {
           );
         return { ...signal, dist, index };
       }),
-    (signals: signal[]) =>
-      sortBy(
-        signals,
-        // Signals with distance metric go first
-        (signal) => signal.dist === undefined,
-        // Sort alphabetically
-        (signal) => signal.entrytag,
-      ),
+    (signals: signal[]) => signals.sort((a, b) => sortSignal(a, b)),
   ])(data.signals || []);
   return (
     <Window title="Global Positioning System" width={470} height={700}>

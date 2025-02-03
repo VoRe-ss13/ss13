@@ -1,10 +1,17 @@
 /* eslint react/no-danger: "off" */
+<<<<<<< HEAD
 import { sortBy } from 'common/collections';
 import { BooleanLike } from 'common/react';
 
 import { useBackend } from '../backend';
 import { Box, Button, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
+=======
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Box, Button, LabeledList, Section } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 type Data = {
   access: number[] | null;
@@ -24,6 +31,8 @@ export const GuestPass = (props) => {
   const { act, data } = useBackend<Data>();
 
   const { area, giver, giveName, reason, duration, mode, log, uid } = data;
+
+  area.sort((a, b) => a.area_name.localeCompare(b.area_name));
 
   return (
     <Window width={500} height={520}>
@@ -81,7 +90,7 @@ export const GuestPass = (props) => {
               Issue Pass
             </Button.Confirm>
             <Section title="Access">
-              {sortBy(area, (a: area) => a.area_name).map((a) => (
+              {area.map((a) => (
                 <Button.Checkbox
                   checked={a.on}
                   key={a.area}

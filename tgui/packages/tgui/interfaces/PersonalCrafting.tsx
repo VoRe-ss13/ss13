@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 import { filter } from 'common/collections';
 import { flow } from 'common/fp';
 import { BooleanLike } from 'common/react';
 import { createSearch } from 'common/string';
+=======
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { useState } from 'react';
 
 import { useBackend } from '../backend';
@@ -97,12 +100,12 @@ export const PersonalCrafting = (props) => {
 
   const shownRecipes: uiRecipe[] = flow([
     (recipes: uiRecipe[]) =>
-      filter(recipes, (recipe) => recipe.category === tab),
+      recipes.filter((recipe) => recipe.category === tab),
     (recipes: uiRecipe[]) => {
       if (!searchText) {
         return recipes;
       } else {
-        return filter(recipes, testSearch);
+        return recipes.filter(testSearch);
       }
     },
   ])(recipes);

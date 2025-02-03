@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 import { filter } from 'common/collections';
 import { flow } from 'common/fp';
 import { BooleanLike, classes } from 'common/react';
 import { createSearch } from 'common/string';
+=======
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { useState } from 'react';
 
 import { useBackend } from '../backend';
@@ -209,7 +212,7 @@ export const prepareSearch = (
       if (!searchText) {
         return products;
       } else {
-        return filter(products, testSearch);
+        return products.filter(testSearch);
       }
     },
   ])(products);

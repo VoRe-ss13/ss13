@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 import { filter } from 'common/collections';
 import { flow } from 'common/fp';
 import { BooleanLike } from 'common/react';
 import { createSearch } from 'common/string';
 
 import { useBackend, useSharedState } from '../backend';
+=======
+import { useBackend, useSharedState } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import {
   Button,
   Input,
@@ -576,7 +581,7 @@ const prepareSearch = (
       if (!searchText) {
         return laws;
       } else {
-        return filter(laws, testSearch);
+        return laws.filter(testSearch);
       }
     },
   ])(laws);
