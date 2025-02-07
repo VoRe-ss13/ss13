@@ -10,8 +10,20 @@
 
 	var/datum/component/artifact_master/artifact_master = /datum/component/artifact_master
 
+<<<<<<< HEAD
 	var/being_used = 0
 
+=======
+/obj/machinery/artifact/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume) //If we get too hot, we burst!
+	if(exposed_temperature >= ARTIFACT_HEAT_BREAK) ///2500K
+		qdel(src)
+
+/obj/machinery/artifact/process() //Air too hot! We break!
+	var/turf/T = get_turf(src)
+	var/datum/gas_mixture/env = T.return_air()
+	if(env && env.temperature > ARTIFACT_HEAT_BREAK)
+		qdel(src)
+>>>>>>> 44c6516aa2 ([MIRROR] Xenoarch Gas Tweaks (#10093))
 
 /obj/machinery/artifact/Destroy()
 	if(artifact_master)
@@ -22,8 +34,8 @@
 			qdel(arti_mstr)
 	. = ..()
 
-/obj/machinery/artifact/New()
-	..()
+/obj/machinery/artifact/Initialize(mapload)
+	. = ..()
 
 	if(ispath(artifact_master))
 		AddComponent(artifact_master)

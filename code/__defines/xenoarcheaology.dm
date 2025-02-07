@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+/// <summary>
+/// This is how much artifacts take to activate.
+/// </summary>
+#define ARTIFACT_GAS_TRIGGER 200	//In MOL
+#define ARTIFACT_HEAT_TRIGGER 375	//In Kelvin
+#define ARTIFACT_COLD_TRIGGER 225	//In Kelvin
+#define ARTIFACT_HEAT_BREAK 2500	//In Kelvin
+
+/// <summary>
+/// These are the defines for the SMALL (can hold in hand) artifacts.
+/// </summary>
+>>>>>>> 44c6516aa2 ([MIRROR] Xenoarch Gas Tweaks (#10093))
 #define ARCHAEO_BOWL 1
 #define ARCHAEO_URN 2
 #define ARCHAEO_CUTLERY 3
