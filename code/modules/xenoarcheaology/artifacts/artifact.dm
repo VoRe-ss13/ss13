@@ -57,8 +57,12 @@
 			my_effect.trigger = TRIGGER_TOUCH
 	else if(icon_num == 10)
 		desc = "A large alien device, there appear to be some kind of vents in the side."
+<<<<<<< HEAD
 		if(prob(50))
 			my_effect.trigger = pick(TRIGGER_ENERGY, TRIGGER_HEAT, TRIGGER_COLD, TRIGGER_PHORON, TRIGGER_OXY, TRIGGER_CO2, TRIGGER_NITRO)
+=======
+		my_effect.trigger = pick(TRIGGER_ENERGY, TRIGGER_HEAT, TRIGGER_COLD)
+>>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 	else if(icon_num == 11)
 		name = "sealed alien pod"
 		desc = "A strange alien device."
@@ -67,8 +71,12 @@
 	else if(icon_num == 12 || icon_num == 14)
 		name = "intricately carved statue"
 		desc = "A strange statue."
+<<<<<<< HEAD
 		if(prob(60))
 			my_effect.trigger = pick(TRIGGER_TOUCH, TRIGGER_HEAT, TRIGGER_COLD, TRIGGER_PHORON, TRIGGER_OXY, TRIGGER_CO2, TRIGGER_NITRO)
+=======
+		my_effect.trigger = pick(TRIGGER_TOUCH, TRIGGER_HEAT, TRIGGER_COLD)
+>>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 
 /obj/machinery/artifact/update_icon()
 	..()

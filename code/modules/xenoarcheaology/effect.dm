@@ -145,12 +145,25 @@
 	. += "</b>"
 
 	switch(trigger)
+<<<<<<< HEAD
 		if(TRIGGER_TOUCH, TRIGGER_WATER, TRIGGER_ACID, TRIGGER_VOLATILE, TRIGGER_TOXIN)
 			. += " Activation index involves <b>physical interaction</b> with artifact surface."
 		if(TRIGGER_FORCE, TRIGGER_ENERGY, TRIGGER_HEAT, TRIGGER_COLD)
 			. += " Activation index involves <b>energetic interaction</b> with artifact surface."
 		if(TRIGGER_PHORON, TRIGGER_OXY, TRIGGER_CO2, TRIGGER_NITRO)
 			. += " Activation index involves <b>precise local atmospheric conditions</b>."
+=======
+		if(TRIGGER_TOUCH) //This one should be self explanatory.
+			. += "Activation index involves " + span_bold("physical interaction") + " with artifact surface."
+		if(TRIGGER_WATER, TRIGGER_ACID, TRIGGER_VOLATILE, TRIGGER_TOXIN) //No xenoarch would know how to activate these without code digging.
+			. += " Activation index involves " + span_bold("chemical interaction with artifact surface.") + " Water/Hydrogen, sulfuric acid, Thermite/Phoron, and toxin/toxic substances (such as lead, phoron, fertilizers, among others) are potential triggers."
+
+		if(TRIGGER_FORCE, TRIGGER_ENERGY) //Did you know multitools can activate energy artifacts?
+			. += " Activation index involves " + span_bold("forceful or energetic interaction with artifact surface.") + " Potential triggers are a pulse from a multitool or battering the artifact with a strong object."
+
+		if(TRIGGER_HEAT, TRIGGER_COLD) //Heat is easy to activate. Smack it with a welder. Cold? Have to cool the area.
+			. += " Activation index involves " + span_bold("precise temperature conditions.") + " Heating/Cooling the atmosphere (>[ARTIFACT_HEAT_TRIGGER]K or <[ARTIFACT_COLD_TRIGGER]K) or using a welder are potential triggers."
+>>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 		else
 			. += " Unable to determine any data about activation trigger."
 

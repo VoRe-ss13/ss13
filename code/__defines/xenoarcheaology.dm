@@ -56,6 +56,12 @@
 #define EFFECT_PULSE 2
 #define MAX_EFFECT 2
 
+<<<<<<< HEAD
+=======
+/// <summary>
+/// These are the defines for what is required to ACTIVATE the artifact.
+/// </summary>
+>>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 #define TRIGGER_TOUCH 0
 #define TRIGGER_WATER 1
 #define TRIGGER_ACID 2
@@ -65,13 +71,10 @@
 #define TRIGGER_ENERGY 6
 #define TRIGGER_HEAT 7
 #define TRIGGER_COLD 8
-#define TRIGGER_PHORON 9
-#define TRIGGER_OXY 10
-#define TRIGGER_CO2 11
-#define TRIGGER_NITRO 12
-#define MAX_TRIGGER 12
+#define MAX_TRIGGER 8
 
 #define EFFECT_UNKNOWN 0
+<<<<<<< HEAD
 #define EFFECT_ENERGY 1
 #define EFFECT_PSIONIC 2
 #define EFFECT_ELECTRO 3
@@ -79,3 +82,28 @@
 #define EFFECT_ORGANIC 5
 #define EFFECT_BLUESPACE 6
 #define EFFECT_SYNTH 7
+=======
+#define EFFECT_ANIMATE 1
+#define EFFECT_BERSERK 2
+#define EFFECT_FEELINGS 3
+#define EFFECT_CELL 4
+#define EFFECT_ELECTIC_FIELD 5
+#define EFFECT_EMP 6
+#define EFFECT_FEYSIGHT 7
+#define EFFECT_FORCEFIELD 8
+#define EFFECT_GAIA 9
+#define EFFECT_GAS 10
+#define EFFECT_GRAVIATIONAL_WAVES 11
+#define EFFECT_TEMPERATURE 12
+#define EFFECT_POLTERGEIST 13
+#define EFFECT_RADIATE 14
+#define EFFECT_RESURRECT 15
+#define EFFECT_ROBOT_HEALTH 16
+#define EFFECT_SLEEPY 17
+#define EFFECT_STUN 18
+#define EFFECT_TELEPORT 19
+#define EFFECT_VAMPIRE 20
+#define EFFECT_HEALTH 21
+#define EFFECT_GENERATOR 22
+#define EFFECT_DNASWITCH 23
+>>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))

@@ -230,10 +230,15 @@
 		else if(ishuman(bumped) && GetAnomalySusceptibility(bumped) >= 0.5)
 			if (my_effect.trigger == TRIGGER_TOUCH && prob(50))
 				my_effect.ToggleActivate()
+<<<<<<< HEAD
 				warn = 1
 
 			if (my_effect.effect == EFFECT_TOUCH && prob(50))
 				my_effect.DoEffectTouch(bumped)
+=======
+				if(my_effect.activated && my_effect.effect == EFFECT_TOUCH)
+					my_effect.DoEffectTouch(bumped)
+>>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 				warn = 1
 
 	if(warn && isliving(bumped))
@@ -249,12 +254,19 @@
 					my_effect.ToggleActivate()
 
 		else if(ishuman(M) && !istype(M:gloves,/obj/item/clothing/gloves))
+<<<<<<< HEAD
 			if (my_effect.trigger == TRIGGER_TOUCH && prob(50))
 				my_effect.ToggleActivate()
 				warn = 1
 
 			if (my_effect.effect == EFFECT_TOUCH && prob(50))
 				my_effect.DoEffectTouch(M)
+=======
+			if (my_effect.trigger == TRIGGER_TOUCH)
+				my_effect.ToggleActivate(M)
+				if(my_effect.activated && my_effect.effect == EFFECT_TOUCH)
+					my_effect.DoEffectTouch(M)
+>>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 				warn = 1
 
 	if(warn && isliving(M))
@@ -274,15 +286,13 @@
 
 	var/triggered = FALSE
 
-	for(var/datum/artifact_effect/my_effect in my_effects)
-
-		if(my_effect.trigger == TRIGGER_TOUCH)
-			triggered = TRUE
-			my_effect.ToggleActivate()
-
-		if (my_effect.effect == EFFECT_TOUCH)
-			triggered = TRUE
-			my_effect.DoEffectTouch(user)
+	if(ishuman(user) && !istype(user:gloves,/obj/item/clothing/gloves))
+		for(var/datum/artifact_effect/my_effect in my_effects)
+			if(my_effect.trigger == TRIGGER_TOUCH)
+				triggered = TRUE
+				my_effect.ToggleActivate()
+				if(my_effect.activated && my_effect.effect == EFFECT_TOUCH)
+					my_effect.DoEffectTouch(user)
 
 	if(triggered)
 		to_chat(user, span_filter_notice(span_bold("You touch [holder].")))
@@ -374,10 +384,6 @@
 	//if any of our effects rely on environmental factors, work that out
 	var/trigger_cold = 0
 	var/trigger_hot = 0
-	var/trigger_phoron = 0
-	var/trigger_oxy = 0
-	var/trigger_co2 = 0
-	var/trigger_nitro = 0
 
 	var/turf/T = get_turf(holder)
 	var/datum/gas_mixture/env = T.return_air()
@@ -387,6 +393,7 @@
 		else if(env.temperature > 375)
 			trigger_hot = 1
 
+<<<<<<< HEAD
 		if(env.gas[GAS_PHORON] >= 10)
 			trigger_phoron = 1
 		if(env.gas[GAS_O2] >= 10)
@@ -396,6 +403,8 @@
 		if(env.gas[GAS_N2] >= 10)
 			trigger_nitro = 1
 
+=======
+>>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 	for(var/datum/artifact_effect/my_effect in my_effects)
 		my_effect.artifact_id = artifact_id
 
@@ -409,6 +418,7 @@
 		if(my_effect.trigger == TRIGGER_HEAT && (trigger_hot ^ my_effect.activated))
 			my_effect.ToggleActivate()
 
+<<<<<<< HEAD
 		//PHORON GAS ACTIVATION
 		if(my_effect.trigger == TRIGGER_PHORON && (trigger_phoron ^ my_effect.activated))
 			my_effect.ToggleActivate()
@@ -424,3 +434,13 @@
 		//NITROGEN GAS ACTIVATION
 		if(my_effect.trigger == TRIGGER_NITRO && (trigger_nitro ^ my_effect.activated))
 			my_effect.ToggleActivate()
+=======
+#undef HYDROGEN_PATH
+#undef WATER_PATH
+#undef ACID_PATH
+#undef DIETHYLAMINE_PATH
+#undef PHORON_PATH
+#undef HYDROPHORON_PATH
+#undef THERMITE_PATH
+#undef TOXIN_PATH
+>>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
