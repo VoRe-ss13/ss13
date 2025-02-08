@@ -1153,3 +1153,293 @@
 	msg_owner_grab_fail = "You step down onto %prey with one of your vines, forcing them onto the ground!"
 	msg_prey_grab_fail = "%owner steps down onto you with one of their vines, squishing you and forcing you onto the ground!"
 */// CHOMPRemove End
+<<<<<<< HEAD
+=======
+/datum/sprite_accessory/tail/taur/redpanda
+	name = "Red Panda (Taur)"
+	icon_state = "redpanda"
+
+/datum/sprite_accessory/tail/taur/redpandadc
+	name = "Red Panda (Taur dual-color)"
+	icon_state = "redpanda_dc"
+	extra_overlay = "redpanda_dc_markings"
+
+/datum/sprite_accessory/tail/taur/wolf/fatwolf_2c/fatwolfalt
+	name = "Fat Wolf 3-color-alt (Taur)"
+	icon_state = "fatwolfalt_s"
+	extra_overlay = "fatwolfalt_markings1"
+	extra_overlay2 = "fatwolfalt_markings2"
+	icon_sprite_tag = "wolf"
+
+/datum/sprite_accessory/tail/taur/naga/alt
+	name = "Naga alt (Taur)"
+	icon_state = "naga_alt_s"
+	vore_tail_sprite_variant = "NagaAlt"
+	fullness_icons = 1
+
+/datum/sprite_accessory/tail/taur/naga/alt/second
+	name = "Naga dual-color alt (Taur)"
+	extra_overlay = "naga_alt_markings"
+
+/datum/sprite_accessory/tail/taur/naga/synthnaga
+	name = "Synthetic Naga dual-color (Taur)"
+	icon_state = "synthnaga"
+	extra_overlay = "synthnaga_belly"
+
+/datum/sprite_accessory/tail/taur/horse/scoli
+	name = "Scolipede (Taur)"
+	icon_state = "scoli_s"
+	extra_overlay = "scoli_markings1"
+	extra_overlay2 = "scoli_markings2"
+
+/datum/sprite_accessory/tail/taur/sergal/wheaties
+	name = "Sergal (Taur)"
+	icon_state = "sergwheat"
+	icon_sprite_tag = "wolf"
+	vore_tail_sprite_variant = "N"
+	fullness_icons = 3
+	struggle_anim = TRUE
+
+/datum/sprite_accessory/tail/taur/longvirus
+	name = "Long Virus (Taur)"
+	icon_state = "longvirus_s"
+	extra_overlay = "longvirus_markings"
+	icon_sprite_tag = "virus"
+
+/datum/sprite_accessory/tail/taur/sectdrone
+	name = "Sect Drone (Taur)"
+	icon_state = "sectdrone"
+	extra_overlay = "sectdrone_markings"
+	can_loaf = TRUE
+	icon_loaf = 'icons/mob/vore/taurs_loaf.dmi'
+	vore_tail_sprite_variant = "SectDrone"
+	belly_variant_when_loaf = TRUE
+	struggle_anim = TRUE
+	loaf_offset = 3
+	fullness_icons = 3
+
+	msg_owner_disarm_run = "You quickly push %prey to the ground with your leg!"
+	msg_prey_disarm_run = "%owner pushes you down to the ground with their leg!"
+
+	msg_owner_disarm_walk = "You firmly push your leg down on %prey, painfully but harmlessly pinning them to the ground!"
+	msg_prey_disarm_walk = "%owner firmly pushes their leg down on you, quite painfully but harmlessly pinning you to the ground!"
+
+	msg_owner_harm_walk = "You methodically place your leg down upon %prey's body, slowly applying pressure, crushing them against the floor!"
+	msg_prey_harm_walk = "%owner methodically places their leg upon your body, slowly applying pressure, crushing you against the floor!"
+
+	msg_owner_grab_success = "You pin %prey down on the ground with your front leg before using your other leg to pick them up, trapping them between two of your front legs!"
+	msg_prey_grab_success = "%owner pins you down on the ground with their front leg before using their other leg to pick you up, trapping you between two of their front legs!"
+
+	msg_owner_grab_fail = "You step down onto %prey, squishing them and forcing them down to the ground!"
+	msg_prey_grab_fail = "%owner steps down and squishes you with their leg, forcing you down to the ground!"
+
+/datum/sprite_accessory/tail/taur/sect_drone/fat
+	name = "Fat Sect Drone (Taur)"
+	icon_state = "fat_sect_drone"
+	extra_overlay = "fat_sect_drone_markings"
+	icon_sprite_tag = "sect_drone"
+
+/datum/sprite_accessory/tail/taur/sergal/fatwheaties
+	name = "Fat Sergal (Taur)"
+	icon_state = "fatsergal"
+	icon_sprite_tag = "wolf"
+	vore_tail_sprite_variant = "N"
+	fullness_icons = 3
+	struggle_anim = TRUE
+
+/datum/sprite_accessory/tail/taur/sergal/wheaties_2c
+	name = "Sergal (Taur, dual-color)"
+	icon_state = "sergwheat"
+	extra_overlay = "sergwheat_markings"
+	icon_sprite_tag = "wolf"
+	vore_tail_sprite_variant = "N"
+	fullness_icons = 3
+	struggle_anim = TRUE
+
+/datum/sprite_accessory/tail/taur/sergal/fatwheaties_2c
+	name = "Fat Sergal (Taur, dual-color)"
+	icon_state = "fatsergal"
+	extra_overlay = "sergwheat_markings"
+	icon_sprite_tag = "wolf"
+	vore_tail_sprite_variant = "N"
+	fullness_icons = 3
+	struggle_anim = TRUE
+
+/datum/sprite_accessory/tail/taur/cow_alt
+	name = "Cow Alt (Taur dual-color)"
+	icon_state = "cow_alt"
+	extra_overlay = "cow_alt_2"
+	vore_tail_sprite_variant = "CowAlt"
+	fullness_icons = 1
+
+/datum/sprite_accessory/tail/taur/bigleggy
+	name = "Big Leggies"
+	icon_state = "bigleggy"
+	extra_overlay = "bigleggy_markings"
+	vore_tail_sprite_variant = "bigleggy"
+	fullness_icons = 3
+	ani_state = "bigleggy_stanced"
+	extra_overlay_w = "bigleggy_markings_stanced"
+
+/datum/sprite_accessory/tail/taur/bigleggy/canine
+	name = "Big Leggies (Canine Tail)"
+	extra_overlay2 = "bigleggy_canine"
+	extra_overlay2_w = "bigleggy_canine"
+
+/datum/sprite_accessory/tail/taur/bigleggy/feline
+	name = "Big Leggies (Feline Tail)"
+	extra_overlay2 = "bigleggy_feline"
+	extra_overlay2_w = "bigleggy_feline"
+
+/datum/sprite_accessory/tail/taur/bigleggy/reptile
+	name = "Big Leggies (Reptile Tail)"
+	extra_overlay2 = "bigleggy_reptile"
+	extra_overlay2_w = "bigleggy_reptile"
+
+/datum/sprite_accessory/tail/taur/bigleggy/snake
+	name = "Big Leggies (Snake Tail)"
+	extra_overlay2 = "bigleggy_snake"
+	extra_overlay2_w = "bigleggy_snake"
+
+/datum/sprite_accessory/tail/taur/bigleggy/fox
+	name = "Big Leggies (Fox Tail)"
+	extra_overlay2 = "bigleggy_vulpine"
+	extra_overlay2_w = "bigleggy_vulpine"
+
+/datum/sprite_accessory/tail/taur/bigleggy/bird
+	name = "Big Leggies (Bird)"
+	icon_state = "bigleggy"
+	extra_overlay = "bigleggy_m_bird"
+	extra_overlay2 = "bigleggy_bird"
+	extra_overlay_w = "bigleggy_m_bird_stanced"
+	extra_overlay2_w = "bigleggy_bird"
+
+/datum/sprite_accessory/tail/taur/bigleggy/plug
+	name = "Big Leggies (Plug Tail)"
+	extra_overlay2 = "bigleggy_plug"
+	extra_overlay2_w = "bigleggy_plug"
+
+/datum/sprite_accessory/tail/taur/bigleggy/AlienSlug
+	name = "Big Leggies (Alien Slug Tail)"
+	icon_state = "bigleggy_full_alienslug"
+	extra_overlay = "bigleggy_alienslug"
+	extra_overlay_w = "bigleggy_alienslug"
+	extra_overlay2 = "bigleggy_alienslug_m"
+	extra_overlay2_w = "bigleggy_alienslug_m"
+
+/datum/sprite_accessory/tail/taur/drake/extended
+	name = "Fat Drake Extended (Taur)"
+	icon_state = "extended_fatdrake"
+	extra_overlay = "extended_fatdrake_markings"
+	extra_overlay2 = "extended_fatdrake_markings2"
+	fullness_icons = 2
+	can_loaf = TRUE //Soon //Actually, NOW
+	icon_loaf = 'icons/mob/vore/taurs_loaf.dmi' //This file needs to be nuked during the removal of 'taurs_ch_loaf.dmi' into the normal loaf file.
+	loaf_offset = 5
+
+/datum/sprite_accessory/tail/taur/lizard/spotty
+	name = "Spotted Lizard (Taur, Tricolor)"
+	icon_state = "spottedlizard_s"
+	extra_overlay = "spottedlizard_markings"
+	extra_overlay_w = "spottedlizard_markings"
+	extra_overlay2 = "spottedlizard_markings_2"
+	extra_overlay2_w = "spottedlizard_markings_2"
+	can_loaf = TRUE
+	icon_loaf = 'icons/mob/vore/taurs_loaf.dmi' //This file needs to be nuked during the removal of 'taurs_ch_loaf.dmi' into the normal loaf file.
+	loaf_offset = 5
+
+
+
+/datum/sprite_accessory/tail/taur/lizard/spotty_fat
+	name = "Fat Spotted Lizard (Taur, Tricolor)"
+	icon_state = "fatspottedlizard_s"
+	extra_overlay = "fatspottedlizard_markings"
+	extra_overlay_w = "fatspottedlizard_markings"
+	extra_overlay2 = "fatspottedlizard_markings_2"
+	extra_overlay2_w = "fatspottedlizard_markings_2"
+	can_loaf = TRUE
+	icon_loaf = 'icons/mob/vore/taurs_loaf.dmi' //This file needs to be nuked during the removal of 'taurs_ch_loaf.dmi' into the normal loaf file.
+	loaf_offset = 3
+
+/datum/sprite_accessory/tail/taur/drake/extended/spotty
+	name = "Fat Spotted Drake Extended (Taur)"
+	vore_tail_sprite_variant = "FatDrake"
+	icon_state = "spottedextended_fatdrake"
+	extra_overlay = "spottedextended_fatdrake_markings"
+	extra_overlay_w = "spottedextended_fatdrake_markings"
+	extra_overlay2 = "spottedextended_fatdrake_markings_2"
+	extra_overlay2_w = "spottedextended_fatdrake_markings_2"
+	fullness_icons = 2
+	can_loaf = TRUE
+	icon_loaf = 'icons/mob/vore/taurs_loaf.dmi' //This file needs to be nuked during the removal of 'taurs_ch_loaf.dmi' into the normal loaf file.
+	loaf_offset = 5
+
+/datum/sprite_accessory/tail/taur/drake/spotty
+	name = "Spotted Drake (Taur, Tricolor)"
+	icon_state = "spotteddrake_s"
+	extra_overlay = "spotteddrake_markings"
+	extra_overlay_w = "spotteddrake_markings"
+	extra_overlay2 = "spotteddrake_markings_2"
+	extra_overlay2_w = "spotteddrake_markings_2"
+	suit_sprites = 'icons/mob/taursuits_drake_ch.dmi'
+	icon_sprite_tag = "drake"
+	can_loaf = TRUE
+	icon_loaf = 'icons/mob/vore/taurs_loaf.dmi' //This file needs to be nuked during the removal of 'taurs_ch_loaf.dmi' into the normal loaf file.
+	loaf_offset = 6
+
+/datum/sprite_accessory/tail/taur/drake/fat/spotty
+	name = "Fat Spotted Drake (Taur, Tricolor)"
+	vore_tail_sprite_variant = "FatDrake"
+	icon_state = "fatspotteddrake_s"
+	extra_overlay = "fatspotteddrake_markings"
+	extra_overlay_w = "fatspotteddrake_markings"
+	extra_overlay2 = "fatspotteddrake_markings_2"
+	extra_overlay2_w = "fatspotteddrake_markings_2"
+	fullness_icons = 2
+	can_loaf = TRUE
+	icon_loaf = 'icons/mob/vore/taurs_loaf.dmi' //This file needs to be nuked during the removal of 'taurs_ch_loaf.dmi' into the normal loaf file.
+	loaf_offset = 6
+
+/datum/sprite_accessory/tail/taur/drake/extended_alt
+	name = "Drake Extended (Taur)"
+	vore_tail_sprite_variant = "Drake"
+	icon_state = "extended_drake"
+	extra_overlay = "extended_drake_markings"
+	extra_overlay_w = "extended_drake_markings"
+	extra_overlay2 = "extended_drake_markings_2"
+	extra_overlay2_w = "extended_drake_markings_2"
+	fullness_icons = 3
+	can_loaf = TRUE
+	icon_loaf = 'icons/mob/vore/taurs_loaf.dmi'
+	loaf_offset = 5
+
+/datum/sprite_accessory/tail/taur/drake/extended_alt/spotted
+	name = "Spotted Drake Extended (Taur)"
+	vore_tail_sprite_variant = "Drake"
+	icon_state = "spottedextended_drake"
+	extra_overlay = "spottedextended_drake_markings"
+	extra_overlay_w = "spottedextended_drake_markings"
+	extra_overlay2 = "spottedextended_drake_markings_2"
+	extra_overlay2_w = "spottedextended_drake_markings_2"
+	fullness_icons = 3
+	can_loaf = TRUE
+	icon_loaf = 'icons/mob/vore/taurs_loaf.dmi' //This file needs to be nuked during the removal of 'taurs_ch_loaf.dmi' into the normal loaf file.
+	loaf_offset = 5
+
+/datum/sprite_accessory/tail/taur/zorgoia_new
+	name = "Zorgoia (Taur) (New)"
+	icon_state = "zorgoia_new"
+	extra_overlay = "zorgoia_new_fluff"
+
+/datum/sprite_accessory/tail/taur/zorgoia_new/fat
+	name = "Zorgoia (Fat Taur) (New)"
+	icon_state = "zorgoia_new_fat"
+	extra_overlay = "zorgoia_new_fat_overlay"
+
+/datum/sprite_accessory/tail/taur/sloog
+	name = "Sloog (Taur)"
+	icon_state = "sloog"
+	extra_overlay = "sloog_glowstripe"
+	extra_overlay_w = "sloog_glowstripe"
+	can_loaf = FALSE
+>>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
