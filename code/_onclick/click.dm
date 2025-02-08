@@ -143,6 +143,7 @@
 				if(ismob(A)) // No instant mob attacking
 					setClickCooldown(get_attack_speed())
 				UnarmedAttack(A, 1)
+<<<<<<< HEAD
 			trigger_aiming(TARGET_CAN_CLICK)
 			return
 		else // non-adjacent click
@@ -150,6 +151,28 @@
 				W.afterattack(A, src, 0, params) // 0: not Adjacent
 			else
 				RangedAttack(A, params)
+=======
+				trigger_aiming(TARGET_CAN_CLICK)
+				return
+		else
+			if(A.Adjacent(src) || (W && W.attack_can_reach(src, A, W.reach)) ) // see adjacent.dm
+				if(W && !restrained())
+					// Return 1 in attackby() to prevent afterattack() effects (when safely moving items for example)
+					var/resolved = W.resolve_attackby(A,src, click_parameters = params)
+					if(!resolved && A && W)
+						W.afterattack(A, src, 1, params) // 1: clicking something Adjacent
+				else
+					if(ismob(A)) // No instant mob attacking
+						setClickCooldown(get_attack_speed())
+					UnarmedAttack(A, 1)
+				trigger_aiming(TARGET_CAN_CLICK)
+				return
+			else // non-adjacent click
+				if(W)
+					W.afterattack(A, src, 0, params) // 0: not Adjacent
+				else
+					RangedAttack(A, params)
+>>>>>>> cabda49fd0 ([MIRROR] Fixes a unneeded currently_restrained check (#10123))
 
 			trigger_aiming(TARGET_CAN_CLICK)
 	return 1
