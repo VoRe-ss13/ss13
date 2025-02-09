@@ -1,17 +1,9 @@
-<<<<<<< HEAD
-import { BooleanLike } from 'common/react';
-=======
 import { useBackend } from 'tgui/backend';
 import { BeakerContents } from 'tgui/interfaces/common/BeakerContents';
 import { modalOpen } from 'tgui/interfaces/common/ComplexModal';
 import { Box, Button, Section } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
->>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
-import { useBackend } from '../../../backend';
-import { Box, Button, Section } from '../../../components';
-import { BeakerContents } from '../.././common/BeakerContents';
-import { modalOpen } from '../.././common/ComplexModal';
 import { transferAmounts } from './constants';
 import { reagent } from './types';
 

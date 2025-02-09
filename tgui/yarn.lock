@@ -19055,15 +19055,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-<<<<<<< HEAD
-"tgui-core@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "tgui-core@npm:1.2.0"
-  peerDependencies:
-    react: ^18.2.0
-    react-dom: ^18.2.0
-  checksum: 10c0/1eead0edbe0df5c49bfa88f0d2caa5df743057be75e9c526d0afd838b8def072c67fe60435c66cba52551c4ef70749d60d68094fa103542187008998002714f7
-=======
 "tgui-core@npm:^1.7.5":
   version: 1.7.5
   resolution: "tgui-core@npm:1.7.5"
@@ -19071,7 +19062,6 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
   checksum: 10c0/2631ee32272831a1b778e4c825a58c38adf728663aa0537b177e449640708e6f44122b47f1b109e05f42606b7045525d8da6241419a8cb11e14a4afcec9bae82
->>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
   languageName: node
   linkType: hard
 
@@ -19189,11 +19179,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-popper: "npm:^2.3.0"
-<<<<<<< HEAD
-    tgui-core: "npm:^1.2.0"
-=======
     tgui-core: "npm:^1.7.5"
->>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
     tgui-dev-server: "workspace:*"
     tgui-polyfill: "workspace:*"
   languageName: unknown

@@ -1,23 +1,16 @@
 import { useBackend } from 'tgui/backend';
+import { RankIcon } from 'tgui/interfaces/common/RankIcon';
 import {
   Box,
   Button,
-  Flex,
   LabeledList,
   NoticeBox,
   Section,
-<<<<<<< HEAD
-} from 'tgui/components';
-import { formatTime } from 'tgui/format';
-
-import { RankIcon } from '../../../common/RankIcon';
-=======
   Stack,
 } from 'tgui-core/components';
 import { formatTime } from 'tgui-core/format';
 import { toFixed } from 'tgui-core/math';
 import { BooleanLike } from 'tgui-core/react';
->>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 type Data = {
   card: string | null;
@@ -92,20 +85,14 @@ export const pda_timeclock = (props) => {
           {!!job_datum && (
             <>
               <LabeledList.Item label="Rank">
-                <Box backgroundColor={job_datum.selection_color} p={0.8}>
-                  <Flex justify="space-between" align="center">
-                    <Flex.Item>
-                      <Box ml={1}>
-                        <RankIcon color="white" rank={job_datum.title} />
-                      </Box>
-                    </Flex.Item>
-                    <Flex.Item>
-                      <Box fontSize={1.5} inline mr={1}>
-                        {job_datum.title}
-                      </Box>
-                    </Flex.Item>
-                  </Flex>
-                </Box>
+                <Stack backgroundColor={job_datum.selection_color} p={0.8}>
+                  <Stack.Item ml={1}>
+                    <RankIcon color="white" rank={job_datum.title} />
+                  </Stack.Item>
+                  <Stack.Item fontSize={1.5} grow textAlign="right" mr={1}>
+                    {job_datum.title}
+                  </Stack.Item>
+                </Stack>
               </LabeledList.Item>
               <LabeledList.Item label="Departments">
                 {job_datum.departments}
