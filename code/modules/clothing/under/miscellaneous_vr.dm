@@ -188,8 +188,6 @@
 	if(target_size < 0.25) //ChompEDIT - set to our rule cap
 		target_size = 0.25 //ChompEDIT - set to our rule cap
 
-<<<<<<< HEAD
-=======
 /obj/item/clothing/gloves/bluespace/deluxe
 	name = "deluxe size standardization bracelet"
 	desc = "A somewhat bulky metal bracelet featuring a crystal, glowing blue. The outer side of the bracelet has an elongated case that one might imagine \
@@ -258,7 +256,6 @@
 		last_activated = world.time
 
 
->>>>>>> b76d4d7c12 ([MIRROR] Size Changing Apparel Adjusments & Runtime fixes (#10053))
 //Same as Nanotrasen Security Uniforms
 /obj/item/clothing/under/ert
 	armor = list(melee = 5, bullet = 10, laser = 10, energy = 5, bomb = 5, bio = 0, rad = 0)
