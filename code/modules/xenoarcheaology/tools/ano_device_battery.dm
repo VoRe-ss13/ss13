@@ -50,8 +50,6 @@
 	..()
 	START_PROCESSING(SSobj, src)
 
-<<<<<<< HEAD
-=======
 /obj/item/anodevice/Destroy()
 	inserted_battery = null
 	archived_loc = null
@@ -62,7 +60,6 @@
 	last_user_touched = user
 	..()
 
->>>>>>> 51aa7b87d0 ([MIRROR] Some misc xenoarch fixes (#9960))
 /obj/item/anodevice/attackby(var/obj/I as obj, var/mob/user as mob)
 	if(istype(I, /obj/item/anobattery))
 		if(!inserted_battery)

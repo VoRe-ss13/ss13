@@ -90,15 +90,6 @@
 /// These are defines of what TYPE of artifact it is. See code/modules/xenoarcheaology/effects for each artifact.
 /// </summary>
 #define EFFECT_UNKNOWN 0
-<<<<<<< HEAD
-#define EFFECT_ENERGY 1
-#define EFFECT_PSIONIC 2
-#define EFFECT_ELECTRO 3
-#define EFFECT_PARTICLE 4
-#define EFFECT_ORGANIC 5
-#define EFFECT_BLUESPACE 6
-#define EFFECT_SYNTH 7
-=======
 #define EFFECT_ANIMATE 1
 #define EFFECT_BERSERK 2
 #define EFFECT_FEELINGS 3
@@ -122,4 +113,3 @@
 #define EFFECT_HEALTH 21
 #define EFFECT_GENERATOR 22
 #define EFFECT_DNASWITCH 23 //Not in as of yet.
->>>>>>> 51aa7b87d0 ([MIRROR] Some misc xenoarch fixes (#9960))

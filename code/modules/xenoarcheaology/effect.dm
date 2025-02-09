@@ -114,22 +114,6 @@
 /datum/artifact_effect/proc/getDescription()
 	. = "<br><br>This object has been detected to: "
 	switch(effect_type)
-<<<<<<< HEAD
-		if(EFFECT_ENERGY)
-			. += "Concentrated energy emissions"
-		if(EFFECT_PSIONIC)
-			. += "Intermittent psionic wavefront"
-		if(EFFECT_ELECTRO)
-			. += "Electromagnetic energy"
-		if(EFFECT_PARTICLE)
-			. += "High frequency particles"
-		if(EFFECT_ORGANIC)
-			. += "Organically reactive exotic particles"
-		if(EFFECT_BLUESPACE)
-			. += "Interdimensional/bluespace? phasing"
-		if(EFFECT_SYNTH)
-			. += "Atomic synthesis"
-=======
 		if(EFFECT_UNKNOWN)
 			. += span_bold("have an unknown effect") //Should never happen but you know, whatever. Failsafe.
 		if(EFFECT_ANIMATE)
@@ -178,7 +162,6 @@
 			. += "drain the blood of subjects, creating creatures or anomalous artifacts in the process"
 		if(EFFECT_DNASWITCH)
 			. += "mutate the cells of the organism that touches it, resulting in rampant mutations"
->>>>>>> 51aa7b87d0 ([MIRROR] Some misc xenoarch fixes (#9960))
 		else
 			. += "have no previously-known anomalous properties"
 
