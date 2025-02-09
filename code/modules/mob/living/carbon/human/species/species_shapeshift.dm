@@ -179,11 +179,7 @@ var/list/wrapped_species_by_ref = list()
 
 	last_special = world.time + 50
 
-<<<<<<< HEAD
-	var/new_skin = input(usr, "Please select a new body color.", "Shapeshifter Colour", rgb(r_skin, g_skin, b_skin)) as null|color
-=======
 	var/new_skin = tgui_color_picker(src, "Please select a new body color.", "Shapeshifter Colour", rgb(r_skin, g_skin, b_skin))
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 	if(!new_skin)
 		return
 	shapeshifter_set_colour(new_skin)
@@ -221,17 +217,6 @@ var/list/wrapped_species_by_ref = list()
 
 	last_special = world.time + 50
 
-<<<<<<< HEAD
-	var/new_hair = input(usr, "Please select a new hair color.", "Hair Colour") as color
-	if(!new_hair)
-		return
-	shapeshifter_set_hair_color(new_hair)
-	var/new_grad = input(src, "Please select a new hair gradient color.", "Hair Gradient Colour") as color
-	if(!new_grad)
-		return
-	shapeshifter_set_grad_color(new_grad)
-	var/new_fhair = input(usr, "Please select a new facial hair color.", "Facial Hair Color") as color
-=======
 	var/new_hair = tgui_color_picker(src, "Please select a new hair color.", "Hair Colour")
 	if(!new_hair)
 		return
@@ -241,7 +226,6 @@ var/list/wrapped_species_by_ref = list()
 		return
 	shapeshifter_set_grad_color(new_grad)
 	var/new_fhair = tgui_color_picker(src, "Please select a new facial hair color.", "Facial Hair Color")
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 	if(!new_fhair)
 		return
 	shapeshifter_set_facial_color(new_fhair)
@@ -333,11 +317,7 @@ var/list/wrapped_species_by_ref = list()
 	last_special = world.time + 50
 
 	var/current_color = rgb(r_eyes,g_eyes,b_eyes)
-<<<<<<< HEAD
-	var/new_eyes = input(usr, "Pick a new color for your eyes.","Eye Color", current_color) as null|color
-=======
 	var/new_eyes = tgui_color_picker(src, "Pick a new color for your eyes.","Eye Color", current_color)
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 	if(!new_eyes)
 		return
 

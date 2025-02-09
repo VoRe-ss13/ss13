@@ -243,11 +243,7 @@ Book Cart End
 					src.name = newtitle
 					src.title = newtitle
 			if("Contents")
-<<<<<<< HEAD
-				var/content = sanitize(input(usr, "Write your book's contents (HTML NOT allowed):") as message|null, MAX_BOOK_MESSAGE_LEN)
-=======
 				var/content = sanitize(tgui_input_text(user, "Write your book's contents (HTML NOT allowed):", max_length=MAX_BOOK_MESSAGE_LEN, multiline=TRUE), MAX_BOOK_MESSAGE_LEN)
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 				if(!content)
 					to_chat(user, "The content is invalid.")
 					return

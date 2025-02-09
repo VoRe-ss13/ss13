@@ -28,11 +28,7 @@
 	//Allow color picks
 	var/current_pri_color = rgb(r_ears,g_ears,b_ears)
 
-<<<<<<< HEAD
-	var/new_pri_color = input(usr, "Pick primary ear color:","Ear Color (Pri)", current_pri_color) as null|color
-=======
 	var/new_pri_color = tgui_color_picker(src, "Pick primary ear color:","Ear Color (Pri)", current_pri_color)
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 	if(new_pri_color)
 		var/list/new_color_rgb_list = hex2rgb(new_pri_color)
 		r_ears = new_color_rgb_list[1]
@@ -42,11 +38,7 @@
 		//Indented inside positive primary color choice, don't bother if they clicked cancel
 		var/current_sec_color = rgb(r_ears2,g_ears2,b_ears2)
 
-<<<<<<< HEAD
-		var/new_sec_color = input(usr, "Pick secondary ear color (only applies to some ears):","Ear Color (sec)", current_sec_color) as null|color
-=======
 		var/new_sec_color = tgui_color_picker(src, "Pick secondary ear color (only applies to some ears):","Ear Color (sec)", current_sec_color)
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 		if(new_sec_color)
 			new_color_rgb_list = hex2rgb(new_sec_color)
 			r_ears2 = new_color_rgb_list[1]
@@ -55,11 +47,7 @@
 
 		var/current_ter_color = rgb(r_ears3,g_ears3,b_ears3)
 
-<<<<<<< HEAD
-		var/new_ter_color = input(usr, "Pick tertiary ear color (only applies to some ears):","Ear Color (sec)", current_ter_color) as null|color
-=======
 		var/new_ter_color = tgui_color_picker(src, "Pick tertiary ear color (only applies to some ears):","Ear Color (sec)", current_ter_color)
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 		if(new_ter_color)
 			new_color_rgb_list = hex2rgb(new_sec_color)
 			r_ears3 = new_color_rgb_list[1]
@@ -126,11 +114,7 @@
 	//Allow color picks
 	var/current_pri_color = rgb(r_tail,g_tail,b_tail)
 
-<<<<<<< HEAD
-	var/new_pri_color = input(usr, "Pick primary tail color:","Tail Color (Pri)", current_pri_color) as null|color
-=======
 	var/new_pri_color = tgui_color_picker(src, "Pick primary tail color:","Tail Color (Pri)", current_pri_color)
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 	if(new_pri_color)
 		var/list/new_color_rgb_list = hex2rgb(new_pri_color)
 		r_tail = new_color_rgb_list[1]
@@ -140,11 +124,7 @@
 		//Indented inside positive primary color choice, don't bother if they clicked cancel
 		var/current_sec_color = rgb(r_tail2,g_tail2,b_tail2)
 
-<<<<<<< HEAD
-		var/new_sec_color = input(usr, "Pick secondary tail color (only applies to some tails):","Tail Color (sec)", current_sec_color) as null|color
-=======
 		var/new_sec_color = tgui_color_picker(src, "Pick secondary tail color (only applies to some tails):","Tail Color (sec)", current_sec_color)
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 		if(new_sec_color)
 			new_color_rgb_list = hex2rgb(new_sec_color)
 			r_tail2 = new_color_rgb_list[1]
@@ -153,11 +133,7 @@
 
 		var/current_ter_color = rgb(r_tail3,g_tail3,b_tail3)
 
-<<<<<<< HEAD
-		var/new_ter_color = input(usr, "Pick tertiary tail color (only applies to some tails):","Tail Color (sec)", current_ter_color) as null|color
-=======
 		var/new_ter_color = tgui_color_picker(src, "Pick tertiary tail color (only applies to some tails):","Tail Color (sec)", current_ter_color)
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 		if(new_ter_color)
 			new_color_rgb_list = hex2rgb(new_ter_color)
 			r_tail3 = new_color_rgb_list[1]
@@ -192,11 +168,7 @@
 	//Allow color picks
 	var/current_color = rgb(r_wing,g_wing,b_wing)
 
-<<<<<<< HEAD
-	var/new_color = input(usr, "Pick wing color:","Wing Color", current_color) as null|color
-=======
 	var/new_color = tgui_color_picker(src, "Pick wing color:","Wing Color", current_color)
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 	if(new_color)
 		var/list/new_color_rgb_list = hex2rgb(new_color)
 		r_wing = new_color_rgb_list[1]
@@ -206,11 +178,7 @@
 		//Indented inside positive primary color choice, don't bother if they clicked cancel
 		var/current_sec_color = rgb(r_wing2,g_wing2,b_wing2)
 
-<<<<<<< HEAD
-		var/new_sec_color = input(usr, "Pick secondary wing color (only applies to some wings):","Wing Color (sec)", current_sec_color) as null|color
-=======
 		var/new_sec_color = tgui_color_picker(src, "Pick secondary wing color (only applies to some wings):","Wing Color (sec)", current_sec_color)
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 		if(new_sec_color)
 			new_color_rgb_list = hex2rgb(new_sec_color)
 			r_wing2 = new_color_rgb_list[1]
@@ -219,11 +187,7 @@
 
 		var/current_ter_color = rgb(r_wing3,g_wing3,b_wing3)
 
-<<<<<<< HEAD
-		var/new_ter_color = input(usr, "Pick tertiary wing color (only applies to some wings):","Wing Color (sec)", current_ter_color) as null|color
-=======
 		var/new_ter_color = tgui_color_picker(src, "Pick tertiary wing color (only applies to some wings):","Wing Color (sec)", current_ter_color)
->>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 		if(new_ter_color)
 			new_color_rgb_list = hex2rgb(new_ter_color)
 			r_wing3 = new_color_rgb_list[1]
