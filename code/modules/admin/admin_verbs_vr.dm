@@ -119,13 +119,8 @@
 			dat += "</td></tr>"
 		dat += "</table>"
 
-<<<<<<< HEAD
-		qdel(query) // CHOMPEdit
-	usr << browse(dat, "window=library")
-=======
 		qdel(query)
 	usr << browse("<html>[dat]</html>", "window=library")
->>>>>>> 40e935a774 ([MIRROR] Moving the database to a subsystem (#9963))
 	onclose(usr, "library")
 
 /client/proc/toggle_spawning_with_recolour()
