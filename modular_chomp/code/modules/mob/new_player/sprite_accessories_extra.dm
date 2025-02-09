@@ -220,6 +220,7 @@
 	body_parts = list(BP_HEAD)
 	color_blend_mode = ICON_MULTIPLY
 
+
 /datum/sprite_accessory/marking/ch/dragon_lowerjaw
 	name = "Dragon Lower Jaw"
 	icon_state = "dragon_lowerjaw"
@@ -240,11 +241,6 @@
 >>>>>>> 15a43f113a (Many Improvements to Yesterday's Sprites. (#10050))
 	color_blend_mode = ICON_MULTIPLY
 
-/datum/sprite_accessory/marking/ch/hippo_lowerjaw
-	name = "Hippo Lower Jaw"
-	icon_state = "hippo_lowerjaw"
-	body_parts = list(BP_HEAD)
-	color_blend_mode = ICON_MULTIPLY
 
 /datum/sprite_accessory/marking/ch/trex_upperjaw
 	name = "T-Rex Upper Jaw"
@@ -286,6 +282,30 @@
 /datum/sprite_accessory/marking/ch/bovine_nose
 	name = "Bovine Nose"
 	icon_state = "bovine_nose"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/horse_head
+	name = "Horse Snout"
+	icon_state = "horse_head"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/horse_muzzle
+	name = "Horse Muzzle"
+	icon_state = "horse_muzzle"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/horse_eyes
+	name = "Horse Eyes"
+	icon_state = "horse_eyes"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/horse_fringe
+	name = "Horse Fringe"
+	icon_state = "horse_fringe"
 	body_parts = list(BP_HEAD)
 	color_blend_mode = ICON_MULTIPLY
 
