@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - qol: "Robots can now use their mining points to upgrade their scanner"
