@@ -258,15 +258,15 @@
 	body_parts = list(BP_HEAD)
 	color_blend_mode = ICON_MULTIPLY
 
-/datum/sprite_accessory/marking/ch/cow_head
-	name = "Cow Snout"
-	icon_state = "cow_head"
+/datum/sprite_accessory/marking/ch/bovine_snout
+	name = "Bovine Snout"
+	icon_state = "bovine_snout"
 	body_parts = list(BP_HEAD)
 	color_blend_mode = ICON_MULTIPLY
 
-/datum/sprite_accessory/marking/ch/cow_nose
-	name = "Cow Nose"
-	icon_state = "cow_nose"
+/datum/sprite_accessory/marking/ch/bovine_nose
+	name = "Bovine Nose"
+	icon_state = "bovine_nose"
 	body_parts = list(BP_HEAD)
 	color_blend_mode = ICON_MULTIPLY
 
@@ -300,8 +300,6 @@
 	body_parts = list(BP_TORSO,BP_GROIN,BP_L_LEG,BP_R_LEG,BP_L_HAND,BP_R_HAND)
 	color_blend_mode = ICON_MULTIPLY
 
-<<<<<<< HEAD
-=======
 /datum/sprite_accessory/marking/ch/six_pack
 	name = "Six Pack"
 	icon_state = "six_pack"
@@ -321,7 +319,6 @@
 	color_blend_mode = ICON_MULTIPLY
 
 
->>>>>>> 07af789b06 (Adds Several New Sprites  (#10016))
 /datum/sprite_accessory/marking/ch/sloog_head
 	name = "sloog head"
 	icon = 'modular_chomp/icons/mob/human_races/sprite_accessories/sloog.dmi'
