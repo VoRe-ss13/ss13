@@ -1,4 +1,3 @@
-//todo
 /datum/artifact_effect/dnaswitch
 	name = "DNA Mutator"
 	effect_type = EFFECT_DNASWITCH
