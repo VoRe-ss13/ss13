@@ -71,7 +71,7 @@
 	playsound(src, 'sound/weapons/targeton.ogg', 50, 1)
 	user.update_mob_action_buttons()
 
-/obj/item/gun/projectile/shotgun/compact/verb/verb_toggle_stock(mob/user as mob)
+/obj/item/gun/projectile/shotgun/compact/verb/verb_toggle_stock()
 	set category = "Object"
 	set name = "Toggle stock"
 	set src in usr
