@@ -1,0 +1,63 @@
+2025-02-03:
+  Drathek:
+  - bugfix: Fixed escape pod UI saying ERROR instead of CLOSED for its hatch
+  Drathek Rykka-Stormheart:
+  - rscadd: Added auxtools support for debugging in VSC (currently only 515)
+  VoRe-bot:
+  - rscadd: added new variants of all three vulp earsets with colourable eartips
+  - rscadd: added satin's tiger taur parts (normal, fat, and vwag-toggleable)
+  - refactor: de-kaleidoscope'd tails/ears/etc.
+  - bugfix: camera qdel failures on disassembling
+  - code_imp: Changes tgui/components and tgui/format to their tgui-core equivalents,
+      and replaces a Flex element with Stack
+  - balance: Changed fitness machines to drain your weight ten times faster.
+  - balance: Changed fitness structures to drain your weight.
+  - qol: Syringe guns can be put in holsters
+  - rscadd: tgui color picker for anyone using 516 or later
+  - rscadd: Adds Catborgs
+  - rscadd: Adds Kittyborgs
+  - rscadd: Adds a Gryphonborg
+  - rscadd: Added large shark tails.
+  - bugfix: more icon and map issues
+  - qol: adds filters and sorting to the crew monitor
+  - bugfix: crewMonitor
+  - rscadd: smallchubbybelly-l_hand and -r_hand
+  - image: improvements to hippo_upperjaw-head, hippo_lowerjaw-head, bovine_snout-head,
+      bovine_nose-head
+  - bugfix: more 516 browser windows
+  - code_imp: cleans up some destroy and new
+  - code_imp: '"cow_head-head", and "cow_nose-head" changed to "bovine_snout-head"
+      and "bovine_nose-head", to avoid confusion and overwriting existing "cow nose"
+      body marking.'
+  - bugfix: '"chubby belly, small" by separating the sprite via "torso" and groin",
+      and improved its look and greyscaling,'
+  - code_imp: altered the dmi for smallchubbybelly for visual improvement, and to
+      hide protruding hand sprites when facing sideways.
+  - image: visual and greyscaling improvements to bovine_snout and bovine_nose
+  - rscadd: topic and click limits
+  - code_imp: change the logout check lists to only use the smaller ones
+  - rscadd: option to test robot dmis without recompiling the game
+  - image: added top surgery, body tonage and gradient markings
+  - image: fixed stray pixel on blue singer outfit
+  - bugfix: some invisible icons
+  - bugfix: more missing html tags
+  - balance: tyr things rebalanced
+  - bugfix: partially fixes hardsuits eating gloves
+  - qol: doorbell functionality moved to ctrl-click.
+  - rscadd: Added a new "Private Notes" option to character setup.
+  - rscadd: Added a new "Private Notes" verb to the IC tab.
+  - qol: Moved memory "Note" verbs to a new Notes sub category in the IC tab alongside
+      the new Private Notes function.
+  - bugfix: egg plants not mutating to the right type
+  - admin: heavily improves the ticket panel
+  - bugfix: an issue where the supermatter was not announcing safe operation conditions
+      after going critical
+  - code_imp: migrates our chomp UIs to tgui-core
+  - bugfix: Fixed hanner beast form and reverting spawning on turf rather than in
+      the same location as the hanner.
+  - balance: adjusted the concussion maul for better power efficiency and slightly
+      faster attack cooldown, and added a detailed info-desc
+  - rscadd: Added a new "signpost_fake" structure that looks like other sign posts,
+      but without the teleporting functionality.
+  - maptweak: Fixed signposts that would break your character in the fantasy redgate
+      map.
