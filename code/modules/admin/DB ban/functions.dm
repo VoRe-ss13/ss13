@@ -483,4 +483,4 @@
 			output += "</table></div>"
 			qdel(select_query)
 
-	usr << browse(output,"window=lookupbans;size=900x700")
+	usr << browse("<html>[output]</html>","window=lookupbans;size=900x700")

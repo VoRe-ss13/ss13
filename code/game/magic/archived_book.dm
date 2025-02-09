@@ -76,7 +76,7 @@ var/global/datum/book_manager/book_mgr = new()
 			dat += "</table>"
 			qdel(query)
 
-	usr << browse(dat, "window=library")
+	usr << browse("<html>[dat]</html>", "window=library")
 	onclose(usr, "library")
 //VOREStation Edit End
 
