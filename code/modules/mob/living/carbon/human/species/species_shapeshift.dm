@@ -111,13 +111,13 @@ var/list/wrapped_species_by_ref = list()
 
 	visible_message(span_notice("\The [src]'s form contorts subtly."))
 	if(valid_hairstyles.len)
-		var/new_hair = tgui_input_list(usr, "Select a hairstyle.", "Shapeshifter Hair", valid_hairstyles)
+		var/new_hair = tgui_input_list(src, "Select a hairstyle.", "Shapeshifter Hair", valid_hairstyles)
 		change_hair(new_hair ? new_hair : "Bald")
 	if(valid_gradstyles.len)
-		var/new_hair = tgui_input_list(usr, "Select a hair gradient style.", "Shapeshifter Hair", valid_gradstyles)
+		var/new_hair = tgui_input_list(src, "Select a hair gradient style.", "Shapeshifter Hair", valid_gradstyles)
 		change_hair_gradient(new_hair ? new_hair : "None")
 	if(valid_facialhairstyles.len)
-		var/new_hair = tgui_input_list(usr, "Select a facial hair style.", "Shapeshifter Hair", valid_facialhairstyles)
+		var/new_hair = tgui_input_list(src, "Select a facial hair style.", "Shapeshifter Hair", valid_facialhairstyles)
 		change_facial_hair(new_hair ? new_hair : "Shaved")
 
 /mob/living/carbon/human/proc/shapeshifter_select_gender()
@@ -130,11 +130,11 @@ var/list/wrapped_species_by_ref = list()
 
 	last_special = world.time + 50
 
-	var/new_gender = tgui_input_list(usr, "Please select a gender.", "Shapeshifter Gender", list(FEMALE, MALE, NEUTER, PLURAL))
+	var/new_gender = tgui_input_list(src, "Please select a gender.", "Shapeshifter Gender", list(FEMALE, MALE, NEUTER, PLURAL))
 	if(!new_gender)
 		return
 
-	var/new_gender_identity = tgui_input_list(usr, "Please select a gender Identity.", "Shapeshifter Gender Identity", list(FEMALE, MALE, NEUTER, PLURAL, HERM)) //VOREStation Edit
+	var/new_gender_identity = tgui_input_list(src, "Please select a gender Identity.", "Shapeshifter Gender Identity", list(FEMALE, MALE, NEUTER, PLURAL, HERM)) //VOREStation Edit
 	if(!new_gender_identity)
 		return
 
@@ -153,7 +153,7 @@ var/list/wrapped_species_by_ref = list()
 	last_special = world.time + 50
 
 	var/new_species = null
-	new_species = tgui_input_list(usr, "Please select a species to emulate.", "Shapeshifter Body", species.get_valid_shapeshifter_forms(src))
+	new_species = tgui_input_list(src, "Please select a species to emulate.", "Shapeshifter Body", species.get_valid_shapeshifter_forms(src))
 
 	if(!new_species || !GLOB.all_species[new_species] || wrapped_species_by_ref["\ref[src]"] == new_species)
 		return
@@ -226,7 +226,7 @@ var/list/wrapped_species_by_ref = list()
 	if(!new_hair)
 		return
 	shapeshifter_set_hair_color(new_hair)
-	var/new_grad = input(usr, "Please select a new hair gradient color.", "Hair Gradient Colour") as color
+	var/new_grad = input(src, "Please select a new hair gradient color.", "Hair Gradient Colour") as color
 	if(!new_grad)
 		return
 	shapeshifter_set_grad_color(new_grad)
