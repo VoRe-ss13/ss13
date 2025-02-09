@@ -416,7 +416,14 @@
 	explosion_resistance = initial(explosion_resistance)
 	src.layer = closed_layer
 	update_nearby_tiles()
+<<<<<<< HEAD
 	sleep(anim_length_before_finalize)
+=======
+	addtimer(CALLBACK(src, PROC_REF(close_internalfinish),forced), anim_length_before_finalize)
+
+/obj/machinery/door/proc/close_internalfinish(var/forced = 0)
+	PROTECTED_PROC(TRUE) //do not touch this or BYOND will devour you
+>>>>>>> 2e7b54fbf3 ([MIRROR] fix firedoor sensors (#10129))
 	update_icon()
 	if(visible && !glass)
 		set_opacity(1)	//caaaaarn!
