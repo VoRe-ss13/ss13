@@ -119,8 +119,8 @@
 			dat += "</td></tr>"
 		dat += "</table>"
 
-		qdel(query) // CHOMPEdit
-	usr << browse(dat, "window=library")
+		qdel(query)
+	usr << browse("<html>[dat]</html>", "window=library")
 	onclose(usr, "library")
 
 /client/proc/toggle_spawning_with_recolour()

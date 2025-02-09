@@ -214,7 +214,7 @@ var/list/preferences_datums = list()
 	dat += "<br><HR></center>"
 	dat += player_setup.content(user)
 
-	dat += "</html></body>"
+	dat += "</body></html>"
 	//user << browse(dat, "window=preferences;size=635x736")
 	winshow(user, "preferences_window", TRUE)
 	var/datum/browser/popup = new(user, "preferences_browser", "Character Setup", 800, 800)
@@ -282,7 +282,7 @@ var/list/preferences_datums = list()
 		else
 			to_chat(user, span_danger("The forum URL is not set in the server configuration."))
 			return
-	ShowChoices(user) //ChompEDIT - usr removal
+	ShowChoices(user)
 	return 1
 
 /datum/preferences/Topic(href, list/href_list)
