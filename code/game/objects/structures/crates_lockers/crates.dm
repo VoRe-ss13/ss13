@@ -742,6 +742,7 @@
 	closet_appearance = null
 	open_sound = 'sound/effects/rustle1.ogg'
 	close_sound = 'sound/effects/rustle2.ogg'
+	icon_state = ""
 
 //Wooden Crate
 /obj/structure/closet/crate/wooden
@@ -751,6 +752,7 @@
 	closet_appearance = null
 	open_sound = 'sound/effects/wooden_closet_open.ogg'
 	close_sound = 'sound/effects/wooden_closet_close.ogg'
+	icon_state = ""
 
 //Chest
 /obj/structure/closet/crate/chest
@@ -760,6 +762,7 @@
 	closet_appearance = null
 	open_sound = 'sound/effects/wooden_closet_open.ogg'
 	close_sound = 'sound/effects/wooden_closet_close.ogg'
+	icon_state = ""
 
 //Mining Cart
 /obj/structure/closet/crate/miningcar
@@ -769,3 +772,4 @@
 	closet_appearance = null
 	open_sound = 'sound/effects/wooden_closet_open.ogg'
 	close_sound = 'sound/effects/wooden_closet_close.ogg'
+	icon_state = ""
