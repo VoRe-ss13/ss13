@@ -102,7 +102,7 @@
 				"Select new color",
 				null,
 				default_value || COLOR_WHITE,
-			) as color | null
+			)
 
 			if(!new_color)
 				return FALSE

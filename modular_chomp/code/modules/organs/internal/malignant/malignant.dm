@@ -74,7 +74,7 @@
 		return TRUE
 
 	// welp, clean up.
-	neworgan.Destroy()
+	qdel(neworgan)
 	return FALSE
 
 
@@ -121,7 +121,7 @@
 	// perform actions based on the parasite
 	if(feedmodmax > 0)
 		if(owner.nutrition > 0)
-			owner.nutrition = max(owner.nutrition - rand( growth * feedmodmin, growth * feedmodmax),0)
+			owner.adjust_nutrition(-rand(growth * feedmodmin, growth * feedmodmax))
 		else
 			owner.remove_blood(1 + rand( growth * feedmodmin, growth * feedmodmax))
 	// by default, don't grow. Other parasites might thought!
@@ -196,7 +196,7 @@
 		if(prob(1))
 			owner.Weaken(3)
 			owner.adjustToxLoss(3)
-			owner.nutrition = max(owner.nutrition - rand(1,5),0)
+			owner.adjust_nutrition(-rand(1,5))
 			cooldown = rand(cooldownmin,cooldownmax)
 	if(stage > 2)
 		if(prob(1))
@@ -210,7 +210,7 @@
 						owner.make_dizzy(90)
 					else
 						owner.Confuse(20)
-			owner.nutrition = max(owner.nutrition - rand(1,5),0)
+			owner.adjust_nutrition(-rand(1,5))
 			cooldown = rand(cooldownmin,cooldownmax)
 	if(stage > 3)
 		if(prob(1))
@@ -219,7 +219,7 @@
 			bodypart.wounds += W
 			owner.Weaken(10)
 			owner.adjustToxLoss(20)
-			owner.nutrition = max(owner.nutrition - rand(1,5),0)
+			owner.adjust_nutrition(-rand(1,5))
 			cooldown = rand(cooldownmin,cooldownmax)
 
 
@@ -241,7 +241,7 @@
 
 	if(prob(3))
 		owner.adjustToxLoss(2)
-		owner.nutrition = max(owner.nutrition - rand(1,5),0)
+		owner.adjust_nutrition(-rand(1,5))
 
 	if(prob(2))
 		owner.vomit()
@@ -344,7 +344,7 @@
 	if(!turf_clear(T))
 		T = get_turf(src)
 	new /obj/effect/decal/cleanable/confetti(T)
-	Destroy()
+	qdel(src)
 
 
 // Teleports you randomly, until it gets you killed
@@ -515,7 +515,7 @@
 	while(thalers > 1)
 		thalers -= 1
 		spawn_money(1, src.loc)
-	Destroy()
+	qdel(src)
 
 
 /****************************************************
@@ -621,7 +621,7 @@
 		// finished, ready to TRANSFORM
 		if(owner.radiation > 20)
 			growth++
-			owner.nutrition -= rand(1,3)
+			owner.adjust_nutrition(-rand(1,3))
 		if(owner.nutrition > 20)
 			if(growth > growth_trigger)
 				// spawn new organ, delete us
@@ -630,7 +630,7 @@
 					var/ourowner = owner
 					var/ourloc = parent_organ
 					var/ourtag = organ_tag
-					Destroy()
+					qdel(src)
 					new newpath(ourowner, TRUE, ourloc, ourtag)
 			cooldown = rand(2,5)
 		else
@@ -639,7 +639,7 @@
 			cooldown = rand(5,10)
 
 	else if(!prepared)
-		owner.nutrition -= rand(1,3)
+		owner.adjust_nutrition(-rand(1,3))
 		if(owner.nutrition > 20)
 			growth++
 		if(growth > growth_trigger)
@@ -729,7 +729,7 @@
 		// process the chems!
 		if(owner.bloodstr.get_reagent_amount(chemid) < 5)
 			if(prob(10))
-				owner.nutrition = max(owner.nutrition - 1,0) // num num
+				owner.adjust_nutrition(-1) // num num
 			owner.bloodstr.add_reagent(chemid,rand(5,10))
 			cooldown = rand(5,10)
 
