@@ -704,8 +704,6 @@
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "zorgoia_inner"
 	extra_overlay2 = "zorgoia_tips"
-<<<<<<< HEAD
-=======
 
 
 
@@ -1226,4 +1224,3 @@
     icon_state = "pipears"
     ckeys_allowed = list("phoaly")
 	*/ //CHOMPRemove END
->>>>>>> aec0a970ed ([MIRROR] adds an angler bulb for your noggin (#9976))
