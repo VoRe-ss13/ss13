@@ -84,19 +84,6 @@
 	else
 		to_chat(usr, span_notice("You cannot do this in your current state."))
 
-<<<<<<< HEAD
-
-/obj/item/gun/projectile/shotgun/compact/attack_self(mob/user as mob)
-	if(issilicon(usr))
-		return
-
-	if (isliving(usr))
-		toggle_stock()
-	else
-		to_chat(usr, span_notice("You cannot do this in your current state."))
-
-=======
->>>>>>> 92e9dc63d5 ([MIRROR] Misc fixes (#10033))
 /obj/item/gun/projectile/shotgun/compact/ui_action_click(mob/unused_user, actiontype)
 	var/mob/living/user = loc
 	if(!isliving(user))

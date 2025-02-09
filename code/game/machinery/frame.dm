@@ -451,10 +451,7 @@
 				circuit.construct(B)
 				circuit.loc = null
 				B.circuit = circuit
-<<<<<<< HEAD
-=======
 				B.update_icon()
->>>>>>> 92e9dc63d5 ([MIRROR] Misc fixes (#10033))
 				qdel(src)
 				return
 
