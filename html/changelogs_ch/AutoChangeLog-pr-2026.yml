@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - bugfix: "Fixes spontaneous rupture of lungs when breathing otherwise adequate amounts of air"
+  - bugfix: "The proper alert will now show up when you're suffocating in space."
