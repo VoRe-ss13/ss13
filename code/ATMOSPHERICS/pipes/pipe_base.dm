@@ -71,6 +71,11 @@
 	return 1
 
 /obj/machinery/atmospherics/pipe/return_air()
+<<<<<<< HEAD
+=======
+	if(QDELETED(src))
+		return
+>>>>>>> 2f5c945c42 ([MIRROR] make this more efficient (#10126))
 	if(!parent)
 		parent = new /datum/pipeline()
 		parent.build_pipeline(src)
@@ -78,6 +83,11 @@
 	return parent.air
 
 /obj/machinery/atmospherics/pipe/build_network()
+<<<<<<< HEAD
+=======
+	if(QDELETED(src))
+		return
+>>>>>>> 2f5c945c42 ([MIRROR] make this more efficient (#10126))
 	if(!parent)
 		parent = new /datum/pipeline()
 		parent.build_pipeline(src)
@@ -85,6 +95,11 @@
 	return parent.return_network()
 
 /obj/machinery/atmospherics/pipe/network_expand(datum/pipe_network/new_network, obj/machinery/atmospherics/pipe/reference)
+<<<<<<< HEAD
+=======
+	if(QDELETED(src))
+		return
+>>>>>>> 2f5c945c42 ([MIRROR] make this more efficient (#10126))
 	if(!parent)
 		parent = new /datum/pipeline()
 		parent.build_pipeline(src)
@@ -92,7 +107,13 @@
 	return parent.network_expand(new_network, reference)
 
 /obj/machinery/atmospherics/pipe/return_network(obj/machinery/atmospherics/reference)
+<<<<<<< HEAD
 	if(!parent)
+=======
+	if(QDELETED(src))
+		return
+	if(parent)
+>>>>>>> 2f5c945c42 ([MIRROR] make this more efficient (#10126))
 		parent = new /datum/pipeline()
 		parent.build_pipeline(src)
 
