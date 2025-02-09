@@ -915,9 +915,6 @@
 
 /datum/sprite_accessory/tail/taur/zorgoia/fat
 	name = "Zorgoia (Fat Taur)"
-<<<<<<< HEAD
-	extra_overlay = "zorgoia_fat"
-=======
 	extra_overlay = "zorgoia_fat2"
 
 /datum/sprite_accessory/tail/taur/rat
@@ -1156,4 +1153,3 @@
 	msg_owner_grab_fail = "You step down onto %prey with one of your vines, forcing them onto the ground!"
 	msg_prey_grab_fail = "%owner steps down onto you with one of their vines, squishing you and forcing you onto the ground!"
 */// CHOMPRemove End
->>>>>>> f4755bd3bf (follow up (#10026))
