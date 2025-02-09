@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-/datum/sprite_accessory/tail
-    var/vore_tail_sprite_variant = ""
-    var/belly_variant_when_loaf = FALSE
-    var/fullness_icons = 0
-    var/struggle_anim = FALSE
-    var/bellies_icon_path = 'modular_chomp/icons/mob/vore/Taur_Bellies.dmi' //CHOMPEdit
-=======
 /datum/sprite_accessory/tail/taur
 	name = DEVELOPER_WARNING_NAME
 	icon = 'icons/mob/human_races/sprite_accessories/taurs.dmi'
@@ -50,7 +42,6 @@
 	hide_body_parts	= list(BP_L_LEG, BP_L_FOOT, BP_R_LEG, BP_R_FOOT) //Exclude pelvis just in case.
 	icon = 'icons/mob/human_races/sprite_accessories/taurs.dmi'
 	clip_mask_state = "taur_clip_mask_def" //Used to clip off the lower part of suits & uniforms.
->>>>>>> 0872bdde46 ([MIRROR] Let taurs be ridden again (#10030))
 
 /datum/riding/taur
 	keytype = /obj/item/material/twohanded/riding_crop // Crack!
