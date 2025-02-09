@@ -32,15 +32,9 @@
 	var/author
 	var/SQLquery
 
-<<<<<<< HEAD
-/obj/machinery/librarypubliccomp/attack_hand(var/mob/user as mob)
-	usr.set_machine(src)
-	var/dat = "<HEAD><TITLE>Library Visitor</TITLE></HEAD><BODY>\n" // <META HTTP-EQUIV='Refresh' CONTENT='10'>
-=======
 /obj/machinery/librarypubliccomp/attack_hand(var/mob/user)
 	user.set_machine(src)
 	var/dat = "<html><HEAD><TITLE>Library Visitor</TITLE></HEAD><BODY>\n" // <META HTTP-EQUIV='Refresh' CONTENT='10'>
->>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	switch(screenstate)
 		if(0)
 			dat += {"<h2>Search Settings</h2><br>

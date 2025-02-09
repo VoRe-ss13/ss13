@@ -1355,15 +1355,12 @@
 	if(href_list["set_metainfo_ooc_style"])
 		set_metainfo_ooc_style(usr) //ChompEDIT - usr arg
 	//CHOMPEdit End
-<<<<<<< HEAD
-=======
 	if(href_list["save_private_notes"])
 		if(usr == src)
 			save_private_notes(usr)
 	if(href_list["edit_private_notes"])
 		if(usr == src)
 			set_metainfo_private_notes(usr)
->>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	return ..()
 
 /mob/living/proc/display_voreprefs(mob/user)	//Called by Topic() calls on instances of /mob/living (and subtypes) containing vore_prefs as an argument

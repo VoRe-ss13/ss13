@@ -92,13 +92,8 @@
 			var/default_value = read_preference(requested_preference.type)
 
 			// Yielding
-<<<<<<< HEAD
-			var/new_color = input(
-				usr,
-=======
 			var/new_color = tgui_color_picker(
 				ui.user,
->>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 				"Select new color",
 				null,
 				default_value || COLOR_WHITE,
