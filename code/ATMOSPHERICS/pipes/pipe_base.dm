@@ -92,6 +92,11 @@
 	return parent.network_expand(new_network, reference)
 
 /obj/machinery/atmospherics/pipe/return_network(obj/machinery/atmospherics/reference)
+<<<<<<< HEAD
+=======
+	if(QDELETED(src))
+		return
+>>>>>>> 4fc3d777f5 ([MIRROR] that somehow slpped (#10130))
 	if(!parent)
 		parent = new /datum/pipeline()
 		parent.build_pipeline(src)
