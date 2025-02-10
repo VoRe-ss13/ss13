@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - bugfix: "low blood sugar will no longer give you infinitely stacking drowsyness"
