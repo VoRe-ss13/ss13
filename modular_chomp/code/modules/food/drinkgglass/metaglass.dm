@@ -63,7 +63,7 @@
 	glass_icon_file = 'modular_chomp/icons/obj/drinks.dmi'
 	glass_center_of_mass = list("x"=16, "y"=7)
 
-/datum/reagent/toxin/bluetrain
+/datum/reagent/ethanol/bluetrain
 	glass_icon_state = "bluetrain"
 	glass_icon_file = 'modular_chomp/icons/obj/drinks.dmi'
 	glass_center_of_mass = list("x"=16, "y"=8)
@@ -145,7 +145,7 @@
 	glass_icon_state = "manlydorfglass"
 	glass_icon_file = 'modular_chomp/icons/obj/drinks.dmi'
 
-/datum/reagent/ethanol/tequilla_sunrise
+/datum/reagent/ethanol/tequila_sunrise
 	glass_icon_state = "tequilasunriseglass"
 	glass_icon_file = 'modular_chomp/icons/obj/drinks.dmi'
 

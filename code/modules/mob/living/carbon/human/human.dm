@@ -74,13 +74,22 @@
 		qdel(organ)
 	*/
 	if(nif)
+<<<<<<< HEAD
 		QDEL_NULL(nif)	//VOREStation Add
+=======
+		QDEL_NULL(nif)
+	alt_farmanimals -= src
+>>>>>>> 42463a356a ([MIRROR] Consolidates some /Destroy()s to make them properly delete (#10171))
 	worn_clothing.Cut()
 
+	if(stored_blob)
+		stored_blob.drop_l_hand()
+		stored_blob.drop_r_hand()
+		QDEL_NULL(stored_blob)
 
 	if(vessel)
 		QDEL_NULL(vessel)
-	return ..()
+	. = ..()
 
 /mob/living/carbon/human/get_status_tab_items()
 	. = ..()
