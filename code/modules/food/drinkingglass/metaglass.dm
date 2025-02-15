@@ -285,8 +285,14 @@ Drinks Data
 	glass_center_of_mass = list("x"=16, "y"=12)
 
 /datum/reagent/ethanol/tequila
+<<<<<<< HEAD
 	glass_icon_state = "tequillaglass"
 	glass_center_of_mass = list("x"=16, "y"=12)
+=======
+	glass_icon_state = "tequillaglass" //Yes. It's typo'd in the .dmi file. Deal with it or fix it.
+	glass_center_of_mass_x = 16
+	glass_center_of_mass_y = 12
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 
 /datum/reagent/ethanol/thirteenloko
 	glass_icon_state = "thirteen_loko_glass"
@@ -371,7 +377,7 @@ Drinks Data
 	glass_icon_state = "bravebullglass"
 	glass_center_of_mass = list("x"=15, "y"=8)
 
-/datum/reagent/ethanol/changelingsting
+/datum/reagent/ethanol/changeling_sting
 	glass_icon_state = "changelingsting"
 
 /datum/reagent/ethanol/martini
@@ -513,8 +519,8 @@ Drinks Data
 	glass_icon_state = "syndicatebomb"
 	glass_center_of_mass = list("x"=16, "y"=4)
 
-/datum/reagent/ethanol/tequilla_sunrise
-	glass_icon_state = "tequillasunriseglass"
+/datum/reagent/ethanol/tequila_sunrise
+	glass_icon_state = "tequillasunriseglass" //Yes. It's typo'd in the .dmi file. Deal with it or fix it.
 
 /datum/reagent/ethanol/threemileisland
 	glass_icon_state = "threemileislandglass"

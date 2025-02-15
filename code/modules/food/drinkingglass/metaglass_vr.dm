@@ -63,7 +63,7 @@
 	glass_center_of_mass = list("x"=16, "y"=8)
 	glass_icon_file = 'icons/obj/drinks_vr.dmi'
 
-/datum/reagent/ethanol/lovepotion
+/datum/reagent/drink/love_potion
 	glass_icon_state = "lovepotionglass"
 	glass_center_of_mass = list("x"=16, "y"=8)
 	glass_icon_file = 'icons/obj/drinks_vr.dmi'
@@ -217,7 +217,7 @@
 /datum/reagent/ethanol/snowwhite
 	glass_icon_file = 'icons/obj/drinks_vr.dmi'
 
-/datum/reagent/ethanol/tequilla_sunrise
+/datum/reagent/ethanol/tequila_sunrise
 	glass_icon_file = 'icons/obj/drinks_vr.dmi'
 
 /datum/reagent/ethanol/white_russian
