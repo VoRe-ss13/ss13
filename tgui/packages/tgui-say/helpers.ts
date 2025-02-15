@@ -43,4 +43,30 @@ const setWindowVisibility = (visible: boolean) => {
   Byond.winset('tgui_say', {
     'is-visible': visible,
   });
+<<<<<<< HEAD
 };
+=======
+}
+
+const CHANNEL_REGEX = /^[:.]\w\s|^,b\s/;
+
+/** Tests for a channel prefix, returning it or none */
+export function getPrefix(
+  value: string,
+): keyof typeof RADIO_PREFIXES | undefined {
+  if (!value || value.length < 3 || !CHANNEL_REGEX.test(value)) {
+    return;
+  }
+
+  let adjusted = value
+    .slice(0, 3)
+    ?.toLowerCase()
+    ?.replace('.', ':') as keyof typeof RADIO_PREFIXES;
+
+  if (!RADIO_PREFIXES[adjusted]) {
+    return;
+  }
+
+  return adjusted;
+}
+>>>>>>> 39c89988b5 ([MIRROR] Revert "Revert "storage to typescript"" (#10181))

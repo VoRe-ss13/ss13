@@ -53,6 +53,7 @@ export class TguiSay extends Component<{}, State> {
   constructor(props: never) {
     super(props);
 
+<<<<<<< HEAD
     this.channelIterator = new ChannelIterator();
     this.chatHistory = new ChatHistory();
     this.currentPrefix = null;
@@ -92,6 +93,14 @@ export class TguiSay extends Component<{}, State> {
 
     if (direction === KEY.PageUp) {
       if (this.chatHistory.isAtLatest() && currentValue) {
+=======
+  function handleArrowKeys(direction: KEY.PageUp | KEY.PageDown): void {
+    const chat = chatHistory.current;
+    const iterator = channelIterator.current;
+
+    if (direction === KEY.PageUp) {
+      if (chat.isAtLatest() && value) {
+>>>>>>> 39c89988b5 ([MIRROR] Revert "Revert "storage to typescript"" (#10181))
         // Save current message to temp history if at the most recent message
         this.chatHistory.saveTemp(currentValue);
       }
@@ -256,12 +265,56 @@ export class TguiSay extends Component<{}, State> {
   handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
     const currentValue = this.innerRef.current?.value;
     switch (event.key) {
+<<<<<<< HEAD
       case KEY.PageUp:
       case KEY.PageDown:
         // Allow moving between lines if there are newlines
         /* if (currentValue?.includes('\n')) {
           break;
         } */
+=======
+      case 'u': // replace with tgui core 1.8.x
+        if (event.ctrlKey || event.metaKey) {
+          event.preventDefault();
+          const { value, selectionStart, selectionEnd } = event.currentTarget;
+          event.currentTarget.value = getMarkupString(
+            value,
+            '_',
+            selectionStart,
+            selectionEnd,
+          );
+          event.currentTarget.selectionEnd = selectionEnd + 2;
+        }
+        break;
+      case 'i': // replace with tgui core 1.8.x
+        if (event.ctrlKey || event.metaKey) {
+          event.preventDefault();
+          const { value, selectionStart, selectionEnd } = event.currentTarget;
+          event.currentTarget.value = getMarkupString(
+            value,
+            '|',
+            selectionStart,
+            selectionEnd,
+          );
+          event.currentTarget.selectionEnd = selectionEnd + 2;
+        }
+        break;
+      case 'b': // replace with tgui core 1.8.x
+        if (event.ctrlKey || event.metaKey) {
+          event.preventDefault();
+          const { value, selectionStart, selectionEnd } = event.currentTarget;
+          event.currentTarget.value = getMarkupString(
+            value,
+            '+',
+            selectionStart,
+            selectionEnd,
+          );
+          event.currentTarget.selectionEnd = selectionEnd + 2;
+        }
+        break;
+      case KEY.PageUp:
+      case KEY.PageDown:
+>>>>>>> 39c89988b5 ([MIRROR] Revert "Revert "storage to typescript"" (#10181))
         event.preventDefault();
         this.handleArrowKeys(event.key);
         break;
