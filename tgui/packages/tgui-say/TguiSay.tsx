@@ -186,13 +186,19 @@ export class TguiSay extends Component<{}, State> {
       ? prefix + currentValue
       : currentValue;
 
+<<<<<<< HEAD
     this.messages.forceSayMsg(grunt);
     this.reset();
+=======
+    messages.current.forceSayMsg(grunt);
+    unloadChat();
+>>>>>>> 9ffe6f5fcb ([MIRROR] cleans up some left over things (#10168))
   }
 
   handleIncrementChannel() {
     this.currentPrefix = null;
 
+<<<<<<< HEAD
     this.channelIterator.next();
 
     // If we've looped onto a quiet channel, tell byond to hide thinking indicators
@@ -215,6 +221,48 @@ export class TguiSay extends Component<{}, State> {
       this.messages.channelIncrementMsg(false, this.channelIterator.current());
     } else {
       this.messages.channelIncrementMsg(true, this.channelIterator.current());
+=======
+    iterator.next();
+    setButtonContent(iterator.current());
+    setCurrentPrefix(null);
+    messages.current.channelIncrementMsg(
+      iterator.isVisible(),
+      iterator.current(),
+    );
+  }
+
+  function handleDecrementChannel() {
+    const iterator = channelIterator.current;
+
+    iterator.prev();
+    setButtonContent(iterator.current());
+    setCurrentPrefix(null);
+    messages.current.channelIncrementMsg(
+      iterator.isVisible(),
+      iterator.current(),
+    );
+  }
+
+  function handleInput(event: FormEvent<HTMLTextAreaElement>): void {
+    const iterator = channelIterator.current;
+    let newValue = event.currentTarget.value;
+
+    let newPrefix = getPrefix(newValue) || currentPrefix;
+    // Handles switching prefixes
+    if (newPrefix && newPrefix !== currentPrefix) {
+      setButtonContent(RADIO_PREFIXES[newPrefix]);
+      setCurrentPrefix(newPrefix);
+      newValue = newValue.slice(3);
+
+      if (newPrefix === ',b ') {
+        Byond.sendMessage('thinking', { visible: false });
+      }
+    }
+
+    // Handles typing indicators
+    if (channelIterator.current.isVisible() && newPrefix !== ',b ') {
+      messages.current.typingMsg(iterator.current());
+>>>>>>> 9ffe6f5fcb ([MIRROR] cleans up some left over things (#10168))
     }
 
     this.setState({ buttonContent: this.channelIterator.current() });
@@ -283,10 +331,17 @@ export class TguiSay extends Component<{}, State> {
       case KEY.Tab:
         event.preventDefault();
         if (event.shiftKey) {
+<<<<<<< HEAD
           this.handleDecrementChannel();
         } else {
           this.handleIncrementChannel();
         }
+=======
+          handleDecrementChannel();
+          break;
+        }
+        handleIncrementChannel();
+>>>>>>> 9ffe6f5fcb ([MIRROR] cleans up some left over things (#10168))
         break;
 
       default:

@@ -6,7 +6,11 @@ const SECONDS = 1000;
 export const byondMessages = {
   // Debounce: Prevents spamming the server
   channelIncrementMsg: debounce(
+<<<<<<< HEAD
     (visible: boolean, channel: string) =>
+=======
+    (visible: boolean, channel: Channel) =>
+>>>>>>> 9ffe6f5fcb ([MIRROR] cleans up some left over things (#10168))
       Byond.sendMessage('thinking', { visible, channel }),
     0.4 * SECONDS,
   ),
