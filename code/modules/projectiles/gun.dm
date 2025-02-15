@@ -441,6 +441,7 @@
 			set_light(0)
 		//VOREStation Edit End
 
+<<<<<<< HEAD
 	//YAWNEDIT: Recoil knockdown for micros, ported from CHOMPStation
 	if(recoil_mode && iscarbon(user))
 		var/mob/living/carbon/nerd = user
@@ -457,6 +458,53 @@
 	//YAWNEDIT: Knockdown code end
 
 	user.hud_used.update_ammo_hud(user, src)
+=======
+			process_accuracy(projectile, user, target, ticker, held_twohanded)
+
+			if(pointblank)
+				process_point_blank(projectile, user, target)
+
+			if(process_projectile(projectile, user, target, user.zone_sel.selecting, clickparams))
+				handle_post_fire(user, target, pointblank, reflex)
+				update_icon()
+
+			// We do this down here, so we don't get the message if we fire an empty gun.
+			if(user.item_is_in_hands(src) && user.hands_are_full())
+				if(one_handed_penalty >= 20)
+					to_chat(user, span_warning("You struggle to keep \the [src] pointed at the correct position with just one hand!"))
+
+			accuracy = initial(accuracy) //Reset our accuracy
+			last_shot = world.time
+			user.hud_used.update_ammo_hud(user, src)
+			user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
+
+			if(recoil_mode && iscarbon(user))
+				var/mob/living/carbon/micro = user
+				var/mysize = micro.size_multiplier
+				if(recoil_mode > 0)
+					if(mysize <= 0.60)
+						micro.Weaken(1*recoil_mode)
+						if(!istype(src,/obj/item/gun/energy))
+							micro.adjustBruteLoss((5-mysize*4)*recoil_mode)
+							to_chat(micro, span_danger("You're so tiny that you drop the gun and hurt yourself from the recoil!"))
+						else
+							to_chat(micro, span_danger("You're so tiny that the pull of the trigger causes you to drop the gun!"))
+
+			if(!(target && target.loc))
+				target = targloc
+				pointblank = 0
+
+			if(ticker < burst)
+				addtimer(CALLBACK(src, PROC_REF(handle_gunfire),target, user, clickparams, pointblank, reflex, ++ticker, TRUE), burst_delay, TIMER_DELETE_ME)
+				return
+
+			if(ticker == burst)
+				if(muzzle_flash)
+					if(gun_light)
+						addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, set_light),light_brightness), burst_delay, TIMER_DELETE_ME)
+					else
+						addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, set_light),0), burst_delay, TIMER_DELETE_ME)
+>>>>>>> 9ffe6f5fcb ([MIRROR] cleans up some left over things (#10168))
 
 // Similar to the above proc, but does not require a user, which is ideal for things like turrets.
 /obj/item/gun/proc/Fire_userless(atom/target)
@@ -614,8 +662,7 @@
 					to_chat(user, span_warning("You struggle to hold \the [src] steady!"))
 
 	if(recoil)
-		spawn()
-			shake_camera(user, recoil+1, recoil)
+		shake_camera(user, recoil+1, recoil)
 	update_icon()
 
 /obj/item/gun/proc/process_point_blank(obj/projectile, mob/user, atom/target)
