@@ -317,11 +317,19 @@
 		var/damage = 0
 
 
+<<<<<<< HEAD
 		if (radiation < 50) //Less than 1.0 Gy. No side effects.
 			radiation -= 10 * RADIATION_SPEED_COEFFICIENT
 			accumulated_rads += 10 * RADIATION_SPEED_COEFFICIENT //No escape from accumulated rads.
 
 		else if (radiation >= 50 && radiation < 100) //Equivalent of 1.0-2.0 Gy. Minimum stage you start seeing effects.
+=======
+		if (radiation < GLOB.radiation_levels[species.rad_levels]["safe"]) //Less than 1.0 Gy. No side effects.
+			radiation -= 10 * RADIATION_SPEED_COEFFICIENT * species.rad_removal_mod
+			accumulated_rads += 10 * RADIATION_SPEED_COEFFICIENT //No escape from accumulated rads.
+
+		else if (radiation >= GLOB.radiation_levels[species.rad_levels]["safe"] && radiation < GLOB.radiation_levels[species.rad_levels]["danger_1"]) //Equivalent of 1.0-2.0 Gy. Minimum stage you start seeing effects.
+>>>>>>> 9ef4973c24 ([MIRROR] Radiation Fixes (#10177))
 			damage = 1
 			radiation -= 10 * RADIATION_SPEED_COEFFICIENT
 			accumulated_rads += 10 * RADIATION_SPEED_COEFFICIENT
@@ -338,7 +346,11 @@
 				if(prob(1) && prob(100 * RADIATION_SPEED_COEFFICIENT)) //Rare chance of vomiting.
 					spawn vomit()
 
+<<<<<<< HEAD
 		else if (radiation >= 100 && radiation < 300) //Equivalent of 2.0 to 6.0 Gy. Nobody should ever be above this without extreme negligence.
+=======
+		else if (radiation >= GLOB.radiation_levels[species.rad_levels]["danger_1"] && radiation < GLOB.radiation_levels[species.rad_levels]["danger_2"]) //Equivalent of 2.0 to 6.0 Gy. Nobody should ever be above this without extreme negligence.
+>>>>>>> 9ef4973c24 ([MIRROR] Radiation Fixes (#10177))
 			damage = 3
 			radiation -= 30 * RADIATION_SPEED_COEFFICIENT
 			accumulated_rads += 30 * RADIATION_SPEED_COEFFICIENT
@@ -354,7 +366,11 @@
 					to_chat(src, span_warning("You feel sick."))
 					AdjustWeakened(3)
 
+<<<<<<< HEAD
 		else if (radiation >= 300 && radiation < 400) //Equivalent of 6.0 to 8.0 Gy.
+=======
+		else if (radiation >= GLOB.radiation_levels[species.rad_levels]["danger_2"] && radiation < GLOB.radiation_levels[species.rad_levels]["danger_3"]) //Equivalent of 6.0 to 8.0 Gy.
+>>>>>>> 9ef4973c24 ([MIRROR] Radiation Fixes (#10177))
 			damage = 5
 			radiation -= 50 * RADIATION_SPEED_COEFFICIENT
 			accumulated_rads += 50 * RADIATION_SPEED_COEFFICIENT
@@ -381,7 +397,11 @@
 						I.take_damage(damage * species.radiation_mod * RADIATION_SPEED_COEFFICIENT)
 
 
+<<<<<<< HEAD
 		else if (radiation >= 400 && radiation < 1500) //Equivalent of 8.0 to 30 Gy.
+=======
+		else if (radiation >= GLOB.radiation_levels[species.rad_levels]["danger_3"] && radiation < GLOB.radiation_levels[species.rad_levels]["danger_4"]) //Equivalent of 8.0 to 30 Gy.
+>>>>>>> 9ef4973c24 ([MIRROR] Radiation Fixes (#10177))
 			damage = 10
 			radiation -= 100 * RADIATION_SPEED_COEFFICIENT
 			accumulated_rads += 100 * RADIATION_SPEED_COEFFICIENT
@@ -416,7 +436,11 @@
 						if(istype(I)) I.add_autopsy_data("Radiation Induced Cancerous Growth", damage)
 						I.take_damage(damage * species.radiation_mod * RADIATION_SPEED_COEFFICIENT)
 
+<<<<<<< HEAD
 		else if (radiation >= 1500) //Above 30Gy. You had to get absolutely blasted with rads for this.
+=======
+		else if (radiation >= GLOB.radiation_levels[species.rad_levels]["danger_4"]) //Above 30Gy. You had to get absolutely blasted with rads for this.
+>>>>>>> 9ef4973c24 ([MIRROR] Radiation Fixes (#10177))
 			damage = 30
 			radiation -= 300 * RADIATION_SPEED_COEFFICIENT
 			accumulated_rads += 300 * RADIATION_SPEED_COEFFICIENT
