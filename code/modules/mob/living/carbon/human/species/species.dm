@@ -252,6 +252,21 @@
 	var/gluttonous											// Can eat some mobs. 1 for mice, 2 for monkeys, 3 for people.
 	var/soft_landing = FALSE								// Can fall down and land safely on small falls.
 
+<<<<<<< HEAD
+=======
+	var/drippy = FALSE 										// If we drip or not. Primarily for goo beings.
+	var/photosynthesizing = FALSE							// If we get nutrition from light or not.
+	var/shrinks = FALSE										// If we shrink when we have no nutrition. Not added but here for downstream's sake.
+	var/grows = FALSE										// Same as above but if we grow when >1000 nutrition.
+	var/crit_mod = 1										// Used for when we go unconscious. Used downstream.
+	var/list/env_traits = list()
+	var/pixel_offset_x = 0									// Used for offsetting 64x64 and up icons.
+	var/pixel_offset_y = 0									// Used for offsetting 64x64 and up icons.
+	var/rad_levels = NORMAL_RADIATION_RESISTANCE		//For handle_mutations_and_radiation
+	var/rad_removal_mod = 1
+
+
+>>>>>>> 9ef4973c24 ([MIRROR] Radiation Fixes (#10177))
 	var/rarity_value = 1									// Relative rarity/collector value for this species.
 	var/economic_modifier = 2								// How much money this species makes
 
