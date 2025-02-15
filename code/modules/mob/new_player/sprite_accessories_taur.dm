@@ -306,7 +306,13 @@
 
 /datum/sprite_accessory/tail/taur/naga/alt_3c
 	name = "Naga alt style tri-color (Taur)"
+<<<<<<< HEAD
 	suit_sprites = 'icons/mob/taursuits_naga_alt.dmi'
+=======
+	suit_sprites = 'icons/mob/taursuits_naga_alt_ch.dmi' //TODO: PORT CHOMPS NAGA_ALT AND MAKE THESE NAGA_ALT. //CHOMPStation Edit
+	vore_tail_sprite_variant = "Naga3Piece" //CHOMPStation Add
+	fullness_icons = 1 //CHOMPStation Add
+>>>>>>> 144553d5af ([MIRROR] Up-ports wings (#10163))
 	icon_state = "altnaga_s"
 	extra_overlay = "altnaga_markings"
 	extra_overlay2 = "altnaga_stripes"
