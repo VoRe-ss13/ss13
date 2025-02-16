@@ -272,12 +272,19 @@ export class TguiSay extends Component<{}, State> {
         break;
 
       case KEY.Enter:
+<<<<<<< HEAD
         // Allow inputting newlines
         if (event.shiftKey) {
           break;
         }
         event.preventDefault();
         this.handleEnter();
+=======
+        if (!event.shiftKey) {
+          event.preventDefault();
+          handleEnter();
+        }
+>>>>>>> 97b98d3e58 ([MIRROR] shift enter on tgui say (#10184))
         break;
 
       case KEY.Tab:
