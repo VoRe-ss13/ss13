@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscadd: "Adds a new spont vore interaction to buckling to an already occupied seat"

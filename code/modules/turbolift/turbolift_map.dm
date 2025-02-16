@@ -19,7 +19,8 @@
 	turbolifts -= src
 	return ..()
 
-/obj/turbolift_map_holder/New()
+/obj/turbolift_map_holder/Initialize()
+	..()
 	turbolifts += src
 <<<<<<< HEAD
 	..()
