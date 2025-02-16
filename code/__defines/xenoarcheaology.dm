@@ -75,12 +75,9 @@
 #define EFFECT_PULSE 2
 #define MAX_EFFECT 2
 
-<<<<<<< HEAD
-=======
 /// <summary>
 /// These are the defines for what is required to ACTIVATE the artifact.
 /// </summary>
->>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 #define TRIGGER_TOUCH 0
 #define TRIGGER_WATER 1
 #define TRIGGER_ACID 2
@@ -92,16 +89,10 @@
 #define TRIGGER_COLD 8
 #define MAX_TRIGGER 8
 
+/// <summary>
+/// These are defines of what TYPE of artifact it is. See code/modules/xenoarcheaology/effects for each artifact.
+/// </summary>
 #define EFFECT_UNKNOWN 0
-<<<<<<< HEAD
-#define EFFECT_ENERGY 1
-#define EFFECT_PSIONIC 2
-#define EFFECT_ELECTRO 3
-#define EFFECT_PARTICLE 4
-#define EFFECT_ORGANIC 5
-#define EFFECT_BLUESPACE 6
-#define EFFECT_SYNTH 7
-=======
 #define EFFECT_ANIMATE 1
 #define EFFECT_BERSERK 2
 #define EFFECT_FEELINGS 3
@@ -125,4 +116,3 @@
 #define EFFECT_HEALTH 21
 #define EFFECT_GENERATOR 22
 #define EFFECT_DNASWITCH 23
->>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))

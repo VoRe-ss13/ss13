@@ -10,9 +10,6 @@
 	var/datum/artifact_effect/battery_effect
 	var/capacity = 500
 	var/stored_charge = 0
-<<<<<<< HEAD
-	var/effect_id = ""
-=======
 
 /obj/item/anobattery/examine(mob/user)
 	. = ..()
@@ -21,7 +18,6 @@
 /obj/item/anobattery/Destroy()
 	battery_effect = null
 	..()
->>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 
 /obj/item/anobattery/moderate
 	name = "moderate anomaly battery"

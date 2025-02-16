@@ -269,15 +269,8 @@ var/list/toxic_reagents = list(TOXIN_PATH)
 		else if(ishuman(bumped) && GetAnomalySusceptibility(bumped) >= 0.5)
 			if (my_effect.trigger == TRIGGER_TOUCH)
 				my_effect.ToggleActivate()
-<<<<<<< HEAD
-				warn = 1
-
-			if (my_effect.effect == EFFECT_TOUCH)
-				my_effect.DoEffectTouch(bumped)
-=======
 				if(my_effect.activated && my_effect.effect == EFFECT_TOUCH)
 					my_effect.DoEffectTouch(bumped)
->>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 				warn = 1
 
 	if(warn && isliving(bumped))
@@ -293,19 +286,10 @@ var/list/toxic_reagents = list(TOXIN_PATH)
 					my_effect.ToggleActivate()
 
 		else if(ishuman(M) && !istype(M:gloves,/obj/item/clothing/gloves))
-<<<<<<< HEAD
-			if (my_effect.trigger == TRIGGER_TOUCH && prob(50))
-				my_effect.ToggleActivate()
-				warn = 1
-
-			if (my_effect.effect == EFFECT_TOUCH)
-				my_effect.DoEffectTouch(M)
-=======
 			if (my_effect.trigger == TRIGGER_TOUCH)
 				my_effect.ToggleActivate(M)
 				if(my_effect.activated && my_effect.effect == EFFECT_TOUCH)
 					my_effect.DoEffectTouch(M)
->>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 				warn = 1
 
 	if(warn && isliving(M))
@@ -446,18 +430,6 @@ var/list/toxic_reagents = list(TOXIN_PATH)
 		else if(env.temperature > ARTIFACT_HEAT_TRIGGER)
 			trigger_hot = 1
 
-<<<<<<< HEAD
-		if(env.gas[GAS_PHORON] >= 10)
-			trigger_phoron = 1
-		if(env.gas[GAS_O2] >= ARTIFACT_GAS_TRIGGER)
-			trigger_oxy = 1
-		if(env.gas[GAS_CO2] >= ARTIFACT_GAS_TRIGGER)
-			trigger_co2 = 1
-		if(env.gas[GAS_N2] >= ARTIFACT_GAS_TRIGGER)
-			trigger_nitro = 1
-
-=======
->>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 	for(var/datum/artifact_effect/my_effect in my_effects)
 		my_effect.artifact_id = artifact_id
 
@@ -471,23 +443,6 @@ var/list/toxic_reagents = list(TOXIN_PATH)
 		if(my_effect.trigger == TRIGGER_HEAT && (trigger_hot ^ my_effect.activated))
 			my_effect.ToggleActivate()
 
-<<<<<<< HEAD
-		//PHORON GAS ACTIVATION
-		if(my_effect.trigger == TRIGGER_PHORON && (trigger_phoron ^ my_effect.activated))
-			my_effect.ToggleActivate()
-
-		//OXYGEN GAS ACTIVATION
-		if(my_effect.trigger == TRIGGER_OXY && (trigger_oxy ^ my_effect.activated))
-			my_effect.ToggleActivate()
-
-		//CO2 GAS ACTIVATION
-		if(my_effect.trigger == TRIGGER_CO2 && (trigger_co2 ^ my_effect.activated))
-			my_effect.ToggleActivate()
-
-		//NITROGEN GAS ACTIVATION
-		if(my_effect.trigger == TRIGGER_NITRO && (trigger_nitro ^ my_effect.activated))
-			my_effect.ToggleActivate()
-=======
 #undef HYDROGEN_PATH
 #undef WATER_PATH
 #undef ACID_PATH
@@ -496,4 +451,3 @@ var/list/toxic_reagents = list(TOXIN_PATH)
 #undef HYDROPHORON_PATH
 #undef THERMITE_PATH
 #undef TOXIN_PATH
->>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))

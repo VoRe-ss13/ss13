@@ -13,11 +13,8 @@
 	var/obj/cur_artifact
 	var/obj/machinery/artifact_scanpad/owned_scanner = null
 	var/last_process = 0
-<<<<<<< HEAD
-=======
 	bubble_icon = "science"
 	circuit = /obj/item/circuitboard/artifact_harvester
->>>>>>> 6ecf87eec6 ([MIRROR] Artifact Tweaks (#10112))
 
 /// If you want it to load smoothly, set it's dir to wherever the scanpad is!
 /obj/machinery/artifact_harvester/Initialize()
