@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - qol: "robot gun sprites will only show if any of the guns is actually in the activated slot"
