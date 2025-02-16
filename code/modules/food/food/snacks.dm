@@ -924,7 +924,7 @@
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_EGG, 3)
 
-/obj/item/reagent_containers/food/snacks/egg/afterattack(obj/O, mob/user, proximity)
+/obj/item/reagent_containers/food/snacks/egg/afterattack(obj/O as obj, mob/user as mob, proximity)
 	if(istype(O,/obj/machinery/microwave))
 		return . = ..()
 	if(!(proximity && O.is_open_container()))
