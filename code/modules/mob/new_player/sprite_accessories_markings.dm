@@ -844,12 +844,8 @@ includes scars and tattoos
 /datum/sprite_accessory/marking/teshi_fluff
 	name = "Underfluff (Teshari)"
 	icon_state = "teshi_fluff"
-<<<<<<< HEAD
-	body_parts = list(BP_HEAD, BP_TORSO, BP_GROIN, BP_R_LEG, BP_L_LEG)
-=======
 	body_parts = list(BP_HEAD, BP_TORSO, BP_GROIN, BP_R_LEG, BP_L_LEG, BP_L_FOOT, BP_R_FOOT)
 	color_blend_mode = ICON_MULTIPLY
->>>>>>> e9043e4206 ([MIRROR] fixes space chicken leg asymmetry that was making a sprite look weird and also fixing the sprite because it was weird (#10058))
 	species_allowed = list(SPECIES_TESHARI)
 
 /datum/sprite_accessory/marking/teshi_heterochromia
