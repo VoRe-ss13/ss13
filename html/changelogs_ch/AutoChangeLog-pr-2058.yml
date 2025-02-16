@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscadd: "Mining vendor now contains the Kinetic Gauntlets"
+  - rscadd: "Mining vendor now contains the Diamond Pickaxe"
