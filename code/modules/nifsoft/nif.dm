@@ -152,6 +152,7 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 			return FALSE
 		forceMove(parent)
 		parent.implants += src
+<<<<<<< HEAD
 		spawn(0) //Let the character finish spawning yo.
 			if(!H) //Or letting them get deleted
 				return
@@ -159,9 +160,20 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 				owner = H.mind.name
 				owner_key = H.ckey
 			implant(H)
+=======
+		addtimer(CALLBACK(src, PROC_REF(quick_install), H), 1)
+>>>>>>> 12e267e221 ([MIRROR] fix nif init (#10186))
 		return TRUE
 
 	return FALSE
+
+/obj/item/nif/proc/quick_install(var/mob/living/carbon/human/H)
+	if(!H) //Or letting them get deleted
+		return
+	if(H.mind)
+		owner = H.mind.name
+		owner_key = H.ckey
+	implant(H)
 
 //Being removed from some mob
 /obj/item/nif/proc/unimplant(var/mob/living/carbon/human/H)
