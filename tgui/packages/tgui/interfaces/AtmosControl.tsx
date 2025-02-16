@@ -1,15 +1,8 @@
 import { useState } from 'react';
-<<<<<<< HEAD
-
-import { useBackend } from '../backend';
-import { Box, Button, Icon, NanoMap, Section, Tabs } from '../components';
-import { Window } from '../layouts';
-=======
 import { useBackend } from 'tgui/backend';
 import { NanoMap } from 'tgui/components';
 import { Window } from 'tgui/layouts';
 import { Box, Button, Icon, Section, Stack, Tabs } from 'tgui-core/components';
->>>>>>> ab6a02b150 ([MIRROR] rework atmos control (#10107))
 
 type alarm = {
   name: string;
@@ -44,51 +37,6 @@ export const AtmosControlContent = (props) => {
   const [tabIndex, setTabIndex] = useState(0);
   const [zoom, setZoom] = useState(1);
 
-<<<<<<< HEAD
-  let body;
-  // Alarms View
-  if (tabIndex === 0) {
-    body = (
-      <Section title="Alarms">
-        {alarms.map((alarm) => (
-          <Button
-            key={alarm.name}
-            color={
-              alarm.danger === 2 ? 'bad' : alarm.danger === 1 ? 'average' : ''
-            }
-            onClick={() => act('alarm', { alarm: alarm.ref })}
-          >
-            {alarm.name}
-          </Button>
-        ))}
-      </Section>
-    );
-  } else if (tabIndex === 1) {
-    // Please note, if you ever change the zoom values,
-    // you MUST update styles/components/Tooltip.scss
-    // and change the @for scss to match.
-    body = (
-      <Box height="526px" mb="0.5rem" overflow="hidden">
-        <NanoMap zoomScale={data.zoomScale} onZoom={(v) => setZoom(v)}>
-          {alarms
-            .filter((x) => ~~x.z === ~~config.mapZLevel)
-            .map((cm) => (
-              <NanoMap.Marker
-                key={cm.ref}
-                x={cm.x}
-                y={cm.y}
-                zoom={zoom}
-                icon="bell"
-                tooltip={cm.name}
-                color={cm.danger ? 'red' : 'green'}
-                onClick={() => act('alarm', { alarm: cm.ref })}
-              />
-            ))}
-        </NanoMap>
-      </Box>
-    );
-  }
-=======
   const tab: React.JSX.Element[] = [];
 
   tab[0] = (
@@ -129,7 +77,6 @@ export const AtmosControlContent = (props) => {
       </NanoMap>
     </Box>
   );
->>>>>>> ab6a02b150 ([MIRROR] rework atmos control (#10107))
 
   return (
     <Stack fill vertical>
