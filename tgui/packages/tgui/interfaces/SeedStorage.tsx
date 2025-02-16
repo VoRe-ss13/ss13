@@ -75,9 +75,9 @@ export const SeedStorage = (props) => {
                     </LabeledList>
                   </Section>
                 </Collapsible>
-              </Flex.Item>
-              <Flex.Item mt={0.4}>{seed.amount} Remaining</Flex.Item>
-              <Flex.Item grow={1}>
+              </Stack.Item>
+              <Stack.Item mt={0.4}>{seed.amount} Remaining</Stack.Item>
+              <Stack.Item grow>
                 <Button
                   fluid
                   icon="download"
@@ -85,8 +85,8 @@ export const SeedStorage = (props) => {
                 >
                   Vend
                 </Button>
-              </Flex.Item>
-              <Flex.Item grow={1}>
+              </Stack.Item>
+              <Stack.Item grow>
                 <Button
                   fluid
                   icon="trash"
@@ -94,8 +94,8 @@ export const SeedStorage = (props) => {
                 >
                   Purge
                 </Button>
-              </Flex.Item>
-            </Flex>
+              </Stack.Item>
+            </Stack>
           ))}
         </Section>
       </Window.Content>

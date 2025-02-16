@@ -17,8 +17,10 @@ import {
   Section,
   Table,
   Tabs,
-} from '../components';
-import { Window } from '../layouts';
+} from 'tgui-core/components';
+import { flow } from 'tgui-core/fp';
+import { BooleanLike } from 'tgui-core/react';
+import { createSearch } from 'tgui-core/string';
 
 type Data = {
   ion_law_nr: string;
@@ -300,6 +302,7 @@ export const LawManagerLaws = (props: {
                 <Table.Cell collapsing>Zero</Table.Cell>
                 <Table.Cell>
                   <Input
+                    updateOnPropsChange
                     value={zeroth_law}
                     fluid
                     onChange={(e, val: string) =>
@@ -321,6 +324,7 @@ export const LawManagerLaws = (props: {
               <Table.Cell collapsing>Ion</Table.Cell>
               <Table.Cell>
                 <Input
+                  updateOnPropsChange
                   value={ion_law}
                   fluid
                   onChange={(e, val: string) =>
@@ -339,6 +343,7 @@ export const LawManagerLaws = (props: {
               <Table.Cell>Inherent</Table.Cell>
               <Table.Cell>
                 <Input
+                  updateOnPropsChange
                   value={inherent_law}
                   fluid
                   onChange={(e, val: string) =>
@@ -357,6 +362,7 @@ export const LawManagerLaws = (props: {
               <Table.Cell>Supplied</Table.Cell>
               <Table.Cell>
                 <Input
+                  updateOnPropsChange
                   value={supplied_law}
                   fluid
                   onChange={(e, val: string) =>

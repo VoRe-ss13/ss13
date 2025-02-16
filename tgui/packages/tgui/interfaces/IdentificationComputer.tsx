@@ -5,19 +5,21 @@ import { decodeHtmlEntities } from 'common/string';
 =======
 >>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { Fragment } from 'react';
-
-import { useBackend } from '../backend';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
 import {
   Box,
   Button,
-  Flex,
   Input,
   LabeledList,
   Section,
+  Stack,
   Table,
   Tabs,
-} from '../components';
-import { Window } from '../layouts';
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+import { decodeHtmlEntities } from 'tgui-core/string';
+
 import { CrewManifestContent } from './CrewManifest';
 
 type Data = {
@@ -146,7 +148,7 @@ export const IdentificationComputerAccessModification = (props: {
   } = data;
 
   return (
-    <Section title="Access Modification">
+    <Section title="Access Modification" scrollable fill height="92%">
       {!authenticated && (
         <Box italic mb={1}>
           Please insert the IDs into the terminal to proceed.
@@ -172,6 +174,7 @@ export const IdentificationComputerAccessModification = (props: {
             <LabeledList>
               <LabeledList.Item label="Registered Name">
                 <Input
+                  updateOnPropsChange
                   value={target_owner!}
                   fluid
                   onInput={(e, val) => act('reg', { reg: val })}
@@ -179,6 +182,7 @@ export const IdentificationComputerAccessModification = (props: {
               </LabeledList.Item>
               <LabeledList.Item label="Account Number">
                 <Input
+                  updateOnPropsChange
                   value={account_number!}
                   fluid
                   onInput={(e, val) => act('account', { account: val })}
@@ -286,7 +290,7 @@ export const IdentificationComputerRegions = (props: { actName: string }) => {
   }
 
   return (
-    <Flex wrap="wrap" spacing={1}>
+    <Stack wrap="wrap">
       {regions &&
 <<<<<<< HEAD
         sortBy(regions, (r) => r.name).map((region) => (
@@ -313,8 +317,8 @@ export const IdentificationComputerRegions = (props: { actName: string }) => {
                 </Box>
               ))}
             </Section>
-          </Flex.Item>
+          </Stack.Item>
         ))}
-    </Flex>
+    </Stack>
   );
 };

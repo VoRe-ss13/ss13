@@ -15,8 +15,8 @@ import {
   NoticeBox,
   NumberInput,
   Section,
-} from '../components';
-import { Window } from '../layouts';
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
 type Data = {
   noTelepad: BooleanLike;

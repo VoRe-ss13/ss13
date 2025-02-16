@@ -4,7 +4,8 @@ import { decodeHtmlEntities } from 'common/string';
 =======
 >>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { useBackend } from 'tgui/backend';
-import { Box, LabeledList } from 'tgui/components';
+import { Box, LabeledList } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
 
 type Data = {
   aircontents: aircontent[];

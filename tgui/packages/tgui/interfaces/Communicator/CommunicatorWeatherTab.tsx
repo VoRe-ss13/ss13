@@ -7,8 +7,6 @@ import { Box, LabeledList, Section } from 'tgui-core/components';
 import { decodeHtmlEntities, toTitleCase } from 'tgui-core/string';
 >>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
-import { useBackend } from '../../backend';
-import { Box, LabeledList, Section } from '../../components';
 import { AirContent, WeatherTabData } from './types';
 
 export const CommunicatorWeatherTab = (props) => {

@@ -5,18 +5,20 @@ import { toFixed } from 'common/math';
 =======
 >>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { useState } from 'react';
-
-import { useBackend } from '../../backend';
+import { useBackend } from 'tgui/backend';
 import {
   Box,
   Button,
   Chart,
-  Flex,
   LabeledList,
   ProgressBar,
   Section,
+  Stack,
   Table,
-} from '../../components';
+} from 'tgui-core/components';
+import { flow } from 'tgui-core/fp';
+import { toFixed } from 'tgui-core/math';
+
 import { PEAK_DRAW } from './constants';
 import { powerRank } from './functions';
 import { AreaCharge, AreaStatusColorBox } from './PowerMonitorHelpers';
@@ -40,7 +42,7 @@ export const PowerMonitorFocus = (props: { focus: sensor }) => {
   // Process area data
   const areas: area[] = flow([
     (areas: area[]) =>
-      map(areas, (area, i) => ({
+      areas.map((area, i) => ({
         ...area,
         // Generate a unique id
         id: area.name + i,
@@ -96,8 +98,8 @@ export const PowerMonitorFocus = (props: { focus: sensor }) => {
           </Button>
         }
       />
-      <Flex mx={-0.5} mb={1}>
-        <Flex.Item mx={0.5} width="200px">
+      <Stack mx={-0.5} mb={1}>
+        <Stack.Item mx={0.5} width="200px">
           <Section>
             <LabeledList>
               <LabeledList.Item label="Supply">
@@ -122,8 +124,8 @@ export const PowerMonitorFocus = (props: { focus: sensor }) => {
               </LabeledList.Item>
             </LabeledList>
           </Section>
-        </Flex.Item>
-        <Flex.Item mx={0.5} grow={1}>
+        </Stack.Item>
+        <Stack.Item mx={0.5} grow>
           <Section position="relative" height="100%">
             <Chart.Line
               fillPositionedParent
@@ -142,8 +144,8 @@ export const PowerMonitorFocus = (props: { focus: sensor }) => {
               fillColor="rgba(224, 57, 151, 0.25)"
             />
           </Section>
-        </Flex.Item>
-      </Flex>
+        </Stack.Item>
+      </Stack>
       <Section>
         <Box mb={1}>
           <Box inline mr={2} color="label">
@@ -187,15 +189,9 @@ export const PowerMonitorFocus = (props: { focus: sensor }) => {
             <Table.Cell>Area</Table.Cell>
             <Table.Cell collapsing>Charge</Table.Cell>
             <Table.Cell textAlign="right">Draw</Table.Cell>
-            <Table.Cell collapsing title="Equipment">
-              Eqp
-            </Table.Cell>
-            <Table.Cell collapsing title="Lighting">
-              Lgt
-            </Table.Cell>
-            <Table.Cell collapsing title="Environment">
-              Env
-            </Table.Cell>
+            <Table.Cell collapsing>Eqp</Table.Cell>
+            <Table.Cell collapsing>Lgt</Table.Cell>
+            <Table.Cell collapsing>Env</Table.Cell>
           </Table.Row>
           {areas.map((area, i) => (
             <tr key={i} className="Table__row candystripe">

@@ -1,6 +1,5 @@
 <<<<<<< HEAD
 import { sortBy } from 'common/collections';
-import { flow } from 'common/fp';
 import { useBackend } from 'tgui/backend';
 import { Box, Icon, Tabs } from 'tgui/components';
 =======

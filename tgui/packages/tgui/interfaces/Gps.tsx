@@ -8,10 +8,19 @@ import { BooleanLike } from 'common/react';
 =======
 >>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { vecLength, vecSubtract } from 'common/vector';
-
-import { useBackend } from '../backend';
-import { Box, Button, Icon, LabeledList, Section, Table } from '../components';
-import { Window } from '../layouts';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import {
+  Box,
+  Button,
+  Icon,
+  LabeledList,
+  Section,
+  Table,
+} from 'tgui-core/components';
+import { flow } from 'tgui-core/fp';
+import { clamp } from 'tgui-core/math';
+import { BooleanLike } from 'tgui-core/react';
 
 const coordsToVec = (coords: string) => coords.split(', ').map(parseFloat);
 
@@ -114,9 +123,9 @@ export const Gps = (props) => {
             <Section title="Detected Signals">
               <Table>
                 <Table.Row bold>
-                  <Table.Cell content="Name" />
-                  <Table.Cell collapsing content="Direction" />
-                  <Table.Cell collapsing content="Coordinates" />
+                  <Table.Cell>Name</Table.Cell>
+                  <Table.Cell collapsing>Direction</Table.Cell>
+                  <Table.Cell collapsing>Coordinates</Table.Cell>
                 </Table.Row>
                 {signals.map((signal, index) => (
                   <Table.Row

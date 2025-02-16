@@ -7,7 +7,6 @@ import { createSearch } from 'common/string';
 >>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
-import { Button, Dropdown, Flex, Input, Section } from 'tgui/components';
 import { Window } from 'tgui/layouts';
 <<<<<<< HEAD
 import { ByondUi } from 'tgui-core/components';
@@ -160,8 +159,8 @@ export const CameraConsoleContent = (props) => {
     networkFilter,
   );
   return (
-    <Flex direction={'column'} height="100%">
-      <Flex.Item>
+    <Stack vertical height="100%">
+      <Stack.Item>
         <Input
           autoFocus
           fluid
@@ -169,10 +168,10 @@ export const CameraConsoleContent = (props) => {
           placeholder="Search for a camera"
           onInput={(e, value: string) => setSearchText(value)}
         />
-      </Flex.Item>
-      <Flex.Item>
-        <Flex>
-          <Flex.Item>
+      </Stack.Item>
+      <Stack.Item>
+        <Stack>
+          <Stack.Item>
             <Dropdown
               autoScroll={false}
               mb={1}
@@ -182,9 +181,9 @@ export const CameraConsoleContent = (props) => {
               options={allNetworks}
               onSelected={(value) => setNetworkFilter(value)}
             />
-          </Flex.Item>
+          </Stack.Item>
           {networkFilter ? (
-            <Flex.Item>
+            <Stack.Item>
               <Button
                 width="22px"
                 icon="undo"
@@ -193,13 +192,13 @@ export const CameraConsoleContent = (props) => {
                   setNetworkFilter('');
                 }}
               />
-            </Flex.Item>
+            </Stack.Item>
           ) : (
             ''
           )}
-        </Flex>
-      </Flex.Item>
-      <Flex.Item height="100%">
+        </Stack>
+      </Stack.Item>
+      <Stack.Item height="100%">
         <Section fill scrollable>
           {selected_cameras.map((camera) => (
             // We're not using the component here because performance
@@ -226,7 +225,7 @@ export const CameraConsoleContent = (props) => {
             </div>
           ))}
         </Section>
-      </Flex.Item>
-    </Flex>
+      </Stack.Item>
+    </Stack>
   );
 };
