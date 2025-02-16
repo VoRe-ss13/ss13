@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-import { filter } from 'common/collections';
-import { decodeHtmlEntities } from 'common/string';
-
-import { useBackend } from '../backend';
-import { LabeledList, Section } from '../components';
-import { Window } from '../layouts';
-=======
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
 import { LabeledList, Section } from 'tgui-core/components';
 import { decodeHtmlEntities } from 'tgui-core/string';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 type Data = {
   aircontents: aircontent[];

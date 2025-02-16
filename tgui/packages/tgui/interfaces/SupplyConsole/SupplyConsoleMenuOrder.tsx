@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import { filter, sortBy } from 'common/collections';
-import { useState } from 'react';
-=======
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Box, Button, Section, Stack } from 'tgui-core/components';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 import { Data, supplyPack } from './types';
 

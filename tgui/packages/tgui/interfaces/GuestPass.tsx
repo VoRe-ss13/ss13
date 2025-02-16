@@ -1,17 +1,8 @@
 /* eslint react/no-danger: "off" */
-<<<<<<< HEAD
-import { sortBy } from 'common/collections';
-import { BooleanLike } from 'common/react';
-
-import { useBackend } from '../backend';
-import { Box, Button, LabeledList, Section } from '../components';
-import { Window } from '../layouts';
-=======
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
 import { Box, Button, LabeledList, Section } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 type Data = {
   access: number[] | null;

@@ -1,12 +1,5 @@
 // Currently not used!
 
-<<<<<<< HEAD
-import { map, sortBy } from 'common/collections';
-import { flow } from 'common/fp';
-import { clamp } from 'common/math';
-import { BooleanLike } from 'common/react';
-=======
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { vecLength, vecSubtract } from 'common/vector';
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';

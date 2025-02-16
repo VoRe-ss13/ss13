@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-import { sortBy } from 'common/collections';
-
-import { useBackend } from '../backend';
-import { Button, Section, Table } from '../components';
-import { Window } from '../layouts';
-=======
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
 import { Button, Section, Table } from 'tgui-core/components';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 type Data = {
   shuttles: Shuttle[];

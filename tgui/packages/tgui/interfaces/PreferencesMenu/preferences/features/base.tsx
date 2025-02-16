@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import { sortBy } from 'common/collections';
-import { BooleanLike } from 'common/react';
-=======
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import {
   ComponentType,
   createElement,
@@ -10,13 +5,8 @@ import {
   useEffect,
   useState,
 } from 'react';
-<<<<<<< HEAD
-
-import { sendAct, useBackend } from '../../../../backend';
-=======
 import React from 'react';
 import { sendAct, useBackend } from 'tgui/backend';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import {
   Box,
   Button,

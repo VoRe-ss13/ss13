@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import { sortBy } from 'common/collections';
-import { toTitleCase } from 'common/string';
-
-import { useBackend } from '../backend';
-import { Button, Collapsible, Flex, LabeledList, Section } from '../components';
-import { Window } from '../layouts';
-=======
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
 import {
@@ -16,7 +8,6 @@ import {
   Stack,
 } from 'tgui-core/components';
 import { toTitleCase } from 'tgui-core/string';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 type Data = {
   scanner: string[];
@@ -55,15 +46,9 @@ export const SeedStorage = (props) => {
     <Window width={600} height={760}>
       <Window.Content scrollable>
         <Section title="Seeds">
-<<<<<<< HEAD
-          {sortedSeeds.map((seed) => (
-            <Flex spacing={1} mt={-1} key={seed.name + seed.uid}>
-              <Flex.Item basis="60%">
-=======
           {seeds.map((seed) => (
             <Stack mt={-1} key={seed.name + seed.uid}>
               <Stack.Item basis="60%">
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
                 <Collapsible title={toTitleCase(seed.name) + ' #' + seed.uid}>
                   <Section width="165%" title="Traits">
                     <LabeledList>

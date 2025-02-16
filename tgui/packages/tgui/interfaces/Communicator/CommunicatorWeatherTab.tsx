@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import { filter } from 'common/collections';
-import { decodeHtmlEntities, toTitleCase } from 'common/string';
-=======
 import { useBackend } from 'tgui/backend';
 import { Box, LabeledList, Section } from 'tgui-core/components';
 import { decodeHtmlEntities, toTitleCase } from 'tgui-core/string';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 import { AirContent, WeatherTabData } from './types';
 

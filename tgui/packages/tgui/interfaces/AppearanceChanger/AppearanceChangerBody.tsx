@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-import { sortBy } from 'common/collections';
-import { useBackend } from 'tgui/backend';
-import { Button, LabeledList, Section, Stack } from 'tgui-core/components';
-
-import { Data, species, styles } from './types';
-=======
 import { useBackend } from 'tgui/backend';
 import { Button, LabeledList, Section, Stack } from 'tgui-core/components';
 
 import { Data, species } from './types';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 export const AppearanceChangerSpecies = (props) => {
   const { act, data } = useBackend<Data>();

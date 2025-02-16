@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-import { filter, sortBy } from 'common/collections';
-import { BooleanLike } from 'common/react';
-
-import { useBackend, useSharedState } from '../backend';
-=======
 import { useBackend, useSharedState } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import {
   Box,
   Button,

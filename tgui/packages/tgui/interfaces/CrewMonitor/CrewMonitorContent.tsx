@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-import { sortBy } from 'common/collections';
-import { useBackend } from 'tgui/backend';
-import { Box, Icon, Tabs } from 'tgui/components';
-=======
 import { useBackend } from 'tgui/backend';
 import { Box, Icon, Tabs } from 'tgui-core/components';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 import { CrewMonitorCrew } from './CrewMonitorCrew';
 import { CrewMonitorMapView } from './CrewMonitorMapView';

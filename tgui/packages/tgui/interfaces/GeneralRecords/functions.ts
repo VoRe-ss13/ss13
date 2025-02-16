@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-import { filter } from 'common/collections';
-import { flow } from 'common/fp';
-import { createSearch } from 'common/string';
-=======
 import { flow } from 'tgui-core/fp';
 import { createSearch } from 'tgui-core/string';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 import { modalOpen } from '../common/ComplexModal';
 import { field, record } from './types';

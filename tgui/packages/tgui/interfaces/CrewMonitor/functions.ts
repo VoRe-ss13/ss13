@@ -88,9 +88,6 @@ export function getSortedCrew(
   return flow([
     (shownCrew: crewmember[]) => {
       if (sortType === 'name') {
-<<<<<<< HEAD
-        const sorted = sortBy(shownCrew, (cm) => cm.name);
-=======
         const sorted = shownCrew.sort(
           (a, b) =>
             a.name.localeCompare(b.name) ||
@@ -98,7 +95,6 @@ export function getSortedCrew(
             a.x - b.x ||
             a.y - b.y,
         );
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
         if (nameSortOrder) {
           return sorted.reverse();
         }
@@ -109,15 +105,11 @@ export function getSortedCrew(
     },
     (shownCrew: crewmember[]) => {
       if (sortType === 'damage') {
-<<<<<<< HEAD
-        const sorted = sortBy(shownCrew, (cm) => getTotalDamage(cm));
-=======
         const sorted = shownCrew.sort(
           (a, b) =>
             getTotalDamage(a) - getTotalDamage(b) ||
             a.name.localeCompare(b.name),
         );
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
         if (damageSortOrder) {
           return sorted.reverse();
         }
@@ -128,31 +120,6 @@ export function getSortedCrew(
     },
     (shownCrew: crewmember[]) => {
       if (sortType === 'location') {
-<<<<<<< HEAD
-        const sorted = sortBy(shownCrew, (cm) => cm.x);
-        if (locationSortOrder) {
-          return sorted.reverse();
-        }
-        return sorted;
-      } else {
-        return shownCrew;
-      }
-    },
-    (shownCrew: crewmember[]) => {
-      if (sortType === 'location') {
-        const sorted = shownCrew.sort((a, b) => a.y - b.y);
-        if (locationSortOrder) {
-          return sorted.reverse();
-        }
-        return sorted;
-      } else {
-        return shownCrew;
-      }
-    },
-    (shownCrew: crewmember[]) => {
-      if (sortType === 'location') {
-        const sorted = sortBy(shownCrew, (cm) => cm.realZ);
-=======
         const sorted = shownCrew.sort(
           (a, b) =>
             a.realZ - b.realZ ||
@@ -160,7 +127,6 @@ export function getSortedCrew(
             a.y - b.y ||
             a.name.localeCompare(b.name),
         );
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
         if (locationSortOrder) {
           return sorted.reverse();
         }

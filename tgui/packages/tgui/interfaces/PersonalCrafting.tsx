@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import { filter } from 'common/collections';
-import { flow } from 'common/fp';
-import { BooleanLike } from 'common/react';
-import { createSearch } from 'common/string';
-=======
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';

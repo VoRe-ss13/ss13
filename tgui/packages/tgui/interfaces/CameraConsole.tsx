@@ -1,16 +1,6 @@
-<<<<<<< HEAD
-import { filter, sortBy } from 'common/collections';
-import { flow } from 'common/fp';
-import { BooleanLike, classes } from 'common/react';
-import { createSearch } from 'common/string';
-=======
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
-<<<<<<< HEAD
-import { ByondUi } from 'tgui-core/components';
-=======
 import {
   Button,
   ByondUi,
@@ -21,7 +11,6 @@ import {
 } from 'tgui-core/components';
 import { BooleanLike, classes } from 'tgui-core/react';
 import { createSearch } from 'tgui-core/string';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 type activeCamera = { name: string; status: BooleanLike } | null;
 

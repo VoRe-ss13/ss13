@@ -1,8 +1,3 @@
-<<<<<<< HEAD:tgui/packages/tgui/interfaces/Stack.tsx
-import { useBackend } from '../backend';
-import { Box, Button, Collapsible, Section, Table } from '../components';
-import { Window } from '../layouts';
-=======
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
@@ -16,7 +11,6 @@ import {
   Table,
 } from 'tgui-core/components';
 import { createSearch } from 'tgui-core/string';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059)):tgui/packages/tgui/interfaces/MaterialStack.tsx
 
 type Data = { amount: number; recipes: Record<string, recipe>[] };
 

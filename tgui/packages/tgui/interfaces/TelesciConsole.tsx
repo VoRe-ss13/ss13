@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-import { sortBy } from 'common/collections';
-import { BooleanLike } from 'common/react';
-
-import { useBackend } from '../backend';
-=======
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import {
   AnimatedNumber,
   Box,

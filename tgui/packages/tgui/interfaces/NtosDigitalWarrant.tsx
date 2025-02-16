@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-import { filter } from 'common/collections';
-import { BooleanLike } from 'common/react';
-
-import { useBackend } from '../backend';
-import { Button, LabeledList, Section, Table } from '../components';
-import { NtosWindow } from '../layouts';
-=======
 import { useBackend } from 'tgui/backend';
 import { NtosWindow } from 'tgui/layouts';
 import { Button, LabeledList, Section, Table } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 type Data = {
   warrantname: string | null;

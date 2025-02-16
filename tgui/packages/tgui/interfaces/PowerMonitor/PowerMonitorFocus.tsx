@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import { map, sortBy } from 'common/collections';
-import { flow } from 'common/fp';
-import { toFixed } from 'common/math';
-=======
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import {

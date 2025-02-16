@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-import { filter } from 'common/collections';
-import { BooleanLike } from 'common/react';
-
-import { useBackend, useSharedState } from '../backend';
-import { Box, Button, LabeledList, Section, Tabs } from '../components';
-import { Window } from '../layouts';
-=======
 import { useBackend, useSharedState } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
 import { Box, Button, LabeledList, Section, Tabs } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 
 type Data = { badmin: BooleanLike; servers: server[]; consoles: console[] };
 

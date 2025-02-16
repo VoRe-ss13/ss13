@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import { sortBy } from 'common/collections';
-import { BooleanLike } from 'common/react';
-import { decodeHtmlEntities } from 'common/string';
-=======
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { Fragment } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
@@ -292,13 +286,8 @@ export const IdentificationComputerRegions = (props: { actName: string }) => {
   return (
     <Stack wrap="wrap">
       {regions &&
-<<<<<<< HEAD
-        sortBy(regions, (r) => r.name).map((region) => (
-          <Flex.Item mb={1} basis="content" grow={1} key={region.name}>
-=======
         regions.map((region) => (
           <Stack.Item mb={1} basis="content" grow key={region.name}>
->>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
             <Section title={region.name} height="100%">
               {region.accesses.map((access) => (
                 <Box key={access.ref}>
