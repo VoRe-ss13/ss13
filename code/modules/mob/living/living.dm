@@ -744,11 +744,7 @@
 	return
 
 
-<<<<<<< HEAD
-/mob/living/verb/Examine_OOC() //ChompEDIT - proc --> verb
-=======
 /mob/living/verb/Examine_OOC()
->>>>>>> 5394d73f31 ([MIRROR] splits verb and proc (#10054))
 	set name = "Examine Meta-Info (OOC)"
 	set category = "OOC.Game"
 	set src in view()

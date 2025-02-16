@@ -1,10 +1,6 @@
 /mob/living/silicon/Topic(href, href_list) //For Robots and pAI's. And possibly AI's too.
 	if(href_list["ooc_notes"])
-<<<<<<< HEAD
-		src.Examine_OOC()
-=======
 		do_examine_ooc(usr)
->>>>>>> 5394d73f31 ([MIRROR] splits verb and proc (#10054))
 		return 1
 	return ..()
 
