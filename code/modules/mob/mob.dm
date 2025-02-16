@@ -53,7 +53,7 @@
 	spell_masters = null
 	zone_sel = null
 
-/mob/Initialize()
+/mob/Initialize(mapload)
 	mob_list += src
 	if(stat == DEAD)
 		dead_mob_list += src
