@@ -92,15 +92,9 @@ var/list/organ_cache = list()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		species = GLOB.all_species[SPECIES_HUMAN]
-<<<<<<< HEAD
-		if(holder.dna)
-			dna = C.dna.Clone()
-			species = C.species //VOREStation Edit - For custom species
-=======
 		if(owner.dna)
 			qdel_swap(dna, C.dna.Clone())
 			species = C.species
->>>>>>> 9fbaf7932d ([MIRROR] organs NEW to INIT (#10103))
 		else
 			log_debug("[src] at [loc] spawned without a proper DNA.")
 		var/mob/living/carbon/human/H = C
