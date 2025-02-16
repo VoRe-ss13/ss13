@@ -22,15 +22,9 @@
 /obj/turbolift_map_holder/Initialize()
 	..()
 	turbolifts += src
-<<<<<<< HEAD
-	..()
-
-/obj/turbolift_map_holder/Initialize()
-=======
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/turbolift_map_holder/LateInitialize()
->>>>>>> 2897b070fa ([MIRROR] fix missing naming (#10098))
 	. = ..()
 	// Create our system controller.
 	var/datum/turbolift/lift = new()
