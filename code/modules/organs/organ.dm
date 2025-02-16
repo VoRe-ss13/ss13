@@ -54,7 +54,7 @@ var/list/organ_cache = list()
 	if(transplant_data) transplant_data.Cut()
 	if(autopsy_data)    autopsy_data.Cut()
 	if(trace_chemicals) trace_chemicals.Cut()
-	dna = null
+	QDEL_NULL(dna)
 	species = null
 
 	return ..()
@@ -137,7 +137,7 @@ var/list/organ_cache = list()
 
 /obj/item/organ/proc/set_dna(var/datum/dna/new_dna)
 	if(new_dna)
-		dna = new_dna.Clone()
+		qdel_swap(dna, new_dna.Clone())
 		if(blood_DNA)
 			blood_DNA.Cut()
 			blood_DNA[dna.unique_enzymes] = dna.b_type
