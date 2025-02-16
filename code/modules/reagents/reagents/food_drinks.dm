@@ -3132,6 +3132,11 @@
 
 //Base type for alchoholic drinks containing coffee
 /datum/reagent/ethanol/coffee
+<<<<<<< HEAD
+=======
+	name = REAGENT_DEVELOPER_WARNING
+	id = REAGENT_ID_DEVELOPER_WARNING
+>>>>>>> 2ef927a319 ([MIRROR] CHEM DISPENSER HOTFIX [HOTFIX] (#10182))
 	overdose = 45
 	allergen_type = ALLERGEN_COFFEE|ALLERGEN_STIMULANT //Contains coffee or is made from coffee
 
@@ -3387,6 +3392,13 @@
 				else
 					L.take_damage(100, 0)
 
+<<<<<<< HEAD
+=======
+/datum/reagent/ethanol/wine
+	name = REAGENT_DEVELOPER_WARNING // Unit test ignore
+	id = REAGENT_ID_DEVELOPER_WARNING
+
+>>>>>>> 2ef927a319 ([MIRROR] CHEM DISPENSER HOTFIX [HOTFIX] (#10182))
 /datum/reagent/ethanol/wine/champagne
 	name = REAGENT_CHAMPAGNE
 	id = REAGENT_ID_CHAMPAGNE
