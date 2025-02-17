@@ -10,8 +10,19 @@ import { BooleanLike } from 'tgui-core/react';
 
 import { Channel, ChannelIterator } from './ChannelIterator';
 import { ChatHistory } from './ChatHistory';
+<<<<<<< HEAD
 import { LINE_LENGTHS, RADIO_PREFIXES, WINDOW_SIZES } from './constants';
 import { windowClose, windowOpen, windowSet } from './helpers';
+=======
+import { LineLength, RADIO_PREFIXES, WindowSize } from './constants';
+import {
+  getMarkupString,
+  getPrefix,
+  windowClose,
+  windowOpen,
+  windowSet,
+} from './helpers';
+>>>>>>> 4944978a4f ([MIRROR] fix tguiSay style (#10192))
 import { byondMessages } from './timers';
 
 type ByondOpen = {
@@ -50,8 +61,24 @@ export class TguiSay extends Component<{}, State> {
   private messages: typeof byondMessages;
   state: State;
 
+<<<<<<< HEAD
   constructor(props: never) {
     super(props);
+=======
+  // I initially wanted to make these an object or a reducer, but it's not really worth it.
+  // You lose the granulatity and add a lot of boilerplate.
+  const [buttonContent, setButtonContent] = useState('');
+  const [currentPrefix, setCurrentPrefix] = useState<
+    keyof typeof RADIO_PREFIXES | null
+  >(null);
+  const [size, setSize] = useState(WindowSize.Small);
+  const [maxLength, setMaxLength] = useState(1024);
+  const [minimumHeight, setMinimumHeight] = useState(WindowSize.Small);
+  const [minimumWidth, setMinimumWidth] = useState(WindowSize.Width);
+  const [lightMode, setLightMode] = useState(false);
+  const [position, setPosition] = useState([window.screenX, window.screenY]);
+  const [value, setValue] = useState('');
+>>>>>>> 4944978a4f ([MIRROR] fix tguiSay style (#10192))
 
     this.channelIterator = new ChannelIterator();
     this.chatHistory = new ChatHistory();
@@ -190,16 +217,54 @@ export class TguiSay extends Component<{}, State> {
     this.reset();
   }
 
+<<<<<<< HEAD
   handleIncrementChannel() {
     this.currentPrefix = null;
+=======
+  function handleIncrementChannel(): void {
+    const xPos = window.screenX;
+    const yPos = window.screenY;
+    if (JSON.stringify(position) !== JSON.stringify([xPos, yPos])) return;
+    const iterator = channelIterator.current;
+>>>>>>> 4944978a4f ([MIRROR] fix tguiSay style (#10192))
 
     this.channelIterator.next();
 
+<<<<<<< HEAD
     // If we've looped onto a quiet channel, tell byond to hide thinking indicators
     if (!this.channelIterator.isVisible()) {
       this.messages.channelIncrementMsg(false, this.channelIterator.current());
     } else {
       this.messages.channelIncrementMsg(true, this.channelIterator.current());
+=======
+  function handleDecrementChannel() {
+    const iterator = channelIterator.current;
+
+    iterator.prev();
+    setButtonContent(iterator.current());
+    setCurrentPrefix(null);
+    messages.current.channelIncrementMsg(
+      iterator.isVisible(),
+      iterator.current(),
+    );
+  }
+
+  function handleInput(event: FormEvent<HTMLTextAreaElement>): void {
+    const iterator = channelIterator.current;
+    let newValue = event.currentTarget.value;
+
+    let newPrefix = getPrefix(newValue) || currentPrefix;
+    // Handles switching prefixes
+    if (newPrefix && newPrefix !== currentPrefix) {
+      setButtonContent(RADIO_PREFIXES[newPrefix]);
+      setCurrentPrefix(newPrefix);
+      newValue = newValue.slice(3);
+      iterator.set('Say');
+
+      if (newPrefix === ',b ') {
+        Byond.sendMessage('thinking', { visible: false });
+      }
+>>>>>>> 4944978a4f ([MIRROR] fix tguiSay style (#10192))
     }
 
     this.setState({ buttonContent: this.channelIterator.current() });
@@ -220,6 +285,7 @@ export class TguiSay extends Component<{}, State> {
     this.setState({ buttonContent: this.channelIterator.current() });
   }
 
+<<<<<<< HEAD
   handleInput() {
     const typed = this.innerRef.current?.value;
 
@@ -255,6 +321,11 @@ export class TguiSay extends Component<{}, State> {
 
   handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
     const currentValue = this.innerRef.current?.value;
+=======
+  function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>): void {
+    if (event.getModifierState('AltGraph')) return;
+
+>>>>>>> 4944978a4f ([MIRROR] fix tguiSay style (#10192))
     switch (event.key) {
       case KEY.PageUp:
       case KEY.PageDown:
@@ -296,7 +367,18 @@ export class TguiSay extends Component<{}, State> {
     }
   }
 
+<<<<<<< HEAD
   handleOpen = (data: ByondOpen) => {
+=======
+  function handleButtonDrag(e: React.MouseEvent<Element, MouseEvent>): void {
+    const xPos = window.screenX;
+    const yPos = window.screenY;
+    setPosition([xPos, yPos]);
+    dragStartHandler(e);
+  }
+
+  function handleOpen(data: ByondOpen): void {
+>>>>>>> 4944978a4f ([MIRROR] fix tguiSay style (#10192))
     setTimeout(() => {
       this.innerRef.current?.focus();
     }, 0);
@@ -402,9 +484,41 @@ const Dragzone = ({ theme, position }: { theme: string; position: string }) => {
     position === 'left' || position === 'right' ? 'vertical' : 'horizontal';
 
   return (
+<<<<<<< HEAD
     <div
       className={`dragzone-${location} dragzone-${position} dragzone-${theme}`}
       onMouseDown={dragStartHandler}
     />
+=======
+    <>
+      <div
+        className={`window window-${theme} window-${size}`}
+        onMouseDown={dragStartHandler}
+      >
+        {!lightMode && <div className={`shine shine-${theme}`} />}
+      </div>
+      <div className={classes(['content', lightMode && 'content-lightMode'])}>
+        <button
+          className={`button button-${theme}`}
+          onClick={handleIncrementChannel}
+          onMouseDown={handleButtonDrag}
+          type="button"
+        >
+          {buttonContent}
+        </button>
+        <textarea
+          autoCorrect="off"
+          className={`textarea textarea-${theme}`}
+          maxLength={maxLength}
+          onInput={handleInput}
+          onKeyDown={handleKeyDown}
+          ref={innerRef}
+          spellCheck={false}
+          rows={ROWS[size] || 1}
+          value={value}
+        />
+      </div>
+    </>
+>>>>>>> 4944978a4f ([MIRROR] fix tguiSay style (#10192))
   );
 };
