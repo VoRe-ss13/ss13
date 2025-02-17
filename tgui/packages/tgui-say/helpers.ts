@@ -43,4 +43,39 @@ const setWindowVisibility = (visible: boolean) => {
   Byond.winset('tgui_say', {
     'is-visible': visible,
   });
+<<<<<<< HEAD
 };
+=======
+}
+
+const CHANNEL_REGEX = /^[:.]\w\s|^,b\s/;
+
+/** Tests for a channel prefix, returning it or none */
+export function getPrefix(
+  value: string,
+): keyof typeof RADIO_PREFIXES | undefined {
+  if (!value || value.length < 3 || !CHANNEL_REGEX.test(value)) {
+    return;
+  }
+
+  let adjusted = value
+    .slice(0, 3)
+    ?.toLowerCase()
+    ?.replace('.', ':') as keyof typeof RADIO_PREFIXES;
+
+  if (!RADIO_PREFIXES[adjusted]) {
+    return;
+  }
+
+  return adjusted;
+}
+
+export function getMarkupString(
+  inputText: string,
+  markupType: string,
+  startPosition: number,
+  endPosition: number,
+) {
+  return `${inputText.substring(0, startPosition)}${markupType}${inputText.substring(startPosition, endPosition)}${markupType}${inputText.substring(endPosition)}`;
+}
+>>>>>>> 4944978a4f ([MIRROR] fix tguiSay style (#10192))
