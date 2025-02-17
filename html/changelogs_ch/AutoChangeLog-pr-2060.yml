@@ -1,6 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - bugfix: "Fixes a massive memory leak."
-  - bugfix: "Deadringer now properly does deathgasp on the right mob"
-  - bugfix: "Wounds now properly delete when limbs are Destroy()'d"

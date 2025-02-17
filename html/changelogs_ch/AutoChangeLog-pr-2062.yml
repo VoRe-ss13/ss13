@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - rscadd: "Radio code is now more efficient on the backend."
