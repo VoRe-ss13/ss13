@@ -198,6 +198,7 @@
 #include "code\_global_vars\logging.dm"
 #include "code\_global_vars\misc.dm"
 #include "code\_global_vars\mobs.dm"
+#include "code\_global_vars\tgui.dm"
 #include "code\_global_vars\time_vars.dm"
 #include "code\_global_vars\traits.dm"
 #include "code\_global_vars\typecache.dm"
@@ -2196,6 +2197,7 @@
 #include "code\modules\catalogue\catalogue_data_yw.dm"
 #include "code\modules\catalogue\cataloguer.dm"
 #include "code\modules\catalogue\cataloguer_visuals.dm"
+#include "code\modules\changelog\changelog.dm"
 #include "code\modules\client\client defines.dm"
 #include "code\modules\client\client procs.dm"
 #include "code\modules\client\client procs_vr.dm"
@@ -4769,8 +4771,11 @@
 #include "modular_chomp\code\__defines\_planes+layers.dm"
 #include "modular_chomp\code\__defines\span.dm"
 #include "modular_chomp\code\__defines\text.dm"
+<<<<<<< HEAD
 #include "modular_chomp\code\__defines\dcs\signals\signals_turf.dm"
 #include "modular_chomp\code\_global_vars\tgui.dm"
+=======
+>>>>>>> ba36a93f74 (Autochangelog Mirror from Virgo (#10195))
 #include "modular_chomp\code\_global_vars\list\names.dm"
 #include "modular_chomp\code\_HELPERS\announcements.dm"
 #include "modular_chomp\code\_HELPERS\game.dm"
@@ -4780,7 +4785,6 @@
 #include "modular_chomp\code\datums\http.dm"
 #include "modular_chomp\code\datums\autolathe\engineering_ch.dm"
 #include "modular_chomp\code\datums\autolathe\general_ch.dm"
-#include "modular_chomp\code\datums\changelog\changelog.dm"
 #include "modular_chomp\code\datums\components\dry.dm"
 #include "modular_chomp\code\datums\components\hearer.dm"
 #include "modular_chomp\code\datums\components\orbiter.dm"
