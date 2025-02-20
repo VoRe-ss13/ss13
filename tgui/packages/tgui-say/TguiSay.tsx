@@ -50,8 +50,24 @@ export class TguiSay extends Component<{}, State> {
   private messages: typeof byondMessages;
   state: State;
 
+<<<<<<< HEAD
   constructor(props: never) {
     super(props);
+=======
+  // I initially wanted to make these an object or a reducer, but it's not really worth it.
+  // You lose the granulatity and add a lot of boilerplate.
+  const [buttonContent, setButtonContent] = useState('');
+  const [currentPrefix, setCurrentPrefix] = useState<
+    keyof typeof RADIO_PREFIXES | null
+  >(null);
+  const [size, setSize] = useState(WindowSize.Small);
+  const [maxLength, setMaxLength] = useState(4096);
+  const [minimumHeight, setMinimumHeight] = useState(WindowSize.Small);
+  const [minimumWidth, setMinimumWidth] = useState(WindowSize.Width);
+  const [lightMode, setLightMode] = useState(false);
+  const [position, setPosition] = useState([window.screenX, window.screenY]);
+  const [value, setValue] = useState('');
+>>>>>>> 7e80962c40 ([MIRROR] rework tgui say long message handling (#10198))
 
     this.channelIterator = new ChannelIterator();
     this.chatHistory = new ChatHistory();
@@ -165,6 +181,7 @@ export class TguiSay extends Component<{}, State> {
         ? sanitizeMultiline(value)
         : removeAllSkiplines(value);
 
+<<<<<<< HEAD
       Byond.sendMessage('entry', {
         channel: this.channelIterator.current(),
         entry: this.channelIterator.isSay()
@@ -174,6 +191,24 @@ export class TguiSay extends Component<{}, State> {
     }
 
     this.handleClose();
+=======
+    if (value?.length) {
+      if (value.length < maxLength) {
+        chatHistory.current.add(value);
+        Byond.sendMessage('entry', {
+          channel: iterator.current(),
+          entry: iterator.isSay() ? prefix + value : value,
+        });
+      } else {
+        Byond.sendMessage('lenwarn', {
+          length: value.length,
+          maxlength: maxLength,
+        });
+        return;
+      }
+    }
+    handleClose();
+>>>>>>> 7e80962c40 ([MIRROR] rework tgui say long message handling (#10198))
   }
 
   handleForceSay() {
