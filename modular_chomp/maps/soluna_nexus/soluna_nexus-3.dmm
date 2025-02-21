@@ -136,6 +136,72 @@
 /obj/effect/catwalk_plated/white,
 /turf/simulated/floor/glass/turfpack/airless,
 /area/bridge/AI_Core_Chamber)
+"aaq" = (
+/obj/item/bedsheet/rainbowdouble{
+	pixel_y = -4
+	},
+/obj/structure/bed/double/padded{
+	pixel_y = -4
+	},
+/turf/simulated/floor/carpet/blue2,
+/area/crew_quarters/sleep/Dormitory_06)
+"aar" = (
+/obj/structure/bed/psych{
+	pixel_y = -19
+	},
+/turf/simulated/floor/carpet/sblucarpet,
+/area/medical/Psych_Room_2)
+"aas" = (
+/obj/item/bedsheet/greendouble{
+	pixel_x = 10;
+	pixel_y = -4
+	},
+/obj/item/bedsheet/greendouble{
+	pixel_y = -4;
+	pixel_x = 22
+	},
+/obj/structure/bed/double/padded{
+	pixel_x = 10;
+	pixel_y = -4
+	},
+/turf/simulated/floor/tiled/white{
+	color = "#8bbbd5"
+	},
+/area/medical/Virology)
+"aat" = (
+/obj/item/bedsheet/greendouble{
+	pixel_y = -4;
+	pixel_x = 3;
+	layer = 3.91
+	},
+/obj/structure/bed/double/padded{
+	pixel_y = -4
+	},
+/turf/simulated/floor/tiled/white{
+	color = "#8bbbd5"
+	},
+/area/medical/Virology)
+"aau" = (
+/obj/structure/window/plastitanium{
+	color = "white";
+	name = "Padded wall";
+	desc = "A dense soft cushion laminated on the wall";
+	dir = 1
+	},
+/obj/item/bedsheet/double{
+	pixel_y = -4;
+	pixel_x = 10
+	},
+/obj/item/bedsheet/double{
+	pixel_y = -4;
+	pixel_x = 21
+	},
+/obj/structure/bed/double/padded{
+	pixel_x = 10;
+	pixel_y = -4
+	},
+/turf/simulated/floor/tiled/old_cargo,
+/area/medical/Deck3_Corridor)
 "aav" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/glass/reinforced,
@@ -146,6 +212,21 @@
 /obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Dorms_ForPort_Corridor1)
+"aax" = (
+/obj/structure/window/plastitanium{
+	color = "white";
+	name = "Padded wall";
+	desc = "A dense soft cushion laminated on the wall";
+	dir = 1
+	},
+/obj/item/bedsheet/double{
+	pixel_y = -4
+	},
+/obj/structure/bed/double/padded{
+	pixel_y = -4
+	},
+/turf/simulated/floor/tiled/old_cargo,
+/area/medical/Deck3_Corridor)
 "aaD" = (
 /obj/machinery/atmospherics/binary/pump{
 	name = "N2O to Connector"
@@ -858,13 +939,11 @@
 /area/space)
 "aoy" = (
 /obj/structure/bed/double/padded{
-	pixel_y = 25
+	layer = 3.01
 	},
-/obj/structure/bed/double/padded,
 /obj/item/bedsheet/rainbowdouble{
-	pixel_y = 25
+	layer = 3.92
 	},
-/obj/item/bedsheet/rainbowdouble,
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/Dormitory_06)
 "aoz" = (
@@ -7859,29 +7938,20 @@
 /turf/simulated/floor/grass2,
 /area/crew_quarters/Public_Hydroponics)
 "cPN" = (
-/obj/structure/bed/double/padded{
-	pixel_x = 10;
-	pixel_y = 25
-	},
-/obj/structure/bed/double/padded{
-	pixel_x = 10
-	},
-/obj/item/bedsheet/greendouble{
-	pixel_y = 25;
-	pixel_x = 10
-	},
-/obj/item/bedsheet/greendouble{
-	pixel_x = 10
-	},
-/obj/item/bedsheet/greendouble{
-	pixel_y = 25;
-	pixel_x = 22
-	},
-/obj/item/bedsheet/greendouble{
-	pixel_x = 22
-	},
 /obj/item/radio/intercom{
 	pixel_y = -22
+	},
+/obj/item/bedsheet/greendouble{
+	pixel_x = 10;
+	layer = 3.91
+	},
+/obj/structure/bed/double/padded{
+	pixel_x = 10;
+	layer = 3.01
+	},
+/obj/item/bedsheet/greendouble{
+	pixel_x = 22;
+	layer = 3.91
 	},
 /turf/simulated/floor/tiled/white{
 	color = "#8bbbd5"
@@ -9437,11 +9507,8 @@
 /area/maintenance/Deck3_Engineering_AftStarCorridor2)
 "dxj" = (
 /obj/structure/bed/psych{
-	pixel_y = 9;
-	pixel_x = 2
-	},
-/obj/structure/bed/psych{
-	pixel_x = 2
+	pixel_x = 2;
+	layer = 3.01
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/medical/Psych_Room_2)
@@ -9564,6 +9631,13 @@
 	},
 /obj/effect/floor_decal/spline/fancy{
 	dir = 1
+	},
+/obj/item/bedsheet/captaindouble{
+	pixel_y = 28
+	},
+/obj/structure/bed/double/padded{
+	pixel_y = 28;
+	layer = 3.01
 	},
 /turf/simulated/floor/wood/alt/parquet,
 /area/bridge/sleep/Captain_Quarters)
@@ -17090,13 +17164,7 @@
 /area/engineering/Deck3_1_Corridor)
 "fED" = (
 /obj/structure/bed/double/padded,
-/obj/structure/bed/double/padded{
-	pixel_y = -24
-	},
 /obj/item/bedsheet/rddouble,
-/obj/item/bedsheet/rddouble{
-	pixel_y = -23
-	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/bridge/sleep/RD_Quarters)
 "fEI" = (
@@ -19218,6 +19286,13 @@
 /area/medical/Patient_3)
 "gnw" = (
 /obj/effect/floor_decal/spline/fancy,
+/obj/item/bedsheet/piratedouble{
+	pixel_y = 2
+	},
+/obj/structure/bed/double/padded{
+	pixel_y = 2;
+	layer = 3.01
+	},
 /turf/simulated/floor/carpet/geo,
 /area/crew_quarters/sleep/Dormitory_10)
 "gnG" = (
@@ -20927,6 +21002,14 @@
 /area/maintenance/Deck3_Dorms_AftCorridor2)
 "gRN" = (
 /obj/effect/floor_decal/spline/fancy,
+/obj/item/bedsheet/rddouble{
+	pixel_y = 4;
+	layer = 3.91
+	},
+/obj/structure/bed/double/padded{
+	pixel_y = 4;
+	layer = 3.01
+	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/bridge/sleep/RD_Quarters)
 "gRR" = (
@@ -23419,14 +23502,7 @@
 "hMo" = (
 /obj/structure/bed/double/padded{
 	pixel_x = 10;
-	pixel_y = 25
-	},
-/obj/structure/bed/double/padded{
-	pixel_x = 10
-	},
-/obj/item/bedsheet/mimedouble{
-	pixel_y = 25;
-	pixel_x = 9
+	layer = 3.01
 	},
 /obj/item/bedsheet/mimedouble{
 	pixel_x = 9
@@ -24475,20 +24551,11 @@
 /area/bridge/Conference_Room)
 "idD" = (
 /obj/structure/bed/double/padded,
-/obj/structure/bed/double/padded{
-	pixel_y = -24
-	},
 /obj/item/bedsheet/medical{
 	pixel_y = 13
 	},
 /obj/item/bedsheet/medical{
 	pixel_y = 1
-	},
-/obj/item/bedsheet/medical{
-	pixel_y = -11
-	},
-/obj/item/bedsheet/medical{
-	pixel_y = -23
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -27231,11 +27298,9 @@
 /obj/structure/bed/double/padded{
 	pixel_y = 25
 	},
-/obj/structure/bed/double/padded,
 /obj/item/bedsheet/captaindouble{
 	pixel_y = 25
 	},
-/obj/item/bedsheet/captaindouble,
 /turf/simulated/floor/carpet/blue2,
 /area/bridge/sleep/Captain_Quarters)
 "iYO" = (
@@ -28900,16 +28965,12 @@
 /turf/simulated/floor/wood/alt,
 /area/medical/Patient_4)
 "jDg" = (
+/obj/item/bedsheet/greendouble{
+	pixel_x = 3;
+	layer = 3.92
+	},
 /obj/structure/bed/double/padded{
-	pixel_y = 25
-	},
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/greendouble{
-	pixel_y = 25;
-	pixel_x = 3
-	},
-/obj/item/bedsheet/greendouble{
-	pixel_x = 3
+	layer = 3.01
 	},
 /turf/simulated/floor/tiled/white{
 	color = "#8bbbd5"
@@ -28954,13 +29015,7 @@
 /area/crew_quarters/Observation_Atrium)
 "jEj" = (
 /obj/structure/bed/double/padded,
-/obj/structure/bed/double/padded{
-	pixel_y = -24
-	},
 /obj/item/bedsheet/bluedouble,
-/obj/item/bedsheet/bluedouble{
-	pixel_y = -23
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
@@ -30191,13 +30246,7 @@
 /area/crew_quarters/Dorm_Corridor_1)
 "jZI" = (
 /obj/structure/bed/double/padded,
-/obj/structure/bed/double/padded{
-	pixel_y = -24
-	},
 /obj/item/bedsheet/hosdouble,
-/obj/item/bedsheet/hosdouble{
-	pixel_y = -23
-	},
 /turf/simulated/floor/carpet,
 /area/bridge/sleep/HoS_Quarters)
 "jZX" = (
@@ -31095,21 +31144,10 @@
 "kpZ" = (
 /obj/structure/bed/double/padded{
 	pixel_x = 10;
-	pixel_y = 25
-	},
-/obj/structure/bed/double/padded{
-	pixel_x = 10
-	},
-/obj/item/bedsheet/double{
-	pixel_y = 25;
-	pixel_x = 10
+	layer = 3.01
 	},
 /obj/item/bedsheet/double{
 	pixel_x = 10
-	},
-/obj/item/bedsheet/double{
-	pixel_y = 25;
-	pixel_x = 21
 	},
 /obj/item/bedsheet/double{
 	pixel_x = 21
@@ -35748,6 +35786,16 @@
 	dir = 4;
 	pixel_x = 22
 	},
+/obj/structure/bed/double/padded{
+	pixel_y = -2
+	},
+/obj/item/bedsheet/mimedouble{
+	pixel_x = -11;
+	pixel_y = -2
+	},
+/obj/item/bedsheet/mimedouble{
+	pixel_y = -2
+	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/medical/Patient_4)
 "lPC" = (
@@ -38844,18 +38892,10 @@
 /area/engineering/Engine2_Chamber)
 "mKK" = (
 /obj/structure/bed/double/padded{
-	pixel_y = 25
-	},
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/mimedouble{
-	pixel_x = -11;
-	pixel_y = 25
+	layer = 3.01
 	},
 /obj/item/bedsheet/mimedouble{
 	pixel_x = -11
-	},
-/obj/item/bedsheet/mimedouble{
-	pixel_y = 25
 	},
 /obj/item/bedsheet/mimedouble,
 /turf/simulated/floor/carpet/bcarpet,
@@ -40216,24 +40256,15 @@
 "niM" = (
 /obj/structure/bed/double/padded{
 	pixel_x = 10;
-	pixel_y = 25
-	},
-/obj/structure/bed/double/padded{
-	pixel_x = 10
-	},
-/obj/item/bedsheet/rainbowdouble{
-	pixel_x = 8;
-	pixel_y = 25
+	layer = 3.01
 	},
 /obj/item/bedsheet/rainbowdouble{
 	pixel_x = 20;
-	pixel_y = 25
+	layer = 3.92
 	},
 /obj/item/bedsheet/rainbowdouble{
-	pixel_x = 8
-	},
-/obj/item/bedsheet/rainbowdouble{
-	pixel_x = 20
+	pixel_x = 8;
+	layer = 3.91
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/Dormitory_06)
@@ -40763,13 +40794,7 @@
 /area/hallway/Stairwell_Star)
 "nsT" = (
 /obj/structure/bed/double/padded,
-/obj/structure/bed/double/padded{
-	pixel_y = -24
-	},
 /obj/item/bedsheet/cedouble,
-/obj/item/bedsheet/cedouble{
-	pixel_y = -23
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
@@ -46718,9 +46743,6 @@
 /area/engineering/Atmospherics_Chamber)
 "ppx" = (
 /obj/structure/bed/double/padded,
-/obj/structure/bed/double/padded{
-	pixel_y = -24
-	},
 /turf/simulated/floor/tiled/white{
 	color = "#8bbbd5"
 	},
@@ -46867,6 +46889,18 @@
 "prH" = (
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/item/bedsheet/rainbowdouble{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/obj/item/bedsheet/rainbowdouble{
+	pixel_x = 20;
+	pixel_y = -4
+	},
+/obj/structure/bed/double/padded{
+	pixel_x = 10;
+	pixel_y = -4
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/crew_quarters/sleep/Dormitory_06)
@@ -47765,6 +47799,18 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/spline/fancy{
 	dir = 1
+	},
+/obj/item/bedsheet/captaindouble{
+	pixel_x = 6;
+	pixel_y = 28
+	},
+/obj/structure/bed/double/padded{
+	pixel_x = 10;
+	pixel_y = 28
+	},
+/obj/item/bedsheet/captaindouble{
+	pixel_x = 19;
+	pixel_y = 28
 	},
 /turf/simulated/floor/wood/alt/parquet,
 /area/bridge/sleep/Captain_Quarters)
@@ -48858,13 +48904,7 @@
 /area/medical/Lounge)
 "pXm" = (
 /obj/structure/bed/double/padded,
-/obj/structure/bed/double/padded{
-	pixel_y = -24
-	},
 /obj/item/bedsheet/hopdouble,
-/obj/item/bedsheet/hopdouble{
-	pixel_y = -23
-	},
 /turf/simulated/floor/carpet/blucarpet,
 /area/bridge/HoP_Office)
 "pXp" = (
@@ -50262,9 +50302,8 @@
 /area/maintenance/Deck3_Medical_ForStarChamber3)
 "qwl" = (
 /obj/structure/bed/psych{
-	pixel_y = 9
+	layer = 3.01
 	},
-/obj/structure/bed/psych,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/medical/Psych_Room_2)
 "qwq" = (
@@ -55704,6 +55743,10 @@
 /turf/simulated/floor/plating,
 /area/engineering/Engine1_Chamber)
 "smH" = (
+/obj/structure/bed/psych{
+	pixel_y = -19;
+	pixel_x = 2
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/medical/Psych_Room_2)
 "smS" = (
@@ -59869,6 +59912,14 @@
 /area/hallway/Star_Breakroom)
 "tHb" = (
 /obj/effect/floor_decal/spline/fancy,
+/obj/item/bedsheet/hopdouble{
+	pixel_y = 4;
+	layer = 3.91
+	},
+/obj/structure/bed/double/padded{
+	pixel_y = 4;
+	layer = 3.01
+	},
 /turf/simulated/floor/carpet/blucarpet,
 /area/bridge/HoP_Office)
 "tHm" = (
@@ -61372,13 +61423,7 @@
 /area/crew_quarters/sleep/Dormitory_07)
 "ugq" = (
 /obj/structure/bed/double/padded,
-/obj/structure/bed/double/padded{
-	pixel_y = -24
-	},
 /obj/item/bedsheet/piratedouble,
-/obj/item/bedsheet/piratedouble{
-	pixel_y = -25
-	},
 /turf/simulated/floor/carpet/geo,
 /area/crew_quarters/sleep/Dormitory_10)
 "ugI" = (
@@ -62224,8 +62269,13 @@
 /obj/item/bedsheet/greendouble{
 	pixel_y = 33
 	},
+/obj/structure/bed/double/padded{
+	pixel_y = 4;
+	layer = 3.01
+	},
 /obj/item/bedsheet/greendouble{
-	pixel_y = 8
+	pixel_y = 4;
+	layer = 3.91
 	},
 /turf/simulated/floor/tiled/white{
 	color = "#8bbbd5"
@@ -63231,24 +63281,16 @@
 "uMq" = (
 /obj/structure/bed/double/padded{
 	pixel_x = 10;
-	pixel_y = 25
-	},
-/obj/structure/bed/double/padded{
-	pixel_x = 10
+	pixel_y = 25;
+	layer = 3.01
 	},
 /obj/item/bedsheet/captaindouble{
 	pixel_x = 6;
 	pixel_y = 25
 	},
 /obj/item/bedsheet/captaindouble{
-	pixel_x = 6
-	},
-/obj/item/bedsheet/captaindouble{
 	pixel_x = 19;
 	pixel_y = 25
-	},
-/obj/item/bedsheet/captaindouble{
-	pixel_x = 19
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/carpet/blue2,
@@ -63461,6 +63503,14 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Medical_ForPortChamber1)
 "uQf" = (
+/obj/structure/bed/double/padded{
+	pixel_x = 10;
+	pixel_y = -2
+	},
+/obj/item/bedsheet/mimedouble{
+	pixel_y = -2;
+	pixel_x = 9
+	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/medical/Patient_4)
 "uQn" = (
@@ -69946,6 +69996,14 @@
 /obj/effect/floor_decal/spline/fancy{
 	dir = 6
 	},
+/obj/item/bedsheet/cedouble{
+	pixel_y = 4;
+	layer = 3.91
+	},
+/obj/structure/bed/double/padded{
+	pixel_y = 4;
+	layer = 3.01
+	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/bridge/sleep/CE_Quarters)
 "wRh" = (
@@ -71043,6 +71101,14 @@
 /obj/effect/floor_decal/spline/fancy/wood{
 	dir = 6
 	},
+/obj/item/bedsheet/bluedouble{
+	pixel_y = 4;
+	layer = 3.91
+	},
+/obj/structure/bed/double/padded{
+	pixel_y = 4;
+	layer = 3.01
+	},
 /turf/simulated/floor/carpet/tealcarpet,
 /area/bridge/sleep/Secretary_Quarters)
 "xgb" = (
@@ -71946,11 +72012,7 @@
 /area/maintenance/Deck3_Medical_ForStarChamber2)
 "xti" = (
 /obj/structure/bed/double/padded{
-	pixel_y = 25
-	},
-/obj/structure/bed/double/padded,
-/obj/item/bedsheet/double{
-	pixel_y = 25
+	layer = 3.01
 	},
 /obj/item/bedsheet/double,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -72874,6 +72936,18 @@
 /obj/effect/floor_decal/spline/fancy{
 	dir = 6
 	},
+/obj/item/bedsheet/medical{
+	pixel_y = 20;
+	layer = 3.91
+	},
+/obj/structure/bed/double/padded{
+	pixel_y = 4;
+	layer = 3.01
+	},
+/obj/item/bedsheet/medical{
+	pixel_y = 6;
+	layer = 3.92
+	},
 /turf/simulated/floor/carpet/blue,
 /area/bridge/sleep/CMO_Quarters)
 "xIR" = (
@@ -73562,6 +73636,14 @@
 /area/maintenance/Deck3_Medical_ForChamber2)
 "xRv" = (
 /obj/effect/floor_decal/spline/fancy/wood,
+/obj/item/bedsheet/hosdouble{
+	pixel_y = 4;
+	layer = 3.91
+	},
+/obj/structure/bed/double/padded{
+	pixel_y = 4;
+	layer = 3.01
+	},
 /turf/simulated/floor/carpet,
 /area/bridge/sleep/HoS_Quarters)
 "xRB" = (
@@ -100269,7 +100351,7 @@ naP
 sFc
 gWf
 eRQ
-bCO
+aaq
 aoy
 icv
 cUy
@@ -122669,7 +122751,7 @@ rcB
 nYO
 aWs
 rUS
-smH
+aar
 qwl
 njY
 qbV
@@ -123682,7 +123764,7 @@ hbO
 wvJ
 qeo
 hge
-hbO
+aau
 kpZ
 qeo
 hge
@@ -123940,7 +124022,7 @@ drk
 wzX
 qeo
 hge
-hbO
+aax
 xti
 vee
 hge
@@ -126277,7 +126359,7 @@ nJi
 iCX
 pGh
 iCX
-iCX
+aas
 cPN
 nJi
 dHa
@@ -126535,7 +126617,7 @@ nJi
 cGK
 cwT
 uuw
-iCX
+aat
 jDg
 nJi
 dHa

@@ -2,20 +2,6 @@
 "aa" = (
 /turf/space,
 /area/space)
-"ae" = (
-/obj/effect/step_trigger/teleporter/random{
-	affect_ghosts = 1;
-	name = "escapeshuttle_leave";
-	teleport_x = 25;
-	teleport_x_offset = 245;
-	teleport_y = 25;
-	teleport_y_offset = 245;
-	teleport_z = 4;
-	teleport_z_offset = 4
-	},
-/turf/space,
-/turf/space/transit/east,
-/area/space)
 "ag" = (
 /obj/effect/step_trigger/teleporter/planetary_fall/sif,
 /turf/simulated/sky/moving/north,
@@ -60,14 +46,6 @@
 	landmark_id = "fall_sif"
 	},
 /turf/simulated/sky/east,
-/area/space)
-"ar" = (
-/turf/space/transit/east,
-/turf/space/transit/east,
-/area/space)
-"as" = (
-/turf/space,
-/turf/space/transit/east,
 /area/space)
 "at" = (
 /obj/effect/step_trigger/teleporter/random{
@@ -287,10 +265,6 @@
 	},
 /turf/simulated/shuttle/floor,
 /area/shuttle/arrival/pre_game)
-"cU" = (
-/turf/space,
-/turf/space,
-/area/space)
 "cV" = (
 /obj/effect/step_trigger/teleporter/landmark{
 	landmark_id = "fall_sif"
@@ -432,20 +406,6 @@
 /obj/effect/shuttle_landmark/southern_cross/escape_pod2/transit,
 /turf/space/transit/north,
 /area/shuttle/escape_pod2/transit)
-"gO" = (
-/obj/effect/step_trigger/teleporter/random{
-	affect_ghosts = 1;
-	name = "escapeshuttle_leave";
-	teleport_x = 25;
-	teleport_x_offset = 245;
-	teleport_y = 25;
-	teleport_y_offset = 245;
-	teleport_z = 4;
-	teleport_z_offset = 4
-	},
-/turf/space,
-/turf/space,
-/area/space)
 "ij" = (
 /obj/structure/closet/emcloset,
 /obj/item/radio/intercom{
@@ -11243,6 +11203,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 XE
 XE
 gO
@@ -11252,6 +11213,17 @@ ar
 ar
 ar
 ar
+=======
+ap
+ap
+ah
+aj
+aj
+aj
+aj
+aj
+aj
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 cY
 aI
 aI
@@ -11503,13 +11475,13 @@ aa
 aa
 ap
 ap
-aE
+ah
 aj
 aj
 aj
 aj
 aj
-ar
+aj
 cY
 aI
 aI
@@ -11761,13 +11733,13 @@ aa
 aa
 ap
 ap
-aE
+ah
 aj
 aj
 aj
 aj
 aj
-ar
+aj
 cY
 aI
 aI
@@ -12019,13 +11991,13 @@ aa
 aa
 ap
 ap
-aE
+ah
 aj
 aj
 aj
 aj
 aj
-ar
+aj
 cY
 cY
 aI
@@ -12277,13 +12249,13 @@ aa
 aa
 ap
 ap
-aE
+ah
 aj
 aj
 aj
 aj
 aj
-ar
+aj
 aj
 cY
 cY
@@ -12541,7 +12513,7 @@ aj
 aj
 aj
 aj
-ar
+aj
 aj
 aj
 aj
@@ -15114,35 +15086,44 @@ aa
 aa
 aa
 ap
+<<<<<<< HEAD
 XE
 ae
 as
 as
 as
 as
+=======
+ap
+ah
 aj
 aj
-as
-as
-as
-as
-as
-as
 aj
 aj
-as
-as
-as
-as
-as
-as
 aj
 aj
-as
-as
-as
-as
-as
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
+aj
+aj
+aj
+aj
+aj
+aj
 aj
 aj
 aj
@@ -27394,6 +27375,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -27424,6 +27406,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (104,1,1) = {"
 aa
@@ -27652,6 +27666,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -27682,6 +27697,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (105,1,1) = {"
 aa
@@ -27910,6 +27957,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -27940,6 +27988,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (106,1,1) = {"
 aa
@@ -28168,6 +28248,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -28198,6 +28279,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (107,1,1) = {"
 aa
@@ -28426,6 +28539,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -28456,6 +28570,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (108,1,1) = {"
 aa
@@ -28684,6 +28830,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -28714,6 +28861,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (109,1,1) = {"
 aa
@@ -28942,6 +29121,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -28972,6 +29152,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (110,1,1) = {"
 aa
@@ -29200,6 +29412,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -29230,6 +29443,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (111,1,1) = {"
 aa
@@ -29458,6 +29703,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -29488,6 +29734,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (112,1,1) = {"
 aa
@@ -29716,6 +29994,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -29746,6 +30025,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (113,1,1) = {"
 aa
@@ -29974,6 +30285,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -30004,6 +30316,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (114,1,1) = {"
 aa
@@ -30232,6 +30576,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -30262,6 +30607,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (115,1,1) = {"
 aa
@@ -30490,6 +30867,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -30520,6 +30898,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (116,1,1) = {"
 aa
@@ -30748,6 +31158,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -30778,6 +31189,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (117,1,1) = {"
 aa
@@ -31006,6 +31449,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -31036,6 +31480,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (118,1,1) = {"
 aa
@@ -31264,6 +31740,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -31294,6 +31771,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (119,1,1) = {"
 aa
@@ -31522,6 +32031,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -31552,6 +32062,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (120,1,1) = {"
 aa
@@ -31780,6 +32322,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -31810,6 +32353,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (121,1,1) = {"
 aa
@@ -32038,6 +32613,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -32068,6 +32644,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (122,1,1) = {"
 aa
@@ -32296,6 +32904,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -32326,6 +32935,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (123,1,1) = {"
 aa
@@ -32554,6 +33195,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -32584,6 +33226,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (124,1,1) = {"
 aa
@@ -32812,6 +33486,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -32842,6 +33517,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (125,1,1) = {"
 aa
@@ -33070,6 +33777,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -33100,6 +33808,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (126,1,1) = {"
 aa
@@ -33328,6 +34068,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -33358,6 +34099,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (127,1,1) = {"
 aa
@@ -33586,6 +34359,7 @@ aa
 aa
 aa
 aa
+<<<<<<< HEAD
 cU
 cU
 cU
@@ -33616,6 +34390,38 @@ cU
 cU
 XE
 XE
+=======
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ap
+ap
+>>>>>>> e2b24f9029 (Maplinters Port & DMI Test Enable (#9105))
 "}
 (128,1,1) = {"
 aa
@@ -38356,7 +39162,7 @@ aa
 aa
 aa
 aa
-cU
+aa
 aa
 aa
 aa
@@ -38614,7 +39420,7 @@ aa
 aa
 aa
 aa
-cU
+aa
 aa
 aa
 aa
@@ -38872,7 +39678,7 @@ aa
 aa
 aa
 aa
-cU
+aa
 aa
 aa
 aa
@@ -39130,7 +39936,7 @@ aa
 aa
 aa
 aa
-cU
+aa
 aa
 aa
 aa
@@ -39388,7 +40194,7 @@ aa
 aa
 aa
 aa
-cU
+aa
 aa
 aa
 aa
@@ -39646,7 +40452,7 @@ aa
 aa
 aa
 aa
-cU
+aa
 aa
 aa
 aa
@@ -39904,7 +40710,7 @@ aa
 aa
 aa
 aa
-cU
+aa
 aa
 aa
 aa
@@ -40162,7 +40968,7 @@ aa
 aa
 aa
 aa
-cU
+aa
 aa
 aa
 aa
