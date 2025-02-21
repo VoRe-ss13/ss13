@@ -701,9 +701,7 @@
 /area/surface/outside/plains/outpost)
 "aqe" = (
 /turf/simulated/floor/tiled/techfloor/grid,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "aqq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -781,9 +779,7 @@
 /area/surface/outside/path/plains)
 "asD" = (
 /turf/simulated/floor/tiled/techfloor,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "asF" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/grassybush{
@@ -851,9 +847,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "auf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1090,9 +1084,7 @@
 /area/surface/outpost/mining_main/refinery)
 "aCQ" = (
 /turf/simulated/floor/water/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "aCZ" = (
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -2837,9 +2829,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "bzp" = (
 /obj/effect/floor_decal/stairs/wood_stairs,
 /turf/simulated/floor/wood{
@@ -4104,9 +4094,7 @@
 /obj/machinery/alarm{
 	pixel_y = 22
 	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
+/obj/item/storage/pouch,
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
 	pixel_y = 31
@@ -4711,9 +4699,7 @@
 /area/security/armoury)
 "cpk" = (
 /turf/simulated/floor/tiled/steel_dirty,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "cpv" = (
 /obj/structure/table/hardwoodtable,
 /obj/machinery/door/blast/gate/thin{
@@ -5573,9 +5559,7 @@
 "cEG" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/simulated/floor/water/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "cEQ" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/mob_spawner/mouse_nest,
@@ -5690,9 +5674,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "cHj" = (
 /obj/machinery/light/bigfloorlamp{
 	active_power_usage = 0;
@@ -6748,15 +6730,11 @@
 "dcJ" = (
 /mob/living/simple_mob/animal/passive/fish/koi,
 /turf/simulated/floor/water/deep/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dcK" = (
 /mob/living/simple_mob/animal/passive/fish/solarfish,
 /turf/simulated/floor/water/deep/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dcL" = (
 /obj/structure/stairs/spawner/east,
 /turf/simulated/floor/plating,
@@ -6829,9 +6807,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dfk" = (
 /obj/structure/flora/ausbushes/grassybush{
 	opacity = 1
@@ -6839,9 +6815,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dfl" = (
 /obj/structure/stairs/spawner/east,
 /turf/simulated/floor/tiled/steel_dirty{
@@ -6898,7 +6872,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/workshop)
 "dgk" = (
-/obj/structure/table/standard,
 /obj/structure/table/standard,
 /obj/item/stack/cable_coil,
 /obj/item/multitool,
@@ -7673,9 +7646,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dxe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -8036,9 +8007,7 @@
 "dCF" = (
 /mob/living/simple_mob/animal/passive/crab/Coffee,
 /turf/simulated/floor/water/deep/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dCI" = (
 /obj/structure/table/standard,
 /obj/item/radio/intercom/department/security{
@@ -8173,9 +8142,7 @@
 /area/engineering/foyer)
 "dFu" = (
 /turf/simulated/floor/water/deep/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dFv" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
@@ -8574,9 +8541,7 @@
 	dir = 6
 	},
 /turf/simulated/wall/r_wall,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dNI" = (
 /obj/effect/floor_decal/stairs/dark_stairs{
 	dir = 4
@@ -8897,9 +8862,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dSr" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/tiled/steel_dirty{
@@ -9142,15 +9105,11 @@
 "dWJ" = (
 /obj/effect/floor_decal/rust/mono_rusted3,
 /turf/simulated/wall/r_wall,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dWK" = (
 /obj/structure/prop/rock/watersharp,
 /turf/simulated/floor/water/deep/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "dWU" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/medical,
@@ -10924,9 +10883,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "eJZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -10943,9 +10900,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "eKw" = (
 /obj/structure/boxingrope{
 	dir = 1
@@ -10973,9 +10928,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "eLF" = (
 /obj/machinery/power/apc{
 	dir = 1;
@@ -11385,9 +11338,7 @@
 /area/security/security_hallway)
 "eTJ" = (
 /turf/simulated/floor/outdoors/dirt,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "eTK" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -11540,9 +11491,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "eWY" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
@@ -14302,9 +14251,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "geR" = (
 /obj/structure/flora/tree/jungle_small,
 /obj/structure/flora/ausbushes/brflowers,
@@ -14362,9 +14309,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "gfT" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/security/evidence_storage)
@@ -14402,9 +14347,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "ggn" = (
 /obj/structure/closet/wardrobe/detective,
 /obj/structure/window/reinforced,
@@ -17760,9 +17703,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "hDd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -18257,9 +18198,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "hPn" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 10
@@ -18619,7 +18558,6 @@
 /area/surface/outpost/main/landing/one)
 "hXm" = (
 /obj/item/radio/intercom{
-	broadcasting = 0;
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
@@ -18654,9 +18592,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "hXP" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/wingrille_spawn/reinforced,
@@ -19162,7 +19098,6 @@
 /obj/structure/fans/tiny,
 /obj/machinery/door/airlock/command{
 	name = "Electrical Maintenance";
-	req_access = null;
 	req_one_access = list(1,11,24)
 	},
 /turf/simulated/floor,
@@ -20005,9 +19940,7 @@
 /turf/simulated/floor/plating{
 	outdoors = 1
 	},
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "iAC" = (
 /obj/effect/floor_decal/chapel{
 	dir = 4
@@ -20321,9 +20254,7 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "iGO" = (
 /obj/machinery/door/airlock/glass,
 /obj/machinery/door/firedoor/border_only,
@@ -21152,9 +21083,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "iYg" = (
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
@@ -21506,9 +21435,7 @@
 /obj/structure/closet/firecloset/full,
 /obj/effect/zone_divider,
 /turf/simulated/floor/tiled/steel_dirty,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "jgp" = (
 /obj/effect/zone_divider,
 /obj/machinery/camera/network/exterior{
@@ -22131,9 +22058,7 @@
 "jAM" = (
 /obj/machinery/porta_turret{
 	check_access = 0;
-	check_anomalies = 1;
 	check_arrest = 0;
-	check_records = 1;
 	faction = "neutral";
 	installation = /obj/item/gun/energy/locked/phasegun/cannon/unlocked
 	},
@@ -22251,9 +22176,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "jCC" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -22348,9 +22271,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "jGC" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/dark,
@@ -22424,9 +22345,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "jHX" = (
 /obj/machinery/door/blast/shutters{
 	id = "cargounload";
@@ -23175,9 +23094,7 @@
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "jVM" = (
 /obj/machinery/camera/network/exterior{
 	c_tag = "EXT - Research South 8"
@@ -23206,9 +23123,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "jXz" = (
 /turf/simulated/wall,
 /area/medical/reception)
@@ -23315,9 +23230,7 @@
 	dir = 9
 	},
 /turf/simulated/wall/r_wall,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "jZv" = (
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/tiled/steel_dirty,
@@ -24800,9 +24713,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "kHa" = (
 /obj/structure/railing/grey{
 	dir = 8
@@ -25705,9 +25616,7 @@
 /area/quartermaster/foyer)
 "lfc" = (
 /turf/simulated/wall/r_wall,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "lfm" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -27377,9 +27286,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "lPs" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -27432,9 +27339,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "lQq" = (
 /obj/structure/cable/green{
 	icon_state = "1-8"
@@ -27823,7 +27728,6 @@
 	dir = 6
 	},
 /obj/item/radio/intercom{
-	broadcasting = 0;
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
@@ -28179,7 +28083,6 @@
 	pixel_z = 8
 	},
 /obj/item/radio/intercom{
-	broadcasting = 0;
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
@@ -28502,9 +28405,7 @@
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "mrz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -29009,7 +28910,6 @@
 /area/bridge)
 "mDs" = (
 /obj/item/radio/intercom{
-	broadcasting = 0;
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
@@ -29125,9 +29025,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "mEL" = (
 /obj/item/towel/random,
 /obj/item/towel/random{
@@ -29967,7 +29865,6 @@
 	dir = 1
 	},
 /obj/item/radio/intercom{
-	broadcasting = 0;
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
@@ -30097,9 +29994,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "mXY" = (
 /obj/structure/window/reinforced/survival_pod{
 	density = 0;
@@ -31788,9 +31683,7 @@
 	name_tag = "Exploration Subgrid"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "nND" = (
 /turf/simulated/shuttle/wall/voidcraft/no_join,
 /area/shuttle/needle)
@@ -32570,9 +32463,7 @@
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/steel_dirty,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "ofQ" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -32916,7 +32807,6 @@
 /area/surface/outpost/civilian/emergency_storage)
 "osm" = (
 /obj/item/radio/intercom{
-	broadcasting = 0;
 	name = "Station Intercom (General)";
 	pixel_y = -21
 	},
@@ -32995,9 +32885,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "otK" = (
 /obj/random/tech_supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -34348,9 +34236,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "oZM" = (
 /obj/structure/closet/l3closet/medical,
 /obj/structure/cable/green{
@@ -35741,9 +35627,7 @@
 	RCon_tag = "Exploration Substation Bypass"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "pDC" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/firealarm{
@@ -37324,9 +37208,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "qgN" = (
 /obj/structure/bed/chair/office/light{
 	dir = 8
@@ -38083,9 +37965,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "qAI" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "1-8"
@@ -38096,9 +37976,7 @@
 "qAR" = (
 /obj/structure/prop/rock/water,
 /turf/simulated/floor/water/indoors,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "qBP" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "1-4"
@@ -40368,9 +40246,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "rzO" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "1-8"
@@ -41201,7 +41077,6 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/multi_tile/glass{
 	dir = 2;
-	id_tag = null;
 	name = "EMT Bay";
 	req_access = list(5)
 	},
@@ -41426,7 +41301,6 @@
 "saV" = (
 /obj/machinery/door/airlock/multi_tile/glass{
 	dir = 2;
-	id_tag = null;
 	name = "EMT Bay";
 	req_access = list(5)
 	},
@@ -41708,9 +41582,7 @@
 "shq" = (
 /obj/structure/closet/firecloset/full,
 /turf/simulated/floor/tiled/steel_dirty,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "shy" = (
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/yellow/border,
@@ -44093,9 +43965,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "tgD" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -45327,9 +45197,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "tFB" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
@@ -45773,9 +45641,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "tNy" = (
 /obj/structure/closet/secure_closet/medical2,
 /obj/effect/floor_decal/borderfloorblack{
@@ -46029,9 +45895,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "tTW" = (
 /obj/machinery/light{
 	dir = 1
@@ -46904,9 +46768,7 @@
 /area/holodeck_control)
 "usd" = (
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "usC" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 10
@@ -47717,9 +47579,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "uGB" = (
 /obj/machinery/button/remote/airlock{
 	id = "unit2";
@@ -49152,7 +49012,6 @@
 	dir = 8
 	},
 /obj/machinery/computer/shuttle_control/mining{
-	ai_control = 1;
 	dir = 1
 	},
 /turf/simulated/shuttle/floor/purple,
@@ -49298,15 +49157,12 @@
 "viC" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/tiled/steel_dirty,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "viQ" = (
 /turf/simulated/floor/tiled/techfloor,
 /area/rnd/research)
 "vjf" = (
 /obj/machinery/computer/shuttle_control/research{
-	ai_control = 1;
 	req_one_access = list(47)
 	},
 /obj/machinery/light{
@@ -49367,7 +49223,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/command{
-	id_tag = null;
 	name = "Research Director Quarters";
 	req_access = list(30)
 	},
@@ -49457,9 +49312,7 @@
 /area/surface/outside/path/plains)
 "vlF" = (
 /turf/simulated/open,
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "vlH" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -50039,7 +49892,6 @@
 	dir = 4
 	},
 /obj/machinery/computer/shuttle_control/research{
-	ai_control = 1;
 	dir = 1;
 	req_one_access = list(47)
 	},
@@ -50842,9 +50694,7 @@
 /area/crew_quarters/kitchen)
 "vNh" = (
 /turf/simulated/wall/r_wall,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "vNR" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/wood/alt/panel,
@@ -50935,9 +50785,7 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "vQW" = (
 /obj/structure/flora/ausbushes/grassybush{
 	opacity = 1
@@ -52184,9 +52032,7 @@
 /turf/simulated/wall/r_wall{
 	cached_rad_resistance = 150
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "wqg" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -53073,9 +52919,7 @@
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/substation/atmospherics{
-	name = "Exploration Substation"
-	})
+/area/maintenance/substation/atmospherics/exploration)
 "wJc" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -56209,9 +56053,7 @@
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "xOC" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/window/reinforced/full,
@@ -56316,27 +56158,13 @@
 	},
 /obj/item/clothing/mask/gas/clear,
 /obj/item/clothing/mask/gas/clear,
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
-/obj/item/storage/pouch{
-	remove_delay = 0
-	},
+/obj/item/storage/pouch,
+/obj/item/storage/pouch,
+/obj/item/storage/pouch,
+/obj/item/storage/pouch,
+/obj/item/storage/pouch,
+/obj/item/storage/pouch,
+/obj/item/storage/pouch,
 /turf/simulated/floor/tiled/techfloor,
 /area/security/security_ses)
 "xRi" = (
@@ -57061,9 +56889,7 @@
 /turf/simulated/floor/outdoors/grass/heavy{
 	outdoors = -1
 	},
-/area/surface/outside/plains/outpost{
-	outdoors = -1
-	})
+/area/surface/outside/plains/outpost/outdoors_area)
 "ydT" = (
 /obj/structure/cable/heavyduty{
 	icon_state = "4-8"
