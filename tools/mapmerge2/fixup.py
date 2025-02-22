@@ -58,7 +58,19 @@ def main(repo):
             print("If you are about to commit maps for the first time, run `Run Before Committing.bat`.")
             return 1
 
+<<<<<<< HEAD
     # Read the HEAD commit.
+=======
+    # Set up upstream remote if needed
+    try:
+        repo.remotes.create("upstream", "https://github.com/CHOMPStation2/CHOMPStation2.git") # ChompEDIT
+    except ValueError:
+        pass
+    else:
+        print("Adding upstream remote...")
+
+    # Read the HEAD and ancestor commits.
+>>>>>>> decef6b094 (Chomp edit notes and CI cleanup (#10211))
     head_commit = repo[repo.head.target]
     head_files = {}
     for path, blob in walk_tree(head_commit.tree):
