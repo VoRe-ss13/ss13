@@ -21,13 +21,6 @@ jobs:
       - name: Ensure +x on CI directory
         run: |
           chmod -R +x ./tools/ci
-      - name: Restore SpacemanDMM cache
-        uses: actions/cache@v4
-        with:
-          path: ~/SpacemanDMM
-          key: ${{ runner.os }}-spacemandmm-${{ hashFiles('dependencies.sh') }}
-          restore-keys: |
-            ${{ runner.os }}-spacemandmm-
       - name: Restore Yarn cache
         uses: actions/cache@v4
         with:
@@ -67,7 +60,11 @@ jobs:
           pip3 install setuptools
           bash tools/ci/install_build_deps.sh
           bash tools/ci/install_ripgrep.sh
+<<<<<<< HEAD
           bash tools/ci/install_spaceman_dmm.sh dreamchecker
+=======
+          bash tools/ci/install_spaceman_dmm.sh dmm-tools
+>>>>>>> decef6b094 (Chomp edit notes and CI cleanup (#10211))
           tools/bootstrap/python -c ''
       - name: Run Tests
         run: |
@@ -81,6 +78,7 @@ jobs:
         run: tools/build/build --ci lint tgui-test
 
   dreamchecker:
+    if: ( !contains(github.event.head_commit.message, '[ci skip]') )
     name: DreamChecker
     runs-on: ubuntu-24.04
     steps:

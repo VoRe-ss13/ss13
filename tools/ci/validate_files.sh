@@ -23,6 +23,10 @@ if command -v rg >/dev/null 2>&1; then
 	fi
 	code_files="code/**/**.dm"
 	map_files="maps/**/**.dmm"
+<<<<<<< HEAD
+=======
+	modular_map_files="modular_chomp/maps/**/**.dmm" # CHOMPEdit - Modular maps
+>>>>>>> decef6b094 (Chomp edit notes and CI cleanup (#10211))
 	# shuttle_map_files="_maps/shuttles/**.dmm"
 	# code_x_515="code/**/!(__byond_version_compat).dm"
 else
@@ -30,6 +34,10 @@ else
 	grep=grep
 	code_files="-r --include=code/**/**.dm"
 	map_files="-r --include=maps/**/**.dmm"
+<<<<<<< HEAD
+=======
+	modular_map_files="-r --include=modular_chomp/maps/**/**.dmm" # CHOMPEdit - Modular maps
+>>>>>>> decef6b094 (Chomp edit notes and CI cleanup (#10211))
 	# shuttle_map_files="-r --include=_maps/shuttles/**.dmm"
 	# code_x_515="-r --include=code/**/!(__byond_version_compat).dm"
 fi
@@ -59,6 +67,18 @@ if [ $retVal -ne 0 ]; then
   FAILED=1
 fi
 
+<<<<<<< HEAD
+=======
+# ChompEDIT START
+(! $grep 'step_[xy]' $modular_map_files)
+retVal=$?
+if [ $retVal -ne 0 ]; then
+  echo -e "${RED}The variables 'step_x' and 'step_y' are present on a map, and they 'break' movement ingame.${NC}"
+  FAILED=1
+fi
+# ChompEDIT END
+
+>>>>>>> decef6b094 (Chomp edit notes and CI cleanup (#10211))
 part "test map included"
 #Checking for any 'checked' maps that include 'test'
 (! $grep 'maps\\.*test.*' *.dme)
