@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscadd: "Footstep Element"
+  - code_imp: "Upated DCS"
