@@ -79,7 +79,7 @@
 	set category = "Abilities.Vore"
 	set desc = "Check the amount of liquid in your belly."
 
-	var/obj/belly/RTB = input("Choose which vore belly to check") as null|anything in src.vore_organs
+	var/obj/belly/RTB = tgui_input_list(src, "Choose which vore belly to check", "Select Belly", vore_organs)
 	if(!RTB)
 		return FALSE
 
@@ -94,16 +94,16 @@
 	if(!checkClickCooldown() || incapacitated(INCAPACITATION_KNOCKOUT))
 		return FALSE
 
-	var/mob/living/user = usr
+	var/mob/living/user = src
 
-	var/mob/living/TG = input("Choose who to transfer from") as null| mob in view(1,user.loc)
+	var/mob/living/TG = tgui_input_list(user, "Choose who to transfer from", "Transfer From", mobs_in_view(1,user))
 	if(!TG)
 		return FALSE
 	if(TG.give_reagents == FALSE && user != TG) //User isnt forced to allow giving in prefs if they are the one doing it
 		to_chat(user, span_vwarning("This person's prefs dont allow that!"))
 		return FALSE
 
-	var/obj/belly/RTB = input("Choose which vore belly to transfer from") as null|anything in TG.vore_organs //First they choose the belly to transfer from.
+	var/obj/belly/RTB = tgui_input_list(user, "Choose which vore belly to transfer from", "Select Belly", vore_organs)
 	if(!RTB)
 		return FALSE
 
@@ -115,11 +115,11 @@
 		if("Cancel")
 			return FALSE
 		if("Vore belly")
-			var/mob/living/TR = input(user,"Choose who to transfer to","Select Target") as null|mob in view(1,user.loc)
+			var/mob/living/TR = tgui_input_list(user,"Choose who to transfer to","Select Target", mobs_in_view(1,user))
 			if(!TR)  return FALSE
 
 			if(TR == user) //Proceed, we dont need to have prefs enabled for transfer within user
-				var/obj/belly/TB = input("Choose which organ to transfer to") as null|anything in user.vore_organs
+				var/obj/belly/TB = tgui_input_list(user, "Choose which organ to transfer to", "Select Belly", user.vore_organs)
 				if(!TB)
 					return FALSE
 				if(!Adjacent(TR) || !Adjacent(TG))
@@ -135,14 +135,14 @@
 					add_attack_logs(user,TR,"Transfered [RTB.reagent_name] from [TG]'s [RTB] to [TR]'s [TB]")	//Bonus for staff so they can see if people have abused transfer and done pref breaks
 				RTB.reagents.vore_trans_to_mob(TR, transfer_amount, CHEM_VORE, 1, 0, TB)
 				if(RTB.count_liquid_for_sprite || TB.count_liquid_for_sprite)
-					update_fullness()
+					handle_belly_update()
 
 			else if(TR.receive_reagents == FALSE)
 				to_chat(user, span_vwarning("This person's prefs dont allow that!"))
 				return FALSE
 
 			else
-				var/obj/belly/TB = input("Choose which organ to transfer to") as null|anything in TR.vore_organs
+				var/obj/belly/TB = tgui_input_list(user, "Choose which organ to transfer to", "Select Belly", TR.vore_organs)
 				if(!TB)
 					return FALSE
 				if(!Adjacent(TR) || !Adjacent(TG))
@@ -159,13 +159,13 @@
 				RTB.reagents.vore_trans_to_mob(TR, transfer_amount, CHEM_VORE, 1, 0, TB)
 				add_attack_logs(user,TR,"Transfered reagents from [TG]'s [RTB] to [TR]'s [TB]")	//Bonus for staff so they can see if people have abused transfer and done pref breaks
 				if(RTB.count_liquid_for_sprite)
-					update_fullness()
+					handle_belly_update()
 				if(TB.count_liquid_for_sprite)
-					TR.update_fullness()
+					TR.handle_belly_update()
 
 
 		if("Stomach")
-			var/mob/living/TR = input(user,"Choose who to transfer to","Select Target") as null|mob in view(1,user.loc)
+			var/mob/living/TR = tgui_input_list(user,"Choose who to transfer to","Select Target", mobs_in_view(1,user))
 			if(!TR)  return
 			if(!Adjacent(TR) || !Adjacent(TG))
 				return //No long distance transfer
@@ -178,7 +178,7 @@
 				RTB.reagents.vore_trans_to_mob(TR, transfer_amount, CHEM_INGEST, 1, 0, null)
 				add_attack_logs(user,TR,"Transfered [RTB.reagent_name] from [TG]'s [RTB] to [TR]'s Stomach")
 				if(RTB.count_liquid_for_sprite)
-					update_fullness()
+					handle_belly_update()
 
 			else if(TR.receive_reagents == FALSE)
 				to_chat(user, span_vwarning("This person's prefs dont allow that!"))
@@ -193,7 +193,7 @@
 				RTB.reagents.vore_trans_to_mob(TR, transfer_amount, CHEM_INGEST, 1, 0, null)
 				add_attack_logs(user,TR,"Transfered [RTB.reagent_name] from [TG]'s [RTB] to [TR]'s Stomach")	//Bonus for staff so they can see if people have abused transfer and done pref breaks
 				if(RTB.count_liquid_for_sprite)
-					update_fullness()
+					handle_belly_update()
 
 		if("Container")
 			if(RTB.reagentid == REAGENT_ID_STOMACID)
@@ -201,7 +201,7 @@
 			var/list/choices = list()
 			for(var/obj/item/reagent_containers/rc in view(1,user.loc))
 				choices += rc
-			var/obj/item/reagent_containers/T = input(user,"Choose what to transfer to","Select Target") as null|anything in choices
+			var/obj/item/reagent_containers/T = tgui_input_list(user,"Choose what to transfer to","Select Target", choices)
 			if(!T)
 				return FALSE
 			if(!Adjacent(T) || !Adjacent(TG))
@@ -215,13 +215,13 @@
 			RTB.reagents.vore_trans_to_con(T, transfer_amount, 1, 0)
 			add_attack_logs(user, T,"Transfered [RTB.reagent_name] from [TG]'s [RTB] to a [T]")	//Bonus for staff so they can see if people have abused transfer and done pref breaks
 			if(RTB.count_liquid_for_sprite)
-				update_fullness()
+				handle_belly_update()
 		if("Floor")
 			if(RTB.reagentid == REAGENT_ID_WATER)
 				return
 			var/amount_removed = RTB.reagents.remove_any(transfer_amount)
 			if(RTB.count_liquid_for_sprite)
-				update_fullness()
+				handle_belly_update()
 			var/puddle_amount = round(amount_removed/5)
 
 			if(puddle_amount == 0)
@@ -255,7 +255,7 @@
 	set desc = "Provide bellyrubs to either yourself or another mob with a belly."
 
 	if(!T)
-		T = input("Choose whose belly to rub") as null| mob in view(1,src)
+		T = tgui_input_list(src, "Choose whose belly to rub", "Rub Belly?", mobs_in_view(1,src))
 		if(!T)
 			return FALSE
 	if(!(T in view(1,src)))
