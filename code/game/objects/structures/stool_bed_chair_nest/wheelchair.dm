@@ -13,13 +13,8 @@
 	var/min_mob_buckle_size = MOB_SMALL
 	var/max_mob_buckle_size = MOB_LARGE
 
-<<<<<<< HEAD
-/obj/structure/bed/chair/wheelchair/Initialize(var/newloc, var/new_material, var/new_padding_material)
-	..()
-=======
 /obj/structure/bed/chair/wheelchair/Initialize(mapload, var/new_material, var/new_padding_material)
 	. = ..()
->>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 	update_icon()
 
 /obj/structure/bed/chair/wheelchair/motor
