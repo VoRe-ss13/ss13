@@ -12608,10 +12608,7 @@
 	pixel_y = 5
 	},
 /obj/item/multitool,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/item/stack/cable_coil,
 /obj/item/stack/cable_coil,
 /turf/simulated/floor,
@@ -15865,6 +15862,7 @@
 	pixel_x = 11;
 	pixel_y = -24
 	},
+/obj/structure/closet/crate/hydroponics/prespawned,
 /turf/simulated/floor/tiled/white,
 /area/rnd/xenobiology/xenoflora)
 "fFB" = (
@@ -15965,7 +15963,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/hallway/primary/firstdeck/aft)
 "fKK" = (
-/obj/structure/closet/crate/hydroponics/prespawned,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 8
 	},
@@ -22092,14 +22089,8 @@
 "mJJ" = (
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /turf/simulated/floor/tiled/steel,
 /area/construction/firstdeck/construction3)
 "mKw" = (

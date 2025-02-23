@@ -5664,10 +5664,7 @@
 	dir = 2
 	},
 /obj/structure/table/standard,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/item/melee/baton/cattleprod,
 /obj/machinery/recharger,
 /turf/simulated/floor/tiled,
@@ -9015,7 +9012,6 @@
 	pixel_y = 20
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /obj/item/handcuffs/legcuffs/fuzzy,
@@ -25935,7 +25931,6 @@
 /obj/structure/curtain/bed,
 /obj/item/bedsheet/hosdouble,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = 32
 	},
 /turf/simulated/floor/wood,
@@ -29737,7 +29732,6 @@
 /obj/item/clothing/shoes/sandal,
 /obj/item/clothing/shoes/sandal,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /obj/item/towel/random,
