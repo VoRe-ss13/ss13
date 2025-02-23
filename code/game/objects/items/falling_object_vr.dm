@@ -8,8 +8,14 @@
 	var/falling_type = /obj/item/reagent_containers/food/snacks/sliceable/pizza/margherita
 	var/crushing = TRUE
 
+<<<<<<< HEAD
 /obj/effect/falling_effect/Initialize(mapload, type)
+=======
+/obj/effect/falling_effect/Initialize(mapload, type, var/crushing_type)
+>>>>>>> 98b5de4045 ([MIRROR] PIZZA VOUCHERS DON'T GIB YOU, AGAIN. [FUCK]] (#10215))
 	..()
+	if(!isnull(crushing_type))
+		crushing = crushing_type
 	if(type)
 		falling_type = type
 	return INITIALIZE_HINT_LATELOAD
