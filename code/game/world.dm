@@ -641,10 +641,7 @@ var/failed_old_db_connections = 0
 		to_world_log("Your server failed to establish a connection with the feedback database.")
 	else
 		to_world_log("Feedback database connection established.")
-<<<<<<< HEAD
-=======
 		// CHOMPEdit Begin - Truncating the temporary dialog/attacklog tables
->>>>>>> 602c12f043 (Makes the dialog/attacklog tables clear again after each round (#10121))
 		var/datum/db_query/query_truncate = SSdbcore.NewQuery("TRUNCATE erro_dialog")
 		var/num_tries = 0
 		while(!query_truncate.Execute() && num_tries<5)
@@ -661,13 +658,7 @@ var/failed_old_db_connections = 0
 		if(num_tries==5)
 			log_admin("ERROR TRYING TO CLEAR erro_attacklog")
 		qdel(query_truncate2)
-<<<<<<< HEAD
-	else
-		to_world_log("Feedback database connection failed.")
-	//CHOMPEdit End
-=======
 		// CHOMPEdit End
->>>>>>> 602c12f043 (Makes the dialog/attacklog tables clear again after each round (#10121))
 	return 1
 
 /proc/setup_database_connection()
