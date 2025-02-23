@@ -81,9 +81,6 @@
 	var/turf/W = new N( locate(src.x, src.y, src.z) )
 	if(ispath(N, /turf/simulated/floor))
 		if(old_fire)
-<<<<<<< HEAD
-			fire = old_fire
-=======
 			W.fire = old_fire
 		W.RemoveLattice()
 	W.lighting_corners_initialised = old_lighting_corners_initialized
@@ -96,40 +93,6 @@
 		W_sim.shandler.manualInit()
 	if(old_fire)
 		old_fire.RemoveFire()
->>>>>>> 7e2fd538ac ([MIRROR] Up ports the dynamic light system (#10149))
-
-		if (istype(W,/turf/simulated/floor))
-			W.RemoveLattice()
-
-		if(tell_universe)
-			universe.OnTurfChange(W)
-
-		if(SSair)
-			SSair.mark_for_update(src) //handle the addition of the new turf.
-
-		for(var/turf/space/S in range(W,1))
-			S.update_starlight()
-
-		W.levelupdate()
-		W.update_icon(1)
-		W.post_change()
-		new_turf = W //CHOMPEdit
-		. = W
-
-	else
-		//CHOMPEdit Begin
-		var/turf/W = new N( locate(src.x, src.y, src.z), is_turfchange=TRUE )
-		W.lighting_corners_initialised = old_lighting_corners_initialized
-		var/turf/simulated/W_sim = W
-		if(istype(W_sim) && old_shandler)
-			W_sim.shandler = old_shandler
-			old_shandler.holder = W
-		else if(istype(W_sim) && (SSplanets && SSplanets.z_to_planet.len >= z && SSplanets.z_to_planet[z]) && has_dynamic_lighting())
-			W_sim.shandler = new(src)
-			W_sim.shandler.manualInit()
-		//CHOMPEdit End
-		if(old_fire)
-			old_fire.RemoveFire()
 
 	if(tell_universe)
 		universe.OnTurfChange(W)
