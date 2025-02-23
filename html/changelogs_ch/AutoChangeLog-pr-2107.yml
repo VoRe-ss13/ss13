@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - bugfix: "IRC comms are disabled without a password set"
