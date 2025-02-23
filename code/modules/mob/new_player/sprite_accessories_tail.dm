@@ -369,7 +369,7 @@
 	color_blend_mode = ICON_MULTIPLY
 
 /datum/sprite_accessory/tail/sneptail
-	name = "Snep/Furry Tail (vwag)"
+	name = "Snep/Furry Tail (vwag) (old)"
 	desc = ""
 	icon_state = "sneptail"
 	ani_state = "sneptail_w"
@@ -377,6 +377,16 @@
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "sneptail_mark"
 	extra_overlay_w = "sneptail_mark_w"
+
+/datum/sprite_accessory/tail/sneptail_new //From Skyrat
+	name = "Snep/Furry Tail (vwag) (new)"
+	desc = ""
+	icon_state = "sneptail_new"
+	ani_state = "sneptail_new_w"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "sneptail_new_mark"
+	extra_overlay_w = "sneptail_new_mark_w"
 
 /datum/sprite_accessory/tail/tiger_new
 	name = "tiger tail (vwag)"
@@ -596,7 +606,7 @@
 	extra_overlay = "teshpattern_fem_tail"
 
 /datum/sprite_accessory/tail/tesh_pattern_fem_alt
-	name = "Teshari male tail alt. pattern"
+	name = "Teshari fem tail alt. pattern"
 	desc = ""
 	icon_state = "teshtail_s"
 	do_colouration = 1
@@ -612,7 +622,7 @@
 
 //For all species tails. Includes haircolored tails.
 /datum/sprite_accessory/tail/special
-	name = "Blank tail. Do not select."
+	name = DEVELOPER_WARNING_NAME
 	icon = 'icons/effects/species_tails.dmi'
 
 /datum/sprite_accessory/tail/special/unathi
@@ -1431,7 +1441,7 @@
 	do_colouration = 1
 	extra_overlay = "synth_stilts_marking"
 	hide_body_parts = list(BP_L_LEG, BP_L_FOOT, BP_R_LEG, BP_R_FOOT) //Exclude pelvis just in case.
-	clip_mask_icon = 'icons/mob/vore/taurs_vr.dmi'
+	clip_mask_icon = 'icons/mob/human_races/sprite_accessories/taurs.dmi'
 	clip_mask_state = "taur_clip_mask_def" //Used to clip off the lower part of suits & uniforms.
 
 /datum/sprite_accessory/tail/blade_like_tail
@@ -1454,7 +1464,7 @@
 	color_blend_mode = ICON_MULTIPLY
 	do_colouration = 1
 	hide_body_parts = list(BP_L_LEG, BP_L_FOOT, BP_R_LEG, BP_R_FOOT) //Exclude pelvis just in case.
-	clip_mask_icon = 'icons/mob/vore/taurs_vr.dmi'
+	clip_mask_icon = 'icons/mob/human_races/sprite_accessories/taurs.dmi'
 	clip_mask_state = "taur_clip_mask_def" //Used to clip off the lower part of suits & uniforms.
 	extra_overlay = "horse" //I can't believe this works.
 
@@ -1545,6 +1555,14 @@
 	name = "Shadekin Long Tail"
 	icon_state = "shadekin_long_s"
 
+/datum/sprite_accessory/tail/longtail/shadekin_tail/shadekin_tail_fat
+	name = "Shadekin Fat Tail"
+	icon_state = "shadekin_fat_s"
+
+/datum/sprite_accessory/tail/longtail/shadekin_tail/shadekin_tail_fat/spots
+	name = "Shadekin Fat Tail (Spotted)"
+	extra_overlay = "shadekin_fat_spots"
+
 /datum/sprite_accessory/tail/longtail/zaprat
 	name = "bolt-shaped tail, dual color"
 	icon = 'icons/mob/human_races/sprite_accessories/taurs.dmi'
@@ -1594,7 +1612,7 @@
 /datum/sprite_accessory/tail/peacocktail_red //this is ckey locked for now, but prettiebyrd wants these tails to be unlocked at a later date
 	name = "Peacock tail (vwag)"
 	desc = ""
-	icon = 'icons/mob/vore/tails_vr.dmi'
+	icon = 'icons/mob/human_races/sprite_accessories/tails.dmi'
 	icon_state = "peacocktail_red"
 	ani_state = "peacocktail_red_w"
 	ckeys_allowed = list("prettiebyrd")
@@ -1602,7 +1620,7 @@
 /datum/sprite_accessory/tail/peacocktail //ditto
 	name = "Peacock tail, colorable (vwag)"
 	desc = ""
-	icon = 'icons/mob/vore/tails_vr.dmi'
+	icon = 'icons/mob/human_races/sprite_accessories/tails.dmi'
 	icon_state = "peacocktail"
 	ani_state = "peacocktail_w"
 	do_colouration = 1
@@ -1617,7 +1635,7 @@
 
 /datum/sprite_accessory/tail/kara //SatinIsle fluff item
 	name = "Pterokara Tail"
-	icon = 'icons/mob/vore/tails_vr.dmi'
+	icon = 'icons/mob/human_races/sprite_accessories/tails.dmi'
 	icon_state = "kara_tail"
 	ckeys_allowed = list("satinisle")
 
@@ -1701,3 +1719,28 @@
 	icon_state = "tigresstail"
 	ckeys_allowed = list("hoodoo")
 */// CHOMPRemove End
+
+/datum/sprite_accessory/tail/longtail/longflufftail
+	name = "Long fluffy tail"
+	icon_state = "longflufftail"
+
+/datum/sprite_accessory/tail/longtail/ringtailbig
+	name = "Long ring tail"
+	icon_state = "bigringtail"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "bigringtail_markings"
+
+/datum/sprite_accessory/tail/longtail/desert_nightstalker
+	name = "Desert Nightstalker Tail (vwag)"
+	icon_state = "nightstalker_desert"
+	ani_state = "nightstalker_desert_w"
+	do_colouration = 0 // We're not coloring this, these are pre-colored
+	color_blend_mode = ICON_ADD
+
+/datum/sprite_accessory/tail/longtail/diamondback_nightstalker
+	name = "Diamondback Nightstalker Tail (dual-color, vwag)"
+	icon_state = "nightstalker_diamondback"
+	ani_state = "nightstalker_diamondback_w"
+	extra_overlay = "nightstalker_diamondback_markings"
+	extra_overlay_w = "nightstalker_diamondback_markings_w"

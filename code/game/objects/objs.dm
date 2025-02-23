@@ -22,6 +22,7 @@
 	var/show_examine = TRUE	// Does this pop up on a mob when the mob is examined?
 
 	var/redgate_allowed = TRUE	//can we be taken through the redgate, in either direction?
+	var/being_used = 0
 
 /obj/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -103,24 +104,26 @@
 	else
 		return null
 
-/obj/proc/updateUsrDialog()
+/obj/proc/updateUsrDialog(mob/user)
 	if(in_use)
+		to_world("we actually have a [user]")
+		to_world("we got a [usr]")
 		var/is_in_use = 0
 		var/list/nearby = viewers(1, src)
 		for(var/mob/M in nearby)
 			if ((M.client && M.machine == src))
 				is_in_use = 1
 				src.attack_hand(M)
-		if (isAI(usr) || isrobot(usr))
-			if (!(usr in nearby))
-				if (usr.client && usr.machine==src) // && M.machine == src is omitted because if we triggered this by using the dialog, it doesn't matter if our machine changed in between triggering it and this - the dialog is probably still supposed to refresh.
+		if (isAI(user) || isrobot(user))
+			if (!(user in nearby))
+				if (user.client && user.machine==src) // && M.machine == src is omitted because if we triggered this by using the dialog, it doesn't matter if our machine changed in between triggering it and this - the dialog is probably still supposed to refresh.
 					is_in_use = 1
-					src.attack_ai(usr)
+					src.attack_ai(user)
 
 		// check for TK users
 
-		if (ishuman(usr))
-			var/mob/living/carbon/human/H = usr
+		if (ishuman(user))
+			var/mob/living/carbon/human/H = user
 			if(H.get_type_in_hands(/obj/item/tk_grab))
 				if(!(H in nearby))
 					if(H.client && H.machine==src)
@@ -216,3 +219,10 @@
 			if(src)
 				step(src, pick(NORTH,SOUTH,EAST,WEST))
 				sleep(rand(2,4))
+
+// Gives the object a shake animation.
+/obj/proc/animate_shake()
+	var/init_px = pixel_x
+	var/shake_dir = pick(-1, 1)
+	animate(src, transform=turn(matrix(), 8*shake_dir), pixel_x=init_px + 2*shake_dir, time=1)
+	animate(transform=null, pixel_x=init_px, time=6, easing=ELASTIC_EASING)
