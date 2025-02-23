@@ -282,7 +282,7 @@ var/list/preferences_datums = list()
 		else
 			to_chat(user, span_danger("The forum URL is not set in the server configuration."))
 			return
-	ShowChoices(user) //ChompEDIT - usr removal
+	ShowChoices(user)
 	return 1
 
 /datum/preferences/Topic(href, list/href_list)
@@ -315,6 +315,8 @@ var/list/preferences_datums = list()
 	else if(href_list["close"])
 		// User closed preferences window, cleanup anything we need to.
 		clear_character_previews()
+		if(GLOB.mannequins[client_ckey])
+			qdel_null(GLOB.mannequins[client_ckey])
 		return 1
 	else
 		return 0
