@@ -35,8 +35,11 @@ var/const/star_name		= "Virgo-Erigone"
 var/const/starsys_name	= "Virgo-Erigone"
 */
 //CHOMPStation Removal End
+<<<<<<< HEAD
 var/const/game_version	= "CHOMPStation"	//CHOMPStation Edit TFF 24/12/19 - Chompers
 var/changelog_hash		= ""
+=======
+>>>>>>> 8999331642 ([MIRROR] Changed 1 Global Var to test the workflow change (#10196))
 var/servernews_hash		= "" //ChompADD - news hash gen
 var/game_year			= (text2num(time2text(world.realtime, "YYYY")) + 544) //YW EDIT
 var/round_progressing = 1

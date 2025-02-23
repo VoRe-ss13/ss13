@@ -3,3 +3,9 @@
 GLOBAL_REAL(config, /datum/controller/configuration) = new
 
 GLOBAL_DATUM_INIT(revdata, /datum/getrev, new)
+<<<<<<< HEAD
+=======
+
+GLOBAL_VAR_INIT(game_version, "CHOMPStation") // CHOMPEdit TFF 24/12/19 - Chompers
+GLOBAL_VAR_INIT(changelog_hash, "")
+>>>>>>> 8999331642 ([MIRROR] Changed 1 Global Var to test the workflow change (#10196))
