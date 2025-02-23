@@ -744,10 +744,13 @@
 	return
 
 
-/mob/living/verb/Examine_OOC(mob/user = usr)
+/mob/living/verb/Examine_OOC()
 	set name = "Examine Meta-Info (OOC)"
 	set category = "OOC.Game"
 	set src in view()
+	do_examine_ooc(usr)
+
+/mob/living/proc/do_examine_ooc(mob/user)
 	//VOREStation Edit Start - Making it so SSD people have prefs with fallback to original style.
 	if(CONFIG_GET(flag/allow_metadata))
 		if(ooc_notes)
@@ -862,17 +865,15 @@
 /mob/living/proc/slip(var/slipped_on,stun_duration=8)
 	return 0
 
-// CHOMPAdd - Drop both things on hands
+/mob/living/carbon/drop_from_inventory(var/obj/item/W, var/atom/target = null)
+	return !(W in internal_organs) && ..()
+
 /mob/living/proc/drop_both_hands()
 	if(l_hand)
 		unEquip(l_hand)
 	if(r_hand)
 		unEquip(r_hand)
 	return
-// CHOMPEnd
-
-/mob/living/carbon/drop_from_inventory(var/obj/item/W, var/atom/target = null)
-	return !(W in internal_organs) && ..()
 
 /mob/living/touch_map_edge()
 
@@ -1413,9 +1414,53 @@
 /mob/living/verb/mob_sleep()
 	set name = "Sleep"
 	set category = "IC.Game"
-	if(!toggled_sleeping && alert(src, "Are you sure you wish to go to sleep? You will snooze until you use the Sleep verb again.", "Sleepy Time", "No", "Yes") == "No")
+	if(!toggled_sleeping && tgui_alert(src, "Are you sure you wish to go to sleep? You will snooze until you use the Sleep verb again.", "Sleepy Time", list("No", "Yes")) != "Yes")
 		return
 	toggled_sleeping = !toggled_sleeping
 	to_chat(src, span_notice("You are [toggled_sleeping ? "now sleeping. Use the Sleep verb again to wake up" : "no longer sleeping"]."))
 	if(toggled_sleeping)
 		Sleeping(1)
+
+/mob/living/proc/handle_dripping()
+	if(prob(95))
+		return
+	if(!isturf(src.loc))
+		return
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		if(H.species && H.species.drippy)
+			// drip body color if human
+			var/obj/effect/decal/cleanable/blood/B
+			var/decal_type = /obj/effect/decal/cleanable/blood/splatter
+			var/turf/T = get_turf(src.loc)
+
+			// Are we dripping or splattering?
+			var/list/drips = list()
+			// Only a certain number of drips (or one large splatter) can be on a given turf.
+			for(var/obj/effect/decal/cleanable/blood/drip/drop in T)
+				drips |= drop.drips
+				qdel(drop)
+			if(drips.len < 6)
+				decal_type = /obj/effect/decal/cleanable/blood/drip
+
+			// Find a blood decal or create a new one.
+			B = locate(decal_type) in T
+			if(!B)
+				B = new decal_type(T)
+
+			var/obj/effect/decal/cleanable/blood/drip/drop = B
+			if(istype(drop) && drips && drips.len)
+				drop.add_overlay(drips)
+				drop.drips |= drips
+
+			// Update appearance.
+			drop.name = "drips of something"
+			drop.desc = "It's thick and gooey. Perhaps it's the chef's cooking?"
+			drop.dryname = "dried something"
+			drop.drydesc = "It's dry and crusty. The janitor isn't doing their job."
+			drop.basecolor = rgb(H.r_skin,H.g_skin,H.b_skin)
+			drop.update_icon()
+			drop.fluorescent  = 0
+			drop.invisibility = 0
+	//else
+		// come up with drips for other mobs someday

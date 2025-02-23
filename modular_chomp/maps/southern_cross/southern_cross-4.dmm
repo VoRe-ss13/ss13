@@ -3128,10 +3128,7 @@
 	},
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -26202,7 +26199,6 @@
 /area/hallway/primary/thirddeck/aftdoorm)
 "vuJ" = (
 /obj/structure/table/woodentable,
-/obj/structure/table/woodentable,
 /obj/item/communicator,
 /obj/item/starcaster_news,
 /obj/machinery/light{
@@ -27911,9 +27907,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/dormsstarboard)
 "wCl" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},

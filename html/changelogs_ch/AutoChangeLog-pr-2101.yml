@@ -1,0 +1,5 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - rscadd: "dynamic light system for planets"
+  - qol: "updates diagonal movement calculations"
