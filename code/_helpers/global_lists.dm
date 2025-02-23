@@ -361,8 +361,6 @@ GLOBAL_LIST_EMPTY(legacy_globals)
 	GLOB.legacy_globals["item_tf_spawnpoints"] = item_tf_spawnpoints
 	GLOB.legacy_globals["existing_solargrubs"] = existing_solargrubs
 	*/
-<<<<<<< HEAD
-=======
 
 var/global/list/selectable_footstep = list(
 	"Default" = FOOTSTEP_MOB_HUMAN,
@@ -381,4 +379,3 @@ var/global/list/blacklisted_artifact_effects = list(
 	/datum/artifact_effect/gas/phoron,
 	/datum/artifact_effect/extreme
 )
->>>>>>> 1c8250aeb6 ([MIRROR] More xenoarch tweaks (#10139))
