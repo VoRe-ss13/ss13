@@ -61,3 +61,278 @@
       but without the teleporting functionality.
   - maptweak: Fixed signposts that would break your character in the fantasy redgate
       map.
+2025-02-10:
+  ShadowLarkens Kashargul:
+  - code_imp: moves our UIs to tgui core
+  VoRe-bot:
+  - bugfix: Fixed inventory missing sprites for some overcoats
+  - bugfix: All the numerous zaddat players can now rejoice as they can now choose
+      sprite accessories!
+  - bugfix: A few misc xenoarch fixes. Enables the dnaswitch artifact
+  - bugfix: fixes a to_world
+  - bugfix: Fixed Teshari pattern ears being missing from the ears selection.
+  - code_imp: malignant organs -> adjust_nutrition
+  - bugfix: _yw taur sprites properly show now
+  - bugfix: Fixes a bunch of taur sprites. They no longer make all your items go invisible.
+  - bugfix: Fixed missing longsword and sabre sprites.
+  - code_imp: crash on guns with 0 fire delay, let us find out what guntype is doing
+      this
+  - bugfix: Teshari underfluff colors properly now
+  - bugfix: Altevian ears among other wings, tails, and tuar halves show properly
+  - rscadd: Adds some currently unused weather effects (starry_night, midnight, sandstorm,
+      toxic_rain, downpour, downpourfatal, and acidfog)
+  - code_imp: Xenoarch stuff spawns better
+  - code_imp: removes old alert
+  - code_imp: properly enables dnaswitch artifact
+  - bugfix: Fixed taurs being unable to be ridden.
+  - bugfix: Tritium no longer acts as slime jelly
+  - rscadd: Bodybags now show a visible tag when written on
+  - bugfix: Bodybags show properly again
+  - bugfix: Crew monitor now filters and shows vitals properly
+  - bugfix: low blood sugar will no longer give you infinitely stacking drowsyness
+  - code_imp: add cable dir maptest
+  - rscadd: Adds a Deluxe bluespace bracelet that allows a variable toggle.
+  - balance: Lowered cost of base bluespace bracelet to 1 loadout point
+  - rscadd: scaled_belly-torso, horse_head-head, horse_eyes-head, horse_muzzle-head,
+      horse_fringe-head, six_pack-torso, six_pack_groin
+  - rscadd: Added warnings for people on clients 516.1652 to 1654 that they should
+      use another version.
+  - rscadd: 'adds the angler bulb to the sprite DM whose name i immediately forgor
+
+      image:adds angler icon states from caustic cove to ears.dmi'
+  - bugfix: Fixed resting sprites for medical and security catborgs.
+  - qol: Robots can now use their mining points to upgrade their scanner
+  - bugfix: another case where alarms could get stuck
+  - refactor: Changes how xenoarch generation works to make it take up less memory.
+      Leaves an EXTREME amount of comments to help future maintainers dig through
+      the mess that is xenoarch code.
+  - qol: Makes the Artifact Analyzer give you actually accurate data that isn't completely
+      cluttered. Tells you what the artifact does (vaguely), its activation requirements,
+      and what range it does it in.
+  - bugfix: Fixes the Artifact Harvester so it actually works for ALL artifacts and
+      can harvest object artifacts properly.
+  - bugfix: Fixes the Artifact Harvester and makes it able to harvest artifacts that
+      have more than 1 effect
+  - code_imp: Added a debug proc to the game to allow spawning minor artifacts for
+      easy testing & admin events.
+  - code_imp: ' Changes /obj/item/New() to /obj/item/Initialize(mapload)'
+  - rscdel: Removes 'anomaly depth' and 'anomaly dispersion', meaning the depth of
+      the artifact is how deep you need to dig. No longer has a range.
+  - qol: Removes the Suspension Generator requirement for artifacts. Can now be excavated
+      without it.
+  - qol: Makes the excavation drill faster and able to go down to 60 depth
+  - qol: Gives the xenoarcheology closet the excavation drill at spawn.
+  - qol: Expands the list of reagents that can be used to activate chemical requirements
+      for artifacts.
+  - qol: Rocky Debris no longer spawns randomly.
+  - qol: Rocky Debris only spawns when an artifact is held within the rock.
+  - qol: LARGE artifacts can no longer be accidentally destroyed. This means miners
+      will no longer eat rads to the face and upset science at the same time.
+  - qol: Strange Rocks no longer require a brush/welder to be used. Any pick will
+      work.
+  - qol: Makes plant artifacts give a description to say that they should be given
+      to xenoflora
+  - qol: Massively lowers the rate of fossils and bones spawning.
+  - qol: Removes a lot of random RNG that made no sense, like touching having a 75%
+      chance to not activate a touch artifact.
+  - qol: Makes it so you can touch artifacts with gloves to activate them, but not
+      bump them if you have gloves.
+  - refactor: Condenses all the gas artifacts into one artifact type & file.
+  - refactor: Condenses good/bad/cannible feel, hot/cold atmos, heal/harm, and synth
+      heal/harm into singular types instead of duplicated files.
+  - code_imp: Changes all istype to ishuman, isrobot, ismob where appropriate in the
+      xenoarch code.
+  - code_imp: Changes Bold to span_bold() where appropriate in the xenoarch code.
+  - rscadd: Adds a wrench to the xenoarch supply pack
+  - rscadd: Adds the xenoarcheology depth scanner to mining vendor. (Allows miners
+      to excavate, but not locate artifacts to prevent jobstealing.)
+  - bugfix: Makes the xenoarch syringe find no longer go invisible
+  - bugfix: Fixes a bug where sometimes, nothing would spawn when an artifact was
+      excavated.
+  - bugfix: Fixes a bug where sometimes a large artifact would have the 'datum/artifact_effect/extreme'
+      effect which did nothing.
+  - bugfix: Fixes a server crashing bug where - very rarely - a gravity anomaly would
+      be triggered by touch, resulting in an infinite loop. Added comments to tell
+      you not to touch it.
+  - rscadd: Sets of artifacts can now spawn. Primarily used for xeno organs and cult
+      armor.
+  - rscadd: Makes it so Human Remains finds will spawn with a random organ
+  - rscadd: Makes it so Alien Remains finds will spawn with a xenomorph plasma vessel
+      + xenomorph organ
+  - rscadd: Makes it so Robot Remains finds will spawn a robot drone pod (Allowing
+      for ghosts to take control of it and become a vore robot)
+  - rscadd: Makes it so Gun Finds (energy and projectile) will spawn with randomized
+      projectiles.
+  - rscadd: Makes it so xenoarch syringe find will spawn with random reagents
+  - rscadd: Makes it so xenoarch bowls/urns will generate random reagents
+  - rscadd: Swaps the Cult Blade spawn with an Artifact Blade that has a collection
+      of unique upsides and downsides. Just don't try to hit your fellow crew with
+      it!
+  - rscadd: Makes the anomaly scanner do a 'wavelength change' if the Z level runs
+      out of small/large artifacts. This creates more digsites around the user.
+  - rscadd: Adds a new 'power generator' artifact. Commented out until some good sounds
+      can be procured.
+  - rscdel: Deletes a lot of useless junk from the spawnpool, like cutlery, rods,
+      and shards.
+  - rscadd: Makes 'material stack' drops found via xenoarch select a random material
+      from the game (with a blacklist) instead of a few select ones.
+  - rscadd: Expanded the alien tool drops and also allows them to spawn with an alien
+      equipment piece as well.
+  - rscadd: Allows tomes to be unearthed in xenoarch. (No functionality, just fluff)
+  - rscadd: Makes any objects that have subtypes have a chance of having the subtype
+      spawn in.
+  - balance: Makes it so the gasmask actually spawns a unique one (poltergeist or
+      voice) instead of just a normal, mundane gasmask.
+  - bugfix: Makes it so the 'cult armor' artifact actually spawns armor
+  - bugfix: Makes the shock maul play a different sound when powered down and used
+      on a rock.
+  - bugfix: Makes Shadow wrights not sit in nullspace forever after activating
+  - rscadd: Makes shadow wrights give you some text when they KO you instead of just
+      disappearing
+  - balance: Adjusted xenoarch large artifact spawnrates.
+  - balance: More xenoarch large artifacts spawn in the universe now.
+  - balance: Makes the vampiric artifact and vampiric statue give you rewards for
+      feeding them instead of giving you pain and suffering through spawning mobs
+      on top of you.
+  - rscadd: Added a warning message if clients are older than 516, warning them that
+      the game will soon update to version 516 and that they will experience issues
+      in the meantime, and eventually not be able to connect at all.
+  - rscadd: Adds a new sneptail from Skyrat
+  - balance: Massively lowers chance of the virgo beacon spawning
+  - balance: Massively lowers chance of both guns and laser guns spawning in war digsites
+      (The chances you would find a fully functioning gun is pretty low, honestly.
+      This reflects that.)
+  - balance: Lowers chance of finding the cult blade
+  - balance: Adds human corpses to temple digsites, war digsites, and garden digsites
+  - balance: Adds alien corpses to garden digsites and war digsites
+  - balance: Adds robot corpses to war digsites and technical digsites
+  - bugfix: Xenoarch guns can no longer erroneously choose a firemode and swap their
+      projectile type
+  - bugfix: Xenoarch guns no longer become laser rifles when battery is swapped
+  - bugfix: Xenoarch guns have proper names now
+  - balance: Xenoarch guns can no longer have pulse destroyer beams
+  - balance: You can no longer accidentally nuke yourself with the cult sword
+  - balance: The electric field artifact can no longer be rapidly turned on and off
+      to nuke people
+  - bugfix: The cult sword checks to make sure it has the proper lifeforce
+  - balance: Actually properly gets rid of radiation+damage when you destroy an artifact.
+      You instead now become jittery.
+  - bugfix: nearby computers merge their icons
+  - rscadd: Added a simple recolourable wrestling mask to the loadout for the upcoming
+      event.
+  - bugfix: fixes some runtimes pertaining to guns dividing by 0
+  - bugfix: Fixes compact shotguns not being able to rack the gun
+  - bugfix: Fixes computers not facing the right way
+  - code_imp: converts more usr to user / src
+  - rscadd: Added a new stable glamour crafting material that can be used to craft
+      various items.
+  - rscadd: Added a new unstable glamour item, that has a few risky effects when used
+      and picked up without protection.
+  - rscadd: Added a new particle smasher recipe to turn unstable glamour into stable
+      glamour.
+  - rscadd: Added new items to the lleill transmute ability.
+  - rscadd: Added new glamour bow and arrow items.
+  - rscadd: Added a variable for particle smasher recipes to have a chance not to
+      consume an item.
+  - rscadd: Added new glamour turfs for whitespace maps.
+  - code_imp: Changed TF procs to be called from one centralised location, rather
+      than repeated across the code multiple times.
+  - bugfix: Fixes spontaneous rupture of lungs when breathing otherwise adequate amounts
+      of air
+  - bugfix: The proper alert will now show up when you're suffocating in space.
+2025-02-17:
+  Diana:
+  - bugfix: your sponge will no longer look for its nonexistent species when emp'd
+      when outside your body
+  - rscadd: 'Adds a bunch of new taur sprites that were in the icon files but never
+      had the code written for them.
+
+      code; Gets the _ch and _vr files in sync'
+  - bugfix: NPCs are no longer opportunistic and will not maul their sleeping allies
+  - bugfix: Artifacts will no longer activate via touch if their effect(strength)
+      is set to 'touch strength' but their trigger(method of activation) is set to
+      anything but 'touch'
+  - bugfix: Touching a touch artifact to turn it off will no longer hit you with the
+      activation effects
+  - bugfix: Touching a touch artifact will now properly make it turn on
+  - qol: Gets rid of anomalies that require gas to activate
+  - qol: The analyzer now tells you you can dump lead (among others) to activate an
+      artifact
+  - qol: Artifacts will not longer activate through gloves. Small artifacts are safe
+      to pick up now!
+  - rscadd: Adds more anomaly battery types craftable in science
+  - rscadd: Artifact harvesters and its scanpad can now be crafted and deconstructed
+  - rscadd: Harvester can now be upgraded, giving increased charge rate.
+  UPPORT:
+  - qol: Doorbells can now be used on doors via ctrl-click instead of alt-click, allowing
+      you to examine doors properly.
+  VoRe-bot:
+  - rscadd: Adds 'Dirtking' a trait that lets you dirty tiles up quicker (Sorry janitors!)
+  - rscadd: Adds 'Mudslip' a trait that makes you slip over dirt tiles (Blame the
+      dirtkings!)
+  - code_imp: more backend stuff
+  - code_imp: moves organs from new to init
+  - code_imp: repalces center of mass list with x and y vars
+  - bugfix: fixed the teshari foot sprites
+  - bugfix: fixed teshi_fluff
+  - image: added foot states for teshi_fluff to make the fix actually work. It's just
+      the leg sprites but I chopped em to fit
+  - refactor: TGUI collections usage reduced
+  - bugfix: building camera consoles runtiming
+  - code_imp: Doors are less resource intensive
+  - code_imp: Robots will now scream if you touch them wrong in the code
+  - rscadd: Doors close faster if it's freezing or a raging fire is on the other side.
+      (Less fire spreading and less heat lost)
+  - code_imp: Non-Contagious GBS now has CAN_NOT_SPREAD
+  - image: adjusts some icons to equal their virgo equivalent. Nothing front-facing,
+      all backend.
+  - code_imp: Makes deluxe bluespace bracelets and hyper jumpsuit code not as bad
+  - bugfix: Fixes a bug where projectiles could go into nullspace and runtime
+  - bugfix: Fixes a bug where tcomms would runtime trying to get their temperature
+      after being destroyed
+  - bugfix: Fixes a bug where circuit boards would not del their datums properly
+  - rscadd: Deluxe bluespace bracelets respect dorms
+  - rscdel: Removed old things that should have been removed a long time ago
+  - code_imp: fixes a general destroy issue and some init hints
+  - rscadd: crocodile_neck-head
+  - code_imp: hide_body_parts to scaled_belly-torso, six_pack-torso
+  - image: modified and improved horse_head-head, horse_fringe-head, dragon_upperjaw-head,
+      dragon_lowerjaw-head, six_pack-torso, scaled_belly-torso
+  - bugfix: Fixes a bug where augments could not be inserted into robotic limbs. The
+      step is now screwdriver->multitool to insert them
+  - bugfix: Melee augments can no longer embed inside someone
+  - rscadd: A lot of the augments are now craftable in science, requiring high tech
+      levels and lots of resources for them.
+  - bugfix: rdconsole static data updates for all users again
+  - rscadd: Additional checks added to mob tf
+  - rscadd: Adds a new spont vore interaction to buckling to an already occupied seat
+  - rscadd: Makes medical kiosks now detect viruses and infections
+  - qol: Makes medical kiosks have varying text severity's depending on how bad the
+      thing is
+  - qol: Makes medical kiosks tell you to put pressure on the wound
+  - rscadd: Makes medical kiosks detect chronic radiation (but only if done with the
+      acute phase)
+  - qol: robot gun sprites will only show if any of the guns is actually in the activated
+      slot
+  - qol: removes all old inputs
+  - qol: atmos alarms can now be scrolled through
+  - rscadd: Radio code is now more efficient on the backend.
+  - bugfix: Fixes a massive memory leak.
+  - bugfix: Deadringer now properly does deathgasp on the right mob
+  - bugfix: Wounds now properly delete when limbs are Destroy()'d
+  - bugfix: rhubarb using the wrong define
+  - code_imp: removes sleeps in robot module selection
+  - code_imp: Adjusts the way guns fire on the backend
+  - rscadd: Mining vendor now contains the Kinetic Gauntlets
+  - rscadd: Mining vendor now contains the Diamond Pickaxe
+  - bugfix: buttons not properly aligned in the vorepanel settings
+  - code_imp: Makes the artifact gas trigger, artifact heat, and artifact cold activation
+      temps defines
+  - code_imp: Artifacts now properly remove their signals.
+  - balance: Artifacts now take more moles in the air to activate
+  - balance: Artifacts break if they get WAY too hot.
+  - bugfix: Fixes an error where it said % to activate artifacts. Now properly tells
+      you it is in moles.
+  - balance: Telecubes no longer start mated in xenoarch. This means you'll have to
+      find two of them (and be sad the game won't let you pair them). This means you
+      will no longer get gibbed if you're unlucky

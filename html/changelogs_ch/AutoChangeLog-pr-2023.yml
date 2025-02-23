@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - rscadd: "Adds some currently unused weather effects (starry_night, midnight, sandstorm, toxic_rain, downpour, downpourfatal, and acidfog)"
