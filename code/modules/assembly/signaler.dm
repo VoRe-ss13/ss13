@@ -123,16 +123,12 @@
 	if(!frequency)
 		return
 	if(!radio_controller)
-<<<<<<< HEAD
-		sleep(20)
-=======
 		addtimer(CALLBACK(src, PROC_REF(radio_checkup), new_frequency), 2 SECONDS)
 		return
 	set_radio(new_frequency)
 
 /obj/item/assembly/signaler/proc/radio_checkup(new_frequency)
 	PROTECTED_PROC(TRUE)
->>>>>>> bb96b78dc7 ([MIRROR] Fixes signalers not signaling (#10131))
 	if(!radio_controller)
 		return
 	set_radio(new_frequency)
