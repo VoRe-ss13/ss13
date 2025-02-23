@@ -477,11 +477,7 @@
 #include "code\datums\organs.dm"
 #include "code\datums\position_point_vector.dm"
 #include "code\datums\progressbar.dm"
-<<<<<<< HEAD
-#include "code\datums\reference_tracking_ch.dm"
-=======
 #include "code\datums\reference_tracking_new.dm"
->>>>>>> 4524b7b325 ([MIRROR] DCS Update + Footstep element (#10125))
 #include "code\datums\riding.dm"
 #include "code\datums\signals.dm"
 #include "code\datums\reference_tracking_new.dm"

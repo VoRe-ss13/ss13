@@ -46,16 +46,9 @@
 		stored_mmi = null
 	return ..()
 
-<<<<<<< HEAD
-/obj/item/organ/internal/mmi_holder/New(var/mob/living/carbon/human/new_owner, var/internal, var/obj/item/mmi/installed)
-	..(new_owner, internal)
-	var/mob/living/carbon/human/dummy/mannequin/M = new_owner
-	if(istype(M))
-=======
 /obj/item/organ/internal/mmi_holder/Initialize(mapload, var/internal, var/obj/item/mmi/installed)
 	. = ..(mapload, internal)
 	if(!ishuman(loc) || istype(loc, /mob/living/carbon/human/dummy/mannequin))
->>>>>>> 4524b7b325 ([MIRROR] DCS Update + Footstep element (#10125))
 		return
 	if(installed)
 		stored_mmi = installed
