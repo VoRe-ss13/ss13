@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - bugfix: "removed an extra overlay that shouldn't have been on the dual-colour thin vulp ears"
