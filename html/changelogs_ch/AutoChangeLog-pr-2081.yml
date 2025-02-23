@@ -1,0 +1,4 @@
+author: "VoRe-bot"
+delete-after: True
+changes:
+  - bugfix: "The food replicator now costs nutriment based on how many units of reagents are in the replicated dish."
