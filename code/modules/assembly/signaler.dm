@@ -15,7 +15,7 @@
 	var/airlock_wire = null
 	var/datum/wires/connected = null
 	var/datum/radio_frequency/radio_connection
-	var/deadman = FALSE //CHOMPAdd
+	var/deadman = FALSE
 
 /obj/item/assembly/signaler/Initialize()
 	. = ..()
