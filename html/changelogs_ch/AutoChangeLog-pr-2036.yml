@@ -1,4 +1,0 @@
-author: "VoRe-bot"
-delete-after: True
-changes:
-  - bugfix: "fixes some runtimes pertaining to guns dividing by 0"

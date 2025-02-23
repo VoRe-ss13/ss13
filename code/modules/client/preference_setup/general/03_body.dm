@@ -652,7 +652,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	else if(href_list["grad_style"])
 		var/list/valid_gradients = GLOB.hair_gradients
 
-		var/new_grad_style = input(user, "Choose a color pattern for your hair:", "Character Preference", pref.grad_style)  as null|anything in valid_gradients
+		var/new_grad_style = tgui_input_list(user, "Choose a color pattern for your hair:", "Character Preference", pref.grad_style, valid_gradients)
 		if(new_grad_style && CanUseTopic(user))
 			pref.grad_style = new_grad_style
 			return TOPIC_REFRESH_UPDATE_PREVIEW
@@ -812,7 +812,8 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		if (isnull(pref.body_markings[M]["color"]))
 			if (tgui_alert(user, "You currently have customized marking colors. This will reset each bodypart's color. Are you sure you want to continue?","Reset Bodypart Colors",list("Yes","No")) != "Yes")
 				return TOPIC_NOACTION
-		var/mark_color = tgui_color_picker(user, "Choose the [M] color: ", "Character Preference", pref.body_markings[M]["color"])
+		var/current = pref.body_markings[M] ? pref.body_markings[M]["color"] : "#000000"
+		var/mark_color = tgui_color_picker(user, "Choose the [M] color: ", "Character Preference", current)
 		if(mark_color && CanUseTopic(user))
 			pref.body_markings[M] = pref.mass_edit_marking_list(M,FALSE,TRUE,pref.body_markings[M],color="[mark_color]")
 			return TOPIC_REFRESH_UPDATE_PREVIEW
