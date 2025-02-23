@@ -312,13 +312,8 @@
 					return 1
 		if("tail3_color")
 			if(can_change(owner, APPEARANCE_HAIR_COLOR))
-<<<<<<< HEAD
-				var/new_hair = tgui_color_picker(ui.user, "Please select secondary tail color.", "3rd Tail Color", rgb(owner.r_tail3, owner.g_tail3, owner.b_tail3))
-				if(new_hair && can_still_topic(owner, state))
-=======
 				var/new_hair = tgui_color_picker(ui.user, "Please select tertiary tail color.", "3rd Tail Color", rgb(owner.r_tail3, owner.g_tail3, owner.b_tail3))
 				if(new_hair && can_still_topic(ui.user, state))
->>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 					owner.r_tail3 = hex2num(copytext(new_hair, 2, 4))
 					owner.g_tail3 = hex2num(copytext(new_hair, 4, 6))
 					owner.b_tail3 = hex2num(copytext(new_hair, 6, 8))
@@ -362,13 +357,8 @@
 					return 1
 		if("wing3_color")
 			if(can_change(owner, APPEARANCE_HAIR_COLOR))
-<<<<<<< HEAD
-				var/new_hair = tgui_color_picker(ui.user, "Please select secondary wing color.", "3rd Wing Color", rgb(owner.r_wing3, owner.g_wing3, owner.b_wing3))
-				if(new_hair && can_still_topic(owner, state))
-=======
 				var/new_hair = tgui_color_picker(ui.user, "Please select tertiary wing color.", "3rd Wing Color", rgb(owner.r_wing3, owner.g_wing3, owner.b_wing3))
 				if(new_hair && can_still_topic(ui.user, state))
->>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 					owner.r_wing3 = hex2num(copytext(new_hair, 2, 4))
 					owner.g_wing3 = hex2num(copytext(new_hair, 4, 6))
 					owner.b_wing3 = hex2num(copytext(new_hair, 6, 8))

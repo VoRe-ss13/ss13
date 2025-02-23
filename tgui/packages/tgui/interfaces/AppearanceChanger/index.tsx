@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
-<<<<<<< HEAD
-import { ByondUi } from 'tgui-core/components';
-=======
 import {
   Box,
   Button,
@@ -14,7 +11,6 @@ import {
   Tabs,
 } from 'tgui-core/components';
 import { capitalize, decodeHtmlEntities } from 'tgui-core/string';
->>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 
 import {
   AppearanceChangerGender,
@@ -203,139 +199,6 @@ export const AppearanceChanger = (props) => {
   const [tabIndex, setTabIndex] = useState(firstAccesibleTab);
 
   return (
-<<<<<<< HEAD
-    <Window width={700} height={650} title={decodeHtmlEntities(title)}>
-      <Window.Content>
-        <Section title="Reflection">
-          <Stack>
-            <Stack.Item grow>
-              <LabeledList>
-                <LabeledList.Item label="Name">{name}</LabeledList.Item>
-                <LabeledList.Item
-                  label="Species"
-                  color={!change_race ? 'grey' : undefined}
-                >
-                  {specimen}
-                </LabeledList.Item>
-                <LabeledList.Item
-                  label="Biological Sex"
-                  color={!change_gender ? 'grey' : undefined}
-                >
-                  {gender ? capitalize(gender) : 'Not Set'}
-                </LabeledList.Item>
-                <LabeledList.Item
-                  label="Gender Identity"
-                  color={!change_color ? 'grey' : undefined}
-                >
-                  {gender_id ? capitalize(gender_id) : 'Not Set'}
-                </LabeledList.Item>
-                <LabeledList.Item
-                  label="Hair Style"
-                  color={!change_hair ? 'grey' : undefined}
-                >
-                  {hair_style ? capitalize(hair_style) : 'Not Set'}
-                </LabeledList.Item>
-                <LabeledList.Item
-                  label="Facial Hair Style"
-                  color={!change_facial_hair ? 'grey' : undefined}
-                >
-                  {facial_hair_style
-                    ? capitalize(facial_hair_style)
-                    : 'Not Set'}
-                </LabeledList.Item>
-                <LabeledList.Item
-                  label="Ear Style"
-                  color={!change_hair ? 'grey' : undefined}
-                >
-                  {ear_style ? capitalize(ear_style) : 'Not Set'}
-                </LabeledList.Item>
-                <LabeledList.Item
-                  label="Tail Style"
-                  color={!change_hair ? 'grey' : undefined}
-                >
-                  {tail_style ? capitalize(tail_style) : 'Not Set'}
-                </LabeledList.Item>
-                <LabeledList.Item
-                  label="Wing Style"
-                  color={!change_hair ? 'grey' : undefined}
-                >
-                  {wing_style ? capitalize(wing_style) : 'Not Set'}
-                </LabeledList.Item>
-              </LabeledList>
-            </Stack.Item>
-            <Stack.Item>
-              <ByondUi
-                style={{
-                  width: '256px',
-                  height: '256px',
-                }}
-                params={{
-                  id: mapRef,
-                  type: 'map',
-                }}
-              />
-            </Stack.Item>
-          </Stack>
-        </Section>
-        <Tabs>
-          {change_race ? (
-            <Tabs.Tab selected={tabIndex === 0} onClick={() => setTabIndex(0)}>
-              Race
-            </Tabs.Tab>
-          ) : null}
-          {change_gender ? (
-            <Tabs.Tab selected={tabIndex === 1} onClick={() => setTabIndex(1)}>
-              Gender & Sex
-            </Tabs.Tab>
-          ) : null}
-          {change_color ? (
-            <Tabs.Tab selected={tabIndex === 2} onClick={() => setTabIndex(2)}>
-              Colors
-            </Tabs.Tab>
-          ) : null}
-          {change_hair ? (
-            <>
-              <Tabs.Tab
-                selected={tabIndex === 3}
-                onClick={() => setTabIndex(3)}
-              >
-                Hair
-              </Tabs.Tab>
-              <Tabs.Tab
-                selected={tabIndex === 5}
-                onClick={() => setTabIndex(5)}
-              >
-                Ear
-              </Tabs.Tab>
-              <Tabs.Tab
-                selected={tabIndex === 6}
-                onClick={() => setTabIndex(6)}
-              >
-                Tail
-              </Tabs.Tab>
-              <Tabs.Tab
-                selected={tabIndex === 7}
-                onClick={() => setTabIndex(7)}
-              >
-                Wing
-              </Tabs.Tab>
-              <Tabs.Tab
-                selected={tabIndex === 8}
-                onClick={() => setTabIndex(8)}
-              >
-                Markings
-              </Tabs.Tab>
-            </>
-          ) : null}
-          {change_facial_hair ? (
-            <Tabs.Tab selected={tabIndex === 4} onClick={() => setTabIndex(4)}>
-              Facial Hair
-            </Tabs.Tab>
-          ) : null}
-        </Tabs>
-        <Box height="43%">{tab[tabIndex]}</Box>
-      </Window.Content>
-=======
     <Window width={700} height={850} title={decodeHtmlEntities(title)}>
       {is_design_console && !selected_a_record ? (
         <Window.Content>
@@ -523,7 +386,6 @@ export const AppearanceChanger = (props) => {
           </Stack>
         </Window.Content>
       )}
->>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
     </Window>
   );
 };

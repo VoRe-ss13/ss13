@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import { useBackend } from '../../backend';
-import { Box, Button, ColorBox, LabeledList, Section } from '../../components';
-import { Data, SPRITE_ACCESSORY_COLOR_CHANNEL_NAMES } from './types';
-=======
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import {
@@ -21,7 +16,6 @@ import { createSearch } from 'tgui-core/string';
 
 import { MARKINGS_PER_PAGE } from './constants';
 import { bodyStyle, Data, SPRITE_ACCESSORY_COLOR_CHANNEL_NAMES } from './types';
->>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 
 export const AppearanceChangerColors = (props) => {
   const { act, data } = useBackend<Data>();

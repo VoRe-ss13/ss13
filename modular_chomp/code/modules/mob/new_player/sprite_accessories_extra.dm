@@ -214,18 +214,11 @@
 	body_parts = list(BP_HEAD)
 	color_blend_mode = ICON_MULTIPLY
 
-<<<<<<< HEAD
-/datum/sprite_accessory/marking/ch/hippo_upperjaw
-	name = "Hippo Upper Jaw"
-	icon_state = "hippo_upperjaw"
-	body_parts = list(BP_HEAD)
-=======
 /datum/sprite_accessory/marking/ch/scaled_belly
 	name = "Scaled Belly"
 	icon_state = "scaled_belly"
 	hide_body_parts = list(BP_L_LEG,BP_R_LEG,BP_L_HAND,BP_R_HAND,BP_L_LEG,BP_R_LEG,BP_GROIN)
 	body_parts = list(BP_TORSO)
->>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 	color_blend_mode = ICON_MULTIPLY
 
 
@@ -299,12 +292,8 @@
 /datum/sprite_accessory/marking/ch/smallchubbybelly
 	name = "Chubby Belly, Small"
 	icon_state = "smallchubbybelly"
-<<<<<<< HEAD
-	body_parts = list(BP_TORSO,BP_GROIN,BP_L_LEG,BP_R_LEG,BP_L_HAND,BP_R_HAND)
-=======
 	hide_body_parts = list(BP_L_LEG,BP_R_LEG,BP_L_HAND,BP_R_HAND,BP_L_LEG,BP_R_LEG,BP_GROIN)
 	body_parts = list(BP_TORSO,BP_GROIN,BP_L_HAND,BP_R_HAND)
->>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 	color_blend_mode = ICON_MULTIPLY
 
 
