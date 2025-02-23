@@ -49,13 +49,8 @@
 	else
 		. = ..()
 
-<<<<<<< HEAD
-/obj/machinery/computer/transhuman/designer/attack_ai(mob/user as mob)
-	return attack_hand(user)
-=======
 /obj/machinery/computer/transhuman/designer/attack_ai(mob/user)
 	attack_hand(user)
->>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 
 /obj/machinery/computer/transhuman/designer/attack_hand(mob/user)
 	add_fingerprint(user)
