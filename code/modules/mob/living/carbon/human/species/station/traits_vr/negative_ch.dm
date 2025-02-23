@@ -1,32 +1,6 @@
 /datum/trait/negative/hollow
 	excludes = list(/datum/trait/positive/densebones)
 
-<<<<<<< HEAD
-/datum/trait/negative/slipperydirt
-	name = "Dirt Vulnerability"
-	desc = "Even the tiniest particles of dirt give you uneasy footing, even through several layers of footwear."
-	cost = -5
-	var_changes = list("dirtslip" = TRUE)
-	excludes = list(/datum/trait/positive/absorbent)
-
-/datum/trait/negative/less_blood
-	name = "Low Blood Volume"
-	desc = "You have 33.3% less blood volume compared to most species, making you more prone to blood loss issues."
-	cost = -3
-	var_changes = list("blood_volume" = 375)
-	excludes = list(/datum/trait/negative/less_blood_extreme,/datum/trait/positive/more_blood,/datum/trait/positive/more_blood_extreme)
-	can_take = ORGANICS
-
-/datum/trait/negative/less_blood_extreme
-	name = "Low Blood Volume, Extreme"
-	desc = "You have 60% less blood volume compared to most species, making you much more prone to blood loss issues."
-	cost = -5
-	var_changes = list("blood_volume" = 224)
-	excludes = list(/datum/trait/negative/less_blood,/datum/trait/positive/more_blood,/datum/trait/positive/more_blood_extreme)
-	can_take = ORGANICS
-
-=======
->>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /datum/trait/negative/scrawny
 	name = "Scrawny"
 	desc = "You have a much harder time breaking free of grabs as well as creating and holding onto grabs on other people."

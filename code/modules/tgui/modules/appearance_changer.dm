@@ -938,8 +938,6 @@
 
 /datum/tgui_module/appearance_changer/mirror/coskit
 	name = "SalonPro Porta-Makeover Deluxe&trade;"
-<<<<<<< HEAD
-=======
 
 // *******************************************************
 // Vore TF
@@ -1110,4 +1108,3 @@
 	// Add listeners back
 	owner.AddComponent(/datum/component/recursive_move)
 	RegisterSignal(owner, COMSIG_OBSERVER_MOVED, PROC_REF(update_active_camera_screen), TRUE)
->>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))

@@ -1062,15 +1062,9 @@ closest to where the cursor has clicked on.
 Note: This proc can be overwritten to allow for different types of auto-alignment.
 */
 
-<<<<<<< HEAD
-///obj/item/var/list/center_of_mass = list("x" = 16,"y" = 16) CHOMPEdit NO STOP PLEASE -- center_of_mass - 52.0879 mb total
-/obj/item/var/center_of_mass_x = 16 //CHOMPEdit
-/obj/item/var/center_of_mass_y = 16 //CHOMPEdit
-=======
 
 /obj/item/var/center_of_mass_x = 16
 /obj/item/var/center_of_mass_y = 16
->>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 
 /proc/auto_align(obj/item/W, click_parameters, var/animate = FALSE)
 	if(!W.center_of_mass_x && !W.center_of_mass_y)

@@ -1315,20 +1315,6 @@
 			var/datum/mob_descriptor/descriptor = species.descriptors[desctype]
 			descriptors[desctype] = descriptor.default_value
 
-<<<<<<< HEAD
-	spawn(0)
-		if(regen_icons) regenerate_icons()
-		make_blood()
-		if(vessel.total_volume < species.blood_volume)
-			vessel.maximum_volume = species.blood_volume
-			vessel.add_reagent(REAGENT_ID_BLOOD, species.blood_volume - vessel.total_volume)
-		else if(vessel.total_volume > species.blood_volume)
-			vessel.remove_reagent(REAGENT_ID_BLOOD,vessel.total_volume - species.blood_volume) //This one should stay remove_reagent to work even lack of a O_heart
-			vessel.maximum_volume = species.blood_volume
-		fixblood()
-		species.update_attack_types() //VOREStation Edit - Required for any trait that updates unarmed_types in setup.
-		species.update_vore_belly_def_variant()
-=======
 	//This was the old location of initialize_vessel. A race condiiton happened here because of species code being JANK. This resulted in runtimes during unit test, but worked perfectly fine in game.
 	//Now, initialize_vessel has been moved to human/Initialize()
 	// addtimer(CALLBACK(src, PROC_REF(initialize_vessel)), 0, TIMER_DELETE_ME) //Doing ASYNC fails here. This used to be a spawn(0)
@@ -1357,7 +1343,6 @@
 	fixblood()
 	species.update_attack_types() //Required for any trait that updates unarmed_types in setup.
 	species.update_vore_belly_def_variant()
->>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 
 /mob/living/carbon/human/proc/bloody_doodle()
 	set category = "IC.Game"

@@ -471,7 +471,6 @@
 	anchored = TRUE
 	var/blur_amount
 	var/confuse_amount
-	// var/sickness_duration // CHOMPRemove
 
 	var/mob/living/carbon/human/occupant = null
 	var/connected = null
@@ -501,12 +500,7 @@
 		manip_rating += M.rating
 	blur_amount = (48 - manip_rating * 8)
 
-	/* CHOMPRemove Start
-	var/total_rating = manip_rating + scan_rating
-	sickness_duration = (45 - (total_rating-4)*1.875) MINUTES		// 45 minutes default, 30 minutes with max non-anomaly upgrades, 15 minutes with max anomaly ones
-	*/// CHOMPRemove End
-
-/obj/machinery/transhuman/resleever/attack_hand(mob/user)
+/obj/machinery/transhuman/resleever/attack_hand(mob/user as mob)
 	tgui_interact(user)
 
 /obj/machinery/transhuman/resleever/tgui_interact(mob/user, datum/tgui/ui = null)
@@ -661,13 +655,10 @@
 	occupant.confused = max(occupant.confused, confuse_amount)
 	occupant.eye_blurry = max(occupant.eye_blurry, blur_amount)
 
-<<<<<<< HEAD
-=======
 	// Vore deaths get a fake modifier labeled as such
 	if(!occupant.mind)
 		log_debug("[occupant] didn't have a mind to check for vore_death, which may be problematic.")
 
->>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	if(occupant.mind && occupant.original_player && ckey(occupant.mind.key) != occupant.original_player)
 		log_and_message_admins("is now a cross-sleeved character. Body originally belonged to [occupant.real_name]. Mind is now [occupant.mind.name].",occupant)
 

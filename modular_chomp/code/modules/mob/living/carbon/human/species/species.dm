@@ -1,14 +1,4 @@
 /datum/species
-<<<<<<< HEAD
-	var/crit_mod = 1
-	var/list/env_traits = list()
-	var/photosynthesizing = FALSE
-	var/grows = FALSE
-	var/shrinks = FALSE
-	var/rad_levels = list("safe" = 2.5, "danger_1" = 50, "danger_2" = 75, "danger_3" = 150)
-	var/rad_removal_mod = 1
-=======
->>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	var/bite_mod = 1
 	var/grab_resist_divisor_victims = 1
 	var/grab_resist_divisor_self = 1

@@ -1398,8 +1398,6 @@
 						else
 							input += "s"
 	return input
-<<<<<<< HEAD
-=======
 
 /datum/trait/neutral/drippy
 	name = "Drippy"
@@ -1420,4 +1418,3 @@
 	cost = 0
 	var_changes = list("mudking" = TRUE)
 	custom_only = FALSE
->>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))

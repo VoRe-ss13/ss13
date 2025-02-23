@@ -147,7 +147,7 @@
 
 /datum/trait/negative/lightweight
 	name = "Lightweight"
-	desc = "Your light weight and poor balance make you very susceptible to unhelpful bumping. Think of it like a bowling ball versus a pin." //CHOMP Edit btw //TORCHEdit Toning down description because we can
+	desc = "Your light weight and poor balance make you very susceptible to unhelpful bumping. Think of it like a bowling ball versus a pin. (STOP TAKING THIS AS SECURITY! We're MRP, so expect to lose your junk immediately, especially in events. - Love, Admins)" //CHOMP Edit btw
 	cost = -2
 	var_changes = list("lightweight" = 1)
 	excludes = list(/datum/trait/negative/lightweight_light) //CHOMPedit Added a lesser version of this trait
@@ -237,8 +237,6 @@
 	var_changes = list("bad_swimmer" = 1, "water_movement" = 4, "swim_mult" = 1.25)
 	varchange_type = TRAIT_VARCHANGE_LESS_BETTER
 	excludes = list(/datum/trait/positive/good_swimmer)
-<<<<<<< HEAD
-=======
 
 /datum/trait/negative/less_blood
 	name = "Low Blood Volume"
@@ -706,4 +704,3 @@
 	cost = -5
 	var_changes = list("dirtslip" = TRUE)
 	excludes = list(/datum/trait/positive/absorbent) // CHOMPAdd
->>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
