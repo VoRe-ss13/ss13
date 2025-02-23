@@ -2788,56 +2788,35 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				return FALSE
 			else
 				host.vore_selected.belly_sprite_to_affect = belly_choice
-				if(isanimal(host))
-					host.update_icon()
-				else
-					host.update_fullness()
+				host.handle_belly_update()
 			. = TRUE
 		if("b_affects_vore_sprites")
 			host.vore_selected.affects_vore_sprites = !host.vore_selected.affects_vore_sprites
-			if(isanimal(host))
-				host.update_icon()
-			else
-				host.update_fullness()
+			host.handle_belly_update()
 			. = TRUE
 		if("b_count_absorbed_prey_for_sprites")
 			host.vore_selected.count_absorbed_prey_for_sprite = !host.vore_selected.count_absorbed_prey_for_sprite
-			if(isanimal(host))
-				host.update_icon()
-			else
-				host.update_fullness()
+			host.handle_belly_update()
 			. = TRUE
 		if("b_absorbed_multiplier")
 			var/absorbed_multiplier_input = tgui_input_number(user, "Set the impact absorbed prey's size have on your vore sprite. 1 means no scaling, 0.5 means absorbed prey count half as much, 2 means absorbed prey count double. (Range from 0.1 - 3)", "Absorbed Multiplier", host.vore_selected.absorbed_multiplier, 3, 0.1, round_value=FALSE)
 			if(!isnull(absorbed_multiplier_input))
 				host.vore_selected.absorbed_multiplier = CLAMP(absorbed_multiplier_input, 0.1, 3)
-				if(isanimal(host))
-					host.update_icon()
-				else
-					host.update_fullness()
+				host.handle_belly_update()
 			. = TRUE
 		if("b_count_items_for_sprites")
 			host.vore_selected.count_items_for_sprite = !host.vore_selected.count_items_for_sprite
-			if(isanimal(host))
-				host.update_icon()
-			else
-				host.update_fullness()
+			host.handle_belly_update()
 			. = TRUE
 		if("b_item_multiplier")
 			var/item_multiplier_input = tgui_input_number(user, "Set the impact items will have on your vore sprite. 1 means a belly with 8 normal-sized items will count as 1 normal sized prey-thing's worth, 0.5 means items count half as much, 2 means items count double. (Range from 0.1 - 10)", "Item Multiplier", host.vore_selected.item_multiplier, 10, 0.1, round_value=FALSE)
 			if(!isnull(item_multiplier_input))
 				host.vore_selected.item_multiplier = CLAMP(item_multiplier_input, 0.1, 10)
-				if(isanimal(host))
-					host.update_icon()
-				else
-					host.update_fullness()
+				host.handle_belly_update()
 			. = TRUE
 		if("b_health_impacts_size")
 			host.vore_selected.health_impacts_size = !host.vore_selected.health_impacts_size
-			if(isanimal(host))
-				host.update_icon()
-			else
-				host.update_fullness()
+			host.handle_belly_update()
 			. = TRUE
 		if("b_resist_animation")
 			host.vore_selected.resist_triggers_animation = !host.vore_selected.resist_triggers_animation
@@ -2846,10 +2825,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			var/size_factor_input = tgui_input_number(user, "Set the impact all belly content's collective size has on your vore sprite. 1 means no scaling, 0.5 means content counts half as much, 2 means contents count double. (Range from 0.1 - 3)", "Size Factor", host.vore_selected.size_factor_for_sprite, 3, 0.1, round_value=FALSE)
 			if(!isnull(size_factor_input))
 				host.vore_selected.size_factor_for_sprite = CLAMP(size_factor_input, 0.1, 3)
-				if(isanimal(host))
-					host.update_icon()
-				else
-					host.update_fullness()
+				host.handle_belly_update()
 			. = TRUE
 		if("b_vore_sprite_flags")
 			var/list/menu_list = host.vore_selected.vore_sprite_flag_list.Copy()
@@ -2860,19 +2836,13 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			. = TRUE
 		if("b_count_liquid_for_sprites") //CHOMP Addition
 			host.vore_selected.count_liquid_for_sprite = !host.vore_selected.count_liquid_for_sprite
-			if(isanimal(host))
-				host.update_icon()
-			else
-				host.update_fullness()
+			host.handle_belly_update()
 			. = TRUE
 		if("b_liquid_multiplier") //CHOMP Addition
 			var/liquid_multiplier_input = tgui_input_number(user, "Set the impact amount of liquid reagents will have on your vore sprite. 1 means a belly with 100 reagents of fluid will count as 1 normal sized prey-thing's worth, 0.5 means liquid counts half as much, 2 means liquid counts double. (Range from 0.1 - 10)", "Liquid Multiplier", host.vore_selected.liquid_multiplier, 10, 0.1, round_value=FALSE)
 			if(!isnull(liquid_multiplier_input))
 				host.vore_selected.liquid_multiplier = CLAMP(liquid_multiplier_input, 0.1, 10)
-				if(isanimal(host))
-					host.update_icon()
-				else
-					host.update_fullness()
+				host.handle_belly_update()
 			. = TRUE
 		if("b_undergarment_choice")
 			var/datum/category_group/underwear/undergarment_choice = tgui_input_list(user, "Which undergarment do you want to enable when your [lowertext(host.vore_selected.name)] is filled?","Select Undergarment Class", global_underwear.categories)
@@ -2880,7 +2850,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				return FALSE
 			else
 				host.vore_selected.undergarment_chosen = undergarment_choice.name
-				host.update_fullness()
+				host.handle_belly_update()
 			. = TRUE
 		if("b_undergarment_if_none")
 			var/datum/category_group/underwear/UWC = global_underwear.categories_by_name[host.vore_selected.undergarment_chosen]
@@ -2889,13 +2859,13 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				return FALSE
 			else
 				host.vore_selected.undergarment_if_none = selected_underwear
-				host.update_fullness()
+				host.handle_belly_update()
 				host.updateVRPanel()
 		if("b_undergarment_color")
 			var/newcolor = tgui_color_picker(user, "Choose a color.", "", host.vore_selected.undergarment_color)
 			if(newcolor)
 				host.vore_selected.undergarment_color = newcolor
-				host.update_fullness()
+				host.handle_belly_update()
 			. = TRUE
 		if("b_tail_to_change_to")
 			var/tail_choice = tgui_input_list(user, "Which tail sprite do you want to use when your [lowertext(host.vore_selected.name)] is filled?","Select Sprite", global.tail_styles_list)
@@ -2925,7 +2895,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 //CHOMPedit start: liquid belly procs
 /datum/vore_look/proc/liq_set_attr(mob/user, params)
 	if(!host.vore_selected)
-		alert("No belly selected to modify.")
+		tgui_alert("No belly selected to modify.")
 		return FALSE
 
 	var/attr = params["liq_attribute"]
@@ -2959,7 +2929,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			var/new_name = html_encode(tgui_input_text(user,"New name for liquid shown when transfering and dumping on floor (The actual liquid's name is still the same):","New Name",host.vore_selected.reagent_name))
 
 			if(length(new_name) > BELLIES_NAME_MAX || length(new_name) < BELLIES_NAME_MIN)
-				alert("Entered name length invalid (must be longer than [BELLIES_NAME_MIN], no longer than [BELLIES_NAME_MAX]).","Error")
+				tgui_alert("Entered name length invalid (must be longer than [BELLIES_NAME_MIN], no longer than [BELLIES_NAME_MAX]).","Error")
 				return FALSE
 
 			host.vore_selected.reagent_name = new_name
@@ -2968,7 +2938,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			var/new_verb = html_encode(tgui_input_text(user,"New verb when liquid is transfered from this belly:","New Verb", host.vore_selected.reagent_transfer_verb))
 
 			if(length(new_verb) > BELLIES_NAME_MAX || length(new_verb) < BELLIES_NAME_MIN)
-				alert("Entered verb length invalid (must be longer than [BELLIES_NAME_MIN], no longer than [BELLIES_NAME_MAX]).","Error")
+				tgui_alert("Entered verb length invalid (must be longer than [BELLIES_NAME_MIN], no longer than [BELLIES_NAME_MAX]).","Error")
 				return FALSE
 
 			host.vore_selected.reagent_transfer_verb = new_verb
@@ -3140,8 +3110,8 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				host.vore_selected.update_internal_overlay()
 			. = TRUE
 		if("b_liq_purge")
-			var/alert = alert("Are you sure you want to delete the liquids in your [lowertext(host.vore_selected.name)]?","Confirmation","Delete","Cancel")
-			if(!(alert == "Delete"))
+			var/alert = tgui_alert("Are you sure you want to delete the liquids in your [lowertext(host.vore_selected.name)]?","Confirmation",list("Delete","Cancel"))
+			if(alert != "Delete")
 				return FALSE
 			else
 				host.vore_selected.reagents.clear_reagents()
@@ -3151,7 +3121,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 
 /datum/vore_look/proc/liq_set_msg(mob/user, params)
 	if(!host.vore_selected)
-		alert("No belly selected to modify.")
+		tgui_alert(user, "No belly selected to modify.")
 		return FALSE
 
 	var/attr = params["liq_messages"]
@@ -3180,7 +3150,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			host.vore_selected.liquid_fullness5_messages = !host.vore_selected.liquid_fullness5_messages
 			. = TRUE
 		if("b_liq_msg1")
-			alert(user,"Setting abusive or deceptive messages will result in a ban. Consider this your warning. Max 150 characters per message, max 10 messages per topic.","Really, don't.")
+			tgui_alert(user,"Setting abusive or deceptive messages will result in a ban. Consider this your warning. Max 150 characters per message, max 10 messages per topic.","Really, don't.")
 			var/help = " Press enter twice to separate messages. '%pred' will be replaced with your name. '%prey' will be replaced with the prey's name. '%belly' will be replaced with your belly's name."
 
 			var/new_message = tgui_input_text(user,"These are sent to people who examine you when this belly is 0 to 20% full. Write them in 3rd person ('Their %belly is bulging')."+help,"Liquid Examine Message (0 - 20%)",host.vore_selected.get_reagent_messages("full1"))
@@ -3188,7 +3158,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				host.vore_selected.set_reagent_messages(new_message,"full1")
 			. = TRUE
 		if("b_liq_msg2")
-			alert(user,"Setting abusive or deceptive messages will result in a ban. Consider this your warning. Max 150 characters per message, max 10 messages per topic.","Really, don't.")
+			tgui_alert(user,"Setting abusive or deceptive messages will result in a ban. Consider this your warning. Max 150 characters per message, max 10 messages per topic.","Really, don't.")
 			var/help = " Press enter twice to separate messages. '%pred' will be replaced with your name. '%prey' will be replaced with the prey's name. '%belly' will be replaced with your belly's name."
 
 			var/new_message = tgui_input_text(user,"These are sent to people who examine you when this belly is 20 to 40% full. Write them in 3rd person ('Their %belly is bulging')."+help,"Liquid Examine Message (20 - 40%)",host.vore_selected.get_reagent_messages("full2"))
@@ -3196,7 +3166,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				host.vore_selected.set_reagent_messages(new_message,"full2")
 			. = TRUE
 		if("b_liq_msg3")
-			alert(user,"Setting abusive or deceptive messages will result in a ban. Consider this your warning. Max 150 characters per message, max 10 messages per topic.","Really, don't.")
+			tgui_alert(user,"Setting abusive or deceptive messages will result in a ban. Consider this your warning. Max 150 characters per message, max 10 messages per topic.","Really, don't.")
 			var/help = " Press enter twice to separate messages. '%pred' will be replaced with your name. '%prey' will be replaced with the prey's name. '%belly' will be replaced with your belly's name."
 
 			var/new_message = tgui_input_text(user,"These are sent to people who examine you when this belly is 40 to 60% full. Write them in 3rd person ('Their %belly is bulging')."+help,"Liquid Examine Message (40 - 60%)",host.vore_selected.get_reagent_messages("full3"))
@@ -3204,7 +3174,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				host.vore_selected.set_reagent_messages(new_message,"full3")
 			. = TRUE
 		if("b_liq_msg4")
-			alert(user,"Setting abusive or deceptive messages will result in a ban. Consider this your warning. Max 150 characters per message, max 10 messages per topic.","Really, don't.")
+			tgui_alert(user,"Setting abusive or deceptive messages will result in a ban. Consider this your warning. Max 150 characters per message, max 10 messages per topic.","Really, don't.")
 			var/help = " Press enter twice to separate messages. '%pred' will be replaced with your name. '%prey' will be replaced with the prey's name. '%belly' will be replaced with your belly's name."
 
 			var/new_message = tgui_input_text(user,"These are sent to people who examine you when this belly is 60 to 80% full. Write them in 3rd person ('Their %belly is bulging')."+help,"Liquid Examine Message (60 - 80%)",host.vore_selected.get_reagent_messages("full4"))
@@ -3212,7 +3182,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				host.vore_selected.set_reagent_messages(new_message,"full4")
 			. = TRUE
 		if("b_liq_msg5")
-			alert(user,"Setting abusive or deceptive messages will result in a ban. Consider this your warning. Max 150 characters per message, max 10 messages per topic.","Really, don't.")
+			tgui_alert(user,"Setting abusive or deceptive messages will result in a ban. Consider this your warning. Max 150 characters per message, max 10 messages per topic.","Really, don't.")
 			var/help = " Press enter twice to separate messages. '%pred' will be replaced with your name. '%prey' will be replaced with the prey's name. '%belly' will be replaced with your belly's name."
 
 			var/new_message = tgui_input_text(user,"These are sent to people who examine you when this belly is 80 to 100% full. Write them in 3rd person ('Their %belly is bulging')."+help,"Liquid Examine Message (80 - 100%)",host.vore_selected.get_reagent_messages("full5"))

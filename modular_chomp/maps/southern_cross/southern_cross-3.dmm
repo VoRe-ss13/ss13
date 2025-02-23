@@ -5116,14 +5116,8 @@
 	pixel_x = -12;
 	pixel_y = -24
 	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/sc/chief)
 "aoW" = (
@@ -25168,10 +25162,7 @@
 	},
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 22
@@ -34253,14 +34244,8 @@
 "chJ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/item/stack/cable_coil{
 	pixel_x = 3;
 	pixel_y = -7
@@ -40293,9 +40278,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -41756,10 +41738,7 @@
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
 /obj/item/stack/cable_coil,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -43734,7 +43713,6 @@
 /obj/structure/disposaloutlet{
 	dir = 4
 	},
-/obj/machinery/shield_diffuser,
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/airless,
 /area/space)
@@ -50221,6 +50199,10 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 10
 	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -23
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/distillery)
 "hlX" = (
@@ -51445,6 +51427,9 @@
 /obj/machinery/door/firedoor/glass,
 /obj/effect/wingrille_spawn/reinforced/polarized{
 	id = "hop_office"
+	},
+/obj/structure/cable/green{
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/sc/hop)
@@ -53104,14 +53089,8 @@
 "iNs" = (
 /obj/structure/table/standard,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/item/radio/intercom{
 	dir = 1;
 	name = "Station Intercom (General)";
@@ -53925,22 +53904,18 @@
 /area/hallway/primary/seconddeck/apcenter)
 "jgH" = (
 /obj/structure/table/standard,
-/obj/structure/table/standard,
 /obj/item/stack/cable_coil,
 /obj/item/multitool,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/machinery/sparker{
 	dir = 4;
 	id = "Xenobio";
 	pixel_x = -25
+	},
+/obj/item/stack/material/plastic{
+	amount = 2
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/misc_lab)
@@ -58856,14 +58831,8 @@
 	pixel_x = 3;
 	pixel_y = -7
 	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/item/storage/toolbox/mechanical{
 	pixel_x = -2;
 	pixel_y = -1
@@ -60883,10 +60852,7 @@
 "nkI" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/item/tool/wrench,
 /obj/machinery/status_display{
 	pixel_y = -32
@@ -63782,26 +63748,18 @@
 /area/crew_quarters/seconddeck/artgallery)
 "oVk" = (
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
@@ -71015,10 +70973,6 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/obj/machinery/disposal/wall{
-	dir = 4;
-	pixel_x = -37
-	},
 /turf/simulated/floor/tiled/white,
 /area/medical/genetics)
 "tnO" = (
@@ -74175,9 +74129,6 @@
 	},
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay)
 "vyn" = (

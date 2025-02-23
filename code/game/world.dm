@@ -280,7 +280,8 @@ var/world_topic_spam_protect_time = world.timeofday
 
 	else if(copytext(T,1,5) == "info")
 		var/input[] = params2list(T)
-		if(input["key"] != CONFIG_GET(string/comms_password))
+		var/password = CONFIG_GET(string/comms_password)
+		if(!password || input["key"] != password)
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
 
 				spawn(50)
@@ -367,7 +368,8 @@ var/world_topic_spam_protect_time = world.timeofday
 
 
 		var/input[] = params2list(T)
-		if(input["key"] != CONFIG_GET(string/comms_password))
+		var/password = CONFIG_GET(string/comms_password)
+		if(!password || input["key"] != password)
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
 
 				spawn(50)
@@ -417,7 +419,8 @@ var/world_topic_spam_protect_time = world.timeofday
 				2. validationkey = the key the bot has, it should match the gameservers commspassword in it's configuration.
 		*/
 		var/input[] = params2list(T)
-		if(input["key"] != CONFIG_GET(string/comms_password))
+		var/password = CONFIG_GET(string/comms_password)
+		if(!password || input["key"] != password)
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
 
 				spawn(50)
@@ -432,7 +435,8 @@ var/world_topic_spam_protect_time = world.timeofday
 
 	else if(copytext(T,1,4) == "age")
 		var/input[] = params2list(T)
-		if(input["key"] != CONFIG_GET(string/comms_password))
+		var/password = CONFIG_GET(string/comms_password)
+		if(!password || input["key"] != password)
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
 				spawn(50)
 					world_topic_spam_protect_time = world.time
@@ -641,6 +645,24 @@ var/failed_old_db_connections = 0
 		to_world_log("Your server failed to establish a connection with the feedback database.")
 	else
 		to_world_log("Feedback database connection established.")
+		// CHOMPEdit Begin - Truncating the temporary dialog/attacklog tables
+		var/datum/db_query/query_truncate = SSdbcore.NewQuery("TRUNCATE erro_dialog")
+		var/num_tries = 0
+		while(!query_truncate.Execute() && num_tries<5)
+			num_tries++
+
+		if(num_tries==5)
+			log_admin("ERROR TRYING TO CLEAR erro_dialog")
+		qdel(query_truncate)
+		var/datum/db_query/query_truncate2 = SSdbcore.NewQuery("TRUNCATE erro_attacklog")
+		num_tries = 0
+		while(!query_truncate2.Execute() && num_tries<5)
+			num_tries++
+
+		if(num_tries==5)
+			log_admin("ERROR TRYING TO CLEAR erro_attacklog")
+		qdel(query_truncate2)
+		// CHOMPEdit End
 	return 1
 
 /proc/setup_database_connection()
