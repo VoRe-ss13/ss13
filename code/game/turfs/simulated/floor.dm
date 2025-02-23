@@ -120,6 +120,10 @@
 /turf/simulated/floor/can_engrave()
 	return (!flooring || flooring.can_engrave)
 
+/turf/simulated/floor/proc/cause_slip(var/mob/living/M)
+	PROTECTED_PROC(TRUE)
+	return
+
 /* CHOMPEdit - moved this block to modular_chomp\code\game\objects\items\weapons\rcd.dm
 /turf/simulated/floor/rcd_values(mob/living/user, obj/item/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
@@ -189,6 +193,12 @@
 			ChangeTurf(get_base_turf_by_area(src), preserve_outdoors = TRUE)
 			return TRUE
 */
+
+/turf/simulated/floor/occult_act(mob/living/user)
+	to_chat(user, span_cult("You consecrate the floor."))
+	ChangeTurf(/turf/simulated/floor/cult, preserve_outdoors = TRUE)
+	return TRUE
+
 /turf/simulated/floor/AltClick(mob/user)
 	if(isliving(user))
 		var/mob/living/livingUser = user

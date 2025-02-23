@@ -580,7 +580,6 @@
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "vulp_jackal-inner"
-	extra_overlay2 = "vulp_jackal-tips"
 
 /datum/sprite_accessory/ears/vulp_jackal/tri
 	name = "vulpkanin thin, tri-color (tips)"
@@ -631,6 +630,22 @@
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "tesharilowinner"
+
+/datum/sprite_accessory/ears/tesh_pattern_ear_male
+	name = "Teshari male ear pattern (colorable)"
+	desc = ""
+	icon_state = "teshari"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshari_male_pattern"
+
+/datum/sprite_accessory/ears/tesh_pattern_ear_female
+	name = "Teshari female ear pattern (colorable)"
+	desc = ""
+	icon_state = "teshari"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshari_female_pattern"
 
 /datum/sprite_accessory/ears/inkling
 	name = "colorable mature inkling hair"
@@ -952,7 +967,7 @@
 /datum/sprite_accessory/ears/altevian
 	name = "Altevian Ears"
 	desc = ""
-	icon = 'icons/mob/vore/ears_vr.dmi'
+	icon = 'icons/mob/human_races/sprite_accessories/ears.dmi'
 	icon_state = "altevian"
 	extra_overlay = "altevian-inner"
 	do_colouration = 1
@@ -1107,6 +1122,14 @@
 	extra_overlay = "feather_fan_ears-outer"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/angler
+	name = "Angler bulb"
+	desc = ""
+	icon_state = "angler"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "angler_bulb"
 
 //Dino frills
 /datum/sprite_accessory/ears/dino_frills

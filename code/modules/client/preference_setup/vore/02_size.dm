@@ -1,6 +1,4 @@
 // Body weight limits on a character.
-#define WEIGHT_MIN 70
-#define WEIGHT_MAX 500
 #define WEIGHT_CHANGE_MIN 0
 #define WEIGHT_CHANGE_MAX 100
 
@@ -175,7 +173,7 @@
 
 	else if(href_list["voice_freq"])
 		var/list/preset_voice_freqs = list("high" = MAX_VOICE_FREQ, "middle-high" = 56250, "middle" = 42500, "middle-low"= 28750, "low" = MIN_VOICE_FREQ, "custom" = 1, "random" = 0)
-		var/choice = tgui_input_list(user, "What would you like to set your voice frequency to? ([MIN_VOICE_FREQ] - [MAX_VOICE_FREQ])", "Voice Frequency", preset_voice_freqs) //ChompEDIT - usr removal
+		var/choice = tgui_input_list(user, "What would you like to set your voice frequency to? ([MIN_VOICE_FREQ] - [MAX_VOICE_FREQ])", "Voice Frequency", preset_voice_freqs)
 		if(!choice)
 			return
 		choice = preset_voice_freqs[choice]
@@ -373,7 +371,5 @@
 	// CHOMPEdit End
 	return ..();
 
-#undef WEIGHT_MIN
-#undef WEIGHT_MAX
 #undef WEIGHT_CHANGE_MIN
 #undef WEIGHT_CHANGE_MAX
