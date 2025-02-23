@@ -106,9 +106,10 @@
 	var/gasp_volume = 50 // Self-explanatory, define this separately on your species if the sound files are louder.
 	var/death_volume = 50 // Self-explanatory, define this separately on your species if the sound files are louder.
 	// var/species_sounds_herm // If you want a custom sound played for other genders, just add them like so
+	// CHOMPEdit End
+
 	var/footstep = FOOTSTEP_MOB_HUMAN
 	var/list/special_step_sounds = null
-	// CHOMPEdit End
 
 	// Combat/health/chem/etc. vars.
 	var/total_health = 100								// How much damage the mob can take before entering crit.
@@ -236,6 +237,7 @@
 	var/has_glowing_eyes = 0								// Whether the eyes are shown above all lighting
 	var/water_movement = 0									// How much faster or slower the species is in water
 	var/snow_movement = 0									// How much faster or slower the species is on snow
+	var/dirtslip = FALSE									// If we slip over dirt or not.
 	var/can_space_freemove = FALSE							// Can we freely move in space?
 	var/can_zero_g_move	= FALSE								// What about just in zero-g non-space?
 
@@ -265,6 +267,8 @@
 	var/economic_modifier = 2								// How much money this species makes
 
 	var/vanity_base_fit 									//when shapeshifting using vanity_copy_to, this allows you to have add something so they can go back to their original species fit
+
+	var/mudking = FALSE										// If we dirty up tiles quicker
 
 	var/vore_belly_default_variant = "H"
 
@@ -367,8 +371,8 @@
 		inherent_verbs |= /mob/living/carbon/human/proc/regurgitate
 
 	update_sort_hint()
-// CHOMPadd
-/datum/species/proc/get_footstep_sounds()
+
+/datum/species/proc/get_footsep_sounds()
 	return footstep
 
 /datum/species/proc/update_sort_hint()

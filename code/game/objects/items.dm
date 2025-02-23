@@ -1073,7 +1073,7 @@ Note: This proc can be overwritten to allow for different types of auto-alignmen
 >>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 
 /proc/auto_align(obj/item/W, click_parameters, var/animate = FALSE)
-	if(!W.center_of_mass_x && !W.center_of_mass_y) //CHOMPEdit
+	if(!W.center_of_mass_x && !W.center_of_mass_y)
 		W.randpixel_xy()
 		return
 
@@ -1089,8 +1089,8 @@ Note: This proc can be overwritten to allow for different types of auto-alignmen
 		var/cell_x = max(0, min(CELLS-1, round(mouse_x/CELLSIZE)))
 		var/cell_y = max(0, min(CELLS-1, round(mouse_y/CELLSIZE)))
 
-		var/target_x = (CELLSIZE * (0.5 + cell_x)) - W.center_of_mass_x //CHOMPEdit
-		var/target_y = (CELLSIZE * (0.5 + cell_y)) - W.center_of_mass_y //CHOMPEdit
+		var/target_x = (CELLSIZE * (0.5 + cell_x)) - W.center_of_mass_x
+		var/target_y = (CELLSIZE * (0.5 + cell_y)) - W.center_of_mass_y
 		if(animate)
 			var/dist_x = abs(W.pixel_x - target_x)
 			var/dist_y = abs(W.pixel_y - target_y)
