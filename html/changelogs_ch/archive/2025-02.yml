@@ -336,3 +336,148 @@
   - balance: Telecubes no longer start mated in xenoarch. This means you'll have to
       find two of them (and be sad the game won't let you pair them). This means you
       will no longer get gibbed if you're unlucky
+2025-02-24:
+  Diana:
+  - bugfix: signalers will now signal
+  - bugfix: Xenoarch gas effects will no longer have a 1/3 chance of not working when
+      spawned in.
+  - bugfix: Gas artifacts no longer overpopulate the artifact pool
+  - qol: Gas artifacts and temperature artifacts can no longer be 'spam-toggled' and
+      will instead only be aura artifacts.
+  - code_imp: Made a global blacklist for artifacts that should not spawn in global_lists.dm
+  - bugfix: You are prevented from stomping while buckled now.
+  - bugfix: You are prevented from kicking while buckled now.
+  - bugfix: You are prevented from biting while buckled now.
+  - bugfix: Fixes gloves increasing damage on anything other than punches.
+  - bugfix: Fixes it so the click code can properly get to unarmed attack code now,
+      allowing it to run it's proper checks to see if you can attack or not instead
+      of just always returning false.
+  - code_imp: Changes some vars from 0 to FALSE where indicated.
+  - code_imp: Gets rid of some needless = FALSE when it was already on the parent
+  Diana, Kash, Will:
+  - bugfix: Fixes the body designer and changes it to use appearance changer
+  - code_imp: Adds a unit test that will POLITELY tell you to to FIX YOUR DUPLICATE
+      / UNNAMED / UN-ICONED sprite_accessory in the  code. It's for your own good.
+      Promise.
+  - code_imp: Adds another unit test that will POLITELY check your markings in the
+      FILE to let you know you if you add a marking without a proper sprite. (This
+      is for your own good.)
+  - bugfix: Fixes a bug with the color picker would let you upload photos to it and
+      accept that as a color input
+  - bugfix: Fixes some things having duplicate names / duplicate paths meaning they
+      could never be selected
+  - bugfix: Fixes a LOT of broken sprites
+  - bugfix: Fixes Shadekin Snoot marking
+  - bugfix: Adds Double Unathi Horns
+  - bugfix: Skrell Very Short Tentacles never existed.
+  - bugfix: Wrist Fluff not having the correct body_parts
+  - bugfix: Replikant Paneling - SynthFlesh (body) now shows up properly
+  - bugfix: Rosette's Groin now shows up properly when viewed.
+  - bugfix: Augment (Backside Left, Head) now shows up properly
+  - bugfix: Augment (Backside Left Diode, Head) now shows up properly
+  - bugfix: Hands,Feet,Belly Color (Major, Female) now shows their groin properly.
+  Guti:
+  - image: Added a few icon effects
+  VoRe-bot:
+  - refactor: up-ports ghost orbiting refactor
+  - bugfix: a 6 year old issue where any modifier could set your pulse to 0
+  - bugfix: door tag id inputs being too short
+  - bugfix: IRC comms are disabled without a password set
+  - bugfix: makes the dialog/attacklog tables clear again after each round
+  - code_imp: Adjusts the temp cap to be higher for  engineers trying to make hellmixes.
+  - bugfix: Gases will no longer linger as microscopic values in pipes.
+  - bugfix: firedoors checking the processing before being closed
+  - bugfix: belly sprites not properly working in some cases
+  - rscadd: dynamic light system for planets
+  - qol: updates diagonal movement calculations
+  - bugfix: Micro cameras will now properly reset when micros are dropped
+  - bugfix: removed an extra overlay that shouldn't have been on the dual-colour thin
+      vulp ears
+  - balance: Disabled Random virus event
+  - code_imp: forwards usr refs from topic for usrDialog
+  - maptweak: Map stability fixes.
+  - bugfix: The food replicator now costs nutriment based on how many units of reagents
+      are in the replicated dish.
+  - bugfix: swoopies being unable to use the soulcatcher
+  - rscadd: Footstep Element
+  - code_imp: Upated DCS
+  - bugfix: some ui issues on shield gen, gyro control and rust control
+  - code_imp: You can no longer place markings on your lungs (Unit test checks for
+      improper bodypart areas)
+  Will:
+  - bugfix: Vents now properly hibernate instead of running 24/7
+  - code_imp: Gets rid of more sleeps
+  - code_imp: Showers are more efficient on the backend
+  Will, Kash, Diana:
+  - bugfix: Fixes a server crashing issue with flip emote
+  - bugfix: Fixes Genetics and all the powers that came with it
+  - rscadd: Adds Trait Genetics to the game. (Genetics can activate/deactivate traits)
+  - rscadd: Various new traits up-ported (drippy, rad-resistance/immunity, Photosynthesis,
+      Rotting Genetics, Incomprehensible, Less blood volume, slowdown EXTREME, low
+      blood sugar, Agoraphobia, Loneliness, Glass Endurance, reduced biocompat, photosensitivity,
+      haemophillia, pain intolerance, sensitive biochem, table passer,)
+  - rscadd: Health analyzers tell you if someone is  suffering from a genetic side
+      effect and what to give to cure them.
+  - rscadd: Allows cocoon weaver to change eye and skin color
+  - bugfix: Various small bugfixes up-ported from Chomp
+  - sound: Added some founds from Chomp for space inhale/exhale sounds
+  - refactor: Refactors how radiation code works to work with rad resistance/immunity.
+  - refactor: Genetic side effects edited NOT to be shitcode with spawns & sleeps.
+      Made to use timers instead.
+  - code_imp: Updated a LOT of files to be equivalent to their chomp versions.
+  - balance: Adjusted  laser eyes  to do 10 damage instead of 40 per shot, due to
+      being spammable and nutrition being extremely high.
+  - balance: Chems that formerly fixed genetic damage now heal cloneloss instead of
+      genetics, since the new system is incomparable with old genetic healing.
+  - rscadd: People can be reset to their default with the resleever console, as it
+      can print out a genetic injector that does NO radiation or genetic damage, just
+      purely fixing them back to their default.
+  - code_imp: A lot of the below were added because while updating the files to be
+      1:1 where traitgene changes occured, there were massive changes codewise.
+  - code_imp: Autostrip steptriggers added
+  - code_imp: Flare box now contains 14 instead of just 4 flares.
+  - code_imp: Mind secure closets added
+  - code_imp: Persistence doesn't do to_world anymore
+  - code_imp: Removes a LOT OF VORESTATION EDIT COMMENTS as we are no longer a downstream.
+  - code_imp: '''DO NOT USE'' sprite_accessories will no longer appear.'
+  - code_imp: disk/data was removed and replaced with disk/body_record. Fluff item
+      fixed with this in mind.
+  - code_imp: Gets rid of RS comments that slipped into our code somehow.
+  - code_imp: Save_character will now tell you you saved your character.
+  - code_imp: Abandoned crates given dna injectors as possible loot. Teppi ray added.
+      Alien junk prop added.
+  - bugfix: When an observer/dead is destroyed, it now properly gets rid of the visualnet
+      blocked turfs.
+  - bugfix: choosing high blood volume no longer kills you on spawn
+  - bugfix: AI eye no longer hard deletes
+  - rscadd: Last_breath_sounds added from CS. Touched human/human.dm
+  - bugfix: Rest-left Rest-right works properly
+  - code_imp: Moving with broken limbs checks to see if you can feel pain before doing
+      a pain emote
+  - code_imp: Radiation cap increased to 5000 to account for rad resistant peoples.
+  - code_imp: Radiation now is decreased by a rad_removal_mod.
+  - code_imp: Shrinks & grows vars added. Not used here, but used downstream. Crit_mod
+      as well.
+  - code_imp: Monkeys no longer process if there is nobody on their Z level
+  - bugfix: Protean rig no longer hard deletes
+  - bugfix: PAI no longer gets stuck outside disposals
+  - code_imp: new censor_swears proc.
+  - code_imp: Polls now have the 'NEW' under them instead of next to them
+  - code_imp: Brain moved from /new to /init
+  - code_imp: Droplimb acid added
+  - balance: Immunorejection chems last much longer
+  - code_imp: Adds a debug log if someone spawns with no DNA
+  - code_imp: Resleeve designer can now add flavortext per limb
+  - bugfix: Resleever properly applys digi legs now.
+  - balance: Resleeve sickness is no longer a thing (you also do not get genetic mutations
+      from the sleever)
+  - code_imp: Psionic and wingdings fonts added
+  - code_imp: 'Makes the SD MAP_OVERRIDE warning note that it is the SD not the tether
+
+      code:'
+  - code_imp: Xenomorph references changed to Genaprawn like downstream, was included
+      in a few files that were being changed.
+  - code_imp: span_major_announcement, ooc_announcement and subheader_announcement
+      addeed
+  - code_imp: send_ooc_announcement proc added
+  - code_imp: Gets rid of a spawn(0) in species generation
