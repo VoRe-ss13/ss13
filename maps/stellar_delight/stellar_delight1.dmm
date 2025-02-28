@@ -12727,6 +12727,11 @@
 	pixel_x = -24;
 	pixel_y = -24
 	},
+/obj/structure/privacyswitch{
+	dir = 1;
+	pixel_x = -19;
+	pixel_y = -24
+	},
 /turf/simulated/floor/carpet,
 /area/stellardelight/deck1/dorms/dorm5)
 "AC" = (
@@ -13472,6 +13477,11 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = 25;
+	pixel_y = -24
+	},
+/obj/structure/privacyswitch{
+	dir = 1;
+	pixel_x = 20;
 	pixel_y = -24
 	},
 /turf/simulated/floor/carpet/purcarpet,
@@ -16781,6 +16791,11 @@
 	pixel_y = -8;
 	specialfunctions = 4
 	},
+/obj/structure/privacyswitch{
+	pixel_y = 5;
+	pixel_x = -32;
+	dir = 4
+	},
 /turf/simulated/floor/tiled/eris/white/bluecorner,
 /area/medical/exam_room)
 "Js" = (
@@ -17315,6 +17330,10 @@
 	pixel_x = 25;
 	pixel_y = 25
 	},
+/obj/structure/privacyswitch{
+	pixel_y = 25;
+	pixel_x = 20
+	},
 /turf/simulated/floor/carpet,
 /area/stellardelight/deck1/dorms/dorm1)
 "KH" = (
@@ -17382,6 +17401,11 @@
 /obj/machinery/light_switch{
 	dir = 1;
 	pixel_x = -24;
+	pixel_y = -24
+	},
+/obj/structure/privacyswitch{
+	dir = 1;
+	pixel_x = -19;
 	pixel_y = -24
 	},
 /turf/simulated/floor/carpet/purcarpet,
@@ -18348,6 +18372,11 @@
 	pixel_x = 25;
 	pixel_y = -24
 	},
+/obj/structure/privacyswitch{
+	dir = 1;
+	pixel_x = 20;
+	pixel_y = -24
+	},
 /turf/simulated/floor/carpet,
 /area/stellardelight/deck1/dorms/dorm4)
 "MR" = (
@@ -18545,6 +18574,10 @@
 /obj/machinery/light_switch{
 	pixel_x = 25;
 	pixel_y = 25
+	},
+/obj/structure/privacyswitch{
+	pixel_y = 25;
+	pixel_x = 20
 	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/stellardelight/deck1/dorms/dorm2)
@@ -20906,12 +20939,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/door/airlock/angled_bay/standard/glass{
 	dir = 4;
 	door_color = "#333333";
@@ -21070,6 +21097,10 @@
 /obj/machinery/light_switch{
 	pixel_x = -24;
 	pixel_y = 25
+	},
+/obj/structure/privacyswitch{
+	pixel_y = 25;
+	pixel_x = -19
 	},
 /turf/simulated/floor/carpet,
 /area/stellardelight/deck1/dorms/dorm8)
@@ -21257,6 +21288,10 @@
 /obj/machinery/light_switch{
 	pixel_x = -24;
 	pixel_y = 25
+	},
+/obj/structure/privacyswitch{
+	pixel_y = 25;
+	pixel_x = -19
 	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/stellardelight/deck1/dorms/dorm7)
