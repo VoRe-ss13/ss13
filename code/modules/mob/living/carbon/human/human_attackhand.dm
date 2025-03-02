@@ -37,6 +37,14 @@
 /mob/living/carbon/human/attack_hand(mob/living/M as mob)
 	var/datum/gender/TT = gender_datums[M.get_visible_gender()]
 	var/mob/living/carbon/human/H = M
+<<<<<<< HEAD
+=======
+  
+	if(is_incorporeal())
+		return
+
+	var/has_hands = TRUE
+>>>>>>> 3444e3e21d ([MIRROR] up ports incorp and proximity handling (#10266))
 	if(istype(H))
 		var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
 		if(H.hand)
@@ -55,8 +63,6 @@
 			if(D.IsSpreadByTouch())
 				ContractDisease(D)
 
-	if(H.lying)
-		return
 	M.break_cloak()
 
 	..()
