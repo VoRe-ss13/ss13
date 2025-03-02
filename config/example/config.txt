@@ -588,6 +588,7 @@ JUKEBOX_TRACK_FILES config/jukebox.json
 # Uncomment to enable
 #ALLOW_SIMPLE_MOB_RECOLOR
 
+<<<<<<< HEAD
 
 # Controls whether players can spawn as mobs without admin intervention when ghosting (Using 'Join As Mob' verb when ghosting)
 # Uncomment to enable
@@ -595,3 +596,13 @@ ALLOW_GHOST_MOB_SPAWN
 
 # Controls how many mobs ghosts can spawn as
 GHOST_MOB_COUNT 5
+=======
+# Chatlogs are now saved by calling the chatlogging library instead of letting the clients handle it
+# REQUIRES an database
+# Uncomment to enable
+#CHATLOG_DATABASE_BACKEND
+
+# The endpoint for the chat to fetch the chatlogs from (for example, the last 2500 messages on init for the history)
+# REQUIRES chatlog_database_backend to be enabled
+#CHATLOG_DATABASE_API_ENDPOINT https://example.com
+>>>>>>> 09bb0e61b3 ([MIRROR] Chat history prototype (#10278))
