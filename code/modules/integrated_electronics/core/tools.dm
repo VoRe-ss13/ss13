@@ -283,8 +283,12 @@
 /obj/item/storage/bag/circuits/emp_act()
 	return	//No
 
+<<<<<<< HEAD
 /obj/item/storage/bag/circuits/basic/Initialize()
 	//. = ..() CHOMPEdit
+=======
+/obj/item/storage/bag/circuits/basic/Initialize(mapload)
+>>>>>>> 1a1029c376 ([MIRROR] More compat (#10277))
 	new /obj/item/storage/bag/circuits/mini/arithmetic(src)
 	new /obj/item/storage/bag/circuits/mini/trig(src)
 	new /obj/item/storage/bag/circuits/mini/input(src)
