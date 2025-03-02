@@ -45,8 +45,14 @@
  */
 /obj/effect/landmark/sc_bible_spawner
 	name = "Safecode hint spawner"
+	delete_me = TRUE
 
+<<<<<<< HEAD
 /obj/effect/landmark/sc_bible_spawner/New()
+=======
+/obj/effect/landmark/sc_bible_spawner/Initialize(mapload)
+	. = ..()
+>>>>>>> ad0915a957 ([MIRROR] some more new to init (#10270))
 	var/obj/item/storage/bible/B = new /obj/item/storage/bible/booze(src.loc)
 	B.name = "The Holy book of the Geometer"
 	B.deity_name = "Narsie"
@@ -54,7 +60,10 @@
 	B.item_state = "melted"
 	new /obj/item/paper/sc_safehint_paper_bible(B)
 	new /obj/item/pen(B)
+<<<<<<< HEAD
 	qdel(src)
+=======
+>>>>>>> ad0915a957 ([MIRROR] some more new to init (#10270))
 
 /*
  * Guns - I'm making these specifically so that I dont spawn a pile of fully loaded weapons on the map.
