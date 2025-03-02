@@ -256,6 +256,48 @@ export class TguiSay extends Component<{}, State> {
   handleKeyDown(event: React.KeyboardEvent<HTMLTextAreaElement>) {
     const currentValue = this.innerRef.current?.value;
     switch (event.key) {
+<<<<<<< HEAD
+=======
+      case 'u':
+        if (event.ctrlKey || event.metaKey) {
+          event.preventDefault();
+          const { value, selectionStart, selectionEnd } = event.currentTarget;
+          event.currentTarget.value = getMarkupString(
+            value,
+            '_',
+            selectionStart,
+            selectionEnd,
+          );
+          event.currentTarget.selectionEnd = selectionEnd + 2;
+        }
+        break;
+      case 'i':
+        if (event.ctrlKey || event.metaKey) {
+          event.preventDefault();
+          const { value, selectionStart, selectionEnd } = event.currentTarget;
+          event.currentTarget.value = getMarkupString(
+            value,
+            '|',
+            selectionStart,
+            selectionEnd,
+          );
+          event.currentTarget.selectionEnd = selectionEnd + 2;
+        }
+        break;
+      case 'b':
+        if (event.ctrlKey || event.metaKey) {
+          event.preventDefault();
+          const { value, selectionStart, selectionEnd } = event.currentTarget;
+          event.currentTarget.value = getMarkupString(
+            value,
+            '+',
+            selectionStart,
+            selectionEnd,
+          );
+          event.currentTarget.selectionEnd = selectionEnd + 2;
+        }
+        break;
+>>>>>>> 39d18b8dfd ([MIRROR] tgui core 1.8.1 update (#10275))
       case KEY.PageUp:
       case KEY.PageDown:
         // Allow moving between lines if there are newlines
