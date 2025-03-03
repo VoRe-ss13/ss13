@@ -58,8 +58,14 @@
 		return ..()
 
 /obj/item/clothing/accessory/dosimeter/proc/check_holder()
+<<<<<<< HEAD
 	if(wearer)
 		if(current_film && (wearer.radiation >= 25) && (current_film.state == 0))
+=======
+	var/mob/living/carbon/human/H = wearer?.resolve()
+	if(H)
+		if(current_film && (H.radiation >= 25) && (current_film.state == 0))
+>>>>>>> 413c06dd5b ([MIRROR] Fixes accessories and a few others not showing properly (#10288))
 			update_state(1)
 			visible_message(span_warning("The film of \the [src] starts to darken."))
 			desc = "This seems like a dosimeter, but the film has darkened."

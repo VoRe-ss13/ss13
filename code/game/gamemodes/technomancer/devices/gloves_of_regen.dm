@@ -20,12 +20,27 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_HEAT_PROTECTION_TEMPERATURE
 
+<<<<<<< HEAD
 /obj/item/clothing/gloves/regen/equipped(var/mob/living/carbon/human/H)
 	if(H && H.gloves == src)
 		wearer = H
 		if(wearer.can_feel_pain())
 			to_chat(H, span_danger("You feel a stabbing sensation in your hands as you slide \the [src] on!"))
 			wearer.custom_pain("You feel a sharp pain in your hands!",1)
+=======
+/obj/item/clothing/gloves/regen/equipped(var/mob/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.gloves == src)
+			wearer = WEAKREF(H)
+			if(H.can_feel_pain())
+				to_chat(H, span_danger("You feel a stabbing sensation in your hands as you slide \the [src] on!"))
+				H.custom_pain("You feel a sharp pain in your hands!",1)
+	..()
+
+
+/obj/item/clothing/gloves/regen/dropped(var/mob/user)
+>>>>>>> 413c06dd5b ([MIRROR] Fixes accessories and a few others not showing properly (#10288))
 	..()
 
 /obj/item/clothing/gloves/regen/dropped(var/mob/living/carbon/human/H)
