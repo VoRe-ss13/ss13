@@ -210,5 +210,18 @@
 	name = "Dullahan janitor v3"
 	sprite_icon_state = "dullahanjanitor"
 	has_vore_belly_sprites = TRUE
+<<<<<<< HEAD
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
+=======
+	rest_sprite_options = list("Default", "Sit")
+
+/datum/robot_sprite/dogborg/janitor/possum
+	name = "0-P0SSm"
+	sprite_icon = 'icons/mob/robot/possumborg.dmi'
+	sprite_icon_state = "possjani"
+	//has_vore_belly_resting_sprites = TRUE
+	has_eye_light_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+	rest_sprite_options = list("Default")
+>>>>>>> 9543740f7a ([MIRROR] fix robot linting [IDB IGNORE] (#10301))

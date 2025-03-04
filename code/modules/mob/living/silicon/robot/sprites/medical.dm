@@ -147,9 +147,13 @@
 /datum/robot_sprite/dogborg/tall/medical/dullahanv3/medicaldully
 	name = "Dullahan medical v3"
 	sprite_icon_state = "dullahanmedical"
+<<<<<<< HEAD
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
+=======
+	rest_sprite_options = list("Default", "Sit")
+>>>>>>> 9543740f7a ([MIRROR] fix robot linting [IDB IGNORE] (#10301))
 
 // Surgeon
 
@@ -406,3 +410,49 @@
 	sprite_icon_state = "raptor"
 	has_custom_equipment_sprites = TRUE
 	rest_sprite_options = list("Default", "Bellyup")
+<<<<<<< HEAD
+=======
+
+/datum/robot_sprite/dogborg/crisis/cat
+	name = "Cat"
+	sprite_icon = 'icons/mob/robot/catborg_variant.dmi'
+	sprite_icon_state = "vixmed"
+	has_vore_belly_resting_sprites = TRUE
+	has_eye_light_sprites = TRUE
+	has_sleeper_light_indicator = TRUE
+	has_dead_sprite_overlay = FALSE
+
+//Medical into Crisis type merge
+/datum/robot_sprite/surgical
+	module_type = "Crisis"
+
+/datum/robot_sprite/dogborg/surgical
+	module_type = "Crisis"
+
+//Added sprites
+/datum/robot_sprite/dogborg/crisis/vale2
+	name = "Mediborg Model V-3"
+	sprite_icon = 'icons/mob/robot/widerobot/widerobot.dmi'
+	sprite_icon_state = "vale2"
+	sprite_hud_icon_state = "medihound"
+	has_eye_light_sprites = TRUE
+	has_sleeper_light_indicator = TRUE
+	rest_sprite_options = list("Default")
+
+/datum/robot_sprite/dogborg/crisis/cat
+	name = "Cat"
+	sprite_icon = 'icons/mob/robot/catborg_variant.dmi'
+	sprite_icon_state = "vixmed"
+	has_vore_belly_resting_sprites = TRUE
+	has_eye_light_sprites = TRUE
+	has_sleeper_light_indicator = TRUE
+
+/datum/robot_sprite/dogborg/crisis/smolraptor
+	sprite_icon = 'icons/mob/robot/smallraptors/smolraptor_med.dmi'
+	name = "Small Raptor"
+	sprite_icon_state = "smolraptor"
+	has_dead_sprite_overlay = FALSE
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	rest_sprite_options = list("Default", "Sit")
+>>>>>>> 9543740f7a ([MIRROR] fix robot linting [IDB IGNORE] (#10301))

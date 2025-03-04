@@ -76,8 +76,13 @@
 	has_eye_light_sprites = TRUE
 	has_custom_open_sprites = TRUE
 	has_vore_belly_sprites = TRUE
+<<<<<<< HEAD
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
+=======
+	sprite_decals = list("decals")
+	rest_sprite_options = list("Default", "Sit")
+>>>>>>> 9543740f7a ([MIRROR] fix robot linting [IDB IGNORE] (#10301))
 
 // Protector
 
@@ -174,8 +179,13 @@
 	has_eye_light_sprites = TRUE
 	has_custom_open_sprites = TRUE
 	has_vore_belly_sprites = TRUE
+<<<<<<< HEAD
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
+=======
+	sprite_decals = list("decals")
+	rest_sprite_options = list("Default", "Sit")
+>>>>>>> 9543740f7a ([MIRROR] fix robot linting [IDB IGNORE] (#10301))
 
 /datum/robot_sprite/dogborg/tall/mechanist/syndimechraptor
 	name = "Raptor V-4"
