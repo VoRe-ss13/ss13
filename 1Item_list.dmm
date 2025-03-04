@@ -17328,7 +17328,7 @@
 	},
 /area/survivalpod)
 "feW" = (
-/obj/item/clothing/head/helmet/space/void/medical/alt,
+/obj/item/clothing/head/helmet/space/void/medical/veymed,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -64749,12 +64749,6 @@
 	icon_state = "vault"
 	},
 /area/survivalpod)
-"sZf" = (
-/obj/item/clothing/head/helmet/space/void/medical/alt/tesh,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
 "sZg" = (
 /obj/item/clothing/under/dress/dress_green,
 /turf/simulated/fitness{
@@ -69127,7 +69121,7 @@
 	},
 /area/survivalpod)
 "uoj" = (
-/obj/item/clothing/suit/space/void/medical/alt/tesh,
+/obj/item/clothing/suit/space/void/medical/veymed_static,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -77585,7 +77579,7 @@
 	},
 /area/survivalpod)
 "wKe" = (
-/obj/item/clothing/suit/space/void/medical/alt,
+/obj/item/clothing/suit/space/void/medical/veymed,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -102866,7 +102860,7 @@ aBa
 rmi
 whe
 wov
-sZf
+wKe
 vhb
 hxh
 dNn
