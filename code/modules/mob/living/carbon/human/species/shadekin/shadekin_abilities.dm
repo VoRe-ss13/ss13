@@ -5,21 +5,6 @@
 		return TRUE
 	return ..()
 
-//CHOMPEdit Start - General ability check
-/mob/living/carbon/human/proc/shadekin_ability_check()
-	var/datum/species/shadekin/SK = species
-	if(!istype(SK))
-		to_chat(src, span_warning("Only a shadekin can use that!"))
-		return FALSE
-	else if(stat)
-		to_chat(src, span_warning("Can't use that ability in your state!"))
-		return FALSE
-	else if((ability_flags & AB_DARK_RESPITE || has_modifier_of_type(/datum/modifier/dark_respite)) && !(ability_flags & AB_PHASE_SHIFTED))
-		to_chat(src, span_warning("You can't use that so soon after an emergency warp!"))
-		return FALSE
-	return TRUE
-//CHOMPEdit End
-
 /////////////////////
 ///  PHASE SHIFT  ///
 /////////////////////
@@ -41,19 +26,17 @@
 	verbpath = /mob/living/carbon/human/proc/phase_shift
 	ability_icon_state = "tech_passwall"
 
-/* //ChompEDIT - Moved to modular_chomp
 /mob/living/carbon/human/proc/phase_shift()
 	set name = "Phase Shift (100)"
 	set desc = "Shift yourself out of alignment with realspace to travel quickly to different areas."
 	set category = "Abilities.Shadekin"
-
-	//RS Port #658 Start
+	/* //CHOMPEdit - Moved below //RS Port #658 Start
 	var/area/A = get_area(src)
 	if(!client?.holder && A.flag_check(AREA_BLOCK_PHASE_SHIFT))
 		to_chat(src, span_warning("You can't do that here!"))
 		return
 	//RS Port #658 End
-
+	*/ //CHOMPEdit End
 	var/ability_cost = 100
 
 	var/darkness = 1
@@ -61,9 +44,21 @@
 	if(!T)
 		to_chat(src,span_warning("You can't use that here!"))
 		return FALSE
+<<<<<<< HEAD
 	if((get_area(src).flags & PHASE_SHIELDED))	//CHOMPAdd - Mapping tools to control phasing
 		to_chat(src,span_warning("This area is preventing you from phasing!"))
 		return FALSE
+=======
+	if((get_area(src).flags & PHASE_SHIELDED))	//CHOMPEdit Start - Mapping tools to control phasing
+		to_chat(src,span_warning("This area is preventing you from phasing!"))
+		return FALSE
+	//RS Port #658 Start
+	var/area/A = get_area(src)
+	if(!client?.holder && A.flag_check(AREA_BLOCK_PHASE_SHIFT))
+		to_chat(src, span_warning("You can't do that here!"))
+		return FALSE
+	//RS Port #658 End //CHOMPEdit End
+>>>>>>> d316c4c886 (Demar (#10307))
 
 	if(ability_flags & AB_PHASE_SHIFTING)
 		return FALSE
@@ -72,11 +67,19 @@
 	darkness = 1-brightness //Invert
 
 	var/watcher = 0
+<<<<<<< HEAD
 	//Chompedit start - Nerf to phasing
 	for(var/thing in orange(7, src))
 		if(istype(thing, /mob/living/carbon/human))
 			var/mob/living/carbon/human/watchers = thing
 			if(watchers in oviewers(7,src) && watchers.species != SPECIES_SHADEKIN)	// And they can see us... //CHOMPEDIT - (And aren't themselves a shadekin)
+=======
+	//CHOMPEdit Start - Nerf to phasing
+	for(var/thing in orange(7, src))
+		if(istype(thing, /mob/living/carbon/human))
+			var/mob/living/carbon/human/watchers = thing
+			if((watchers in oviewers(7,src)) && watchers.species != SPECIES_SHADEKIN)	// And they can see us... (And aren't themselves a shadekin)
+>>>>>>> d316c4c886 (Demar (#10307))
 				if(!(watchers.stat) && !isbelly(watchers.loc) && !istype(watchers.loc, /obj/item/holder))	// And they are alive and not being held by someone...
 					watcher++	// They are watching us!
 		else if(istype(thing, /mob/living/silicon/robot))
@@ -88,14 +91,19 @@
 			var/obj/machinery/camera/watchers = thing
 			if(watchers.can_use())
 				if(src in watchers.can_see())
+<<<<<<< HEAD
 					watcher++	//The camera is watching us!
 	//CHOMPedit end
+=======
+					watcher++	//CHOMPEdit End - The camera is watching us!
+>>>>>>> d316c4c886 (Demar (#10307))
 
 
 	ability_cost = CLAMP(ability_cost/(0.01+darkness*2),50, 80)//This allows for 1 watcher in full light
 	if(watcher>0)
 		ability_cost = ability_cost + ( 15 * watcher )
 	if(!(ability_flags & AB_PHASE_SHIFTED))
+<<<<<<< HEAD
 		log_debug("[src] attempted to shift with [watcher] observers with a  cost of [ability_cost] in a darkness level of [darkness]")
 	//CHOMPEdit start - inform about the observers affecting phasing
 	if(darkness<=0.4 && watcher>=2)
@@ -108,11 +116,25 @@
 	var/datum/species/shadekin/SK = species
 	/* CHOMPEdit start - general shadekin ability check
 	if(!istype(SK))
+=======
+		log_debug("[src] attempted to shift with [watcher] observers with a  cost of [ability_cost] in a darkness level of [darkness]") //CHOMPEdit Start - More clear phase info.
+	// inform about the observers affecting phasing
+	if(darkness<=0.4 && watcher>=2)
+		to_chat(src, span_warning("You have a few observers in a well-lit area! This may prevent phasing. (Working cameras count towards observers)"))
+	else if(watcher>=3)
+		to_chat(src, span_warning("You have a large number of observers! This may prevent phasing. (Working cameras count towards observers)")) //CHOMPEdit End
+
+
+	var/datum/species/shadekin/SK = species
+	/* if(!istype(SK)) //CHOMPEdit Removal - Moved to shadekin_ability_check
+>>>>>>> d316c4c886 (Demar (#10307))
 		to_chat(src, span_warning("Only a shadekin can use that!"))
 		return FALSE
 	else if(stat)
-		to_chat(src, span_warning("Can't use that ability in your state!"))
+		to_chat(src, span_warning("Can't use that ability in your state!")) */ //CHOMPEdit End
+	if(!shadekin_ability_check())
 		return FALSE
+<<<<<<< HEAD
 	//CHOMPEdit Start - Dark Respite
 	else if((ability_flags & AB_DARK_RESPITE || has_modifier_of_type(/datum/modifier/dark_respite)) && !(ability_flags & AB_PHASE_SHIFTED))
 		to_chat(src, span_warning("You can't use that so soon after an emergency warp!"))
@@ -126,6 +148,12 @@
 		to_chat(src, span_warning("You are already trying to phase!"))
 		return FALSE
 	//CHOMPEdit End
+=======
+	// Prevent bugs when spamming phase button
+	else if(SK.doing_phase)
+		to_chat(src, span_warning("You are already trying to phase!"))
+		return FALSE
+>>>>>>> d316c4c886 (Demar (#10307))
 
 	else if(shadekin_get_energy() < ability_cost && !(ability_flags & AB_PHASE_SHIFTED))
 		to_chat(src, span_warning("Not enough energy for that ability!"))
@@ -174,6 +202,7 @@
 		//cut_overlays()
 		invisibility = initial(invisibility)
 		see_invisible = initial(see_invisible)
+<<<<<<< HEAD
 		see_invisible_default = initial(see_invisible_default) // CHOMPEdit - Allow seeing phased entities while phased.
 		incorporeal_move = initial(incorporeal_move)
 		density = initial(density)
@@ -183,6 +212,15 @@
 		can_pull_mobs = initial(can_pull_mobs)
 		hovering = initial(hovering)
 		//CHOMPEdit end
+=======
+		see_invisible_default = initial(see_invisible_default) //CHOMPEdit Add - Allow seeing phased entities while phased. (Port upstream)
+		incorporeal_move = initial(incorporeal_move)
+		density = initial(density)
+		force_max_speed = initial(force_max_speed)
+		can_pull_size = initial(can_pull_size) //CHOMPEdit Start - Resetting pull ability after phasing back in (Port upstream)
+		can_pull_mobs = initial(can_pull_mobs)
+		hovering = initial(hovering) //CHOMPEdit End
+>>>>>>> d316c4c886 (Demar (#10307))
 		update_icon()
 
 		//Cosmetics mostly
@@ -210,6 +248,7 @@
 					to_chat(target, span_vwarning("\The [src] phases into you, [target.vore_selected.vore_verb]ing them into your [target.vore_selected.name]!"))
 					to_chat(src, span_vwarning("You phase into [target], having them [target.vore_selected.vore_verb] you into their [target.vore_selected.name]!"))
 
+<<<<<<< HEAD
 		ability_flags &= ~AB_PHASE_SHIFTING
 
 		//Affect nearby lights
@@ -240,6 +279,56 @@
 						L.broken()
 				else
 					L.flicker(10)
+=======
+/mob/living/carbon/human/proc/shadekin_complete_phase_in(var/original_canmove)
+	var/datum/species/shadekin/SK = species //CHOMPEdit Add - Eye check. (Port upstream)
+	canmove = original_canmove
+	alpha = initial(alpha)
+	remove_modifiers_of_type(/datum/modifier/shadekin_phase_vision)
+	remove_modifiers_of_type(/datum/modifier/shadekin_phase) //CHOMPEdit Add - Shadekin probably shouldn't be hit while phasing (Port upstream)
+
+	//Potential phase-in vore
+	if(can_be_drop_pred || can_be_drop_prey) //Toggleable in vore panel //CHOMPEdit Start - Dropprey and phasevore checks. (Port upstream when possible)
+		var/list/potentials = living_mobs(0)
+		if(potentials.len)
+			var/mob/living/target = pick(potentials)
+			if(can_be_drop_pred && istype(target) && target.devourable && target.can_be_drop_prey && target.phase_vore && vore_selected && phase_vore)
+				target.forceMove(vore_selected)
+				to_chat(target, span_vwarning("\The [src] phases in around you, [vore_selected.vore_verb]ing you into their [vore_selected.name]!"))
+				to_chat(src, span_vwarning("You phase around [target], [vore_selected.vore_verb]ing them into your [vore_selected.name]!"))
+			else if(can_be_drop_prey && istype(target) && devourable && target.can_be_drop_pred && target.phase_vore && target.vore_selected && phase_vore)
+				forceMove(target.vore_selected)
+				to_chat(target, span_vwarning("\The [src] phases into you, [target.vore_selected.vore_verb]ing them into your [target.vore_selected.name]!"))
+				to_chat(src, span_vwarning("You phase into [target], having them [target.vore_selected.vore_verb] you into their [target.vore_selected.name]!")) //CHOMPEdit End - Dropprey and phasevore checks.
+
+	ability_flags &= ~AB_PHASE_SHIFTING
+
+	//Affect nearby lights
+	var/destroy_lights = 0
+
+	//CHOMPEdit Start - Add back light destruction & gentle phasing (Port upstream but replace with my variable toggle for full 100% control over chance, color, etc ~Diana)
+	if(SK.get_shadekin_eyecolor(src) == RED_EYES)
+		destroy_lights = 80
+	else if(SK.get_shadekin_eyecolor(src) == PURPLE_EYES)
+		destroy_lights = 25
+
+	// Add gentle phasing
+	if(SK.phase_gentle) // gentle case: No light destruction. Flicker in 4 tile radius once.
+		for(var/obj/machinery/light/L in machines)
+			if(L.z != z || get_dist(src,L) > 4)
+				continue
+			L.flicker(1)
+		Stun(1)
+	else //CHOMPEdit End
+		for(var/obj/machinery/light/L in machines)
+			if(L.z != z || get_dist(src,L) > 10)
+				continue
+
+			if(prob(destroy_lights))
+				addtimer(CALLBACK(L, TYPE_PROC_REF(/obj/machinery/light, broken)), rand(5,25), TIMER_DELETE_ME)
+			else
+				L.flicker(10)
+>>>>>>> d316c4c886 (Demar (#10307))
 
 /mob/living/carbon/human/proc/phase_out(var/turf/T)
 	if(!(ability_flags & AB_PHASE_SHIFTED))
@@ -255,6 +344,21 @@
 		stop_pulling()
 		canmove = FALSE
 
+		var/list/allowed_implants = list( //CHOMPEdit Start - Implant dropping
+			/obj/item/implant/sizecontrol,
+			/obj/item/implant/compliance,
+		)
+		for(var/obj/item/organ/external/organ in organs)
+			for(var/obj/item/O in organ.implants)
+				if(is_type_in_list(O, allowed_implants))
+					continue
+				if(O == nif)
+					nif.unimplant(src)
+				O.forceMove(drop_location())
+				organ.implants -= O
+		if(!has_embedded_objects())
+			clear_alert("embeddedobject")
+		//CHOMPEdit End
 		// change
 		ability_flags |= AB_PHASE_SHIFTED
 		ability_flags |= AB_PHASE_SHIFTING
@@ -262,7 +366,11 @@
 		custom_emote(1,"phases out!")
 		name = get_visible_name()
 
+<<<<<<< HEAD
 		//CHOMPEdit begin - Unequipping slots when phasing in, and preventing pulling stuff while phased.
+=======
+		//CHOMPEdit Start - Unequipping slots when phasing in, and preventing pulling stuff while phased.
+>>>>>>> d316c4c886 (Demar (#10307))
 		if(l_hand)
 			unEquip(l_hand)
 		if(r_hand)
@@ -273,8 +381,12 @@
 		can_pull_size = 0
 		can_pull_mobs = MOB_PULL_NONE
 		hovering = TRUE
+<<<<<<< HEAD
 		//CHOMPEdit end
 
+=======
+		//CHOMPEdit End
+>>>>>>> d316c4c886 (Demar (#10307))
 		for(var/obj/belly/B as anything in vore_organs)
 			B.escapable = FALSE
 
@@ -282,7 +394,11 @@
 		phaseanim.dir = dir
 		alpha = 0
 		add_modifier(/datum/modifier/shadekin_phase_vision)
+<<<<<<< HEAD
 		add_modifier(/datum/modifier/shadekin_phase) //CHOMPEdit - Shadekin probably shouldn't be hit while phasing
+=======
+		add_modifier(/datum/modifier/shadekin_phase) //CHOMPEdit Add - Shadekin probably shouldn't be hit while phasing
+>>>>>>> d316c4c886 (Demar (#10307))
 		sleep(5)
 		invisibility = INVISIBILITY_SHADEKIN
 		see_invisible = INVISIBILITY_SHADEKIN
@@ -296,8 +412,11 @@
 		density = FALSE
 		force_max_speed = TRUE
 		ability_flags &= ~AB_PHASE_SHIFTING
+<<<<<<< HEAD
 	SK.doing_phase = FALSE //CHOMPEdit - Prevent bugs when spamming phase button
 */ //ChompEDIT END - moved to modular_chomp
+=======
+>>>>>>> d316c4c886 (Demar (#10307))
 
 //CHOMPEdit Start - Toggle to Nutrition conversion
 /mob/living/carbon/human/proc/nutrition_conversion_toggle()
@@ -344,7 +463,7 @@
 
 	var/ability_cost = 50
 
-	/* CHOMPEdit start - general shadekin ability check
+	/* CHOMPEdit Start - general shadekin ability check
 	var/datum/species/shadekin/SK = species
 	if(!istype(SK))
 		to_chat(src, span_warning("Only a shadekin can use that!"))
@@ -422,7 +541,7 @@
 
 	var/ability_cost = 25
 
-	/* CHOMPEdit start - general shadekin ability check
+	/* CHOMPEdit Start - general shadekin ability check
 	var/datum/species/shadekin/SK = species
 	if(!istype(SK))
 		to_chat(src, span_warning("Only a shadekin can use that!"))

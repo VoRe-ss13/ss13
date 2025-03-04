@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /mob/living/carbon/human/proc/phase_shift()
 	set name = "Phase Shift (100)"
 	set desc = "Shift yourself out of alignment with realspace to travel quickly to different areas."
@@ -276,6 +277,20 @@
 		density = FALSE
 		force_max_speed = TRUE
 		ability_flags &= ~AB_PHASE_SHIFTING
+=======
+/mob/living/carbon/human/proc/shadekin_ability_check()
+	var/datum/species/shadekin/SK = species
+	if(!istype(SK))
+		to_chat(src, span_warning("Only a shadekin can use that!"))
+		return FALSE
+	else if(stat)
+		to_chat(src, span_warning("Can't use that ability in your state!"))
+		return FALSE
+	else if((ability_flags & AB_DARK_RESPITE || has_modifier_of_type(/datum/modifier/dark_respite)) && !(ability_flags & AB_PHASE_SHIFTED))
+		to_chat(src, span_warning("You can't use that so soon after an emergency warp!"))
+		return FALSE
+	return TRUE
+>>>>>>> d316c4c886 (Demar (#10307))
 
 //CHOMPEdit start - force dephase proc, to be called by other procs to dephase the shadekin. T is the target to force dephase them to.
 /mob/living/carbon/human/proc/attack_dephase(var/turf/T = null, atom/dephaser)
