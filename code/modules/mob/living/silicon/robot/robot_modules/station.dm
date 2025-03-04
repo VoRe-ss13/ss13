@@ -346,7 +346,11 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/surgical/bioregen/cyborg(src)
 // CHOMPedit end: Combining Surgeon and Crisis.
 	src.modules += new /obj/item/inflatable_dispenser/robot(src)
+<<<<<<< HEAD
 	src.modules += new /obj/item/holosign_creator/medical(src) //CHOMPAdd
+=======
+	src.modules += new /obj/item/holosign_creator/medical(src)
+>>>>>>> aa0da49558 ([MIRROR] Various upports (#10293))
 	var/obj/item/reagent_containers/spray/PS = new /obj/item/reagent_containers/spray(src)
 	src.emag += PS
 	PS.reagents.add_reagent(REAGENT_ID_PACID, 250)
