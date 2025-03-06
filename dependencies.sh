@@ -4,8 +4,13 @@
 #Final authority on what's required to fully build the project
 
 # byond version
+<<<<<<< HEAD
 export BYOND_MAJOR=515
 export BYOND_MINOR=1647
+=======
+export BYOND_MAJOR=516
+export BYOND_MINOR=1657
+>>>>>>> af8a155239 ([MIRROR] Update minimum compiler version in __byond_version_compat.dm (#10313))
 
 # Macro Count
 export MACRO_COUNT=8
