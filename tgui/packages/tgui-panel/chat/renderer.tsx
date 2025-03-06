@@ -288,7 +288,7 @@ class ChatRenderer {
   }
 
   assignStyle(style = {}) {
-    for (let key of Object.keys(style)) {
+    for (const key of Object.keys(style)) {
       if (this.rootNode) {
         this.rootNode.style.setProperty(key, style[key]);
       }
@@ -309,7 +309,7 @@ class ChatRenderer {
       const highlightWholeMessage = setting.highlightWholeMessage;
       const matchWord = setting.matchWord;
       const matchCase = setting.matchCase;
-      const allowedRegex = /^[a-z0-9_\-$/^[\s\]\\]+$/gi;
+      const allowedRegex = /^[a-zа-яё0-9_\-$/^[\s\]\\]+$/gi;
       const regexEscapeCharacters = /[!#$%^&*)(+=.<>{}[\]:;'"|~`_\-\\/]/g;
       const lines = String(text)
         .split(',')
@@ -815,7 +815,42 @@ class ChatRenderer {
     });
   }
 
+<<<<<<< HEAD
   saveToDisk(logLineCount, startLine = 0, endLine = 0) {
+=======
+  /**
+   * @clearChat
+   * @copyright 2023
+   * @author Cheffie
+   * @link https://github.com/CheffieGithub
+   * @license MIT
+   */
+  clearChat() {
+    const messages = this.visibleMessages;
+    this.visibleMessages = [];
+    for (let i = 0; i < messages.length; i++) {
+      const message = messages[i];
+      if (this.rootNode && message.node instanceof HTMLElement) {
+        this.rootNode.removeChild(message.node);
+      }
+      // Mark this message as pruned
+      message.node = 'pruned';
+    }
+    // Remove pruned messages from the message array
+    this.messages = this.messages.filter(
+      (message) => message.node !== 'pruned',
+    );
+    logger.log(`Cleared chat`);
+  }
+
+  saveToDisk(
+    logLineCount: number = 0,
+    startLine: number = 0,
+    endLine: number = 0,
+    startRound: number = 0,
+    endRound: number = 0,
+  ) {
+>>>>>>> 96ffd04c6a ([MIRROR] allow chat setting ex / import (#10315))
     // Compile currently loaded stylesheets as CSS text
     let cssText = '';
     const styleSheets = document.styleSheets;

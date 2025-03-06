@@ -11,6 +11,7 @@ import DOMPurify from 'dompurify';
 import { selectGame } from '../game/selectors';
 import {
   addHighlightSetting,
+  importSettings,
   loadSettings,
   removeHighlightSetting,
   updateHighlightSetting,
@@ -21,6 +22,11 @@ import {
   addChatPage,
   changeChatPage,
   changeScrollTracking,
+<<<<<<< HEAD
+=======
+  clearChat,
+  getChatData,
+>>>>>>> 96ffd04c6a ([MIRROR] allow chat setting ex / import (#10315))
   loadChat,
   moveChatPageLeft,
   moveChatPageRight,
@@ -172,7 +178,7 @@ export const chatMiddleware = (store) => {
       settings.interleaveColor,
     );
     // Load the chat once settings are loaded
-    if (!initialized && (settings.initialized || settings.firstLoad)) {
+    if (!initialized && settings.initialized) {
       initialized = true;
       setInterval(() => {
         saveChatToStorage(store);
@@ -255,12 +261,14 @@ export const chatMiddleware = (store) => {
       type === loadSettings.type ||
       type === addHighlightSetting.type ||
       type === removeHighlightSetting.type ||
-      type === updateHighlightSetting.type
+      type === updateHighlightSetting.type ||
+      type === importSettings.type
     ) {
       next(action);
+      const nextSettings = selectSettings(store.getState());
       chatRenderer.setHighlight(
-        settings.highlightSettings,
-        settings.highlightSettingById,
+        nextSettings.highlightSettings,
+        nextSettings.highlightSettingById,
       );
 
       return;
@@ -280,6 +288,10 @@ export const chatMiddleware = (store) => {
         storedLines[storedLines.length - settings.exportEnd],
         storedLines[storedLines.length - settings.exportStart],
       );
+      return;
+    }
+    if (type === clearChat.type) {
+      chatRenderer.clearChat();
       return;
     }
     if (type === purgeChatMessageArchive.type) {

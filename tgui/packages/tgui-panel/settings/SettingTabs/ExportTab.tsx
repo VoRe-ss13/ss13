@@ -12,11 +12,16 @@ import {
 } from 'tgui-core/components';
 import { toFixed } from 'tgui-core/math';
 
-import { purgeChatMessageArchive, saveChatToDisk } from '../../chat/actions';
+import {
+  clearChat,
+  purgeChatMessageArchive,
+  saveChatToDisk,
+} from '../../chat/actions';
 import { MESSAGE_TYPES } from '../../chat/constants';
 import { useGame } from '../../game';
-import { updateSettings, updateToggle } from '../actions';
+import { exportSettings, updateSettings, updateToggle } from '../actions';
 import { selectSettings } from '../selectors';
+import { importChatSettings } from '../settingsImExport';
 
 export const ExportTab = (props) => {
   const dispatch = useDispatch();
@@ -37,9 +42,16 @@ export const ExportTab = (props) => {
   return (
     <Section>
       <Stack align="baseline">
+<<<<<<< HEAD
         {logEnable ? (
           logConfirm ? (
             <Button
+=======
+        {!game.databaseBackendEnabled &&
+          (logEnable ? (
+            <Button.Confirm
+              tooltip="Disable local chat logging"
+>>>>>>> 96ffd04c6a ([MIRROR] allow chat setting ex / import (#10315))
               icon="ban"
               color="red"
               onClick={() => {
@@ -65,6 +77,24 @@ export const ExportTab = (props) => {
               }}
             >
               Disable logging
+<<<<<<< HEAD
+=======
+            </Button.Confirm>
+          ) : (
+            <Button
+              tooltip="Enable local chat logging"
+              icon="download"
+              color="green"
+              onClick={() => {
+                dispatch(
+                  updateSettings({
+                    logEnable: true,
+                  }),
+                );
+              }}
+            >
+              Enable logging
+>>>>>>> 96ffd04c6a ([MIRROR] allow chat setting ex / import (#10315))
             </Button>
           )
         ) : (
@@ -236,6 +266,7 @@ export const ExportTab = (props) => {
         </LabeledList.Item>
       </LabeledList>
       <Divider />
+<<<<<<< HEAD
       <Button icon="save" onClick={() => dispatch(saveChatToDisk())}>
         Save chat log
       </Button>
@@ -264,6 +295,69 @@ export const ExportTab = (props) => {
           Purge message archive
         </Button>
       )}
+=======
+      <Stack fill>
+        <Stack.Item mt={0.15}>
+          <Button
+            icon="compact-disc"
+            tooltip="Export chat settings"
+            onClick={() => dispatch(exportSettings())}
+          >
+            Export settings
+          </Button>
+        </Stack.Item>
+        <Stack.Item mt={0.15}>
+          <Button.File
+            accept=".json"
+            tooltip="Import chat settings"
+            icon="arrow-up-from-bracket"
+            onSelectFiles={(files) => importChatSettings(files)}
+          >
+            Import settings
+          </Button.File>
+        </Stack.Item>
+        <Stack.Item grow mt={0.15}>
+          <Button
+            icon="save"
+            tooltip="Export current tab history into HTML file"
+            onClick={() => dispatch(saveChatToDisk())}
+          >
+            Save chat log
+          </Button>
+        </Stack.Item>
+        <Stack.Item mt={0.15}>
+          <Button.Confirm
+            icon="trash"
+            tooltip="Erase current tab history"
+            onClick={() => dispatch(clearChat())}
+          >
+            Clear chat
+          </Button.Confirm>
+        </Stack.Item>
+        {!game.databaseBackendEnabled && (
+          <Stack.Item mt={0.15}>
+            <Button.Confirm
+              disabled={purgeButtonText === 'Purged!'}
+              icon="trash"
+              tooltip="Erase current tab history"
+              color="red"
+              confirmIcon="trash"
+              confirmColor="red"
+              confirmContent="Are you sure?"
+              onClick={() => {
+                dispatch(purgeChatMessageArchive());
+                setPurgeButtonText('Purged!');
+                setTimeout(() => {
+                  setPurgeButtonText('Purge message archive');
+                }, 1000);
+              }}
+            >
+              {purgeButtonText}
+            </Button.Confirm>
+          </Stack.Item>
+        )}
+      </Stack>
+>>>>>>> 96ffd04c6a ([MIRROR] allow chat setting ex / import (#10315))
     </Section>
   );
 };
