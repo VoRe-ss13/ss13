@@ -64,6 +64,13 @@
 #define MAT_CARDBOARD		"cardboard"
 #define MAT_COTTON			"cotton"
 #define MAT_GLAMOUR			"stable glamour"
+<<<<<<< HEAD
+=======
+#define MAT_DARKGLASS		"darkglass"
+#define MAT_FLESH			"flesh"
+#define MAT_FANCYBLACK		"fancyblack"
+#define MAT_FOAM			"foam"
+>>>>>>> 5aad34f339 ([MIRROR] Some more Init and Destroy issues (#10317))
 
 // cloth materials
 #define MAT_WOOL			"wool"

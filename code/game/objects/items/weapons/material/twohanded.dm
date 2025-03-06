@@ -56,8 +56,13 @@
 	throwforce = round(force*thrown_force_divisor)
 	//to_world("[src] has unwielded force [force_unwielded], wielded force [force_wielded] and throwforce [throwforce] when made from default material [material.name]")
 
+<<<<<<< HEAD
 /obj/item/material/twohanded/New()
 	..()
+=======
+/obj/item/material/twohanded/Initialize(mapload, material_key)
+	. = ..()
+>>>>>>> 5aad34f339 ([MIRROR] Some more Init and Destroy issues (#10317))
 	update_icon()
 
 //Allow a small chance of parrying melee attacks when wielded - maybe generalize this to other weapons someday
