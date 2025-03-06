@@ -1002,7 +1002,6 @@
 #include "code\game\jobs\job\security.dm"
 #include "code\game\jobs\job\silicon.dm"
 #include "code\game\jobs\job\special.dm"
-#include "code\game\jobs\job\zz_alt_titles_ch.dm"
 #include "code\game\machinery\adv_med.dm"
 #include "code\game\machinery\adv_med_vr.dm"
 #include "code\game\machinery\ai_slipper.dm"
@@ -1303,7 +1302,11 @@
 #include "code\game\objects\explosion_recursive.dm"
 #include "code\game\objects\items.dm"
 #include "code\game\objects\items_vr.dm"
+<<<<<<< HEAD
 #include "code\game\objects\kasscbuttons_ch.dm"
+=======
+#include "code\game\objects\mail.dm"
+>>>>>>> 3025bb7f28 (Desinning the past step by step (#10308))
 #include "code\game\objects\micro_event.dm"
 #include "code\game\objects\micro_structures.dm"
 #include "code\game\objects\mob_spawner_vr.dm"
@@ -1338,8 +1341,6 @@
 #include "code\game\objects\effects\step_triggers.dm"
 #include "code\game\objects\effects\wire_deleter.dm"
 #include "code\game\objects\effects\zone_divider.dm"
-#include "code\game\objects\effects\zz_portals_ch.dm"
-#include "code\game\objects\effects\zz_triggers_ch.dm"
 #include "code\game\objects\effects\alien\aliens.dm"
 #include "code\game\objects\effects\chem\chemsmoke.dm"
 #include "code\game\objects\effects\chem\coating.dm"
@@ -3410,7 +3411,6 @@
 #include "code\modules\mob\living\silicon\robot\drone\swarm.dm"
 #include "code\modules\mob\living\silicon\robot\drone\swarm_abilities.dm"
 #include "code\modules\mob\living\silicon\robot\drone\swarm_items.dm"
-#include "code\modules\mob\living\silicon\robot\drone\zzz_unify_drone.dm"
 #include "code\modules\mob\living\silicon\robot\robot_modules\__Widerobot_Misc_Tools_ch.dm"
 #include "code\modules\mob\living\silicon\robot\robot_modules\event.dm"
 #include "code\modules\mob\living\silicon\robot\robot_modules\station.dm"
@@ -4803,7 +4803,11 @@
 #include "modular_chomp\code\game\jobs\job\captain.dm"
 #include "modular_chomp\code\game\jobs\job\department.dm"
 #include "modular_chomp\code\game\jobs\job\engineering.dm"
+<<<<<<< HEAD
 #include "modular_chomp\code\game\jobs\job\job_goodies.dm"
+=======
+#include "modular_chomp\code\game\jobs\job\entertainer_alts.dm"
+>>>>>>> 3025bb7f28 (Desinning the past step by step (#10308))
 #include "modular_chomp\code\game\jobs\job\medical.dm"
 #include "modular_chomp\code\game\jobs\job\noncrew.dm"
 #include "modular_chomp\code\game\jobs\job\security.dm"
@@ -4983,6 +4987,7 @@
 #include "modular_chomp\code\modules\mob\living\carbon\human\species\station\traits\positive.dm"
 #include "modular_chomp\code\modules\mob\living\carbon\human\species\station\traits\trait_mods.dm"
 #include "modular_chomp\code\modules\mob\living\carbon\human\species\station\traits\xenomorph_hybrid_trait.dm"
+#include "modular_chomp\code\modules\mob\living\silicon\drone\unify_drone.dm"
 #include "modular_chomp\code\modules\mob\living\silicon\robot\robot.dm"
 #include "modular_chomp\code\modules\mob\living\silicon\robot\robot_movement.dm"
 #include "modular_chomp\code\modules\mob\living\silicon\robot\dogborg\dog_modules.dm"
@@ -5159,6 +5164,7 @@
 #include "modular_chomp\code\ZAS\Fire.dm"
 #include "modular_chomp\code\ZAS\Fire_acts.dm"
 #include "modular_chomp\datums\tgs_event_handler.dm"
+#include "modular_chomp\game\effects\simple_portals.dm"
 #include "modular_chomp\game\effects\spawner.dm"
 #include "modular_chomp\game\machinery\bluespace_denier.dm"
 #include "modular_chomp\game\machinery\buttons.dm"

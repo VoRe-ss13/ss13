@@ -12885,10 +12885,6 @@
 /obj/item/gun/projectile/automatic/sts35,
 /turf/simulated/shuttle/floor/voidcraft/light,
 /area/space)
-"iIq" = (
-/obj/effect/ctrigger,
-/turf/simulated/floor/outdoors/dirt,
-/area/space)
 "iIv" = (
 /obj/structure/artilleryplaceholder{
 	icon_state = "33"
@@ -17993,10 +17989,6 @@
 	name = "Dorm"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/space)
-"mfO" = (
-/obj/effect/ctrigger,
-/turf/template_noop,
 /area/space)
 "mfQ" = (
 /obj/machinery/shower{
@@ -40796,7 +40788,7 @@ cmZ
 sRR
 plK
 mYY
-iIq
+mYY
 imH
 mYY
 mYY
@@ -43885,7 +43877,7 @@ nwG
 nwG
 dmw
 nwG
-mfO
+nwG
 nwG
 nwG
 cmZ
