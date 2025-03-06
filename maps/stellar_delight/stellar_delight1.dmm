@@ -10744,11 +10744,6 @@
 /turf/simulated/floor/tiled/milspec,
 /area/stellardelight/deck1/exploration)
 "wm" = (
-/obj/machinery/power/apc/angled{
-	dir = 4;
-	name = "night shift APC";
-	nightshift_setting = 2
-	},
 /obj/structure/cable/green{
 	color = "#42038a"
 	},
@@ -11731,11 +11726,6 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/research)
 "yr" = (
-/obj/machinery/power/apc/angled{
-	dir = 4;
-	name = "night shift APC";
-	nightshift_setting = 2
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
