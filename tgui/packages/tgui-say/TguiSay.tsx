@@ -16,6 +16,8 @@ import { byondMessages } from './timers';
 
 type ByondOpen = {
   channel: Channel;
+  minimumWidth: number;
+  minimumHeight: number;
 };
 
 type ByondProps = {
@@ -298,8 +300,15 @@ export class TguiSay extends Component<{}, State> {
 
   handleOpen = (data: ByondOpen) => {
     setTimeout(() => {
+<<<<<<< HEAD
       this.innerRef.current?.focus();
     }, 0);
+=======
+      innerRef.current?.focus();
+      setSize(minimumHeight);
+      windowSet(minimumWidth, minimumHeight);
+    }, 1);
+>>>>>>> ab171de574 ([MIRROR] tgui say update (#10323))
 
     const { channel } = data;
     // Catches the case where the modal is already open
@@ -341,6 +350,10 @@ export class TguiSay extends Component<{}, State> {
     } else {
       newSize = WINDOW_SIZES.small;
     }
+<<<<<<< HEAD
+=======
+    newSize = clamp(newSize, minimumHeight, WindowSize.Max);
+>>>>>>> ab171de574 ([MIRROR] tgui say update (#10323))
 
     newSize = clamp(newSize, this.minimumHeight * 20 + 10, WINDOW_SIZES.max);
     console.log(newSize);
@@ -402,9 +415,49 @@ const Dragzone = ({ theme, position }: { theme: string; position: string }) => {
     position === 'left' || position === 'right' ? 'vertical' : 'horizontal';
 
   return (
+<<<<<<< HEAD
     <div
       className={`dragzone-${location} dragzone-${position} dragzone-${theme}`}
       onMouseDown={dragStartHandler}
     />
+=======
+    <>
+      <div
+        className={`window window-${theme} window-${size}`}
+        onMouseDown={dragStartHandler}
+      >
+        {!lightMode && <div className={`shine shine-${theme}`} />}
+      </div>
+      <div className={classes(['content', lightMode && 'content-lightMode'])}>
+        <button
+          className={`button button-${theme}`}
+          onClick={handleIncrementChannel}
+          onMouseDown={handleButtonDrag}
+          type="button"
+        >
+          {buttonContent}
+        </button>
+        <textarea
+          spellCheck
+          autoCorrect="off"
+          className={`textarea textarea-${theme}`}
+          maxLength={maxLength}
+          onInput={handleInput}
+          onKeyDown={handleKeyDown}
+          ref={innerRef}
+          rows={ROWS[size] || 1}
+          value={value}
+        />
+        <button
+          key="escape"
+          className={`button button-${theme}`}
+          onClick={handleClose}
+          type="submit"
+        >
+          X
+        </button>
+      </div>
+    </>
+>>>>>>> ab171de574 ([MIRROR] tgui say update (#10323))
   );
 };
