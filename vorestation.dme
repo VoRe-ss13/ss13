@@ -5083,6 +5083,7 @@
 #include "modular_chomp\code\modules\mob\new_player\sprite_accessories_taur.dm"
 #include "modular_chomp\code\modules\mob\new_player\sprite_accessories_wing.dm"
 #include "modular_chomp\code\modules\organs\organ_icon.dm"
+#include "modular_chomp\code\modules\organs\robolimbs.dm"
 #include "modular_chomp\code\modules\organs\internal\malignant\malignant.dm"
 #include "modular_chomp\code\modules\overmap\dynamic_sector.dm"
 #include "modular_chomp\code\modules\paperwork\faxmachine.dm"
