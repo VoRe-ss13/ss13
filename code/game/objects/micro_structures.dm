@@ -20,7 +20,11 @@ var/global/list/micro_tunnels = list()
 		/mob/living/simple_mob/slime
 	)
 
+<<<<<<< HEAD
 /obj/structure/micro_tunnel/New()
+=======
+/obj/structure/micro_tunnel/Initialize(mapload)
+>>>>>>> ce2446922e ([MIRROR] Initialize fixing (#10335))
 	. = ..()
 	micro_tunnels.Add(src)
 
@@ -457,7 +461,7 @@ var/global/list/micro_tunnels = list()
 
 	var/chance_to_spawn = 25
 
-/obj/effect/mouse_hole_spawner/Initialize()
+/obj/effect/mouse_hole_spawner/Initialize(mapload)
 	. = ..()
 
 	if(prob(chance_to_spawn))

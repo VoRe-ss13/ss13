@@ -4,7 +4,12 @@
 	icon_state = "x"
 	unacidable = TRUE//Just to be sure.
 
+<<<<<<< HEAD
 /obj/effect/manifest/New()
+=======
+/obj/effect/manifest/Initialize(mapload)
+	. = ..()
+>>>>>>> ce2446922e ([MIRROR] Initialize fixing (#10335))
 
 	src.invisibility = 101
 	return

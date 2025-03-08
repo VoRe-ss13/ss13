@@ -27,7 +27,18 @@
 	var/db_key
 	var/datum/transcore_db/our_db
 
+<<<<<<< HEAD
 /obj/machinery/medical_kiosk/Initialize()
+=======
+	//These are the variables that control 'When we were
+	var/last_dispensed
+	var/dispense_cooldown = 1 MINUTE //If abused, this can be decreased. The machine gives chems and supplies that are easily and readily available, barring tramadol. If someone intentionally breaks their arm to rob the machines of their tramadol to fuel their addiction, that's a gameplay feature.
+
+	/// This determines if the kiosk can dispense or not. Edit the below line to FALSE if you don't want them to do such.
+	var/can_dispense = TRUE
+
+/obj/machinery/medical_kiosk/Initialize(mapload)
+>>>>>>> ce2446922e ([MIRROR] Initialize fixing (#10335))
 	. = ..()
 	our_db = SStranscore.db_by_key(db_key)
 

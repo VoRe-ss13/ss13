@@ -8,7 +8,11 @@
 	gauge_cap = 3
 	volume = 12		// CHOMP EDIT double extended
 
+<<<<<<< HEAD
 /obj/item/tank/emergency/phoron/double/Initialize() //ChompEDIT New() -> Initialize()
+=======
+/obj/item/tank/emergency/phoron/double/Initialize(mapload)
+>>>>>>> ce2446922e ([MIRROR] Initialize fixing (#10335))
 	. = ..()
 	air_contents.adjust_gas(GAS_PHORON, (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 

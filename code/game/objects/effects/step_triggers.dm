@@ -171,7 +171,7 @@ GLOBAL_LIST_EMPTY(mapped_autostrips_mob)
 	var/obj/effect/landmark/the_landmark = null
 	var/landmark_id = null
 
-/obj/effect/step_trigger/teleporter/landmark/Initialize()
+/obj/effect/step_trigger/teleporter/landmark/Initialize(mapload)
 	. = ..()
 	for(var/obj/effect/landmark/teleport_mark/mark in tele_landmarks)
 		if(mark.landmark_id == landmark_id)
@@ -188,9 +188,15 @@ var/global/list/tele_landmarks = list() // Terrible, but the alternative is loop
 /obj/effect/landmark/teleport_mark
 	var/landmark_id = null
 
+<<<<<<< HEAD
 /obj/effect/landmark/teleport_mark/New()
 	..()
 	tele_landmarks += src
+=======
+/obj/effect/landmark/teleport_mark/Initialize(mapload)
+	. = ..()
+	GLOB.tele_landmarks += src
+>>>>>>> ce2446922e ([MIRROR] Initialize fixing (#10335))
 
 /obj/effect/landmark/teleport_mark/Destroy()
 	tele_landmarks -= src

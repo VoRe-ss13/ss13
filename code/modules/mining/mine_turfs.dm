@@ -204,7 +204,7 @@ var/list/mining_overlay_cache = list()
 	//Cache hit
 	return mining_overlay_cache["[cache_id]_[direction]"]
 
-/turf/simulated/mineral/Initialize()
+/turf/simulated/mineral/Initialize(mapload)
 	. = ..()
 	if(prob(20))
 		overlay_detail = "asteroid[rand(0,9)]"

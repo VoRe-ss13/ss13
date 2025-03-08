@@ -30,8 +30,13 @@
 
 	faction = FACTION_VAMPIRE
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/vampire/New()
 	..()
+=======
+/mob/living/simple_mob/vore/vampire/Initialize(mapload)
+	. = ..()
+>>>>>>> ce2446922e ([MIRROR] Initialize fixing (#10335))
 	if(random_skin)
 		icon_living = pick(skins)
 		icon_rest = "[icon_living]asleep"

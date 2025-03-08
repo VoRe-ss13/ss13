@@ -12,7 +12,7 @@
 	drop_sound = 'sound/items/drop/glass.ogg'
 	pickup_sound = 'sound/items/pickup/glass.ogg'
 
-/obj/item/nailpolish/Initialize()
+/obj/item/nailpolish/Initialize(mapload)
 	. = ..()
 	desc = "<font color='[colour]'>Nail polish,</font> " + initial(desc)
 	top_underlay = image(icon, "top")

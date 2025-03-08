@@ -63,7 +63,7 @@
 		list(mode_name="induce specific mutations", projectile_type=/obj/item/projectile/energy/floramut/gene, modifystate="floramut"),
 		)
 
-/obj/item/gun/energy/floragun/Initialize()
+/obj/item/gun/energy/floragun/Initialize(mapload)
 	. = ..()
 	emitter = new(src)
 

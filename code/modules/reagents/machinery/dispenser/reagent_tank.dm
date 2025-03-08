@@ -28,7 +28,7 @@
 
 	..()
 
-/obj/structure/reagent_dispensers/Initialize()
+/obj/structure/reagent_dispensers/Initialize(mapload)
 	var/datum/reagents/R = new/datum/reagents(5000)
 	reagents = R
 	R.my_atom = src
@@ -106,7 +106,7 @@
 	icon_state = "water"
 	amount_per_transfer_from_this = 10
 
-/obj/structure/reagent_dispensers/watertank/Initialize()
+/obj/structure/reagent_dispensers/watertank/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_WATER, 1000)
 
@@ -115,7 +115,7 @@
 	desc = "A highly-pressurized water tank made to hold vast amounts of water.."
 	icon_state = "water_high"
 
-/obj/structure/reagent_dispensers/watertank/high/Initialize()
+/obj/structure/reagent_dispensers/watertank/high/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_WATER, 4000)
 
@@ -133,7 +133,7 @@
 	var/modded = 0
 	var/obj/item/assembly_holder/rig = null
 
-/obj/structure/reagent_dispensers/fueltank/Initialize()
+/obj/structure/reagent_dispensers/fueltank/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_FUEL,1000)
 
@@ -142,7 +142,7 @@
 	desc = "A highly-pressurized fuel tank made to hold vast amounts of fuel."
 	icon_state = "fuel_high"
 
-/obj/structure/reagent_dispensers/fueltank/high/Initialize()
+/obj/structure/reagent_dispensers/fueltank/high/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_FUEL,4000)
 
@@ -153,7 +153,7 @@
 	icon_state = "foam"
 	amount_per_transfer_from_this = 10
 
-/obj/structure/reagent_dispensers/foam/Initialize()
+/obj/structure/reagent_dispensers/foam/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_FIREFOAM,1000)
 
@@ -164,7 +164,7 @@
 	icon_state = "he3"
 	amount_per_transfer_from_this = 10
 
-/obj/structure/reagent_dispenser/he3/Initialize()
+/obj/structure/reagent_dispenser/he3/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_HELIUM3,1000)
 
@@ -305,7 +305,7 @@
 	density = FALSE
 	amount_per_transfer_from_this = 45
 
-/obj/structure/reagent_dispensers/peppertank/Initialize()
+/obj/structure/reagent_dispensers/peppertank/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_CONDENSEDCAPSAICIN,1000)
 
@@ -318,7 +318,7 @@
 	density = FALSE
 	amount_per_transfer_from_this = 10
 
-/obj/structure/reagent_dispensers/virusfood/Initialize()
+/obj/structure/reagent_dispensers/virusfood/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_VIRUSFOOD, 1000)
 
@@ -331,7 +331,7 @@
 	density = FALSE
 	amount_per_transfer_from_this = 10
 
-/obj/structure/reagent_dispensers/acid/Initialize()
+/obj/structure/reagent_dispensers/acid/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_SACID, 1000)
 
@@ -353,7 +353,7 @@
 	cupholder = 1
 	cups = 10
 
-/obj/structure/reagent_dispensers/water_cooler/Initialize()
+/obj/structure/reagent_dispensers/water_cooler/Initialize(mapload)
 	. = ..()
 	if(bottle)
 		reagents.add_reagent(REAGENT_ID_WATER,2000)
@@ -493,7 +493,7 @@
 	icon_state = "beertankTEMP"
 	amount_per_transfer_from_this = 10
 
-/obj/structure/reagent_dispensers/beerkeg/Initialize()
+/obj/structure/reagent_dispensers/beerkeg/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_BEER,1000)
 
@@ -507,7 +507,7 @@
 	desc = "A wine casket with a tap on it."
 	icon_state = "beertankfantasy"
 
-/obj/structure/reagent_dispensers/beerkeg/wine/Initialize()
+/obj/structure/reagent_dispensers/beerkeg/wine/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_REDWINE,1000)
 
@@ -525,7 +525,7 @@
 	icon_state = "oiltank"
 	amount_per_transfer_from_this = 120
 
-/obj/structure/reagent_dispensers/cookingoil/Initialize()
+/obj/structure/reagent_dispensers/cookingoil/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_COOKINGOIL,5000)
 
@@ -548,6 +548,6 @@
 	icon_state = "bloodbarrel"
 	amount_per_transfer_from_this = 10
 
-/obj/structure/reagent_dispensers/bloodbarrel/Initialize()
+/obj/structure/reagent_dispensers/bloodbarrel/Initialize(mapload)
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_BLOOD, 1000, list("donor"=null,"viruses"=null,"blood_DNA"=null,"blood_type"="O-","resistances"=null,"trace_chem"=null))

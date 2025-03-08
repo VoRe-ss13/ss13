@@ -34,8 +34,13 @@ var/global/list/default_pai_software = list()
 			default_pai_software[P.id] = P
 	return r
 
+<<<<<<< HEAD
 /mob/living/silicon/pai/New()
 	..()
+=======
+/mob/living/silicon/pai/Initialize(mapload)
+	. = ..()
+>>>>>>> ce2446922e ([MIRROR] Initialize fixing (#10335))
 	software = default_pai_software.Copy()
 
 /mob/living/silicon/pai/verb/paiInterface()

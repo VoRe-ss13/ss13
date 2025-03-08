@@ -308,8 +308,12 @@
 	make_exact_fit()
 	. = ..() //CHOMPEdit
 
+<<<<<<< HEAD
 /obj/item/storage/bag/circuits/all/Initialize()
 	//. = ..() CHOMPEdit
+=======
+/obj/item/storage/bag/circuits/all/Initialize(mapload)
+>>>>>>> ce2446922e ([MIRROR] Initialize fixing (#10335))
 	new /obj/item/storage/bag/circuits/mini/arithmetic/all(src)
 	new /obj/item/storage/bag/circuits/mini/trig/all(src)
 	new /obj/item/storage/bag/circuits/mini/input/all(src)
@@ -351,7 +355,7 @@
 /obj/item/storage/bag/circuits/mini/arithmetic/all // Don't believe this will ever be needed.
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/arithmetic/Initialize()
+/obj/item/storage/bag/circuits/mini/arithmetic/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/arithmetic/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)
@@ -368,7 +372,7 @@
 /obj/item/storage/bag/circuits/mini/trig/all // Ditto
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/trig/Initialize()
+/obj/item/storage/bag/circuits/mini/trig/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/trig/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)
@@ -385,7 +389,7 @@
 /obj/item/storage/bag/circuits/mini/input/all
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/input/Initialize()
+/obj/item/storage/bag/circuits/mini/input/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/input/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)
@@ -402,7 +406,7 @@
 /obj/item/storage/bag/circuits/mini/output/all
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/output/Initialize()
+/obj/item/storage/bag/circuits/mini/output/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/output/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)
@@ -419,7 +423,7 @@
 /obj/item/storage/bag/circuits/mini/memory/all
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/memory/Initialize()
+/obj/item/storage/bag/circuits/mini/memory/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/memory/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)
@@ -436,7 +440,7 @@
 /obj/item/storage/bag/circuits/mini/logic/all
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/logic/Initialize()
+/obj/item/storage/bag/circuits/mini/logic/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/logic/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)
@@ -453,7 +457,7 @@
 /obj/item/storage/bag/circuits/mini/time/all
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/time/Initialize()
+/obj/item/storage/bag/circuits/mini/time/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/time/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)
@@ -470,7 +474,7 @@
 /obj/item/storage/bag/circuits/mini/reagents/all
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/reagents/Initialize()
+/obj/item/storage/bag/circuits/mini/reagents/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/reagent/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)
@@ -487,7 +491,7 @@
 /obj/item/storage/bag/circuits/mini/transfer/all
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/transfer/Initialize()
+/obj/item/storage/bag/circuits/mini/transfer/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/transfer/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)
@@ -504,7 +508,7 @@
 /obj/item/storage/bag/circuits/mini/converter/all
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/converter/Initialize()
+/obj/item/storage/bag/circuits/mini/converter/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/converter/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)
@@ -520,7 +524,7 @@
 /obj/item/storage/bag/circuits/mini/smart/all
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/smart/Initialize()
+/obj/item/storage/bag/circuits/mini/smart/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/smart/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)
@@ -536,7 +540,7 @@
 /obj/item/storage/bag/circuits/mini/manipulation/all
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/manipulation/Initialize()
+/obj/item/storage/bag/circuits/mini/manipulation/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/manipulation/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)
@@ -553,7 +557,7 @@
 /obj/item/storage/bag/circuits/mini/power/all
 	spawn_flags_to_use = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
-/obj/item/storage/bag/circuits/mini/power/Initialize()
+/obj/item/storage/bag/circuits/mini/power/Initialize(mapload)
 	for(var/obj/item/integrated_circuit/passive/power/IC in all_integrated_circuits)
 		if(IC.spawn_flags & spawn_flags_to_use)
 			for(var/i = 1 to 4)

@@ -419,7 +419,7 @@ update_flag
 	return 1
 
 //Dirty way to fill room with gas. However it is a bit easier to do than creating some floor/engine/n2o -rastaf0
-/obj/machinery/portable_atmospherics/canister/nitrous_oxide/roomfiller/Initialize()
+/obj/machinery/portable_atmospherics/canister/nitrous_oxide/roomfiller/Initialize(mapload)
 	. = ..()
 	air_contents.gas[GAS_N2O] = 9*4000
 	var/turf/simulated/location = src.loc

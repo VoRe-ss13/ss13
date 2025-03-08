@@ -7,8 +7,13 @@
 	can_reinforce = FALSE
 	can_plate = FALSE
 
+<<<<<<< HEAD
 /obj/structure/table/darkglass/New()
 	material = get_material_by_name("darkglass")
+=======
+/obj/structure/table/darkglass/Initialize(mapload)
+	material = get_material_by_name(MAT_DARKGLASS)
+>>>>>>> ce2446922e ([MIRROR] Initialize fixing (#10335))
 	verbs -= /obj/structure/table/verb/do_flip
 	verbs -= /obj/structure/table/proc/do_put
 
@@ -45,6 +50,10 @@
 	icon_state = "plain_preview"
 	color = "#FFFF00"
 
+<<<<<<< HEAD
 /obj/structure/table/gold/New()
+=======
+/obj/structure/table/gold/Initialize(mapload)
+>>>>>>> ce2446922e ([MIRROR] Initialize fixing (#10335))
 	material = get_material_by_name(MAT_GOLD)
 	..()

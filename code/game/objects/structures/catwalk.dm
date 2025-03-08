@@ -19,7 +19,7 @@
 	var/health = 100
 	var/maxhealth = 100
 
-/obj/structure/catwalk/Initialize()
+/obj/structure/catwalk/Initialize(mapload)
 	. = ..()
 	for(var/obj/structure/catwalk/C in get_turf(src))
 		if(C != src)

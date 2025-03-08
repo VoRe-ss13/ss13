@@ -11,9 +11,15 @@ var/list/obj/effect/bump_teleporter/BUMP_TELEPORTERS = list()
 	density = TRUE
 	opacity = 0
 
+<<<<<<< HEAD
 /obj/effect/bump_teleporter/New()
 	..()
 	BUMP_TELEPORTERS += src
+=======
+/obj/effect/bump_teleporter/Initialize(mapload)
+	. = ..()
+	GLOB.bump_teleporters += src
+>>>>>>> ce2446922e ([MIRROR] Initialize fixing (#10335))
 
 /obj/effect/bump_teleporter/Destroy()
 	BUMP_TELEPORTERS -= src
