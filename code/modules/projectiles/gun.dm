@@ -438,7 +438,17 @@
 			if(ticker < burst)
 				addtimer(CALLBACK(src, PROC_REF(handle_gunfire),target, user, clickparams, pointblank, reflex, ++ticker, TRUE), burst_delay, TIMER_DELETE_ME)
 
+<<<<<<< HEAD
 
+=======
+			if(ticker == burst)
+				next_fire_time = world.time + fire_delay
+				if(muzzle_flash)
+					if(gun_light)
+						addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, set_light),light_brightness), burst_delay, TIMER_DELETE_ME)
+					else
+						addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, set_light),0), burst_delay, TIMER_DELETE_ME)
+>>>>>>> a469097e15 ([MIRROR] Firecode Fix & Phoron Bore Adjustment (#10341))
 
 // Similar to the above proc, but does not require a user, which is ideal for things like turrets.
 /obj/item/gun/proc/Fire_userless(atom/target)
