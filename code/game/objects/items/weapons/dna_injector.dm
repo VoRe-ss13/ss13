@@ -345,7 +345,15 @@
 	trait_path = /datum/trait/positive/superpower_remotetalk
 /obj/item/dnainjector/set_trait/remotetalk/disable
 	disabling = TRUE
+<<<<<<< HEAD
 
+=======
+/obj/item/dnainjector/set_trait/damagedspine // brokenspine
+	trait_path = /datum/trait/negative/disability_damagedspine
+/obj/item/dnainjector/set_trait/damagedspine/disable
+	disabling = TRUE
+// CHOMPEnable Start
+>>>>>>> 3cea069905 ([MIRROR] Disabled legs trait (#10342))
 /obj/item/dnainjector/set_trait/nonconduct // shock
 	trait_path = /datum/trait/positive/nonconductive_plus
 /obj/item/dnainjector/set_trait/nonconduct/disable
