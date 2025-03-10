@@ -60,6 +60,31 @@
 
 	var/knockdown_chance = 15
 
+<<<<<<< HEAD
+=======
+	var/random_color = FALSE
+	var/rarechance = 1
+
+	var/static/list/carp_colors = list(\
+	"lightpurple" = "#c3b9f1", \
+	"lightpink" = "#da77a8", \
+	"green" = "#70ff25", \
+	"grape" = "#df0afb", \
+	"swamp" = "#e5e75a", \
+	"turquoise" = "#04e1ed", \
+	"brown" = "#ca805a", \
+	"teal" = "#20e28e", \
+	"lightblue" = "#4d88cc", \
+	"rusty" = "#dd5f34", \
+	"beige" = "#bbaeaf", \
+	"yellow" = "#f3ca4a", \
+	"blue" = "#09bae1", \
+	"palegreen" = "#7ef099", \
+	)
+	var/static/list/carp_colors_rare = list(\
+	"silver" = "#fdfbf3", \
+	)
+>>>>>>> e9a77f6012 ([MIRROR] Myelamine fixes and adjustments (#10345))
 	can_be_drop_prey = FALSE //CHOMP Add
 
 /mob/living/simple_mob/animal/space/carp/apply_melee_effects(var/atom/A)
@@ -154,7 +179,7 @@
 	B.name = "stomach"
 	B.desc = "You've been swallowed whole and alive by a massive white carp! The stomach around you is oppressively tight, squeezing and grinding wrinkled walls across your body, making it hard to make any movement at all. The chamber is flooded with fluids that completely overwhelm you."
 	B.mode_flags = DM_FLAG_THICKBELLY
-//	B.belly_fullscreen = "yet_another_tumby" //Chompedit - Belly Fullscreen change
+	//B.belly_fullscreen = "yet_another_tumby" //Chompedit - Belly Fullscreen change
 	B.digest_brute = 2
 	B.digest_burn = 2
 	B.digest_oxy = 1
