@@ -123,6 +123,18 @@
 	pain_emote_1p = list("chitter", "click") //CHOMP Add
 	pain_emote_3p = list("chitters", "clicks") //CHOMP Add
 
+<<<<<<< HEAD
+=======
+/mob/living/simple_mob/animal/giant_spider/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/swarming)
+
+/mob/living/simple_mob/animal/giant_spider/CanPass(atom/movable/mover, turf/target)
+	if(isliving(mover) && !istype(mover, /mob/living/simple_mob/animal/giant_spider) && mover.density == TRUE && stat != DEAD)
+		return FALSE
+	return ..()
+
+>>>>>>> f730089c46 ([MIRROR] Fixes swarm enemies behaving like walls when dead (#10356))
 /mob/living/simple_mob/animal/giant_spider/apply_melee_effects(var/atom/A)
 	if(isliving(A))
 		var/mob/living/L = A

@@ -62,6 +62,65 @@
 
 	can_be_drop_prey = FALSE //CHOMP Add
 
+<<<<<<< HEAD
+=======
+/mob/living/simple_mob/animal/space/carp/Initialize(mapload)
+	. = ..()
+	carp_randomify(rarechance)
+	update_icons()
+	AddComponent(/datum/component/swarming)
+
+// This is so carps can swarm
+/mob/living/simple_mob/animal/space/carp/CanPass(atom/movable/mover, turf/target)
+	if(isliving(mover) && !istype(mover, /mob/living/simple_mob/animal/space/carp) && mover.density == TRUE && stat != DEAD)
+		return FALSE
+	return ..()
+
+/mob/living/simple_mob/animal/space/carp/proc/carp_randomify(rarechance)
+	if(random_color)
+		var/our_color
+		if(prob(rarechance))
+			our_color = pick(carp_colors_rare)
+			add_atom_colour(carp_colors_rare[our_color], FIXED_COLOUR_PRIORITY)
+		else
+			our_color = pick(carp_colors)
+			add_atom_colour(carp_colors[our_color], FIXED_COLOUR_PRIORITY)
+		regenerate_icons()
+
+/mob/living/simple_mob/animal/space/carp/proc/add_carp_overlay()
+	if(!random_color)
+		return
+	var/mutable_appearance/base_overlay = mutable_appearance(icon, "base_mouth")
+	base_overlay.appearance_flags = RESET_COLOR
+	add_overlay(base_overlay)
+
+/mob/living/simple_mob/animal/space/carp/proc/add_dead_carp_overlay()
+	if(!random_color)
+		return
+	var/mutable_appearance/base_dead_overlay = mutable_appearance(icon, "base_dead_mouth")
+	base_dead_overlay.appearance_flags = RESET_COLOR
+	add_overlay(base_dead_overlay)
+
+/mob/living/simple_mob/animal/space/carp/death(gibbed)
+	. = ..()
+	if(!random_color || gibbed)
+		return
+	regenerate_icons()
+
+/mob/living/simple_mob/animal/space/carp/revive()
+	..()
+	regenerate_icons()
+
+/mob/living/simple_mob/animal/space/carp/regenerate_icons()
+	..()
+	if(!random_color)
+		return
+	if(stat != DEAD)
+		add_carp_overlay()
+	else
+		add_dead_carp_overlay()
+
+>>>>>>> f730089c46 ([MIRROR] Fixes swarm enemies behaving like walls when dead (#10356))
 /mob/living/simple_mob/animal/space/carp/apply_melee_effects(var/atom/A)
 	if(isliving(A))
 		var/mob/living/L = A

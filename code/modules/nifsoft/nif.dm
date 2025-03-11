@@ -163,6 +163,17 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 
 	return FALSE
 
+<<<<<<< HEAD
+=======
+/obj/item/nif/proc/quick_install(var/mob/living/carbon/human/H)
+	if(QDELETED(H)) //Or letting them get deleted
+		return
+	if(H.mind)
+		owner = H.mind.name
+		owner_key = H.ckey
+	implant(H)
+
+>>>>>>> f730089c46 ([MIRROR] Fixes swarm enemies behaving like walls when dead (#10356))
 //Being removed from some mob
 /obj/item/nif/proc/unimplant(var/mob/living/carbon/human/H)
 	var/datum/nifsoft/soulcatcher/SC = imp_check(NIF_SOULCATCHER)
