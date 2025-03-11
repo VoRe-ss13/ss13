@@ -37,6 +37,14 @@
 /mob/living/carbon/human/attack_hand(mob/living/M as mob)
 	var/datum/gender/TT = gender_datums[M.get_visible_gender()]
 	var/mob/living/carbon/human/H = M
+<<<<<<< HEAD
+=======
+
+	if(is_incorporeal())
+		return
+
+	var/has_hands = TRUE
+>>>>>>> 65f21fb1d3 ([MIRROR] end of file Fix (#10355))
 	if(istype(H))
 		var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
 		if(H.hand)
