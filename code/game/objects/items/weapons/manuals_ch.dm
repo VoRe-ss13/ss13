@@ -20,5 +20,9 @@
 				</style>
 				</head>
 				<body>
+<<<<<<< HEAD
 				<h1>((https://wiki.torchstation13.net/index.php?title=Guide_to_Chemistry))</h1>
+=======
+				<h1>((https://wiki.chompstation13.net/index.php?title=Guide_to_Chemistry))</h1>
+>>>>>>> 3cfc33bfde ([MIRROR] ports a bunch of grep checks from TG (#10361))
 			"}
