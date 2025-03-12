@@ -23,7 +23,11 @@ const getStories = () => r.keys().map((path) => r(path));
 
 export const KitchenSink = (props) => {
   const { panel } = props;
+<<<<<<< HEAD:tgui/packages/tgui/debug/KitchenSink.jsx
   const [theme] = useState(null);
+=======
+  const [theme, setTheme] = useState(undefined);
+>>>>>>> 87be9dc7e8 ([MIRROR] Turfsuff (#10366)):tgui/packages/tgui/debug/KitchenSink.tsx
   const [pageIndex, setPageIndex] = useState(0);
   const stories = getStories();
   const story = stories[pageIndex];
@@ -46,11 +50,21 @@ export const KitchenSink = (props) => {
               ))}
             </Tabs>
           </Section>
+<<<<<<< HEAD:tgui/packages/tgui/debug/KitchenSink.jsx
         </Flex.Item>
         <Flex.Item position="relative" grow={1}>
           <Layout.Content scrollable>{story.meta.render()}</Layout.Content>
         </Flex.Item>
       </Flex>
+=======
+        </Stack.Item>
+        <Stack.Item position="relative" grow>
+          <Layout.Content scrollable>
+            {story.meta.render(theme, setTheme)}
+          </Layout.Content>
+        </Stack.Item>
+      </Stack>
+>>>>>>> 87be9dc7e8 ([MIRROR] Turfsuff (#10366)):tgui/packages/tgui/debug/KitchenSink.tsx
     </Layout>
   );
 };

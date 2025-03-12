@@ -271,6 +271,7 @@ VIRGO3B_TURF_CREATE(/turf/simulated/mineral/floor)
 
 	add_vis_overlay('icons/effects/effects.dmi', "white", plane = SPACE_PLANE, add_vis_flags = VIS_INHERIT_ID|VIS_UNDERLAY)
 
+<<<<<<< HEAD
 /turf/space/v3b_midpoint/Initialize()
 	. = ..()
 	new /obj/effect/step_trigger/teleporter/planetary_fall/virgo3b(src)
@@ -280,6 +281,8 @@ VIRGO3B_TURF_CREATE(/turf/simulated/mineral/floor)
 	for(var/obj/effect/step_trigger/teleporter/planetary_fall/virgo3b/F in src)
 		qdel(F)
 
+=======
+>>>>>>> 87be9dc7e8 ([MIRROR] Turfsuff (#10366))
 /turf/space/v3b_midpoint/CanZPass(atom, direction)
 	return 0			// We're not Space
 
@@ -287,3 +290,16 @@ VIRGO3B_TURF_CREATE(/turf/simulated/mineral/floor)
 /turf/simulated/floor/tiled/techfloor/grid/transit
 	icon = 'icons/turf/transit_vr.dmi'
 	initial_flooring = null
+
+// Virgo 3b trufs
+/turf/space/transit/south/virgo3b/planet_fall/find_planet()
+	return planet_virgo3b
+
+/turf/space/transit/east/virgo3b/planet_fall/find_planet()
+	return planet_virgo3b
+
+/turf/simulated/sky/virgo3b/south/planet_fall/find_planet()
+	return planet_virgo3b
+
+/turf/space/v3b_midpoint/find_planet()
+	return planet_virgo3b

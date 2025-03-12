@@ -5020,12 +5020,15 @@
 	},
 /turf/simulated/floor/holofloor/tiled,
 /area/holodeck/source_thunderdomecourt)
+<<<<<<< HEAD:maps/yw/cryogaia-07-misc.dmm
 "yO" = (
 /turf/unsimulated/wall{
 	icon = 'icons/misc/title.dmi';
 	icon_state = "title"
 	},
 /area)
+=======
+>>>>>>> 87be9dc7e8 ([MIRROR] Turfsuff (#10366)):archive/maps/old_yw/yw/cryogaia-07-misc.dmm
 "yR" = (
 /obj/machinery/mech_recharger,
 /turf/unsimulated/floor{
@@ -10519,7 +10522,7 @@ sv
 sv
 sv
 sv
-yO
+sv
 zR
 Xn
 Xn

@@ -17316,18 +17316,6 @@
 	},
 /turf/simulated/floor,
 /area/bridge_hallway)
-"aEN" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/commandmaint)
 "aEO" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -25388,12 +25376,6 @@
 /turf/simulated/floor/tiled,
 /area/janitor)
 "aVx" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled,
-/area/janitor)
-"aVy" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -46332,7 +46314,7 @@ aBW
 aCL
 aDC
 aAJ
-aEN
+azH
 aFp
 aGg
 aGK
@@ -46474,7 +46456,7 @@ aze
 aCM
 aDD
 aAJ
-aEN
+azH
 aFp
 aFp
 aFp
@@ -48346,7 +48328,7 @@ aSn
 atC
 aUc
 aUQ
-aVy
+aVx
 aWt
 aUc
 adt
