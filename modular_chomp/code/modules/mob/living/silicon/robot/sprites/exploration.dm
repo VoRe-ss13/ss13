@@ -15,8 +15,12 @@
 
 /datum/robot_sprite/dogborg/tall/explorer/dullahan
 	module_type = "Exploration"
+<<<<<<< HEAD:modular_chomp/code/modules/mob/living/silicon/robot/sprites/exploration.dm
 	sprite_icon = 'modular_chomp/icons/mob/dullahanborg/dullahan_explorer.dmi'
 	pixel_x = 0
+=======
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_explorer.dmi'
+>>>>>>> a60ff606aa ([MIRROR] Dullahan pixel adjustment (#10364)):code/modules/mob/living/silicon/robot/subtypes/exploration/exploration-sprites.dm
 
 /datum/robot_sprite/dogborg/tall/explorer/dullahan/explorer
 	name = "Dullahan"

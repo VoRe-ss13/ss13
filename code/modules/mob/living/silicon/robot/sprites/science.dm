@@ -212,8 +212,28 @@
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	//named v3 to avoid conflicts with downstream
 
+<<<<<<< HEAD
 /datum/robot_sprite/dogborg/tall/science/dullahanv3/sciencedully
 	name = "Dullahan science v3"
+=======
+/datum/robot_sprite/dogborg/tall/science/dullahan
+	name = "Dullahan"
+	sprite_icon_state = "dullahansci"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_sci.dmi'
+	has_vore_belly_sprites = TRUE
+	has_eye_light_sprites = TRUE
+	sprite_hud_icon_state = "sci-borg"
+	rest_sprite_options = list("Default", "Sit")
+
+
+/datum/robot_sprite/dogborg/tall/science/dullahan/scialt
+	name = "Dullahan v2"
+	sprite_icon_state = "dullahansci_alt"
+
+/datum/robot_sprite/dogborg/tall/science/dullahan/scialt2
+	name = "Dullahan v3"
+	sprite_icon = 'icons/mob/robot/dullahan/v3/science.dmi'
+>>>>>>> a60ff606aa ([MIRROR] Dullahan pixel adjustment (#10364))
 	sprite_icon_state = "dullahanscience"
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE

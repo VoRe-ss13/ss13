@@ -69,6 +69,17 @@
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
 
+<<<<<<< HEAD
+=======
+/datum/robot_sprite/dogborg/tall/combat_medic/dullahancombatmedic
+	name = "Dullahan Combat Medic"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_syndie.dmi'
+	sprite_icon_state = "dullahansyndi"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	rest_sprite_options = list("Default", "Sit")
+
+>>>>>>> a60ff606aa ([MIRROR] Dullahan pixel adjustment (#10364))
 /datum/robot_sprite/dogborg/tall/syndie/dullahanv3syndi
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	sprite_icon_state = "dullahansyndi"
@@ -78,6 +89,7 @@
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
+
 
 // Protector
 

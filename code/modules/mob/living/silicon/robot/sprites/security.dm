@@ -216,9 +216,21 @@
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
 
+<<<<<<< HEAD
 /datum/robot_sprite/dogborg/tall/security/dullahanv3
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	//named v3 to avoid conflicts with downstream
+=======
+/datum/robot_sprite/dogborg/tall/security/dullahan
+	name = "Dullahan"
+	sprite_icon_state = "dullahansec"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_sec.dmi'
+
+	sprite_hud_icon_state = "k9"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	rest_sprite_options = list("Default", "Sit")
+>>>>>>> a60ff606aa ([MIRROR] Dullahan pixel adjustment (#10364))
 
 /datum/robot_sprite/dogborg/tall/security/dullahanv3/securitydully
 	name = "Dullahan security v3"
