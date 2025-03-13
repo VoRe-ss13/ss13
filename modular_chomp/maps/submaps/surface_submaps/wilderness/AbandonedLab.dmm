@@ -32,7 +32,6 @@
 	locked = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -596,7 +595,6 @@
 "xd" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -649,7 +647,6 @@
 "yq" = (
 /obj/effect/decal/cleanable/greenglow,
 /obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/submap/AbandonedLab{
@@ -886,7 +883,6 @@
 	})
 "Gk" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/remains/human,
 /turf/simulated/floor/tiled/dark,
@@ -968,6 +964,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
+<<<<<<< HEAD
 /area/submap/AbandonedLab{
 	requires_power = 0
 	})
@@ -978,6 +975,9 @@
 /area/submap/AbandonedLab{
 	requires_power = 0
 	})
+=======
+/area/submap/AbandonedLab)
+>>>>>>> 6f7b9e450f (regexes some map issues (#10392))
 "Jv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/research,
@@ -1347,7 +1347,6 @@
 	requires_power = 0
 	})
 "WZ" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/generic,
@@ -1775,9 +1774,15 @@ ka
 BC
 mu
 cH
+<<<<<<< HEAD
 UQ
 Je
 Je
+=======
+KT
+cH
+cH
+>>>>>>> 6f7b9e450f (regexes some map issues (#10392))
 ku
 Nj
 Dh

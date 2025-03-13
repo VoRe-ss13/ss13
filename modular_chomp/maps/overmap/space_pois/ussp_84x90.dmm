@@ -893,7 +893,6 @@
 "ef" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/red,
 /area/derelict/arrival)
 "eh" = (
@@ -1496,11 +1495,6 @@
 	})
 "gl" = (
 /obj/structure/bed/chair/wood,
-/turf/simulated/floor/wood,
-/area/derelict/crew_quarters)
-"gm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/derelict/crew_quarters)
 "gp" = (
@@ -11289,7 +11283,7 @@ eF
 hm
 fw
 hm
-gm
+fc
 gF
 hm
 hm

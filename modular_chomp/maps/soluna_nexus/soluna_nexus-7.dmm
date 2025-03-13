@@ -3335,12 +3335,6 @@
 /obj/effect/floor_decal/milspec/cargo,
 /turf/simulated/floor/tiled/techmaint,
 /area/shadekin)
-"cyH" = (
-/obj/structure/table/woodentable/holotable,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/holofloor/desert,
-/area/holodeck/source_picnicarea)
 "cyR" = (
 /obj/effect/floor_decal/sign/small_a{
 	icon = 'icons/turf/flooring/decals.dmi'
@@ -9560,17 +9554,6 @@
 	icon_state = "vault"
 	},
 /area/wizard_station)
-"hZt" = (
-/obj/structure/bed/chair/oldsofa{
-	dir = 4
-	},
-/obj/effect/floor_decal/spline/fancy/wood{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/holofloor/desert,
-/area/holodeck/source_picnicarea)
 "hZH" = (
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/structure/table/marble,
@@ -91446,7 +91429,7 @@ jGe
 nKo
 wtL
 kVS
-hZt
+kVS
 jjb
 uXj
 hMz
@@ -91962,7 +91945,7 @@ nKo
 nKo
 ofF
 ppq
-cyH
+trv
 gpC
 nbf
 hMz

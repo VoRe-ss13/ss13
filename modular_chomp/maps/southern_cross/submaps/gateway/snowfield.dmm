@@ -431,13 +431,6 @@
 /obj/machinery/computer,
 /turf/simulated/floor/tiled/techfloor,
 /area/awaymission/snowfield/command/server)
-"auz" = (
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
-/area/awaymission/snowfield/engineering/primary_storage)
 "avt" = (
 /obj/structure/filingcabinet,
 /obj/item/paper/awaygate/snowfield/evacuation_order,
@@ -1232,7 +1225,6 @@
 	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/awaymission/snowfield/hallway/northhallway)
 "bjO" = (
@@ -1337,11 +1329,6 @@
 /obj/structure/window/reinforced,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/awaymission/snowfield/engineering/locker_room)
-"boG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt,
-/area/awaymission/snowfield/cavern)
 "bpn" = (
 /obj/item/ore/verdantium,
 /turf/simulated/mineral/floor/cave,
@@ -1382,7 +1369,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
-/obj/structure/catwalk,
 /obj/structure/catwalk,
 /turf/simulated/floor,
 /area/awaymission/snowfield/solarshack)
@@ -1868,11 +1854,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/awaymission/snowfield/security/security_cell)
-"bLf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel,
-/area/awaymission/snowfield/dorms/dorm10)
 "bLl" = (
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/grey/border,
@@ -2044,7 +2025,6 @@
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning,
 /obj/item/ammo_casing/spent,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/awaymission/snowfield/hallway/northhallway)
@@ -2437,20 +2417,6 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snowfield/security/lobby)
-"cnr" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel,
-/area/awaymission/snowfield/security/hallway)
 "cnS" = (
 /obj/structure/closet/radiation,
 /obj/effect/floor_decal/industrial/warning/corner{
@@ -2777,11 +2743,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/mineral/floor/cave,
 /area/awaymission/snowfield/security/hallway2)
-"cCT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/outside)
 "cDP" = (
 /obj/structure/closet/secure_closet/warden{
 	starts_with = list(/obj/item/clothing/gloves/combat,/obj/item/clothing/accessory/holster,/obj/item/storage/belt/security,/obj/item/shield/riot,/obj/item/ammo_magazine/akm=2,/obj/item/gun/projectile/automatic/serdy/krinkov,/obj/item/clothing/head/beret/sec/corporate/warden,/obj/item/clothing/head/helmet/warden/hat,/obj/item/clothing/head/helmet/warden,/obj/item/clothing/suit/armor/swat/officer,/obj/item/radio/headset/alt/heads/hos,/obj/item/radio/headset/heads/hos,/obj/item/storage/backpack/security,/obj/item/storage/backpack/satchel/sec,/obj/item/clothing/shoes/boots/marine,/obj/item/ammo_magazine/s357=2,/obj/item/gun/projectile/revolver/nagant/skinned,/obj/item/clothing/under/soviet,/obj/item/reagent_containers/spray/pepper,/obj/item/melee/classic_baton)
@@ -3351,15 +3312,6 @@
 /obj/structure/bed,
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snowfield/dorms/dorm6)
-"dhV" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor,
-/area/awaymission/snowfield/engineering/hallway)
 "dib" = (
 /obj/structure/fence,
 /obj/structure/railing,
@@ -3757,12 +3709,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/awaymission/snowfield/hallway/southhallway)
-"dzD" = (
-/obj/item/ore/glass,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/cavern)
 "dzH" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -3973,11 +3919,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snowfield/security/hallway)
-"dHq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt,
-/area/awaymission/snowfield/outside)
 "dHD" = (
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/grey/border,
@@ -4479,12 +4420,6 @@
 /obj/item/stack/material/wood,
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snowfield/security/seconddesk)
-"dZP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/boulder,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/cavern)
 "dZR" = (
 /obj/structure/cable/green{
 	icon_state = "2-8"
@@ -4638,12 +4573,6 @@
 	dir = 4
 	},
 /turf/simulated/floor,
-/area/awaymission/snowfield/outside)
-"egB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks,
 /area/awaymission/snowfield/outside)
 "egT" = (
 /obj/structure/table/bench/wooden,
@@ -5410,11 +5339,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/gorefloor2,
 /area/awaymission/snowfield/command/bridge)
-"eUs" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/security/security_cell)
 "eUt" = (
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snowfield/dorms/dorm1)
@@ -5464,12 +5388,6 @@
 "eWn" = (
 /turf/simulated/wall/r_wall,
 /area/awaymission/snowfield/service/janitor)
-"eWs" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/cavern)
 "eWZ" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -5580,12 +5498,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/awaymission/snowfield/hallway/frontgate_substation)
-"fag" = (
-/obj/structure/boulder,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/cavern)
 "fav" = (
 /obj/effect/decal/remains/human,
 /mob/living/simple_mob/construct/shade,
@@ -6426,12 +6338,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/awaymission/snowfield/security/armory_entrance)
-"fRB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt,
-/area/awaymission/snowfield/outside)
 "fRZ" = (
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/grey/border,
@@ -6795,11 +6701,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
 /area/awaymission/snowfield/engineering/primary_storage)
-"ghF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/cavern)
 "ghL" = (
 /obj/structure/table/wooden_reinforced,
 /obj/machinery/light{
@@ -6899,7 +6800,6 @@
 /turf/simulated/floor/outdoors/snow/sif/planetuse,
 /area/awaymission/snowfield/outside)
 "gmb" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 1
@@ -7221,7 +7121,6 @@
 	pixel_x = 5;
 	pixel_y = 12
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/awaymission/snowfield/hallway/northhallway)
@@ -7902,7 +7801,6 @@
 	},
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/awaymission/snowfield/engineering/engine)
 "hdq" = (
@@ -8407,13 +8305,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/awaymission/snowfield/command/bridge)
-"hzH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks,
-/area/awaymission/snowfield/outside)
 "hAd" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/freezer,
@@ -8435,7 +8326,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/obj/structure/catwalk,
 /obj/structure/catwalk,
 /turf/simulated/floor,
 /area/awaymission/snowfield/hallway/frontgate_substation)
@@ -8535,7 +8425,6 @@
 "hDg" = (
 /obj/structure/door_assembly/door_assembly_highsecurity,
 /obj/structure/lattice,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/mineral/floor/cave,
 /area/awaymission/snowfield/hallway/commandhallway)
@@ -9246,11 +9135,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/rocks/caves,
 /area/awaymission/snowfield/security/security_cell)
-"ikI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/hallway/commandhallway)
 "ilc" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
@@ -9293,7 +9177,6 @@
 "imc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/rocks/caves,
 /area/awaymission/snowfield/cavern)
@@ -9561,7 +9444,6 @@
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/awaymission/snowfield/hallway/southhallway)
 "iDk" = (
@@ -9802,11 +9684,6 @@
 "iLe" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/awaymission/snowfield/dorms/dorm6)
-"iLi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel,
-/area/awaymission/snowfield/dorms/dorm11)
 "iLw" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -10767,7 +10644,6 @@
 /area/awaymission/snowfield/checkpoint)
 "jCI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -11542,13 +11418,6 @@
 /obj/structure/flora/bush,
 /turf/simulated/floor/outdoors/snow/sif/planetuse,
 /area/awaymission/snowfield/outside)
-"khx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/ash,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/cavern)
 "kia" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -11639,11 +11508,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/awaymission/snowfield/command/bsa)
-"kmE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/awaymission/snowfield/hallway/northhallway)
 "knc" = (
 /obj/item/ore/glass,
 /obj/item/ore/glass,
@@ -13043,13 +12907,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/outdoors/snow/sif/planetuse,
 /area/awaymission/snowfield/outside)
-"lxg" = (
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_mob/animal/giant_spider/pepper,
-/turf/simulated/floor/plating,
-/area/awaymission/snowfield/engineering/primary_storage)
 "lxq" = (
 /obj/machinery/shower{
 	pixel_y = 18
@@ -13640,7 +13497,6 @@
 /obj/effect/spider/stickyweb,
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/awaymission/snowfield/hallway/northhallway)
 "mbh" = (
@@ -13967,11 +13823,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/awaymission/snowfield/command/bridge)
-"mqa" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/mineral/floor/cave,
-/area/awaymission/snowfield/cavern)
 "mrS" = (
 /turf/simulated/wall/r_wall,
 /area/awaymission/snowfield/engineering/monitor_room)
@@ -14638,12 +14489,6 @@
 /obj/structure/flora/grass/both,
 /turf/simulated/floor/outdoors/snow/sif/planetuse,
 /area/awaymission/snowfield/outside)
-"mUN" = (
-/obj/machinery/door/blast/gate,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/cavern)
 "mUV" = (
 /turf/simulated/wall/r_wall,
 /area/awaymission/snowfield/hallway/commandhallway)
@@ -14808,12 +14653,6 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/floor/outdoors/rocks,
 /area/awaymission/snowfield/cavern)
-"ncW" = (
-/obj/structure/closet/secure_closet/personal,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel_grid,
-/area/awaymission/snowfield/dorms/dorm9)
 "ncZ" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -15301,12 +15140,6 @@
 "nyy" = (
 /turf/simulated/wall/r_wall,
 /area/awaymission/snowfield/medical/storage_room)
-"nyG" = (
-/obj/structure/outcrop,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/cavern)
 "nyK" = (
 /turf/simulated/floor/cult,
 /area/awaymission/snowfield/command/sub_chamber)
@@ -15723,7 +15556,6 @@
 "nQK" = (
 /obj/structure/table/wooden_reinforced,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snowfield/dorms/dorm10)
 "nQZ" = (
@@ -15764,11 +15596,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/awaymission/snowfield/checkpoint)
-"nTa" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks,
-/area/awaymission/snowfield/cavern)
 "nTe" = (
 /turf/simulated/floor/tiled/steel_grid,
 /area/awaymission/snowfield/dorms/dorm3)
@@ -16461,20 +16288,6 @@
 /obj/item/ore/glass,
 /turf/simulated/mineral/floor/cave,
 /area/awaymission/snowfield/cavern)
-"oya" = (
-/obj/effect/floor_decal/borderfloorblack{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/grey/border{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techfloor,
-/area/awaymission/snowfield/hallway/dormhallway)
 "oyB" = (
 /obj/structure/bed,
 /obj/item/bedsheet/orange,
@@ -17149,7 +16962,6 @@
 	pixel_y = -15
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/awaymission/snowfield/hallway/northhallway)
 "pok" = (
@@ -17186,12 +16998,6 @@
 /obj/structure/closet/secure_closet/personal,
 /turf/simulated/floor/tiled/steel_grid,
 /area/awaymission/snowfield/dorms/dorm11)
-"pqQ" = (
-/obj/structure/lattice,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/security/hallway2)
 "pqR" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/soap,
@@ -17934,12 +17740,6 @@
 /mob/living/simple_mob/animal/giant_spider/hunter,
 /turf/simulated/floor/tiled/steel,
 /area/awaymission/snowfield/security/hallway)
-"pSG" = (
-/obj/effect/spider/stickyweb,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/awaymission/snowfield/hallway/northhallway)
 "pTk" = (
 /mob/living/simple_mob/construct/artificer{
 	devourable = 0
@@ -18063,7 +17863,6 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/cult,
 /area/awaymission/snowfield/hallway/commandhallway)
@@ -18848,7 +18647,6 @@
 	dir = 9
 	},
 /obj/structure/catwalk,
-/obj/structure/catwalk,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/awaymission/snowfield/command/bsa)
 "qFo" = (
@@ -19095,7 +18893,6 @@
 	pixel_x = 13;
 	pixel_y = 18
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -19670,11 +19467,6 @@
 "rtq" = (
 /turf/simulated/floor/tiled/dark,
 /area/awaymission/snowfield/solarshack)
-"rtv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/awaymission/snowfield/hallway/southhallway)
 "ruo" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -19885,12 +19677,6 @@
 	},
 /turf/simulated/floor/tiled/neutral,
 /area/awaymission/snowfield/medical/medical_locker)
-"rKf" = (
-/obj/structure/boulder,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/mineral/floor/cave,
-/area/awaymission/snowfield/cavern)
 "rKt" = (
 /turf/simulated/wall/r_wall,
 /area/awaymission/snowfield/public/toolstorage1)
@@ -20436,11 +20222,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/cult,
 /area/awaymission/snowfield/command/gateway)
-"ssf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/cult,
-/area/awaymission/snowfield/command/commandarmory)
 "ssD" = (
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/green/border,
@@ -21251,7 +21032,6 @@
 /area/awaymission/snowfield/dorms/dorm5)
 "tic" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/item/ore/glass,
 /obj/item/ore/glass,
 /obj/item/ore/glass,
@@ -21646,13 +21426,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/awaymission/snowfield/command/observatory_path)
-"tCv" = (
-/obj/effect/decal/cleanable/ash,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks,
-/area/awaymission/snowfield/cavern)
 "tCA" = (
 /obj/structure/bed,
 /obj/effect/decal/cleanable/dirt,
@@ -21709,11 +21482,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor,
 /area/awaymission/snowfield/hallway/checkpointhallway)
-"tFJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks,
-/area/awaymission/snowfield/outside)
 "tFR" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -22034,12 +21802,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/awaymission/snowfield/hallway/northhallway)
-"tTx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks,
-/area/awaymission/snowfield/cavern)
 "tTO" = (
 /turf/simulated/wall,
 /area/awaymission/snowfield/checkpoint)
@@ -22184,12 +21946,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/awaymission/snowfield/command/bridge)
-"uaB" = (
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating,
-/area/awaymission/snowfield/engineering/primary_storage)
 "uaU" = (
 /obj/structure/table/standard,
 /obj/machinery/button/remote/blast_door{
@@ -22648,13 +22404,6 @@
 "uvm" = (
 /turf/simulated/wall/r_wall,
 /area/awaymission/snowfield/service/cafeteria)
-"uvx" = (
-/obj/structure/outcrop,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/cavern)
 "uvE" = (
 /obj/structure/table/rack/shelf/steel,
 /obj/item/clothing/suit/straight_jacket,
@@ -22944,12 +22693,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/awaymission/snowfield/security/security_cell_hallway)
-"uJF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/ash,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/cavern)
 "uJI" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -22965,11 +22708,6 @@
 /obj/structure/outcrop,
 /turf/simulated/floor/outdoors/rocks,
 /area/awaymission/snowfield/cavern)
-"uKp" = (
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating,
-/area/awaymission/snowfield/engineering/primary_storage)
 "uKG" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -23064,7 +22802,6 @@
 /area/awaymission/snowfield/security/seconddesk)
 "uPg" = (
 /obj/structure/catwalk,
-/obj/structure/catwalk,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -23149,7 +22886,6 @@
 /area/awaymission/snowfield/outside)
 "uUm" = (
 /obj/item/radio/phone,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/rocks/caves,
 /area/awaymission/snowfield/hallway/commandhallway)
@@ -24125,12 +23861,6 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/awaymission/snowfield/public/cafeteria_restroom)
-"vJp" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/ore/glass,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/cavern)
 "vJH" = (
 /obj/structure/table/glass,
 /obj/item/towel/random,
@@ -24309,7 +24039,6 @@
 "vRc" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/rocks/caves,
 /area/awaymission/snowfield/hallway/commandhallway)
 "vRM" = (
@@ -24341,7 +24070,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/awaymission/snowfield/command/bsa)
 "vTT" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/cult,
 /area/awaymission/snowfield/command/monitorroom)
@@ -25193,12 +24921,6 @@
 "wLo" = (
 /turf/simulated/wall/r_wall,
 /area/awaymission/snowfield/public/toolstroage2)
-"wLL" = (
-/obj/item/ore/glass,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/mineral/floor/cave,
-/area/awaymission/snowfield/cavern)
 "wLW" = (
 /obj/effect/floor_decal/steeldecal/steel_decals5,
 /obj/effect/floor_decal/steeldecal/steel_decals_central2{
@@ -25440,12 +25162,6 @@
 	},
 /turf/simulated/floor/outdoors/snow/sif/planetuse,
 /area/awaymission/snowfield/outside)
-"wTF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt,
-/area/awaymission/snowfield/cavern)
 "wUf" = (
 /obj/structure/catwalk,
 /obj/machinery/light{
@@ -26345,12 +26061,6 @@
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/awaymission/snowfield/dorms/dorm12)
-"xtX" = (
-/obj/item/ore/glass,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks/caves,
-/area/awaymission/snowfield/outside)
 "xuc" = (
 /obj/structure/table/wooden_reinforced,
 /turf/simulated/floor/tiled/steel,
@@ -26491,7 +26201,6 @@
 	icon_state = "2-8"
 	},
 /obj/structure/catwalk,
-/obj/structure/catwalk,
 /turf/simulated/floor,
 /area/awaymission/snowfield/outside)
 "xAe" = (
@@ -26563,7 +26272,6 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/awaymission/snowfield/hallway/northhallway)
@@ -27136,7 +26844,6 @@
 	pixel_x = -4;
 	pixel_y = -7
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor,
 /area/awaymission/snowfield/hallway/northhallway)
@@ -37278,7 +36985,7 @@ upF
 upF
 eoB
 xCP
-pSG
+fYJ
 umu
 ife
 ife
@@ -38310,7 +38017,7 @@ mxR
 upF
 eoB
 tIn
-kmE
+tSF
 maX
 nYl
 ufs
@@ -39123,7 +38830,7 @@ jil
 fiZ
 jil
 nkw
-ncW
+oXJ
 xad
 wpC
 jGP
@@ -39328,7 +39035,7 @@ gGa
 nAG
 nAG
 nAG
-dhV
+uWu
 jCV
 nAG
 oDz
@@ -39385,7 +39092,7 @@ oXJ
 xad
 gPW
 nQK
-bLf
+xqQ
 xYr
 cHx
 vdE
@@ -39907,7 +39614,7 @@ iip
 vdE
 plq
 tCA
-iLi
+muk
 hbK
 wkh
 eij
@@ -40408,7 +40115,7 @@ rSO
 lus
 cIw
 rhd
-oya
+qNQ
 iar
 qUW
 qUW
@@ -40607,13 +40314,13 @@ siu
 ssD
 uYG
 tNE
-uaB
 fuU
 fuU
-lxg
+fuU
+ngO
 fuU
 fuU
-auz
+fuU
 kBA
 uYG
 ktp
@@ -40865,7 +40572,7 @@ siu
 ssD
 uYG
 rim
-uKp
+emW
 kWO
 nQZ
 emW
@@ -41177,7 +40884,7 @@ qBl
 qBl
 arL
 xYN
-rtv
+dzm
 nkh
 eti
 eti
@@ -41381,13 +41088,13 @@ vHw
 cIk
 uYG
 kIH
-uKp
+emW
 kIH
 emW
-uaB
+fuU
 fuU
 emW
-uaB
+fuU
 xzW
 uYG
 bat
@@ -41639,7 +41346,7 @@ vHw
 xeR
 uYG
 kkL
-uaB
+fuU
 rim
 rim
 emW
@@ -41903,7 +41610,7 @@ jdk
 fuU
 kkL
 rim
-uKp
+emW
 veE
 uYG
 qfC
@@ -41934,7 +41641,7 @@ eim
 gjB
 gjB
 nBW
-cnr
+ekh
 eoU
 qBl
 qBl
@@ -42155,7 +41862,7 @@ siu
 xeR
 uYG
 rim
-uKp
+emW
 fhb
 fGG
 fuU
@@ -46606,7 +46313,7 @@ kPy
 ulH
 ulH
 ulH
-ikI
+kPy
 ult
 qLx
 xjM
@@ -46864,7 +46571,7 @@ mZG
 cQT
 ulH
 uUm
-ikI
+kPy
 qLx
 qLx
 cmo
@@ -47120,7 +46827,7 @@ pUC
 jaj
 uZn
 jhx
-ikI
+kPy
 vRc
 qrh
 qLx
@@ -47359,7 +47066,7 @@ dfd
 cCM
 wdB
 cwI
-pqQ
+mmT
 mJi
 mJi
 cwI
@@ -47617,7 +47324,7 @@ ocr
 ocr
 fMj
 vlk
-eUs
+ikv
 tlT
 tlT
 tlT
@@ -47875,7 +47582,7 @@ rQn
 ocr
 uDJ
 cTE
-eUs
+ikv
 tlT
 cTE
 uqf
@@ -51886,8 +51593,8 @@ xgt
 xgt
 gwC
 hTO
-tCv
-tFJ
+mjf
+laC
 laC
 pun
 nZF
@@ -52142,10 +51849,10 @@ sBs
 xgt
 xgt
 vKl
-ghF
+gwC
 sBs
 jCI
-tFJ
+laC
 laC
 dBB
 dBB
@@ -52332,10 +52039,10 @@ vDF
 vDF
 vDF
 cTa
-ghF
-fag
-uvx
-uJF
+gwC
+xBm
+bmw
+nBY
 cTa
 gwC
 qym
@@ -52402,8 +52109,8 @@ nse
 vKl
 bvd
 kdB
-tTx
-tFJ
+vKl
+laC
 laC
 jBT
 jBT
@@ -52549,7 +52256,7 @@ mRS
 knp
 eNV
 sHH
-ssf
+ovn
 hyA
 wXM
 pJl
@@ -52590,10 +52297,10 @@ vDF
 vDF
 xgt
 xgt
-eWs
-khx
-eWs
-eWs
+gwC
+nBY
+gwC
+gwC
 qQo
 urx
 pun
@@ -52629,11 +52336,11 @@ pun
 pun
 ayK
 qzc
-ghF
-uJF
-uvx
-ghF
-fag
+gwC
+nBY
+bmw
+gwC
+xBm
 gwC
 vDF
 vDF
@@ -52658,9 +52365,9 @@ vDF
 laF
 qTN
 vKl
-wTF
+urx
 kdB
-tTx
+vKl
 laC
 jBT
 jBT
@@ -52848,10 +52555,10 @@ vDF
 vDF
 vDF
 vDF
-uvx
-eWs
-eWs
-eWs
+bmw
+gwC
+gwC
+gwC
 qzc
 gcu
 jBT
@@ -52887,7 +52594,7 @@ laC
 laC
 kNs
 cTa
-ghF
+gwC
 vDF
 vDF
 vDF
@@ -52916,9 +52623,9 @@ vDF
 vDF
 qTN
 uKf
-nTa
+vKl
 ncU
-tTx
+vKl
 jBT
 jBT
 dBB
@@ -53112,7 +52819,7 @@ vDF
 gwC
 qzc
 ayK
-dHq
+jBT
 jBT
 pun
 pun
@@ -53174,9 +52881,9 @@ vDF
 vDF
 kmf
 vKl
-tTx
+vKl
 kdB
-tCv
+mjf
 jBT
 jBT
 nZF
@@ -53403,10 +53110,10 @@ kNs
 laC
 qym
 cTa
-ghF
 gwC
-ghF
-fag
+gwC
+gwC
+xBm
 vDF
 vDF
 vDF
@@ -53431,11 +53138,11 @@ vDF
 vDF
 vDF
 kmf
-nTa
-nTa
+vKl
+vKl
 kdB
-hzH
-tFJ
+laC
+laC
 laC
 laC
 kNs
@@ -53621,14 +53328,14 @@ vDF
 vDF
 vDF
 bmw
-ghF
-uJF
-ghF
-ghF
-khx
-mUN
-ghF
-tFJ
+gwC
+nBY
+gwC
+gwC
+nBY
+qzc
+gwC
+laC
 kNs
 dBB
 pun
@@ -53661,10 +53368,10 @@ vKZ
 laC
 vKl
 qzc
-ghF
-ghF
-eWs
-eWs
+gwC
+gwC
+gwC
+gwC
 xgt
 mEn
 xgt
@@ -53690,9 +53397,9 @@ cTa
 xgt
 laF
 vKl
-boG
+urx
 kdB
-egB
+laC
 laC
 laC
 nZF
@@ -53879,14 +53586,14 @@ vDF
 vDF
 xBm
 xBm
-mUN
-ghF
-fag
-ghF
-nyG
 qzc
-cCT
-cCT
+gwC
+xBm
+gwC
+bmw
+qzc
+ayK
+ayK
 dBB
 dBB
 pun
@@ -53920,8 +53627,8 @@ dBB
 qTN
 cTa
 mEn
-fag
-eWs
+xBm
+gwC
 imc
 nse
 vDF
@@ -53950,7 +53657,7 @@ mEn
 qTN
 vKl
 kdB
-fRB
+jBT
 laC
 laC
 nZF
@@ -54466,9 +54173,9 @@ xgt
 nse
 xgt
 hTO
-egB
-tFJ
-tFJ
+laC
+laC
+laC
 pun
 pun
 pun
@@ -66727,7 +66434,7 @@ tOE
 tKC
 wqG
 tMR
-ghF
+gwC
 beY
 vDF
 xgt
@@ -66985,11 +66692,11 @@ vDF
 vDF
 vDF
 vDF
-vJp
-ghF
-dZP
+hAS
+gwC
 beY
-ghF
+beY
+gwC
 vDF
 vDF
 vDF
@@ -67242,7 +66949,7 @@ vDF
 vDF
 vDF
 vDF
-ghF
+gwC
 tic
 gwC
 vDF
@@ -67750,8 +67457,8 @@ vDF
 vDF
 vDF
 nJK
-nyG
-ghF
+bmw
+gwC
 gwC
 vDF
 vDF
@@ -67902,10 +67609,10 @@ pun
 tMW
 xdV
 vdz
-dzD
+kyF
 mEn
 beY
-ghF
+gwC
 mEn
 vDF
 vDF
@@ -68524,7 +68231,7 @@ iNe
 iGk
 iGk
 xBm
-fag
+xBm
 gwC
 eAM
 gwC
@@ -68933,7 +68640,7 @@ ayK
 xdV
 mNZ
 laC
-xtX
+cLC
 xBm
 iGk
 gwC
@@ -70063,7 +69770,7 @@ xBm
 xBm
 kyF
 gwC
-ghF
+gwC
 xkl
 mEn
 mEn
@@ -70717,7 +70424,7 @@ vDF
 vDF
 vDF
 vmf
-mqa
+iGk
 iGk
 nJK
 nJK
@@ -71236,7 +70943,7 @@ iGk
 iGk
 vyE
 vyE
-wLL
+vyE
 vDF
 vDF
 vDF
@@ -71491,8 +71198,8 @@ vDF
 vDF
 vDF
 iGk
-rKf
-rKf
+nJK
+nJK
 vDF
 vDF
 vDF
@@ -72523,7 +72230,7 @@ iGk
 iGk
 oxR
 bFc
-dZP
+beY
 beY
 lgS
 vDF
@@ -73031,7 +72738,7 @@ gwC
 oxR
 vDF
 bmw
-ghF
+gwC
 iGk
 xkl
 xkl
@@ -73286,7 +72993,7 @@ pun
 bvd
 mEn
 gwC
-mqa
+iGk
 iGk
 gwC
 hHj
@@ -73551,7 +73258,7 @@ xkl
 xkl
 xkl
 xkl
-nyG
+bmw
 gwC
 vyE
 lgS

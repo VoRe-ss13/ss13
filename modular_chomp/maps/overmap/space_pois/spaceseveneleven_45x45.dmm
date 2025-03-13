@@ -2101,7 +2101,6 @@
 /area/submap/spaceseveneleven)
 "WC" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/rocks{
 	nitrogen = 0;
 	oxygen = 0

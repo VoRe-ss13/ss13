@@ -372,11 +372,6 @@
 /obj/structure/frame/computer,
 /turf/simulated/floor/tiled/eris/white/techfloor,
 /area/submap/whiteship)
-"wx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/submap/whiteship)
 "xq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 6
@@ -555,7 +550,6 @@
 	name = "Hibernation Pods"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/whiteship)
 "IB" = (
@@ -570,7 +564,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/whiteship)
 "Jy" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/trash,
 /obj/random/junk,
@@ -758,12 +751,6 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/eris/white/techfloor,
-/area/submap/whiteship)
-"Xy" = (
-/mob/living/simple_mob/metroid/juvenile/baby,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techfloor/grid,
 /area/submap/whiteship)
 "XK" = (
 /obj/machinery/atmospherics/portables_connector,
@@ -1103,7 +1090,7 @@ fR
 fR
 gJ
 Jb
-Xy
+TC
 oh
 Br
 al
@@ -1337,8 +1324,8 @@ qz
 tg
 eV
 qz
-Xy
-wx
+TC
+qz
 sj
 tb
 QH
