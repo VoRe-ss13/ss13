@@ -163,8 +163,11 @@
 	pixel_x = 6;
 	pixel_y = 4
 	},
+<<<<<<< HEAD
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+=======
+>>>>>>> 2fb223932a (hopefully the last (#10396))
 /obj/effect/map_helper/no_phaseshift/area,
 /turf/simulated/floor/wood/sif,
 /area/submap/DeathDen)
@@ -225,15 +228,6 @@
 	outdoors = 0
 	},
 /area/template_noop)
-"rQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/snacks/candy_corn{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood/sif,
-/area/submap/DeathDen)
 "si" = (
 /turf/simulated/floor/outdoors/dirt,
 /area/template_noop)
@@ -967,7 +961,7 @@ ua
 PJ
 pE
 hz
-rQ
+Ps
 Bx
 Do
 MV
