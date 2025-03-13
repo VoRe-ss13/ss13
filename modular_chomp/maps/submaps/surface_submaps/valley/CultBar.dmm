@@ -716,8 +716,11 @@
 "Gp" = (
 /obj/effect/gibspawner/human,
 /obj/effect/decal/cleanable/dirt,
+<<<<<<< HEAD
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+=======
+>>>>>>> ca5a786143 (more map fixes (#10394))
 /turf/simulated/floor/wood/sif/broken,
 /area/submap/CultBar)
 "Gy" = (
@@ -729,6 +732,7 @@
 /obj/structure/loot_pile/surface/bones,
 /turf/simulated/floor/tiled/freezer,
 /area/submap/CultBar)
+<<<<<<< HEAD
 "Hw" = (
 /obj/effect/floor_decal/corner/lightgrey/diagonal,
 /obj/effect/decal/cleanable/dirt,
@@ -740,6 +744,8 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/sif,
 /area/submap/CultBar)
+=======
+>>>>>>> ca5a786143 (more map fixes (#10394))
 "HP" = (
 /obj/effect/floor_decal/corner/red/diagonal,
 /turf/simulated/floor/tiled/asteroid_steel,
@@ -903,17 +909,13 @@
 /obj/structure/flora/ausbushes,
 /turf/simulated/floor/outdoors/mud,
 /area/submap/CultBar)
-"Op" = (
-/obj/effect/floor_decal/corner/lightgrey/diagonal,
-/obj/effect/decal/cleanable/blood,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/freezer,
-/area/submap/CultBar)
 "Oq" = (
 /obj/effect/decal/cleanable/dirt,
+<<<<<<< HEAD
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+=======
+>>>>>>> ca5a786143 (more map fixes (#10394))
 /obj/structure/cult/pylon,
 /turf/simulated/floor/wood/sif/broken,
 /area/submap/CultBar)
@@ -1023,6 +1025,7 @@
 /obj/item/stolenpackage,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/CultBar)
+<<<<<<< HEAD
 "UJ" = (
 /obj/structure/table/bench/sifwooden,
 /obj/effect/decal/cleanable/dirt,
@@ -1030,6 +1033,8 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/sif,
 /area/submap/CultBar)
+=======
+>>>>>>> ca5a786143 (more map fixes (#10394))
 "UT" = (
 /obj/structure/table/marble,
 /obj/random/meat,
@@ -1842,7 +1847,11 @@ dO
 Mw
 ma
 bs
+<<<<<<< HEAD
 ht
+=======
+or
+>>>>>>> ca5a786143 (more map fixes (#10394))
 or
 WL
 bs
@@ -2025,7 +2034,11 @@ fF
 VZ
 Gy
 Gd
+<<<<<<< HEAD
 hm
+=======
+kZ
+>>>>>>> ca5a786143 (more map fixes (#10394))
 KF
 BV
 Gd
@@ -2108,7 +2121,7 @@ VZ
 Ks
 Ah
 Ka
-UJ
+Ah
 or
 mT
 sh

@@ -966,7 +966,6 @@
 /obj/structure/sign/nosmoking_1{
 	pixel_x = -30
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/submap/AbandonedLab{
 	requires_power = 0

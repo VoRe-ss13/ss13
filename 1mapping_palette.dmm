@@ -5745,9 +5745,6 @@
 /area/space)
 "dRK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/map_effect/interval/sound_emitter/ballistic_gunfight,
 /turf/simulated/floor/outdoors/dirt,
 /area/space)
@@ -6364,14 +6361,6 @@
 	name = "Spill of fear"
 	},
 /turf/simulated/floor/gorefloor,
-/area/space)
-"epX" = (
-/obj/effect/alien/weeds,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks{
-	outdoors = 0
-	},
 /area/space)
 "eqm" = (
 /obj/structure/window/titanium/full,
@@ -12469,11 +12458,6 @@
 	},
 /turf/simulated/shuttle/floor/white,
 /area/space)
-"ixh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood,
-/area/space)
 "ixo" = (
 /obj/structure/grille/cult{
 	name = "Alien grille"
@@ -12934,11 +12918,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/space)
-"iKm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white,
-/area/space)
 "iKL" = (
 /obj/machinery/door/airlock/maintenance/command,
 /turf/simulated/floor/outdoors/dirt,
@@ -13031,7 +13010,6 @@
 /area/space)
 "iPZ" = (
 /obj/item/clothing/suit/storage/apron/white,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/space)
@@ -18561,11 +18539,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/grass,
 /area/space)
-"mvi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/space)
 "mvE" = (
 /obj/machinery/light{
 	dir = 4
@@ -20636,7 +20609,6 @@
 	pixel_y = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/space)
 "nKz" = (
@@ -21822,12 +21794,6 @@
 	},
 /turf/simulated/shuttle/floor/alienplating,
 /area/space)
-"oEe" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood/broken,
-/area/space)
 "oEo" = (
 /obj/structure/bed/double/padded,
 /turf/simulated/floor/wood/sif/broken,
@@ -22675,8 +22641,6 @@
 /turf/simulated/shuttle/wall/alien/blue/hard_corner,
 /area/space)
 "pfu" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt,
 /area/space)
@@ -23864,11 +23828,6 @@
 	id = "atriumeast"
 	},
 /turf/simulated/shuttle/floor/voidcraft,
-/area/space)
-"pRG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood/broken,
 /area/space)
 "pSg" = (
 /obj/effect/blocker,
@@ -25907,7 +25866,6 @@
 "rgx" = (
 /obj/effect/alien/weeds,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/junk,
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = 0
@@ -26133,8 +26091,6 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/space)
@@ -26964,7 +26920,6 @@
 "rUy" = (
 /obj/structure/simple_door/resin,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = 0
 	},
@@ -27522,7 +27477,6 @@
 /turf/simulated/floor/outdoors/dirt,
 /area/space)
 "sjH" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_mob/humanoid/merc/ranged{
 	health = 15;
@@ -28159,7 +28113,6 @@
 "sHj" = (
 /obj/item/pack/cardemon,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/space)
 "sHK" = (
@@ -28324,7 +28277,6 @@
 /area/space)
 "sPn" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/item/paper{
 	info = "Seems to be filled with odd runes drawn with blood";
 	name = "Blood stained paper"
@@ -28396,12 +28348,6 @@
 	amount = 25
 	},
 /turf/simulated/floor/plating,
-/area/space)
-"sRs" = (
-/obj/random/trash,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet,
 /area/space)
 "sRL" = (
 /obj/structure/prop/alien/pod,
@@ -29834,7 +29780,6 @@
 "tMW" = (
 /obj/effect/alien/weeds,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /mob/living/simple_mob/humanoid/merc/melee/sword/poi{
 	health = 15;
 	maxHealth = 15
@@ -30140,14 +30085,6 @@
 	dir = 1
 	},
 /turf/simulated/shuttle/plating/airless/carry,
-/area/space)
-"tTw" = (
-/obj/effect/alien/weeds,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
 /area/space)
 "tTG" = (
 /obj/item/storage/firstaid,
@@ -30833,8 +30770,6 @@
 /turf/simulated/floor/tiled,
 /area/space)
 "urd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/space)
@@ -31840,8 +31775,6 @@
 /area/space)
 "vbb" = (
 /obj/effect/alien/weeds/node,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = 0
@@ -34622,7 +34555,6 @@
 "xau" = (
 /obj/effect/alien/weeds/node,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/junk,
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = 0
@@ -35374,7 +35306,6 @@
 /obj/effect/alien/weeds,
 /obj/effect/alien/weeds,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/rocks{
 	outdoors = 0
 	},
@@ -35674,14 +35605,6 @@
 "xIV" = (
 /obj/structure/fence,
 /turf/simulated/floor/outdoors/grass/heavy,
-/area/space)
-"xJd" = (
-/obj/effect/alien/weeds/node,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
 /area/space)
 "xJg" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -36114,11 +36037,6 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/space)
-"xVi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor,
-/area/space)
 "xVA" = (
 /obj/effect/gibspawner/robot,
 /turf/simulated/floor/outdoors/dirt,
@@ -36216,7 +36134,6 @@
 	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/space)
 "xZn" = (
@@ -36227,7 +36144,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/space)
@@ -36258,7 +36174,6 @@
 /obj/random/junk,
 /obj/random/junk,
 /obj/random/junk,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/space)
@@ -53495,7 +53410,7 @@ mYY
 mYY
 hIe
 ygs
-ixh
+lmI
 jGl
 lfY
 lfY
@@ -53761,7 +53676,7 @@ fZc
 vHw
 pNG
 rlV
-sRs
+ulT
 lfY
 fZc
 wrW
@@ -54014,7 +53929,7 @@ lMZ
 fZc
 xoj
 llr
-mvi
+lfZ
 lmI
 lMZ
 lmI
@@ -54790,12 +54705,12 @@ hIe
 lmI
 lmI
 nKr
-oEe
-pRG
+ygs
+ygs
 rpj
-ixh
-ixh
-ixh
+lmI
+lmI
+lmI
 ygs
 hIe
 wGN
@@ -55301,7 +55216,7 @@ nwG
 nwG
 vHw
 hXY
-iKm
+iYc
 jUk
 fZc
 myA
@@ -55310,11 +55225,11 @@ oLW
 pUb
 vHw
 sYn
-pRG
+ygs
 hUt
 wtD
 xaO
-xVi
+wtD
 vHw
 wGN
 ssV
@@ -55559,7 +55474,7 @@ nwG
 nwG
 lMZ
 iac
-iKm
+iYc
 jVj
 lmI
 myT
@@ -55572,7 +55487,7 @@ urd
 vHQ
 vHw
 xck
-xVi
+wtD
 vHw
 wGN
 sBp
@@ -71101,7 +71016,7 @@ ybA
 ybA
 ybA
 mza
-tTw
+fal
 xau
 ybA
 ybA
@@ -71358,7 +71273,7 @@ ybA
 ybA
 ybA
 ybA
-epX
+pzv
 xyE
 rtj
 ybA
@@ -72904,7 +72819,7 @@ ybA
 ybA
 ybA
 qxF
-xJd
+vbb
 fal
 ybA
 ybA

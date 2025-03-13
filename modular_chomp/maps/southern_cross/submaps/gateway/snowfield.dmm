@@ -9290,6 +9290,7 @@
 /obj/structure/outcrop,
 /turf/simulated/floor/outdoors/rocks/caves,
 /area/awaymission/snowfield/outside)
+<<<<<<< HEAD
 "imc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
@@ -9297,6 +9298,8 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/rocks/caves,
 /area/awaymission/snowfield/cavern)
+=======
+>>>>>>> ca5a786143 (more map fixes (#10394))
 "imu" = (
 /turf/simulated/floor/tiled/freezer,
 /area/awaymission/snowfield/service/fridge)
@@ -53920,9 +53923,15 @@ dBB
 qTN
 cTa
 mEn
+<<<<<<< HEAD
 fag
 eWs
 imc
+=======
+xBm
+gwC
+nBY
+>>>>>>> ca5a786143 (more map fixes (#10394))
 nse
 vDF
 vDF

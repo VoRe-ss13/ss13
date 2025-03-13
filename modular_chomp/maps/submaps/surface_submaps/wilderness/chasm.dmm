@@ -88,6 +88,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/Chasm)
+<<<<<<< HEAD
 "iR" = (
 /obj/random/trash,
 /obj/effect/decal/cleanable/dirt,
@@ -104,6 +105,8 @@
 	outdoors = 0
 	},
 /area/submap/Chasm)
+=======
+>>>>>>> ca5a786143 (more map fixes (#10394))
 "kH" = (
 /obj/random/junk,
 /turf/template_noop,
@@ -933,7 +936,11 @@ hR
 Sc
 Sc
 rI
+<<<<<<< HEAD
 rR
+=======
+rI
+>>>>>>> ca5a786143 (more map fixes (#10394))
 tg
 HE
 uf
