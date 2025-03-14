@@ -92,10 +92,15 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 			return TRUE
 		else
 			if(show_msg)
+<<<<<<< HEAD
 				to_chat(C, span_filter_adminlog(span_warning("Error: You do not have sufficient rights to do that. You require one of the following flags:[rights2text(rights_required," ")].")))
 			return FALSE
 	else
 		return TRUE
+=======
+				to_chat(usr, span_red("Error: You do not have sufficient rights to do that. You require one of the following flags:[rights2text(rights_required," ")]."), confidential = TRUE)
+	return FALSE
+>>>>>>> f682996b40 ([MIRROR] tgui core 1.8.2 (#10398))
 
 //probably a bit iffy - will hopefully figure out a better solution
 /proc/check_if_greater_rights_than(client/other)

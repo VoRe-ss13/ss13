@@ -51,6 +51,7 @@
 	if(holder && !holder.fakekey)
 		ooc_style = "elevated"
 
+<<<<<<< HEAD
 		if(holder.rights & R_EVENT) //Retired Admins
 			ooc_style = "event_manager"
 		if(holder.rights & R_ADMIN && !(holder.rights & R_BAN)) //Game Masters
@@ -58,6 +59,15 @@
 		if(holder.rights & R_DEBUG && !(holder.rights & R_BAN)) //Developers
 			ooc_style = "developer"
 		if(holder.rights & R_ADMIN && holder.rights & R_BAN) //Admins
+=======
+		if(check_rights(R_EVENT, FALSE)) //Retired Admins
+			ooc_style = "event_manager"
+		if(check_rights(R_ADMIN, FALSE) && !(check_rights(R_BAN, FALSE))) //Game Masters
+			ooc_style = "moderator"
+		if(check_rights(R_SERVER, FALSE) && !(check_rights(R_BAN, FALSE))) //Developers
+			ooc_style = "developer"
+		if(check_rights(R_ADMIN, FALSE) && check_rights(R_BAN, FALSE)) //Admins
+>>>>>>> f682996b40 ([MIRROR] tgui core 1.8.2 (#10398))
 			ooc_style = "admin"
 
 	msg = GLOB.is_valid_url.Replace(msg,span_linkify("$1"))
@@ -74,7 +84,11 @@
 					else
 						display_name = holder.fakekey
 			var/pref_color = prefs.read_preference(/datum/preference/color/ooc_color)
+<<<<<<< HEAD
 			if(holder && !holder.fakekey && (holder.rights & R_ADMIN|R_FUN|R_EVENT) && CONFIG_GET(flag/allow_admin_ooccolor) && pref_color != "#010000") // keeping this for the badmins
+=======
+			if(holder && !holder.fakekey && (check_rights(R_ADMIN|R_FUN|R_EVENT, FALSE)) && CONFIG_GET(flag/allow_admin_ooccolor) && pref_color != "#010000") // keeping this for the badmins
+>>>>>>> f682996b40 ([MIRROR] tgui core 1.8.2 (#10398))
 				to_chat(target, span_ooc("<font color='[pref_color]'>" + create_text_tag("ooc", "OOC:", target) + " <EM>[display_name]:</EM> [span_message(msg)]</font>"))
 			else
 				to_chat(target, span_ooc("<span class='[ooc_style]'>" + create_text_tag("ooc", "OOC:", target) + " <EM>[display_name]:</EM> " + span_message(msg)) + "</span>")
