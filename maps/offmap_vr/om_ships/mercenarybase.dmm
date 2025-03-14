@@ -3682,6 +3682,17 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark,
 /area/mercbase/hall)
+<<<<<<< HEAD
+=======
+"wF" = (
+/obj/machinery/airlock_sensor/airlock_interior{
+	frequency = 1200;
+	id_tag = "westairlock";
+	master_tag = "westinteriorsensor"
+	},
+/turf/simulated/wall/r_wall,
+/area/mercbase/hall)
+>>>>>>> 5a7d78b0b9 ([MIRROR] Map adjustments [MDB IGNORE] (#10415))
 
 (1,1,1) = {"
 mc

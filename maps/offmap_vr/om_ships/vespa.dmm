@@ -8289,11 +8289,15 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/structure/extinguisher_cabinet{
 	pixel_w = 0;
 	pixel_y = 26;
 	pixel_z = 1
 	},
+=======
+/obj/structure/extinguisher_cabinet,
+>>>>>>> 5a7d78b0b9 ([MIRROR] Map adjustments [MDB IGNORE] (#10415))
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/expe/hangarcontrol)
 "pN" = (
@@ -12091,11 +12095,15 @@
 	dir = 1;
 	icon_state = "techfloor_edges"
 	},
+<<<<<<< HEAD
 /obj/structure/extinguisher_cabinet{
 	pixel_w = 0;
 	pixel_y = 26;
 	pixel_z = 1
 	},
+=======
+/obj/structure/extinguisher_cabinet,
+>>>>>>> 5a7d78b0b9 ([MIRROR] Map adjustments [MDB IGNORE] (#10415))
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/expe/corridor4)
 "yI" = (
@@ -12114,11 +12122,15 @@
 	dir = 1;
 	icon_state = "techfloor_edges"
 	},
+<<<<<<< HEAD
 /obj/structure/extinguisher_cabinet{
 	pixel_w = 0;
 	pixel_y = 26;
 	pixel_z = 1
 	},
+=======
+/obj/structure/extinguisher_cabinet,
+>>>>>>> 5a7d78b0b9 ([MIRROR] Map adjustments [MDB IGNORE] (#10415))
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/expe/corridor3)
 "yJ" = (
@@ -12137,11 +12149,15 @@
 	dir = 1;
 	icon_state = "techfloor_edges"
 	},
+<<<<<<< HEAD
 /obj/structure/extinguisher_cabinet{
 	pixel_w = 0;
 	pixel_y = 26;
 	pixel_z = 1
 	},
+=======
+/obj/structure/extinguisher_cabinet,
+>>>>>>> 5a7d78b0b9 ([MIRROR] Map adjustments [MDB IGNORE] (#10415))
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/expe/corridor3)
 "yK" = (
@@ -12157,11 +12173,15 @@
 	dir = 1;
 	icon_state = "techfloor_edges"
 	},
+<<<<<<< HEAD
 /obj/structure/extinguisher_cabinet{
 	pixel_w = 0;
 	pixel_y = 26;
 	pixel_z = 1
 	},
+=======
+/obj/structure/extinguisher_cabinet,
+>>>>>>> 5a7d78b0b9 ([MIRROR] Map adjustments [MDB IGNORE] (#10415))
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/expe/corridor1)
 "yL" = (
@@ -12174,11 +12194,15 @@
 	dir = 1;
 	icon_state = "bordercolor"
 	},
+<<<<<<< HEAD
 /obj/structure/extinguisher_cabinet{
 	pixel_w = 0;
 	pixel_y = 26;
 	pixel_z = 1
 	},
+=======
+/obj/structure/extinguisher_cabinet,
+>>>>>>> 5a7d78b0b9 ([MIRROR] Map adjustments [MDB IGNORE] (#10415))
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/expe/expedition)
 "yM" = (
@@ -12194,11 +12218,15 @@
 	dir = 1;
 	icon_state = "techfloor_edges"
 	},
+<<<<<<< HEAD
 /obj/structure/extinguisher_cabinet{
 	pixel_w = 0;
 	pixel_y = 26;
 	pixel_z = 1
 	},
+=======
+/obj/structure/extinguisher_cabinet,
+>>>>>>> 5a7d78b0b9 ([MIRROR] Map adjustments [MDB IGNORE] (#10415))
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/expe/corridor2)
 "yN" = (
@@ -12214,11 +12242,15 @@
 	dir = 1;
 	icon_state = "techfloor_edges"
 	},
+<<<<<<< HEAD
 /obj/structure/extinguisher_cabinet{
 	pixel_w = 0;
 	pixel_y = 26;
 	pixel_z = 1
 	},
+=======
+/obj/structure/extinguisher_cabinet,
+>>>>>>> 5a7d78b0b9 ([MIRROR] Map adjustments [MDB IGNORE] (#10415))
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/expe/corridor2)
 "yP" = (
