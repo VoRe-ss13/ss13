@@ -3,12 +3,19 @@
 /turf/space,
 /area/space)
 "aab" = (
+<<<<<<< HEAD
 /obj/effect/floor_decal/industrial/arrows/blue,
 /obj/effect/floor_decal/industrial/arrows/blue{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/hallway/Aft_Transit_Lobby)
+=======
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_AftStar1_Corridor2)
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 "aac" = (
 /obj/machinery/telecomms/server/presets/security,
 /obj/effect/catwalk_plated/dark,
@@ -299,6 +306,55 @@
 	},
 /turf/simulated/floor,
 /area/shuttle/ursula)
+<<<<<<< HEAD
+=======
+"aby" = (
+/obj/structure/girder,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/reinforced/airless,
+/area/maintenance/Deck1_Security_StarCorridor3)
+"abz" = (
+/obj/random/crate,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_Cargo_Corridor1)
+"abA" = (
+/obj/machinery/alarm{
+	pixel_y = 22
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_AftPort_Corridor1)
+"abB" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/catwalk_plated/techmaint,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_Cargo_Corridor1)
+"abC" = (
+/obj/machinery/alarm{
+	dir = 1;
+	pixel_y = -22
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_Cargo_Corridor1)
+"abD" = (
+/obj/structure/bookcase,
+/obj/machinery/camera/network/security{
+	dir = 9;
+	c_tag = "D1-Sec-Cryo Foyer1"
+	},
+/turf/simulated/floor/carpet/purcarpet/turfpack/station,
+/area/hallway/Cryostorage_Lounge)
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 "abF" = (
 /turf/simulated/floor/glass/reinforced,
 /area/hallway/Central_1_Deck_Hall)
@@ -1141,6 +1197,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals_central5{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_1_Deck_Hall)
 "agy" = (
@@ -1705,6 +1764,13 @@
 /obj/effect/floor_decal/corner/green/border{
 	dir = 4
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 22
+	},
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/Public_Gateway)
 "aiN" = (
@@ -2204,6 +2270,15 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Port_Corridor)
@@ -8637,9 +8712,6 @@
 	icon_state = "pipe-j2"
 	},
 /obj/effect/catwalk_plated/techmaint,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Cargo_Corridor1)
 "bsU" = (
@@ -20432,10 +20504,6 @@
 /turf/simulated/floor/tiled/dark,
 /area/harbor/Dock4)
 "eWa" = (
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 22
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
@@ -23248,6 +23316,7 @@
 	desc = "Ladder for emergency use only";
 	pixel_y = -32
 	},
+/obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Star_Corridor)
 "fXa" = (
@@ -26062,6 +26131,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Star_Corridor)
 "gXk" = (
@@ -27962,6 +28032,15 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Port_Corridor)
@@ -36161,6 +36240,7 @@
 	pixel_x = 27;
 	dir = 8
 	},
+/obj/random/crate,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Cargo_Corridor1)
 "kRt" = (
@@ -36371,14 +36451,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/Deck1_Transit_Hall)
-"kUE" = (
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -22
-	},
-/obj/random/trash,
-/turf/simulated/floor/plating,
-/area/maintenance/Deck1_Cargo_Corridor1)
 "kUS" = (
 /obj/random/trash,
 /obj/effect/landmark{
@@ -37711,6 +37783,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/Observation_Hall)
+<<<<<<< HEAD
 "lrJ" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
@@ -37720,6 +37793,8 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_1_Deck_Hall)
+=======
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 "lrZ" = (
 /turf/simulated/floor/tiled/white,
 /area/rnd/Xenobiology_Lab)
@@ -53438,6 +53513,16 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+<<<<<<< HEAD
+=======
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/effect/catwalk_plated/techmaint,
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Port_Corridor)
 "qJW" = (
@@ -60489,6 +60574,7 @@
 	desc = "Ladder for emergency use only";
 	pixel_y = -32
 	},
+/obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Port_Corridor)
 "tlh" = (
@@ -61764,6 +61850,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
+/obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Star_Corridor)
 "tGZ" = (
@@ -62271,6 +62358,14 @@
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 1
 	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "north bump";
+	pixel_y = 24
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_1_Deck_Hall)
 "tSk" = (
@@ -62480,6 +62575,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -70814,6 +70915,16 @@
 	},
 /obj/effect/catwalk_plated/techmaint,
 /obj/machinery/light/small,
+<<<<<<< HEAD
+=======
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/catwalk_plated/techmaint,
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Port_Corridor)
 "wQG" = (
@@ -89320,9 +89431,9 @@ tgg
 nxq
 aaM
 heo
-kUE
+klC
 iXF
-ycA
+sdT
 bsP
 vdg
 xJX
@@ -89578,10 +89689,10 @@ tgg
 tgg
 aaM
 tQT
-vYi
+abC
 iXF
-sdT
-xSP
+ycA
+abB
 vYi
 vYi
 iXF
@@ -91401,7 +91512,7 @@ vYi
 kjQ
 vYi
 vYi
-vYi
+abz
 aVS
 uYn
 arR
@@ -98102,7 +98213,7 @@ aan
 alF
 wJV
 aAa
-auk
+abA
 auk
 auk
 clF
@@ -101133,7 +101244,7 @@ bci
 hts
 lwk
 lwk
-lwk
+bci
 bci
 rWn
 ioc
@@ -106345,8 +106456,13 @@ jYP
 jYP
 jYP
 tCJ
+<<<<<<< HEAD
 jYP
 tgD
+=======
+tqY
+abF
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 abF
 abF
 fkW
@@ -106603,8 +106719,13 @@ vNe
 mbX
 tBJ
 dTJ
+<<<<<<< HEAD
 lrJ
 auG
+=======
+xJm
+abF
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 abF
 abF
 gTJ
@@ -108362,7 +108483,7 @@ dZy
 raY
 mwj
 hpu
-tTb
+abD
 tTb
 iPp
 kYw
@@ -111541,7 +111662,7 @@ vci
 fVc
 qJl
 oVU
-xaJ
+uSv
 oVU
 oVU
 tqB
@@ -111798,8 +111919,8 @@ ayg
 ddS
 fVc
 xCL
-gDq
-uSv
+vQV
+xaJ
 oVU
 oVU
 vzg
@@ -112056,7 +112177,7 @@ adm
 oXv
 fVc
 cAX
-oVU
+aRY
 xaJ
 oVU
 vUq
@@ -112314,7 +112435,7 @@ adm
 xGZ
 fVc
 cAX
-oVU
+aab
 xaJ
 lxO
 bbQ
