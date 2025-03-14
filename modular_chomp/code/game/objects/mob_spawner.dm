@@ -15,12 +15,32 @@
 		/mob/living/simple_mob/animal/space/bats = 70,
 		/mob/living/simple_mob/vore/jelly = 25,
 		/mob/living/simple_mob/vore/oregrub = 25,
+<<<<<<< HEAD
 		/mob/living/simple_mob/vore/aggressive/lizardman = 25,
 		/mob/living/simple_mob/animal/space/bear = 1,
 		/mob/living/simple_mob/vore/aggressive/deathclaw = 1,
 		/mob/living/simple_mob/animal/space/goose = 60,
 		/mob/living/simple_mob/vore/bee = 50,
 		/mob/living/simple_mob/metroid/mine = 20,
+=======
+		/mob/living/simple_mob/vore/aggressive/dino = 20,
+		/mob/living/simple_mob/animal/space/carp = 20,
+		/mob/living/simple_mob/vore/oregrub/lava = 15,
+		/mob/living/simple_mob/vore/stalker = 10,
+		/mob/living/simple_mob/vore/lamia/copper/cave = 10,
+		/mob/living/simple_mob/vore/lamia/albino/cave = 5,
+		/mob/living/simple_mob/vore/aggressive/lizardman = 5,
+		/mob/living/simple_mob/vore/otie = 5,
+		/mob/living/simple_mob/animal/passive/pillbug = 5, // These aren't dangerous, but are made rare just because few people are going to bother killing them.
+		/obj/structure/closet/crate/mimic/cointoss = 1,
+		/obj/structure/closet/crate/mimic/closet/cointoss = 1,
+		/mob/living/simple_mob/vore/otie/feral = 1,
+		// /mob/living/simple_mob/vore/sonadile = 1, // Removed until sprite issues fixed.
+		/mob/living/simple_mob/animal/space/bear/brown = 1,
+		/mob/living/simple_mob/vore/aggressive/deathclaw = 1,
+		/mob/living/simple_mob/vore/gryphon = 1,
+		/mob/living/simple_mob/vore/demon = 0.5 // VERY rare!
+>>>>>>> 37ab2032a2 (More minor adjustments to cave mob spawns (#10413))
 	)
 
 /obj/structure/mob_spawner/proc/get_used_report(var/obj/structure/closet/crate/mimic/O)
