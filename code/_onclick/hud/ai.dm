@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /obj/screen/ai/multicam/Click() 
     if(..()) 
         return 
@@ -9,6 +10,19 @@
         return 
     var/mob/living/silicon/ai/AI = usr
     AI.drop_new_multicam() 
+=======
+/obj/screen/ai/multicam/Click()
+	if(..())
+		return
+	var/mob/living/silicon/ai/AI = usr
+	AI.toggle_multicam()
+
+/obj/screen/ai/add_multicam/Click()
+	if(..())
+		return
+	var/mob/living/silicon/ai/AI = usr
+	AI.drop_new_multicam()
+>>>>>>> 789db280cc ([MIRROR] space cleanup (#10414))
 
 /obj/screen/ai/up/Click()
 	var/mob/living/silicon/ai/AI = usr

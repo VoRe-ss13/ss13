@@ -409,6 +409,7 @@
 
 //hooded cloaks
 /obj/item/clothing/suit/storage/hooded/cloak
+<<<<<<< HEAD
     name = "hooded maroon cloak"
     desc = "A simple maroon colored cloak."
     icon_state = "maroon_cloak"
@@ -433,3 +434,28 @@
     desc = "A fancy black hooded cloak."
     icon_state = "hb_cloak"
     hoodtype = /obj/item/clothing/head/hood/cloak/fancy
+=======
+	name = "hooded maroon cloak"
+	desc = "A simple maroon colored cloak."
+	icon_state = "maroon_cloak"
+	body_parts_covered = CHEST|ARMS
+	hoodtype = /obj/item/clothing/head/hood/cloak
+
+/obj/item/clothing/suit/storage/hooded/cloak/winter
+	name = "hooded winter cloak"
+	desc = "A simple wool cloak used during winter."
+	icon_state = "winter_cloak"
+	hoodtype = /obj/item/clothing/head/hood/cloak/winter
+
+/obj/item/clothing/suit/storage/hooded/cloak/asymmetric
+	name = "hooded asymmetric cloak"
+	desc = "A blue hooded cloak with an asymmetric design."
+	icon_state = "asymmetric_cloak"
+	hoodtype = /obj/item/clothing/head/hood/cloak/asymmetric
+
+/obj/item/clothing/suit/storage/hooded/cloak/fancy
+	name = "hooded fancy cloak"
+	desc = "A fancy black hooded cloak."
+	icon_state = "hb_cloak"
+	hoodtype = /obj/item/clothing/head/hood/cloak/fancy
+>>>>>>> 789db280cc ([MIRROR] space cleanup (#10414))

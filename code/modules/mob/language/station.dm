@@ -193,8 +193,13 @@
 		)
 
 /datum/language/teshari/get_random_name(gender)
+<<<<<<< HEAD
 	return ..(gender, 1, 4, 1.5) //CHOMPedit: Keep "1" as the second argument because tesharii here typically omit the pack name (thus only use 1 name). This is because 
 				     //CHOMPedit: there are very few packs and thus most tesharii would have the same first name.	
+=======
+	return ..(gender, 1, 4, 1.5) //CHOMPedit: Keep "1" as the second argument because tesharii here typically omit the pack name (thus only use 1 name). This is because
+				 	//CHOMPedit: there are very few packs and thus most tesharii would have the same first name.
+>>>>>>> 789db280cc ([MIRROR] space cleanup (#10414))
 
 /datum/language/zaddat
 	name = LANGUAGE_ZADDAT
