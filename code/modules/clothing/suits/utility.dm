@@ -17,8 +17,13 @@
 	w_class = ITEMSIZE_LARGE//bulky item
 	gas_transfer_coefficient = 0.90
 	permeability_coefficient = 0.50
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	allowed = list(/obj/item/flashlight,/obj/item/tank/emergency/oxygen,/obj/item/extinguisher)
+=======
+	body_parts_covered = CHEST|LEGS|FEET|ARMS|HANDS
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, /obj/item/extinguisher)
+>>>>>>> 8ffdc6cc33 ([MIRROR]  Cleaned up every clothing item to use defined pocket lists #35  (#10375))
 	slowdown = 1.0
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER
 	item_flags = 0
@@ -72,8 +77,13 @@
 
 /obj/item/clothing/suit/bomb_suit/security
 	icon_state = "bombsuitsec"
+<<<<<<< HEAD
 	allowed = list(/obj/item/gun/energy,/obj/item/melee/baton,/obj/item/handcuffs)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+=======
+	allowed = list(POCKET_SECURITY)
+	body_parts_covered = CHEST|LEGS|FEET|ARMS|HANDS
+>>>>>>> 8ffdc6cc33 ([MIRROR]  Cleaned up every clothing item to use defined pocket lists #35  (#10375))
 
 /*
  * Radiation protection
@@ -94,8 +104,13 @@
 	w_class = ITEMSIZE_LARGE//bulky item
 	gas_transfer_coefficient = 0.90
 	permeability_coefficient = 0.50
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS|HANDS|FEET
 	allowed = list(/obj/item/flashlight,/obj/item/tank/emergency/oxygen,/obj/item/clothing/head/radiation,/obj/item/clothing/mask/gas)
+=======
+	body_parts_covered = CHEST|LEGS|ARMS|HANDS|FEET
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, /obj/item/clothing/head/radiation)
+>>>>>>> 8ffdc6cc33 ([MIRROR]  Cleaned up every clothing item to use defined pocket lists #35  (#10375))
 	slowdown = 1.5
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 60, rad = 100)
 	flags_inv = HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER

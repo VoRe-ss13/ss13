@@ -268,7 +268,12 @@
 	flags_inv = HIDEHOLSTER|HIDETIE
 	actions_types = list(/datum/action/item_action/toggle_hood)
 	hoodtype = /obj/item/clothing/head/tesh_hood
+<<<<<<< HEAD
 	allowed = list (/obj/item/pen, /obj/item/paper, /obj/item/flashlight,/obj/item/tank/emergency/oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask)
+=======
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY)
+	species_restricted = list(SPECIES_TESHARI)
+>>>>>>> 8ffdc6cc33 ([MIRROR]  Cleaned up every clothing item to use defined pocket lists #35  (#10375))
 
 /obj/item/clothing/head/tesh_hood
 	name = "Cloak Hood"

@@ -16,8 +16,12 @@
 	name = "Skrellian voidsuit"
 	desc = "Seems like a wetsuit with reinforced plating seamlessly attached to it. Very chic."
 	armor = list(melee = 20, bullet = 20, laser = 20, energy = 50, bomb = 50, bio = 100, rad = 50)
+<<<<<<< HEAD
 	allowed = list(/obj/item/flashlight,/obj/item/tank,/obj/item/storage/bag/ore,/obj/item/t_scanner,/obj/item/pickaxe, /obj/item/rcd)
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+=======
+	allowed = list(POCKET_GENERIC, POCKET_ALL_TANKS, POCKET_MINING, /obj/item/t_scanner, /obj/item/rcd)
+>>>>>>> 8ffdc6cc33 ([MIRROR]  Cleaned up every clothing item to use defined pocket lists #35  (#10375))
 	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	species_restricted = list(SPECIES_SKRELL,SPECIES_HUMAN)
 
@@ -33,7 +37,7 @@
 	w_class = ITEMSIZE_NORMAL
 	flags = PHORONGUARD
 	item_flags = THICKMATERIAL
-	allowed = list(/obj/item/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/melee/energy/sword,/obj/item/handcuffs,/obj/item/tank)
+	allowed = list(POCKET_GENERIC, POCKET_EXPLO, POCKET_ALL_TANKS, /obj/item/melee/energy/sword)
 	armor = list(melee = 60, bullet = 50, laser = 40,energy = 15, bomb = 30, bio = 100, rad = 50)
 	siemens_coefficient = 0.2
 	heat_protection = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS

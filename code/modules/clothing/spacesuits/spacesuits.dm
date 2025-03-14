@@ -76,8 +76,13 @@
 	permeability_coefficient = 0  //Chompedit was 0.01, zeroed to test protecting those who are vulnerable to water.
 	flags = PHORONGUARD
 	item_flags = THICKMATERIAL
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	allowed = list(/obj/item/flashlight,/obj/item/tank/emergency/oxygen,/obj/item/suit_cooling_unit,/obj/item/storage/backpack) //CHOMPedit
+=======
+	body_parts_covered = CHEST|LEGS|FEET|ARMS|HANDS
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, POCKET_SUIT_REGULATORS,/obj/item/storage/backpack) //CHOMPedit)
+>>>>>>> 8ffdc6cc33 ([MIRROR]  Cleaned up every clothing item to use defined pocket lists #35  (#10375))
 	slowdown = 1 // CHOMPedit: 1.5 to 1. More sane movespeed delay. Voidsuits are still faster.
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 100, rad = 50)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER

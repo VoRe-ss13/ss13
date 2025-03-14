@@ -42,10 +42,17 @@
 
 /obj/item/clothing/suit/space/rig
 	name = "chestpiece"
+<<<<<<< HEAD
 	allowed = list(/obj/item/flashlight,/obj/item/tank,/obj/item/suit_cooling_unit,/obj/item/storage) //ChompEdit: allows all suits to carry a backpack on their back unless otherwise specified.
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	heat_protection =	 UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	cold_protection =	 UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+=======
+	allowed = list(POCKET_GENERIC, POCKET_ALL_TANKS, POCKET_SUIT_REGULATORS,/obj/item/storage) //ChompEdit: allows all suits to carry a backpack on their back unless otherwise specified.
+	body_parts_covered = CHEST|LEGS|ARMS
+	heat_protection =	 CHEST|LEGS|ARMS
+	cold_protection =	 CHEST|LEGS|ARMS
+>>>>>>> 8ffdc6cc33 ([MIRROR]  Cleaned up every clothing item to use defined pocket lists #35  (#10375))
 	flags_inv =			 HIDEJUMPSUIT|HIDETAIL
 	item_flags =		 THICKMATERIAL | AIRTIGHT
 	slowdown = 0
@@ -123,11 +130,16 @@
 	species_restricted = null
 
 /obj/item/clothing/suit/lightrig
+<<<<<<< HEAD
 	name = "suit"
 	allowed = list(/obj/item/flashlight)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	heat_protection =    UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	cold_protection =    UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+=======
+	name = DEVELOPER_WARNING_NAME // "suit"
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY)
+>>>>>>> 8ffdc6cc33 ([MIRROR]  Cleaned up every clothing item to use defined pocket lists #35  (#10375))
 	flags_inv =          HIDEJUMPSUIT
 	flags =              THICKMATERIAL
 	species_restricted = null

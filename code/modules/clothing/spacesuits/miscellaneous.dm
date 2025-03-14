@@ -17,8 +17,13 @@
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.02
 	item_flags = 0
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 	allowed = list(/obj/item/tank/emergency/oxygen, /obj/item/flashlight,/obj/item/gun/energy, /obj/item/gun/projectile, /obj/item/ammo_magazine, /obj/item/ammo_casing, /obj/item/melee/baton,/obj/item/handcuffs)
+=======
+	body_parts_covered = CHEST|LEGS|FEET|ARMS|HANDS
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, POCKET_SECURITY)
+>>>>>>> 8ffdc6cc33 ([MIRROR]  Cleaned up every clothing item to use defined pocket lists #35  (#10375))
 	slowdown = 1.5
 	armor = list(melee = 65, bullet = 50, laser = 50, energy = 25, bomb = 50, bio = 100, rad = 50)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
@@ -83,7 +88,7 @@
 	desc = "Yarr."
 	icon_state = "pirate"
 	w_class = ITEMSIZE_NORMAL
-	allowed = list(/obj/item/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/melee/baton,/obj/item/handcuffs,/obj/item/tank/emergency/oxygen)
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, POCKET_EXPLO)
 	slowdown = 0
 	armor = list(melee = 60, bullet = 50, laser = 30,energy = 15, bomb = 30, bio = 30, rad = 30)
 	siemens_coefficient = 0.9

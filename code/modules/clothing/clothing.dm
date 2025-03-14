@@ -746,8 +746,19 @@
 		)
 	name = "suit"
 	var/fire_resist = T0C+100
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	allowed = list(/obj/item/tank/emergency/oxygen)
+=======
+	body_parts_covered = CHEST|ARMS|LEGS
+	//Switch to taur sprites if a taur equips
+	sprite_sheets = list(
+		SPECIES_TESHARI = 'icons/inventory/suit/mob_teshari.dmi',
+		SPECIES_VOX = 'icons/inventory/suit/mob_vox.dmi',
+		SPECIES_WEREBEAST = 'icons/inventory/suit/mob_vr_werebeast.dmi')
+	max_heat_protection_temperature = T0C+100
+	allowed = list(POCKET_EMERGENCY)
+>>>>>>> 8ffdc6cc33 ([MIRROR]  Cleaned up every clothing item to use defined pocket lists #35  (#10375))
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0)
 	slot_flags = SLOT_OCLOTHING
 	var/blood_overlay_type = "suit"
