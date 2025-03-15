@@ -26,7 +26,12 @@
 	var/crisis //Admin-settable for combat module use.
 	var/crisis_override = 0
 	var/integrated_light_power = 6
+<<<<<<< HEAD
 	var/robotdecal_on = 0
+=======
+	var/list/robotdecal_on = list()
+	var/glowy_enabled = FALSE
+>>>>>>> 2cd485cbba ([MIRROR] Adds Gooborgs & Toggleable Stomach Glowing for Borgs (#10418))
 	var/datum/wires/robot/wires
 
 	can_be_antagged = TRUE
@@ -455,10 +460,49 @@
 	update_icon()
 
 /mob/living/silicon/robot/verb/toggle_robot_decals() // loads overlay UNDER lights.
+<<<<<<< HEAD
 	set category = "Abilities.Silicon"
 	set name = "Toggle extras"
 	robotdecal_on = !robotdecal_on
 	to_chat(src, span_filter_notice("You [robotdecal_on ? "enable" : "disable"] your extra apperances."))
+=======
+	set category = "Abilities.Settings"
+	set name = "Toggle Extra Decals"
+
+	if(!sprite_datum)
+		return
+	if(!LAZYLEN(sprite_datum.sprite_decals))
+		to_chat(src, span_warning("This module does not support decals."))
+		return
+
+	var/extra_message = "Enabled decals:\n"
+	for(var/decal in robotdecal_on)
+		extra_message += decal + "\n"
+
+	var/decal_to_toggle = tgui_input_list(src, "Please select which decal you want to toggle\n[extra_message]", "Decal Toggle", sprite_datum.sprite_decals)
+	if(!decal_to_toggle)
+		return
+
+	decal_to_toggle = lowertext(decal_to_toggle)
+
+	if(robotdecal_on.Find(decal_to_toggle))
+		robotdecal_on -= decal_to_toggle
+		to_chat(src, span_filter_notice("You disable your \"[decal_to_toggle]\" extra apperances."))
+	else
+		robotdecal_on += decal_to_toggle
+		to_chat(src, span_filter_notice("You enable your \"[decal_to_toggle]\" extra apperances."))
+>>>>>>> 2cd485cbba ([MIRROR] Adds Gooborgs & Toggleable Stomach Glowing for Borgs (#10418))
+	update_icon()
+
+/mob/living/silicon/robot/verb/toggle_glowy_stomach()
+	set category = "Abilities.Settings"
+	set name = "Toggle Glowing Stomach & Accents"
+
+	glowy_enabled = !glowy_enabled
+	if(glowy_enabled)
+		to_chat(src, span_filter_notice("Your stomach will now glow and any naturally glowing accents you have will now appear!"))
+	else
+		to_chat(src, span_filter_notice("Your stomach will no longer glow, and any naturally glowing accents you have will be hidden!"))
 	update_icon()
 
 /mob/living/silicon/robot/verb/spark_plug() //So you can still sparkle on demand without violence.
@@ -946,31 +990,52 @@
 		pixel_x = sprite_datum.pixel_x
 		old_x = sprite_datum.pixel_x
 
+	//Want to know how to make an overlay appear in darkness? Look at the below. Add a mutable and then emissive overlay.
+	//These get applied first and foremost, as things will get applied overtop of them.
+	//Only borgs that have specialty glow sprites get this.
+	if(sprite_datum.has_glow_sprites && glowy_enabled)
+		add_overlay(mutable_appearance(sprite_datum.sprite_icon, sprite_datum.get_glow_overlay(src)))
+		add_overlay(emissive_appearance(sprite_datum.sprite_icon, sprite_datum.get_glow_overlay(src)))
+
 	if(stat == CONSCIOUS)
 		update_fullness()
 		for(var/belly_class in vore_fullness_ex)
 			reset_belly_lights(belly_class)
 			var/vs_fullness = vore_fullness_ex[belly_class]
-			if(belly_class == "sleeper" && sleeper_state == 0 && vore_selected.silicon_belly_overlay_preference == "Sleeper") continue
-			if(belly_class == "sleeper" && sleeper_state != 0 && !(vs_fullness + 1 > vore_capacity_ex[belly_class]))
-				if(vore_selected.silicon_belly_overlay_preference == "Sleeper")
-					vs_fullness = vore_capacity_ex[belly_class]
-				else if(vore_selected.silicon_belly_overlay_preference == "Both")
-					vs_fullness += 1
+			if(belly_class == "sleeper")
+				if(sleeper_state == 0 && vore_selected.silicon_belly_overlay_preference == "Sleeper") continue
+				if(sleeper_state != 0 && !(vs_fullness + 1 > vore_capacity_ex[belly_class]))
+					if(vore_selected.silicon_belly_overlay_preference == "Sleeper")
+						vs_fullness = vore_capacity_ex[belly_class]
+					else if(vore_selected.silicon_belly_overlay_preference == "Both")
+						vs_fullness += 1
 			if(!vs_fullness > 0) continue
 			if(resting)
 				if(!sprite_datum.has_vore_belly_resting_sprites)
 					continue
-				add_overlay(sprite_datum.get_belly_resting_overlay(src, vs_fullness, belly_class))
+				//If we have glowy stomach sprites.
+				if(glowy_enabled)
+					var/mutable_appearance/MA = mutable_appearance(sprite_datum.sprite_icon, sprite_datum.get_belly_resting_overlay(src, vs_fullness, belly_class))
+					MA.appearance_flags = KEEP_APART
+					add_overlay(MA)
+					add_overlay(emissive_appearance(sprite_datum.sprite_icon, sprite_datum.get_belly_resting_overlay(src, vs_fullness, belly_class)))
+				else
+					add_overlay(sprite_datum.get_belly_resting_overlay(src, vs_fullness, belly_class))
 			else
 				update_belly_lights(belly_class)
-				add_overlay(sprite_datum.get_belly_overlay(src, vs_fullness, belly_class))
+				//If we have glowy stomach sprites.
+				if(glowy_enabled)
+					var/mutable_appearance/MA = mutable_appearance(sprite_datum.sprite_icon, sprite_datum.get_belly_overlay(src, vs_fullness, belly_class))
+					MA.appearance_flags = KEEP_APART
+					add_overlay(MA)
+					add_overlay(emissive_appearance(sprite_datum.sprite_icon, sprite_datum.get_belly_overlay(src, vs_fullness, belly_class)))
+				else
+					add_overlay(sprite_datum.get_belly_overlay(src, vs_fullness, belly_class))
 
 		sprite_datum.handle_extra_icon_updates(src)			// Various equipment-based sprites go here.
 
 		if(resting && sprite_datum.has_rest_sprites)
 			icon_state = sprite_datum.get_rest_sprite(src)
-
 		if(sprite_datum.has_eye_sprites)
 			if(!shell || deployed) // Shell borgs that are not deployed will have no eyes.
 				var/eyes_overlay = sprite_datum.get_eyes_overlay(src)

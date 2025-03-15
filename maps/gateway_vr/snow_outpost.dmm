@@ -1967,8 +1967,12 @@
 /area/awaymission/snow_outpost/outside)
 "gD" = (
 /obj/structure/cable{
+<<<<<<< HEAD
 	icon_state = "0-2";
 	
+=======
+	icon_state = "0-2"
+>>>>>>> 2cd485cbba ([MIRROR] Adds Gooborgs & Toggleable Stomach Glowing for Borgs (#10418))
 	},
 /obj/machinery/porta_turret/alien/destroyed,
 /turf/simulated/shuttle/floor/alienplating,
