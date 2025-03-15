@@ -120,6 +120,14 @@
 		else
 			return "[get_belly_overlay(ourborg, size, b_class)]-rest"
 
+<<<<<<< HEAD
+=======
+/datum/robot_sprite/proc/get_glow_overlay(var/mob/living/silicon/robot/ourborg)
+	if(!ourborg.resting)
+		return "[sprite_icon_state]-glow"
+	return "[get_rest_sprite(ourborg)]-glow"
+
+>>>>>>> fb60ed62ee ([MIRROR] robot sprite hotfix (#10423))
 /datum/robot_sprite/proc/get_eyes_overlay(var/mob/living/silicon/robot/ourborg)
 	if(!(ourborg.resting && has_rest_sprites))
 		return "[sprite_icon_state]-eyes"
