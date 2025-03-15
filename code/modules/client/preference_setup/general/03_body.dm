@@ -1199,9 +1199,17 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	if(!current_species.has_organ[O_HEART])
 		dat += "</br><b>Does not have a circulatory system.</b>"
 	if(!current_species.has_organ[O_LUNGS])
+<<<<<<< HEAD
 		dat += "</br><b>Does not have a respiratory system.</b>"
 	if(current_species.flags & NO_SCAN)
 		dat += "</br><b>Does not have DNA.</b>"
+=======
+		dat += "</br>" + span_bold("Does not have a respiratory system.")
+	if(current_species.flags & NO_DNA)
+		dat += "</br>" + span_bold("Does not have DNA.")
+	if(current_species.flags & NO_SLEEVE)
+		dat += "</br>" + span_bold("Cannot be cloned.")
+>>>>>>> 15a65537e9 ([MIRROR] Split NO_SCAN into two flags (#10420))
 	if(current_species.flags & NO_DEFIB)
 		dat += "</br><b>Cannot be defibrillated.</b>"
 	if(current_species.flags & NO_PAIN)
