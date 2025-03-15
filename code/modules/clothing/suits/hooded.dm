@@ -1,5 +1,6 @@
 // Hooded suits
 
+<<<<<<< HEAD
 //Hoods for winter coats and chaplain hoodie etc
 
 /obj/item/clothing/suit/storage/hooded
@@ -70,6 +71,10 @@
 /obj/item/clothing/suit/storage/hooded/update_icon()
 	. = ..()
 	icon_state = "[toggleicon][hood_up ? "_t" : ""]"
+=======
+/obj/item/clothing/suit/storage/hooded
+	has_hood_sprite = TRUE //These all have suit sprites that HAVE hood sprites.
+>>>>>>> f08d4c2cd0 ([MIRROR] No more fake hoods (#10421))
 
 /obj/item/clothing/suit/storage/hooded/costume
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
