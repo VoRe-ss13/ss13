@@ -113,16 +113,19 @@
 
 	var/datum/looping_sound/supermatter/soundloop
 
-	var/engwarn = FALSE // CHOMPEdit: Looping Alarms
-	var/critwarn = FALSE // CHOMPEdit: Looping Alarms
-	var/causalitywarn = FALSE // CHOMPEdit: Looping Alarms
-	var/stationcrystal = FALSE // CHOMPEdit: Looping Alarms
+	// CHOMPAdd Start
+	var/engwarn = FALSE
+	var/critwarn = FALSE
+	var/causalitywarn = FALSE
+	var/stationcrystal = FALSE
+	// CHOMPAdd End
 
-/obj/machinery/power/supermatter/New()
-	..()
-	uid = gl_uid++
-
+<<<<<<< HEAD
 /obj/machinery/power/supermatter/Initialize()
+=======
+/obj/machinery/power/supermatter/Initialize(mapload)
+	uid = gl_uid++
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 	soundloop = new(list(src), TRUE)
 	if(src.z in using_map.station_levels) // CHOMPEdit: Looping Alarms
 		stationcrystal = TRUE  // CHOMPEdit: Looping Alarms

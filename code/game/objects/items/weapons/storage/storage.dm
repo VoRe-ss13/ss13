@@ -822,12 +822,20 @@
 	else
 		icon_state = closed_state
 
+<<<<<<< HEAD
 /obj/item/storage/trinketbox/New()
+=======
+/obj/item/storage/trinketbox/Initialize(mapload)
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 	if(!open_state)
 		open_state = "[initial(icon_state)]_open"
 	if(!closed_state)
 		closed_state = "[initial(icon_state)]"
+<<<<<<< HEAD
 	..()
+=======
+	. = ..()
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 
 /obj/item/storage/trinketbox/attack_self()
 	open = !open

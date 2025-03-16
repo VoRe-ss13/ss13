@@ -61,12 +61,20 @@
 		)
 	starts_with = list(/obj/item/reagent_containers/food/snacks/egg = 12)
 
+<<<<<<< HEAD
 /obj/item/storage/fancy/egg_box/New()
+=======
+/obj/item/storage/fancy/egg_box/Initialize(mapload)
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 	if(!open_state)
 		open_state = "[initial(icon_state)]0"
 	if(!closed_state)
 		closed_state = "[initial(icon_state)]"
+<<<<<<< HEAD
 	..()
+=======
+	. = ..()
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 
 /obj/item/storage/fancy/egg_box/update_icon()
 	cut_overlays()
@@ -263,12 +271,20 @@
 			C.brand = brand
 			C.desc += " This one is \a [brand]."
 
+<<<<<<< HEAD
 /obj/item/storage/fancy/cigarettes/New()
+=======
+/obj/item/storage/fancy/cigarettes/Initialize(mapload)
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 	if(!open_state)
 		open_state = "[initial(icon_state)]_open"
 	if(!closed_state)
 		closed_state = "[initial(icon_state)]"
+<<<<<<< HEAD
 	..()
+=======
+	. = ..()
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 
 /obj/item/storage/fancy/cigarettes/update_icon()
 	cut_overlays()
@@ -410,12 +426,20 @@
 	reagents.trans_to_obj(C, (reagents.total_volume/contents.len))
 	return ..()
 
+<<<<<<< HEAD
 /obj/item/storage/fancy/cigar/New()
+=======
+/obj/item/storage/fancy/cigar/Initialize(mapload)
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 	if(!open_state)
 		open_state = "[initial(icon_state)]0"
 	if(!closed_state)
 		closed_state = "[initial(icon_state)]"
+<<<<<<< HEAD
 	..()
+=======
+	. = ..()
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 
 /obj/item/storage/fancy/cigar/update_icon()
 	cut_overlays()

@@ -121,15 +121,18 @@ Class Procs:
 
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
 
-/obj/machinery/New(l, d=0)
-	..()
+/obj/machinery/Initialize(mapload, d=0)
+	. = ..()
 	if(isnum(d))
 		set_dir(d)
+<<<<<<< HEAD
 	if(ispath(circuit))
 		circuit = new circuit(src)
 
 /obj/machinery/Initialize(var/mapload)
 	. = ..()
+=======
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 	SSmachines.all_machines += src
 	if(ispath(circuit))
 		circuit = new circuit(src)

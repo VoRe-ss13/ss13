@@ -132,6 +132,7 @@
 	if(new_frequency)
 		radio_connection = radio_controller.add_object(src, new_frequency, RADIO_AIRLOCK)
 
+<<<<<<< HEAD
 
 /obj/machinery/door/airlock/Initialize()
 	. = ..()
@@ -140,6 +141,8 @@
 
 	update_icon()
 
+=======
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 /obj/machinery/door/airlock/Destroy()
 	if(frequency && radio_controller)
 		radio_controller.remove_object(src,frequency)

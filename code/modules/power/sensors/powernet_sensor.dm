@@ -25,14 +25,19 @@
 	var/next_record = 0
 	var/is_secret_monitor = FALSE
 
-// Proc: New()
+// Proc: Initialize(mapload)
 // Parameters: None
 // Description: Automatically assigns name according to ID tag.
+<<<<<<< HEAD
 /obj/machinery/power/sensor/New()
 	..()
 	auto_set_name()
 /obj/machinery/power/sensor/Initialize()
+=======
+/obj/machinery/power/sensor/Initialize(mapload)
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 	. = ..()
+	auto_set_name()
 	history["supply"] = list()
 	history["demand"] = list()
 

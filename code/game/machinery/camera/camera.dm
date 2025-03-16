@@ -42,7 +42,7 @@
 
 	var/list/camera_computers_using_this = list()
 
-/obj/machinery/camera/New()
+/obj/machinery/camera/Initialize(mapload)
 	wires = new(src)
 	assembly = new(src)
 	assembly.state = 4
@@ -65,7 +65,15 @@
 	if(!c_tag)
 		var/area/A = get_area(src)
 		c_tag = "[A ? A.name : "Unknown"] #[rand(111,999)]"
+<<<<<<< HEAD
 	..()
+=======
+
+	. = ..()
+
+	if (dir == NORTH)
+		layer = ABOVE_MOB_LAYER
+>>>>>>> c844cc3dee ([MIRROR] Finish Machinery new to init (#10439))
 	// VOREStation Edit End
 
 /obj/machinery/camera/Destroy()
