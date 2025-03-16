@@ -217,6 +217,7 @@
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
 
+<<<<<<< HEAD
 /datum/robot_sprite/dogborg/tall/engineering/dullahanv3
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	//named v3 to avoid conflicts with downstream
@@ -224,6 +225,46 @@
 /datum/robot_sprite/dogborg/tall/engineering/dullahanv3/engineerdully
 	name = "Dullahan engineer v3"
 	sprite_icon_state = "dullahanengineer"
+=======
+/datum/robot_sprite/dogborg/tall/engineering/dullahan
+	name = "Dullahan v1"
+	sprite_icon_state = "dullahaneng"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_eng.dmi'
+	rest_sprite_options = list("Default", "Sit")
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/engineering/dullahan/engineerv2
+	name = "Dullahan v2"
+	sprite_icon_state = "dullahaneng_alt"
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/engineering/dullahan/engineerv3
+	name = "Dullahan v3"
+	sprite_icon = 'icons/mob/robot/dullahan/v3/engineer.dmi'
+	sprite_icon_state = "dullahanengineer"
+	sprite_decals = list("decals")
+	icon_x = 64
+	pixel_x = -16
+
+/datum/robot_sprite/dogborg/engineering/cat
+	name = "Cat"
+	sprite_icon = 'icons/mob/robot/catborg_variant.dmi'
+	sprite_icon_state = "vixengi"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_resting_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+
+/datum/robot_sprite/dogborg/engineering/smolraptorengineeringsprite
+	sprite_icon = 'icons/mob/robot/smallraptors/smolraptor_eng.dmi'
+	name = "Small Raptor"
+	sprite_icon_state = "smolraptor"
+	has_dead_sprite_overlay = FALSE
+	has_eye_light_sprites = TRUE
+>>>>>>> 1ad7827d9d ([MIRROR] Robot offset unittest (#10433))
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")

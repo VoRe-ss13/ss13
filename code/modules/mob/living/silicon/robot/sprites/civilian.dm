@@ -311,6 +311,7 @@
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
 
+<<<<<<< HEAD
 /datum/robot_sprite/dogborg/tall/service/dullahanv3
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	//named v3 to avoid conflicts with downstream
@@ -321,13 +322,45 @@
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
+=======
+/datum/robot_sprite/dogborg/tall/service/dullahan
+	name = "Dullahan v1"
+	sprite_icon_state = "dullahanserv"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_serv.dmi'
+	rest_sprite_options = list("Default", "Sit")
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	pixel_x = 0
+	icon_x = 32
+
+
+/datum/robot_sprite/dogborg/tall/service/dullahan/servicealt
+	name = "Dullahan v2"
+	sprite_icon_state = "dullahanserv_alt"
+	pixel_x = 0
+	icon_x = 32
+
+/datum/robot_sprite/dogborg/tall/service/dullahan/servicealt2
+	name = "Dullahan v3"
+	sprite_icon = 'icons/mob/robot/dullahan/v3/service.dmi'
+	sprite_icon_state = "dullahanservice"
+	sprite_decals = list("decals")
+	icon_x = 64
+	pixel_x = -16
+>>>>>>> 1ad7827d9d ([MIRROR] Robot offset unittest (#10433))
 
 /datum/robot_sprite/dogborg/tall/service/dullahanv3/barista
 	name = "Dullahan matcha v3"
 	sprite_icon_state = "dullahanbarista"
+<<<<<<< HEAD
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
+=======
+	sprite_decals = list("decals")
+	icon_x = 64
+	pixel_x = -16
+>>>>>>> 1ad7827d9d ([MIRROR] Robot offset unittest (#10433))
 
 // Clerical
 
@@ -404,3 +437,83 @@
 
 		// None yet
 */
+<<<<<<< HEAD
+=======
+
+/datum/robot_sprite/dogborg/clown
+	module_type = "Clown"
+	sprite_icon = 'icons/mob/robot/widerobot/widerobot.dmi'
+
+/datum/robot_sprite/dogborg/clown/vale
+	name = "Honkhound V2"
+	sprite_icon_state = "honkborg"
+	has_eye_light_sprites = TRUE
+
+/datum/robot_sprite/dogborg/tall/clown
+	module_type = "Clown"
+	sprite_icon = 'icons/mob/robot/tallrobot/tallrobots.dmi'
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/clown/k4t
+	name = "K4T"
+	sprite_icon_state = "k4tclown"
+	has_eye_light_sprites = TRUE
+	has_custom_open_sprites = FALSE
+	has_vore_belly_sprites = FALSE
+	rest_sprite_options = list("Default", "Bellyup")
+	icon_x = 32
+
+/datum/robot_sprite/dogborg/tall/clown/dullahan
+	name = "Dullahan Clown"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_clown.dmi'
+	sprite_icon_state = "dullahanclown"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	rest_sprite_options = list("Default", "Sit")
+	pixel_x = 0
+	icon_x = 32
+
+/datum/robot_sprite/dogborg/clown/stoat
+	name = "ST-04t"
+	sprite_icon = 'icons/mob/robot/stoatborg.dmi'
+	sprite_icon_state = "stoatclown"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_resting_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+	rest_sprite_options = list("Default")
+
+/datum/robot_sprite/dogborg/service/valech
+	name = "ServicehoundV2 - Alt"
+	sprite_icon = 'icons/mob/robot/widerobot/widerobot.dmi'
+	sprite_icon_state = "servborg"
+	rest_sprite_options = list("Default")
+	has_eye_light_sprites = TRUE
+
+/datum/robot_sprite/dogborg/service/cat
+	name = "Cat"
+	sprite_icon = 'icons/mob/robot/catborg_variant.dmi'
+	sprite_icon_state = "vixserv"
+	has_vore_belly_resting_sprites = TRUE
+	has_eye_light_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+
+/datum/robot_sprite/dogborg/tall/service/mekaserve_alt
+	sprite_icon = 'icons/mob/robot/tallrobot/tallrobots.dmi'
+	name = "MEKA Alt"
+	sprite_icon_state = "mekaserve_alt"
+	rest_sprite_options = list("Default", "Sit")
+	icon_x = 32
+	pixel_x = 0
+
+
+/datum/robot_sprite/dogborg/service/smolraptorservicesprite
+	sprite_icon = 'icons/mob/robot/smallraptors/smolraptor_serv.dmi'
+
+/datum/robot_sprite/dogborg/service/smolraptorservicesprite/smolraptorserv
+	name = "Small Raptor"
+	sprite_icon_state = "smolraptor"
+	has_dead_sprite_overlay = FALSE
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	rest_sprite_options = list("Default", "Sit")
+>>>>>>> 1ad7827d9d ([MIRROR] Robot offset unittest (#10433))

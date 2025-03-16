@@ -24,6 +24,8 @@
 	has_eye_light_sprites = TRUE
 	has_vore_belly_sprites = TRUE
 	rest_sprite_options = list("Default", "Sit")
+	icon_x = 32
+	pixel_x = 0
 
 /datum/robot_sprite/dogborg/tall/explorer/dullahan/exploreralt
 	name = "Dullahan v2"
@@ -31,6 +33,8 @@
 	has_eye_light_sprites = TRUE
 	has_vore_belly_sprites = TRUE
 	rest_sprite_options = list("Default", "Sit")
+	icon_x = 32
+	pixel_x = 0
 
 /* placeholder
 /datum/robot_sprite/dogborg/tall/explorer
