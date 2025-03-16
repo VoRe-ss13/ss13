@@ -801,6 +801,16 @@
 	var/opened = FALSE	// has this been slit open? this will allow you to store an object in a plushie.
 	var/obj/item/stored_item	// Note: Stored items can't be bigger than the plushie itself.
 
+<<<<<<< HEAD
+=======
+	//This makes it so it reverts back to its initial name when it speaks if TRUE.
+	//This should be used if a plushie can be made to say custom messages. Not currently required at the moment, but here just in case it'd added in the future.
+	var/prevent_impersonation = FALSE
+
+/obj/item/toy/plushie/Initialize(mapload)
+	. = ..()
+	adjusted_name = name
+>>>>>>> 1000158323 ([MIRROR] More plush tweaks (#10434))
 
 /obj/item/toy/plushie/examine(mob/user)
 	. = ..()
@@ -835,6 +845,21 @@
 		visible_message("[src] says, \"[pokephrase]\"")
 	last_message = world.time
 
+<<<<<<< HEAD
+=======
+/obj/item/toy/plushie/proc/say_phrase()
+	//If we don't prevent impersonation, we just speak like normal!
+	//The PI var is used in case a plushie can be made to speak a custom message.
+	if(!prevent_impersonation)
+		atom_say("[pokephrase]")
+		return
+
+	//If we do prevent impersonation, change the name to original, speak, then bring it back.
+	name = initial(name) //No namestealing.
+	atom_say("[pokephrase]")
+	name = adjusted_name
+
+>>>>>>> 1000158323 ([MIRROR] More plush tweaks (#10434))
 /obj/item/toy/plushie/verb/rename_plushie()
 	set name = "Name Plushie"
 	set category = "Object"
