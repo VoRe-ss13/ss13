@@ -269,8 +269,13 @@
 	for(var/obj/ct as anything in req_components)
 		req_component_names[ct] = initial(ct.name)
 
+<<<<<<< HEAD
 /obj/structure/frame/New(var/loc, var/dir, var/building = 0, var/datum/frame/frame_types/type, mob/user as mob)
 	..()
+=======
+/obj/structure/frame/Initialize(mapload, var/dir, var/building = 0, var/datum/frame/frame_types/type, mob/user as mob)
+	. = ..()
+>>>>>>> 9cbf4c2865 (needs a hint (#10442))
 	if(building)
 		frame_type = type
 		state = FRAME_PLACED
