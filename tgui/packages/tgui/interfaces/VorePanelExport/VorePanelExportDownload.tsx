@@ -5,7 +5,7 @@ import { generateBellyString } from './VorePanelExportBellyString';
 import { getCurrentTimestamp } from './VorePanelExportTimestamp';
 
 export const downloadPrefs = (extension: string) => {
-  const { act, data } = useBackend<Data>();
+  const { data } = useBackend<Data>();
 
   const { db_version, db_repo, mob_name, bellies } = data;
 

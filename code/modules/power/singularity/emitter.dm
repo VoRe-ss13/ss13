@@ -58,8 +58,13 @@
 /obj/machinery/power/emitter/Destroy()
 	message_admins("Emitter deleted at ([x],[y],[z] - <A href='byond://?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)",0,1)
 	log_game("EMITTER([x],[y],[z]) Destroyed/deleted.")
+<<<<<<< HEAD
 	investigate_log("<font color='red'>deleted</font> at ([x],[y],[z])","singulo")
 	..()
+=======
+	investigate_log(span_red("deleted") + " at ([x],[y],[z])","singulo")
+	. = ..()
+>>>>>>> 2f698760c7 ([MIRROR] Panel port test [IDB IGNORE] (#10447))
 
 /obj/machinery/power/emitter/update_icon()
 	if (active && powernet && avail(active_power_usage))

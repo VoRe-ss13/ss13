@@ -52,7 +52,7 @@
 	for(var/atom/movable/AM in contents)
 		qdel(AM)
 	QDEL_NULL(soundloop)
-	..()
+	. = ..()
 
 /obj/machinery/pda_multicaster/update_icon()
 	if(on)

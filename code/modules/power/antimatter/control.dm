@@ -9,8 +9,8 @@
 	idle_power_usage = 100
 	active_power_usage = 1000
 
-	var/list/obj/machinery/am_shielding/linked_shielding
-	var/list/obj/machinery/am_shielding/linked_cores
+	var/list/obj/machinery/am_shielding/linked_shielding = list()
+	var/list/obj/machinery/am_shielding/linked_cores = list()
 	var/obj/item/am_containment/fueljar
 	var/update_shield_icons = 0
 	var/stability = 100
@@ -28,6 +28,7 @@
 
 	var/stored_power = 0//Power to deploy per tick
 
+<<<<<<< HEAD
 
 /obj/machinery/power/am_control_unit/New()
 	..()
@@ -35,10 +36,12 @@
 	linked_cores = list()
 
 
+=======
+>>>>>>> 2f698760c7 ([MIRROR] Panel port test [IDB IGNORE] (#10447))
 /obj/machinery/power/am_control_unit/Destroy()//Perhaps damage and run stability checks rather than just qdel on the others
 	for(var/obj/machinery/am_shielding/AMS in linked_shielding)
 		qdel(AMS)
-	..()
+	. = ..()
 
 
 /obj/machinery/power/am_control_unit/process()
