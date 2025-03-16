@@ -56,9 +56,13 @@
 
 		//Cosmetics mostly
 		flick("tp_in",src)
+<<<<<<< HEAD
 		custom_emote(1,"phases in!")
 		sleep(5) //The duration of the TP animation
 		canmove = original_canmove
+=======
+		automatic_custom_emote(VISIBLE_MESSAGE,"phases in!")
+>>>>>>> 8732f6f928 ([MIRROR] Removes more sleeps from init (#10445))
 
 		//Potential phase-in vore
 		if(can_be_drop_pred) //Toggleable in vore panel
@@ -109,9 +113,14 @@
 
 		// change
 		ability_flags |= AB_PHASE_SHIFTED
+<<<<<<< HEAD
 		throwpass = TRUE // CHOMPAdd
 		mouse_opacity = 0
 		custom_emote(1,"phases out!")
+=======
+		throwpass = TRUE
+		automatic_custom_emote(VISIBLE_MESSAGE,"phases out!")
+>>>>>>> 8732f6f928 ([MIRROR] Removes more sleeps from init (#10445))
 		real_name = name
 		name = "Something"
 

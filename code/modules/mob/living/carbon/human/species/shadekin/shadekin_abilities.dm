@@ -189,12 +189,16 @@
 		var/obj/effect/temp_visual/shadekin/phase_in/phaseanim = new /obj/effect/temp_visual/shadekin/phase_in(src.loc)
 		phaseanim.dir = dir
 		alpha = 0
+<<<<<<< HEAD
 		custom_emote(1,"phases in!")
 		sleep(5) //The duration of the TP animation
 		canmove = original_canmove
 		alpha = initial(alpha)
 		remove_modifiers_of_type(/datum/modifier/shadekin_phase_vision)
 		remove_modifiers_of_type(/datum/modifier/shadekin_phase) //CHOMPEdit - Shadekin probably shouldn't be hit while phasing
+=======
+		automatic_custom_emote(VISIBLE_MESSAGE,"phases in!")
+>>>>>>> 8732f6f928 ([MIRROR] Removes more sleeps from init (#10445))
 
 		//Potential phase-in vore
 		if(can_be_drop_pred || can_be_drop_prey) //Toggleable in vore panel
@@ -258,8 +262,13 @@
 		// change
 		ability_flags |= AB_PHASE_SHIFTED
 		ability_flags |= AB_PHASE_SHIFTING
+<<<<<<< HEAD
 		mouse_opacity = 0
 		custom_emote(1,"phases out!")
+=======
+		throwpass = TRUE
+		automatic_custom_emote(VISIBLE_MESSAGE,"phases out!")
+>>>>>>> 8732f6f928 ([MIRROR] Removes more sleeps from init (#10445))
 		name = get_visible_name()
 
 		//CHOMPEdit begin - Unequipping slots when phasing in, and preventing pulling stuff while phased.
