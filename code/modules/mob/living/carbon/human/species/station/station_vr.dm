@@ -214,7 +214,7 @@
 			they now slowly recover from their previous hubris and aim to revitalize their planet. While many Zorren live in pre-industrial conditions by necessity, \
 			they are an interstellar species known for their pride and stubbornness and doggedly hold out on a Deathworld of their own creation. \
 			As local species, they hold moderate sway on local corporations and are hired by NT and other companies, although they find \"Outlander\" culture deeply weird."
-	wikilink="https://wiki.torchstation13.net/index.php?title=Zorren" //CHOMPEdit: link to our wiki
+	wikilink="https://wiki.torchstation13.net/index.php?title=Zorren" //CHOMPEdit: link to our wiki //TORCHEdit - Torch links
 
 	catalogue_data = list(/datum/category_item/catalogue/fauna/zorren)
 
@@ -334,7 +334,7 @@
 	descriptors = list()
 
 //CHOMPSedit: link to our wiki
-	wikilink="https://wiki.torchstation13.net/index.php?title=Unathi"
+	wikilink="https://wiki.torchstation13.net/index.php?title=Unathi" //TORCHEdit - Torch links
 
 /datum/species/tajaran
 	spawn_flags = SPECIES_CAN_JOIN
@@ -350,7 +350,7 @@
 	heat_discomfort_level = 295 //Prevents heat discomfort spam at 20c
 
 //CHOMPSedit: links to our wiki
-	wikilink="https://wiki.torchstation13.net/index.php?title=Tajaran"
+	wikilink="https://wiki.torchstation13.net/index.php?title=Tajaran" //TORCHEdit - Torch links
 	genders = list(MALE, FEMALE, PLURAL, NEUTER)
 	agility = 90
 	can_climb = TRUE
@@ -368,7 +368,7 @@
 	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX, LANGUAGE_PROMETHEAN)
 
 //CHOMPedit: link to our wiki
-	wikilink="https://wiki.torchstation13.net/index.php?title=Skrell"
+	wikilink="https://wiki.torchstation13.net/index.php?title=Skrell" //TORCHEdit - Torch links
 	genders = list(MALE, FEMALE, PLURAL, NEUTER)
 
 	water_breather = TRUE
@@ -383,7 +383,7 @@
 	descriptors = list()
 
 //CHOMPedit: link to our wiki
-	wikilink="https://wiki.torchstation13.net/index.php?title=Zaddat"
+	wikilink="https://wiki.torchstation13.net/index.php?title=Zaddat" //TORCHEdit - Torch links
 
 /datum/species/zaddat/equip_survival_gear(var/mob/living/carbon/human/H)
 	.=..()
@@ -396,13 +396,13 @@
 /datum/species/diona
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_WHITELIST_SELECTABLE	//CHOMPStation Edit: restore whitelist requirement
 	min_age = 18
-	wikilink="https://wiki.torchstation13.net/index.php?title=Diona" //CHOMPedit
+	wikilink="https://wiki.torchstation13.net/index.php?title=Diona" //CHOMPedit //TORCHEdit - Torch links
 	genders = list(MALE, FEMALE, PLURAL, NEUTER)
 
 //CHOMPedit start
 /datum/species/shapeshifter/promethean
 	spawn_flags = SPECIES_CAN_JOIN
-	wikilink="https://wiki.torchstation13.net/index.php?title=Promethean"
+	wikilink="https://wiki.torchstation13.net/index.php?title=Promethean" //TORCHEdit - Torch links
 //CHOMPedit end
 
 /datum/species/human
@@ -420,7 +420,7 @@
 	base_color = "#EECEB3"
 
 //CHOMPedit: link to our wiki
-	wikilink="https://wiki.torchstation13.net/index.php?title=Humans"
+	wikilink="https://wiki.torchstation13.net/index.php?title=Humans" //TORCHEdit - Torch links
 
 /datum/species/human/vatgrown
 	spawn_flags = SPECIES_IS_RESTRICTED
@@ -441,7 +441,7 @@
 		)
 
 //CHOMPedit: link to our wiki
-	wikilink="https://wiki.torchstation13.net/index.php?title=Vox"
+	wikilink="https://wiki.torchstation13.net/index.php?title=Vox" //TORCHEdit - Torch links
 
 /datum/species/harpy
 	name = SPECIES_RAPALA

@@ -76,6 +76,12 @@
 
 	if(status != SHELTER_DEPLOY_ALLOWED)
 		return FALSE
+	//RS Port #658 Start
+	var/area/A = get_area(src)
+	if(!client?.holder && A.flag_check(AREA_BLOCK_PHASE_SHIFT))
+		to_chat(src, span_warning("You can't do that here!"))
+		return FALSE
+	//RS Port #658 End
 
 	var/turf/T = deploy_location
 	var/datum/effect/effect/system/smoke_spread/smoke = new /datum/effect/effect/system/smoke_spread()

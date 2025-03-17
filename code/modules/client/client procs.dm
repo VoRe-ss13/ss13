@@ -341,6 +341,7 @@
 		winset(src, "rpane.changelog", "background-color=#eaeaea;font-style=bold")
 		if(CONFIG_GET(flag/aggressive_changelog))
 			src.changes()
+	// CHOMPAdd End
 
 	if(CONFIG_GET(flag/paranoia_logging))
 		var/alert = FALSE //VOREStation Edit start.

@@ -455,6 +455,7 @@
 	set name = "Changelog"
 	set category = "OOC.Resources"
 
+	// CHOMPAdd Start
 	if(!GLOB.changelog_tgui)
 		GLOB.changelog_tgui = new /datum/changelog()
 	GLOB.changelog_tgui.tgui_interact(usr)

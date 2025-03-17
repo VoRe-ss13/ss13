@@ -10,6 +10,7 @@
 
 	var/has_eye_sprites = TRUE
 	var/has_eye_light_sprites = FALSE
+	var/has_robotdecal_sprites = FALSE
 	var/has_custom_open_sprites = FALSE
 	var/has_vore_belly_sprites = FALSE
 	var/has_vore_belly_resting_sprites = FALSE

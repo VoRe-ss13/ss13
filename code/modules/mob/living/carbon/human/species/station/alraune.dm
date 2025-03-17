@@ -19,7 +19,7 @@
 
 	// male_scream_sound = null //CHOMPedit
 	// female_scream_sound = null //CHOMPedit
-	wikilink="https://wiki.torchstation13.net/index.php?title=Alraune" //CHOMPedit: add wiki link
+	wikilink="https://wiki.torchstation13.net/index.php?title=Alraune" //CHOMPedit: add wiki link //TORCHEdit - Torch links
 
 	body_temperature = T20C
 	breath_type = GAS_O2

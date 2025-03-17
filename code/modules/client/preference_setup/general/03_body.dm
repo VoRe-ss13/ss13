@@ -338,7 +338,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			var/key = pref.rlimb_data[name]
 			if(!istext(key))
 				log_debug("Bad rlimb_data for [key_name(pref.client)], [name] was set to [key]")
-				to_chat(usr, span_warning("Error loading robot limb data for `[name]`, clearing pref."))
+				to_chat(user, span_warning("Error loading robot limb data for `[name]`, clearing pref."))
 				pref.rlimb_data -= name
 			else
 				R = LAZYACCESS(all_robolimbs, key)

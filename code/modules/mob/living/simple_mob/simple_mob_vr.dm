@@ -223,6 +223,12 @@
 	add_verb(src, /mob/living/simple_mob/proc/toggle_fancygurgle)
 	add_verb(src, /mob/living/proc/vertical_nom)
 
+	/* CHOMPRemove Start, handled with the vore_active var
+	if(!IsAdvancedToolUser())
+		add_verb(src, /mob/living/simple_mob/proc/animal_nom)
+		add_verb(src, /mob/living/proc/shred_limb)
+	*/// CHOMPRemove End
+
 	if(LAZYLEN(vore_organs))
 		return
 

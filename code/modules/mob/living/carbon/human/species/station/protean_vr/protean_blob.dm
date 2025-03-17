@@ -199,6 +199,8 @@
 		humanform.species.update_misc_tabs(src)
 
 /mob/living/simple_mob/protean_blob/updatehealth()
+	if(humanform.nano_dead_check(src))
+		return
 	if(!humanform)
 		CRASH("A protean blob does not have a humanform! src = [src] ckey = [ckey]")
 	if(humanform.nano_dead_check(src))

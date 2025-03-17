@@ -173,6 +173,22 @@
 		else
 			M.inertia_dir = 0
 	..()
+/turf/simulated/proc/handle_slipping(var/mob/living/M, var/slip_dist, var/dirtslip)
+	PRIVATE_PROC(TRUE)
+	if(!M || !slip_dist)
+		return
+	if(isbelly(M.loc))	// Stop the slip if we're in a belly.
+		return
+	if(!step(M, M.dir) && !dirtslip)
+		return // done sliding, failed to move
+	// check tile for next slip
+	if(!dirtslip)
+		var/turf/simulated/ground = get_turf(M)
+		if(!istype(ground,/turf/simulated))
+			return // stop sliding as it is impossible to be on wet terrain?
+		if(ground.wet != 2)
+			return // done sliding, not lubed
+	addtimer(CALLBACK(src, PROC_REF(handle_slipping), M, --slip_dist, dirtslip), 1)
 
 /turf/simulated/proc/handle_slipping(var/mob/living/M, var/slip_dist, var/dirtslip)
 	PRIVATE_PROC(TRUE)

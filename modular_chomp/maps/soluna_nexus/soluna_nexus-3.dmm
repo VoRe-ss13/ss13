@@ -5130,6 +5130,9 @@
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_3_Deck_Hall)
 "bmm" = (
@@ -11661,6 +11664,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/wood/alt,
 /area/crew_quarters/Chomp_Dinner_2)
 "dKo" = (
@@ -14578,6 +14584,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/hallway/Central_3_Deck_Hall)
 "eFF" = (
@@ -21725,6 +21732,9 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_3_Deck_Hall)
 "gOd" = (
@@ -22747,6 +22757,10 @@
 /obj/machinery/light/floortube{
 	dir = 8;
 	pixel_x = -3
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_3_Deck_Hall)
@@ -24908,7 +24922,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Center_Star)
 "iaG" = (
@@ -34113,6 +34126,10 @@
 	},
 /obj/effect/floor_decal/corner/white/border{
 	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_3_Deck_Hall)
@@ -68863,6 +68880,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 8
 	},
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/wood/alt,
 /area/crew_quarters/Chomp_Dinner_1)
 "wGB" = (
@@ -70134,6 +70154,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
+	},
+/obj/structure/disposalpipe/junction{
+	dir = 1;
+	icon_state = "pipe-j2"
 	},
 /obj/structure/disposalpipe/junction{
 	dir = 1;

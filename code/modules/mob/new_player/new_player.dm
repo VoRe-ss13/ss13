@@ -77,8 +77,7 @@
 
 	output += "<hr>" //ChompADD - a line divider between functional and info buttons
 
-	/*
-	//nobody uses this feature //WELL WE'RE GONNA //TORCHEdit Not really. Not yet at least
+	//nobody uses this feature //WELL WE'RE GONNA
 	if(!IsGuestKey(src.key))
 		establish_db_connection()
 

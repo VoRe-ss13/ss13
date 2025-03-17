@@ -7524,6 +7524,9 @@
 /obj/effect/floor_decal/corner/white/border{
 	dir = 4
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/Aft_1_Deck_Stairwell)
 "aVB" = (
@@ -26286,7 +26289,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Star_Corridor)
 "gXk" = (
@@ -28604,6 +28606,9 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/white/border{
+	dir = 4
+	},
+/obj/machinery/light{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -37213,6 +37218,9 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/corner/white/border{
+	dir = 8
+	},
+/obj/machinery/light{
 	dir = 8
 	},
 /turf/simulated/floor/tiled,
@@ -51444,6 +51452,10 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Security_StarCorridor2)
 "pZd" = (
@@ -61375,7 +61387,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
-/obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck1_Star_Corridor)
 "tGZ" = (
@@ -70284,6 +70295,10 @@
 	},
 /obj/effect/floor_decal/corner/white/border{
 	dir = 8
+	},
+/obj/machinery/light{
+	dir = 8;
+	layer = 3
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/Aft_1_Deck_Stairwell)
@@ -90720,6 +90735,29 @@ aaa
 aaa
 aaa
 aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 "}
 (65,1,1) = {"
 aaa
@@ -99982,6 +100020,12 @@ pFU
 pFU
 pFU
 pFU
+aaa
+aaa
+aaa
+aaa
+"}
+(101,1,1) = {"
 aaa
 aaa
 aaa

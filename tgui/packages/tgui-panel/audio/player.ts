@@ -8,93 +8,117 @@ import { createLogger } from 'tgui/logging';
 
 const logger = createLogger('AudioPlayer');
 
-type AudioOptions = {
-  pitch?: number;
-  start?: number;
-  end?: number;
-};
+type CustomAudioElement = HTMLAudioElement & { stop: Function };
 
 export class AudioPlayer {
-  element: HTMLAudioElement | null;
-  options: AudioOptions;
+  node: CustomAudioElement;
+  playing: boolean;
   volume: number;
-
-  onPlaySubscribers: { (): void }[];
-  onStopSubscribers: { (): void }[];
-
+  options: { pitch?: number; start?: number; end?: number };
+  onPlaySubscribers: Function[];
+  onStopSubscribers: Function[];
+  playbackInterval: NodeJS.Timeout;
   constructor() {
-    this.element = null;
-
+    // Set up the HTMLAudioElement node
+    this.node = document.createElement('audio') as CustomAudioElement;
+    this.node.style.setProperty('display', 'none');
+    document.body.appendChild(this.node);
+    // Set up other properties
+    this.playing = false;
+    this.volume = 1;
+    this.options = {};
     this.onPlaySubscribers = [];
     this.onStopSubscribers = [];
-  }
-
-  destroy() {
-    this.element = null;
-  }
-
-  play(url: string, options: AudioOptions = {}) {
-    if (this.element) {
-      this.stop();
-    }
-    this.options = options;
-
-    const audio = (this.element = new Audio(url));
-    audio.volume = this.volume;
-    audio.playbackRate = this.options.pitch || 1;
-
-    logger.log('playing', url, options);
-
-    audio.addEventListener('ended', () => {
+    // Listen for playback start events
+    this.node.addEventListener('canplaythrough', () => {
+      logger.log('canplaythrough');
+      this.playing = true;
+      this.node.playbackRate = this.options.pitch || 1;
+      this.node.currentTime = this.options.start || 0;
+      this.node.volume = this.volume;
+      this.node.play();
+      for (let subscriber of this.onPlaySubscribers) {
+        subscriber();
+      }
+    });
+    // Listen for playback stop events
+    this.node.addEventListener('ended', () => {
       logger.log('ended');
       this.stop();
     });
-
-    audio.addEventListener('error', (error) => {
-      logger.log('playback error', error);
+    // Listen for playback errors
+    this.node.addEventListener('error', (e) => {
+      if (this.playing) {
+        logger.log('playback error', e.error);
+        this.stop();
+      }
     });
+    // Check every second to stop the playback at the right time
+    this.playbackInterval = setInterval(() => {
+      if (!this.playing) {
+        return;
+      }
+      const shouldStop =
+        this.options.end &&
+        this.options.end > 0 &&
+        this.node.currentTime >= this.options.end;
+      if (shouldStop) {
+        this.stop();
+      }
+    }, 1000);
+  }
 
-    if (this.options.end) {
-      audio.addEventListener('timeupdate', () => {
-        if (
-          this.options.end &&
-          this.options.end > 0 &&
-          audio.currentTime >= this.options.end
-        ) {
-          this.stop();
-        }
-      });
+  destroy() {
+    if (!this.node) {
+      return;
     }
+    this.node.stop();
+    document.removeChild(this.node);
+    clearInterval(this.playbackInterval);
+  }
 
-    audio.play();
-
-    this.onPlaySubscribers.forEach((subscriber) => subscriber());
+  play(url, options = {}) {
+    if (!this.node) {
+      return;
+    }
+    logger.log('playing', url, options);
+    this.options = options;
+    this.node.src = url;
   }
 
   stop() {
-    if (!this.element) return;
-
+    if (!this.node) {
+      return;
+    }
+    if (this.playing) {
+      for (let subscriber of this.onStopSubscribers) {
+        subscriber();
+      }
+    }
     logger.log('stopping');
-
-    this.element.pause();
-    this.element = null;
-
-    this.onStopSubscribers.forEach((subscriber) => subscriber());
+    this.playing = false;
+    this.node.src = '';
   }
 
-  setVolume(volume: number): void {
+  setVolume(volume) {
+    if (!this.node) {
+      return;
+    }
     this.volume = volume;
-
-    if (!this.element) return;
-
-    this.element.volume = volume;
+    this.node.volume = volume;
   }
 
-  onPlay(subscriber: () => void): void {
+  onPlay(subscriber) {
+    if (!this.node) {
+      return;
+    }
     this.onPlaySubscribers.push(subscriber);
   }
 
-  onStop(subscriber: () => void): void {
+  onStop(subscriber) {
+    if (!this.node) {
+      return;
+    }
     this.onStopSubscribers.push(subscriber);
   }
 }

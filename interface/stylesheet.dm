@@ -25,6 +25,8 @@ em						{font-style: normal;font-weight: bold;}
 
 .underline				{text-decoration: underline;}
 
+.underline				{			text-decoration: underline;}
+
 .prefix					{font-weight: bold;}
 .log_message			{color: #386AFF;	font-weight: bold;}
 

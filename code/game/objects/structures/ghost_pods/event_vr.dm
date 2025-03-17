@@ -53,6 +53,7 @@
 		reset_ghostpod()
 		return
 
+	// var/mobtype = possible_mobs[choice] //TORCHRemoval
 	var/mob/living/simple_mob/newPred = new mobtype(get_turf(src))
 	qdel(newPred.ai_holder)
 	newPred.ai_holder = null
