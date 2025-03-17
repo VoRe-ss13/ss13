@@ -227,22 +227,6 @@ GLOBAL_LIST_INIT(grass_grass,list(
 		/obj/structure/flora/ausbushes/sparsegrass,
 		/obj/structure/flora/ausbushes/fullgrass
 		),
-//TORCHEdit Begin
-	"thor_real" = list(
-		/obj/structure/flora/ausbushes/sparsegrass,
-		/obj/structure/flora/ausbushes/fullgrass,
-		/obj/structure/flora/ausbushes/lavendergrass,
-		/obj/structure/flora/ausbushes/genericbush,
-		/obj/structure/flora/ausbushes/grassybush,
-		/obj/structure/flora/ausbushes/sunnybush,
-		/obj/structure/flora/ausbushes/brflowers,
-		/obj/structure/flora/ausbushes/ppflowers,
-		/obj/structure/flora/ausbushes/ywflowers,
-		/obj/structure/flora/tree/jungle_small,
-		/obj/structure/flora/tree/jungle,
-		/obj/structure/flora/ausbushes/leafybush,
-		)
-//TORCHEdit End
 ))
 
 GLOBAL_LIST_INIT(grass_trees, list(

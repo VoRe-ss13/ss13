@@ -654,8 +654,10 @@ var/list/global/slot_flags_enumeration = list(
 		return
 
 	//if we haven't made our blood_overlay already
-	if( !blood_overlay )
+	if(!blood_overlay)
 		generate_blood_overlay()
+	else
+		overlays.Remove(blood_overlay)
 
 	//Make the blood_overlay have the proper color then apply it.
 	blood_overlay.color = blood_color
@@ -813,13 +815,6 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 		return TRUE
 	else
 		return FALSE
-
-
-// My best guess as to why this is here would be that it does so little. Still, keep it under all the procs, for sanity's sake.
-/obj/item
-	icon = 'icons/obj/device.dmi'
-	pickup_sound = 'sound/items/pickup/device.ogg'
-	drop_sound = 'sound/items/drop/device.ogg'
 
 //Worn icon generation for on-mob sprites
 /obj/item/proc/make_worn_icon(var/body_type,var/slot_name,var/inhands,var/default_icon,var/default_layer,var/icon/clip_mask = null)

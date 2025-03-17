@@ -70,10 +70,10 @@
 
 	if(href_list["irc_msg"])
 		if(!holder && received_irc_pm < world.time - 6000) //Worse they can do is spam IRC for 10 minutes
-			to_chat(usr, span_warning("You are no longer able to use this, it's been more than 10 minutes since an admin on IRC has responded to you"))
+			to_chat(src, span_warning("You are no longer able to use this, it's been more than 10 minutes since an admin on IRC has responded to you"))
 			return
 		if(mute_irc)
-			to_chat(usr, "<span class='warning'You cannot use this as your client has been muted from sending messages to the admins on IRC</span>")
+			to_chat(usr, span_warning("You cannot use this as your client has been muted from sending messages to the admins on IRC"))
 			return
 		send2adminirc(href_list["irc_msg"])
 		return
@@ -115,6 +115,8 @@
 			qdel(query) //CHOMPEdit TGSQL
 		return
 	//VOREStation Add End
+	if(href_list["reload_statbrowser"])
+		stat_panel.reinitialize()
 
 	if(href_list["reload_statbrowser"]) //CHOMPEdit
 		stat_panel.reinitialize() //CHOMPEdit
@@ -657,7 +659,7 @@
 
 	show_verb_panel = !show_verb_panel
 
-	to_chat(usr, "Your verbs are now [show_verb_panel ? "on" : "off. To turn them back on, type 'toggle-verbs' into the command bar."].")
+	to_chat(src, "Your verbs are now [show_verb_panel ? "on" : "off. To turn them back on, type 'toggle-verbs' into the command bar."].")
 *///CHOMPRemove End
 
 /*
@@ -672,6 +674,23 @@
 	else
 		winset(usr, "input", "is-visible=false")
 */
+
+/client/verb/show_active_playtime()
+	set name = "Active Playtime"
+	set category = "IC.Game"
+
+	if(!play_hours.len)
+		to_chat(src, span_warning("Persistent playtime disabled!"))
+		return
+
+	var/department_hours = ""
+	for(var/play_hour in play_hours)
+		if(!isnum(play_hour) && isnum(play_hours[play_hour]))
+			department_hours += "<br>\t[capitalize(play_hour)]: [play_hours[play_hour]]"
+	if(!department_hours)
+		to_chat(src, span_warning("No recorded playtime found!"))
+		return
+	to_chat(src, span_info("Your department hours:" + department_hours))
 
 /// compiles a full list of verbs and sends it to the browser
 /client/proc/init_verbs()
@@ -688,7 +707,7 @@
 		if(!istext(verb_to_init.category))
 			continue
 		panel_tabs |= verb_to_init.category
-		verblist[++verblist.len] = list(verb_to_init.category, verb_to_init.name)
+		verblist[++verblist.len] = list(verb_to_init.category, verb_to_init.name, verb_to_init.desc)
 	src.stat_panel.send_message("init_verbs", list(panel_tabs = panel_tabs, verblist = verblist))
 
 /client/proc/check_panel_loaded()

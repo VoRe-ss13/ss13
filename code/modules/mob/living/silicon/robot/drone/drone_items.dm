@@ -28,6 +28,8 @@
 	var/obj/item/wrapped = null // Item currently being held.
 
 	var/force_holder = null //
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
 
 /obj/item/gripper/examine(mob/user)
 	. = ..()
@@ -266,7 +268,7 @@
 
 	set name = "Drop Item"
 	set desc = "Release an item from your magnetic gripper."
-	set category = "Abilities.Silicon" //ChompEDIT - TGPanel
+	set category = "Abilities.Silicon"
 
 	drop_item()
 
@@ -563,15 +565,15 @@
 	<B>Installed Modules</B><BR><BR>"}
 
 
-	var/tools = "<B>Tools and devices</B><BR>"
-	var/resources = "<BR><B>Resources</B><BR>"
+	var/tools = span_bold("Tools and devices") + "<BR>"
+	var/resources = "<BR>" + span_bold("Resources") + "<BR>"
 
 	for (var/O in module.modules)
 
 		var/module_string = ""
 
 		if (!O)
-			module_string += text("<B>Resource depleted</B><BR>")
+			module_string += span_bold("Resource depleted") + "<BR>"
 		else if(activated(O))
 			module_string += text("[O]: <B>Activated</B><BR>")
 		else
@@ -588,7 +590,7 @@
 			var/module_string = ""
 
 			if (!O)
-				module_string += text("<B>Resource depleted</B><BR>")
+				module_string += span_bold("Resource depleted") + "<BR>"
 			else if(activated(O))
 				module_string += text("[O]: <B>Activated</B><BR>")
 			else
