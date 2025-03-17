@@ -405,7 +405,7 @@
 	projectile_type = /obj/item/projectile/bullet/rifle/a145/highvel
 	matter = list(MAT_STEEL = 4000, MAT_PLASTEEL = 1000) //CHOMPedit Makes them a bit more expensive
 
-/obj/item/ammo_casing/a145/spent/Initialize()
+/obj/item/ammo_casing/a145/spent/Initialize(mapload)
 	. = ..()
 	expend()
 
@@ -473,7 +473,7 @@
 /obj/item/ammo_casing/rocket
 	name = "rocket shell"
 	desc = "A high explosive designed to be fired from a launcher."
-	icon_state = "rocketshell"
+	icon_state = "sshell_alt"
 	projectile_type = /obj/item/projectile/bullet/srmrocket
 	caliber = "rocket"
 	matter = list(MAT_STEEL = 10000)

@@ -1377,7 +1377,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
@@ -2318,18 +2318,9 @@
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/emergency,
 /obj/item/storage/toolbox/emergency,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/item/radio/off,
 /obj/item/radio/off,
 /obj/item/radio/off,
@@ -2999,7 +2990,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -3199,7 +3190,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "ckB" = (
@@ -3274,12 +3265,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "cnI" = (
@@ -3371,7 +3362,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "cry" = (
@@ -3775,12 +3766,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "cBP" = (
@@ -5745,9 +5736,6 @@
 /area/space)
 "dRK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/map_effect/interval/sound_emitter/ballistic_gunfight,
 /turf/simulated/floor/outdoors/dirt,
 /area/space)
@@ -6364,14 +6352,6 @@
 	name = "Spill of fear"
 	},
 /turf/simulated/floor/gorefloor,
-/area/space)
-"epX" = (
-/obj/effect/alien/weeds,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks{
-	outdoors = 0
-	},
 /area/space)
 "eqm" = (
 /obj/structure/window/titanium/full,
@@ -7049,7 +7029,6 @@
 /obj/structure/curtain/bed,
 /obj/item/bedsheet/hosdouble,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = 32
 	},
 /turf/simulated/floor/wood,
@@ -8402,7 +8381,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "fSx" = (
@@ -8939,12 +8918,12 @@
 /area/space)
 "glz" = (
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "glT" = (
@@ -9069,7 +9048,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "gqk" = (
@@ -10148,7 +10127,7 @@
 	once = 0
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "gYa" = (
@@ -10348,7 +10327,7 @@
 /obj/effect/map_effect/interval/sound_emitter/geiger/high,
 /obj/effect/map_effect/interval/sound_emitter/thunder,
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "heD" = (
@@ -10883,7 +10862,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -11441,12 +11420,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "hPw" = (
@@ -11820,7 +11799,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "ibO" = (
@@ -11877,7 +11856,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "ieF" = (
@@ -12155,7 +12134,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -12468,11 +12447,6 @@
 	dir = 1
 	},
 /turf/simulated/shuttle/floor/white,
-/area/space)
-"ixh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood,
 /area/space)
 "ixo" = (
 /obj/structure/grille/cult{
@@ -12885,10 +12859,6 @@
 /obj/item/gun/projectile/automatic/sts35,
 /turf/simulated/shuttle/floor/voidcraft/light,
 /area/space)
-"iIq" = (
-/obj/effect/ctrigger,
-/turf/simulated/floor/outdoors/dirt,
-/area/space)
 "iIv" = (
 /obj/structure/artilleryplaceholder{
 	icon_state = "33"
@@ -12933,11 +12903,6 @@
 	pixel_x = -32
 	},
 /turf/simulated/floor/reinforced,
-/area/space)
-"iKm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white,
 /area/space)
 "iKL" = (
 /obj/machinery/door/airlock/maintenance/command,
@@ -13032,7 +12997,6 @@
 "iPZ" = (
 /obj/item/clothing/suit/storage/apron/white,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/space)
 "iQa" = (
@@ -13093,7 +13057,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -14531,7 +14495,6 @@
 	pixel_y = 20
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /obj/item/handcuffs/legcuffs/fuzzy,
@@ -14771,7 +14734,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "kaP" = (
@@ -15314,12 +15277,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "knl" = (
@@ -15638,14 +15601,10 @@
 	name = "First-Aid (empty)"
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
@@ -15898,7 +15857,6 @@
 /obj/item/clothing/shoes/sandal,
 /obj/item/clothing/shoes/sandal,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /obj/item/towel/random,
@@ -17994,10 +17952,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/space)
-"mfO" = (
-/obj/effect/ctrigger,
-/turf/template_noop,
-/area/space)
 "mfQ" = (
 /obj/machinery/shower{
 	dir = 4
@@ -18132,7 +18086,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "mjW" = (
@@ -18561,11 +18515,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/grass,
 /area/space)
-"mvi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/space)
 "mvE" = (
 /obj/machinery/light{
 	dir = 4
@@ -18932,7 +18881,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "mAJ" = (
@@ -19472,12 +19421,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "mRF" = (
@@ -20398,7 +20347,7 @@
 /area/space)
 "nCu" = (
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "nCJ" = (
@@ -20635,7 +20584,6 @@
 	pixel_x = 5;
 	pixel_y = 10
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/space)
@@ -21488,14 +21436,8 @@
 /obj/item/clothing/gloves/sterile/latex,
 /obj/item/storage/belt/utility,
 /obj/item/storage/belt/utility,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/item/stack/material/copper{
 	amount = 25
 	},
@@ -21607,12 +21549,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "ovB" = (
@@ -21822,12 +21764,6 @@
 	},
 /turf/simulated/shuttle/floor/alienplating,
 /area/space)
-"oEe" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood/broken,
-/area/space)
 "oEo" = (
 /obj/structure/bed/double/padded,
 /turf/simulated/floor/wood/sif/broken,
@@ -21970,7 +21906,7 @@
 	once = 0
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "oHU" = (
@@ -22178,12 +22114,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "oLZ" = (
@@ -22676,8 +22612,6 @@
 /area/space)
 "pfu" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt,
 /area/space)
 "pfH" = (
@@ -22839,7 +22773,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -22906,7 +22840,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "pmu" = (
@@ -23865,11 +23799,6 @@
 	},
 /turf/simulated/shuttle/floor/voidcraft,
 /area/space)
-"pRG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood/broken,
-/area/space)
 "pSg" = (
 /obj/effect/blocker,
 /turf/template_noop,
@@ -23985,12 +23914,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "pYp" = (
@@ -24073,7 +24002,7 @@
 	portal_id = 20
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "qcn" = (
@@ -24503,7 +24432,7 @@
 	invisibility = 99
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "qqu" = (
@@ -25031,7 +24960,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "qHF" = (
@@ -25068,7 +24997,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "qIh" = (
@@ -25721,7 +25650,7 @@
 /area/space)
 "rcM" = (
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -25738,7 +25667,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "rcS" = (
@@ -25798,7 +25727,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "reE" = (
@@ -25906,7 +25835,6 @@
 /area/space)
 "rgx" = (
 /obj/effect/alien/weeds,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/junk,
 /turf/simulated/floor/outdoors/dirt{
@@ -26134,8 +26062,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/space)
 "rpz" = (
@@ -26285,7 +26211,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
@@ -26368,7 +26294,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "rwk" = (
@@ -26964,7 +26890,6 @@
 "rUy" = (
 /obj/structure/simple_door/resin,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = 0
 	},
@@ -27154,12 +27079,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "sbA" = (
@@ -27522,7 +27447,6 @@
 /turf/simulated/floor/outdoors/dirt,
 /area/space)
 "sjH" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_mob/humanoid/merc/ranged{
 	health = 15;
@@ -28159,7 +28083,6 @@
 "sHj" = (
 /obj/item/pack/cardemon,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/space)
 "sHK" = (
@@ -28324,7 +28247,6 @@
 /area/space)
 "sPn" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/item/paper{
 	info = "Seems to be filled with odd runes drawn with blood";
 	name = "Blood stained paper"
@@ -28396,12 +28318,6 @@
 	amount = 25
 	},
 /turf/simulated/floor/plating,
-/area/space)
-"sRs" = (
-/obj/random/trash,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet,
 /area/space)
 "sRL" = (
 /obj/structure/prop/alien/pod,
@@ -29834,7 +29750,6 @@
 "tMW" = (
 /obj/effect/alien/weeds,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /mob/living/simple_mob/humanoid/merc/melee/sword/poi{
 	health = 15;
 	maxHealth = 15
@@ -30140,14 +30055,6 @@
 	dir = 1
 	},
 /turf/simulated/shuttle/plating/airless/carry,
-/area/space)
-"tTw" = (
-/obj/effect/alien/weeds,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
 /area/space)
 "tTG" = (
 /obj/item/storage/firstaid,
@@ -30834,8 +30741,6 @@
 /area/space)
 "urd" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/space)
 "usi" = (
@@ -31037,7 +30942,7 @@
 /area/space)
 "uzS" = (
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
@@ -31054,7 +30959,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "uAv" = (
@@ -31097,7 +31002,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -31189,7 +31094,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -31560,15 +31465,10 @@
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 2;
 	pixel_y = 4
 	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_y = 28
 	},
@@ -31840,8 +31740,6 @@
 /area/space)
 "vbb" = (
 /obj/effect/alien/weeds/node,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = 0
@@ -33187,7 +33085,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "vZv" = (
@@ -33203,12 +33101,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "wab" = (
@@ -34000,12 +33898,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "wEc" = (
@@ -34110,12 +34008,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "wHO" = (
@@ -34378,12 +34276,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "wPR" = (
@@ -34622,7 +34520,6 @@
 "xau" = (
 /obj/effect/alien/weeds/node,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/junk,
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = 0
@@ -34709,12 +34606,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "xec" = (
@@ -35374,7 +35271,6 @@
 /obj/effect/alien/weeds,
 /obj/effect/alien/weeds,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/rocks{
 	outdoors = 0
 	},
@@ -35639,7 +35535,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "xIq" = (
@@ -35674,14 +35570,6 @@
 "xIV" = (
 /obj/structure/fence,
 /turf/simulated/floor/outdoors/grass/heavy,
-/area/space)
-"xJd" = (
-/obj/effect/alien/weeds/node,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
 /area/space)
 "xJg" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -35845,7 +35733,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
@@ -36114,11 +36002,6 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/space)
-"xVi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor,
-/area/space)
 "xVA" = (
 /obj/effect/gibspawner/robot,
 /turf/simulated/floor/outdoors/dirt,
@@ -36216,7 +36099,6 @@
 	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/space)
 "xZn" = (
@@ -36227,7 +36109,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/space)
@@ -36258,7 +36139,6 @@
 /obj/random/junk,
 /obj/random/junk,
 /obj/random/junk,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/space)
@@ -40796,7 +40676,7 @@ cmZ
 sRR
 plK
 mYY
-iIq
+mYY
 imH
 mYY
 mYY
@@ -43885,7 +43765,7 @@ nwG
 nwG
 dmw
 nwG
-mfO
+nwG
 nwG
 nwG
 cmZ
@@ -53495,7 +53375,7 @@ mYY
 mYY
 hIe
 ygs
-ixh
+lmI
 jGl
 lfY
 lfY
@@ -53761,7 +53641,7 @@ fZc
 vHw
 pNG
 rlV
-sRs
+ulT
 lfY
 fZc
 wrW
@@ -54014,7 +53894,7 @@ lMZ
 fZc
 xoj
 llr
-mvi
+lfZ
 lmI
 lMZ
 lmI
@@ -54790,12 +54670,12 @@ hIe
 lmI
 lmI
 nKr
-oEe
-pRG
+ygs
+ygs
 rpj
-ixh
-ixh
-ixh
+lmI
+lmI
+lmI
 ygs
 hIe
 wGN
@@ -55301,7 +55181,7 @@ nwG
 nwG
 vHw
 hXY
-iKm
+iYc
 jUk
 fZc
 myA
@@ -55310,11 +55190,11 @@ oLW
 pUb
 vHw
 sYn
-pRG
+ygs
 hUt
 wtD
 xaO
-xVi
+wtD
 vHw
 wGN
 ssV
@@ -55559,7 +55439,7 @@ nwG
 nwG
 lMZ
 iac
-iKm
+iYc
 jVj
 lmI
 myT
@@ -55572,7 +55452,7 @@ urd
 vHQ
 vHw
 xck
-xVi
+wtD
 vHw
 wGN
 sBp
@@ -71101,7 +70981,7 @@ ybA
 ybA
 ybA
 mza
-tTw
+fal
 xau
 ybA
 ybA
@@ -71358,7 +71238,7 @@ ybA
 ybA
 ybA
 ybA
-epX
+pzv
 xyE
 rtj
 ybA
@@ -72904,7 +72784,7 @@ ybA
 ybA
 ybA
 qxF
-xJd
+vbb
 fal
 ybA
 ybA

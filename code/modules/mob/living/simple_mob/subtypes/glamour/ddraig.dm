@@ -79,6 +79,8 @@
 /mob/living/simple_mob/vore/ddraig/init_vore()
 	if(!voremob_loaded)
 		return
+	if(LAZYLEN(vore_organs))
+		return
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
@@ -246,7 +248,7 @@
 
 /obj/item/projectile/beam/mouselaser/ddraig/spawn_mob(var/mob/living/target)
 	var/list/tf_list = list(/mob/living/simple_mob/animal/passive/mouse,
-		/mob/living/simple_mob/animal/passive/mouse/rat,
+		/mob/living/simple_mob/animal/passive/mouse/rat/strong, // CHOMPEdit
 		/mob/living/simple_mob/vore/alienanimals/dustjumper,
 		/mob/living/simple_mob/vore/woof,
 		/mob/living/simple_mob/animal/passive/dog/corgi,

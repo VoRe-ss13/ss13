@@ -115,6 +115,7 @@
 	mappath = "maps/submaps/surface_submaps/mountains/lost_explorer.dmm"
 	cost = 5
 	allow_duplicates = TRUE
+	template_group = "Underground Cliffs"
 
 /datum/map_template/surface/mountains/normal/Rockb1
 	name = "Rocky Base 1"

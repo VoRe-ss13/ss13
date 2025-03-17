@@ -17,7 +17,7 @@
 	var/path = pick(prob(6);/obj/item/reagent_containers/food/drinks/bottle/whiskey,
 					prob(3);/obj/item/reagent_containers/food/drinks/bottle/specialwhiskey,
 					prob(3);/obj/item/reagent_containers/food/drinks/bottle/vodka,
-					prob(3);/obj/item/reagent_containers/food/drinks/bottle/tequilla,
+					prob(3);/obj/item/reagent_containers/food/drinks/bottle/tequila,
 					prob(3);/obj/item/reagent_containers/food/drinks/bottle/rum,
 					prob(3);/obj/item/reagent_containers/food/drinks/bottle/goldschlager,
 					prob(3);/obj/item/reagent_containers/food/drinks/bottle/vermouth,
@@ -147,7 +147,7 @@
 					prob(2);/obj/item/ammo_magazine/ammo_box/b12g/stunshell,
 					prob(2);/obj/item/ammo_magazine/m45/rubber,
 					prob(2);/obj/item/ammo_magazine/m9mmt/rubber,
-                    prob(2);/obj/item/cell/device/weapon,
+					prob(2);/obj/item/cell/device/weapon,
 					prob(1);/obj/item/toy/plushie/borgplushie)
 	playsound(T, 'sound/effects/phasein.ogg', 25, 1)
 	new path(T)

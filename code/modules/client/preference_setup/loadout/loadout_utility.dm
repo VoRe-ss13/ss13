@@ -275,9 +275,9 @@ modular computers
 	path = /obj/item/storage/backpack/dufflebag/emt
 
 /datum/gear/utility/dufflebag/sec
-    display_name = "security Dufflebag"
-    allowed_roles = list(JOB_HEAD_OF_SECURITY,JOB_WARDEN,JOB_DETECTIVE,JOB_SECURITY_OFFICER,JOB_BLUESHIELD_GUARD,JOB_SECURITY_PILOT) //YW ADDITIONS
-    path = /obj/item/storage/backpack/dufflebag/sec
+	display_name = "security Dufflebag"
+	allowed_roles = list(JOB_HEAD_OF_SECURITY,JOB_WARDEN,JOB_DETECTIVE,JOB_SECURITY_OFFICER,JOB_BLUESHIELD_GUARD,JOB_SECURITY_PILOT) //YW ADDITIONS
+	path = /obj/item/storage/backpack/dufflebag/sec
 
 /datum/gear/utility/dufflebag/eng
 	display_name = "engineering dufflebag"
@@ -317,3 +317,8 @@ modular computers
 	display_name = "podzu music player"
 	path = /obj/item/walkpod
 	cost = 2
+
+/datum/gear/utility/bloodbag //For your vampiric crew!
+	display_name = "blood bag (Randomized)"
+	path = /obj/item/reagent_containers/blood/random_bloodsucker
+	cost = 1

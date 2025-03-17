@@ -50,7 +50,7 @@
 	heat_level_2 = 1000
 	heat_level_3 = 1150
 
-	flags =  NO_SCAN | NO_MINOR_CUT | NO_INFECT
+	flags =  NO_DNA | NO_SLEEVE | NO_MINOR_CUT | NO_INFECT
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_WHITELIST_SELECTABLE
 
 	reagent_tag = IS_SHADEKIN		// for shadekin-unqiue chem interactions
@@ -77,6 +77,7 @@
 	breath_type = null
 	poison_type = null
 	water_breather = TRUE	//They don't quite breathe
+	var/doing_phase = FALSE // Prevent bugs when spamming phase button
 
 	vision_flags = SEE_SELF|SEE_MOBS
 	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_SKIN_COLOR | HAS_EYE_COLOR | HAS_UNDERWEAR
@@ -122,7 +123,6 @@
 	var/energy_dark = 0.75
 	var/nutrition_conversion_scaling = 0.5 //CHOMPEdit - Add nutrition <-> dark energy conversion
 	var/phase_gentle = TRUE //CHOMPEdit - Add gentle phasing, defaults to on.
-	var/doing_phase = FALSE //CHOMPEdit - Prevent bugs when spamming phase button
 	var/manual_respite = FALSE //CHOMPEdit - Dark Respite
 	var/respite_activating = FALSE //CHOMPEdit - Dark Respite
 	var/nutrition_energy_conversion = TRUE //CHOMPEdit - Add toggle to nutrition and energy conversions

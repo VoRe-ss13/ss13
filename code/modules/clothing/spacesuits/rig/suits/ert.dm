@@ -14,25 +14,7 @@
 	siemens_coefficient= 0.5
 
 	armor = list(melee = 60, bullet = 50, laser = 30,energy = 15, bomb = 30, bio = 100, rad = 100)
-	allowed = list(
-		/obj/item/flashlight,
-		/obj/item/tank,
-		/obj/item/t_scanner,
-		/obj/item/rcd,
-		/obj/item/tool/crowbar,
-		/obj/item/tool/screwdriver,
-		/obj/item/weldingtool,
-		/obj/item/tool/wirecutters,
-		/obj/item/tool/wrench,
-		/obj/item/multitool,
-		/obj/item/radio,
-		/obj/item/analyzer,
-		/obj/item/storage,
-		/obj/item/melee/baton,
-		/obj/item/gun,
-		/obj/item/reagent_containers/hypospray,
-		/obj/item/roller
-		)
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, POCKET_SECURITY, POCKET_ENGINEERING, POCKET_HEAVYTOOLS, POCKET_STORAGE, POCKET_ALL_TANKS, POCKET_SUIT_REGULATORS)
 
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
@@ -94,7 +76,7 @@
 	rigsuit_min_pressure = 0
 	max_heat_protection_temperature = FIRE_HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 	//CHOMPEdit End
-	
+
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets,
@@ -106,7 +88,7 @@
 		/obj/item/rig_module/device/rcd,
 		/obj/item/rig_module/datajack
 		)
-		
+
 /obj/item/rig/ert/assetprotection/antiareli
 	name = "Heavy Asset Protection Special Agent control module"
 	desc = "A heavy suit worn by the highest level of the highest level of Asset Protection, don't mess with the person wearing this. Armoured and space ready and protected against almost fucking everything"

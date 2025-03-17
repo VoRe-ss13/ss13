@@ -53,7 +53,7 @@ FIRE ALARM
 	. = ..()
 	. += "Current security level: [seclevel]"
 
-/obj/machinery/firealarm/Initialize()
+/obj/machinery/firealarm/Initialize(mapload)
 	. = ..()
 	if(!pixel_x && !pixel_y)
 		offset_alarm()
@@ -228,6 +228,8 @@ FIRE ALARM
 	if(!(working))
 		return
 	var/area/area = get_area(src)
+	if(!firewarn && !alarms_hidden) // CHOMPAdd
+		global_announcer.autosay("Tripped [area]", "Fire Alarm Monitor", DEPARTMENT_ENGINEERING)
 	for(var/obj/machinery/firealarm/FA in area)
 		fire_alarm.triggerAlarm(loc, FA, duration, hidden = alarms_hidden)
 		FA.soundloop.start() // CHOMPEdit: Soundloop

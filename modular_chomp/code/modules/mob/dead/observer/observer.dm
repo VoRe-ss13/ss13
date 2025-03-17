@@ -1,13 +1,5 @@
 /mob/observer
-	var/mob/living/body_backup = null //add reforming
 	low_priority = TRUE
-
-/mob/observer/Destroy()
-	if(body_backup)
-		body_backup.moveToNullspace() //YEET
-		qdel(body_backup)
-		body_backup = null
-	return ..()
 
 // Persistence vars not included as we probably don't want losing limbs in the game mean losing limbs in real life. Definitely can't backfire.
 /mob/observer/dead/verb/fake_enter_vr()
@@ -45,7 +37,7 @@
 			S = i
 			break
 
-	var/mob/living/carbon/human/avatar = new(get_turf(S), "Virtual Reality Avatar")
+	var/mob/living/carbon/human/avatar = new(get_turf(S), client.prefs.species)
 	if(!avatar)
 		to_chat(src, "Something went wrong and spawning failed.")
 		return

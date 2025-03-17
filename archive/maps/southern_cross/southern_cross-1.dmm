@@ -5569,7 +5569,6 @@
 /obj/item/storage/bible,
 /obj/structure/table/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/clean,
 /turf/simulated/floor,
 /area/maintenance/firstdeck/foreport)
@@ -12844,14 +12843,8 @@
 "aAU" = (
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /turf/simulated/floor/tiled/steel,
 /area/construction/firstdeck/construction3)
 "aAV" = (
@@ -20056,10 +20049,7 @@
 	pixel_y = 5
 	},
 /obj/item/multitool,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/item/stack/cable_coil,
 /obj/item/stack/cable_coil,
 /turf/simulated/floor,
@@ -26438,7 +26428,6 @@
 /area/security/main)
 "bbj" = (
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = 32
 	},
 /obj/machinery/vending/cola,
@@ -26600,7 +26589,6 @@
 	dir = 1
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = -32
 	},
 /obj/machinery/light,
@@ -32657,7 +32645,6 @@
 	pixel_x = 32
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = 32
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -35904,14 +35891,8 @@
 "bsh" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/item/stack/cable_coil{
 	pixel_x = 3;
 	pixel_y = -7
@@ -43168,10 +43149,7 @@
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
 /obj/item/stack/cable_coil,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
@@ -43762,7 +43740,6 @@
 "bGE" = (
 /obj/structure/table/steel,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = 32
 	},
 /obj/effect/floor_decal/borderfloorblack{
@@ -44987,7 +44964,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/light,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = -32
 	},
 /obj/item/tabloid,
@@ -49126,14 +49102,8 @@
 "bRe" = (
 /obj/structure/table/standard,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/item/radio/intercom{
 	dir = 1;
 	name = "Station Intercom (General)";
@@ -49490,14 +49460,8 @@
 /obj/item/stack/cable_coil,
 /obj/item/multitool,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/machinery/sparker{
 	dir = 4;
 	id = "Xenobio";
@@ -53056,10 +53020,7 @@
 "bZk" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/item/tool/wrench,
 /obj/machinery/status_display{
 	pixel_y = -32
@@ -53933,14 +53894,8 @@
 	pixel_x = -12;
 	pixel_y = -24
 	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/heads/sc/chief)
 "caZ" = (
@@ -54041,7 +53996,6 @@
 	},
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled,
@@ -63988,7 +63942,6 @@
 	pixel_y = 30
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/white,
@@ -64205,7 +64158,6 @@
 /obj/item/clothing/glasses/science,
 /obj/item/clothing/glasses/science,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = 32
 	},
 /obj/machinery/light{
@@ -64622,14 +64574,8 @@
 	pixel_x = 3;
 	pixel_y = -7
 	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/item/storage/toolbox/mechanical{
 	pixel_x = -2;
 	pixel_y = -1
@@ -72549,10 +72495,7 @@
 	},
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 22
@@ -72854,7 +72797,6 @@
 	dir = 4
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = 32
 	},
 /turf/simulated/floor/carpet/sblucarpet,
@@ -76786,7 +76728,6 @@
 /obj/structure/table/glass,
 /obj/machinery/computer/med_data/laptop,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = 32
 	},
 /obj/machinery/light{
@@ -77347,7 +77288,6 @@
 /obj/structure/bed/padded,
 /obj/item/bedsheet/brown,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = 32
 	},
 /turf/simulated/floor/carpet,
@@ -77921,7 +77861,6 @@
 /obj/structure/bed/padded,
 /obj/item/bedsheet/brown,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = 32
 	},
 /turf/simulated/floor/carpet,
@@ -81505,7 +81444,6 @@
 	pixel_x = 21
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	layer = 4;
 	pixel_y = -32
 	},
@@ -81551,7 +81489,6 @@
 	pixel_x = 30
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	layer = 4;
 	pixel_y = -32
 	},
@@ -84676,7 +84613,6 @@
 	dir = 4
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32
 	},
 /turf/simulated/floor/lino,
@@ -88651,7 +88587,6 @@
 	dir = 1
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /obj/machinery/light{
@@ -88682,7 +88617,6 @@
 	dir = 1
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32
 	},
 /obj/machinery/light{
@@ -96626,7 +96560,6 @@
 /obj/item/folder/blue_hop,
 /obj/item/pen/multi,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32
 	},
 /turf/simulated/floor/carpet,
@@ -96755,7 +96688,6 @@
 /obj/item/folder/white_cmo,
 /obj/item/pen/multi,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32
 	},
 /turf/simulated/floor/carpet/blue,
@@ -96772,7 +96704,6 @@
 /obj/item/folder/white_rd,
 /obj/item/pen/multi,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /turf/simulated/floor/carpet,
@@ -99172,7 +99103,6 @@
 	dir = 8
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -99189,7 +99119,6 @@
 /obj/item/folder/yellow_ce,
 /obj/item/pen/multi,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /turf/simulated/floor/carpet,
@@ -99349,7 +99278,6 @@
 /obj/item/folder/red_hos,
 /obj/item/pen/multi,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32
 	},
 /turf/simulated/floor/carpet,
@@ -99359,7 +99287,6 @@
 	dir = 8
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /obj/structure/table/standard,
@@ -99860,7 +99787,6 @@
 "dNA" = (
 /obj/machinery/vending/coffee,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32
 	},
 /turf/simulated/floor/wood,
@@ -99945,7 +99871,6 @@
 /obj/structure/table/wooden_reinforced,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /obj/item/flashlight/lamp/green,
@@ -103867,7 +103792,6 @@
 /area/construction/seconddeck/construction2)
 "dVc" = (
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = -32
 	},
 /obj/item/stack/cable_coil{
@@ -107448,26 +107372,18 @@
 /area/maintenance/substation/central)
 "ebQ" = (
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},

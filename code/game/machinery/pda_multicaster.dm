@@ -15,8 +15,8 @@
 	var/datum/looping_sound/tcomms/soundloop // CHOMPStation Add: Hummy noises
 	var/noisy = TRUE  // CHOMPStation Add: Hummy noises
 
-/obj/machinery/pda_multicaster/New()
-	..()
+/obj/machinery/pda_multicaster/Initialize(mapload)
+	. = ..()
 	internal_PDAs = list("command" = new /obj/item/pda/multicaster/command(src),
 		"security" = new /obj/item/pda/multicaster/security(src),
 		"engineering" = new /obj/item/pda/multicaster/engineering(src),
@@ -25,9 +25,6 @@
 		"exploration" = new /obj/item/pda/multicaster/exploration(src), //VOREStation Add,
 		"cargo" = new /obj/item/pda/multicaster/cargo(src),
 		"civilian" = new /obj/item/pda/multicaster/civilian(src))
-
-/obj/machinery/pda_multicaster/Initialize()
-	. = ..()
 
 	// CHOMPAdd: PDA Multicaster Server humming
 	soundloop = new(list(src), FALSE)
@@ -44,7 +41,7 @@
 	soundloop.start() // Have to do this here bc it starts on
 	// CHOMPAdd End
 
-/obj/machinery/pda_multicaster/prebuilt/Initialize()
+/obj/machinery/pda_multicaster/prebuilt/Initialize(mapload)
 	. = ..()
 	default_apply_parts()
 
@@ -52,7 +49,7 @@
 	for(var/atom/movable/AM in contents)
 		qdel(AM)
 	QDEL_NULL(soundloop)
-	..()
+	. = ..()
 
 /obj/machinery/pda_multicaster/update_icon()
 	if(on)

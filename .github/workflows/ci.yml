@@ -17,17 +17,12 @@ jobs:
       cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
+        with:
+            fetch-depth: 0
       # Caches
       - name: Ensure +x on CI directory
         run: |
           chmod -R +x ./tools/ci
-      - name: Restore SpacemanDMM cache
-        uses: actions/cache@v4
-        with:
-          path: ~/SpacemanDMM
-          key: ${{ runner.os }}-spacemandmm-${{ hashFiles('dependencies.sh') }}
-          restore-keys: |
-            ${{ runner.os }}-spacemandmm-
       - name: Restore Yarn cache
         uses: actions/cache@v4
         with:
@@ -67,18 +62,67 @@ jobs:
           pip3 install setuptools
           bash tools/ci/install_build_deps.sh
           bash tools/ci/install_ripgrep.sh
-          bash tools/ci/install_spaceman_dmm.sh dreamchecker
+          bash tools/ci/install_spaceman_dmm.sh dmm-tools
           tools/bootstrap/python -c ''
-      - name: Run Tests
-        run: |
-          tools/ci/validate_files.sh
+      - name: Run Validation Tests
+        run: bash tools/ci/validate_files.sh
       - name: Run Define Sanity Checks
         run: tools/bootstrap/python -m define_sanity.check
-      - name: Run DreamChecker
-        shell: bash
-        run: ~/dreamchecker 2>&1 | bash tools/ci/annotate_dm.sh
+      - name: Run DMI Tests
+        run: tools/bootstrap/python -m dmi.test
+      - name: Run Map Checks
+        run: |
+          tools/bootstrap/python -m tools.maplint.source
+          tools/bootstrap/python -m mapmerge2.dmm_test
       - name: Run TGUI Checks
         run: tools/build/build --ci lint tgui-test
+      - name: Run Nanomap Checks
+        run: tools/github-actions/nanomap-renderer-invoker.sh --testing
+
+  dreamchecker:
+    if: ( !contains(github.event.head_commit.message, '[ci skip]') )
+    name: DreamChecker
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore SpacemanDMM Cache
+        uses: actions/cache@v4
+        with:
+          path: ~/SpacemanDMM
+          key: ${{ runner.os }}-dreamchecker-${{ hashFiles('dependencies.sh')}}
+          restore-keys: ${{ runner.os }}-dreamchecker
+
+      - name: Install Dependencies
+        run: |
+          tools/ci/install_spaceman_dmm.sh dreamchecker
+
+      - name: Run Linter
+        id: linter
+        run: |
+          ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
+
+      - name: Annotate Linter
+        uses: yogstation13/DreamAnnotate@v2
+        if: always()
+        with:
+          outputFile: output-annotations.txt
+
+  odlint:
+    name: Lint with OpenDream
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9
+      - uses: actions/checkout@v4
+      - uses: robinraju/release-downloader@v1.12
+        with:
+          repository: "OpenDreamProject/OpenDream"
+          tag: "latest"
+          fileName: "DMCompiler_linux-x64.tar.gz"
+          extract: true
+      - run: ./DMCompiler_linux-x64/DMCompiler --suppress-unimplemented vorestation.dme
 
   dreamchecker:
     name: DreamChecker
@@ -113,7 +157,7 @@ jobs:
     if: ( !contains(github.event.head_commit.message, '[ci skip]') )
     strategy:
       matrix:
-        map: ['USE_MAP_RELIC_BASE']
+        map: ['USE_MAP_SOUTHERN_CROSS', 'USE_MAP_SOLUNA_NEXUS', 'USE_MAP_RELIC_BASE']
     # name: Integration Tests (${{ matrix.map }})
     name: Integration Tests
     # needs: ['run_linters', 'dreamchecker']

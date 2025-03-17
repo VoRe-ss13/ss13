@@ -955,7 +955,6 @@
 		M.apply_effect(4, AGONY, 0)
 		if(prob(5))
 			M.visible_message(span_warning("[M] [pick("dry heaves!","coughs!","splutters!")]"), span_danger("You feel like your insides are burning!"))
-	// holder.remove_reagent(REAGENT_ID_FROSTOIL, 5) // VOREStation Edit: Nop, we don't instadelete spices for free.
 
 /* Drinks */
 
@@ -984,7 +983,7 @@
 /datum/reagent/drink/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	if(!(M.species.allergens & allergen_type))
 		var/bonus = M.food_preference(allergen_type)
-		M.adjust_nutrition((nutrition + bonus) * removed) //RS edit
+		M.adjust_nutrition((nutrition + bonus) * removed)
 	M.dizziness = max(0, M.dizziness + adj_dizzy)
 	M.drowsyness = max(0, M.drowsyness + adj_drowsy)
 	M.AdjustSleeping(adj_sleepy)
@@ -995,10 +994,6 @@
 	if(issmall(M)) removed *= 2 //CHOMP Station addition Small bodymass, more effect from lower volume.
 	if(M.species.organic_food_coeff) //CHOMPStation addition. If this is set to 0, they don't get nutrition from food.
 		M.nutrition += nutriment_factor * removed //CHOMPStation addition For hunger and fatness
-	/* VOREStation Removal
-	if(alien == IS_SLIME && water_based)
-		M.adjustToxLoss(removed * 2)
-	*/ //VOREStation Removal End
 
 /datum/reagent/drink/overdose(var/mob/living/carbon/M, var/alien) //Add special interactions here in the future if desired.
 	..()
@@ -1587,7 +1582,7 @@
 	adj_drowsy = -3
 	adj_sleepy = -2
 	adj_temp = 25
-	overdose = 45
+	overdose = REAGENTS_OVERDOSE *1.5
 
 	cup_icon_state = "cup_coffee"
 	cup_name = REAGENT_ID_COFFEE
@@ -2611,7 +2606,7 @@
 	glass_desc = "You can almost smell the tranquility emanating from this."
 	//allergen_type = ALLERGEN_FRUIT Sorry to break the news, chief. Honey is not a fruit.
 
-/datum/reagent/drink/lovepotion
+/datum/reagent/drink/love_potion
 	name = REAGENT_LOVEPOTION
 	id = REAGENT_ID_LOVEPOTION
 	description = "Creamy strawberries and sugar, simple and sweet."
@@ -2721,7 +2716,7 @@
 				if(D.water_based)
 					M.adjustToxLoss(removed * -2)
 
-/datum/reagent/drink/mojito
+/datum/reagent/drink/virgin_mojito
 	name = REAGENT_VIRGINMOJITO
 	id = REAGENT_ID_VIRGINMOJITO
 	description = "Mint, bubbly water, and citrus, made for sailing."
@@ -2819,7 +2814,7 @@
 	glass_desc = "That is just way too much syrup to drink on its own."
 	allergen_type = ALLERGEN_SUGARS
 
-	overdose = 45
+	overdose = REAGENTS_OVERDOSE *1.5
 
 /datum/reagent/drink/syrup/overdose(var/mob/living/carbon/M, var/alien)
 	if(alien == IS_DIONA)
@@ -3132,7 +3127,9 @@
 
 //Base type for alchoholic drinks containing coffee
 /datum/reagent/ethanol/coffee
-	overdose = 45
+	name = REAGENT_DEVELOPER_WARNING
+	id = REAGENT_ID_DEVELOPER_WARNING
+	overdose = REAGENTS_OVERDOSE *1.5
 	allergen_type = ALLERGEN_COFFEE|ALLERGEN_STIMULANT //Contains coffee or is made from coffee
 
 /datum/reagent/ethanol/coffee/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
@@ -3242,8 +3239,8 @@
 	allergen_type = ALLERGEN_FRUIT //Made from orange juice
 
 /datum/reagent/ethanol/tequila
-	name = REAGENT_TEQUILLA
-	id = REAGENT_ID_TEQUILLA
+	name = REAGENT_TEQUILA
+	id = REAGENT_ID_TEQUILA
 	description = "A strong and mildly flavored, Mexican produced spirit. Feeling thirsty hombre?"
 	taste_description = "paint thinner"
 	color = "#FFFF91"
@@ -3386,6 +3383,10 @@
 					L.take_damage(10 * removed, 0)
 				else
 					L.take_damage(100, 0)
+
+/datum/reagent/ethanol/wine
+	name = REAGENT_DEVELOPER_WARNING // Unit test ignore
+	id = REAGENT_ID_DEVELOPER_WARNING
 
 /datum/reagent/ethanol/wine/champagne
 	name = REAGENT_CHAMPAGNE
@@ -3653,7 +3654,7 @@
 	glass_name = REAGENT_BRAVEBULL
 	glass_desc = "Tequilla and coffee liquor, brought together in a mouthwatering mixture. Drink up."
 
-/datum/reagent/ethanol/changelingsting
+/datum/reagent/ethanol/changeling_sting
 	name = REAGENT_CHANGELINGSTING
 	id = REAGENT_ID_CHANGELINGSTING
 	description = "You take a tiny sip and feel a burning sensation..."
@@ -4135,9 +4136,9 @@
 
 	allergen_type = ALLERGEN_GRAINS|ALLERGEN_STIMULANT //Made from beer(grain) and whiskeycola(whiskey(grain) and cola(caffeine))
 
-/datum/reagent/ethanol/tequilla_sunrise
-	name = REAGENT_TEQUILLASUNRISE
-	id = REAGENT_ID_TEQUILLASUNRISE
+/datum/reagent/ethanol/tequila_sunrise
+	name = REAGENT_TEQUILASUNRISE
+	id = REAGENT_ID_TEQUILASUNRISE
 	description = "Tequila and orange juice. Much like a Screwdriver, only Mexican~."
 	taste_description = "oranges"
 	color = "#FFE48C"
@@ -5023,3 +5024,23 @@
 	nutriment_factor = 2
 	glass_name = REAGENT_ID_KVASS
 	glass_desc = "A hearty glass of Slavic brew."
+
+/datum/reagent/cinnamonpowder
+	name = REAGENT_CINNAMONPOWDER
+	id = REAGENT_ID_CINNAMONPOWDER
+	description = "Cinnamon, a spice made from tree bark, ground into a fine powder. Probably not a good idea to eat on its own!"
+	taste_description= "sweet spice with a hint of wood"
+	color = "#a96622"
+
+	glass_name = REAGENT_ID_CINNAMONPOWDER
+	glass_desc = "A glass of ground cinnamon. Dare you take the challenge?"
+
+/datum/reagent/gelatin
+	name = REAGENT_GELATIN
+	id = REAGENT_ID_GELATIN
+	description = "It doesnt taste like anything."
+	taste_description = REAGENT_ID_NOTHING
+	color = "#aaabcf"
+
+	glass_name = REAGENT_GELATIN
+	glass_desc = "It's like flavourless slime."

@@ -32,7 +32,7 @@
 		/obj/item/stack/cable_coil = 5,
 	)
 
-/obj/machinery/food_replicator/Initialize()
+/obj/machinery/food_replicator/Initialize(mapload)
 	. = ..()
 
 	default_apply_parts()
@@ -128,7 +128,7 @@
 	if(default_part_replacement(user, O))
 		return
 	if(istype(O, /obj/item/reagent_containers/food))
-		balloon_alert(user, "Scanning...")
+		balloon_alert(user, "scanning...")
 		if(!do_after(user, 10))
 			return
 		foodcheck(O)
@@ -141,7 +141,7 @@
 		user.drop_item()
 		O.loc = src
 		container = O
-		balloon_alert(user, "Placed \the [O] in \the [src]")
+		balloon_alert(user, "placed \the [O] in \the [src]")
 		return
 
 	return ..()
@@ -188,16 +188,16 @@
 		use_power = USE_POWER_IDLE
 
 /obj/machinery/food_replicator/RefreshParts()
-    var/cap_rating = 0
-    var/man_rating = 0
+	var/cap_rating = 0
+	var/man_rating = 0
 
-    for(var/obj/item/stock_parts/capacitor/C in component_parts)
-        cap_rating += C.rating
-    for(var/obj/item/stock_parts/manipulator/M in component_parts)
-        man_rating += M.rating
+	for(var/obj/item/stock_parts/capacitor/C in component_parts)
+		cap_rating += C.rating
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		man_rating += M.rating
 
-    efficiency = 3 / man_rating
-    speed = cap_rating / 2
+	efficiency = 3 / man_rating
+	speed = cap_rating / 2
 
 
 /obj/machinery/food_replicator/verb/eject_beaker()

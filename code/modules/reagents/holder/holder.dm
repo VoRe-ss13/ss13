@@ -18,6 +18,8 @@
 			var/datum/reagent/D = new path()
 			if(!D.name)
 				continue
+			if(D.name == REAGENT_DEVELOPER_WARNING) //We remove reagents that don't have a name from being put in the list.
+				continue
 			SSchemistry.chemical_reagents[D.id] = D
 
 /datum/reagents/Destroy()
@@ -278,7 +280,7 @@
 		return splash_mob(target, amount * multiplier, copy) //Touch effects handled by splash_mob
 	if(isturf(target))
 		return trans_to_turf(target, amount, multiplier, copy)
-	if(isobj(target) && target.is_open_container() && !isbelly(target.loc)) //CHOMPEdit
+	if(isobj(target) && target.is_open_container() && !isbelly(target.loc))
 		return trans_to_obj(target, amount, multiplier, copy)
 	return 0
 

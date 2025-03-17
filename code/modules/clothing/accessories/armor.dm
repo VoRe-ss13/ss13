@@ -87,7 +87,9 @@
 	name = "light armor plate"
 	desc = "A basic armor plate made of steel-reinforced synthetic fibers. Attaches to a plate carrier."
 	icon_state = "armor_light"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	body_parts_covered = CHEST
+	heat_protection = CHEST
+	cold_protection = CHEST
 	armor = list(melee = 30, bullet = 15, laser = 40, energy = 10, bomb = 25, bio = 0, rad = 0)
 	slot = ACCESSORY_SLOT_ARMOR_C
 
@@ -189,6 +191,8 @@
 	icon_state = "armguards"
 	gender = PLURAL
 	body_parts_covered = ARMS
+	heat_protection = ARMS
+	cold_protection = ARMS
 	armor = list(melee = 40, bullet = 40, laser = 40, energy = 25, bomb = 30, bio = 0, rad = 0)
 	slot = ACCESSORY_SLOT_ARMOR_A
 
@@ -213,7 +217,7 @@
 	desc = "A pair of green arm pads reinforced with armor plating. Attaches to a plate carrier."
 	icon_state = "armguards_green"
 	armor = list(melee = 30, bullet = 20, laser = 20, energy = 20, bomb = 35, bio = 75, rad = 35)
-	
+
 /obj/item/clothing/accessory/armor/armguards/merc
 	name = "heavy arm guards"
 	desc = "A pair of red-trimmed black arm pads reinforced with heavy armor plating. Attaches to a plate carrier."
@@ -254,6 +258,8 @@
 	icon_state = "legguards"
 	gender = PLURAL
 	body_parts_covered = LEGS
+	heat_protection = LEGS
+	cold_protection = LEGS
 	armor = list(melee = 40, bullet = 40, laser = 40, energy = 25, bomb = 30, bio = 0, rad = 0)
 	slot = ACCESSORY_SLOT_ARMOR_L
 
@@ -319,12 +325,12 @@
 	icon_state = "solflag"
 	slot = ACCESSORY_SLOT_ARMOR_M
 	w_class = ITEMSIZE_SMALL
-
+/* //Lost to time.
 /obj/item/clothing/accessory/armor/tag/sifguard
 	name = "\improper Sif Defense Force crest"
 	desc = "An emblem depicting the crest of the Sif Defense Force."
 	icon_state = "ecflag"
-
+*/
 /obj/item/clothing/accessory/armor/tag/sec
 	name = "\improper POLICE tag"
 	desc = "An armor tag with the word POLICE printed in silver lettering on it."

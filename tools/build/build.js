@@ -152,6 +152,7 @@ export const IconCutterTarget = new Juke.Target({
     'icons/**/*.png',
     `icons/**/*${CUTTER_SUFFIX}`,
     `cutter_templates/**/*${CUTTER_SUFFIX}`,
+    `tgui/public/tgui.html`,
     cutter_path,
   ],
   outputs: ({ get }) => {
@@ -185,6 +186,7 @@ export const DmMapsIncludeTarget = new Juke.Target({
       ...Juke.glob('modular_chomp/maps/southern_cross/**/*.dmm'),
       ...Juke.glob('modular_chomp/maps/relic_base/**/*.dmm'),
       ...Juke.glob('modular_chomp/maps/submap/**/*.dmm'),
+      ...Juke.glob('maps/relic_base/**/*.dmm'),
     ];
     const content = folders
       .map((file) => file.replace('_maps/', ''))
@@ -203,7 +205,7 @@ export const DmTarget = new Juke.Target({
   inputs: [
     '_maps/map_files/generic/**',
     'maps/**/*.dm',
-    'maps/relic_base/**/*.dmm', // Placed here so it recompiles on map changes //TORCHEdit
+    'maps/relic_base/**/*.dmm', // Placed here so it recompiles on map changes //TORCHEdit - Changing to forbearance
     'code/**',
     'html/**',
     'icons/**',

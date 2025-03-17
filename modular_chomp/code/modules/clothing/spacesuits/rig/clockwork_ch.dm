@@ -20,10 +20,7 @@
 	boot_type = /obj/item/clothing/shoes/magboots/rig/ch/clockwork
 	cell_type =  /obj/item/cell/clockwork
 
-	allowed = list(/obj/item/flashlight,
-	/obj/item/tank,/obj/item/suit_cooling_unit,/obj/item/storage/bag/ore,
-	/obj/item/t_scanner,/obj/item/pickaxe, /obj/item/rcd,/obj/item/storage/backpack,
-	/obj/item/bluespaceradio, /obj/item/defib_kit, /obj/item/ratvarian_spear
+	allowed = list(POCKET_GENERIC, POCKET_ALL_TANKS, POCKET_SUIT_REGULATORS, POCKET_MINING, POCKET_ENGINEERING, POCKET_HEAVYTOOLS, POCKET_BAYSUIT,  /obj/item/storage/backpack, /obj/item/ratvarian_spear
 		)
 
 	initial_modules = list(
@@ -38,22 +35,28 @@
 /obj/item/clothing/suit/space/rig/ch/clockwork
 	name = "cuirass"
 	icon = 'icons/obj/clothing/spacesuits_ch.dmi'
+	icon_state = "clockwork_rig"
 	desc = "A bulky cuirass made of brass."
 
 /obj/item/clothing/head/helmet/space/rig/ch/clockwork
 	name = "helmet"
 	icon = 'icons/obj/clothing/hats_ch.dmi'
+	icon_state = "clockwork_rig"
 	desc = "A heavy helmet made of brass."
 
 /obj/item/clothing/gloves/gauntlets/rig/ch/clockwork
 	name = "gauntlets"
 	icon = 'icons/obj/clothing/gloves_ch.dmi'
+	icon_state = "clockwork_rig"
+
 	desc = "Heavy, shock-resistant gauntlets with brass reinforcement."
 	siemens_coefficient = 0
 
 /obj/item/clothing/shoes/magboots/rig/ch/clockwork
 	name = "treads"
 	icon = 'icons/obj/clothing/shoes_ch.dmi'
+	icon_state = "clockwork_rig"
+
 	desc = "Industrial boots made of brass. They're very heavy."
 
 /obj/item/cell/clockwork //using the stats of a precursor void cell until someone's motivated to port and make the suit use clockcult global power

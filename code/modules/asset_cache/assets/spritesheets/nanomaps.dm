@@ -2,7 +2,6 @@
 	// It REALLY doesnt matter too much if these arent up to date
 	// They are relatively big
 	assets = list(
-		/* //TORCHRemoval Start - Render only Forbearance
 		// CHOMP Edit: Restored for chomp station. Removed Tether.
 		"southern_cross_nanomap_z1.png"		= 'icons/_nanomaps/southern_cross_nanomap_z1.png',
 		"southern_cross_nanomap_z2.png"		= 'icons/_nanomaps/southern_cross_nanomap_z2.png',
@@ -25,7 +24,6 @@
 		"soluna_nexus_nanomap_z7.png"		= 'icons/_nanomaps/soluna_nexus_nanomap_z7.png',
 		"soluna_nexus_nanomap_z8.png"		= 'icons/_nanomaps/soluna_nexus_nanomap_z8.png',
 		"soluna_nexus_nanomap_z9.png"		= 'icons/_nanomaps/southern_cross_nanomap_z10.png',
-		*/ // TORCHRemoval End
 
 		"relicbase_nanomap_z1.png"			= 'icons/_nanomaps/relicbase_nanomap_z1.png',
 		"relicbase_nanomap_z2.png"			= 'icons/_nanomaps/relicbase_nanomap_z2.png',

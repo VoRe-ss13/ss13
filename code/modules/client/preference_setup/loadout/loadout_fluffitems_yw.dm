@@ -780,11 +780,11 @@
 	allowed_roles = list(JOB_EXPLORER, JOB_PATHFINDER)
 
 /datum/gear/fluff/mocha_cloak
-    path = /obj/item/clothing/accessory/poncho/cloak/fluff/mocha
-    display_name = "Elaborate Cloak"
-    description = "A cloak denoting the rank of a warden, the name \"Mocha\" is embroidered along the collar in red lettering"
-    ckeywhitelist = list("mocatheporg1")
-    character_name = list("Mocha")
+	path = /obj/item/clothing/accessory/poncho/cloak/fluff/mocha
+	display_name = "Elaborate Cloak"
+	description = "A cloak denoting the rank of a warden, the name \"Mocha\" is embroidered along the collar in red lettering"
+	ckeywhitelist = list("mocatheporg1")
+	character_name = list("Mocha")
 
 //  N CKEYS
 //NESgamer190
@@ -867,13 +867,6 @@
 	path = /obj/item/clothing/under/explorer/utility/command/engineering/fluff/vasharr
 	display_name = "Cartographer Engineering Command Uniform"
 	description = "A Engineering Command Uniform from the Galactic Cartographers Society, A group of intrepid explorers. This one has gold trim and organge blazes."
-	ckeywhitelist = list("radiantflash")
-	character_name = list("Vasharr Zahirn")
-
-/datum/gear/fluff/vasharr_coat
-	path = /obj/item/clothing/suit/storage/explorer/engineering/command/fluff/vasharr
-	display_name = "Cartographer Engineering Command Jacket"
-	description = "A Engineering Command Jacket from the Galactic Cartographers Society, A group of intrepid explorers. It has gold buttons and orange trim."
 	ckeywhitelist = list("radiantflash")
 	character_name = list("Vasharr Zahirn")
 

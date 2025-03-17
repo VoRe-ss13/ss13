@@ -70,10 +70,7 @@
 /turf/simulated/shuttle/floor/white,
 /area/derelict/ship)
 "ao" = (
-/obj/item/cell{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell,
 /turf/simulated/shuttle/floor/white,
 /area/derelict/ship)
 "ap" = (
@@ -1101,7 +1098,6 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
 	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
@@ -2883,7 +2879,6 @@
 "gT" = (
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
 /turf/simulated/floor/tiled/dark,
@@ -3081,7 +3076,6 @@
 "hl" = (
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
 	pixel_x = -22
 	},
 /turf/simulated/floor/tiled/dark,

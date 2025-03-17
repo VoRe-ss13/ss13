@@ -1332,6 +1332,11 @@
 "cZ" = (
 /obj/structure/table/standard,
 /obj/item/storage/box/lights/mixed,
+/obj/item/mail_scanner{
+	pixel_x = -5;
+	pixel_y = -5
+	},
+/obj/item/mail_scanner,
 /turf/simulated/floor/tiled,
 /area/groundbase/cargo/office)
 "da" = (
@@ -2047,6 +2052,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
+	},
+/obj/structure/privacyswitch{
+	dir = 4;
+	pixel_x = -30;
+	pixel_y = -27
 	},
 /turf/simulated/floor/wood,
 /area/groundbase/dorms/room4)
@@ -3701,6 +3711,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
+	},
+/obj/structure/privacyswitch{
+	pixel_y = -27;
+	dir = 8;
+	pixel_x = 30
 	},
 /turf/simulated/floor/wood,
 /area/groundbase/dorms/room5)
@@ -8826,6 +8841,11 @@
 	dir = 1;
 	pixel_y = -30
 	},
+/obj/structure/privacyswitch{
+	dir = 1;
+	pixel_y = -30;
+	pixel_x = -5
+	},
 /turf/simulated/floor/wood,
 /area/groundbase/dorms/room1)
 "yC" = (
@@ -9540,26 +9560,18 @@
 	name = "robotics equipment"
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
@@ -9728,6 +9740,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
+	},
+/obj/structure/privacyswitch{
+	dir = 4;
+	pixel_x = -30;
+	pixel_y = -27
 	},
 /turf/simulated/floor/wood,
 /area/groundbase/dorms/room6)
@@ -12051,6 +12068,11 @@
 	dir = 1
 	},
 /obj/machinery/light,
+/obj/item/storage/bag/mail,
+/obj/item/storage/bag/mail{
+	pixel_x = -5;
+	pixel_y = -5
+	},
 /turf/simulated/floor/tiled,
 /area/groundbase/cargo/office)
 "HK" = (
@@ -13410,6 +13432,11 @@
 	pixel_y = 27;
 	pixel_x = 7;
 	id = "dorm8"
+	},
+/obj/structure/privacyswitch{
+	dir = 4;
+	pixel_x = -30;
+	pixel_y = -27
 	},
 /turf/simulated/floor/wood,
 /area/groundbase/dorms/room8)
@@ -15400,6 +15427,11 @@
 	pixel_x = -7;
 	id = "dorm7"
 	},
+/obj/structure/privacyswitch{
+	pixel_y = -27;
+	dir = 8;
+	pixel_x = 30
+	},
 /turf/simulated/floor/wood,
 /area/groundbase/dorms/room7)
 "QP" = (
@@ -15768,6 +15800,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
+	},
+/obj/structure/privacyswitch{
+	pixel_y = -27;
+	dir = 8;
+	pixel_x = 30
 	},
 /turf/simulated/floor/wood,
 /area/groundbase/dorms/room3)
@@ -16982,6 +17019,11 @@
 	pixel_y = -7;
 	pixel_x = -27;
 	id = "dorm2"
+	},
+/obj/structure/privacyswitch{
+	dir = 4;
+	pixel_y = 27;
+	pixel_x = -30
 	},
 /turf/simulated/floor/wood,
 /area/groundbase/dorms/room2)

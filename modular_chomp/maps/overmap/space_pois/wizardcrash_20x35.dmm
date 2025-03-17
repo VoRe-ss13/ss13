@@ -40,7 +40,6 @@
 /area/submap/wizardcrash)
 "al" = (
 /obj/structure/shuttle/window,
-/obj/structure/grille,
 /obj/structure/grille/rustic,
 /turf/simulated/floor/wood,
 /area/submap/wizardcrash)
@@ -483,7 +482,6 @@
 /area/submap/wizardcrash)
 "bO" = (
 /obj/structure/shuttle/window,
-/obj/structure/grille,
 /obj/structure/grille/rustic,
 /turf/simulated/floor/plating,
 /area/submap/wizardcrash)
@@ -561,11 +559,6 @@
 /mob/living/simple_mob/construct/proteon,
 /turf/simulated/floor/wood,
 /area/submap/wizardcrash)
-"yn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/shuttle/floor/voidcraft,
-/area/submap/wizardcrash)
 "zA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/bronze,
@@ -639,7 +632,6 @@
 /turf/simulated/floor/wood,
 /area/submap/wizardcrash)
 "UX" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_mob/construct/shade,
 /turf/simulated/floor/wood,
@@ -947,7 +939,7 @@ aX
 aX
 bH
 lE
-yn
+lE
 aS
 bH
 bH

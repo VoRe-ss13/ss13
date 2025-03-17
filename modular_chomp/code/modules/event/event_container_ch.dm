@@ -94,7 +94,7 @@
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Spontaneous Malignant Organ", 	/datum/event/spontaneous_malignant_organ, 	-30,	list(DEPARTMENT_MEDICAL = 30), 1, min_jobs = list(DEPARTMENT_MEDICAL = 2)),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Supply Demand",			/datum/event/supply_demand,				0,		list(DEPARTMENT_ANY = 5, DEPARTMENT_RESEARCH = 15, JOB_BOTANIST = 10, DEPARTMENT_ENGINEERING = 10, DEPARTMENT_MEDICAL = 15), 1),
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Virology Breach",			/datum/event/prison_break/virology,		0,		list(DEPARTMENT_MEDICAL = 100), 1, min_jobs = list(DEPARTMENT_MEDICAL = 1)),
-		// new /datum/event_meta(EVENT_LEVEL_MODERATE, "Wormholes",				/datum/event/wormholes,	 				20,		list(DEPARTMENT_ANY = 5)), //TORCHEdit - Disabling wormholes until we agree if they are compatible with a planetside station
+		//new /datum/event_meta(EVENT_LEVEL_MODERATE, "Wormholes",				/datum/event/wormholes,	 				20,		list(DEPARTMENT_ANY = 5)), //TORCHEdit - Disabling wormholes until we agree if they are compatible with a planetside station
 		new /datum/event_meta(EVENT_LEVEL_MODERATE, "Xenobiology Breach",		/datum/event/prison_break/xenobiology,	0,		list(DEPARTMENT_RESEARCH = 100), 1, min_jobs = list(DEPARTMENT_RESEARCH = 1), min_jobs = list(DEPARTMENT_RESEARCH = 1, DEPARTMENT_SECURITY =1)),
 	)
 	add_disabled_events(list(
@@ -121,7 +121,7 @@
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Meaty Ores Wave",				/datum/event/meteor_wave/meatyores,		-90,	list(DEPARTMENT_ENGINEERING = 50, DEPARTMENT_MEDICAL = 10, DEPARTMENT_ANY = 1),	1, min_jobs = list(DEPARTMENT_ENGINEERING = 1)),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Meteor Wave",					/datum/event/meteor_wave,				-90,	list(DEPARTMENT_ENGINEERING = 50, DEPARTMENT_MEDICAL = 10, DEPARTMENT_ANY = 1),	1, min_jobs = list(DEPARTMENT_ENGINEERING = 1)),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Spacefish Swarm",				/datum/event/spacefish_migration,		10,		list(DEPARTMENT_SECURITY = 5, DEPARTMENT_MEDICAL = 3), 1, min_jobs = list(DEPARTMENT_SECURITY = 1)),
-		// new /datum/event_meta(EVENT_LEVEL_MAJOR, "Space Vines",					/datum/event/spacevine, 				20,		list(DEPARTMENT_ENGINEERING = 15), 1), // TORCHEdit Start - Disable space vines until we revise its spawn areas
+		//new /datum/event_meta(EVENT_LEVEL_MAJOR, "Space Vines",					/datum/event/spacevine, 				20,		list(DEPARTMENT_ENGINEERING = 15), 1), // TORCHEdit Start - Disable space vines until we revise its spawn areas
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Supply Demand",				/datum/event/supply_demand,				0,		list(DEPARTMENT_ANY = 5, DEPARTMENT_RESEARCH = 15, JOB_BOTANIST = 10, DEPARTMENT_ENGINEERING = 10, DEPARTMENT_MEDICAL = 15), 1, min_jobs = list(DEPARTMENT_CARGO = 1)),
 	)
 	add_disabled_events(list(

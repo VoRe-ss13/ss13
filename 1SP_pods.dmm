@@ -1467,14 +1467,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/survivalpod/superpose/CultShip)
-"bbP" = (
-/obj/structure/hull_corner{
-	dir = 4
-	},
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/template_noop,
-/area/template_noop)
 "bcf" = (
 /obj/structure/table/standard,
 /obj/machinery/reagentgrinder,
@@ -2011,7 +2003,6 @@
 "byP" = (
 /obj/item/clothing/suit/storage/apron/white,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/survivalpod/superpose/LoneHome)
 "bze" = (
@@ -2357,8 +2348,6 @@
 "bNk" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/rust,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/survivalpod/superpose/MethLab)
@@ -3710,11 +3699,6 @@
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/survivalpod)
-"cOZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood/broken,
-/area/survivalpod/superpose/LoneHome)
 "cPf" = (
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 1;
@@ -3742,11 +3726,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/survivalpod/superpose/HydroCave)
-"cPL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood,
-/area/survivalpod/superpose/OldHotel)
 "cQd" = (
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark,
@@ -3889,7 +3868,6 @@
 /obj/item/clothing/shoes/sandal,
 /obj/item/clothing/shoes/sandal,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /obj/item/towel/random,
@@ -6693,7 +6671,6 @@
 	dir = 8
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32
 	},
 /turf/simulated/floor/carpet,
@@ -8508,11 +8485,6 @@
 /obj/item/material/knife/butch,
 /turf/simulated/floor/tiled/white,
 /area/survivalpod/superpose/Dinner)
-"gax" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/asteroid_steel,
-/area/survivalpod/superpose/OldHotel)
 "gaP" = (
 /obj/structure/simple_door/wood,
 /obj/structure/barricade/planks,
@@ -9148,8 +9120,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/survivalpod/superpose/LoneHome)
 "gzu" = (
@@ -9289,14 +9259,10 @@
 	name = "First-Aid (empty)"
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
@@ -10785,7 +10751,6 @@
 "hFo" = (
 /obj/random/trash,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/survivalpod/superpose/MethLab)
 "hFu" = (
@@ -10939,9 +10904,7 @@
 "hJi" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/seeds/wheatseed{
-	icon_state = "seed"
-	},
+/obj/item/seeds/wheatseed,
 /turf/simulated/floor/outdoors/dirt,
 /area/survivalpod/superpose/DragonCave)
 "hJu" = (
@@ -11038,18 +11001,9 @@
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/emergency,
 /obj/item/storage/toolbox/emergency,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/item/radio/off,
 /obj/item/radio/off,
 /obj/item/radio/off,
@@ -11144,11 +11098,6 @@
 /obj/item/seeds/pumpkinseed,
 /turf/simulated/floor/tiled/hydro,
 /area/survivalpod/superpose/HydroCave)
-"hPW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/survivalpod/superpose/LoneHome)
 "hQb" = (
 /obj/item/pen/fountain,
 /turf/simulated/floor/wood,
@@ -12586,7 +12535,6 @@
 /area/survivalpod/superpose/MethLab)
 "iZk" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/item/paper{
 	info = "Seems to be filled with odd runes drawn with blood";
 	name = "Blood stained paper"
@@ -13196,12 +13144,6 @@
 /obj/structure/table/darkglass,
 /turf/simulated/floor/tiled/white,
 /area/survivalpod/superpose/HydroCave)
-"jtF" = (
-/obj/effect/floor_decal/rust,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel_dirty,
-/area/survivalpod/superpose/MethLab)
 "jtI" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/shuttle/floor/voidcraft/dark,
@@ -13797,7 +13739,6 @@
 /area/template_noop)
 "jRX" = (
 /obj/item/stool,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/survivalpod/superpose/MethLab)
@@ -14919,11 +14860,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt,
 /area/survivalpod/superpose/DragonCave)
-"kBL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled,
-/area/survivalpod/superpose/HydroCave)
 "kCu" = (
 /obj/structure/bed/double/padded,
 /obj/item/bedsheet/hosdouble,
@@ -15180,7 +15116,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/survivalpod/superpose/LoneHome)
 "kUL" = (
@@ -15364,7 +15299,6 @@
 /area/survivalpod)
 "laC" = (
 /obj/item/pack/cardemon,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/survivalpod/superpose/LoneHome)
@@ -15998,14 +15932,10 @@
 	name = "First-Aid (empty)"
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
@@ -16224,8 +16154,6 @@
 "lsL" = (
 /obj/structure/barricade,
 /obj/effect/floor_decal/steeldecal/steel_decals_central5,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/survivalpod/superpose/MethLab)
@@ -16725,7 +16653,6 @@
 /obj/structure/curtain/bed,
 /obj/item/bedsheet/hosdouble,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = 32
 	},
 /turf/simulated/floor/wood,
@@ -16767,7 +16694,6 @@
 	pixel_x = 5;
 	pixel_y = 10
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/survivalpod/superpose/LoneHome)
@@ -17776,7 +17702,6 @@
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/survivalpod/superpose/LoneHome)
@@ -20951,12 +20876,6 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/template_noop)
-"oEK" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood/broken,
-/area/survivalpod/superpose/LoneHome)
 "oEP" = (
 /obj/structure/flora/sif/subterranean{
 	icon_state = "glowplant2"
@@ -21450,8 +21369,6 @@
 /turf/simulated/wall/r_wall,
 /area/survivalpod/superpose/HydroCave)
 "oUU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/survivalpod/superpose/LoneHome)
@@ -24205,15 +24122,10 @@
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 2;
 	pixel_y = 4
 	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_y = 28
 	},
@@ -24392,12 +24304,6 @@
 	},
 /turf/simulated/floor/gorefloor,
 /area/survivalpod/superpose/DemonPool)
-"pTt" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/steel_dirty,
-/area/survivalpod/superpose/MethLab)
 "pTC" = (
 /obj/item/camera,
 /turf/simulated/floor/tiled/techmaint,
@@ -24465,14 +24371,8 @@
 /obj/item/clothing/gloves/sterile/latex,
 /obj/item/storage/belt/utility,
 /obj/item/storage/belt/utility,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/item/stack/material/copper{
 	amount = 25
 	},
@@ -24627,7 +24527,7 @@
 /area/survivalpod/superpose/LoneHome)
 "qaP" = (
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/survivalpod/superpose/HellCave)
 "qaS" = (
@@ -25574,7 +25474,6 @@
 	},
 /area/survivalpod/superpose/Farm)
 "qHQ" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance,
 /turf/simulated/floor/tiled/steel_dirty,
@@ -26955,12 +26854,6 @@
 	},
 /turf/simulated/shuttle/floor/purple,
 /area/survivalpod/superpose/ScienceShip)
-"rUc" = (
-/obj/effect/floor_decal/rust,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/old_tile/green,
-/area/survivalpod/superpose/MethLab)
 "rUp" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/floor_decal/industrial/warning{
@@ -27079,11 +26972,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/shuttle/floor/voidcraft,
 /area/survivalpod)
-"saN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor,
-/area/survivalpod/superpose/LoneHome)
 "saQ" = (
 /obj/item/paper_bin{
 	pixel_x = -3;
@@ -30448,11 +30336,6 @@
 /obj/item/clothing/head/pin/flower/blue,
 /obj/item/clothing/head/pin/flower/orange,
 /obj/item/clothing/head/pin/flower/pink,
-/obj/item/clothing/head/justice,
-/obj/item/clothing/head/justice/blue,
-/obj/item/clothing/head/justice/green,
-/obj/item/clothing/head/justice/pink,
-/obj/item/clothing/head/justice/yellow,
 /obj/item/clothing/head/philosopher_wig,
 /obj/item/clothing/head/plaguedoctorhat,
 /obj/item/clothing/head/xenos,
@@ -31768,11 +31651,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/plating,
 /area/template_noop)
-"vCe" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white,
-/area/survivalpod/superpose/LoneHome)
 "vCM" = (
 /obj/item/storage/firstaid/regular,
 /turf/simulated/floor/tiled/techmaint,
@@ -32020,11 +31898,6 @@
 	},
 /turf/simulated/floor,
 /area/survivalpod/superpose/WoodenCamp)
-"vOs" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood,
-/area/survivalpod/superpose/LoneHome)
 "vOz" = (
 /obj/item/sticky_pad/random,
 /turf/simulated/floor/tiled/techmaint,
@@ -32531,7 +32404,7 @@
 /area/survivalpod/superpose/GrandLibrary)
 "whZ" = (
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/template_noop)
 "wiQ" = (
@@ -32579,7 +32452,6 @@
 /obj/random/junk,
 /obj/random/junk,
 /obj/random/junk,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/survivalpod/superpose/LoneHome)
@@ -33442,12 +33314,6 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/survivalpod/superpose/CrashedInfestedShip)
-"wMJ" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/simulated/shuttle/wall/voidcraft/blue,
-/area/survivalpod)
 "wMK" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 1
@@ -34070,7 +33936,6 @@
 	pixel_y = 20
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /obj/item/handcuffs/legcuffs/fuzzy,
@@ -34281,9 +34146,7 @@
 /area/survivalpod/superpose/Farm)
 "xms" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil,
-/obj/item/seeds/onionseed{
-	icon_state = "seed"
-	},
+/obj/item/seeds/onionseed,
 /obj/item/seeds/tomatoseed{
 	icon_state = "seed";
 	pixel_x = 4;
@@ -34356,7 +34219,6 @@
 /turf/simulated/floor/tiled,
 /area/survivalpod/superpose/HydroCave)
 "xpa" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/engineering,
 /turf/simulated/floor/tiled/old_tile/green,
@@ -34593,12 +34455,6 @@
 	icon_state = "floor_white"
 	},
 /area/survivalpod/superpose/CrashedQurantineShip)
-"xyN" = (
-/obj/random/trash,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/survivalpod/superpose/LoneHome)
 "xzd" = (
 /obj/random/maintenance/engineering,
 /turf/simulated/floor,
@@ -35386,11 +35242,6 @@
 	},
 /turf/simulated/shuttle/floor/voidcraft/dark,
 /area/template_noop)
-"yeD" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/old_tile/green,
-/area/survivalpod/superpose/MethLab)
 "yeQ" = (
 /turf/simulated/shuttle/wall/alien/blue/hard_corner,
 /area/survivalpod/superpose/CrashedInfestedShip)
@@ -39814,7 +39665,7 @@ wWX
 uHE
 wWX
 uHE
-bbP
+rug
 pIr
 pIr
 pIr
@@ -54155,7 +54006,7 @@ jTF
 mtA
 ktQ
 fsy
-wMJ
+oKt
 qkX
 gjM
 eMp
@@ -58989,7 +58840,7 @@ lNO
 lNO
 gnX
 uvB
-vOs
+tGy
 wHy
 dRG
 dRG
@@ -59254,7 +59105,7 @@ chf
 aww
 gHu
 gOA
-xyN
+oeZ
 dRG
 chf
 xrs
@@ -59296,7 +59147,7 @@ lVq
 iQG
 nCC
 uwm
-rUc
+oeH
 xpa
 fPt
 kAO
@@ -59506,7 +59357,7 @@ sJN
 chf
 vtt
 oLI
-hPW
+pcn
 tGy
 sJN
 tGy
@@ -59554,9 +59405,9 @@ qVw
 clR
 kbH
 kbH
-yeD
-rUc
-yeD
+hzJ
+oeH
+hzJ
 hzJ
 xda
 kbH
@@ -60279,12 +60130,12 @@ gnX
 tGy
 tGy
 lMg
-oEK
-cOZ
+uvB
+uvB
 gyP
-vOs
-vOs
-vOs
+tGy
+tGy
+tGy
 uvB
 gnX
 xNH
@@ -60788,7 +60639,7 @@ qRd
 qRd
 aww
 fnO
-vCe
+dIL
 ecK
 chf
 obV
@@ -60797,11 +60648,11 @@ iDe
 pLU
 aww
 lOr
-cOZ
+uvB
 pYs
 tRH
 lAl
-saN
+tRH
 aww
 xNH
 bJU
@@ -60834,8 +60685,8 @@ alT
 xrZ
 uHc
 cOE
-jtF
-pTt
+pQB
+fdj
 mjk
 clR
 bEL
@@ -61045,7 +60896,7 @@ qRd
 qRd
 sJN
 daR
-vCe
+dIL
 fHI
 tGy
 wxO
@@ -64931,7 +64782,7 @@ xhB
 kXY
 rGY
 pGz
-cPL
+dYU
 tnb
 kXY
 rXy
@@ -66468,7 +66319,7 @@ ePU
 jgz
 dYU
 hip
-gax
+drP
 vxG
 mUV
 wAw
@@ -66725,7 +66576,7 @@ dYU
 bQL
 kXY
 hip
-gax
+drP
 ksh
 dcm
 ksh
@@ -67496,7 +67347,7 @@ gtC
 xhB
 kyE
 dcm
-gax
+drP
 ksh
 ksh
 rmP
@@ -71870,7 +71721,7 @@ wrH
 wrH
 tSm
 cMl
-kBL
+jau
 clr
 por
 ktQ

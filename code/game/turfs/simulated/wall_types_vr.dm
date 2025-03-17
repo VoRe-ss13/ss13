@@ -86,7 +86,7 @@ var/list/flesh_overlay_cache = list()
 	hard_corner = 1 //They're all HC
 	true_name = "wall"
 
-/turf/simulated/shuttle/wall/flock/Initialize()
+/turf/simulated/shuttle/wall/flock/Initialize(mapload)
 	. = ..()
 	set_light(3,3,"#26c5a9")
 
@@ -187,7 +187,7 @@ var/list/flesh_overlay_cache = list()
 	icon_state = "sifwood"
 	icon = 'icons/turf/wall_masks_vr.dmi'
 
-//CHOMPEdit Start	
+//CHOMPEdit Start
 /turf/simulated/wall/rsifwood
 	icon_state = "sifwood"
 	icon = 'icons/turf/wall_masks_vr.dmi'

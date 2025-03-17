@@ -135,14 +135,6 @@ SUBSYSTEM_DEF(xenoarch)
 		if(!prob(XENOARCH_SPAWN_CHANCE))
 			continue
 
-		var/farEnough = 1
-		for(var/turf/T as anything in digsite_spawning_turfs)
-			if(T in range(5, M))
-				farEnough = 0
-				break
-		if(!farEnough)
-			continue
-
 		digsite_spawning_turfs.Add(M) //This rock was lucky enough to be selected and not near any other sites!
 
 		var/digsite = get_random_digsite_type() //What type of artifact site is this? Dictates what items will spawn.
@@ -200,7 +192,7 @@ SUBSYSTEM_DEF(xenoarch)
 
 	//create artifact machinery. Colloquially known as large artifacts.
 	//Any artifact turfs except for garden & animal digsites can be selected.
-	var/num_artifacts_spawn = rand(PROCEDURAL_LOWER, PROCEDURAL_UPPER) //Our random generation will spawn fewer new large artifacts. Remember, this is for our Z level, not the whole map!
+	var/num_artifacts_spawn = rand(ARTIFACTSPAWNNUM_LOWER, ARTIFACTSPAWNNUM_UPPER)
 	while(artifact_spawning_turfs.len > num_artifacts_spawn)
 		pick_n_take(artifact_spawning_turfs)
 

@@ -1030,7 +1030,6 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 24
 	},
 /turf/simulated/floor/tiled,
@@ -2265,7 +2264,6 @@
 "fg" = (
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 24
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -3159,12 +3157,10 @@
 /area/shuttle/webdemo)
 "hA" = (
 /obj/structure/shuttle/engine/heater,
-/turf/space,
 /turf/simulated/shuttle/plating/carry,
 /area/shuttle/webdemo)
 "hB" = (
 /obj/structure/shuttle/engine/propulsion,
-/turf/space,
 /turf/simulated/shuttle/plating/carry,
 /area/shuttle/webdemo)
 "hC" = (
@@ -3175,7 +3171,6 @@
 /obj/machinery/ion_engine{
 	dir = 1
 	},
-/turf/space,
 /turf/simulated/shuttle/plating/carry,
 /area/shuttle/overmapdemo)
 "hJ" = (
@@ -3247,7 +3242,6 @@
 	id = "EngineEmitterPortWest";
 	name = "Engine Room Blast Doors";
 	pixel_y = 25;
-	req_access = null;
 	req_one_access = list(11,24)
 	},
 /obj/effect/floor_decal/industrial/outline,
@@ -3371,10 +3365,7 @@
 "kr" = (
 /obj/structure/table/steel,
 /obj/item/storage/box/lights/mixed,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/item/paper{
 	info = "The big blue box recently installed in here is a 'grid checker' which will shut off the power if a dangerous power spike from the engine erupts into the powernet.  Shutting everything down protects everything from electrical damage, however the outages can be disruptive to colony operations, so it is designed to restore power after a somewhat significant delay, up to ten minutes or so.  The grid checker can be manually hacked in order to end the outage sooner.  To do that, you must cut three specific wires which do not cause a red light to shine, then pulse a fourth wire.  Electrical protection is highly recommended when doing maintenance on the grid checker.";
 	name = "grid checker info"
@@ -3437,11 +3428,6 @@
 /obj/effect/floor_decal/corner/yellow/bordercorner,
 /turf/simulated/floor/tiled,
 /area/engineering/engine_room)
-"kT" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/space,
-/area/space)
 "kU" = (
 /obj/structure/shuttle,
 /turf/simulated/shuttle/wall/voidcraft/green,
@@ -4136,7 +4122,6 @@
 /area/engineering/workshop)
 "sA" = (
 /obj/structure/shuttle/engine/heater,
-/turf/space,
 /turf/simulated/shuttle/plating/carry,
 /area/shuttle/multidemo)
 "sB" = (
@@ -4291,7 +4276,6 @@
 "uq" = (
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
@@ -4786,10 +4770,7 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/engine_monitoring)
 "zf" = (
@@ -5734,9 +5715,6 @@
 /turf/simulated/floor/tiled,
 /area/engineering/engine_room)
 "Li" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 4
-	},
 /obj/structure/grille,
 /obj/structure/window/phoronreinforced{
 	dir = 1
@@ -5971,7 +5949,6 @@
 	},
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -22
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -6157,7 +6134,6 @@
 /area/engineering/engine_room)
 "Pg" = (
 /obj/structure/shuttle/engine/propulsion,
-/turf/space,
 /turf/simulated/shuttle/plating/carry,
 /area/shuttle/multidemo)
 "Pk" = (
@@ -6835,7 +6811,6 @@
 "XA" = (
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 24
 	},
 /obj/structure/table/standard,
@@ -15390,7 +15365,7 @@ vh
 mP
 od
 wW
-kT
+wW
 Pp
 II
 GB
@@ -16716,7 +16691,7 @@ JB
 lx
 lx
 tz
-kT
+wW
 oG
 II
 GB

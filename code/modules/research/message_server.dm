@@ -73,11 +73,7 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 	var/datum/looping_sound/tcomms/soundloop // CHOMPStation Add: Hummy noises
 	var/noisy = FALSE  // CHOMPStation Add: Hummy noises
 
-/obj/machinery/message_server/New()
-	message_servers += src
-	decryptkey = GenerateKey()
-	send_pda_message("System Administrator", "system", "This is an automated message. The messaging system is functioning correctly.")
-
+/obj/machinery/message_server/Initialize(mapload)
 	// CHOMPAdd: PDA Messaging Server humming
 	soundloop = new(list(src), FALSE)
 	if(prob(60)) // 60% chance to change the midloop
@@ -91,14 +87,15 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 			soundloop.mid_sounds = list('sound/machines/tcomms/tcomms_04.ogg' = 1)
 			soundloop.mid_length = 30
 	// CHOMPAdd End
-	..()
-	return
+	. = ..()
+	message_servers += src
+	decryptkey = GenerateKey()
+	send_pda_message("System Administrator", "system", "This is an automated message. The messaging system is functioning correctly.")
 
 /obj/machinery/message_server/Destroy()
 	message_servers -= src
 	QDEL_NULL(soundloop) // CHOMPStation Add: Hummy noises
-	..()
-	return
+	return ..()
 
 /obj/machinery/message_server/examine(mob/user, distance, infix, suffix)
 	. = ..()
@@ -130,7 +127,7 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 	var/result
 	for (var/token in spamfilter)
 		if (findtextEx(message,token))
-			message = "<font color=\"red\">[message]</font>"	//Rejected messages will be indicated by red color.
+			message = span_red("[message]")	//Rejected messages will be indicated by red color.
 			result = token										//Token caused rejection (if there are multiple, last will be chosen>.
 	pda_msgs += new/datum/data_pda_msg(recipient,sender,message)
 	return result
@@ -165,7 +162,7 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 
 
 /obj/machinery/message_server/attack_hand(user as mob)
-//	to_chat(user, "<font color='blue'>There seem to be some parts missing from this server. They should arrive on the station in a few days, give or take a few CentCom delays.</font>")
+//	to_chat(user, span_blue("There seem to be some parts missing from this server. They should arrive on the station in a few days, give or take a few CentCom delays."))
 	to_chat(user, span_filter_notice("You toggle PDA message passing from [active ? "On" : "Off"] to [active ? "Off" : "On"]."))
 	active = !active
 	update_icon()
@@ -286,10 +283,11 @@ var/obj/machinery/blackbox_recorder/blackbox
 	var/list/datum/feedback_variable/feedback = new()
 
 	//Only one can exist in the world!
-/obj/machinery/blackbox_recorder/New()
+/obj/machinery/blackbox_recorder/Initialize(mapload)
+	. = ..()
 	if(blackbox)
 		if(istype(blackbox,/obj/machinery/blackbox_recorder))
-			qdel(src)
+			return INITIALIZE_HINT_QDEL
 	blackbox = src
 
 /obj/machinery/blackbox_recorder/Destroy()
@@ -312,7 +310,7 @@ var/obj/machinery/blackbox_recorder/blackbox
 		BR.messages_admin = messages_admin
 		if(blackbox != BR)
 			blackbox = BR
-	..()
+	. = ..()
 
 /obj/machinery/blackbox_recorder/proc/find_feedback_datum(var/variable)
 	for(var/datum/feedback_variable/FV in feedback)

@@ -16,7 +16,7 @@
 		/obj/item/ammo_magazine/clip/c762/hunter = 9,
 		/obj/item/gun/projectile/shotgun/pump/rifle = 2)
 
-/obj/structure/closet/secure_closet/guncabinet/rifle/Initialize()
+/obj/structure/closet/secure_closet/guncabinet/rifle/Initialize(mapload)
 	if(prob(85))
 		starts_with += /obj/item/gun/projectile/shotgun/pump/rifle
 	else
@@ -45,7 +45,6 @@
 		/obj/item/clothing/head/helmet/explorer,
 		/obj/item/clothing/suit/storage/hooded/explorer,
 		/obj/item/clothing/mask/gas/explorer,
-		/obj/item/storage/belt/explorer, //CHOMPADD
 		/obj/item/clothing/shoes/boots/winter/explorer,
 		/obj/item/clothing/gloves/black,
 		/obj/item/radio/headset/explorer,
@@ -55,13 +54,12 @@
 		/obj/item/storage/box/flare,
 		/obj/item/geiger,
 		/obj/item/cell/device,
+		/obj/item/radio,
 		/obj/item/stack/marker_beacon/thirty,
-		/obj/item/reagent_containers/food/snacks/liquidfood, //CHOMPADD
-		/obj/item/reagent_containers/food/snacks/liquidprotein, //CHOMPADD
 		/obj/item/cataloguer
 		)
 
-/obj/structure/closet/secure_closet/explorer/Initialize()
+/obj/structure/closet/secure_closet/explorer/Initialize(mapload)
 	if(prob(50))
 		starts_with += /obj/item/storage/backpack
 	else
@@ -130,7 +128,7 @@
 		/obj/item/cell/device,
 		/obj/item/radio)
 
-/obj/structure/closet/secure_closet/pilot/Initialize()
+/obj/structure/closet/secure_closet/pilot/Initialize(mapload)
 	if(prob(50))
 		starts_with += /obj/item/storage/backpack
 	else

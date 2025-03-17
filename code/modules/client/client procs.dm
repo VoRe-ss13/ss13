@@ -216,7 +216,7 @@
 	//Helps prevent multiple files being uploaded at once. Or right after eachother.
 	var/time_to_wait = fileaccess_timer - world.time
 	if(time_to_wait > 0)
-		to_chat(src, "<font color='red'>Error: AllowUpload(): Spam prevention. Please wait [round(time_to_wait/10)] seconds.</font>")
+		to_chat(src, span_red("Error: AllowUpload(): Spam prevention. Please wait [round(time_to_wait/10)] seconds."))
 		return 0
 	fileaccess_timer = world.time + FTPDELAY	*/
 	return 1
@@ -226,9 +226,7 @@
 	//CONNECT//
 	///////////
 /client/New(TopicData)
-	// TODO: Remove version check with 516
-	if(byond_version >= 516) // Enable 516 compat browser storage mechanisms
-		winset(src, null, "browser-options=[DEFAULT_CLIENT_BROWSER_OPTIONS]")
+	winset(src, null, "browser-options=[DEFAULT_CLIENT_BROWSER_OPTIONS]")
 
 	TopicData = null							//Prevent calls to client.Topic from connect
 
@@ -249,9 +247,12 @@
 	GLOB.clients += src
 	GLOB.directory[ckey] = src
 
+	if (CONFIG_GET(flag/chatlog_database_backend))
+		chatlog_token = vchatlog_generate_token(ckey)
+
 	// Instantiate stat panel
 	stat_panel = new(src, "statbrowser")
-	stat_panel.subscribe(src, .proc/on_stat_panel_message)
+	stat_panel.subscribe(src, PROC_REF(on_stat_panel_message))
 
 	// Instantiate tgui panel
 	tgui_say = new(src, "tgui_say")
@@ -261,7 +262,7 @@
 	GLOB.tickets.ClientLogin(src) // CHOMPedit - Tickets System
 
 	//Admin Authorisation
-	holder = admin_datums[ckey]
+	holder = GLOB.admin_datums[ckey]
 	if(holder)
 		GLOB.admins += src
 		holder.owner = src
@@ -335,8 +336,7 @@
 		void = new()
 	screen += void
 
-	// CHOMPAdd Start
-	if((prefs.lastchangelog != changelog_hash) && isnewplayer(src.mob)) //bolds the changelog button on the interface so we know there are updates.
+	if((prefs?.read_preference(/datum/preference/text/lastchangelog) != GLOB.changelog_hash) && isnewplayer(src.mob)) //bolds the changelog button on the interface so we know there are updates.
 		to_chat(src, span_info("You have unread updates in the changelog."))
 		winset(src, "rpane.changelog", "background-color=#eaeaea;font-style=bold")
 		if(CONFIG_GET(flag/aggressive_changelog))
@@ -360,11 +360,9 @@
 	fully_created = TRUE
 	attempt_auto_fit_viewport()
 
-	// TODO: Remove version check with 516
-	if(byond_version >= 516)
-		// Now that we're fully initialized, use our prefs
-		if(prefs?.read_preference(/datum/preference/toggle/browser_dev_tools))
-			winset(src, null, "browser-options=[DEFAULT_CLIENT_BROWSER_OPTIONS],devtools")
+	// Now that we're fully initialized, use our prefs
+	if(prefs?.read_preference(/datum/preference/toggle/browser_dev_tools))
+		winset(src, null, "browser-options=[DEFAULT_CLIENT_BROWSER_OPTIONS],devtools")
 
 	//////////////
 	//DISCONNECT//
@@ -468,7 +466,7 @@
 
 	var/admin_rank = "Player"
 	if(src.holder)
-		admin_rank = src.holder.rank
+		admin_rank = src.holder.rank_names()
 
 	var/sql_ip = sql_sanitize_text(src.address)
 	var/sql_computerid = sql_sanitize_text(src.computer_id)
@@ -478,7 +476,7 @@
 
 	//Panic bunker code
 	if (isnum(player_age) && player_age == 0) //first connection
-		if (CONFIG_GET(flag/panic_bunker) && !holder && !deadmin_holder)
+		if (CONFIG_GET(flag/panic_bunker) && !holder && !GLOB.deadmins[key])
 			log_adminwarn("Failed Login: [key] - New account attempting to connect during panic bunker")
 			message_admins(span_adminnotice("Failed Login: [key] - New account attempting to connect during panic bunker"))
 			disconnect_with_message("Sorry but the server is currently not accepting connections from never before seen players.")
@@ -667,22 +665,10 @@
 		return TRUE
 
 /client/proc/disconnect_with_message(var/message = "You have been intentionally disconnected by the server.<br>This may be for security or administrative reasons.")
-	message = "<head><title>You Have Been Disconnected</title></head><body><hr><center><b>[message]</b></center><hr><br>If you feel this is in error, you can contact an administrator out-of-game (for example, on Discord).</body>"
+	message = "<head><title>You Have Been Disconnected</title></head><body><hr><center>" + span_bold("[message]") + "</center><hr><br>If you feel this is in error, you can contact an administrator out-of-game (for example, on Discord).</body>"
 	window_flash(src)
 	src << browse("<html>[message]</html>","window=dropmessage;size=480x360;can_close=1")
 	qdel(src)
-
-/// Keydown event in a tgui window this client has open. Has keycode passed to it.
-/client/verb/TguiKeyDown(keycode as text)
-	set name = "TguiKeyDown"
-	set hidden = TRUE
-	return // stub
-
-/// Keyup event in a tgui window this client has open. Has keycode passed to it.
-/client/verb/TguiKeyUp(keycode as text) // Doesn't seem to currently fire?
-	set name = "TguiKeyUp"
-	set hidden = TRUE
-	return // stub
 
 /client/verb/toggle_fullscreen()
 	set name = "Toggle Fullscreen"

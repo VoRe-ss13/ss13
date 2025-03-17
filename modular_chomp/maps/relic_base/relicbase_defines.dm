@@ -28,7 +28,7 @@
 	full_name = "NLS Relic Base"
 	path = "relicbase"
 
-	lobby_icon = 'icons/misc/CHOMPSTATION.gif'
+	lobby_icon = 'icons/misc/title_tc.dmi' //TORCHEdit
 	lobby_screens = list("thor") //CHOMPStation Edit TFF 24/12/19 - CHOMPStation image
 	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'	//CHOMPStation Edit 25/1/20 TFF - Job icons for off-duty/exploration
 
@@ -348,37 +348,37 @@
 		Z_LEVEL_CATACOMBS
 	)
 
-/obj/effect/step_trigger/teleporter/bridge/east_to_west/Initialize()
+/obj/effect/step_trigger/teleporter/bridge/east_to_west/Initialize(mapload)
 	teleport_x = src.x - 4
 	teleport_y = src.y
 	teleport_z = src.z
 	return ..()
 
-/obj/effect/step_trigger/teleporter/bridge/east_to_west/small/Initialize()
+/obj/effect/step_trigger/teleporter/bridge/east_to_west/small/Initialize(mapload)
 	teleport_x = src.x - 3
 	teleport_y = src.y
 	teleport_z = src.z
 	return ..()
 
-/obj/effect/step_trigger/teleporter/bridge/west_to_east/Initialize()
+/obj/effect/step_trigger/teleporter/bridge/west_to_east/Initialize(mapload)
 	teleport_x = src.x + 4
 	teleport_y = src.y
 	teleport_z = src.z
 	return ..()
 
-/obj/effect/step_trigger/teleporter/bridge/west_to_east/small/Initialize()
+/obj/effect/step_trigger/teleporter/bridge/west_to_east/small/Initialize(mapload)
 	teleport_x = src.x + 3
 	teleport_y = src.y
 	teleport_z = src.z
 	return ..()
 
-/obj/effect/step_trigger/teleporter/bridge/north_to_south/Initialize()
+/obj/effect/step_trigger/teleporter/bridge/north_to_south/Initialize(mapload)
 	teleport_x = src.x
 	teleport_y = src.y - 4
 	teleport_z = src.z
 	return ..()
 
-/obj/effect/step_trigger/teleporter/bridge/south_to_north/Initialize()
+/obj/effect/step_trigger/teleporter/bridge/south_to_north/Initialize(mapload)
 	teleport_x = src.x
 	teleport_y = src.y + 4
 	teleport_z = src.z

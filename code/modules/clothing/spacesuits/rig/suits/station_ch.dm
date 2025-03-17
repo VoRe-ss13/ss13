@@ -1,6 +1,7 @@
 //Hardsuits
 /obj/item/rig/ch //Some blank bs
-	desc = "This is a dev item and should not be spawned."
+	name = DEVELOPER_WARNING_NAME
+	desc = DEVELOPER_WARNING_NAME
 	default_mob_icon = 'modular_chomp/icons/mob/rig_back_ch.dmi'
 	chest_type = /obj/item/clothing/suit/space/rig/ch
 	helm_type = /obj/item/clothing/head/helmet/space/rig/ch
@@ -8,15 +9,22 @@
 	boot_type = /obj/item/clothing/shoes/magboots/rig/ch
 
 /obj/item/clothing/suit/space/rig/ch
+	icon_state = "nanomachine_rig" //The name is seen by players, but rigs do some funny things like overwriting the icon_state. The unit test will screech if a rig doesn't have an icon_state, so we set one here.
 	icon = 'icons/obj/clothing/spacesuits_ch.dmi'
 
 /obj/item/clothing/head/helmet/space/rig/ch
+	icon_state = "nanomachine_rig" //The name is seen by players, but rigs do some funny things like overwriting the icon_state. The unit test will screech if a rig doesn't have an icon_state, so we set one here.
+
 	icon = 'icons/obj/clothing/hats_ch.dmi'
 
 /obj/item/clothing/gloves/gauntlets/rig/ch
+	icon_state = "nanomachine_rig" //The name is seen by players, but rigs do some funny things like overwriting the icon_state. The unit test will screech if a rig doesn't have an icon_state, so we set one here.
+
 	icon = 'icons/obj/clothing/gloves_ch.dmi'
 
 /obj/item/clothing/shoes/magboots/rig/ch
+	icon_state = "nanomachine_rig" //The name is seen by players, but rigs do some funny things like overwriting the icon_state. The unit test will screech if a rig doesn't have an icon_state, so we set one here.
+
 	icon = 'icons/obj/clothing/shoes_ch.dmi'
 
 
@@ -24,7 +32,7 @@
 //A second security suit. Comes with a grenade launcher that only accepts flashbangs and adds a new sprinter and flash modules.
 /obj/item/rig/ch/pursuit
 	name = "pursuit hardsuit control module"
-	icon = 'icons/obj/rig_modules.dmi'
+	icon = 'modular_chomp/icons/obj/rig_modules_ch.dmi'
 	icon_state = "pursuit_rig"
 	suit_type = "pursuit hardsuit"
 	desc = "A Security hardsuit designed for chasing down the grey tide."

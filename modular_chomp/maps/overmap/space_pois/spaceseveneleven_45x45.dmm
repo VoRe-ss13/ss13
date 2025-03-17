@@ -760,13 +760,13 @@
 /obj/structure/window/basic{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/drinks/bottle/tequilla{
+/obj/item/reagent_containers/food/drinks/bottle/tequila{
 	pixel_x = -7
 	},
-/obj/item/reagent_containers/food/drinks/bottle/tequilla{
+/obj/item/reagent_containers/food/drinks/bottle/tequila{
 	pixel_x = -7
 	},
-/obj/item/reagent_containers/food/drinks/bottle/tequilla{
+/obj/item/reagent_containers/food/drinks/bottle/tequila{
 	pixel_x = -7
 	},
 /obj/item/reagent_containers/food/drinks/bottle/jager,
@@ -1535,8 +1535,7 @@
 /area/submap/spaceseveneleven)
 "HI" = (
 /obj/structure/cable{
-	icon_state = "4-8";
-	tag = ""
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/outdoors/sidewalk/slab/city{
 	oxygen = 0;
@@ -2100,7 +2099,6 @@
 /turf/simulated/floor/tiled/old_tile/white,
 /area/submap/spaceseveneleven)
 "WC" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/rocks{
 	nitrogen = 0;

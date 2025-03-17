@@ -260,8 +260,8 @@ GLOBAL_LIST_EMPTY(unique_deployable)
 	icon = 'icons/obj/survival_pod.dmi'
 	icon_state = "bed"
 
-/obj/structure/bed/pod/Initialize(var/newloc)
-	. = ..(newloc, MAT_STEEL, MAT_COTTON)
+/obj/structure/bed/pod/Initialize(mapload)
+	. = ..(mapload, MAT_STEEL, MAT_COTTON)
 
 //Survival Storage Unit
 /obj/machinery/smartfridge/survival_pod
@@ -278,7 +278,7 @@ GLOBAL_LIST_EMPTY(unique_deployable)
 	pixel_y = -4
 	max_n_of_items = 100
 
-/obj/machinery/smartfridge/survival_pod/Initialize()
+/obj/machinery/smartfridge/survival_pod/Initialize(mapload)
 	. = ..()
 	for(var/obj/item/O in loc)
 		if(accept_check(O))

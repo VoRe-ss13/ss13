@@ -286,10 +286,7 @@
 /turf/simulated/floor/tiled/eris/steel/techfloor_grid,
 /area/submap/whiteship)
 "tb" = (
-/obj/item/cell{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -372,11 +369,6 @@
 /obj/structure/frame/computer,
 /turf/simulated/floor/tiled/eris/white/techfloor,
 /area/submap/whiteship)
-"wx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/submap/whiteship)
 "xq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 6
@@ -429,10 +421,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/whiteship)
 "zY" = (
-/obj/item/cell{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell,
 /obj/random/trash,
 /turf/simulated/floor/tiled/eris/white/techfloor,
 /area/submap/whiteship)
@@ -509,11 +498,6 @@
 /mob/living/simple_mob/metroid/juvenile/super,
 /turf/simulated/floor/tiled/eris/white/techfloor,
 /area/submap/whiteship)
-"FB" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/template_noop,
-/area/submap/whiteship)
 "FT" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/tiled/eris/white/techfloor,
@@ -555,7 +539,6 @@
 	name = "Hibernation Pods"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/whiteship)
 "IB" = (
@@ -570,7 +553,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/whiteship)
 "Jy" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/trash,
 /obj/random/junk,
@@ -758,12 +740,6 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/eris/white/techfloor,
-/area/submap/whiteship)
-"Xy" = (
-/mob/living/simple_mob/metroid/juvenile/baby,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techfloor/grid,
 /area/submap/whiteship)
 "XK" = (
 /obj/machinery/atmospherics/portables_connector,
@@ -1103,7 +1079,7 @@ fR
 fR
 gJ
 Jb
-Xy
+TC
 oh
 Br
 al
@@ -1337,8 +1313,8 @@ qz
 tg
 eV
 qz
-Xy
-wx
+TC
+qz
 sj
 tb
 QH
@@ -2042,7 +2018,7 @@ fR
 fR
 EE
 Nc
-FB
+EE
 Nc
 fR
 fR
@@ -2100,7 +2076,7 @@ fR
 fR
 fR
 EE
-FB
+EE
 EE
 gJ
 gJ

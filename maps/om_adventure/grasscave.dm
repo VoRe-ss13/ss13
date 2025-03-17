@@ -159,6 +159,15 @@
 	mappath = "maps/om_adventure/pois/darktear_sample.dmm"
 	cost = 5
 
+/area/om_adventure/poi/darktear_sample
+	name = "POI - Darktear Scientific"
+
+/datum/map_template/om_adventure/cave/darktear_sample
+	name = "darktear (Samples)"	//1 uncommon-or-rare sample
+	desc = "Ooh, spooky"
+	mappath = "maps/om_adventure/pois/darktear_sample.dmm"
+	cost = 5
+
 /area/om_adventure/poi/fleshtear1
 	name = "POI - Fleshtear 1"
 
@@ -193,6 +202,15 @@
 	name = "fleshtear4"
 	desc = "Wow gross!"
 	mappath = "maps/om_adventure/pois/fleshtear4.dmm"
+	cost = 5
+
+/area/om_adventure/poi/fleshtear_samples
+	name = "POI - Fleshtear Scientific"
+
+/datum/map_template/om_adventure/cave/fleshtear_samples
+	name = "fleshtear (Samples)"	//3 common/uncommon samples
+	desc = "Ooh, meaty"
+	mappath = "maps/om_adventure/pois/fleshtear_samples.dmm"
 	cost = 5
 
 /area/om_adventure/poi/fleshtear_samples

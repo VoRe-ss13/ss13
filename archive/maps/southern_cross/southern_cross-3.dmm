@@ -617,7 +617,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/surface/outpost/mining_main)
 "bG" = (
@@ -802,7 +801,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
 	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
@@ -927,7 +925,6 @@
 /obj/structure/bed/roller,
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 22
 	},
 /obj/effect/floor_decal/borderfloorwhite{
@@ -1182,7 +1179,6 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
 	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
@@ -4109,7 +4105,6 @@
 "jb" = (
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 22
 	},
 /obj/effect/floor_decal/borderfloor{
@@ -4209,7 +4204,6 @@
 "jm" = (
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 22
 	},
 /turf/simulated/floor/tiled,
@@ -4231,7 +4225,6 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 22
 	},
 /turf/simulated/floor/plating,
@@ -4716,7 +4709,6 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
 	pixel_x = -22
 	},
 /obj/effect/floor_decal/borderfloor,
@@ -5235,7 +5227,6 @@
 /obj/structure/table/marble,
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
 	pixel_x = -22
 	},
 /obj/item/reagent_containers/food/condiment/small/saltshaker,
@@ -5766,7 +5757,6 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 22
 	},
 /turf/simulated/floor/plating,
@@ -5839,7 +5829,6 @@
 /obj/item/storage/firstaid/regular,
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 22
 	},
 /turf/simulated/floor/tiled,
@@ -6058,7 +6047,6 @@
 /obj/structure/table/standard,
 /obj/item/storage/box/cups,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32;
 	pixel_y = 0
 	},
@@ -6275,7 +6263,6 @@
 	},
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -6339,7 +6326,6 @@
 	},
 /obj/machinery/alarm{
 	dir = 4;
-	icon_state = "alarm0";
 	pixel_x = -22
 	},
 /obj/item/radio/intercom{
@@ -6959,7 +6945,6 @@
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/restroom)
 "pm" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/tiled/steel_dirty{
@@ -7773,7 +7758,6 @@
 "qO" = (
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/freezer,
@@ -8006,7 +7990,6 @@
 /area/surface/outpost/main/dorms)
 "rl" = (
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 0;
 	pixel_y = 32
 	},
@@ -8159,7 +8142,6 @@
 /area/surface/outpost/main/dorms)
 "ry" = (
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 0;
 	pixel_y = 32
 	},
@@ -8312,7 +8294,6 @@
 "rO" = (
 /obj/structure/table/standard,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32;
 	pixel_y = 0
 	},
@@ -8941,7 +8922,6 @@
 "tb" = (
 /obj/structure/table/standard,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32;
 	pixel_y = 0
 	},
@@ -9041,7 +9021,6 @@
 /area/surface/outpost/main/pool)
 "tm" = (
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32;
 	pixel_y = 0
 	},
@@ -9085,7 +9064,6 @@
 /area/surface/outpost/main/pool)
 "ts" = (
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32;
 	pixel_y = 0
 	},
@@ -9478,13 +9456,10 @@
 "uA" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
 /area/surface/outpost/research/xenoresearch)
 "uB" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/plating/sif/planetuse,
@@ -9728,7 +9703,6 @@
 "vf" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 0;
 	pixel_y = 32
 	},
@@ -9758,7 +9732,6 @@
 "vi" = (
 /obj/structure/table/standard,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32;
 	pixel_y = 0
 	},
@@ -9787,7 +9760,6 @@
 "vm" = (
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 22
 	},
 /turf/simulated/floor/plating,
@@ -12371,7 +12343,6 @@
 /obj/machinery/portable_atmospherics/hydroponics,
 /obj/machinery/alarm{
 	dir = 8;
-	icon_state = "alarm0";
 	pixel_x = 22
 	},
 /turf/simulated/floor/tiled/hydro,
@@ -13063,7 +13034,6 @@
 /area/surface/outpost/research/xenoresearch/xenobiology)
 "Ck" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/structure/disposaloutlet,
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -13072,7 +13042,6 @@
 /turf/simulated/floor/tiled/steel/sif/planetuse,
 /area/surface/outpost/research/xenoresearch/xenobiology)
 "Cl" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/tiled/steel/sif/planetuse,

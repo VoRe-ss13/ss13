@@ -22,7 +22,7 @@
 	var/obj/item/radio/intercom/announce	// Integreated announcer
 
 
-/obj/machinery/computer/timeclock/Initialize()
+/obj/machinery/computer/timeclock/Initialize(mapload)
 	. = ..()
 	announce = new /obj/item/radio/intercom(src)
 
@@ -266,8 +266,8 @@ CHOMPedit end. */
 /obj/item/card/id
 	var/last_job_switch
 
-/obj/item/card/id/New()
-	.=..()
+/obj/item/card/id/Initialize(mapload)
+	. = ..()
 	last_job_switch = world.time
 
 //

@@ -17,7 +17,7 @@
 	var/obj/machinery/body_scanconsole/console
 	var/printing_text = null
 
-/obj/machinery/bodyscanner/Initialize()
+/obj/machinery/bodyscanner/Initialize(mapload)
 	. = ..()
 	default_apply_parts()
 
@@ -127,7 +127,7 @@
 	if (occupant.client)
 		occupant.client.eye = occupant.client.mob
 		occupant.client.perspective = MOB_PERSPECTIVE
-	occupant.loc = src.loc
+	occupant.forceMove(src.loc) // was occupant.loc = src.loc, but that doesn't trigger exit(), and thus recursive radio listeners forwarded messages to the occupant as if they were still inside it for the rest of the round! OP21 #5f88307 Port
 	occupant = null
 	update_icon() //icon_state = "body_scanner_1" //VOREStation Edit - Health display for consoles with light and such.
 	SStgui.update_uis(src)
@@ -161,7 +161,6 @@
 				//SN src = null
 				qdel(src)
 				return
-		else
 	return
 
 /obj/machinery/bodyscanner/tgui_host(mob/user)
@@ -334,8 +333,9 @@
 
 		occupantData["blind"] = (H.sdisabilities & BLIND)
 		occupantData["nearsighted"] = (H.disabilities & NEARSIGHTED)
-		occupantData["husked"] = (HUSK in H.mutations) // VOREstation edit
-		occupantData = attempt_vr(src, "get_occupant_data_vr", list(occupantData, H)) //VOREStation Insert
+		occupantData["brokenspine"] = (H.disabilities & SPINE)
+		occupantData["husked"] = (HUSK in H.mutations)
+		occupantData = attempt_vr(src, "get_occupant_data_vr", list(occupantData, H))
 	data["occupant"] = occupantData
 
 	return data
@@ -628,7 +628,6 @@
 				//SN src = null
 				qdel(src)
 				return
-		else
 	return
 
 /obj/machinery/body_scanconsole/proc/findscanner()

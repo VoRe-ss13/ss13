@@ -21,7 +21,7 @@
 	drop_sound = 'sound/items/drop/component.ogg'
 	pickup_sound = 'sound/items/pickup/component.ogg'
 
-/obj/item/radio/headset/Initialize()
+/obj/item/radio/headset/Initialize(mapload)
 	. = ..()
 	internal_channels.Cut()
 	if(ks1type)
@@ -210,6 +210,13 @@
 			radio_text += ", "
 
 	radio_desc = radio_text
+
+/obj/item/radio/headset/mob_headset/handle_message_mode(mob/living/M, list/message_pieces, channel)	//RS ADD START // TORCHEdit Start - Porting "Join As Mob" verb and changes from Rogue Star.
+	if(isanimal(M))
+		if(!istype(M.default_language,/datum/language/common))
+			to_chat(M,"<span class = 'warning'>You need to speak common to speak on the radio!</span>")
+			return
+	return ..()		//RS ADD END // TORCHEdit End - Porting "Join As Mob" verb and changes from Rogue Star.
 
 /obj/item/radio/headset/mob_headset/receive_range(freq, level)
 	if(ismob(src.loc))
@@ -674,7 +681,7 @@
 	syndie = 1
 	ks1type = /obj/item/encryptionkey/raider
 
-/obj/item/radio/headset/raider/Initialize()
+/obj/item/radio/headset/raider/Initialize(mapload)
 	. = ..()
 	set_frequency(RAID_FREQ)
 

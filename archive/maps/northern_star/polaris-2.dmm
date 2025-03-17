@@ -2730,7 +2730,6 @@
 	dir = 8
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32
 	},
 /turf/simulated/floor/carpet,
@@ -3852,11 +3851,6 @@
 /obj/item/clothing/head/pin/flower/blue,
 /obj/item/clothing/head/pin/flower/orange,
 /obj/item/clothing/head/pin/flower/pink,
-/obj/item/clothing/head/justice,
-/obj/item/clothing/head/justice/blue,
-/obj/item/clothing/head/justice/green,
-/obj/item/clothing/head/justice/pink,
-/obj/item/clothing/head/justice/yellow,
 /obj/item/clothing/head/philosopher_wig,
 /obj/item/clothing/head/plaguedoctorhat,
 /obj/item/clothing/head/xenos,
@@ -5542,10 +5536,7 @@
 	},
 /area/centcom/specops)
 "ne" = (
-/turf/unsimulated/wall{
-	icon = 'icons/misc/title.dmi';
-	icon_state = "title"
-	},
+/turf/unsimulated/wall,
 /area)
 "nf" = (
 /turf/unsimulated/wall,
@@ -8017,10 +8008,7 @@
 /obj/item/stack/material/glass{
 	amount = 15
 	},
-/obj/item/cell{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell,
 /turf/simulated/shuttle/floor/darkred,
 /area/syndicate_station/start)
 "rD" = (
@@ -11638,7 +11626,6 @@
 /obj/item/storage/box/donkpockets,
 /obj/item/storage/box/donkpockets,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 30
 	},
 /obj/effect/floor_decal/corner/orange{
@@ -14762,7 +14749,6 @@
 "FO" = (
 /obj/structure/table/standard,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -30
 	},
 /turf/unsimulated/floor{
@@ -14778,7 +14764,6 @@
 "FQ" = (
 /obj/structure/table/standard,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 30
 	},
 /turf/unsimulated/floor{
@@ -15629,7 +15614,6 @@
 	dir = 8
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -30
 	},
 /turf/unsimulated/floor{
@@ -18330,9 +18314,7 @@
 /turf/simulated/shuttle/floor/white,
 /area/centcom/evac)
 "Nu" = (
-/turf/unsimulated/floor{
-	icon_state = "sandwater"
-	},
+/turf/unsimulated/floor,
 /area/beach)
 "Nv" = (
 /turf/unsimulated/wall{

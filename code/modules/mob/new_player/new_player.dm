@@ -77,7 +77,7 @@
 
 	output += "<hr>" //ChompADD - a line divider between functional and info buttons
 
-	//nobody uses this feature //WELL WE'RE GONNA
+	/* //nobody uses this feature //WELL WE'RE GONNA //TORCHEdit removal
 	if(!IsGuestKey(src.key))
 		establish_db_connection()
 
@@ -95,8 +95,8 @@
 			if(newpoll)
 				output += "<p><b><a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A><br>(NEW!)</b></p>"
 			else
-				output += "<p><a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A><br><i>No Changes</i></p>"
-
+				output += "<p><a href='byond://?src=\ref[src];showpoll=1'>Show Player Polls</A><br><i>No Changes</i></p>" //ChompEDIT - fixed height
+	*/ //TORCHEdit End
 	if(client?.check_for_new_server_news())
 		output += "<p><b><a href='byond://?src=\ref[src];shownews=1'>Show Server News</A><br>(NEW!)</b></p>"
 	else
@@ -111,12 +111,10 @@
 		else
 			output += "<p><b><a href='byond://?src=\ref[src];open_station_news=1'>Show [using_map.station_name] News<br>(NEW!)</A></b></p>"
 
-	//ChompEDIT start: Show Changelog
-	if(client?.prefs?.lastchangelog == changelog_hash)
+	if(read_preference(/datum/preference/text/lastchangelog) == GLOB.changelog_hash)
 		output += "<p><a href='byond://?src=\ref[src];open_changelog=1'>Show Changelog</A><br><i>No Changes</i></p>"
 	else
 		output += "<p><b><a href='byond://?src=\ref[src];open_changelog=1'>Show Changelog</A><br>(NEW!)</b></p>"
-	//ChompEDIT End
 
 	output += "</div>"
 
@@ -186,6 +184,9 @@
 		new_player_panel_proc()
 
 	if(href_list["observe"])
+		if(!SSticker || SSticker.current_state == GAME_STATE_INIT)
+			to_chat(src, span_warning("The game is still setting up, please try again later."))
+			return 0
 		if(tgui_alert(src,"Are you sure you wish to observe? If you do, make sure to not use any knowledge gained from observing if you decide to join later.","Observe Round?",list("Yes","No")) == "Yes")
 			if(!client)	return 1
 
@@ -194,6 +195,7 @@
 			client.prefs.dress_preview_mob(mannequin)
 			var/mob/observer/dead/observer = new(mannequin)
 			observer.moveToNullspace() //Let's not stay in our doomed mannequin
+			qdel(mannequin) //We're not used anymore, so goodbye!
 
 			spawning = 1
 			if(client.media)
@@ -357,13 +359,10 @@
 		else
 			client.feedback_form = new(client)
 
-	//ChompEDIT START
 	if(href_list["open_changelog"])
-		client.prefs.lastchangelog = changelog_hash
-		SScharacter_setup.queue_preferences_save(client.prefs)
+		write_preference_directly(/datum/preference/text/lastchangelog, GLOB.changelog_hash)
 		client.changes()
 		return
-	//ChompEDIT END
 
 /mob/new_player/proc/handle_server_news()
 	if(!client)
@@ -622,7 +621,7 @@
 
 	if(chosen_species && use_species_name)
 		// Have to recheck admin due to no usr at roundstart. Latejoins are fine though.
-		if(is_alien_whitelisted(chosen_species))
+		if(is_alien_whitelisted(src.client, chosen_species))
 			new_character = new(T, use_species_name)
 
 	if(!new_character)
@@ -698,9 +697,6 @@
 	src << browse(null, "window=News") //closes news window
 	panel.close()
 
-/mob/new_player/proc/has_admin_rights()
-	return check_rights(R_ADMIN, 0, src)
-
 /mob/new_player/get_species()
 	var/datum/species/chosen_species
 	if(client.prefs.species)
@@ -709,7 +705,7 @@
 	if(!chosen_species)
 		return SPECIES_HUMAN
 
-	if(is_alien_whitelisted(chosen_species))
+	if(is_alien_whitelisted(src.client, chosen_species))
 		return chosen_species.name
 
 	return SPECIES_HUMAN

@@ -62,13 +62,11 @@
 	icon_state = "green"
 	requires_power = 1
 	has_gravity = 0
-
 /area/shuttle/mackerel_hc_skel_cockpit
 	name = "\improper Mackerel Heavy Cargo Cockpit"
 	icon_state = "purple"
 	requires_power = 1
 	has_gravity = 0
-
 /area/shuttle/mackerel_hc_skel_eng
 	name = "\improper Mackerel Heavy Cargo Engineering"
 	icon_state = "yellow"

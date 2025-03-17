@@ -78,12 +78,12 @@
 	path = /obj/item/clothing/shoes/laceup
 
 /datum/gear/shoes/lacey/New()
-    ..()
-    var/list/laces = list()
-    for(var/lace in typesof(/obj/item/clothing/shoes/laceup))
-        var/obj/item/clothing/shoes/laceup/lace_type = lace
-        laces[initial(lace_type.name)] = lace_type
-    gear_tweaks += new/datum/gear_tweak/path(sortAssoc(laces))
+	..()
+	var/list/laces = list()
+	for(var/lace in typesof(/obj/item/clothing/shoes/laceup))
+		var/obj/item/clothing/shoes/laceup/lace_type = lace
+		laces[initial(lace_type.name)] = lace_type
+	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(laces))
 
 /datum/gear/shoes/green
 	display_name = "shoes, green"
@@ -118,12 +118,12 @@
 	path = /obj/item/clothing/shoes/hitops/
 
 /datum/gear/shoes/hitops/New()
-    ..()
-    var/list/hitops = list()
-    for(var/hitop in typesof(/obj/item/clothing/shoes/hitops))
-        var/obj/item/clothing/shoes/hitops/hitop_type = hitop
-        hitops[initial(hitop_type.name)] = hitop_type
-    gear_tweaks += new/datum/gear_tweak/path(sortAssoc(hitops))
+	..()
+	var/list/hitops = list()
+	for(var/hitop in typesof(/obj/item/clothing/shoes/hitops))
+		var/obj/item/clothing/shoes/hitops/hitop_type = hitop
+		hitops[initial(hitop_type.name)] = hitop_type
+	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(hitops))
 
 /datum/gear/shoes/flipflops
 	display_name = "flip flops"
@@ -171,9 +171,9 @@
 		"cowboy boots, black"=/obj/item/clothing/shoes/boots/cowboy/black,
 		"cowboy boots, white"=/obj/item/clothing/shoes/boots/cowboy/white,
 		"cowboy boots, fancy"=/obj/item/clothing/shoes/boots/cowboy/fancy,
-		"cowboy boots, snakeskin"=/obj/item/clothing/shoes/boots/cowboy/snakeskin,
-		"cowboy boots, green"=/obj/item/clothing/shoes/boots/cowboy/green,
-		"cowboy boots, blue"=/obj/item/clothing/shoes/boots/cowboy/blue
+		"cowboy boots, snakeskin"=/obj/item/clothing/shoes/boots/cowboy/snakeskin
+		//"cowboy boots, green"=/obj/item/clothing/shoes/boots/cowboy/green,
+		//"cowboy boots, blue"=/obj/item/clothing/shoes/boots/cowboy/blue
 	)
 	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(selector_uniforms))
 
@@ -325,12 +325,13 @@
 	cost = 0
 
 /obj/item/clothing/shoes/none
-	name = "No Shoes"
+	name = DEVELOPER_WARNING_NAME // These shoes qdel theirself 0.1 second after being created, so...whatever. You'll never see their name and the unit test requires this. Honestly, this entire item should be nuked from orbit and a toggle added to the loadout like coats, but I digress. Outside the scope of this PR.
 	desc = "shoeless?"
-	icon_state = ""
+	icon = 'icons/effects/effects.dmi' //This is to make the unit test happy. These are invisible which are... Less than ideal. This should probably be moved to a trait or sound selector, but I digress. Outside scope of this PR.
+	icon_state = "nothing" // Horribly illegal and shouldn't be a thing, but whatever.
 	species_restricted = null
 
-/obj/item/clothing/shoes/none/Initialize()
+/obj/item/clothing/shoes/none/Initialize(mapload)
 	. = ..()
 	if(istype(loc, /mob)) // are we in a mob?
 		var/mob/m = loc
@@ -339,8 +340,7 @@
 		for(var/atom/movable/thing in contents)
 			thing.loc = get_turf(src)
 	moveToNullspace() // go to nullspace
-	spawn(1)
-		qdel(src) // die
+	QDEL_IN(src, 1)
 
 /obj/item/clothing/shoes/none/make_worn_icon(body_type, slot_name, inhands, default_icon, default_layer, icon/clip_mask) // override this to ensure that no worn icon is generated
 	return

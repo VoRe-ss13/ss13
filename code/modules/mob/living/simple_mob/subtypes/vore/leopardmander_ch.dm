@@ -79,12 +79,14 @@
 	plane_holder.set_vis(VIS_CH_STATUS_R, 1)
 	plane_holder.set_vis(VIS_CH_BACKUP, 1)	//Makes sense for player Leppy's to be able to see health.
 
-/mob/living/simple_mob/vore/leopardmander/Initialize()
-	..()
+/mob/living/simple_mob/vore/leopardmander/Initialize(mapload)
+	. = ..()
 	src.adjust_nutrition(src.max_nutrition)
 
 /mob/living/simple_mob/vore/leopardmander/init_vore()
 	if(!voremob_loaded)
+		return
+	if(LAZYLEN(vore_organs))
 		return
 	.=..()
 	var/obj/belly/B = new /obj/belly(src)
@@ -186,6 +188,8 @@
 
 /mob/living/simple_mob/vore/leopardmander/exotic/init_vore()
 	if(!voremob_loaded)
+		return
+	if(LAZYLEN(vore_organs))
 		return
 	//.=..() //Dont need this, it just spawns the parent's guts
 	var/obj/belly/B = new /obj/belly(src)

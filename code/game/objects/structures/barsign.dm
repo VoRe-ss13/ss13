@@ -2,7 +2,7 @@
 	desc = "The current barsign of this shift! The bartender can change it with their ID."
 	icon = 'icons/obj/barsigns.dmi'
 	plane = ABOVE_PLANE
-	icon_state = "empty"
+	icon_state = "Empty"
 	appearance_flags = 0
 	anchored = TRUE
 	var/cult = 0
@@ -27,8 +27,8 @@
 		else
 			. += "It says '[icon_state]'"
 
-/obj/structure/sign/double/barsign/New()
-	..()
+/obj/structure/sign/double/barsign/Initialize(mapload)
+	. = ..()
 	icon_state = pick(get_valid_states())
 
 /obj/structure/sign/double/barsign/attackby(obj/item/I, mob/user)

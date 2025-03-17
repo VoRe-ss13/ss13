@@ -1,13 +1,13 @@
-#ifndef CITESTING
+#if !defined(CITESTING) && !defined(SPACEMAN_DMM)
 
 /*********************/
 /* MAP SELECTION     */
 /* FOR LIVE SERVER   */
 /*********************/
 
-// #define USE_MAP_SOUTHERN_CROSS
+//#define USE_MAP_SOUTHERN_CROSS //TORCHEdit
 // #define USE_MAP_SOLUNA_NEXUS
-#define USE_MAP_RELIC_BASE
+#define USE_MAP_RELIC_BASE //TORCHEdit
 
 // Debug
 //#define USE_MAP_MINITEST
@@ -30,7 +30,7 @@
 
 // Relic Base
 #ifdef USE_MAP_RELIC_BASE
-#include "../../../maps/relic_base/relicbase.dm"
+#include "../relic_base/relicbase.dm"
 #endif
 
 #ifdef USE_MAP_MINITEST
