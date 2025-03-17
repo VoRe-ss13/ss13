@@ -1,10 +1,11 @@
-import { useBackend } from '../../backend';
-import { Section } from '../../components';
+import { useBackend } from 'tgui/backend';
+import { Section } from 'tgui-core/components';
+
 import {
   EscapePodControls,
   EscapePodStatus,
 } from './EmbeddedControllerHelpers';
-import { EscapePodBerthConsoleData } from './types';
+import type { EscapePodBerthConsoleData } from './types';
 
 /**
  * These are the least airlock-like UIs here, but they're "close enough".

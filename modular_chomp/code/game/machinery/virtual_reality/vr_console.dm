@@ -24,13 +24,9 @@
 	light_color = "#FF0000"
 	//var/global/list/vr_mob_tf_options // Global var located in global_list_ch.dm
 
-
-/obj/machinery/vr_sleeper/Initialize()
+/obj/machinery/vr_sleeper/Initialize(mapload)
 	. = ..()
 	default_apply_parts()
-
-/obj/machinery/vr_sleeper/Initialize()
-	. = ..()
 	smoke = new
 	update_icon()
 
@@ -160,6 +156,7 @@
 		return
 	if(!ishuman(M))
 		to_chat(user, span_warning("\The [src] rejects [M] with a sharp beep."))
+		return
 	if(occupant)
 		to_chat(user, span_warning("\The [src] is already occupied."))
 		return

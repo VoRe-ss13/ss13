@@ -252,13 +252,13 @@
 	if(client && client.prefs.language_prefixes && client.prefs.language_prefixes.len)
 		return client.prefs.language_prefixes[1]
 
-	return CONFIG_GET(str_list/language_prefixes)[1] // CHOMPEdit
+	return CONFIG_GET(str_list/language_prefixes)[1]
 
 /mob/proc/is_language_prefix(var/prefix)
 	if(client && client.prefs.language_prefixes && client.prefs.language_prefixes.len)
 		return prefix in client.prefs.language_prefixes
 
-	return prefix in CONFIG_GET(str_list/language_prefixes) // CHOMPEdit
+	return prefix in CONFIG_GET(str_list/language_prefixes)
 
 //TBD
 /mob/proc/check_lang_data()
@@ -287,7 +287,7 @@
 
 /mob/verb/check_languages()
 	set name = "Check Known Languages"
-	set category = "IC.Game" //CHOMPEdit
+	set category = "IC.Game"
 	set src = usr
 
 	var/datum/browser/popup = new(src, "checklanguage", "Known Languages", 420, 470)
@@ -298,13 +298,13 @@
 	if(href_list["default_lang"])
 		if(href_list["default_lang"] == "reset")
 			if (species_language)
-				apply_default_language(GLOB.all_languages[species_language]) //CHOMPEdit
+				apply_default_language(GLOB.all_languages[species_language])
 			else
-				apply_default_language(GLOB.all_languages[LANGUAGE_GIBBERISH]) //CHOMPEdit
+				apply_default_language(GLOB.all_languages[LANGUAGE_GIBBERISH])
 		else
 			var/datum/language/L = locate(href_list["default_lang"])
 			if(L && (L in languages))
-				apply_default_language(L) //CHOMPEdit
+				apply_default_language(L)
 		check_languages()
 		return 1
 	else if(href_list["set_lang_key"])

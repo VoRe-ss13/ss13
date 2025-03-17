@@ -111,7 +111,8 @@ Notes:
 	last_target = null
 
 /datum/tooltip/proc/do_hide()
-	winshow(owner, control, FALSE)
+	if(owner)
+		winshow(owner, control, FALSE)
 
 /datum/tooltip/Destroy(force)
 	last_target = null
@@ -123,7 +124,7 @@ Notes:
 /proc/openToolTip(mob/user = null, atom/movable/tip_src = null, params = null, title = "", content = "", theme = "")
 	if(!istype(user) || !user.client?.tooltips)
 		return
-	var/ui_style = user.client?.prefs?.tooltipstyle
+	var/ui_style = user.read_preference(/datum/preference/choiced/tooltip_style)
 	if(!theme && ui_style)
 		theme = lowertext(ui_style)
 	if(!theme)

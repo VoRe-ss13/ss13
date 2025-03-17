@@ -52,6 +52,10 @@ var/list/outfits_decls_by_type_
 
 	var/id_pda_assignment
 
+	var/headset = /obj/item/radio/headset
+	var/headset_alt = /obj/item/radio/headset/alt
+	var/headset_earbud = /obj/item/radio/headset/earbud
+
 	var/backpack = /obj/item/storage/backpack
 	var/satchel_one  = /obj/item/storage/backpack/satchel/norm
 	var/satchel_two  = /obj/item/storage/backpack/satchel
@@ -72,7 +76,11 @@ var/list/outfits_decls_by_type_
 	dd_insertObjectList(outfits_decls_, src)
 
 /decl/hierarchy/outfit/proc/pre_equip(mob/living/carbon/human/H)
-	if(flags & OUTFIT_HAS_BACKPACK)
+	switch(H.headset)
+		if(1) l_ear = headset
+		if(2) l_ear = headset_alt
+		if(3) l_ear = headset_earbud
+	if(flags && OUTFIT_HAS_BACKPACK)
 		switch(H.backbag)
 			if(2) back = backpack
 			if(3) back = satchel_one
@@ -119,7 +127,8 @@ var/list/outfits_decls_by_type_
 	if(uniform)
 		H.equip_to_slot_or_del(new uniform(H),slot_w_uniform)
 	if(suit)
-		H.equip_to_slot_or_del(new suit(H),slot_wear_suit)
+		if(!(H.client?.prefs?.no_jacket))
+			H.equip_to_slot_or_del(new suit(H),slot_wear_suit)
 	if(back)
 		H.equip_to_slot_or_del(new back(H),slot_back)
 	if(belt)

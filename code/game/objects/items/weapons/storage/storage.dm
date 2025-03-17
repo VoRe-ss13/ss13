@@ -53,7 +53,7 @@
 	/// If you can use this storage while in a pocket
 	var/pocketable = FALSE
 
-/obj/item/storage/Initialize()
+/obj/item/storage/Initialize(mapload)
 	. = ..()
 
 	if(allow_quick_empty)
@@ -309,7 +309,7 @@
 	if(display_contents_with_number)
 		for(var/datum/numbered_display/ND in display_contents)
 			ND.sample_object.screen_loc = "[cx]:16,[cy]:16"
-			ND.sample_object.maptext = "<font color='white'>[(ND.number > 1)? "[ND.number]" : ""]</font>"
+			ND.sample_object.maptext = span_white("[(ND.number > 1)? "[ND.number]" : ""]")
 			ND.sample_object.hud_layerise()
 			var/atom/movable/storage_slot/SS = new(null, ND.sample_object)
 			SS.screen_loc = ND.sample_object.screen_loc
@@ -484,7 +484,7 @@
 	//CHOMPEdit - Getting around to proper object flags
 	if(HAS_TRAIT(W, TRAIT_NODROP)) //SHOULD be handled in unEquip, but better safe than sorry.
 		if(!stop_messages)
-			to_chat(usr, "<span class='warning'>\the [W] is stuck to your hand, you can't put it in \the [src]!</span>")
+			to_chat(usr, span_warning("\the [W] is stuck to your hand, you can't put it in \the [src]!"))
 		return FALSE
 
 	return 1
@@ -614,8 +614,8 @@
 	W.add_fingerprint(user)
 	return handle_item_insertion(W)
 
-/obj/item/storage/dropped(mob/user as mob)
-	return
+/obj/item/storage/dropped(mob/user)
+	return ..()
 
 /obj/item/storage/attack_hand(mob/user as mob)
 	if(ishuman(user) && !pocketable)
@@ -708,7 +708,7 @@
 	max_storage_space = max(total_storage_space,max_storage_space) //Prevents spawned containers from being too small for their contents.
 
 /obj/item/storage/emp_act(severity)
-	if(!istype(src.loc, /mob/living))
+	if(!isliving(src.loc))
 		for(var/obj/O in contents)
 			O.emp_act(severity)
 	..()
@@ -727,13 +727,13 @@
 
 	while (cur_atom && !(cur_atom in container.contents))
 		if (isarea(cur_atom))
-			return INFINITY // CHOMPedit
+			return INFINITY
 		if (istype(cur_atom.loc, /obj/item/storage))
 			depth++
 		cur_atom = cur_atom.loc
 
 	if (!cur_atom)
-		return INFINITY	// CHOMPedit - inside something with a null loc.
+		return INFINITY	//inside something with a null loc.
 
 	return depth
 
@@ -745,13 +745,13 @@
 
 	while (cur_atom && !isturf(cur_atom))
 		if (isarea(cur_atom))
-			return INFINITY // CHOMPedit
+			return INFINITY
 		if (istype(cur_atom.loc, /obj/item/storage))
 			depth++
 		cur_atom = cur_atom.loc
 
 	if (!cur_atom)
-		return INFINITY	//CHOMPedit - inside something with a null loc.
+		return INFINITY	//inside something with a null loc.
 
 	return depth
 
@@ -797,7 +797,7 @@
 	var/open = 0
 	storage_slots = 1
 	can_hold = list(
-		/obj/item/clothing/gloves/ring,
+		/obj/item/clothing/accessory/ring,
 		/obj/item/coin,
 		/obj/item/clothing/accessory/medal
 		)
@@ -811,7 +811,7 @@
 
 		if(contents.len >= 1)
 			var/contained_image = null
-			if(istype(contents[1],  /obj/item/clothing/gloves/ring))
+			if(istype(contents[1],  /obj/item/clothing/accessory/ring))
 				contained_image = "ring_trinket"
 			else if(istype(contents[1], /obj/item/coin))
 				contained_image = "coin_trinket"
@@ -822,12 +822,12 @@
 	else
 		icon_state = closed_state
 
-/obj/item/storage/trinketbox/New()
+/obj/item/storage/trinketbox/Initialize(mapload)
 	if(!open_state)
 		open_state = "[initial(icon_state)]_open"
 	if(!closed_state)
 		closed_state = "[initial(icon_state)]"
-	..()
+	. = ..()
 
 /obj/item/storage/trinketbox/attack_self()
 	open = !open
@@ -862,14 +862,15 @@
 	alpha = 200
 	var/datum/weakref/held_item
 
-/atom/movable/storage_slot/New(newloc, obj/item/held_item)
+/atom/movable/storage_slot/Initialize(mapload, obj/item/held_item)
+	. = ..()
 	ASSERT(held_item)
 	name += held_item.name
 	src.held_item = WEAKREF(held_item)
 
 /atom/movable/storage_slot/Destroy()
 	held_item = null
-	..()
+	. = ..()
 
 /// Has to be this way. The fact that the overlays will be constantly mutated by other storage means we can't wait.
 /atom/movable/storage_slot/add_overlay(list/somethings)

@@ -101,7 +101,7 @@
 	speaker.say_signlang(message, verb_to_use, verb_to_use, src)
 
 /datum/language/tajsign/can_speak_special(var/mob/speaker)	// TODO: If ever we make external organs assist languages, convert this over to the new format
-	var/list/allowed_species = list(SPECIES_TAJ, SPECIES_TESHARI)	// Need a tail and ears and such to use this.
+	var/list/allowed_species = list(SPECIES_TAJARAN, SPECIES_TESHARI)	// Need a tail and ears and such to use this.
 	if(iscarbon(speaker))
 		var/obj/item/organ/external/hand/hands = locate() in speaker //you can't sign without hands
 		if(!hands)
@@ -193,8 +193,8 @@
 		)
 
 /datum/language/teshari/get_random_name(gender)
-	return ..(gender, 1, 4, 1.5) //CHOMPedit: Keep "1" as the second argument because tesharii here typically omit the pack name (thus only use 1 name). This is because 
-				     //CHOMPedit: there are very few packs and thus most tesharii would have the same first name.	
+	return ..(gender, 1, 4, 1.5) //CHOMPedit: Keep "1" as the second argument because tesharii here typically omit the pack name (thus only use 1 name). This is because
+				 	//CHOMPedit: there are very few packs and thus most tesharii would have the same first name.
 
 /datum/language/zaddat
 	name = LANGUAGE_ZADDAT

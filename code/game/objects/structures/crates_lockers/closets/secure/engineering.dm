@@ -13,14 +13,15 @@
 		/obj/item/clothing/under/rank/chief_engineer/skirt,
 		/obj/item/clothing/under/rank/neo_chiefengi,
 		/obj/item/clothing/under/rank/neo_chiefengi_skirt,
-		/obj/item/clothing/under/rank/neo_ce_gorka,
+		/obj/item/clothing/under/rank/neo_gorka/ce,
 		/obj/item/clothing/head/hardhat/white,
 		///obj/item/clothing/head/welding,	//VOREStation Removal: Locker bloat, grr. They get fancy goggles or can raid the welding supplies locker for one of these.
 		/obj/item/clothing/gloves/heavy_engineer,	//VOREStation Edit: chief gets the good shit
 		/obj/item/clothing/shoes/brown,
 		/obj/item/cartridge/ce,
 		/obj/item/radio/headset/heads/ce,
-		/obj/item/radio/headset/heads/ce/alt,
+		/obj/item/radio/headset/alt/heads/ce,
+		/obj/item/radio/headset/earbud/heads/ce,
 		/obj/item/storage/toolbox/mechanical,
 		/obj/item/clothing/suit/storage/hazardvest,
 		///obj/item/clothing/mask/gas,	//VOREStation Removal: Locker bloat, grr. The fancy one below functions as a mask & helmet combined.
@@ -41,7 +42,7 @@
 		/obj/item/rcd/advanced/loaded, //CHOMPAdd
 		/obj/item/pipe_dispenser) //YW Add
 
-/obj/structure/closet/secure_closet/engineering_chief/Initialize()
+/obj/structure/closet/secure_closet/engineering_chief/Initialize(mapload)
 	if(prob(50))
 		starts_with += /obj/item/storage/backpack/industrial
 	else
@@ -95,7 +96,8 @@
 		/obj/item/clothing/accessory/storage/brown_vest,
 		/obj/item/storage/toolbox/mechanical,
 		/obj/item/radio/headset/headset_eng,
-		/obj/item/radio/headset/headset_eng/alt,
+		/obj/item/radio/headset/alt/headset_eng,
+		/obj/item/radio/headset/earbud/headset_eng,
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas,
 		/obj/item/clothing/glasses/meson,
@@ -109,7 +111,7 @@
 		/obj/item/reagent_containers/spray/windowsealant,	//VOREStation Add
 		/obj/item/areaeditor/blueprints/engineers) //VOREStation Add
 
-/obj/structure/closet/secure_closet/engineering_personal/Initialize()
+/obj/structure/closet/secure_closet/engineering_personal/Initialize(mapload)
 	if(prob(50))
 		starts_with += /obj/item/storage/backpack/industrial
 	else
@@ -132,7 +134,8 @@
 		/obj/item/extinguisher/atmo,
 		///obj/item/clamp,	//VOREStation Removal: without leaks those are pointless,
 		/obj/item/radio/headset/headset_eng,
-		/obj/item/radio/headset/headset_eng/alt,
+		/obj/item/radio/headset/alt/headset_eng,
+		/obj/item/radio/headset/earbud/headset_eng,
 		/obj/item/clothing/suit/storage/hazardvest/atmos,	//VOREStation edit. Eng locker gets regular haz-vest, atmos gets the themed one of their own
 		/obj/item/clothing/mask/gas,
 		/obj/item/cartridge/atmos,
@@ -144,7 +147,7 @@
 		/obj/item/pipe_dispenser, //CHOMPAdd
 		/obj/item/storage/belt/utility/atmostech) //VOREStation edit. They don't get a toolbox to fill it from, so why not give a spare one that's full already?
 
-/obj/structure/closet/secure_closet/atmos_personal/Initialize()
+/obj/structure/closet/secure_closet/atmos_personal/Initialize(mapload)
 	if(prob(50))
 		starts_with += /obj/item/storage/backpack/industrial
 	else

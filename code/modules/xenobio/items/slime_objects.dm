@@ -118,12 +118,12 @@
 	desc = "A glob of slime that is thick as honey.  For the brave " + JOB_XENOBIOLOGIST + "."
 	icon_state = "honeycomb"
 	filling_color = "#FFBB00"
-	center_of_mass_x = 17 //CHOMPEdit
-	center_of_mass_y= 10 //CHOMPEdit
+	center_of_mass_x = 17
+	center_of_mass_y = 10
 	nutriment_amt = 25 // Very filling.
-	nutriment_desc = list("slime" = 10, "sweetness" = 10, "bliss" = 5)
+	nutriment_desc = list("slime" = 10, "sweetness" = 10, REAGENT_ID_BLISS = 5)
 
-/obj/item/reagent_containers/food/snacks/slime/Initialize()
+/obj/item/reagent_containers/food/snacks/slime/Initialize(mapload)
 	. = ..()
 	bitesize = 5
 
@@ -144,8 +144,8 @@
 	power_use = 0
 	light_system = STATIC_LIGHT
 
-/obj/item/flashlight/slime/Initialize()
-	.=..()
+/obj/item/flashlight/slime/Initialize(mapload)
+	. = ..()
 	set_light(light_range, light_power, light_color)
 
 /obj/item/flashlight/slime/update_brightness()
@@ -167,10 +167,10 @@
 	light_range = 2
 	w_class = ITEMSIZE_TINY
 
-/obj/item/slime_irradiator/New()
+/obj/item/slime_irradiator/Initialize(mapload)
+	. = ..()
 	START_PROCESSING(SSobj, src)
 	set_light(light_range, light_power, light_color)
-	return ..()
 
 /obj/item/slime_irradiator/process()
 	SSradiation.radiate(src, 5)
@@ -192,21 +192,21 @@
 
 /datum/reagent/myelamine/slime
 	name = "Agent A"
-	id = "slime_bleed_fixer"
+	id = REAGENT_ID_SLIMEBLEEDFIXER
 	description = "A slimy liquid which appears to rapidly clot internal hemorrhages by increasing the effectiveness of platelets at low quantities.  Toxic in high quantities."
 	taste_description = "slime"
 	overdose = 5
 
 /datum/reagent/osteodaxon/slime
 	name = "Agent B"
-	id = "slime_bone_fixer"
+	id = REAGENT_ID_SLIMEBONEFIXER
 	description = "A slimy liquid which can be used to heal bone fractures at low quantities.  Toxic in high quantities."
 	taste_description = "slime"
 	overdose = 5
 
 /datum/reagent/peridaxon/slime
 	name = "Agent C"
-	id = "slime_organ_fixer"
+	id = REAGENT_ID_SLIMEORGANFIXER
 	description = "A slimy liquid which is used to encourage recovery of internal organs and nervous systems in low quantities.  Toxic in high quantities."
 	taste_description = "slime"
 	overdose = 5

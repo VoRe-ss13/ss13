@@ -1,9 +1,9 @@
-import { decodeHtmlEntities } from 'common/string';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Section, Table } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
 
-import { useBackend } from '../../backend';
-import { Box, Button, Section, Table } from '../../components';
 import { MESSSUBTAB, PHONTAB } from './constants';
-import { ContactsTabData } from './types';
+import type { ContactsTabData } from './types';
 
 export const CommunicatorContactTab = (props) => {
   const { act, data } = useBackend<ContactsTabData>();
@@ -19,7 +19,7 @@ export const CommunicatorContactTab = (props) => {
               <Table.Cell
                 color="label"
                 style={{
-                  'word-break': 'break-all',
+                  wordBreak: 'break-all',
                 }}
               >
                 {decodeHtmlEntities(device.name)}

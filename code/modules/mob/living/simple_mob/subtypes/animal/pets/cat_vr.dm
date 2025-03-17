@@ -1,7 +1,9 @@
 /mob/living/simple_mob/animal/passive/cat/runtime/init_vore()
 	if(!voremob_loaded)
 		return
-	.=..()
+	if(LAZYLEN(vore_organs))
+		return
+	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "Stomach"
 	B.desc = "The slimy wet insides of Runtime! Not quite as clean as the cat on the outside."
@@ -52,7 +54,7 @@
 	if (has_AI() && friend)
 		var/friend_dist = get_dist(src,friend)
 		if (friend_dist <= 1)
-			if (friend.stat >= DEAD || friend.health <= CONFIG_GET(number/health_threshold_softcrit)) // CHOMPEdit
+			if (friend.stat >= DEAD || friend.health <= CONFIG_GET(number/health_threshold_softcrit))
 				if (prob((friend.stat < DEAD)? 50 : 15))
 					var/verb = pick("meows", "mews", "mrowls")
 					audible_emote(pick("[verb] in distress.", "[verb] anxiously."))

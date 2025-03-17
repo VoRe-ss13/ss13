@@ -8,8 +8,8 @@
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "cutters"
 	item_state = "cutters"
-	center_of_mass_x = 18 //CHOMPEdit
-	center_of_mass_y= 10 //CHOMPEdit
+	center_of_mass_x = 18
+	center_of_mass_y = 10
 	slot_flags = SLOT_BELT
 	force = 6
 	throw_speed = 2
@@ -28,7 +28,8 @@
 	tool_qualities = list(TOOL_WIRECUTTER)
 	var/random_color = TRUE
 
-/obj/item/tool/wirecutters/New()
+/obj/item/tool/wirecutters/Initialize(mapload)
+	. = ..()
 	if(random_color)
 		switch(pick("red","blue","yellow"))
 			if ("red")
@@ -42,12 +43,11 @@
 				item_state = "cutters_yellow"
 
 	if (prob(75))
-		src.pixel_y = rand(0, 16)
-	..()
+		pixel_y = rand(0, 16)
 
 /obj/item/tool/wirecutters/attack(mob/living/carbon/C as mob, mob/user as mob)
 	if(istype(C) && user.a_intent == I_HELP && (C.handcuffed) && (istype(C.handcuffed, /obj/item/handcuffs/cable)))
-		usr.visible_message("\The [usr] cuts \the [C]'s restraints with \the [src]!",\
+		user.visible_message("\The [user] cuts \the [C]'s restraints with \the [src]!",\
 		"You cut \the [C]'s restraints with \the [src]!",\
 		"You hear cable being cut.")
 		C.handcuffed = null

@@ -25,7 +25,7 @@
 		"hot pink" = COLOR_ASSEMBLY_HOT_PINK
 		)
 
-/obj/item/integrated_electronics/detailer/Initialize()
+/obj/item/integrated_electronics/detailer/Initialize(mapload)
 	update_icon()
 	return ..()
 
@@ -69,7 +69,7 @@
 	// Just uncomment this and get rid of all of the TGUI bullshit lol
 	// if(!in_range(user, src))
 	// 	return
-	// var/new_color = input(user, "Pick a color", "Color Selection", detail_color) as color|null
+	// var/new_color = tgui_color_picker(user, "Pick a color", "Color Selection", detail_color)
 	// if(!new_color)
 	// 	return
 	// detail_color = new_color

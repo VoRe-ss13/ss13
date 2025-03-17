@@ -7,8 +7,8 @@
 	icon = 'icons/obj/storage_vr.dmi'
 	icon_state = "red"
 	item_state_slots = list(slot_r_hand_str = "toolbox_red", slot_l_hand_str = "toolbox_red")
-	center_of_mass_x = 16 //CHOMPEdit
-	center_of_mass_y= 11 //CHOMPEdit
+	center_of_mass_x = 16
+	center_of_mass_y= 11
 	force = 10
 	throwforce = 10
 	throw_speed = 1
@@ -33,7 +33,7 @@
 		/obj/item/extinguisher/mini,
 		/obj/item/radio
 	)
-/obj/item/storage/toolbox/emergency/Initialize()
+/obj/item/storage/toolbox/emergency/Initialize(mapload)
 	if(prob(50))
 		new /obj/item/flashlight(src)
 	else
@@ -69,7 +69,7 @@
 		/obj/item/stack/cable_coil/random_belt,
 		/obj/item/stack/cable_coil/random_belt
 	)
-/obj/item/storage/toolbox/electrical/Initialize()
+/obj/item/storage/toolbox/electrical/Initialize(mapload)
 	. = ..()
 	if(prob(5))
 		new /obj/item/clothing/gloves/yellow(src)
@@ -151,7 +151,7 @@
 	var/filled = FALSE
 	attack_verb = list("lunched")
 
-/obj/item/storage/toolbox/lunchbox/Initialize()
+/obj/item/storage/toolbox/lunchbox/Initialize(mapload)
 	if(filled)
 		var/list/lunches = lunchables_lunches()
 		var/lunch = lunches[pick(lunches)]

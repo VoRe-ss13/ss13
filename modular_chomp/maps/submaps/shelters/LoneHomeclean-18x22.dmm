@@ -455,7 +455,7 @@
 /area/survivalpod/superpose/LoneHomeclean)
 "bG" = (
 /obj/item/reagent_containers/glass/rag,
-/obj/item/clothing/gloves/ring/engagement,
+/obj/item/clothing/accessory/ring/engagement,
 /obj/structure/table/wooden_reinforced,
 /turf/simulated/floor/wood,
 /area/survivalpod/superpose/LoneHomeclean)
@@ -731,7 +731,6 @@
 "cC" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor,
@@ -801,7 +800,6 @@
 	pixel_y = 20
 	},
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,

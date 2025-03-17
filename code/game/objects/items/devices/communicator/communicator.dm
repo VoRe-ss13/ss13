@@ -97,7 +97,7 @@ var/global/list/obj/item/communicator/all_communicators = list()
 // Parameters: None
 // Description: Adds the new communicator to the global list of all communicators, sorts the list, obtains a reference to the Exonet node, then tries to
 //				assign the device to the holder's name automatically in a spectacularly shitty way.
-/obj/item/communicator/Initialize()
+/obj/item/communicator/Initialize(mapload)
 	. = ..()
 	all_communicators += src
 	all_communicators = sortAtom(all_communicators)
@@ -128,7 +128,7 @@ var/global/list/obj/item/communicator/all_communicators = list()
 	if(id)
 		remove_id()
 	else
-		to_chat(usr, "<span class='notice'>This Communicator does not have an ID in it.</span>")
+		to_chat(usr, span_notice("This Communicator does not have an ID in it."))
 // Proc: GetAccess()
 // Parameters: None
 // Description: Returns the access level of the communicator's ID, if it has one. If the communicator does not have an ID, the procedure returns the
@@ -155,7 +155,7 @@ var/global/list/obj/item/communicator/all_communicators = list()
 		if (ismob(loc))
 			var/mob/M = loc
 			M.put_in_hands(id)
-			to_chat(M, "<span class='notice'>You remove the ID from the [name].</span>") //ChompEDIT usr --> M
+			to_chat(M, span_notice("You remove the ID from the [name].")) //ChompEDIT usr --> M
 			playsound(src, 'sound/machines/id_swipe.ogg', 100, 1)
 		else
 			id.loc = get_turf(src)
@@ -214,7 +214,7 @@ var/global/list/obj/item/communicator/all_communicators = list()
 // Description: Sets up the exonet datum, gives the device an address, and then gets a node reference.  Afterwards, populates the device
 //				list.
 /obj/item/communicator/proc/initialize_exonet(mob/user)
-	if(!user || !istype(user, /mob/living))
+	if(!user || !isliving(user))
 		return
 	if(!exonet)
 		exonet = new(src)
@@ -360,7 +360,7 @@ var/global/list/obj/item/communicator/all_communicators = list()
 // Proc: New()
 // Parameters: None
 // Description: Gives ghosts an exonet address based on their key and ghost name.
-/mob/observer/dead/Initialize()
+/mob/observer/dead/Initialize(mapload)
 	. = ..()
 	exonet = new(src)
 	if(client)
@@ -372,11 +372,10 @@ var/global/list/obj/item/communicator/all_communicators = list()
 // Parameters: None
 // Description: Removes the ghost's address and nulls the exonet datum, to allow qdel()ing.
 /mob/observer/dead/Destroy()
-	. = ..()
 	if(exonet)
 		exonet.remove_address()
 		qdel_null(exonet)
-	return ..()
+	. = ..()
 
 // Proc: register_device()
 // Parameters: 1 (user - the person to use their name for)
@@ -450,8 +449,8 @@ var/global/list/obj/item/communicator/all_communicators = list()
 /obj/machinery/camera/communicator
 	network = list(NETWORK_COMMUNICATORS)
 
-/obj/machinery/camera/communicator/New()
-	..()
+/obj/machinery/camera/communicator/Initialize(mapload)
+	. = ..()
 	client_huds |= global_hud.whitense
 	client_huds |= global_hud.darkMask
 

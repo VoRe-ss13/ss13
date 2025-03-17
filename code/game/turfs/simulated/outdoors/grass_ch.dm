@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(grass_animals,list(
 		/obj/random/mob/multiple/sifmobs = 6,
 		/mob/living/simple_mob/humanoid/cultist/tesh = 2,
 		/mob/living/simple_mob/humanoid/eclipse/solar/froststalker = 2,
-		/mob/living/simple_mob/humanoid/eclipse/lunar/pummler = 1,
+		/mob/living/simple_mob/humanoid/eclipse/lunar = 1,
 		/mob/living/simple_mob/humanoid/merc/ranged/laser = 2,
 		/mob/living/simple_mob/humanoid/cultist/magus/rift = 0.05
 		),
@@ -49,7 +49,7 @@ GLOBAL_LIST_INIT(grass_animals,list(
 		/mob/living/simple_mob/animal/space/mouse_army/pyro = 6,
 		/mob/living/simple_mob/animal/space/mouse_army/ammo = 6,
 		/mob/living/simple_mob/mechanical/mecha/mouse_tank/livewire = 2,
-		/mob/living/simple_mob/humanoid/eclipse/lunar/miner = 6
+		/mob/living/simple_mob/humanoid/eclipse/lunar = 6
 		),
 	"seasonalspring" = list(
 		/mob/living/simple_mob/vore/alienanimals/teppi = 10, //CHOMP Edit
@@ -126,22 +126,70 @@ GLOBAL_LIST_INIT(grass_animals,list(
 	"smokestar" = list(
 		/mob/living/simple_mob/vore/smokestar/drider = 1
 		),
-//TORCHEdit Begin
 	"thor_real" = list(
-		/mob/living/simple_mob/vore/aggressive/frog = 5,
-		/mob/living/simple_mob/animal/sif/glitterfly = 35,
-		/mob/living/simple_mob/vore/otie = 15,
-		/mob/living/simple_mob/vore/otie/feral = 5,
-		/mob/living/simple_mob/vore/fennec = 20,
-		/mob/living/simple_mob/animal/passive/lizard = 20,
-		/mob/living/simple_mob/animal/passive/armadillo = 10,
-		/mob/living/simple_mob/animal/passive/opossum = 10,
-		/mob/living/simple_mob/animal/passive/mouse/jerboa = 5,
-		/mob/living/simple_mob/vore/wolf/direwolf = 5,
-		/mob/living/simple_mob/vore/aggressive/rat = 5,
-		/mob/living/simple_mob/vore/horse/big = 10
+		/mob/living/simple_mob/animal/passive/crab = 10,
+		/mob/living/simple_mob/animal/passive/tindalos = 10,
+		/mob/living/simple_mob/animal/passive/yithian = 10,
+		/mob/living/simple_mob/animal/passive/cockroach = 10,
+		// /mob/living/simple_mob/animal/passive/lizard = 6, // If we ever get komodo dragons or tegu or some lizard with a less shitty sprite, put them in here.
+		/mob/living/simple_mob/vore/aggressive/frog = 10,
+		/mob/living/simple_mob/animal/passive/chicken = 10, // Did you know chickens come from South-East Asia? In the jungle? Bet they'd thrive here as an invasive species.
+		/mob/living/simple_mob/animal/passive/mouse = 10,
+		/mob/living/simple_mob/animal/passive/snake/python = 10,
+		// /mob/living/simple_mob/vore/pitcher = 7, // Inactive until the jank on these is fixed by Virgo.
+		/mob/living/simple_mob/vore/pitcher_plant = 7,
+		/mob/living/simple_mob/vore/mantrap = 7,
+		/mob/living/simple_mob/animal/passive/bird/parrot = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/eclectus = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/grey_parrot = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/white_caique = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/budgerigar = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/cockatiel = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/white_cockatoo = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/pink_cockatoo = 6,
+		/mob/living/simple_mob/vore/seagull = 6,
+		/mob/living/simple_mob/vore/redpanda = 6,
+		/mob/living/simple_mob/vore/meowl = 6,
+		/mob/living/simple_mob/vore/fennec = 2,
+		/mob/living/simple_mob/vore/lamia = 2, // Sure I could just use the 'random' version, but I want them all to be naked in the wilderness.
+		/mob/living/simple_mob/vore/lamia/cobra = 2,
+		/mob/living/simple_mob/vore/lamia/copper = 2,
+		/mob/living/simple_mob/vore/lamia/green = 2,
+		/mob/living/simple_mob/vore/lamia/zebra = 2,
+		/mob/living/simple_mob/vore/lamia/albino = 2,
+		/mob/living/simple_mob/vore/aggressive/rat = 1,
+		/mob/living/simple_mob/vore/aggressive/giant_snake = 1,
+		/mob/living/simple_mob/tomato = 1, // just a silly lil' guy, hanging out
+		/mob/living/simple_mob/vore/gryphon = 1
 		),
-//TORCHEdit End
+	"thor_safe" = list( // No aggressive mobs, meant for placement close to the resort and landing sites.
+		/mob/living/simple_mob/animal/passive/crab = 10,
+		/mob/living/simple_mob/animal/passive/tindalos = 10,
+		/mob/living/simple_mob/animal/passive/yithian = 10,
+		/mob/living/simple_mob/animal/passive/cockroach = 10,
+		// /mob/living/simple_mob/animal/passive/lizard = 6, // If we ever get komodo dragons or tegu or some lizard with a less shitty sprite, put them in here.
+		// /mob/living/simple_mob/vore/aggressive/frog = 10, // Weirdly, these don't attack anyone, but I'm pretty sure that's a bug so...
+		/mob/living/simple_mob/animal/passive/chicken = 10,
+		/mob/living/simple_mob/animal/passive/mouse = 10,
+		/mob/living/simple_mob/animal/passive/snake/python = 10,
+		// /mob/living/simple_mob/vore/pitcher = 7, // Inactive until the jank on these is fixed by Virgo.
+		/mob/living/simple_mob/vore/pitcher_plant = 7,
+		/mob/living/simple_mob/vore/mantrap = 7,
+		/mob/living/simple_mob/animal/passive/bird/parrot = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/eclectus = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/grey_parrot = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/white_caique = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/budgerigar = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/cockatiel = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/white_cockatoo = 6,
+		/mob/living/simple_mob/animal/passive/bird/parrot/pink_cockatoo = 6,
+		/mob/living/simple_mob/vore/seagull = 6,
+		/mob/living/simple_mob/vore/redpanda = 6,
+		/mob/living/simple_mob/vore/meowl = 6,
+		/mob/living/simple_mob/vore/fennec = 2,
+		/mob/living/simple_mob/vore/lamia/random = 4, // More civilized, so they wear clothes.
+		/mob/living/simple_mob/tomato = 1
+		)
 ))
 
 GLOBAL_LIST_INIT(grass_grass,list(
@@ -227,6 +275,20 @@ GLOBAL_LIST_INIT(grass_grass,list(
 		/obj/structure/flora/ausbushes/sparsegrass,
 		/obj/structure/flora/ausbushes/fullgrass
 		),
+	"thor_real" = list(
+		/obj/structure/flora/ausbushes/sparsegrass,
+		/obj/structure/flora/ausbushes/fullgrass,
+		/obj/structure/flora/ausbushes/lavendergrass,
+		/obj/structure/flora/ausbushes/genericbush,
+		/obj/structure/flora/ausbushes/grassybush,
+		/obj/structure/flora/ausbushes/sunnybush,
+		/obj/structure/flora/ausbushes/brflowers,
+		/obj/structure/flora/ausbushes/ppflowers,
+		/obj/structure/flora/ausbushes/ywflowers,
+		/obj/structure/flora/tree/jungle_small,
+		/obj/structure/flora/tree/jungle,
+		/obj/structure/flora/ausbushes/leafybush,
+		)
 ))
 
 GLOBAL_LIST_INIT(grass_trees, list(
@@ -240,7 +302,7 @@ GLOBAL_LIST_INIT(grass_trees, list(
 		/obj/structure/flora/tree/jungle_small,
 		/obj/structure/flora/tree/jungle
 		),
-	"seasonalautumn" = list(	//TORCHEdit - Fixing wrong list name. We should eventually PR this upstream, but rn I'm fixing this as an edit to fix a runtime asap
+	"seasonalautumn" = list(
 		/obj/structure/flora/tree/bigtree
 		),
 	"seasonalwinter" = list(

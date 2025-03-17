@@ -37,7 +37,7 @@
 
 /obj/item/sign/attackby(obj/item/tool as obj, mob/user as mob)	//construction
 	if(tool.has_tool_quality(TOOL_SCREWDRIVER) && isturf(user.loc))
-		var/direction = tgui_input_list(usr, "In which direction?", "Select direction.", list("North", "East", "South", "West", "Cancel"))
+		var/direction = tgui_input_list(user, "In which direction?", "Select direction.", list("North", "East", "South", "West", "Cancel"))
 		if(direction == "Cancel") return
 		var/target_type = original_type || /obj/structure/sign
 		var/obj/structure/sign/S = new target_type(user.loc)
@@ -127,7 +127,7 @@
 	name = "\improper WARNING"
 	icon_state = "securearea"
 
-/obj/structure/sign/warning/Initialize()
+/obj/structure/sign/warning/Initialize(mapload)
 	. = ..()
 	desc = "A warning sign which reads '[name]'."
 
@@ -184,7 +184,7 @@
 	name = "\improper LETHAL TURRETS"
 	icon_state = "turrets"
 
-/obj/structure/sign/warning/lethal_turrets/Initialize()
+/obj/structure/sign/warning/lethal_turrets/Initialize(mapload)
 	. = ..()
 	desc += " Enter at own risk!."
 
@@ -358,7 +358,7 @@
 //disabled this proc, it serves no purpose except to overwrite the description that already exists. may have been intended for making your own signs?
 //seems to defeat the point of having a generic directional sign that mappers could edit and use in POIs? left it here in case something breaks.
 /*
-/obj/structure/sign/directions/Initialize()
+/obj/structure/sign/directions/Initialize(mapload)
 	. = ..()
 	desc = "A direction sign, pointing out the way to \the [src]."
 */
@@ -1645,7 +1645,7 @@
 	qdel(src)
 
 /obj/structure/sign/flag/attack_hand(mob/user)
-	if(alert("Do you want to rip \the [src] from its place?","You think...","Yes","No") == "Yes")
+	if(tgui_alert(user, "Do you want to rip \the [src] from its place?","You think...",list("Yes","No")) == "Yes")
 		if(!Adjacent(user)) //Cannot bring up dialogue and walk away
 			return FALSE
 		visible_message(span_warning("\The [user] rips \the [src] in a single, decisive motion!" ))
@@ -1855,7 +1855,7 @@
 	desc = "The red flag of the Five Arrows."
 	description_fluff = "The Five Arrows is an independent government entity that seceded from the Solar Confederate Government in 2570, in response to perceived \
 	failures in aiding the Sagittarius Heights during the Skathari Incursion. The success of the government in achieving effective local defense and prosperity has \
-	since attracted the membership of Kauq'xum, a remote Skrellian colony. \The Five Arrows formed the model for SolGov's own semi-autonomous \"Regional Blocs\"."
+	since attracted the membership of Kauq'xum, a remote Skrellian colony. The Five Arrows formed the model for SolGov's own semi-autonomous \"Regional Blocs\"."
 	icon_state = "fivearrows"
 	flagtype = /obj/item/flag/fivearrows
 
@@ -1870,7 +1870,7 @@
 	desc = "The red flag of the Five Arrows."
 	description_fluff = "The Five Arrows is an independent government entity that seceded from the Solar Confederate Government in 2570, in response to perceived \
 	failures in aiding the Sagittarius Heights during the Skathari Incursion. The success of the government in achieving effective local defense and prosperity has \
-	since attracted the membership of Kauq'xum, a remote Skrellian colony. \The Five Arrows formed the model for SolGov's own semi-autonomous \"Regional Blocs\"."
+	since attracted the membership of Kauq'xum, a remote Skrellian colony. The Five Arrows formed the model for SolGov's own semi-autonomous \"Regional Blocs\"."
 	flag_path = "fivearrows"
 
 /obj/item/flag/fivearrows/l

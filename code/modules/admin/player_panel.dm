@@ -38,7 +38,7 @@
 								}
 								var ltd = tr.getElementsByTagName("td");
 								var td = ltd\[0\];
-								var lsearch = td.getElementsByTagName("b");
+								var lsearch = td.getElementsByClassName("bold");
 								var search = lsearch\[0\];
 								//var inner_span = li.getElementsByTagName("span")\[1\] //Should only ever contain one element.
 								//document.write("<p>"+search.innerText+"<br>"+filter+"<br>"+search.innerText.indexOf(filter))
@@ -75,15 +75,15 @@
 
 					body += "</td><td align='center'>";
 
-					body += "<a href='?src=\ref[src];[HrefToken()];adminplayeropts="+ref+"'>PP</a> - "
-					body += "<a href='?src=\ref[src];[HrefToken()];notes=show;mob="+ref+"'>N</a> - "
-					body += "<a href='?_src_=vars;Vars="+ref+"'>VV</a> - "
-					body += "<a href='?src=\ref[src];[HrefToken()];traitor="+ref+"'>TP</a> - "
-					body += "<a href='?src=\ref[usr];[HrefToken()];priv_msg=\ref"+ref+"'>PM</a> - "
-					body += "<a href='?src=\ref[src];[HrefToken()];subtlemessage="+ref+"'>SM</a> - "
-					body += "<a href='?src=\ref[src];[HrefToken()];adminplayerobservejump="+ref+"'>JMP</a><br>"
+					body += "<a href='byond://?src=\ref[src];[HrefToken()];adminplayeropts="+ref+"'>PP</a> - "
+					body += "<a href='byond://?src=\ref[src];[HrefToken()];notes=show;mob="+ref+"'>N</a> - "
+					body += "<a href='byond://?_src_=vars;Vars="+ref+"'>VV</a> - "
+					body += "<a href='byond://?src=\ref[src];[HrefToken()];traitor="+ref+"'>TP</a> - "
+					body += "<a href='byond://?src=\ref[usr];[HrefToken()];priv_msg=\ref"+ref+"'>PM</a> - "
+					body += "<a href='byond://?src=\ref[src];[HrefToken()];subtlemessage="+ref+"'>SM</a> - "
+					body += "<a href='byond://?src=\ref[src];[HrefToken()];adminplayerobservejump="+ref+"'>JMP</a><br>"
 					if(antagonist > 0)
-						body += "<font size='2'><a href='?src=\ref[src];[HrefToken()];check_antagonist=1'><font color='red'><b>Antagonist</b></font></a></font>";
+						body += "<font size='2'><a href='byond://?src=\ref[src];[HrefToken()];check_antagonist=1'><font color='red'><b>Antagonist</b></font></a></font>";
 
 					body += "</td></tr></table>";
 
@@ -97,6 +97,8 @@
 						var span = spans\[i\];
 
 						var id = span.getAttribute("id");
+						if(!id)
+							continue;
 
 						if(!(id.indexOf("item")==0))
 							continue;
@@ -193,14 +195,14 @@
 		<table width='560' align='center' cellspacing='0' cellpadding='5' id='maintable'>
 			<tr id='title_tr'>
 				<td align='center'>
-					<font size='5'><b>Player panel</b></font><br>
-					Hover over a line to see more information - <a href='?src=\ref[src];[HrefToken()];check_antagonist=1'>Check antagonists</a>
+					"} + span_giant(span_bold("Player panel")) + {"<br>
+					Hover over a line to see more information - <a href='byond://?src=\ref[src];[HrefToken()];check_antagonist=1'>Check antagonists</a>
 					<p>
 				</td>
 			</tr>
 			<tr id='search_tr'>
 				<td align='center'>
-					<b>Search:</b> <input type='text' id='filter' value='' style='width:300px;'>
+					"} + span_bold("Search:") + {" <input type='text' id='filter' value='' style='width:300px;'>
 				</td>
 			</tr>
 	</table>
@@ -257,7 +259,7 @@
 				else
 					M_job = JOB_LIVING
 
-			else if(istype(M,/mob/new_player))
+			else if(isnewplayer(M))
 				M_job = JOB_NEW_PLAYER
 
 			else if(isobserver(M))
@@ -290,7 +292,7 @@
 						<a id='link[i]'
 						onmouseover='expand("item[i]","[M_job]","[M_name]","[M_rname]","--unused--","[M_key]","[M.lastKnownIP]",[is_antagonist],"\ref[M]")'
 						>
-						<span id='search[i]'><b>[M_name] - [M_rname] - [M_key] ([M_job])</b></span>
+						<span id='search[i]'>"} + span_bold("[M_name] - [M_rname] - [M_key] ([M_job])") + {"</span>
 						</a>
 						<br><span id='item[i]'></span>
 					</td>
@@ -321,7 +323,7 @@
 		return
 
 	var/dat = "<html><head><title>Player Menu</title></head>"
-	dat += "<body><table border=1 cellspacing=5><B><tr><th>Name</th><th>Real Name</th><th>Assigned Job</th><th>Key</th><th>Options</th><th>PM</th><th>Traitor?</th></tr></B>"
+	dat += "<body><table border=1 cellspacing=5>" + span_bold("<tr><th>Name</th><th>Real Name</th><th>Assigned Job</th><th>Key</th><th>Options</th><th>PM</th><th>Traitor?</th></tr>")
 	//add <th>IP:</th> to this if wanting to add back in IP checking
 	//add <td>(IP: [M.lastKnownIP])</td> if you want to know their ip to the lists below
 	var/list/mobs = sortmobs()
@@ -336,9 +338,9 @@
 			dat += "<td>Cyborg</td>"
 		else if(ishuman(M))
 			dat += "<td>[M.real_name]</td>"
-		else if(istype(M, /mob/living/silicon/pai))
+		else if(ispAI(M))
 			dat += "<td>pAI</td>"
-		else if(istype(M, /mob/new_player))
+		else if(isnewplayer(M))
 			dat += "<td>New Player</td>"
 		else if(isobserver(M))
 			dat += "<td>Ghost</td>"
@@ -350,7 +352,7 @@
 			dat += "<td>Unknown</td>"
 
 
-		if(istype(M,/mob/living/carbon/human))
+		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			if(H.mind && H.mind.assigned_role)
 				dat += "<td>[H.mind.assigned_role]</td>"
@@ -359,18 +361,18 @@
 
 
 		dat += {"<td>[M.key ? (M.client ? M.key : "[M.key] (DC)") : "No key"]</td>
-		<td align=center><A HREF='?src=\ref[src];[HrefToken()];adminplayeropts=\ref[M]'>X</A></td>
-		<td align=center><A href='?src=\ref[usr];[HrefToken()];priv_msg=\ref[M]'>PM</A></td>
+		<td align=center><A href='byond://?src=\ref[src];[HrefToken()];adminplayeropts=\ref[M]'>X</A></td>
+		<td align=center><A href='byond://?src=\ref[usr];[HrefToken()];priv_msg=\ref[M]'>PM</A></td>
 		"}
 
 		if(usr.client)
 			switch(is_special_character(M))
 				if(0)
-					dat += {"<td align=center><A HREF='?src=\ref[src];[HrefToken()];traitor=\ref[M]'>Traitor?</A></td>"}
+					dat += {"<td align=center><A href='byond://?src=\ref[src];[HrefToken()];traitor=\ref[M]'>Traitor?</A></td>"}
 				if(1)
-					dat += {"<td align=center><A HREF='?src=\ref[src];[HrefToken()];traitor=\ref[M]'><font color=red>Traitor?</font></A></td>"}
+					dat += {"<td align=center><A href='byond://?src=\ref[src];[HrefToken()];traitor=\ref[M]'>"} + span_red("Traitor?") + {"</A></td>"}
 				if(2)
-					dat += {"<td align=center><A HREF='?src=\ref[src];[HrefToken()];traitor=\ref[M]'><font color=red><b>Traitor?</b></font></A></td>"}
+					dat += {"<td align=center><A href='byond://?src=\ref[src];[HrefToken()];traitor=\ref[M]'>"} + span_red(span_bold("Traitor?")) + {"</A></td>"}
 		else
 			dat += {"<td align=center> N/A </td>"}
 
@@ -384,26 +386,26 @@
 
 /datum/admins/proc/check_antagonists()
 	if (ticker && ticker.current_state >= GAME_STATE_PLAYING)
-		var/dat = "<html><head><title>Round Status</title></head><body><h1><B>Round Status</B></h1>"
-		dat += "Current Game Mode: <B>[ticker.mode.name]</B><BR>"
-		dat += "Round Duration: <B>[roundduration2text()]</B><BR>"
+		var/dat = "<html><head><title>Round Status</title></head><body><h1>" + span_bold("Round Status") + "</h1>"
+		dat += "Current Game Mode: " + span_bold("[ticker.mode.name]") + "<BR>"
+		dat += "Round Duration: " + span_bold("[roundduration2text()]") + "<BR>"
 		dat += span_bold("Emergency shuttle") + "<BR>"
 		if (!emergency_shuttle.online())
-			dat += "<a href='?src=\ref[src];[HrefToken()];call_shuttle=1'>Call Shuttle</a><br>"
+			dat += "<a href='byond://?src=\ref[src];[HrefToken()];call_shuttle=1'>Call Shuttle</a><br>"
 		else
 			if (emergency_shuttle.wait_for_launch)
 				var/timeleft = emergency_shuttle.estimate_launch_time()
-				dat += "ETL: <a href='?src=\ref[src];[HrefToken()];edit_shuttle_time=1'>[(timeleft / 60) % 60]:[add_zero(num2text(timeleft % 60), 2)]</a><BR>"
+				dat += "ETL: <a href='byond://?src=\ref[src];[HrefToken()];edit_shuttle_time=1'>[(timeleft / 60) % 60]:[add_zero(num2text(timeleft % 60), 2)]</a><BR>"
 
 			else if (emergency_shuttle.shuttle.has_arrive_time())
 				var/timeleft = emergency_shuttle.estimate_arrival_time()
-				dat += "ETA: <a href='?src=\ref[src];[HrefToken()];edit_shuttle_time=1'>[(timeleft / 60) % 60]:[add_zero(num2text(timeleft % 60), 2)]</a><BR>"
-				dat += "<a href='?src=\ref[src];[HrefToken()];call_shuttle=2'>Send Back</a><br>"
+				dat += "ETA: <a href='byond://?src=\ref[src];[HrefToken()];edit_shuttle_time=1'>[(timeleft / 60) % 60]:[add_zero(num2text(timeleft % 60), 2)]</a><BR>"
+				dat += "<a href='byond://?src=\ref[src];[HrefToken()];call_shuttle=2'>Send Back</a><br>"
 
 			if (emergency_shuttle.shuttle.moving_status == SHUTTLE_WARMUP)
 				dat += "Launching now..."
 
-		dat += "<a href='?src=\ref[src];[HrefToken()];delay_round_end=1'>[ticker.delay_end ? "End Round Normally" : "Delay Round End"]</a><br>"
+		dat += "<a href='byond://?src=\ref[src];[HrefToken()];delay_round_end=1'>[ticker.delay_end ? "End Round Normally" : "Delay Round End"]</a><br>"
 		dat += "<hr>"
 		for(var/antag_type in all_antag_types)
 			var/datum/antagonist/A = all_antag_types[antag_type]

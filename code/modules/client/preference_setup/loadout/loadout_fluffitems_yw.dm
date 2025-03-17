@@ -780,11 +780,11 @@
 	allowed_roles = list(JOB_EXPLORER, JOB_PATHFINDER)
 
 /datum/gear/fluff/mocha_cloak
-    path = /obj/item/clothing/accessory/poncho/cloak/fluff/mocha
-    display_name = "Elaborate Cloak"
-    description = "A cloak denoting the rank of a warden, the name \"Mocha\" is embroidered along the collar in red lettering"
-    ckeywhitelist = list("mocatheporg1")
-    character_name = list("Mocha")
+	path = /obj/item/clothing/accessory/poncho/cloak/fluff/mocha
+	display_name = "Elaborate Cloak"
+	description = "A cloak denoting the rank of a warden, the name \"Mocha\" is embroidered along the collar in red lettering"
+	ckeywhitelist = list("mocatheporg1")
+	character_name = list("Mocha")
 
 //  N CKEYS
 //NESgamer190
@@ -870,17 +870,10 @@
 	ckeywhitelist = list("radiantflash")
 	character_name = list("Vasharr Zahirn")
 
-/datum/gear/fluff/vasharr_coat
-	path = /obj/item/clothing/suit/storage/explorer/engineering/command/fluff/vasharr
-	display_name = "Cartographer Engineering Command Jacket"
-	description = "A Engineering Command Jacket from the Galactic Cartographers Society, A group of intrepid explorers. It has gold buttons and orange trim."
-	ckeywhitelist = list("radiantflash")
-	character_name = list("Vasharr Zahirn")
-
 //roguenoob
 //Basir Fahim
 /datum/gear/fluff/basir_1
-	path = /obj/item/clothing/gloves/ring/fluff/basir
+	path = /obj/item/clothing/accessory/ring/fluff/basir
 	display_name = "Sundancer Engagement Ring"
 	description = "This ring is stylized to have an ornate sun, with a sample of phoron swirling around inside. Keep away from Fire! Inscribed along the band is a sentence in Siik; \"Always yours, my little frost-fire. With love. -Sheri\""
 	ckeywhitelist = list("roguenoob")

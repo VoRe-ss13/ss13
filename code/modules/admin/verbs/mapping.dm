@@ -77,18 +77,18 @@ GLOBAL_LIST_BOILERPLATE(all_debugging_effects, /obj/effect/debugging)
 	for(var/obj/machinery/camera/C in cameranet.cameras)
 		CL += C
 
-	var/output = {"<B>CAMERA ANNOMALITIES REPORT</B><HR>
-<B>The following annomalities have been detected. The ones in red need immediate attention: Some of those in black may be intentional.</B><BR><ul>"}
+	var/output = {""} + span_bold("CAMERA ANNOMALITIES REPORT") + {"<HR>
+"} + span_bold("The following annomalities have been detected. The ones in red need immediate attention: Some of those in black may be intentional.") + {"<BR><ul>"}
 
 	for(var/obj/machinery/camera/C1 in CL)
 		for(var/obj/machinery/camera/C2 in CL)
 			if(C1 != C2)
 				if(C1.c_tag == C2.c_tag)
-					output += "<li><font color='red'>c_tag match for sec. cameras at \[[C1.x], [C1.y], [C1.z]\] ([C1.loc.loc]) and \[[C2.x], [C2.y], [C2.z]\] ([C2.loc.loc]) - c_tag is [C1.c_tag]</font></li>"
+					output += "<li>" + span_red("c_tag match for sec. cameras at \[[C1.x], [C1.y], [C1.z]\] ([C1.loc.loc]) and \[[C2.x], [C2.y], [C2.z]\] ([C2.loc.loc]) - c_tag is [C1.c_tag]") + "</li>"
 				if(C1.loc == C2.loc && C1.dir == C2.dir && C1.pixel_x == C2.pixel_x && C1.pixel_y == C2.pixel_y)
-					output += "<li><font color='red'>FULLY overlapping sec. cameras at \[[C1.x], [C1.y], [C1.z]\] ([C1.loc.loc]) Networks: [C1.network] and [C2.network]</font></li>"
+					output += "<li>" + span_red("FULLY overlapping sec. cameras at \[[C1.x], [C1.y], [C1.z]\] ([C1.loc.loc]) Networks: [C1.network] and [C2.network]") + "</li>"
 				if(C1.loc == C2.loc)
-					output += "<li>overlapping sec. cameras at \[[C1.x], [C1.y], [C1.z]\] ([C1.loc.loc]) Networks: [C1.network] and [C2.network]</font></li>"
+					output += "<li>overlapping sec. cameras at \[[C1.x], [C1.y], [C1.z]\] ([C1.loc.loc]) Networks: [C1.network] and [C2.network]</li>"
 		var/turf/T = get_step(C1,turn(C1.dir,180))
 		if(!T || !isturf(T) || !T.density )
 			if(!(locate(/obj/structure/grille,T)))
@@ -98,10 +98,10 @@ GLOBAL_LIST_BOILERPLATE(all_debugging_effects, /obj/effect/debugging)
 						window_check = 1
 						break
 				if(!window_check)
-					output += "<li><font color='red'>Camera not connected to wall at \[[C1.x], [C1.y], [C1.z]\] ([C1.loc.loc]) Network: [C1.network]</color></li>"
+					output += "<li>" + span_red("Camera not connected to wall at \[[C1.x], [C1.y], [C1.z]\] ([C1.loc.loc]) Network: [C1.network]") + "</li>"
 
 	output += "</ul>"
-	usr << browse(output,"window=airreport;size=1000x500")
+	usr << browse("<html>[output]</html>","window=airreport;size=1000x500")
 	feedback_add_details("admin_verb","mCRP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/intercom_view()
@@ -125,41 +125,35 @@ GLOBAL_LIST_BOILERPLATE(all_debugging_effects, /obj/effect/debugging)
 	feedback_add_details("admin_verb","mIRD") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 var/list/debug_verbs = list (
-        /client/proc/do_not_use_these
-        ,/client/proc/camera_view
-        ,/client/proc/sec_camera_report
-        ,/client/proc/intercom_view
-        ,/client/proc/Cell
-        ,/client/proc/atmosscan
-        ,/client/proc/powerdebug
-        ,/client/proc/count_objects_on_z_level
-        ,/client/proc/count_objects_all
-        ,/client/proc/cmd_assume_direct_control
-        ,/client/proc/jump_to_dead_group
-        ,/client/proc/startSinglo
-        ,/client/proc/set_server_fps
-        ,/client/proc/cmd_admin_grantfullaccess
-        ,/client/proc/kaboom
-        ,/client/proc/cmd_admin_areatest
-        ,/client/proc/cmd_admin_rejuvenate
-        ,/datum/admins/proc/show_traitor_panel
-        ,/client/proc/print_jobban_old
-        ,/client/proc/print_jobban_old_filter
-        ,/client/proc/forceEvent
-        ,/client/proc/break_all_air_groups
-        ,/client/proc/regroup_all_air_groups
-        ,/client/proc/kill_pipe_processing
-        ,/client/proc/kill_air_processing
-        ,/client/proc/disable_communication
-        ,/client/proc/disable_movement
-        ,/client/proc/Zone_Info
-        ,/client/proc/Test_ZAS_Connection
-        ,/client/proc/ZoneTick
-        ,/client/proc/rebootAirMaster
-        ,/client/proc/hide_debug_verbs
-        ,/client/proc/testZAScolors
-        ,/client/proc/testZAScolors_remove
-        ,/datum/admins/proc/setup_supermatter
+		/client/proc/do_not_use_these
+		,/client/proc/camera_view
+		,/client/proc/sec_camera_report
+		,/client/proc/intercom_view
+		,/client/proc/Cell
+		,/client/proc/atmosscan
+		,/client/proc/powerdebug
+		,/client/proc/count_objects_on_z_level
+		,/client/proc/count_objects_all
+		,/client/proc/cmd_assume_direct_control
+		,/client/proc/jump_to_dead_group
+		,/client/proc/startSinglo
+		,/client/proc/set_server_fps
+		,/client/proc/cmd_admin_grantfullaccess
+		,/client/proc/kaboom
+		,/client/proc/cmd_admin_areatest
+		,/client/proc/cmd_admin_rejuvenate
+		,/datum/admins/proc/show_traitor_panel
+		,/client/proc/print_jobban_old
+		,/client/proc/print_jobban_old_filter
+		,/client/proc/forceEvent
+		,/client/proc/Zone_Info
+		,/client/proc/Test_ZAS_Connection
+		,/client/proc/ZoneTick
+		,/client/proc/rebootAirMaster
+		,/client/proc/hide_debug_verbs
+		,/client/proc/testZAScolors
+		,/client/proc/testZAScolors_remove
+		,/datum/admins/proc/setup_supermatter
 		,/client/proc/atmos_toggle_debug
 		,/client/proc/spawn_tanktransferbomb
 		,/client/proc/take_picture
@@ -167,7 +161,7 @@ var/list/debug_verbs = list (
 
 
 /client/proc/enable_debug_verbs()
-	set category = "Debug.Misc" //CHOMPEdit
+	set category = "Debug.Misc"
 	set name = "Debug verbs"
 
 	if(!check_rights(R_DEBUG)) return
@@ -177,7 +171,7 @@ var/list/debug_verbs = list (
 	feedback_add_details("admin_verb","mDV") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/hide_debug_verbs()
-	set category = "Debug.Misc" //CHOMPEdit
+	set category = "Debug.Misc"
 	set name = "Hide Debug verbs"
 
 	if(!check_rights(R_DEBUG)) return
@@ -209,7 +203,7 @@ var/list/debug_verbs = list (
 
 
 /client/proc/testZAScolors()
-	set category = "Mapping" //CHOMPEdit
+	set category = "Mapping.ZAS"
 	set name = "Check ZAS connections"
 
 	if(!check_rights(R_DEBUG)) return
@@ -258,7 +252,7 @@ var/list/debug_verbs = list (
 		testZAScolors_turfs += T
 
 /client/proc/testZAScolors_remove()
-	set category = "Mapping" //CHOMPEdit
+	set category = "Mapping.ZAS"
 	set name = "Remove ZAS connection colors"
 
 	testZAScolors_turfs.Cut()
@@ -270,7 +264,7 @@ var/list/debug_verbs = list (
 				images.Remove(i)
 
 /client/proc/rebootAirMaster()
-	set category = "Mapping" //CHOMPEdit
+	set category = "Mapping.ZAS"
 	set name = "Reboot ZAS"
 
 	if(tgui_alert(usr, "This will destroy and remake all zone geometry on the whole map.","Reboot ZAS",list("Reboot ZAS","Nevermind")) == "Reboot ZAS")
@@ -345,80 +339,3 @@ var/list/debug_verbs = list (
 
 	to_world("There are [count] objects of type [type_path] in the game world")
 	feedback_add_details("admin_verb","mOBJ") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-
-var/global/prevent_airgroup_regroup = 0
-
-/client/proc/break_all_air_groups()
-	set category = "Mapping"
-	set name = "Break All Airgroups"
-
-	/*prevent_airgroup_regroup = 1
-	for(var/datum/air_group/AG in air_master.air_groups)
-		AG.suspend_group_processing()
-	message_admins("[src.ckey] used 'Break All Airgroups'")*/
-
-/client/proc/regroup_all_air_groups()
-	set category = "Mapping"
-	set name = "Regroup All Airgroups Attempt"
-
-	to_chat(usr, span_red("Proc disabled.")) //Why not.. Delete the procs instead?
-
-	/*prevent_airgroup_regroup = 0
-	for(var/datum/air_group/AG in air_master.air_groups)
-		AG.check_regroup()
-	message_admins("[src.ckey] used 'Regroup All Airgroups Attempt'")*/
-
-/client/proc/kill_pipe_processing()
-	set category = "Mapping"
-	set name = "Kill pipe processing"
-
-	to_chat(usr, span_red("Proc disabled."))
-
-	/*pipe_processing_killed = !pipe_processing_killed
-	if(pipe_processing_killed)
-		message_admins("[src.ckey] used 'kill pipe processing', stopping all pipe processing.")
-	else
-		message_admins("[src.ckey] used 'kill pipe processing', restoring all pipe processing.")*/
-
-/client/proc/kill_air_processing()
-	set category = "Mapping"
-	set name = "Kill air processing"
-
-	to_chat(usr, span_red("Proc disabled."))
-
-	/*air_processing_killed = !air_processing_killed
-	if(air_processing_killed)
-		message_admins("[src.ckey] used 'kill air processing', stopping all air processing.")
-	else
-		message_admins("[src.ckey] used 'kill air processing', restoring all air processing.")*/
-
-//This proc is intended to detect lag problems relating to communication procs
-var/global/say_disabled = 0
-/client/proc/disable_communication()
-	set category = "Mapping"
-	set name = "Disable all communication verbs"
-
-	to_chat(usr, span_red("Proc disabled."))
-
-	/*say_disabled = !say_disabled
-	if(say_disabled)
-		message_admins("[src.ckey] used 'Disable all communication verbs', killing all communication methods.")
-	else
-		message_admins("[src.ckey] used 'Disable all communication verbs', restoring all communication methods.")*/
-
-//This proc is intended to detect lag problems relating to movement
-var/global/movement_disabled = 0
-var/global/movement_disabled_exception //This is the client that calls the proc, so he can continue to run around to gauge any change to lag.
-/client/proc/disable_movement()
-	set category = "Mapping"
-	set name = "Disable all movement"
-
-	to_chat(usr, span_red("Proc disabled."))
-
-	/*movement_disabled = !movement_disabled
-	if(movement_disabled)
-		message_admins("[src.ckey] used 'Disable all movement', killing all movement.")
-		movement_disabled_exception = usr.ckey
-	else
-		message_admins("[src.ckey] used 'Disable all movement', restoring all movement.")*/

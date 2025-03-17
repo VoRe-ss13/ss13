@@ -1,6 +1,7 @@
-import { useBackend } from '../../backend';
-import { Section, Tabs } from '../../components';
-import { Window } from '../../layouts';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Section, Tabs } from 'tgui-core/components';
+
 import {
   RCS_ANNOUNCE,
   RCS_MAINMENU,
@@ -27,7 +28,7 @@ import {
   RequestConsoleRelay,
   RequestConsoleSupplies,
 } from './RequestConsolTypes';
-import { Data } from './types';
+import type { Data } from './types';
 
 export const RequestConsole = (props) => {
   const { act, data } = useBackend<Data>();

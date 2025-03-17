@@ -11,24 +11,24 @@
 /obj/item/bananapeel/Crossed(atom/movable/AM as mob|obj)
 	if(AM.is_incorporeal())
 		return
-	if(istype(AM, /mob/living))
+	if(isliving(AM))
 		var/mob/living/M = AM
 		M.slip("the [src.name]",4)
 /*
  * Soap
  */
-/obj/item/soap/Initialize()
+/obj/item/soap/Initialize(mapload)
 	. = ..()
 	create_reagents(5)
 	wet()
 
 /obj/item/soap/proc/wet()
-	reagents.add_reagent("cleaner", 5)
+	reagents.add_reagent(REAGENT_ID_CLEANER, 5)
 
 /obj/item/soap/Crossed(atom/movable/AM as mob|obj)
 	if(AM.is_incorporeal())
 		return
-	if(istype(AM, /mob/living))
+	if(isliving(AM))
 		var/mob/living/M =	AM
 		M.slip("the [src.name]",3)
 
@@ -83,5 +83,5 @@
 /obj/item/bikehorn/Crossed(atom/movable/AM as mob|obj)
 	if(AM.is_incorporeal())
 		return
-	if(istype(AM, /mob/living))
+	if(isliving(AM))
 		playsound(src, honk_sound, 50, 1)

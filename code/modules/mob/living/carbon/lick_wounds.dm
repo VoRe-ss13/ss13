@@ -1,6 +1,6 @@
 /mob/living/carbon/human/proc/lick_wounds(var/mob/living/carbon/M as mob in view(1)) // Allows the user to lick themselves. Given how rarely this trait is used, I don't see an issue with a slight buff.
 	set name = "Lick Wounds"
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 	set desc = "Disinfect and heal small wounds with your saliva."
 
 	if(stat || paralysis || weakened || stunned)
@@ -12,19 +12,18 @@
 		return
 	//YW edit. Added the distance check to here. this allows the ability to lick ones own wounds. although this also means that all living/carbon/M appear on the list if used.
 	if (get_dist(src,M) >= 2)
-		to_chat(src, "<span class='warning'>You need to be closer to do that.</span>") // CHOMPEdit - don't use src << unless you have to.
+		to_chat(src, span_warning("You need to be closer to do that.")) // CHOMPEdit - don't use src << unless you have to.
 		return
 
 	if (get_dist(src,M) >= 2)
 		to_chat(src, span_warning("You need to be closer to do that."))
 		return
 
-	if ( ! (istype(src, /mob/living/carbon/human) || \
-			istype(src, /mob/living/silicon)) )
+	if ( ! (ishuman(src) || issilicon(src)) )
 		to_chat(src, span_warning("If you even have a tongue, it doesn't work that way."))
 		return
 
-	if (istype(M, /mob/living/carbon/human))
+	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/external/affecting = H.get_organ(src.zone_sel.selecting)
 
@@ -64,7 +63,7 @@
 
 		else
 			visible_message(span_infoplain(span_bold("\The [src]") + " starts licking the wounds on [M]'s [affecting.name] clean."), \
-					             span_notice("You start licking the wounds on [M]'s [affecting.name] clean.") )
+								span_notice("You start licking the wounds on [M]'s [affecting.name] clean.") )
 
 			for (var/datum/wound/W in affecting.wounds)
 
@@ -81,11 +80,11 @@
 
 				else
 					visible_message(span_notice("\The [src] [pick("slathers \a [W.desc] on [M]'s [affecting.name] with their spit.",
-																			   "drags their tongue across \a [W.desc] on [M]'s [affecting.name].",
-																			   "drips saliva onto \a [W.desc] on [M]'s [affecting.name].",
-																			   "uses their tongue to disinfect \a [W.desc] on [M]'s [affecting.name].",
-																			   "licks \a [W.desc] on [M]'s [affecting.name], cleaning it.")]"), \
-					                        	span_notice("You treat \a [W.desc] on [M]'s [affecting.name] with your antiseptic saliva.") )
+																"drags their tongue across \a [W.desc] on [M]'s [affecting.name].",
+																"drips saliva onto \a [W.desc] on [M]'s [affecting.name].",
+																"uses their tongue to disinfect \a [W.desc] on [M]'s [affecting.name].",
+																"licks \a [W.desc] on [M]'s [affecting.name], cleaning it.")]"), \
+												span_notice("You treat \a [W.desc] on [M]'s [affecting.name] with your antiseptic saliva.") )
 					adjust_nutrition(-20)
 					W.salve()
 					W.bandage()

@@ -1,5 +1,5 @@
 /mob/living/simple_mob/vore/scrubble
-	name = "Scrubble"
+	name = "scrubble"
 	desc = "A small skittish animal with some features resembling rodents and foxes. Usually seen coated with beige and brown fur, the scrubble has four ears that pivot quickly, two long fluffy tails and dark red eyes."
 	catalogue_data = list(/datum/category_item/catalogue/fauna/scrubble)
 	tt_desc = "vuldentia"
@@ -7,7 +7,7 @@
 	icon_dead = "scrubble-dead"
 	icon_living = "scrubble"
 	icon_state = "scrubble"
-	icon_rest = "scrubble-rest"
+	icon_rest = "scrubble_rest"
 	faction = FACTION_SCRUBBLE
 	friendly = list("nudges", "sniffs on", "rumbles softly at", "nuzzles")
 	response_help = "bumps"
@@ -41,9 +41,11 @@
 	vore_standing_too = 1
 
 /mob/living/simple_mob/vore/scrubble/init_vore()
-	if(!voremob_loaded) //TORCHAdd - Added to fix redgate runtime
-		return //TORCHAdd
-	..()
+	if(!voremob_loaded)
+		return
+	if(LAZYLEN(vore_organs))
+		return
+	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "Despite the small size of the scrubble, it seems to have a lot of energy behind it. The critter dives atop you in a panic, its maw quickly engulfing your head as its paws flail scrabble against you, hot slobber slathering across your tightly trapped face. It takes a little repositioning to get itself in the right position, but soon the creature is gulping its way down your entire body. Somehow it manages to squeeze you completely into a gut that should rightly be far too small for anything but a mouse, bundling up your body into a tight ball as the walls around you clench in tightly to keep you nice and compact. The sounds of burbling and glorping echo through the intensely tight space as the stomach lining grinds in thick oozes against your skin, pressure so high that you can barely move a muscle."

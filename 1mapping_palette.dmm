@@ -32,12 +32,9 @@
 	id = "SP-Sec"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
@@ -154,8 +151,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -232,8 +227,6 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -241,16 +234,12 @@
 /area/space)
 "ajs" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/plating/skipjack,
 /area/space)
 "ajt" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 5;
 	icon_state = "2-5"
 	},
 /turf/simulated/floor/plating,
@@ -269,8 +258,6 @@
 /area/space)
 "akc" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
@@ -304,13 +291,9 @@
 /area/space)
 "ald" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/catwalk,
@@ -368,13 +351,9 @@
 /area/space)
 "amu" = (
 /obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor,
@@ -444,8 +423,6 @@
 	dir = 6
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor,
@@ -532,8 +509,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -571,7 +546,6 @@
 /area/space)
 "avt" = (
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
@@ -611,8 +585,6 @@
 	name = "Auxiliary Storage"
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor,
@@ -757,8 +729,6 @@
 /area/space)
 "aEb" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating/external,
@@ -777,8 +747,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -919,7 +887,6 @@
 /area/space)
 "aJs" = (
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
@@ -951,8 +918,6 @@
 /area/space)
 "aLg" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 5;
 	icon_state = "4-5"
 	},
 /turf/simulated/floor/plating,
@@ -966,8 +931,6 @@
 /area/space)
 "aMk" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
@@ -981,7 +944,6 @@
 /area/space)
 "aMy" = (
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
@@ -1075,8 +1037,6 @@
 /area/space)
 "aPb" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/carpet/blue,
@@ -1111,13 +1071,9 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -1135,18 +1091,12 @@
 /area/space)
 "aQm" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
@@ -1427,7 +1377,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
@@ -1492,8 +1442,6 @@
 /area/space)
 "aZO" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -1614,8 +1562,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -1651,8 +1597,6 @@
 	name = "shuttle side hatch"
 	},
 /obj/structure/cable/blue{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/button/remote/airlock{
@@ -1808,8 +1752,6 @@
 /area/space)
 "bjr" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/alarm/angled{
@@ -1821,8 +1763,6 @@
 "bjA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -1989,8 +1929,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/milspec/stripe{
@@ -2094,13 +2032,9 @@
 /area/space)
 "bum" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -2125,7 +2059,6 @@
 	pixel_y = -24
 	},
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -2258,8 +2191,6 @@
 /area/space)
 "bzD" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -2387,18 +2318,9 @@
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/emergency,
 /obj/item/storage/toolbox/emergency,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/item/radio/off,
 /obj/item/radio/off,
 /obj/item/radio/off,
@@ -2653,8 +2575,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -2686,7 +2606,6 @@
 "bML" = (
 /obj/machinery/power/smes/buildable/point_of_interest,
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/structure/railing{
@@ -2755,8 +2674,6 @@
 /area/space)
 "bRs" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/white,
@@ -2788,13 +2705,9 @@
 	dir = 1
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -2828,8 +2741,6 @@
 /area/space)
 "bSy" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -2910,8 +2821,6 @@
 /area/space)
 "bUE" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/generic,
@@ -2962,7 +2871,6 @@
 	pixel_x = -26
 	},
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor,
@@ -3082,7 +2990,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -3097,8 +3005,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -3218,13 +3124,9 @@
 	pixel_x = -6
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -3251,8 +3153,6 @@
 /area/space)
 "cim" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -3290,7 +3190,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "ckB" = (
@@ -3365,12 +3265,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "cnI" = (
@@ -3401,8 +3301,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -3426,8 +3324,6 @@
 /area/space)
 "cpQ" = (
 /obj/structure/cable/blue{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -3466,7 +3362,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "cry" = (
@@ -3640,13 +3536,9 @@
 /area/space)
 "ctq" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/ash,
@@ -3654,8 +3546,6 @@
 /area/space)
 "ctI" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/eris/dark/techfloor,
@@ -3773,8 +3663,6 @@
 /area/space)
 "cuG" = (
 /obj/structure/cable{
-	d1 = 5;
-	d2 = 8;
 	icon_state = "5-8"
 	},
 /turf/simulated/floor/plating,
@@ -3878,12 +3766,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "cBP" = (
@@ -3894,8 +3782,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm/angled{
@@ -4005,8 +3891,6 @@
 	},
 /obj/structure/fans/hardlight,
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating/eris/under,
@@ -4017,8 +3901,6 @@
 /area/space)
 "cIj" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -4044,8 +3926,6 @@
 /area/space)
 "cII" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 9;
 	icon_state = "2-9"
 	},
 /turf/simulated/floor/plating,
@@ -4055,8 +3935,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -4140,13 +4018,9 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
@@ -4176,8 +4050,6 @@
 /area/space)
 "cOn" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/alarm/angled{
@@ -4423,7 +4295,6 @@
 	},
 /obj/structure/frame,
 /obj/structure/cable/yellow{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/bluegrid,
@@ -4445,13 +4316,9 @@
 /area/space)
 "cTj" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -4464,8 +4331,6 @@
 /area/space)
 "cTs" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -4643,8 +4508,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -4772,7 +4635,6 @@
 	output_level = 950000
 	},
 /obj/structure/cable/cyan{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor,
@@ -4819,8 +4681,6 @@
 /area/space)
 "dfu" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
@@ -4913,8 +4773,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -4988,8 +4846,6 @@
 /area/awaymission/snowfield/outside)
 "dmQ" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -5145,8 +5001,6 @@
 /area/space)
 "dqu" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 10;
 	icon_state = "1-10"
 	},
 /turf/simulated/floor/plating,
@@ -5371,8 +5225,6 @@
 "dyT" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/yellow,
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/shuttle/floor/yellow,
@@ -5401,8 +5253,6 @@
 /area/space)
 "dzU" = (
 /obj/structure/cable{
-	d1 = 32;
-	d2 = 5;
 	icon_state = "32-5"
 	},
 /turf/simulated/floor/plating,
@@ -5430,8 +5280,6 @@
 /area/space)
 "dBz" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
@@ -5517,8 +5365,6 @@
 /area/space)
 "dEl" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -5567,13 +5413,9 @@
 	dir = 9
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -5620,13 +5462,9 @@
 /area/space)
 "dIY" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -5677,8 +5515,6 @@
 	name = "reinforced grille"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/machinery/door/blast/regular{
@@ -5701,8 +5537,6 @@
 	pixel_x = 6
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/carpet/blue,
@@ -5755,13 +5589,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor,
@@ -5815,8 +5645,6 @@
 /area/space)
 "dNH" = (
 /obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor,
@@ -5873,8 +5701,6 @@
 /area/space)
 "dQQ" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/eris/dark/techfloor,
@@ -5910,9 +5736,6 @@
 /area/space)
 "dRK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/map_effect/interval/sound_emitter/ballistic_gunfight,
 /turf/simulated/floor/outdoors/dirt,
 /area/space)
@@ -5933,8 +5756,6 @@
 	dir = 4
 	},
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -6098,15 +5919,12 @@
 	pixel_x = 26
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor,
 /area/space)
 "dZb" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 9;
 	icon_state = "4-9"
 	},
 /turf/simulated/floor/plating,
@@ -6124,8 +5942,6 @@
 /area/space)
 "eac" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -6176,8 +5992,6 @@
 /area/space)
 "ech" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden,
@@ -6196,8 +6010,6 @@
 /area/space)
 "eck" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -6214,7 +6026,6 @@
 	pixel_x = 26
 	},
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -6335,8 +6146,6 @@
 /area/space)
 "ehL" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/light{
@@ -6356,8 +6165,6 @@
 	name = "Security Door"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -6546,14 +6353,6 @@
 	},
 /turf/simulated/floor/gorefloor,
 /area/space)
-"epX" = (
-/obj/effect/alien/weeds,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/rocks{
-	outdoors = 0
-	},
-/area/space)
 "eqm" = (
 /obj/structure/window/titanium/full,
 /obj/structure/grille/cult{
@@ -6717,8 +6516,6 @@
 /area/space)
 "ewt" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden,
@@ -6773,7 +6570,6 @@
 /area/space)
 "ezb" = (
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
@@ -6905,8 +6701,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -6960,7 +6754,6 @@
 /area/space)
 "eEO" = (
 /obj/structure/cable{
-	d2 = 10;
 	icon_state = "6-10";
 	d1 = 6
 	},
@@ -6991,8 +6784,6 @@
 /area/space)
 "eFH" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -7035,8 +6826,6 @@
 "eGe" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -7144,7 +6933,6 @@
 "eLX" = (
 /obj/machinery/power/smes/buildable/hybrid,
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -7198,8 +6986,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -7243,7 +7029,6 @@
 /obj/structure/curtain/bed,
 /obj/item/bedsheet/hosdouble,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_y = 32
 	},
 /turf/simulated/floor/wood,
@@ -7274,8 +7059,6 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -7301,8 +7084,6 @@
 /area/space)
 "ePV" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 9;
 	icon_state = "1-9"
 	},
 /turf/simulated/floor/plating,
@@ -7395,8 +7176,6 @@
 /area/space)
 "eSH" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
@@ -7467,8 +7246,6 @@
 /area/space)
 "eWO" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 10;
 	icon_state = "4-10"
 	},
 /turf/simulated/floor/plating,
@@ -7482,8 +7259,6 @@
 /area/space)
 "eYd" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -7517,7 +7292,6 @@
 /obj/machinery/pointdefense,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -7533,8 +7307,6 @@
 	},
 /obj/structure/window/phoronreinforced,
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/floor/voidcraft,
@@ -7569,8 +7341,6 @@
 /area/space)
 "fcD" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -7706,8 +7476,6 @@
 /area/space)
 "fjP" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -7815,8 +7583,6 @@
 /area/space)
 "flt" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
@@ -8002,7 +7768,6 @@
 	pixel_y = 20
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/shuttle/plating/skipjack,
@@ -8078,8 +7843,6 @@
 "ftd" = (
 /obj/machinery/door/airlock/glass_centcom,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -8109,8 +7872,6 @@
 /area/space)
 "fuJ" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -8221,8 +7982,6 @@
 /area/space)
 "fxI" = (
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/airless,
@@ -8300,13 +8059,9 @@
 /area/space)
 "fCI" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -8453,8 +8208,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/alarm/angled{
@@ -8526,8 +8279,6 @@
 /area/space)
 "fJY" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -8630,13 +8381,11 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "fSx" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -8652,12 +8401,9 @@
 "fTk" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
@@ -8771,8 +8517,6 @@
 /area/space)
 "fYg" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -8876,8 +8620,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -8887,8 +8629,6 @@
 /area/space)
 "gdf" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 10;
 	icon_state = "2-10"
 	},
 /turf/simulated/floor/plating,
@@ -8920,8 +8660,6 @@
 	dir = 9
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -8938,8 +8676,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -8965,7 +8701,6 @@
 "gfB" = (
 /obj/machinery/power/tesla_coil,
 /obj/structure/cable/yellow{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/airless,
@@ -9076,18 +8811,12 @@
 /area/space)
 "giB" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
@@ -9179,7 +8908,6 @@
 	},
 /obj/machinery/power/terminal,
 /obj/structure/cable/blue{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/structure/closet/walllocker/emerglocker{
@@ -9190,12 +8918,12 @@
 /area/space)
 "glz" = (
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "glT" = (
@@ -9238,15 +8966,12 @@
 	dir = 9
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
 /area/space)
 "gnx" = (
 /obj/structure/cable{
-	d2 = 5;
 	icon_state = "0-5"
 	},
 /turf/simulated/floor/plating,
@@ -9272,8 +8997,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -9325,7 +9048,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "gqk" = (
@@ -9368,12 +9091,9 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/shuttle/plating,
@@ -9398,8 +9118,6 @@
 /area/space)
 "grh" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating/external,
@@ -9504,8 +9222,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/reinforced,
@@ -9724,8 +9440,6 @@
 	name = "reinforced grille"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/blast/regular{
@@ -9738,8 +9452,6 @@
 /area/space)
 "gzV" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -9883,7 +9595,6 @@
 /area/space)
 "gFa" = (
 /obj/structure/cable{
-	d1 = 32;
 	icon_state = "32-1"
 	},
 /turf/simulated/floor/plating,
@@ -10047,7 +9758,6 @@
 	pixel_y = 26
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -10093,8 +9803,6 @@
 /area/space)
 "gNv" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -10195,8 +9903,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -10204,8 +9910,6 @@
 "gQf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -10285,7 +9989,6 @@
 	dir = 1
 	},
 /obj/structure/cable/cyan{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor,
@@ -10332,18 +10035,12 @@
 /area/space)
 "gUt" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/shuttle/floor/yellow,
@@ -10398,7 +10095,6 @@
 /area/space)
 "gWK" = (
 /obj/structure/cable/blue{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
@@ -10431,13 +10127,11 @@
 	once = 0
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "gYa" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
@@ -10475,8 +10169,6 @@
 /obj/random/maintenance/research,
 /obj/random/maintenance/research,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -10494,13 +10186,9 @@
 /area/space)
 "haj" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -10639,7 +10327,7 @@
 /obj/effect/map_effect/interval/sound_emitter/geiger/high,
 /obj/effect/map_effect/interval/sound_emitter/thunder,
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "heD" = (
@@ -10662,8 +10350,6 @@
 /area/space)
 "hfh" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -10678,8 +10364,6 @@
 /area/space)
 "hfm" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -10729,8 +10413,6 @@
 /area/space)
 "hgc" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor,
@@ -10738,8 +10420,6 @@
 "hgh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -10846,8 +10526,6 @@
 "hks" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/airless,
@@ -10922,8 +10600,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/alarm/angled{
@@ -10992,8 +10668,6 @@
 /area/space)
 "hpQ" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white,
@@ -11091,8 +10765,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -11167,7 +10839,6 @@
 	pixel_x = -6
 	},
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc{
@@ -11191,7 +10862,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -11250,8 +10921,6 @@
 	layer = 3
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -11374,8 +11043,6 @@
 /area/space)
 "hBW" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -11385,12 +11052,9 @@
 	dir = 10
 	},
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
@@ -11600,14 +11264,12 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/airless,
 /area/space)
 "hKr" = (
 /obj/structure/cable/blue{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
@@ -11713,7 +11375,6 @@
 /area/space)
 "hOa" = (
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
@@ -11759,12 +11420,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "hPw" = (
@@ -11782,8 +11443,6 @@
 /area/space)
 "hPy" = (
 /obj/structure/cable/blue{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
@@ -11793,13 +11452,9 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
@@ -11853,8 +11508,6 @@
 	dir = 9
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/decal/cleanable/molten_item,
@@ -11888,7 +11541,6 @@
 /area/space)
 "hSj" = (
 /obj/structure/cable{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
@@ -11896,8 +11548,6 @@
 "hSG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -11962,8 +11612,6 @@
 /area/space)
 "hVK" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -12062,8 +11710,6 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -12100,8 +11746,6 @@
 /area/space)
 "iad" = (
 /obj/structure/cable{
-	d1 = 32;
-	d2 = 4;
 	icon_state = "32-4"
 	},
 /turf/simulated/floor/plating,
@@ -12136,8 +11780,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -12157,7 +11799,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "ibO" = (
@@ -12214,7 +11856,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "ieF" = (
@@ -12226,8 +11868,6 @@
 /area/space)
 "ieJ" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
@@ -12365,13 +12005,9 @@
 /area/space)
 "ike" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -12498,7 +12134,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -12510,8 +12146,6 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -12574,8 +12208,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/milspec/stripe{
@@ -12662,8 +12294,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/milspec/stripe{
@@ -12677,8 +12307,6 @@
 /area/space)
 "isj" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -12735,7 +12363,6 @@
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/shield_generator/charged{
@@ -12747,8 +12374,6 @@
 /area/space)
 "ivw" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/wall/rshull,
@@ -12823,11 +12448,6 @@
 	},
 /turf/simulated/shuttle/floor/white,
 /area/space)
-"ixh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood,
-/area/space)
 "ixo" = (
 /obj/structure/grille/cult{
 	name = "Alien grille"
@@ -12880,8 +12500,6 @@
 /area/space)
 "izf" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -12976,18 +12594,12 @@
 /area/space)
 "iCz" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -13025,13 +12637,9 @@
 	density = 0
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/alarm/angled{
@@ -13146,8 +12754,6 @@
 	dir = 10
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/catwalk_plated/techfloor,
@@ -13253,10 +12859,6 @@
 /obj/item/gun/projectile/automatic/sts35,
 /turf/simulated/shuttle/floor/voidcraft/light,
 /area/space)
-"iIq" = (
-/obj/effect/ctrigger,
-/turf/simulated/floor/outdoors/dirt,
-/area/space)
 "iIv" = (
 /obj/structure/artilleryplaceholder{
 	icon_state = "33"
@@ -13267,8 +12869,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -13303,11 +12903,6 @@
 	pixel_x = -32
 	},
 /turf/simulated/floor/reinforced,
-/area/space)
-"iKm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white,
 /area/space)
 "iKL" = (
 /obj/machinery/door/airlock/maintenance/command,
@@ -13386,8 +12981,6 @@
 /area/space)
 "iOu" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 6;
 	icon_state = "1-6"
 	},
 /turf/simulated/floor/plating,
@@ -13404,7 +12997,6 @@
 "iPZ" = (
 /obj/item/clothing/suit/storage/apron/white,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/space)
 "iQa" = (
@@ -13415,7 +13007,6 @@
 /area/space)
 "iQZ" = (
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/structure/table/standard,
@@ -13437,7 +13028,6 @@
 	pixel_y = 26
 	},
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -13467,7 +13057,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -13531,8 +13121,6 @@
 /area/space)
 "iSv" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/alarm/angled{
@@ -13603,8 +13191,6 @@
 /area/space)
 "iTV" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -13647,8 +13233,6 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -13679,11 +13263,9 @@
 	dir = 1
 	},
 /obj/structure/cable/blue{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/shuttle/floor/yellow,
@@ -13715,8 +13297,6 @@
 /area/space)
 "iWJ" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/binary/pump/on,
@@ -13778,8 +13358,6 @@
 	dir = 6
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -13843,8 +13421,6 @@
 /obj/item/tape/random,
 /obj/item/taperecorder,
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/item/paper_bin{
@@ -13983,8 +13559,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/reinforced,
@@ -14038,8 +13612,6 @@
 	dir = 9
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -14050,7 +13622,6 @@
 /area/space)
 "jjA" = (
 /obj/structure/cable{
-	d2 = 6;
 	icon_state = "0-6"
 	},
 /turf/simulated/floor/plating,
@@ -14170,8 +13741,6 @@
 "jnB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -14184,7 +13753,6 @@
 	dir = 5
 	},
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/effect/floor_decal/techfloor/hole/right{
@@ -14315,8 +13883,6 @@
 	req_one_access = list(67)
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -14381,8 +13947,6 @@
 "jum" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -14414,8 +13978,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/milspec/stripe{
@@ -14591,7 +14153,6 @@
 	dir = 9
 	},
 /obj/structure/cable{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /obj/machinery/power/port_gen/pacman,
@@ -14722,8 +14283,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/firealarm/angled{
@@ -14776,8 +14335,6 @@
 /area/space)
 "jIN" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -14796,7 +14353,6 @@
 /area/space)
 "jKC" = (
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
@@ -14862,8 +14418,6 @@
 	dir = 1
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -14941,7 +14495,6 @@
 	pixel_y = 20
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /obj/item/handcuffs/legcuffs/fuzzy,
@@ -15181,7 +14734,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "kaP" = (
@@ -15196,8 +14749,6 @@
 /area/space)
 "kaS" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
@@ -15231,8 +14782,6 @@
 /area/space)
 "kbl" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -15244,8 +14793,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/hidden,
 /obj/machinery/meter,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -15271,8 +14818,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/catwalk_plated/techfloor,
@@ -15411,13 +14956,9 @@
 	dir = 1
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -15490,8 +15031,6 @@
 	density = 0
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -15518,8 +15057,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -15548,13 +15085,9 @@
 	dir = 10
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -15712,7 +15245,6 @@
 /area/space)
 "klF" = (
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc{
@@ -15745,12 +15277,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "knl" = (
@@ -15758,7 +15290,6 @@
 	dir = 6
 	},
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/smes/buildable{
@@ -15799,8 +15330,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/decal/remains/xeno,
@@ -15887,8 +15416,6 @@
 "krC" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -15933,8 +15460,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/shuttle/plating,
@@ -15961,8 +15486,6 @@
 	dir = 10
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/table/alien/blue,
@@ -16078,14 +15601,10 @@
 	name = "First-Aid (empty)"
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
@@ -16277,8 +15796,6 @@
 /area/space)
 "kET" = (
 /obj/structure/cable{
-	d1 = 32;
-	d2 = 10;
 	icon_state = "32-10"
 	},
 /turf/simulated/floor/plating,
@@ -16299,13 +15816,9 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/generic,
@@ -16344,7 +15857,6 @@
 /obj/item/clothing/shoes/sandal,
 /obj/item/clothing/shoes/sandal,
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = -32
 	},
 /obj/item/towel/random,
@@ -16376,8 +15888,6 @@
 "kII" = (
 /obj/structure/table/hardwoodtable,
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -16501,8 +16011,6 @@
 "kLw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -16520,8 +16028,6 @@
 "kMR" = (
 /obj/machinery/atmospherics/pipe/cap/hidden,
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor,
@@ -16692,16 +16198,12 @@
 	pixel_y = -28
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 8
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/shuttle/floor/yellow,
@@ -16828,15 +16330,12 @@
 /area/space)
 "kTP" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 6;
 	icon_state = "2-6"
 	},
 /turf/simulated/floor/plating,
 /area/space)
 "kTV" = (
 /obj/structure/cable{
-	d2 = 10;
 	icon_state = "9-10";
 	d1 = 9
 	},
@@ -16880,8 +16379,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/milspec/stripe{
@@ -16934,8 +16431,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -17131,8 +16626,6 @@
 /area/space)
 "lfg" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -17239,8 +16732,6 @@
 /area/space)
 "llF" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/decal/cleanable/blood/gibs/robot,
@@ -17257,8 +16748,6 @@
 /area/space)
 "lmJ" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -17316,8 +16805,6 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -17484,8 +16971,6 @@
 /area/space)
 "lxu" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -17640,8 +17125,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/item/clothing/under/psysuit,
@@ -17672,7 +17155,6 @@
 	pixel_y = 26
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor,
@@ -17730,8 +17212,6 @@
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/manifold4w/visible,
 /obj/structure/cable/blue{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -17845,18 +17325,12 @@
 /area/space)
 "lKw" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -17906,7 +17380,6 @@
 /obj/machinery/power/port_gen/pacman,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -18045,16 +17518,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/reinforced,
@@ -18089,8 +17558,6 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -18140,15 +17607,12 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "lUp" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/power/grounding_rod/pre_mapped{
@@ -18253,8 +17717,6 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/table/alien/blue,
@@ -18299,8 +17761,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/emblem/nt1,
@@ -18317,7 +17777,6 @@
 /area/space)
 "lYH" = (
 /obj/structure/cable{
-	d2 = 9;
 	icon_state = "0-9"
 	},
 /turf/simulated/floor/plating,
@@ -18437,7 +17896,6 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc{
@@ -18493,10 +17951,6 @@
 	name = "Dorm"
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/space)
-"mfO" = (
-/obj/effect/ctrigger,
-/turf/template_noop,
 /area/space)
 "mfQ" = (
 /obj/machinery/shower{
@@ -18583,8 +18037,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/reinforced,
@@ -18616,8 +18068,6 @@
 /area/space)
 "mjC" = (
 /obj/structure/cable{
-	d1 = 32;
-	d2 = 8;
 	icon_state = "32-8"
 	},
 /turf/simulated/floor/plating,
@@ -18636,7 +18086,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "mjW" = (
@@ -18735,8 +18185,6 @@
 	dir = 1
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -18916,7 +18364,6 @@
 	dir = 1
 	},
 /obj/structure/cable/yellow{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/bluegrid,
@@ -18946,8 +18393,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/milspec/stripe,
@@ -18957,8 +18402,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -18972,8 +18415,6 @@
 /area/survivalpod)
 "msn" = (
 /obj/structure/cable{
-	d1 = 32;
-	d2 = 6;
 	icon_state = "32-6"
 	},
 /turf/simulated/floor/plating,
@@ -19005,8 +18446,6 @@
 "msS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -19076,11 +18515,6 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/simulated/floor/grass,
 /area/space)
-"mvi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/space)
 "mvE" = (
 /obj/machinery/light{
 	dir = 4
@@ -19140,13 +18574,9 @@
 /area/space)
 "mxL" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/molten_item,
@@ -19451,7 +18881,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "mAJ" = (
@@ -19482,13 +18912,9 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -19498,12 +18924,9 @@
 	dir = 9
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/emitter/gyrotron/anchored{
@@ -19736,7 +19159,6 @@
 /area/space)
 "mIu" = (
 /obj/structure/cable{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
@@ -19790,8 +19212,6 @@
 /area/space)
 "mKV" = (
 /obj/structure/cable/blue{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
@@ -19943,7 +19363,6 @@
 /obj/effect/decal/cleanable/blood/gibs/robot,
 /obj/effect/decal/cleanable/molten_item,
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
@@ -19974,8 +19393,6 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -20004,12 +19421,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "mRF" = (
@@ -20049,8 +19466,6 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -20191,8 +19606,6 @@
 /area/space)
 "mXT" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/alarm/angled{
@@ -20203,8 +19616,6 @@
 /area/space)
 "mYh" = (
 /obj/structure/cable{
-	d1 = 16;
-	d2 = 0;
 	icon_state = "16-0"
 	},
 /turf/simulated/floor/plating,
@@ -20288,8 +19699,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/ash,
@@ -20327,14 +19736,10 @@
 "nbA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/airless,
@@ -20370,13 +19775,9 @@
 "nch" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor,
@@ -20384,8 +19785,6 @@
 "ncq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -20404,13 +19803,9 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -20437,7 +19832,6 @@
 /area/space)
 "neP" = (
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc{
@@ -20471,12 +19865,9 @@
 	dir = 5
 	},
 /obj/structure/cable{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
@@ -20569,13 +19960,9 @@
 /area/space)
 "nmZ" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -20675,7 +20062,6 @@
 /area/space)
 "ntP" = (
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
@@ -20816,8 +20202,6 @@
 /area/space)
 "nxx" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/industrial/loading{
@@ -20872,8 +20256,6 @@
 /area/space)
 "nzu" = (
 /obj/structure/cable{
-	d1 = 8;
-	d2 = 10;
 	icon_state = "8-10"
 	},
 /turf/simulated/floor/plating,
@@ -20945,7 +20327,6 @@
 	opacity = 1
 	},
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /obj/machinery/telecomms/allinone,
@@ -20966,7 +20347,7 @@
 /area/space)
 "nCu" = (
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "nCJ" = (
@@ -21000,8 +20381,6 @@
 	dir = 6
 	},
 /obj/structure/cable/blue{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/wall/voidcraft/green,
@@ -21012,8 +20391,6 @@
 /area/space)
 "nDU" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -21028,8 +20405,6 @@
 "nED" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -21081,8 +20456,6 @@
 "nGd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -21107,8 +20480,6 @@
 /area/space)
 "nGI" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
@@ -21152,8 +20523,6 @@
 /area/space)
 "nIr" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -21204,7 +20573,6 @@
 	opacity = 1
 	},
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /obj/machinery/power/port_gen/pacman,
@@ -21216,7 +20584,6 @@
 	pixel_x = 5;
 	pixel_y = 10
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/space)
@@ -21254,8 +20621,6 @@
 /area/space)
 "nKY" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -21264,7 +20629,6 @@
 /area/space)
 "nLJ" = (
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
@@ -21303,8 +20667,6 @@
 /area/space)
 "nNs" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -21337,8 +20699,6 @@
 "nNW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -21393,8 +20753,6 @@
 /area/space)
 "nPX" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/angled_bay/hatch/common{
@@ -21482,8 +20840,6 @@
 /obj/structure/table/standard,
 /obj/structure/bedsheetbin,
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/white,
@@ -21503,8 +20859,6 @@
 /area/space)
 "nXM" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -21587,8 +20941,6 @@
 	dir = 1
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -21628,7 +20980,6 @@
 /area/space)
 "obj" = (
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/tesla_coil/pre_mapped,
@@ -21662,14 +21013,10 @@
 /area/space)
 "ocY" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/airless,
@@ -21678,7 +21025,6 @@
 /obj/machinery/pointdefense,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/cable{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -21796,13 +21142,9 @@
 /area/space)
 "oiM" = (
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor,
@@ -21840,8 +21182,6 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/ash,
@@ -21908,8 +21248,6 @@
 	name = "Waste to Filter"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -21935,8 +21273,6 @@
 /area/space)
 "ooB" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/airless,
@@ -21948,8 +21284,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -21968,8 +21302,6 @@
 /area/space)
 "opr" = (
 /obj/structure/cable/blue{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
@@ -21983,8 +21315,6 @@
 "opF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -22106,14 +21436,8 @@
 /obj/item/clothing/gloves/sterile/latex,
 /obj/item/storage/belt/utility,
 /obj/item/storage/belt/utility,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/item/stack/material/copper{
 	amount = 25
 	},
@@ -22185,8 +21509,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor,
@@ -22211,7 +21533,6 @@
 "ovg" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating/external,
@@ -22228,12 +21549,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "ovB" = (
@@ -22427,8 +21748,6 @@
 	dir = 8
 	},
 /obj/structure/cable/blue{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -22444,12 +21763,6 @@
 	dir = 4
 	},
 /turf/simulated/shuttle/floor/alienplating,
-/area/space)
-"oEe" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood/broken,
 /area/space)
 "oEo" = (
 /obj/structure/bed/double/padded,
@@ -22486,8 +21799,6 @@
 /area/space)
 "oGj" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/wall/rshull,
@@ -22595,7 +21906,7 @@
 	once = 0
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "oHU" = (
@@ -22647,8 +21958,6 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -22678,13 +21987,9 @@
 /area/space)
 "oJq" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -22700,13 +22005,9 @@
 /area/space)
 "oJJ" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/techfloor/corner,
@@ -22737,8 +22038,6 @@
 	pixel_x = -6
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -22815,12 +22114,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "oLZ" = (
@@ -22854,8 +22153,6 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -22961,8 +22258,6 @@
 "oRy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -23276,8 +22571,6 @@
 	req_access = list(2,4)
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/bed/chair/bay/chair/padded/black{
@@ -23308,7 +22601,6 @@
 /area/space)
 "peE" = (
 /obj/structure/cable{
-	d2 = 9;
 	icon_state = "6-9";
 	d1 = 6
 	},
@@ -23319,8 +22611,6 @@
 /turf/simulated/shuttle/wall/alien/blue/hard_corner,
 /area/space)
 "pfu" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt,
 /area/space)
@@ -23413,8 +22703,6 @@
 	dir = 5
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/generic,
@@ -23485,7 +22773,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -23552,7 +22840,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "pmu" = (
@@ -23586,8 +22874,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/hidden,
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -23628,8 +22914,6 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -23675,8 +22959,6 @@
 	name = "Waste Compresser"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -23713,8 +22995,6 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -23725,8 +23005,6 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -23780,8 +23058,6 @@
 	locked = 1
 	},
 /obj/structure/cable/blue{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
@@ -23875,8 +23151,6 @@
 /area/space)
 "pxT" = (
 /obj/structure/cable/blue{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/binary/pump,
@@ -24089,8 +23363,6 @@
 	dir = 6
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -24109,8 +23381,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden,
@@ -24318,7 +23588,6 @@
 	pixel_y = 26
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -24462,8 +23731,6 @@
 /area/space)
 "pPz" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -24532,11 +23799,6 @@
 	},
 /turf/simulated/shuttle/floor/voidcraft,
 /area/space)
-"pRG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood/broken,
-/area/space)
 "pSg" = (
 /obj/effect/blocker,
 /turf/template_noop,
@@ -24584,16 +23846,12 @@
 	density = 0
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/carpet/blue,
 /area/space)
 "pVx" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/alarm/angled{
@@ -24635,7 +23893,7 @@
 /area/space)
 "pXp" = (
 /obj/item/reagent_containers/glass/rag,
-/obj/item/clothing/gloves/ring/engagement,
+/obj/item/clothing/accessory/ring/engagement,
 /obj/structure/table/wooden_reinforced,
 /turf/simulated/floor/wood,
 /area/space)
@@ -24656,12 +23914,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "pYp" = (
@@ -24676,8 +23934,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/light{
@@ -24691,8 +23947,6 @@
 /area/space)
 "pYV" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -24748,13 +24002,11 @@
 	portal_id = 20
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "qcn" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/catwalk_plated/techfloor,
@@ -24844,8 +24096,6 @@
 /area/space)
 "qfw" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/wall/rshull,
@@ -24853,8 +24103,6 @@
 "qfA" = (
 /obj/effect/floor_decal/techfloor/orange,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -24917,7 +24165,6 @@
 /area/space)
 "qgB" = (
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/item/trash/material/metal,
@@ -24925,8 +24172,6 @@
 /area/space)
 "qgK" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/wall/rshull,
@@ -24971,8 +24216,6 @@
 /area/space)
 "qio" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating/external,
@@ -25189,7 +24432,7 @@
 	invisibility = 99
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "qqu" = (
@@ -25316,8 +24559,6 @@
 	},
 /obj/effect/floor_decal/techfloor/orange/corner,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -25382,8 +24623,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -25408,15 +24647,12 @@
 /area/space)
 "qwI" = (
 /obj/structure/cable/blue{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
 /area/space)
 "qwS" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating/external,
@@ -25455,8 +24691,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -25491,7 +24725,6 @@
 /obj/machinery/pointdefense,
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/cable{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -25655,8 +24888,6 @@
 	dir = 4
 	},
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -25729,7 +24960,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "qHF" = (
@@ -25738,15 +24969,12 @@
 /area/space)
 "qHP" = (
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/hyper{
 	pixel_y = -24
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/closet/walllocker/emerglocker{
@@ -25769,7 +24997,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "qIh" = (
@@ -25835,7 +25063,6 @@
 "qKu" = (
 /obj/machinery/power/smes/buildable/hybrid,
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating/external,
@@ -25878,7 +25105,6 @@
 /area/space)
 "qMn" = (
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/tesla_coil/pre_mapped,
@@ -25912,8 +25138,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor,
@@ -25921,8 +25145,6 @@
 /area/space)
 "qOe" = (
 /obj/structure/cable/blue{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating,
@@ -26031,13 +25253,9 @@
 	dir = 5
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor,
@@ -26086,8 +25304,6 @@
 /area/space)
 "qTO" = (
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor,
@@ -26106,8 +25322,6 @@
 /area/space)
 "qUS" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/item/trash/material/metal,
@@ -26139,13 +25353,9 @@
 	req_access = list(2,4)
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/plating/skipjack,
@@ -26390,18 +25600,12 @@
 /area/space)
 "rbL" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -26446,7 +25650,7 @@
 /area/space)
 "rcM" = (
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -26463,13 +25667,11 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "rcS" = (
 /obj/structure/cable{
-	d1 = 32;
-	d2 = 2;
 	icon_state = "32-2"
 	},
 /turf/simulated/floor/plating,
@@ -26507,8 +25709,6 @@
 /area/space)
 "reb" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/eris/dark/techfloor,
@@ -26527,7 +25727,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "reE" = (
@@ -26636,7 +25836,6 @@
 "rgx" = (
 /obj/effect/alien/weeds,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/junk,
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = 0
@@ -26665,8 +25864,6 @@
 /area/space)
 "rjk" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden,
@@ -26685,8 +25882,6 @@
 /area/space)
 "rjm" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/effect/decal/cleanable/blood/gibs/robot,
@@ -26737,8 +25932,6 @@
 "rlv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -26804,8 +25997,6 @@
 	name = "reinforced grille"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/blast/regular{
@@ -26871,8 +26062,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/space)
 "rpz" = (
@@ -26916,8 +26105,6 @@
 	},
 /obj/structure/window/phoronreinforced,
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/floor/voidcraft,
@@ -27024,7 +26211,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
@@ -27070,7 +26257,6 @@
 	dir = 8
 	},
 /obj/structure/cable/yellow{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/bluegrid,
@@ -27108,14 +26294,12 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "rwk" = (
 /obj/effect/floor_decal/techfloor/orange,
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/item/material/shard/phoron{
@@ -27152,13 +26336,9 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
@@ -27169,8 +26349,6 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -27190,7 +26368,6 @@
 	pixel_x = 26
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/white,
@@ -27207,16 +26384,12 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/space)
 "rzu" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -27272,8 +26445,6 @@
 /area/space)
 "rBa" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/generic,
@@ -27404,8 +26575,6 @@
 /area/space)
 "rFe" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/effect/decal/cleanable/generic,
@@ -27439,7 +26608,6 @@
 "rFW" = (
 /obj/machinery/power/tesla_coil,
 /obj/structure/cable/yellow{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/airless,
@@ -27452,8 +26620,6 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -27621,8 +26787,6 @@
 "rPx" = (
 /obj/effect/floor_decal/techfloor/orange/corner,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/molten_item,
@@ -27668,8 +26832,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -27682,8 +26844,6 @@
 /area/space)
 "rRf" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
@@ -27707,8 +26867,6 @@
 /area/space)
 "rTB" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -27732,15 +26890,12 @@
 "rUy" = (
 /obj/structure/simple_door/resin,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = 0
 	},
 /area/space)
 "rUz" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden,
@@ -27788,8 +26943,6 @@
 "rWK" = (
 /obj/effect/floor_decal/techfloor/orange,
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /mob/living/simple_mob/mechanical/hivebot/ranged_damage/laser,
@@ -27838,13 +26991,9 @@
 /area/space)
 "rYN" = (
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor,
@@ -27882,8 +27031,6 @@
 /area/space)
 "rZM" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -27906,8 +27053,6 @@
 	dir = 6
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/machinery/power/emitter/gyrotron/anchored{
@@ -27934,12 +27079,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "sbA" = (
@@ -28052,8 +27197,6 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -28077,8 +27220,6 @@
 "seb" = (
 /obj/machinery/atmospherics/binary/pump/on,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -28228,8 +27369,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -28309,7 +27448,6 @@
 /area/space)
 "sjH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /mob/living/simple_mob/humanoid/merc/ranged{
 	health = 15;
 	maxHealth = 15
@@ -28359,8 +27497,6 @@
 	name = "reinforced grille"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/machinery/door/blast/regular{
@@ -28375,8 +27511,6 @@
 	layer = 3
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/airless,
@@ -28561,13 +27695,9 @@
 /area/space)
 "ssE" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -28708,18 +27838,12 @@
 /area/space)
 "sxf" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/structure/catwalk,
@@ -28749,8 +27873,6 @@
 /area/space)
 "syO" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white,
@@ -28841,8 +27963,6 @@
 "sCm" = (
 /obj/structure/stairs/bottom,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -28857,8 +27977,6 @@
 "sCv" = (
 /obj/machinery/mineral/stacking_unit_console,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/shuttle/wall/voidcraft/green,
@@ -28884,8 +28002,6 @@
 /area/space)
 "sDP" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
@@ -28967,13 +28083,10 @@
 "sHj" = (
 /obj/item/pack/cardemon,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/space)
 "sHK" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -29001,8 +28114,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden,
@@ -29045,8 +28156,6 @@
 /area/space)
 "sJT" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
@@ -29113,8 +28222,6 @@
 /area/space)
 "sOt" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
@@ -29139,7 +28246,6 @@
 /turf/simulated/shuttle/floor/voidcraft/dark,
 /area/space)
 "sPn" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/paper{
 	info = "Seems to be filled with odd runes drawn with blood";
@@ -29213,12 +28319,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/space)
-"sRs" = (
-/obj/random/trash,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/space)
 "sRL" = (
 /obj/structure/prop/alien/pod,
 /turf/simulated/floor/outdoors/dirt,
@@ -29235,18 +28335,12 @@
 /area/space)
 "sSo" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
@@ -29259,8 +28353,6 @@
 	pixel_x = 6
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/carpet/blue,
@@ -29317,8 +28409,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -29549,7 +28639,6 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -29694,13 +28783,9 @@
 /area/space)
 "tdT" = (
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor,
@@ -29995,14 +29080,10 @@
 	},
 /obj/structure/cable/yellow,
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/machinery/power/smes/buildable,
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/bluegrid,
@@ -30018,8 +29099,6 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -30038,8 +29117,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -30092,7 +29169,6 @@
 /area/space)
 "tuP" = (
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc{
@@ -30146,8 +29222,6 @@
 /area/space)
 "twa" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -30189,13 +29263,9 @@
 /area/space)
 "twE" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/power/grounding_rod/pre_mapped{
@@ -30229,7 +29299,6 @@
 	dir = 8
 	},
 /obj/structure/cable/yellow{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/airless,
@@ -30247,8 +29316,6 @@
 /area/space)
 "tyT" = (
 /obj/structure/cable{
-	d1 = 6;
-	d2 = 8;
 	icon_state = "6-8"
 	},
 /turf/simulated/floor/plating,
@@ -30277,13 +29344,9 @@
 /area/space)
 "tzK" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/generic,
@@ -30444,8 +29507,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden,
@@ -30585,8 +29646,6 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -30690,7 +29749,6 @@
 /area/space)
 "tMW" = (
 /obj/effect/alien/weeds,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_mob/humanoid/merc/melee/sword/poi{
 	health = 15;
@@ -30852,8 +29910,6 @@
 /area/space)
 "tQT" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -31000,14 +30056,6 @@
 	},
 /turf/simulated/shuttle/plating/airless/carry,
 /area/space)
-"tTw" = (
-/obj/effect/alien/weeds,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
-/area/space)
 "tTG" = (
 /obj/item/storage/firstaid,
 /turf/simulated/floor/outdoors/dirt,
@@ -31104,15 +30152,12 @@
 	dir = 9
 	},
 /obj/structure/cable/blue{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/plating,
 /area/space)
 "tXM" = (
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
@@ -31122,8 +30167,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor/hole/right{
@@ -31146,8 +30189,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -31220,8 +30261,6 @@
 /area/space)
 "ucw" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/firealarm/angled{
@@ -31316,8 +30355,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/power/emitter{
@@ -31326,7 +30363,6 @@
 	state = 1
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating,
@@ -31434,13 +30470,9 @@
 /area/space)
 "ugC" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk,
@@ -31479,8 +30511,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -31565,7 +30595,6 @@
 /area/space)
 "ulZ" = (
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/alarms_hidden{
@@ -31643,8 +30672,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor,
@@ -31692,8 +30719,6 @@
 /area/space)
 "upR" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/airless,
@@ -31715,8 +30740,6 @@
 /turf/simulated/floor/tiled,
 /area/space)
 "urd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/bcarpet,
 /area/space)
@@ -31919,7 +30942,7 @@
 /area/space)
 "uzS" = (
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
@@ -31936,7 +30959,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "uAv" = (
@@ -31951,7 +30974,6 @@
 	pixel_x = -26
 	},
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/white,
@@ -31980,7 +31002,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -31991,7 +31013,6 @@
 	dir = 6
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc{
@@ -32051,8 +31072,6 @@
 	dir = 9
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/catwalk_plated/techfloor,
@@ -32075,7 +31094,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
@@ -32129,8 +31148,6 @@
 /area/space)
 "uGr" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/white,
@@ -32164,13 +31181,9 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/generic,
@@ -32295,7 +31308,6 @@
 	id = "SP-Sec"
 	},
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
@@ -32372,8 +31384,6 @@
 "uPk" = (
 /obj/effect/floor_decal/techfloor/orange,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -32426,7 +31436,6 @@
 /area/space)
 "uRL" = (
 /obj/structure/cable{
-	d2 = 10;
 	icon_state = "0-10"
 	},
 /turf/simulated/floor/plating,
@@ -32456,15 +31465,10 @@
 /obj/structure/table/steel,
 /obj/machinery/cell_charger,
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 2;
 	pixel_y = 4
 	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_y = 28
 	},
@@ -32549,8 +31553,6 @@
 /area/space)
 "uUP" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/carpet/blue,
@@ -32616,8 +31618,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/generic,
@@ -32670,8 +31670,6 @@
 "uZr" = (
 /obj/effect/floor_decal/techfloor/orange,
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -32709,8 +31707,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -32729,7 +31725,6 @@
 	pixel_y = -24
 	},
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/eris/dark/techfloor,
@@ -32737,8 +31732,6 @@
 "vaU" = (
 /obj/effect/floor_decal/techfloor/orange,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/techfloor/hole/right,
@@ -32747,8 +31740,6 @@
 /area/space)
 "vbb" = (
 /obj/effect/alien/weeds/node,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = 0
@@ -32764,13 +31755,9 @@
 "vbv" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -32801,8 +31788,6 @@
 /area/space)
 "vbY" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/closet/walllocker{
@@ -32838,8 +31823,6 @@
 /area/space)
 "vet" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor,
@@ -32969,8 +31952,6 @@
 /area/space)
 "viY" = (
 /obj/structure/cable/blue{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
@@ -33007,8 +31988,6 @@
 /area/space)
 "vjE" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden,
@@ -33027,7 +32006,6 @@
 /area/space)
 "vjN" = (
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /obj/machinery/power/port_gen/pacman,
@@ -33038,8 +32016,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /mob/living/simple_mob/mechanical/hivebot/ranged_damage/laser,
@@ -33185,8 +32161,6 @@
 "vow" = (
 /obj/structure/catwalk,
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -33199,8 +32173,6 @@
 /area/space)
 "vqs" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 6;
 	icon_state = "4-6"
 	},
 /turf/simulated/floor/plating,
@@ -33221,8 +32193,6 @@
 "vrn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/catwalk,
@@ -33282,8 +32252,6 @@
 /area/space)
 "vuM" = (
 /obj/structure/cable{
-	d1 = 32;
-	d2 = 9;
 	icon_state = "32-9"
 	},
 /turf/simulated/floor/plating,
@@ -33365,16 +32333,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor,
 /area/space)
 "vxb" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/wall/rshull,
@@ -33387,8 +32351,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -33619,7 +32581,6 @@
 /area/space)
 "vHD" = (
 /obj/structure/cable{
-	d2 = 9;
 	icon_state = "5-9";
 	d1 = 5
 	},
@@ -33628,8 +32589,6 @@
 "vHL" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -33709,8 +32668,6 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -33742,7 +32699,6 @@
 	dir = 4
 	},
 /obj/structure/cable/blue{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -33828,16 +32784,12 @@
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor,
 /area/space)
 "vPm" = (
 /obj/structure/cable/blue{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/ore_box,
@@ -33895,8 +32847,6 @@
 /area/space)
 "vQF" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -33976,8 +32926,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/milspec/stripe{
@@ -33992,8 +32940,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/reinforced,
@@ -34010,7 +32956,6 @@
 /area/space)
 "vVz" = (
 /obj/structure/cable{
-	d2 = 10;
 	icon_state = "5-10";
 	d1 = 5
 	},
@@ -34140,7 +33085,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "vZv" = (
@@ -34156,12 +33101,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "wab" = (
@@ -34248,13 +33193,9 @@
 /area/space)
 "wcE" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -34267,8 +33208,6 @@
 /area/space)
 "wcO" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -34439,8 +33378,6 @@
 "wjl" = (
 /obj/machinery/appliance/cooker/fryer,
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -34574,8 +33511,6 @@
 "woE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8";
 	dir = 4
 	},
@@ -34599,8 +33534,6 @@
 /area/space)
 "wpP" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 5;
 	icon_state = "1-5"
 	},
 /turf/simulated/floor/plating,
@@ -34628,14 +33561,10 @@
 "wqp" = (
 /obj/structure/catwalk,
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor,
@@ -34686,8 +33615,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -34719,8 +33646,6 @@
 "wst" = (
 /obj/effect/floor_decal/techfloor/orange,
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating,
@@ -34768,8 +33693,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -34817,7 +33740,6 @@
 /area/space)
 "wwC" = (
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/tesla_coil/pre_mapped,
@@ -34877,8 +33799,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -34922,8 +33842,6 @@
 /area/space)
 "wAX" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/light{
@@ -34980,12 +33898,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "wEc" = (
@@ -35090,19 +34008,17 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "wHO" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm/angled{
@@ -35154,8 +34070,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/button/remote/blast_door{
@@ -35172,8 +34086,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -35192,8 +34104,6 @@
 /area/space)
 "wJT" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
@@ -35244,8 +34154,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor,
@@ -35354,8 +34262,6 @@
 "wPu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -35370,12 +34276,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb/dark{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "You gaze upon a mess of stained barbed wires,  the attempt of making sense upon this scratches thoughts from your mind as it fills you with a sense of dread, it's best you don't get tangled in this mess";
 	name = "Wires of doubt"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "wPR" = (
@@ -35409,8 +34315,6 @@
 "wQS" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk,
@@ -35421,8 +34325,6 @@
 /obj/machinery/meter,
 /obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor,
@@ -35555,8 +34457,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -35620,7 +34520,6 @@
 "xau" = (
 /obj/effect/alien/weeds/node,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/junk,
 /turf/simulated/floor/outdoors/dirt{
 	outdoors = 0
@@ -35658,7 +34557,6 @@
 /area/space)
 "xcw" = (
 /obj/structure/cable/green{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/super{
@@ -35708,12 +34606,12 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "xec" = (
@@ -35731,8 +34629,6 @@
 	dir = 1
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/floor/voidcraft,
@@ -35774,13 +34670,9 @@
 	dir = 6
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
@@ -36028,8 +34920,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -36042,8 +34932,6 @@
 	dir = 9
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/floor_decal/techfloor/corner{
@@ -36059,8 +34947,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor/glass/hidden{
@@ -36169,8 +35055,6 @@
 /area/space)
 "xud" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/plating,
@@ -36340,8 +35224,6 @@
 /area/space)
 "xxu" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/glass/hidden,
@@ -36388,7 +35270,6 @@
 "xyE" = (
 /obj/effect/alien/weeds,
 /obj/effect/alien/weeds,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/rocks{
 	outdoors = 0
@@ -36533,13 +35414,9 @@
 /area/space)
 "xFm" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/eris/dark/techfloor,
@@ -36579,8 +35456,6 @@
 	pixel_x = -27
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/effect/floor_decal/milspec/stripe{
@@ -36606,12 +35481,9 @@
 	id = "SP-Sec"
 	},
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating,
@@ -36663,7 +35535,7 @@
 	name = "Veil of sanity"
 	},
 /turf/simulated/floor/flesh/colour{
-	color = red
+	color = "red"
 	},
 /area/space)
 "xIq" = (
@@ -36699,14 +35571,6 @@
 /obj/structure/fence,
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/space)
-"xJd" = (
-/obj/effect/alien/weeds/node,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt{
-	outdoors = 0
-	},
-/area/space)
 "xJg" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/closet/crate,
@@ -36727,8 +35591,6 @@
 /area/space)
 "xJw" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/effect/floor_decal/industrial/warning/corner,
@@ -36791,8 +35653,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/techfloor{
@@ -36808,8 +35668,6 @@
 	dir = 10
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -36875,7 +35733,7 @@
 	name = "Veil of sanity"
 	},
 /obj/effect/spider/stickyweb{
-	color = #8A0808;
+	color = "#8A0808";
 	desc = "Like a leash you can see those strings trying to hold you back, hesitating at the thought only to exasperate the sensation of the reality you are in. . . this may not be an illusion.";
 	name = "Strings of distress"
 	},
@@ -36911,8 +35769,6 @@
 /area/space)
 "xPh" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/binary/pump{
@@ -37013,8 +35869,6 @@
 /area/space)
 "xRV" = (
 /obj/structure/cable/blue{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating,
@@ -37075,8 +35929,6 @@
 	dir = 5
 	},
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -37149,11 +36001,6 @@
 	starts_with = list(/obj/item/tool/prybar/red,/obj/item/clothing/glasses/goggles,/obj/item/reagent_containers/hypospray/autoinjector,/obj/item/stack/medical/bruise_pack,/obj/item/flashlight/glowstick,/obj/item/reagent_containers/food/snacks/candy/proteinbar,/obj/item/clothing/mask/breath,/obj/item/tank/emergency/oxygen/engi)
 	},
 /turf/simulated/floor/carpet/bcarpet,
-/area/space)
-"xVi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor,
 /area/space)
 "xVA" = (
 /obj/effect/gibspawner/robot,
@@ -37252,7 +36099,6 @@
 	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/space)
 "xZn" = (
@@ -37263,7 +36109,6 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/space)
@@ -37294,7 +36139,6 @@
 /obj/random/junk,
 /obj/random/junk,
 /obj/random/junk,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/space)
@@ -37337,8 +36181,6 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -37444,8 +36286,6 @@
 /area/space)
 "yfD" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
@@ -37512,7 +36352,6 @@
 /area/space)
 "yhj" = (
 /obj/structure/cable{
-	d2 = 6;
 	icon_state = "5-6";
 	d1 = 5
 	},
@@ -37524,8 +36363,6 @@
 	dir = 8
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor,
@@ -37552,8 +36389,6 @@
 "yka" = (
 /obj/structure/table/steel_reinforced,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/random/maintenance,
@@ -41841,7 +40676,7 @@ cmZ
 sRR
 plK
 mYY
-iIq
+mYY
 imH
 mYY
 mYY
@@ -44930,7 +43765,7 @@ nwG
 nwG
 dmw
 nwG
-mfO
+nwG
 nwG
 nwG
 cmZ
@@ -54540,7 +53375,7 @@ mYY
 mYY
 hIe
 ygs
-ixh
+lmI
 jGl
 lfY
 lfY
@@ -54806,7 +53641,7 @@ fZc
 vHw
 pNG
 rlV
-sRs
+ulT
 lfY
 fZc
 wrW
@@ -55059,7 +53894,7 @@ lMZ
 fZc
 xoj
 llr
-mvi
+lfZ
 lmI
 lMZ
 lmI
@@ -55835,12 +54670,12 @@ hIe
 lmI
 lmI
 nKr
-oEe
-pRG
+ygs
+ygs
 rpj
-ixh
-ixh
-ixh
+lmI
+lmI
+lmI
 ygs
 hIe
 wGN
@@ -56346,7 +55181,7 @@ nwG
 nwG
 vHw
 hXY
-iKm
+iYc
 jUk
 fZc
 myA
@@ -56355,11 +55190,11 @@ oLW
 pUb
 vHw
 sYn
-pRG
+ygs
 hUt
 wtD
 xaO
-xVi
+wtD
 vHw
 wGN
 ssV
@@ -56604,7 +55439,7 @@ nwG
 nwG
 lMZ
 iac
-iKm
+iYc
 jVj
 lmI
 myT
@@ -56617,7 +55452,7 @@ urd
 vHQ
 vHw
 xck
-xVi
+wtD
 vHw
 wGN
 sBp
@@ -72146,7 +70981,7 @@ ybA
 ybA
 ybA
 mza
-tTw
+fal
 xau
 ybA
 ybA
@@ -72403,7 +71238,7 @@ ybA
 ybA
 ybA
 ybA
-epX
+pzv
 xyE
 rtj
 ybA
@@ -73949,7 +72784,7 @@ ybA
 ybA
 ybA
 qxF
-xJd
+vbb
 fal
 ybA
 ybA

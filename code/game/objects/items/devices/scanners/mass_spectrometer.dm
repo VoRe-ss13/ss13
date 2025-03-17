@@ -19,8 +19,8 @@
 	pickup_sound = 'sound/items/pickup/device.ogg'
 	drop_sound = 'sound/items/drop/device.ogg'
 
-/obj/item/mass_spectrometer/New()
-	..()
+/obj/item/mass_spectrometer/Initialize(mapload)
+	. = ..()
 	var/datum/reagents/R = new/datum/reagents(5)
 	reagents = R
 	R.my_atom = src
@@ -40,7 +40,7 @@
 	if(reagents.total_volume)
 		var/list/blood_traces = list()
 		for(var/datum/reagent/R in reagents.reagent_list)
-			if(R.id != "blood")
+			if(R.id != REAGENT_ID_BLOOD)
 				reagents.clear_reagents()
 				to_chat(user, span_warning("The sample was contaminated! Please insert another sample"))
 				return

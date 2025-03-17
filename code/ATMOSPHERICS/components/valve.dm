@@ -131,7 +131,7 @@
 	return
 
 /obj/machinery/atmospherics/valve/attack_hand(mob/user as mob)
-	src.add_fingerprint(usr)
+	src.add_fingerprint(user)
 	update_icon(1)
 	sleep(10)
 	if (src.open)
@@ -263,7 +263,7 @@
 	if(frequency)
 		radio_connection = radio_controller.add_object(src, frequency, RADIO_ATMOSIA)
 
-/obj/machinery/atmospherics/valve/digital/Initialize()
+/obj/machinery/atmospherics/valve/digital/Initialize(mapload)
 	. = ..()
 	if(frequency)
 		set_frequency(frequency)

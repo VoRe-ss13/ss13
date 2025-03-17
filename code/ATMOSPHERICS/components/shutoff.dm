@@ -18,7 +18,7 @@ GLOBAL_LIST_EMPTY(shutoff_valves)
 	. = ..()
 	. += "The automatic shutoff circuit is [close_on_leaks ? "enabled" : "disabled"]."
 
-/obj/machinery/atmospherics/valve/shutoff/Initialize()
+/obj/machinery/atmospherics/valve/shutoff/Initialize(mapload)
 	. = ..()
 	open()
 	GLOB.shutoff_valves += src
@@ -26,13 +26,13 @@ GLOBAL_LIST_EMPTY(shutoff_valves)
 
 /obj/machinery/atmospherics/valve/shutoff/Destroy()
 	GLOB.shutoff_valves -= src
-	..()
+	. = ..()
 
 /obj/machinery/atmospherics/valve/shutoff/attack_ai(mob/user as mob)
 	return src.attack_hand(user)
 
 /obj/machinery/atmospherics/valve/shutoff/attack_hand(var/mob/user)
-	src.add_fingerprint(usr)
+	src.add_fingerprint(user)
 	update_icon(1)
 	close_on_leaks = !close_on_leaks
 	to_chat(user, "You [close_on_leaks ? "enable" : "disable"] the automatic shutoff circuit.")

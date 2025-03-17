@@ -70,7 +70,7 @@
 					/obj/item/reagent_containers/food/drinks/bottle/rum = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/sake = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/specialwhiskey = 5,
-					/obj/item/reagent_containers/food/drinks/bottle/tequilla = 5,
+					/obj/item/reagent_containers/food/drinks/bottle/tequila = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/vermouth = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/vodka = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/whiskey = 5,
@@ -417,7 +417,12 @@
 					/obj/item/stack/medical/advanced/ointment = 6,
 					/obj/item/stack/medical/splint = 4,
 					/obj/item/storage/pill_bottle/carbon = 2,
-					/obj/item/clothing/mask/chewable/candy/lolli = 15)
+					/obj/item/clothing/mask/chewable/candy/lolli = 15,
+					/obj/item/storage/box/khcrystal = 4,
+					/obj/item/backup_implanter = 3,
+					/obj/item/clothing/glasses/omnihud/med = 4,
+					/obj/item/glasses_kit = 1,
+					/obj/item/storage/quickdraw/syringe_case = 4)
 	contraband = list(/obj/item/reagent_containers/pill/tox = 3,
 					/obj/item/reagent_containers/pill/stox = 4,
 					/obj/item/reagent_containers/pill/antitox = 6)
@@ -450,7 +455,8 @@
 	products = list(/obj/item/stack/medical/bruise_pack = 2,
 				/obj/item/stack/medical/ointment = 2,
 				/obj/item/reagent_containers/hypospray/autoinjector = 4,
-				/obj/item/healthanalyzer = 1)
+				/obj/item/healthanalyzer = 1,
+				/obj/item/bodybag/cryobag = 2)
 	contraband = list(/obj/item/reagent_containers/syringe/antitoxin = 4,
 				/obj/item/reagent_containers/syringe/antiviral = 4,
 				/obj/item/reagent_containers/pill/tox = 1)
@@ -469,14 +475,19 @@
 				/obj/item/reagent_containers/syringe/antitoxin = 3,
 				/obj/item/stack/medical/bruise_pack = 3,
 				/obj/item/stack/medical/ointment =3,
-				/obj/item/healthanalyzer = 3)
+				/obj/item/healthanalyzer = 3,
+				/obj/item/bodybag/cryobag = 3)
 	contraband = list(/obj/item/reagent_containers/pill/tox = 3)
 	req_log_access = access_cmo
 	has_logs = 1
 	can_rotate = 0
 
 /obj/machinery/vending/wallmed1/public
-	products = list(/obj/item/stack/medical/bruise_pack = 8,/obj/item/stack/medical/ointment = 8,/obj/item/reagent_containers/hypospray/autoinjector = 16,/obj/item/healthanalyzer = 4)
+	products = list(/obj/item/stack/medical/bruise_pack = 8,
+					/obj/item/stack/medical/ointment = 8,
+					/obj/item/reagent_containers/hypospray/autoinjector = 16,
+					/obj/item/healthanalyzer = 4,
+					/obj/item/bodybag/cryobag = 4)
 
 /obj/machinery/vending/security
 	name = "SecTech"
@@ -490,10 +501,16 @@
 					/obj/item/flash = 5,
 					/obj/item/reagent_containers/food/snacks/donut/plain = 6,
 					/obj/item/reagent_containers/food/snacks/donut/plain/jelly = 6,
-					/obj/item/storage/box/evidence = 6, // CHOMPEdit
-					/obj/item/clothing/accessory/bodycam = 10) // CHOMPEdit
+					/obj/item/storage/box/evidence = 6,
+					/obj/item/gun/energy/taser = 8,
+					/obj/item/gun/energy/stunrevolver = 4,
+					/obj/item/reagent_containers/spray/pepper = 6,
+					/obj/item/taperoll/police = 6,
+					/obj/item/clothing/glasses/omnihud/sec = 6,
+					/obj/item/clothing/accessory/bodycam = 10) // CHOMPAdd
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
-					/obj/item/storage/box/donut = 2)
+					/obj/item/storage/box/donut = 2,
+					/obj/item/implanter/compliance = 1)
 	req_log_access = access_armory
 	has_logs = 1
 
@@ -556,7 +573,9 @@
 					/obj/item/seeds/pumpkinseed = 3,
 					/obj/item/seeds/cherryseed = 3,
 					/obj/item/seeds/plastiseed = 3,
-					/obj/item/seeds/riceseed = 3)
+					/obj/item/seeds/riceseed = 3,
+					/obj/item/seeds/shrinkshroom = 3,
+					/obj/item/seeds/megashroom = 3)
 	contraband = list(/obj/item/seeds/amanitamycelium = 2,
 					/obj/item/seeds/glowshroom = 2,
 					/obj/item/seeds/libertymycelium = 2,
@@ -655,7 +674,8 @@
 					/obj/item/flashlight/glowstick/red = 3,
 					/obj/item/flashlight/glowstick/blue = 3,
 					/obj/item/flashlight/glowstick/orange =3,
-					/obj/item/flashlight/glowstick/yellow = 3)
+					/obj/item/flashlight/glowstick/yellow = 3,
+					/obj/item/reagent_containers/spray/windowsealant = 5)
 	contraband = list(/obj/item/weldingtool/hugetank = 2,
 					/obj/item/clothing/gloves/fyellow = 2)
 	premium = list(/obj/item/clothing/gloves/heavy_engineer = 1) //VOREStation Edit - yellow gloves are common in engineering, let's make "premium" actually mean something
@@ -672,6 +692,7 @@
 					/obj/item/multitool = 4,
 					/obj/item/cell/high = 10,
 					/obj/item/airlock_electronics = 10,
+					/obj/item/circuitboard/airlock_cycling = 20,
 					/obj/item/module/power_control = 10,
 					/obj/item/circuitboard/airalarm = 10,
 					/obj/item/circuitboard/firealarm = 10,
@@ -698,8 +719,10 @@
 					/obj/item/circuitboard/body_scanner,
 					/obj/item/circuitboard/medical_kiosk,
 					/obj/item/circuitboard/sleeper,
-					/obj/item/circuitboard/dna_analyzer)
-	contraband = list(/obj/item/cell/potato = 3)
+					/obj/item/circuitboard/dna_analyzer,
+					/obj/item/clothing/glasses/omnihud/eng = 6)
+	contraband = list(/obj/item/cell/potato = 3,
+						/obj/item/rms = 5)
 	premium = list(/obj/item/storage/belt/utility = 3)
 	product_records = list()
 	req_log_access = access_ce
@@ -774,7 +797,7 @@
 					/obj/item/paper/card/cat = 3,
 					/obj/item/paper/card/flower = 3,
 					/obj/item/clothing/accessory/bracelet/friendship = 5,
-					/obj/item/toy/plushie/therapy/red = 2,
+					/obj/item/toy/plushie/therapy = 2,
 					/obj/item/toy/plushie/therapy/purple = 2,
 					/obj/item/toy/plushie/therapy/blue = 2,
 					/obj/item/toy/plushie/therapy/yellow = 2,
@@ -793,7 +816,6 @@
 					/obj/item/toy/plushie/deer = 1,
 					/obj/item/toy/plushie/tabby_cat = 1,
 					/obj/item/threadneedle = 3,
-					//VOREStation Add Start
 					/obj/item/toy/plushie/lizardplushie/kobold = 1,
 					/obj/item/toy/plushie/slimeplushie = 1,
 					/obj/item/toy/plushie/box = 1,
@@ -806,6 +828,8 @@
 					/obj/item/toy/plushie/vox = 1,
 					/obj/item/toy/plushie/shark = 1,
 					/obj/item/toy/mistletoe = 1,
+					/obj/item/toy/plushie/tinytin = 1,
+					/obj/item/toy/plushie/tinytin_sec = 1,
 					//VOREStation Add End
 					//YawnWider Add Start
 					/obj/item/toy/plushie/teshari/_yw = 1,
@@ -833,7 +857,7 @@
 					/obj/item/paper/card/cat = 1,
 					/obj/item/paper/card/flower = 1,
 					/obj/item/clothing/accessory/bracelet/friendship = 5,
-					/obj/item/toy/plushie/therapy/red = 20,
+					/obj/item/toy/plushie/therapy = 20,
 					/obj/item/toy/plushie/therapy/purple = 20,
 					/obj/item/toy/plushie/therapy/blue = 20,
 					/obj/item/toy/plushie/therapy/yellow = 20,
@@ -852,7 +876,6 @@
 					/obj/item/toy/plushie/deer = 50,
 					/obj/item/toy/plushie/tabby_cat = 50,
 					/obj/item/threadneedle = 2,
-					//VOREStation Add Start
 					/obj/item/toy/plushie/lizardplushie/kobold = 50,
 					/obj/item/toy/plushie/slimeplushie = 50,
 					/obj/item/toy/plushie/box = 50,
@@ -865,6 +888,8 @@
 					/obj/item/toy/plushie/vox = 50,
 					/obj/item/toy/plushie/shark = 50,
 					/obj/item/toy/mistletoe = 50,
+					/obj/item/toy/plushie/tinytin = 35,
+					/obj/item/toy/plushie/tinytin_sec = 50,
 					//VOREStation Add End
 					//YawnWider Add Start
 					/obj/item/toy/plushie/teshari/_yw = 150,
@@ -1254,6 +1279,7 @@
 		/obj/item/clothing/under/rank/security2 = 5,
 		/obj/item/clothing/under/rank/security/turtleneck = 5,
 		/obj/item/clothing/under/rank/security/modern = 5,
+		/obj/item/clothing/under/rank/security/aces = 5,
 		/obj/item/clothing/under/rank/security/skirt = 5,
 		/obj/item/clothing/shoes/boots/jackboots = 5,
 		/obj/item/clothing/head/soft/sec = 5,
@@ -1279,7 +1305,7 @@
 		/obj/item/clothing/under/rank/neo_corrections = 5,
 		/obj/item/clothing/under/rank/neo_corrections_skirt = 5,
 		/obj/item/clothing/under/rank/neo_runner = 5,
-		/obj/item/clothing/under/rank/neo_sec_gorka = 5,
+		/obj/item/clothing/under/rank/neo_gorka/sec = 5,
 		/obj/item/clothing/suit/neo_runner_coat = 5,
 		/obj/item/clothing/shoes/boots/jackboots/silver = 5,
 		/obj/item/clothing/shoes/boots/jackboots/white = 5,
@@ -1351,7 +1377,7 @@
 		/obj/item/clothing/under/rank/neo_para_light_skirt = 5,
 		/obj/item/clothing/under/rank/neo_med_dark = 5,
 		/obj/item/clothing/under/rank/neo_med_dark_skirt = 5,
-		/obj/item/clothing/under/rank/neo_med_gorka = 5,
+		/obj/item/clothing/under/rank/neo_gorka/med = 5,
 		/obj/item/clothing/suit/storage/toggle/labcoat/neo_emt = 5,
 		/obj/item/clothing/suit/storage/toggle/labcoat/neo_labcoat = 5,
 		/obj/item/clothing/suit/storage/toggle/labcoat/neo_highvis = 5,
@@ -1458,7 +1484,7 @@
 		/obj/item/clothing/under/rank/neo_science = 5,
 		/obj/item/clothing/under/rank/neo_science_skirt = 5,
 		/obj/item/clothing/under/rank/neo_util_sci = 5,
-		/obj/item/clothing/under/rank/neo_sci_gorka = 5,
+		/obj/item/clothing/under/rank/neo_gorka/sci = 5,
 		/obj/item/clothing/suit/storage/toggle/labcoat/neo_sci_dep = 5,
 		/obj/item/clothing/suit/storage/toggle/labcoat/neo_labcoat = 5,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/science = 5,
@@ -1539,7 +1565,7 @@
 		/obj/item/clothing/mask/bandana/gold = 5,
 		/obj/item/clothing/under/rank/neo_engi = 5,
 		/obj/item/clothing/under/rank/neo_engi_skirt = 5,
-		/obj/item/clothing/under/rank/neo_engi_gorka = 5,
+		/obj/item/clothing/under/rank/neo_gorka/engi = 5,
 		/obj/item/clothing/accessory/armband/engine = 5,
 		/obj/item/clothing/suit/storage/toggle/labcoat/neo_engi_dep = 5,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/engineering = 5,
@@ -1613,7 +1639,7 @@
 		/obj/item/clothing/under/rank/neo_cargo_casual = 5,
 		/obj/item/clothing/under/rank/neo_cargo_turtle = 5,
 		/obj/item/clothing/under/rank/neo_cargo_turtle_skirt = 5,
-		/obj/item/clothing/under/rank/neo_cargo_gorka = 5,
+		/obj/item/clothing/under/rank/neo_gorka/cargo = 5,
 		/obj/item/clothing/under/rank/neo_cargo_customs = 5,
 		/obj/item/clothing/suit/storage/toggle/labcoat/neo_cargo_dep = 5,
 		/obj/item/clothing/suit/neo_gorka_cargo = 5,
@@ -1649,7 +1675,7 @@
 		/obj/item/clothing/head/soft/purple = 5,
 		/obj/item/clothing/head/beret/purple = 5,
 		/obj/item/clothing/head/headband/maid = 5,
-		/obj/item/radio/headset/headset_service = 5,
+		/obj/item/radio/headset/service = 5,
 		/obj/item/clothing/under/rank/janitor = 5,
 		/obj/item/clothing/under/dress/maid/janitor = 5,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/janitor = 5,

@@ -22,7 +22,7 @@
 	var/to_wear_r_radio = null
 	var/to_wear_uniform = /obj/item/clothing/under/color/grey
 	var/to_wear_suit = /obj/item/clothing/suit/armor/material/makeshift/glass
-	var/to_wear_gloves = /obj/item/clothing/gloves/ring/material/platinum
+	var/to_wear_gloves = /obj/item/clothing/accessory/ring/material/platinum
 	var/to_wear_shoes = /obj/item/clothing/shoes/galoshes
 	var/to_wear_belt = /obj/item/storage/belt/utility/full
 	var/to_wear_l_pocket = /obj/item/soap
@@ -34,14 +34,16 @@
 	var/to_wear_l_hand = null
 	var/to_wear_r_hand = /obj/item/melee/baton
 
-/mob/living/carbon/human/ai_controlled/Initialize()
+/mob/living/carbon/human/ai_controlled/Initialize(mapload)
 	if(generate_gender)
 		gender = pick(list(MALE, FEMALE, PLURAL, NEUTER))
 
 	if(generate_id_gender)
 		identifying_gender = pick(list(MALE, FEMALE, PLURAL, NEUTER))
 
-	..(loc, generate_species)
+	. = ..(mapload, generate_species)
+
+	species.produceCopy(species.traits.Copy(),src,null,FALSE)
 
 	h_style = to_wear_hair
 
@@ -126,7 +128,7 @@
 	to_wear_helmet = /obj/item/clothing/head/helmet/dermal
 	to_wear_glasses = /obj/item/clothing/glasses/goggles
 	to_wear_mask = /obj/item/clothing/mask/gas/half
-	to_wear_l_radio = /obj/item/radio/headset/headset_rob
+	to_wear_l_radio = /obj/item/radio/headset
 	to_wear_r_radio = null
 	to_wear_uniform = /obj/item/clothing/under/color/grey
 	to_wear_suit = /obj/item/clothing/suit/armor/vest
@@ -141,7 +143,7 @@
 
 	to_wear_r_hand = null
 
-/mob/living/carbon/human/ai_controlled/replicant/Initialize()
+/mob/living/carbon/human/ai_controlled/replicant/Initialize(mapload)
 	. = ..()
 	name = species.get_random_name(gender)
 	add_modifier(/datum/modifier/homeothermic, 0, null)

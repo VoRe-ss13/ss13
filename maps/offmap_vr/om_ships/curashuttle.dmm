@@ -1289,7 +1289,6 @@
 /obj/machinery/light,
 /obj/machinery/alarm{
 	dir = 1;
-	icon_state = "alarm0";
 	pixel_y = -32
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -1380,19 +1379,11 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shuttle/curabitur/curashuttle/hangar)
-"cO" = (
-/obj/machinery/atmospherics/unary/engine{
-	dir = 1
-	},
-/turf/space,
-/turf/simulated/shuttle/plating/airless/carry,
-/area/shuttle/curabitur/curashuttle/eng)
 "cP" = (
 /obj/machinery/ion_engine{
 	dir = 1;
 	icon_state = "nozzle"
 	},
-/turf/space,
 /turf/simulated/shuttle/plating/airless/carry,
 /area/shuttle/curabitur/curashuttle/eng)
 "dF" = (
@@ -1544,7 +1535,7 @@ ce
 co
 cv
 cD
-cO
+cM
 aa
 aa
 "}
@@ -1744,7 +1735,7 @@ cl
 cr
 cB
 cJ
-cO
+cM
 aa
 aa
 "}

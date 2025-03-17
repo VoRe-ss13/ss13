@@ -113,7 +113,8 @@
 	agony_amount = 80
 	electrocute_amount = 20
 
-/obj/item/electric_hand/New()
+/obj/item/electric_hand/Initialize(mapload)
+	. = ..()
 	if(ismob(loc))
 		visible_message(span_warning("Electrical arcs form around [loc.name]\'s hand!"),
 		span_warning("We store a charge of electricity in our hand."),
@@ -122,6 +123,7 @@
 		new /obj/effect/effect/sparks(T)
 
 /obj/item/electric_hand/dropped(mob/user)
+	..()
 	spawn(1)
 		if(src)
 			qdel(src)

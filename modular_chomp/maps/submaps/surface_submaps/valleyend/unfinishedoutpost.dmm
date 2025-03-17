@@ -238,8 +238,6 @@
 /area/submap/unfinishedoutpost)
 "AQ" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating{
@@ -532,18 +530,8 @@
 /area/submap/unfinishedoutpost)
 "YD" = (
 /obj/structure/cable{
-	d2 = 2;
 	icon_state = "0-2"
 	},
-/turf/simulated/floor/plating{
-	oxygen = 20.7263;
-	nitrogen = 93.7835;
-	temperature = 243.15
-	},
-/area/submap/unfinishedoutpost)
-"Zg" = (
-/obj/structure/catwalk,
-/obj/structure/catwalk,
 /turf/simulated/floor/plating{
 	oxygen = 20.7263;
 	nitrogen = 93.7835;
@@ -929,8 +917,8 @@ CM
 CM
 CM
 CM
-Zg
-Zg
+CM
+CM
 CM
 CM
 CM

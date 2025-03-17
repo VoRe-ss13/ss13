@@ -20,10 +20,10 @@
 	pickup_sound = 'sound/items/pickup/cardboardbox.ogg'
 
 
-/obj/item/paper_bin/MouseDrop(mob/user as mob)
-	if(user == usr && !(usr.restrained() || usr.stat) && (usr.contents.Find(src) || in_range(src, usr)))
-		if(!istype(usr, /mob/living/simple_mob))
-			if( !usr.get_active_hand() )		//if active hand is empty
+/obj/item/paper_bin/MouseDrop(mob/user)
+	if(user == usr && !(user.restrained() || user.stat) && (user.contents.Find(src) || in_range(src, user)))
+		if(!isanimal(user))
+			if( !user.get_active_hand() )		//if active hand is empty
 				var/mob/living/carbon/human/H = user
 				var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
 
@@ -38,7 +38,7 @@
 
 	return
 
-/obj/item/paper_bin/attack_hand(mob/user as mob)
+/obj/item/paper_bin/attack_hand(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
@@ -67,7 +67,7 @@
 				P = new /obj/item/paper
 				if(Holiday == "April Fool's Day")
 					if(prob(30))
-						P.info = "<font face=\"[P.crayonfont]\" color=\"red\"><b>HONK HONK HONK HONK HONK HONK HONK<br>HOOOOOOOOOOOOOOOOOOOOOONK<br>APRIL FOOLS</b></font>"
+						P.info = span_red(span_bold("<font face=\"[P.crayonfont]\">HONK HONK HONK HONK HONK HONK HONK<br>HOOOOOOOOOOOOOOOOOOOOOONK<br>APRIL FOOLS</font>"))
 						P.rigged = 1
 						P.updateinfolinks()
 			else if (response == "Carbon-Copy")

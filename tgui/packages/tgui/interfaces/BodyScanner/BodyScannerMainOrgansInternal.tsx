@@ -1,9 +1,9 @@
-import { toFixed } from 'common/math';
+import { Box, ProgressBar, Section, Table } from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
 
-import { Box, ProgressBar, Section, Table } from '../../components';
 import { damageRange } from './constants';
 import { germStatus, reduceOrganStatus } from './functions';
-import { internalOrgan } from './types';
+import type { internalOrgan } from './types';
 
 export const BodyScannerMainOrgansInternal = (props: {
   organs: internalOrgan[];

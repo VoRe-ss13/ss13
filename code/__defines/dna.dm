@@ -13,6 +13,7 @@
 #define NOCLONE         8
 #define LASER           9  // Harm intent - click anywhere to shoot lasers from eyes.
 #define HEAL            10 // Healing people with hands.
+#define FLASHPROOF		11 // Flashproof eyes.
 
 #define SKELETON      29
 #define PLANT         30
@@ -36,14 +37,23 @@
 #define COUGHING    0x4
 #define TOURETTES   0x8
 #define NERVOUS     0x10
-
+/*
+#define DEPRESSION     	0x20	// Roleplay drugs
+#define SCHIZOPHRENIA  	0x40	// Roleplay drugs
+*/
+#define WINGDINGS     	0x80	// Better handling as disability
+#define DETERIORATE     0x100	// Body melts slowly, medical loves you!
+#define GIBBING     	0x200	// Landmine for genetics to find
+#define CENSORED     	0x400	// Cannot swear
 // sdisabilities
 #define BLIND 0x1
 #define MUTE  0x2
 #define DEAF  0x4
+#define SPINE 0x8
 
+/* Traitgenes (Blocks have finally been retired, huzzah!
 // The way blocks are handled badly needs a rewrite, this is horrible.
-// Too much of a project to handle at the moment, TODO for later.
+// Too much of a project to handle at the moment, TODO for later.)
 var/BLINDBLOCK    = 0
 var/DEAFBLOCK     = 0
 var/HULKBLOCK     = 0
@@ -74,6 +84,7 @@ var/HALLUCINATIONBLOCK = 0
 var/NOPRINTSBLOCK      = 0
 var/SHOCKIMMUNITYBLOCK = 0
 var/SMALLSIZEBLOCK     = 0
+*/
 
 // Define block bounds (off-low,off-high,on-low,on-high)
 // Used in setupgame.dm
@@ -99,42 +110,71 @@ var/SMALLSIZEBLOCK     = 0
 #define DNA_UI_BEARD_STYLE 15
 #define DNA_UI_HAIR_STYLE  16
 #define DNA_UI_EAR_STYLE   17 // VOREStation snippet.
-#define DNA_UI_TAIL_STYLE  18
-#define DNA_UI_PLAYERSCALE 19
-#define DNA_UI_TAIL_R      20
-#define DNA_UI_TAIL_G      21
-#define DNA_UI_TAIL_B      22
-#define DNA_UI_TAIL2_R     23
-#define DNA_UI_TAIL2_G     24
-#define DNA_UI_TAIL2_B     25
-#define DNA_UI_TAIL3_R     26
-#define DNA_UI_TAIL3_G     27
-#define DNA_UI_TAIL3_B     28
-#define DNA_UI_EARS_R      29
-#define DNA_UI_EARS_G      30
-#define DNA_UI_EARS_B      31
-#define DNA_UI_EARS2_R     32
-#define DNA_UI_EARS2_G     33
-#define DNA_UI_EARS2_B     34
-#define DNA_UI_EARS3_R     35
-#define DNA_UI_EARS3_G     36
-#define DNA_UI_EARS3_B     37
-#define DNA_UI_WING_STYLE  38
-#define DNA_UI_WING_R      39
-#define DNA_UI_WING_G      40
-#define DNA_UI_WING_B      41
-#define DNA_UI_WING2_R     42
-#define DNA_UI_WING2_G     43
-#define DNA_UI_WING2_B     44
-#define DNA_UI_WING3_R     45
-#define DNA_UI_WING3_G     46
-#define DNA_UI_WING3_B     47 // VOREStation snippet end.
-#define DNA_UI_LENGTH      47 // VOREStation Edit - Needs to match the highest number above.
+#define DNA_UI_EAR_SECONDARY_STYLE   18 // VOREStation snippet.
+#define DNA_UI_TAIL_STYLE  19
+#define DNA_UI_PLAYERSCALE 20
+#define DNA_UI_TAIL_R      21
+#define DNA_UI_TAIL_G      22
+#define DNA_UI_TAIL_B      23
+#define DNA_UI_TAIL2_R     24
+#define DNA_UI_TAIL2_G     25
+#define DNA_UI_TAIL2_B     26
+#define DNA_UI_TAIL3_R     27
+#define DNA_UI_TAIL3_G     28
+#define DNA_UI_TAIL3_B     29
+#define DNA_UI_TAIL_ALPHA  30
 
-#define DNA_SE_LENGTH 49 // VOREStation Edit (original was UI+11)
+#define DNA_UI_EARS_R      31
+#define DNA_UI_EARS_G      32
+#define DNA_UI_EARS_B      33
+#define DNA_UI_EARS2_R     34
+#define DNA_UI_EARS2_G     35
+#define DNA_UI_EARS2_B     36
+#define DNA_UI_EARS3_R     37
+#define DNA_UI_EARS3_G     38
+#define DNA_UI_EARS3_B     39
+#define DNA_UI_EARS_ALPHA  40
+
+#define DNA_UI_EARS_SECONDARY_START 41
+#define DNA_UI_EARS_SECONDARY_COLOR_CHANNEL_COUNT 3
+
+#define DNA_UI_EARS_SECONDARY_R      41
+#define DNA_UI_EARS_SECONDARY_G      42
+#define DNA_UI_EARS_SECONDARY_B      43
+#define DNA_UI_EARS_SECONDARY2_R     44
+#define DNA_UI_EARS_SECONDARY2_G     45
+#define DNA_UI_EARS_SECONDARY2_B     46
+#define DNA_UI_EARS_SECONDARY3_R     47
+#define DNA_UI_EARS_SECONDARY3_G     48
+#define DNA_UI_EARS_SECONDARY3_B     49
+#define DNA_UI_EARS_SECONDARY_ALPHA  50
+
+#define DNA_UI_WING_STYLE  51
+#define DNA_UI_WING_R      52
+#define DNA_UI_WING_G      53
+#define DNA_UI_WING_B      54
+#define DNA_UI_WING2_R     55
+#define DNA_UI_WING2_G     56
+#define DNA_UI_WING2_B     57
+#define DNA_UI_WING3_R     58
+#define DNA_UI_WING3_G     59
+#define DNA_UI_WING3_B     60 // VOREStation snippet end.
+#define DNA_UI_WING_ALPHA  61
+#define DNA_UI_LENGTH      61 // VOREStation Edit - Needs to match the highest number above.
+
+#define DNA_SE_LENGTH 90 // Traitgenes (Expanded from 49 to 84, there have been a considerable expansion of genes.
+// This leaves room for future expansion. This can be arbitrarily raised without worry if genes start to get crowded.
+// Should have more than 10 empty genes after setup. - Willbird)
 
 //DNA modifiers
 // Buffer datatype flags.
 #define DNA2_BUF_UI 1
 #define DNA2_BUF_UE 2
 #define DNA2_BUF_SE 4
+
+// Mutation flags
+#define MUTCHK_FORCED        1
+
+// Gene flags
+#define GENE_ALWAYS_ACTIVATE 1
+#define MUTCHK_HIDEMSG       2 // Traitgenes (Hide gene activation/deactivation messages, mostly for resleeving so you don't get spammed)

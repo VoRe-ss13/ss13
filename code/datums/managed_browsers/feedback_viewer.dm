@@ -2,7 +2,7 @@
 	var/datum/managed_browser/feedback_viewer/feedback_viewer = null
 
 /datum/admins/proc/view_feedback()
-	set category = "Admin.Misc" //CHOMPEdit
+	set category = "Admin.Misc"
 	set name = "View Feedback"
 	set desc = "Open the Feedback Viewer"
 
@@ -23,7 +23,7 @@
 	var/database/query/last_query = null
 
 /datum/managed_browser/feedback_viewer/New(client/new_client)
-	if(!check_rights(R_ADMIN|R_DEBUG|R_EVENT, new_client)) // Just in case someone figures out a way to spawn this as non-staff.
+	if(!check_rights_for(new_client, R_ADMIN|R_DEBUG|R_EVENT)) // Just in case someone figures out a way to spawn this as non-staff.
 		message_admins("[new_client] tried to view feedback with insufficent permissions.")
 		qdel(src)
 
@@ -143,7 +143,7 @@
 
 	if(href_list["filter_topic"])
 		var/topic_to_search = tgui_input_text(my_client, "Write desired topic here. Partial topics are allowed. \
-		\nThe current topics in the config are [english_list(CONFIG_GET(str_list/sqlite_feedback_topics))].", "Filter by Topic", null) // CHOMPEdit
+		\nThe current topics in the config are [english_list(CONFIG_GET(str_list/sqlite_feedback_topics))].", "Filter by Topic", null)
 		if(topic_to_search)
 			last_query = feedback_filter(SQLITE_FEEDBACK_COLUMN_TOPIC, topic_to_search)
 

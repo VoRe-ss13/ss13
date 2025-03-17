@@ -23,7 +23,7 @@
 	var/legacy_zone = 0 //Disable scanning and whatnot.
 	var/obj/machinery/computer/shuttle_control/belter/shuttle_control
 
-/obj/machinery/computer/roguezones/Initialize()
+/obj/machinery/computer/roguezones/Initialize(mapload)
 	. = ..()
 	shuttle_control = locate(/obj/machinery/computer/shuttle_control/belter)
 	return INITIALIZE_HINT_LATELOAD
@@ -87,7 +87,7 @@
 	data["can_recall_shuttle"] = (shuttle_control && (shuttle_control.z in using_map.belter_belt_z) && !curZoneOccupied)
 	return data
 
-/obj/machinery/computer/roguezones/tgui_act(action, list/params)
+/obj/machinery/computer/roguezones/tgui_act(action, list/params, datum/tgui/ui)
 	if(..())
 		return TRUE
 	switch(action)
@@ -95,10 +95,10 @@
 			scan_for_new_zone()
 			. = TRUE
 		if("recall_shuttle")
-			failsafe_shuttle_recall()
+			failsafe_shuttle_recall(ui.user)
 			. = TRUE
 
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 
 /obj/machinery/computer/roguezones/proc/scan_for_new_zone()
 	if(scanning)
@@ -135,7 +135,7 @@
 	return
 
 
-/obj/machinery/computer/roguezones/proc/failsafe_shuttle_recall()
+/obj/machinery/computer/roguezones/proc/failsafe_shuttle_recall(mob/user)
 	if(!shuttle_control)
 		return // Shuttle computer has been destroyed
 	if (!(shuttle_control.z in using_map.belter_belt_z))
@@ -144,7 +144,7 @@
 		return // Not usable if shuttle is in occupied zone
 	// Okay do it
 	var/datum/shuttle/autodock/ferry/S = SSshuttles.shuttles["Belter"]
-	S.launch(usr)
+	S.launch(user)
 
 /obj/item/circuitboard/roguezones
 	name = T_BOARD("asteroid belt scanning computer")
@@ -163,7 +163,7 @@
 	When a new zone has been scanned, your station's shuttle destination will be updated to direct it to the newly discovered area automatically.<br>
 	You can then travel to the new area to mine in that location.<br>
 	<br>
-	<font size=1>This technology produced under license from Thinktronic Systems, LTD.</font>"}
+	<br> "} + span_small("This technology produced under license from Thinktronic Systems, LTD.")
 
 
 #undef OUTPOST_Z

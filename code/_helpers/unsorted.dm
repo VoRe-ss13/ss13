@@ -9,10 +9,10 @@
 
 //supposedly the fastest way to do this according to https://gist.github.com/Giacom/be635398926bb463b42a
 #define RANGE_TURFS(RADIUS, CENTER) \
-  block( \
-    locate(max(CENTER.x-(RADIUS),1),          max(CENTER.y-(RADIUS),1),          CENTER.z), \
-    locate(min(CENTER.x+(RADIUS),world.maxx), min(CENTER.y+(RADIUS),world.maxy), CENTER.z) \
-  )
+	block( \
+		locate(max(CENTER.x-(RADIUS),1),          max(CENTER.y-(RADIUS),1),          CENTER.z), \
+		locate(min(CENTER.x+(RADIUS),world.maxx), min(CENTER.y+(RADIUS),world.maxy), CENTER.z) \
+	)
 
 //Inverts the colour of an HTML string
 /proc/invertHTML(HTMLstring)
@@ -345,7 +345,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 		for(var/i=1,i<=3,i++)	//we get 3 attempts to pick a suitable name.
 			//newname = tgui_input_text(src,"You are \a [role]. Would you like to change your name to something else?", "Name change",oldname)
-			newname = input(src,"You are \a [role]. Would you like to change your name to something else?", "Name change",oldname)
+			newname = tgui_input_text(src,"You are \a [role]. Would you like to change your name to something else?", "Name change",oldname, MAX_NAME_LEN)
 			if((world.time-time_passed)>3000)
 				return	//took too long
 			newname = sanitizeName(newname, ,allow_numbers)	//returns null if the name doesn't meet some basic requirements. Tidies up a few other things like bad-characters.
@@ -420,7 +420,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 /proc/select_active_ai(var/mob/user)
 	var/list/ais = active_ais()
 	if(ais.len)
-		if(user)	. = tgui_input_list(usr, "AI signals detected:", "AI selection", ais)
+		if(user)	. = tgui_input_list(user, "AI signals detected:", "AI selection", ais)
 		else		. = pick(ais)
 	return .
 
@@ -596,13 +596,13 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 //returns random gauss number
 /proc/GaussRand(var/sigma)
-  var/x,y,rsq
-  do
-    x=2*rand()-1
-    y=2*rand()-1
-    rsq=x*x+y*y
-  while(rsq>1 || !rsq)
-  return sigma*y*sqrt(-2*log(rsq)/rsq)
+	var/x,y,rsq
+	do
+		x=2*rand()-1
+		y=2*rand()-1
+		rsq=x*x+y*y
+	while(rsq>1 || !rsq)
+	return sigma*y*sqrt(-2*log(rsq)/rsq)
 
 //returns random gauss number, rounded to 'roundto'
 /proc/GaussRandRound(var/sigma,var/roundto)
@@ -832,7 +832,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 					//Move the mobs unless it's an AI eye or other eye type.
 					for(var/mob/M in T)
-						if(istype(M, /mob/observer/eye)) continue // If we need to check for more mobs, I'll add a variable
+						if(isEye(M)) continue // If we need to check for more mobs, I'll add a variable
 						M.loc = X
 
 						if(z_level_change) // Same goes for mobs.
@@ -979,7 +979,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 					for(var/mob/M in T)
 
-						if(!istype(M,/mob) || istype(M, /mob/observer/eye)) continue // If we need to check for more mobs, I'll add a variable
+						if(!ismob(M) || isEye(M)) continue // If we need to check for more mobs, I'll add a variable
 						mobs += M
 
 					for(var/mob/M in mobs)
@@ -1008,7 +1008,7 @@ Turf and target are seperate in case you want to teleport some distance from a t
 
 	if(toupdate.len)
 		for(var/turf/simulated/T1 in toupdate)
-			air_master.mark_for_update(T1)
+			SSair.mark_for_update(T1)
 
 	return copiedobjs
 
@@ -1157,8 +1157,15 @@ var/global/list/common_tools = list(
 
 // check if mob is lying down on something we can operate him on.
 // The RNG with table/rollerbeds comes into play in do_surgery() so that fail_step() can be used instead.
-/proc/can_operate(mob/living/carbon/M)
-	return M.lying
+/proc/can_operate(mob/living/carbon/M, mob/living/user)
+	. = M.lying
+
+	if(user && M == user && user.allow_self_surgery && user.a_intent == I_HELP)	// You can, technically, always operate on yourself after standing still. Inadvised, but you can.
+
+		if(!M.isSynthetic())
+			. = TRUE
+
+	return .
 
 // Returns an instance of a valid surgery surface.
 /mob/living/proc/get_surgery_surface()
@@ -1229,7 +1236,7 @@ var/list/WALLITEMS = list(
 /proc/topic_link(var/datum/D, var/arglist, var/content)
 	if(istype(arglist,/list))
 		arglist = list2params(arglist)
-	return "<a href='?src=\ref[D];[arglist]'>[content]</a>"
+	return "<a href='byond://?src=\ref[D];[arglist]'>[content]</a>"
 
 /proc/get_random_colour(var/simple, var/lower=0, var/upper=255)
 	var/colour
@@ -1278,8 +1285,8 @@ var/mob/dview/dview_mob = new
 		color = origin.color
 		set_light(origin.light_range, origin.light_power, origin.light_color)
 
-/mob/dview/New()
-	..()
+/mob/dview/Initialize(mapload)
+	. = ..()
 	// We don't want to be in any mob lists; we're a dummy not a mob.
 	mob_list -= src
 	if(stat == DEAD)
@@ -1388,9 +1395,6 @@ var/mob/dview/dview_mob = new
 
 #undef NOT_FLAG
 #undef HAS_FLAG
-
-//datum may be null, but it does need to be a typed var
-//#define NAMEOF(datum, X) (#X || ##datum.##X) // CHOMPEdit: Moved to nameof_ch.dm
 
 #define VARSET_LIST_CALLBACK(target, var_name, var_value) CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(___callbackvarset), ##target, ##var_name, ##var_value)
 //dupe code because dm can't handle 3 level deep macros
@@ -1532,6 +1536,10 @@ var/mob/dview/dview_mob = new
 		return !QDELETED(D)
 	return FALSE
 
+/// No op
+/proc/pass(...)
+	return
+
 //gives us the stack trace from CRASH() without ending the current proc.
 /proc/stack_trace(msg)
 	CRASH(msg)
@@ -1567,7 +1575,7 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 // Note that object refs will be converted to text, as if \ref[thing] was done. To get the ref back on Topic() side, you will need to use locate().
 // Third one is the text that will be clickable.
 /proc/href(href_src, list/href_params, href_text)
-	return "<a href='?src=\ref[href_src];[list2params(href_params)]'>[href_text]</a>"
+	return "<a href='byond://?src=\ref[href_src];[list2params(href_params)]'>[href_text]</a>"
 
 // This is a helper for anything that wants to render the map in TGUI
 /proc/get_tgui_plane_masters()
@@ -1598,6 +1606,7 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 
 	. += new /obj/screen/plane_master{plane = PLANE_MESONS} 			//Meson-specific things like open ceilings.
 	. += new /obj/screen/plane_master{plane = PLANE_BUILDMODE}			//Things that only show up while in build mode
+	. += new /obj/screen/plane_master{plane = PLANE_JANHUD}
 
 	// Real tangible stuff planes
 	. += new /obj/screen/plane_master/main{plane = TURF_PLANE}
@@ -1612,6 +1621,7 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 	. += new /obj/screen/plane_master{plane = PLANE_CH_VANTAG}				//Vore Antags
 	. += new /obj/screen/plane_master{plane = PLANE_CH_STOMACH}				//Stomachs
 	. += new /obj/screen/plane_master{plane = PLANE_AUGMENTED}				//Augmented reality
+	. += new /obj/screen/plane_master{plane = PLANE_SOULCATCHER}			//Soulcatcher
 	//VOREStation Add End
 /proc/CallAsync(datum/source, proctype, list/arguments)
 	set waitfor = FALSE

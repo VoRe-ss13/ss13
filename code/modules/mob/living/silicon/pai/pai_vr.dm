@@ -1,5 +1,4 @@
 /mob/living/silicon/pai
-	//var/people_eaten = 0 //CHOMPEdit - no longer needed.
 	icon = 'icons/mob/pai_vr.dmi'
 	softfall = TRUE
 	var/eye_glow = TRUE
@@ -68,12 +67,10 @@
 	var/soft_si = FALSE	//signaler
 	var/soft_ar = FALSE	//ar hud
 
-	//CHOMPEdit Begin - Add vore capacity
 	vore_capacity = 1
 	vore_capacity_ex = list("stomach" = 1)
-	//CHOMPEdit End
 
-/mob/living/silicon/pai/Initialize()
+/mob/living/silicon/pai/Initialize(mapload)
 	. = ..()
 
 	add_verb(src, /mob/proc/dominate_predator)
@@ -106,21 +103,12 @@
 
 /mob/living/silicon/pai/proc/pai_nom(var/mob/living/T in oview(1))
 	set name = "pAI Nom"
-	set category = "pAI Commands"
+	set category = "Abilities.pAI Commands"
 	set desc = "Allows you to eat someone while unfolded. Can't be used while in card form."
 
 	if (stat != CONSCIOUS)
 		return
 	return feed_grabbed_to_self(src,T)
-
-/*CHOMPEdit - Just using the update_fullness from living now.
-/mob/living/silicon/pai/proc/update_fullness_pai() //Determines if they have something in their stomach. Copied and slightly modified.
-	var/new_people_eaten = 0
-	for(var/obj/belly/B as anything in vore_organs)
-		for(var/mob/living/M in B)
-			new_people_eaten += M.size_multiplier
-	people_eaten = min(1, new_people_eaten)
-*/
 
 /mob/living/silicon/pai/update_icon() //Some functions cause this to occur, such as resting
 	..()
@@ -129,28 +117,27 @@
 		add_eyes()
 		return
 
-	update_fullness() //CHOMPEdit - Switch to /living update_fullness
-	//CHOMPEdit begin - Add multiple belly size support
+	update_fullness()
+
 	//Add a check when selecting a chassis if you add in support for this, to set vore_capacity to 2 or however many states you have.
 	var/fullness_extension = ""
 	if(vore_capacity > 1 && vore_fullness > 1)
 		fullness_extension = "_[vore_fullness]"
-	//CHOMPEdit end
 
-	if(!vore_fullness && !resting) //CHOMPEdit - Use vore_fullness instead of people_eaten
+	if(!vore_fullness && !resting)
 		icon_state = "[chassis]" //Using icon_state here resulted in quite a few bugs. Chassis is much less buggy.
-	else if(!vore_fullness && resting) //CHOMPEdit - Use vore_fullness instead of people_eaten
+	else if(!vore_fullness && resting)
 		icon_state = "[chassis]_rest"
 
 	// Unfortunately not all these states exist, ugh.
-	else if(vore_fullness && !resting) //CHOMPEdit - Use vore_fullness instead of people_eaten
-		if("[chassis]_full[fullness_extension]" in cached_icon_states(icon)) //CHOMPEdit begin - Add multiple belly size support
-			icon_state = "[chassis]_full[fullness_extension]" //CHOMPEdit - Add multiple belly size support
+	else if(vore_fullness && !resting)
+		if("[chassis]_full[fullness_extension]" in cached_icon_states(icon))
+			icon_state = "[chassis]_full[fullness_extension]"
 		else
 			icon_state = "[chassis]"
-	else if(vore_fullness && resting) //CHOMPEdit - Use vore_fullness instead of people_eaten
-		if("[chassis]_rest_full[fullness_extension]" in cached_icon_states(icon)) //CHOMPEdit begin - Add multiple belly size support
-			icon_state = "[chassis]_rest_full[fullness_extension]" //CHOMPEdit begin - Add multiple belly size support
+	else if(vore_fullness && resting)
+		if("[chassis]_rest_full[fullness_extension]" in cached_icon_states(icon))
+			icon_state = "[chassis]_rest_full[fullness_extension]"
 		else
 			icon_state = "[chassis]_rest"
 	if(chassis in wide_chassis)
@@ -168,20 +155,18 @@
 		add_eyes()
 		return
 	update_fullness()
-	//CHOMPEdit begin - Add multiple belly size support
 	//Add a check when selecting a chassis if you add in support for this, to set vore_capacity to 2 or however many states you have.
 	var/fullness_extension = ""
 	if(vore_capacity > 1 && vore_fullness > 1)
 		fullness_extension = "_[vore_fullness]"
-	//CHOMPEdit end
-	if(!vore_fullness && !resting) //CHOMPEdit - Use vore_fullness instead of people_eaten
+	if(!vore_fullness && !resting)
 		icon_state = "[chassis]"
-	else if(!vore_fullness && resting) //CHOMPEdit - Use vore_fullness instead of people_eaten
+	else if(!vore_fullness && resting)
 		icon_state = "[chassis]_rest"
-	else if(vore_fullness && !resting) //CHOMPEdit - Use vore_fullness instead of people_eaten
-		icon_state = "[chassis]_full[fullness_extension]" //CHOMPEdit begin - Add multiple belly size support
-	else if(vore_fullness && resting) //CHOMPEdit - Use vore_fullness instead of people_eaten
-		icon_state = "[chassis]_rest_full[fullness_extension]" //CHOMPEdit begin - Add multiple belly size support
+	else if(vore_fullness && !resting)
+		icon_state = "[chassis]_full[fullness_extension]"
+	else if(vore_fullness && resting)
+		icon_state = "[chassis]_rest_full[fullness_extension]"
 	if(chassis in wide_chassis)
 		pixel_x = -16
 		default_pixel_x = -16
@@ -192,27 +177,18 @@
 
 //proc override to avoid pAI players being invisible while the chassis selection window is open
 /mob/living/silicon/pai/proc/choose_chassis()
-	set category = "pAI Commands"
+	set category = "Abilities.pAI Commands"
 	set name = "Choose Chassis"
 	var/choice
 
-	choice = tgui_input_list(usr, "What would you like to use for your mobile chassis icon?", "Chassis Choice", possible_chassis)
+	choice = tgui_input_list(src, "What would you like to use for your mobile chassis icon?", "Chassis Choice", possible_chassis)
 	if(!choice) return
 	var/oursize = size_multiplier
 	resize(1, FALSE, TRUE, TRUE, FALSE)		//We resize ourselves to normal here for a moment to let the vis_height get reset
 	chassis = possible_chassis[choice]
 
-	//CHOMPEdit Begin - Reset vore_capacity to allow multiple belly sizes as an option
 	vore_capacity = 1
 	vore_capacity_ex = list("stomach" = 1)
-	//As an example of how you would add support for multiple belly sizes...
-	/*
-	if(chassis == "example")
-		vore_capacity = 2
-		vore_capacity_ex = list("stomach" = 2)
-	*/
-	//Vore sprites would need to be added with sizes being example, example_full, example_full_2, example_full_3, and so forth
-	//CHOMPEdit End
 
 	if(chassis == "13")
 		if(!holo_icon)
@@ -238,7 +214,7 @@
 	update_icon()
 
 /mob/living/silicon/pai/verb/toggle_eyeglow()
-	set category = "pAI Commands"
+	set category = "Abilities.pAI Commands"
 	set name = "Toggle Eye Glow"
 
 	if(chassis in allows_eye_color)
@@ -254,13 +230,12 @@
 
 
 /mob/living/silicon/pai/verb/pick_eye_color()
-	set category = "pAI Commands"
+	set category = "Abilities.pAI Commands"
 	set name = "Pick Eye Color"
-	if(chassis in allows_eye_color)
-	else
+	if(!(chassis in allows_eye_color))
 		to_chat(src, span_warning("Your selected chassis eye color can not be modified. The color you pick will only apply to supporting chassis and your card screen."))
 
-	var/new_eye_color = input(src, "Choose your character's eye color:", "Eye Color") as color|null
+	var/new_eye_color = tgui_color_picker(src, "Choose your character's eye color:", "Eye Color")
 	if(new_eye_color)
 		eye_color = new_eye_color
 		update_icon()
@@ -295,7 +270,6 @@
 			eye_layer = image('icons/mob/pai_vr64x32.dmi', "type13-eyes")
 		else if(holo_icon_dimension_X == 64 && holo_icon_dimension_Y == 64)
 			eye_layer = image('icons/mob/pai_vr64x64.dmi', "type13-eyes")
-		else
 	else if(chassis in allows_eye_color)
 		eye_layer = image(icon, "[icon_state]-eyes")
 	else return
@@ -322,6 +296,16 @@
 				hug(src, A)
 		if(I_GRAB)
 			pai_nom(A)
+
+// Allow card inhabited machines to be interacted with
+// This has to override ClickOn because of storage depth nonsense with how pAIs are in cards in machines
+/mob/living/silicon/pai/ClickOn(var/atom/A, var/params)
+	if(istype(A, /obj/machinery))
+		var/obj/machinery/M = A
+		if(M.paicard == card)
+			M.attack_ai(src)
+			return
+	return ..()
 
 /mob/living/silicon/pai/proc/hug(var/mob/living/silicon/pai/H, var/mob/living/target)
 
@@ -440,7 +424,7 @@
 	return 1
 
 /mob/living/silicon/pai/verb/save_pai_to_slot()
-	set category = "pAI Commands"
+	set category = "Abilities.pAI Commands"
 	set name = "Save Configuration"
 	savefile_save(src)
 	to_chat(src, span_filter_notice("[name] configuration saved to global pAI settings."))
@@ -476,8 +460,8 @@
 /mob/living/silicon/pai/verb/toggle_gender_identity_vr()
 	set name = "Set Gender Identity"
 	set desc = "Sets the pronouns when examined and performing an emote."
-	set category = "IC.Settings" //CHOMPEdit
-	var/new_gender_identity = tgui_input_list(usr, "Please select a gender Identity:", "Set Gender Identity", list(FEMALE, MALE, NEUTER, PLURAL, HERM))
+	set category = "IC.Settings"
+	var/new_gender_identity = tgui_input_list(src, "Please select a gender Identity:", "Set Gender Identity", list(FEMALE, MALE, NEUTER, PLURAL, HERM))
 	if(!new_gender_identity)
 		return 0
 	gender = new_gender_identity
@@ -486,7 +470,7 @@
 /mob/living/silicon/pai/verb/pai_hide()
 	set name = "Hide"
 	set desc = "Allows to hide beneath tables or certain items. Toggled on or off."
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.pAI"
 
 	hide()
 	if(status_flags & HIDING)
@@ -496,7 +480,7 @@
 	update_icon()
 
 /mob/living/silicon/pai/verb/screen_message(message as text|null)
-	set category = "pAI Commands"
+	set category = "Abilities.pAI Commands"
 	set name = "Screen Message"
 	set desc = "Allows you to display a message on your screen. This will show up in the chat of anyone who is holding your card."
 
@@ -544,7 +528,7 @@
 	else return
 	to_chat(src, span_notice("Your message was relayed."))
 	for (var/mob/G in player_list)
-		if (istype(G, /mob/new_player))
+		if (isnewplayer(G))
 			continue
 		else if(isobserver(G) && G.client?.prefs?.read_preference(/datum/preference/toggle/ghost_ears))
 			if((client?.prefs?.read_preference(/datum/preference/toggle/whisubtle_vis) || G.client.holder) && \

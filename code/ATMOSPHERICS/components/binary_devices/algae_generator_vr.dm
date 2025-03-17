@@ -30,14 +30,14 @@
 	var/ui_error = null // For error messages to show up in nano ui.
 
 	var/datum/gas_mixture/internal = new()
-	var/const/input_gas = "carbon_dioxide"
-	var/const/output_gas = "oxygen"
+	var/const/input_gas = GAS_CO2
+	var/const/output_gas = GAS_O2
 
 /obj/machinery/atmospherics/binary/algae_farm/filled
 	stored_material = list(MAT_ALGAE = 10000, MAT_GRAPHITE = 0)
 
-/obj/machinery/atmospherics/binary/algae_farm/New()
-	..()
+/obj/machinery/atmospherics/binary/algae_farm/Initialize(mapload)
+	. = ..()
 	desc = initial(desc) + " Its outlet port is to the [dir2text(dir)]."
 	default_apply_parts()
 	update_icon()
@@ -206,10 +206,10 @@
 
 	return data
 
-/obj/machinery/atmospherics/binary/algae_farm/tgui_act(action, params)
+/obj/machinery/atmospherics/binary/algae_farm/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 
 	switch(action)
 		if("toggle")
@@ -259,7 +259,7 @@
 			S.use(1)
 			count++
 		user.visible_message("\The [user] inserts [S.name] into \the [src].", span_notice("You insert [count] [S.name] into \the [src]."))
-		updateUsrDialog()
+		updateUsrDialog(user)
 	else
 		to_chat(user, span_warning("\The [src] cannot hold more [S.name]."))
 	return 1

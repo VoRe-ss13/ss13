@@ -1,5 +1,5 @@
 /// Away Missions
-#if AWAY_MISSION_TEST
+#ifdef AWAY_MISSION_TEST
 #include "../expedition_vr/beach/beach.dmm"
 #include "../expedition_vr/beach/cave.dmm"
 #include "../expedition_vr/alienship/alienship.dmm"
@@ -226,6 +226,29 @@
 
 //////////////////////////////////////////////////////////////////////////////////////
 
+#ifdef AWAY_MISSION_TEST
+#include "../redgate/falls/falls.dmm"
+#include "../redgate/abandonedisland.dmm"
+#include "../redgate/cybercity.dmm"
+#include "../redgate/darkadventure.dmm"
+#include "../redgate/eggnogtown.dmm"
+#include "../redgate/eggnogtownunderground.dmm"
+#include "../redgate/facility.dmm"
+#include "../redgate/fantasy_dungeon.dmm"
+#include "../redgate/fantasy.dmm"
+#include "../redgate/hotsprings.dmm"
+#include "../redgate/innland.dmm"
+#include "../redgate/islands_underwater.dmm"
+#include "../redgate/islands.dmm"
+#include "../redgate/jungle_underground.dmm"
+#include "../redgate/jungle.dmm"
+#include "../redgate/laserdome.dmm"
+#include "../redgate/stardog.dmm"
+#include "../redgate/teppiranch.dmm"
+#include "../redgate/train_upper.dmm"
+#include "../redgate/train.dmm"
+#endif
+
 /datum/map_template/common_lateload/redgate
 	name = "Redgate Submap"
 	desc = "Please do not use this."
@@ -358,7 +381,7 @@
 
 //////////////////////////////////////////////////////////////////////////////////////
 // Admin-use z-levels for loading whenever an admin feels like
-#if AWAY_MISSION_TEST
+#ifdef AWAY_MISSION_TEST
 #include "../submaps/admin_use_vr/spa.dmm"
 #endif
 #include "../submaps/admin_use_vr/fun.dm"
@@ -397,7 +420,7 @@
 /obj/effect/step_trigger/zlevel_fall //Don't ever use this, only use subtypes.Define a new var/static/target_z on each
 	affect_ghosts = 1
 
-/obj/effect/step_trigger/zlevel_fall/Initialize()
+/obj/effect/step_trigger/zlevel_fall/Initialize(mapload)
 	. = ..()
 
 	if(istype(get_turf(src), /turf/simulated/floor))
@@ -460,12 +483,12 @@
 	var/mob/living/simple_mob/my_mob
 	var/depleted = FALSE
 
-/obj/tether_away_spawner/Initialize()
+/obj/tether_away_spawner/Initialize(mapload)
 	. = ..()
 
 	if(!LAZYLEN(mobs_to_pick_from))
 		error("Mob spawner at [x],[y],[z] ([get_area(src)]) had no mobs_to_pick_from set on it!")
-		initialized = TRUE
+		flags |= ATOM_INITIALIZED
 		return INITIALIZE_HINT_QDEL
 	START_PROCESSING(SSobj, src)
 
@@ -497,21 +520,21 @@
 
 				var/list/gaslist = env.gas
 				if(my_mob.min_oxy)
-					my_mob.min_oxy = gaslist["oxygen"] * 0.8
+					my_mob.min_oxy = gaslist[GAS_O2] * 0.8
 				if(my_mob.min_tox)
-					my_mob.min_tox = gaslist["phoron"] * 0.8
+					my_mob.min_tox = gaslist[GAS_PHORON] * 0.8
 				if(my_mob.min_n2)
-					my_mob.min_n2 = gaslist["nitrogen"] * 0.8
+					my_mob.min_n2 = gaslist[GAS_N2] * 0.8
 				if(my_mob.min_co2)
-					my_mob.min_co2 = gaslist["carbon_dioxide"] * 0.8
+					my_mob.min_co2 = gaslist[GAS_CO2] * 0.8
 				if(my_mob.max_oxy)
-					my_mob.max_oxy = gaslist["oxygen"] * 1.2
+					my_mob.max_oxy = gaslist[GAS_O2] * 1.2
 				if(my_mob.max_tox)
-					my_mob.max_tox = gaslist["phoron"] * 1.2
+					my_mob.max_tox = gaslist[GAS_PHORON] * 1.2
 				if(my_mob.max_n2)
-					my_mob.max_n2 = gaslist["nitrogen"] * 1.2
+					my_mob.max_n2 = gaslist[GAS_N2] * 1.2
 				if(my_mob.max_co2)
-					my_mob.max_co2 = gaslist["carbon_dioxide"] * 1.2
+					my_mob.max_co2 = gaslist[GAS_CO2] * 1.2
 /* //VORESTATION AI TEMPORARY REMOVAL
 		if(guard)
 			my_mob.returns_home = TRUE
@@ -618,7 +641,7 @@
 #include "../offmap_vr/talon/talon_v2.dm"
 #include "../offmap_vr/talon/talon_v2_areas.dm"
 
-#if MAP_TEST
+#ifdef MAP_TEST
 #include "../offmap_vr/talon/talon_v2.dmm"
 #endif
 

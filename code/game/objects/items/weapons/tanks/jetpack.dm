@@ -17,10 +17,10 @@
 	var/on = 0.0
 	var/stabilization_on = 0
 	var/volume_rate = 500              //Needed for borg jetpack transfer
-	action_button_name = "Toggle Jetpack"
+	actions_types = list(/datum/action/item_action/toggle_jetpack)
 
-/obj/item/tank/jetpack/New()
-	..()
+/obj/item/tank/jetpack/Initialize(mapload)
+	. = ..()
 	ion_trail = new /datum/effect/effect/system/ion_trail_follow()
 	ion_trail.set_up(src)
 
@@ -55,7 +55,7 @@
 	if (ismob(usr))
 		var/mob/M = usr
 		M.update_inv_back()
-		M.update_action_buttons()
+		M.update_mob_action_buttons()
 
 	to_chat(usr, "You toggle the thrusters [on? "on":"off"].")
 
@@ -81,7 +81,7 @@
 	fuel.remove(num)
 	return 1
 
-/obj/item/tank/jetpack/ui_action_click()
+/obj/item/tank/jetpack/ui_action_click(mob/user, actiontype)
 	toggle()
 
 /obj/item/tank/jetpack/void
@@ -90,9 +90,9 @@
 	icon_state = "jetpack-void"
 	item_state_slots = list(slot_r_hand_str = "jetpack-void", slot_l_hand_str = "jetpack-void")
 
-/obj/item/tank/jetpack/void/Initialize()
+/obj/item/tank/jetpack/void/Initialize(mapload)
 	. = ..()
-	air_contents.adjust_gas("oxygen", (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	air_contents.adjust_gas(GAS_O2, (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
 /obj/item/tank/jetpack/oxygen
 	name = "jetpack (oxygen)"
@@ -100,9 +100,9 @@
 	icon_state = "jetpack"
 	item_state_slots = list(slot_r_hand_str = "jetpack", slot_l_hand_str = "jetpack")
 
-/obj/item/tank/jetpack/oxygen/Initialize()
+/obj/item/tank/jetpack/oxygen/Initialize(mapload)
 	. = ..()
-	air_contents.adjust_gas("oxygen", (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	air_contents.adjust_gas(GAS_O2, (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
 /obj/item/tank/jetpack/breaker
 	name = "CSC industrial jetpack"
@@ -110,9 +110,9 @@
 	icon_state = "jetpack-breaker"
 	item_state_slots = list(slot_r_hand_str = "jetpack", slot_l_hand_str = "jetpack")
 
-/obj/item/tank/jetpack/breaker/Initialize()
+/obj/item/tank/jetpack/breaker/Initialize(mapload)
 	. = ..()
-	air_contents.adjust_gas("volatile_fuel", (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	air_contents.adjust_gas(GAS_VOLATILE_FUEL, (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
 /obj/item/tank/jetpack/carbondioxide
 	name = "jetpack (carbon dioxide)"
@@ -121,9 +121,9 @@
 	icon_state = "jetpack-black"
 	item_state_slots = list(slot_r_hand_str = "jetpack-black", slot_l_hand_str = "jetpack-black")
 
-/obj/item/tank/jetpack/carbondioxide/Initialize()
+/obj/item/tank/jetpack/carbondioxide/Initialize(mapload)
 	. = ..()
-	air_contents.adjust_gas("carbon_dioxide", (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	air_contents.adjust_gas(GAS_CO2, (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
 /obj/item/tank/jetpack/rig
 	name = "jetpack"

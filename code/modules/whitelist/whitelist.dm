@@ -5,7 +5,7 @@
 /client/verb/print_whitelist()
 	set name = "Show Whitelist Entries"
 	set desc = "Print the set of things you're whitelisted for."
-	set category = "OOC.Client Settings" //CHOMPEdit
+	set category = "OOC.Client settings"
 
 	to_chat(src, "You are whitelisted for:")
 	to_chat(src, jointext(get_whitelists_list(), "\n"))
@@ -97,4 +97,4 @@
 
 
 /proc/whitelist_overrides(mob/M)
-	return !CONFIG_GET(flag/usealienwhitelist) || check_rights(R_ADMIN|R_EVENT, 0, M) // CHOMPEdit
+	return !CONFIG_GET(flag/usealienwhitelist) || check_rights_for(M.client, R_ADMIN|R_EVENT) // CHOMPEdit

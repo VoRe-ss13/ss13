@@ -13,9 +13,9 @@
 
 import { perf } from 'common/perf';
 import { createAction } from 'common/redux';
+import { globalEvents } from 'tgui-core/events';
 
 import { setupDrag } from './drag';
-import { globalEvents } from './events';
 import { focusMap } from './focus';
 import { createLogger } from './logging';
 import { resumeRenderer, suspendRenderer } from './renderer';
@@ -310,43 +310,6 @@ export const useBackend = <TData>() => {
  * A tuple that contains the state and a setter function for it.
  */
 type StateWithSetter<T> = [T, (nextState: T) => void];
-
-/**
- * Allocates state on Redux store without sharing it with other clients.
- *
- * Use it when you want to have a stateful variable in your component
- * that persists between renders, but will be forgotten after you close
- * the UI.
- *
- * It is a lot more performant than `setSharedState`.
- *
- * @param context React context.
- * @param key Key which uniquely identifies this state in Redux store.
- * @param initialState Initializes your global variable with this value.
- * @deprecated Use useState and useEffect when you can. Pass the state as a prop.
- */
-export const useLocalState = <T>(
-  key: string,
-  initialState: T,
-): StateWithSetter<T> => {
-  const state = globalStore?.getState()?.backend;
-  const sharedStates = state?.shared ?? {};
-  const sharedState = key in sharedStates ? sharedStates[key] : initialState;
-  return [
-    sharedState,
-    (nextState) => {
-      globalStore.dispatch(
-        backendSetSharedState({
-          key,
-          nextState:
-            typeof nextState === 'function'
-              ? nextState(sharedState)
-              : nextState,
-        }),
-      );
-    },
-  ];
-};
 
 /**
  * Allocates state on Redux store, and **shares** it with other clients

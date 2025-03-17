@@ -20,7 +20,7 @@
 //////////////////////////////Capturing////////////////////////////////////////////////////////
 
 /obj/item/soulstone/attack(mob/living/carbon/human/M as mob, mob/user as mob)
-	if(!istype(M, /mob/living/carbon/human))//If target is not a human.
+	if(!ishuman(M))//If target is not a human.
 		return ..()
 	if(istype(M, /mob/living/carbon/human/dummy))
 		return..()
@@ -43,12 +43,12 @@
 	if (!in_range(src, user))
 		return
 	user.set_machine(src)
-	var/dat = "<TT><B>Soul Stone</B><BR>"
+	var/dat = "<html><TT><B>Soul Stone</B><BR>"
 	for(var/mob/living/simple_mob/construct/shade/A in src)
 		dat += "Captured Soul: [A.name]<br>"
 		dat += {"<A href='byond://?src=\ref[src];choice=Summon'>Summon Shade</A>"}
 		dat += "<br>"
-		dat += {"<a href='byond://?src=\ref[src];choice=Close'> Close</a>"}
+		dat += {"<a href='byond://?src=\ref[src];choice=Close'> Close</a></html>"}
 	user << browse(dat, "window=aicard")
 	onclose(user, "aicard")
 	return
@@ -109,7 +109,7 @@
 	if(src.imprinted != "empty")
 		to_chat(U, span_danger("Capture failed!") + ": The soul stone has already been imprinted with [src.imprinted]'s mind!")
 		return
-	if ((T.health + T.halloss) > CONFIG_GET(number/health_threshold_crit) && T.stat != DEAD) // CHOMPEdit
+	if ((T.health + T.halloss) > CONFIG_GET(number/health_threshold_crit) && T.stat != DEAD)
 		to_chat(U, span_danger("Capture failed!") + ": Kill or maim the victim first!")
 		return
 	if(T.client == null)

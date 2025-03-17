@@ -21,8 +21,8 @@
 	drop_sound = 'sound/items/drop/paper.ogg'
 	pickup_sound = 'sound/items/pickup/paper.ogg'
 
-/obj/item/deck/cards/New()
-	..()
+/obj/item/deck/cards/Initialize(mapload)
+	. = ..()
 	var/datum/playingcard/P
 	for(var/suit in list("spades","clubs","diamonds","hearts"))
 
@@ -52,7 +52,7 @@
 		P.card_icon = "joker"
 		cards += P
 
-/obj/item/deck/attackby(obj/O as obj, mob/user as mob)
+/obj/item/deck/attackby(obj/O, mob/user)
 	if(istype(O,/obj/item/hand))
 		var/obj/item/hand/H = O
 		if(H.parentdeck == src)
@@ -68,7 +68,7 @@
 
 /obj/item/deck/attack_hand(mob/user as mob)
 	var/mob/living/carbon/human/H = user
-	if(istype(src.loc, /obj/item/storage) || src == H.r_store || src == H.l_store || src.loc == user) // so objects can be removed from storage containers or pockets. also added a catch-all, so if it's in the mob you'll pick it up.
+	if(ishuman(H) && (istype(src.loc, /obj/item/storage) || src == H.r_store || src == H.l_store || src.loc == user)) // so objects can be removed from storage containers or pockets. also added a catch-all, so if it's in the mob you'll pick it up. Human only, however!
 		..()
 	else // but if they're not, or are in your hands, you can still draw cards.
 		draw_card()
@@ -82,13 +82,13 @@
 
 	var/mob/living/carbon/user = usr
 
-	if(usr.stat || !Adjacent(usr)) return
+	if(user.stat || !Adjacent(user)) return
 
 	if(user.hands_are_full()) // Safety check lest the card disappear into oblivion
 		to_chat(user,span_notice("Your hands are full!"))
 		return
 
-	if(!istype(usr,/mob/living/carbon))
+	if(!istype(user,/mob/living/carbon))
 		return
 
 	if(!cards.len)
@@ -211,8 +211,8 @@
 
 	..()
 
-/obj/item/deck/attack_self()
-	shuffle()
+/obj/item/deck/attack_self(mob/user)
+	shuffle(user)
 
 
 /obj/item/deck/verb/verb_shuffle()
@@ -220,10 +220,9 @@
 	set name = "Shuffle"
 	set desc = "Shuffle the cards in the deck."
 	set src in view(1)
-	shuffle()
+	shuffle(usr)
 
-/obj/item/deck/proc/shuffle()
-	var/mob/living/user = usr
+/obj/item/deck/proc/shuffle(mob/user)
 	if (cooldown < world.time - 10) // 15 ticks cooldown
 		var/list/newcards = list()
 		while(cards.len)
@@ -238,10 +237,10 @@
 		return
 
 
-/obj/item/deck/MouseDrop(mob/user as mob) // Code from Paper bin, so you can still pick up the deck
-	if((user == usr && (!( usr.restrained() ) && (!( usr.stat ) && (usr.contents.Find(src) || in_range(src, usr))))))
-		if(!istype(usr, /mob/living/simple_mob))
-			if( !usr.get_active_hand() )		//if active hand is empty
+/obj/item/deck/MouseDrop(mob/user) // Code from Paper bin, so you can still pick up the deck
+	if((user == usr && (!( user.restrained() ) && (!( user.stat ) && (user.contents.Find(src) || in_range(src, user))))))
+		if(!isanimal(user))
+			if( !user.get_active_hand() )		//if active hand is empty
 				var/mob/living/carbon/human/H = user
 				var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
 
@@ -258,9 +257,9 @@
 
 /obj/item/deck/verb_pickup() // Snowflaked so pick up verb work as intended
 	var/mob/user = usr
-	if((istype(user) && (!( usr.restrained() ) && (!( usr.stat ) && (usr.contents.Find(src) || in_range(src, usr))))))
-		if(!istype(usr, /mob/living/simple_mob))
-			if( !usr.get_active_hand() )		//if active hand is empty
+	if((istype(user) && (!( user.restrained() ) && (!( user.stat ) && (user.contents.Find(src) || in_range(src, user))))))
+		if(!isanimal(user))
+			if( !user.get_active_hand() )		//if active hand is empty
 				var/mob/living/carbon/human/H = user
 				var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
 
@@ -373,15 +372,15 @@
 	if(user.stat || !Adjacent(user)) return
 
 	if(user.hands_are_full()) // Safety check lest the card disappear into oblivion
-		to_chat(usr,span_danger("Your hands are full!"))
+		to_chat(user,span_danger("Your hands are full!"))
 		return
 
 	var/pickablecards = list()
 	for(var/datum/playingcard/P in cards)
-		pickablecards[P.name] += P
-	var/pickedcard = tgui_input_list(usr, "Which card do you want to remove from the hand?", "Card Selection", pickablecards)
+		pickablecards[P.name] = P
+	var/pickedcard = tgui_input_list(user, "Which card do you want to remove from the hand?", "Card Selection", pickablecards)
 
-	if(!pickedcard || !pickablecards[pickedcard] || !usr || !src) return
+	if(!pickedcard || !pickablecards[pickedcard] || !user || !src) return
 
 	var/datum/playingcard/card = pickablecards[pickedcard]
 
@@ -456,12 +455,13 @@
 		i++
 
 
-/obj/item/hand/dropped(mob/user as mob)
+/obj/item/hand/dropped(mob/user)
+	..()
 	if(locate(/obj/structure/table, loc))
 		src.update_icon(user.dir)
 	else
 		update_icon()
 
-/obj/item/hand/pickup(mob/user as mob)
+/obj/item/hand/pickup(mob/user)
 	..()
 	src.update_icon()

@@ -1,8 +1,8 @@
-import { BooleanLike } from 'common/react';
+import { useBackend } from 'tgui/backend';
+import { Button, LabeledList } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
-import { useBackend } from '../../../backend';
-import { Button, LabeledList } from '../../../components';
-import { interactData } from '../types';
+import type { interactData } from '../types';
 
 export const VoreSelectedBellyDescriptionsEscape = (props: {
   message_mode: BooleanLike;

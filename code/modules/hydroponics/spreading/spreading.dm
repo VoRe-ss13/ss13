@@ -1,4 +1,4 @@
-#define DEFAULT_SEED "glowshroom"
+#define DEFAULT_SEED PLANT_GLOWSHROOM
 #define VINE_GROWTH_STAGES 5
 
 /proc/spacevine_infestation(var/potency_min=70, var/potency_max=100, var/maturation_min=5, var/maturation_max=15)
@@ -74,7 +74,7 @@
 /obj/effect/plant/Destroy()
 	neighbors.Cut()
 	if(seed.get_trait(TRAIT_SPREAD)==2)
-		unsense_proximity(callback = /atom/proc/HasProximity, center = get_turf(src))
+		unsense_proximity(callback = TYPE_PROC_REF(/atom, HasProximity), center = get_turf(src))
 	SSplants.remove_plant(src)
 	for(var/obj/effect/plant/neighbor in range(1,src))
 		SSplants.add_plant(neighbor)
@@ -112,7 +112,7 @@
 	name = seed.display_name
 	max_health = round(seed.get_trait(TRAIT_ENDURANCE)/2)
 	if(seed.get_trait(TRAIT_SPREAD)==2)
-		sense_proximity(callback = TYPE_PROC_REF(/atom,HasProximity)) // Grabby - CHOMPEdit
+		sense_proximity(callback = TYPE_PROC_REF(/atom,HasProximity)) // Grabby
 		max_growth = VINE_GROWTH_STAGES
 		growth_threshold = max_health/VINE_GROWTH_STAGES
 		icon = 'icons/obj/hydroponics_vines.dmi'
@@ -142,7 +142,7 @@
 	update_icon()
 	SSplants.add_plant(src)
 	//Some plants eat through plating.
-	if(islist(seed.chems) && !isnull(seed.chems["pacid"]))
+	if(islist(seed.chems) && !isnull(seed.chems[REAGENT_ID_PACID]))
 		var/turf/T = get_turf(src)
 		T.ex_act(prob(80) ? 3 : 2)
 
@@ -205,14 +205,13 @@
 	if(growth>2 && growth == max_growth)
 		plane = ABOVE_PLANE
 		set_opacity(1)
-		if(!isnull(seed.chems["woodpulp"]))
+		if(!isnull(seed.chems[REAGENT_ID_WOODPULP]))
 			density = TRUE
 	else
 		reset_plane_and_layer()
 		density = FALSE
 
 /obj/effect/plant/proc/calc_dir()
-	//set background = 1 //CHOMPEdit
 	var/turf/T = get_turf(src)
 	if(!istype(T)) return
 
@@ -315,7 +314,6 @@
 			if (prob(5))
 				die_off()
 				return
-		else
 	return
 
 /obj/effect/plant/proc/check_health()

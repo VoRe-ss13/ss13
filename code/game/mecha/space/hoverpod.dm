@@ -26,7 +26,7 @@
 	max_universal_equip = 1
 	max_special_equip = 1
 
-/obj/mecha/working/hoverpod/Initialize()
+/obj/mecha/working/hoverpod/Initialize(mapload)
 	. = ..()
 	ion_trail = new /datum/effect/effect/system/ion_trail_follow()
 	ion_trail.set_up(src)
@@ -54,7 +54,7 @@
 	var/output = {"<div class='wr'>
 						<div class='header'>Special</div>
 						<div class='links'>
-						<a href='?src=\ref[src];toggle_stabilization=1'><span id="stabilization_command">[stabilization_enabled?"Dis":"En"]able thruster stabilization</span></a><br>
+						<a href='byond://?src=\ref[src];toggle_stabilization=1'><span id="stabilization_command">[stabilization_enabled?"Dis":"En"]able thruster stabilization</span></a><br>
 						</div>
 						</div>
 						"}
@@ -117,7 +117,7 @@
 	max_universal_equip = 1
 	max_special_equip = 1
 
-/obj/mecha/working/hoverpod/combatpod/Initialize()
+/obj/mecha/working/hoverpod/combatpod/Initialize(mapload)
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	ME.attach(src)
@@ -128,7 +128,7 @@
 /obj/mecha/working/hoverpod/shuttlepod
 	desc = "Who knew a tiny ball could fit three people?"
 
-/obj/mecha/working/hoverpod/shuttlepod/Initialize()
+/obj/mecha/working/hoverpod/shuttlepod/Initialize(mapload)
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/tool/passenger
 	ME.attach(src)

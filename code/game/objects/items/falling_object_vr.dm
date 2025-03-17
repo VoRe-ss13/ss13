@@ -1,5 +1,5 @@
 /obj/effect/falling_effect
-	name = "you should not see this"
+	name = DEVELOPER_WARNING_NAME
 	desc = "no data"
 	invisibility = 101
 	anchored = TRUE
@@ -8,8 +8,10 @@
 	var/falling_type = /obj/item/reagent_containers/food/snacks/sliceable/pizza/margherita
 	var/crushing = TRUE
 
-/obj/effect/falling_effect/Initialize(mapload, type)
+/obj/effect/falling_effect/Initialize(mapload, type, var/crushing_type)
 	..()
+	if(!isnull(crushing_type))
+		crushing = crushing_type
 	if(type)
 		falling_type = type
 	return INITIALIZE_HINT_LATELOAD
@@ -26,12 +28,11 @@
 	dropped.density = FALSE
 	dropped.opacity = FALSE
 	animate(dropped, pixel_y = initial_y, pixel_x = initial_x , time = 7)
-	spawn(7)
-		dropped.end_fall(crushing)
+	addtimer(CALLBACK(dropped, TYPE_PROC_REF(/atom/movable,end_fall), crushing), 0.7 SECONDS)
 	qdel(src)
 
 /atom/movable/proc/end_fall(var/crushing = FALSE)
-	if(istype(src, /mob/living))
+	if(isliving(src))
 		var/mob/living/L = src
 		if(L.vore_selected && L.can_be_drop_pred && L.drop_vore)
 			for(var/mob/living/P in loc)

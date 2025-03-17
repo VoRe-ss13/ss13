@@ -20,20 +20,18 @@
 			plane_holder.set_vis(VIS_CH_VANTAG,FALSE)
 			vis_enabled -= VIS_CH_VANTAG
 
-	//CHOMPAdd Start Soulcatcher
 	if(soulgem?.flag_check(SOULGEM_SEE_SR_SOULS))
 		plane_holder.set_vis(VIS_SOULCATCHER, TRUE)
 		vis_enabled += VIS_SOULCATCHER
 	else
 		plane_holder.set_vis(VIS_SOULCATCHER, FALSE)
 		vis_enabled -= VIS_SOULCATCHER
-	//CHOMPAdd End
 	return
 
 
 /mob/verb/toggle_stomach_vision()
 	set name = "Toggle Stomach Sprites"
-	set category = "Preferences.Vore" //CHOMPEdit
+	set category = "Preferences.Vore"
 	set desc = "Toggle the ability to see stomachs or not"
 
 	var/toggle

@@ -24,6 +24,8 @@
 		qdel(src)
 
 /obj/effect/weaversilk/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+	var/turf/T = get_turf(src)
+	T?.feed_lingering_fire(0.1) // CHOMPAdd - Lingering fire, feeding fires
 	qdel(src)
 
 /obj/effect/weaversilk/attack_generic(mob/user as mob, var/damage)
@@ -41,8 +43,8 @@
 	plane = DIRTY_PLANE
 	layer = DIRTY_LAYER
 
-/obj/effect/weaversilk/floor/Initialize()
-	..()
+/obj/effect/weaversilk/floor/Initialize(mapload)
+	. = ..()
 	icon_state = pick(possible_icon_states)
 
 /obj/effect/weaversilk/wall
@@ -52,12 +54,12 @@
 	var/possible_icon_states = list("wallweb1", "wallweb2", "wallweb3")
 	density = TRUE
 
-/obj/effect/weaversilk/wall/Initialize()
-	..()
+/obj/effect/weaversilk/wall/Initialize(mapload)
+	. = ..()
 	icon_state = pick(possible_icon_states)
 
 /obj/effect/weaversilk/wall/CanPass(atom/movable/mover, turf/target)
-	if(istype(mover, /mob/living/carbon/human))
+	if(ishuman(mover))
 		var/mob/living/carbon/human/H = mover
 		if(H.species.is_weaver)
 			return TRUE
@@ -94,13 +96,13 @@
 /obj/effect/weaversilk/trap/Crossed(atom/movable/AM as mob|obj)
 	if(AM.is_incorporeal())
 		return
-	if(istype(AM, /mob/living/carbon/human))
+	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
 		if(H.species.is_weaver)
 			return
 	if(isliving(AM) && trap_active)
 		var/mob/living/L = AM
-		if(L.m_intent == "run")
+		if(L.m_intent == I_RUN)
 			L.visible_message(
 				span_danger("[L] steps on \the [src]."),
 				span_danger("You step on \the [src]!"),
@@ -130,7 +132,7 @@
 	desc = "A webbed cocoon that completely restrains the wearer."
 	icon_state = "web_bindings"
 	item_state = "web_bindings_mob"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+	body_parts_covered = CHEST|LEGS|FEET|ARMS|HANDS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
 	//CHOMPedit - Teshari sprite, this was originally a YW edit of the old web bindings
 	sprite_sheets = list(

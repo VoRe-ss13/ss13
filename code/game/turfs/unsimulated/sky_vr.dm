@@ -8,11 +8,10 @@
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "sky_slow"
 	dir = SOUTH
-	//initialized = FALSE CHOMPRemoval
 	var/does_skyfall = TRUE
 	var/list/skyfall_levels
 
-/turf/unsimulated/floor/sky/Initialize()
+/turf/unsimulated/floor/sky/Initialize(mapload)
 	. = ..()
 	if(does_skyfall && !LAZYLEN(skyfall_levels))
 		error("[x],[y],[z], [get_area(src)] doesn't have skyfall_levels defined! Can't skyfall!")

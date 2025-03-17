@@ -81,7 +81,7 @@
 
 //Shows today's server log
 /datum/admins/proc/view_txt_log()
-	set category = "Admin.Logs" //CHOMPEdit
+	set category = "Admin.Logs"
 	set name = "Show Server Log"
 	set desc = "Shows today's server log."
 
@@ -96,7 +96,7 @@
 
 //Shows today's attack log
 /datum/admins/proc/view_atk_log()
-	set category = "Admin.Logs" //CHOMPEdit
+	set category = "Admin.Logs"
 	set name = "Show Server Attack Log"
 	set desc = "Shows today's server attack log."
 
@@ -107,7 +107,7 @@
 	if( fexists(path) )
 		src << run( file(path) )
 	else
-		to_chat(src, "<font color='red'>Error: view_atk_log(): File not found/Invalid path([path]).</font>")
+		to_chat(src, span_red("<Error: view_atk_log(): File not found/Invalid path([path])."))
 		return
 	usr << run( file(path) )
 	feedback_add_details("admin_verb","SSAL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

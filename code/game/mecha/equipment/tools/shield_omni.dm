@@ -57,7 +57,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/omni_shield/get_equip_info()
 	if(!chassis) return
-	return (equip_ready ? span_green("*") : span_red("*")) + "&nbsp;[src.name] - <a href='?src=\ref[src];toggle_omnishield=1'>[shields?.active?"Dea":"A"]ctivate</a>"
+	return (equip_ready ? span_green("*") : span_red("*")) + "&nbsp;[src.name] - <a href='byond://?src=\ref[src];toggle_omnishield=1'>[shields?.active?"Dea":"A"]ctivate</a>"
 
 
 ////// The shield projector object
@@ -74,7 +74,7 @@
 
 	var/obj/mecha/my_mech = null
 
-/obj/item/shield_projector/rectangle/mecha/Initialize()
+/obj/item/shield_projector/rectangle/mecha/Initialize(mapload)
 	. = ..()
 	my_mech = loc
 	RegisterSignal(my_mech, COMSIG_OBSERVER_MOVED, /obj/item/shield_projector/proc/update_shield_positions)

@@ -13,18 +13,11 @@
 	var/start_pressure = ONE_ATMOSPHERE
 	var/maximum_pressure = 90 * ONE_ATMOSPHERE
 
-/obj/machinery/portable_atmospherics/New()
-	//..() CHOMP Removal, moved to bottom
-	//VOREStation Edit - Fix runtime
+/obj/machinery/portable_atmospherics/Initialize(mapload)
+	..()
 	if(air_contents)
 		air_contents.volume = volume
 		air_contents.temperature = T20C
-	//VOREStation Edit End
-	..() //CHOMPEdit. Please for the love of god, do not put ..() at the top of New(), like ever
-	return 1
-
-/obj/machinery/portable_atmospherics/Initialize()
-	..()
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/machinery/portable_atmospherics/LateInitialize()
@@ -50,8 +43,8 @@
 
 /obj/machinery/portable_atmospherics/proc/StandardAirMix()
 	return list(
-		"oxygen" = O2STANDARD * MolesForPressure(),
-		"nitrogen" = N2STANDARD *  MolesForPressure())
+		GAS_O2 = O2STANDARD * MolesForPressure(),
+		GAS_N2 = N2STANDARD *  MolesForPressure())
 
 /obj/machinery/portable_atmospherics/proc/MolesForPressure(var/target_pressure = start_pressure)
 	return (target_pressure * air_contents.volume) / (R_IDEAL_GAS_EQUATION * air_contents.temperature)

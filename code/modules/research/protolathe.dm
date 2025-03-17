@@ -41,7 +41,7 @@
 	var/req_category = LATHE_ALL // CHOMPAdd - Departmental Lathes
 	var/dep_overlay = null // CHOMPAdd - Departmental Lathes
 
-/obj/machinery/r_n_d/protolathe/Initialize()
+/obj/machinery/r_n_d/protolathe/Initialize(mapload)
 	. = ..()
 
 // Go through all materials, and add them to the possible storage, but hide them unless we contain them.
@@ -198,8 +198,9 @@
 	return
 
 /obj/machinery/r_n_d/protolathe/proc/removeFromQueue(var/index)
-	queue.Cut(index, index + 1)
-	return
+	if(queue.len >= index)
+		queue.Cut(index, index + 1)
+		return
 
 //CHOMPAdd Start, Locked Designs
 /obj/machinery/r_n_d/protolathe/proc/allowedToBuild(var/datum/design/D)

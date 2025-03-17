@@ -22,8 +22,8 @@
 
 	var/list/spawned_mobs = list()
 
-/obj/structure/mob_spawner/New()
-	..()
+/obj/structure/mob_spawner/Initialize(mapload)
+	. = ..()
 	START_PROCESSING(SSobj, src)
 	last_spawn = world.time + rand(0,spawn_delay)
 
@@ -181,7 +181,7 @@ It also makes it so a ghost wont know where all the goodies/mobs are.
 
 
 /obj/structure/mob_spawner/scanner/proc/CheckProximity(atom/movable/AM,turf/new_loc)
-	if(AM in mobs_in_range && (!AM || get_dist(src,new_loc) > range))
+	if((AM in mobs_in_range) && (!AM || get_dist(src,new_loc) > range))
 		mobs_in_range -= AM
 
 //CHOMPEdit End
@@ -206,7 +206,7 @@ It also makes it so a ghost wont know where all the goodies/mobs are.
 	name = "Corgi Lazy Spawner"
 	desc = "This is a proof of concept, not sure why you would use this one"
 	spawn_delay = 3 MINUTES
-	mob_faction = "Corgi"
+	mob_faction = FACTION_CORGI
 	spawn_types = list(
 	/mob/living/simple_mob/animal/passive/dog/corgi = 75,
 	/mob/living/simple_mob/animal/passive/dog/corgi/puppy = 50
@@ -223,7 +223,7 @@ It also makes it so a ghost wont know where all the goodies/mobs are.
 	spawn_delay = 10 MINUTES
 	range = 10
 	simultaneous_spawns = 1
-	mob_faction = "wild animal"
+	mob_faction = FACTION_WILD_ANIMAL
 	total_spawns = -1
 	destructible = 0
 	anchored = TRUE
@@ -240,7 +240,7 @@ It also makes it so a ghost wont know where all the goodies/mobs are.
 	spawn_delay = 10 MINUTES
 	range = 10
 	simultaneous_spawns = 1
-	mob_faction = "xeno"
+	mob_faction = FACTION_XENO
 	total_spawns = -1
 	destructible = 1
 	health = 50
@@ -259,7 +259,7 @@ It also makes it so a ghost wont know where all the goodies/mobs are.
 	spawn_delay = 10 MINUTES
 	range = 10
 	simultaneous_spawns = 1
-	mob_faction = "xeno"
+	mob_faction = FACTION_XENO
 	total_spawns = 1
 	destructible = 1
 	health = 50

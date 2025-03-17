@@ -60,12 +60,12 @@
 /mob/living/simple_mob/mechanical/mecha/combat/durand/verb/toggle_defense_mode()
 	set name = "Toggle Defense Mode"
 	set desc = "Toggles a special mode which makes you immobile and much more resilient."
-	set category = "Abilities.Durand" //CHOMPEdit
+	set category = "Abilities.Durand"
 
 	set_defense_mode(!defense_mode)
 
 // Variant that starts in defense mode, perhaps for PoIs.
-/mob/living/simple_mob/mechanical/mecha/combat/durand/defensive/Initialize()
+/mob/living/simple_mob/mechanical/mecha/combat/durand/defensive/Initialize(mapload)
 	set_defense_mode(TRUE)
 	return ..()
 

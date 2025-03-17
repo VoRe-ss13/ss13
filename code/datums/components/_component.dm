@@ -281,7 +281,8 @@
 	var/datum/component/C = dc[c_type]
 	if(C)
 		if(length(C))
-			C = C[1]
+			var/list/component_list = C
+			C = component_list[1]
 		if(C.type == c_type)
 			return C
 	return null
@@ -429,12 +430,11 @@
 	. = GetComponent(arguments[1])
 	if(!.)
 		return _AddComponent(arguments)
-
 /**
- * Removes the component from parent, ends up with a null parent
+  * Removes the component from parent, ends up with a null parent
  * Used as a helper proc by the component transfer proc, does not clean up the component like Destroy does
- */
-/datum/component/proc/ClearFromParent()
+  */
+/datum/component/proc/RemoveComponent()
 	if(!parent)
 		return
 	var/datum/old_parent = parent
@@ -455,7 +455,7 @@
 	if(!target || target.parent == src)
 		return
 	if(target.parent)
-		target.ClearFromParent()
+		target.RemoveComponent()
 	target.parent = src
 	var/result = target.PostTransfer()
 	switch(result)

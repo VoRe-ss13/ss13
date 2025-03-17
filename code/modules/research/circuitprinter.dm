@@ -26,7 +26,7 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 	idle_power_usage = 30
 	active_power_usage = 2500
 
-/obj/machinery/r_n_d/circuit_imprinter/Initialize()
+/obj/machinery/r_n_d/circuit_imprinter/Initialize(mapload)
 	. = ..()
 
 	spawn()	// Go through all materials, and add them to the possible storage, but hide them unless we contain them.
@@ -175,8 +175,9 @@ using metal and glass, it uses glass and reagents (usually sulphuric acid).
 	return
 
 /obj/machinery/r_n_d/circuit_imprinter/proc/removeFromQueue(var/index)
-	queue.Cut(index, index + 1)
-	return
+	if(queue.len >= index)
+		queue.Cut(index, index + 1)
+		return
 
 //CHOMPAdd Start, Locked Designs
 /obj/machinery/r_n_d/circuit_imprinter/proc/allowedToBuild(var/datum/design/D)

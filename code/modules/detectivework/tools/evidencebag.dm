@@ -2,14 +2,14 @@
 
 /obj/item/evidencebag
 	name = "evidence bag"
-	desc = "An empty evidence bag.  Use by clicking on the bag and dragging it to the item you want to bag."	//CHOMPstation edit-"Actually clarifies how to use the item in game"
+	desc = "An empty evidence bag.  Use by clicking on the bag and dragging it to the item you want to bag."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "evidenceobj"
 	item_state = null
 	w_class = ITEMSIZE_SMALL
 	var/obj/item/stored_item = null
 
-/obj/item/evidencebag/MouseDrop(var/obj/item/I as obj)
+/obj/item/evidencebag/MouseDrop(var/obj/item/I)
 	if (!ishuman(usr))
 		return
 	if(!istype(I) || I.anchored)
@@ -27,7 +27,7 @@
 		//If it isn't on the floor. Do some checks to see if it's in our hands or a box. Otherwise give up.
 		if(istype(I.loc,/obj/item/storage))	//in a container.
 			var/sdepth = I.storage_depth(user)
-			if (sdepth > MAX_STORAGE_REACH) // CHOMPedit: Storage reach depth.
+			if (sdepth > MAX_STORAGE_REACH)
 				return	//too deeply nested to access
 
 			var/obj/item/storage/U = I.loc

@@ -1,7 +1,8 @@
-import { useBackend } from '../../backend';
-import { Box } from '../../components';
+import { useBackend } from 'tgui/backend';
+import { Box } from 'tgui-core/components';
+
 import { FullscreenNotice } from '../common/FullscreenNotice';
-import { Data } from './types';
+import type { Data } from './types';
 
 export const MessageMonitorHack = (props) => {
   const { data } = useBackend<Data>();

@@ -22,7 +22,8 @@ FLOOR SAFES
 	var/maxspace = 24	//the maximum combined w_class of stuff in the safe
 
 
-/obj/structure/safe/Initialize()
+/obj/structure/safe/Initialize(mapload)
+	. = ..()
 	tumbler_1_pos = rand(0, 72)
 	tumbler_1_open = rand(0, 72)
 
@@ -41,7 +42,7 @@ FLOOR SAFES
 			space += I.w_class
 			I.forceMove(src)
 
-/obj/structure/safe/proc/check_unlocked(mob/user as mob, canhear)
+/obj/structure/safe/proc/check_unlocked(mob/user, canhear)
 	if(user && canhear)
 		if(tumbler_1_pos == tumbler_1_open)
 			to_chat(user, span_notice("You hear a [pick("tonk", "krunk", "plunk")] from \the [src]."))
@@ -74,15 +75,15 @@ FLOOR SAFES
 		icon_state = initial(icon_state)
 
 
-/obj/structure/safe/attack_hand(mob/user as mob)
+/obj/structure/safe/attack_hand(mob/user)
 	user.set_machine(src)
 	var/dat = "<center>"
-	dat += "<a href='?src=\ref[src];open=1'>[open ? "Close" : "Open"] [src]</a> | <a href='?src=\ref[src];decrement=1'>-</a> [dial * 5] <a href='?src=\ref[src];increment=1'>+</a>"
+	dat += "<a href='byond://?src=\ref[src];open=1'>[open ? "Close" : "Open"] [src]</a> | <a href='byond://?src=\ref[src];decrement=1'>-</a> [dial * 5] <a href='byond://?src=\ref[src];increment=1'>+</a>"
 	if(open)
 		dat += "<table>"
 		for(var/i = contents.len, i>=1, i--)
 			var/obj/item/P = contents[i]
-			dat += "<tr><td><a href='?src=\ref[src];retrieve=\ref[P]'>[P.name]</a></td></tr>"
+			dat += "<tr><td><a href='byond://?src=\ref[src];retrieve=\ref[P]'>[P.name]</a></td></tr>"
 		dat += "</table></center>"
 	user << browse("<html><head><title>[name]</title></head><body>[dat]</body></html>", "window=safe;size=350x300")
 
@@ -100,7 +101,7 @@ FLOOR SAFES
 			to_chat(user, span_notice("You [open ? "close" : "open"] [src]."))
 			open = !open
 			update_icon()
-			updateUsrDialog()
+			updateUsrDialog(usr)
 			return
 		else
 			to_chat(user, span_notice("You can't [open ? "close" : "open"] [src], the lock is engaged!"))
@@ -119,7 +120,7 @@ FLOOR SAFES
 					playsound(src, 'sound/machines/click.ogg', 20, 1)
 			check_unlocked(user, canhear)
 
-		updateUsrDialog()
+		updateUsrDialog(usr)
 		return
 
 	if(href_list["increment"])
@@ -134,27 +135,27 @@ FLOOR SAFES
 					to_chat(user, span_notice("You hear a [pick("click", "chink", "clink")] from \the [src]."))
 					playsound(src, 'sound/machines/click.ogg', 20, 1)
 			check_unlocked(user, canhear)
-		updateUsrDialog()
+		updateUsrDialog(usr)
 		return
 
 	if(href_list["retrieve"])
-		user << browse("", "window=safe") // Close the menu
+		user << browse(null, "window=safe") // Close the menu
 
 		var/obj/item/P = locate(href_list["retrieve"]) in src
 		if(open)
 			if(P && in_range(src, user))
 				user.put_in_hands(P)
-				updateUsrDialog()
+				updateUsrDialog(usr)
 
 
-/obj/structure/safe/attackby(obj/item/I as obj, mob/user as mob)
+/obj/structure/safe/attackby(obj/item/I, mob/user)
 	if(open)
 		if(I.w_class + space <= maxspace)
 			space += I.w_class
 			user.drop_item()
 			I.loc = src
 			to_chat(user, span_notice("You put [I] in \the [src]."))
-			updateUsrDialog()
+			updateUsrDialog(user)
 			return
 		else
 			to_chat(user, span_notice("[I] won't fit in \the [src]."))
@@ -177,7 +178,7 @@ FLOOR SAFES
 	plane = PLATING_PLANE
 	layer = ABOVE_UTILITY
 
-/obj/structure/safe/floor/Initialize()
+/obj/structure/safe/floor/Initialize(mapload)
 	. = ..()
 	var/turf/T = loc
 	if(istype(T) && !T.is_plating())

@@ -142,7 +142,7 @@
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 2, TECH_BIO = 2)
 	var/volume = 60
-	var/list/fuel = list("phoron" = 50000, "slimejelly" = 25000, "fuel" = 15000, "carbon" = 10000, "ethanol"= 10000, "nutriment" =8000, "blood" = 5000)
+	var/list/fuel = list(REAGENT_ID_PHORON = 50000, REAGENT_ID_SLIMEJELLY = 25000, REAGENT_ID_FUEL = 15000, REAGENT_ID_CARBON = 10000, REAGENT_ID_ETHANOL= 10000, REAGENT_ID_NUTRIMENT = 8000, REAGENT_ID_BLOOD = 5000)
 
 /obj/item/integrated_circuit/passive/power/chemical_cell/New()
 	..()
@@ -213,7 +213,7 @@
 	var/obj/machinery/power/circuit_io/IO = null // Dummy power machine to move energy in/out without a bunch of code duplication.
 	var/throughput = 10000 // Give/take up to 10kW.
 
-/obj/item/integrated_circuit/passive/power/powernet/Initialize()
+/obj/item/integrated_circuit/passive/power/powernet/Initialize(mapload)
 	IO = new(src)
 	return ..()
 

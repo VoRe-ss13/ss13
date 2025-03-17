@@ -1,7 +1,7 @@
 // This causes PoI maps to get 'checked' and compiled, when undergoing a unit test.
 // This is so CI can validate PoIs, and ensure future changes don't break PoIs, as PoIs are loaded at runtime and the compiler can't catch errors.
 // When adding a new PoI, please add it to this list.
-#if MAP_TEST
+#ifdef MAP_TEST
 #include "AbandonedLab.dmm"
 #include "AmbushBase.dmm"
 #include "AmbushBaseAlt.dmm"
@@ -513,6 +513,24 @@
 	name = "Abandoned Lab"
 	desc = "Experiments gone wrong! Be wary of the test subjects gone rogue."
 	mappath = "modular_chomp/maps/submaps/surface_submaps/wilderness/AbandonedLab.dmm"
+	cost = 20
+
+/datum/map_template/surface/wilderness/deep/AbandonedLab
+	name = "Abandoned Lab"
+	desc = "Experiments gone wrong! Be wary of the test subjects gone rogue."
+	mappath = "modular_chomp/maps/submaps/surface_submaps/wilderness/AbandonedLab.dmm"
+	cost = 20
+
+/datum/map_template/surface/wilderness/deep/VolcanicFissure
+	name = "Volcanic Fissure"
+	desc = "Strange alien tech has caused magma to surface, creating a pit of lava."
+	mappath = "modular_chomp/maps/submaps/surface_submaps/wilderness/VolcanicFissure.dmm"
+	cost = 20
+
+/datum/map_template/surface/wilderness/deep/PirateLake
+	name = "Volcanic Fissure"
+	desc = "Yarr, explorers my expirence diffcults when facing defenses of water and table."
+	mappath = "modular_chomp/maps/submaps/surface_submaps/wilderness/PirateLake.dmm"
 	cost = 20
 
 /*==Disabled==/

@@ -25,7 +25,7 @@ GLOBAL_LIST_EMPTY(holoposters)
 		"moebius" = list(LIGHT_COLOR_PURPLE, "Moebius. One of the few companies worth merit beyond their local bubble staffed completely by synthetics. 'For synths, by synths.'")
 	)
 
-/obj/machinery/holoposter/Initialize()
+/obj/machinery/holoposter/Initialize(mapload)
 	. = ..()
 	set_rand_sprite()
 	GLOB.holoposters += src
@@ -85,7 +85,7 @@ GLOBAL_LIST_EMPTY(holoposters)
 		return
 	if (W.has_tool_quality(TOOL_MULTITOOL))
 		playsound(src, 'sound/items/penclick.ogg', 60, 1)
-		icon_state = tgui_input_list(usr, "Available Posters", "Holographic Poster", postertypes + "random")
+		icon_state = tgui_input_list(user, "Available Posters", "Holographic Poster", postertypes + "random")
 		if(!Adjacent(user))
 			return
 		if(icon_state == "random")

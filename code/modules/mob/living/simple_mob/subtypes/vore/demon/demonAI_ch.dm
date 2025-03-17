@@ -29,7 +29,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 5
 	var/poison_chance = 50
-	var/poison_type = "mindbreaker"
+	var/poison_type = REAGENT_ID_MINDBREAKER
 	var/poison_per_bite = 3
 
 	min_oxy = 0
@@ -67,6 +67,8 @@
 
 /mob/living/simple_mob/vore/demonAI/init_vore()
 	if(!voremob_loaded)
+		return
+	if(LAZYLEN(vore_organs))
 		return
 	.=..()
 	var/obj/belly/B = vore_selected
@@ -183,20 +185,20 @@
 	..()
 
 /mob/living/simple_mob/vore/demonAI/bullet_act()
-    playsound(src, 'sound/misc/demonlaugh.ogg', 50, 1)
-    ..()
+	playsound(src, 'sound/misc/demonlaugh.ogg', 50, 1)
+	..()
 
 /mob/living/simple_mob/vore/demonAI/attack_hand()
-    playsound(src, 'sound/misc/demonlaugh.ogg', 50, 1)
-    ..()
+	playsound(src, 'sound/misc/demonlaugh.ogg', 50, 1)
+	..()
 
 /mob/living/simple_mob/vore/demonAI/hitby()
-    playsound(src, 'sound/misc/demonlaugh.ogg', 50, 1)
-    ..()
+	playsound(src, 'sound/misc/demonlaugh.ogg', 50, 1)
+	..()
 
 /mob/living/simple_mob/vore/demonAI/attackby()
-    playsound(src, 'sound/misc/demonlaugh.ogg', 50, 1)
-    ..()
+	playsound(src, 'sound/misc/demonlaugh.ogg', 50, 1)
+	..()
 
 /mob/living/simple_mob/vore/demonAI/gibspam
 

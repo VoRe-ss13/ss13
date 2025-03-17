@@ -44,7 +44,7 @@
 	if(aiCamera && aiCamera.in_camera_mode)
 		aiCamera.camera_mode_off()
 		if(is_component_functioning("camera"))
-			aiCamera.captureimage(A, usr)
+			aiCamera.captureimage(A, src)
 		else
 			to_chat(src, span_userdanger("Your camera isn't functional."))
 		return
@@ -73,7 +73,7 @@
 
 		W.attack_self(src)
 		return
-	
+
 	// cyborgs are prohibited from using storage items so we can I think safely remove (A.loc in contents)
 	if(A == loc || (A in loc) || (A in contents))
 		// No adjacency checks

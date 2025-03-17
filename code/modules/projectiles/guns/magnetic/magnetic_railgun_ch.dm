@@ -19,12 +19,12 @@
 	is_picked_up = TRUE
 	update_transform()
 
-/obj/item/gun/magnetic/railgun/dropped()
+/obj/item/gun/magnetic/railgun/dropped(mob/living/user)
 	. = ..()
 	is_picked_up = FALSE
 	update_transform()
 
-/obj/item/gun/magnetic/railgun/Initialize()
+/obj/item/gun/magnetic/railgun/Initialize(mapload)
 	. = ..()
 	if((!(type == /obj/item/gun/magnetic/railgun)) && !is64x32_override)
 		is64x32 = FALSE

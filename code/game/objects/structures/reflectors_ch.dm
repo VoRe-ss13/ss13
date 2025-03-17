@@ -23,7 +23,7 @@
 	var/list/has_projectiles = list()
 	var/bullet_act_in_progress = FALSE
 
-/obj/structure/reflector/Initialize()
+/obj/structure/reflector/Initialize(mapload)
 	. = ..()
 	icon_state = "reflector_base"
 	allowed_projectile_typecache = typecacheof(allowed_projectile_typecache)
@@ -170,7 +170,7 @@
 	if (!can_rotate || admin)
 		to_chat(user, span_warning("The rotation is locked!"))
 		return FALSE
-	var/new_angle = input(user, "Input a new angle for primary reflection face.", "Reflector Angle", rotation_angle) as null|num
+	var/new_angle = tgui_input_number(user, "Input a new angle for primary reflection face.", "Reflector Angle", rotation_angle, 360, -360)
 	if(!CanUseTopic(user))
 		return
 	if(!isnull(new_angle))
@@ -308,6 +308,6 @@
 /obj/machinery/portable_atmospherics/canister
 	var/dont_burst = FALSE
 
-/obj/machinery/portable_atmospherics/canister/phoron/cold/Initialize() //ChompEDIT New --> Initialize
+/obj/machinery/portable_atmospherics/canister/phoron/cold/Initialize(mapload)
+	. = ..()
 	src.air_contents.temperature = 2.72
-	..()

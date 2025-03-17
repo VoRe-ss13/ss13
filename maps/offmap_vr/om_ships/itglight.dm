@@ -1,5 +1,5 @@
 // Compile in the map for CI testing if we're testing compileability of all the maps
-#if MAP_TEST
+#ifdef MAP_TEST
 #include "itglight.dmm"
 #endif
 
@@ -138,7 +138,7 @@
 
 /obj/item/paper/Dauntless
 	name = "Notes about Dauntless"
-	info = {"<font size=1>Welcome to the Ironcrest Transport Group</font><br><br>
+	info = span_small("Welcome to the Ironcrest Transport Group") + {"<br><br>
 	<h4>ITG Dauntless</h4>
 	Welcome to the Dauntless, there are a few things you should know.<br><br>
 	WRITE DOWN THE DOCKING CODES<br>

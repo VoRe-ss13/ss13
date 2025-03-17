@@ -1,5 +1,6 @@
-import { useBackend } from '../../backend';
-import { Window } from '../../layouts';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+
 import { AirlockConsoleAdvanced } from './AirlockConsoleAdvanced';
 import { AirlockConsoleDocking } from './AirlockConsoleDocking';
 import { AirlockConsolePhoron } from './AirlockConsolePhoron';
@@ -9,7 +10,7 @@ import { DockingConsoleSimple } from './DockingConsoleSimple';
 import { DoorAccessConsole } from './DoorAccessConsole';
 import { EscapePodBerthConsole } from './EscapePodBerthConsole';
 import { EscapePodConsole } from './EscapePodConsole';
-import { Data } from './types';
+import type { Data } from './types';
 
 /**
  * This is an all-in-one replacement for the following NanoUI Templates:
@@ -98,7 +99,7 @@ export const EmbeddedController = (props) => {
   }
 
   return (
-    <Window width={450} height={340}>
+    <Window width={500} height={400}>
       <Window.Content>{Component}</Window.Content>
     </Window>
   );

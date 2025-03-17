@@ -135,7 +135,7 @@
 					prob(9);/obj/item/gun/projectile/automatic/mini_uzi,\
 					prob(9);/obj/item/gun/projectile/pistol,\
 					prob(9);/obj/item/gun/projectile/shotgun/pump/combat,\
-					prob(9);/obj/item/twohanded/fireaxe,\
+					prob(9);/obj/item/material/twohanded/fireaxe,\
 					prob(9);/obj/item/cane/concealed,\
 					prob(9);/obj/item/gun/energy/gun,\
 					prob(8);/obj/item/gun/energy/ionrifle,\
@@ -195,9 +195,7 @@
 					prob(4);/obj/item/ammo_magazine/m9mmt,\
 					prob(4);/obj/item/ammo_magazine/m9mmt/rubber,\
 					prob(4);/obj/item/ammo_magazine/m10mm,\
-//CHOMPedit start: new P90 magazine.
-					prob(4);/obj/item/ammo_magazine/a57p90,\
-//CHOMPedit end.
+					prob(4);/obj/item/ammo_magazine/m9mmp90,\
 					prob(4);/obj/item/ammo_magazine/m545/ext,
 					prob(4);/obj/item/ammo_magazine/m762,\
 					prob(4);/obj/item/ammo_magazine/ammo_box/b762/surplus/hunter,\

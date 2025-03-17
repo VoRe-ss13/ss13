@@ -8,9 +8,9 @@
 
 	emote_type = 2 //This lets them emote through containers.  The communicator has a image feed of the person calling them so...
 
-/mob/living/voice/Initialize(loc)
+/mob/living/voice/Initialize(mapload)
 	add_language(LANGUAGE_GALCOM)
-	apply_default_language(GLOB.all_languages[LANGUAGE_GALCOM]) //CHOMPEdit
+	apply_default_language(GLOB.all_languages[LANGUAGE_GALCOM])
 
 	if(istype(loc, /obj/item/communicator))
 		comm = loc

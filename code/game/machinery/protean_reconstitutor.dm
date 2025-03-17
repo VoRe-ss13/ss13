@@ -33,7 +33,7 @@
 	//component vars
 	circuit = /obj/item/circuitboard/protean_reconstitutor
 
-/obj/machinery/protean_reconstitutor/Initialize()
+/obj/machinery/protean_reconstitutor/Initialize(mapload)
 	component_parts = list()
 	component_parts += new /obj/item/stock_parts/matter_bin(src)
 	component_parts += new /obj/item/stock_parts/manipulator(src)
@@ -135,7 +135,7 @@
 
 	if(W.has_tool_quality(TOOL_WRENCH))
 		if(protean_brain || protean_orchestrator || protean_refactory)
-			var/choice = tgui_input_list(usr, "What component would you like to remove?", "Remove Component", list(protean_brain,protean_orchestrator,protean_refactory))
+			var/choice = tgui_input_list(user, "What component would you like to remove?", "Remove Component", list(protean_brain,protean_orchestrator,protean_refactory))
 			if(!choice) return
 
 			if(choice == protean_brain)
@@ -242,7 +242,9 @@
 					return
 				if(P.dna)
 					P.dna.ResetUIFrom(P)
+					P.sync_dna_traits(FALSE) // Traitgenes Sync traits to genetics if needed
 					P.sync_organ_dna()
+				P.initialize_vessel()
 
 				if(P.mind)
 					P.mind.loaded_from_ckey = picked_ckey

@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Input } from 'tgui-core/components';
 
-import { useBackend } from '../../backend';
-import { Box, Button, Input } from '../../components';
 import { selectRecords } from './functions';
-import { Data, record } from './types';
+import type { Data, record } from './types';
 
 export const GeneralRecordsList = (props) => {
   const { act, data } = useBackend<Data>();

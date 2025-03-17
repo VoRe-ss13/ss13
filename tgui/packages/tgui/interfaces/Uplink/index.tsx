@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Section } from 'tgui-core/components';
 
-import { useBackend } from '../../backend';
-import { Section } from '../../components';
-import { Window } from '../../layouts';
 import { ExploitableInformation } from './ExploitableInformation';
 import { GenericUplink } from './GenericUplink';
-import { Data } from './types';
+import type { Data } from './types';
 import { UplinkHeader } from './UplinkHeader';
 
 export const Uplink = (props) => {

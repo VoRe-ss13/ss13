@@ -385,11 +385,6 @@
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/security/breakroom)
-"aaH" = (
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/tether/surfacebase/outside/outside3)
 "aaI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 10
@@ -704,7 +699,7 @@
 /area/tether/surfacebase/outside/outside3)
 "abe" = (
 /obj/structure/closet,
-/obj/item/reagent_containers/food/drinks/bottle/tequilla,
+/obj/item/reagent_containers/food/drinks/bottle/tequila,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/medsec_maintenance)
 "abf" = (
@@ -1743,7 +1738,7 @@
 /area/tether/surfacebase/security/upperhall)
 "acK" = (
 /obj/structure/bookcase,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
 /obj/item/book/manual/standard_operating_procedure,
 /obj/item/book/manual/command_guide,
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -1941,7 +1936,6 @@
 /obj/effect/floor_decal/corner/paleblue/bordercorner2{
 	dir = 9
 	},
-/obj/machinery/vitals_monitor,
 /obj/machinery/vitals_monitor,
 /obj/machinery/light,
 /obj/structure/cable/green{
@@ -5825,8 +5819,8 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/item/book/manual/security_space_law,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tether/surfacebase/security/lobby)
 "aiV" = (
@@ -8237,14 +8231,8 @@
 "anA" = (
 /obj/structure/table/standard,
 /obj/machinery/cell_charger,
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
+/obj/item/cell/high,
 /obj/machinery/newscaster{
 	pixel_y = 30
 	},
@@ -10796,13 +10784,14 @@
 /turf/simulated/floor/grass,
 /area/hydroponics)
 "asj" = (
-/turf/space,
-/turf/simulated/wall/fancy_shuttle{
-	fancy_shuttle_tag = "lifeboat1"
+/obj/structure/cable/orange{
+	icon_state = "4-8"
 	},
-/area/shuttle/tether{
-	base_turf = /turf/simulated/floor/reinforced
-	})
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/tether/surfacebase/shuttle_pad)
 "ask" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 8
@@ -13949,7 +13938,7 @@
 	desc = "There appears to be a shrine to WGW at the back...";
 	name = "Forbidden Knowledge"
 	},
-/obj/item/book/manual/engineering_hacking,
+/obj/item/book/manual/wiki/engineering_hacking,
 /obj/item/book/manual/nuclear,
 /turf/simulated/floor/carpet,
 /area/tether/surfacebase/library/study)
@@ -15024,26 +15013,18 @@
 	name = "robotics parts"
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
 /obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000;
 	pixel_x = 5;
 	pixel_y = -5
 	},
@@ -19037,14 +19018,14 @@
 /obj/item/book/manual/mass_spectrometry,
 /obj/item/book/manual/materials_chemistry_analysis,
 /obj/item/book/manual/medical_cloning,
-/obj/item/book/manual/medical_diagnostics_manual,
+/obj/item/book/manual/wiki/medical_diagnostics_manual,
 /obj/item/book/manual/research_and_development,
 /obj/item/book/manual/resleeving,
 /obj/item/book/manual/ripley_build_and_repair,
 /obj/item/book/manual/robotics_cyborgs,
-/obj/item/book/manual/robotics_manual,
+/obj/item/book/manual/wiki/robotics_manual,
 /obj/item/book/manual/rust_engine,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
 /obj/item/book/manual/standard_operating_procedure,
 /obj/item/book/manual/stasis,
 /obj/item/book/manual/supermatter_engine,
@@ -19442,8 +19423,8 @@
 /obj/item/book/manual/chef_recipes,
 /obj/item/book/manual/command_guide,
 /obj/item/book/manual/detective,
-/obj/item/book/manual/engineering_construction,
-/obj/item/book/manual/engineering_guide,
+/obj/item/book/manual/wiki/engineering_construction,
+/obj/item/book/manual/wiki/engineering_guide,
 /obj/item/book/manual/engineering_particle_accelerator,
 /obj/item/book/manual/engineering_singularity_safety,
 /obj/item/book/manual/evaguide,
@@ -23764,12 +23745,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/power/apc{
-	name = "south bump";
-	nightshift_setting = 0;
-	pixel_y = -28;
-	req_access = list(67)
-	},
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
 /obj/effect/floor_decal/borderfloorwhite/corner2,
@@ -27500,7 +27475,6 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals7,
 /obj/machinery/atmospherics/unary/vent_pump/on,
-/obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/surface_three_hall/nwest)
 "aWu" = (
@@ -29931,7 +29905,6 @@
 /area/tether/surfacebase/surface_three_hall)
 "baI" = (
 /obj/structure/closet/crate{
-	icon_state = "crate";
 	name = "Grenade Crate"
 	},
 /obj/item/grenade/chem_grenade,
@@ -30159,7 +30132,7 @@
 /area/crew_quarters/captain)
 "bbb" = (
 /obj/structure/bookcase,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
 /obj/item/book/manual/standard_operating_procedure,
 /obj/item/book/manual/command_guide,
 /turf/simulated/floor/wood,
@@ -33585,11 +33558,6 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/topairlock)
 "bhV" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "north bump";
-	pixel_y = 28
-	},
 /obj/structure/cable/orange{
 	icon_state = "0-2"
 	},
@@ -34034,18 +34002,12 @@
 	pixel_x = 3;
 	pixel_y = -7
 	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/item/stack/cable_coil{
 	pixel_x = 3;
 	pixel_y = -7
 	},
-/obj/item/cell/high{
-	charge = 100;
-	maxcharge = 15000
-	},
+/obj/item/cell/high,
 /obj/item/storage/toolbox/mechanical{
 	pixel_x = -2;
 	pixel_y = -1
@@ -34909,7 +34871,7 @@
 "bkS" = (
 /obj/structure/table/standard,
 /obj/item/book/manual/robotics_cyborgs,
-/obj/item/book/manual/robotics_manual,
+/obj/item/book/manual/wiki/robotics_manual,
 /obj/item/clothing/glasses/omnihud/rnd,
 /obj/machinery/light{
 	dir = 8
@@ -35400,12 +35362,6 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
-	},
-/obj/structure/bed/chair/wheelchair{
-	dir = 4
-	},
-/obj/structure/bed/chair/wheelchair{
-	dir = 4
 	},
 /obj/structure/bed/chair/wheelchair{
 	dir = 4
@@ -36729,9 +36685,9 @@
 /area/tether/surfacebase/security/briefingroom)
 "crz" = (
 /obj/structure/bookcase,
-/obj/item/book/manual/security_space_law,
-/obj/item/book/manual/security_space_law,
-/obj/item/book/manual/engineering_construction,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/engineering_construction,
 /obj/item/book/manual/detective,
 /obj/item/book/manual/standard_operating_procedure,
 /obj/item/book/codex/lore/vir,
@@ -36992,18 +36948,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/southhall)
-"daD" = (
-/obj/structure/cable/orange{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 4
-	},
-/turf/simulated/floor/reinforced,
-/area/tether/surfacebase/shuttle_pad)
 "daN" = (
 /obj/machinery/scale,
 /obj/structure/disposalpipe/segment{
@@ -43278,9 +43222,9 @@
 /area/tether/surfacebase/security/iaa/officeb)
 "tPE" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
 /obj/item/book/codex,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
@@ -43969,8 +43913,8 @@
 /obj/structure/bookcase,
 /obj/item/book/manual/standard_operating_procedure,
 /obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/security_space_law,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
 /obj/item/book/manual/command_guide,
 /obj/item/book/manual/command_guide,
 /obj/effect/floor_decal/spline/plain{
@@ -44578,9 +44522,6 @@
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/entrepreneur)
 "xan" = (
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/machinery/door/firedoor,
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -44998,8 +44939,8 @@
 /obj/structure/bookcase,
 /obj/item/book/manual/standard_operating_procedure,
 /obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/security_space_law,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
 /obj/item/book/manual/command_guide,
 /obj/item/book/manual/command_guide,
 /obj/effect/floor_decal/spline/plain{
@@ -57129,7 +57070,7 @@ aab
 aab
 aaq
 bou
-aaH
+ajG
 aac
 aac
 aac
@@ -57205,7 +57146,7 @@ aKU
 aKU
 aKU
 aKU
-daD
+asj
 aKU
 aKU
 aKU
@@ -57347,7 +57288,7 @@ aKU
 aKU
 aKU
 aKU
-daD
+asj
 aKU
 aKU
 aKU
@@ -59053,7 +58994,7 @@ aNP
 uSA
 aNP
 aNP
-asj
+aME
 aKU
 abg
 aOk
@@ -59195,7 +59136,7 @@ fzG
 aNK
 aNK
 uzl
-asj
+aME
 aKU
 abg
 aOk
@@ -59337,7 +59278,7 @@ aNm
 eLD
 aNm
 aNm
-asj
+aME
 aKU
 abg
 aOk

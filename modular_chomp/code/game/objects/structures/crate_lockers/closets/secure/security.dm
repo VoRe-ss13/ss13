@@ -10,7 +10,7 @@
 		/obj/item/cartridge/captain,
 		/obj/item/storage/lockbox/medal,
 		/obj/item/radio/headset/heads/captain,
-		/obj/item/radio/headset/heads/captain/alt,
+		/obj/item/radio/headset/alt/heads/captain,
 		/obj/item/gun/energy/gun,
 		/obj/item/melee/telebaton,
 		/obj/item/flash,
@@ -27,7 +27,7 @@
 		/obj/item/clothing/head/helmet,
 		/obj/item/cartridge/hop,
 		/obj/item/radio/headset/heads/hop,
-		/obj/item/radio/headset/heads/hop/alt,
+		/obj/item/radio/headset/alt/heads/hop,
 		/obj/item/storage/box/ids = 2,
 		/obj/item/gun/energy/gun/compact,
 		/obj/item/storage/box/commandkeys,
@@ -90,7 +90,7 @@
 		/obj/item/clothing/head/helmet/dermal,
 		/obj/item/cartridge/hos,
 		/obj/item/radio/headset/heads/hos,
-		/obj/item/radio/headset/heads/hos/alt,
+		/obj/item/radio/headset/alt/heads/hos,
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
 		/obj/item/shield/riot,
@@ -116,7 +116,7 @@
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/mask/gas/sechailer/swat/hos)
 
-/obj/structure/closet/secure_closet/hos/Initialize()
+/obj/structure/closet/secure_closet/hos/Initialize(mapload)
 	if(prob(50))
 		starts_with += /obj/item/storage/backpack/security
 	else
@@ -151,7 +151,7 @@
 		/obj/item/clothing/under/rank/neo_sec_gorka,
 		/obj/item/cartridge/security,
 		/obj/item/radio/headset/headset_sec,
-		/obj/item/radio/headset/headset_sec/alt,
+		/obj/item/radio/headset/alt/headset_sec,
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
 		/obj/item/clothing/accessory/badge/holo/warden,
@@ -175,7 +175,7 @@
 		/obj/item/retail_scanner/security	//CHOMPStation addition
 		)
 
-/obj/structure/closet/secure_closet/warden/Initialize()
+/obj/structure/closet/secure_closet/warden/Initialize(mapload)
 	if(prob(50))
 		starts_with += /obj/item/storage/backpack/security
 	else
@@ -195,7 +195,7 @@
 		/obj/item/clothing/mask/gas/sechailer/swat/officer,
 		/obj/item/cartridge/security,
 		/obj/item/radio/headset/headset_sec,
-		/obj/item/radio/headset/headset_sec/alt,
+		/obj/item/radio/headset/alt/headset_sec,
 		/obj/item/storage/belt/security,
 		/obj/item/flash,
 		/obj/item/reagent_containers/spray/pepper,
@@ -220,7 +220,7 @@
 		/obj/item/ticket_printer			//CHOMPStation addition
 		)
 
-/obj/structure/closet/secure_closet/security/Initialize()
+/obj/structure/closet/secure_closet/security/Initialize(mapload)
 	if(prob(50))
 		starts_with += /obj/item/storage/backpack/security
 	else
@@ -231,22 +231,22 @@
 		starts_with += /obj/item/poster/nanotrasen
 	return ..()
 
-/obj/structure/closet/secure_closet/security/cargo/Initialize()
+/obj/structure/closet/secure_closet/security/cargo/Initialize(mapload)
 	starts_with += /obj/item/clothing/accessory/armband/cargo
 	starts_with += /obj/item/encryptionkey/headset_cargo
 	return ..()
 
-/obj/structure/closet/secure_closet/security/engine/Initialize()
+/obj/structure/closet/secure_closet/security/engine/Initialize(mapload)
 	starts_with += /obj/item/clothing/accessory/armband/engine
 	starts_with += /obj/item/encryptionkey/headset_eng
 	return ..()
 
-/obj/structure/closet/secure_closet/security/science/Initialize()
+/obj/structure/closet/secure_closet/security/science/Initialize(mapload)
 	starts_with += /obj/item/clothing/accessory/armband/science
 	starts_with += /obj/item/encryptionkey/headset_sci
 	return ..()
 
-/obj/structure/closet/secure_closet/security/med/Initialize()
+/obj/structure/closet/secure_closet/security/med/Initialize(mapload)
 	starts_with += /obj/item/clothing/accessory/armband/medblue
 	starts_with += /obj/item/encryptionkey/headset_med
 	return ..()
@@ -268,7 +268,7 @@
 		/obj/item/storage/belt/detective,
 		/obj/item/storage/box/evidence,
 		/obj/item/radio/headset/headset_sec,
-		/obj/item/radio/headset/headset_sec/alt,
+		/obj/item/radio/headset/alt/headset_sec,
 		/obj/item/clothing/suit/storage/vest/detective,
 		/obj/item/taperoll/police,
 		/obj/item/clothing/accessory/holster/armpit,
@@ -277,7 +277,7 @@
 		/obj/item/storage/briefcase/crimekit,
 		/obj/item/taperecorder,
 		/obj/item/storage/bag/detective,
-		/obj/item/tape/random = 3,
+		/obj/item/tape = 3,
 		/obj/item/retail_scanner/security,	//CHOMPStation addition
 		/obj/item/clothing/glasses/hud/security		//CHOMPStation addition
 		)

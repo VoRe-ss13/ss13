@@ -27,8 +27,8 @@
 
 	poison_chance = 20
 	poison_per_bite = 5
-	poison_type = "condensedcapsaicin_v"
+	poison_type = REAGENT_ID_CONDENSEDCAPSAICINV
 
-/mob/living/simple_mob/animal/giant_spider/pepper/Initialize()
+/mob/living/simple_mob/animal/giant_spider/pepper/Initialize(mapload)
 	adjust_scale(1.1)
 	return ..()

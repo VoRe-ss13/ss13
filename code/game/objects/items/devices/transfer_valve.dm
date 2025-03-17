@@ -55,7 +55,6 @@
 		SStgui.update_uis(src) // update all UIs attached to src
 	return
 
-// CHOMPEdit Start
 /obj/item/transfer_valve/HasProximity(turf/T, datum/weakref/WF, old_loc)
 	SIGNAL_HANDLER
 	if(isnull(WF))
@@ -64,14 +63,13 @@
 	if(isnull(AM))
 		log_debug("DEBUG: HasProximity called without reference on [src].")
 	attached_device?.HasProximity(T, WEAKREF(AM), old_loc)
-// CHOMPEdit End
 
 /obj/item/transfer_valve/Moved(old_loc, direction, forced)
 	. = ..()
 	if(isturf(old_loc))
-		unsense_proximity(callback = TYPE_PROC_REF(/atom,HasProximity), center = old_loc) // CHOMPEdit
+		unsense_proximity(callback = TYPE_PROC_REF(/atom,HasProximity), center = old_loc)
 	if(isturf(loc))
-		sense_proximity(callback = TYPE_PROC_REF(/atom,HasProximity)) // CHOMPEdit
+		sense_proximity(callback = TYPE_PROC_REF(/atom,HasProximity))
 
 /obj/item/transfer_valve/attack_self(mob/user)
 	tgui_interact(user)
@@ -93,7 +91,7 @@
 	data["valve"] = valve_open
 	return data
 
-/obj/item/transfer_valve/tgui_act(action, params)
+/obj/item/transfer_valve/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return
 	. = TRUE
@@ -106,7 +104,7 @@
 			toggle_valve()
 		if("device")
 			if(attached_device)
-				attached_device.attack_self(usr)
+				attached_device.attack_self(ui.user)
 		if("remove_device")
 			if(attached_device)
 				attached_device.forceMove(get_turf(src))
@@ -117,7 +115,7 @@
 			. = FALSE
 	if(.)
 		update_icon()
-		add_fingerprint(usr)
+		add_fingerprint(ui.user)
 
 /obj/item/transfer_valve/proc/process_activation(var/obj/item/D)
 	if(toggle)
@@ -197,7 +195,7 @@
 		else
 			attacher_name = "[attacher.name]([attacher.ckey])"
 
-		var/log_str = "Bomb valve opened in <A HREF='?_src_=holder;[HrefToken(TRUE)];adminplayerobservecoodjump=1;X=[bombturf.x];Y=[bombturf.y];Z=[bombturf.z]'>[A.name]</a> "
+		var/log_str = "Bomb valve opened in <A href='byond://?_src_=holder;[HrefToken(TRUE)];adminplayerobservecoodjump=1;X=[bombturf.x];Y=[bombturf.y];Z=[bombturf.z]'>[A.name]</a> "
 		log_str += "with [attached_device ? attached_device : "no device"] attacher: [attacher_name]"
 
 		if(attacher)

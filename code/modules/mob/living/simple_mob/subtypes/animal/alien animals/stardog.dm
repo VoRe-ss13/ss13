@@ -152,7 +152,7 @@
 	return															//If it can do normal vore mechanics, it can carry players to the OM,
 																	//and release them there. I think that's probably a bad idea.
 
-/mob/living/simple_mob/vore/overmap/stardog/Initialize()
+/mob/living/simple_mob/vore/overmap/stardog/Initialize(mapload)
 	. = ..()
 	child_om_marker.set_light(5, 1, "#ff8df5")
 
@@ -187,14 +187,14 @@
 /mob/living/simple_mob/vore/overmap/stardog/verb/eject()
 	set name = "Eject"
 	set desc = "Stop controlling the dog and return to your own body."
-	set category = "Abilities.Stardog" //CHOMPEdit
+	set category = "Abilities.Stardog"
 
 	control_node.eject()
 
 /mob/living/simple_mob/vore/overmap/stardog/verb/eat_space_weather()
 	set name = "Eat Space Weather"
 	set desc = "Eat carp or rocks!"
-	set category = "Abilities.Stardog" //CHOMPEdit
+	set category = "Abilities.Stardog"
 
 	var/obj/effect/overmap/event/E
 	var/nut = 0
@@ -297,7 +297,7 @@
 /mob/living/simple_mob/vore/overmap/stardog/verb/transition()	//Don't ask how it works. I don't know. I didn't think about it. I just thought it would be cool.
 	set name = "Transition"
 	set desc = "Attempt to go to the location you have arrived at, or return to space!"
-	set category = "Abilities.Stardog" //CHOMPEdit
+	set category = "Abilities.Stardog"
 	if(nutrition <= 500)
 		to_chat(src, span_warning("You're too hungry..."))
 		return
@@ -322,7 +322,7 @@
 		if(!destinations.len)
 			to_chat(src, span_warning("There is nowhere nearby to land! You need to get closer to somewhere else that you can transition to before you can transition."))
 			return
-		for(var/obj/effect/landmark/stardog/l in destinations)
+		//for(var/obj/effect/landmark/stardog/l in destinations)
 		var/obj/effect/overmap/visitable/our_dest = tgui_input_list(src, "Where would you like to try to go?", "Transition", destinations, timeout = 15 SECONDS, strict_modern = TRUE)
 		if(!our_dest)
 			to_chat(src, span_warning("You decide not to transition."))
@@ -429,7 +429,7 @@
 	icon_state = "furX"
 	tree_chance = 0
 
-/turf/simulated/floor/outdoors/fur/Initialize()
+/turf/simulated/floor/outdoors/fur/Initialize(mapload)
 	. = ..()
 	if(tree_chance && prob(tree_chance) && !check_density())
 		var/obj/structure/flora/tree/tree = new tree_type(src)
@@ -451,7 +451,7 @@
 /turf/simulated/floor/outdoors/fur/verb/pet()
 	set name = "Pet Fur"
 	set desc = "Pet the fur!"
-	set category = "IC.Stardog" //CHOMPEdit
+	set category = "IC.Stardog"
 	set src in oview(1)
 
 	usr.visible_message(span_notice("\The [usr] pets \the [src]."), span_notice("You pet \the [src]."), runemessage = "pet pat...")
@@ -466,7 +466,7 @@
 /turf/simulated/floor/outdoors/fur/verb/emote_beyond(message as message)	//Now even the stars will know your sin.
 	set name = "Emote Beyond"
 	set desc = "Emote to those beyond the fur!"
-	set category = "IC.Chat" //CHOMPEdit
+	set category = "IC.Chat"
 	set src in oview(1)
 
 	if(!isliving(usr))
@@ -1102,14 +1102,14 @@
 	icon = 'icons/obj/landmark_vr.dmi'
 	icon_state = "transition"
 
-/obj/effect/landmark/stardog/Initialize()
+/obj/effect/landmark/stardog/Initialize(mapload)
 	. = ..()
 	var/area/a = get_area(src)
 	name = a.name
 
 /obj/effect/landmark/area_gatherer
 	name = "stardog area gatherer"
-/obj/effect/landmark/area_gatherer/Initialize()
+/obj/effect/landmark/area_gatherer/Initialize(mapload)
 	. = ..()
 	LateInitialize()
 
@@ -1139,7 +1139,7 @@
 /obj/machinery/computer/ship/navigation/verb/emote_beyond(message as message)	//I could have put this into any other file but right here will do
 	set name = "Emote Beyond"
 	set desc = "Emote to those beyond the ship!"
-	set category = "IC.Chat" //CHOMPEdit
+	set category = "IC.Chat"
 	set src in oview(7)
 
 	if(!isliving(usr))
@@ -1149,7 +1149,7 @@
 		to_chat(L, span_warning("You cannot speak in IC (muted)."))
 		return
 	if (!message)
-		message = tgui_input_text(usr, "Type a message to emote.","Emote Beyond")
+		message = tgui_input_text(L, "Type a message to emote.","Emote Beyond")
 	message = sanitize_or_reflect(message,L)
 	if (!message)
 		return
@@ -1246,7 +1246,7 @@
 	if(L.client)
 		to_chat(L, span_notice("A hot breath rushes up from under your feet, before the air rushes back down into the dog's nose as the dog sniffs you! SNEEF SNEEF!!!"))
 
-/obj/effect/dog_eye/Initialize()
+/obj/effect/dog_eye/Initialize(mapload)
 	. = ..()
 	var/area/redgate/stardog/eyes/e = get_area(src)
 	if(istype(e,/area/redgate/stardog/eyes))
@@ -1270,7 +1270,7 @@
 	var/check_keys = FALSE
 	var/check_prefs = TRUE
 
-/obj/effect/dog_teleporter/Initialize()
+/obj/effect/dog_teleporter/Initialize(mapload)
 	. = ..()
 	dog_teleporters |= src
 	do_setup()
@@ -1437,7 +1437,7 @@
 	water_state = "enzyme_shallow"
 	under_state = "flesh_floor"
 
-	reagent_type = "Sulphuric acid"	//why not
+	reagent_type = REAGENT_ID_SACID //why not
 	outdoors = FALSE
 	var/mob/living/simple_mob/vore/overmap/stardog/linked_mob
 	var/mobstuff = TRUE		//if false, we don't care about dogs, and that's terrible
@@ -1632,7 +1632,7 @@
 		)
 	var/faction = FACTION_MACROBACTERIA
 
-/obj/structure/auto_flesh_door/Initialize()
+/obj/structure/auto_flesh_door/Initialize(mapload)
 	. = ..()
 	countdown = rand(50,250)
 	START_PROCESSING(SSobj, src)

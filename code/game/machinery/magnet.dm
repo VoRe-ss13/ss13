@@ -27,18 +27,16 @@
 	var/center_y = 0
 	var/max_dist = 20 // absolute value of center_x,y cannot exceed this integer
 
-/obj/machinery/magnetic_module/New()
-	..()
+/obj/machinery/magnetic_module/Initialize(mapload)
+	. = ..()
 	var/turf/T = loc
 	hide(!T.is_plating())
 	center = T
 
-	spawn(10)	// must wait for map loading to finish
-		if(radio_controller)
-			radio_controller.add_object(src, freq, RADIO_MAGNETS)
+	if(radio_controller)
+		radio_controller.add_object(src, freq, RADIO_MAGNETS)
 
-	spawn()
-		magnetic_process()
+	magnetic_process()
 
 // update the invisibility and icon
 /obj/machinery/magnetic_module/hide(var/intact)
@@ -159,10 +157,14 @@
 
 	update_icon()
 
-/obj/machinery/magnetic_module/proc/magnetic_process() // proc that actually does the pulling
-	if(pulling) return
-	while(on)
+/obj/machinery/magnetic_module/proc/magnetic_process(var/called_back) // proc that actually does the pulling
+	if(called_back)
+		pulling = 0
 
+	if(pulling)
+		return
+
+	if(on)
 		pulling = 1
 		center = locate(x+center_x, y+center_y, z)
 		if(center)
@@ -171,18 +173,18 @@
 					step_towards(M, center)
 
 			for(var/mob/living/silicon/S in orange(magnetic_field, center))
-				if(istype(S, /mob/living/silicon/ai)) continue
+				if(isAI(S)) continue
 				step_towards(S, center)
 
 		use_power(electricity_level * 5)
-		sleep(13 - electricity_level)
+		addtimer(CALLBACK(src, PROC_REF(magnetic_process), TRUE), 13 - electricity_level, TIMER_DELETE_ME)
 
 	pulling = 0
 
 /obj/machinery/magnetic_module/Destroy()
 	if(radio_controller)
 		radio_controller.remove_object(src, freq)
-	..()
+	. = ..()
 
 /obj/machinery/magnetic_controller
 	name = "Magnetic Control Console"
@@ -209,8 +211,8 @@
 	var/datum/radio_frequency/radio_connection
 
 
-/obj/machinery/magnetic_controller/New()
-	..()
+/obj/machinery/magnetic_controller/Initialize(mapload)
+	. = ..()
 
 	if(autolink)
 		for(var/obj/machinery/magnetic_module/M in machines)
@@ -218,9 +220,8 @@
 				magnets.Add(M)
 
 
-	spawn(45)	// must wait for map loading to finish
-		if(radio_controller)
-			radio_connection = radio_controller.add_object(src, frequency, RADIO_MAGNETS)
+	if(radio_controller)
+		radio_connection = radio_controller.add_object(src, frequency, RADIO_MAGNETS)
 
 
 	if(path) // check for default path
@@ -244,9 +245,9 @@
 	var/dat = span_bold("Magnetic Control Console") + "<BR><BR>"
 	if(!autolink)
 		dat += {"
-		Frequency: <a href='?src=\ref[src];operation=setfreq'>[frequency]</a><br>
-		Code: <a href='?src=\ref[src];operation=setfreq'>[code]</a><br>
-		<a href='?src=\ref[src];operation=probe'>Probe Generators</a><br>
+		Frequency: <a href='byond://?src=\ref[src];operation=setfreq'>[frequency]</a><br>
+		Code: <a href='byond://?src=\ref[src];operation=setfreq'>[code]</a><br>
+		<a href='byond://?src=\ref[src];operation=probe'>Probe Generators</a><br>
 		"}
 
 	if(magnets.len >= 1)
@@ -255,14 +256,14 @@
 		var/i = 0
 		for(var/obj/machinery/magnetic_module/M in magnets)
 			i++
-			dat += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;< \[[i]\] (<a href='?src=\ref[src];radio-op=togglepower'>[M.on ? "On":"Off"]</a>) | Electricity level: <a href='?src=\ref[src];radio-op=minuselec'>-</a> [M.electricity_level] <a href='?src=\ref[src];radio-op=pluselec'>+</a>; Magnetic field: <a href='?src=\ref[src];radio-op=minusmag'>-</a> [M.magnetic_field] <a href='?src=\ref[src];radio-op=plusmag'>+</a><br>"
+			dat += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;< \[[i]\] (<a href='byond://?src=\ref[src];radio-op=togglepower'>[M.on ? "On":"Off"]</a>) | Electricity level: <a href='byond://?src=\ref[src];radio-op=minuselec'>-</a> [M.electricity_level] <a href='byond://?src=\ref[src];radio-op=pluselec'>+</a>; Magnetic field: <a href='byond://?src=\ref[src];radio-op=minusmag'>-</a> [M.magnetic_field] <a href='byond://?src=\ref[src];radio-op=plusmag'>+</a><br>"
 
-	dat += "<br>Speed: <a href='?src=\ref[src];operation=minusspeed'>-</a> [speed] <a href='?src=\ref[src];operation=plusspeed'>+</a><br>"
-	dat += "Path: {<a href='?src=\ref[src];operation=setpath'>[path]</a>}<br>"
-	dat += "Moving: <a href='?src=\ref[src];operation=togglemoving'>[moving ? "Enabled":"Disabled"]</a>"
+	dat += "<br>Speed: <a href='byond://?src=\ref[src];operation=minusspeed'>-</a> [speed] <a href='byond://?src=\ref[src];operation=plusspeed'>+</a><br>"
+	dat += "Path: {<a href='byond://?src=\ref[src];operation=setpath'>[path]</a>}<br>"
+	dat += "Moving: <a href='byond://?src=\ref[src];operation=togglemoving'>[moving ? "Enabled":"Disabled"]</a>"
 
 
-	user << browse(dat, "window=magnet;size=400x500")
+	user << browse("<html>[dat]</html>", "window=magnet;size=400x500")
 	onclose(user, "magnet")
 
 /obj/machinery/magnetic_controller/Topic(href, href_list)
@@ -300,9 +301,6 @@
 
 		radio_connection.post_signal(src, signal, radio_filter = RADIO_MAGNETS)
 
-		spawn(1)
-			updateUsrDialog() // pretty sure this increases responsiveness
-
 	if(href_list["operation"])
 		switch(href_list["operation"])
 			if("plusspeed")
@@ -327,7 +325,7 @@
 					spawn() MagnetMove()
 
 
-	updateUsrDialog()
+	updateUsrDialog(usr)
 
 /obj/machinery/magnetic_controller/proc/MagnetMove()
 	if(looping) return
@@ -393,4 +391,4 @@
 /obj/machinery/magnetic_controller/Destroy()
 	if(radio_controller)
 		radio_controller.remove_object(src, frequency)
-	..()
+	. = ..()

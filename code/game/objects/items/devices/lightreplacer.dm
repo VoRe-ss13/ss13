@@ -56,9 +56,9 @@
 	pickup_sound = 'sound/items/pickup/device.ogg'
 	drop_sound = 'sound/items/drop/device.ogg'
 
-/obj/item/lightreplacer/New()
+/obj/item/lightreplacer/Initialize(mapload)
+	. = ..()
 	failmsg = "The [name]'s refill light blinks red."
-	..()
 
 /obj/item/lightreplacer/examine(mob/user)
 	. = ..()
@@ -66,7 +66,7 @@
 		. += "It has [uses] lights remaining."
 
 /obj/item/lightreplacer/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/stack/material) && W.get_material_name() == "glass" || istype(W, /obj/item/stack/material/cyborg/glass))
+	if(istype(W, /obj/item/stack/material) && W.get_material_name() == MAT_GLASS || istype(W, /obj/item/stack/material/cyborg/glass))
 		var/obj/item/stack/G = W
 		if(uses >= max_uses)
 			to_chat(user, span_warning("[src.name] is full."))
@@ -134,14 +134,14 @@
 		var/mob/living/silicon/robot/R = user
 		if(R.emagged)
 			src.Emag()
-			to_chat(usr, You short circuit the [src].")
+			to_chat(user, You short circuit the [src].")
 			return
 	*/
-	to_chat(usr, "It has [uses] lights remaining.")
-	var/new_color = input(usr, "Choose a color to set the light to! (Default is [LIGHT_COLOR_INCANDESCENT_TUBE])", "", selected_color) as color|null
+	to_chat(user, "It has [uses] lights remaining.")
+	var/new_color = tgui_color_picker(user, "Choose a color to set the light to! (Default is [LIGHT_COLOR_INCANDESCENT_TUBE])", "", selected_color)
 	if(new_color)
 		selected_color = new_color
-		to_chat(usr, "The light color has been changed.")
+		to_chat(user, "The light color has been changed.")
 
 /obj/item/lightreplacer/update_icon()
 	icon_state = "lightreplacer[emagged]"
@@ -219,3 +219,72 @@
 		return 1
 	else
 		return 0
+
+// Light Painter.
+
+/obj/item/lightpainter
+	name = "light painter"
+	desc = "A device to configure the emission color of lighting fixtures. Use this device in-hand to set/reset the color. Use the device on a light fixture to assign the color."
+	icon = 'icons/obj/janitor.dmi'
+	icon_state = "lightreplacer0"
+	color = "#bbbbff"
+	slot_flags = SLOT_BELT
+
+	matter = list(MAT_STEEL = 5000,MAT_GLASS = 1500)
+
+	var/static/dcolor = "#e0eff0"
+	var/static/dnightcolor = "#efcc86"
+	//set color values.
+	var/setcolor = "#e0eff0"
+	var/setnightcolor = "#efcc86"
+	var/resetmode = 1
+
+	var/dimming = 0.7 // multiply value to dim lights from setcolor to nightcolor
+
+/obj/item/lightpainter/examine(mob/user)
+	. = ..()
+	if(get_dist(user, src) <= 2)
+		if(resetmode)
+			. += "It is currently resetting light colors."
+		else
+			. += "It is currently coloring lights."
+
+/obj/item/lightpainter/attack_self(mob/user)
+
+	if(!resetmode)
+		resetmode = 1
+		to_chat(user, span_infoplain("Painter reset."))
+	else
+		var/color_input = tgui_color_picker(user,"","Choose Light Color",setcolor)
+		if(color_input)
+			setcolor = sanitize_hexcolor(color_input)
+			var/list/setcolorRGB = hex2rgb(setcolor)
+			var/setcolorR = num2hex(setcolorRGB[1] * dimming, 2)
+			var/setcolorG = num2hex(setcolorRGB[2] * dimming, 2)
+			var/setcolorB = num2hex(setcolorRGB[3] * dimming, 2)
+			setnightcolor = addtext("#", setcolorR, setcolorG, setcolorB)
+			resetmode = 0
+			to_chat(user, span_infoplain("Painter color set."))
+
+
+/obj/item/lightpainter/proc/ColorLight(var/obj/machinery/light/target, var/mob/living/U)
+
+	src.add_fingerprint(U)
+
+	if(resetmode)
+		to_chat(U, span_notice("You reset the color of the [target.get_fitting_name()]."))
+		target.brightness_color = dcolor
+		target.brightness_color_ns = dnightcolor
+	else
+		to_chat(U, span_notice("You set the color of the [target.get_fitting_name()]."))
+
+		target.brightness_color = setcolor
+		target.brightness_color_ns = setnightcolor
+
+	if(target.nightshift_enabled)
+		target.light_color = target.brightness_color_ns
+	else
+		target.light_color = target.brightness_color
+
+	target.set_light(0)
+	target.update()

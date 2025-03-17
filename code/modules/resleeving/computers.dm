@@ -4,11 +4,11 @@
 
 /obj/machinery/computer/transhuman/resleeving
 	name = "resleeving control console"
-	catalogue_data = list(/datum/category_item/catalogue/information/organization/vey_med,
-						/datum/category_item/catalogue/technology/resleeving)
+	catalogue_data = list(/datum/category_item/catalogue/technology/resleeving)
 	icon_keyboard = "med_key"
 	icon_screen = "dna"
 	light_color = "#315ab4"
+	bubble_icon = "medical"
 	circuit = /obj/item/circuitboard/resleeving_control
 	req_access = list(access_heads) //Only used for record deletion right now.
 	var/list/pods = null //Linked grower pods.
@@ -33,7 +33,9 @@
 	var/db_key
 	var/datum/transcore_db/our_db // These persist all round and are never destroyed, just keep a hard ref
 
-/obj/machinery/computer/transhuman/resleeving/Initialize()
+	var/gene_sequencing = FALSE // Traitgenes edit - create a dna injector for fixing dna, but don't let it be abusable
+
+/obj/machinery/computer/transhuman/resleeving/Initialize(mapload)
 	. = ..()
 	pods = list()
 	spods = list()
@@ -230,7 +232,7 @@
 
 	return data
 
-/obj/machinery/computer/transhuman/resleeving/tgui_act(action, params)
+/obj/machinery/computer/transhuman/resleeving/tgui_act(action, params, datum/tgui/ui)
 	. = ..()
 	if(.)
 		return
@@ -290,7 +292,7 @@
 							set_temp("Error: Not enough [MAT_STEEL] in SynthFab.", "danger")
 							active_br = null
 							return
-						else if(spod.stored_material["glass"] < spod.body_cost)
+						else if(spod.stored_material[MAT_GLASS] < spod.body_cost)
 							set_temp("Error: Not enough glass in SynthFab.", "danger")
 							active_br = null
 							return
@@ -338,7 +340,7 @@
 							return
 
 						//Disabled in config.
-						else if(!CONFIG_GET(flag/revival_cloning)) // CHOMPEdit
+						else if(!CONFIG_GET(flag/revival_cloning))
 							set_temp("Error: Unable to initiate growing cycle.", "danger")
 							active_br = null
 							return
@@ -391,7 +393,7 @@
 								subtargets += H
 							if(subtargets.len)
 								var/oc_sanity = sleever.occupant
-								override = tgui_input_list(usr,"Multiple bodies detected. Select target for resleeving of [active_mr.mindname] manually. Sleeving of primary body is unsafe with sub-contents, and is not listed.", "Resleeving Target", subtargets)
+								override = tgui_input_list(ui.user,"Multiple bodies detected. Select target for resleeving of [active_mr.mindname] manually. Sleeving of primary body is unsafe with sub-contents, and is not listed.", "Resleeving Target", subtargets)
 								if(!override || oc_sanity != sleever.occupant || !(override in sleever.occupant))
 									set_temp("Error: Target selection aborted.", "danger")
 									active_mr = null
@@ -445,9 +447,34 @@
 		if("menu")
 			menu = clamp(text2num(params["num"]), MENU_MAIN, MENU_MIND)
 			. = TRUE
+		// Traitgenes edit begin - create a dna injector based off the BR currently selected, to allow normal doctors to reset someone's SEs
+		if("genereset")
+			if(gene_sequencing)
+				set_temp("Sequencing Record... Please wait.")
+				tgui_modal_clear(src)
+			else if(istype(active_br))
+				set_temp("Sequencing Record...")
+				tgui_modal_clear(src)
+				gene_sequencing = TRUE
+				// Make the injector here, so no desync
+				var/obj/item/dnainjector/I = new(src)
+				I.name += " ([active_br.mydna.name] - Resequencer)"
+				I.desc = "Resequences structural enzymes to match the body record this was created from."
+				I.buf = active_br.mydna.copy()
+				I.buf.types = DNA2_BUF_SE
+				atom_say("Beginning injector synthesis.")
+				addtimer(CALLBACK(src, PROC_REF(dispense_injector), I), 10 SECONDS, TIMER_DELETE_ME)
+			. = TRUE
 		if("cleartemp")
 			temp = null
 			. = TRUE
+
+/obj/machinery/computer/transhuman/resleeving/proc/dispense_injector(var/obj/item/dnainjector/I)
+	I.forceMove(loc)
+	gene_sequencing = FALSE
+	set_temp("Injector dispensed...")
+	visible_message(span_notice("\The [src] ejects \the [I]."))
+	playsound(src, 'sound/machines/ding.ogg', 50, 1)
 
 // In here because only relevant to computer
 /obj/item/cmo_disk_holder

@@ -1,11 +1,11 @@
-import { BooleanLike } from 'common/react';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Section } from 'tgui-core/components';
+import type { BooleanLike } from 'tgui-core/react';
 
-import { useBackend } from '../../backend';
-import { Box, Button, Section } from '../../components';
 import { BeakerContents } from '../common/BeakerContents';
 import { modalOpen } from '../common/ComplexModal';
 import { transferAmounts } from './constants';
-import { reagent } from './types';
+import type { reagent } from './types';
 
 export const ChemMasterBuffer = (props: {
   mode: BooleanLike;

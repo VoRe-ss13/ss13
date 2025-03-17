@@ -28,17 +28,22 @@
 	var/corpseidicon = null //For setting it to be a gold, silver, CentCom etc ID
 	var/species = SPECIES_HUMAN	//defaults to generic-ass humans
 	var/random_species = FALSE	//flip to TRUE to randomize species from the list below
-	var/list/random_species_list = list(SPECIES_HUMAN,SPECIES_TAJ,SPECIES_UNATHI,SPECIES_SKRELL)
+	var/list/random_species_list = list(SPECIES_HUMAN,SPECIES_TAJARAN,SPECIES_UNATHI,SPECIES_SKRELL)
 	var/list/tail_type = null
 	var/list/ear_type = null
+	/// list(name of ear, color of ear, color of ear, ...).
+	/// Color is optional, each position after the name is a color channel from 1 to n.
+	var/list/ear_secondary_type
 	var/list/wing_type = null
 	var/hair = null // CHOMPAdd
 	var/corpsesynthtype = 0			// 0 for organic, 1 for drone, 2 for posibrain
 	var/corpsesynthbrand = "Unbranded"
 	var/corpsesensormode = 0	//CHOMPAdd - For setting the suit sensors of a corpse. Default to 0 so we don't annoy medbay.
+	delete_me = TRUE
 
-/obj/effect/landmark/mobcorpse/Initialize() //CHOMPEdit
+/obj/effect/landmark/mobcorpse/Initialize(mapload)
 	createCorpse()
+	. = ..()
 
 /obj/effect/landmark/mobcorpse/proc/createCorpse() //Creates a mob and checks for gear in each slot before attempting to equip it.
 	var/mob/living/carbon/human/M = new /mob/living/carbon/human (src.loc)
@@ -92,6 +97,12 @@
 		M.h_style = hair
 		M.update_hair()
 	//CHOMPAdd End
+	// handle secondary ears
+	if(length(ear_secondary_type) && (ear_secondary_type[1] in global.ear_styles_list))
+		M.ear_secondary_style = global.ear_styles_list[ear_secondary_type[1]]
+		if(length(ear_secondary_type) > 1)
+			M.ear_secondary_colors = ear_secondary_type.Copy(2, min(length(GLOB.fancy_sprite_accessory_color_channel_names), length(ear_secondary_type)) + 1)
+
 	if(wing_type && wing_type.len)
 		if(wing_type[1] in wing_styles_list)
 			M.wing_style = wing_styles_list[wing_type[1]]
@@ -174,8 +185,6 @@
 		M.equip_voidhelm_to_slot_or_del_with_refit(new src.corpsehelmet(M), slot_head, src.species)
 	if(src.corpsesuit)
 		M.equip_voidsuit_to_slot_or_del_with_refit(new src.corpsesuit(M), slot_wear_suit, src.species)
-	delete_me = 1
-	qdel(src)
 
 /obj/effect/landmark/mobcorpse/proc/generateCorpseName()
 	return name

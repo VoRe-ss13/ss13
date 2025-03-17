@@ -893,74 +893,22 @@
 /obj/item/clothing/suit/storage/toggle/hoodiebuttoned
 	name = "labcoat"
 	desc = "A suit that protects against minor chemical spills."
-	icon_state = "labcoat"
+	icon_state = "jiao_labcoat"
 	item_state_slots = list(slot_r_hand_str = "labcoat", slot_l_hand_str = "labcoat")
 	blood_overlay_type = "coat"
 	body_parts_covered = UPPER_TORSO|ARMS
 	flags_inv = HIDEHOLSTER
-	allowed = list(/obj/item/analyzer,/obj/item/stack/medical,/obj/item/dnainjector,/obj/item/reagent_containers/dropper,/obj/item/reagent_containers/syringe,/obj/item/reagent_containers/hypospray,/obj/item/healthanalyzer,/obj/item/flashlight/pen,/obj/item/reagent_containers/glass/bottle,/obj/item/reagent_containers/glass/beaker,/obj/item/reagent_containers/pill,/obj/item/storage/pill_bottle,/obj/item/paper)
+	allowed = list(POCKET_GENERIC,POCKET_MEDICAL,POCKET_GENERIC)
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 50, rad = 0)
+	hoodtype = /obj/item/clothing/head/hood/hoodiebuttoned //Default hoodie.
 	icon = 'icons/vore/custom_clothes_yw.dmi'
 	icon_override = 'icons/vore/custom_onmob_yw.dmi'
 
-	var/obj/item/clothing/head/hood
-	var/hoodtype = null //so the chaplain hoodie or other hoodies can override this
 	var/suittoggled = 0
 	var/hooded = 0
-	action_button_name = "Toggle Hood"
+	actions_types = list(/datum/action/item_action/toggle_hood)
 	icon = 'icons/vore/custom_clothes_yw.dmi'
 	icon_override = 'icons/vore/custom_onmob_yw.dmi'
-
-/obj/item/clothing/suit/storage/toggle/hoodiebuttoned/New()
-	MakeHood()
-	..()
-
-/obj/item/clothing/suit/storage/toggle/hoodiebuttoned/Destroy()
-	qdel(hood)
-	return ..()
-
-/obj/item/clothing/suit/storage/toggle/hoodiebuttoned/proc/MakeHood()
-	if(!hood)
-		var/obj/item/clothing/head/hood/hoodiebuttoned/W = new hoodtype(src)
-		hood = W
-
-/obj/item/clothing/suit/storage/toggle/hoodiebuttoned/ui_action_click()
-	ToggleHood()
-
-/obj/item/clothing/suit/storage/toggle/hoodiebuttoned/equipped(mob/user, slot)
-	if(slot != slot_wear_suit)
-		RemoveHood()
-	..()
-
-/obj/item/clothing/suit/storage/toggle/hoodiebuttoned/proc/RemoveHood()
-	suittoggled = 0
-	hood.canremove = TRUE // This shouldn't matter anyways but just incase.
-	if(ishuman(hood.loc))
-		var/mob/living/carbon/H = hood.loc
-		H.unEquip(hood, 1)
-		H.update_inv_wear_suit()
-	hood.forceMove(src)
-
-/obj/item/clothing/suit/storage/toggle/hoodiebuttoned/dropped()
-	RemoveHood()
-
-/obj/item/clothing/suit/storage/toggle/hoodiebuttoned/proc/ToggleHood()
-	if(!suittoggled)
-		if(ishuman(loc))
-			var/mob/living/carbon/human/H = src.loc
-			if(H.wear_suit != src)
-				to_chat(H, "<span class='warning'>You must be wearing [src] to put up the hood!</span>")
-				return
-			if(H.head)
-				to_chat(H, "<span class='warning'>You're already wearing something on your head!</span>")
-				return
-			else
-				H.equip_to_slot_if_possible(hood,slot_head,0,0,1)
-				suittoggled = 1
-				hood.canremove = FALSE
-				H.update_inv_wear_suit()
-	else
-		RemoveHood()
 
 /obj/item/clothing/head/hood/hoodiebuttoned
 	name = "winter hood"
@@ -1093,11 +1041,6 @@
 /obj/item/clothing/under/explorer/utility/command/engineering/fluff/vasharr
 	name = "Cartographer Engineering Command Uniform"
 	desc = "A Engineering Command Uniform from the Galactic Cartographers Society, A group of intrepid explorers. This one has gold trim and organge blazes."
-
-/obj/item/clothing/suit/storage/explorer/engineering/command/fluff/vasharr
-	name = "Cartographer Engineering Command Jacket"
-	desc = "A Engineering Command Jacket from the Galactic Cartographers Society, A group of intrepid explorers. It has gold buttons and orange trim."
-
 // ********
 // Dwaggy90
 // ********
@@ -1153,31 +1096,31 @@
  	item_state = "tesh_cloak_saroth"
 
 /obj/item/clothing/accessory/poncho/cloak/fluff/Jaree
-    name = "plain cloak"
-    desc = "A plain cloak to be worn for warmth or comfort. Looks cozy."
-    icon = 'icons/vore/custom_clothes_yw.dmi'
-    icon_state = "jaree_cloak"
-    icon_override = 'icons/vore/custom_onmob_yw.dmi'
-    item_state = "jaree_cloak"
+	name = "plain cloak"
+	desc = "A plain cloak to be worn for warmth or comfort. Looks cozy."
+	icon = 'icons/vore/custom_clothes_yw.dmi'
+	icon_state = "jaree_cloak"
+	icon_override = 'icons/vore/custom_onmob_yw.dmi'
+	item_state = "jaree_cloak"
 
 /obj/item/clothing/head/ushanka/alt/fluff/Jaree
-    name = "ushanka"
-    desc = "Perfect for winter in Siberia, da?"
-    icon_state = "ushanka2down"
-    icon = 'icons/vore/custom_clothes_yw.dmi'
-    icon_override = 'icons/vore/custom_onmob_yw.dmi'
-    item_state = "ushanka2down"
-    flags_inv = HIDEEARS
+	name = "ushanka"
+	desc = "Perfect for winter in Siberia, da?"
+	icon_state = "ushanka2down"
+	icon = 'icons/vore/custom_clothes_yw.dmi'
+	icon_override = 'icons/vore/custom_onmob_yw.dmi'
+	item_state = "ushanka2down"
+	flags_inv = HIDEEARS
 
 /obj/item/clothing/head/ushanka/alt/fluff/Jaree/attack_self(mob/user as mob)
-    if(src.icon_state == "ushanka2down")
-        src.icon_state = "ushanka2up"
-        src.item_state = "ushanka2up"
-        user << "You raise the ear flaps on the ushanka."
-    else
-        src.icon_state = "ushanka2down"
-        src.item_state = "ushanka2down"
-        user << "You lower the ear flaps on the ushanka."
+	if(src.icon_state == "ushanka2down")
+		src.icon_state = "ushanka2up"
+		src.item_state = "ushanka2up"
+		user << "You raise the ear flaps on the ushanka."
+	else
+		src.icon_state = "ushanka2down"
+		src.item_state = "ushanka2down"
+		user << "You lower the ear flaps on the ushanka."
 
 // ******
 // Benl8561
@@ -1240,13 +1183,13 @@
 	item_state = "noel_glasses"
 
 /obj/item/clothing/suit/storage/toggle/hoodie/fluff/noel_hoodie
-    name = "Noel's casual hoodie"
-    desc = "A blue faded black trimmed hoodie, it looks very simple and warm, there are the initials N.W. on the tag inside"
-    icon = 'icons/vore/custom_clothes_yw.dmi'
-    icon_state = "noel_hoodie"
-    // "noel_hoodie_open" will be the open state
-    icon_override = 'icons/vore/custom_onmob_yw.dmi'
-    item_state = null
+	name = "Noel's casual hoodie"
+	desc = "A blue faded black trimmed hoodie, it looks very simple and warm, there are the initials N.W. on the tag inside"
+	icon = 'icons/vore/custom_clothes_yw.dmi'
+	icon_state = "noel_hoodie"
+	// "noel_hoodie_open" will be the open state
+	icon_override = 'icons/vore/custom_onmob_yw.dmi'
+	item_state = null
 
 /obj/item/clothing/ears/earings/fluff/noel_earings
 	name = "Teardrop Earrings"
@@ -1268,11 +1211,11 @@
 	if(ring_on)
 		icon_state = "[base_icon]"
 		ring_on = 0
-		usr << "<span class='notice'>You remove the right earring.</span>"
+		usr << span_notice("You remove the right earring.")
 	else
 		icon_state = "[base_icon]_on"
 		ring_on = 1
-		usr << "<span class='notice'>You put on the right earring.</span>"
+		usr << span_notice("You put on the right earring.")
 
 	update_clothing_icon()
 
@@ -1289,7 +1232,7 @@
 
 //Basir Fahim
 
-/obj/item/clothing/gloves/ring/fluff/basir
+/obj/item/clothing/accessory/ring/fluff/basir
 	name = "Sundancer Engagement Ring"
 	desc = "This ring is stylized to have an ornate sun, with a sample of phoron swirling around inside. Keep away from Fire! Inscribed along the band is a sentence in Siik; \"Always yours, my little frost-fire. With love. -Sheri\""
 	icon = 'icons/vore/custom_clothes_yw.dmi'
@@ -1315,7 +1258,7 @@
 		if(istype(H) && istype(H.tail_style, /datum/sprite_accessory/tail/taur/horse/big))
 			return ..()
 		else
-			to_chat(H,"<span class='warning'>You need to have a kentauri half to wear this.</span>")
+			to_chat(H,span_warning("You need to have a kentauri half to wear this."))
 			return 0
 
 /obj/item/clothing/suit/armor/vest/harpsong/make_worn_icon(var/body_type,var/slot_name,var/inhands,var/default_icon,var/default_layer = 0, var/icon/clip_mask = null)
@@ -1392,7 +1335,7 @@
 	if(usr.stat || usr.incapacitated())
 		return
 
-	var/new_color = input(usr, "Pick a new colour", "Collar Colour", color) as color|null
+	var/new_color = tgui_color_picker(usr, "Pick a new colour", "Collar Colour", color)
 
 	if(new_color && (new_color != color))
 		color = new_color
@@ -1566,13 +1509,13 @@
 	armor = list(melee = 30, bullet = 20, laser = 20, energy = 20, bomb = 35, bio = 75, rad = 35)
 
 /obj/item/clothing/accessory/poncho/cloak/fluff/mocha
-    name = "Elaborate Cloak"
-    desc = "A cloak denoting the rank of a warden, the name \"Mocha\" is embroidered along the collar in red lettering"
-    icon = 'icons/vore/custom_clothes_yw.dmi'
-    icon_state = "mocha_cloak"
-    icon_override = 'icons/vore/custom_clothes_yw.dmi'
-    item_state = "mocha_cloak_s"
-    overlay_state = "mocha_cloak_s"
+	name = "Elaborate Cloak"
+	desc = "A cloak denoting the rank of a warden, the name \"Mocha\" is embroidered along the collar in red lettering"
+	icon = 'icons/vore/custom_clothes_yw.dmi'
+	icon_state = "mocha_cloak"
+	icon_override = 'icons/vore/custom_clothes_yw.dmi'
+	item_state = "mocha_cloak_s"
+	overlay_state = "mocha_cloak_s"
 
 // ******
 // Lawst
@@ -1659,7 +1602,7 @@
 	icon_state = "avigoggles_i"
 	item_state = "avigoggles"
 	icon_override = 'icons/vore/custom_clothes_yw.dmi'
-	action_button_name = "Flip Aviation Goggles"
+	actions_types = list(/datum/action/item_action/toggle_goggles)
 	item_flags = AIRTIGHT
 	var/up = 0
 
@@ -1703,7 +1646,7 @@
 	item_state = "kbraid_outfit_s"
 	body_parts_covered = UPPER_TORSO|ARMS|FEET
 	hoodtype = /obj/item/clothing/head/hood/kbraid_hood
-	action_button_name = "Toggle Headphones"
+	actions_types = list(/datum/action/item_action/toggle_hood)
 
 /obj/item/clothing/head/hood/kbraid_hood
 	name = "Earphones"
@@ -1721,7 +1664,7 @@
 	name = "white gear harness"
 	desc = "How... minimalist."
 	icon = 'icons/vore/custom_clothes_yw.dmi'
-	icon_state = "gear_harness_white"
+	icon_state = "gear_harness_white_s"
 	icon_override = 'icons/vore/custom_clothes_yw.dmi'
-	item_state = "gear_harness_white"
+	item_state = "gear_harness_white_s"
 	body_parts_covered = 0

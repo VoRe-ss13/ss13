@@ -6,8 +6,8 @@
 	w_class = ITEMSIZE_NORMAL
 	throw_speed = 3
 	throw_range = 3
-	center_of_mass_x = 0 //CHOMPEdit
-	center_of_mass_y = 0 //CHOMPEdit
+	center_of_mass_x = 0
+	center_of_mass_y = 0
 	max_amount = 50
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items/lefthand_material.dmi',
@@ -16,12 +16,13 @@
 
 	var/default_type = MAT_STEEL
 	var/datum/material/material
+	var/coin_type = null
 	var/perunit = SHEET_MATERIAL_AMOUNT
 	var/apply_colour //temp pending icon rewrite
 	drop_sound = 'sound/items/drop/axe.ogg'
 	pickup_sound = 'sound/items/pickup/axe.ogg'
 
-/obj/item/stack/material/Initialize()
+/obj/item/stack/material/Initialize(mapload)
 	. = ..()
 
 	randpixel_xy()

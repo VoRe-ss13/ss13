@@ -133,7 +133,7 @@
 			else if(firer)
 				var/obj/T
 
-				if(original in target.contents && istype(original, /obj))
+				if((original in target.contents) && istype(original, /obj))
 					T = original
 
 				var/list/possible_targets = list()
@@ -167,13 +167,13 @@
 					done_mob_unique = TRUE
 					success = TRUE
 				if(I_HURT)
-					if(prob(10) && istype(L, /mob/living/carbon/human))
+					if(prob(10) && ishuman(L))
 						to_chat(L, span_warning("\The [src] rips at your hands!"))
 						ranged_disarm(L)
 					success = TRUE
 					done_mob_unique = TRUE
 				if(I_DISARM)
-					if(prob(disarm_chance) && istype(L, /mob/living/carbon/human))
+					if(prob(disarm_chance) && ishuman(L))
 						ranged_disarm(L)
 					else
 						L.visible_message(span_danger("\The [src] sends \the [L] stumbling backwards."))

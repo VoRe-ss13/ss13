@@ -27,9 +27,13 @@
 
 /obj/item/storage/sample_container/afterattack(turf/T as turf, mob/user as mob)
 	for(var/obj/item/research_sample/S in T)
-		S.loc = src
-		update_icon()
-		to_chat(user, span_notice("You scoop \the [S] into \the [src]."))
+		if(contents.len >= max_storage_space)
+			to_chat(user, span_notice("\The [src] is full!"))
+			return
+		else
+			S.loc = src
+			update_icon()
+			to_chat(user, span_notice("You scoop \the [S] into \the [src]."))
 
 //Splice research sample containers into the list of valid items for these belts *without* overriding the lists entirely
 /obj/item/storage/belt/explorer/New()
@@ -45,11 +49,11 @@
 	can_hold.Add(/obj/item/storage/sample_container)
 
 //ditto, lockers and redemption machines
-/obj/structure/closet/secure_closet/miner/Initialize()
+/obj/structure/closet/secure_closet/miner/Initialize(mapload)
 	. = ..()
 	starts_with += /obj/item/storage/sample_container
 
-/obj/structure/closet/secure_closet/xenoarchaeologist/Initialize()
+/obj/structure/closet/secure_closet/xenoarchaeologist/Initialize(mapload)
 	. = ..()
 	starts_with += /obj/item/storage/sample_container
 

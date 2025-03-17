@@ -1,6 +1,7 @@
-import { useBackend } from '../../backend';
-import { Box, Button, Input } from '../../components';
-import { Data } from './types';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Input } from 'tgui-core/components';
+
+import type { Data } from './types';
 
 export const SecurityRecordsList = (props) => {
   const { act, data } = useBackend<Data>();

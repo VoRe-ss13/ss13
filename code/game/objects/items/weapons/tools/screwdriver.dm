@@ -7,8 +7,8 @@
 	//description_fluff = "This could be used to engrave messages on suitable surfaces if you really put your mind to it! Alt-click a floor or wall to engrave with it." //This way it's not a completely hidden, arcane art to engrave. //CHOMP Remove
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "screwdriver"
-	center_of_mass_x = 13 //CHOMPEdit
-	center_of_mass_y= 7 //CHOMPEdit
+	center_of_mass_x = 13
+	center_of_mass_y = 7
 	slot_flags = SLOT_BELT | SLOT_EARS
 	force = 6
 	w_class = ITEMSIZE_TINY
@@ -26,7 +26,8 @@
 	tool_qualities = list(TOOL_SCREWDRIVER)
 	var/random_color = TRUE
 
-/obj/item/tool/screwdriver/New()
+/obj/item/tool/screwdriver/Initialize(mapload)
+	. = ..()
 	if(random_color)
 		switch(pick("red","blue","purple","brown","green","cyan","yellow"))
 			if ("red")
@@ -52,11 +53,10 @@
 				item_state = "screwdriver_yellow"
 
 	if (prob(75))
-		src.pixel_y = rand(0, 16)
-	..()
+		pixel_y = rand(0, 16)
 
 /obj/item/tool/screwdriver/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
-	if(!istype(M) || user.a_intent == "help")
+	if(!istype(M) || user.a_intent == I_HELP)
 		return ..()
 	if(user.zone_sel.selecting != O_EYES && user.zone_sel.selecting != BP_HEAD)
 		return ..()

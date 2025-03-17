@@ -29,7 +29,7 @@
 
 // create a new disposal
 // find the attached trunk (if present) and init gas resvr.
-/obj/machinery/disposal/Initialize()
+/obj/machinery/disposal/Initialize(mapload)
 	. = ..()
 
 	trunk = locate() in loc
@@ -121,9 +121,9 @@
 	if(istype(G))	// handle grabbed mob
 		if(ismob(G.affecting))
 			var/mob/GM = G.affecting
-			for (var/mob/V in viewers(usr))
-				V.show_message("[usr] starts putting [GM.name] into the disposal.", 3)
-			if(do_after(usr, 20))
+			for (var/mob/V in viewers(user))
+				V.show_message("[user] starts putting [GM.name] into the disposal.", 3)
+			if(do_after(user, 20))
 				if (GM.client)
 					GM.client.perspective = EYE_PERSPECTIVE
 					GM.client.eye = src
@@ -173,13 +173,13 @@
 	src.add_fingerprint(user)
 	var/target_loc = target.loc
 	var/msg
-	for (var/mob/V in viewers(usr))
+	for (var/mob/V in viewers(user))
 		if(target == user && !user.stat && !user.weakened && !user.stunned && !user.paralysis)
-			V.show_message("[usr] starts climbing into the disposal.", 3)
+			V.show_message("[user] starts climbing into the disposal.", 3)
 		if(target != user && !user.restrained() && !user.stat && !user.weakened && !user.stunned && !user.paralysis)
 			if(target.anchored) return
-			V.show_message("[usr] starts stuffing [target.name] into the disposal.", 3)
-	if(!do_after(usr, 20))
+			V.show_message("[user] starts stuffing [target.name] into the disposal.", 3)
+	if(!do_after(user, 20))
 		return
 	if(target_loc != target.loc)
 		return
@@ -269,18 +269,18 @@
 	if(..())
 		return
 
-	if(usr.loc == src)
-		to_chat(usr, span_warning("You cannot reach the controls from inside."))
+	if(ui.user.loc == src)
+		to_chat(ui.user, span_warning("You cannot reach the controls from inside."))
 		return TRUE
 
 	if(mode==-1 && action != "eject") // If the mode is -1, only allow ejection
-		to_chat(usr, span_warning("The disposal units power is disabled."))
+		to_chat(ui.user, span_warning("The disposal units power is disabled."))
 		return
 
 	if(stat & BROKEN)
 		return
 
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 
 	if(flushing)
 		return
@@ -311,22 +311,22 @@
 	// 	user.unset_machine()
 	// 	return
 
-	// var/dat = "<head><title>Waste Disposal Unit</title></head><body><TT><B>Waste Disposal Unit</B><HR>"
+	// var/dat = "<head><title>Waste Disposal Unit</title></head><body><TT>" + span_bold("Waste Disposal Unit") + "<HR>"
 
 	// if(!ai)  // AI can't pull flush handle
 	// 	if(flush)
-	// 		dat += "Disposal handle: <A href='?src=\ref[src];handle=0'>Disengage</A> <B>Engaged</B>"
+	// 		dat += "Disposal handle: <A href='byond://?src=\ref[src];handle=0'>Disengage</A> " + span_bold("Engaged")
 	// 	else
-	// 		dat += "Disposal handle: <B>Disengaged</B> <A href='?src=\ref[src];handle=1'>Engage</A>"
+	// 		dat += "Disposal handle: " + span_bold("Disengaged") + " <A href='byond://?src=\ref[src];handle=1'>Engage</A>"
 
-	// 	dat += "<BR><HR><A href='?src=\ref[src];eject=1'>Eject contents</A><HR>"
+	// 	dat += "<BR><HR><A href='byond://?src=\ref[src];eject=1'>Eject contents</A><HR>"
 
 	// if(mode <= 0)
-	// 	dat += "Pump: <B>Off</B> <A href='?src=\ref[src];pump=1'>On</A><BR>"
+	// 	dat += "Pump: " + span_bold("Off") + " <A href='byond://?src=\ref[src];pump=1'>On</A><BR>"
 	// else if(mode == 1)
-	// 	dat += "Pump: <A href='?src=\ref[src];pump=0'>Off</A> <B>On</B> (pressurizing)<BR>"
+	// 	dat += "Pump: <A href='byond://?src=\ref[src];pump=0'>Off</A> " + span_bold("On") + " (pressurizing)<BR>"
 	// else
-	// 	dat += "Pump: <A href='?src=\ref[src];pump=0'>Off</A> <B>On</B> (idle)<BR>"
+	// 	dat += "Pump: <A href='byond://?src=\ref[src];pump=0'>Off</A> " + span_bold("On") + " (idle)<BR>"
 
 	// var/per = 100* air_contents.return_pressure() / (SEND_PRESSURE)
 
@@ -334,18 +334,18 @@
 
 
 	// user.set_machine(src)
-	// user << browse(dat, "window=disposal;size=360x170")
+	// user << browse("<html>[dat]</html>", "window=disposal;size=360x170")
 	// onclose(user, "disposal")
 
 // handle machine interaction
 
 // /obj/machinery/disposal/Topic(href, href_list)
 // 	if(usr.loc == src)
-// 		to_chat(usr, "<font color='red'>You cannot reach the controls from inside.</font>")
+// 		to_chat(usr, span_red("You cannot reach the controls from inside."))
 // 		return
 
 // 	if(mode==-1 && !href_list["eject"]) // only allow ejecting if mode is -1
-// 		to_chat(usr, "<font color='red'>The disposal units power is disabled.</font>")
+// 		to_chat(usr, span_red("The disposal units power is disabled."))
 // 		return
 // 	if(..())
 // 		return
@@ -546,7 +546,7 @@
 		if(prob(75))
 			AM.forceMove(src)
 			if(istype(AM, /obj/item/holder/micro) || istype(AM, /mob/living))
-				log_and_message_admins("[AM] was thrown into \the [src]")
+				log_and_message_admins("[AM] was thrown into \the [src]", null)
 				visible_message("\The [AM] lands in \the [src]!")
 				//flush() //Away they go! //Uncomment this for proper autoflush. Compromising with autopull to avoid possible disposal dunking abuse
 				//flush = 1 //1984. No autoflush, no autopull. Leaving this here incase someone wants to revisit this in the future when the mood on this changes
@@ -569,7 +569,7 @@
 		if(prob(75))
 			I.forceMove(src)
 			if(istype(I, /obj/item/holder/micro))
-				log_and_message_admins("[I.name] was thrown into \the [src]")
+				log_and_message_admins("[I.name] was thrown into \the [src]", null)
 			for(var/mob/M in viewers(src))
 				M.show_message("\The [I] lands in \the [src].", 3)
 		else
@@ -585,7 +585,7 @@
 
 	density = FALSE
 
-/obj/machinery/disposal/wall/Initialize()
+/obj/machinery/disposal/wall/Initialize(mapload)
 	. = ..()
 
 	spawn(1 SECOND)	// Fixfix for weird interaction with buildmode or other late-spawning.
@@ -658,11 +658,11 @@
 		if(istype(AM, /mob/living/silicon/robot/drone))
 			var/mob/living/silicon/robot/drone/drone = AM
 			src.destinationTag = drone.mail_destination
-		// CHOMPEdit Start -- Envelopes can be sent through as well!
+
 		if(istype(AM, /obj/item/mail) && !hasmob)
 			var/obj/item/mail/T = AM
 			src.destinationTag = T.sortTag
-		// CHOMPEdit End
+
 
 // start the movement process
 // argument is the disposal unit the holder started in
@@ -751,7 +751,7 @@
 // called when player tries to move while in a pipe
 /obj/structure/disposalholder/relaymove(mob/user as mob)
 
-	if(!istype(user,/mob/living))
+	if(!isliving(user))
 		return
 
 	var/mob/living/U = user
@@ -1454,7 +1454,7 @@
 	icon_state = "pipe-t"
 	var/obj/linked 	// the linked obj/machinery/disposal or obj/disposaloutlet
 
-/obj/structure/disposalpipe/trunk/Initialize()
+/obj/structure/disposalpipe/trunk/Initialize(mapload)
 	..()
 	dpdir = dir
 	return INITIALIZE_HINT_LATELOAD
@@ -1578,7 +1578,7 @@
 	var/mode = 0
 	var/launch_dist = 3 //CHOMPEdit
 
-/obj/structure/disposaloutlet/Initialize()
+/obj/structure/disposaloutlet/Initialize(mapload)
 	. = ..()
 
 	target = get_ranged_target_turf(src, dir, 10)

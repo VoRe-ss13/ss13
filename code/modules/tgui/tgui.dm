@@ -45,6 +45,8 @@
 	var/datum/tgui/parent_ui
 	/// Children of this UI
 	var/list/children = list()
+	/// Any partial packets that we have received from TGUI, waiting to be sent
+	var/partial_packets
 
 /**
  * public
@@ -104,10 +106,10 @@
 	if(!window.is_ready())
 		window.initialize(
 			strict_mode = TRUE,
-			fancy = user.client.prefs.tgui_fancy,
+			fancy = user.read_preference(/datum/preference/toggle/tgui_fancy),
 			assets = list(
 				get_asset_datum(/datum/asset/simple/tgui),
-			))
+				))
 	else
 		window.send_message("ping")
 	send_assets()
@@ -266,8 +268,8 @@
 		"window" = list(
 			"key" = window_key,
 			"size" = window_size,
-			"fancy" = user.client.prefs.tgui_fancy,
-			"locked" = user.client.prefs.tgui_lock,
+			"fancy" = user.read_preference(/datum/preference/toggle/tgui_fancy),
+			"locked" = user.read_preference(/datum/preference/toggle/tgui_lock),
 		),
 		"client" = list(
 			"ckey" = user.client.ckey,
@@ -349,6 +351,28 @@
 	// Pass act type messages to tgui_act
 	if(type && copytext(type, 1, 5) == "act/")
 		var/act_type = copytext(type, 5)
+		var/id = href_list["packetId"]
+		if(!isnull(id))
+			id = text2num(id)
+
+			var/total = text2num(href_list["totalPackets"])
+			if(id == 1)
+				if(total > MAX_MESSAGE_CHUNKS)
+					return
+
+				partial_packets = new /list(total)
+
+			partial_packets[id] = href_list["packet"]
+
+			if(id != total)
+				return
+
+			var/assembled_payload = ""
+			for(var/packet in partial_packets)
+				assembled_payload += packet
+
+			payload = json_decode(assembled_payload)
+			partial_packets = null
 		#ifdef TGUI_DEBUGGING
 		log_tgui(user, "Action: [act_type] [href_list["payload"]], Window: [window.id], Source: [src_object]")
 		#endif

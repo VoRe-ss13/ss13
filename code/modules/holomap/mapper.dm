@@ -81,7 +81,7 @@
 		"/obj/item/rig/ert/medical" = "ertm"
 	)
 
-/obj/item/mapping_unit/Initialize()
+/obj/item/mapping_unit/Initialize(mapload)
 	. = ..()
 	base_prefix = marker_prefix
 
@@ -120,8 +120,9 @@
 
 	return ..()
 
-/obj/item/mapping_unit/dropped(mob/dropper)
-	if(loc != dropper) // Not just a juggle
+/obj/item/mapping_unit/dropped(mob/user)
+	..()
+	if(loc != user) // Not just a juggle
 		hide_device()
 
 /obj/item/mapping_unit/attack_self(mob/user)
@@ -405,7 +406,7 @@
 	var/mapper_filter = HOLOMAP_FILTER_STATIONMAP
 	var/in_list = FALSE
 
-/obj/item/holomap_beacon/Initialize()
+/obj/item/holomap_beacon/Initialize(mapload)
 	. = ..()
 	if(in_list) // mapped in turned on
 		in_list = TRUE

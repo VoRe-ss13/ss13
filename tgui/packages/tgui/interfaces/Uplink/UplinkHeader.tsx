@@ -1,6 +1,7 @@
-import { useBackend } from '../../backend';
-import { Box, Section, Tabs } from '../../components';
-import { Data } from './types';
+import { useBackend } from 'tgui/backend';
+import { Box, Section, Tabs } from 'tgui-core/components';
+
+import type { Data } from './types';
 
 export const UplinkHeader = (props: {
   screen: number;

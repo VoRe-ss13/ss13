@@ -53,10 +53,10 @@ GLOBAL_DATUM_INIT(mhelp_tickets, /datum/mentor_help_tickets, new)
 	if(!l2b)
 		return
 	var/list/dat = list("<html><head><title>[title]</title></head>")
-	dat += "<A HREF='?_src_=mentorholder;[HrefToken()];mhelp_tickets=[state]'>Refresh</A><br><br>"
+	dat += "<A href='byond://?_src_=mentorholder;[HrefToken()];mhelp_tickets=[state]'>Refresh</A><br><br>"
 	for(var/datum/mentor_help/MH as anything in l2b)
-		dat += span_adminnotice(span_adminhelp("Ticket #[MH.id]") + " <A HREF='?_src_=mentorholder;mhelp=\ref[MH];[HrefToken()];mhelp_action=ticket'>[MH.initiator_ckey]: [MH.name]</A>") + "<br>"
-
+		dat += span_adminnotice(span_adminhelp("Ticket #[MH.id]") + " <A href='byond://?_src_=mentorholder;mhelp=\ref[MH];[HrefToken()];mhelp_action=ticket'>[MH.initiator_ckey]: [MH.name]</A>") + "<br>"
+	dat += "</html>"
 	usr << browse(dat.Join(), "window=mhelp_list[state];size=600x480")
 
 //Tickets statpanel
@@ -179,25 +179,25 @@ GLOBAL_DATUM_INIT(mhelp_tickets, /datum/mentor_help_tickets, new)
 /datum/mentor_help/proc/ClosureLinks(ref_src)
 	if(!ref_src)
 		ref_src = "\ref[src]"
-	. = " (<A HREF='?_src_=mentorholder;mhelp=[ref_src];[HrefToken()];mhelp_action=resolve'>RSLVE</A>)"
+	. = " (<A href='byond://?_src_=mentorholder;mhelp=[ref_src];[HrefToken()];mhelp_action=resolve'>RSLVE</A>)"
 
 //private
 /datum/mentor_help/proc/LinkedReplyName(ref_src)
 	if(!ref_src)
 		ref_src = "\ref[src]"
-	return "<A HREF='?_src_=mentorholder;mhelp=[ref_src];[HrefToken()];mhelp_action=reply'>[initiator_ckey]</A>"
+	return "<A href='byond://?_src_=mentorholder;mhelp=[ref_src];[HrefToken()];mhelp_action=reply'>[initiator_ckey]</A>"
 
 //private
 /datum/mentor_help/proc/TicketHref(msg, ref_src, action = "ticket")
 	if(!ref_src)
 		ref_src = "\ref[src]"
-	return "<A HREF='?_src_=mentorholder;mhelp=[ref_src];[HrefToken()];mhelp_action=[action]'>[msg]</A>"
+	return "<A href='byond://?_src_=mentorholder;mhelp=[ref_src];[HrefToken()];mhelp_action=[action]'>[msg]</A>"
 
 //message from the initiator without a target, all people with mentor powers will see this
 /datum/mentor_help/proc/MessageNoRecipient(msg)
 	var/ref_src = "\ref[src]"
-	var/chat_msg = span_notice("(<A HREF='?_src_=mentorholder;mhelp=[ref_src];[HrefToken()];mhelp_action=escalate'>ESCALATE</A>) Ticket [TicketHref("#[id]", ref_src)]<b>: [LinkedReplyName(ref_src)]:</b> [msg]")
-	AddInteraction("<font color='red'>[LinkedReplyName(ref_src)]: [msg]</font>")
+	var/chat_msg = span_notice("(<A href='byond://?_src_=mentorholder;mhelp=[ref_src];[HrefToken()];mhelp_action=escalate'>ESCALATE</A>) Ticket [TicketHref("#[id]", ref_src)]" + span_bold(": [LinkedReplyName(ref_src)]:") + " [msg]")
+	AddInteraction(span_red("[LinkedReplyName(ref_src)]: [msg]"))
 	for (var/client/C in GLOB.mentors)
 		if (C.prefs?.read_preference(/datum/preference/toggle/play_mentorhelp_ping))
 			C << 'sound/effects/mentorhelp.mp3'
@@ -227,7 +227,7 @@ GLOBAL_DATUM_INIT(mhelp_tickets, /datum/mentor_help_tickets, new)
 	if(initiator)
 		initiator.current_mentorhelp = src
 
-	AddInteraction("<font color='purple'>Reopened by [usr.ckey]</font>")
+	AddInteraction(span_purple("Reopened by [usr.ckey]"))
 	if(initiator)
 		to_chat(initiator, span_filter_adminlog("[span_purple("Ticket [TicketHref("#[id]")] was reopened by [usr.ckey].")]"))
 	var/msg = span_adminhelp("Ticket [TicketHref("#[id]")] reopened by [usr.ckey].")
@@ -271,15 +271,15 @@ GLOBAL_DATUM_INIT(mhelp_tickets, /datum/mentor_help_tickets, new)
 	var/list/dat = list("<html><head><title>Ticket #[id]</title></head>")
 	var/ref_src = "\ref[src]"
 	dat += "<h4>Mentor Help Ticket #[id]: [LinkedReplyName(ref_src)]</h4>"
-	dat += "<b>State: "
+	dat += span_bold("State: ")
 	switch(state)
 		if(AHELP_ACTIVE)
-			dat += "<font color='red'>OPEN</font>"
+			dat += span_bold(span_red("OPEN"))
 		if(AHELP_RESOLVED)
-			dat += "<font color='green'>RESOLVED</font>"
+			dat += span_bold(span_green("RESOLVED"))
 		else
 			dat += "UNKNOWN"
-	dat += "</b>[GLOB.TAB][TicketHref("Refresh", ref_src)]"
+	dat += "[GLOB.TAB][TicketHref("Refresh", ref_src)]"
 	if(state != AHELP_ACTIVE)
 		dat += "[GLOB.TAB][TicketHref("Reopen", ref_src, "reopen")]"
 	dat += "<br><br>Opened at: [gameTimestamp(wtime = opened_at)] (Approx [(world.time - opened_at) / 600] minutes ago)"
@@ -290,10 +290,10 @@ GLOBAL_DATUM_INIT(mhelp_tickets, /datum/mentor_help_tickets, new)
 		dat += span_bold("Actions:") + " [Context(ref_src)]<br>"
 	else
 		dat += span_bold("DISCONNECTED") + "[GLOB.TAB][ClosureLinks(ref_src)]<br>"
-	dat += "<br><b>Log:</b><br><br>"
+	dat += "<br>" + span_bold("Log:") + "<br><br>"
 	for(var/I in _interactions)
 		dat += "[I]<br>"
-
+	dat += "</html>"
 	usr << browse(dat.Join(), "window=mhelp[id];size=620x480")
 
 /datum/mentor_help/tgui_fallback(payload)
@@ -375,7 +375,7 @@ GLOBAL_DATUM_INIT(mhelp_tickets, /datum/mentor_help_tickets, new)
 	if(state == AHELP_ACTIVE)
 		. += ClosureLinks(ref_src)
 	if(state != AHELP_RESOLVED)
-		. += " (<A HREF='?_src_=mentorholder;[HrefToken()];mhelp=[ref_src];mhelp_action=escalate'>ESCALATE</A>)"
+		. += " (<A href='byond://?_src_=mentorholder;[HrefToken()];mhelp=[ref_src];mhelp_action=escalate'>ESCALATE</A>)"
 
 //Forwarded action from admin/Topic OR mentor/Topic depending on which rank the caller has
 /datum/mentor_help/proc/Action(action)
@@ -420,10 +420,6 @@ GLOBAL_DATUM_INIT(mhelp_tickets, /datum/mentor_help_tickets, new)
 	set category = "Admin"
 	set name = "Mentorhelp"
 
-	if(say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, span_danger("Speech is currently admin-disabled."))
-		return
-
 	//handle muting and automuting
 	if(prefs.muted & MUTE_ADMINHELP)
 		to_chat(src, span_danger("Error: Mentor-PM: You cannot send adminhelps (Muted)."))
@@ -467,7 +463,7 @@ GLOBAL_DATUM_INIT(mhelp_tickets, /datum/mentor_help_tickets, new)
 			if(current_mentorhelp)
 				log_admin("Mentorhelp: [key_name(src)]: [msg]")
 				current_mentorhelp.MessageNoRecipient(msg)
-				to_chat(usr, span_mentor_pm_notice("Mentor-PM to-<b>Mentors</b>: [msg]"))
+				to_chat(usr, span_mentor_pm_notice("Mentor-PM to-" + span_bold("Mentors") + ": [msg]"))
 				return
 			else
 				to_chat(usr, span_warning("Ticket not found, creating new one..."))
@@ -480,7 +476,7 @@ GLOBAL_DATUM_INIT(mhelp_tickets, /datum/mentor_help_tickets, new)
 //admin proc
 /client/proc/cmd_mentor_ticket_panel()
 	set name = "Mentor Ticket List"
-	set category = "Admin.Misc" //CHOMPEdit
+	set category = "Admin.Misc"
 
 	var/browse_to
 

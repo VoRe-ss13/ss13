@@ -1,7 +1,7 @@
 //Verbs after this point.
 /mob/living/carbon/alien/diona/proc/merge()
 
-	set category = "Abilities.Diona" //CHOMPEdit
+	set category = "Abilities.Diona"
 	set name = "Merge with gestalt"
 	set desc = "Merge with another diona."
 
@@ -17,7 +17,7 @@
 
 		if(!(src.Adjacent(C)) || !(C.client)) continue
 
-		if(istype(C,/mob/living/carbon/human))
+		if(ishuman(C))
 			var/mob/living/carbon/human/D = C
 			if(D.species && D.species.name == SPECIES_DIONA)
 				choices += C
@@ -41,7 +41,7 @@
 
 /mob/living/carbon/alien/diona/proc/split()
 
-	set category = "Abilities.Diona" //CHOMPEdit
+	set category = "Abilities.Diona"
 	set name = "Split from gestalt"
 	set desc = "Split away from your gestalt as a lone nymph."
 

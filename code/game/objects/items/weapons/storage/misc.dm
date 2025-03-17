@@ -33,14 +33,14 @@ var/list/random_weighted_donuts = list(
 	icon_state = "donutbox"
 	name = "donut box"
 	desc = "A box that holds tasty donuts, if you're lucky."
-	center_of_mass_x = 16 //CHOMPEdit
-	center_of_mass_y= 9 //CHOMPEdit
+	center_of_mass_x = 16
+	center_of_mass_y = 9
 	max_storage_space = ITEMSIZE_COST_SMALL * 6
 	can_hold = list(/obj/item/reagent_containers/food/snacks/donut)
 	foldable = /obj/item/stack/material/cardboard
 	//starts_with = list(/obj/item/reagent_containers/food/snacks/donut/normal = 6)
 
-/obj/item/storage/box/donut/Initialize()
+/obj/item/storage/box/donut/Initialize(mapload)
 	if(!empty)
 		for(var/i in 1 to 6)
 			var/type_to_spawn = pickweight(random_weighted_donuts)
@@ -73,7 +73,7 @@ var/list/random_weighted_donuts = list(
 	)
 	starts_with = list(/obj/item/reagent_containers/food/snacks/worm = 6)
 
-/obj/item/storage/box/wormcan/Initialize()
+/obj/item/storage/box/wormcan/Initialize(mapload)
 	. = ..()
 	update_icon()
 

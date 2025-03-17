@@ -4,7 +4,7 @@
 /mob/living/carbon/human/proc/tie_hair()
 	set name = "Tie Hair"
 	set desc = "Style your hair."
-	set category = "IC.Game" //CHOMPEdit
+	set category = "IC.Game"
 
 	if(incapacitated())
 		to_chat(src, span_warning("You can't mess with your hair right now!"))
@@ -22,7 +22,7 @@
 				var/datum/sprite_accessory/hair/test = hair_styles_list[hair_string]
 				if(test.flags & HAIR_TIEABLE)
 					valid_hairstyles.Add(hair_string)
-			selected_string = tgui_input_list(usr, "Select a new hairstyle", "Your hairstyle", valid_hairstyles)
+			selected_string = tgui_input_list(src, "Select a new hairstyle", "Your hairstyle", valid_hairstyles)
 		if(incapacitated())
 			to_chat(src, span_warning("You can't mess with your hair right now!"))
 			return
@@ -34,7 +34,7 @@
 			to_chat(src, span_notice("You're already using that style."))
 
 /mob/living/carbon/human/proc/tackle()
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 	set name = "Tackle"
 	set desc = "Tackle someone down."
 
@@ -81,7 +81,7 @@
 			O.show_message(span_warning(span_red(span_bold("[src] [failed ? "tried to tackle" : "has tackled"] down [T]!"))), 1)
 
 /mob/living/carbon/human/proc/commune()
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 	set name = "Commune with creature"
 	set desc = "Send a telepathic message to an unlucky recipient."
 
@@ -90,11 +90,11 @@
 	var/text = null
 
 	targets += getmobs() //Fill list, prompt user with list
-	target = tgui_input_list(usr, "Select a creature!", "Speak to creature", targets)
+	target = tgui_input_list(src, "Select a creature!", "Speak to creature", targets)
 
 	if(!target) return
 
-	text = tgui_input_text(usr, "What would you like to say?", "Speak to creature", null, MAX_MESSAGE_LEN)
+	text = tgui_input_text(src, "What would you like to say?", "Speak to creature", null, MAX_MESSAGE_LEN)
 
 	text = sanitize(text, MAX_MESSAGE_LEN)
 
@@ -102,14 +102,14 @@
 
 	var/mob/M = targets[target]
 
-	if(istype(M, /mob/observer/dead) || M.stat == DEAD)
+	if(isobserver(M) || M.stat == DEAD)
 		to_chat(src, span_filter_notice("Not even a [src.species.name] can speak to the dead."))
 		return
 
 	log_say("(COMMUNE to [key_name(M)]) [text]",src)
 
 	to_chat(M, span_filter_say("[span_blue("Like lead slabs crashing into the ocean, alien thoughts drop into your mind: [text]")]"))
-	if(istype(M,/mob/living/carbon/human))
+	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(H.species.name == src.species.name)
 			return
@@ -119,7 +119,7 @@
 /mob/living/carbon/human/proc/regurgitate()
 	set name = "Regurgitate"
 	set desc = "Empties the contents of your stomach"
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 	if(stomach_contents.len)
 		for(var/mob/M in src)
@@ -132,9 +132,9 @@
 /mob/living/carbon/human/proc/psychic_whisper(mob/M as mob in oview())
 	set name = "Psychic Whisper"
 	set desc = "Whisper silently to someone over a distance."
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
-	var/msg = sanitize(tgui_input_text(usr, "Message:", "Psychic Whisper"))
+	var/msg = sanitize(tgui_input_text(src, "Message:", "Psychic Whisper"))
 	if(msg)
 		log_say("(PWHISPER to [key_name(M)]) [msg]", src)
 		to_chat(M, span_filter_say("[span_green("You hear a strange, alien voice in your head... <i>[msg]</i>")]"))
@@ -144,7 +144,7 @@
 /mob/living/carbon/human/proc/diona_split_nymph()
 	set name = "Split"
 	set desc = "Split your humanoid form into its constituent nymphs."
-	set category = "Abilities.Diona" //CHOMPEdit
+	set category = "Abilities.Diona"
 	diona_split_into_nymphs(5)	// Separate proc to void argments being supplied when used as a verb
 
 /mob/living/carbon/human/proc/diona_split_into_nymphs(var/number_of_resulting_nymphs)
@@ -204,7 +204,7 @@
 /mob/living/carbon/human/proc/self_diagnostics()
 	set name = "Self-Diagnostics"
 	set desc = "Run an internal self-diagnostic to check for damage."
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 	if(stat == DEAD) return
 
@@ -247,7 +247,7 @@
 /mob/living/carbon/human/proc/sonar_ping()
 	set name = "Listen In"
 	set desc = "Allows you to listen in to movement and noises around you."
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 	if(incapacitated())
 		to_chat(src, span_warning("You need to recover before you can use this ability."))
@@ -263,7 +263,7 @@
 	to_chat(src, span_notice("You take a moment to listen in to your environment..."))
 	for(var/mob/living/L in range(client.view, src))
 		var/turf/T = get_turf(L)
-		if(!T || L == src || L.stat == DEAD || is_below_sound_pressure(T) || L.is_incorporeal()) // CHOMPAdd - No bluespace ears.
+		if(!T || L == src || L.stat == DEAD || is_below_sound_pressure(T) || L.is_incorporeal())
 			continue
 		heard_something = TRUE
 		var/feedback = list()
@@ -291,7 +291,7 @@
 /mob/living/carbon/human/proc/regenerate()
 	set name = "Regenerate"
 	set desc = "Allows you to regrow limbs and heal organs after a period of rest."
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 	if(nutrition < 250)
 		to_chat(src, span_warning("You lack the biomass to begin regeneration!"))
@@ -355,7 +355,7 @@
 /mob/living/carbon/human/proc/setmonitor_state()
 	set name = "Set monitor display"
 	set desc = "Set your monitor display"
-	set category = "IC.Settings" //CHOMPEdit
+	set category = "IC.Settings"
 	if(stat)
 		to_chat(src,span_warning("You must be awake and standing to perform this action!"))
 		return
@@ -370,7 +370,7 @@
 	var/list/states
 	if(!states)
 		states = params2list(robohead.monitor_styles)
-	var/choice = tgui_input_list(usr, "Select a screen icon:", "Screen Icon Choice", states)
+	var/choice = tgui_input_list(src, "Select a screen icon:", "Screen Icon Choice", states)
 	if(choice)
 		E.eye_icon_location = robohead.monitor_icon
 		E.eye_icon = states[choice]

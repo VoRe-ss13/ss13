@@ -1,0 +1,393 @@
+2025-03-01:
+  CHOMPStation2StaffMirrorBot:
+  - bugfix: Fixed mantraps eating the same person instantly on escape, they now do
+      not eat someone who has escaped them previously.
+  - bugfix: Fixed a few mob names being capitalised.
+  - code_imp: removes sleep from light flicker
+  - code_imp: enables the block spawn on runechat now where flicker is fixed
+  - rscadd: Added privacy switches to all dorm rooms, these buttons make an overlay
+      appear on the room for ghosts preventing them seeing inside. This does not currently
+      prevent them hearing emotes from inside the room, it's purely a visual block.
+  - bugfix: Fixed station maps for the map linter PR.
+  - bugfix: Fixed a missing air alarm in the tether atmos break room.
+  - bugfix: door controllers being instant triggerable
+  Diana:
+  - bugfix: Makes it so you can attack without hands
+  - bugfix: Fixes grabbing a buckled entity to cause you to be perma-slowed
+  - bugfix: You will no longer bleed to death from a headbutt
+  - code_imp: Removes attack_paw
+  - code_imp: Makes the attack_hand code less garbage
+  Hunter-Dovetail:
+  - rscadd: scaled_belly-l_leg, scaled_belly-r_leg, scaled_belly-groin
+  - bugfix: dragon_upperjaw-head
+  Will:
+  - code_imp: Trasheater is no longer an abomination to look at in the code
+  - rscadd: Adds a new motion tracker subsystem to the game to allow for tracking
+      entities through walls!
+  - rscadd: Adds a motion tracker item to R&D
+  - rscadd: Adds a vibration sense trait that allows users to hear entities moving
+      through walls
+  - qol: Teshari's and Xenochimera's 'listen in' verb has been upgraded to the new
+      listen-in trait
+2025-03-02:
+  CHOMPStation2StaffMirrorBot:
+  - admin: fix internet audio player
+  - qol: people can now hide entertainment radio messages separately
+  Diana:
+  - bugfix: You no longer check if you can remove your internal organs to throw them
+      at people
+  - bugfix: You can no longer become immortal via cocoon weaver
+  - bugfix: Cocoon weaver now properly makes a TGUI window and keeps it.
+  - qol: Replaces face-left and face-right with a 'change facing' verb from Chomp
+      for when you're laying down.
+  - bugfix: You can no longer change facing direction, toggle glow,
+  - bugfix: Spin cocoon can no longer be used while buckled which caused space time
+      reality to break
+  - code_imp: Upgrades update_icons to work better and support change-facing
+  - bugfix: You can no longer cause telecrystal inflation
+  - code_imp: Gets a few things standardized by having the base /proc/ have /var and
+      its children being normal.
+  Drathek:
+  - rscadd: Added OD pragma lints
+  - bugfix: Fixed various issues caught by errors e.g. icon_forge's apply method,
+      VV on a list, etc.
+  - bugfix: Fixed various issues with apply_damage where arguments were incorrect
+      for used_weapon
+  Kashargul, Nadyr:
+  - code_imp: replaces more font tags
+  Will:
+  - bugfix: motion tracking ability now lets you properly motion track
+  - qol: Motion tracker subsystem can be toggled off for hide and seek modes
+  - bugfix: Potentially fixes your organs exploding when you spawn in
+  - bugfix: no more randomly invisible marker beacons
+  Will, Diana, Kash.:
+  - code_imp: There is now a unit test that will ENSURE every borg sprite from this
+      point forwards in time will have proper sprites. - Will
+  - bugfix: Fixes a LOT of broken sprites. - Diana
+  - rscadd: Adds variant catborgs (old variant), Dullahan variants
+  - rscadd: A BUNCH of sprites
+  - rscadd: Up-ports the Stoat and Possum from Outpost
+  - rscadd: Worm Borgs now have better sprites
+  - rscadd: More than one decal can be added to borgs
+  - qol: Surgery and crisis combined
+  tacoguy7765093:
+  - rscadd: Simplemob zorgoia markings added. Stars, full head, tail fade
+2025-03-03:
+  CHOMPStation2StaffMirrorBot:
+  - qol: using a database to store the round logs to reduce client-side lag
+  - qol: using same database to load the most recent messages into the chat (instead
+      of having to fetch from client browser)
+  - code_imp: refactors more new to init
+  - spellcheck: Adjusted the OOC escape text. Instead of starting strong with 'don't
+      use this', let's be more passive tone.
+  - spellcheck: Weight selection is less aggressive as well.
+  - bugfix: dogborg id properly deletes
+  - rscadd: ctrl u, i, b markups for text inputs
+  - code_imp: some more 516 things
+  Diana, Will:
+  - bugfix: Protean rigs actually have a proper sprite and aren't just invisible.
+  - bugfix: Fixes RIG gear to not drop your equipped items
+  - bugfix: If a suit tells you it 'protects you between X any Y temperatures' it
+      actually does, now!
+  - code_imp: There is now a unit test that will tell you if your icons are broken!
+  - bugfix: Over a 100+ uniforms, accessories, gloves, boots, suits, etc have been
+      fixed spritewise.
+  - code_imp: over 3600 missing sprite icons have been identified...
+  tacoguy7765093:
+  - admin: /proc/toggle_selfsurgery() works now.
+2025-03-05:
+  CHOMPStation2StaffMirrorBot:
+  - rscadd: Atmos and Medical holosigns
+  - rscadd: Super Matter lighters
+  - rscadd: Light painters
+  - rscadd: Mail System, blank envelopes, and mail scanner.
+  - rscadd: Blank envelopes
+  - rscadd: Mail scanner
+  - bugfix: changeTurf will no longer create outdoor turfs in turbolifts or shuttles
+  - rscadd: Adds Purple Robes and Tiara to loadout
+  - qol: lowers cost of suit clothing fluff (This helps you identify which ones have
+      armor and which ones don't, as some things are naturally priced higher due to
+      their innate armor)
+  - qol: Brings some loadout items to normal prices (increased is reserved for ones
+      that give armor)
+  - bugfix: Fixes neural implant always having 2 cost due to implant/language existing
+      and taking priority.
+  - qol: Neural implant only costs one loadout point, now.
+  - rscadd: Adds pirate coat and pirate hat to loadout. Yarr!
+  - qol: veymed autoadaptive suits can now handle teshari
+  - balance: veymed tesh suits changed to generic nonadaptive suits
+  - qol: '"streamlined" changed to "lightweight" in veymed suit names'
+  Diana. Tacoguy, Kash:
+  - rscadd: Tacoguy - Adds Combat Medic Catborg sprite.
+  - code_imp: Kash - Robot linter will now properly detect stomach states.
+  - code_imp: Diana - Fixes invisible robot sprites.
+  Will:
+  - code_imp: Vents work better
+2025-03-07:
+  CHOMPStation2StaffMirrorBot:
+  - code_imp: updated the minimum compiler version of the project
+  - bugfix: Fixed duplicate APCs in the same area on station maps.
+  - bugfix: Fixed redgate ladders that allowed upwards movement without having a z-level
+      above.
+  - bugfix: More maps fixed for the linter.
+  - qol: allows chat settings to be ex / imported
+  - qol: allows to prune history of specific tabs
+  - bugfix: some rare scaling issues
+  - qol: adds close button
+  - qol: resizes button
+  - rscadd: added fake coins to loadouts, can be flipped, can't be put in vendors
+  - rscadd: 'added seven new coin types (plus fakes): steel, titanium, copper, durasteel,
+      plasteel, graphite, and lead. some of these are in the random coin spawner.'
+  - image: moved coin icons into their own dmi
+  - refactor: a sheet's coin type is now set on the stack obj definition, tidied up
+      the mint code to not be a string of if/else if, and to not require a list of
+      valid materials on the machine, so now it's easier to add new coin types. coin
+      names also use material def names now.
+  - code_imp: resolves some more init and destroy issues
+  Diana:
+  - rscadd: You no longer hallucinate while absorbed with low blood sugar
+  - bugfix: Teshari can now use small wheelchairs (and so can others)
+  - qol: Reworks the medical kiosk to have use. It now dispenses small amounts of
+      painpills and medications to help stabilize you to get you to medical before
+      you croak.
+  - qol: Lungs no longer IMMEDIATELY risk popping if you forget internals for one
+      second. You now have gradually accumulate damage over time. Get those internals
+      on quick!
+  - qol: Infections now give you a better alert that it's an INFECTION you have instead
+      of just a random 'you feel itchy' so players are less blindsided by infections.
+  - qol: Adjusts the text that you get when you suffer internal bleeding. Now it sticks
+      out more during fights so you can know you have IB and get to medical quicker.
+  - rscadd: Makes the medical kiosk actually DETECT more issues than before. Now it
+      actually does a full body scan on you to see what's wrong with you!
+  - qol: Crayons and markers are no longer the strongest poison in the game. One crayon
+      won't OD you anymore, but two will. One marker can still OD you with disaster
+      effects if you eat it entirely. OORAH
+  - bugfix: Crayons and markers get properly added to your stomach
+  - bugfix: inaprovaline PROPERLY affects internal bleeding now.
+  - qol: Putting pressure on an external wound will put some pressure on arterial
+      bleeds as well, helping decrease (but not entirely stop) bloodloss.
+  - qol: Vox can be defibbed.
+  - code_imp: Changes a few sections in the code to use REAGENTS_OVERDOSE instead
+      of just a plain number.
+  - code_imp: Gets rid of a few //EDIT comments for better code quality.
+  - code_imp: Moved internal wound handling to handle_blood()
+  - rscadd: You can now unwrench pipes that are over-pressurized, at the cost of being
+      flung back.
+  - bugfix: Atmos analyzers will no longer fail on portable connectors
+  - bugfix: No more attempting to blendRGB if we have nothing to blend.
+  - bugfix: Diseases will not try to copy non-existent vars over.
+  - bugfix: Recursive explosions no longer runtime if the turf it tries to step into
+      is invalid.
+  - qol: Health analyzer guide now tells users what to do, no longer requiring medical
+      access. Also some wording changes.
+  - bugfix: Health analyzer guide no longer runtimes if someone has no viruses.
+  - bugfix: Cards no longer runtime if you try to pull a card without being a human.
+  - bugfix: Anything-turned-protean will alert you if it has no humanform
+  - bugfix: Tunneler spiders will no longer runtime if the turf they try to tunnel
+      into doesn't exist
+  - bugfix: Mannequins now properly get deleted when you observe.
+  - bugfix: When placing a pipe on a pipeline, the pipeline will no longer lose all
+      the gas within the pipeline. This occurred when you placed a new pipe on a pipeline
+      that had not had not previously had a pipe unwrenched on the pipeline, resulting
+      in the pipes on the pipeline not saving the gas, resulting in all the gas within
+      the pipes on that pipeline being voided.
+  Kashargul:
+  - code_imp: cleans up some old code and moves the useful one to modular
+2025-03-08:
+  CHOMPStation2StaffMirrorBot:
+  - image: added missing sidewalk turf edge overlays
+  - bugfix: hair gradient selection arrows
+  - bugfix: wrong blood volumes on apply prefs
+  - bugfix: early spawns in nullspace
+  - rscadd: Strong rat variant
+  Kashargul:
+  - code_imp: cleans up some ini issues
+2025-03-09:
+  CHOMPStation2StaffMirrorBot:
+  - code_imp: fix initialize for grep checks
+  - qol: Synthfabs no longer apply massive damage when unupgraded.
+  zeskorion:
+  - rscadd: YR3 Enviroshell prosthetic, which is usable for xenochimerae. a colorable
+      version is also added.
+2025-03-10:
+  CHOMPStation2StaffMirrorBot:
+  - code_imp: finishes up typescript
+  - bugfix: Shield capacitors now only take power from wires when anchored to the
+      ground.
+  Caramelion:
+  - rscadd: Different colourations for carps
+  - bugfix: Fixed attacking resetting pixelshift position to 0, 0 after the animation
+  - qol: Allows various mobs to create swarms
+  - code_imp: Added Swarm component
+  - code_imp: Added connect_loc_behalf component
+  Diana:
+  - bugfix: Guns now have their fire_delays fixed. No more rapidfire RPGs.
+  - qol: Phoron bore gets to keep it's unintentional attack-speed buff. (Mining is
+      in need of QoL changes, so let this be at least one of them.)
+  Will:
+  - rscadd: Adds a new trait 'Lumbar Impairment' which makes you incapable of utilizing
+      your legs.
+2025-03-11:
+  CHOMPStation2StaffMirrorBot:
+  - bugfix: Fixed jungle and fantasy redgates having cave walls generate where they
+      shouldn't.
+  Diana:
+  - bugfix: myelamine properly clots your external wounds
+  - balance: myelamine now applies an up-front heal for bleeding wounds when clotting
+      them.
+  - qol: myelamine now ACTUALLY heals internal wounds if you take a 10u dose of it.
+      No more 'I took 10u and it had 0.1 damage remaining and I bled out 10 minutes
+      later'
+  - spellcheck: myelamine has an updated description, informing you that it doesn't
+      heal JUST internal wounds, but it also heals external wounds.
+  - spellcheck: myelamine now accurately tells you via the chemmaster that it clots
+      MORE than just internal hemorrhages. It additionally tells you the ideal dose
+      for wound healing.
+  Kashargul:
+  - bugfix: blood issues in VR
+2025-03-12:
+  CHOMPStation2StaffMirrorBot:
+  - qol: admin ranks are now datums
+  - admin: admin ranks can be now made out of multiple ranks
+  - server: updates to the database schema and configuration examples
+  - code_imp: end of file new line fix for grep
+  Guti:
+  - bugfix: Fixed swarm mobs becoming walls on death
+  - code_imp: Slightly changed projectile code to check for lying down mobs instead
+      of their density
+  Kashargul:
+  - code_imp: fixes some issues in the random poi init
+  Will & Diana:
+  - rscadd: Adds a nevrean plush with two variants, normal and security.
+  - qol: Goes through and gives plushies speech bubbles pertaining to what they are.
+  - bugfix: Fixes it so plushies now properly speak.
+  - qol: Makes it so any interaction with plushies will play their phrase, NOT just
+      disarm-intenting them (This was never made clear that disarm intent makes them
+      speak.)
+  - code_imp: Gets rid of a few non-existent base paths by converting one of the paths
+      into the base one. (plushy/therapy & plushies/squid)
+  - bugfix: Fixes the toaster from having the sus plushie sound.
+  - code_imp: Changed some timers that were calling a proc that just set a var to
+      false. Instead, we now use a varset_callback timer there.
+2025-03-13:
+  Ace:
+  - maptweak: Thor map updated
+  - config: Thor terrain is now configured to spawn appropriate mobs instead of just
+      placeholder tindalos.
+  CHOMPStation2StaffMirrorBot:
+  - bugfix: Fixed dullahans being in between two tiles
+  - code_imp: changes the falling turf effect to turfs directly
+  Hunter-Dovetail:
+  - rscadd: scaled_belly-r_leg, scaled_belly-l_leg, chubbybelly_small-r_leg, chubbybelly_small-l_leg
+  - bugfix: hippo_upperjaw-head, hippo_lowerjaw-head, scaled_belly-groin
+2025-03-14:
+  Ace:
+  - maptweak: Temporarily deletes the security taurs from Thor.
+  - bugfix: Thor terrains did not actually use the randomized fauna made for it.
+  - rscadd: Added cave lamias
+  - rscadd: Added cave spiders to replace space bees in the mines
+  - balance: Changed the list of what mobs appear in caves
+  CHOMPStation2StaffMirrorBot:
+  - code_imp: tgui core to 1.8.2
+  - config: the example now has the correct flags for the BUILD and SOUND permissions
+  - bugfix: Fixed mantraps voring people who step on them when they're dead.
+  - image: modified the head states of DSI nevreans
+  - image: modified the torso states of DSI tesh and regular tesh
+  - rscadd: AI law modules will show the laws they apply when examined
+  - code_imp: fixes some runtimes
+  Diana:
+  - rscadd: Medical kiosk now informs you how to cure Dizziness and Jitteryness
+  Guti:
+  - image: Fixed mailman's hat
+  - maptweak: Added a couple of mail scanners and mail bags to all the maps
+  Kashargul:
+  - code_imp: more banned map types
+  Will:
+  - code_imp: adds some more map tests
+  tacoguy7765093:
+  - maptweak: Removed pointless ladder in explo shelter.
+  - maptweak: Soluna Nexus duplicate APCs removed.
+2025-03-15:
+  Ace:
+  - rscadd: Gryphons can now rarely appear in the caves.
+  - rscdel: Sonadile removed from caves at least until the sprite animation looping
+      bug is fixed.
+  - bugfix: A cobra lamia was incorrectly used as the base of a cave lamia variant.
+      It should have been a copper lamia.
+  - code_imp: Adjusted a few spawn weights for cave mobs.
+  - balance: Altered Thor animal spawn weights.
+  - maptweak: Various small changes to Thor
+  CHOMPStation2StaffMirrorBot:
+  - code_imp: some more grep checks
+  - bugfix: Fixed a number of duplicate structures and cleanables on maps for the
+      map linter PR.
+  Cameron-The-Raven:
+  - rscadd: Riftwalkers will now be able to swap their sprite appearances on demand.
+      (This means you have much more riftwalker sprites to choose from!)
+  - rscadd: Riftwalkers now have two new LARGE sprites (brutola and ignia) which have
+      2 stomach sprites each
+  Diana:
+  - rscadd: Adds gooborgs! Sprites by Toriate
+  - rscadd: You can now TOGGLE STOMACH GLOWING on borgs! If toggled on, your tummy
+      will GLOW IN THE DARK!
+  - rscadd: Catborgs now have passive glowing parts if they are toggled on
+  - code_imp: Robotic eswords and batons now count as robotic weapons and trigger
+      appropriate sprites.
+  - bugfix: Borg batons will no longer start looking like it has no cell.
+  - qol: Moves 'toggle extras' to a more conspicuous spot in the Abilities tab. (Dullahans
+      and Gryphonborg have alternative sprites if used)
+  - maptweak: touches every map and smashes it with a plasteel hammer to make it comply
+  SpadesNeil:
+  - bugfix: Makes giant cave spiders no longer giant
+  Will:
+  - qol: Clothing pockets now have better lists that allow you to carry a wider list
+      of items inside of them. No longer will winter jacket allow you to hold pens,
+      but winter coat won't.
+  - code_imp: Pockets have been completely reworked to not use randomly defined lists
+      everywhere. They are now consolidated.
+2025-03-16:
+  CHOMPStation2StaffMirrorBot:
+  - bugfix: All suits no longer have a 'toggle hood' button even if they have no hood
+      to toggle.
+  - bugfix: robot sprites broken by goo borgs
+  Diana:
+  - bugfix: Plushies will no longer lose their loadout name
+  - bugfix: Plushies will speak in their given name in the chat properly.
+  - bugfix: Xenoarch organs no longer have the possibility of being rejected.
+  Will:
+  - rscadd: Adds a positive trait that allows you to have your genetics unable to
+      be scrambled.
+  - rscadd: 'Adds three new negative traits: One Life, Unsleeveable, and Unreviveable.'
+  - rscadd: If you have NO_DNA or NO_RESLEEVE(your genetics is trashed), slimes find
+      you unappealing!
+  - code_imp: NO_DNA and NO_RESLEEVE are now separated.
+  - bugfix: Traits will no longer wipe innate species traits
+  - code_imp: ATC is now a subsystem
+  Will & Diana:
+  - bugfix: Dullahans (among others) have proper offsets now
+  - code_imp: Unit test forces coders to comply with proper offsetting of borg sprites
+2025-03-17:
+  CHOMPStation2StaffMirrorBot:
+  - rscadd: Added a new bluespace sheet snatcher of holding that can be created by
+      science (cheaper and easier than other "of holding" items). This allows it to
+      carry up to 5000 sheets. It can also be bought from the mining vendor for 1000
+      points.
+  - balance: Changed the normal sheet snatcher to hold 500 (previously 300), and the
+      borg version to hold 700 (previously 500).
+  - rscadd: You can now adjust the transparency of your wings in the character editor
+      and related.
+  - code_imp: finishes machines new to init
+  - bugfix: The various character transparency additions are properly added to character
+      DNA now.
+  - code_imp: fix admin vote
+  - rscadd: liquid bellies
+  - rscadd: all chomp belly overlays
+  - rscadd: soul catcher for generic usage by every mob
+  - rscadd: more transfer, processing and other belly options
+  - bugfix: bellies no longer update every life tick
+  - qol: reworked the entire vore panel preference section
+  - qol: rework vorespwan to also be autoamted / used as direct spawn point
+  Diana:
+  - code_imp: Emotes work a bit differently on the backend.
+  - bugfix: immunosuprizine is no longer the strongest poison in the game. It will
+      no longer do 1245 damage per unit to people you hit with it.

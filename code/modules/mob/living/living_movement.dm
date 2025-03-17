@@ -9,7 +9,7 @@
 	if(istype(mover, /obj/item/projectile))
 		var/obj/item/projectile/P = mover
 		return !P.can_hit_target(src, P.permutated, src == P.original, TRUE)
-	return (!mover.density || !density || lying)
+	return (!mover.density || !density || lying || is_incorporeal())
 
 /mob/CanZASPass(turf/T, is_zone)
 	return ATMOS_PASS_YES
@@ -17,7 +17,7 @@
 /mob/living/SelfMove(turf/n, direct, movetime)
 	// If on walk intent, don't willingly step into hazardous tiles.
 	// Unless the walker is confused.
-	if(m_intent == "walk" && confused <= 0)
+	if(m_intent == I_WALK && confused <= 0)
 		if(!n.is_safe_to_enter(src))
 			to_chat(src, span_warning("\The [n] is dangerous to move into."))
 			return FALSE // In case any code wants to know if movement happened.
@@ -48,10 +48,10 @@ default behaviour is:
 		return 0
 
 /mob/living/Bump(atom/movable/AM)
-	if(now_pushing || !loc || buckled == AM)
+	if(now_pushing || !loc || buckled == AM || AM.is_incorporeal())
 		return
 	now_pushing = 1
-	if (istype(AM, /mob/living))
+	if (isliving(AM))
 		var/mob/living/tmob = AM
 
 		//Even if we don't push/swap places, we "touched" them, so spread fire
@@ -126,12 +126,10 @@ default behaviour is:
 			tmob.forceMove(oldloc)
 			now_pushing = 0
 			return
-		//VOREStation Edit - Begin
 		else if((tmob.mob_always_swap || (tmob.a_intent == I_HELP || tmob.restrained()) && (a_intent == I_HELP || src.restrained())) && canmove && can_swap && handle_micro_bump_helping(tmob))
 			forceMove(tmob.loc)
 			now_pushing = 0
 			return
-		//VOREStation Edit - End
 
 		if(!can_move_mob(tmob, 0, 0))
 			now_pushing = 0
@@ -139,18 +137,19 @@ default behaviour is:
 		if(a_intent == I_HELP || src.restrained())
 			now_pushing = 0
 			return
-		// VOREStation Edit - Begin
 		// Plow that nerd.
 		if(ishuman(tmob))
 			var/mob/living/carbon/human/H = tmob
 			if(H.species.lightweight == 1 && prob(50))
+				if(HULK in H.mutations) //No knocking over the hulk
+					return
 				H.visible_message(span_warning("[src] bumps into [H], knocking them off balance!"))
 				H.Weaken(5)
 				now_pushing = 0
 				return
 			//CHOMPSTATION edit Adding alternative to lightweight
 			if(H.species.lightweight_light == 1 && H.a_intent == I_HELP)
-				H.visible_message("<span class='warning'>[src] bumps into [H], knocking them off balance!</span>")
+				H.visible_message(span_warning("[src] bumps into [H], knocking them off balance!"))
 				H.Weaken(5)
 				now_pushing = 0
 				return
@@ -161,7 +160,7 @@ default behaviour is:
 		else
 			if(handle_micro_bump_other(tmob,1)) return
 		// CHOMPSTATION edit end
-		if(istype(tmob, /mob/living/carbon/human) && (FAT in tmob.mutations))
+		if(ishuman(tmob) && (FAT in tmob.mutations))
 			if(prob(40) && !(FAT in src.mutations))
 				to_chat(src, span_danger("You fail to push [tmob]'s fat ass out of the way."))
 				now_pushing = 0
@@ -184,11 +183,11 @@ default behaviour is:
 	. = ..()
 	if (!istype(AM, /atom/movable) || AM.anchored)
 		//VOREStation Edit - object-specific proc for running into things
-		if(((confused || is_blind()) && stat == CONSCIOUS && prob(50) && m_intent=="run") || flying)
+		if(((confused || is_blind()) && stat == CONSCIOUS && prob(50) && m_intent==I_RUN) || flying)
 			AM.stumble_into(src)
 		//VOREStation Edit End
 		/* VOREStation Removal - See above
-		if(confused && prob(50) && m_intent=="run")
+		if(confused && prob(50) && m_intent==I_RUN)
 			Weaken(2)
 			playsound(src, "punch", 25, 1, -1)
 			visible_message(span_warning("[src] [pick("ran", "slammed")] into \the [AM]!"))
@@ -280,6 +279,8 @@ default behaviour is:
 /mob/living/Moved(var/atom/oldloc, direct, forced, movetime)
 	. = ..()
 	handle_footstep(loc)
+	if(!forced && movetime)
+		SSmotiontracker?.ping(src) // Incase of before init "turf enter gravity" this is ?, unfortunately.
 	// Begin VOREstation edit
 	if(is_shifted)
 		is_shifted = FALSE

@@ -30,6 +30,7 @@
 			list(/obj/item/melee/classic_baton, 6) = 3,
 			list(/obj/item/rig/industrial, 6) = 3,
 			list(/obj/item/multitool/hacktool, 5) = 3,
+			list(/obj/item/multitool/hacktool/modified, 4) = 4,
 			list(/obj/item/toy/katana, 1) = 2,
 			list(/obj/item/clothing/head/kitty, 1) = 2,
 			list(pick(subtypesof(/obj/item/soap)), 1) = 2,
@@ -41,7 +42,7 @@
 			list(/obj/item/toy/syndicateballoon, 3) = 2,
 			list(/obj/item/clothing/suit/ianshirt, 3) = 2,
 			list(/obj/item/clothing/head/bearpelt, 4) = 2,
-			//list(/obj/item/archaeological_find, 3) = 2, //ChompREMOVE - causes runtimes
+			//list(/obj/item/archaeological_find, 3) = 2, // Removed, causes runtimes
 			list(pick(subtypesof(/obj/item/toy/mecha)), 4) = 2,
 			list(pick(subtypesof(/obj/item/toy/figure)), 4) = 2,
 			list(pick(subtypesof(/obj/item/toy/plushie)), 4) = 2,
@@ -58,7 +59,8 @@
 			list(/obj/item/storage/belt/utility/chief/full, 8) = 2,
 			list(/obj/item/personal_shield_generator/belt/mining/loaded, 6) = 2,
 			list(pick(subtypesof(/obj/item/melee/energy/sword) - /obj/item/melee/energy/sword/charge), 6) = 2,
-			list(pick(/obj/item/dnainjector/xraymut, /obj/item/dnainjector/nobreath, /obj/item/dnainjector/insulation), 6) = 2,
+			// Traitgenes New injector loot
+			list(pick(/obj/item/dnainjector/random_good,/obj/item/dnainjector/random_good_labeled,/obj/item/dnainjector/random_labeled,/obj/item/dnainjector/random), 6) = 2,
 			list(/obj/item/gun/energy/netgun, 7) = 2,
 			list(pick(prob(300);/obj/item/gun/energy/mouseray,
 				prob(50);/obj/item/gun/energy/mouseray/corgi,
@@ -102,7 +104,8 @@
 			list(/obj/item/card/emag, 11) = 1,
 			list(/obj/item/melee/shock_maul, 11) = 3,
 			list(/obj/item/clothing/suit/storage/vest/martian_miner/reinforced, 4) = 6,
-			list(/obj/item/storage/backpack/sport/hyd/catchemall, 11) = 1
+			list(/obj/item/storage/backpack/sport/hyd/catchemall, 11) = 1,
+			list(/obj/item/prop/alien/junk, 12) = 1,
 			))
 		var/path = choice[1]
 		var/value = choice[2]
@@ -169,7 +172,7 @@
 		/obj/item/capture_crystal
 	)
 
-/obj/item/storage/backpack/sport/hyd/catchemall/Initialize() //gotta have your starter 'mon too (or an improved way to catch one)
-	..()
+/obj/item/storage/backpack/sport/hyd/catchemall/Initialize(mapload) //gotta have your starter 'mon too (or an improved way to catch one)
+	. = ..()
 	var/path = pick(subtypesof(/obj/item/capture_crystal))
 	contents += new path()

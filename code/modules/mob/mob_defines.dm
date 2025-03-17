@@ -115,10 +115,9 @@
 	var/stunned = 0.0
 	var/weakened = 0.0
 	var/losebreath = 0.0//Carbon
-	var/shakecamera = 0
 	var/a_intent = I_HELP//Living
 	var/m_int = null//Living
-	var/m_intent = "run"//Living
+	var/m_intent = I_RUN//Living
 	var/lastKnownIP = null
 	var/obj/buckled = null//Living
 
@@ -208,7 +207,6 @@
 	//so don't treat them as being SSD even though their client var is null.
 	var/mob/teleop = null
 
-	var/turf/listed_turf = null  	//the current turf being examined in the stat panel
 	var/list/shouldnt_see = list(/mob/observer/eye)	//list of objects that this mob shouldn't see in the stat panel. this silliness is needed because of AI alt+click and cult blood runes
 
 	var/list/active_genes=list()
@@ -240,4 +238,11 @@
 	/// dict of custom stat tabs with data
 	var/list/list/misc_tabs = list()
 
-	var/custom_footstep = FOOTSTEP_MOB_SHOE // CHOMPEdit
+	var/list/datum/action/actions
+
+	var/list/viruses
+	var/list/resistances
+
+	var/custom_footstep = FOOTSTEP_MOB_SHOE
+	VAR_PRIVATE/is_motion_tracking = FALSE // Prevent multiple unsubs and resubs, also used to check if the vis layer is enabled, use has_motiontracking() to get externally.
+	VAR_PRIVATE/wants_to_see_motion_echos = TRUE

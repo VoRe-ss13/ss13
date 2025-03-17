@@ -1,5 +1,5 @@
 /client/proc/debug_variables(datum/D in world)
-	set category = "Debug.Investigate" //CHOMPEdit
+	set category = "Debug.Investigate"
 	set name = "View Variables"
 	//set src in world
 	var/static/cookieoffset = rand(1, 9999) //to force cookies to reset after the round.
@@ -225,7 +225,7 @@
 								</tr>
 							</table>
 							<div align='center'>
-								<b><font size='1'>[formatted_type]</font></b>
+								"} + span_bold(span_small("[formatted_type]")) + {"
 								<span id='marked'>[marked]</span>
 								<span id='varedited'>[varedited_line]</span>
 								<span id='deleted'>[deleted_line]</span>
@@ -233,7 +233,7 @@
 						</td>
 						<td width='50%'>
 							<div align='center'>
-								<a id='refresh_link' href='?_src_=vars;
+								<a id='refresh_link' href='byond://?_src_=vars;
 	datumrefresh=[refid]'>Refresh</a>
 								<form>
 									<select name="file" size="1"
@@ -249,11 +249,9 @@
 				</table>
 			</div>
 			<hr>
-			<font size='1'>
-				<b>E</b> - Edit, tries to determine the variable type by itself.<br>
-				<b>C</b> - Change, asks you for the var type first.<br>
-				<b>M</b> - Mass modify: changes this variable for all objects of this type.<br>
-			</font>
+				"} + span_small(span_bold("E") + " - Edit, tries to determine the variable type by itself.<br>") + {"
+				"} + span_small(span_bold("C") + " - Change, asks you for the var type first.<br>") + {"
+				"} + span_small(span_bold("M") + " - Mass modify: changes this variable for all objects of this type.<br>") + {"
 			<hr>
 			<table width='100%'>
 				<tr>

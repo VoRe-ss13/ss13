@@ -22,7 +22,6 @@
 #define open_link(target, url) target << link(url)
 
 // From TG, might be useful to have.
-// Didn't port SEND_TEXT() since to_chat() appears to serve the same purpose.
 #define DIRECT_OUTPUT(A, B) A << B
 #define DIRECT_INPUT(A, B) A >> B
 #define SEND_IMAGE(target, image) DIRECT_OUTPUT(target, image)
@@ -32,6 +31,8 @@
 #define CanInteract(user, state) (CanUseTopic(user, state) == STATUS_INTERACTIVE)
 
 #define qdel_null(x) if(x) { qdel(x) ; x = null }
+
+#define qdel_swap(x,y) if(x) { qdel(x) }; x = y;
 
 #define sequential_id(key) uniqueness_repository.Generate(/datum/uniqueness_generator/id_sequential, key)
 

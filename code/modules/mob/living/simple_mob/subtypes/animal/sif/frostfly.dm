@@ -84,7 +84,7 @@
 /mob/living/simple_mob/animal/sif/frostfly/get_cold_protection()
 	return 1	// It literally produces a cryogenic mist inside itself. Cold doesn't bother it.
 
-/mob/living/simple_mob/animal/sif/frostfly/Initialize()
+/mob/living/simple_mob/animal/sif/frostfly/Initialize(mapload)
 	. = ..()
 	smoke_special = new
 	add_verb(src, /mob/living/proc/ventcrawl)
@@ -157,7 +157,7 @@
 
 /datum/ai_holder/simple_mob/ranged/kiting/threatening/frostfly/post_ranged_attack(atom/A)
 	var/mob/living/simple_mob/animal/sif/frostfly/F = holder
-	if(istype(A,/mob/living))
+	if(isliving(A))
 		var/new_dir = turn(F.dir, -90)
 		if(prob(50))
 			new_dir = turn(F.dir, 90)

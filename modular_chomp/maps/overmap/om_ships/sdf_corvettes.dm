@@ -1,5 +1,5 @@
 // Compile in the map for CI testing if we're testing compileability of all the maps
-#if MAP_TEST
+#ifdef MAP_TEST
 #include "sdf_corvette.dmm"
 #include "sdf_corvette_wreck.dmm"
 #include "sdf_cutter.dmm"
@@ -179,7 +179,7 @@
 	vessel_mass = 1000
 	vessel_size = SHIP_SIZE_TINY
 	shuttle = "SDF Corvette Civilian"
-
+	known = FALSE
 
 /datum/map_template/shelter/superpose/sdf_corvette
 	shelter_id = "SDFCorvette"

@@ -40,6 +40,9 @@
 #define ACCESSORY_SLOT_ARMOR_M  0x8000
 #define ACCESSORY_SLOT_HELM_C   0x10000 //24 bit - higher than 0x80000 will overflow
 
+#define ACCESSORY_SLOT_RING		0x20000	//rings, knuckledusters
+#define ACCESSORY_SLOT_WRIST	0x40000	//wristwatches, wrist PDA maybe?
+
 // Bitmasks for the /obj/item/var/flags_inv variable. These determine when a piece of clothing hides another, i.e. a helmet hiding glasses.
 // WARNING: The following flags apply only to the external suit!
 #define HIDEGLOVES      0x1
@@ -117,18 +120,19 @@
 #define EYES        0x4
 #define UPPER_TORSO 0x8
 #define LOWER_TORSO 0x10
+#define CHEST		0x18	// UPPER_TORSO | LOWER_TORSO
 #define LEG_LEFT    0x20
 #define LEG_RIGHT   0x40
-#define LEGS        0x60   //  LEG_LEFT | LEG_RIGHT
+#define LEGS        0x60	// LEG_LEFT | LEG_RIGHT
 #define FOOT_LEFT   0x80
 #define FOOT_RIGHT  0x100
-#define FEET        0x180  // FOOT_LEFT | FOOT_RIGHT
+#define FEET        0x180	// FOOT_LEFT | FOOT_RIGHT
 #define ARM_LEFT    0x200
 #define ARM_RIGHT   0x400
-#define ARMS        0x600 //  ARM_LEFT | ARM_RIGHT
+#define ARMS        0x600	// ARM_LEFT | ARM_RIGHT
 #define HAND_LEFT   0x800
 #define HAND_RIGHT  0x1000
-#define HANDS       0x1800 // HAND_LEFT | HAND_RIGHT
+#define HANDS       0x1800	// HAND_LEFT | HAND_RIGHT
 #define FULL_BODY   0xFFFF
 
 // Bitflags for the percentual amount of protection a piece of clothing which covers the body part offers.

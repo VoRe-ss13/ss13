@@ -13,9 +13,9 @@
 	var/open = 0
 	var/brightness_on = 8		//can't remember what the maxed out value is
 
-/obj/machinery/floodlight/Initialize() //ChompEDIT New --> Initialize
+/obj/machinery/floodlight/Initialize(mapload)
+	. = ..()
 	cell = new(src)
-	..()
 
 /obj/machinery/floodlight/update_icon()
 	cut_overlays()
@@ -65,7 +65,7 @@
 		visible_message("\The [src] shuts down.")
 
 /obj/machinery/floodlight/attack_ai(mob/user as mob)
-	if(istype(user, /mob/living/silicon/robot) && Adjacent(user))
+	if(isrobot(user) && Adjacent(user))
 		return attack_hand(user)
 
 	if(on)

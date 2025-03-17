@@ -8,12 +8,12 @@
 
 	var/datum/tgui_module/agentcard/agentcard_module
 
-/obj/item/card/id/syndicate/Initialize()
+/obj/item/card/id/syndicate/Initialize(mapload)
 	. = ..()
 	agentcard_module = new(src)
 	access = syndicate_access.Copy()
 
-/obj/item/card/id/syndicate/station_access/Initialize()
+/obj/item/card/id/syndicate/station_access/Initialize(mapload)
 	. = ..() // Same as the normal Syndicate id, only already has all station access
 	access |= get_all_station_access()
 
@@ -38,7 +38,7 @@
 	if(!registered_user && register_user(user))
 		to_chat(user, span_notice("The microscanner marks you as its owner, preventing others from accessing its internals."))
 	if(registered_user == user)
-		switch(tgui_alert(usr, "Would you like to edit the ID, or show it?","Show or Edit?", list("Edit","Show")))
+		switch(tgui_alert(user, "Would you like to edit the ID, or show it?","Show or Edit?", list("Edit","Show")))
 			if(null)
 				return
 			if("Edit")

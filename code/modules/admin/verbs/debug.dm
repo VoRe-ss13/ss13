@@ -1,5 +1,5 @@
 /client/proc/Debug2()
-	set category = "Debug.Investigate" //CHOMPEdit
+	set category = "Debug.Investigate"
 	set name = "Debug-Game"
 	if(!check_rights(R_DEBUG))	return
 
@@ -18,7 +18,7 @@
 
 /client/proc/simple_DPS()
 	set name = "Simple DPS"
-	set category = "Debug.Investigate" //CHOMPEdit
+	set category = "Debug.Investigate"
 	set desc = "Gives a really basic idea of how much hurt something in-hand does."
 
 	var/obj/item/I = null
@@ -64,16 +64,16 @@
 		to_chat(user, span_notice("\The [I] does <b>[DPS]</b> damage per second."))
 		if(DPS > 0)
 			to_chat(user, span_notice("At your maximum health ([user.getMaxHealth()]), it would take approximately;"))
-			to_chat(user, span_notice("[(user.getMaxHealth() - CONFIG_GET(number/health_threshold_softcrit)) / DPS] seconds to softcrit you. ([CONFIG_GET(number/health_threshold_softcrit)] health)")) // CHOMPEdit
-			to_chat(user, span_notice("[(user.getMaxHealth() - CONFIG_GET(number/health_threshold_crit)) / DPS] seconds to hardcrit you. ([CONFIG_GET(number/health_threshold_crit)] health)")) // CHOMPEdit
-			to_chat(user, span_notice("[(user.getMaxHealth() - CONFIG_GET(number/health_threshold_dead)) / DPS] seconds to kill you. ([CONFIG_GET(number/health_threshold_dead)] health)")) // CHOMPEdit
+			to_chat(user, span_notice("[(user.getMaxHealth() - CONFIG_GET(number/health_threshold_softcrit)) / DPS] seconds to softcrit you. ([CONFIG_GET(number/health_threshold_softcrit)] health)"))
+			to_chat(user, span_notice("[(user.getMaxHealth() - CONFIG_GET(number/health_threshold_crit)) / DPS] seconds to hardcrit you. ([CONFIG_GET(number/health_threshold_crit)] health)"))
+			to_chat(user, span_notice("[(user.getMaxHealth() - CONFIG_GET(number/health_threshold_dead)) / DPS] seconds to kill you. ([CONFIG_GET(number/health_threshold_dead)] health)"))
 
 	else
 		to_chat(user, span_warning("You need to be a living mob, with hands, and for an object to be in your active hand, to use this verb."))
 		return
 
 /client/proc/Cell()
-	set category = "Debug.Investigate" //CHOMPEdit
+	set category = "Debug.Investigate"
 	set name = "Cell"
 	if(!mob)
 		return
@@ -94,13 +94,13 @@
 	feedback_add_details("admin_verb","ASL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_robotize(var/mob/M in mob_list)
-	set category = "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 	set name = "Make Robot"
 
 	if(!ticker)
 		tgui_alert_async(usr, "Wait until the game starts")
 		return
-	if(istype(M, /mob/living/carbon/human))
+	if(ishuman(M))
 		log_admin("[key_name(src)] has robotized [M.key].")
 		spawn(10)
 			M:Robotize()
@@ -109,7 +109,7 @@
 		tgui_alert_async(usr, "Invalid mob")
 
 /client/proc/cmd_admin_animalize(var/mob/M in mob_list)
-	set category = "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 	set name = "Make Simple Animal"
 
 	if(!ticker)
@@ -120,17 +120,17 @@
 		tgui_alert_async(usr, "That mob doesn't seem to exist, close the panel and try again.")
 		return
 
-	if(istype(M, /mob/new_player))
+	if(isnewplayer(M))
 		tgui_alert_async(usr, "The mob must not be a new_player.")
 		return
 
 	log_admin("[key_name(src)] has animalized [M.key].")
 	spawn(10)
-		M.Animalize()
+		M.Animalize(usr)
 
 
 /client/proc/makepAI()
-	set category = "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 	set name = "Make pAI"
 	set desc = "Spawn someone in as a pAI!"
 	if(!check_rights(R_ADMIN|R_EVENT|R_DEBUG))
@@ -161,7 +161,7 @@
 	feedback_add_details("admin_verb","MPAI") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_alienize(var/mob/M in mob_list)
-	set category = "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 	set name = "Make Alien"
 
 	if(!ticker)
@@ -180,7 +180,7 @@
 
 //TODO: merge the vievars version into this or something maybe mayhaps
 /client/proc/cmd_debug_del_all()
-	set category = "Debug.Dangerous" //CHOMPEdit
+	set category = "Debug.Dangerous"
 	set name = "Del-All"
 
 	// to prevent REALLY stupid deletions
@@ -195,7 +195,7 @@
 	feedback_add_details("admin_verb","DELA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_debug_make_powernets()
-	set category = "Debug.Dangerous" //CHOMPEdit
+	set category = "Debug.Dangerous"
 	set name = "Make Powernets"
 	SSmachines.makepowernets()
 	log_admin("[key_name(src)] has remade the powernet. SSmachines.makepowernets() called.")
@@ -203,16 +203,16 @@
 	feedback_add_details("admin_verb","MPWN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_debug_tog_aliens()
-	set category = "Server.Game" //CHOMPEdit
+	set category = "Server.Game"
 	set name = "Toggle Aliens"
 
-	CONFIG_SET(flag/aliens_allowed, !CONFIG_GET(flag/aliens_allowed)) // CHOMPEdit
-	log_admin("[key_name(src)] has turned aliens [CONFIG_GET(flag/aliens_allowed) ? "on" : "off"].") // CHOMPEdit
-	message_admins("[key_name_admin(src)] has turned aliens [CONFIG_GET(flag/aliens_allowed) ? "on" : "off"].", 0) // CHOMPEdit
+	CONFIG_SET(flag/aliens_allowed, !CONFIG_GET(flag/aliens_allowed))
+	log_admin("[key_name(src)] has turned aliens [CONFIG_GET(flag/aliens_allowed) ? "on" : "off"].")
+	message_admins("[key_name_admin(src)] has turned aliens [CONFIG_GET(flag/aliens_allowed) ? "on" : "off"].", 0)
 	feedback_add_details("admin_verb","TAL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_display_del_log()
-	set category = "Debug.Investigate" //CHOMPEdit
+	set category = "Debug.Investigate"
 	set name = "Display del() Log"
 	set desc = "Display del's log of everything that's passed through it."
 
@@ -239,19 +239,20 @@
 
 	dellog += "</ol>"
 
-	usr << browse(dellog.Join(), "window=dellog")
+	usr << browse("<html>[dellog.Join()]</html>", "window=dellog")
 
 /client/proc/cmd_display_init_log()
-	set category = "Debug.Investigate" //CHOMPEdit
+	set category = "Debug.Investigate"
 	set name = "Display Initialize() Log"
 	set desc = "Displays a list of things that didn't handle Initialize() properly"
 
-	if(!check_rights(R_DEBUG))	return
-	src << browse(replacetext(SSatoms.InitLog(), "\n", "<br>"), "window=initlog")
+	if(!check_rights(R_DEBUG))
+		return
+	src << browse("<html>[replacetext(SSatoms.InitLog(), "\n", "<br>")]</html>", "window=initlog")
 
 /*
 /client/proc/cmd_display_overlay_log()
-	set category = "Debug"
+	set category = "Debug.Investigate"
 	set name = "Display overlay Log"
 	set desc = "Display SSoverlays log of everything that's passed through it."
 
@@ -268,18 +269,18 @@
 		lines += "[entry] => [num2text(data[STAT_ENTRY_TIME], 10)]ms ([data[STAT_ENTRY_COUNT]]) (avg:[num2text(data[STAT_ENTRY_TIME]/(data[STAT_ENTRY_COUNT] || 1), 99)])"
 
 	if (user)
-		user << browse("<ol><li>[lines.Join("</li><li>")]</li></ol>", "window=[url_encode("stats:\ref[stats]")]")
+		user << browse("<html><ol><li>[lines.Join("</li><li>")]</li></ol></html>", "window=[url_encode("stats:\ref[stats]")]")
 	else
 		. = lines.Join("\n")
 
 /client/proc/cmd_admin_grantfullaccess(var/mob/M in mob_list)
-	set category = "Admin.Events" //CHOMPEdit
+	set category = "Admin.Events"
 	set name = "Grant Full Access"
 
 	if (!ticker)
 		tgui_alert_async(usr, "Wait until the game starts")
 		return
-	if (istype(M, /mob/living/carbon/human))
+	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if (H.wear_id)
 			var/obj/item/card/id/id = H.wear_id
@@ -304,7 +305,7 @@
 	message_admins(span_blue("[key_name_admin(usr)] has granted [M.key] full access."), 1)
 
 /client/proc/cmd_assume_direct_control(var/mob/M in mob_list)
-	set category = "Admin.Game" //CHOMPEdit
+	set category = "Admin.Game"
 	set name = "Assume direct control"
 	set desc = "Direct intervention"
 
@@ -325,7 +326,7 @@
 
 /client/proc/take_picture(var/atom/A in world)
 	set name = "Save PNG"
-	set category = "Debug.Misc" //CHOMPEdit
+	set category = "Debug.Misc"
 	set desc = "Opens a dialog to save a PNG of any object in the game."
 
 	if(!check_rights(R_DEBUG))
@@ -422,7 +423,7 @@
 		to_world("* [areatype]")
 
 /datum/admins/proc/cmd_admin_dress(input in getmobs())
-	set category = "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 	set name = "Select equipment"
 
 	if(!check_rights(R_FUN))
@@ -454,7 +455,7 @@
 
 /client/proc/startSinglo()
 
-	set category = "Debug.Game" //CHOMPEdit
+	set category = "Debug.Game"
 	set name = "Start Singularity"
 	set desc = "Sets up the singularity and all machines to get power flowing through the station"
 
@@ -489,7 +490,7 @@
 		if(Rad.anchored)
 			if(!Rad.P)
 				var/obj/item/tank/phoron/Phoron = new/obj/item/tank/phoron(Rad)
-				Phoron.air_contents.gas["phoron"] = 70
+				Phoron.air_contents.gas[GAS_PHORON] = 70
 				Rad.drainratio = 0
 				Rad.P = Phoron
 				Phoron.loc = Rad
@@ -498,7 +499,7 @@
 				Rad.toggle_power()
 
 /client/proc/setup_supermatter_engine()
-	set category = "Debug"
+	set category = "Debug.Game"
 	set name = "Setup supermatter"
 	set desc = "Sets up the supermatter engine"
 
@@ -528,7 +529,7 @@
 
 				var/obj/item/tank/phoron/Phoron = new/obj/item/tank/phoron(Rad)
 
-				Phoron.air_contents.gas["phoron"] = 29.1154	//This is a full tank if you filled it from a canister
+				Phoron.air_contents.gas[GAS_PHORON] = 29.1154	//This is a full tank if you filled it from a canister
 				Rad.P = Phoron
 
 				Phoron.loc = Rad
@@ -541,7 +542,7 @@
 				var/obj/machinery/atmospherics/binary/pump/Pump = M
 				if(Pump.name == "Engine Feed" && response == "Setup Completely")
 					found_the_pump = 1
-					Pump.air2.gas["nitrogen"] = 3750	//The contents of 2 canisters.
+					Pump.air2.gas[GAS_N2] = 3750	//The contents of 2 canisters.
 					Pump.air2.temperature = 50
 					Pump.air2.update_values()
 				Pump.update_use_power(USE_POWER_IDLE)
@@ -569,7 +570,7 @@
 	if(!found_the_pump && response == "Setup Completely")
 		to_chat(src, span_red("Unable to locate air supply to fill up with coolant, adding some coolant around the supermatter"))
 		var/turf/simulated/T = SM.loc
-		T.zone.air.gas["nitrogen"] += 450
+		T.zone.air.gas[GAS_N2] += 450
 		T.zone.air.temperature = 50
 		T.zone.air.update_values()
 
@@ -581,7 +582,7 @@
 
 
 /client/proc/cmd_debug_mob_lists()
-	set category = "Debug.Investigate" //CHOMPEdit
+	set category = "Debug.Investigate"
 	set name = "Debug Mob Lists"
 	set desc = "For when you just gotta know"
 
@@ -600,7 +601,7 @@
 			to_chat(usr, span_filter_debuglogs(jointext(GLOB.clients,",")))
 
 /client/proc/cmd_debug_using_map()
-	set category = "Debug.Investigate" //CHOMPEdit
+	set category = "Debug.Investigate"
 	set name = "Debug Map Datum"
 	set desc = "Debug the map metadata about the currently compiled in map."
 
@@ -616,7 +617,7 @@
 	if(istype(M, /mob/living/carbon))
 		M.dna.SetSEState(block,!M.dna.GetSEState(block))
 		domutcheck(M,null,MUTCHK_FORCED)
-		M.update_mutations()
+		M.UpdateAppearance()
 		var/state="[M.dna.GetSEState(block)?"on":"off"]"
 		var/blockname=assigned_blocks[block]
 		message_admins("[key_name_admin(src)] has toggled [M.key]'s [blockname] block [state]!")
@@ -625,7 +626,7 @@
 		tgui_alert_async(usr, "Invalid mob")
 
 /datum/admins/proc/view_runtimes()
-	set category = "Debug.Investigate" //CHOMPEdit
+	set category = "Debug.Investigate"
 	set name = "View Runtimes"
 	set desc = "Open the Runtime Viewer"
 
@@ -635,7 +636,7 @@
 	error_cache.showTo(usr)
 
 /datum/admins/proc/change_weather()
-	set category = "Debug.Events" //CHOMPEdit
+	set category = "Debug.Events"
 	set name = "Change Weather"
 	set desc = "Changes the current weather."
 
@@ -653,7 +654,7 @@
 			log_admin(log)
 
 /datum/admins/proc/toggle_firework_override()
-	set category = "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 	set name = "Toggle Weather Firework Override"
 	set desc = "Toggles ability for weather fireworks to affect weather on planet of choice."
 
@@ -668,7 +669,7 @@
 		log_admin(log)
 
 /datum/admins/proc/change_time()
-	set category = "Debug.Events" //CHOMPEdit
+	set category = "Debug.Events"
 	set name = "Change Planet Time"
 	set desc = "Changes the time of a planet."
 
@@ -678,9 +679,11 @@
 	var/datum/planet/planet = tgui_input_list(usr, "Which planet do you want to modify time on?", "Change Time", SSplanets.planets)
 	if(istype(planet))
 		var/datum/time/current_time_datum = planet.current_time
-		var/new_hour = tgui_input_number(usr, "What hour do you want to change to?", "Change Time", text2num(current_time_datum.show_time("hh")), 23)
+		var/planet_hours = max(round(current_time_datum.seconds_in_day / 36000) - 1, 0)
+		var/new_hour = tgui_input_number(usr, "What hour do you want to change to?", "Change Time", text2num(current_time_datum.show_time("hh")), planet_hours)
 		if(!isnull(new_hour))
-			var/new_minute = tgui_input_number(usr, "What minute do you want to change to?", "Change Time", text2num(current_time_datum.show_time("mm")), 59)
+			var/planet_minutes = max(round(current_time_datum.seconds_in_hour / 600) - 1, 0)
+			var/new_minute = tgui_input_number(usr, "What minute do you want to change to?", "Change Time", text2num(current_time_datum.show_time("mm")), planet_minutes)
 			if(!isnull(new_minute))
 				var/type_needed = current_time_datum.type
 				var/datum/time/new_time = new type_needed()
@@ -693,3 +696,44 @@
 				var/log = "[key_name(src)] changed [planet.name]'s time to [planet.current_time.show_time("hh:mm")]."
 				message_admins(log)
 				log_admin(log)
+
+/client/proc/cmd_regenerate_asset_cache()
+	set category = "Debug.Assets"
+	set name = "Regenerate Asset Cache"
+	set desc = "Clears the asset cache and regenerates it immediately."
+	if(!CONFIG_GET(flag/cache_assets))
+		to_chat(usr, span_warning("Asset caching is disabled in the config!"))
+		return
+	var/regenerated = 0
+	for(var/datum/asset/A as() in subtypesof(/datum/asset))
+		if(!initial(A.cross_round_cachable))
+			continue
+		if(A == initial(A._abstract))
+			continue
+		var/datum/asset/asset_datum = GLOB.asset_datums[A]
+		asset_datum.regenerate()
+		regenerated++
+	to_chat(usr, span_notice("Regenerated [regenerated] asset\s."))
+
+/client/proc/cmd_clear_smart_asset_cache()
+	set category = "Debug.Assets"
+	set name = "Clear Smart Asset Cache"
+	set desc = "Clears the smart asset cache."
+	if(!CONFIG_GET(flag/smart_cache_assets))
+		to_chat(usr, span_warning("Smart asset caching is disabled in the config!"))
+		return
+	var/cleared = 0
+	for(var/datum/asset/spritesheet_batched/A as() in subtypesof(/datum/asset/spritesheet_batched))
+		if(A == initial(A._abstract))
+			continue
+		fdel("[ASSET_CROSS_ROUND_SMART_CACHE_DIRECTORY]/spritesheet_cache.[initial(A.name)].json")
+		cleared++
+	to_chat(usr, span_notice("Cleared [cleared] asset\s."))
+
+// For spriters with long world loads, allows to reload test robot sprites
+/client/proc/cmd_reload_robot_sprite_test()
+	set category = "Debug.Sprites"
+	set name = "Reload Robot Test Sprites"
+	set desc = "Reloads the dmis from the test folder and creates the test datums."
+
+	SSrobot_sprites.reload_test_sprites()

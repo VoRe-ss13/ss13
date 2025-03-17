@@ -1,18 +1,18 @@
 /mob/living/carbon/human/proc/reconstitute_form() //Scree's race ability.in exchange for: No cloning.
 	set name = "Reconstitute Form"
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 	// Sanity is mostly handled in chimera_regenerate()
 	if(stat == DEAD)
-		var/confirm = tgui_alert(usr, "Are you sure you want to regenerate your corpse? This process can take up to thirty minutes.", "Confirm Regeneration", list("Yes", "No"))
+		var/confirm = tgui_alert(src, "Are you sure you want to regenerate your corpse? This process can take up to thirty minutes.", "Confirm Regeneration", list("Yes", "No"))
 		if(confirm == "Yes")
 			chimera_regenerate()
 	else if (quickcheckuninjured())
-		var/confirm = tgui_alert(usr, "Are you sure you want to regenerate? As you are uninjured this will only take 30 seconds and match your appearance to your character slot.", "Confirm Regeneration", list("Yes", "No"))
+		var/confirm = tgui_alert(src, "Are you sure you want to regenerate? As you are uninjured this will only take 30 seconds and match your appearance to your character slot.", "Confirm Regeneration", list("Yes", "No"))
 		if(confirm == "Yes")
 			chimera_regenerate()
 	else
-		var/confirm = tgui_alert(usr, "Are you sure you want to completely reconstruct your form? This process can take up to fifteen minutes, depending on how hungry you are, and you will be unable to move.", "Confirm Regeneration", list("Yes", "No"))
+		var/confirm = tgui_alert(src, "Are you sure you want to completely reconstruct your form? This process can take up to fifteen minutes, depending on how hungry you are, and you will be unable to move.", "Confirm Regeneration", list("Yes", "No"))
 		if(confirm == "Yes")
 			chimera_regenerate()
 
@@ -87,9 +87,9 @@
 
 
 /mob/living/carbon/human/proc/hasnutriment()
-	if (bloodstr.has_reagent("nutriment", 30) || src.bloodstr.has_reagent("protein", 15)) //protein needs half as much. For reference, a steak contains 9u protein.
+	if (bloodstr.has_reagent(REAGENT_ID_NUTRIMENT, 30) || src.bloodstr.has_reagent(REAGENT_ID_PROTEIN, 15)) //protein needs half as much. For reference, a steak contains 9u protein.
 		return TRUE
-	else if (ingested.has_reagent("nutriment", 60) || src.ingested.has_reagent("protein", 30)) //try forcefeeding them, why not. Less effective.
+	else if (ingested.has_reagent(REAGENT_ID_NUTRIMENT, 60) || src.ingested.has_reagent(REAGENT_ID_PROTEIN, 30)) //try forcefeeding them, why not. Less effective.
 		return TRUE
 	else return FALSE
 
@@ -106,14 +106,14 @@
 
 /mob/living/carbon/human/proc/hatch()
 	set name = "Hatch"
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 	if(revive_ready != REVIVING_DONE)
 		//Hwhat?
 		remove_verb(src, /mob/living/carbon/human/proc/hatch)
 		return
 
-	var/confirm = tgui_alert(usr, "Are you sure you want to hatch right now? This will be very obvious to anyone in view.", "Confirm Regeneration", list("Yes", "No"))
+	var/confirm = tgui_alert(src, "Are you sure you want to hatch right now? This will be very obvious to anyone in view.", "Confirm Regeneration", list("Yes", "No"))
 	if(confirm == "Yes")
 
 		//Dead when hatching
@@ -126,7 +126,7 @@
 			chimera_hatch()
 			// add_modifier(/datum/modifier/resleeving_sickness/chimera, sickness_duration) //CHOMPedit
 			adjustBrainLoss(5) // if they're reviving from dead, they come back with 5 brainloss on top of whatever's unhealed.
-			visible_message(span_warning("<p><font size=4>The former corpse staggers to its feet, all its former wounds having vanished...</font></p>")) //Bloody hell...
+			visible_message(span_warning("<p>" + span_huge("The former corpse staggers to its feet, all its former wounds having vanished...") + "</p>")) //Bloody hell...
 			clear_alert("hatch")
 			return
 
@@ -134,7 +134,7 @@
 		else
 			chimera_hatch()
 
-			visible_message(span_warning("<p><font size=4>[src] rises to \his feet.</font></p>")) //Bloody hell...
+			visible_message(span_warning("<p>" + span_huge("[src] rises to \his feet.") + "</p>")) //Bloody hell...
 			clear_alert("hatch")
 
 /mob/living/carbon/human/proc/chimera_hatch()
@@ -160,7 +160,7 @@
 		var/blood_color = species.blood_color
 		var/flesh_color = species.flesh_color
 		new /obj/effect/gibspawner/human/xenochimera(T, null, flesh_color, blood_color)
-		visible_message(span_danger("<p><font size=4>The lifeless husk of [src] bursts open, revealing a new, intact copy in the pool of viscera.</font></p>")) //Bloody hell...
+		visible_message(span_danger("<p>" + span_huge("The lifeless husk of [src] bursts open, revealing a new, intact copy in the pool of viscera.") + "</p>")) //Bloody hell...
 		playsound(T, 'sound/effects/mob_effects/xenochimera/hatch.ogg', 50)
 	else //lower cost for doing a quick cosmetic revive
 		nutrition = old_nutrition * 0.9
@@ -170,7 +170,7 @@
 	update_canmove()
 	stunned = 2 // CHOMPEdit - Whoops, crawling is a thing now.
 
-	revive_ready = world.time + 10 MINUTES //set the cooldown CHOMPEdit: Reduced this to 10 minutes, you're playing with fire if you're reviving that often.
+	revive_ready = world.time + 10 MINUTES //set the cooldown, Reduced this to 10 minutes, you're playing with fire if you're reviving that often.
 
 /datum/modifier/resleeving_sickness/chimera //near identical to the regular version, just with different flavortexts
 	name = "imperfect regeneration"
@@ -215,7 +215,7 @@
 						var/list/slots_free = list(ui_lhand,ui_rhand)
 						if(l_hand) slots_free -= ui_lhand
 						if(r_hand) slots_free -= ui_rhand
-						if(istype(src,/mob/living/carbon/human))
+						if(ishuman(src))
 							var/mob/living/carbon/human/H = src
 							if(!H.belt) slots_free += ui_belt
 							if(!H.l_store) slots_free += ui_storage1
@@ -388,7 +388,7 @@
 /mob/living/carbon/human/proc/bloodsuck()
 	set name = "Partially Drain prey of blood"
 	set desc = "Bites prey and drains them of a significant portion of blood, feeding you in the process. You may only do this once per minute."
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 
 	if(stat || paralysis || stunned || weakened || lying || restrained() || buckled)
@@ -510,7 +510,7 @@
 /mob/living/carbon/human/proc/succubus_drain()
 	set name = "Drain prey of nutrition"
 	set desc = "Slowly drain prey of all the nutrition in their body, feeding you in the process. You may only do this to one person at a time."
-	set category = "Abilities.Succubus" //CHOMPEdit
+	set category = "Abilities.Succubus"
 	if(!ishuman(src))
 		return //If you're not a human you don't have permission to do this.
 	var/mob/living/carbon/human/C = src
@@ -573,7 +573,7 @@
 /mob/living/carbon/human/proc/succubus_drain_lethal()
 	set name = "Lethally drain prey" //Provide a warning that THIS WILL KILL YOUR PREY.
 	set desc = "Slowly drain prey of all the nutrition in their body, feeding you in the process. Once prey run out of nutrition, you will begin to drain them lethally. You may only do this to one person at a time."
-	set category = "Abilities.Succubus" //CHOMPEdit
+	set category = "Abilities.Succubus"
 	if(!ishuman(src))
 		return //If you're not a human you don't have permission to do this.
 
@@ -656,7 +656,7 @@
 				T.apply_damage(500, OXY) //Kill them.
 				absorbing_prey = 0
 				to_chat(src, span_notice("You have completely drained [T], killing them in the process."))
-				to_chat(T, span_danger("<font size='7'>You... Feel... So... Weak...</font>"))
+				to_chat(T, span_danger(span_massive("You... Feel... So... Weak...")))
 				visible_message(span_danger("[src] seems to finish whatever they were doing to [T]."))
 				add_attack_logs(src,T,"Succubus drained (lethal)")
 				return
@@ -669,7 +669,7 @@
 /mob/living/carbon/human/proc/slime_feed()
 	set name = "Feed prey with self"
 	set desc = "Slowly feed prey with your body, draining you in the process. You may only do this to one person at a time."
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	if(!ishuman(src))
 		return //If you're not a human you don't have permission to do this.
 	var/mob/living/carbon/human/C = src
@@ -730,7 +730,7 @@
 /mob/living/carbon/human/proc/succubus_drain_finalize()
 	set name = "Drain/Feed Finalization"
 	set desc = "Toggle to allow for draining to be prolonged. Turn this on to make it so prey will be knocked out/die while being drained, or you will feed yourself to the prey's selected stomach if you're feeding them. Can be toggled at any time."
-	set category = "Abilities.Succubus" //CHOMPEdit
+	set category = "Abilities.Succubus"
 
 	var/mob/living/carbon/human/C = src
 	C.drain_finalized = !C.drain_finalized
@@ -822,7 +822,7 @@
 /mob/living/proc/shred_limb()
 	set name = "Damage/Remove Prey's Organ"
 	set desc = "Severely damages prey's organ. If the limb is already severely damaged, it will be torn off."
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 
 	//can_shred() will return a mob we can shred, if we can shred any.
 	var/mob/living/carbon/human/T = can_shred()
@@ -834,13 +834,13 @@
 	if(!T_ext) //Picking something here is critical.
 		return
 	if(T_ext.vital)
-		if(tgui_alert(usr, "Are you sure you wish to severely damage their [T_ext]? It will likely kill [T]...","Shred Limb",list("Yes", "No")) != "Yes")
+		if(tgui_alert(src, "Are you sure you wish to severely damage their [T_ext]? It will likely kill [T]...","Shred Limb",list("Yes", "No")) != "Yes")
 			return //If they reconsider, don't continue.
 
 	//Any internal organ, if there are any
 	var/obj/item/organ/internal/T_int = tgui_input_list(src,"Do you wish to severely damage an internal organ, as well? If not, click 'cancel'", "Organ Choice", T_ext.internal_organs)
 	if(T_int && T_int.vital)
-		if(tgui_alert(usr, "Are you sure you wish to severely damage their [T_int]? It will likely kill [T]...","Shred Limb",list("Yes", "No")) != "Yes")
+		if(tgui_alert(src, "Are you sure you wish to severely damage their [T_int]? It will likely kill [T]...","Shred Limb",list("Yes", "No")) != "Yes")
 			return //If they reconsider, don't continue.
 
 	//And a belly, if they want
@@ -898,13 +898,13 @@
 /mob/living/proc/shred_limb_temp()
 	set name = "Damage/Remove Prey's Organ (beartrap)"
 	set desc = "Severely damages prey's organ. If the limb is already severely damaged, it will be torn off."
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	shred_limb()
 
 /mob/living/proc/flying_toggle()
 	set name = "Toggle Flight"
 	set desc = "While flying over open spaces, you will use up some nutrition. If you run out nutrition, you will fall."
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 	var/mob/living/carbon/human/C = src
 	if(!C.wing_style) //The species var isn't taken into account here, as it's only purpose is to give this proc to a person.
@@ -927,7 +927,7 @@
 /mob/living/proc/flying_vore_toggle()
 	set name = "Toggle Flight Vore"
 	set desc = "Allows you to engage in voracious misadventures while flying."
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 
 	flight_vore = !flight_vore
 	if(flight_vore)
@@ -939,7 +939,7 @@
 /mob/living/proc/start_wings_hovering()
 	set name = "Hover"
 	set desc = "Allows you to stop gliding and hover. This will take a fair amount of nutrition to perform."
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 	var/mob/living/carbon/human/C = src
 	if(!C.wing_style) //The species var isn't taken into account here, as it's only purpose is to give this proc to a person.
@@ -971,13 +971,13 @@
 /mob/living/proc/toggle_pass_table()
 	set name = "Toggle Agility" //Dunno a better name for this. You have to be pretty agile to hop over stuff!!!
 	set desc = "Allows you to start/stop hopping over things such as hydroponics trays, tables, and railings."
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 	pass_flags ^= PASSTABLE //I dunno what this fancy ^= is but Aronai gave it to me.
 	to_chat(src, "You [pass_flags&PASSTABLE ? "will" : "will NOT"] move over tables/railings/trays!")
 
 /mob/living/carbon/human/proc/check_silk_amount()
 	set name = "Check Silk Amount"
-	set category = "Abilities.Weaver" //CHOMPEdit
+	set category = "Abilities.Weaver"
 
 	if(species.is_weaver)
 		to_chat(src, "Your silk reserves are at [species.silk_reserve]/[species.silk_max_reserve].")
@@ -986,7 +986,7 @@
 
 /mob/living/carbon/human/proc/toggle_silk_production()
 	set name = "Toggle Silk Production"
-	set category = "Abilities.Weaver" //CHOMPEdit
+	set category = "Abilities.Weaver"
 
 	if(species.is_weaver)
 		species.silk_production = !(species.silk_production)
@@ -996,7 +996,7 @@
 
 /mob/living/carbon/human/proc/weave_structure()
 	set name = "Weave Structure"
-	set category = "Abilities.Weaver" //CHOMPEdit
+	set category = "Abilities.Weaver"
 
 	if(!(species.is_weaver))
 		to_chat(src, span_warning("You are not a weaver! How are you doing this? Tell a developer!"))
@@ -1056,7 +1056,7 @@
 
 /mob/living/carbon/human/proc/weave_item()
 	set name = "Weave Item"
-	set category = "Abilities.Weaver" //CHOMPEdit
+	set category = "Abilities.Weaver"
 
 	if(!(species.is_weaver))
 		return
@@ -1110,19 +1110,19 @@
 
 /mob/living/carbon/human/proc/set_silk_color()
 	set name = "Set Silk Color"
-	set category = "Abilities.Weaver" //CHOMPEdit
+	set category = "Abilities.Weaver"
 
 	if(!(species.is_weaver))
 		to_chat(src, span_warning("You are not a weaver! How are you doing this? Tell a developer!"))
 		return
 
-	var/new_silk_color = input(usr, "Pick a color for your woven products:","Silk Color", species.silk_color) as null|color
+	var/new_silk_color = tgui_color_picker(src, "Pick a color for your woven products:","Silk Color", species.silk_color)
 	if(new_silk_color)
 		species.silk_color = new_silk_color
 
 /mob/living/carbon/human/proc/toggle_eye_glow()
 	set name = "Toggle Eye Glowing"
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 	species.has_glowing_eyes = !species.has_glowing_eyes
 	update_eyes()
@@ -1132,17 +1132,18 @@
 
 /mob/living/carbon/human/proc/enter_cocoon()
 	set name = "Spin Cocoon"
-	set category = "Abilities.Weaver" //CHOMPEdit
+	set category = "Abilities.Weaver"
 	if(!isturf(loc))
 		to_chat(src, "You don't have enough space to spin a cocoon!")
+		return
+
+	if(buckled ||stat || paralysis || weakened || stunned || world.time < last_special) //No tongue flicking while stunned.
+		to_chat(src, span_warning("You can't do that in your current state."))
 		return
 
 	if(do_after(src, 25, exclusive = TASK_USER_EXCLUSIVE))
 		var/obj/item/storage/vore_egg/bugcocoon/C = new(loc)
 		forceMove(C)
-		transforming = TRUE
-		var/datum/tgui_module/appearance_changer/cocoon/V = new(src, src)
-		V.tgui_interact(src)
 
 		var/mob_holder_type = src.holder_type || /obj/item/holder
 		C.w_class = src.size_multiplier * 4 //Egg size and weight scaled to match occupant.
@@ -1153,11 +1154,13 @@
 		C.update_transform()
 		//egg_contents -= src
 		C.contents -= src
+		var/datum/tgui_module/appearance_changer/cocoon/V = new(src, src)
+		V.tgui_interact(src)
 
 /mob/living/carbon/human/proc/water_stealth()
 	set name = "Dive under water / Resurface"
 	set desc = "Dive under water, allowing for you to be stealthy and move faster."
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 	if(last_special > world.time)
 		return
@@ -1189,7 +1192,7 @@
 /mob/living/carbon/human/proc/underwater_devour()
 	set name = "Devour From Water"
 	set desc = "Grab something in the water with you and devour them with your selected stomach."
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 
 	if(last_special > world.time)
 		return
@@ -1245,7 +1248,7 @@
 /mob/living/carbon/human/proc/toggle_pain_module()
 	set name = "Toggle pain simulation."
 	set desc = "Turn on your pain simulation for that organic experience! Or turn it off for repairs, or if it's too much."
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 	if(synth_cosmetic_pain)
 		to_chat(src, span_notice(" You turn off your pain simulators."))
@@ -1260,16 +1263,16 @@
 
 /mob/living/proc/long_vore() // Allows the user to tongue grab a creature in range. Made a /living proc so frogs can frog you.
 	set name = "Grab Prey With Appendage"
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	set desc = "Grab a target with any of your appendages!"
 
-	if(stat || paralysis || weakened || stunned || world.time < last_special) //No tongue flicking while stunned.
+	if(stat || paralysis || weakened || stunned || world.time < last_special || is_incorporeal()) //No tongue flicking while stunned.
 		to_chat(src, span_warning("You can't do that in your current state."))
 		return
 
 	last_special = world.time + 10 //Anti-spam.
 
-	if (!istype(src, /mob/living))
+	if (!isliving(src))
 		to_chat(src, span_warning("It doesn't work that way."))
 		return
 
@@ -1278,12 +1281,12 @@
 		return
 
 	if(choice == "Color") //Easy way to set color so we don't bloat up the menu with even more buttons.
-		var/new_color = input(usr, "Choose a color to set your appendage to!", "", appendage_color) as color|null
+		var/new_color = tgui_color_picker(src, "Choose a color to set your appendage to!", "", appendage_color)
 		if(new_color)
 			appendage_color = new_color
 
 	if(choice == "Functionality") //Easy way to set color so we don't bloat up the menu with even more buttons.
-		var/choice2 = tgui_alert(usr, "Choose if you want to be pulled to the target or pull them to you!", "Functionality Setting", list("Pull target to self", "Pull self to target"))
+		var/choice2 = tgui_alert(src, "Choose if you want to be pulled to the target or pull them to you!", "Functionality Setting", list("Pull target to self", "Pull self to target"))
 		if(!choice2)
 			return
 		if(choice2 == "Pull target to self")
@@ -1294,7 +1297,7 @@
 		var/list/targets = list() //IF IT IS NOT BROKEN. DO NOT FIX IT.
 
 		for(var/mob/living/L in range(5, src))
-			if(!istype(L, /mob/living)) //Don't eat anything that isn't mob/living. Failsafe.
+			if(!isliving(L)) //Don't eat anything that isn't mob/living. Failsafe.
 				continue
 			if(L == src) //no eating yourself. 1984.
 				continue
@@ -1310,7 +1313,7 @@
 		if(!target)
 			return
 
-		if(!istype(target, /mob/living)) //Safety.
+		if(!isliving(target)) //Safety.
 			to_chat(src, span_warning("You need to select a living target!"))
 			return
 
@@ -1360,7 +1363,7 @@
 
 /obj/item/projectile/beam/appendage/generate_hitscan_tracers()
 	if(firer) //This neat little code block allows for C O L O R A B L E tongues! Correction: 'Appendages'
-		if(istype(firer,/mob/living))
+		if(isliving(firer))
 			var/mob/living/originator = firer
 			color = originator.appendage_color
 	..()
@@ -1368,10 +1371,10 @@
 /obj/item/projectile/beam/appendage/on_hit(var/atom/target)
 	if(target == firer) //NO EATING YOURSELF
 		return
-	if(istype(target, /mob/living))
+	if(isliving(target))
 		var/mob/living/M = target
 		var/throw_range = get_dist(firer,M)
-		if(istype(firer, /mob/living)) //Let's check for any alt settings. Such as: User selected to be thrown at target.
+		if(isliving(firer)) //Let's check for any alt settings. Such as: User selected to be thrown at target.
 			var/mob/living/F = firer
 			if(F.appendage_alt_setting == 1)
 				F.throw_at(M, throw_range, firer.throw_speed, F) //Firer thrown at target.
@@ -1386,7 +1389,7 @@
 	if(istype(target, /obj/item/)) //We hit an object? Pull it. This can only happen via admin shenanigans such as a gun being VV'd with this projectile.
 		var/obj/item/hit_object = target
 		if(hit_object.density || hit_object.anchored)
-			if(istype(firer, /mob/living))
+			if(isliving(firer))
 				var/mob/living/originator = firer
 				originator.Weaken(2) //If you hit something dense or anchored, fall flat on your face.
 				originator.visible_message(span_warning("\The [originator] trips over their self and falls flat on their face!"), \
@@ -1396,7 +1399,7 @@
 		else
 			hit_object.throw_at(firer, throw_range, hit_object.throw_speed, firer)
 	if(istype(target, /turf/simulated/wall) || istype(target, /obj/machinery/door) || istype(target, /obj/structure/window)) //This can happen normally due to odd terrain. For some reason, it seems to not actually interact with walls.
-		if(istype(firer, /mob/living))
+		if(isliving(firer))
 			var/mob/living/originator = firer
 			originator.Weaken(2) //Hit a wall? Whoops!
 			originator.visible_message(span_warning("\The [originator] trips over their self and falls flat on their face!"), \
@@ -1473,7 +1476,7 @@
 
 /mob/living/proc/target_lunge() //The leaper leap, but usable as an ability
 	set name = "Lunge At Prey"
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	set desc = "Dive atop your prey and gobble them up!"
 
 	var/leap_warmup = 1 SECOND //Easy to modify
@@ -1485,7 +1488,7 @@
 
 	last_special = world.time + 10 //Anti-spam.
 
-	if (!istype(src, /mob/living))
+	if (!isliving(src))
 		to_chat(src, span_warning("It doesn't work that way."))
 		return
 
@@ -1493,7 +1496,7 @@
 		var/list/targets = list() //IF IT IS NOT BROKEN. DO NOT FIX IT.
 
 		for(var/mob/living/L in range(5, src))
-			if(!istype(L, /mob/living)) //Don't eat anything that isn't mob/living. Failsafe.
+			if(!isliving(L)) //Don't eat anything that isn't mob/living. Failsafe.
 				continue
 			if(L == src) //no eating yourself. 1984.
 				continue
@@ -1509,7 +1512,7 @@
 		if(!target)
 			return
 
-		if(!istype(target, /mob/living)) //Safety.
+		if(!isliving(target)) //Safety.
 			to_chat(src, span_warning("You need to select a living target!"))
 			return
 
@@ -1543,7 +1546,7 @@
 
 /mob/living/proc/injection() // Allows the user to inject reagents into others somehow, like stinging, or biting.
 	set name = "Injection"
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 	set desc = "Inject another being with something!"
 
 	if(stat || paralysis || weakened || stunned || world.time < last_special) //Epic copypasta from tongue grabbing.
@@ -1569,54 +1572,54 @@
 		return
 
 	if(choice == "Change reagent")
-		var/reagent_choice = tgui_input_list(usr, "Choose which reagent to inject!", "Select reagent", trait_injection_reagents)
+		var/reagent_choice = tgui_input_list(src, "Choose which reagent to inject!", "Select reagent", trait_injection_reagents)
 		if(reagent_choice)
 			trait_injection_selected = reagent_choice
 		to_chat(src, span_notice("You prepare to inject [trait_injection_amount] units of [trait_injection_selected ? "[trait_injection_selected]" : "...nothing. Select a reagent before trying to inject anything."]"))
 		return
 	if(choice == "Change amount")
-		var/amount_choice = tgui_input_number(usr, "How much of the reagent do you want to inject? (Up to 5 units) (Can select 0 for a bite that doesn't inject venom!)", "How much?", trait_injection_amount, 5, 0, round_value = FALSE)
+		var/amount_choice = tgui_input_number(src, "How much of the reagent do you want to inject? (Up to 5 units) (Can select 0 for a bite that doesn't inject venom!)", "How much?", trait_injection_amount, 5, 0, round_value = FALSE)
 		if(amount_choice >= 0)
 			trait_injection_amount = amount_choice
 		to_chat(src, span_notice("You prepare to inject [trait_injection_amount] units of [trait_injection_selected ? "[trait_injection_selected]" : "...nothing. Select a reagent before trying to inject anything."]"))
 		return
 	if(choice == "Change verb")
-		var/verb_choice = tgui_input_text(usr, "Choose the percieved manner of injection, such as 'bites' or 'stings', don't be misleading or abusive. This will show up in game as ('X' 'Verb' 'Y'. Example: X bites Y.)", "How are you injecting?", trait_injection_verb, max_length = 60) //Whoaa there cowboy don't put a novel in there.
+		var/verb_choice = tgui_input_text(src, "Choose the percieved manner of injection, such as 'bites' or 'stings', don't be misleading or abusive. This will show up in game as ('X' 'Verb' 'Y'. Example: X bites Y.)", "How are you injecting?", trait_injection_verb, max_length = 60) //Whoaa there cowboy don't put a novel in there.
 		if(verb_choice)
 			trait_injection_verb = verb_choice
 		to_chat(src, span_notice("You will [trait_injection_verb] your targets."))
 		return
 	if(choice == "Chemical Refresher")
-		var/output = {"<B>Chemical Refresher!</B><HR>
-					<B>Options for venoms</B><BR>
+		var/output = {""} + span_bold("Chemical Refresher!") + {"<HR>
+					"} + span_bold("Options for venoms") + {"<BR>
 					<BR>
-					<B>Size Chemicals</B><BR>
+					"} + span_bold("Size Chemicals") + {"<BR>
 					Microcillin: Will make someone shrink. <br>
 					Macrocillin: Will make someone grow. <br>
 					Normalcillin: Will make someone normal size. <br>
 					Note: 1 unit = 100% size diff. 0.01 unit = 1% size diff. <br>
 					Note: Normacillin stops at 100%  size. <br>
 					<br>
-					<B>Gender Chemicals</B><BR>
+					"} + span_bold("Gender Chemicals") + {"<BR>
 					Androrovir: Will transform someone's sex to male. <br>
 					Gynorovir: Will transform someone's sex to female. <br>
 					Androgynorovir: Will transform someone's sex to plural. <br>
 					<br>
-					<B>Special Chemicals</B><BR>
+					"} + span_bold("Special Chemicals") + {"<BR>
 					Stoxin: Will make someone drowsy. <br>
 					Rainbow Toxin: Will make someone see rainbows. <br>
 					Paralysis Toxin: Will make someone paralyzed. <br>
 					Numbing Enzyme: Will make someone unable to feel pain. <br>
 					Pain Enzyme: Will make someone feel amplified pain. <br>
 					<br>
-					<B>Side Notes</B><BR>
+					"} + span_bold("Side Notes") + {"<BR>
 					You can select a value of 0 to inject nothing! <br>
 					Overdose threshold for most chemicals is 30 units. <br>
 					Exceptions to OD is: (Numbing Enzyme:20)<br>
 					You can also bite synthetics, but due to how synths work, they won't have anything injected into them.
 					<br>
 					"}
-		usr << browse(output,"window=chemicalrefresher")
+		src << browse("<html>[output]</html>","window=chemicalrefresher")
 		return
 	else
 		var/list/targets = list() //IF IT IS NOT BROKEN. DO NOT FIX IT. AND KEEP COPYPASTING IT  (Pointing Rick Dalton: "That's my code!" ~CL)
@@ -1626,9 +1629,9 @@
 				continue
 			if(L == src) //no getting high off your own supply, get a nif or something, nerd.
 				continue
-			if(!L.resizable && (trait_injection_selected == "macrocillin" || trait_injection_selected == "microcillin" || trait_injection_selected == "normalcillin")) // If you're using a size reagent, ignore those with pref conflicts.
+			if(!L.resizable && (trait_injection_selected == REAGENT_ID_MACROCILLIN || trait_injection_selected == REAGENT_ID_MICROCILLIN || trait_injection_selected == REAGENT_ID_NORMALCILLIN)) // If you're using a size reagent, ignore those with pref conflicts.
 				continue
-			if(!L.allow_spontaneous_tf && (trait_injection_selected == "androrovir" || trait_injection_selected == "gynorovir" || trait_injection_selected == "androgynorovir")) // If you're using a TF reagent, ignore those with pref conflicts.
+			if(!L.allow_spontaneous_tf && (trait_injection_selected == REAGENT_ID_ANDROROVIR || trait_injection_selected == REAGENT_ID_GYNOROVIR || trait_injection_selected == REAGENT_ID_ANDROGYNOROVIR)) // If you're using a TF reagent, ignore those with pref conflicts.
 				continue
 			targets += L
 
@@ -1662,7 +1665,7 @@
 			add_attack_logs(src,target,"Injection trait ([trait_injection_selected], [trait_injection_amount])")
 			if(target.reagents && (trait_injection_amount > 0) && !synth)
 				target.reagents.add_reagent(trait_injection_selected, trait_injection_amount)
-			var/ourmsg = "[usr] [trait_injection_verb] [target] "
+			var/ourmsg = "[src] [trait_injection_verb] [target] "
 			switch(zone_sel.selecting)
 				if(BP_HEAD)
 					ourmsg += "on the head!"

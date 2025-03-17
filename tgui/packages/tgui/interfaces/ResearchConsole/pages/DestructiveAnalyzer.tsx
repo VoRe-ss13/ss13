@@ -1,10 +1,9 @@
-import { classes } from 'common/react';
 import { useEffect, useState } from 'react';
 import { useBackend } from 'tgui/backend';
-import { Box, Button, Icon, Section, Stack, Table } from 'tgui/components';
-import { BoxProps } from 'tgui/components/Box';
+import { Box, Button, Icon, Section, Stack, Table } from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
 
-import { Data, LinkedDestroyer } from '../data';
+import type { Data, LinkedDestroyer } from '../data';
 
 export const DestructiveAnalyzer = (props) => {
   const { act, data } = useBackend<Data>();
@@ -115,7 +114,7 @@ const DestroyButton = (props: { destroyer: LinkedDestroyer }) => {
   );
 };
 
-export const AnimatedArrows = (props: { on: boolean } & BoxProps) => {
+export const AnimatedArrows = (props: { on: boolean } & any) => {
   const { on, ...rest } = props;
 
   const [activeArrow, setActiveArrow] = useState(0);

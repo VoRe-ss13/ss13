@@ -183,7 +183,7 @@
 				recipient << 'sound/effects/adminhelp.ogg'
 
 				//AdminPM popup for ApocStation and anybody else who wants to use it. Set it with POPUP_ADMIN_PM in config.txt ~Carn
-				if(CONFIG_GET(flag/popup_admin_pm)) // CHOMPEdit
+				if(CONFIG_GET(flag/popup_admin_pm))
 					spawn()	//so we don't hold the caller proc up
 						var/sender = src
 						var/sendername = key
@@ -202,14 +202,14 @@
 	if(irc)
 		log_admin("PM: [key_name(src)]->IRC: [rawmsg]")
 		for(var/client/X in GLOB.admins)
-			if(!check_rights(R_ADMIN|R_SERVER, 0, X)) //CHOMPEdit
+			if(!check_rights_for(X, R_ADMIN|R_SERVER)) //CHOMPEdit
 				continue
 			to_chat(X, span_admin_pm_notice(span_bold("PM: [key_name(src, X, 0)]-&gt;IRC:") + " [keywordparsedmsg]"))
 	else
 		log_admin("PM: [key_name(src)]->[key_name(recipient)]: [rawmsg]")
 		//we don't use message_admins here because the sender/receiver might get it too
 		for(var/client/X in GLOB.admins)
-			if(!check_rights(R_ADMIN|R_SERVER, 0, X)) //CHOMPEdit
+			if(!check_rights_for(X, R_ADMIN|R_SERVER)) //CHOMPEdit
 				continue
 			if(X.key!=key && X.key!=recipient.key)	//check client/X is an admin and isn't the sender or recipient
 				to_chat(X, span_admin_pm_notice(span_bold("PM: [key_name(src, X, 0)]-&gt;[key_name(recipient, X, 0)]:") + " [keywordparsedmsg]"))
@@ -262,7 +262,7 @@
 	log_admin("IRC PM: [sender] -> [key_name(C)] : [msg]")
 
 	to_chat(C, span_admin_pm_warning(span_huge(span_bold("-- Administrator private message --"))))
-	to_chat(C, span_admin_pm_warning("Admin PM from-<b><a href='?priv_msg=[stealthkey]'>[adminname]</A></b>: [msg]"))
+	to_chat(C, span_admin_pm_warning("Admin PM from-<b><a href='byond://?priv_msg=[stealthkey]'>[adminname]</A></b>: [msg]"))
 	to_chat(C, span_admin_pm_warning(span_italics("Click on the administrator's name to reply.")))
 
 	admin_ticket_log(C, span_admin_pm_notice("PM From [irc_tagged]: [msg]"))

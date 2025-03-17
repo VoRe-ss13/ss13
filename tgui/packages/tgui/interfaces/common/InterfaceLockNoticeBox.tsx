@@ -1,7 +1,6 @@
-import { BooleanLike } from 'common/react';
-
-import { useBackend } from '../../backend';
-import { Button, Flex, NoticeBox } from '../../components';
+import { useBackend } from 'tgui/backend';
+import { Button, NoticeBox, Stack } from 'tgui-core/components';
+import type { BooleanLike } from 'tgui-core/react';
 
 type Data = {
   siliconUser: BooleanLike;
@@ -23,7 +22,15 @@ type Data = {
  * All props can be redefined if you want custom behavior, but
  * it's preferred to stick to defaults.
  */
-export const InterfaceLockNoticeBox = (props) => {
+export const InterfaceLockNoticeBox = (props: {
+  readonly siliconUser?: BooleanLike;
+  readonly locked?: BooleanLike;
+  readonly onLockStatusChange?: (status: BooleanLike) => void;
+  readonly accessText?: string;
+  readonly preventLocking?: BooleanLike;
+  readonly deny?: BooleanLike;
+  readonly denialMessage?: React.JSX.Element | string;
+}) => {
   const { act, data } = useBackend<Data>();
   const {
     siliconUser = data.siliconUser,
@@ -31,15 +38,20 @@ export const InterfaceLockNoticeBox = (props) => {
     onLockStatusChange = () => act('lock'),
     accessText = 'an ID card',
     preventLocking = data.preventLocking,
+    deny = false,
+    denialMessage = 'Error.',
   } = props;
+  if (deny) {
+    return denialMessage;
+  }
   // For silicon users
   if (siliconUser) {
     return (
       <NoticeBox color="grey">
-        <Flex align="center">
-          <Flex.Item>Interface lock status:</Flex.Item>
-          <Flex.Item grow={1} />
-          <Flex.Item>
+        <Stack align="center">
+          <Stack.Item>Interface lock status:</Stack.Item>
+          <Stack.Item grow />
+          <Stack.Item>
             <Button
               m={0}
               color={locked ? 'red' : 'green'}
@@ -53,8 +65,8 @@ export const InterfaceLockNoticeBox = (props) => {
             >
               {locked ? 'Locked' : 'Unlocked'}
             </Button>
-          </Flex.Item>
-        </Flex>
+          </Stack.Item>
+        </Stack>
       </NoticeBox>
     );
   }

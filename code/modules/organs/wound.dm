@@ -204,18 +204,18 @@
 
 /datum/wound/proc/bleeding()
 	if (src.internal)
-		return 0	// internal wounds don't bleed in the sense of this function
+		return FALSE	// internal wounds don't bleed in the sense of this function
 
 	if (current_stage > max_bleeding_stage)
-		return 0
+		return FALSE
 
 	if (bandaged||clamped)
-		return 0
+		return FALSE
 
 	if (bleed_timer <= 0 && wound_damage() <= bleed_threshold)
-		return 0	//Bleed timer has run out. Once a wound is big enough though, you'll need a bandage to stop it
+		return FALSE	//Bleed timer has run out. Once a wound is big enough though, you'll need a bandage to stop it
 
-	return 1
+	return TRUE
 
 /** WOUND DEFINITIONS **/
 
@@ -393,6 +393,15 @@
 				"ripped charred stump" = damage_amt*1.3,
 				"charred stump" = damage_amt,
 				"scarred stump" = damage_amt*0.5,
+				"scarred stump" = 0
+				)
+
+		if(DROPLIMB_ACID)
+			damage_type = BURN
+			stages = list(
+				"disfigured mass" = damage_amt*1.3,
+				"melted stump" = damage_amt,
+				"deformed stump" = damage_amt*0.5,
 				"scarred stump" = 0
 				)
 

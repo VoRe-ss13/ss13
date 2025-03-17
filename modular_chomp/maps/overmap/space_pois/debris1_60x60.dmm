@@ -74,10 +74,7 @@
 /area/submap/debris1)
 "fp" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	tag = ""
+	icon_state = "4-8"
 	},
 /turf/template_noop,
 /area/submap/debris1)
@@ -164,11 +161,6 @@
 "jG" = (
 /turf/simulated/floor/plating,
 /area/submap/debris1)
-"kf" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/template_noop,
-/area/submap/debris1)
 "kg" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -221,9 +213,9 @@
 /area/submap/debris1)
 "nt" = (
 /obj/structure/safe,
-/obj/item/dnainjector/xraymut,
-/obj/item/dnainjector/runfast,
-/obj/item/dnainjector/antistutt,
+/obj/item/dnainjector/set_trait/xray,
+/obj/item/dnainjector/set_trait/haste,
+/obj/item/dnainjector/set_trait/anxiety/disable,
 /turf/simulated/floor/tiled/airless,
 /area/submap/debris1)
 "oh" = (
@@ -708,8 +700,6 @@
 /area/submap/debris1)
 "TO" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/template_noop,
@@ -806,7 +796,7 @@
 /turf/simulated/floor/plating,
 /area/submap/debris1)
 "ZA" = (
-/obj/item/stack/material/cyborg/steel{
+/obj/item/stack/material/steel{
 	amount = 18
 	},
 /turf/simulated/floor/tiled/airless,
@@ -2825,7 +2815,7 @@ wq
 ip
 wq
 ip
-kf
+ip
 Ma
 Ma
 WW
@@ -2913,7 +2903,7 @@ gO
 Pj
 mk
 gO
-kf
+ip
 de
 de
 de
@@ -4024,7 +4014,7 @@ yk
 Wx
 AP
 AP
-kf
+ip
 wq
 wq
 wq

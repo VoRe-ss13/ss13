@@ -1,14 +1,14 @@
-import { BooleanLike } from 'common/react';
-
-import { useBackend } from '../../backend';
+import { useBackend } from 'tgui/backend';
 import {
   Box,
   Button,
   LabeledList,
   ProgressBar,
   Section,
-} from '../../components';
-import { Data } from './types';
+} from 'tgui-core/components';
+import type { BooleanLike } from 'tgui-core/react';
+
+import type { Data } from './types';
 
 export const SleeperDialysisPump = (props: {
   active: BooleanLike;

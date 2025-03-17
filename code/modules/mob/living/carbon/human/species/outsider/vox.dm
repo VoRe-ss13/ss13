@@ -49,12 +49,12 @@
 
 	gluttonous = 1
 
-	breath_type = "nitrogen" //CHOMPedit
-	poison_type = "oxygen"
+	breath_type = GAS_N2 //CHOMPedit
+	poison_type = GAS_O2
 	ideal_air_type = /datum/gas_mixture/belly_air/vox
 	siemens_coefficient = 0.2
 
-	flags = NO_SCAN | NO_DEFIB
+	flags = NO_DNA | NO_SLEEVE | NO_DEFIB
 	spawn_flags = SPECIES_IS_WHITELISTED
 	appearance_flags = HAS_EYE_COLOR | HAS_HAIR_COLOR | HAS_SKIN_COLOR
 

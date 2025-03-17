@@ -25,8 +25,9 @@
 
 	var/list/ports = new()
 
-/obj/machinery/atmospherics/omni/New()
-	..()
+/obj/machinery/atmospherics/omni/Initialize(mapload)
+	. = ..()
+
 	icon_state = "base"
 
 	ports = new()
@@ -100,7 +101,7 @@
 	if(..())
 		return
 
-	src.add_fingerprint(usr)
+	src.add_fingerprint(user)
 	tgui_interact(user)
 	return
 
@@ -300,3 +301,21 @@
 	update_ports()
 
 	return null
+
+//CHOMPEdit Start - Keybinds for EVEEERYTHING
+/obj/machinery/atmospherics/omni/CtrlClick(mob/user)
+	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+	if(allowed(user))
+		update_use_power(!use_power)
+		update_icon()
+		add_fingerprint(user)
+		if(use_power)
+			configuring = 0
+			to_chat(user, span_notice("You toggle the [name] on."))
+
+		else
+			to_chat(user, span_notice("You toggle the [name] off."))
+
+	else
+		to_chat(user, span_warning("Access denied."))
+//CHOMPEdit End

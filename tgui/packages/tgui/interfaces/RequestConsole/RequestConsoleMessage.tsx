@@ -1,9 +1,9 @@
-import { decodeHtmlEntities } from 'common/string';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, LabeledList, Section } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
 
-import { useBackend } from '../../backend';
-import { Box, Button, LabeledList, Section } from '../../components';
 import { RCS_MAINMENU } from './constants';
-import { Data } from './types';
+import type { Data } from './types';
 
 export const RequestConsoleViewMessages = (props) => {
   const { act, data } = useBackend<Data>();

@@ -1,8 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ai" = (
-/obj/random/trash,
-/turf/simulated/floor/carpet/purcarpet,
-/area/submap/oldhotel)
 "aJ" = (
 /obj/item/towel/random,
 /obj/item/towel/random,
@@ -18,7 +14,6 @@
 /turf/simulated/floor/wood/virgo3b,
 /area/submap/oldhotel)
 "bQ" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/old_tile/white/virgo3b,
 /area/submap/oldhotel)
@@ -103,11 +98,6 @@
 /obj/structure/table/woodentable,
 /obj/item/trash/tray,
 /turf/simulated/floor/wood/virgo3b,
-/area/submap/oldhotel)
-"ja" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/junk,
-/turf/simulated/floor/carpet/purcarpet,
 /area/submap/oldhotel)
 "je" = (
 /obj/structure/closet/cabinet,
@@ -342,7 +332,7 @@
 /area/submap/oldhotel)
 "yM" = (
 /obj/item/stack/cable_coil,
-/turf/simulated/floor/carpet/purcarpet,
+/turf/simulated/floor/carpet/sblucarpet/virgo3b,
 /area/submap/oldhotel)
 "zs" = (
 /obj/effect/decal/cleanable/dirt,
@@ -579,9 +569,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/old_tile/white/virgo3b,
 /area/submap/oldhotel)
-"SG" = (
-/turf/simulated/floor/carpet/purcarpet,
-/area/submap/oldhotel)
 "SL" = (
 /obj/item/material/shard,
 /obj/item/material/shard,
@@ -629,7 +616,6 @@
 /turf/simulated/floor/carpet/sblucarpet/virgo3b,
 /area/submap/oldhotel)
 "Wy" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/virgo3b,
 /area/submap/oldhotel)
@@ -846,8 +832,8 @@ Vj
 SZ
 hQ
 RM
-ai
-ja
+ES
+cZ
 TU
 hQ
 RM
@@ -873,7 +859,7 @@ cZ
 SZ
 hQ
 TU
-SG
+Vj
 yM
 Wy
 ZG

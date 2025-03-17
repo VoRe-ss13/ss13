@@ -132,7 +132,7 @@
 		using = new /obj/screen()
 		using.name = "mov_intent"
 		using.icon = HUD.ui_style
-		using.icon_state = (m_intent == "run" ? "running" : "walking")
+		using.icon_state = (m_intent == I_RUN ? "running" : "walking")
 		using.screen_loc = ui_movi
 		using.color = HUD.ui_color
 		using.alpha = HUD.ui_alpha
@@ -396,7 +396,7 @@
 	HUD.inventory_shown = 0
 
 /mob/living/carbon/human/verb/toggle_hotkey_verbs()
-	set category = "OOC.Client Settings" //CHOMPEdit
+	set category = "OOC.Client Settings"
 	set name = "Toggle hotkey buttons"
 	set desc = "This disables or enables the user interface buttons which can be used with hotkeys."
 

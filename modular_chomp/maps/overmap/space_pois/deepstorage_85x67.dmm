@@ -277,11 +277,11 @@
 /area/submap/deepstorage)
 "aA" = (
 /obj/structure/table/standard,
-/obj/item/radio/headset/sar/alt,
-/obj/item/radio/headset/sar/alt{
+/obj/item/radio/headset/alt/sar,
+/obj/item/radio/headset/alt/sar{
 	pixel_x = 7
 	},
-/obj/item/radio/headset/sar/alt{
+/obj/item/radio/headset/alt/sar{
 	pixel_y = 0;
 	pixel_x = -6
 	},
@@ -601,7 +601,6 @@
 /area/submap/deepstorage)
 "br" = (
 /obj/structure/cable{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/port_gen/pacman,
@@ -611,8 +610,6 @@
 /area/submap/deepstorage)
 "bs" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/power/smes/buildable/point_of_interest,
@@ -648,8 +645,6 @@
 /area/submap/deepstorage)
 "by" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /obj/machinery/power/terminal{
@@ -683,7 +678,6 @@
 /area/submap/deepstorage)
 "bG" = (
 /obj/structure/cable{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/high{
@@ -697,10 +691,7 @@
 /area/submap/deepstorage)
 "bH" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	tag = ""
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/asteroid_steel{
 	temperature = 295.15
@@ -708,10 +699,7 @@
 /area/submap/deepstorage)
 "bI" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8";
-	tag = ""
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/asteroid_steel{
 	temperature = 295.15
@@ -867,10 +855,7 @@
 /area/submap/deepstorage)
 "ic" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	tag = ""
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating/external,
 /area/submap/deepstorage)
@@ -977,7 +962,6 @@
 "qV" = (
 /obj/structure/prop/machine/comm_tower/starts_on,
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/plating/external,
@@ -1058,10 +1042,7 @@
 /area/submap/deepstorage)
 "uJ" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	tag = ""
+	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/rust,
 /turf/simulated/floor/plating/external,
@@ -1134,8 +1115,6 @@
 /area/submap/deepstorage)
 "CJ" = (
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating/external,
@@ -1180,9 +1159,6 @@
 /area/submap/deepstorage)
 "Kl" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	dir = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/plating/external,

@@ -1,17 +1,38 @@
-/obj/item/reagent_containers/chem_disp_cartridge
-	//Xenoflora
-	ammonia			spawn_reagent = "ammonia"
-	diethylamine	spawn_reagent = "diethylamine"
-	plantbgone		spawn_reagent = "plantbgone"
-	mutagen			spawn_reagent = "mutagen"
+//Xenoflora
 
-	//Biochem
-	nutriment		spawn_reagent = "nutriment"
-	protein			spawn_reagent = "protein"
+/obj/item/reagent_containers/chem_disp_cartridge/ammonia
+	spawn_reagent = REAGENT_ID_AMMONIA
 
-	//Special Ops
-	biomass			spawn_reagent = "biomass"
-	carthatoline	spawn_reagent = "carthatoline"
-	corophizine		spawn_reagent = "corophizine"
-	myelamine		spawn_reagent = "myelamine"
-	osteodaxon		spawn_reagent = "osteodaxon"
+/obj/item/reagent_containers/chem_disp_cartridge/diethylamine
+	spawn_reagent = REAGENT_ID_DIETHYLAMINE
+
+/obj/item/reagent_containers/chem_disp_cartridge/plantbgone
+	spawn_reagent = REAGENT_ID_PLANTBGONE
+
+/obj/item/reagent_containers/chem_disp_cartridge/mutagen
+	spawn_reagent = REAGENT_ID_MUTAGEN
+
+//Biochem
+
+/obj/item/reagent_containers/chem_disp_cartridge/nutriment
+	spawn_reagent = REAGENT_ID_NUTRIMENT
+
+/obj/item/reagent_containers/chem_disp_cartridge/protein
+	spawn_reagent = REAGENT_ID_PROTEIN
+
+//Special Ops
+
+/obj/item/reagent_containers/chem_disp_cartridge/biomass
+	spawn_reagent = REAGENT_ID_BIOMASS
+
+/obj/item/reagent_containers/chem_disp_cartridge/carthatoline
+	spawn_reagent = REAGENT_ID_CARTHATOLINE
+
+/obj/item/reagent_containers/chem_disp_cartridge/corophizine
+	spawn_reagent = REAGENT_ID_COROPHIZINE
+
+/obj/item/reagent_containers/chem_disp_cartridge/myelamine
+	spawn_reagent = REAGENT_ID_MYELAMINE
+
+/obj/item/reagent_containers/chem_disp_cartridge/osteodaxon
+	spawn_reagent = REAGENT_ID_OSTEODAXON

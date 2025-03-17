@@ -34,8 +34,8 @@
 	//So if xenoarch isn't careful and is just shoving items willy-nilly without taking the proper precautions they can end up in a bit of trouble!
 
 
-/obj/machinery/replicator/vore/New() //This replicator turns people into mobs!
-	..() //TODO: Someone can replace the 'alien' interface with something neater sometime. It is simply out of my abilities at the current moment.
+/obj/machinery/replicator/vore/Initialize(mapload) //This replicator turns people into mobs!
+	. = ..() //TODO: Someone can replace the 'alien' interface with something neater sometime. It is simply out of my abilities at the current moment.
 
 	for(var/i=0, i<quantity, i++)
 		var/background = pick("yellow","purple","green","blue","red","orange","white")
@@ -128,7 +128,7 @@
 						M.vore_organs -= B
 						new_mob.vore_organs += B
 
-					M.soulgem.transfer_self(new_mob) //CHOMPAdd Soulcatcher
+					M.soulgem.transfer_self(new_mob) // Soulcatcher
 
 					new_mob.ckey = M.ckey
 					if(M.ai_holder && new_mob.ai_holder)
@@ -145,7 +145,7 @@
 				M.forceMove(new_mob)
 
 			//Did they put a person in it?
-			else if(istype(source_material,/mob/living))
+			else if(isliving(source_material))
 				var/mob/living/M = source_material
 				//Start of mob code shamelessly ripped from mouseray
 				new_mob.faction = M.faction
@@ -182,7 +182,7 @@
 						M.vore_organs -= B
 						new_mob.vore_organs += B
 
-					M.soulgem.transfer_self(new_mob) //CHOMPAdd Soulcatcher
+					M.soulgem.transfer_self(new_mob) // Soulcatcher
 
 					new_mob.ckey = M.ckey
 					if(M.ai_holder && new_mob.ai_holder)
@@ -237,9 +237,9 @@
 				if(response != "Certain")
 					to_chat(user, span_notice("[W] stops you from placing them in the machine."))
 					return
-				if(istype(inserted_mob, /mob/living/voice) || W.loc == src) //Sanity.
+				if(isvoice(inserted_mob) || W.loc == src) //Sanity.
 					return
-				log_and_message_admins("[user] has just placed [inserted_mob] into a mob transformation machine.", user)
+				log_and_message_admins("has just placed [inserted_mob] into a mob transformation machine.", user)
 		else
 			to_chat(user, span_notice("You cannot put \the [W] into the machine. ((The micro must be connected to the server.))"))
 			return
@@ -266,13 +266,13 @@
 				if(response != "Certain")
 					to_chat(user, span_notice("[W] stops you from placing them in the machine."))
 					return
-				if(istype(inserted_mob, /mob/living/voice) || W.loc == src)
+				if(isvoice(inserted_mob) || W.loc == src)
 					return
-				log_and_message_admins("[user] has just placed [inserted_mob] into a mob transformation machine.", user)
+				log_and_message_admins("has just placed [inserted_mob] into a mob transformation machine.", user)
 				user.drop_item() //Dropping a grab destroys it.
 				//Grabs require a bit of extra work.
 				//We want them to drop their clothing/items as well.
-				if(istype(inserted_mob, /mob/living/carbon/human)) //So, this WORKS. Works very well!
+				if(ishuman(inserted_mob)) //So, this WORKS. Works very well!
 					var/mob/living/carbon/human/inserted_human = inserted_mob
 					for(var/obj/item/I in inserted_mob)
 						if(istype(I, /obj/item/implant) || istype(I, /obj/item/nif))
@@ -292,7 +292,7 @@
 	if(istype(W, /obj/item/holder/micro)) //I hate this but it's the only way to get their stuff to drop.
 		var/obj/item/holder/micro/micro_holder = W
 		var/mob/living/inserted_mob = micro_holder.held_mob //Get the actual mob.
-		if(istype(inserted_mob, /mob/living/carbon/human)) //Only humans have the drop_from_inventory proc.
+		if(ishuman(inserted_mob)) //Only humans have the drop_from_inventory proc.
 			var/mob/living/carbon/human/inserted_human = inserted_mob
 			for(var/obj/item/I in inserted_human) //Drop any remaining items! This only really seems to affect hands.
 				if(istype(I, /obj/item/implant) || istype(I, /obj/item/nif))
@@ -352,12 +352,11 @@
 	var/list/created_items = list()
 	var/list/tgui_vore_selection = list()
 	var/list/viable_items = list(
-	/obj/item/clothing/gloves/ring,
+	/obj/item/clothing/accessory/ring,
 	/obj/item/clothing/gloves/evening,
 	/obj/item/clothing/gloves/black,
 	/obj/item/clothing/under/swimsuit/black,
 	/obj/item/clothing/under/shorts/black,
-	/obj/item/clothing/under/wetsuit_skimpy,
 	/obj/item/clothing/under/dress/maid,
 	/obj/item/clothing/under/fluff/latexmaid,
 	/obj/item/clothing/suit/oversize,
@@ -391,8 +390,8 @@
 	) 	// Currently: 3 gloves, 5 undersuits, 3 oversuits, 5 plushies, 5 headwear, 7 shoes, 7 misc. = 35
 		//Fishing hat was going to be added, but it was simply too powerful for this world.
 
-/obj/machinery/replicator/clothing/New() //The specific thing about the VORE replicator is that it will only contain obj/items. Only things that can be picked up, used, and worn!
-	..() //TODO: Someone can replace the 'alien' interface with something neater sometime. It is simply out of my abilities at the current moment.
+/obj/machinery/replicator/clothing/Initialize(mapload) //The specific thing about the VORE replicator is that it will only contain obj/items. Only things that can be picked up, used, and worn!
+	. = ..() //TODO: Someone can replace the 'alien' interface with something neater sometime. It is simply out of my abilities at the current moment.
 
 	for(var/i=0, i<quantity, i++)
 		var/background = pick("yellow","purple","green","blue","red","orange","white")
@@ -456,7 +455,7 @@
 				M.forceMove(possessed_voice) //Places them in the 'voice' for later recovery! Essentially: The item contains a 'possessed voice' mob, which contains their original mob.
 
 
-			else if(istype(source_material,/mob/living))//Did they shove a person in there normally?
+			else if(isliving(source_material))//Did they shove a person in there normally?
 				var/mob/living/M = source_material //If so, this cuts down the work we have to do!
 				M.release_vore_contents(TRUE, TRUE) //Release their stomach contents. Don't spam the chat, either.
 				spawned_obj.inhabit_item(M, original_name, M)
@@ -505,9 +504,9 @@
 				if(response != "I accept the possibilities")
 					to_chat(user, span_notice("[W] stops you from placing them in the machine."))
 					return
-				if(istype(inserted_mob, /mob/living/voice) || W.loc == src) //This is a sanity check to keep them from entering it multiple times.
+				if(isvoice(inserted_mob) || W.loc == src) //This is a sanity check to keep them from entering it multiple times.
 					return
-				log_and_message_admins("[user] has just placed [inserted_mob] into an item transformation machine.", user)
+				log_and_message_admins("has just placed [inserted_mob] into an item transformation machine.", user)
 		else
 			to_chat(user, span_notice("You cannot put \the [W] into the machine. ((The micro must be connected to the server.))"))
 			return
@@ -534,13 +533,13 @@
 				if(response != "I accept the possibilities")
 					to_chat(user, span_notice("[W] stops you from placing them in the machine."))
 					return
-				if(istype(inserted_mob, /mob/living/voice) || W.loc == src)
+				if(isvoice(inserted_mob) || W.loc == src)
 					return
-				log_and_message_admins("[user] has just placed [inserted_mob] into an item transformation machine.", user)
+				log_and_message_admins("has just placed [inserted_mob] into an item transformation machine.", user)
 				user.drop_item() //Dropping a grab destroys it.
 				//Grabs require a bit of extra work.
 				//We want them to drop their clothing/items as well.
-				if(istype(inserted_mob, /mob/living/carbon/human)) //So, this WORKS. Works very well!
+				if(ishuman(inserted_mob)) //So, this WORKS. Works very well!
 					var/mob/living/carbon/human/inserted_human = inserted_mob
 					for(var/obj/item/I in inserted_mob)
 						if(istype(I, /obj/item/implant) || istype(I, /obj/item/nif))
@@ -558,7 +557,7 @@
 	if(istype(W, /obj/item/holder/micro)) //I hate this but it's the only way to get their stuff to drop.
 		var/obj/item/holder/micro/micro_holder = W
 		var/mob/living/inserted_mob = micro_holder.held_mob //Get the actual mob.
-		if(istype(inserted_mob, /mob/living/carbon/human)) //Only humans have the drop_from_inventory proc.
+		if(ishuman(inserted_mob)) //Only humans have the drop_from_inventory proc.
 			var/mob/living/carbon/human/inserted_human = inserted_mob
 			for(var/obj/item/I in inserted_human) //Drop any remaining items! This only really seems to affect hands.
 				if(istype(I, /obj/item/implant) || istype(I, /obj/item/nif))

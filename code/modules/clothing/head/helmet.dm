@@ -7,9 +7,7 @@
 	flags = THICKMATERIAL
 	armor = list(melee = 40, bullet = 30, laser = 30, energy = 10, bomb = 10, bio = 0, rad = 0)
 	flags_inv = HIDEEARS|BLOCKHEADHAIR
-	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
-	heat_protection = HEAD
 	max_heat_protection_temperature = HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.7
 	w_class = ITEMSIZE_NORMAL
@@ -66,7 +64,7 @@
 	armor = list(melee = 80, bullet = 10, laser = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.7
 	valid_accessory_slots = null
-	action_button_name = "Toggle Visor"
+	actions_types = list(/datum/action/item_action/toggle_visor)
 
 /obj/item/clothing/head/helmet/riot/attack_self(mob/user as mob)
 	if(src.icon_state == initial(icon_state))
@@ -113,7 +111,7 @@
 	siemens_coefficient = 0.6
 	light_range = 6
 	light_overlay = "helmet_light_dual_green"
-	action_button_name = "Toggle Head-light"
+	actions_types = list(/datum/action/item_action/toggle_head_light)
 	min_cold_protection_temperature = T0C - 20
 	cold_protection = HEAD
 
@@ -172,7 +170,7 @@
 	icon_state = "swathelm"
 	item_state_slots = list(slot_r_hand_str = "swat", slot_l_hand_str = "swat")
 	sprite_sheets = list(
-		SPECIES_TAJ = 'icons/inventory/head/mob_tajaran.dmi',
+		SPECIES_TAJARAN = 'icons/inventory/head/mob_tajaran.dmi',
 		SPECIES_UNATHI = 'icons/inventory/head/mob_unathi.dmi',
 		)
 

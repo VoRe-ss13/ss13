@@ -144,7 +144,8 @@
 			return 0
 		var/thermal_energy_limit = -(temperature - TCMB)*heat_capacity	//ensure temperature does not go below TCMB
 		thermal_energy = max( thermal_energy, thermal_energy_limit )	//thermal_energy and thermal_energy_limit are negative here.
-	temperature += thermal_energy/heat_capacity
+	if(heat_capacity > 0)
+		temperature = min(temperature + thermal_energy / heat_capacity, MAX_ATMOS_TEMPERATURE)
 	return thermal_energy
 
 //Returns the thermal energy change required to get to a new temperature
@@ -233,7 +234,7 @@
 /datum/gas_mixture/proc/remove_ratio(ratio, out_group_multiplier = 1)
 	if(ratio <= 0)
 		return null
-	out_group_multiplier = between(1, out_group_multiplier, group_multiplier)
+	out_group_multiplier = clamp(out_group_multiplier, 1, group_multiplier)
 
 	ratio = min(ratio, 1)
 
@@ -241,8 +242,8 @@
 	removed.group_multiplier = out_group_multiplier
 
 	for(var/g in gas)
-		removed.gas[g] = (gas[g] * ratio * group_multiplier / out_group_multiplier)
-		gas[g] = gas[g] * (1 - ratio)
+		removed.gas[g] = QUANTIZE((gas[g] * ratio * group_multiplier / out_group_multiplier))
+		gas[g] = QUANTIZE(gas[g] * (1 - ratio))
 
 	removed.temperature = temperature
 	removed.volume = volume * group_multiplier / out_group_multiplier

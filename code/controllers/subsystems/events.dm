@@ -21,7 +21,7 @@ SUBSYSTEM_DEF(events)
 		)
 	if(global.using_map.use_overmap)
 		GLOB.overmap_event_handler.create_events(global.using_map.overmap_z, global.using_map.overmap_size, global.using_map.overmap_event_areas)
-	return SS_INIT_SUCCESS // CHOMPEdit
+	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/events/fire(resumed)
 	if (!resumed)
@@ -76,7 +76,7 @@ SUBSYSTEM_DEF(events)
 	if(!report_at_round_end)
 		return
 
-	to_chat(world, "<br><br><br><font size=3><b>Random Events This Round:</b></font>")
+	to_chat(world, "<br><br><br>" + span_large(span_bold("Random Events This Round:")))
 	for(var/datum/event/E in active_events|finished_events)
 		var/datum/event_meta/EM = E.event_meta
 		if(EM.name == "Nothing")

@@ -1,5 +1,5 @@
 /mob/living/simple_mob/vore/stalker
-	name = "Cave Stalker"
+	name = "cave stalker"
 	desc = "A strange slim creature that lurks in the dark. It's features could be described as a mix of feline and canine, but it's most notable alien property is the second set of forelegs. Additionally, it has a series of boney blue spikes running down it's spine, a similarly hard tip to it's tail and dark blue fangs hanging from it's snout."
 	catalogue_data = list(/datum/category_item/catalogue/fauna/stalker)
 	tt_desc = "Canidfelanis"
@@ -44,9 +44,11 @@
 	vore_bump_emote = "pounces on"
 
 /mob/living/simple_mob/vore/stalker/init_vore()
-	if(!voremob_loaded) //TORCHAdd - Added to fix redgate runtime
-		return //TORCHAdd
-	..()
+	if(!voremob_loaded)
+		return
+	if(LAZYLEN(vore_organs))
+		return
+	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "The lithe creature spends only minimal time with you pinned beneath it, before it's jaws stretch wide ahead of your face. The slightly blue hued interior squelches tightly over your head as the stalker's teeth prod against you, threatening to become much more of a danger if you put up too much of a fight. However, the process is quick, your body is efficiently squeezed through that tight gullet, contractions dragging you effortlessly towards the creature's gut. The stomach swells and hangs beneath the animal, swaying like a hammock under the newfound weight. The walls wrap incredibly tightly around you, compressing you tightly into a small ball as it grinds caustic juices over you."

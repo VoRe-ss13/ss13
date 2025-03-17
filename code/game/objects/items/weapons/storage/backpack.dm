@@ -34,7 +34,7 @@
 	..(user, slot)
 
 /*
-/obj/item/storage/backpack/dropped(mob/user as mob)
+/obj/item/storage/backpack/dropped(mob/user)
 	if (loc == user && src.use_sound)
 		playsound(src, src.use_sound, 50, 1, -5)
 	..(user)
@@ -58,7 +58,7 @@
 	var/tilted = 0
 	icon_state = "holdingduffle"
 
-/obj/item/storage/backpack/holding/duffle/Initialize()
+/obj/item/storage/backpack/holding/duffle/Initialize(mapload)
 	. = ..()
 	if(prob(50))
 		icon_state = "[icon_state]_tilted"
@@ -184,7 +184,7 @@
 	var/can_tilt = 1
 	max_storage_space = INVENTORY_DUFFLEBAG_SPACE
 
-/obj/item/storage/backpack/dufflebag/Initialize()
+/obj/item/storage/backpack/dufflebag/Initialize(mapload)
 	. = ..()
 	if(prob(50))
 		icon_state = "[icon_state]_tilted"
@@ -512,7 +512,7 @@
 	set category = "Object"
 	set src in usr
 
-	if(!istype(src.loc, /mob/living))
+	if(!isliving(src.loc))
 		return
 
 	var/mob/living/carbon/human/H = usr

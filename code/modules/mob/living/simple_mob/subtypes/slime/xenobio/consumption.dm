@@ -136,9 +136,9 @@
 		to_chat(src, "This subject does not have an edible life energy...")
 		return FALSE
 	//VOREStation Addition start
-	if(istype(L, /mob/living/carbon/human))
+	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if(H.species.flags & NO_SCAN)
+		if(H.species.flags & (NO_DNA|NO_SLEEVE))
 			to_chat(src, "This subject's life energy is beyond my reach...")
 			return FALSE
 	//VOREStation Addition end

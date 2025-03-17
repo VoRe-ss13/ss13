@@ -18,12 +18,10 @@
 	name = "syndicate guard dog"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
 /area/submap/DogBase)
 "ay" = (
 /obj/structure/dogbed,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains/tajaran,
 /obj/random/maintenance/medical,
@@ -37,7 +35,6 @@
 /obj/structure/dogbed,
 /obj/effect/decal/remains/tajaran,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/bone,
 /obj/random/maintenance/security,
@@ -75,8 +72,6 @@
 /area/submap/DogBase)
 "cS" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /mob/living/simple_mob/mechanical/viscerator/mercenary,
@@ -119,7 +114,6 @@
 /area/submap/DogBase)
 "fI" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/cargo,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
 /area/submap/DogBase)
@@ -141,7 +135,6 @@
 "hZ" = (
 /obj/machinery/power/smes/buildable/point_of_interest,
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
@@ -154,7 +147,6 @@
 /obj/structure/dogbed,
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/filth,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/bone/ribs,
 /obj/random/maintenance/research,
@@ -177,13 +169,11 @@
 /obj/structure/dogbed,
 /obj/effect/decal/remains/unathi,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/security,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
 /area/submap/DogBase)
 "kl" = (
 /obj/effect/decal/remains/human,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/cargo,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
@@ -208,14 +198,12 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /mob/living/simple_mob/mechanical/viscerator/mercenary,
 /turf/simulated/floor/plating,
 /area/submap/DogBase)
 "lk" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
 /area/submap/DogBase)
@@ -256,7 +244,6 @@
 /area/submap/DogBase)
 "oW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
 /area/template_noop)
 "pR" = (
@@ -287,7 +274,6 @@
 /area/submap/DogBase)
 "qI" = (
 /obj/structure/dogbed,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/bone,
 /obj/random/maintenance/security,
@@ -359,13 +345,9 @@
 /area/submap/DogBase)
 "vX" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /mob/living/simple_mob/mechanical/viscerator/mercenary,
@@ -395,13 +377,9 @@
 /area/template_noop)
 "xc" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /mob/living/simple_mob/mechanical/viscerator/mercenary,
@@ -421,7 +399,6 @@
 "xp" = (
 /obj/structure/dogbed,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/remains/human,
 /obj/random/contraband/nofail,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
@@ -429,7 +406,6 @@
 "yl" = (
 /obj/structure/dogbed,
 /obj/effect/decal/remains/deer,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/contraband/nofail,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
@@ -497,7 +473,6 @@
 "CQ" = (
 /obj/structure/dogbed,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/item/bone,
 /obj/random/contraband/nofail,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
@@ -556,7 +531,6 @@
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/filth,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/cargo,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
 /area/submap/DogBase)
@@ -597,27 +571,21 @@
 "Jm" = (
 /obj/structure/dogbed,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/research,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
 /area/submap/DogBase)
 "Ki" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
 /area/submap/DogBase)
 "Kt" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /obj/machinery/light{
@@ -628,8 +596,6 @@
 /area/submap/DogBase)
 "Le" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /mob/living/simple_mob/mechanical/viscerator/mercenary,
@@ -673,7 +639,6 @@
 /area/submap/DogBase)
 "Ol" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/item/bone/leg,
 /mob/living/simple_mob/vore/wolf/direwolf/dog/sec{
 	desc = "The biggest and baddest guard dog around.";
@@ -716,8 +681,6 @@
 /area/submap/DogBase)
 "PJ" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /mob/living/simple_mob/mechanical/viscerator/mercenary,
@@ -748,7 +711,6 @@
 	max_tox = 0;
 	name = "syndicate guard dog"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
 /area/template_noop)
@@ -786,7 +748,6 @@
 "UY" = (
 /obj/structure/dogbed,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/security,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
 /area/submap/DogBase)
@@ -797,7 +758,6 @@
 /area/submap/DogBase)
 "Vy" = (
 /obj/effect/decal/remains/unathi,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
 /area/submap/DogBase)
@@ -874,7 +834,6 @@
 /obj/structure/dogbed,
 /obj/effect/decal/remains/deer,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/medical,
 /turf/simulated/floor/outdoors/dirt/virgo3b,
 /area/submap/DogBase)
@@ -886,7 +845,6 @@
 	pixel_x = -24
 	},
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /mob/living/simple_mob/mechanical/viscerator/mercenary,

@@ -25,7 +25,7 @@
 					lostTarget(target)
 
 /obj/machinery/camera/proc/newTarget(var/mob/target)
-	if (istype(target, /mob/living/silicon/ai)) return 0
+	if (isAI(target)) return 0
 	if (detectTime == 0)
 		detectTime = world.time // start the clock
 	if (!(target in motionTargets))
@@ -54,7 +54,6 @@
 	detectTime = -1
 	return 1
 
-// CHOMPEdit start
 /obj/machinery/camera/HasProximity(turf/T, datum/weakref/WF, old_loc)
 	SIGNAL_HANDLER
 	if(isnull(WF))
@@ -63,7 +62,6 @@
 	if(isnull(AM))
 		log_debug("DEBUG: HasProximity called without reference on [src].")
 		return
-	// CHOMPEdit End
 	// Motion cameras outside of an "ai monitored" area will use this to detect stuff.
 	if (!area_motion)
 		if(isliving(AM))

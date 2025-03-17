@@ -52,7 +52,7 @@ var/global/moth_amount = 0 // Chompstation Addition, Rykka waz here. *pawstamp*
 	say_list_type = /datum/say_list/solargrub
 
 	var/poison_per_bite = 5 //grubs cause a shock when they bite someone
-	var/poison_type = "shockchem"
+	var/poison_type = REAGENT_ID_SHOCKCHEM
 	var/poison_chance = 50
 	var/datum/powernet/PN            // Our powernet
 	var/obj/structure/cable/attached        // the attached cable
@@ -67,9 +67,9 @@ var/global/moth_amount = 0 // Chompstation Addition, Rykka waz here. *pawstamp*
 /datum/say_list/solargrub
 	emote_see = list("squelches", "squishes")
 
-/mob/living/simple_mob/vore/solargrub/New()
+/mob/living/simple_mob/vore/solargrub/Initialize(mapload)
+	. = ..()
 	existing_solargrubs += src
-	..()
 
 /mob/living/simple_mob/vore/solargrub/Life()
 	. = ..()
@@ -114,7 +114,7 @@ var/global/moth_amount = 0 // Chompstation Addition, Rykka waz here. *pawstamp*
 			death_star()
 
 /mob/living/simple_mob/vore/solargrub/proc/death_star()
-	visible_message("<span class='warning'>\The [src]'s shell rips open and evolves!</span>")
+	visible_message(span_warning("\The [src]'s shell rips open and evolves!"))
 
 /*
 //Commenting this bit out. It's unncecessary, especially since we only use one form.
@@ -178,7 +178,9 @@ var/global/moth_amount = 0 // Chompstation Addition, Rykka waz here. *pawstamp*
 /mob/living/simple_mob/vore/solargrub/init_vore()
 	if(!voremob_loaded)
 		return
-	.=..()
+	if(LAZYLEN(vore_organs))
+		return
+	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "Through either grave error, overwhelming willingness, or some other factor, you find yourself lodged halfway past the solargrub's mandibles. While it had initially hissed and chittered in glee at the prospect of a new meal, it is clearly more versed in suckling on power cables; inch by inch, bit by bit, it undulates forth to slowly, noisily gulp you down its short esophagus... and right into its extra-cramped, surprisingly hot stomach. As the rest of you spills out into the plush-walled chamber, the grub's soft body bulges outwards here and there with your compressed figure. Before long, a thick slime oozes out from the surrounding stomach walls; only time will tell how effective it is on something solid like you..."

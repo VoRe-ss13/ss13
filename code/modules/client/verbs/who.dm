@@ -1,6 +1,6 @@
 /client/verb/who()
 	set name = "Who"
-	set category = "OOC.Resources" //CHOMPEdit
+	set category = "OOC.Resources"
 
 	var/msg = span_bold("Current Players:") + "\n"
 
@@ -73,26 +73,26 @@
 		if(C.holder.fakekey && !check_rights_for(src, R_ADMIN|R_MOD))	// Only admins and mods can see stealthmins
 			continue
 		// VOREStation Edit End
-		if(check_rights(R_BAN, FALSE, C)) // admins //VOREStation Edit
+		if(check_rights_for(C, R_BAN)) // admins //VOREStation Edit
 			num_admins_online++
-		else if(check_rights(R_ADMIN, FALSE, C) && !check_rights(R_SERVER, FALSE, C)) // mods //VOREStation Edit: Game masters
+		else if(check_rights_for(C, R_ADMIN) && !check_rights_for(C, R_SERVER)) // mods //VOREStation Edit: Game masters
 			category = R_MOD
 			num_mods_online++
-		else if(check_rights(R_SERVER, FALSE, C)) // developers
+		else if(check_rights_for(C, R_SERVER)) // developers
 			category = R_SERVER
 			num_devs_online++
-		else if(check_rights(R_STEALTH, FALSE, C)) // event managers //VOREStation Edit: Retired Staff
+		else if(check_rights_for(C, R_STEALTH)) // event managers //VOREStation Edit: Retired Staff
 			category = R_EVENT
 			num_event_managers_online++
 
-		temp += "\t[C] is a [C.holder.rank]"
+		temp += "\t[C] is a [C.holder.rank_names()]"
 		if(holder)
 			if(C.holder.fakekey)
 				temp += " " + span_italics("(as [C.holder.fakekey])")
 
 			if(isobserver(C.mob))
 				temp += " - Observing"
-			else if(istype(C.mob,/mob/new_player))
+			else if(isnewplayer(C.mob))
 				temp += " - Lobby"
 			else
 				temp += " - Playing"
@@ -113,13 +113,13 @@
 
 	msg = span_bold("Current Admins ([num_admins_online]):") + "\n" + msg
 
-	if(CONFIG_GET(flag/show_mods)) // CHOMPEdit
-		msg += "\n" + span_bold(" Current Moderators ([num_mods_online]):") + "\n" + modmsg	//YW EDIT
+	if(CONFIG_GET(flag/show_mods))
+		msg += "\n" + span_bold(" Current Moderators ([num_mods_online]):") + "\n" + modmsg // CHOMPEdit
 
-	if(CONFIG_GET(flag/show_devs)) // CHOMPEdit
+	if(CONFIG_GET(flag/show_devs))
 		msg += "\n" + span_bold(" Current Developers ([num_devs_online]):") + "\n" + devmsg
 
-	if(CONFIG_GET(flag/show_event_managers)) // CHOMPEdit
+	if(CONFIG_GET(flag/show_event_managers))
 		msg += "\n" + span_bold(" Current Miscellaneous ([num_event_managers_online]):") + "\n" + eventMmsg
 
 	var/num_mentors_online = 0
@@ -131,7 +131,7 @@
 		if(holder)
 			if(isobserver(C.mob))
 				mmsg += " - Observing"
-			else if(istype(C.mob,/mob/new_player))
+			else if(isnewplayer(C.mob))
 				mmsg += " - Lobby"
 			else
 				mmsg += " - Playing"
@@ -141,7 +141,7 @@
 				mmsg += " (AFK - [round(seconds / 60)] minutes, [seconds % 60] seconds)"
 		mmsg += "\n"
 
-	if(CONFIG_GET(flag/show_mentors)) // CHOMPEdit
+	if(CONFIG_GET(flag/show_mentors))
 		msg += "\n" + span_bold(" Current Mentors ([num_mentors_online]):") + "\n" + mmsg
 
 	msg += "\n" + span_info("Adminhelps are also sent to Discord. If no admins are available in game try anyway and an admin on Discord may see it and respond.")

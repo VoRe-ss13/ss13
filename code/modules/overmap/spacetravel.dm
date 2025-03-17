@@ -5,7 +5,7 @@
 	known = FALSE
 	in_space = TRUE
 
-/obj/effect/overmap/visitable/sector/temporary/Initialize()
+/obj/effect/overmap/visitable/sector/temporary/Initialize(mapload)
 	if(!istype(loc, /turf/unsimulated/map))
 		CRASH("Attempt to create deepspace which is not on overmap: [log_info_line(loc)]")
 	// Tell sector initializer where are is where we want to be.
@@ -102,7 +102,7 @@
 		return
 
 	// Don't let AI eyes yeet themselves off the map
-	if(istype(A, /mob/observer/eye))
+	if(isEye(A))
 		return
 
 	if(A.lost_in_space())

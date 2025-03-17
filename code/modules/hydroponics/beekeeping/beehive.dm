@@ -196,7 +196,7 @@
 			return
 		var/obj/item/reagent_containers/glass/G = I
 		var/transferred = min(G.reagents.maximum_volume - G.reagents.total_volume, honey)
-		G.reagents.add_reagent("honey", transferred)
+		G.reagents.add_reagent(REAGENT_ID_HONEY, transferred)
 		honey -= transferred
 		user.visible_message(span_notice("[user] collects honey from \the [src] into \the [G]."), span_notice("You collect [transferred] units of honey from \the [src] into \the [G]."))
 		return 1
@@ -217,7 +217,7 @@
 
 	var/honey = 0
 
-/obj/item/honey_frame/Initialize()
+/obj/item/honey_frame/Initialize(mapload)
 	. = ..()
 	update_icon()
 
@@ -258,7 +258,7 @@
 	pass_color = TRUE
 	strict_color_stacking = TRUE
 
-/obj/item/stack/material/wax/Initialize()
+/obj/item/stack/material/wax/Initialize(mapload)
 	. = ..()
 	recipes = wax_recipes
 
@@ -281,8 +281,8 @@ var/global/list/datum/stack_recipe/wax_recipes = list( \
 	icon_state = "beepack"
 	var/full = 1
 
-/obj/item/bee_pack/Initialize() //ChompEDIT New --> Initialize
-	..()
+/obj/item/bee_pack/Initialize(mapload)
+	. = ..()
 	add_overlay("beepack-full")
 
 /obj/item/bee_pack/proc/empty()

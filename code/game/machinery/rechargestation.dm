@@ -23,7 +23,7 @@
 	var/weld_power_use = 2300	// power used per point of brute damage repaired. 2.3 kW ~ about the same power usage of a handheld arc welder
 	var/wire_power_use = 500	// power used per point of burn damage repaired.
 
-/obj/machinery/recharge_station/Initialize()
+/obj/machinery/recharge_station/Initialize(mapload)
 	. = ..()
 	default_apply_parts()
 	cell = default_use_hicell()
@@ -173,7 +173,7 @@
 			return
 		if (istype(O, /obj/item/grab) && get_dist(src,user)<2)
 			var/obj/item/grab/G = O
-			if(istype(G.affecting,/mob/living))
+			if(isliving(G.affecting))
 				var/mob/living/M = G.affecting
 				qdel(O)
 				go_in(M)
@@ -252,7 +252,7 @@
 	if(occupant)
 		return
 
-	if(istype(L, /mob/living/silicon/robot))
+	if(isrobot(L))
 		var/mob/living/silicon/robot/R = L
 
 		if(R.incapacitated())
@@ -273,7 +273,7 @@
 		return 1
 
 	//VOREStation Add Start
-	else if(istype(L, /mob/living/silicon/pai))
+	else if(ispAI(L))
 		var/mob/living/silicon/pai/P = L
 
 		if(P.incapacitated())

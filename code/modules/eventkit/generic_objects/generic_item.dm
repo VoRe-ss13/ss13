@@ -48,13 +48,13 @@
 						continue
 
 					var/flash_time = 10
-					if(istype(O, /mob/living/carbon/human))
+					if(ishuman(O))
 						var/mob/living/carbon/human/H = O
-						//VOREStation Edit Start
 						if(H.nif && H.nif.flag_check(NIF_V_FLASHPROT,NIF_FLAGS_VISION))
 							H.nif.notify("High intensity light detected, and blocked!",TRUE)
 							continue
-						//VOREStation Edit End
+						if(FLASHPROOF in H.mutations)
+							continue
 						if(!H.eyecheck() <= 0)
 							continue
 						flash_time *= H.species.flash_mod
@@ -90,7 +90,7 @@
 	return ..()
 
 /client/proc/generic_item()
-	set category = "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 	set name = "Spawn Generic Item"
 	set desc = "Spawn a customisable item with a range of different options."
 

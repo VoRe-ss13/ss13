@@ -1,12 +1,19 @@
-import { KEY_DOWN, KEY_E, KEY_S, KEY_UP, KEY_W } from 'common/keycodes';
 import React, { Component, PropsWithChildren } from 'react';
 import { resolveAsset } from 'tgui/assets';
 import { useBackend } from 'tgui/backend';
-import { KeyEvent } from 'tgui/events';
 import { KeyListener } from 'tgui-core/components';
+import {
+  Box,
+  Button,
+  Icon,
+  LabeledList,
+  Slider,
+  Tooltip,
+} from 'tgui-core/components';
+import { KeyEvent } from 'tgui-core/events';
+import { KEY } from 'tgui-core/keys';
 
 import { logger } from '../logging';
-import { Box, Button, Icon, LabeledList, Slider, Tooltip } from '.';
 
 const pauseEvent = (e) => {
   if (e.stopPropagation) {
@@ -42,8 +49,17 @@ export class NanoMap extends Component<Props, State> {
   handleDragMove: (e: MouseEvent) => void;
   handleDragEnd: (e: MouseEvent) => void;
   handleZoom: (e: Event, v: number) => void;
+  handleWheel: (e: WheelEvent) => void;
   handleKey: (e: KeyEvent) => void;
   ref: EventTarget;
+
+  componentDidMount() {
+    document.addEventListener('wheel', this.handleWheel);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('wheel', this.handleWheel);
+  }
 
   setZoom(zoom: number) {
     const newZoom = Math.min(Math.max(zoom, 1), 8);
@@ -127,23 +143,31 @@ export class NanoMap extends Component<Props, State> {
       pauseEvent(e);
     };
 
+    this.handleWheel = (e: WheelEvent) => {
+      if (e.deltaY > 0) {
+        this.setZoom(this.state.zoom + 1);
+      } else if (e.deltaY < 0) {
+        this.setZoom(this.state.zoom - 1);
+      }
+    };
+
     this.handleZoom = (_e: Event, value: number) => {
       this.setZoom(value);
     };
 
     this.handleKey = (e: KeyEvent) => {
-      switch (e.code) {
-        case KEY_UP:
-        case KEY_W: {
+      switch (e.event.key) {
+        case KEY.Up:
+        case KEY.W: {
           this.setZoom(this.state.zoom + 1);
           break;
         }
-        case KEY_DOWN:
-        case KEY_S: {
+        case KEY.Down:
+        case KEY.S: {
           this.setZoom(this.state.zoom - 1);
           break;
         }
-        case KEY_E: {
+        case KEY.E: {
           logger.log(this.state.offsetX, this.state.offsetY);
           break;
         }
@@ -161,7 +185,7 @@ export class NanoMap extends Component<Props, State> {
     );
     // (x * zoom), x Needs to be double the turf- map size. (for virgo, 140x140)
     const mapSize = this.props.zoomScale * zoom + 'px';
-    const newStyle = {
+    const newStyle: {} = {
       width: mapSize,
       height: mapSize,
       'margin-top': offsetY + 'px',

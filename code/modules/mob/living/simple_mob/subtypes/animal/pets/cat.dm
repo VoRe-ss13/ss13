@@ -52,7 +52,7 @@ var/list/_cat_default_emotes = list(
 	var/named = FALSE //have I been named yet?
 	var/friend_name = null //VOREStation Edit - Lock befriending to this character
 
-/mob/living/simple_mob/animal/passive/cat/Initialize()
+/mob/living/simple_mob/animal/passive/cat/Initialize(mapload)
 	icon_living = "[initial(icon_state)]"
 	icon_dead = "[initial(icon_state)]_dead"
 	icon_rest = "[initial(icon_state)]_rest"
@@ -97,7 +97,7 @@ var/list/_cat_default_emotes = list(
 
 /mob/living/simple_mob/animal/passive/cat/verb/become_friends()
 	set name = "Become Friends"
-	set category = "IC.Game" //CHOMPEdit
+	set category = "IC.Game"
 	set src in view(1)
 
 	var/mob/living/L = usr
@@ -105,7 +105,7 @@ var/list/_cat_default_emotes = list(
 		return // Fuck off ghosts.
 
 	if(friend)
-		if(friend == usr)
+		if(friend == L)
 			to_chat(L, span_notice("\The [src] is already your friend! Meow!"))
 			return
 		else
@@ -147,7 +147,7 @@ var/list/_cat_default_emotes = list(
 	gender = NEUTER
 	holder_type = /obj/item/holder/cat/kitten //VOREStation Edit
 
-/mob/living/simple_mob/animal/passive/cat/kitten/Initialize()
+/mob/living/simple_mob/animal/passive/cat/kitten/Initialize(mapload)
 	if(gender == NEUTER)
 		gender = pick(MALE, FEMALE)
 	return ..()

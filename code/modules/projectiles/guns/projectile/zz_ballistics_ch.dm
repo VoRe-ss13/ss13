@@ -32,7 +32,7 @@
 	//icon_scale_x = 0.5
 	//icon_scale_y = 0.5
 
-/obj/item/gun/projectile/automatic/cballistic/Initialize()
+/obj/item/gun/projectile/automatic/cballistic/Initialize(mapload)
 	. = ..()
 	update_transform()
 
@@ -71,7 +71,7 @@
 	var/is_picked_up = FALSE
 	var/is_long = TRUE
 
-/obj/item/gun/projectile/automatic/serdy/Initialize()
+/obj/item/gun/projectile/automatic/serdy/Initialize(mapload)
 	. = ..()
 	update_transform()
 	update_icon()
@@ -92,7 +92,7 @@
 	is_picked_up = TRUE
 	update_transform()
 
-/obj/item/gun/projectile/automatic/serdy/dropped()
+/obj/item/gun/projectile/automatic/serdy/dropped(mob/living/user)
 	. = ..()
 	is_picked_up = FALSE
 	update_transform()
@@ -272,7 +272,7 @@
 	auto_loading_type = CLOSED_BOLT
 	muzzle_velocity = 810
 	w_class = ITEMSIZE_HUGE
-	action_button_name = "Use Scope"
+	actions_types = list(/datum/action/item_action/use_scope)
 	accuracy = -30
 	scoped_accuracy = 50
 	one_handed_penalty = 70
@@ -529,7 +529,7 @@
 	name = "Scoped Mosin Nagant"
 	icon_state = "scopedmosin"
 	desc = "A reproduction of some old russian bolt-action rifle from some backwater rimworld. Smells strongly of cosmoline. The inscriptions on it are in pan-slavic. This one has a scope attached to it. Chambered in 7.62x54mmR."
-	action_button_name = "Use Scope"
+	actions_types = list(/datum/action/item_action/use_scope)
 	accuracy = -15
 	scoped_accuracy = 50
 	one_handed_penalty = 70
@@ -594,7 +594,7 @@
 	projectile_type = /obj/item/projectile/bullet/rifle/a338
 	load_method = MAGAZINE
 	muzzle_velocity = 936
-	action_button_name = "Use Scope"
+	actions_types = list(/datum/action/item_action/use_scope)
 	accuracy = -30
 	scoped_accuracy = 50
 	w_class = ITEMSIZE_HUGE
@@ -631,7 +631,7 @@
 	projectile_type = /obj/item/projectile/bullet/rifle/a145 //the old round type was ass
 	load_method = MAGAZINE
 	muzzle_velocity = 825
-	action_button_name = "Use Scope"
+	actions_types = list(/datum/action/item_action/use_scope)
 	accuracy = -60
 	scoped_accuracy = 15
 	w_class = ITEMSIZE_HUGE
@@ -1232,7 +1232,7 @@
 		icon_state = "c20r"
 	return
 
-/obj/item/gun/projectile/automatic/c20r/Initialize()
+/obj/item/gun/projectile/automatic/c20r/Initialize(mapload)
 	. = ..()
 	update_transform()
 
@@ -1251,7 +1251,7 @@
 	. = ..()
 	icon_state = ammo_magazine ? "[initial(icon_state)]" : "[initial(icon_state)]-e"
 
-/obj/item/gun/projectile/automatic/sts35/Initialize()
+/obj/item/gun/projectile/automatic/sts35/Initialize(mapload)
 	. = ..()
 	update_transform()
 
@@ -1270,7 +1270,7 @@
 	. = ..()
 	icon_state = ammo_magazine ? "[initial(icon_state)]" : "[initial(icon_state)]-e"
 
-/obj/item/gun/projectile/automatic/wt550/Initialize()
+/obj/item/gun/projectile/automatic/wt550/Initialize(mapload)
 	. = ..()
 	update_transform()
 
@@ -1293,7 +1293,7 @@
 		icon_state = "carbine-e"
 	return
 
-/obj/item/gun/projectile/automatic/z8/Initialize()
+/obj/item/gun/projectile/automatic/z8/Initialize(mapload)
 	. = ..()
 	update_transform()
 
@@ -1322,7 +1322,7 @@
 	. = ..()
 	icon_state = ammo_magazine ? "[initial(icon_state)]" : "[initial(icon_state)]-empty"
 
-/obj/item/gun/projectile/automatic/mini_uzi/Initialize()
+/obj/item/gun/projectile/automatic/mini_uzi/Initialize(mapload)
 	. = ..()
 	update_transform()
 
@@ -1396,7 +1396,7 @@
 	icon = 'icons/obj/gun_ch.dmi'
 	icon_state = "m1911"
 
-/obj/item/gun/projectile/colt/Initialize()
+/obj/item/gun/projectile/colt/Initialize(mapload)
 	.=..()
 	update_icon()
 
@@ -1576,7 +1576,7 @@
 	var/is64x32 = TRUE
 	var/is_picked_up = FALSE
 
-/obj/item/gun/projectile/shotgun/pump/Initialize()
+/obj/item/gun/projectile/shotgun/pump/Initialize(mapload)
 	. = ..()
 	if(is64x32)
 		update_transform()
@@ -1591,7 +1591,7 @@
 	is_picked_up = TRUE
 	update_transform()
 
-/obj/item/gun/projectile/shotgun/pump/dropped()
+/obj/item/gun/projectile/shotgun/pump/dropped(mob/living/user)
 	. = ..()
 	is_picked_up = FALSE
 	update_transform()
@@ -1671,7 +1671,7 @@
 /obj/item/gun/projectile/shotgun/doublebarrel/sawn //Default sawn shotgun needs it's old icon path back
 	icon = 'icons/obj/gun.dmi'
 
-/obj/item/gun/projectile/shotgun/doublebarrel/Initialize()
+/obj/item/gun/projectile/shotgun/doublebarrel/Initialize(mapload)
 	. = ..()
 	update_transform()
 	update_icon()
@@ -1693,7 +1693,7 @@
 	is_picked_up = TRUE
 	update_transform()
 
-/obj/item/gun/projectile/shotgun/doublebarrel/dropped()
+/obj/item/gun/projectile/shotgun/doublebarrel/dropped(mob/living/user)
 	. = ..()
 	is_picked_up = FALSE
 	update_transform()

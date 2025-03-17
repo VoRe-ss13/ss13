@@ -21,7 +21,7 @@
 	var/set_temperature = T20C		// Thermostat
 	var/cooling = 0
 
-/obj/machinery/atmospherics/unary/freezer/Initialize()
+/obj/machinery/atmospherics/unary/freezer/Initialize(mapload)
 	. = ..()
 	default_apply_parts()
 
@@ -84,7 +84,7 @@
 
 	return data
 
-/obj/machinery/atmospherics/unary/freezer/tgui_act(action, params)
+/obj/machinery/atmospherics/unary/freezer/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
@@ -103,7 +103,7 @@
 			var/new_setting = between(0, text2num(params["value"]), 100)
 			set_power_level(new_setting)
 
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 
 /obj/machinery/atmospherics/unary/freezer/process()
 	..()

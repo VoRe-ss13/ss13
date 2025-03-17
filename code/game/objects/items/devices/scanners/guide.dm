@@ -1,6 +1,6 @@
 /obj/item/healthanalyzer/verb/toggle_guide()
 	set name = "Toggle Guidance"
-	set desc = "Toggles whether or not \the [src] will provide guidance and instruction in addition to scanning."
+	set desc = "Toggles whether or not the health analyzer will provide guidance and instruction in addition to scanning."
 	set category = "Object"
 	guide = !guide
 	to_chat(usr, span_notice("You toggle \the [src]'s guidance system [guide ? "on" : "off"]."))
@@ -14,8 +14,7 @@
 
 /obj/item/healthanalyzer/proc/guide(var/mob/living/carbon/human/M, mob/living/user)
 
-/* CHOMPedit remove: Anyone can get this info. *
-
+/* Enable this if you want non-medical users to be blocked from the guide. Kind of pointless, since the only ones that would really NEED the guide are non-medical users.
 	var/obj/item/card/id/ourid = user?.GetIdCard()
 	if(!ourid)
 		return
@@ -29,8 +28,7 @@
 		return
 	if(!ishuman(M))
 		return
-
-* CHOMPedit end. */
+*/
 
 	var/dat = ""
 
@@ -71,7 +69,7 @@
 		if(org.damage >= 1 && !istype(org, /obj/item/organ/internal/brain))
 			organ = TRUE
 
-	var/blood_volume = M.vessel.get_reagent_amount("blood")
+	var/blood_volume = M.vessel.get_reagent_amount(REAGENT_ID_BLOOD)
 	if(blood_volume <= M.species.blood_volume*M.species.blood_level_safe)
 		bloodloss = TRUE
 
@@ -85,7 +83,7 @@
 	if(infection)
 		dat += span_bold("Infection") + " - Administer Spaceacillin. If severe, use Corophizine or overdose on Spaceacillin and monitor until well.<br>"
 	if(M.getBrainLoss() >= 1)
-		dat += span_bold("Traumatic Brain Injury") + " - Commence brain repair surgery Administer Alkysine or universal organ-repair chemicals such as Peridaxon.<br>"
+		dat += span_bold("Traumatic Brain Injury") + " - Commence brain repair surgery, administer Alkysine or universal organ-repair chemicals such as Peridaxon.<br>"
 	if(M.radiation || M.accumulated_rads)
 		dat += span_bold("Radiation Exposure") + " - Administer Hyronalin or Arithrazine. Monitor for genetic damage.<br>"
 	if(organ)
@@ -101,9 +99,13 @@
 	if(M.getCloneLoss())
 		dat += span_bold("Genetic Damage") + " - Utilize cryogenic pod with appropriate chemicals (i.e. Cryoxadone) and below 70 K, or give Rezadone.<br>"
 	if(bone)
-		dat += span_bold("Bone Fracture") + " - Splint the fractured limb. Commence a bone repair operation or administer Osteodaxon after treating the physical trauma.<br>"
-	if(M.virus2.len)
-		dat += span_bold("Viral Infection") + " - Inform a Virologist or the Chief Medical Officer and administer antiviral chemicals such as Corophizine and Spaceacilin. Limit exposure to other personnel.<br>"
+		dat += span_bold("Bone fracture") + " - Splint damaged area. Treat with bone repair surgery or Osteodaxon after treating brute damage.<br>"
+	if(M.viruses && M.viruses.len)
+		for(var/datum/disease/D in M.GetViruses())
+			if(D.visibility_flags & HIDDEN_SCANNER)
+				continue
+			else
+				dat += span_bold("Viral Infection") + " - Inform a Virologist or the Chief Medical Officer and administer antiviral chemicals such as Spaceacillin. Limit exposure to other personnel.<br>"
 	if(robotparts)
 		dat += span_bold("Robotic Body Parts") + " - Inform the Robotics department."
 

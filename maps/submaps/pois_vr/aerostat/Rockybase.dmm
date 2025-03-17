@@ -507,7 +507,6 @@
 /area/submap/virgo2/Rockybase)
 "bM" = (
 /obj/structure/table/standard,
-/obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/hypospray/autoinjector/biginjector/burn,
 /turf/simulated/floor/tiled/techfloor/virgo2,
@@ -542,7 +541,6 @@
 /area/submap/virgo2/Rockybase)
 "bS" = (
 /obj/item/stack/rods,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
@@ -620,23 +618,18 @@
 /area/submap/virgo2/Rockybase)
 "ch" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
 "ci" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "cj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/item/material/shard,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "ck" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
@@ -664,7 +657,7 @@
 /area/submap/virgo2/Rockybase)
 "cq" = (
 /obj/structure/cable{
-	icon_state = "0-4";
+	icon_state = "0-4"
 	},
 /obj/machinery/light{
 	dir = 8
@@ -702,8 +695,6 @@
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
 "ct" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/plating/virgo2,

@@ -8,11 +8,11 @@
 	random_color = FALSE
 
 /obj/item/tool/wirecutters/clippers/trimmers
-    name = "hedgetrimmers"
-    desc = "An old pair of trimmers with a pretty dull blade. You would probably have a hard time cutting anything but plants with it."
-    icon_state = "hedget"
-    item_state = "hedget"
-    force = 7 //One point extra than standard wire cutters.
+	name = "hedgetrimmers"
+	desc = "An old pair of trimmers with a pretty dull blade. You would probably have a hard time cutting anything but plants with it."
+	icon_state = "hedget"
+	item_state = "hedget"
+	force = 7 //One point extra than standard wire cutters.
 
 /obj/item/tool/wirecutters/clippers/trimmers/afterattack(atom/A as mob|obj|turf|area, mob/user as mob, proximity)
 	if(!proximity) return
@@ -66,7 +66,7 @@
 
 	switch(action)
 		if("print")
-			print_report(usr)
+			print_report(ui.user)
 			return TRUE
 		if("close")
 			last_seed = null
@@ -146,11 +146,11 @@
 	var/dat = "<h3>Plant data for [form_title]</h3>"
 	dat += "<h2>General Data</h2>"
 	dat += "<table>"
-	dat += "<tr><td><b>Endurance</b></td><td>[grown_seed.get_trait(TRAIT_ENDURANCE)]</td></tr>"
-	dat += "<tr><td><b>Yield</b></td><td>[grown_seed.get_trait(TRAIT_YIELD)]</td></tr>"
-	dat += "<tr><td><b>Maturation time</b></td><td>[grown_seed.get_trait(TRAIT_MATURATION)]</td></tr>"
-	dat += "<tr><td><b>Production time</b></td><td>[grown_seed.get_trait(TRAIT_PRODUCTION)]</td></tr>"
-	dat += "<tr><td><b>Potency</b></td><td>[grown_seed.get_trait(TRAIT_POTENCY)]</td></tr>"
+	dat += "<tr><td>" + span_bold("Endurance") + "</td><td>[grown_seed.get_trait(TRAIT_ENDURANCE)]</td></tr>"
+	dat += "<tr><td>" + span_bold("Yield") + "</td><td>[grown_seed.get_trait(TRAIT_YIELD)]</td></tr>"
+	dat += "<tr><td>" + span_bold("Maturation time") + "</td><td>[grown_seed.get_trait(TRAIT_MATURATION)]</td></tr>"
+	dat += "<tr><td>" + span_bold("Production time") + "</td><td>[grown_seed.get_trait(TRAIT_PRODUCTION)]</td></tr>"
+	dat += "<tr><td>" + span_bold("Potency") + "</td><td>[grown_seed.get_trait(TRAIT_POTENCY)]</td></tr>"
 	dat += "</table>"
 
 	if(LAZYLEN(last_reagents))
@@ -168,7 +168,7 @@
 	var/obj/item/paper/P = new /obj/item/paper(get_turf(src))
 	P.name = "paper - [form_title]"
 	P.info = "[dat]"
-	if(istype(user,/mob/living/carbon/human))
+	if(ishuman(user))
 		user.put_in_hands(P)
 	user.visible_message("\The [src] spits out a piece of paper.")
 	return

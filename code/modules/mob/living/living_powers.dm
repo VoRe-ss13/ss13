@@ -8,7 +8,7 @@
 /mob/living/proc/hide()
 	set name = "Hide"
 	set desc = "Allows to hide beneath tables or certain items. Toggled on or off."
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 
 	if(stat == DEAD || paralysis || weakened || stunned || restrained() || buckled || LAZYLEN(grabbed_by) || has_buckled_mobs()) //VORE EDIT: Check for has_buckled_mobs() (taur riding)
 		return
@@ -28,7 +28,7 @@
 
 	allow_self_surgery = !allow_self_surgery
 
-	to_chat(usr, span_notice("You will [allow_self_surgery ? "now" : "no longer"] attempt to operate upon yourself."))
+	to_chat(src, span_notice("You will [allow_self_surgery ? "now" : "no longer"] attempt to operate upon yourself."))
 	log_admin("DEBUG \[[world.timeofday]\]: [src.ckey ? "[src.name]:([src.ckey])" : "[src.name]"] has [allow_self_surgery ? "Enabled" : "Disabled"] self surgery.")
 
 //ChompEDIT START - re-assert our layer and plane

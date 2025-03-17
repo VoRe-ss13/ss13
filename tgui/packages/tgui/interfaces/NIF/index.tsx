@@ -1,6 +1,6 @@
 import { useState } from 'react';
-
-import { useBackend } from '../../backend';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
 import {
   Box,
   Button,
@@ -8,11 +8,11 @@ import {
   NoticeBox,
   Section,
   Table,
-} from '../../components';
-import { Window } from '../../layouts';
+} from 'tgui-core/components';
+
 import { NIFMain } from './NIFMain';
 import { NIFSettings } from './NIFSettings';
-import { Data, module } from './types';
+import type { Data, module } from './types';
 
 export const NIF = (props) => {
   const { act, config, data } = useBackend<Data>();

@@ -29,7 +29,7 @@ var/global/list/total_extraction_beacons = list()
 	else
 		var/A
 
-		A = tgui_input_list(usr, "Select a beacon to connect to", "Balloon Extraction Pack", possible_beacons)
+		A = tgui_input_list(user, "Select a beacon to connect to", "Balloon Extraction Pack", possible_beacons)
 
 		if(!A)
 			return
@@ -158,7 +158,7 @@ var/global/list/total_extraction_beacons = list()
 	density = FALSE
 	var/beacon_network = "station"
 
-/obj/structure/extraction_point/Initialize()
+/obj/structure/extraction_point/Initialize(mapload)
 	. = ..()
 	name += " ([rand(100,999)]) ([get_area_name(src, TRUE)])"
 	global.total_extraction_beacons += src

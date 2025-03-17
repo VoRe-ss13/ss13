@@ -108,7 +108,7 @@
 	name = "hypo belt"
 	desc = "A medical belt designed to carry autoinjectors and other medical equipment."
 
-/obj/item/storage/belt/medical/technomancer/New()
+/obj/item/storage/belt/medical/technomancer/Initialize(mapload)
 	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/brute(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/burn(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/toxin(src)
@@ -117,7 +117,7 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/pain(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/organ(src)
 	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/combat(src)
-	..()
+	. = ..()
 
 /datum/technomancer/equipment/belt_of_holding
 	name = "Belt of Holding"
@@ -160,7 +160,7 @@
 	capabilities.  The lens appear to be multiple optical matrices layered together, allowing the wearer to see almost anything \
 	across physical barriers."
 	icon_state = "uzenwa_sissra_1"
-	action_button_name = "Toggle Goggles"
+	actions_types = list(/datum/action/item_action/toggle_goggles)
 	origin_tech = list(TECH_MAGNET = 6, TECH_ENGINEERING = 6)
 	toggleable = 1
 	vision_flags = SEE_TURFS|SEE_MOBS|SEE_OBJS

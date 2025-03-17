@@ -32,7 +32,6 @@
 	update_icon()
 	return secured
 
-// CHOMPEdit Start
 /obj/item/assembly/prox_sensor/HasProximity(turf/T, datum/weakref/WF, old_loc)
 	SIGNAL_HANDLER
 	if(isnull(WF))
@@ -41,7 +40,6 @@
 	if(isnull(AM))
 		log_debug("DEBUG: HasProximity called without reference on [src].")
 		return
-// CHOMPEdit End
 	if (istype(AM, /obj/effect/beam))
 		return
 	if (!isobserver(AM) && AM.move_speed < 12)
@@ -69,7 +67,8 @@
 		toggle_scan()
 		time = initial(time)
 
-/obj/item/assembly/prox_sensor/dropped()
+/obj/item/assembly/prox_sensor/dropped(mob/user)
+	..()
 	sense()
 
 /obj/item/assembly/prox_sensor/proc/toggle_scan()

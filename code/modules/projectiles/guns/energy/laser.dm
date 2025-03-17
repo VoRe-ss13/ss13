@@ -165,7 +165,7 @@
 /* 	var/remainingshots = 0 //you may get a limited number of shots regardless of the charge //CHOMPedit: no
 	var/failurechance = 0 //chance per shot of something going awry
 
-/obj/item/gun/energy/captain/Initialize()
+/obj/item/gun/energy/captain/Initialize(mapload)
 	//it's an antique and it's been sitting in a case, unmaintained, for who the hell knows how long - who knows what'll happen when you pull it out?
 	..()
 	//first, we decide, does it have a different type of beam? 75% of just being a 40-damage laser, 15% of being less or 0, 10% of being better
@@ -329,7 +329,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 5, TECH_POWER = 4)
 	projectile_type = /obj/item/projectile/beam/sniper
 	slot_flags = SLOT_BACK
-	action_button_name = "Use Scope"
+	actions_types = list(/datum/action/item_action/use_scope)
 	//Begin CHOMPstation Edit for making this thing not trash
 	//battery_lock = 0
 	charge_cost = 360
@@ -341,7 +341,7 @@
 	one_handed_penalty = 60 // The weapon itself is heavy, and the long barrel makes it hard to hold steady with just one hand.
 	//End CHOMP Edit.
 
-/obj/item/gun/energy/sniperrifle/ui_action_click()
+/obj/item/gun/energy/sniperrifle/ui_action_click(mob/user, actiontype)
 	scope()
 
 /obj/item/gun/energy/sniperrifle/verb/scope()
@@ -439,7 +439,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 4, TECH_POWER = 3)
 	projectile_type = /obj/item/projectile/beam/sniper
 	slot_flags = SLOT_BACK
-	action_button_name = "Aim Down Sights"
+	actions_types = list(/datum/action/item_action/aim_down_sights)
 	charge_cost = 2400
 	fire_delay = 20
 	force = 8
@@ -449,7 +449,7 @@
 	charge_meter = FALSE
 	var/scope_multiplier = 1.5
 
-/obj/item/gun/energy/monorifle/ui_action_click()
+/obj/item/gun/energy/monorifle/ui_action_click(mob/user, actiontype)
 	sights()
 
 /obj/item/gun/energy/monorifle/verb/sights()
@@ -464,6 +464,7 @@
 	desc = "A modernized version of the classic mono-rifle. This one has an optimized capacitor bank that allows the rifle to fire twice before requiring a recharge."
 	description_fluff = "A modern design of a classic rifle produced by a small arms company operating out of Saint Columbia. It was based on the \
 	antique mono-rifle design that was dubbed the 'Rainy Day Special' by many of its users."
+	icon = 'icons/obj/gun.dmi'
 	icon_state = "cmono"
 	item_state = "cshotgun"
 	charge_cost = 1200

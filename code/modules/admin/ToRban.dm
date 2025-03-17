@@ -45,18 +45,18 @@
 
 /client/proc/ToRban(task in list("update","toggle","show","remove","remove all","find"))
 	set name = "ToRban"
-	set category = "Server.Config" //CHOMPEdit
+	set category = "Server.Config"
 	if(!holder)	return
 	switch(task)
 		if("update")
 			ToRban_update()
 		if("toggle")
 			if(config)
-				if(CONFIG_GET(flag/ToRban)) // CHOMPEdit
-					CONFIG_SET(flag/ToRban, FALSE) // CHOMPEdit
+				if(CONFIG_GET(flag/ToRban))
+					CONFIG_SET(flag/ToRban, FALSE)
 					message_admins(span_red("ToR banning disabled."))
 				else
-					CONFIG_SET(flag/ToRban, TRUE) // CHOMPEdit
+					CONFIG_SET(flag/ToRban, TRUE)
 					message_admins(span_green("ToR banning enabled."))
 		if("show")
 			var/savefile/F = new(TORFILE)
@@ -67,7 +67,7 @@
 				dat = "<table width='100%'>[dat]</table>"
 			else
 				dat = "No addresses in list."
-			src << browse(dat,"window=ToRban_show")
+			src << browse("<html>[dat]</html>","window=ToRban_show")
 		if("remove")
 			var/savefile/F = new(TORFILE)
 			var/choice = tgui_input_list(src,"Please select an IP address to remove from the ToR banlist:","Remove ToR ban", F.dir)

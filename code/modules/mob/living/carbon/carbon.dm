@@ -1,4 +1,4 @@
-/mob/living/carbon/Initialize()
+/mob/living/carbon/Initialize(mapload)
 	. = ..()
 	//setup reagent holders
 	bloodstr = new/datum/reagents/metabolism/bloodstream(500, src)
@@ -8,12 +8,10 @@
 	if (!default_language && species_language)
 		default_language = GLOB.all_languages[species_language]
 
-	AddElement(/datum/element/footstep, custom_footstep, 1, -6) // CHOMPAdd
+	AddElement(/datum/element/footstep, custom_footstep, 1, -6)
 
 /mob/living/carbon/Life()
 	..()
-
-	handle_viruses()
 
 	// Increase germ_level regularly
 	if(germ_level < GERM_LEVEL_AMBIENT && prob(30))	//if you're just standing there, you shouldn't get more germs beyond an ambient level
@@ -38,10 +36,10 @@
 	. = ..()
 	if(src.nutrition && src.stat != 2)
 		adjust_nutrition(-DEFAULT_HUNGER_FACTOR / 10)
-		if(src.m_intent == "run")
+		if(src.m_intent == I_RUN)
 			adjust_nutrition(-DEFAULT_HUNGER_FACTOR / 10)
 
-	if((FAT in src.mutations) && src.m_intent == "run" && src.bodytemperature <= 360)
+	if((FAT in src.mutations) && src.m_intent == I_RUN && src.bodytemperature <= 360)
 		src.bodytemperature += 2
 
 	// Moving around increases germ_level faster
@@ -56,7 +54,7 @@
 			var/obj/item/I = user.get_active_hand()
 			if(I && I.force)
 				var/d = rand(round(I.force / 4), I.force)
-				if(istype(src, /mob/living/carbon/human))
+				if(ishuman(src))
 					var/mob/living/carbon/human/H = src
 					var/obj/item/organ/external/organ = H.get_organ(BP_TORSO)
 					if (istype(organ))
@@ -161,10 +159,10 @@
 	if (shock_damage<1)
 		return 0
 
-	src.apply_damage(0.2 * shock_damage, BURN, def_zone, used_weapon="Electrocution") //shock the target organ
-	src.apply_damage(0.4 * shock_damage, BURN, BP_TORSO, used_weapon="Electrocution") //shock the torso more
-	src.apply_damage(0.2 * shock_damage, BURN, null, used_weapon="Electrocution") //shock a random part!
-	src.apply_damage(0.2 * shock_damage, BURN, null, used_weapon="Electrocution") //shock a random part!
+	src.apply_damage(0.2 * shock_damage, BURN, def_zone) //shock the target organ
+	src.apply_damage(0.4 * shock_damage, BURN, BP_TORSO) //shock the torso more
+	src.apply_damage(0.2 * shock_damage, BURN, null) //shock a random part!
+	src.apply_damage(0.2 * shock_damage, BURN, null) //shock a random part!
 
 	playsound(src, "sparks", 50, 1, -1)
 	if (shock_damage > 15)
@@ -198,8 +196,8 @@
 	return shock_damage
 
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
-	if (src.health >= CONFIG_GET(number/health_threshold_crit)) // CHOMPEdit
-		if(src == M && istype(src, /mob/living/carbon/human))
+	if (src.health >= CONFIG_GET(number/health_threshold_crit))
+		if(src == M && ishuman(src))
 			var/mob/living/carbon/human/H = src
 			var/datum/gender/T = gender_datums[H.get_visible_gender()]
 			src.visible_message( \
@@ -277,7 +275,7 @@
 							src.ExtinguishMob()
 							src.fire_stacks = 0
 		else
-			if (istype(src,/mob/living/carbon/human) && src:w_uniform)
+			if (ishuman(src) && src:w_uniform)
 				var/mob/living/carbon/human/H = src
 				H.w_uniform.add_fingerprint(M)
 
@@ -306,8 +304,8 @@
 						M.adjust_fire_stacks(-1)
 					if(M.on_fire)
 						src.IgniteMob()
-					if(do_after(M, 0.5 SECONDS)) //.5 second delay. Makes it a bit stronger than just typing rest.
-						M.resting = 0 //Hoist yourself up up off the ground. No para/stunned/weakened removal.
+					M.resting = 0 //Hoist yourself up up off the ground. No para/stunned/weakened removal.
+					update_canmove()
 				else if(istype(hugger))
 					hugger.species.hug(hugger,src)
 				else
@@ -402,7 +400,10 @@
 		return
 	..()
 	if(istype(A, /mob/living/carbon) && prob(10))
-		spread_disease_to(A, "Contact")
+		var/mob/living/carbon/human/H = A
+		for(var/datum/disease/D in GetViruses())
+			if(D.spread_flags & CONTACT_GENERAL)
+				H.ContractDisease(D)
 
 /mob/living/carbon/cannot_use_vents()
 	return
@@ -465,7 +466,7 @@
 		throw_alert("handcuffed", /obj/screen/alert/restrained/handcuffed, new_master = handcuffed)
 	else
 		clear_alert("handcuffed")
-	update_action_buttons() //some of our action buttons might be unusable when we're handcuffed.
+	update_mob_action_buttons() //some of our action buttons might be unusable when we're handcuffed.
 	update_inv_handcuffed()
 
 // Clears blood overlays
@@ -552,3 +553,12 @@
 	if(allergen_type in species.food_preference)
 		return species.food_preference_bonus
 	return 0
+
+/mob/living/carbon/handle_diseases()
+	for(var/thing in GetViruses())
+		var/datum/disease/D = thing
+		if(prob(D.infectivity))
+			D.spread()
+
+		if(stat != DEAD || D.allow_dead)
+			D.stage_act()

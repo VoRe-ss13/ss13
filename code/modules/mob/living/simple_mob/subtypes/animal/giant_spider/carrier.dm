@@ -27,7 +27,7 @@
 	melee_damage_upper = 25
 
 	poison_per_bite = 3
-	poison_type = "chloralhydrate"
+	poison_type = REAGENT_ID_CHLORALHYDRATE
 
 	movement_cooldown = 2
 
@@ -39,7 +39,7 @@
 	var/swarmling_type = /mob/living/simple_mob/animal/giant_spider/hunter
 	var/swarmling_prob = 10 // Odds that a spiderling will be a swarmling instead.
 
-/mob/living/simple_mob/animal/giant_spider/carrier/Initialize()
+/mob/living/simple_mob/animal/giant_spider/carrier/Initialize(mapload)
 	spiderling_count = rand(5, 10)
 	adjust_scale(1.2)
 	return ..()

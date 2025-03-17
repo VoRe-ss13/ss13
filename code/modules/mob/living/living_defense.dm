@@ -130,12 +130,12 @@
 	if(P.taser_effect)
 		stun_effect_act(0, P.agony, def_zone, P)
 		if(!P.nodamage)
-			apply_damage(P.damage, P.damage_type, def_zone, absorb, soaked, 0, P, sharp=proj_sharp, edge=proj_edge)
+			apply_damage(P.damage, P.damage_type, def_zone, absorb, soaked, 0, sharp=proj_sharp, edge=proj_edge, used_weapon=P, projectile=TRUE)
 		qdel(P)
 		return
 
 	if(!P.nodamage)
-		apply_damage(P.damage, P.damage_type, def_zone, absorb, soaked, 0, P, sharp=proj_sharp, edge=proj_edge)
+		apply_damage(P.damage, P.damage_type, def_zone, absorb, soaked, 0, sharp=proj_sharp, edge=proj_edge, used_weapon=P, projectile=TRUE)
 	P.on_hit(src, absorb, soaked, def_zone)
 
 	if(absorb == 100)
@@ -158,7 +158,7 @@
 		apply_effect(EYE_BLUR, stun_amount)
 
 	if (agony_amount)
-		apply_damage(agony_amount, HALLOSS, def_zone, 0, used_weapon)
+		apply_damage(agony_amount, HALLOSS, def_zone, 0, used_weapon=used_weapon)
 		apply_effect(STUTTER, agony_amount/10)
 		apply_effect(EYE_BLUR, agony_amount/10)
 
@@ -263,6 +263,8 @@
 
 //this proc handles being hit by a thrown atom
 /mob/living/hitby(atom/movable/AM as mob|obj,var/speed = THROWFORCE_SPEED_DIVISOR)//Standardization and logging -Sieve
+	if(is_incorporeal())
+		return
 	if(istype(AM,/obj/))
 		var/obj/O = AM
 		if(stat != DEAD && istype(O,/obj/item) && trash_catching && vore_selected) //ported from chompstation
@@ -333,7 +335,7 @@
 
 	//VORESTATION EDIT START - Allows for thrown vore! //CHOMPEdit Start
 	//Throwing a prey into a pred takes priority. After that it checks to see if the person being thrown is a pred.
-	if(istype(AM, /mob/living))
+	if(isliving(AM))
 		var/mob/living/thrown_mob = AM
 
 		// PERSON BEING HIT: CAN BE DROP PRED, ALLOWS THROW VORE.
@@ -431,7 +433,7 @@
 	return
 
 /mob/living/proc/adjust_fire_stacks(add_fire_stacks) //Adjusting the amount of fire_stacks we have on person
-    fire_stacks = CLAMP(fire_stacks + add_fire_stacks, FIRE_MIN_STACKS, FIRE_MAX_STACKS)
+	fire_stacks = CLAMP(fire_stacks + add_fire_stacks, FIRE_MIN_STACKS, FIRE_MAX_STACKS)
 
 /mob/living/proc/handle_fire()
 	if(fire_stacks < 0)
@@ -447,7 +449,7 @@
 		return 1
 
 	var/datum/gas_mixture/G = loc.return_air() // Check if we're standing in an oxygenless environment
-	if(G.gas["oxygen"] < 1)
+	if(G.gas[GAS_O2] < 1)
 		ExtinguishMob() //If there's no oxygen in the tile we're on, put out the fire
 		return 1
 
@@ -529,22 +531,6 @@
 /mob/living/proc/reagent_permeability()
 	return 1
 
-/mob/living/proc/handle_actions()
-	//Pretty bad, i'd use picked/dropped instead but the parent calls in these are nonexistent
-	for(var/datum/action/A in actions)
-		if(A.CheckRemoval(src))
-			A.Remove(src)
-	for(var/obj/item/I in src)
-		if(I.action_button_name)
-			if(!I.action)
-				if(I.action_button_is_hands_free)
-					I.action = new/datum/action/item_action/hands_free
-				else
-					I.action = new/datum/action/item_action
-				I.action.name = I.action_button_name
-				I.action.target = I
-			I.action.Grant(src)
-	return
 
 // Returns a number to determine if something is harder or easier to hit than normal.
 /mob/living/proc/get_evasion()

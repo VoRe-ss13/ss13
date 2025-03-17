@@ -1,9 +1,13 @@
-import { BooleanLike } from 'common/react';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Box, Button, LabeledList, Section } from 'tgui-core/components';
+import type { BooleanLike } from 'tgui-core/react';
 
-import { useBackend } from '../backend';
-import { Box, Button, LabeledList, Section } from '../components';
-import { Window } from '../layouts';
-import { GeneralRecord, RecordList, SecurityRecord } from './Pda/pda_types';
+import type {
+  GeneralRecord,
+  RecordList,
+  SecurityRecord,
+} from './Pda/pda_types';
 
 type Data = {
   records: RecordList;

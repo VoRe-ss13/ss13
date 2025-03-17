@@ -2,14 +2,14 @@
 //Thanks to Kilakk for the admin-button portion of this code.
 
 var/global/send_emergency_team = 0 // Used for automagic response teams
-                                   // 'admin_emergency_team' for admin-spawned response teams
+   									// 'admin_emergency_team' for admin-spawned response teams
 var/ert_base_chance = 10 // Default base chance. Will be incremented by increment ERT chance.
 var/can_call_ert
 var/silent_ert = 0
 
 /client/proc/response_team()
 	set name = "Dispatch Emergency Response Team"
-	set category = "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 	set desc = "Send an emergency response team to the station"
 
 	if(!holder)
@@ -43,13 +43,13 @@ var/silent_ert = 0
 /client/verb/JoinResponseTeam()
 
 	set name = "Join Response Team"
-	set category = "IC.Event" //CHOMPEdit
+	set category = "IC.Event"
 
 	if(!MayRespawn(1))
 		to_chat(usr, span_warning("You cannot join the response team at this time."))
 		return
 
-	if(istype(usr,/mob/observer/dead) || istype(usr,/mob/new_player))
+	if(isobserver(usr) || isnewplayer(usr))
 		if(!send_emergency_team)
 			to_chat(usr, "No emergency response team is currently being sent.")
 			return

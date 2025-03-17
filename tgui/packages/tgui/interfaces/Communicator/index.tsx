@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Box } from 'tgui-core/components';
 
-import { useBackend } from '../../backend';
-import { Box } from '../../components';
-import { Window } from '../../layouts';
 import { CrewManifestContent } from '../CrewManifest';
 import { CommunicatorContactTab } from './CommunicatorContactTab';
 import {
@@ -20,7 +20,7 @@ import { CommunicatorPhoneTab } from './CommunicatorPhoneTab';
 import { CommunicatorSettingsTab } from './CommunicatorSettingsTab';
 import { CommunicatorWeatherTab } from './CommunicatorWeatherTab';
 import { notFound, tabs } from './constants';
-import { Data } from './types';
+import type { Data } from './types';
 
 export const Communicator = () => {
   const { act, data } = useBackend<Data>();

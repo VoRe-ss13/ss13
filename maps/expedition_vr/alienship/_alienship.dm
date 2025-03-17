@@ -28,7 +28,7 @@
 	var/door_on_mode
 	var/teleport_on_mode
 
-/obj/away_mission_init/alienship/Initialize()
+/obj/away_mission_init/alienship/Initialize(mapload)
 	. = ..()
 
 	if(!mission_mode) //WE ARE NUMBER ONE
@@ -101,7 +101,7 @@
 	icon = 'alienship.dmi'
 	icon_state = "alien_injector"
 	item_state = "autoinjector"
-	filled_reagents = list("rezadone" = 4, "corophizine" = 1)
+	filled_reagents = list(REAGENT_ID_REZADONE = 4, REAGENT_ID_COROPHIZINE = 1)
 
 
 // -- Areas -- //
@@ -114,7 +114,7 @@
 	var/area/dump_area
 	var/obj/shuttle_connector/shuttle_friend
 
-/area/shuttle/excursion/away_alienship/Initialize()
+/area/shuttle/excursion/away_alienship/Initialize(mapload)
 	. = ..()
 	dump_area = locate(/area/tether_away/alienship/equip_dump)
 

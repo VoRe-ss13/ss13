@@ -1,20 +1,20 @@
-import { capitalize } from 'common/string';
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import {
+  Box,
   Button,
   Divider,
-  Flex,
   Icon,
-  Image,
   Input,
   Section,
   Stack,
-} from 'tgui/components';
+} from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+import { capitalize } from 'tgui-core/string';
 
 import { NoSpriteWarning } from '../components';
 import { prepareSearch } from '../functions';
-import { Target } from '../types';
+import type { Target } from '../types';
 
 export const ModifyRobotRadio = (props: { target: Target }) => {
   const { target } = props;
@@ -25,8 +25,8 @@ export const ModifyRobotRadio = (props: { target: Target }) => {
   return (
     <>
       {!target.active && <NoSpriteWarning name={target.name} />}
-      <Flex height={!target.active ? '75%' : '80%'}>
-        <Flex.Item width="30%" fill>
+      <Stack height={!target.active ? '75%' : '80%'}>
+        <Stack.Item width="30%">
           <RadioSection
             title="Add Radio Channel"
             searchText={searchChannelAddText}
@@ -36,19 +36,19 @@ export const ModifyRobotRadio = (props: { target: Target }) => {
             buttonColor="green"
             buttonIcon="arrow-right-to-bracket"
           />
-        </Flex.Item>
-        <Flex.Item width="40%">
-          <Image
-            src={'data:image/jpeg;base64, ' + target.back}
-            style={{
-              display: 'block',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              width: '200px',
-            }}
-          />
-        </Flex.Item>
-        <Flex.Item width="30%" fill>
+        </Stack.Item>
+        <Stack.Item width="40%">
+          <Stack>
+            <Stack.Item grow />
+            <Stack.Item>
+              <Box
+                className={classes([target.sprite_size, target.sprite + 'N'])}
+              />
+            </Stack.Item>
+            <Stack.Item grow />
+          </Stack>
+        </Stack.Item>
+        <Stack.Item width="30%">
           <RadioSection
             title="Remove Radio Channel"
             searchText={searchChannelRemoveText}
@@ -58,8 +58,8 @@ export const ModifyRobotRadio = (props: { target: Target }) => {
             buttonColor="red"
             buttonIcon="trash"
           />
-        </Flex.Item>
-      </Flex>
+        </Stack.Item>
+      </Stack>
     </>
   );
 };
@@ -105,17 +105,18 @@ const RadioSection = (props: {
                   })
                 }
               >
-                <Flex varticalAlign="center">
-                  <Flex.Item>{capitalize(channel)}</Flex.Item>
-                  <Flex.Item grow />
-                  <Flex.Item>
+                <Stack fill align="center">
+                  <Stack.Item grow overflow="hidden">
+                    {capitalize(channel)}
+                  </Stack.Item>
+                  <Stack.Item>
                     <Icon
                       name={buttonIcon}
                       backgroundColor={buttonColor}
                       size={1.5}
                     />
-                  </Flex.Item>
-                </Flex>
+                  </Stack.Item>
+                </Stack>
               </Button>
             );
           })}

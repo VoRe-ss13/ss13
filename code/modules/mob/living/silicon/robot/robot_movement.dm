@@ -39,7 +39,7 @@
 	if(nutrition > 1000) //CHOMPAdd
 		. += nutrition / 2000 //CHOMPAdd
 
-	. += CONFIG_GET(number/robot_delay) // CHOMPEdit
+	. += CONFIG_GET(number/robot_delay)
 
 	. += ..()
 
@@ -84,7 +84,7 @@
 			else if(istype(A, /obj/item))
 				var/obj/item/cleaned_item = A
 				cleaned_item.clean_blood()
-			else if(istype(A, /mob/living/carbon/human))
+			else if(ishuman(A))
 				var/mob/living/carbon/human/cleaned_human = A
 				if(cleaned_human.lying)
 					if(cleaned_human.head)

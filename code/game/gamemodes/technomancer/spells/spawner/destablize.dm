@@ -14,8 +14,8 @@
 	aspect = ASPECT_UNSTABLE
 	spawner_type = /obj/effect/temporary_effect/destablize
 
-/obj/item/spell/spawner/destablize/New()
-	..()
+/obj/item/spell/spawner/destablize/Initialize(mapload)
+	. = ..()
 	set_light(3, 2, l_color = "#C26DDE")
 
 /obj/item/spell/spawner/destablize/on_ranged_cast(atom/hit_atom, mob/user)
@@ -36,7 +36,7 @@
 	var/instability_power = 5
 	var/instability_range = 6
 
-/obj/effect/temporary_effect/destablize/Initialize()
+/obj/effect/temporary_effect/destablize/Initialize(mapload)
 	. = ..()
 	radiate_loop()
 

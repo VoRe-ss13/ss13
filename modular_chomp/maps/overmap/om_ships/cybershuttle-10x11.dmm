@@ -15,10 +15,10 @@
 /obj/item/gps/explorer,
 /obj/structure/closet/walllocker_double/east,
 /obj/item/gun/projectile/garand,
-/obj/item/ammo_magazine/clip/medium,
-/obj/item/ammo_magazine/clip/medium,
-/obj/item/ammo_magazine/clip/medium,
 /obj/item/storage/firstaid/regular,
+/obj/item/ammo_magazine/clip/c762,
+/obj/item/ammo_magazine/clip/c762,
+/obj/item/ammo_magazine/clip/c762,
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/cybershuttle)
 "e" = (
@@ -26,8 +26,6 @@
 	safe = 0
 	},
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/map_helper/airlock/door/ext_door,
@@ -64,9 +62,7 @@
 /area/shuttle/cybershuttle)
 "k" = (
 /obj/machinery/light,
-/obj/machinery/atmospherics/portables_connector{
-	dir = 2
-	},
+/obj/machinery/atmospherics/portables_connector,
 /obj/machinery/portable_atmospherics/canister/air/airlock,
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/cybershuttle)
@@ -75,8 +71,6 @@
 /area/shuttle/cybershuttle)
 "m" = (
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
@@ -85,7 +79,6 @@
 /obj/structure/window/plastitanium,
 /obj/machinery/power/smes/buildable/point_of_interest,
 /obj/structure/cable/blue{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/plating,
@@ -93,25 +86,13 @@
 "q" = (
 /obj/machinery/computer/shuttle_control/explore/cybershuttle,
 /obj/structure/cable/yellow{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/cybershuttle)
 "r" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/shuttle/cybershuttle)
-"t" = (
-/obj/structure/window/plastitanium{
-	dir = 4
-	},
-/obj/structure/window/plastitanium{
-	dir = 4
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/cybershuttle)
@@ -120,8 +101,6 @@
 	safe = 0
 	},
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/map_helper/airlock/door/int_door,
@@ -145,7 +124,6 @@
 	dir = 4
 	},
 /obj/structure/cable/blue{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/alarms_hidden{
@@ -186,9 +164,7 @@
 /turf/simulated/floor/plating,
 /area/shuttle/cybershuttle)
 "E" = (
-/obj/machinery/computer/ship/sensors{
-	dir = 2
-	},
+/obj/machinery/computer/ship/sensors,
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/cybershuttle)
 "F" = (
@@ -226,8 +202,6 @@
 "R" = (
 /obj/effect/shuttle_landmark/shuttle_initializer/cybershuttle,
 /obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
 	icon_state = "2-4"
 	},
 /obj/machinery/light/small{
@@ -287,9 +261,7 @@
 /turf/simulated/floor/plating,
 /area/shuttle/cybershuttle)
 "Z" = (
-/obj/machinery/power/terminal{
-	dir = 2
-	},
+/obj/machinery/power/terminal,
 /obj/structure/cable/yellow,
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/cybershuttle)
@@ -366,7 +338,7 @@ E
 J
 g
 S
-t
+S
 r
 g
 z

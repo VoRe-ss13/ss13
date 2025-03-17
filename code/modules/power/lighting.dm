@@ -31,8 +31,8 @@ var/global/list/light_type_cache = list()
 
 	var/cell_connectors = TRUE
 
-/obj/machinery/light_construct/New(var/atom/newloc, var/newdir, var/building = 0, var/datum/frame/frame_types/frame_type, var/obj/machinery/light/fixture = null)
-	..(newloc)
+/obj/machinery/light_construct/Initialize(mapload, var/newdir, var/building = 0, var/datum/frame/frame_types/frame_type, var/obj/machinery/light/fixture = null)
+	. = ..()
 	if(fixture)
 		fixture_type = fixture.type
 		fixture.transfer_fingerprints_to(src)
@@ -79,7 +79,7 @@ var/global/list/light_type_cache = list()
 		cell.update_icon()
 		cell = null
 
-/obj/machinery/light_construct/attackby(obj/item/W as obj, mob/user as mob)
+/obj/machinery/light_construct/attackby(obj/item/W, mob/user)
 	src.add_fingerprint(user)
 	if(istype(W, /obj/item/cell/emergency_light))
 		if(!cell_connectors)
@@ -102,8 +102,8 @@ var/global/list/light_type_cache = list()
 	if (W.has_tool_quality(TOOL_WRENCH))
 		if (src.stage == 1)
 			playsound(src, W.usesound, 75, 1)
-			to_chat(usr, "You begin deconstructing [src].")
-			if (!do_after(usr, 30 * W.toolspeed))
+			to_chat(user, "You begin deconstructing [src].")
+			if (!do_after(user, 30 * W.toolspeed))
 				return
 			new /obj/item/stack/material/steel( get_turf(src.loc), sheets_refunded )
 			user.visible_message("[user.name] deconstructs [src].", \
@@ -111,11 +111,11 @@ var/global/list/light_type_cache = list()
 			playsound(src, 'sound/items/Deconstruct.ogg', 75, 1)
 			qdel(src)
 		if (src.stage == 2)
-			to_chat(usr, "You have to remove the wires first.")
+			to_chat(user, "You have to remove the wires first.")
 			return
 
 		if (src.stage == 3)
-			to_chat(usr, "You have to unscrew the case first.")
+			to_chat(user, "You have to unscrew the case first.")
 			return
 
 	if(W.has_tool_quality(TOOL_WIRECUTTER))
@@ -748,19 +748,27 @@ var/global/list/light_type_cache = list()
 
 /obj/machinery/light/proc/flicker(var/amount = rand(10, 20))
 	if(flickering) return
-	flickering = 1
-	spawn(0)
-		if(on && status == LIGHT_OK)
-			for(var/i = 0; i < amount; i++)
-				if(status != LIGHT_OK) break
-				on = !on
-				update(0)
-				if(!on) // Only play when the light turns off.
-					playsound(src, 'sound/effects/light_flicker.ogg', 50, 1)
-				sleep(rand(5, 15))
-			on = (status == LIGHT_OK)
-			update(0)
+	if(on && status == LIGHT_OK)
+		flickering = 1
+		do_flicker(amount)
+
+/obj/machinery/light/proc/do_flicker(remaining_flicks)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	PRIVATE_PROC(TRUE)
+	if(status != LIGHT_OK)
 		flickering = 0
+		return
+	on = !on
+	update(0)
+	if(!on) // Only play when the light turns off.
+		playsound(src, 'sound/effects/light_flicker.ogg', 50, 1)
+	if(remaining_flicks > 0)
+		remaining_flicks--
+		addtimer(CALLBACK(src, PROC_REF(do_flicker), remaining_flicks), rand(5, 15), TIMER_DELETE_ME)
+		return
+	on = (status == LIGHT_OK)
+	update(0)
+	flickering = 0
 
 // ai attack - turn on/off emergency lighting for a specific fixture
 /obj/machinery/light/attack_ai(mob/user)
@@ -787,7 +795,7 @@ var/global/list/light_type_cache = list()
 		to_chat(user, "There is no [get_fitting_name()] in this light.")
 		return
 
-	if(istype(user,/mob/living/carbon/human))
+	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.species.can_shred(H))
 			user.setClickCooldown(user.get_attack_speed())
@@ -1118,37 +1126,37 @@ var/global/list/light_type_cache = list()
 		"Nightshift Color",
 		)
 
-		var/modification_decision = tgui_input_list(usr, "What do you wish to change about this light?", "Light Adjustment", menu_list)
+		var/modification_decision = tgui_input_list(user, "What do you wish to change about this light?", "Light Adjustment", menu_list)
 		if(!modification_decision)
 			return //They didn't select anything!
 		switch(modification_decision)
 			if("Normal Range")
-				var/new_range = tgui_input_number(usr, "Choose the new range of the light! (1-[init_brightness_range])", "", init_brightness_range, init_brightness_range, 1, 0)
+				var/new_range = tgui_input_number(user, "Choose the new range of the light! (1-[init_brightness_range])", "", init_brightness_range, init_brightness_range, 1, 0)
 				if(new_range)
 					brightness_range = new_range
 
 			if("Normal Brightness")
-				var/new_power = tgui_input_number(usr, "Choose the new brightness of the light! (0.01 - [init_brightness_power])", "", init_brightness_power, init_brightness_power, 0.01, round_value=FALSE)
+				var/new_power = tgui_input_number(user, "Choose the new brightness of the light! (0.01 - [init_brightness_power])", "", init_brightness_power, init_brightness_power, 0.01, round_value=FALSE)
 				if(new_power)
 					brightness_power = new_power
 
 			if("Normal Color")
-				var/new_color = input(usr, "Choose a color to set the light to!", "", brightness_color) as color|null
+				var/new_color = tgui_color_picker(user, "Choose a color to set the light to!", "", brightness_color)
 				if(new_color)
 					brightness_color = new_color
 
 			if("Nightshift Range")
-				var/new_range = tgui_input_number(usr, "Choose the new range of the light! (1-[init_nightshift_range])", "", init_nightshift_range, init_nightshift_range, 1)
+				var/new_range = tgui_input_number(user, "Choose the new range of the light! (1-[init_nightshift_range])", "", init_nightshift_range, init_nightshift_range, 1)
 				if(new_range)
 					nightshift_range = new_range
 
 			if("Nightshift Brightness")
-				var/new_power = tgui_input_number(usr, "Choose the new brightness of the light! (0.01 - [init_nightshift_power])", "", init_nightshift_power, init_nightshift_power, 0.01, round_value=FALSE)
+				var/new_power = tgui_input_number(user, "Choose the new brightness of the light! (0.01 - [init_nightshift_power])", "", init_nightshift_power, init_nightshift_power, 0.01, round_value=FALSE)
 				if(new_power)
 					nightshift_power = new_power
 
 			if("Nightshift Color")
-				var/new_color = input(usr, "Choose a color to set the light to!", "", nightshift_color) as color|null
+				var/new_color = tgui_color_picker(user, "Choose a color to set the light to!", "", nightshift_color)
 				if(new_color)
 					nightshift_color = new_color
 
@@ -1160,7 +1168,7 @@ var/global/list/light_type_cache = list()
 
 		to_chat(user, "You inject the solution into the [src].")
 
-		if(S.reagents.has_reagent("phoron", 5))
+		if(S.reagents.has_reagent(REAGENT_ID_PHORON, 5))
 
 			log_admin("LOG: [user.name] ([user.ckey]) injected a light with phoron, rigging it to explode.")
 			message_admins("LOG: [user.name] ([user.ckey]) injected a light with phoron, rigging it to explode.")

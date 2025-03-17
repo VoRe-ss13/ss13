@@ -16,8 +16,8 @@
 	var/ar_toggled = TRUE //Used for toggle_ar_planes() verb
 
 
-/obj/item/clothing/glasses/omnihud/New()
-	..()
+/obj/item/clothing/glasses/omnihud/Initialize(mapload)
+	. = ..()
 	if(tgarscreen_path)
 		tgarscreen = new tgarscreen_path(src)
 
@@ -25,7 +25,7 @@
 	QDEL_NULL(tgarscreen)
 	. = ..()
 
-/obj/item/clothing/glasses/omnihud/dropped()
+/obj/item/clothing/glasses/omnihud/dropped(mob/user)
 	if(tgarscreen)
 		SStgui.close_uis(src)
 	..()
@@ -141,7 +141,7 @@
 		away_planes = null
 		to_chat(usr, span_notice("You enabled the Augmented Reality HUD of your [src.name]."))
 	ar_toggled = !ar_toggled
-	usr.update_action_buttons()
+	usr.update_mob_action_buttons()
 	usr.recalculate_vis()
 
 
@@ -167,7 +167,7 @@
 	These have been upgraded with medical records access and virus database integration. \
 	They can also read data from active suit sensors using the crew monitoring system."
 	mode = "med"
-	action_button_name = "AR Console (Crew Monitor)"
+	actions_types = list(/datum/action/item_action/ar_console_crew)
 	tgarscreen_path = /datum/tgui_module/crew_monitor/glasses
 	enables_planes = list(VIS_CH_ID,VIS_CH_HEALTH_VR,VIS_CH_STATUS_R,VIS_CH_BACKUP,VIS_AUGMENTED)
 
@@ -183,7 +183,7 @@
 	They also have access to security alerts such as camera and motion sensor alarms."
 	mode = "sec"
 	flash_protection = FLASH_PROTECTION_MODERATE //weld protection is a little too widespread
-	action_button_name = "AR Console (Security Alerts)"
+	actions_types = list(/datum/action/item_action/ar_console_security_alerts)
 	tgarscreen_path = /datum/tgui_module/alarm_monitor/security/glasses
 	enables_planes = list(VIS_CH_ID,VIS_CH_HEALTH_VR,VIS_CH_WANTED,VIS_AUGMENTED)
 
@@ -199,7 +199,7 @@
 	and can also display a list of atmospheric, fire, and power alarms."
 	mode = "eng"
 	flash_protection = FLASH_PROTECTION_MAJOR
-	action_button_name = "AR Console (Station Alerts)"
+	actions_types = list(/datum/action/item_action/ar_console_station_alerts)
 	tgarscreen_path = /datum/tgui_module/alarm_monitor/engineering/glasses
 
 /obj/item/clothing/glasses/omnihud/eng/ar_interact(var/mob/living/carbon/human/user)
@@ -234,7 +234,7 @@
 	set name = "Toggle projector"
 	set category = "Object"
 	set src in usr
-	if(!istype(usr, /mob/living)) return
+	if(!isliving(usr)) return
 	if(usr.stat) return
 	if(toggleable)
 		if(active)
@@ -249,7 +249,7 @@
 			item_state = initial(item_state)
 			usr.update_inv_glasses()
 			to_chat(usr, "You activate the retinal projector on the [src].")
-		usr.update_action_buttons()
+		usr.update_mob_action_buttons()
 
 /obj/item/clothing/glasses/omnihud/all
 	name = "\improper AR-B glasses"
@@ -259,7 +259,7 @@
 	mode = "best"
 	flash_protection = FLASH_PROTECTION_MAJOR
 	enables_planes = list(VIS_CH_ID,VIS_CH_HEALTH_VR,VIS_CH_STATUS_R,VIS_CH_BACKUP,VIS_CH_WANTED,VIS_AUGMENTED)
-	action_button_name = "AR Console (All Alerts)"
+	actions_types = list(/datum/action/item_action/ar_console_all_alerts)
 	tgarscreen_path = /datum/tgui_module/alarm_monitor/all/glasses
 
 /obj/item/clothing/glasses/omnihud/all/ar_interact(var/mob/living/carbon/human/user)
@@ -268,19 +268,19 @@
 	return 1
 
 /obj/item/clothing/glasses/hud/security/eyepatch
-    name = "Security Hudpatch"
-    desc = "An eyepatch with built in scanners, that analyzes those in view and provides accurate data about their ID status and security records."
-    icon_state = "eyepatch"
-    item_state_slots = list(slot_r_hand_str = "blindfold", slot_l_hand_str = "blindfold")
-    body_parts_covered = 0
-    enables_planes = list(VIS_CH_ID,VIS_CH_WANTED,VIS_CH_IMPTRACK,VIS_CH_IMPLOYAL,VIS_CH_IMPCHEM)
-    var/eye = null
+	name = "Security Hudpatch"
+	desc = "An eyepatch with built in scanners, that analyzes those in view and provides accurate data about their ID status and security records."
+	icon_state = "eyepatch"
+	item_state_slots = list(slot_r_hand_str = "blindfold", slot_l_hand_str = "blindfold")
+	body_parts_covered = 0
+	enables_planes = list(VIS_CH_ID,VIS_CH_WANTED,VIS_CH_IMPTRACK,VIS_CH_IMPLOYAL,VIS_CH_IMPCHEM)
+	var/eye = null
 
 /obj/item/clothing/glasses/hud/security/eyepatch/verb/switcheye()
 	set name = "Switch Eyepatch"
 	set category = "Object"
 	set src in usr
-	if(!istype(usr, /mob/living)) return
+	if(!isliving(usr)) return
 	if(usr.stat) return
 
 	eye = !eye
@@ -291,21 +291,21 @@
 	update_clothing_icon()
 
 /obj/item/clothing/glasses/hud/security/eyepatch2
-    name = "Security Hudpatch MKII"
-    desc = "An eyepatch with built in scanners, that analyzes those in view and provides accurate data about their ID status and security records. This updated model offers better ergonomics and updated sensors."
-    icon = 'icons/inventory/eyes/item_vr.dmi'
-    icon_override = 'icons/inventory/eyes/mob_vr.dmi'
-    icon_state = "sec_eyepatch"
-    item_state_slots = list(slot_r_hand_str = "blindfold", slot_l_hand_str = "blindfold")
-    body_parts_covered = 0
-    enables_planes = list(VIS_CH_ID,VIS_CH_WANTED,VIS_CH_IMPTRACK,VIS_CH_IMPLOYAL,VIS_CH_IMPCHEM)
-    var/eye = null
+	name = "Security Hudpatch MKII"
+	desc = "An eyepatch with built in scanners, that analyzes those in view and provides accurate data about their ID status and security records. This updated model offers better ergonomics and updated sensors."
+	icon = 'icons/inventory/eyes/item_vr.dmi'
+	icon_override = 'icons/inventory/eyes/mob_vr.dmi'
+	icon_state = "sec_eyepatch"
+	item_state_slots = list(slot_r_hand_str = "blindfold", slot_l_hand_str = "blindfold")
+	body_parts_covered = 0
+	enables_planes = list(VIS_CH_ID,VIS_CH_WANTED,VIS_CH_IMPTRACK,VIS_CH_IMPLOYAL,VIS_CH_IMPCHEM)
+	var/eye = null
 
 /obj/item/clothing/glasses/hud/security/eyepatch2/verb/switcheye()
 	set name = "Switch Eyepatch"
 	set category = "Object"
 	set src in usr
-	if(!istype(usr, /mob/living)) return
+	if(!isliving(usr)) return
 	if(usr.stat) return
 
 	eye = !eye
@@ -317,19 +317,19 @@
 
 
 /obj/item/clothing/glasses/hud/health/eyepatch
-    name = "Medical Hudpatch"
-    desc = "An eyepatch with built in scanners, that analyzes those in view and provides accurate data about their health status."
-    icon_state = "eyepatch"
-    item_state_slots = list(slot_r_hand_str = "blindfold", slot_l_hand_str = "blindfold")
-    body_parts_covered = 0
-    enables_planes =  list(VIS_CH_STATUS,VIS_CH_HEALTH)
-    var/eye = null
+	name = "Medical Hudpatch"
+	desc = "An eyepatch with built in scanners, that analyzes those in view and provides accurate data about their health status."
+	icon_state = "eyepatch"
+	item_state_slots = list(slot_r_hand_str = "blindfold", slot_l_hand_str = "blindfold")
+	body_parts_covered = 0
+	enables_planes =  list(VIS_CH_STATUS,VIS_CH_HEALTH)
+	var/eye = null
 
 /obj/item/clothing/glasses/hud/health/eyepatch/verb/switcheye()
 	set name = "Switch Eyepatch"
 	set category = "Object"
 	set src in usr
-	if(!istype(usr, /mob/living)) return
+	if(!isliving(usr)) return
 	if(usr.stat) return
 
 	eye = !eye

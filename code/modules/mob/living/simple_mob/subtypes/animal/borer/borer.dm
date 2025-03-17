@@ -42,6 +42,7 @@
 
 	var/has_reproduced = FALSE
 	var/used_dominate							// world.time when the dominate power was last used.
+	var/datum/ghost_query/Q						// Used to unregister our signal
 
 	can_be_drop_prey = FALSE //CHOMP Add
 
@@ -56,7 +57,7 @@
 	if(antag && mind)
 		borers.add_antagonist(mind)
 
-/mob/living/simple_mob/animal/borer/Initialize()
+/mob/living/simple_mob/animal/borer/Initialize(mapload)
 	add_language("Cortical Link")
 
 	add_verb(src, /mob/living/proc/ventcrawl)
@@ -72,7 +73,7 @@
 /mob/living/simple_mob/animal/borer/handle_special()
 	if(host && !stat && !host.stat)
 		// Handle docility.
-		if(host.reagents.has_reagent("sugar") && !docile)
+		if(host.reagents.has_reagent(REAGENT_ID_SUGAR) && !docile)
 			var/message = "You feel the soporific flow of sugar in your host's blood, lulling you into docility."
 			var/target = controlling ? host : src
 			to_chat(target, span_warning(message))
@@ -109,7 +110,7 @@
 	if(!host || !controlling)
 		return
 
-	if(istype(host, /mob/living/carbon/human))
+	if(ishuman(host))
 		var/mob/living/carbon/human/H = host
 		var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
 		if(head)
@@ -171,7 +172,7 @@
 	reset_view(null)
 	machine = null
 
-	if(istype(host, /mob/living/carbon/human))
+	if(ishuman(host))
 		var/mob/living/carbon/human/H = host
 		var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
 		if(head)
@@ -182,11 +183,16 @@
 	host = null
 
 /mob/living/simple_mob/animal/borer/proc/request_player()
-	var/datum/ghost_query/Q = new /datum/ghost_query/borer()
-	var/list/winner = Q.query() // This will sleep the proc for awhile.
-	if(winner.len)
-		var/mob/observer/dead/D = winner[1]
+	Q = new /datum/ghost_query/borer()
+	RegisterSignal(Q, COMSIG_GHOST_QUERY_COMPLETE, PROC_REF(get_winner))
+	Q.query() // This will sleep the proc for awhile.
+
+/mob/living/simple_mob/animal/borer/proc/get_winner()
+	if(Q && Q.candidates.len) //Q should NEVER get deleted but...whatever, sanity.
+		var/mob/observer/dead/D = Q.candidates[1]
 		transfer_personality(D)
+	UnregisterSignal(Q, COMSIG_GHOST_QUERY_COMPLETE)
+	qdel_null(Q) //get rid of the query
 
 /mob/living/simple_mob/animal/borer/proc/transfer_personality(mob/candidate)
 	if(!candidate || !candidate.mind)
@@ -245,7 +251,7 @@
 					nearby_mobs += LM
 			var/mob/living/speaker
 			if(nearby_mobs.len)
-				speaker = tgui_input_list(usr, "Choose a target speaker:", "Target Choice", nearby_mobs)
+				speaker = tgui_input_list(src, "Choose a target speaker:", "Target Choice", nearby_mobs)
 			if(speaker)
 				log_admin("[src.ckey]/([src]) tried to force [speaker] to say: [message]")
 				message_admins("[src.ckey]/([src]) tried to force [speaker] to say: [message]")
@@ -260,7 +266,7 @@
 	to_chat(host, "Your own thoughts speak: \"[message]\"")
 
 	for(var/mob/M in player_list)
-		if(istype(M, /mob/new_player))
+		if(isnewplayer(M))
 			continue
 		else if(M.stat == DEAD && M.client?.prefs?.read_preference(/datum/preference/toggle/ghost_ears))
 			to_chat(M, "[src.true_name] whispers to [host], \"[message]\"")

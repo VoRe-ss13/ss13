@@ -36,7 +36,7 @@
 	maptext_height = 26
 	maptext_width = 32
 
-/obj/machinery/door_timer/Initialize()
+/obj/machinery/door_timer/Initialize(mapload)
 	..()
 	return INITIALIZE_HINT_LATELOAD
 
@@ -173,13 +173,13 @@
 			break
 	return data
 
-/obj/machinery/door_timer/tgui_act(action, params)
+/obj/machinery/door_timer/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return
 	. = TRUE
 
-	if(!allowed(usr))
-		to_chat(usr, span_warning("Access denied."))
+	if(!allowed(ui.user))
+		to_chat(ui.user, span_warning("Access denied."))
 		return FALSE
 
 	switch(action)

@@ -16,8 +16,8 @@
 	var/footer = null
 	var/footerOn = FALSE
 
-/obj/item/paper/admin/Initialize() //ChompEDIT New --> Initialize
-	..()
+/obj/item/paper/admin/Initialize(mapload) //ChompEDIT New --> Initialize
+	. = ..()
 	generateInteractions()
 
 
@@ -27,13 +27,13 @@
 
 	//Snapshot is crazy and likes putting each topic hyperlink on a seperate line from any other tags so it's nice and clean.
 	interactions += "<HR><center><font size= \"1\">The fax will transmit everything above this line</font><br>"
-	interactions += "<A href='?src=\ref[src];[HrefToken()];confirm=1'>Send fax</A> "
-	interactions += "<A href='?src=\ref[src];[HrefToken()];penmode=1'>Pen mode: [isCrayon ? "Crayon" : "Pen"]</A> "
-	interactions += "<A href='?src=\ref[src];[HrefToken()];cancel=1'>Cancel fax</A> "
+	interactions += "<A href='byond://?src=\ref[src];[HrefToken()];confirm=1'>Send fax</A> "
+	interactions += "<A href='byond://?src=\ref[src];[HrefToken()];penmode=1'>Pen mode: [isCrayon ? "Crayon" : "Pen"]</A> "
+	interactions += "<A href='byond://?src=\ref[src];[HrefToken()];cancel=1'>Cancel fax</A> "
 	interactions += "<BR>"
-	interactions += "<A href='?src=\ref[src];[HrefToken()];toggleheader=1'>Toggle Header</A> "
-	interactions += "<A href='?src=\ref[src];[HrefToken()];togglefooter=1'>Toggle Footer</A> "
-	interactions += "<A href='?src=\ref[src];[HrefToken()];clear=1'>Clear page</A> "
+	interactions += "<A href='byond://?src=\ref[src];[HrefToken()];toggleheader=1'>Toggle Header</A> "
+	interactions += "<A href='byond://?src=\ref[src];[HrefToken()];togglefooter=1'>Toggle Footer</A> "
+	interactions += "<A href='byond://?src=\ref[src];[HrefToken()];clear=1'>Clear page</A> "
 	interactions += "</center>"
 
 /obj/item/paper/admin/proc/generateHeader()
@@ -54,8 +54,7 @@
 	//TODO change logo based on who you're contacting.
 	text = "<center><img src = [logo]></br>"
 	text += span_bold("[origin] Quantum Uplink Signed Message") + "<br>"
-	text += "<font size = \"1\">Encryption key: [originhash]<br>"
-	text += "Challenge: [timehash]<br></font></center><hr>"
+	text += span_small("Encryption key: [originhash]<br>Challenge: [timehash]") + "<br></center><hr>"
 
 	header = text
 

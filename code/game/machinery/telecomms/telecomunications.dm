@@ -115,9 +115,15 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 		return 0
 
 
-/obj/machinery/telecomms/New()
+/obj/machinery/telecomms/Initialize(mapload)
 	telecomms_list += src
 	..()
+	default_apply_parts()
+	return INITIALIZE_HINT_LATELOAD
+
+
+/obj/machinery/telecomms/LateInitialize()
+	. = ..()
 
 	//Set the listening_level if there's none.
 	if(!listening_level)
@@ -125,7 +131,6 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 		var/turf/position = get_turf(src)
 		listening_level = position.z
 
-/obj/machinery/telecomms/Initialize()
 	if(autolinkers.len)
 		// Links nearby machines
 		if(!long_range_link)
@@ -148,7 +153,6 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 			soundloop.mid_length = 30
 	soundloop.start()
 	// CHOMPAdd End
-	. = ..()
 
 /obj/machinery/telecomms/Destroy()
 	telecomms_list -= src
@@ -156,7 +160,7 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 		comm.links -= src
 	links = list()
 	QDEL_NULL(soundloop) // CHOMPAdd: Tcomms noises
-	..()
+	. = ..()
 
 // Used in auto linking
 /obj/machinery/telecomms/proc/add_link(var/obj/machinery/telecomms/T)
@@ -214,6 +218,8 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	..()
 
 /obj/machinery/telecomms/proc/checkheat()
+	if(QDELETED(src))
+		return
 	// Checks heat from the environment and applies any integrity damage
 	var/datum/gas_mixture/environment = loc.return_air()
 	var/damage_chance = 0                           // Percent based chance of applying 1 integrity damage this tick
@@ -289,10 +295,6 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	var/overmap_range_max = 5
 
 	var/list/linked_radios_weakrefs = list()
-
-/obj/machinery/telecomms/receiver/Initialize()
-	. = ..()
-	default_apply_parts()
 
 /obj/machinery/telecomms/receiver/proc/link_radio(var/obj/item/radio/R)
 	if(!istype(R))
@@ -373,10 +375,6 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	long_range_link = 1
 	netspeed = 40
 
-/obj/machinery/telecomms/hub/Initialize()
-	. = ..()
-	default_apply_parts()
-
 /obj/machinery/telecomms/hub/receive_information(datum/signal/signal, obj/machinery/telecomms/machine_from)
 	if(is_freq_listening(signal))
 		if(istype(machine_from, /obj/machinery/telecomms/receiver))
@@ -412,10 +410,6 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	long_range_link = 1
 	var/broadcasting = 1
 	var/receiving = 1
-
-/obj/machinery/telecomms/relay/Initialize()
-	. = ..()
-	default_apply_parts()
 
 /obj/machinery/telecomms/relay/forceMove(var/newloc)
 	. = ..(newloc)
@@ -470,10 +464,6 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	netspeed = 40
 	var/change_frequency = 0
 
-/obj/machinery/telecomms/bus/Initialize()
-	. = ..()
-	default_apply_parts()
-
 /obj/machinery/telecomms/bus/receive_information(datum/signal/signal, obj/machinery/telecomms/machine_from)
 
 	if(is_freq_listening(signal))
@@ -526,10 +516,6 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 	circuit = /obj/item/circuitboard/telecomms/processor
 	var/process_mode = 1 // 1 = Uncompress Signals, 0 = Compress Signals
 
-/obj/machinery/telecomms/processor/Initialize()
-	. = ..()
-	default_apply_parts()
-
 /obj/machinery/telecomms/processor/receive_information(datum/signal/signal, obj/machinery/telecomms/machine_from)
 
 	if(is_freq_listening(signal))
@@ -581,15 +567,11 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 							// would add up to md5("password123comsat")
 	var/obj/item/radio/headset/server_radio = null
 
-/obj/machinery/telecomms/server/New()
-	..()
+/obj/machinery/telecomms/server/Initialize(mapload)
 	Compiler = new()
 	Compiler.Holder = src
 	server_radio = new()
-
-/obj/machinery/telecomms/server/Initialize()
 	. = ..()
-	default_apply_parts()
 
 /obj/machinery/telecomms/server/receive_information(datum/signal/signal, obj/machinery/telecomms/machine_from)
 
@@ -641,7 +623,7 @@ var/global/list/obj/machinery/telecomms/telecomms_list = list()
 
 				log.parameters["race"] = race
 
-				if(!istype(M, /mob/new_player) && M)
+				if(!isnewplayer(M) && M)
 					log.parameters["uspeech"] = M.universal_speak
 				else
 					log.parameters["uspeech"] = 0

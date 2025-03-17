@@ -17,8 +17,6 @@
 	var/absorbing_prey = 0 				// Determines if the person is using the succubus drain or not. See station_special_abilities_vr.
 	var/drain_finalized = 0				// Determines if the succubus drain will be KO'd/absorbed. Can be toggled on at any time.
 	var/fuzzy = 0						// Preference toggle for sharp/fuzzy icon.
-//	var/voice_freq = 0					// Preference for character voice frequency		CHOMPEdit - Moved to modular_chomp/code/modules/mob/mob.dm
-//	var/list/voice_sounds_list = list()	// The sound list containing our voice sounds!	CHOMPEdit - Moved to modular_chomp/code/modules/mob/mob.dm
 	var/next_preyloop					// For Fancy sound internal loop
 	var/stuffing_feeder = FALSE			// Can feed foods to others whole, like trash eater can eat them on their own.
 	var/adminbus_trash = FALSE			// For abusing trash eater for event shenanigans.
@@ -26,7 +24,7 @@
 	var/vis_height = 32					// Sprite height used for resize features.
 	var/appendage_color = "#e03997" //Default pink. Used for the 'long_vore' trait.
 	var/appendage_alt_setting = FALSE	// Dictates if 'long_vore' user pulls prey to them or not. 1 = user thrown towards target.
-	var/digestion_in_progress = FALSE	// CHOMPEdit: Gradual corpse gurgles
+	var/digestion_in_progress = FALSE	// Gradual corpse gurgles
 	var/regen_sounds = list(
 		'sound/effects/mob_effects/xenochimera/regen_1.ogg',
 		'sound/effects/mob_effects/xenochimera/regen_2.ogg',
@@ -39,6 +37,17 @@
 	var/trait_injection_selected = null			//RSEdit: What trait reagent you're injecting.
 	var/trait_injection_amount = 5				//RSEdit: How much you're injecting with traits.
 	var/trait_injection_verb = "bites"			//RSEdit: Which fluffy manner you're doing the injecting.
+
+	var/mute_entry = FALSE					//Toggleable vorgan entry logs.
+	var/parasitic = FALSE					//Digestion immunity and nutrition leeching variable
+	var/liquidbelly_visuals = TRUE			//Toggle for liquidbelly level visuals.
+	var/churn_count = 0						//Counter for digested livings
+
+	var/passtable_reset		// For crawling
+	var/passtable_crawl_checked = FALSE
+
+/mob/living/proc/handle_special_unlocks()
+	return
 
 //
 // Hook for generic creation of stuff on new creatures
@@ -56,12 +65,10 @@
 /mob/proc/init_vore()
 	//Something else made organs, meanwhile.
 	if(!isnewplayer(src))
-		AddElement(/datum/element/slosh) // CHOMPEdit - Sloshy element
+		AddElement(/datum/element/slosh)
 	if(LAZYLEN(vore_organs))
-		//CHOMPAdd Start
 		if(!soulgem)
 			soulgem = new(src)
-		//CHOMPAdd End
 		return TRUE
 
 	//We'll load our client's organs if we have one
@@ -86,11 +93,9 @@
 			var/mob/living/carbon/human/H = src
 			if(istype(H.species,/datum/species/monkey))
 				allow_spontaneous_tf = TRUE
-		//CHOMPAdd Start
 		if(!soulgem)
 			soulgem = new(src)
 		return TRUE
-		//CHOMPAdd End
 
 /mob/living/init_vore()
 	if(no_vore)
@@ -124,7 +129,7 @@
 			///// If user clicked on themselves
 			if(src == G.assailant && is_vore_predator(src))
 				if(istype(victim) && !victim.client && !victim.ai_holder)
-					log_and_message_admins("[key_name_admin(src)] attempted to eat [key_name_admin(G.affecting)] whilst they were AFK ([G.affecting ? ADMIN_JMP(G.affecting) : "null"])")
+					log_and_message_admins("attempted to eat [key_name_admin(G.affecting)] whilst they were AFK ([G.affecting ? ADMIN_JMP(G.affecting) : "null"])", src)
 				if(feed_grabbed_to_self(src, G.affecting))
 					qdel(G)
 					return TRUE
@@ -134,10 +139,10 @@
 			///// If user clicked on their grabbed target
 			else if((src == G.affecting) && (attacker.a_intent == I_GRAB) && (attacker.zone_sel.selecting == BP_TORSO) && (is_vore_predator(G.affecting)))
 				if(istype(victim) && !victim.client && !victim.ai_holder) //Check whether the victim is: A carbon mob, has no client, but has a ckey. This should indicate an SSD player.
-					log_and_message_admins("[key_name_admin(attacker)] attempted to force feed themselves to [key_name_admin(G.affecting)] whilst they were AFK ([G.affecting ? ADMIN_JMP(G.affecting) : "null"])")
+					log_and_message_admins("attempted to force feed themselves to [key_name_admin(G.affecting)] whilst they were AFK ([G.affecting ? ADMIN_JMP(G.affecting) : "null"])", attacker)
 				if(!G.affecting.feeding)
 					to_chat(user, span_vnotice("[G.affecting] isn't willing to be fed."))
-					log_and_message_admins("[key_name_admin(src)] attempted to feed themselves to [key_name_admin(G.affecting)] against their prefs ([G.affecting ? ADMIN_JMP(G.affecting) : "null"])")
+					log_and_message_admins("attempted to feed themselves to [key_name_admin(G.affecting)] against their prefs ([G.affecting ? ADMIN_JMP(G.affecting) : "null"])", src)
 					return FALSE
 
 				if(attacker.feed_self_to_grabbed(attacker, G.affecting))
@@ -149,18 +154,18 @@
 			///// If user clicked on anyone else but their grabbed target
 			else if((src != G.affecting) && (src != G.assailant) && (is_vore_predator(src)))
 				if(istype(victim) && !victim.client && !victim.ai_holder)
-					log_and_message_admins("[key_name_admin(attacker)] attempted to feed [key_name_admin(G.affecting)] to [key_name_admin(src)] whilst [key_name_admin(G.affecting)] was AFK ([G.affecting ? ADMIN_JMP(G.affecting) : "null"])")
+					log_and_message_admins("attempted to feed [key_name_admin(G.affecting)] to [key_name_admin(src)] whilst [key_name_admin(G.affecting)] was AFK ([G.affecting ? ADMIN_JMP(G.affecting) : "null"])", attacker)
 				var/mob/living/carbon/victim_fed = src
 				if(istype(victim_fed) && !victim_fed.client && !victim_fed.ai_holder)
-					log_and_message_admins("[key_name_admin(attacker)] attempted to feed [key_name_admin(G.affecting)] to [key_name_admin(src)] whilst [key_name_admin(src)] was AFK ([G.affecting ? ADMIN_JMP(G.affecting) : "null"])")
+					log_and_message_admins("attempted to feed [key_name_admin(G.affecting)] to [key_name_admin(src)] whilst [key_name_admin(src)] was AFK ([G.affecting ? ADMIN_JMP(G.affecting) : "null"])", attacker)
 
 				if(!feeding)
 					to_chat(user, span_vnotice("[src] isn't willing to be fed."))
-					log_and_message_admins("[key_name_admin(attacker)] attempted to feed [key_name_admin(G.affecting)] to [key_name_admin(src)] against predator's prefs ([src ? ADMIN_JMP(src) : "null"])")
+					log_and_message_admins("attempted to feed [key_name_admin(G.affecting)] to [key_name_admin(src)] against predator's prefs ([src ? ADMIN_JMP(src) : "null"])", attacker)
 					return FALSE
 				if(!(G.affecting.devourable))
 					to_chat(user, span_vnotice("[G.affecting] isn't able to be devoured."))
-					log_and_message_admins("[key_name_admin(attacker)] attempted to feed [key_name_admin(G.affecting)] to [key_name_admin(src)] against prey's prefs ([G.affecting ? ADMIN_JMP(G.affecting) : "null"])")
+					log_and_message_admins("attempted to feed [key_name_admin(G.affecting)] to [key_name_admin(src)] against prey's prefs ([G.affecting ? ADMIN_JMP(G.affecting) : "null"])", attacker)
 					return FALSE
 				if(attacker.feed_grabbed_to_other(attacker, G.affecting, src))
 					qdel(G)
@@ -187,7 +192,7 @@
 	else if(istype(I,/obj/item/radio/beacon))
 		var/confirm = tgui_alert(user, "[src == user ? "Eat the beacon?" : "Feed the beacon to [src]?"]", "Confirmation", list("Yes!", "Cancel"))
 		if(confirm == "Yes!")
-			var/obj/belly/B = tgui_input_list(user, "Which belly?", "Select A Belly", vore_organs) //ChompEDIT - user, not usr
+			var/obj/belly/B = tgui_input_list(user, "Which belly?", "Select A Belly", vore_organs)
 			if(!istype(B))
 				return TRUE
 			visible_message(span_warning("[user] is trying to stuff a beacon into [src]'s [lowertext(B.name)]!"),
@@ -267,6 +272,7 @@
 	P.slip_vore = src.slip_vore
 	P.throw_vore = src.throw_vore
 	P.food_vore = src.food_vore
+	P.consume_liquid_belly = src.consume_liquid_belly
 	P.digest_pain = src.digest_pain
 	P.stumble_vore = src.stumble_vore
 	P.eating_privacy_global = src.eating_privacy_global
@@ -276,10 +282,9 @@
 	P.nutrition_messages = src.nutrition_messages
 	P.weight_message_visible = src.weight_message_visible
 	P.weight_messages = src.weight_messages
-	P.vore_sprite_color = src.vore_sprite_color // CHOMPEdit
+	P.vore_sprite_color = src.vore_sprite_color
 	P.allow_mind_transfer = src.allow_mind_transfer
 
-	//CHOMP stuff Start
 	P.phase_vore = src.phase_vore
 	P.noisy_full = src.noisy_full
 	P.latejoin_vore = src.latejoin_vore
@@ -298,7 +303,6 @@
 	P.no_latejoin_prey_warning_persists = src.no_latejoin_prey_warning_persists
 	P.belly_rub_target = src.belly_rub_target
 	P.soulcatcher_pref_flags = src.soulcatcher_pref_flags
-	//CHOMP Stuff End
 
 	var/list/serialized = list()
 	for(var/obj/belly/B as anything in src.vore_organs)
@@ -306,13 +310,13 @@
 
 	P.belly_prefs = serialized
 
-	P.soulcatcher_prefs = src.soulgem.serialize() // CHOMPAdd
+	P.soulcatcher_prefs = src.soulgem.serialize()
 	return TRUE
 
 //
 //	Proc for applying vore preferences, given bellies
 //
-/mob/proc/copy_from_prefs_vr(var/bellies = TRUE, var/full_vorgans = FALSE) //CHOMPedit: full_vorgans var to bypass 1-belly load optimization.
+/mob/proc/copy_from_prefs_vr(var/bellies = TRUE, var/full_vorgans = FALSE) // full_vorgans var to bypass 1-belly load optimization.
 	if(!client || !client.prefs_vr)
 		to_chat(src,span_warning("You attempted to apply your vore prefs but somehow you're in this character without a client.prefs_vr variable. Tell a dev."))
 		return FALSE
@@ -334,7 +338,6 @@
 	show_vore_fx = P.show_vore_fx
 	can_be_drop_prey = P.can_be_drop_prey
 	can_be_drop_pred = P.can_be_drop_pred
-//	allow_inbelly_spawning = P.allow_inbelly_spawning //CHOMP Removal: we have vore spawning at home. Actually if this were to be enabled, it would break anyway. Just leaving this here as a reference to it.
 	allow_spontaneous_tf = P.allow_spontaneous_tf
 	step_mechanics_pref = P.step_mechanics_pref
 	pickup_pref = P.pickup_pref
@@ -343,6 +346,7 @@
 	throw_vore = P.throw_vore
 	stumble_vore = P.stumble_vore
 	food_vore = P.food_vore
+	consume_liquid_belly = P.consume_liquid_belly
 	digest_pain = P.digest_pain
 	eating_privacy_global = P.eating_privacy_global
 	allow_mimicry = P.allow_mimicry
@@ -351,10 +355,9 @@
 	nutrition_messages = P.nutrition_messages
 	weight_message_visible = P.weight_message_visible
 	weight_messages = P.weight_messages
-	vore_sprite_color = P.vore_sprite_color //CHOMPEdit
+	vore_sprite_color = P.vore_sprite_color
 	allow_mind_transfer = P.allow_mind_transfer
 
-	//CHOMP stuff
 	phase_vore = P.phase_vore
 	noisy_full = P.noisy_full
 	latejoin_vore = P.latejoin_vore
@@ -378,7 +381,7 @@
 		if(isliving(src))
 			var/mob/living/L = src
 			L.release_vore_contents(silent = TRUE)
-		QDEL_LIST(vore_organs) // CHOMPedit
+		QDEL_LIST(vore_organs)
 		for(var/entry in P.belly_prefs)
 			list_to_object(entry,src)
 		if(!vore_organs.len)
@@ -391,7 +394,6 @@
 		else
 			vore_selected = vore_organs[1]
 
-		//CHOMPAdd Start
 		if(soulgem)
 			src.soulgem.release_mobs()
 			QDEL_NULL(soulgem)
@@ -399,7 +401,6 @@
 			soulgem = list_to_object(P.soulcatcher_prefs, src)
 		else
 			soulgem = new(src)
-		//CHMPAdd End
 
 	return TRUE
 
@@ -429,7 +430,7 @@
 	var/list/charlist = list()
 
 	var/default
-	for(var/i in 1 to CONFIG_GET(number/character_slots)) //CHOMPEdit
+	for(var/i in 1 to CONFIG_GET(number/character_slots))
 		var/list/save_data = savefile.get_entry("character[i]", list())
 		var/name = save_data["real_name"]
 		var/nickname = save_data["nickname"]
@@ -458,14 +459,14 @@
 		return
 
 	load_character(slotnum)
-	attempt_vr(user.client?.prefs_vr,"load_vore","") //VOREStation Edit
+	attempt_vr(user.client?.prefs_vr,"load_vore","")
 	sanitize_preferences()
 
 	return remember_default
 
 /datum/preferences/proc/return_to_character_slot(mob/user, var/remembered_default)
 	load_character(remembered_default)
-	attempt_vr(user.client?.prefs_vr,"load_vore","") //VOREStation Edit
+	attempt_vr(user.client?.prefs_vr,"load_vore","")
 	sanitize_preferences()
 
 //
@@ -516,26 +517,26 @@
 //
 // Clearly super important. Obviously.
 //
-/mob/living/proc/lick(mob/living/tasted in living_mobs_in_view(1, TRUE)) //CHOMPEdit
+/mob/living/proc/lick(mob/living/tasted in living_mobs_in_view(1, TRUE))
 	set name = "Lick"
-	set category = "IC.Game" //CHOMPEdit
+	set category = "IC.Game"
 	set desc = "Lick someone nearby!"
 	set popup_menu = FALSE // Stop licking by accident!
 
 	if(!istype(tasted))
 		return
 
-	if(!checkClickCooldown() || incapacitated(INCAPACITATION_KNOCKOUT)) //CHOMPEdit
+	if(!checkClickCooldown() || incapacitated(INCAPACITATION_KNOCKOUT))
 		return
 
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	if(tasted == src) //CHOMPEdit Start
+	if(tasted == src)
 		visible_message(span_vwarning("[src] licks themself!"),span_notice("You lick yourself. You taste rather like [tasted.get_taste_message()]."),span_infoplain(span_bold("Slurp!")))
-		balloon_alert_visible("Licks themself!", "Tastes like [tasted.get_taste_message()]")
+		//balloon_alert_visible("licks themself!", "tastes like [tasted.get_taste_message()]")
 	else
 		visible_message(span_vwarning("[src] licks [tasted]!"),span_notice("You lick [tasted]. They taste rather like [tasted.get_taste_message()]."),span_infoplain(span_bold("Slurp!")))
-		balloon_alert_visible("Licks [tasted]!", "Tastes like [tasted.get_taste_message()]")
-		//CHOMPEdit End
+		//balloon_alert_visible("licks [tasted]!", "tastes like [tasted.get_taste_message()]")
+
 
 
 /mob/living/proc/get_taste_message(allow_generic = 1)
@@ -562,25 +563,25 @@
 
 
 //This is just the above proc but switched about.
-/mob/living/proc/smell(mob/living/smelled in living_mobs(1, TRUE)) //CHOMPEdit
+/mob/living/proc/smell(mob/living/smelled in living_mobs(1, TRUE))
 	set name = "Smell"
-	set category = "IC.Game" //CHOMPEdit
+	set category = "IC.Game"
 	set desc = "Smell someone nearby!"
 	set popup_menu = FALSE
 
 	if(!istype(smelled))
 		return
-	if(!checkClickCooldown() || incapacitated(INCAPACITATION_KNOCKOUT)) //CHOMPEdit
+	if(!checkClickCooldown() || incapacitated(INCAPACITATION_KNOCKOUT))
 		return
 
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
-	if(smelled == src) //CHOMPEdit Start
+	if(smelled == src)
 		visible_message(span_vwarning("[src] smells themself!"),span_notice("You smell yourself. You smell like [smelled.get_smell_message()]."),span_infoplain(span_bold("Sniff!")))
-		balloon_alert_visible("Smells themself!", "Smells like [smelled.get_smell_message()]")
+		//balloon_alert_visible("smells themself!", "smells like [smelled.get_smell_message()]")
 	else
 		visible_message(span_vwarning("[src] smells [smelled]!"),span_notice("You smell [smelled]. They smell like [smelled.get_smell_message()]."),span_infoplain(span_bold("Sniff!")))
-		balloon_alert_visible("Smells [smelled]!", "Smells like [smelled.get_smell_message()]")
-		//CHOMPEdit End
+		//balloon_alert_visible("smells [smelled]!", "smells like [smelled.get_smell_message()]")
+
 
 /mob/living/proc/get_smell_message(allow_generic = 1)
 	if(!vore_smell && !allow_generic)
@@ -606,7 +607,7 @@
 //
 /mob/living/proc/escapeOOC()
 	set name = "OOC Escape"
-	set category = "OOC.Vore" //CHOMPEdit
+	set category = "OOC.Vore"
 
 	//You're in a belly!
 	if(isbelly(loc))
@@ -616,7 +617,7 @@
 			s.undo_prey_takeover(TRUE)
 			return
 		var/obj/belly/B = loc
-		var/confirm = tgui_alert(src, "Please feel free to press use this button at any time you are uncomfortable and in a belly. Consent is important.", "Confirmation", list("Okay", "Cancel")) //CHOMPedit
+		var/confirm = tgui_alert(src, "Please feel free to use this button at any time you are uncomfortable and in a belly. Consent is important.", "Confirmation", list("Okay", "Cancel"))
 		if(confirm != "Okay" || loc != B)
 			return
 		//Actual escaping
@@ -626,11 +627,9 @@
 		SetSleeping(0) //Wake up instantly if asleep
 		for(var/mob/living/simple_mob/SA in range(10))
 			LAZYSET(SA.prey_excludes, src, world.time)
-		log_and_message_admins("[key_name(src)] used the OOC escape button to get out of [key_name(B.owner)] ([B.owner ? "<a href='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[B.owner.x];Y=[B.owner.y];Z=[B.owner.z]'>JMP</a>" : "null"])")
+		log_and_message_admins("used the OOC escape button to get out of [key_name(B.owner)] ([B.owner ? "<a href='byond://?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[B.owner.x];Y=[B.owner.y];Z=[B.owner.z]'>JMP</a>" : "null"])", src)
 
-		B.owner.update_fullness() //CHOMPEdit - This is run whenever a belly's contents are changed.
-		if(!ishuman(B.owner))
-			B.owner.update_icons()
+		B.owner.handle_belly_update() //This is run whenever a belly's contents are changed.
 
 	//You're in a dogborg!
 	else if(istype(loc, /obj/item/dogborg/sleeper))
@@ -641,14 +640,14 @@
 		if(confirm != "Okay" || loc != belly)
 			return
 		//Actual escaping
-		log_and_message_admins("[key_name(src)] used the OOC escape button to get out of [key_name(pred)] (BORG) ([pred ? "<a href='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[pred.x];Y=[pred.y];Z=[pred.z]'>JMP</a>" : "null"])")
+		log_and_message_admins("used the OOC escape button to get out of [key_name(pred)] (BORG) ([pred ? "<a href='byond://?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[pred.x];Y=[pred.y];Z=[pred.z]'>JMP</a>" : "null"])", src)
 		belly.go_out(src) //Just force-ejects from the borg as if they'd clicked the eject button.
 
 	//You're in an AI hologram!
 	else if(istype(loc, /obj/effect/overlay/aiholo))
 		var/obj/effect/overlay/aiholo/holo = loc
 		holo.drop_prey() //Easiest way
-		log_and_message_admins("[key_name(src)] used the OOC escape button to get out of [key_name(holo.master)] (AI HOLO) ([holo ? "<a href='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[holo.x];Y=[holo.y];Z=[holo.z]'>JMP</a>" : "null"])")
+		log_and_message_admins("used the OOC escape button to get out of [key_name(holo.master)] (AI HOLO) ([holo ? "<a href='byond://?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[holo.x];Y=[holo.y];Z=[holo.z]'>JMP</a>" : "null"])", src)
 
 	//You're in a capture crystal! ((It's not vore but close enough!))
 	else if(iscapturecrystal(loc))
@@ -656,47 +655,57 @@
 		crystal.unleash()
 		crystal.bound_mob = null
 		crystal.bound_mob = capture_crystal = 0
-		clear_fullscreen(ATOM_BELLY_FULLSCREEN) // CHOMPedit
-		log_and_message_admins("[key_name(src)] used the OOC escape button to get out of [crystal] owned by [crystal.owner]. [ADMIN_FLW(src)]")
+		clear_fullscreen(ATOM_BELLY_FULLSCREEN)
+		log_and_message_admins("used the OOC escape button to get out of [crystal] owned by [crystal.owner]. [ADMIN_FLW(src)]", src)
 
 	//You've been turned into an item!
-	else if(tf_mob_holder && istype(src, /mob/living/voice) && istype(src.loc, /obj/item))
+	else if(tf_mob_holder && isvoice(src) && istype(src.loc, /obj/item))
 		var/obj/item/item_to_destroy = src.loc //If so, let's destroy the item they just TF'd out of.
+		//If tf_mob_holder is not located in src, then it's a Mind Binder OOC Escape
+		var/mob/living/ourmob = tf_mob_holder
+		if(ourmob.loc != src)
+			if(isnull(ourmob.loc))
+				to_chat(src,span_notice("You have no body."))
+				src.tf_mob_holder = null
+				return
+			if(ourmob.ckey)
+				to_chat(src,span_notice("Your body appears to be in someone else's control."))
+				return
+			src.mind.transfer_to(ourmob)
+			item_to_destroy.possessed_voice -= src
+			qdel(src)
+			log_and_message_admins("[key_name(src)] used the OOC escape button to revert back to their original form from being TFed into an object.")
+			return
 		if(istype(src.loc, /obj/item/clothing)) //Are they in clothes? Delete the item then revert them.
 			qdel(item_to_destroy)
-			log_and_message_admins("[key_name(src)] used the OOC escape button to revert back to their original form from being TFed into an object.")
+			log_and_message_admins("used the OOC escape button to revert back to their original form from being TFed into an object.", src)
 			revert_mob_tf()
 		else //Are they in any other type of object? If qdel is done first, the mob is deleted from the world.
 			forceMove(get_turf(src))
 			qdel(item_to_destroy)
-			log_and_message_admins("[key_name(src)] used the OOC escape button to revert back to their original form from being TFed into an object.")
+			log_and_message_admins("used the OOC escape button to revert back to their original form from being TFed into an object.", src)
 			revert_mob_tf()
 
 	//You've been turned into a mob!
 	else if(tf_mob_holder)
-		log_and_message_admins("[key_name(src)] used the OOC escape button to revert back to their original form from being TFed into another mob.")
+		log_and_message_admins("used the OOC escape button to revert back to their original form from being TFed into another mob.", src)
 		revert_mob_tf()
 
 	else if(istype(loc, /obj/item/holder/micro) && (istype(loc.loc, /obj/machinery/microwave)))
 		forceMove(get_turf(src))
-		log_and_message_admins("[key_name(src)] used the OOC escape button to get out of a microwave.")
+		log_and_message_admins("used the OOC escape button to get out of a microwave.", src)
 
-	//CHOMPEdit - petrification (again not vore but hey- ooc escape)
 	else if(istype(loc, /obj/structure/gargoyle) && loc:was_rayed)
 		var/obj/structure/gargoyle/G = loc
 		G.can_revert = TRUE
 		qdel(G)
-		log_and_message_admins("[key_name(src)] used the OOC escape button to revert back from being petrified.")
+		log_and_message_admins("used the OOC escape button to revert back from being petrified.", src)
 
-	//CHOMPEdit - In-shoe OOC escape. Checking voices as precaution if something akin to obj TF or possession happens
+	//In-shoe OOC escape. Checking voices as precaution if something akin to obj TF or possession happens
 	else if(!istype(src, /mob/living/voice) && istype(src.loc, /obj/item/clothing/shoes))
 		var/obj/item/clothing/shoes/S = src.loc
 		forceMove(get_turf(src))
 		log_and_message_admins("[key_name(src)] used the OOC escape button to escape from of a pair of shoes. [ADMIN_FLW(src)] - Shoes [ADMIN_VV(S)]")
-
-	else if(istype(loc, /obj/item/holder/micro) && (istype(loc.loc, /obj/machinery/microwave)))
-		forceMove(get_turf(src))
-		log_and_message_admins("[key_name(src)] used the OOC escape button to get out of a microwave.")
 
 	//You are in food and for some reason can't resist out
 	else if(istype(loc, /obj/item/reagent_containers/food))
@@ -704,7 +713,13 @@
 		if(F.food_inserted_micros)
 			F.food_inserted_micros -= src
 		src.forceMove(get_turf(F))
-		log_and_message_admins("[key_name(src)] used the OOC escape button to get out of a food item.")
+		log_and_message_admins("used the OOC escape button to get out of a food item.", src)
+
+	else if(src.alerts["leashed"])
+		var/obj/screen/alert/leash_pet/pet_alert = src.alerts["leashed"]
+		var/obj/item/leash/owner = pet_alert.master
+		owner.clear_leash()
+		log_and_message_admins("used the OOC escape button to get out of a leash.", src)
 
 	//Don't appear to be in a vore situation
 	else
@@ -714,14 +729,12 @@
 // Eating procs depending on who clicked what
 //
 
-//CHOMPAdd Start
 /mob/living/proc/feedable_bellies()
 	var/list/bellies = list()
 	for(var/obj/belly/Y in src.vore_organs)
 		if(Y.is_feedable)
 			bellies += Y
 	return bellies
-//CHOMPAdd End
 
 /mob/living/proc/feed_grabbed_to_self(mob/living/user, mob/living/prey)
 	var/belly = user.vore_selected
@@ -730,17 +743,17 @@
 /mob/living/proc/eat_held_mob(mob/living/user, mob/living/prey, mob/living/pred)
 	var/belly
 	if(user != pred)
-		belly = tgui_input_list(user, "Choose Belly", "Belly Choice", pred.feedable_bellies())	//CHOMPEdit remove usr
+		belly = tgui_input_list(user, "Choose Belly", "Belly Choice", pred.feedable_bellies())
 	else
 		belly = pred.vore_selected
 	return perform_the_nom(user, prey, pred, belly)
 
 /mob/living/proc/feed_self_to_grabbed(mob/living/user, mob/living/pred)
-	var/belly = tgui_input_list(user, "Choose Belly", "Belly Choice", pred.feedable_bellies())	//CHOMPEdit - remove usr
+	var/belly = tgui_input_list(user, "Choose Belly", "Belly Choice", pred.feedable_bellies())
 	return perform_the_nom(user, user, pred, belly)
 
 /mob/living/proc/feed_grabbed_to_other(mob/living/user, mob/living/prey, mob/living/pred)
-	var/belly = tgui_input_list(user, "Choose Belly", "Belly Choice", pred.feedable_bellies())	//CHOMPEdit - remove usr
+	var/belly = tgui_input_list(user, "Choose Belly", "Belly Choice", pred.feedable_bellies())
 	return perform_the_nom(user, prey, pred, belly)
 
 //
@@ -767,7 +780,7 @@
 
 	if(!prey.devourable)
 		to_chat(user, span_vnotice("They aren't able to be devoured."))
-		log_and_message_admins("[key_name_admin(src)] attempted to devour [key_name_admin(prey)] against their prefs ([prey ? ADMIN_JMP(prey) : "null"])")
+		log_and_message_admins("attempted to devour [key_name_admin(prey)] against their prefs ([prey ? ADMIN_JMP(prey) : "null"])", src)
 		return FALSE
 	if(prey.absorbed || pred.absorbed)
 		to_chat(user, span_vwarning("They aren't aren't in a state to be devoured."))
@@ -811,14 +824,14 @@
 	if(delay)
 		swallow_time = delay
 	else
-		swallow_time = istype(prey, /mob/living/carbon/human) ? belly.human_prey_swallow_time : belly.nonhuman_prey_swallow_time
+		swallow_time = ishuman(prey) ? belly.human_prey_swallow_time : belly.nonhuman_prey_swallow_time
 
 	// Their AI should get notified so they can stab us
 	prey.ai_holder?.react_to_attack(user)
 
 	//Timer and progress bar
-	if(!user.client && prey.weakened > 0) // CHOMPEdit stop crwaling instantly break swallow attempt for mobvore
-		prey.Stun(min(prey.weakened, 2)) // CHOMPEdit stop crwaling instantly break swallow attempt for mobvore
+	if(!user.client && prey.weakened > 0) // stop crwaling instantly break swallow attempt for mobvore
+		prey.Stun(min(prey.weakened, 2)) // stop crwaling instantly break swallow attempt for mobvore
 	if(!do_after(user, swallow_time, prey, exclusive = TASK_USER_EXCLUSIVE))
 		return FALSE // Prey escpaed (or user disabled) before timer expired.
 
@@ -841,10 +854,10 @@
 
 	var/mob/living/carbon/victim = prey // Check for afk vore
 	if(istype(victim) && !victim.client && !victim.ai_holder && victim.ckey)
-		log_and_message_admins("[key_name_admin(pred)] ate [key_name_admin(prey)] whilst the prey was AFK ([pred ? ADMIN_JMP(pred) : "null"])")
+		log_and_message_admins("ate [key_name_admin(prey)] whilst the prey was AFK ([pred ? ADMIN_JMP(pred) : "null"])", pred)
 	var/mob/living/carbon/victim_pred = pred // Check for afk vore
 	if(istype(victim_pred) && !victim_pred.client && !victim_pred.ai_holder && victim_pred.ckey)
-		log_and_message_admins("[key_name_admin(pred)] ate [key_name_admin(prey)] whilst the pred was AFK ([pred ? ADMIN_JMP(pred) : "null"])")
+		log_and_message_admins("ate [key_name_admin(prey)] whilst the pred was AFK ([pred ? ADMIN_JMP(pred) : "null"])", pred)
 
 	// Inform Admins
 	if(pred == user)
@@ -878,55 +891,70 @@
 
 // This is about 0.896m^3 of atmosphere
 /datum/gas_mixture/belly_air
-    volume = 2500
-    temperature = 293.150
-    total_moles = 104
+	volume = 2500
+	temperature = 293.150
+	total_moles = 104
 
 /datum/gas_mixture/belly_air/New()
-    . = ..()
-    gas = list(
-        "oxygen" = 21,
-        "nitrogen" = 79)
+	. = ..()
+	gas = list(
+		GAS_O2 = 21,
+		GAS_N2 = 79)
 
 /datum/gas_mixture/belly_air/vox
-    volume = 2500
-    temperature = 293.150
-    total_moles = 104
+	volume = 2500
+	temperature = 293.150
+	total_moles = 104
 
 /datum/gas_mixture/belly_air/vox/New()
-    . = ..()
-    gas = list(
-        "nitrogen" = 100) // Chomp edit
+	. = ..()
+	gas = list(
+		GAS_N2 = 100) // CHOMPEdit
 
 /datum/gas_mixture/belly_air/zaddat
-    volume = 2500
-    temperature = 293.150
-    total_moles = 300
+	volume = 2500
+	temperature = 293.150
+	total_moles = 300
 
 /datum/gas_mixture/belly_air/zaddat/New()
-    . = ..()
-    gas = list(
-        "oxygen" = 100)
+	. = ..()
+	gas = list(
+		GAS_O2 = 100)
 
 /datum/gas_mixture/belly_air/nitrogen_breather
-    volume = 2500
-    temperature = 293.150
-    total_moles = 104
+	volume = 2500
+	temperature = 293.150
+	total_moles = 104
 
 /datum/gas_mixture/belly_air/nitrogen_breather/New()
-    . = ..()
-    gas = list(
-        "nitrogen" = 100)
+	. = ..()
+	gas = list(
+		GAS_N2 = 100)
 
+/datum/gas_mixture/belly_air/carbon_dioxide_breather
+	volume = 2500
+	temperature = 293.150
+	total_moles = 104
+
+/datum/gas_mixture/carbon_dioxide_breather/New()
+	. = ..()
+	gas = list(
+		GAS_CO2 = 100)
 
 /mob/living/proc/feed_grabbed_to_self_falling_nom(var/mob/living/user, var/mob/living/prey)
+	if(user.is_incorporeal())
+		return FALSE
 	var/belly = user.vore_selected
 	return perform_the_nom(user, prey, user, belly, delay = 1) //1/10th of a second is probably fine.
 
 /mob/living/proc/glow_toggle()
 	set name = "Glow (Toggle)"
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.General"
 	set desc = "Toggle your glowing on/off!"
+
+	if(stat || paralysis || weakened || stunned || world.time < last_special)
+		to_chat(src, span_warning("You can't do that in your current state."))
+		return
 
 	//I don't really see a point to any sort of checking here.
 	//If they're passed out, the light won't help them. Same with buckled. Really, I think it's fine to do this whenever.
@@ -936,12 +964,12 @@
 
 /mob/living/proc/glow_color()
 	set name = "Glow (Set Color)"
-	set category = "Abilities.General" //CHOMPEdit
+	set category = "Abilities.Settings"
 	set desc = "Pick a color for your body's glow."
 
 	//Again, no real need for a check on this. I'm unsure how it could be somehow abused.
 	//Even if they open the box 900 times, who cares, they get the wrong color and do it again.
-	var/new_color = input(src,"Select a new color","Body Glow",glow_color) as color
+	var/new_color = tgui_color_picker(src,"Select a new color","Body Glow",glow_color)
 	if(new_color)
 		glow_color = new_color
 
@@ -956,8 +984,12 @@
 
 /mob/living/proc/eat_trash()
 	set name = "Eat Trash"
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	set desc = "Consume held garbage."
+
+	if(stat || paralysis || weakened || stunned || world.time < last_special)
+		to_chat(src, span_warning("You can't do that in your current state."))
+		return
 
 	if(!vore_selected)
 		to_chat(src,span_warning("You either don't have a belly selected, or don't have a belly!"))
@@ -968,162 +1000,17 @@
 		to_chat(src, span_notice("You are not holding anything."))
 		return
 
-	if(is_type_in_list(I,item_vore_blacklist) && !adminbus_trash) //If someone has adminbus, they can eat whatever they want.
-		to_chat(src, span_warning("You are not allowed to eat this."))
-		return
-
-	if(!I.trash_eatable) //OOC pref. This /IS/ respected, even if adminbus_trash is enabled
-		to_chat(src, span_warning("You can't eat that so casually!"))
-		return
-
-	if(istype(I, /obj/item/paicard))
-		var/obj/item/paicard/palcard = I
-		var/mob/living/silicon/pai/pocketpal = palcard.pai
-		if(pocketpal && (!pocketpal.devourable))
-			to_chat(src, span_warning("\The [pocketpal] doesn't allow you to eat it."))
+	if(is_type_in_list(I,edible_trash) || adminbus_trash || is_type_in_list(I,edible_tech) && isSynthetic()) // adds edible tech for synth
+		if(!I.on_trash_eaten(src)) // shows object's rejection message itself
 			return
-
-	if(istype(I, /obj/item/book))
-		var/obj/item/book/book = I
-		if(book.carved)
-			to_chat(src, span_warning("\The [book] is not worth eating without the filling."))
-			return
-
-	if(is_type_in_list(I,edible_trash) | adminbus_trash || is_type_in_list(I,edible_tech) && isSynthetic()) //chompstation add synth check
-		if(I.hidden_uplink)
-			to_chat(src, span_warning("You really should not be eating this."))
-			message_admins("[key_name(src)] has attempted to ingest an uplink item. ([src ? ADMIN_JMP(src) : "null"])")
-			return
-		if(istype(I,/obj/item/pda))
-			var/obj/item/pda/P = I
-			if(P.owner)
-				var/watching = FALSE
-				for(var/mob/living/carbon/human/H in view(src))
-					if(H.real_name == P.owner && H.client)
-						watching = TRUE
-						break
-				if(!watching)
-					return
-				else
-					visible_message(span_warning("[src] is threatening to make [P] disappear!"))
-					if(P.id)
-						var/confirm = tgui_alert(src, "The PDA you're holding contains a vulnerable ID card. Will you risk it?", "Confirmation", list("Definitely", "Cancel"))
-						if(confirm != "Definitely")
-							return
-					if(!do_after(src, 100, P))
-						return
-					visible_message(span_warning("[src] successfully makes [P] disappear!"))
-			to_chat(src, span_notice("You can taste the sweet flavor of delicious technology."))
-			drop_item()
-			I.forceMove(vore_selected)
-			updateVRPanel()
-			return
-		if(istype(I,/obj/item/clothing/shoes))
-			var/obj/item/clothing/shoes/S = I
-			if(S.holding)
-				to_chat(src, span_warning("There's something inside!"))
-				return
-		if(iscapturecrystal(I))
-			var/obj/item/capture_crystal/C = I
-			if(!C.bound_mob.devourable)
-				to_chat(src, span_warning("That doesn't seem like a good idea. (\The [C.bound_mob]'s prefs don't allow it.)"))
-				return
 		drop_item()
 		I.forceMove(vore_selected)
 		updateVRPanel()
-
 		log_admin("VORE: [src] used Eat Trash to swallow [I].")
-
-		if(istype(I,/obj/item/flashlight/flare) || istype(I,/obj/item/flame/match) || istype(I,/obj/item/storage/box/matches))
-			to_chat(src, span_notice("You can taste the flavor of spicy cardboard."))
-		else if(istype(I,/obj/item/flashlight/glowstick))
-			to_chat(src, span_notice("You found out the glowy juice only tastes like regret."))
-		else if(istype(I,/obj/item/trash/cigbutt))
-			to_chat(src, span_notice("You can taste the flavor of bitter ash. Classy."))
-		else if(istype(I,/obj/item/clothing/mask/smokable))
-			var/obj/item/clothing/mask/smokable/C = I
-			if(C.lit)
-				to_chat(src, span_notice("You can taste the flavor of burning ash. Spicy!"))
-			else
-				to_chat(src, span_notice("You can taste the flavor of aromatic rolling paper and funny looks."))
-		else if(istype(I,/obj/item/paper))
-			to_chat(src, span_notice("You can taste the dry flavor of bureaucracy."))
-		else if(istype(I,/obj/item/book))
-			to_chat(src, span_notice("You can taste the dry flavor of knowledge."))
-		else if(istype(I,/obj/item/dice)) //CHOMPedit: Removed roulette ball because that's not active here.
-			to_chat(src, span_notice("You can taste the bitter flavor of cheating."))
-		else if(istype(I,/obj/item/lipstick))
-			to_chat(src, span_notice("You can taste the flavor of couture and style. Toddler at the make-up bag style."))
-		else if(istype(I,/obj/item/soap))
-			to_chat(src, span_notice("You can taste the bitter flavor of verbal purification."))
-		else if(istype(I,/obj/item/spacecash) || istype(I,/obj/item/storage/wallet))
-			to_chat(src, span_notice("You can taste the flavor of wealth and reckless waste."))
-		else if(istype(I,/obj/item/broken_bottle) || istype(I,/obj/item/material/shard))
-			to_chat(src, span_notice("You can taste the flavor of pain. This can't possibly be healthy for your guts."))
-		else if(istype(I,/obj/item/light))
-			var/obj/item/light/L = I
-			if(L.status == LIGHT_BROKEN)
-				to_chat(src, span_notice("You can taste the flavor of pain. This can't possibly be healthy for your guts."))
-			else
-				to_chat(src, span_notice("You can taste the flavor of really bad ideas."))
-		else if(istype(I,/obj/item/bikehorn/tinytether))
-			to_chat(src, span_notice("You feel a rush of power swallowing such a large, err, tiny structure."))
-		else if(istype(I,/obj/item/mmi/digital/posibrain) || istype(I,/obj/item/aicard))
-			to_chat(src, span_notice("You can taste the sweet flavor of digital friendship. Or maybe it is something else."))
-		else if(istype(I,/obj/item/paicard))
-			to_chat(src, span_notice("You can taste the sweet flavor of digital friendship."))
-			var/obj/item/paicard/ourcard = I
-			if(ourcard.pai && ourcard.pai.client && isbelly(ourcard.loc))
-				var/obj/belly/B = ourcard.loc
-				to_chat(ourcard.pai, span_boldnotice("[B.desc]"))
-		else if(istype(I,/obj/item/reagent_containers/food))
-			var/obj/item/reagent_containers/food/F = I
-			if(!F.reagents.total_volume)
-				to_chat(src, span_notice("You can taste the flavor of garbage and leftovers. Delicious?"))
-			else
-				to_chat(src, span_notice("You can taste the flavor of gluttonous waste of food."))
-		else if (istype(I,/obj/item/clothing/accessory/collar))
-			to_chat(src, span_notice("You can taste the submissiveness in the wearer of [I]!"))
-		else if(iscapturecrystal(I))
-			var/obj/item/capture_crystal/C = I
-			if(C.bound_mob && (C.bound_mob in C.contents))
-				if(isbelly(C.loc))
-					//var/obj/belly/B = C.loc //CHOMPedit
-					//to_chat(C.bound_mob, span_notice("Outside of your crystal, you can see; " + span_notice("[B.desc]"))) //CHOMPedit: moved to modular_chomp capture_crystal.dm
-					to_chat(src, span_notice("You can taste the the power of command."))
-		// CHOMPedit begin
-		else if(istype(I,/obj/item/starcaster_news))
-			to_chat(src, span_notice("You can taste the dry flavor of digital garbage, oh wait its just the news."))
-		else if(istype(I,/obj/item/newspaper))
-			to_chat(src, span_notice("You can taste the dry flavor of garbage, oh wait its just the news."))
-		else if (istype(I,/obj/item/cell))
-			visible_message(span_warning("[src] sates their electric appetite with a [I]!"))
-			to_chat(src, span_notice("You can taste the spicy flavor of electrolytes, yum."))
-		else if (istype(I,/obj/item/walkpod))
-			visible_message(span_warning("[src] sates their musical appetite with a [I]!"))
-			to_chat(src, span_notice("You can taste the jazzy flavor of music."))
-		else if (istype(I,/obj/item/mail/junkmail))
-			visible_message(span_warning("[src] devours the [I]!"))
-			to_chat(src, span_notice("You can taste the flavor of the galactic postal service."))
-		else if (istype(I,/obj/item/gun/energy/sizegun))
-			visible_message(span_warning("[src] devours the [I]!"))
-			to_chat(src, span_notice("You didn't read the warning label, did you?"))
-		else if (istype(I,/obj/item/slow_sizegun))
-			visible_message(span_warning("[src] devours the [I]!"))
-			to_chat(src, span_notice("You taste the flavor of sunday driver bluespace."))
-		else if (istype(I,/obj/item/laser_pointer))
-			visible_message(span_warning("[src] devours the [I]!"))
-			to_chat(src, span_notice("You taste the flavor of a laser."))
-		else if (istype(I,/obj/item/canvas))
-			visible_message(span_warning("[src] devours the [I]!"))
-			to_chat(src, span_notice("You taste the flavor of priceless artwork."))
-		//CHOMPedit end
-
-		else
-			to_chat(src, span_notice("You can taste the flavor of garbage. Delicious."))
-		visible_message(span_vwarning("[src] demonstrates the voracious capabilities of their [lowertext(vore_selected.name)] by making [I] disappear!")) //CHOMPedit
+		I.after_trash_eaten(src)
+		visible_message(span_vwarning("[src] demonstrates the voracious capabilities of their [lowertext(vore_selected.name)] by making [I] disappear!"))
 		return
-	to_chat(src, span_notice("This snack is too powerful to go down that easily.")) //CHOMPEdit
+	to_chat(src, span_notice("This snack is too powerful to go down that easily."))
 	return
 
 /mob/living/proc/toggle_trash_catching() //Ported from chompstation
@@ -1131,11 +1018,11 @@
 	set category = "Abilities.Vore"
 	set desc = "Toggle Trash Eater throw vore abilities."
 	trash_catching = !trash_catching
-	to_chat(src, span_vwarning("Trash catching [trash_catching ? "enabled" : "disabled"].")) //CHOMPEdit
+	to_chat(src, span_vwarning("Trash catching [trash_catching ? "enabled" : "disabled"]."))
 
 /mob/living/proc/eat_minerals() //Actual eating abstracted so the user isn't given a prompt due to an argument in this verb.
 	set name = "Eat Minerals"
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	set desc = "Consume held raw ore, gems and refined minerals. Snack time!"
 
 	handle_eat_minerals()
@@ -1166,20 +1053,20 @@
 		//List in list, define by material property of ore in code/mining/modules/ore.dm.
 		//50 nutrition = 5 ore to get 250 nutrition. 250 is the beginning of the 'well fed' range.
 		var/list/rock_munch = list(
-			MAT_URANIUM		= list("nutrition" = 30, "remark" = "Crunching [O] in your jaws almost makes you wince, a horribly tangy and sour flavour radiating through your mouth. It goes down all the same.", "WTF" = FALSE),
-			"hematite"		= list("nutrition" = 15, "remark" = "The familiar texture and taste of [O] does the job but leaves little to the imagination and hardly sates your appetite.", "WTF" = FALSE),
-			"carbon"		= list("nutrition" = 15, "remark" = "Utterly bitter, crunching down on [O] only makes you long for better things. But a snack's a snack...", "WTF" = FALSE),
-			"marble"		= list("nutrition" = 40, "remark" = "A fitting dessert, the sweet and savoury [O] lingers on the palate and satisfies your hunger.", "WTF" = FALSE),
-			"sand"			= list("nutrition" = 0,  "remark" = "You crunch on [O] but its texture is almost gag-inducing. Stifling a cough, you somehow manage to swallow both [O] and your regrets.", "WTF" = FALSE),
-			MAT_PHORON		= list("nutrition" = 30, "remark" = "Crunching [O] to dust between your jaw you find pleasant, comforting warmth filling your mouth that briefly spreads down the throat to your chest as you swallow.", "WTF" = FALSE),
-			MAT_SILVER		= list("nutrition" = 40, "remark" = "[O] tastes quite nice indeed as you munch on it. A little tarnished, but that's just fine aging.", "WTF" = FALSE),
-			MAT_GOLD		= list("nutrition" = 40, "remark" = "You taste supreme richness that exceeds expectations and satisfies your hunger.", "WTF" = FALSE),
-			MAT_DIAMOND		= list("nutrition" = 50, "remark" = "The heavenly taste of [O] almost brings a tear to your eye. Its glimmering gloriousness is even better on the tongue than you imagined, so you savour it fondly.", "WTF" = FALSE),
-			"platinum"		= list("nutrition" = 40, "remark" = "A bit tangy but elegantly balanced with a long faintly sour finish. Delectable.", "WTF" = FALSE),
-			MAT_METALHYDROGEN = list("nutrition" = 30, "remark" = "Quite sweet on the tongue, you savour the light and easy to chew [O], finishing it quickly.", "WTF" = FALSE),
-			"rutile"		= list("nutrition" = 50, "remark" = "A little... angular, you savour the light but chewy [O], finishing it quickly.", "WTF" = FALSE),
-			MAT_VERDANTIUM	= list("nutrition" = 50, "remark" = "You taste scientific mystery and a rare delicacy. Your tastebuds tingle pleasantly as you eat [O] and the feeling warmly blossoms in your chest for a moment.", "WTF" = FALSE),
-			MAT_LEAD		= list("nutrition" = 40, "remark" = "It takes some work to break down [O] but you manage it, unlocking lasting tangy goodness in the process. Yum.", "WTF" = FALSE)
+			ORE_URANIUM		= list("nutrition" = 30, "remark" = "Crunching [O] in your jaws almost makes you wince, a horribly tangy and sour flavour radiating through your mouth. It goes down all the same.", "WTF" = FALSE),
+			ORE_HEMATITE	= list("nutrition" = 15, "remark" = "The familiar texture and taste of [O] does the job but leaves little to the imagination and hardly sates your appetite.", "WTF" = FALSE),
+			ORE_CARBON		= list("nutrition" = 15, "remark" = "Utterly bitter, crunching down on [O] only makes you long for better things. But a snack's a snack...", "WTF" = FALSE),
+			ORE_MARBLE		= list("nutrition" = 40, "remark" = "A fitting dessert, the sweet and savoury [O] lingers on the palate and satisfies your hunger.", "WTF" = FALSE),
+			ORE_SAND		= list("nutrition" = 0,  "remark" = "You crunch on [O] but its texture is almost gag-inducing. Stifling a cough, you somehow manage to swallow both [O] and your regrets.", "WTF" = FALSE),
+			ORE_PHORON		= list("nutrition" = 30, "remark" = "Crunching [O] to dust between your jaw you find pleasant, comforting warmth filling your mouth that briefly spreads down the throat to your chest as you swallow.", "WTF" = FALSE),
+			ORE_SILVER		= list("nutrition" = 40, "remark" = "[O] tastes quite nice indeed as you munch on it. A little tarnished, but that's just fine aging.", "WTF" = FALSE),
+			ORE_GOLD		= list("nutrition" = 40, "remark" = "You taste supreme richness that exceeds expectations and satisfies your hunger.", "WTF" = FALSE),
+			ORE_DIAMOND		= list("nutrition" = 50, "remark" = "The heavenly taste of [O] almost brings a tear to your eye. Its glimmering gloriousness is even better on the tongue than you imagined, so you savour it fondly.", "WTF" = FALSE),
+			ORE_PLATINUM	= list("nutrition" = 40, "remark" = "A bit tangy but elegantly balanced with a long faintly sour finish. Delectable.", "WTF" = FALSE),
+			ORE_MHYDROGEN	= list("nutrition" = 30, "remark" = "Quite sweet on the tongue, you savour the light and easy to chew [O], finishing it quickly.", "WTF" = FALSE),
+			ORE_RUTILE		= list("nutrition" = 50, "remark" = "A little... angular, you savour the light but chewy [O], finishing it quickly.", "WTF" = FALSE),
+			ORE_VERDANTIUM	= list("nutrition" = 50, "remark" = "You taste scientific mystery and a rare delicacy. Your tastebuds tingle pleasantly as you eat [O] and the feeling warmly blossoms in your chest for a moment.", "WTF" = FALSE),
+			ORE_LEAD		= list("nutrition" = 40, "remark" = "It takes some work to break down [O] but you manage it, unlocking lasting tangy goodness in the process. Yum.", "WTF" = FALSE)
 		)
 		if(O.material in rock_munch)
 			nom	= rock_munch[O.material]
@@ -1207,18 +1094,18 @@
 			MAT_PLASTITANIUM				= list("nutrition" = 60,  "remark" = "A glorious marriage of richness and mildly sour with cool refreshing finish. [O] practically begs to be savoured, lingering on the palate long enough to tempt another bite.", "WTF" = FALSE),
 			MAT_PLASTITANIUMGLASS			= list("nutrition" = 25,  "remark" = "After some work, you grind [O] down with a satisfying crunch to unleash a sublime mixture of mildly sour richness and cooling refreshment. It readily entices you for another bite.", "WTF" = FALSE),
 			MAT_GLASS						= list("nutrition" = 0,   "remark" = "All crunch and nothing more, you effortlessly grind [O] down to find it only wets your appetite and dries the throat.", "WTF" = FALSE),
-			"rglass"						= list("nutrition" = 5,   "remark" = "With a satisfying crunch, you grind [O] down with ease. It is barely palatable with a subtle metallic tang.", "WTF" = FALSE),
-			MAT_BOROSILICATE				= list("nutrition" = 10,  "remark" = "With a satisfying crunch, you grind [O] down with ease and find it somewhat palatable due to a subtle but familiar rush of phoronic warmth.", "WTF" = FALSE),
-			"reinforced borosilicate glass"	= list("nutrition" = 15,  "remark" = "With a satisfying crunch, you grind [O] down. It is quite palatable due to a subtle metallic tang and familiar rush of phoronic warmth.", "WTF" = FALSE),
+			MAT_RGLASS						= list("nutrition" = 5,   "remark" = "With a satisfying crunch, you grind [O] down with ease. It is barely palatable with a subtle metallic tang.", "WTF" = FALSE),
+			MAT_PGLASS						= list("nutrition" = 10,  "remark" = "With a satisfying crunch, you grind [O] down with ease and find it somewhat palatable due to a subtle but familiar rush of phoronic warmth.", "WTF" = FALSE),
+			MAT_RPGLASS						= list("nutrition" = 15,  "remark" = "With a satisfying crunch, you grind [O] down. It is quite palatable due to a subtle metallic tang and familiar rush of phoronic warmth.", "WTF" = FALSE),
 			MAT_GRAPHITE					= list("nutrition" = 30,  "remark" = "Satisfyingly metallic with a mildly savoury tartness, you chew [O] until its flavour is no more but are left longing for another.", "WTF" = FALSE),
 			MAT_OSMIUM						= list("nutrition" = 45,  "remark" = "Successive bites serve to almost chill your palate, a rush of rich and mildly sour flavour unlocked with the grinding of your powerful jaws. Delectable.", "WTF" = FALSE),
 			MAT_METALHYDROGEN				= list("nutrition" = 35,  "remark" = "Quite sweet on the tongue, you savour the light and easy to chew [O], finishing it quickly.", "WTF" = FALSE),
-			"platinum"						= list("nutrition" = 40,  "remark" = "A bit tangy but elegantly balanced with a long faintly sour finish. Delectable.", "WTF" = FALSE),
+			MAT_PLATINUM					= list("nutrition" = 40,  "remark" = "A bit tangy but elegantly balanced with a long faintly sour finish. Delectable.", "WTF" = FALSE),
 			MAT_IRON						= list("nutrition" = 15,  "remark" = "The familiar texture and taste of [O] does the job but leaves little to the imagination and hardly sates your appetite.", "WTF" = FALSE),
 			MAT_LEAD						= list("nutrition" = 40,   "remark" = "It takes some work to break down [O] but you manage it, unlocking lasting tangy goodness in the process. Yum.", "WTF" = FALSE),
 			MAT_VERDANTIUM					= list("nutrition" = 55,  "remark" = "You taste scientific mystery and a rare delicacy. Your tastebuds tingle pleasantly as you eat [O] and the feeling warmly blossoms in your chest for a moment.", "WTF" = FALSE),
 			MAT_MORPHIUM					= list("nutrition" = 75,  "remark" = "The question, the answer and the taste: It all floods your mouth and your mind to momentarily overwhelm the senses. What the hell was that? Your mouth and throat are left tingling for a while.", "WTF" = 10),
-			"alienalloy"					= list("nutrition" = 120, "remark" = "Working hard for so long to rend the material apart has left your jaw sore, but a veritable explosion of mind boggling indescribable flavour is unleashed. Completely alien sensations daze and overwhelm you while it feels like an interdimensional rift opened in your mouth, briefly numbing your face.", "WTF" = 15)
+			MAT_ALIENALLOY					= list("nutrition" = 120, "remark" = "Working hard for so long to rend the material apart has left your jaw sore, but a veritable explosion of mind boggling indescribable flavour is unleashed. Completely alien sensations daze and overwhelm you while it feels like an interdimensional rift opened in your mouth, briefly numbing your face.", "WTF" = 15)
 		)
 		if(O.default_type in refined_taste)
 			var/obj/item/stack/material/stack = O.split(1) //A little off the top.
@@ -1264,7 +1151,7 @@
 
 /mob/living/proc/toggle_stuffing_mode()
 	set name = "Toggle feeding mode"
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	set desc = "Switch whether you will try to feed other people food whole or normally, bite by bite."
 
 	stuffing_feeder = !stuffing_feeder
@@ -1272,7 +1159,7 @@
 
 /mob/living/proc/switch_scaling()
 	set name = "Switch scaling mode"
-	set category = "Preferences.Game" //CHOMPEdit
+	set category = "Preferences.Game"
 	set desc = "Switch sharp/fuzzy scaling for current mob."
 	appearance_flags ^= PIXEL_SCALE
 	fuzzy = !fuzzy
@@ -1280,7 +1167,7 @@
 
 /mob/living/proc/center_offset()
 	set name = "Switch center offset mode"
-	set category = "Preferences.Game" //CHOMPEdit
+	set category = "Preferences.Game"
 	set desc = "Switch sprite center offset to fix even/odd symmetry."
 	offset_override = !offset_override
 	update_transform()
@@ -1290,39 +1177,45 @@
 	if(custom_link)
 		. += "Custom link: " + span_linkify("[custom_link]")
 	if(ooc_notes)
-		. += "OOC Notes: <a href='?src=\ref[src];ooc_notes=1'>\[View\]</a> - <a href='?src=\ref[src];print_ooc_notes_to_chat=1'>\[Print\]</a>"
-	. += "<a href='?src=\ref[src];vore_prefs=1'>\[Mechanical Vore Preferences\]</a>"
+		. += "OOC Notes: <a href='byond://?src=\ref[src];ooc_notes=1'>\[View\]</a> - <a href='byond://?src=\ref[src];print_ooc_notes_chat=1'>\[Print\]</a>"
+	. += "<a href='byond://?src=\ref[src];vore_prefs=1'>\[Mechanical Vore Preferences\]</a>"
 
 
 /mob/living/Topic(href, href_list)	//Can't find any instances of Topic() being overridden by /mob/living in polaris' base code, even though /mob/living/carbon/human's Topic() has a ..() call
 	if(href_list["vore_prefs"])
 		display_voreprefs(usr)
 	if(href_list["ooc_notes"])
-		src.Examine_OOC()
+		do_examine_ooc(usr)
 	if(href_list["edit_ooc_notes"])
 		if(usr == src)
-			set_metainfo_panel(usr) //ChompEDIT - usr arg
+			set_metainfo_panel(usr)
 	if(href_list["edit_ooc_note_likes"])
 		if(usr == src)
-			set_metainfo_likes(usr) //ChompEDIT - usr arg
+			set_metainfo_likes(usr)
 	if(href_list["edit_ooc_note_dislikes"])
 		if(usr == src)
-			set_metainfo_dislikes(usr) //ChompEDIT - usr arg
+			set_metainfo_dislikes(usr)
 	if(href_list["save_ooc_panel"])
 		if(usr == src)
-			save_ooc_panel(usr) //ChompEDIT - usr arg
-	if(href_list["print_ooc_notes_to_chat"])
-		print_ooc_notes_to_chat(usr) //ChompEDIT - usr arg
-	//CHOMPEdit Start
+			save_ooc_panel(usr)
+	if(href_list["print_ooc_notes_chat"])
+		print_ooc_notes_chat(usr)
+	// CHOMPEnable Start
 	if(href_list["edit_ooc_note_favs"])
 		if(usr == src)
-			set_metainfo_favs(usr) //ChompEDIT - usr arg
+			set_metainfo_favs(usr)
 	if(href_list["edit_ooc_note_maybes"])
 		if(usr == src)
-			set_metainfo_maybes(usr) //ChompEDIT - usr arg
+			set_metainfo_maybes(usr)
 	if(href_list["set_metainfo_ooc_style"])
-		set_metainfo_ooc_style(usr) //ChompEDIT - usr arg
-	//CHOMPEdit End
+		set_metainfo_ooc_style(usr)
+	// CHOMPEnable End
+	if(href_list["save_private_notes"])
+		if(usr == src)
+			save_private_notes(usr)
+	if(href_list["edit_private_notes"])
+		if(usr == src)
+			set_metainfo_private_notes(usr)
 	return ..()
 
 /mob/living/proc/display_voreprefs(mob/user)	//Called by Topic() calls on instances of /mob/living (and subtypes) containing vore_prefs as an argument
@@ -1333,7 +1226,6 @@
 		dat += span_red(span_bold("OOC DISABLED")) + "<br>"
 	if(!client?.prefs?.read_preference(/datum/preference/toggle/show_looc))
 		dat += span_red(span_bold("LOOC DISABLED")) + "<br>"
-	//CHOMPEdit Start
 	dat += span_bold("Devourable:") + " [devourable ? span_green("Enabled") : span_red("Disabled")]<br>"
 	if(devourable)
 		dat += span_bold("Healbelly permission:") + " [permit_healbelly ? span_green("Allowed") : span_red("Disallowed")]<br>"
@@ -1363,6 +1255,7 @@
 	dat += span_bold("Feedable:") + " [feeding ? span_green("Enabled") : span_red("Disabled")]<br>"
 	dat += span_bold("Receiving liquids:") + " [receive_reagents ? span_green("Enabled") : span_red("Disabled")]<br>"
 	dat += span_bold("Giving liquids:") + " [give_reagents ? span_green("Enabled") : span_red("Disabled")]<br>"
+	dat += span_bold("Consuming liquids:") + " [consume_liquid_belly ? span_green("Enabled") : span_red("Disabled")]<br>"
 	dat += span_bold("Late join spawn point belly:") + " [latejoin_vore ? span_green("Enabled") : span_red("Disabled")]<br>"
 	if(latejoin_vore)
 		dat += span_bold("Late join spawn auto accept:") + " [no_latejoin_vore_warning ? span_green("Enabled") : span_red("Disabled")]<br>"
@@ -1372,27 +1265,21 @@
 	dat += span_bold("Global Vore Privacy is:") + " [eating_privacy_global ? span_green("Subtle") : span_red("Loud")]<br>"
 	dat += span_bold("Current active belly:") + " [vore_selected ? vore_selected.name : "None"]<br>"
 	dat += span_bold("Belly rub target:") + " [belly_rub_target ? belly_rub_target : (vore_selected ? vore_selected.name : "None")]<br>"
-	//CHOMPEdit End
 	var/datum/browser/popup = new(user, "[name]mvp", "Vore Prefs: [src]", 300, 700, src)
 	popup.set_content(dat)
 	popup.open()
 
 // Full screen belly overlays!
 /obj/screen/fullscreen/belly
-	icon = 'modular_chomp/icons/mob/vore_fullscreens/screen_full_vore_ch.dmi' //CHOMPedit
+	icon = 'icons/mob/vore_fullscreens/screen_full_vore_list.dmi'
 
-/obj/screen/fullscreen/belly/fixed //CHOMPedit: tweaking to preserve save data
-	icon = 'icons/mob/screen_full_vore.dmi' //CHOMPedit: tweaking to preserve save data
+/obj/screen/fullscreen/belly/fixed
+	icon = 'icons/mob/screen_full_vore.dmi'
 	icon_state = ""
 
-/* //Chomp DISABLE - use our solution, not upstream's.
-/obj/screen/fullscreen/belly/colorized/overlay
-	icon = 'icons/mob/screen_full_colorized_vore_overlays.dmi'
-*/ //Chomp DISABLE End
-
-/mob/living/verb/vorebelly_printout() //Spew the vorepanel belly messages into chat window for copypasting. //ChompEDIT proc -> verb
+/mob/living/proc/vorebelly_printout() //Spew the vorepanel belly messages into chat window for copypasting.
 	set name = "X-Print Vorebelly Settings"
-	set category = "Preferences.Vore" //CHOMPEdit
+	set category = "Preferences.Vore"
 	set desc = "Print out your vorebelly messages into chat for copypasting."
 
 	var/result = tgui_alert(src, "Would you rather open the export panel?", "Selected Belly Export", list("Open Panel", "Print to Chat"))
@@ -1401,12 +1288,12 @@
 	if(result == "Open Panel")
 		var/mob/living/user = usr
 		if(!user)
-			to_chat(usr,span_notice("Mob undefined: [user]"))
+			to_chat(user,span_notice("Mob undefined: [user]"))
 			return FALSE
 
 		var/datum/vore_look/export_panel/exportPanel
 		if(!exportPanel)
-			exportPanel = new(usr)
+			exportPanel = new(user)
 
 		if(!exportPanel)
 			to_chat(user,span_notice("Export panel undefined: [exportPanel]"))
@@ -1556,7 +1443,7 @@
 	if(owner.client)
 		create_mob_button(parent)
 	add_verb(owner, /mob/proc/insidePanel)
-	if(!owner.vorePanel) //CHOMPEdit
+	if(!owner.vorePanel)
 		owner.vorePanel = new(owner)
 
 /datum/component/vore_panel/UnregisterFromParent()
@@ -1588,7 +1475,7 @@
 /datum/component/vore_panel/proc/vore_panel_click(source, location, control, params, user)
 	var/mob/living/owner = user
 	if(istype(owner) && owner.vorePanel)
-		INVOKE_ASYNC(owner, TYPE_PROC_REF(/mob/living, insidePanel), owner) //CHOMPEdit
+		INVOKE_ASYNC(owner, TYPE_PROC_REF(/mob/living, insidePanel), owner)
 /**
  * Screen object for vore panel
  */
@@ -1597,3 +1484,287 @@
 	icon = 'icons/mob/screen/midnight.dmi'
 	icon_state = "vore"
 	screen_loc = ui_smallquad
+
+
+
+//
+// Returns examine messages for how much reagents are in bellies
+//
+/mob/living/proc/examine_reagent_bellies()
+	if(!show_pudge()) //Some clothing or equipment can hide this. Reagent inflation is not very different in this aspect.
+		return ""
+
+	var/message = ""
+	for (var/belly in vore_organs)
+		var/obj/belly/B = belly
+
+		var/fill_percentage = B.reagents.maximum_volume > 0 ? B.reagents.total_volume / B.reagents.maximum_volume : 0
+
+		if(0 <= fill_percentage && fill_percentage <= 0.2 && B.show_fullness_messages)
+			message += B.get_reagent_examine_msg1()
+		if(0.2 < fill_percentage && fill_percentage <= 0.4 && B.show_fullness_messages)
+			message += B.get_reagent_examine_msg2()
+		if(0.4 < fill_percentage && fill_percentage <= 0.6 && B.show_fullness_messages)
+			message += B.get_reagent_examine_msg3()
+		if(0.6 < fill_percentage && fill_percentage <= 0.8 && B.show_fullness_messages)
+			message += B.get_reagent_examine_msg4()
+		if(0.8 < fill_percentage && fill_percentage <= 1 && B.show_fullness_messages)
+			message += B.get_reagent_examine_msg5()
+
+	return message
+
+/mob/living/proc/vore_check_reagents()
+	set name = "Check Belly Liquid (Vore)"
+	set category = "Abilities.Vore"
+	set desc = "Check the amount of liquid in your belly."
+
+	var/obj/belly/RTB = tgui_input_list(src, "Choose which vore belly to check", "Select Belly", vore_organs)
+	if(!RTB)
+		return FALSE
+
+	to_chat(src, span_vnotice("[RTB] has [RTB.reagents.total_volume] units of liquid."))
+
+/mob/living/proc/vore_transfer_reagents()
+	set name = "Transfer Liquid (Vore)"
+	set category = "Abilities.Vore"
+	set desc = "Transfer liquid from an organ to another or stomach, or into another person or container."
+	set popup_menu = FALSE
+
+	if(!checkClickCooldown() || incapacitated(INCAPACITATION_KNOCKOUT))
+		return FALSE
+
+	var/mob/living/user = src
+
+	var/mob/living/TG = tgui_input_list(user, "Choose who to transfer from", "Transfer From", mobs_in_view(1,user))
+	if(!TG)
+		return FALSE
+	if(TG.give_reagents == FALSE && user != TG) //User isnt forced to allow giving in prefs if they are the one doing it
+		to_chat(user, span_vwarning("This person's prefs dont allow that!"))
+		return FALSE
+
+	var/obj/belly/RTB = tgui_input_list(user, "Choose which vore belly to transfer from", "Select Belly", vore_organs)
+	if(!RTB)
+		return FALSE
+
+	var/transfer_amount = tgui_input_list(user, "How much to transfer?", "Transfer Amount", list(5,10,25,50,100))
+	if(!transfer_amount)
+		return FALSE
+
+	switch(tgui_input_list(user,"Choose what to transfer to","Select Target", list("Vore belly", "Stomach", "Container", "Floor", "Cancel")))
+		if("Cancel")
+			return FALSE
+		if("Vore belly")
+			var/mob/living/TR = tgui_input_list(user,"Choose who to transfer to","Select Target", mobs_in_view(1,user))
+			if(!TR)  return FALSE
+
+			if(TR == user) //Proceed, we dont need to have prefs enabled for transfer within user
+				var/obj/belly/TB = tgui_input_list(user, "Choose which organ to transfer to", "Select Belly", user.vore_organs)
+				if(!TB)
+					return FALSE
+				if(!Adjacent(TR) || !Adjacent(TG))
+					return //No long distance transfer
+				if(!TB.reagents?.get_free_space())
+					to_chat(user, span_vnotice("[TB] is full!"))
+					return FALSE
+
+				if(TG == user)
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from their [lowertext(RTB.name)] into their [lowertext(TB.name)]."))
+				else
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from [TG]'s [lowertext(RTB.name)] into their [lowertext(TB.name)]."))
+					add_attack_logs(user,TR,"Transfered [RTB.reagent_name] from [TG]'s [RTB] to [TR]'s [TB]")	//Bonus for staff so they can see if people have abused transfer and done pref breaks
+				RTB.reagents.vore_trans_to_mob(TR, transfer_amount, CHEM_VORE, 1, 0, TB)
+				if(RTB.count_liquid_for_sprite || TB.count_liquid_for_sprite)
+					handle_belly_update()
+
+			else if(TR.receive_reagents == FALSE)
+				to_chat(user, span_vwarning("This person's prefs dont allow that!"))
+				return FALSE
+
+			else
+				var/obj/belly/TB = tgui_input_list(user, "Choose which organ to transfer to", "Select Belly", TR.vore_organs)
+				if(!TB)
+					return FALSE
+				if(!Adjacent(TR) || !Adjacent(TG))
+					return //No long distance transfer
+				if(!TB.reagents?.get_free_space())
+					to_chat(user, span_vnotice("[TR]'s [lowertext(TB.name)] is full!"))
+					return FALSE
+
+				if(TG == user)
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from their [lowertext(RTB.name)] into [TR]'s [lowertext(TB.name)]."))
+				else
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from [TG]s [lowertext(RTB.name)] into [TR]'s [lowertext(TB.name)]."))
+
+				RTB.reagents.vore_trans_to_mob(TR, transfer_amount, CHEM_VORE, 1, 0, TB)
+				add_attack_logs(user,TR,"Transfered reagents from [TG]'s [RTB] to [TR]'s [TB]")	//Bonus for staff so they can see if people have abused transfer and done pref breaks
+				if(RTB.count_liquid_for_sprite)
+					handle_belly_update()
+				if(TB.count_liquid_for_sprite)
+					TR.handle_belly_update()
+
+
+		if("Stomach")
+			var/mob/living/TR = tgui_input_list(user,"Choose who to transfer to","Select Target", mobs_in_view(1,user))
+			if(!TR)  return
+			if(!Adjacent(TR) || !Adjacent(TG))
+				return //No long distance transfer
+
+			if(TR == user) //Proceed, we dont need to have prefs enabled for transfer within user
+				if(TG == user)
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from their [lowertext(RTB.name)] into their stomach."))
+				else
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from [TG]'s [lowertext(RTB.name)] into their stomach."))
+				RTB.reagents.vore_trans_to_mob(TR, transfer_amount, CHEM_INGEST, 1, 0, null)
+				add_attack_logs(user,TR,"Transfered [RTB.reagent_name] from [TG]'s [RTB] to [TR]'s Stomach")
+				if(RTB.count_liquid_for_sprite)
+					handle_belly_update()
+
+			else if(TR.receive_reagents == FALSE)
+				to_chat(user, span_vwarning("This person's prefs dont allow that!"))
+				return FALSE
+
+			else
+				if(TG == user)
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from their [lowertext(RTB.name)] into [TR]'s stomach."))
+				else
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from [TG]'s [lowertext(RTB.name)] into [TR]'s stomach."))
+
+				RTB.reagents.vore_trans_to_mob(TR, transfer_amount, CHEM_INGEST, 1, 0, null)
+				add_attack_logs(user,TR,"Transfered [RTB.reagent_name] from [TG]'s [RTB] to [TR]'s Stomach")	//Bonus for staff so they can see if people have abused transfer and done pref breaks
+				if(RTB.count_liquid_for_sprite)
+					handle_belly_update()
+
+		if("Container")
+			if(RTB.reagentid == REAGENT_ID_STOMACID)
+				return
+			var/list/choices = list()
+			for(var/obj/item/reagent_containers/rc in view(1,user.loc))
+				choices += rc
+			var/obj/item/reagent_containers/arc = user.get_active_hand()
+			if(istype(arc,/obj/item/reagent_containers))
+				choices += arc
+			var/obj/item/reagent_containers/irc = user.get_inactive_hand()
+			if(istype(irc,/obj/item/reagent_containers))
+				choices += irc
+
+			var/obj/item/reagent_containers/T = tgui_input_list(user,"Choose what to transfer to","Select Target", choices)
+			if(!T)
+				return FALSE
+			if(!Adjacent(T) || !Adjacent(TG))
+				return //No long distance transfer
+
+			if(TG == user)
+				user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from their [lowertext(RTB.name)] into [T]."))
+			else
+				user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from [TG]'s [lowertext(RTB.name)] into [T]."))
+
+			RTB.reagents.vore_trans_to_con(T, transfer_amount, 1, 0)
+			add_attack_logs(user, T,"Transfered [RTB.reagent_name] from [TG]'s [RTB] to a [T]")	//Bonus for staff so they can see if people have abused transfer and done pref breaks
+			if(RTB.count_liquid_for_sprite)
+				handle_belly_update()
+		if("Floor")
+			if(RTB.reagentid == REAGENT_ID_WATER)
+				return
+			var/amount_removed = RTB.reagents.remove_any(transfer_amount)
+			if(RTB.count_liquid_for_sprite)
+				handle_belly_update()
+			var/puddle_amount = round(amount_removed/5)
+
+			if(puddle_amount == 0)
+				to_chat(user,span_vnotice("[RTB.reagent_name] dripples from the [lowertext(RTB.name)], not enough to form a puddle."))
+				return
+
+			if(TG == user)
+				user.custom_emote_vr(1, span_vnotice("spills [RTB.reagent_name] from their [lowertext(RTB.name)] onto the floor!"))
+			else
+				user.custom_emote_vr(1, span_vnotice("spills [RTB.reagent_name] from [TG]'s [lowertext(RTB.name)] onto the floor!"))
+
+			var/obj/effect/decal/cleanable/blood/reagent/puddle = null
+			if (RTB.custom_reagentcolor)
+				puddle = new /obj/effect/decal/cleanable/blood/reagent(RTB.reagent_name, RTB.custom_reagentcolor, RTB.reagentid, puddle_amount, user.ckey, TG.ckey)
+			else
+				puddle = new /obj/effect/decal/cleanable/blood/reagent(RTB.reagent_name, RTB.reagentcolor, RTB.reagentid, puddle_amount, user.ckey, TG.ckey)
+
+			puddle.loc = TG.loc
+
+			var/soundfile
+			if(!RTB.fancy_vore)
+				soundfile = classic_release_sounds[RTB.release_sound]
+			else
+				soundfile = fancy_release_sounds[RTB.release_sound]
+			if(soundfile)
+				playsound(src, soundfile, vol = 100, vary = 1, falloff = VORE_SOUND_FALLOFF, preference = /datum/preference/toggle/eating_noises)
+
+/mob/living/proc/vore_bellyrub(var/mob/living/T in view(1,src))
+	set name = "Give Bellyrubs"
+	set category = "Abilities.General"
+	set desc = "Provide bellyrubs to either yourself or another mob with a belly."
+
+	if(!T)
+		T = tgui_input_list(src, "Choose whose belly to rub", "Rub Belly?", mobs_in_view(1,src))
+		if(!T)
+			return FALSE
+	if(!(T in view(1,src)))
+		return FALSE
+	if(T.vore_selected)
+		var/obj/belly/B = T.vore_selected
+		if(istype(B))
+			if(T == src)
+				custom_emote_vr(1, "rubs their [belly_rub_target ? belly_rub_target : lowertext(B.name)].")
+			else
+				custom_emote_vr(1, "gives some rubs over [T]'s [belly_rub_target ? belly_rub_target : lowertext(B.name)].")
+			B.quick_cycle()
+			return TRUE
+	to_chat(src, span_vwarning("There is no suitable belly for rubs."))
+	return FALSE
+
+/mob/living/proc/mute_entry()
+	set name = "Mute Vorgan Entrance"
+	set category = "Preferences.Vore"
+	set desc = "Mute the chatlog messages when something enters a vore belly."
+	mute_entry = !mute_entry
+	to_chat(src, span_vwarning("Entrance logs [mute_entry ? "disabled" : "enabled"]."))
+
+/mob/living/proc/restrict_trasheater()
+	set name = "Restrict Trash Eater"
+	set category = "Abilities.Vore"
+	set desc = "Toggle Trash Eater restriction level."
+	adminbus_trash = !adminbus_trash
+	to_chat(src, span_vwarning("Trash Eater restriction level set to [adminbus_trash ? "everything not blacklisted" : "only whitelisted items"]."))
+
+/mob/living/proc/liquidbelly_visuals()
+	set name = "Toggle Liquidbelly Visuals"
+	set category = "Preferences.Vore"
+	set desc = "Toggle liquidbelly fullscreen visual effect."
+	liquidbelly_visuals = !liquidbelly_visuals
+	to_chat(src, span_vwarning("Liquidbelly overlays [liquidbelly_visuals ? "enabled" : "disabled"]."))
+
+/mob/living/proc/fix_vore_effects()
+	set name = "Fix Vore Effects"
+	set category = "OOC.Debug"
+	set desc = "Fix certain vore effects lingering after you've exited a belly."
+
+	if(!isbelly(src.loc))
+		if(alert(src, "Only use this verb if you are affected by certain vore effects outside of a belly, such as muffling or a stuck belly fullscreen.", "Clear Vore Effects", "Continue", "Nevermind") != "Continue")
+			return
+
+		absorbed = FALSE
+		muffled = FALSE
+		clear_fullscreen("belly")
+		clear_fullscreen(ATOM_BELLY_FULLSCREEN)
+		stop_sound_channel(CHANNEL_PREYLOOP)
+
+/mob/living/verb/vore_check_nutrition()
+	set name = "Check Nutrition"
+	set category = "Abilities.Vore"
+	set desc = "Check your current nutrition level."
+	to_chat(src, span_vnotice("Current nutrition level: [nutrition]."))
+
+// This proc will either return the first belly the mob is in or return null if they're not in one
+/mob/living/proc/surrounding_belly()
+	var/atom/curloc = src.loc
+	while(curloc && !isbelly(curloc))
+		if(istype(curloc, /turf)) break
+		if(!curloc.loc || curloc == curloc.loc) break
+		curloc = curloc.loc
+	if(isbelly(curloc)) return curloc

@@ -187,11 +187,9 @@
 	icon_state = "grass0"
 	can_dirty = FALSE //VOREStation Edit
 	initial_flooring = /decl/flooring/grass
-	// CHOMPAdd - Grass has grass footsteps
 	footstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
 	clawfootstep = FOOTSTEP_GRASS
-	// CHOMPEnd
 
 /turf/simulated/floor/tiled
 	name = "floor"
@@ -338,10 +336,10 @@
 	oxygen = 0
 	nitrogen = 0
 
-/turf/simulated/floor/reinforced/n20/Initialize()
+/turf/simulated/floor/reinforced/n20/Initialize(mapload)
 	. = ..()
 	if(!air) make_air()
-	air.adjust_gas("nitrous_oxide", ATMOSTANK_NITROUSOXIDE)
+	air.adjust_gas(GAS_N2O, ATMOSTANK_NITROUSOXIDE)
 
 /turf/simulated/floor/cult
 	name = "engraved floor"

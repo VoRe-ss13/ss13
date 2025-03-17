@@ -42,7 +42,7 @@
 
 // Returns true only if one of the actions unique to reinforcing is done, otherwise false and continuing normal attackby
 /obj/machinery/door/proc/attackby_vr(obj/item/I as obj, mob/user as mob)
-	if(istype(I, /obj/item/stack/material) && I.get_material_name() == "plasteel")
+	if(istype(I, /obj/item/stack/material) && I.get_material_name() == MAT_PLASTEEL)
 		if(heat_proof)
 			to_chat(user, span_warning("\The [src] is already reinforced."))
 			return TRUE
@@ -85,7 +85,7 @@
 
 		var/obj/item/weldingtool/welder = I.get_welder()
 		if(welder.remove_fuel(0,user))
-			to_chat(user, span_notice("You start weld \the plasteel into place."))
+			to_chat(user, span_notice("You start welding the plasteel into place."))
 			playsound(src, welder.usesound, 50, 1)
 			if(do_after(user, 10 * welder.toolspeed) && welder && welder.isOn())
 				to_chat(user, span_notice("You finish reinforcing \the [src]."))

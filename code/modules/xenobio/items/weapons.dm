@@ -28,15 +28,10 @@
 				H.apply_damage(agony_to_apply, HALLOSS)
 
 	..()
-/obj/item/melee/baton/slime/loaded/Initialize()
+/obj/item/melee/baton/slime/loaded/Initialize(mapload)
 	bcell = new/obj/item/cell/device(src)
 	update_icon()
 	return ..()
-
-// Research borg's version
-/obj/item/melee/baton/slime/robot
-	hitcost = 200
-	use_external_power = TRUE
 
 // Xeno stun gun + projectile
 /obj/item/gun/energy/taser/xeno
@@ -52,12 +47,8 @@
 	description_fluff = "An easy to use weapon designed by NanoTrasen, for NanoTrasen. This weapon is based on the NT Mk30 NL, \
 	it's core components swaped out for a new design made to subdue lesser slime-based xeno lifeforms at a distance.  It is \
 	ineffective at stunning non-slimy lifeforms such as humanoids."
-	recoil_mode = 0 //CHOMP Addition
+	recoil_mode = 0
 
-/obj/item/gun/energy/taser/xeno/robot // Borg version
-	self_recharge = 1
-	use_external_power = 1
-	recharge_time = 3
 /*
 VORESTATION REMOVAL
 /obj/item/gun/energy/taser/xeno/sec //NT's corner-cutting option for their on-station security.
@@ -91,7 +82,7 @@ VORESTATION REMOVAL
 	agony = 3
 
 /obj/item/projectile/beam/stun/xeno/on_hit(var/atom/target, var/blocked = 0, var/def_zone = null)
-	if(istype(target, /mob/living))
+	if(isliving(target))
 		var/mob/living/L = target
 		if(L.mob_class & MOB_CLASS_SLIME)
 			if(isslime(L))

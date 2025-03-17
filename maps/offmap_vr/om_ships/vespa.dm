@@ -1,5 +1,5 @@
 // Compile in the map for CI testing if we're testing compileability of all the maps
-#if MAP_TEST
+#ifdef MAP_TEST
 #include "vespa.dmm"
 #endif
 
@@ -139,24 +139,24 @@
 
 // The shuttle's 'shuttle' computer
 // /obj/machinery/computer/shuttle_control/explore/vespaboat
-    //name = "Vespa's Shuttle control console"
-    //shuttle_tag = "Vespa's Ship's Boat"
-    //req_one_access = list(access_pilot)
+	//name = "Vespa's Shuttle control console"
+	//shuttle_tag = "Vespa's Ship's Boat"
+	//req_one_access = list(access_pilot)
 
 // A shuttle lateloader landmark
 // /obj/effect/shuttle_landmark/shuttle_initializer/vespaboat
-    //name = "Vespa's Boat Bay"
-    //base_area = /area/ship/expe/hangar
-    //base_turf = /turf/simulated/floor/tiled/techfloor
-    //landmark_tag = "omship_spawn_vespaboat"
-    //docking_controller = "vespa_boatbay"
-    //shuttle_type = /datum/shuttle/autodock/overmap/vespaboat
+	//name = "Vespa's Boat Bay"
+	//base_area = /area/ship/expe/hangar
+	//base_turf = /turf/simulated/floor/tiled/techfloor
+	//landmark_tag = "omship_spawn_vespaboat"
+	//docking_controller = "vespa_boatbay"
+	//shuttle_type = /datum/shuttle/autodock/overmap/vespaboat
 
 // The 'shuttle'
 // /datum/shuttle/autodock/overmap/vespaboat
-    //name = "Vespa's Ship's Boat"
-    //current_location = "omship_spawn_vespaboat"
-    //docking_controller_tag = "vespaboat_docker"
-    //shuttle_area = /area/shuttle/vespaboat
-    //fuel_consumption = 0
-    //defer_initialisation = TRUE
+	//name = "Vespa's Ship's Boat"
+	//current_location = "omship_spawn_vespaboat"
+	//docking_controller_tag = "vespaboat_docker"
+	//shuttle_area = /area/shuttle/vespaboat
+	//fuel_consumption = 0
+	//defer_initialisation = TRUE

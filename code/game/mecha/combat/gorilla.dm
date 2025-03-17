@@ -29,7 +29,7 @@
 	zoom_possible = 1
 	thrusters_possible = 1
 
-/obj/mecha/combat/gorilla/Initialize()
+/obj/mecha/combat/gorilla/Initialize(mapload)
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/tesla_energy_relay(src) // This thing basically cannot function without an external power supply.
 	ME.attach(src)
@@ -122,8 +122,8 @@
 	var/output = {"<div class='wr'>
 						<div class='header'>Special</div>
 						<div class='links'>
-						<a href='?src=\ref[src];toggle_zoom=1'>Toggle zoom mode</a><br>
-						<a href='?src=\ref[src];smoke=1'>Smoke</a>
+						<a href='byond://?src=\ref[src];toggle_zoom=1'>Toggle zoom mode</a><br>
+						<a href='byond://?src=\ref[src];smoke=1'>Smoke</a>
 						</div>
 						</div>
 						"}

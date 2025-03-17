@@ -7,14 +7,9 @@
 	var/inflame_progress = 0
 
 /mob/living/carbon/human/proc/appendicitis()
-	if(stat == DEAD)
-		return 0
-	var/obj/item/organ/internal/appendix/A = internal_organs_by_name[O_APPENDIX]
-	if(istype(A) && !A.inflamed)
-		A.inflamed = 1
-		return 1
-	return 0
+	return ForceContractDisease(new /datum/disease/appendicitis)
 
+/*
 /obj/item/organ/internal/appendix/process()
 	..()
 
@@ -28,11 +23,11 @@
 	if(inflamed == 1)
 		if(prob(5))
 			to_chat(owner, span_warning("You feel a stinging pain in your abdomen!"))
-			owner.custom_emote(VISIBLE_MESSAGE, "winces slightly.")
+			owner.automatic_custom_emote(VISIBLE_MESSAGE, "winces slightly.", check_stat = TRUE)
 	if(inflamed > 1)
 		if(prob(3))
 			to_chat(owner, span_warning("You feel a stabbing pain in your abdomen!"))
-			owner.custom_emote(VISIBLE_MESSAGE, "winces painfully.")
+			owner.automatic_custom_emote(VISIBLE_MESSAGE, "winces painfully.", check_stat = TRUE)
 			owner.adjustToxLoss(1)
 	if(inflamed > 2)
 		if(prob(1))
@@ -47,7 +42,7 @@
 			owner.adjustToxLoss(25)
 			groin.wounds += W
 			inflamed = 1
-
+*/
 /obj/item/organ/internal/appendix/removed()
 	if(inflamed)
 		icon_state = "[initial(icon_state)]inflamed"

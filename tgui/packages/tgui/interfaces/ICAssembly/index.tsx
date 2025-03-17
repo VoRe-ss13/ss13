@@ -1,19 +1,19 @@
-import { toFixed } from 'common/math';
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
-import { LabeledList } from 'tgui/components';
-import { formatPower } from 'tgui/format';
 import { Window } from 'tgui/layouts';
 import {
   AnimatedNumber,
   Box,
   Button,
+  LabeledList,
   ProgressBar,
   Section,
 } from 'tgui-core/components';
+import { formatPower } from 'tgui-core/format';
+import { toFixed } from 'tgui-core/math';
 
 import { Plane } from './Plane';
-import { Data } from './types';
+import type { Data } from './types';
 
 export const ICAssembly = (props) => {
   const [showInfo, setShowInfo] = useState(false);

@@ -1,8 +1,15 @@
 import { useBackend } from 'tgui/backend';
-import { Box, Button, Icon, Section, Stack, Tooltip } from 'tgui/components';
-import { DmIcon } from 'tgui-core/components';
+import {
+  Box,
+  Button,
+  DmIcon,
+  Icon,
+  Section,
+  Stack,
+  Tooltip,
+} from 'tgui-core/components';
 
-import { Data, DDisk, TDisk } from '../data';
+import type { Data, DDisk, TDisk } from '../data';
 
 export const Misc = (props) => {
   const { act, data } = useBackend<Data>();

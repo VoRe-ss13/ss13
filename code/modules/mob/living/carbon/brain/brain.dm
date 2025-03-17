@@ -8,11 +8,11 @@
 	use_me = 0 //Can't use the me verb, it's a freaking immobile brain
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "brain1"
-	no_vore = TRUE //VOREStation Edit - PLEASE. lol.
+	no_vore = TRUE
 	can_pain_emote = FALSE // CHOMPEdit: Sanity/safety
 	low_priority = TRUE //CHOMPEdit
 
-/mob/living/carbon/brain/Initialize()
+/mob/living/carbon/brain/Initialize(mapload)
 	. = ..()
 	var/datum/reagents/R = new/datum/reagents(1000)
 	reagents = R
@@ -24,7 +24,11 @@
 		if(stat != DEAD)	//If not dead.
 			death(1)	//Brains can die again. AND THEY SHOULD AHA HA HA HA HA HA
 		ghostize()		//Ghostize checks for key so nothing else is necessary.
+	qdel(dna)
 	return ..()
+
+/mob/living/carbon/brain/emp_act(severity) //Brains can't be EMP'd...
+	return
 
 /mob/living/carbon/brain/say_understands(var/other)//Goddamn is this hackish, but this say code is so odd
 	if(istype(container, /obj/item/mmi))
@@ -56,7 +60,7 @@
 // Vorestation edit start
 
 /mob/living/carbon/brain/verb/backup_ping()
-	set category = "IC.Game" //CHOMPEdit
+	set category = "IC.Game"
 	set name = "Notify Transcore"
 	set desc = "Your body is gone. Notify robotics to be resleeved!"
 	var/datum/transcore_db/db = SStranscore.db_by_mind_name(mind.name)

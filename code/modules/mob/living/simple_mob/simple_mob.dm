@@ -181,7 +181,13 @@
 	var/hasthermals = TRUE
 	var/isthermal = 0
 
-/mob/living/simple_mob/Initialize()
+	//vars for vore_icons toggle control
+	var/vore_icons_cache = null // null by default. Going from ON to OFF should store vore_icons val here, OFF to ON reset as null
+
+	//no stripping of simplemobs
+	strip_pref = FALSE
+
+/mob/living/simple_mob/Initialize(mapload)
 	remove_verb(src, /mob/verb/observe)
 	health = maxHealth
 
@@ -205,10 +211,10 @@
 	if(organ_names)
 		organ_names = GET_DECL(organ_names)
 
-	if(CONFIG_GET(flag/allow_simple_mob_recolor)) //CHOMPEdit
+	if(CONFIG_GET(flag/allow_simple_mob_recolor))
 		add_verb(src, /mob/living/simple_mob/proc/ColorMate)
 
-	AddElement(/datum/element/footstep, FOOTSTEP_MOB_SHOE, 1, -6) // CHOMPEdit - Giving them all shoe footsteps FOR NOW until I go through all of them and give appropiate ones
+	AddElement(/datum/element/footstep, FOOTSTEP_MOB_SHOE, 1, -6) // Need to go through all of the mobs to give them proper footsteps...
 
 	return ..()
 
@@ -233,7 +239,7 @@
 /mob/living/simple_mob/Login()
 	. = ..()
 	to_chat(src,span_boldnotice("You are \the [src].") + " [player_msg]")
-	if(vore_active && !voremob_loaded) //CHOMPedit: On-demand belly loading.
+	if(vore_active && !voremob_loaded)
 		voremob_loaded = TRUE
 		init_vore()
 	if(hasthermals)
@@ -283,7 +289,7 @@
 			. = 1
 		. *= purge
 
-	if(m_intent == "walk")
+	if(m_intent == I_WALK)
 		. *= 1.5
 
 	// VOREStation Edit Start
@@ -293,7 +299,7 @@
 		. += injury_level
 	// VOREStation Edit Stop
 
-	. += CONFIG_GET(number/animal_delay) // CHOMPEdit
+	. += CONFIG_GET(number/animal_delay)
 
 	. += ..()
 
@@ -321,7 +327,7 @@
 	return verb
 
 /mob/living/simple_mob/is_sentient()
-	return mob_class & MOB_CLASS_HUMANOID|MOB_CLASS_ANIMAL|MOB_CLASS_SLIME // Update this if needed.
+	return mob_class & (MOB_CLASS_HUMANOID|MOB_CLASS_ANIMAL|MOB_CLASS_SLIME) // Update this if needed.
 
 /mob/living/simple_mob/get_nametag_desc(mob/user)
 	return span_italics("[tt_desc]")
@@ -363,40 +369,62 @@
 
 /mob/living/simple_mob/proc/ColorMate()
 	set name = "Recolour"
-	set category = "Abilities.Settings" //CHOMPEdit
+	set category = "Abilities.Settings"
 	set desc = "Allows to recolour once."
 
 	if(!has_recoloured)
-		var/datum/ColorMate/recolour = new /datum/ColorMate(usr)
-		recolour.tgui_interact(usr)
+		var/datum/ColorMate/recolour = new /datum/ColorMate(src)
+		recolour.tgui_interact(src)
 		return
-	to_chat(usr, "You've already recoloured yourself once. You are only allowed to recolour yourself once during a around.")
+	to_chat(src, "You've already recoloured yourself once. You are only allowed to recolour yourself once during a around.")
 
 //Thermal vision adding
 
 /mob/living/simple_mob/proc/hunting_vision()
 	set name = "Track Prey Through Walls"
-	set category = "Abilities.Mob" //ChompEDIT
+	set category = "Abilities.Mob"
 	set desc = "Uses you natural predatory instincts to seek out prey even through walls, or your natural survival instincts to spot predators from a distance."
 
 	if(hunting_cooldown + 5 MINUTES < world.time)
-		to_chat(usr, "You can sense other creatures by focusing carefully on your surroundings.")
+		to_chat(src, "You can sense other creatures by focusing carefully on your surroundings.")
 		sight |= SEE_MOBS
 		hunting_cooldown = world.time
 		spawn(600)
-			to_chat(usr, "Your concentration wears off.")
+			to_chat(src, "Your concentration wears off.")
 			sight -= SEE_MOBS
 	else if(hunting_cooldown + 5 MINUTES > world.time)
-		to_chat(usr, "You must wait for a while before using this again.")
+		to_chat(src, "You must wait for a while before using this again.")
 
 /mob/living/simple_mob/proc/hunting_vision_plus()
 	set name = "Thermal vision toggle"
-	set category = "Abilities.Mob" //ChompEDIT
+	set category = "Abilities.Mob"
 	set desc = "Uses you natural predatory instincts to seek out prey even through walls, or your natural survival instincts to spot predators from a distance."
 
 	if(!isthermal)
-		to_chat(usr, "You can sense other creatures by focusing carefully on your surroundings.")
+		to_chat(src, "You can sense other creatures by focusing carefully on your surroundings.")
 		sight |= SEE_MOBS
 	else
-		to_chat(usr, "You stop sensing creatures beyond the walls.")
+		to_chat(src, "You stop sensing creatures beyond the walls.")
 		sight -= SEE_MOBS
+
+/mob/living/simple_mob/proc/character_directory_species()
+	return "simplemob"
+
+/mob/living/simple_mob/verb/toggle_vore_icons()
+
+	set name = "Toggle Vore Sprite"
+	set desc = "Toggle visibility of changed mob sprite when you have eaten other things."
+	set category = "Abilities.Vore"
+
+	if(!vore_icons && !vore_icons_cache)
+		to_chat(src,span_warning("This simplemob has no vore sprite."))
+	else if(isnull(vore_icons_cache))
+		vore_icons_cache = vore_icons
+		vore_icons = 0
+		to_chat(src,span_warning("Vore sprite disabled."))
+	else
+		vore_icons = vore_icons_cache
+		vore_icons_cache = null
+		to_chat(src,span_warning("Vore sprite enabled."))
+
+	update_icon()

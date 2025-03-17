@@ -24,8 +24,8 @@
 
 /obj/effect/decal/cleanable/greenglow
 
-/obj/effect/decal/cleanable/greenglow/New()
-	..()
+/obj/effect/decal/cleanable/greenglow/Initialize(mapload, _age)
+	. = ..()
 	QDEL_IN(src, 2 MINUTES)
 
 /obj/effect/decal/cleanable/dirt
@@ -37,19 +37,27 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "dirt"
 	mouse_opacity = 0
+	var/delete_me = FALSE
 
-/obj/effect/decal/cleanable/dirt/Initialize(var/mapload, var/_age, var/dirt)
+/obj/effect/decal/cleanable/dirt/Initialize(mapload, var/_age, var/dirt)
 	.=..()
+	if(delete_me)
+		return INITIALIZE_HINT_QDEL
 	var/turf/simulated/our_turf = src.loc
 	if(our_turf && istype(our_turf) && our_turf.can_dirty)
 		our_turf.dirt = clamp(max(age ? (dirt ? dirt : 101) : our_turf.dirt, our_turf.dirt), 0, 101)
+		if(mapload && !our_turf.dirt)
+			our_turf.dirt = rand(51, 100)
 		var/calcalpha = our_turf.dirt > 50 ? min((our_turf.dirt - 50) * 5, 255) : 0
 		var/alreadyfound = FALSE
 		for (var/obj/effect/decal/cleanable/dirt/alreadythere in our_turf) //in case of multiple
 			if (alreadythere == src)
 				continue
 			else if (alreadyfound)
-				qdel(alreadythere)
+				if(!(alreadythere.flags & ATOM_INITIALIZED))
+					delete_me = TRUE
+				else
+					qdel(alreadythere)
 				continue
 			alreadyfound = TRUE
 			alreadythere.alpha = calcalpha //don't need to constantly recalc for all of them in it because it'll just max if a non-persistent dirt overlay gets added, and then the new dirt overlay will be deleted
@@ -113,7 +121,7 @@
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "vomit_1"
 	random_icon_states = list("vomit_1", "vomit_2", "vomit_3", "vomit_4")
-	var/list/datum/disease2/disease/virus2 = list()
+	var/list/datum/disease/viruses = list()
 
 /obj/effect/decal/cleanable/tomato_smudge
 	name = "tomato smudge"
@@ -121,6 +129,7 @@
 	density = FALSE
 	anchored = TRUE
 	icon = 'icons/effects/tomatodecal.dmi'
+	icon_state = "tomato_floor1"
 	random_icon_states = list("tomato_floor1", "tomato_floor2", "tomato_floor3")
 
 /obj/effect/decal/cleanable/egg_smudge
@@ -129,6 +138,7 @@
 	density = FALSE
 	anchored = TRUE
 	icon = 'icons/effects/tomatodecal.dmi'
+	icon_state = "smashed_egg1"
 	random_icon_states = list("smashed_egg1", "smashed_egg2", "smashed_egg3")
 
 /obj/effect/decal/cleanable/pie_smudge //honk
@@ -137,6 +147,7 @@
 	density = FALSE
 	anchored = TRUE
 	icon = 'icons/effects/tomatodecal.dmi'
+	icon_state = "smashed_pie"
 	random_icon_states = list("smashed_pie")
 
 /obj/effect/decal/cleanable/fruit_smudge

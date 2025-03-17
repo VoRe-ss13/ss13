@@ -70,7 +70,7 @@
 		return
 
 	var/burn_user = TRUE
-	if(istype(M, /mob/living/carbon/human))
+	if(ishuman(M))
 		var/mob/living/carbon/human/H = user
 		var/obj/item/clothing/gloves/G = H.gloves
 		var/obj/item/clothing/suit/S = H.wear_suit
@@ -87,12 +87,12 @@
 			switch(damage_type)
 				if("BRUTE")
 					H.visible_message(span_danger("\The [src] creaks as it ravages [H]'s hands!"))
-					H.apply_damage(rand(min_damage,max_damage), BRUTE, "r_hand", used_weapon="Anomalous Material")
-					H.apply_damage(rand(min_damage,max_damage), BRUTE, "l_hand", used_weapon="Anomalous Material")
+					H.apply_damage(rand(min_damage,max_damage), BRUTE, "r_hand", used_weapon=src)
+					H.apply_damage(rand(min_damage,max_damage), BRUTE, "l_hand", used_weapon=src)
 				if("BURN")
 					H.visible_message(span_danger("\The [src] flashes as it scorches [H]'s hands!"))
-					H.apply_damage(rand(min_damage,max_damage), BURN, "r_hand", used_weapon="Anomalous Material")
-					H.apply_damage(rand(min_damage,max_damage), BURN, "l_hand", used_weapon="Anomalous Material")
+					H.apply_damage(rand(min_damage,max_damage), BURN, "r_hand", used_weapon=src)
+					H.apply_damage(rand(min_damage,max_damage), BURN, "l_hand", used_weapon=src)
 				if("TOX")
 					H.visible_message(span_danger("\The [src] seethes and hisses like burning acid!"))
 					if(!H.isSynthetic())
@@ -115,11 +115,11 @@
 			H.drop_from_inventory(src, get_turf(H))
 			return
 
-	if(istype(user, /mob/living/silicon/robot))
+	if(isrobot(user))
 		burn_user = FALSE
 
 	if(burn_user)
-		M.apply_damage(rand(min_damage,max_damage), BURN, null, used_weapon="Anomalous Material")
+		M.apply_damage(rand(min_damage,max_damage), BURN, null, used_weapon=src)
 
 /obj/item/research_sample/attack_self(mob/user)
 	var/mob/living/M = user
@@ -127,7 +127,7 @@
 		return
 
 	var/burn_user = TRUE
-	if(istype(M, /mob/living/carbon/human))
+	if(ishuman(M))
 		var/mob/living/carbon/human/H = user
 		var/obj/item/clothing/gloves/G = H.gloves
 		var/obj/item/clothing/suit/S = H.wear_suit
@@ -144,12 +144,12 @@
 			switch(damage_type)
 				if("BRUTE")
 					H.visible_message(span_danger("\The [src] creaks as it ravages [H]'s hands!"))
-					H.apply_damage(rand(min_damage,max_damage), BRUTE, "r_hand", used_weapon="Anomalous Material")
-					H.apply_damage(rand(min_damage,max_damage), BRUTE, "l_hand", used_weapon="Anomalous Material")
+					H.apply_damage(rand(min_damage,max_damage), BRUTE, "r_hand", used_weapon=src)
+					H.apply_damage(rand(min_damage,max_damage), BRUTE, "l_hand", used_weapon=src)
 				if("BURN")
 					H.visible_message(span_danger("\The [src] flashes as it scorches [H]'s hands!"))
-					H.apply_damage(rand(min_damage,max_damage), BURN, "r_hand", used_weapon="Anomalous Material")
-					H.apply_damage(rand(min_damage,max_damage), BURN, "l_hand", used_weapon="Anomalous Material")
+					H.apply_damage(rand(min_damage,max_damage), BURN, "r_hand", used_weapon=src)
+					H.apply_damage(rand(min_damage,max_damage), BURN, "l_hand", used_weapon=src)
 				if("TOX")
 					H.visible_message(span_danger("\The [src] seethes and hisses like burning acid!"))
 					if(!H.isSynthetic())
@@ -182,20 +182,24 @@
 			H.drop_from_inventory(src,get_turf(H))
 			qdel(src)
 
-	if(istype(user, /mob/living/silicon/robot))
+	if(isrobot(user))
 		burn_user = FALSE
 
 	if(burn_user)
-		M.apply_damage(rand(min_damage,max_damage), BURN, null, used_weapon="Anomalous Material")
+		M.apply_damage(rand(min_damage,max_damage), BURN, null, used_weapon=src)
 
 /obj/item/research_sample/attackby(obj/item/P as obj, mob/user as mob)
 	..()
 
 	if(istype(P, /obj/item/storage/sample_container))
 		var/obj/item/storage/sample_container/SC = P
-		src.loc = SC
-		SC.update_icon()
-		to_chat(user, span_notice("You store \the [src] in \the [SC]."))
+		if(SC.contents.len >= SC.max_storage_space)
+			to_chat(user, span_notice("\The [SC] is full!"))
+			return
+		else
+			src.loc = SC
+			SC.update_icon()
+			to_chat(user, span_notice("You store \the [src] in \the [SC]."))
 
 	if(istype(P, /obj/item/cataloguer))
 		to_chat(user, span_notice("You start to scan \the [src] with \the [P]..."))

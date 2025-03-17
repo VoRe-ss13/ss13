@@ -306,8 +306,6 @@
 /area/survivalpod/superpose/TradingShip)
 "jn" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -320,7 +318,6 @@
 "jD" = (
 /obj/machinery/power/smes/batteryrack/mapped,
 /obj/structure/cable/green{
-	d2 = 2;
 	icon_state = "0-2"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -613,11 +610,6 @@
 /obj/item/clothing/head/pin/flower/blue,
 /obj/item/clothing/head/pin/flower/orange,
 /obj/item/clothing/head/pin/flower/pink,
-/obj/item/clothing/head/justice,
-/obj/item/clothing/head/justice/blue,
-/obj/item/clothing/head/justice/green,
-/obj/item/clothing/head/justice/pink,
-/obj/item/clothing/head/justice/yellow,
 /obj/item/clothing/head/philosopher_wig,
 /obj/item/clothing/head/plaguedoctorhat,
 /obj/item/clothing/head/xenos,
@@ -658,8 +650,6 @@
 	req_one_access = null
 	},
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/floor/voidcraft/dark,
@@ -841,8 +831,6 @@
 /area/survivalpod/superpose/TradingShip)
 "to" = (
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
 	icon_state = "2-8"
 	},
 /turf/simulated/shuttle/floor/darkred,
@@ -1036,7 +1024,6 @@
 	pixel_y = -24
 	},
 /obj/structure/cable/green{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -1309,8 +1296,6 @@
 /area/survivalpod/superpose/TradingShip)
 "DU" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
 	icon_state = "1-8"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -1439,8 +1424,6 @@
 /area/survivalpod/superpose/TradingShip)
 "Gw" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
 	icon_state = "1-4"
 	},
 /turf/simulated/shuttle/floor/darkred,
@@ -1706,7 +1689,6 @@
 	dir = 8
 	},
 /obj/machinery/computer/security/telescreen/entertainment{
-	icon_state = "frame";
 	pixel_x = 32
 	},
 /turf/simulated/floor/carpet,
@@ -1836,8 +1818,6 @@
 "Rb" = (
 /obj/machinery/door/airlock/multi_tile/glass,
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/shuttle/floor/voidcraft/dark,
@@ -1855,8 +1835,6 @@
 /area/survivalpod/superpose/TradingShip)
 "RU" = (
 /obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/shuttle/floor/darkred,
@@ -1866,8 +1844,6 @@
 /area/survivalpod/superpose/TradingShip)
 "Su" = (
 /obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
 	icon_state = "1-2"
 	},
 /turf/simulated/shuttle/floor/darkred,

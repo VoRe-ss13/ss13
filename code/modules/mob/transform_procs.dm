@@ -33,8 +33,6 @@
 	for(var/obj/item/W in src)
 		drop_from_inventory(W)
 	set_species(species.primitive_form)
-	dna.SetSEState(MONKEYBLOCK,1)
-	dna.SetSEValueRange(MONKEYBLOCK,0xDAC, 0xFFF)
 
 	to_chat(src, span_infoplain(span_bold("You are now [species.name]. ")))
 	qdel(animation)
@@ -51,12 +49,10 @@
 	for(var/t in organs)
 		qdel(t)
 
-	//VOREStation Edit Start - Hologram examine flavor
 	var/mob/living/silicon/ai/O = ..(move)
 	if(O)
 		O.flavor_text = O.client?.prefs?.flavor_texts["general"]
 		return O
-	//VOREStation Edit End
 
 	return ..(move)
 
@@ -194,7 +190,6 @@
 		O.custom_speech_bubble = B.custom_speech_bubble
 
 	callHook("borgify", list(O))
-	O.namepick()
 
 	spawn(0)	// Mobs still instantly del themselves, thus we need to spawn or O will never be returned
 		qdel(src)
@@ -246,13 +241,13 @@
 	qdel(src)
 	return
 
-/mob/living/carbon/human/Animalize()
+/mob/living/carbon/human/Animalize(mob/user)
 
 	var/list/mobtypes = typesof(/mob/living/simple_mob)
-	var/mobpath = tgui_input_list(usr, "Which type of mob should [src] turn into?", "Choose a type", mobtypes)
+	var/mobpath = tgui_input_list(user, "Which type of mob should [src] turn into?", "Choose a type", mobtypes)
 
 	if(!safe_animal(mobpath))
-		to_chat(usr, span_red("Sorry but this mob type is currently unavailable."))
+		to_chat(user, span_red("Sorry but this mob type is currently unavailable."))
 		return
 
 	if(transforming)
@@ -280,13 +275,13 @@
 		qdel(src)
 	return
 
-/mob/proc/Animalize()
+/mob/proc/Animalize(mob/user)
 
 	var/list/mobtypes = typesof(/mob/living/simple_mob)
-	var/mobpath = tgui_input_list(usr, "Which type of mob should [src] turn into?", "Choose a type", mobtypes)
+	var/mobpath = tgui_input_list(user, "Which type of mob should [src] turn into?", "Choose a type", mobtypes)
 
 	if(!safe_animal(mobpath))
-		to_chat(usr, span_red("Sorry but this mob type is currently unavailable."))
+		to_chat(user, span_red("Sorry but this mob type is currently unavailable."))
 		return
 
 	var/mob/new_mob = new mobpath(src.loc)

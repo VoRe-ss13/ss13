@@ -1,5 +1,5 @@
 /mob/observer/dead/verb/spawn_in_belly()
-	set category = "Ghost.Join" //CHOMPEdit
+	set category = "Ghost.Join"
 	set name = "Spawn In Belly"
 	set desc = "Spawn in someone's belly."
 
@@ -27,7 +27,7 @@ Please do not abuse this ability.
 			continue
 		if(ishuman(pred))
 			var/mob/living/carbon/human/H = pred
-			if(!H.latejoin_vore) //CHOMPEdit - Changes pref to the same as vorespawn pred
+			if(!H.latejoin_vore)
 				continue
 			eligible_targets += H
 			continue
@@ -35,15 +35,15 @@ Please do not abuse this ability.
 			var/mob/living/silicon/S = pred
 			if(isAI(S))
 				continue						// Sorry, AI buddies. Your vore works too differently.
-			if(!S.latejoin_vore) //CHOMPEdit - Changes pref to the same as vorespawn pred
+			if(!S.latejoin_vore)
 				continue
 			eligible_targets += S
 			continue
-		if(istype(pred, /mob/living/simple_mob))
+		if(isanimal(pred))
 			var/mob/living/simple_mob/SM = pred
 			if(!SM.vore_active)						// No vore, no bellies, no inbelly spawning
 				continue
-			if(!SM.latejoin_vore) //CHOMPEdit - Changes pref to the same as vorespawn pred
+			if(!SM.latejoin_vore)
 				continue
 			eligible_targets += SM
 			continue
@@ -68,7 +68,7 @@ Please do not abuse this ability.
 		return
 
 	// Are we cool with this prey spawning in at all?
-	var/answer = tgui_alert(src, "[potential_prey.prefs.real_name] wants to spawn in one of your bellies. Do you accept?", "Inbelly Spawning", list("Yes", "No")) //CHOMPEdit - hides ckey
+	var/answer = tgui_alert(src, "[potential_prey.prefs.real_name] wants to spawn in one of your bellies. Do you accept?", "Inbelly Spawning", list("Yes", "No"))
 	if(answer != "Yes")
 		to_chat(potential_prey, span_notice("Your request was turned down."))
 		return
@@ -144,7 +144,9 @@ Please do not abuse this ability.
 	prey.prefs.copy_to(new_character)
 	if(new_character.dna)
 		new_character.dna.ResetUIFrom(new_character)
+		new_character.sync_dna_traits(TRUE) // Traitgenes Sync traits to genetics if needed
 		new_character.sync_organ_dna()
+	new_character.initialize_vessel()
 	new_character.key = player_key
 	if(new_character.mind)
 		var/datum/antagonist/antag_data = get_antag_data(new_character.mind.special_role)

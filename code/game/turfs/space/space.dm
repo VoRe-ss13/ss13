@@ -12,8 +12,8 @@
 	var/edge = FALSE //If we're an edge
 	var/forced_dirs = 0 //Force this one to pretend it's an overedge turf
 
-/turf/space/Initialize()
-	if(CONFIG_GET(flag/starlight)) // CHOMPEdit
+/turf/space/Initialize(mapload)
+	if(CONFIG_GET(flag/starlight))
 		update_starlight()
 
 	//Sprite stuff only beyond here
@@ -75,7 +75,7 @@
 
 /turf/space/proc/update_starlight()
 	if(locate(/turf/simulated) in orange(src,1))
-		set_light(CONFIG_GET(flag/starlight)) // CHOMPEdit
+		set_light(CONFIG_GET(flag/starlight))
 	else
 		set_light(0)
 

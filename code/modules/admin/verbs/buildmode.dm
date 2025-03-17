@@ -16,7 +16,7 @@
 	set category = "Special Verbs"
 	if(M.client)
 		if(M.client.buildmode)
-			log_admin("[key_name(usr)] has left build mode.")
+			log_admin("[key_name(M)] has left build mode.")
 			M.client.buildmode = 0
 			M.client.show_popup_menus = 1
 			M.plane_holder.set_vis(VIS_BUILDMODE, FALSE)
@@ -24,7 +24,7 @@
 				if(H.cl == M.client)
 					qdel(H)
 		else
-			log_admin("[key_name(usr)] has entered build mode.")
+			log_admin("[key_name(M)] has entered build mode.")
 			M.client.buildmode = 1
 			M.client.show_popup_menus = 0
 			M.plane_holder.set_vis(VIS_BUILDMODE, TRUE)
@@ -275,7 +275,7 @@
 				var/list/locked = list("vars", "key", "ckey", "client", "firemut", "ishulk", "telekinesis", "xray", "virus", "viruses", "cuffed", "ka", "last_eaten", "urine")
 
 				master.buildmode.varholder = tgui_input_text(usr,"Enter variable name:" ,"Name", "name")
-				if(master.buildmode.varholder in locked && !check_rights(R_DEBUG,0))
+				if((master.buildmode.varholder in locked) && !check_rights(R_DEBUG,0))
 					return 1
 				var/thetype = tgui_input_list(usr,"Select variable type:", "Type", list("text","number","mob-reference","obj-reference","turf-reference"))
 				if(!thetype) return 1
@@ -324,7 +324,7 @@
 						if(input)
 							new_light_intensity = input
 					if("Color")
-						var/input = input(usr, "New light color.","Light Maker",3) as null|color
+						var/input = tgui_color_picker(usr, "New light color.","Light Maker",new_light_color)
 						if(input)
 							new_light_color = input
 			if(BUILDMODE_DROP)
@@ -659,12 +659,10 @@ CHOMP Remove end */
 				return
 			if(pa.Find("left") && !pa.Find("ctrl"))
 				if(ispath(holder.buildmode.objholder))
-					var/obj/effect/falling_effect/FE = new /obj/effect/falling_effect(get_turf(object), holder.buildmode.objholder)
-					FE.crushing = FALSE
+					new /obj/effect/falling_effect(get_turf(object), holder.buildmode.objholder, FALSE)
 			else if(pa.Find("right"))
 				if(ispath(holder.buildmode.objholder))
-					var/obj/effect/falling_effect/FE = new /obj/effect/falling_effect(get_turf(object), holder.buildmode.objholder)
-					FE.crushing = TRUE
+					new /obj/effect/falling_effect(get_turf(object), holder.buildmode.objholder, TRUE)
 			else if(pa.Find("ctrl"))
 				holder.buildmode.objholder = object.type
 				to_chat(user, span_notice("[object]([object.type]) copied to buildmode."))
@@ -831,9 +829,9 @@ CHOMP Remove end */
 			if (!isturf(NT) || (NT in found) || (NT in pending))
 				continue
 			// We ask ZAS to determine if its airtight.  Thats what matters anyway right?
-			if(air_master.air_blocked(T, NT))
+			if(SSair.air_blocked(T, NT))
 				// Okay thats the edge of the room
-				if(get_area_type_buildmode(NT.loc) == AREA_SPACE && air_master.air_blocked(NT, NT))
+				if(get_area_type_buildmode(NT.loc) == AREA_SPACE && SSair.air_blocked(NT, NT))
 					found += NT // So we include walls/doors not already in any area
 				continue
 			if (istype(NT, /turf/space))

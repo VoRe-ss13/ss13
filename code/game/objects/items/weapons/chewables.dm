@@ -25,7 +25,7 @@
 	if(wrapped)
 		add_overlay("[initial(icon_state)]_wrapper")
 
-/obj/item/clothing/mask/chewable/Initialize()
+/obj/item/clothing/mask/chewable/Initialize(mapload)
 	. = ..()
 	flags |= NOREACT // so it doesn't react until you light it
 	create_reagents(chem_volume) // making the cigarrete a chemical holder with a maximum volume of 15
@@ -43,7 +43,7 @@
 		else
 			to_chat(user, span_notice("You don't have a mouth, and can't make much use of \the [src]."))
 
-/obj/item/clothing/mask/chewable/dropped()
+/obj/item/clothing/mask/chewable/dropped(mob/user)
 	STOP_PROCESSING(SSprocessing, src)
 	..()
 
@@ -104,12 +104,12 @@
 /obj/item/clothing/mask/chewable/tobacco/cheap
 	name = "chewing tobacco"
 	desc = "A chewy wad of tobacco. Cut in long strands and treated with syrup so it tastes less like an ash-tray when you stuff it into your face."
-	filling = list("nicotine" = 2)
+	filling = list(REAGENT_ID_NICOTINE = 2)
 
 /obj/item/clothing/mask/chewable/tobacco/fine
 	name = "deluxe chewing tobacco"
 	desc = "A chewy wad of fine tobacco. Cut in long strands and treated with syrup so it doesn't taste like an ash-tray when you stuff it into your face."
-	filling = list("nicotine" = 3)
+	filling = list(REAGENT_ID_NICOTINE = 3)
 
 /obj/item/clothing/mask/chewable/tobacco/nico
 	name = "nicotine gum"
@@ -118,9 +118,9 @@
 	type_butt = /obj/item/trash/spitgum
 	wrapped = TRUE
 
-/obj/item/clothing/mask/chewable/tobacco/nico/Initialize()
+/obj/item/clothing/mask/chewable/tobacco/nico/Initialize(mapload)
 	. = ..()
-	reagents.add_reagent("nicotine", 2)
+	reagents.add_reagent(REAGENT_ID_NICOTINE, 2)
 	color = reagents.get_color()
 
 /obj/item/storage/chewables
@@ -136,7 +136,7 @@
 	slot_flags = SLOT_BELT
 	starts_with = list(/obj/item/clothing/mask/chewable/tobacco = 6)
 
-/obj/item/storage/chewables/Initialize()
+/obj/item/storage/chewables/Initialize(mapload)
 	. = ..()
 	make_exact_fit()
 
@@ -171,12 +171,12 @@
 	var/open_state
 	var/closed_state
 
-/obj/item/storage/box/fancy/chewables/tobacco/nico/New()
+/obj/item/storage/box/fancy/chewables/tobacco/nico/Initialize(mapload)
 	if(!open_state)
 		open_state = "[initial(icon_state)]0"
 	if(!closed_state)
 		closed_state = "[initial(icon_state)]"
-	..()
+	. = ..()
 
 /obj/item/storage/box/fancy/chewables/tobacco/nico/update_icon()
 	cut_overlays()
@@ -215,7 +215,7 @@
 	slot_flags = SLOT_EARS | SLOT_MASK
 	chem_volume = 50
 	chewtime = 300
-	filling = list("sugar" = 2)
+	filling = list(REAGENT_ID_SUGAR = 2)
 
 /obj/item/clothing/mask/chewable/candy/gum
 	name = "chewing gum"
@@ -224,9 +224,9 @@
 	item_state = "gum"
 	wrapped = TRUE
 
-/obj/item/clothing/mask/chewable/candy/gum/Initialize()
+/obj/item/clothing/mask/chewable/candy/gum/Initialize(mapload)
 	. = ..()
-	reagents.add_reagent(pick("banana","berryjuice","grapejuice","lemonjuice","limejuice","orangejuice","watermelonjuice"),10)
+	reagents.add_reagent(pick(REAGENT_ID_BANANA,REAGENT_ID_BERRYJUICE,REAGENT_ID_GRAPEJUICE,REAGENT_ID_LEMONJUICE,REAGENT_ID_LIMEJUICE,REAGENT_ID_ORANGEJUICE,REAGENT_ID_WATERMELONJUICE),10)
 	color = reagents.get_color()
 	update_icon()
 
@@ -333,9 +333,9 @@
 
 // CHOMPAdd End
 
-/obj/item/clothing/mask/chewable/candy/lolli/Initialize()
+/obj/item/clothing/mask/chewable/candy/lolli/Initialize(mapload)
 	. = ..()
-	reagents.add_reagent(pick("banana","berryjuice","grapejuice","lemonjuice","limejuice","orangejuice","watermelonjuice"),20)
+	reagents.add_reagent(pick(REAGENT_ID_BANANA,REAGENT_ID_BERRYJUICE,REAGENT_ID_GRAPEJUICE,REAGENT_ID_LEMONJUICE,REAGENT_ID_LIMEJUICE,REAGENT_ID_ORANGEJUICE,REAGENT_ID_WATERMELONJUICE),20)
 	color = reagents.get_color()
 	update_icon()
 
@@ -359,7 +359,7 @@
 	desc = "A chocolate-coated biscuit stick."
 	icon_state = "pockystick"
 	item_state = "pocky"
-	filling = list("sugar" = 2, "chocolate" = 5)
+	filling = list(REAGENT_ID_SUGAR = 2, REAGENT_ID_CHOCOLATE = 5)
 	type_butt = null
 
 /obj/item/clothing/mask/chewable/candy/pocky/process()

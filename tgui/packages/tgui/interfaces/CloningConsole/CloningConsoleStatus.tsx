@@ -1,6 +1,13 @@
-import { useBackend } from '../../backend';
-import { Box, Button, LabeledList, NoticeBox, Section } from '../../components';
-import { Data } from './types';
+import { useBackend } from 'tgui/backend';
+import {
+  Box,
+  Button,
+  LabeledList,
+  NoticeBox,
+  Section,
+} from 'tgui-core/components';
+
+import type { Data } from './types';
 
 export const CloningConsoleTemp = (props) => {
   const { act, data } = useBackend<Data>();

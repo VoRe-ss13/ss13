@@ -76,14 +76,8 @@
 	// Clothing assemblies can be triggered by clicking on the HUD. This allows that to occur.
 	action_circuit = new(src.IC)
 	IC.force_add_circuit(action_circuit)
-	action_button_name = "Activate [name]"
 
-/obj/item/clothing/Destroy()
-	if(IC)
-		IC.clothing = null
-		action_circuit = null // Will get deleted by qdel-ing the IC assembly.
-		qdel(IC)
-	return ..()
+	add_item_action(new /datum/action/item_action/activate(src, name))
 
 // Specific subtypes.
 
@@ -95,7 +89,7 @@
 	icon_state = "circuitry"
 	worn_state = "circuitry"
 
-/obj/item/clothing/under/circuitry/Initialize()
+/obj/item/clothing/under/circuitry/Initialize(mapload)
 	setup_integrated_circuit(/obj/item/electronic_assembly/clothing)
 	return ..()
 
@@ -109,7 +103,7 @@
 	icon_state = "circuitry"
 	item_state = "circuitry"
 
-/obj/item/clothing/gloves/circuitry/Initialize()
+/obj/item/clothing/gloves/circuitry/Initialize(mapload)
 	setup_integrated_circuit(/obj/item/electronic_assembly/clothing/small)
 	return ..()
 
@@ -123,7 +117,7 @@
 	icon_state = "circuitry"
 	item_state = "night" // The on-mob sprite would be identical anyways.
 
-/obj/item/clothing/glasses/circuitry/Initialize()
+/obj/item/clothing/glasses/circuitry/Initialize(mapload)
 	setup_integrated_circuit(/obj/item/electronic_assembly/clothing/small)
 	return ..()
 
@@ -136,7 +130,7 @@
 	icon_state = "circuitry"
 	item_state = "circuitry"
 
-/obj/item/clothing/shoes/circuitry/Initialize()
+/obj/item/clothing/shoes/circuitry/Initialize(mapload)
 	setup_integrated_circuit(/obj/item/electronic_assembly/clothing/small)
 	return ..()
 
@@ -149,7 +143,7 @@
 	icon_state = "circuitry"
 	item_state = "circuitry"
 
-/obj/item/clothing/head/circuitry/Initialize()
+/obj/item/clothing/head/circuitry/Initialize(mapload)
 	setup_integrated_circuit(/obj/item/electronic_assembly/clothing/small)
 	return ..()
 
@@ -162,7 +156,7 @@
 	icon_state = "circuitry"
 	item_state = "circuitry"
 
-/obj/item/clothing/ears/circuitry/Initialize()
+/obj/item/clothing/ears/circuitry/Initialize(mapload)
 	setup_integrated_circuit(/obj/item/electronic_assembly/clothing/small)
 	return ..()
 
@@ -175,6 +169,6 @@
 	icon_state = "circuitry"
 	item_state = "circuitry"
 
-/obj/item/clothing/suit/circuitry/Initialize()
+/obj/item/clothing/suit/circuitry/Initialize(mapload)
 	setup_integrated_circuit(/obj/item/electronic_assembly/clothing/large)
 	return ..()

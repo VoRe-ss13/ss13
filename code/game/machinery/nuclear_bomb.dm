@@ -22,11 +22,11 @@ var/bomb_set
 	var/safety_wire
 	var/timing_wire
 	var/removal_stage = 0 // 0 is no removal, 1 is covers removed, 2 is covers open,
-	                      // 3 is sealant open, 4 is unwrenched, 5 is removed from bolts.
+	  					// 3 is sealant open, 4 is unwrenched, 5 is removed from bolts.
 	use_power = USE_POWER_OFF
 
-/obj/machinery/nuclearbomb/New()
-	..()
+/obj/machinery/nuclearbomb/Initialize(mapload)
+	. = ..()
 	r_code = "[rand(10000, 99999.0)]"//Creates a random code upon object spawn.
 	wires["Red"] = 0
 	wires["Blue"] = 0
@@ -53,7 +53,7 @@ var/bomb_set
 		for(var/mob/M in viewers(1, src))
 			if((M.client && M.machine == src))
 				attack_hand(M)
-	return
+	return ..()
 
 /obj/machinery/nuclearbomb/attackby(obj/item/O as obj, mob/user as mob)
 	if(O.has_tool_quality(TOOL_SCREWDRIVER))
@@ -86,7 +86,7 @@ var/bomb_set
 
 	if(extended)
 		if(istype(O, /obj/item/disk/nuclear))
-			usr.drop_item()
+			user.drop_item()
 			O.loc = src
 			auth = O
 			add_fingerprint(user)
@@ -170,10 +170,10 @@ var/bomb_set
 			return 1
 
 		user.set_machine(src)
-		var/dat = text("<TT><B>Nuclear Fission Explosive</B><BR>\nAuth. Disk: <A href='?src=\ref[];auth=1'>[]</A><HR>", src, (auth ? "++++++++++" : "----------"))
+		var/dat = text("<TT><B>Nuclear Fission Explosive</B><BR>\nAuth. Disk: <A href='byond://?src=\ref[];auth=1'>[]</A><HR>", src, (auth ? "++++++++++" : "----------"))
 		if(auth)
 			if(yes_code)
-				dat += text("\n<B>Status</B>: []-[]<BR>\n<B>Timer</B>: []<BR>\n<BR>\nTimer: [] <A href='?src=\ref[];timer=1'>Toggle</A><BR>\nTime: <A href='?src=\ref[];time=-10'>-</A> <A href='?src=\ref[];time=-1'>-</A> [] <A href='?src=\ref[];time=1'>+</A> <A href='?src=\ref[];time=10'>+</A><BR>\n<BR>\nSafety: [] <A href='?src=\ref[];safety=1'>Toggle</A><BR>\nAnchor: [] <A href='?src=\ref[];anchor=1'>Toggle</A><BR>\n", (timing ? "Func/Set" : "Functional"), (safety ? "Safe" : "Engaged"), timeleft, (timing ? "On" : "Off"), src, src, src, timeleft, src, src, (safety ? "On" : "Off"), src, (anchored ? "Engaged" : "Off"), src)
+				dat += text("\n<B>Status</B>: []-[]<BR>\n<B>Timer</B>: []<BR>\n<BR>\nTimer: [] <A href='byond://?src=\ref[];timer=1'>Toggle</A><BR>\nTime: <A href='byond://?src=\ref[];time=-10'>-</A> <A href='byond://?src=\ref[];time=-1'>-</A> [] <A href='byond://?src=\ref[];time=1'>+</A> <A href='byond://?src=\ref[];time=10'>+</A><BR>\n<BR>\nSafety: [] <A href='byond://?src=\ref[];safety=1'>Toggle</A><BR>\nAnchor: [] <A href='byond://?src=\ref[];anchor=1'>Toggle</A><BR>\n", (timing ? "Func/Set" : "Functional"), (safety ? "Safe" : "Engaged"), timeleft, (timing ? "On" : "Off"), src, src, src, timeleft, src, src, (safety ? "On" : "Off"), src, (anchored ? "Engaged" : "Off"), src)
 			else
 				dat += text("\n<B>Status</B>: Auth. S2-[]<BR>\n<B>Timer</B>: []<BR>\n<BR>\nTimer: [] Toggle<BR>\nTime: - - [] + +<BR>\n<BR>\n[] Safety: Toggle<BR>\nAnchor: [] Toggle<BR>\n", (safety ? "Safe" : "Engaged"), timeleft, (timing ? "On" : "Off"), timeleft, (safety ? "On" : "Off"), (anchored ? "Engaged" : "Off"))
 		else
@@ -186,8 +186,8 @@ var/bomb_set
 			message = text("[]", code)
 			if(yes_code)
 				message = "*****"
-		dat += text("<HR>\n>[]<BR>\n<A href='?src=\ref[];type=1'>1</A>-<A href='?src=\ref[];type=2'>2</A>-<A href='?src=\ref[];type=3'>3</A><BR>\n<A href='?src=\ref[];type=4'>4</A>-<A href='?src=\ref[];type=5'>5</A>-<A href='?src=\ref[];type=6'>6</A><BR>\n<A href='?src=\ref[];type=7'>7</A>-<A href='?src=\ref[];type=8'>8</A>-<A href='?src=\ref[];type=9'>9</A><BR>\n<A href='?src=\ref[];type=R'>R</A>-<A href='?src=\ref[];type=0'>0</A>-<A href='?src=\ref[];type=E'>E</A><BR>\n</TT>", message, src, src, src, src, src, src, src, src, src, src, src, src)
-		user << browse(dat, "window=nuclearbomb;size=300x400")
+		dat += text("<HR>\n>[]<BR>\n<A href='byond://?src=\ref[];type=1'>1</A>-<A href='byond://?src=\ref[];type=2'>2</A>-<A href='byond://?src=\ref[];type=3'>3</A><BR>\n<A href='byond://?src=\ref[];type=4'>4</A>-<A href='byond://?src=\ref[];type=5'>5</A>-<A href='byond://?src=\ref[];type=6'>6</A><BR>\n<A href='byond://?src=\ref[];type=7'>7</A>-<A href='byond://?src=\ref[];type=8'>8</A>-<A href='byond://?src=\ref[];type=9'>9</A><BR>\n<A href='byond://?src=\ref[];type=R'>R</A>-<A href='byond://?src=\ref[];type=0'>0</A>-<A href='byond://?src=\ref[];type=E'>E</A><BR>\n</TT>", message, src, src, src, src, src, src, src, src, src, src, src, src)
+		user << browse("<html>[dat]</html>", "window=nuclearbomb;size=300x400")
 		onclose(user, "nuclearbomb")
 	else if(deployable)
 		if(removal_stage < 5)
@@ -204,7 +204,7 @@ var/bomb_set
 /obj/machinery/nuclearbomb/proc/nukehack_win(mob/user as mob)
 	var/dat = "<TT><B>Nuclear Fission Explosive</B><BR>\nNuclear Device Wires:</A><HR>"
 	for(var/wire in wires)
-		dat += text("[wire] Wire: <A href='?src=\ref[src];wire=[wire];act=wire'>[wires[wire] ? "Mend" : "Cut"]</A> <A href='?src=\ref[src];wire=[wire];act=pulse'>Pulse</A><BR>")
+		dat += text("[wire] Wire: <A href='byond://?src=\ref[src];wire=[wire];act=wire'>[wires[wire] ? "Mend" : "Cut"]</A> <A href='byond://?src=\ref[src];wire=[wire];act=pulse'>Pulse</A><BR>")
 	dat += text("<HR>The device is [timing ? "shaking!" : "still"]<BR>")
 	dat += text("The device is [safety ? "quiet" : "whirring"].<BR>")
 	dat += text("The lights are [lighthack ? "static" : "functional"].<BR>")
@@ -418,9 +418,9 @@ var/bomb_set
 
 #undef NUKERANGE
 
-/obj/item/disk/nuclear/New()
-	..()
-	nuke_disks |= src
+/obj/item/disk/nuclear/Initialize(mapload)
+	. = ..()
+	nuke_disks += src
 
 /obj/item/disk/nuclear/Destroy()
 	if(!nuke_disks.len && blobstart.len > 0)

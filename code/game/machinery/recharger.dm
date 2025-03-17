@@ -17,7 +17,7 @@
 	var/portable = 1
 	circuit = /obj/item/circuitboard/recharger
 
-/obj/machinery/recharger/Initialize()
+/obj/machinery/recharger/Initialize(mapload)
 	. = ..()
 	default_apply_parts()
 
@@ -50,11 +50,6 @@
 		var/obj/item/modular_computer/C = G
 		if(!C.battery_module)
 			to_chat(user, span_notice("\The [C] does not have a battery installed."))
-			return
-	if(istype(G, /obj/item/melee/baton))
-		var/obj/item/melee/baton/B = G
-		if(B.use_external_power)
-			to_chat(user, span_notice("\The [B] has no recharge port."))
 			return
 	if(istype(G, /obj/item/flash))
 		var/obj/item/flash/F = G
@@ -153,7 +148,7 @@
 		update_icon()
 
 /obj/machinery/recharger/attack_ai(mob/user)
-	if(istype(user, /mob/living/silicon/robot) && Adjacent(user)) // Borgs can remove the cell if they are near enough
+	if(isrobot(user) && Adjacent(user)) // Borgs can remove the cell if they are near enough
 		if(charging)
 			user.visible_message("[user] removes [charging] from [src].", "You remove [charging] from [src].")
 			charging.update_icon()

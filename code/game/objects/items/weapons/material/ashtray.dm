@@ -3,7 +3,7 @@ var/global/list/ashtray_cache = list()
 /obj/item/material/ashtray
 	name = "ashtray"
 	icon = 'icons/obj/objects.dmi'
-	icon_state = "blank"
+	icon_state = "ashtray"
 	randpixel = 5
 	force_divisor = 0.1
 	thrown_force_divisor = 0.1
@@ -11,15 +11,14 @@ var/global/list/ashtray_cache = list()
 	var/image/base_image
 	var/max_butts = 10
 
-/obj/item/material/ashtray/New(var/newloc, var/material_name)
-	..(newloc, material_name)
+/obj/item/material/ashtray/Initialize(mapload, material_key)
+	. = ..()
 	if(!material)
-		qdel(src)
-		return
+		return INITIALIZE_HINT_QDEL
+	icon_state = "blank"
 	max_butts = round(material.hardness/5) //This is arbitrary but whatever.
 	randpixel_xy()
 	update_icon()
-	return
 
 /obj/item/material/ashtray/update_icon()
 	color = null
@@ -61,6 +60,12 @@ var/global/list/ashtray_cache = list()
 				STOP_PROCESSING(SSobj, cig)
 				var/obj/item/butt = new cig.type_butt(src)
 				cig.transfer_fingerprints_to(butt)
+				//CHOMPAdd Start - Turn mind bound cigs into butts
+				if(cig.possessed_voice && cig.possessed_voice.len)
+					var/mob/living/voice/V = src.possessed_voice[1]
+					butt.inhabit_item(V, null, V.tf_mob_holder, TRUE)
+					qdel(V)
+				//CHOMPAdd End
 				qdel(cig)
 				W = butt
 				//spawn(1)
@@ -85,7 +90,7 @@ var/global/list/ashtray_cache = list()
 		health = max(0,health - 3)
 		if (contents.len)
 			src.visible_message(span_danger("\The [src] slams into [hit_atom], spilling its contents!"))
-		for (var/obj/item/clothing/mask/smokable/cigarette/O in contents)
+		for (var/obj/item/O in contents) //CHOMPEdit - Dump all items out, so it ejects butts too
 			O.loc = src.loc
 		if (health < 1)
 			shatter()
@@ -93,11 +98,11 @@ var/global/list/ashtray_cache = list()
 		update_icon()
 	return ..()
 
-/obj/item/material/ashtray/plastic/New(var/newloc)
-	..(newloc, "plastic")
+/obj/item/material/ashtray/plastic/Initialize(mapload)
+	. = ..(mapload, MAT_PLASTIC)
 
-/obj/item/material/ashtray/bronze/New(var/newloc)
-	..(newloc, "bronze")
+/obj/item/material/ashtray/bronze/Initialize(mapload)
+	. = ..(mapload, MAT_BRONZE)
 
-/obj/item/material/ashtray/glass/New(var/newloc)
-	..(newloc, "glass")
+/obj/item/material/ashtray/glass/Initialize(mapload)
+	. = ..(mapload, MAT_GLASS)

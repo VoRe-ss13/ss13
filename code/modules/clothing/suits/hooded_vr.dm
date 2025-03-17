@@ -22,7 +22,7 @@
 	hoodtype = /obj/item/clothing/head/hood/galahad
 	armor = list(melee = 80, bullet = 50, laser = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 2
-	action_button_name = "Toggle Knight Headgear"
+	actions_types = list(/datum/action/item_action/toggle_knight_headgear)
 
 /obj/item/clothing/suit/storage/hooded/knight/galahad
 	name = "crusader's armor"
@@ -53,7 +53,7 @@
 	icon = 'icons/obj/clothing/knights_vr.dmi'
 	icon_override = 'icons/obj/clothing/knights_vr.dmi'
 	hoodtype = /obj/item/clothing/head/hood/galahad_costume
-	action_button_name = "Toggle Knight Headgear"
+	actions_types = list(/datum/action/item_action/toggle_knight_headgear)
 
 /obj/item/clothing/suit/storage/hooded/knight_costume/galahad
 	icon_state = "galahad"
@@ -81,10 +81,11 @@
 
 // Food costumes
 /obj/item/clothing/suit/storage/hooded/foodcostume	//Separate type of costume that does not cover arms and legs. Similar to a cheap mascot costume. <Guy>
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO
+	name = DEVELOPER_WARNING_NAME
+	body_parts_covered = CHEST
 	flags_inv = HIDETIE|HIDEHOLSTER
-	cold_protection = UPPER_TORSO|LOWER_TORSO
-	action_button_name = "Toggle Hood"
+	cold_protection = CHEST
+	actions_types = list(/datum/action/item_action/toggle_hood)
 
 /obj/item/clothing/suit/storage/hooded/foodcostume/hotdog	//Belly filler uniform :^).
 	name = "hotdog costume"
@@ -113,13 +114,12 @@
 	icon_override = 'icons/inventory/suit/mob_vr.dmi'
 	icon_state = "hoodie_plain"
 	item_state_slots = list(slot_r_hand_str = "grey_hoodie", slot_l_hand_str = "grey_hoodie")
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	body_parts_covered = CHEST|ARMS|LEGS
 	flags_inv = HIDEHOLSTER
-	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = CHEST|ARMS|LEGS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	hoodtype = /obj/item/clothing/head/hood/hoodie
-	allowed = list(/obj/item/pen, /obj/item/paper, /obj/item/flashlight, /obj/item/tank/emergency/oxygen, /obj/item/storage/fancy/cigarettes,
-	/obj/item/storage/box/matches, /obj/item/reagent_containers/food/drinks/flask, /obj/item/suit_cooling_unit)
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, POCKET_SUIT_REGULATORS)
 
 /obj/item/clothing/suit/storage/hooded/hoodie/redtrim
 	name = "red-trimmed hoodie"

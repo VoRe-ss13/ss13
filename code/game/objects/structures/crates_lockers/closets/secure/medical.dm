@@ -38,7 +38,8 @@
 		/obj/item/clothing/shoes/white,
 		/obj/item/cartridge/medical,
 		/obj/item/radio/headset/headset_med,
-		/obj/item/radio/headset/headset_med/alt,
+		/obj/item/radio/headset/alt/headset_med,
+		/obj/item/radio/headset/earbud/headset_med,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/alt,
 		/obj/item/clothing/shoes/boots/winter/medical,
@@ -47,7 +48,7 @@
 		/obj/item/storage/box/freezer = 3,
 		/obj/item/storage/belt/medical) //VOREStation Add
 
-/obj/structure/closet/secure_closet/medical3/Initialize()
+/obj/structure/closet/secure_closet/medical3/Initialize(mapload)
 	if(prob(50))
 		starts_with += /obj/item/storage/backpack/medic
 	else
@@ -107,7 +108,9 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat/emt,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/para,
 		/obj/item/clothing/shoes/boots/winter/medical,
-		/obj/item/radio/headset/headset_med/alt,
+		/obj/item/radio/headset/headset_med,
+		/obj/item/radio/headset/alt/headset_med,
+		/obj/item/radio/headset/earbud/headset_med,
 		/obj/item/cartridge/medical,
 		/obj/item/storage/briefcase/inflatable,
 		/obj/item/flashlight,
@@ -140,9 +143,10 @@
 		/obj/item/clothing/under/rank/neo_cmo_skirt,
 		/obj/item/clothing/under/rank/neo_cmo_turtle,
 		/obj/item/clothing/under/rank/neo_cmo_turtle_skirt,
-		/obj/item/clothing/under/rank/neo_cmo_gorka,
+		/obj/item/clothing/under/rank/neo_gorka/cmo,
 		/obj/item/radio/headset/heads/cmo,
-		/obj/item/radio/headset/heads/cmo/alt,
+		/obj/item/radio/headset/alt/heads/cmo,
+		/obj/item/radio/headset/earbud/heads/cmo,
 		/obj/item/flash,
 		/obj/item/reagent_containers/hypospray/vial,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical,
@@ -159,7 +163,7 @@
 		/obj/item/reagent_containers/glass/beaker/vial, //VOREStation Add
 		/obj/item/storage/belt/medical) //VOREStation Add
 
-/obj/structure/closet/secure_closet/CMO/Initialize()
+/obj/structure/closet/secure_closet/CMO/Initialize(mapload)
 	if(prob(50))
 		starts_with += /obj/item/storage/backpack/medic
 	else

@@ -1,5 +1,5 @@
 /datum/admins/proc/quick_nif()
-	set category = "Fun.Add Nif" //CHOMPEdit
+	set category = "Fun.Add Nif"
 	set name = "Quick NIF"
 	set desc = "Spawns a NIF into someone in quick-implant mode."
 
@@ -25,7 +25,7 @@
 		to_chat(usr,span_warning("Target already has a NIF."))
 		return
 
-	if(H.species.flags & NO_SCAN)
+	if(H.species.flags & NO_DNA)
 		var/obj/item/nif/S = /obj/item/nif/bioadap
 		input_NIF = initial(S.name)
 		new /obj/item/nif/bioadap(H)
@@ -47,5 +47,5 @@
 		else
 			new /obj/item/nif(H)
 
-	log_and_message_admins("[key_name(src)] Quick NIF'd [H.real_name] with a [input_NIF].")
+	log_and_message_admins("Quick NIF'd [H.real_name] with a [input_NIF].", src)
 	feedback_add_details("admin_verb","QNIF") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

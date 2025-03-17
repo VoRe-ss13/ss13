@@ -19,8 +19,8 @@
 	var/blood = 1
 	var/list/target_types = list()
 
-/mob/living/bot/cleanbot/New()
-	..()
+/mob/living/bot/cleanbot/Initialize(mapload)
+	. = ..()
 	get_targets()
 
 /mob/living/bot/cleanbot/Destroy()
@@ -30,7 +30,7 @@
 
 /mob/living/bot/cleanbot/handleIdle()
 	if(!wet_floors && !spray_blood && vocal && prob(2))
-		custom_emote(2, "makes an excited booping sound!")
+		automatic_custom_emote(AUDIBLE_MESSAGE, "makes an excited booping sound!")
 		playsound(src, 'sound/machines/synth_yes.ogg', 50, 0)
 
 	if(wet_floors && prob(5)) // Make a mess
@@ -119,7 +119,7 @@
 	if(istype(D, /obj/effect/decal/cleanable))
 		cleantime = istype(D, /obj/effect/decal/cleanable/dirt) ? 10 : 50
 		if(prob(20))
-			custom_emote(2, "begins to clean up \the [D]")
+			automatic_custom_emote(AUDIBLE_MESSAGE, "begins to clean up \the [D]")
 		if(do_after(src, cleantime * cTimeMult))
 			if(istype(loc, /turf/simulated))
 				var/turf/simulated/f = loc
@@ -138,7 +138,7 @@
 				cleantime += 50
 		if(cleantime != 0)
 			if(prob(20))
-				custom_emote(2, "begins to clean up \the [loc]")
+				automatic_custom_emote(AUDIBLE_MESSAGE, "begins to clean up \the [loc]")
 			if(do_after(src, cleantime * cTimeMult))
 				if(blood)
 					clean_blood()
@@ -202,8 +202,8 @@
 /mob/living/bot/cleanbot/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return TRUE
-	usr.set_machine(src)
-	add_fingerprint(usr)
+	ui.user.set_machine(src)
+	add_fingerprint(ui.user)
 	switch(action)
 		if("start")
 			if(on)
@@ -223,11 +223,11 @@
 			. = TRUE
 		if("wet_floors")
 			wet_floors = !wet_floors
-			to_chat(usr, span_notice("You twiddle the screw."))
+			to_chat(ui.user, span_notice("You twiddle the screw."))
 			. = TRUE
 		if("spray_blood")
 			spray_blood = !spray_blood
-			to_chat(usr, span_notice("You press the weird button."))
+			to_chat(ui.user, span_notice("You press the weird button."))
 			. = TRUE
 
 /mob/living/bot/cleanbot/emag_act(var/remaining_uses, var/mob/user)
@@ -273,6 +273,6 @@
 		var/t = sanitizeSafe(tgui_input_text(user, "Enter new robot name", name, created_name, MAX_NAME_LEN), MAX_NAME_LEN)
 		if(!t)
 			return
-		if(!in_range(src, usr) && src.loc != usr)
+		if(!in_range(src, user) && src.loc != user)
 			return
 		created_name = t

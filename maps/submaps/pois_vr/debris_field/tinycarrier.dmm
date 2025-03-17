@@ -56,7 +56,6 @@
 /obj/machinery/atmospherics/unary/engine{
 	dir = 8
 	},
-/turf/space,
 /turf/simulated/shuttle/plating/airless/carry,
 /area/submap/debrisfield/tinyshuttle/engine)
 "ai" = (
@@ -342,7 +341,6 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	dir = 1;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/airless,
@@ -355,7 +353,6 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	dir = 1;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -394,7 +391,6 @@
 /area/submap/debrisfield/tinyshuttle/crew)
 "aO" = (
 /obj/structure/cable/green{
-	dir = 1;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -603,7 +599,6 @@
 /area/submap/debrisfield/tinyshuttle/crew)
 "bf" = (
 /obj/structure/cable/green{
-	dir = 1;
 	icon_state = "4-8"
 	},
 /obj/structure/cable/green{
@@ -620,7 +615,6 @@
 /area/submap/debrisfield/tinyshuttle/crew)
 "bg" = (
 /obj/structure/cable/green{
-	dir = 1;
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -940,7 +934,6 @@
 /area/submap/debrisfield/tinyshuttle/hangar)
 "bJ" = (
 /obj/structure/cable/green{
-	dir = 1;
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1094,7 +1087,6 @@
 /turf/simulated/floor/reinforced/airless,
 /area/submap/debrisfield/tinyshuttle/hangar)
 "cb" = (
-/turf/space,
 /turf/simulated/shuttle/plating/airless/carry,
 /area/submap/debrisfield/tinyshuttle/hangar)
 "cc" = (
@@ -1133,7 +1125,6 @@
 /area/submap/debrisfield/tinyshuttle/engine)
 "cf" = (
 /obj/item/material/shard/titaniumglass,
-/turf/space,
 /turf/simulated/shuttle/plating/airless/carry,
 /area/submap/debrisfield/tinyshuttle/hangar)
 "cg" = (
@@ -1157,7 +1148,6 @@
 "ci" = (
 /obj/structure/lattice,
 /mob/living/simple_mob/mechanical/combat_drone/lesser,
-/turf/space,
 /turf/simulated/shuttle/plating/airless/carry,
 /area/submap/debrisfield/tinyshuttle/hangar)
 "cj" = (
@@ -1181,7 +1171,6 @@
 /area/submap/debrisfield/tinyshuttle/crew)
 "cl" = (
 /obj/effect/decal/mecha_wreckage/baron,
-/turf/space,
 /turf/simulated/shuttle/plating/airless/carry,
 /area/submap/debrisfield/tinyshuttle/hangar)
 "cm" = (

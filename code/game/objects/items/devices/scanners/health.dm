@@ -92,7 +92,6 @@
 	if(!(M.status_flags & FAKEDEATH))
 		analyzed_results = span_notice(analyzed_results)
 	dat += analyzed_results
-	//VOREStation edit/addition starts
 	if(M.timeofdeath && (M.stat == DEAD || (M.status_flags & FAKEDEATH)))
 		dat += 	span_notice("Time of Death: [worldtime2stationtime(M.timeofdeath)]")
 		dat += "<br>"
@@ -100,8 +99,7 @@
 		if(tdelta < (DEFIB_TIME_LIMIT * 10))
 			dat += span_boldnotice("Subject died [DisplayTimeText(tdelta)] ago - resuscitation may be possible!")
 			dat += "<br>"
-	//VOREStation edit/addition ends
-	if(istype(M, /mob/living/carbon/human) && mode == 1)
+	if(ishuman(M) && mode == 1)
 		var/mob/living/carbon/human/H = M
 		var/list/damaged = H.get_damaged_organs(1,1)
 		dat += 	span_notice("Localized Damage, Brute/Burn:")
@@ -118,6 +116,17 @@
 		else
 			dat += span_notice("    Limbs are OK.")
 			dat += "<br>"
+		// This handles genetic side effects and tells you the treatment, if any.
+		// These are handled in side_effects.dm
+		if(H.genetic_side_effects)
+			for(var/datum/genetics/side_effect/side_effect in H.genetic_side_effects)
+				var/datum/reagent/Rd = SSchemistry.chemical_reagents[side_effect.antidote_reagent]
+				dat += "<br>"
+				dat += span_danger("Patient is suffering from [side_effect.name]. ")
+				if(Rd)
+					dat += span_danger("Treatment: [Rd]<br>")
+				else
+					dat += "There is no known treatment.<br>"
 
 	OX = M.getOxyLoss() > 50 ? 	 "[span_cyan(span_bold("Severe oxygen deprivation detected"))]" 			: 	"Subject bloodstream oxygen level normal"
 	TX = M.getToxLoss() > 50 ? 	 "[span_green(span_bold("Dangerous amount of toxins detected"))]" 	: 	"Subject bloodstream toxin level minimal"
@@ -248,20 +257,20 @@
 				else
 					dat += span_warning("Unknown substance[(unknown > 1)?"s":""] found in subject's dermis.")
 					dat += "<br>"
-		if(C.virus2.len)
-			for (var/ID in C.virus2)
-				if (ID in virusDB)
-					var/datum/data/record/V = virusDB[ID]
-					dat += span_warning("Warning: Pathogen [V.fields["name"]] detected in subject's blood. Known antigen : [V.fields["antigen"]]")
-					dat += "<br>"
-				else
-					dat += span_warning("Warning: Unknown pathogen detected in subject's blood.")
-					dat += "<br>"
+		if(LAZYLEN(C.viruses))
+			for (var/datum/disease/virus in C.GetViruses())
+				if(virus.visibility_flags & HIDDEN_SCANNER || virus.visibility_flags & HIDDEN_PANDEMIC)
+					continue
+				virus.discovered = TRUE
+				dat += span_warning("Warning: [virus.name] detected in subject's blood.")
+				dat += "<br>"
+				dat += span_warning("Severity: [virus.severity]")
+				dat += "<br>"
 	if (M.getCloneLoss())
 		dat += span_warning("Subject appears to have been imperfectly cloned.")
 		dat += "<br>"
-//	if (M.reagents && M.reagents.get_reagent_amount("inaprovaline"))
-//		user.show_message(span_notice("Bloodstream Analysis located [M.reagents:get_reagent_amount("inaprovaline")] units of rejuvenation chemicals."))
+//	if (M.reagents && M.reagents.get_reagent_amount(REAGENT_ID_INAPROVALINE))
+//		user.show_message(span_notice("Bloodstream Analysis located [M.reagents:get_reagent_amount(REAGENT_ID_INAPROVALINE)] units of rejuvenation chemicals."))
 	if (M.has_brain_worms())
 		dat += span_warning("Subject suffering from aberrant brain activity. Recommend further scanning.")
 		dat += "<br>"
@@ -279,6 +288,29 @@
 		dat += "<br>"
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
+		//CHOMPedit begin - malignant organs
+		for(var/obj/item/organ/internal/io in H.internal_organs)
+			if(istype(io,/obj/item/organ/internal/appendix))
+				var/obj/item/organ/internal/appendix/a = io
+				var/severity = ""
+				if(a.inflamed > 3)
+					severity = "Severe"
+				else if(a.inflamed > 2)
+					severity = "Moderate"
+				else if(a.inflamed >= 1)
+					severity = "Mild"
+				if(severity)
+					dat += span_warning("[severity] inflammation detected in subject [a.name].")
+					dat += "<br>"
+			else if(istype(io,/obj/item/organ/internal/malignant))
+				if(advscan >= 2)
+					var/obj/item/organ/internal/ORG = H.organs_by_name[io.parent_organ]
+					dat += span_warning("Anatomical irregularities detected in subject's [ORG.name].")
+					dat += "<br>"
+				else
+					dat += span_warning("Anatomical irregularities detected in subject.")
+					dat += "<br>"
+		//CHOMPedit end
 		for(var/obj/item/organ/internal/appendix/a in H.internal_organs)
 			var/severity = ""
 			if(a.inflamed > 3)
@@ -359,7 +391,7 @@
 
 		// Blood level
 		if(M:vessel)
-			var/blood_volume = H.vessel.get_reagent_amount("blood")
+			var/blood_volume = H.vessel.get_reagent_amount(REAGENT_ID_BLOOD)
 			var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
 			var/blood_type = H.dna.b_type
 			var/blood_reagent = H.species.blood_reagents

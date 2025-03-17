@@ -74,18 +74,6 @@
 	desc = "A gift card with a heart on the cover."
 	icon_state = "greetingcard_heart"
 
-/obj/item/paper/card/Initialize() //ChompEDIT New --> Initialize
-	..()
-	pixel_y = rand(-8, 8)
-	pixel_x = rand(-9, 9)
-	stamps = null
-
-	if(info != initial(info))
-		info = html_encode(info)
-		info = replacetext(info, "\n", "<BR>")
-		info = parsepencode(info)
-		return
-
 /obj/item/paper/alien
 	name = "alien tablet"
 	desc = "It looks highly advanced"
@@ -106,18 +94,16 @@
 
 
 /obj/item/paper/Initialize(mapload, var/text, var/title)
-    . = ..()
+	. = ..()
 
-    if(istext(title))
-        name = title
-    if(istext(text))
-        info = text
+	if(istext(title))
+		name = title
+	if(istext(text))
+		info = text
 
-    if(mapload) // Jank, but we do this to prevent maploaded papers from somehow stacking across rounds if re-added to the board by a player.
-        was_maploaded = TRUE
+	if(mapload) // Jank, but we do this to prevent maploaded papers from somehow stacking across rounds if re-added to the board by a player.
+		was_maploaded = TRUE
 
-/obj/item/paper/Initialize(var/newloc, var/text, var/title) //ChompEDIT New --> Initialize
-	..()
 	pixel_y = rand(-8, 8)
 	pixel_x = rand(-9, 9)
 	stamps = ""
@@ -136,11 +122,9 @@
 		info = replacetext(info, "\n", "<BR>")
 		info = parsepencode(info)
 
-	spawn(2)
-		update_icon()
-		update_space(info)
-		updateinfolinks()
-		return
+	update_icon()
+	update_space(info)
+	updateinfolinks()
 
 /obj/item/paper/update_icon()
 	if(icon_state == "paper_talisman")
@@ -158,13 +142,13 @@
 
 /obj/item/paper/examine(mob/user)
 	. = ..()
-	if(in_range(user, src) || istype(user, /mob/observer/dead))
-		show_content(usr)
+	if(in_range(user, src) || isobserver(user))
+		show_content(user)
 	else
 		. += span_notice("You have to go closer if you want to read it.")
 
 /obj/item/paper/proc/show_content(var/mob/user, var/forceshow=0)
-	if(!(forceshow || (istype(user, /mob/living/carbon/human) || istype(user, /mob/observer/dead) || istype(user, /mob/living/silicon) || (istype(user) && user.universal_understand))))
+	if(!(forceshow || (ishuman(user) || isobserver(user) || issilicon(user) || (istype(user) && user.universal_understand))))
 		user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[stars(info)][stamps]</BODY></HTML>", "window=[name]")
 		onclose(user, "[name]")
 	else
@@ -210,18 +194,18 @@
 				spam_flag = 0
 	return
 
-/obj/item/paper/attack_ai(var/mob/living/silicon/ai/user as mob)
+/obj/item/paper/attack_ai(var/mob/living/silicon/ai/user)
 	var/dist
 	if(istype(user) && user.camera) //is AI
 		dist = get_dist(src, user.camera)
 	else //cyborg or AI not seeing through a camera
 		dist = get_dist(src, user)
 	if(dist < 2)
-		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info][stamps]</BODY></HTML>", "window=[name]")
-		onclose(usr, "[name]")
+		user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info][stamps]</BODY></HTML>", "window=[name]")
+		onclose(user, "[name]")
 	else
-		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[stars(info)][stamps]</BODY></HTML>", "window=[name]")
-		onclose(usr, "[name]")
+		user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[stars(info)][stamps]</BODY></HTML>", "window=[name]")
+		onclose(user, "[name]")
 	return
 
 /obj/item/paper/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
@@ -314,8 +298,8 @@
 	info_links = info
 	var/i = 0
 	for(i=1,i<=fields,i++)
-		addtofield(i, "<font face=\"[deffont]\"><A href='?src=\ref[src];write=[i]'>write</A></font>", 1)
-	info_links = info_links + "<font face=\"[deffont]\"><A href='?src=\ref[src];write=end'>write</A></font>"
+		addtofield(i, "<font face=\"[deffont]\"><A href='byond://?src=\ref[src];write=[i]'>write</A></font>", 1)
+	info_links = info_links + "<font face=\"[deffont]\"><A href='byond://?src=\ref[src];write=end'>write</A></font>"
 
 
 /obj/item/paper/proc/clearpaper()
@@ -450,7 +434,7 @@
 
 	if(href_list["write"])
 		var/id = href_list["write"]
-		//var/t = strip_html_simple(input(usr, "What text do you wish to add to " + (id=="end" ? "the end of the paper" : "field "+id) + "?", "[name]", null),8192) as message
+		//var/t = strip_html_simple(tgui_input_text(usr, "What text do you wish to add to " + (id=="end" ? "the end of the paper" : "field "+id) + "?", "[name]", null, multiline=TRUE),8192)
 
 		if(free_space <= 0)
 			to_chat(usr, span_info("There isn't enough space left on \the [src] to write anything."))
@@ -499,7 +483,7 @@
 		// check for exploits
 		for(var/bad in paper_blacklist)
 			if(findtext(t,bad))
-				to_chat(usr, "<font color='blue'>You think to yourself, \"Hm.. this is only paper...\</font>"")
+				to_chat(usr, span_blue("You think to yourself, \"Hm.. this is only paper...\""))
 				log_admin("PAPER: [usr] ([usr.ckey]) tried to use forbidden word in [src]: [bad].")
 				message_admins("PAPER: [usr] ([usr.ckey]) tried to use forbidden word in [src]: [bad].")
 				return
@@ -539,7 +523,7 @@
 		return "paper" //Gross, but required for now.
 	return ..()
 
-/obj/item/paper/attackby(obj/item/P as obj, mob/user as mob)
+/obj/item/paper/attackby(obj/item/P, mob/user)
 	..()
 	var/clown = 0
 	if(user.mind && ((user.mind.role_alt_title == JOB_CLOWN) || (user.mind.role_alt_title == JOB_ALT_JESTER) || (user.mind.role_alt_title == JOB_ALT_FOOL))) // CHOMPStation Edit - Let clows/fools/jesters use clown stamps
@@ -579,7 +563,7 @@
 		else if (P.name != initial(P.name))
 			B.name = P.name
 		user.drop_from_inventory(P)
-		if (istype(user, /mob/living/carbon/human))
+		if (ishuman(user))
 			var/mob/living/carbon/human/h_user = user
 			if (h_user.r_hand == src)
 				h_user.drop_from_inventory(src)
@@ -612,7 +596,7 @@
 
 	else if(istype(P, /obj/item/pen))
 		if(icon_state == "scrap")
-			to_chat(usr, span_warning("\The [src] is too crumpled to write on."))
+			to_chat(user, span_warning("\The [src] is too crumpled to write on."))
 			return
 
 		var/obj/item/pen/robopen/RP = P
@@ -622,7 +606,7 @@
 			user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info_links][stamps]</BODY></HTML>", "window=[name]")
 		return
 
-	else if(istype(P, /obj/item/stamp) || istype(P, /obj/item/clothing/gloves/ring/seal))
+	else if(istype(P, /obj/item/stamp) || istype(P, /obj/item/clothing/accessory/ring/seal))
 		if(istype(P, /obj/item/stamp))
 			var/obj/item/stamp/the_stamp = P
 			if(the_stamp.stamptext)
@@ -630,12 +614,12 @@
 			else
 				stamps += (stamps=="" ? "<HR>" : "<BR>") + span_italics("This paper has been stamped with the [the_stamp.name].")
 		else
-			var/obj/item/clothing/gloves/ring/seal/the_stamp = P
+			var/obj/item/clothing/accessory/ring/seal/the_stamp = P
 			if(the_stamp.stamptext)
 				stamps += (stamps=="" ? "<HR>" : "<BR>") + span_italics("[the_stamp.stamptext]")
 			else
 				stamps += (stamps=="" ? "<HR>" : "<BR>") + span_italics("This paper has been stamped with the [the_stamp.name].")
-		if((!in_range(src, usr) && loc != user && !( istype(loc, /obj/item/clipboard) ) && loc.loc != user && user.get_active_hand() != P))
+		if((!in_range(src, user) && loc != user && !( istype(loc, /obj/item/clipboard) ) && loc.loc != user && user.get_active_hand() != P))
 			return
 		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
 		var/x, y

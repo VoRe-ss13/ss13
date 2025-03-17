@@ -1,5 +1,6 @@
-import { useBackend } from '../../backend';
-import { Button, Section } from '../../components';
+import { useBackend } from 'tgui/backend';
+import { Button, Section } from 'tgui-core/components';
+
 import {
   NEWSCASTER_SCREEN_NEWCHANNEL,
   NEWSCASTER_SCREEN_NEWSTORY,
@@ -8,7 +9,7 @@ import {
   NEWSCASTER_SCREEN_VIEWLIST,
   NEWSCASTER_SCREEN_VIEWWANTED,
 } from './constants';
-import { Data } from './types';
+import type { Data } from './types';
 
 export const NewscasterMainMenu = (props: { setScreen: Function }) => {
   const { data } = useBackend<Data>();

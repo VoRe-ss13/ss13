@@ -29,7 +29,7 @@
 		/obj/item/clothing/head/helmet/space
 		)
 
-/obj/machinery/washing_machine/Initialize()
+/obj/machinery/washing_machine/Initialize(mapload)
 	. = ..()
 	default_apply_parts()
 
@@ -44,7 +44,7 @@
 
 /obj/machinery/washing_machine/proc/start()
 
-	if(!istype(usr, /mob/living)) //ew ew ew usr, but it's the only way to check.
+	if(!isliving(usr)) //ew ew ew usr, but it's the only way to check.
 		return
 
 	if(state != 4)

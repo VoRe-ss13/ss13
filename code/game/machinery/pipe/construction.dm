@@ -38,7 +38,7 @@ Buildable meters
  * @param loc Location
  * @pipe_type
  */
-/obj/item/pipe/Initialize(var/mapload, var/_pipe_type, var/_dir, var/obj/machinery/atmospherics/make_from)
+/obj/item/pipe/Initialize(mapload, var/_pipe_type, var/_dir, var/obj/machinery/atmospherics/make_from)
 	if(make_from)
 		make_from_existing(make_from)
 	else
@@ -65,7 +65,7 @@ Buildable meters
 	if(make_from.mirrored)
 		do_a_flip()
 
-/obj/item/pipe/dropped()
+/obj/item/pipe/dropped(mob/user)
 	if(loc)
 		setPipingLayer(piping_layer)
 	return ..()
@@ -286,7 +286,7 @@ Buildable meters
 	to_chat(user, span_notice("You fasten the meter to the pipe."))
 	qdel(src)
 
-/obj/item/pipe_meter/dropped()
+/obj/item/pipe_meter/dropped(mob/user)
 	. = ..()
 	if(loc)
 		setAttachLayer(piping_layer)

@@ -1,7 +1,13 @@
-import { useBackend } from '../../backend';
-import { AnimatedNumber, Button, LabeledList, Section } from '../../components';
-import { formatTime } from '../../format';
-import { Data } from './types';
+import { useBackend } from 'tgui/backend';
+import {
+  AnimatedNumber,
+  Button,
+  LabeledList,
+  Section,
+} from 'tgui-core/components';
+import { formatTime } from 'tgui-core/format';
+
+import type { Data } from './types';
 
 export const SupplyConsoleShuttleStatus = (props) => {
   const { act, data } = useBackend<Data>();

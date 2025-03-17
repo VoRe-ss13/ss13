@@ -13,14 +13,11 @@
 						 //Setting this to 1 will set locked to null after a player enters the portal and will not allow hand-teles to open portals to that location.
 	var/datum/tgui_module/teleport_control/teleport_control
 
-/obj/machinery/computer/teleporter/New()
+/obj/machinery/computer/teleporter/Initialize(mapload)
 	id = "[rand(1000, 9999)]"
-	..()
+	. = ..()
 	underlays.Cut()
 	underlays += image('icons/obj/stationobjs_vr.dmi', icon_state = "telecomp-wires")	//VOREStation Edit: different direction for wires to account for dirs
-
-/obj/machinery/computer/teleporter/Initialize()
-	. = ..()
 	teleport_control = new(src)
 	var/obj/machinery/teleport/station/station = null
 	var/obj/machinery/teleport/hub/hub = null
@@ -65,8 +62,8 @@
 			L = locate("landmark*[C.data]") // use old stype
 
 		if(istype(L, /obj/effect/landmark/) && istype(L.loc, /turf))
-			to_chat(usr, "You insert the coordinates into the machine.")
-			to_chat(usr, "A message flashes across the screen, reminding the user that the nuclear authentication disk is not transportable via insecure means.")
+			to_chat(user, "You insert the coordinates into the machine.")
+			to_chat(user, "A message flashes across the screen, reminding the user that the nuclear authentication disk is not transportable via insecure means.")
 			user.drop_item()
 			qdel(I)
 
@@ -86,7 +83,7 @@
 				teleport_control.locked = L
 				one_time_use = 1
 
-			add_fingerprint(usr)
+			add_fingerprint(user)
 	else
 		..()
 
@@ -110,7 +107,7 @@
 	set src in oview(1)
 	set desc = "ID Tag:"
 
-	if(stat & (NOPOWER|BROKEN) || !istype(usr,/mob/living))
+	if(stat & (NOPOWER|BROKEN) || !isliving(usr))
 		return
 	if(t)
 		id = t
@@ -142,7 +139,7 @@
 	circuit = /obj/item/circuitboard/teleporter_hub
 	var/obj/machinery/computer/teleporter/com
 
-/obj/machinery/teleport/hub/Initialize()
+/obj/machinery/teleport/hub/Initialize(mapload)
 	. = ..()
 	underlays += image('icons/obj/stationobjs.dmi', icon_state = "tele-wires")
 	default_apply_parts()
@@ -168,7 +165,7 @@
 		return
 	if(istype(M, /atom/movable))
 		//VOREStation Addition Start: Prevent taurriding abuse
-		if(istype(M, /mob/living))
+		if(isliving(M))
 			var/mob/living/L = M
 			if(LAZYLEN(L.buckled_mobs))
 				var/datum/riding/R = L.riding_datum
@@ -210,7 +207,7 @@
 	circuit = /obj/item/circuitboard/teleporter_station
 	var/obj/machinery/teleport/hub/com
 
-/obj/machinery/teleport/station/Initialize()
+/obj/machinery/teleport/station/Initialize(mapload)
 	. = ..()
 	add_overlay("controller-wires")
 	default_apply_parts()

@@ -82,10 +82,10 @@ emp_act
 				drop_from_inventory(c_hand)
 				if(!isbelly(loc)) //VOREStation Add
 					if (affected.robotic >= ORGAN_ROBOT)
-						custom_emote(VISIBLE_MESSAGE, "drops what they were holding, their [affected.name] malfunctioning!")
+						automatic_custom_emote(VISIBLE_MESSAGE, "drops what they were holding, their [affected.name] malfunctioning!", check_stat = TRUE)
 					else
 						var/emote_scream = pick("screams in pain and ", "lets out a sharp cry and ", "cries out and ")
-						custom_emote(VISIBLE_MESSAGE, "[affected.organ_can_feel_pain() ? "" : emote_scream] drops what they were holding in their [affected.name]!")
+						automatic_custom_emote(VISIBLE_MESSAGE, "[affected.organ_can_feel_pain() ? "" : emote_scream] drops what they were holding in their [affected.name]!", check_stat = TRUE)
 
 	..(stun_amount, agony_amount, def_zone)
 
@@ -369,7 +369,7 @@ emp_act
 		effective_force -= round(effective_force*0.8)
 
 	//want the dislocation chance to be such that the limb is expected to dislocate after dealing a fraction of the damage needed to break the limb
-	var/dislocate_chance = effective_force/(dislocate_mult * organ.min_broken_damage * CONFIG_GET(number/organ_health_multiplier))*100 // CHOMPEdit
+	var/dislocate_chance = effective_force/(dislocate_mult * organ.min_broken_damage * CONFIG_GET(number/organ_health_multiplier))*100
 	if(prob(dislocate_chance * (100 - blocked)/100))
 		visible_message(span_danger("[src]'s [organ.joint] [pick("gives way","caves in","crumbles","collapses")]!"))
 		organ.dislocate(1)
@@ -390,13 +390,15 @@ emp_act
 
 //this proc handles being hit by a thrown atom
 /mob/living/carbon/human/hitby(atom/movable/AM as mob|obj,var/speed = THROWFORCE_SPEED_DIVISOR)
+	if(src.is_incorporeal())
+		return
 //	if(buckled && buckled == AM)
 //		return // Don't get hit by the thing we're buckled to.
 
 	//VORESTATION EDIT START - Allows for thrown vore!
 	//Throwing a prey into a pred takes priority. After that it checks to see if the person being thrown is a pred.
 	// I put more comments here for ease of reading.
-	if(istype(AM, /mob/living))
+	if(isliving(AM))
 		var/mob/living/thrown_mob = AM
 		if(isanimal(thrown_mob) && !allowmobvore) //Is the thrown_mob an animal and we don't allow mobvore?
 			return
@@ -431,16 +433,13 @@ emp_act
 				I.forceMove(vore_selected)
 				return
 		if(in_throw_mode && speed <= THROWFORCE_SPEED_DIVISOR)	//empty active hand and we're in throw mode
-			if(canmove && !restrained() && !src.is_incorporeal()) // CHOMPADD - No hands for the phased ones.
+			if(canmove && !restrained() && !src.is_incorporeal())
 				if(isturf(O.loc))
 					if(can_catch(O))
 						put_in_active_hand(O)
 						visible_message(span_warning("[src] catches [O]!"))
 						throw_mode_off()
 						return
-
-		if(src.is_incorporeal()) // CHOMPADD - Don't hit what's not there.
-			return
 
 		var/dtype = O.damtype
 		var/throw_damage = O.throwforce*(speed/THROWFORCE_SPEED_DIVISOR)
@@ -450,7 +449,7 @@ emp_act
 			return
 
 		var/zone
-		if (istype(O.thrower, /mob/living))
+		if (isliving(O.thrower))
 			var/mob/living/L = O.thrower
 			zone = check_zone(L.zone_sel.selecting)
 		else
@@ -578,10 +577,11 @@ emp_act
 
 
 /mob/living/carbon/human/proc/bloody_hands(var/mob/living/source, var/amount = 2)
-	if (gloves)
-		gloves.add_blood(source)
-		gloves:transfer_blood = amount
-		gloves:bloody_hands_mob = source
+	if (istype(gloves, /obj/item/clothing/gloves))
+		var/obj/item/clothing/gloves/gl = gloves
+		gl.add_blood(source)
+		gl.transfer_blood = amount
+		gl.bloody_hands_mob = source
 	else
 		add_blood(source)
 		bloody_hands = amount

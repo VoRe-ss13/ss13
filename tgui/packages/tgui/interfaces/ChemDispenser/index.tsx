@@ -1,11 +1,12 @@
-import { useBackend } from '../../backend';
-import { Stack } from '../../components';
-import { Window } from '../../layouts';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Stack } from 'tgui-core/components';
+
 import { ChemDispenserBeaker } from './ChemDispenserBeaker';
 import { ChemDispenserChemicals } from './ChemDispenserChemicals';
 import { ChemDispenserRecipes } from './ChemDispenserRecipes';
 import { ChemDispenserSettings } from './ChemDispenserSettings';
-import { Data } from './types';
+import type { Data } from './types';
 
 export const ChemDispenser = (props) => {
   const { data } = useBackend<Data>();
@@ -14,8 +15,8 @@ export const ChemDispenser = (props) => {
     <Window width={680} height={540}>
       <Window.Content>
         <Stack vertical fill>
-          <Stack.Item>
-            <Stack>
+          <Stack.Item grow>
+            <Stack fill>
               <Stack.Item grow>
                 <Stack vertical fill>
                   <Stack.Item>
@@ -31,7 +32,7 @@ export const ChemDispenser = (props) => {
               </Stack.Item>
             </Stack>
           </Stack.Item>
-          <Stack.Item grow>
+          <Stack.Item basis="25%">
             <ChemDispenserBeaker />
           </Stack.Item>
         </Stack>

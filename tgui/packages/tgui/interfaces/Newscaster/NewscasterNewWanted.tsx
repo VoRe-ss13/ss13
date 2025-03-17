@@ -1,9 +1,9 @@
-import { decodeHtmlEntities } from 'common/string';
+import { useBackend } from 'tgui/backend';
+import { Button, Input, LabeledList, Section } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
 
-import { useBackend } from '../../backend';
-import { Button, Input, LabeledList, Section } from '../../components';
 import { NEWSCASTER_SCREEN_MAIN } from './constants';
-import { Data } from './types';
+import type { Data } from './types';
 
 export const NewscasterNewWanted = (props: { setScreen: Function }) => {
   const { act, data } = useBackend<Data>();
@@ -31,6 +31,7 @@ export const NewscasterNewWanted = (props: { setScreen: Function }) => {
         <LabeledList.Item label="Criminal Name">
           <Input
             fluid
+            updateOnPropsChange
             value={decodeHtmlEntities(channel_name)}
             onInput={(e, val) => act('set_channel_name', { val: val })}
           />
@@ -38,6 +39,7 @@ export const NewscasterNewWanted = (props: { setScreen: Function }) => {
         <LabeledList.Item label="Description">
           <Input
             fluid
+            updateOnPropsChange
             value={decodeHtmlEntities(msg)}
             onInput={(e, val) => act('set_wanted_desc', { val: val })}
           />

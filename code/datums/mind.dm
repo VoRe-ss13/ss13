@@ -95,6 +95,7 @@
 
 	if(new_character.client)
 		new_character.client.init_verbs() // re-initialize character specific verbs
+		new_character.set_listed_turf(null)
 
 /datum/mind/proc/store_memory(new_text)
 	memory += "[new_text]<BR>"
@@ -113,7 +114,7 @@
 
 	if(ambitions)
 		output += "<HR><B>Ambitions:</B> [ambitions]<br>"
-	recipient << browse(output,"window=memory")
+	recipient << browse("<html>[output]</html>","window=memory")
 
 /datum/mind/proc/edit_memory()
 	if(!ticker || !ticker.mode)
@@ -122,7 +123,7 @@
 
 	var/out = span_bold("[name]") + "[(current&&(current.real_name!=name))?" (as [current.real_name])":""]<br>"
 	out += "Mind currently owned by key: [key] [active?"(synced)":"(not synced)"]<br>"
-	out += "Assigned role: [assigned_role]. <a href='?src=\ref[src];[HrefToken()];role_edit=1'>Edit</a><br>"
+	out += "Assigned role: [assigned_role]. <a href='byond://?src=\ref[src];[HrefToken()];role_edit=1'>Edit</a><br>"
 	out += "<hr>"
 	out += "Factions and special roles:<br><table>"
 	for(var/antag_type in all_antag_types)
@@ -139,16 +140,16 @@
 				out += "([span_green("complete")])"
 			else
 				out += "([span_red("incomplete")])"
-			out += " <a href='?src=\ref[src];[HrefToken()];obj_completed=\ref[O]'>\[toggle\]</a>"
-			out += " <a href='?src=\ref[src];[HrefToken()];obj_delete=\ref[O]'>\[remove\]</a><br>"
+			out += " <a href='byond://?src=\ref[src];[HrefToken()];obj_completed=\ref[O]'>\[toggle\]</a>"
+			out += " <a href='byond://?src=\ref[src];[HrefToken()];obj_delete=\ref[O]'>\[remove\]</a><br>"
 			num++
-		out += "<br><a href='?src=\ref[src];[HrefToken()];obj_announce=1'>\[announce objectives\]</a>"
+		out += "<br><a href='byond://?src=\ref[src];[HrefToken()];obj_announce=1'>\[announce objectives\]</a>"
 
 	else
 		out += "None."
-	out += "<br><a href='?src=\ref[src];[HrefToken()];obj_add=1'>\[add\]</a><br><br>"
-	out += span_bold("Ambitions:") + " [ambitions ? ambitions : "None"] <a href='?src=\ref[src];[HrefToken()];amb_edit=\ref[src]'>\[edit\]</a></br>"
-	usr << browse(out, "window=edit_memory[src]")
+	out += "<br><a href='byond://?src=\ref[src];[HrefToken()];obj_add=1'>\[add\]</a><br><br>"
+	out += span_bold("Ambitions:") + " [ambitions ? ambitions : "None"] <a href='byond://?src=\ref[src];[HrefToken()];amb_edit=\ref[src]'>\[edit\]</a></br>"
+	usr << browse("<html>[out]</html>", "window=edit_memory[src]")
 
 /datum/mind/Topic(href, href_list)
 	if(!check_rights(R_ADMIN|R_FUN|R_EVENT))	return
@@ -178,7 +179,7 @@
 		if(antag) antag.place_mob(src.current)
 
 	else if (href_list["role_edit"])
-		var/new_role = input("Select new role", "Assigned role", assigned_role) as null|anything in joblist
+		var/new_role = tgui_input_list(usr, "Select new role", "Assigned role", assigned_role, joblist)
 		if (!new_role) return
 		assigned_role = new_role
 
@@ -230,7 +231,7 @@
 
 				var/list/possible_targets = list("Free objective")
 				for(var/datum/mind/possible_target in ticker.minds)
-					if ((possible_target != src) && istype(possible_target.current, /mob/living/carbon/human))
+					if ((possible_target != src) && ishuman(possible_target.current))
 						possible_targets += possible_target.current
 
 				var/mob/def_target = null
@@ -346,13 +347,13 @@
 						if(I in organs.implants)
 							qdel(I)
 							break
-				to_chat(H, span_notice("<font size =3><B>Your loyalty implant has been deactivated.</B></font>"))
+				to_chat(H, span_notice(span_large(span_bold("Your loyalty implant has been deactivated."))))
 				log_admin("[key_name_admin(usr)] has de-loyalty implanted [current].")
 			if("add")
-				to_chat(H, span_danger("<font size =3>You somehow have become the recepient of a loyalty transplant, and it just activated!</font>"))
+				to_chat(H, span_danger(span_large("You somehow have become the recepient of a loyalty transplant, and it just activated!")))
 				H.implant_loyalty(override = TRUE)
 				log_admin("[key_name_admin(usr)] has loyalty implanted [current].")
-			else
+
 	else if (href_list["silicon"])
 		BITSET(current.hud_updateflag, SPECIALROLE_HUD)
 		switch(href_list["silicon"])
@@ -375,7 +376,7 @@
 					log_admin("[key_name_admin(usr)] has unemag'ed [R].")
 
 			if("unemagcyborgs")
-				if (istype(current, /mob/living/silicon/ai))
+				if (isAI(current))
 					var/mob/living/silicon/ai/ai = current
 					for (var/mob/living/silicon/robot/R in ai.connected_robots)
 						R.emagged = 0
@@ -402,7 +403,7 @@
 				take_uplink()
 				memory = null//Remove any memory they may have had.
 			if("crystals")
-				if (usr.client.holder.rights & R_FUN)
+				if (check_rights_for(usr.client, R_FUN))
 				//	var/obj/item/uplink/hidden/suplink = find_syndicate_uplink() No longer needed, uses stored in mind
 					var/crystals
 					crystals = tcrystals

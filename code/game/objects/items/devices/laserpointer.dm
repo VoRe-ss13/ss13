@@ -31,17 +31,17 @@
 /obj/item/laser_pointer/purple
 	pointer_icon_state = "purple_laser"
 
-/obj/item/laser_pointer/New()
-	..()
-	diode = new(src)
+/obj/item/laser_pointer/Initialize(mapload, var/laser_path)
+	. = ..()
+	if(ispath(laser_path))
+		diode = new laser_path
+	else
+		diode = new(src)
 	if(!pointer_icon_state)
 		pointer_icon_state = pick("red_laser","green_laser","blue_laser","purple_laser")
 
-/obj/item/laser_pointer/upgraded/New()
-	..()
-	diode = new /obj/item/stock_parts/micro_laser/ultra
-
-
+/obj/item/laser_pointer/upgraded/Initialize(mapload)
+	. = ..(mapload, /obj/item/stock_parts/micro_laser/ultra)
 
 /obj/item/laser_pointer/attack(mob/living/M, mob/user)
 	laser_act(M, user)
@@ -184,7 +184,7 @@
 
 
 	//laser pointer image
-	icon_state = "pointer_[pointer_icon_state]"
+	icon_state = "[initial(icon_state)]_[pointer_icon_state]"
 	var/list/showto = list()
 	for(var/mob/M in viewers(world.view,targloc))
 		if(M.client)
@@ -211,7 +211,7 @@
 
 	flick_overlay(I, showto, cooldown)
 	spawn(cooldown)
-		icon_state = "pointer"
+		icon_state = initial(icon_state)
 
 /obj/item/laser_pointer/process()
 	if(prob(20 - recharge_locked*5))

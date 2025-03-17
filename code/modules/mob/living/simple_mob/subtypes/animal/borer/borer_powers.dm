@@ -1,5 +1,5 @@
 /mob/living/simple_mob/animal/borer/verb/release_host()
-	set category = "Abilities.Borer" //CHOMPEdit
+	set category = "Abilities.Borer"
 	set name = "Release Host"
 	set desc = "Slither out of your host."
 
@@ -39,7 +39,7 @@
 		leave_host()
 
 /mob/living/simple_mob/animal/borer/verb/infest()
-	set category = "Abilities.Borer" //CHOMPEdit
+	set category = "Abilities.Borer"
 	set name = "Infest"
 	set desc = "Infest a suitable humanoid host."
 
@@ -70,7 +70,7 @@
 		to_chat(src, span_warning("You cannot infest someone who is already infested!"))
 		return
 
-	if(istype(M,/mob/living/carbon/human))
+	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 
 		var/obj/item/organ/external/E = H.organs_by_name[BP_HEAD]
@@ -110,7 +110,7 @@
 		if(host.mind)
 			borers.add_antagonist_mind(host.mind, 1, borers.faction_role_text, borers.faction_welcome)
 
-		if(istype(M,/mob/living/carbon/human))
+		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			var/obj/item/organ/I = H.internal_organs_by_name["brain"]
 			if(!I) // No brain organ, so the borer moves in and replaces it permanently.
@@ -127,7 +127,7 @@
 
 /*
 /mob/living/simple_mob/animal/borer/verb/devour_brain()
-	set category = "Abilities.Borer" //CHOMPEdit
+	set category = "Abilities.Borer"
 	set name = "Devour Brain"
 	set desc = "Take permanent control of a dead host."
 
@@ -200,7 +200,7 @@
 		H.lastKnownIP = s2h_ip
 
 /mob/living/simple_mob/animal/borer/verb/secrete_chemicals()
-	set category = "Abilities.Borer" //CHOMPEdit
+	set category = "Abilities.Borer"
 	set name = "Secrete Chemicals"
 	set desc = "Push some chemicals into your host's bloodstream."
 
@@ -218,7 +218,7 @@
 	if(chemicals < 50)
 		to_chat(src,  span_warning("You don't have enough chemicals!"))
 
-	var/chem = tgui_input_list(usr, "Select a chemical to secrete.", "Chemicals", list("alkysine","bicaridine","hyperzine","tramadol"))
+	var/chem = tgui_input_list(src, "Select a chemical to secrete.", "Chemicals", list(REAGENT_ID_ALKYSINE,REAGENT_ID_BICARIDINE,REAGENT_ID_HYPERZINE,REAGENT_ID_TRAMADOL))
 
 	if(!chem || chemicals < 50 || !host || controlling || !src || stat) //Sanity check.
 		return
@@ -228,7 +228,7 @@
 	chemicals -= 50
 
 /mob/living/simple_mob/animal/borer/verb/dominate_victim()
-	set category = "Abilities.Borer" //CHOMPEdit
+	set category = "Abilities.Borer"
 	set name = "Paralyze Victim"
 	set desc = "Freeze the limbs of a potential host with supernatural fear."
 
@@ -268,7 +268,7 @@
 	used_dominate = world.time
 
 /mob/living/simple_mob/animal/borer/verb/bond_brain()
-	set category = "Abilities.Borer" //CHOMPEdit
+	set category = "Abilities.Borer"
 	set name = "Assume Control"
 	set desc = "Fully connect to the brain of your host."
 
@@ -339,12 +339,12 @@
 			return
 
 /mob/living/carbon/human/proc/jumpstart()
-	set category = "Abilities.Borer" //CHOMPEdit
+	set category = "Abilities.Borer"
 	set name = "Revive Host"
 	set desc = "Send a jolt of electricity through your host, reviving them."
 
 	if(stat != 2)
-		to_chat(usr, "Your host is already alive.")
+		to_chat(src, "Your host is already alive.")
 		return
 
 	remove_verb(src, /mob/living/carbon/human/proc/jumpstart)

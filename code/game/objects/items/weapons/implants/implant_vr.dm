@@ -91,15 +91,15 @@
 	if (malfunction)
 		return
 
-	if(istype(imp_in, /mob/living))
+	if(isliving(imp_in))
 		var/mob/living/H = imp_in
 		if(findtext(msg,"implant-toggle"))
 			active = !active
 		if(active)
 			if(findtext(msg,"grow"))
-				H.resize(min(H.size_multiplier*1.5, 2))
+				H.resize(min(H.size_multiplier*1.5, RESIZE_MAXIMUM))
 			else if(findtext(msg,"shrink"))
-				H.resize(max(H.size_multiplier*0.5, 0.25))
+				H.resize(max(H.size_multiplier*0.5, RESIZE_MINIMUM))
 			else if(findtext(msg, "resize"))
 				var/static/regex/size_mult = new/regex("\\d+")
 				if(size_mult.Find(msg))
@@ -114,7 +114,7 @@
 
 
 /obj/item/implant/sizecontrol/emp_act(severity)
-	if(istype(imp_in, /mob/living))
+	if(isliving(imp_in))
 		var/newsize = pick(RESIZE_HUGE,RESIZE_BIG,RESIZE_NORMAL,RESIZE_SMALL,RESIZE_TINY,RESIZE_A_HUGEBIG,RESIZE_A_BIGNORMAL,RESIZE_A_NORMALSMALL,RESIZE_A_SMALLTINY)
 		var/mob/living/H = imp_in
 		H.resize(newsize)
@@ -129,11 +129,10 @@
 'Ignore' - keywords in the speech won't have any effect.
 'Implant-toggle' - toggles implant."}
 
-/obj/item/implanter/sizecontrol/New()
+/obj/item/implanter/sizecontrol/Initialize(mapload)
+	. = ..()
 	src.imp = new /obj/item/implant/sizecontrol( src )
-	..()
 	update()
-	return
 
 
 //////////////////////////////
@@ -154,11 +153,10 @@ Due to the small chemical capacity of the implant, the life of the implant is re
 	safeties to prevent lethal or actively harmful commands from being input to lessen the severity of the crime if they are caught. This one has a golden stamp \
 	with the shape of a star on it, the letters 'KE' in black text on it."
 
-/obj/item/implanter/compliance/New()
-	src.imp = new /obj/item/implant/compliance( src )
-	..()
+/obj/item/implanter/compliance/Initialize(mapload)
+	. = ..()
+	imp = new /obj/item/implant/compliance(src)
 	update()
-	return
 
 /obj/item/implanter/compliance/attack_self(mob/user)
 	if(istype(imp,/obj/item/implant/compliance))

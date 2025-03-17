@@ -35,7 +35,7 @@
 		prey_body = prey
 	pred_body = pred
 
-/mob/living/dominated_brain/Initialize()
+/mob/living/dominated_brain/Initialize(mapload)
 	if(!isliving(loc))
 		qdel(src)
 		return
@@ -166,7 +166,7 @@
 	pred_body.ooc_notes_maybes = pred_ooc_maybes
 	pred_body.ooc_notes_style = pred_ooc_style
 	//CHOMPEdit End
-	log_and_message_admins("[pred_body] is now controlled by [pred_body.ckey]. They were restored to control through prey domination, and had been controlled by [prey_ckey].")
+	log_and_message_admins("is now controlled by [pred_body.ckey]. They were restored to control through prey domination, and had been controlled by [prey_ckey].", pred_body)
 	pred_body.absorb_langs()
 	pred_body.prey_controlled = FALSE
 	qdel(src)
@@ -196,7 +196,7 @@
 
 //Welcome to the adapted borer code.
 /mob/proc/dominate_predator()
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	set name = "Dominate Predator"
 	set desc = "Connect to and dominate the brain of your predator."
 	var/is_mob = FALSE //CHOMPAdd - tracks if character is a non player mob
@@ -318,7 +318,7 @@
 	pred_brain.real_name = pred.real_name
 	pred.ckey = pred_brain.prey_ckey
 	pred.prey_controlled = TRUE
-	log_and_message_admins("[pred] is now controlled by [pred.ckey], they were taken over via prey domination, and were originally controlled by [pred_brain.pred_ckey].")
+	log_and_message_admins("is now controlled by [pred.ckey], they were taken over via prey domination, and were originally controlled by [pred_brain.pred_ckey].", pred)
 	if(delete_source)
 		qdel(prey)
 
@@ -328,7 +328,7 @@
 //CHOMPEdit End
 
 /mob/proc/release_predator()
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	set name = "Restore Control"
 	set desc = "Release control of your predator's body."
 
@@ -351,7 +351,7 @@
 	remove_verb(src, /mob/proc/release_predator)
 
 /mob/living/dominated_brain/proc/resist_control()
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	set name = "Resist Control"
 	set desc = "Attempt to resist control."
 	if(pred_body.ckey == pred_ckey)
@@ -370,7 +370,7 @@
 		to_chat(src, span_warning("\The [pred_body] is already dominated, and cannot be controlled at this time."))
 
 /mob/living/proc/dominate_prey()
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	set name = "Dominate Prey"
 	set desc = "Connect to and dominate the brain of your prey."
 
@@ -471,7 +471,7 @@
 	//CHOMPEdit End
 
 /mob/living/dominated_brain/proc/cease_this_foolishness()
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	set name = "Return to Body"
 	set desc = "If your body is inside of your predator still, attempts to re-insert yourself into it."
 
@@ -498,7 +498,7 @@
 		remove_verb(src, /mob/living/dominated_brain/proc/cease_this_foolishness)
 
 /mob/living/proc/lend_prey_control()
-	set category = "Abilities.Vore" //CHOMPEdit
+	set category = "Abilities.Vore"
 	set name = "Give Prey Control"
 	set desc = "Allow prey control of your body."
 
@@ -602,6 +602,6 @@
 	pred_brain.real_name = pred.real_name
 	pred.ckey = pred_brain.prey_ckey
 	pred.prey_controlled = TRUE
-	log_and_message_admins("[pred] is now controlled by [pred.ckey], they were taken over via pred submission, and were originally controlled by [pred_brain.pred_ckey].")
+	log_and_message_admins("is now controlled by [pred.ckey], they were taken over via pred submission, and were originally controlled by [pred_brain.pred_ckey].", pred)
 	if(delete_source)
 		qdel(prey)

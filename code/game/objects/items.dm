@@ -35,10 +35,8 @@
 	var/max_pressure_protection // Set this variable if the item protects its wearer against high pressures below an upper bound. Keep at null to disable protection.
 	var/min_pressure_protection // Set this variable if the item protects its wearer against low pressures above a lower bound. Keep at null to disable protection. 0 represents protection against hard vacuum.
 
-
-	var/datum/action/item_action/action = null
-	var/action_button_name //It is also the text which gets displayed on the action button. If not set it defaults to 'Use [name]'. If it's not set, there'll be no button.
-	var/action_button_is_hands_free = 0 //If 1, bypass the restrained, lying, and stunned checks action buttons normally test for
+	var/list/actions //list of /datum/action's that this item has.
+	var/list/actions_types //list of paths of action datums to give to the item on New().
 
 	//This flag is used to determine when items in someone's inventory cover others. IE helmets making it so you can't see glasses, etc.
 	//It should be used purely for appearance. For gameplay effects caused by items covering body parts, use body_parts_covered.
@@ -78,7 +76,7 @@
 	/* Species-specific sprites, concept stolen from Paradise//vg/.
 	ex:
 	sprite_sheets = list(
-		SPECIES_TAJ = 'icons/cat/are/bad'
+		SPECIES_TAJARAN = 'icons/cat/are/bad'
 		)
 	If index term exists and icon_override is not set, this sprite sheet will be used.
 	*/
@@ -112,11 +110,19 @@
 
 	var/rock_climbing = FALSE //If true, allows climbing cliffs using click drag for single Z, walls if multiZ
 	var/climbing_delay = 1 //If rock_climbing, lower better.
+	var/digestable = TRUE
+	var/item_tf_spawn_allowed = FALSE
+	var/list/ckeys_allowed_itemspawn = list()
 
-/obj/item/Initialize(mapload) //CHOMPedit I stg I'm going to overwrite these many uncommented edits.
+/obj/item/Initialize(mapload)
 	. = ..()
+
+	for(var/path in actions_types)
+		add_item_action(path)
+
 	if(islist(origin_tech))
 		origin_tech = typelist(NAMEOF(src, origin_tech), origin_tech)
+
 	if(embed_chance < 0)
 		if(sharp)
 			embed_chance = max(5, round(force/w_class))
@@ -131,13 +137,62 @@
 	M.update_held_icons()
 
 /obj/item/Destroy()
+	if(item_tf_spawn_allowed)
+		item_tf_spawnpoints -= src
 	if(ismob(loc))
 		var/mob/m = loc
 		m.drop_from_inventory(src)
 		m.update_inv_r_hand()
 		m.update_inv_l_hand()
 		src.loc = null
+
+	// Handle celaning up our actions list
+	for(var/datum/action/action as anything in actions)
+		remove_item_action(action)
+
 	return ..()
+
+
+/// Called when an action associated with our item is deleted
+/obj/item/proc/on_action_deleted(datum/source)
+	SIGNAL_HANDLER
+
+	if(!(source in actions))
+		CRASH("An action ([source.type]) was deleted that was associated with an item ([src]), but was not found in the item's actions list.")
+
+	LAZYREMOVE(actions, source)
+
+/// Adds an item action to our list of item actions.
+/// Item actions are actions linked to our item, that are granted to mobs who equip us.
+/// This also ensures that the actions are properly tracked in the actions list and removed if they're deleted.
+/// Can be be passed a typepath of an action or an instance of an action.
+/obj/item/proc/add_item_action(action_or_action_type)
+	var/datum/action/action
+	if(ispath(action_or_action_type, /datum/action))
+		action = new action_or_action_type(src)
+	else if(istype(action_or_action_type, /datum/action))
+		action = action_or_action_type
+	else
+		CRASH("item add_item_action got a type or instance of something that wasn't an action.")
+
+	LAZYADD(actions, action)
+	RegisterSignal(action, COMSIG_PARENT_QDELETING, PROC_REF(on_action_deleted))
+	if(ismob(loc))
+		// We're being held or are equipped by someone while adding an action?
+		// Then they should also probably be granted the action, given it's in a correct slot
+		var/mob/holder = loc
+		give_item_action(action, holder, holder.get_inventory_slot(src))
+
+	return action
+
+/// Removes an instance of an action from our list of item actions.
+/obj/item/proc/remove_item_action(datum/action/action)
+	if(!action)
+		return
+
+	UnregisterSignal(action, COMSIG_PARENT_QDELETING)
+	LAZYREMOVE(actions, action)
+	qdel(action)
 
 // Check if target is reasonable for us to operate on.
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)
@@ -317,7 +372,7 @@
 
 /obj/item/throw_impact(atom/hit_atom)
 	..()
-	if(isliving(hit_atom)) //Living mobs handle hit sounds differently.
+	if(isliving(hit_atom) && !hit_atom.is_incorporeal()) //Living mobs handle hit sounds differently.
 		var/volume = get_volume_by_throwforce_and_or_w_class()
 		if (throwforce > 0)
 			if (mob_throw_hit_sound)
@@ -332,10 +387,14 @@
 		playsound(src, drop_sound, 30, preference = /datum/preference/toggle/drop_sounds)
 
 // apparently called whenever an item is removed from a slot, container, or anything else.
-/obj/item/proc/dropped(mob/user as mob)
+/obj/item/proc/dropped(mob/user)
+	SHOULD_CALL_PARENT(TRUE)
 	if(zoom)
 		zoom() //binoculars, scope, etc
 	appearance_flags &= ~NO_CLIENT_COLOR
+	// Remove any item actions we temporary gave out.
+	for(var/datum/action/action_item_has as anything in actions)
+		action_item_has.Remove(user)
 
 // called just as an item is picked up (loc is not yet changed)
 /obj/item/proc/pickup(mob/user)
@@ -361,6 +420,9 @@
 // for items that can be placed in multiple slots
 // note this isn't called during the initial dressing of a player
 /obj/item/proc/equipped(var/mob/user, var/slot)
+	// Give out actions our item has to people who equip it.
+	for(var/datum/action/action as anything in actions)
+		give_item_action(action, user, slot)
 	hud_layerise()
 	user.position_hud_item(src,slot)
 	if(user.client)	user.client.screen |= src
@@ -374,6 +436,24 @@
 		if(!muffled_by_belly(user)) //ChompEDIT
 			playsound(src, pickup_sound, 20, preference = /datum/preference/toggle/pickup_sounds)
 	return
+
+/// Gives one of our item actions to a mob, when equipped to a certain slot
+/obj/item/proc/give_item_action(datum/action/action, mob/to_who, slot)
+	// Some items only give their actions buttons when in a specific slot.
+	if(!item_action_slot_check(slot, to_who))
+		// There is a chance we still have our item action currently,
+		// and are moving it from a "valid slot" to an "invalid slot".
+		// So call Remove() here regardless, even if excessive.
+		action.Remove(to_who)
+		return
+
+	action.Grant(to_who)
+
+//sometimes we only want to grant the item's action if it's equipped in a specific slot.
+/obj/item/proc/item_action_slot_check(slot, mob/user)
+	if(slot == SLOT_BACK || slot == LEGS) //these aren't true slots, so avoid granting actions there
+		return FALSE
+	return TRUE
 
 // As above but for items being equipped to an active module on a robot.
 /obj/item/proc/equipped_robot(var/mob/user)
@@ -538,11 +618,11 @@ var/list/global/slot_flags_enumeration = list(
 	return
 
 
-//This proc is executed when someone clicks the on-screen UI button. To make the UI button show, set the 'icon_action_button' to the icon_state of the image of the button in screen1_action.dmi
+//This proc is executed when someone clicks the on-screen UI button.
 //The default action is attack_self().
 //Checks before we get to here are: mob is alive, mob is not restrained, paralyzed, asleep, resting, laying, item is on the mob.
-/obj/item/proc/ui_action_click()
-	attack_self(usr)
+/obj/item/proc/ui_action_click(mob/user, actiontype)
+	attack_self(user)
 
 //RETURN VALUES
 //handle_shield should return a positive value to indicate that the attack is blocked and should be prevented.
@@ -691,7 +771,7 @@ GLOBAL_LIST_EMPTY(blood_overlays_by_type)
 
 /obj/item/proc/showoff(mob/user)
 	for (var/mob/M in view(user))
-		M.show_message(span_filter_notice("[user] holds up [src]. <a HREF=?src=\ref[M];lookitem=\ref[src]>Take a closer look.</a>"),1)
+		M.show_message(span_filter_notice("[user] holds up [src]. <a HREF='byond://?src=\ref[M];lookitem=\ref[src]'>Take a closer look.</a>"),1)
 
 /mob/living/carbon/verb/showoff()
 	set name = "Show Held Item"
@@ -727,7 +807,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	var/cannotzoom
 
-	if((M.stat && !zoom) || !(istype(M,/mob/living/carbon/human)))
+	if((M.stat && !zoom) || !(ishuman(M)))
 		to_chat(M, span_filter_notice("You are unable to focus through the [devicename]."))
 		cannotzoom = 1
 	else if(!zoom && (global_hud.darkMask[1] in M.client.screen))
@@ -832,6 +912,12 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 				state2use += "_l"
 
 	// testing("[src] (\ref[src]) - Slot: [slot_name], Inhands: [inhands], Worn Icon:[icon2use], Worn State:[state2use], Worn Layer:[layer2use]")
+	// Send icon data to unit test when it is running, hello old testing(). I'm like, your great great grandkid! THE FUTURE IS NOW OLD MAN!
+	#ifdef UNIT_TEST
+	var/mob/living/carbon/human/H = loc
+	if(ishuman(H))
+		SEND_SIGNAL(H, COMSIG_UNITTEST_DATA, list("set_slot",slot_name,icon2use,state2use,inhands,type,H.species?.name))
+	#endif
 
 	//Generate the base onmob icon
 	var/icon/standing_icon = icon(icon = icon2use, icon_state = state2use)
@@ -987,12 +1073,12 @@ closest to where the cursor has clicked on.
 Note: This proc can be overwritten to allow for different types of auto-alignment.
 */
 
-///obj/item/var/list/center_of_mass = list("x" = 16,"y" = 16) CHOMPEdit NO STOP PLEASE -- center_of_mass - 52.0879 mb total
-/obj/item/var/center_of_mass_x = 16 //CHOMPEdit
-/obj/item/var/center_of_mass_y = 16 //CHOMPEdit
+
+/obj/item/var/center_of_mass_x = 16
+/obj/item/var/center_of_mass_y = 16
 
 /proc/auto_align(obj/item/W, click_parameters, var/animate = FALSE)
-	if(!W.center_of_mass_x && !W.center_of_mass_y) //CHOMPEdit
+	if(!W.center_of_mass_x && !W.center_of_mass_y)
 		W.randpixel_xy()
 		return
 
@@ -1008,8 +1094,8 @@ Note: This proc can be overwritten to allow for different types of auto-alignmen
 		var/cell_x = max(0, min(CELLS-1, round(mouse_x/CELLSIZE)))
 		var/cell_y = max(0, min(CELLS-1, round(mouse_y/CELLSIZE)))
 
-		var/target_x = (CELLSIZE * (0.5 + cell_x)) - W.center_of_mass_x //CHOMPEdit
-		var/target_y = (CELLSIZE * (0.5 + cell_y)) - W.center_of_mass_y //CHOMPEdit
+		var/target_x = (CELLSIZE * (0.5 + cell_x)) - W.center_of_mass_x
+		var/target_y = (CELLSIZE * (0.5 + cell_y)) - W.center_of_mass_y
 		if(animate)
 			var/dist_x = abs(W.pixel_x - target_x)
 			var/dist_y = abs(W.pixel_y - target_y)
@@ -1031,3 +1117,21 @@ Note: This proc can be overwritten to allow for different types of auto-alignmen
 
 /obj/item/proc/get_welder()
 	return
+
+/obj/item/verb/toggle_digestable()
+	set category = "Object"
+	set name = "Toggle Digestable"
+	set desc = "Toggle item's digestability."
+	digestable = !digestable
+	if(!digestable)
+		to_chat(usr, span_notice("[src] is now protected from digestion."))
+
+/obj/item/proc/item_tf_spawnpoint_set()
+	if(!item_tf_spawn_allowed)
+		item_tf_spawn_allowed = TRUE
+		item_tf_spawnpoints += src
+
+/obj/item/proc/item_tf_spawnpoint_used()
+	if(item_tf_spawn_allowed)
+		item_tf_spawn_allowed = FALSE
+		item_tf_spawnpoints -= src

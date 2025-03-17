@@ -24,14 +24,15 @@
 		/obj/item/clothing/under/rank/neo_hos_blackblue_skirt,
 		/obj/item/clothing/under/rank/neo_hos_parade_blue,
 		/obj/item/clothing/under/rank/neo_hos_parade_blue_fem,
-		/obj/item/clothing/under/rank/neo_hos_gorka,
+		/obj/item/clothing/under/rank/neo_gorka/hos,
 		/obj/item/clothing/suit/storage/toggle/labcoat/neo_hos_parade,
 		/obj/item/clothing/suit/storage/toggle/labcoat/neo_hosformal_blue,
 		/obj/item/clothing/suit/storage/vest/wardencoat/neo_armsco_trench,
 		/obj/item/clothing/head/helmet/HoS/hat/blue,
 		/obj/item/clothing/head/helmet/dermal,
 		/obj/item/radio/headset/heads/hos,
-		/obj/item/radio/headset/heads/hos/alt,
+		/obj/item/radio/headset/alt/heads/hos,
+		/obj/item/radio/headset/earbud/heads/hos,
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/storage/belt/security,
 		/obj/item/clothing/accessory/holster/waist,
@@ -86,7 +87,8 @@
 		/obj/item/clothing/head/helmet,
 		/obj/item/cartridge/security,
 		/obj/item/radio/headset/headset_sec,
-		/obj/item/radio/headset/headset_sec/alt,
+		/obj/item/radio/headset/alt/headset_sec,
+		/obj/item/radio/headset/earbud/headset_sec,
 		/obj/item/storage/belt/security,
 		/obj/item/flash,
 		/obj/item/reagent_containers/spray/pepper,
@@ -107,7 +109,7 @@
 		/obj/item/clothing/shoes/boots/jackboots,
 		/obj/item/clothing/shoes/boots/jackboots/toeless)
 
-/obj/structure/closet/secure_closet/nanotrasen_security/Initialize()
+/obj/structure/closet/secure_closet/nanotrasen_security/Initialize(mapload)
 	if(prob(25))
 		starts_with += /obj/item/storage/backpack/security
 	else
@@ -132,7 +134,8 @@
 		/obj/item/clothing/head/helmet/dermal,
 		/obj/item/cartridge/hos,
 		/obj/item/radio/headset/heads/hos,
-		/obj/item/radio/headset/heads/hos/alt,
+		/obj/item/radio/headset/alt/heads/hos,
+		/obj/item/radio/headset/earbud/heads/hos,
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
 		/obj/item/shield/riot,
@@ -156,7 +159,7 @@
 		/obj/item/clothing/shoes/boots/jackboots/toeless,
 		/obj/item/clothing/under/nanotrasen/security/commander)
 
-/obj/structure/closet/secure_closet/nanotrasen_commander/Initialize()
+/obj/structure/closet/secure_closet/nanotrasen_commander/Initialize(mapload)
 	if(prob(25))
 		starts_with += /obj/item/storage/backpack/security
 	else
@@ -179,7 +182,8 @@
 		/obj/item/clothing/head/helmet/warden,
 		/obj/item/cartridge/security,
 		/obj/item/radio/headset/headset_sec,
-		/obj/item/radio/headset/headset_sec/alt,
+		/obj/item/radio/headset/alt/headset_sec,
+		/obj/item/radio/headset/earbud/headset_sec,
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
 		/obj/item/clothing/accessory/badge/holo/warden,
@@ -197,7 +201,7 @@
 		/obj/item/clothing/shoes/boots/jackboots,
 		/obj/item/clothing/shoes/boots/jackboots/toeless)
 
-/obj/structure/closet/secure_closet/nanotrasen_warden/Initialize()
+/obj/structure/closet/secure_closet/nanotrasen_warden/Initialize(mapload)
 	if(prob(25))
 		new /obj/item/storage/backpack/security(src)
 	else
@@ -214,7 +218,8 @@
 		/obj/item/cartridge/captain,
 		/obj/item/storage/lockbox/medal,
 		/obj/item/radio/headset/heads/captain,
-		/obj/item/radio/headset/heads/captain/alt,
+		/obj/item/radio/headset/alt/heads/captain,
+		/obj/item/radio/headset/earbud/heads/captain,
 		/obj/item/gunbox/captain,
 		/obj/item/melee/telebaton,
 		/obj/item/flash,

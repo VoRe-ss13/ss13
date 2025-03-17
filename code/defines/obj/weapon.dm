@@ -42,9 +42,10 @@
 	var/randomize = TRUE
 	var/square_chance = 10
 
-/obj/item/soap/Initialize()
+/obj/item/soap/Initialize(mapload)
 	if(randomize && prob(square_chance))
 		icon_state = "[icon_state]-alt"
+	. = ..()
 
 /obj/item/soap/nanotrasen
 	desc = "A NanoTrasen-brand bar of soap. Smells of phoron, a years-old marketing gimmick."
@@ -53,9 +54,9 @@
 /obj/item/soap/deluxe
 	icon_state = "soapdeluxe"
 
-/obj/item/soap/deluxe/New()
+/obj/item/soap/deluxe/Initialize(mapload)
+	. = ..()
 	desc = "A deluxe Waffle Co. brand bar of soap. Smells of [pick("lavender", "vanilla", "strawberry", "chocolate" ,"space")]."
-	..()
 
 /obj/item/soap/syndie
 	desc = "An untrustworthy bar of soap. Smells of fear."
@@ -325,13 +326,13 @@
 	throw_speed = 4
 	throw_range = 20
 
-/obj/item/camera_bug/attack_self(mob/usr as mob)
+/obj/item/camera_bug/attack_self(mob/user as mob)
 	var/list/cameras = new/list()
 	for (var/obj/machinery/camera/C in cameranet.cameras)
 		if (C.bugged && C.status)
 			cameras.Add(C)
 	if (length(cameras) == 0)
-		to_chat(usr, span_warning("No bugged functioning cameras found."))
+		to_chat(user, span_warning("No bugged functioning cameras found."))
 		return
 
 	var/list/friendly_cameras = new/list()
@@ -339,16 +340,16 @@
 	for (var/obj/machinery/camera/C in cameras)
 		friendly_cameras.Add(C.c_tag)
 
-	var/target = tgui_input_list(usr, "Select the camera to observe", "Select Camera", friendly_cameras)
+	var/target = tgui_input_list(user, "Select the camera to observe", "Select Camera", friendly_cameras)
 	if (!target)
 		return
 	for (var/obj/machinery/camera/C in cameras)
 		if (C.c_tag == target)
 			target = C
 			break
-	if (usr.stat == 2) return
+	if (user.stat == 2) return
 
-	usr.client.eye = target
+	user.client.eye = target
 
 /*
 /obj/item/cigarpacket
@@ -490,10 +491,10 @@
 	drop_sound = 'sound/items/drop/component.ogg'
 	pickup_sound = 'sound/items/pickup/component.ogg'
 
-/obj/item/stock_parts/New()
+/obj/item/stock_parts/Initialize(mapload)
+	. = ..()
 	src.pixel_x = rand(-5.0, 5)
 	src.pixel_y = rand(-5.0, 5)
-	..()
 
 /obj/item/stock_parts/get_rating()
 	return rating
@@ -518,7 +519,7 @@
 	var/charge = 0
 	var/max_charge = 1000
 
-/obj/item/stock_parts/capacitor/New()
+/obj/item/stock_parts/capacitor/Initialize(mapload)
 	. = ..()
 	max_charge *= rating
 

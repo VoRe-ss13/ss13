@@ -1,8 +1,13 @@
-import { decodeHtmlEntities } from 'common/string';
+import { useBackend } from 'tgui/backend';
+import {
+  Button,
+  LabeledList,
+  NumberInput,
+  Section,
+} from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
 
-import { useBackend } from '../../backend';
-import { Button, LabeledList, NumberInput, Section } from '../../components';
-import { single_scrubber, single_vent } from './CommonTypes';
+import type { single_scrubber, single_vent } from './CommonTypes';
 
 type vent = { vent: single_vent };
 type scrubber = { scrubber: single_scrubber };

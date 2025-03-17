@@ -15,7 +15,7 @@
 	w_class = ITEMSIZE_LARGE
 	unacidable = TRUE
 	origin_tech = list(TECH_BIO = 4, TECH_POWER = 2)
-	action_button_name = "Remove/Replace Paddles"
+	actions_types = list(/datum/action/item_action/remove_replace_paddles)
 
 	var/obj/item/shockpaddles/linked/paddles
 	var/obj/item/cell/bcell = null
@@ -25,8 +25,8 @@
 /obj/item/defib_kit/get_cell()
 	return bcell
 
-/obj/item/defib_kit/Initialize() //starts without a cell for rnd //ChompEDIT New --> Initialize
-	..()
+/obj/item/defib_kit/Initialize(mapload) //starts without a cell for rnd
+	. = ..()
 	if(ispath(paddles))
 		paddles = new paddles(src, src)
 	else
@@ -64,7 +64,7 @@
 	else
 		add_overlay("[initial(icon_state)]-nocell")
 
-/obj/item/defib_kit/ui_action_click()
+/obj/item/defib_kit/ui_action_click(mob/user, actiontype)
 	toggle_paddles()
 
 /obj/item/defib_kit/attack_hand(mob/user)
@@ -132,7 +132,7 @@
 	if(!slot_check())
 		to_chat(user, span_warning("You need to equip [src] before taking out [paddles]."))
 	else
-		if(!usr.put_in_hands(paddles)) //Detach the paddles into the user's hands
+		if(!user.put_in_hands(paddles)) //Detach the paddles into the user's hands
 			to_chat(user, span_warning("You need a free hand to hold the paddles!"))
 		update_icon() //success
 
@@ -272,11 +272,7 @@
 
 //Checks for various conditions to see if the mob is revivable
 /obj/item/shockpaddles/proc/can_defib(mob/living/carbon/human/H) //This is checked before doing the defib operation
-	//CHOMPEdit Begin - Vox can be revived with jumper cables
-	if(H.get_species() == SPECIES_VOX && use_on_synthetic)
-		// Will silently continue to the other two checks.
-	//CHOMPEdit End - Edit included the else on the next line.
-	else if((H.species.flags & NO_DEFIB))
+	if((H.species.flags & NO_DEFIB))
 		return "buzzes, \"Incompatible physiology. Operation aborted.\""
 	else if(H.isSynthetic() && !use_on_synthetic)
 		return "buzzes, \"Synthetic Body. Operation aborted.\""
@@ -299,10 +295,10 @@
 	H.updatehealth()
 
 	if(H.isSynthetic())
-		if(H.health + H.getOxyLoss() + H.getToxLoss() <= CONFIG_GET(number/health_threshold_dead)) // CHOMPEdit
+		if(H.health + H.getOxyLoss() + H.getToxLoss() <= CONFIG_GET(number/health_threshold_dead))
 			return "buzzes, \"Resuscitation failed - Severe damage detected. Begin manual repair before further attempts futile.\""
 
-	else if(H.health + H.getOxyLoss() <= CONFIG_GET(number/health_threshold_dead) || (HUSK in H.mutations) || !H.can_defib) // CHOMPEdit
+	else if(H.health + H.getOxyLoss() <= CONFIG_GET(number/health_threshold_dead) || (HUSK in H.mutations) || !H.can_defib)
 		return "buzzes, \"Resuscitation failed - Severe tissue damage makes recovery of patient impossible via defibrillator. Further attempts futile.\""
 
 	var/bad_vital_organ = check_vital_organs(H)
@@ -343,7 +339,7 @@
 	if(!heart)
 		return TRUE
 
-	var/blood_volume = H.vessel.get_reagent_amount("blood")
+	var/blood_volume = H.vessel.get_reagent_amount(REAGENT_ID_BLOOD)
 	if(!heart || heart.is_broken())
 		blood_volume *= 0.3
 	else if(heart.is_bruised())
@@ -435,7 +431,7 @@
 	H.apply_damage(burn_damage_amt, BURN, BP_TORSO)
 
 	//set oxyloss so that the patient is just barely in crit, if possible
-	var/barely_in_crit = CONFIG_GET(number/health_threshold_crit) - 1 // CHOMPEdit
+	var/barely_in_crit = CONFIG_GET(number/health_threshold_crit) - 1
 	var/adjust_health = barely_in_crit - H.health //need to increase health by this much
 	H.adjustOxyLoss(-adjust_health)
 

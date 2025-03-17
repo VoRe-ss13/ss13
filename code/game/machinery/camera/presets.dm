@@ -129,14 +129,14 @@ var/global/list/engineering_networks = list(
 
 // EMP
 
-/obj/machinery/camera/emp_proof/New()
-	..()
+/obj/machinery/camera/emp_proof/Initialize(mapload)
+	. = ..()
 	upgradeEmpProof()
 
 // X-RAY
 
 /obj/machinery/camera/xray
-	icon_state = "xraycam" // Thanks to Krutchen for the icons.
+	icon_state = "camera" // Thanks to Krutchen for the icons. // no xraycam in vr icons
 
 /obj/machinery/camera/xray/command
 	network = list(NETWORK_COMMAND)
@@ -150,14 +150,14 @@ var/global/list/engineering_networks = list(
 /obj/machinery/camera/xray/research
 	network = list(NETWORK_RESEARCH)
 
-/obj/machinery/camera/xray/New()
-	..()
+/obj/machinery/camera/xray/Initialize(mapload)
+	. = ..()
 	upgradeXRay()
 
 // MOTION
 
-/obj/machinery/camera/motion/New()
-	..()
+/obj/machinery/camera/motion/Initialize(mapload)
+	. = ..()
 	upgradeMotion()
 
 /obj/machinery/camera/motion/engineering_outpost
@@ -178,8 +178,8 @@ var/global/list/engineering_networks = list(
 /obj/machinery/camera/all/command
 	network = list(NETWORK_COMMAND)
 
-/obj/machinery/camera/all/New()
-	..()
+/obj/machinery/camera/all/Initialize(mapload)
+	. = ..()
 	upgradeEmpProof()
 	upgradeXRay()
 	upgradeMotion()
@@ -188,7 +188,7 @@ var/global/list/engineering_networks = list(
 /obj/machinery/camera/autoname
 	var/static/list/by_area
 
-/obj/machinery/camera/autoname/Initialize()
+/obj/machinery/camera/autoname/Initialize(mapload)
 	. = ..()
 	var/area/A = get_area(src)
 	if(!A)
@@ -214,16 +214,22 @@ var/global/list/engineering_networks = list(
 // CHECKS
 
 /obj/machinery/camera/proc/isEmpProof()
+	if(!assembly)
+		return FALSE
 	var/O = locate(/obj/item/stack/material/osmium) in assembly.upgrades
 	return O
 
 /obj/machinery/camera/proc/isXRay()
+	if(!assembly)
+		return FALSE
 	var/obj/item/stock_parts/scanning_module/O = locate(/obj/item/stock_parts/scanning_module) in assembly.upgrades
 	if (O && O.rating >= 2)
 		return O
 	return null
 
 /obj/machinery/camera/proc/isMotion()
+	if(!assembly)
+		return FALSE
 	var/O = locate(/obj/item/assembly/prox_sensor) in assembly.upgrades
 	return O
 
@@ -245,7 +251,7 @@ var/global/list/engineering_networks = list(
 	assembly.upgrades.Add(new /obj/item/assembly/prox_sensor(assembly))
 	setPowerUsage()
 	START_MACHINE_PROCESSING(src)
-	sense_proximity(callback = TYPE_PROC_REF(/atom,HasProximity)) // CHOMPEdit
+	sense_proximity(callback = TYPE_PROC_REF(/atom,HasProximity))
 	update_coverage()
 
 /obj/machinery/camera/proc/setPowerUsage()

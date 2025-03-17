@@ -15,8 +15,8 @@
 	var/strapped = 0.0
 	var/obj/machinery/computer/operating/computer = null
 
-/obj/machinery/optable/New()
-	..()
+/obj/machinery/optable/Initialize(mapload)
+	. = ..()
 	for(var/direction in list(NORTH,EAST,SOUTH,WEST))
 		computer = locate(/obj/machinery/computer/operating, get_step(src, direction))
 		if(computer)
@@ -39,12 +39,11 @@
 		if(3.0)
 			if(prob(25))
 				density = FALSE
-		else
 	return
 
 /obj/machinery/optable/attack_hand(mob/user as mob)
-	if(HULK in usr.mutations)
-		visible_message(span_danger("\The [usr] destroys \the [src]!"))
+	if(HULK in user.mutations)
+		visible_message(span_danger("\The [user] destroys \the [src]!"))
 		density = FALSE
 		qdel(src)
 	return

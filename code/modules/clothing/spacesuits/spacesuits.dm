@@ -7,15 +7,14 @@
 	icon_state = "space"
 	desc = "A special helmet designed for work in a hazardous, low-pressure environment."
 	randpixel = 0
-	center_of_mass_x = 0 //CHOMPEdit
-	center_of_mass_y = 0 //CHOMPEdit
+	center_of_mass_x = 0
+	center_of_mass_y = 0
 	flags = PHORONGUARD
 	item_flags = THICKMATERIAL | AIRTIGHT | ALLOW_SURVIVALFOOD
 	permeability_coefficient = 0  //Chompedit was 0.01, zeroed to test protecting those who are vulnerable to water.
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 100, rad = 50)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EYES
-	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	min_pressure_protection = 0 * ONE_ATMOSPHERE
 	max_pressure_protection = 2 * ONE_ATMOSPHERE
@@ -28,11 +27,11 @@
 	var/obj/machinery/camera/camera
 	var/list/camera_networks
 
-	action_button_name = "Toggle Helmet Light"
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	light_overlay = "helmet_light"
 	light_range = 4
 
-/obj/item/clothing/head/helmet/space/Initialize()
+/obj/item/clothing/head/helmet/space/Initialize(mapload)
 	. = ..()
 	if(camera_networks)
 		verbs |= /obj/item/clothing/head/helmet/space/proc/toggle_camera
@@ -76,12 +75,13 @@
 	permeability_coefficient = 0  //Chompedit was 0.01, zeroed to test protecting those who are vulnerable to water.
 	flags = PHORONGUARD
 	item_flags = THICKMATERIAL
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
-	allowed = list(/obj/item/flashlight,/obj/item/tank/emergency/oxygen,/obj/item/suit_cooling_unit,/obj/item/storage/backpack) //CHOMPedit
+	body_parts_covered = CHEST|LEGS|FEET|ARMS|HANDS
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, POCKET_SUIT_REGULATORS,/obj/item/storage/backpack) //CHOMPedit)
 	slowdown = 1 // CHOMPedit: 1.5 to 1. More sane movespeed delay. Voidsuits are still faster.
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 100, rad = 50)
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER
-	cold_protection = UPPER_TORSO | LOWER_TORSO | LEGS | FEET | ARMS | HANDS
+	cold_protection = CHEST|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	min_pressure_protection = 0 * ONE_ATMOSPHERE
 	max_pressure_protection = 2 * ONE_ATMOSPHERE
@@ -92,7 +92,7 @@
 	var/list/supporting_limbs //If not-null, automatically splints breaks. Checked when removing the suit.
 
 //VOREStation edit start - use the specially refitted sprites by KBraid. Done this way to avoid breaking subtypes.
-/obj/item/clothing/suit/space/Initialize()
+/obj/item/clothing/suit/space/Initialize(mapload)
 	. = ..()
 	if(type == /obj/item/clothing/suit/space)
 		LAZYSET(sprite_sheets, SPECIES_TESHARI, 'icons/inventory/suit/mob_vr_teshari.dmi')
@@ -102,7 +102,7 @@
 	check_limb_support(M)
 	..()
 
-/obj/item/clothing/suit/space/dropped(var/mob/user)
+/obj/item/clothing/suit/space/dropped(mob/user)
 	check_limb_support(user)
 	..()
 

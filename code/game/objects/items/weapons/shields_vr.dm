@@ -49,7 +49,7 @@
 		to_chat(user, "You [on ? "enable" : "disable"] the shield light.")
 		update_flashlight(user)
 
-		if(istype(user,/mob/living/carbon/human))
+		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.update_inv_l_hand()
 			H.update_inv_r_hand()
@@ -64,7 +64,7 @@
 		set_light(0)
 		light_applied = 0
 	update_icon(user)
-	user.update_action_buttons()
+	user.update_mob_action_buttons()
 	playsound(src, 'sound/weapons/empty.ogg', 15, 1, -3)
 
 /obj/item/shield/riot/explorer/update_icon()

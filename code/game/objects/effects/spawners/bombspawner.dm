@@ -1,5 +1,5 @@
 /client/proc/spawn_tanktransferbomb()
-	set category = "Debug.Game" //CHOMPEdit
+	set category = "Debug.Game"
 	set desc = "Spawn a tank transfer valve bomb"
 	set name = "Instant TTV"
 
@@ -50,8 +50,8 @@
 	if(co != null) carbon_amt = co
 	..()
 
-/obj/effect/spawner/newbomb/Initialize(newloc)
-	..(newloc)
+/obj/effect/spawner/newbomb/Initialize(mapload)
+	..()
 	var/obj/item/transfer_valve/V = new(src.loc)
 	var/obj/item/tank/phoron/PT = new(V)
 	var/obj/item/tank/oxygen/OT = new(V)
@@ -63,14 +63,14 @@
 	OT.master = V
 
 	PT.valve_welded = 1
-	PT.air_contents.gas["phoron"] = phoron_amt
-	PT.air_contents.gas["carbon_dioxide"] = carbon_amt
+	PT.air_contents.gas[GAS_PHORON] = phoron_amt
+	PT.air_contents.gas[GAS_CO2] = carbon_amt
 	PT.air_contents.total_moles = phoron_amt + carbon_amt
 	PT.air_contents.temperature = PHORON_MINIMUM_BURN_TEMPERATURE+1
 	PT.air_contents.update_values()
 
 	OT.valve_welded = 1
-	OT.air_contents.gas["oxygen"] = oxygen_amt
+	OT.air_contents.gas[GAS_O2] = oxygen_amt
 	OT.air_contents.total_moles = oxygen_amt
 	OT.air_contents.temperature = PHORON_MINIMUM_BURN_TEMPERATURE+1
 	OT.air_contents.update_values()

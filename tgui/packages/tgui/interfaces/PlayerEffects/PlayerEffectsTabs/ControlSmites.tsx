@@ -1,5 +1,5 @@
-import { useBackend } from '../../../backend';
-import { Button, Section } from '../../../components';
+import { useBackend } from 'tgui/backend';
+import { Button, Section } from 'tgui-core/components';
 
 export const ControlSmites = (props) => {
   const { act } = useBackend();
@@ -65,6 +65,9 @@ export const ControlSmites = (props) => {
       </Button>
       <Button fluid onClick={() => act('mob_tf')}>
         Mob Transformation
+      </Button>
+      <Button fluid onClick={() => act('item_tf')}>
+        Object Transformation
       </Button>
     </Section>
   );

@@ -1,20 +1,20 @@
-import { capitalize } from 'common/string';
 import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import {
+  Box,
   Button,
   Divider,
-  Flex,
-  Image,
   Input,
   Section,
   Stack,
-} from 'tgui/components';
+} from 'tgui-core/components';
+import { classes } from 'tgui-core/react';
+import { capitalize } from 'tgui-core/string';
 
 import { NoSpriteWarning } from '../components';
 import { install2col } from '../constants';
 import { prepareSearch } from '../functions';
-import { Target, Upgrade } from '../types';
+import type { Target, Upgrade } from '../types';
 
 export const ModifyRobotUpgrades = (props: { target: Target }) => {
   const { target } = props;
@@ -34,8 +34,8 @@ export const ModifyRobotUpgrades = (props: { target: Target }) => {
   return (
     <>
       {!target.active && <NoSpriteWarning name={target.name} />}
-      <Flex height="35%">
-        <Flex.Item width="30%" fill>
+      <Stack height="35%">
+        <Stack.Item width="30%">
           <UpgradeSection
             title="Add Compatibility"
             searchText={searchAddCompatibilityText}
@@ -43,19 +43,19 @@ export const ModifyRobotUpgrades = (props: { target: Target }) => {
             upgrades={target.whitelisted_upgrades}
             action="add_compatibility"
           />
-        </Flex.Item>
-        <Flex.Item width="40%">
-          <Image
-            src={'data:image/jpeg;base64, ' + target.side}
-            style={{
-              display: 'block',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              width: '200px',
-            }}
-          />
-        </Flex.Item>
-        <Flex.Item width="30%" fill>
+        </Stack.Item>
+        <Stack.Item width="40%">
+          <Stack>
+            <Stack.Item grow />
+            <Stack.Item>
+              <Box
+                className={classes([target.sprite_size, target.sprite + 'W'])}
+              />
+            </Stack.Item>
+            <Stack.Item grow />
+          </Stack>
+        </Stack.Item>
+        <Stack.Item width="30%">
           <UpgradeSection
             title="Remove Compatibility"
             searchText={searchRemoveCompatibilityText}
@@ -63,10 +63,10 @@ export const ModifyRobotUpgrades = (props: { target: Target }) => {
             upgrades={target.blacklisted_upgrades}
             action="rem_compatibility"
           />
-        </Flex.Item>
-      </Flex>
-      <Flex height={!target.active ? '40%' : '45%'}>
-        <Flex.Item width="25%" fill>
+        </Stack.Item>
+      </Stack>
+      <Stack height={!target.active ? '40%' : '45%'}>
+        <Stack.Item width="25%">
           <UpgradeSection
             title="Utility Upgrade"
             searchText={searchUtilityUpgradeText}
@@ -74,8 +74,8 @@ export const ModifyRobotUpgrades = (props: { target: Target }) => {
             upgrades={target.utility_upgrades}
             action="add_upgrade"
           />
-        </Flex.Item>
-        <Flex.Item width="25%" fill>
+        </Stack.Item>
+        <Stack.Item width="25%">
           <UpgradeSection
             title="Basic Upgrade"
             searchText={searchBasicUpgradeText}
@@ -83,8 +83,8 @@ export const ModifyRobotUpgrades = (props: { target: Target }) => {
             upgrades={target.basic_upgrades}
             action="add_upgrade"
           />
-        </Flex.Item>
-        <Flex.Item width="25%" fill>
+        </Stack.Item>
+        <Stack.Item width="25%">
           <UpgradeSection
             title="Advanced Upgrade"
             searchText={searchAdvancedUpgradeText}
@@ -92,8 +92,8 @@ export const ModifyRobotUpgrades = (props: { target: Target }) => {
             upgrades={target.advanced_upgrades}
             action="add_upgrade"
           />
-        </Flex.Item>
-        <Flex.Item width="25%" fill>
+        </Stack.Item>
+        <Stack.Item width="25%">
           <UpgradeSection
             title="Restricted Upgrade"
             searchText={searchRestrictedUpgradeText}
@@ -101,8 +101,8 @@ export const ModifyRobotUpgrades = (props: { target: Target }) => {
             upgrades={target.restricted_upgrades}
             action="add_upgrade"
           />
-        </Flex.Item>
-      </Flex>
+        </Stack.Item>
+      </Stack>
     </>
   );
 };
@@ -130,6 +130,7 @@ const UpgradeSection = (props: {
           {prepareSearch(upgrades, searchText).map((upgrade, i) => {
             return (
               <Button
+                ellipsis
                 fluid
                 key={i}
                 color={

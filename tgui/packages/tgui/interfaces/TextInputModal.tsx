@@ -1,9 +1,9 @@
-import { isEscape, KEY } from 'common/keys';
 import { KeyboardEvent, useState } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Box, Section, Stack, TextArea } from 'tgui-core/components';
+import { isEscape, KEY } from 'tgui-core/keys';
 
-import { useBackend } from '../backend';
-import { Box, Section, Stack, TextArea } from '../components';
-import { Window } from '../layouts';
 import { InputButtons } from './common/InputButtons';
 import { Loader } from './common/Loader';
 
@@ -107,6 +107,7 @@ const InputArea = (props: {
   return (
     <TextArea
       autoFocus
+      userMarkup={{ u: '_', i: '|', b: '+' }}
       autoSelect
       height={multiline || input.length >= 30 ? '100%' : '1.8rem'}
       maxLength={max_length}

@@ -37,8 +37,8 @@
 	var/max_summons = 10			// Maximum allowed summoned entities.  Some cores will have different caps.
 	var/universal = FALSE			// Allows non-technomancers to use the core - VOREStation Add
 
-/obj/item/technomancer_core/New()
-	..()
+/obj/item/technomancer_core/Initialize(mapload)
+	. = ..()
 	START_PROCESSING(SSobj, src)
 
 /obj/item/technomancer_core/Destroy()
@@ -116,7 +116,7 @@
 			summoned_mobs -= A
 			continue
 		// Now check for dead mobs who shouldn't be on the list.
-		if(istype(A, /mob/living))
+		if(isliving(A))
 			var/mob/living/L = A
 			if(L.stat == DEAD)
 				summoned_mobs -= L
@@ -142,14 +142,14 @@
 	var/obj/item/technomancer_core/core = null
 	var/ability_icon_state = null
 
-/obj/spellbutton/New(loc, var/path, var/new_name, var/new_icon_state)
-	if(!path || !ispath(path))
-		message_admins("ERROR: /obj/spellbutton/New() was not given a proper path!")
-		qdel(src)
+/obj/spellbutton/Initialize(mapload, var/path, var/new_name, var/new_icon_state)
+	. = ..()
+	src.core = loc
+	if(!path || !ispath(path) || !istype(core))
+		message_admins("ERROR: /obj/spellbutton/Initialize() was not given a proper path or not placed into the right location!")
+		return INITIALIZE_HINT_QDEL
 	src.name = new_name
 	src.spellpath = path
-	src.loc = loc
-	src.core = loc
 	src.ability_icon_state = new_icon_state
 
 /obj/spellbutton/Click()
@@ -357,7 +357,7 @@
 /obj/item/technomancer_core/universal
 	name = "universal core"
 	desc = "A bewilderingly complex 'black box' that allows the wearer to accomplish amazing feats. \
-	This one is a copy of a 'technomancer' core, shamelessly ripped off by a Kitsuhana pattern designer \
+	This one is a copy of a 'technomancer' core, shamelessly ripped off by an unknown pattern designer \
 	for fun, so that he could perform impressive 'magic'. The pack sloshes slightly if you shake it.<br>\
 	Under the straps, <i>'Export Edition'</i> is printed."
 	energy = 7000

@@ -17,7 +17,7 @@
 	var/obj/machinery/body_scanconsole/console
 	var/printing_text = null
 
-/obj/machinery/bodyscanner/Initialize()
+/obj/machinery/bodyscanner/Initialize(mapload)
 	. = ..()
 	default_apply_parts()
 
@@ -127,7 +127,7 @@
 	if (occupant.client)
 		occupant.client.eye = occupant.client.mob
 		occupant.client.perspective = MOB_PERSPECTIVE
-	occupant.loc = src.loc
+	occupant.forceMove(src.loc) // was occupant.loc = src.loc, but that doesn't trigger exit(), and thus recursive radio listeners forwarded messages to the occupant as if they were still inside it for the rest of the round! OP21 #5f88307 Port
 	occupant = null
 	update_icon() //icon_state = "body_scanner_1" //VOREStation Edit - Health display for consoles with light and such.
 	SStgui.update_uis(src)
@@ -161,7 +161,6 @@
 				//SN src = null
 				qdel(src)
 				return
-		else
 	return
 
 /obj/machinery/bodyscanner/tgui_host(mob/user)
@@ -189,7 +188,7 @@
 		occupantData["health"] = H.health
 		occupantData["maxHealth"] = H.getMaxHealth()
 
-		occupantData["hasVirus"] = H.virus2.len
+		occupantData["hasVirus"] = LAZYLEN(H.viruses)
 
 		occupantData["bruteLoss"] = H.getBruteLoss()
 		occupantData["oxyLoss"] = H.getOxyLoss()
@@ -213,7 +212,7 @@
 
 		var/bloodData[0]
 		if(H.vessel)
-			var/blood_volume = round(H.vessel.get_reagent_amount("blood"))
+			var/blood_volume = round(H.vessel.get_reagent_amount(REAGENT_ID_BLOOD))
 			var/blood_max = H.species.blood_volume
 			bloodData["volume"] = blood_volume
 			bloodData["percent"] = round(((blood_volume / blood_max)*100))
@@ -334,8 +333,9 @@
 
 		occupantData["blind"] = (H.sdisabilities & BLIND)
 		occupantData["nearsighted"] = (H.disabilities & NEARSIGHTED)
-		occupantData["husked"] = (HUSK in H.mutations) // VOREstation edit
-		occupantData = attempt_vr(src, "get_occupant_data_vr", list(occupantData, H)) //VOREStation Insert
+		occupantData["brokenspine"] = (H.disabilities & SPINE)
+		occupantData["husked"] = (HUSK in H.mutations)
+		occupantData = attempt_vr(src, "get_occupant_data_vr", list(occupantData, H))
 	data["occupant"] = occupantData
 
 	return data
@@ -379,8 +379,12 @@
 		dat += (occupant.health > (occupant.getMaxHealth() / 2) ? span_blue(health_text) : span_red(health_text))
 		dat += "<br>"
 
-		if(occupant.virus2.len)
-			dat += span_red("Viral pathogen detected in blood stream.") + "<BR>"
+		if(LAZYLEN(occupant.viruses))
+			for(var/datum/disease/D in occupant.GetViruses())
+				if(D.visibility_flags & HIDDEN_SCANNER)
+					continue
+				else
+					dat += span_red("Viral pathogen detected in blood stream.") + "<BR>"
 
 		var/damage_string = null
 		damage_string = "\t-Brute Damage %: [occupant.getBruteLoss()]"
@@ -412,7 +416,7 @@
 			dat += "Large growth detected in frontal lobe, possibly cancerous. Surgical removal is recommended.<br>"
 
 		if(occupant.vessel)
-			var/blood_volume = round(occupant.vessel.get_reagent_amount("blood"))
+			var/blood_volume = round(occupant.vessel.get_reagent_amount(REAGENT_ID_BLOOD))
 			var/blood_max = occupant.species.blood_volume
 			var/blood_percent =  blood_volume / blood_max
 			blood_percent *= 100
@@ -500,6 +504,7 @@
 			else
 				dat += "<td>[e.name]</td><td>-</td><td>-</td><td>Not Found</td>"
 			dat += "</tr>"
+		var/hasMalignants = "" //CHOMPedit - malignant organs
 		for(var/obj/item/organ/i in occupant.internal_organs)
 			var/mech = ""
 			var/i_dead = ""
@@ -531,6 +536,12 @@
 				if(A.inflamed)
 					infection = "Inflammation detected!"
 
+			// CHOMPedit begin - malignant organs
+			if(istype(i, /obj/item/organ/internal/malignant))
+				var/obj/item/organ/internal/ORG = occupant.organs_by_name[i.parent_organ]
+				hasMalignants += span_red(" -[ORG.name]") + "<BR>"
+			// CHOMPedit end
+
 			dat += "<tr>"
 			dat += "<td>[i.name]</td><td>N/A</td><td>[i.damage]</td><td>[infection]:[mech][i_dead]</td><td></td>"
 			dat += "</tr>"
@@ -539,6 +550,10 @@
 			dat += span_red("Cataracts detected.") + "<BR>"
 		if(occupant.disabilities & NEARSIGHTED)
 			dat += span_red("Retinal misalignment detected.") + "<BR>"
+		//CHOMPedit begin - malignant organs
+		if(hasMalignants != "")
+			dat += span_red("Unknown anatomy detected!") + "<BR>[hasMalignants]"
+		//CHOMPedit end
 		if(HUSK in occupant.mutations) // VOREstation edit
 			dat += span_red("Anatomical structure lost, resuscitation not possible!") + "<BR>"
 	else
@@ -561,8 +576,8 @@
 	circuit = /obj/item/circuitboard/scanner_console
 	var/printing = null
 
-/obj/machinery/body_scanconsole/New()
-	..()
+/obj/machinery/body_scanconsole/Initialize(mapload)
+	. = ..()
 	findscanner()
 
 /obj/machinery/body_scanconsole/Destroy()
@@ -613,7 +628,6 @@
 				//SN src = null
 				qdel(src)
 				return
-		else
 	return
 
 /obj/machinery/body_scanconsole/proc/findscanner()

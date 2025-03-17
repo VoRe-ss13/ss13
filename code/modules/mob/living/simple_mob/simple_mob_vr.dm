@@ -7,7 +7,6 @@
 
 	var/vore_active = 0					// If vore behavior is enabled for this mob
 
-	//CHOMPEdit - Vore_capacity is now defined on code/modules/vore/eating/living_ch.dm
 	vore_capacity = 1					// The capacity (in people) this person can hold
 	var/vore_max_size = RESIZE_HUGE		// The max size this mob will consider eating
 	var/vore_min_size = RESIZE_TINY 	// The min size this mob will consider eating
@@ -37,13 +36,6 @@
 	var/vore_default_contamination_flavor = "Generic"	//Contamination descriptors
 	var/vore_default_contamination_color = "green"		//Contamination color
 
-	//CHOMPEDIT start - Moved to code/modules/vore/eating/living_ch
-	//var/vore_fullness = 0				// How "full" the belly is (controls icons)
-	//var/vore_icons = 0					// Bitfield for which fields we have vore icons for.
-	//var/vore_eyes = FALSE				// For mobs with fullness specific eye overlays.
-	//var/belly_size_multiplier = 1
-	//CHOMPEDIT end.
-
 	var/life_disabled = 0				// For performance reasons
 
 	var/vore_attack_override = FALSE	// Enable on mobs you want to have special behaviour on melee grab attack.
@@ -59,7 +51,7 @@
 
 	var/nom_mob = FALSE //If a mob is meant to be hostile for vore purposes but is otherwise not hostile, if true makes certain AI ignore the mob
 
-	var/voremob_loaded = FALSE //CHOMPedit: On-demand belly loading.
+	var/voremob_loaded = FALSE // On-demand belly loading.
 
 // Release belly contents before being gc'd!
 /mob/living/simple_mob/Destroy()
@@ -76,20 +68,6 @@
 			return id //CHOMPAdd End
 	if(myid)
 		return myid
-
-// Update fullness based on size & quantity of belly contents
-/* CHOMPEdit - moved to code/modules/vore/eating/living_ch
-/mob/living/simple_mob/proc/update_fullness()
-	var/new_fullness = 0
-	for(var/obj/belly/B as anything in vore_organs)
-		for(var/mob/living/M in B)
-			if(!M.absorbed || B.count_absorbed_prey_for_sprite)
-				new_fullness += M.size_multiplier
-	new_fullness = new_fullness / size_multiplier //Divided by pred's size so a macro mob won't get macro belly from a regular prey.
-	new_fullness = new_fullness * belly_size_multiplier // Some mobs are small even at 100% size. Let's account for that.
-	new_fullness = round(new_fullness, 1) // Because intervals of 0.25 are going to make sprite artists cry.
-	vore_fullness = min(vore_capacity, new_fullness)
-*/
 
 /mob/living/simple_mob/update_icon()
 	. = ..()
@@ -111,6 +89,10 @@
 			remove_eyes()
 			add_eyes()
 	update_transform()
+	for(var/belly_class in vore_fullness_ex)
+		var/vs_fullness = vore_fullness_ex[belly_class]
+		if(vs_fullness > 0)
+			add_overlay("[icon_state]_[belly_class]-[vs_fullness]")
 
 /mob/living/simple_mob/regenerate_icons()
 	..()
@@ -126,12 +108,10 @@
 	if(src == M) //Don't eat YOURSELF dork
 		//ai_log("vr/won't eat [M] because it's me!", 3) //VORESTATION AI TEMPORARY REMOVAL
 		return 0
-	//CHOMPSTATION add
-	if(!M.devourable)	//Why was there never a check for edibility to begin with
+	if(!M.devourable)	// Why was there never a check for edibility to begin with
 		return 0
-	if(M.is_incorporeal()) // CHOMPADD - No eating the phased ones
+	if(M.is_incorporeal()) // No eating the phased ones
 		return 0
-	//CHOMPSTATION add end
 	if(vore_ignores_undigestable && !M.digestable) //Don't eat people with nogurgle prefs
 		//ai_log("vr/wont eat [M] because I am picky", 3) //VORESTATION AI TEMPORARY REMOVAL
 		return 0
@@ -175,10 +155,8 @@
 /mob/living/simple_mob/proc/CanPounceTarget(var/mob/living/M) //returns either FALSE or a %chance of success
 	if(!M.canmove || issilicon(M) || world.time < vore_pounce_cooldown) //eliminate situations where pouncing CANNOT happen
 		return FALSE
-	// CHOMPADD Start - No pouncing on the shades
 	if(M.is_incorporeal())
 		return FALSE
-	// CHOMPADD End
 	if(!prob(vore_pounce_chance) || !will_eat(M)) //mob doesn't want to pounce
 		return FALSE
 	if(vore_standing_too) //100% chance of hitting people we can eat on the spot
@@ -232,35 +210,27 @@
 
 // Make sure you don't call ..() on this one, otherwise you duplicate work.
 /mob/living/simple_mob/init_vore()
-	if(!vore_active || no_vore || !voremob_loaded) //CHOMPedit: On-demand belly loading.
+	if(!vore_active || no_vore || !voremob_loaded)
 		return
 
 	AddElement(/datum/element/slosh) // Sloshy element
 
-	//CHOMPAdd Start
 	if(!soulgem)
 		soulgem = new(src)
-	//CHOMPAdd End
-
-	/* CHOMPRemove Start, handled with the vore_active var
-	if(!IsAdvancedToolUser())
-		add_verb(src, /mob/living/simple_mob/proc/animal_nom)
-		add_verb(src, /mob/living/proc/shred_limb)
-	*/// CHOMPRemove End
-
-	if(LAZYLEN(vore_organs))
-		return
 
 	// Since they have bellies, add verbs to toggle settings on them.
 	add_verb(src, /mob/living/simple_mob/proc/toggle_digestion)
 	add_verb(src, /mob/living/simple_mob/proc/toggle_fancygurgle)
 	add_verb(src, /mob/living/proc/vertical_nom)
 
+	if(LAZYLEN(vore_organs))
+		return
+
 	//A much more detailed version of the default /living implementation
 	var/obj/belly/B = new /obj/belly(src)
 	vore_selected = B
 	B.immutable = 1
-	B.affects_vore_sprites = TRUE //CHOMPEdit - vore sprites enabled for simplemobs!
+	B.affects_vore_sprites = TRUE
 	B.name = vore_stomach_name ? vore_stomach_name : "stomach"
 	B.desc = vore_stomach_flavor ? vore_stomach_flavor : "Your surroundings are warm, soft, and slimy. Makes sense, considering you're inside \the [name]."
 	B.digest_mode = vore_default_mode
@@ -404,7 +374,7 @@
 
 /mob/living/simple_mob/proc/animal_mount(var/mob/living/M in living_mobs(1))
 	set name = "Animal Mount/Dismount"
-	set category = "Abilities.Mob" //CHOMPEdit
+	set category = "Abilities.Mob"
 	set desc = "Let people ride on you."
 
 	if(LAZYLEN(buckled_mobs))
@@ -439,7 +409,7 @@
 
 /mob/living/simple_mob/proc/leap()
 	set name = "Pounce Target"
-	set category = "Abilities.Mob" //CHOMPEdit
+	set category = "Abilities.Mob"
 	set desc = "Select a target to pounce at."
 
 	if(last_special > world.time)
@@ -457,14 +427,14 @@
 
 	var/mob/living/T = tgui_input_list(src, "Who do you wish to leap at?", "Target Choice", choices)
 
-	if(!T || !src || src.stat) return
+	if(!T || !src || stat) return
 
 	if(get_dist(get_turf(T), get_turf(src)) > 3) return
 
 	if(last_special > world.time)
 		return
 
-	if(usr.incapacitated(INCAPACITATION_DISABLED))
+	if(incapacitated(INCAPACITATION_DISABLED))
 		to_chat(src, "You cannot leap in your current state.")
 		return
 
@@ -472,8 +442,8 @@
 	status_flags |= LEAPING
 	pixel_y = pixel_y + 10
 
-	src.visible_message(span_danger("\The [src] leaps at [T]!"))
-	src.throw_at(get_step(get_turf(T),get_turf(src)), 4, 1, src)
+	visible_message(span_danger("\The [src] leaps at [T]!"))
+	throw_at(get_step(get_turf(T),get_turf(src)), 4, 1, src)
 	playsound(src, 'sound/effects/bodyfall1.ogg', 50, 1)
 	pixel_y = default_pixel_y
 
@@ -481,7 +451,7 @@
 
 	if(status_flags & LEAPING) status_flags &= ~LEAPING
 
-	if(!src.Adjacent(T))
+	if(!Adjacent(T))
 		to_chat(src, span_warning("You miss!"))
 		return
 

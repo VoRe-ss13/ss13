@@ -21,12 +21,12 @@
 
 	// Movespeed delay based on movement mode
 	switch(m_intent)
-		if("run")
+		if(I_RUN)
 			if(drowsyness > 0)
 				. += 6
-			. += CONFIG_GET(number/run_speed) // CHOMPEdit
-		if("walk")
-			. += CONFIG_GET(number/walk_speed) // CHOMPEdit
+			. += CONFIG_GET(number/run_speed)
+		if(I_WALK)
+			. += CONFIG_GET(number/walk_speed)
 
 /client/proc/client_dir(input, direction=-1)
 	return turn(input, direction*dir2angle(dir))
@@ -80,7 +80,7 @@
 
 /client/verb/swap_hand()
 	set hidden = 1
-	if(istype(mob, /mob/living))
+	if(isliving(mob))
 		var/mob/living/L = mob
 		L.swap_hand()
 	if(istype(mob,/mob/living/silicon/robot))
@@ -153,12 +153,22 @@
 		Move_object(direct)
 
 	// Ghosty mob movement
-	if(my_mob.incorporeal_move && isobserver(my_mob))
-		Process_Incorpmove(direct)
-		DEBUG_INPUT("--------")
-		next_move_dir_add = 0	// This one I *think* exists so you can tap move and it will move even if delay isn't quite up.
-		next_move_dir_sub = 0 	// I'm not really sure why next_move_dir_sub even exists.
-		return
+	if(my_mob.is_incorporeal())
+		if(isobserver(my_mob)) //We're an observer! Don't worry about any more checks. Be free!
+			Process_Incorpmove(direct)
+			DEBUG_INPUT("--------")
+			next_move_dir_add = 0	// This one I *think* exists so you can tap move and it will move even if delay isn't quite up.
+			next_move_dir_sub = 0 	// I'm not really sure why next_move_dir_sub even exists.
+			return
+		else //We are anything BUT an observer.
+			if(!my_mob.canmove)//If you want to be very restrictive, add my_mob.restrained() and it'll stop people cuffed/straight jacketed. For now, that's too restrictive for a bugfix PR.
+				return
+			else //Proceed like normal.
+				Process_Incorpmove(direct)
+				DEBUG_INPUT("--------")
+				next_move_dir_add = 0
+				next_move_dir_sub = 0
+				return
 
 	// We're in the middle of another move we've already decided to do
 	if(moving)
@@ -191,7 +201,7 @@
 
 	if(isliving(my_mob))
 		var/mob/living/L = my_mob
-		if(L.incorporeal_move)//Move though walls
+		if(L.is_incorporeal())//Move though walls
 			Process_Incorpmove(direct)
 			return
 		/* TODO observer unzoom
@@ -274,10 +284,10 @@
 			//drunk wheelchair driving
 			else if(my_mob.confused)
 				switch(my_mob.m_intent)
-					if("run")
+					if(I_RUN)
 						if(prob(50))
 							direct = turn(direct, pick(90, -90))
-					if("walk")
+					if(I_WALK)
 						if(prob(25))
 							direct = turn(direct, pick(90, -90))
 			total_delay += 3
@@ -289,11 +299,11 @@
 	// Confused direction randomization
 	if(my_mob.confused)
 		switch(my_mob.m_intent)
-			if("run")
+			if(I_RUN)
 				if(prob(75))
 					direct = turn(direct, pick(90, -90))
 					n = get_step(my_mob, direct)
-			if("walk")
+			if(I_WALK)
 				if(prob(25))
 					direct = turn(direct, pick(90, -90))
 					n = get_step(my_mob, direct)
@@ -364,14 +374,15 @@
 	return Move(n, direct, movetime)
 
 
-//ChompEDIT START
 //Set your incorporeal movespeed
 //Important to note: world.time is always in deciseconds. Higher tickrates mean more subdivisions of world.time (20fps = 0.5, 40fps = 0.25)
 /client
-	var/incorporeal_speed = 0.5
+	var/is_leaving_belly = FALSE
+	var/incorporeal_speed = 0.5 // CHOMPAdd
 
+//ChompEDIT START
 /client/verb/set_incorporeal_speed()
-	set category = "OOC.Game Settings" //CHOMPEdit
+	set category = "OOC.Game Settings"
 	set name = "Set Incorporeal Speed"
 
 	var/input = tgui_input_number(usr, "Set an incorporeal movement delay between 0 (fastest) and 5 (slowest)", "Incorporeal movement speed", (0.5/world.tick_lag), 5, 0)
@@ -382,6 +393,14 @@
 ///Called by client/Move()
 ///Allows mobs to run though walls
 /client/proc/Process_Incorpmove(direct)
+	if(isbelly(mob.loc) && isobserver(mob))
+		if(is_leaving_belly)
+			return
+		is_leaving_belly = TRUE
+		if(tgui_alert(mob, "Do you want to leave your predator's belly?", "Leave belly?", list("Yes", "No")) != "Yes")
+			is_leaving_belly = FALSE
+			return
+		is_leaving_belly = FALSE
 	var/turf/mobloc = get_turf(mob)
 
 	//ChompEDIT START
@@ -397,16 +416,27 @@
 			var/turf/T = get_step(mob, direct)
 			if(!T)
 				return
+			var/area/A = T.loc	//RS Port #658
 			if(mob.check_holy(T))
 				to_chat(mob, span_warning("You cannot get past holy grounds while you are in this plane of existence!"))
 				return
-			//CHOMPEdit start - add ability to block incorporeal movement for nonghosts
 			else if(!istype(mob, /mob/observer/dead) && T.blocks_nonghost_incorporeal)
 				return
-			//CHOMPEdit end
-			else
-				mob.forceMove(get_step(mob, direct))
-				mob.dir = direct
+			//RS Port #658 Start
+			if(!holder)
+				if(isliving(mob) && A.flag_check(AREA_BLOCK_PHASE_SHIFT))
+					to_chat(mob, span_warning("Something blocks you from entering this location while phased out."))
+					return
+				if(isobserver(mob) && A.flag_check(AREA_BLOCK_GHOSTS) && !isbelly(mob.loc))
+					to_chat(mob, span_warning("Ghosts can't enter this location."))
+					var/area/our_area = mobloc.loc
+					if(our_area.flag_check(AREA_BLOCK_GHOSTS) && !isbelly(mob.loc))
+						var/mob/observer/dead/D = mob
+						D.return_to_spawn()
+					return
+			mob.forceMove(get_step(mob, direct))
+			mob.dir = direct
+			//RS Port #658 End
 		if(2)
 			if(prob(50))
 				var/locx

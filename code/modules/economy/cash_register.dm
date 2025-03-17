@@ -25,8 +25,9 @@
 
 
 // Claim machine ID
-/obj/machinery/cash_register/New()
+/obj/machinery/cash_register/Initialize(mapload)
 	machine_id = "[station_name()] RETAIL #[num_financial_terminals++]"
+	. = ..()
 	cash_stored = rand(10, 70)*10
 	transaction_devices += src // Global reference list to be properly set up by /proc/setup_economy()
 
@@ -64,16 +65,16 @@
 
 
 /obj/machinery/cash_register/interact(mob/user as mob)
-	var/dat = "<h2>Cash Register<hr></h2>"
+	var/dat = "<html><h2>Cash Register<hr></h2>"
 	if (locked)
-		dat += "<a href='?src=\ref[src];choice=toggle_lock'>Unlock</a><br>"
+		dat += "<a href='byond://?src=\ref[src];choice=toggle_lock'>Unlock</a><br>"
 		dat += "Linked account: " + span_bold("[linked_account ? linked_account.owner_name : "None"]") + "<br>"
 		dat += span_bold("[cash_locked? "Unlock" : "Lock"] Cash Box") + " | "
 	else
-		dat += "<a href='?src=\ref[src];choice=toggle_lock'>Lock</a><br>"
-		dat += "Linked account: <a href='?src=\ref[src];choice=link_account'>[linked_account ? linked_account.owner_name : "None"]</a><br>"
-		dat += "<a href='?src=\ref[src];choice=toggle_cash_lock'>[cash_locked? "Unlock" : "Lock"] Cash Box</a> | "
-	dat += "<a href='?src=\ref[src];choice=custom_order'>Custom Order</a><hr>"
+		dat += "<a href='byond://?src=\ref[src];choice=toggle_lock'>Lock</a><br>"
+		dat += "Linked account: <a href='byond://?src=\ref[src];choice=link_account'>[linked_account ? linked_account.owner_name : "None"]</a><br>"
+		dat += "<a href='byond://?src=\ref[src];choice=toggle_cash_lock'>[cash_locked? "Unlock" : "Lock"] Cash Box</a> | "
+	dat += "<a href='byond://?src=\ref[src];choice=custom_order'>Custom Order</a><hr>"
 
 	if(item_list.len)
 		dat += get_current_transaction()
@@ -83,9 +84,9 @@
 		dat += "[transaction_logs[i]]<br>"
 
 	if(transaction_logs.len)
-		dat += locked ? "<br>" : "<a href='?src=\ref[src];choice=reset_log'>Reset Log</a><br>"
+		dat += locked ? "<br>" : "<a href='byond://?src=\ref[src];choice=reset_log'>Reset Log</a><br>"
 		dat += "<br>"
-	dat += "<i>Device ID:</i> [machine_id]"
+	dat += "<i>Device ID:</i> [machine_id]</html>"
 	user << browse(dat, "window=cash_register;size=350x500")
 	onclose(user, "cash_register")
 
@@ -397,9 +398,9 @@
 	var/item_name
 	for(var/i=1, i<=item_list.len, i++)
 		item_name = item_list[i]
-		dat += "<tr><td class=\"tx-name-r\">[item_list[item_name] ? "<a href='?src=\ref[src];choice=subtract;item=\ref[item_name]'>-</a> <a href='?src=\ref[src];choice=set_amount;item=\ref[item_name]'>Set</a> <a href='?src=\ref[src];choice=add;item=\ref[item_name]'>+</a> [item_list[item_name]] x " : ""][item_name] <a href='?src=\ref[src];choice=clear;item=\ref[item_name]'>Remove</a></td><td class=\"tx-data-r\" width=50>[price_list[item_name] * item_list[item_name]] &thorn</td></tr>"
+		dat += "<tr><td class=\"tx-name-r\">[item_list[item_name] ? "<a href='byond://?src=\ref[src];choice=subtract;item=\ref[item_name]'>-</a> <a href='byond://?src=\ref[src];choice=set_amount;item=\ref[item_name]'>Set</a> <a href='byond://?src=\ref[src];choice=add;item=\ref[item_name]'>+</a> [item_list[item_name]] x " : ""][item_name] <a href='byond://?src=\ref[src];choice=clear;item=\ref[item_name]'>Remove</a></td><td class=\"tx-data-r\" width=50>[price_list[item_name] * item_list[item_name]] &thorn</td></tr>"
 	dat += "</table><table width=300>"
-	dat += "<tr><td class=\"tx-name-r\"><a href='?src=\ref[src];choice=clear'>Clear Entry</a></td><td class=\"tx-name-r\" style='text-align: right'>" + span_bold("Total Amount: [transaction_amount] &thorn") + "</td></tr>"
+	dat += "<tr><td class=\"tx-name-r\"><a href='byond://?src=\ref[src];choice=clear'>Clear Entry</a></td><td class=\"tx-name-r\" style='text-align: right'>" + span_bold("Total Amount: [transaction_amount] &thorn") + "</td></tr>"
 	dat += "</table></html>"
 	return dat
 
@@ -486,20 +487,20 @@
 	manipulating = 1
 	if(!anchored)
 		user.visible_message("\The [user] begins securing \the [src] to the floor.",
-	                         "You begin securing \the [src] to the floor.")
+							"You begin securing \the [src] to the floor.")
 	else
 		user.visible_message(span_warning("\The [user] begins unsecuring \the [src] from the floor."),
-	                         "You begin unsecuring \the [src] from the floor.")
+							"You begin unsecuring \the [src] from the floor.")
 	playsound(src, W.usesound, 50, 1)
 	if(!do_after(user, 20 * W.toolspeed))
 		manipulating = 0
 		return
 	if(!anchored)
 		user.visible_message(span_notice("\The [user] has secured \the [src] to the floor."),
-	                         span_notice("You have secured \the [src] to the floor."))
+							span_notice("You have secured \the [src] to the floor."))
 	else
 		user.visible_message(span_warning("\The [user] has unsecured \the [src] from the floor."),
-	                         span_notice("You have unsecured \the [src] from the floor."))
+							span_notice("You have unsecured \the [src] from the floor."))
 	anchored = !anchored
 	manipulating = 0
 	return

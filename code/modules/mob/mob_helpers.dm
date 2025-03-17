@@ -1,12 +1,12 @@
 // fun if you want to typecast humans/monkeys/etc without writing long path-filled lines.
 /proc/isxenomorph(A)
-	if(istype(A, /mob/living/carbon/human))
+	if(ishuman(A))
 		var/mob/living/carbon/human/H = A
 		return istype(H.species, /datum/species/xenos)
 	return 0
 
 /proc/issmall(A)
-	if(A && istype(A, /mob/living))
+	if(A && isliving(A))
 		var/mob/living/L = A
 		return L.mob_size <= MOB_SMALL
 	return 0
@@ -21,14 +21,14 @@
 	return TRUE
 
 /proc/istiny(A)
-	if(A && istype(A, /mob/living))
+	if(A && isliving(A))
 		var/mob/living/L = A
 		return L.mob_size <= MOB_TINY
 	return 0
 
 
 /proc/ismini(A)
-	if(A && istype(A, /mob/living))
+	if(A && isliving(A))
 		var/mob/living/L = A
 		return L.mob_size <= MOB_MINISCULE
 	return 0
@@ -83,7 +83,7 @@
 
 
 /proc/is_admin(var/mob/user)
-	return check_rights(R_ADMIN|R_EVENT, 0, user) != 0
+	return check_rights_for(user.client, R_ADMIN|R_EVENT) != 0
 
 /**
  * Moved into its own file as part of port from CHOMP.
@@ -255,8 +255,11 @@
 			if(p >= 70)
 				letter = ""
 
+			var/rand_set = list("#","@","*","&","%","$","/", "<", ">", ";","*","*","*","*","*","*","*")
+			if(p >= 80)
+				rand_set += alphabet_uppercase
 			for(var/j = 1, j <= rand(0, 2), j++)
-				letter += pick("#","@","*","&","%","$","/", "<", ">", ";","*","*","*","*","*","*","*")
+				letter += pick(rand_set)
 
 		returntext += letter
 
@@ -293,28 +296,20 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 
 
 /proc/shake_camera(mob/M, duration, strength=1)
-	if(!M || !M.client || M.shakecamera || M.stat || isEye(M) || isAI(M))
+	if(!M || !M.client || duration < 1)
 		return
-	M.shakecamera = 1
-	spawn(1)
-		if(!M.client)
-			return
+	var/client/C = M.client
+	var/oldx = C.pixel_x
+	var/oldy = C.pixel_y
+	var/max = strength * world.icon_size
+	var/min = -(strength * world.icon_size)
 
-		var/atom/oldeye=M.client.eye
-		var/aiEyeFlag = 0
-		if(istype(oldeye, /mob/observer/eye/aiEye))
-			aiEyeFlag = 1
-
-		var/x
-		for(x=0; x<duration, x++)
-			if(aiEyeFlag)
-				M.client.eye = locate(dd_range(1,oldeye.loc.x+rand(-strength,strength),world.maxx),dd_range(1,oldeye.loc.y+rand(-strength,strength),world.maxy),oldeye.loc.z)
-			else
-				M.client.eye = locate(dd_range(1,M.loc.x+rand(-strength,strength),world.maxx),dd_range(1,M.loc.y+rand(-strength,strength),world.maxy),M.loc.z)
-			sleep(1)
-		M.client.eye=oldeye
-		M.shakecamera = 0
-
+	for(var/i in 0 to duration - 1)
+		if(i == 0)
+			animate(C, pixel_x = rand(min, max), pixel_y = rand(min, max), time = 1)
+		else
+			animate(pixel_x = rand(min, max), pixel_y = rand(min, max), time = 1)
+	animate(pixel_x = oldx, pixel_y = oldy, time = 1)
 
 /proc/findname(msg)
 	for(var/mob/M in mob_list)
@@ -342,7 +337,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 			if(2)			return I_GRAB
 			else			return I_HURT
 
-//change a mob's act-intent. Input the intent as a string such as "help" or use "right"/"left
+//change a mob's act-intent. Input the intent as a string such as I_HELP or use "right"/"left
 /mob/verb/a_intent_change(input as text)
 	set name = "a-intent"
 	set hidden = 1
@@ -411,7 +406,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 		return // Can't talk in deadchat if you can't see it.
 
 	for(var/mob/M in player_list)
-		if(M.client && ((!istype(M, /mob/new_player) && M.stat == DEAD) || (M.client.holder && M.client.holder.rights && M.client?.prefs?.read_preference(/datum/preference/toggle/holder/show_staff_dsay))) && M.client?.prefs?.read_preference(/datum/preference/toggle/show_dsay))
+		if(M.client && ((!isnewplayer(M) && M.stat == DEAD) || (M.client.holder && check_rights_for(M.client, R_NONE) && M.client?.prefs?.read_preference(/datum/preference/toggle/holder/show_staff_dsay))) && M.client?.prefs?.read_preference(/datum/preference/toggle/show_dsay))
 			var/follow
 			var/lname
 			if(M.forbid_seeing_deadchat && !M.client.holder)
@@ -425,7 +420,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 				if(M.stat != DEAD && M.client.holder)
 					follow = "([admin_jump_link(subject, M.client.holder)]) "
 				var/mob/observer/dead/DM
-				if(istype(subject, /mob/observer/dead))
+				if(isobserver(subject))
 					DM = subject
 				if(M.client.holder) 							// What admins see
 					lname = "[keyname][(DM && DM.anonsay) ? "*" : (DM ? "" : "^")] ([name])"
@@ -441,7 +436,7 @@ var/list/intents = list(I_HELP,I_DISARM,I_GRAB,I_HURT)
 
 /proc/say_dead_object(var/message, var/obj/subject = null)
 	for(var/mob/M in player_list)
-		if(M.client && ((!istype(M, /mob/new_player) && M.stat == DEAD) || (M.client.holder && M.client.holder.rights && M.client?.prefs?.read_preference(/datum/preference/toggle/holder/show_staff_dsay))) && M.client?.prefs?.read_preference(/datum/preference/toggle/show_dsay))
+		if(M.client && ((!isnewplayer(M) && M.stat == DEAD) || (M.client.holder && check_rights_for(M.client, R_NONE) && M.client?.prefs?.read_preference(/datum/preference/toggle/holder/show_staff_dsay))) && M.client?.prefs?.read_preference(/datum/preference/toggle/show_dsay))
 			var/follow
 			var/lname = "Game Master"
 			if(M.forbid_seeing_deadchat && !M.client.holder)
@@ -700,3 +695,58 @@ var/global/image/backplane
 
 /mob/proc/can_feed()
 	return TRUE
+
+
+/atom/proc/living_mobs_in_view(var/range = world.view, var/count_held = FALSE)
+	var/list/viewers = oviewers(src, range)
+	if(count_held)
+		viewers = viewers(src,range)
+	var/list/living = list()
+	for(var/mob/living/L in viewers)
+		if(L.is_incorporeal())
+			continue
+		living += L
+		if(count_held)
+			for(var/obj/item/holder/H in L.contents)
+				if(istype(H.held_mob, /mob/living))
+					living += H.held_mob
+	return living
+
+/proc/censor_swears(t)
+	/* Bleeps our swearing */
+	var/static/swear_censoring_list = list("fuck",
+										"shit",
+										"damn",
+										"piss",
+										"whore",
+										"cunt",
+										"bitch",
+										"bastard",
+										"dick",
+										"cock",
+										"slut",
+										"dong",
+										"pussy",
+										"twat",
+										"snatch",
+										"schlong",
+										"damn",
+										"dammit",
+										"damnit",
+										"ass",
+										"tit",
+										"douch",
+										"prick",
+										"hell",
+										"crap")
+	var/haystack = t
+	for(var/filter in swear_censoring_list)
+		var/regex/needle = regex(filter, "i")
+		while(TRUE)
+			var/pos = needle.Find(haystack)
+			if(!pos)
+				break
+			var/partial_start = copytext(haystack,1,pos)
+			var/partial_end   = copytext(haystack,pos+length(filter),length(haystack)+1)
+			haystack = "[partial_start][pick("BEEP","BLEEP","BOINK","BEEEEEP")][partial_end]"
+	return haystack

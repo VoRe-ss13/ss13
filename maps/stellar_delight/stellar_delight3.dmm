@@ -152,7 +152,7 @@
 "au" = (
 /obj/item/book/manual/command_guide,
 /obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
 /obj/structure/closet/walllocker_double/command/hos{
 	dir = 4;
 	pixel_x = 32
@@ -185,8 +185,8 @@
 /obj/item/book/manual/command_guide,
 /obj/item/book/manual/standard_operating_procedure,
 /obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/security_space_law,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
 /obj/structure/closet/walllocker_double/command/iaa{
 	dir = 4;
 	pixel_x = 32
@@ -198,8 +198,8 @@
 /obj/item/book/manual/command_guide,
 /obj/item/book/manual/standard_operating_procedure,
 /obj/item/book/manual/standard_operating_procedure,
-/obj/item/book/manual/security_space_law,
-/obj/item/book/manual/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
 /obj/structure/closet/walllocker_double/command/iaa{
 	dir = 8;
 	pixel_x = -32
@@ -1563,7 +1563,6 @@
 	pixel_y = 12
 	},
 /obj/structure/table/woodentable,
-/obj/item/hand_labeler,
 /obj/machinery/alarm/angled,
 /obj/machinery/status_display{
 	pixel_x = -32
@@ -6161,9 +6160,6 @@
 /obj/item/aiModule/paladin,
 /obj/item/aiModule/robocop,
 /obj/structure/cable/blue,
-/obj/machinery/power/apc/angled{
-	dir = 8
-	},
 /turf/simulated/floor/bluegrid,
 /area/ai_cyborg_station)
 "wq" = (
@@ -9920,19 +9916,11 @@
 	icon_state = "0-2"
 	},
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/food/drinks/glass2/square{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/food/drinks/glass2/square{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/food/drinks/glass2/square{
-	pixel_x = 8;
-	pixel_y = 8
-	},
 /obj/item/reagent_containers/glass/rag,
+/obj/machinery/chemical_dispenser/bar_syrup/full{
+	pixel_y = 11;
+	pixel_x = -1
+	},
 /turf/simulated/floor/lino,
 /area/stellardelight/deck3/cafe)
 "JJ" = (
@@ -11408,6 +11396,13 @@
 	dir = 1
 	},
 /obj/machinery/door/window{
+	req_one_access = list(25)
+	},
+/obj/machinery/button/remote/blast_door{
+	desc = "A remote control-switch for shutters.";
+	id = "cafe";
+	name = "Cafe Shutters";
+	pixel_y = 28;
 	req_one_access = list(25)
 	},
 /turf/simulated/floor/lino,
@@ -13297,9 +13292,6 @@
 /turf/simulated/floor/tiled/monotile,
 /area/stellardelight/deck3/commandhall)
 "Vr" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
 	pixel_x = -3;
@@ -13963,9 +13955,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/stellardelight/deck3/foreportroomb)
 "XJ" = (
-/obj/machinery/power/apc/angled{
-	dir = 8
-	},
 /obj/structure/cable/blue,
 /turf/simulated/floor/tiled/dark,
 /area/lawoffice)
@@ -14112,13 +14101,18 @@
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck3/aftstarroom)
 "Yp" = (
-/obj/machinery/button/remote/blast_door{
-	desc = "A remote control-switch for shutters.";
-	id = "cafe";
-	name = "Cafe Shutters";
-	pixel_y = 28;
-	req_one_access = list(25)
-	},
+/obj/structure/closet/walllocker_double/kitchen/north,
+/obj/item/reagent_containers/food/drinks/glass2/square,
+/obj/item/reagent_containers/food/drinks/glass2/square,
+/obj/item/reagent_containers/food/drinks/glass2/square,
+/obj/item/reagent_containers/food/drinks/glass2/square,
+/obj/item/hand_labeler,
+/obj/item/storage/box/glasses/coffeecup,
+/obj/item/storage/box/glasses/coffeecup,
+/obj/item/storage/box/glasses/coffeecup,
+/obj/item/storage/box/glasses/coffeecup_tall,
+/obj/item/storage/box/glasses/coffeecup_grande,
+/obj/item/storage/box/glasses/coffeecup_venti,
 /turf/simulated/floor/lino,
 /area/stellardelight/deck3/cafe)
 "Ys" = (

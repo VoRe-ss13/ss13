@@ -3,7 +3,7 @@
 	desc = "This box contains blood packs."
 	icon_state = "sterile"
 
-/obj/item/storage/box/bloodpacks/Initialize()
+/obj/item/storage/box/bloodpacks/Initialize(mapload)
 		. = ..()
 		new /obj/item/reagent_containers/blood/empty(src)
 		new /obj/item/reagent_containers/blood/empty(src)
@@ -27,9 +27,9 @@
 	var/label_text = ""
 
 	var/blood_type = null
-	var/reag_id = "blood"
+	var/reag_id = REAGENT_ID_BLOOD
 
-/obj/item/reagent_containers/blood/Initialize()
+/obj/item/reagent_containers/blood/Initialize(mapload)
 	. = ..()
 	base_name = name
 	base_desc = desc
@@ -98,14 +98,22 @@
 
 /obj/item/reagent_containers/blood/synthplas
 	blood_type = "O-"
-	reag_id = "synthblood_dilute"
+	reag_id = REAGENT_ID_SYNTHBLOOD_DILUTE
 
 /obj/item/reagent_containers/blood/synthblood
 	blood_type = "O-"
-	reag_id = "synthblood"
+	reag_id = REAGENT_ID_SYNTHBLOOD
 
 /obj/item/reagent_containers/blood/empty
 	name = "Empty BloodPack"
 	desc = "Seems pretty useless... Maybe if there were a way to fill it?"
 	icon_state = "empty"
 	item_state = "bloodpack_empty"
+
+/obj/item/reagent_containers/blood/random_bloodsucker
+	name = "Ration BloodPack"
+	desc = "A standard issue BloodPack Ration given to crew that require blood to be sustained!"
+
+/obj/item/reagent_containers/blood/random_bloodsucker/Initialize(mapload)
+	blood_type = pick("A+", "A-", "B+", "B-", "O-", "O+", "AB+", "AB-")
+	. = ..()

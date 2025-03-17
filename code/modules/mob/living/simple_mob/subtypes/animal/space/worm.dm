@@ -111,7 +111,7 @@
 	if(stat)
 		icon_state = "[icon_state]_dead"
 
-/mob/living/simple_mob/animal/space/space_worm/head/Initialize()
+/mob/living/simple_mob/animal/space/space_worm/head/Initialize(mapload)
 	. = ..()
 
 	var/mob/living/simple_mob/animal/space/space_worm/current = src
@@ -126,7 +126,7 @@
 /mob/living/simple_mob/animal/space/space_worm/head/verb/toggle_devour()
 	set name = "Toggle Feeding"
 	set desc = "Extends your teeth for 30 seconds so that you can chew through mobs and structures alike."
-	set category = "Abilities.Worm" //CHOMPEdit
+	set category = "Abilities.Worm"
 
 	if(world.time < time_maw_opened + maw_cooldown)
 		if(open_maw)
@@ -268,7 +268,7 @@
 						objectOrMob = null
 						break
 
-					if(D && (D.stat & BROKEN|NOPOWER))
+					if(D && (D.stat & (BROKEN|NOPOWER)))
 						D.open(TRUE)
 						break
 

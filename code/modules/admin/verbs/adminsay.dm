@@ -1,5 +1,5 @@
 /client/proc/cmd_admin_say(msg as text)
-	set category = "Admin.Chat" //CHOMPEdit
+	set category = "Admin.Chat"
 	set name = "Asay" //Gave this shit a shorter name so you only have to time out "asay" rather than "admin say" to use it --NeoFite
 	set hidden = 1
 	if(!check_rights(R_ADMIN)) //VOREStation Edit
@@ -12,13 +12,13 @@
 	log_adminsay(msg,src)
 
 	for(var/client/C in GLOB.admins)
-		if(check_rights(R_ADMIN, 0, C))
+		if(check_rights_for(C, R_ADMIN))
 			to_chat(C, span_admin_channel(create_text_tag("admin", "ADMIN:", C) + " " + span_name("[key_name(usr, 1)]") + "([admin_jump_link(mob, src)]): " + span_name("[msg]") ))
 
 	feedback_add_details("admin_verb","M") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_mod_say(msg as text)
-	set category = "Admin.Chat" //CHOMPEdit
+	set category = "Admin.Chat"
 	set name = "Msay"
 	set hidden = 1
 
@@ -41,7 +41,7 @@
 	feedback_add_details("admin_verb","MS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_event_say(msg as text)
-	set category = "Admin.Chat" //CHOMPEdit
+	set category = "Admin.Chat"
 	set name = "Esay"
 	set hidden = 1
 

@@ -1,9 +1,9 @@
 /* General medicine */
 
 /datum/reagent/inaprovaline
-	name = "Inaprovaline"
-	id = "inaprovaline"
-	description = "Inaprovaline is a synaptic stimulant and cardiostimulant. Commonly used to stabilize patients. Also counteracts allergic reactions."
+	name = REAGENT_INAPROVALINE
+	id = REAGENT_ID_INAPROVALINE
+	description = REAGENT_INAPROVALINE + " is a synaptic stimulant and cardiostimulant. Commonly used to stabilize patients. Also counteracts allergic reactions."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#00BFFF"
@@ -18,9 +18,9 @@
 		M.remove_chemical_effect(CE_ALLERGEN)
 
 /datum/reagent/inaprovaline/topical
-	name = "Inaprovalaze"
-	id = "inaprovalaze"
-	description = "Inaprovalaze is a topical variant of Inaprovaline."
+	name = REAGENT_INAPROVALAZE
+	id = REAGENT_ID_INAPROVALAZE
+	description = REAGENT_INAPROVALAZE + " is a topical variant of Inaprovaline."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#00BFFF"
@@ -41,9 +41,9 @@
 		M.add_chemical_effect(CE_PAINKILLER, 12 * M.species.chem_strength_pain)
 
 /datum/reagent/bicaridine
-	name = "Bicaridine"
-	id = "bicaridine"
-	description = "Bicaridine is an analgesic medication and can be used to treat blunt trauma."
+	name = REAGENT_BICARIDINE
+	id = REAGENT_ID_BICARIDINE
+	description = REAGENT_BICARIDINE + " is an analgesic medication and can be used to treat blunt trauma."
 	taste_description = "bitterness"
 	taste_mult = 3
 	reagent_state = LIQUID
@@ -77,9 +77,9 @@
 						O.wounds -= W
 
 /datum/reagent/bicaridine/topical
-	name = "Bicaridaze"
-	id = "bicaridaze"
-	description = "Bicaridaze is a topical variant of the chemical Bicaridine."
+	name = REAGENT_BICARIDAZE
+	id = REAGENT_ID_BICARIDAZE
+	description = REAGENT_BICARIDAZE + " is a topical variant of the chemical Bicaridine."
 	taste_description = "bitterness"
 	taste_mult = 3
 	reagent_state = LIQUID
@@ -105,8 +105,8 @@
 		M.heal_organ_damage(6 * removed * chem_effective, 0)
 
 /datum/reagent/calciumcarbonate
-	name = "calcium carbonate"
-	id = "calciumcarbonate"
+	name = REAGENT_CALCIUMCARBONATE
+	id = REAGENT_ID_CALCIUMCARBONATE
 	description = "Calcium carbonate is a calcium salt commonly used as an antacid."
 	taste_description = "chalk"
 	reagent_state = SOLID
@@ -124,9 +124,9 @@
 		M.add_chemical_effect(CE_ANTACID, 3)
 
 /datum/reagent/kelotane
-	name = "Kelotane"
-	id = "kelotane"
-	description = "Kelotane is a drug used to treat burns."
+	name = REAGENT_KELOTANE
+	id = REAGENT_ID_KELOTANE
+	description = REAGENT_KELOTANE + " is a drug used to treat burns."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#FFA800"
@@ -142,9 +142,10 @@
 		M.heal_organ_damage(0, 4 * removed * chem_effective) //VOREStation edit
 
 /datum/reagent/dermaline
-	name = "Dermaline"
-	id = "dermaline"
-	description = "Dermaline is the next step in burn medication. Works twice as good as kelotane and enables the body to restore even the direst heat-damaged tissue."
+	name = REAGENT_DERMALINE
+	id = REAGENT_ID_DERMALINE
+	name = REAGENT_DERMALINE
+	description = REAGENT_DERMALINE + " is the next step in burn medication. Works twice as good as kelotane and enables the body to restore even the direst heat-damaged tissue."
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -160,9 +161,9 @@
 		M.heal_organ_damage(0, 8 * removed * chem_effective) //VOREStation edit
 
 /datum/reagent/dermaline/topical
-	name = "Dermalaze"
-	id = "dermalaze"
-	description = "Dermalaze is a topical variant of the chemical Dermaline."
+	name = REAGENT_DERMALAZE
+	id = REAGENT_ID_DERMALAZE
+	description = REAGENT_DERMALAZE + " is a topical variant of the chemical Dermaline."
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	reagent_state = LIQUID
@@ -188,9 +189,9 @@
 		M.heal_organ_damage(0, 12 * removed * chem_effective)
 
 /datum/reagent/dylovene
-	name = "Dylovene"
-	id = "anti_toxin"
-	description = "Dylovene is a broad-spectrum antitoxin."
+	name = REAGENT_ANTITOXIN
+	id = REAGENT_ID_ANTITOXIN
+	description = REAGENT_ANTITOXIN + " is a broad-spectrum antitoxin."
 	taste_description = "a roll of gauze"
 	reagent_state = LIQUID
 	color = "#00A000"
@@ -210,9 +211,9 @@
 			M.remove_a_modifier_of_type(/datum/modifier/poisoned)
 
 /datum/reagent/carthatoline
-	name = "Carthatoline"
-	id = "carthatoline"
-	description = "Carthatoline is strong evacuant used to treat severe poisoning."
+	name = REAGENT_CARTHATOLINE
+	id = REAGENT_ID_CARTHATOLINE
+	description = REAGENT_CARTHATOLINE + " is strong evacuant used to treat severe poisoning."
 	reagent_state = LIQUID
 	color = "#225722"
 	scannable = 1
@@ -245,9 +246,9 @@
 	st?.take_damage(removed * 2) // Causes stomach contractions, makes sense for an overdose to make it much worse.
 
 /datum/reagent/dexalin
-	name = "Dexalin"
-	id = "dexalin"
-	description = "Dexalin is used in the treatment of oxygen deprivation."
+	name = REAGENT_DEXALIN
+	id = REAGENT_ID_DEXALIN
+	description = REAGENT_DEXALIN + " is used in the treatment of oxygen deprivation."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#0080FF"
@@ -267,12 +268,12 @@
 	else if(alien != IS_DIONA)
 		M.adjustOxyLoss(-15 * removed * M.species.chem_strength_heal)
 
-	holder.remove_reagent("lexorin", 8 * removed) //VOREStation Edit
+	holder.remove_reagent(REAGENT_ID_LEXORIN, 8 * removed) //VOREStation Edit
 
 /datum/reagent/dexalinp
-	name = "Dexalin Plus"
-	id = "dexalinp"
-	description = "Dexalin Plus is used in the treatment of oxygen deprivation. It is highly effective."
+	name = REAGENT_DEXALINP
+	id = REAGENT_ID_DEXALINP
+	description = REAGENT_DEXALINP + " is used in the treatment of oxygen deprivation. It is highly effective."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#0040FF"
@@ -292,12 +293,12 @@
 	else if(alien != IS_DIONA)
 		M.adjustOxyLoss(-150 * removed * M.species.chem_strength_heal)
 
-	holder.remove_reagent("lexorin", 3 * removed)
+	holder.remove_reagent(REAGENT_ID_LEXORIN, 3 * removed)
 
 /datum/reagent/tricordrazine
-	name = "Tricordrazine"
-	id = "tricordrazine"
-	description = "Tricordrazine is a highly potent stimulant, originally derived from cordrazine. Can be used to treat a wide range of injuries."
+	name = REAGENT_TRICORDRAZINE
+	id = REAGENT_ID_TRICORDRAZINE
+	description = REAGENT_TRICORDRAZINE + " is a highly potent stimulant, originally derived from cordrazine. Can be used to treat a wide range of injuries."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#8040FF"
@@ -324,9 +325,9 @@
 		affect_blood(M, alien, removed * 0.4)
 
 /datum/reagent/tricorlidaze
-	name = "Tricorlidaze"
-	id = "tricorlidaze"
-	description = "Tricorlidaze is a topical gel produced with tricordrazine and sterilizine."
+	name = REAGENT_TRICORLIDAZE
+	id = REAGENT_ID_TRICORLIDAZE
+	description = REAGENT_TRICORLIDAZE + " is a topical gel produced with tricordrazine and sterilizine."
 	taste_description = "bitterness"
 	reagent_state = SOLID
 	color = "#B060FF"
@@ -360,8 +361,8 @@
 			remove_self(to_produce * 5)
 
 /datum/reagent/cryoxadone
-	name = "Cryoxadone"
-	id = "cryoxadone"
+	name = REAGENT_CRYOXADONE
+	id = REAGENT_ID_CRYOXADONE
 	description = "A chemical mixture with almost magical healing powers. Its main limitation is that the targets body temperature must be under 170K for it to metabolise correctly."
 	taste_description = "overripe bananas"
 	reagent_state = LIQUID
@@ -385,8 +386,8 @@
 		M.adjustToxLoss(-10 * removed * chem_effective)
 
 /datum/reagent/clonexadone
-	name = "Clonexadone"
-	id = "clonexadone"
+	name = REAGENT_CLONEXADONE
+	id = REAGENT_ID_CLONEXADONE
 	description = "A liquid compound similar to that used in the cloning process. Can be used to 'finish' the cloning process when used in conjunction with a cryo tube."
 	taste_description = "rotten bananas"
 	reagent_state = LIQUID
@@ -411,8 +412,8 @@
 		M.adjustToxLoss(-30 * removed * chem_effective)
 
 /datum/reagent/mortiferin
-	name = "Mortiferin"
-	id = "mortiferin"
+	name = REAGENT_MORTIFERIN
+	id = REAGENT_ID_MORTIFERIN
 	description = "A liquid compound based upon those used in cloning. Utilized in cases of toxic shock. May cause liver damage."
 	taste_description = "meat"
 	reagent_state = LIQUID
@@ -454,8 +455,8 @@
 				L.take_damage(rand(1,3) * removed)
 
 /datum/reagent/necroxadone
-	name = "Necroxadone"
-	id = "necroxadone"
+	name = REAGENT_NECROXADONE
+	id = REAGENT_ID_NECROXADONE
 	description = "A liquid compound based upon that which is used in the cloning process. Utilized primarily in severe cases of toxic shock."
 	taste_description = "meat"
 	reagent_state = LIQUID
@@ -489,8 +490,8 @@
 /* Painkillers */
 
 /datum/reagent/paracetamol
-	name = "Paracetamol"
-	id = "paracetamol"
+	name = REAGENT_PARACETAMOL
+	id = REAGENT_ID_PARACETAMOL
 	description = "Most probably know this as Tylenol, but this chemical is a mild, simple painkiller."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
@@ -514,8 +515,8 @@
 	M.hallucination = max(M.hallucination, 2)
 
 /datum/reagent/tramadol
-	name = "Tramadol"
-	id = "tramadol"
+	name = REAGENT_TRAMADOL
+	id = REAGENT_ID_TRAMADOL
 	description = "A simple, yet effective painkiller."
 	taste_description = "sourness"
 	reagent_state = LIQUID
@@ -538,8 +539,8 @@
 	M.hallucination = max(M.hallucination, 2)
 
 /datum/reagent/oxycodone
-	name = "Oxycodone"
-	id = "oxycodone"
+	name = REAGENT_OXYCODONE
+	id = REAGENT_ID_OXYCODONE
 	description = "An effective and very addictive painkiller."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
@@ -567,9 +568,9 @@
 /* Other medicine */
 
 /datum/reagent/synaptizine
-	name = "Synaptizine"
-	id = "synaptizine"
-	description = "Synaptizine is used to treat various diseases."
+	name = REAGENT_SYNAPTIZINE
+	id = REAGENT_ID_SYNAPTIZINE
+	description = REAGENT_SYNAPTIZINE + " is used to treat various diseases."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#99CCFF"
@@ -591,15 +592,15 @@
 	M.AdjustParalysis(-1)
 	M.AdjustStunned(-1)
 	M.AdjustWeakened(-1)
-	holder.remove_reagent("mindbreaker", 5)
+	holder.remove_reagent(REAGENT_ID_MINDBREAKER, 5)
 	M.hallucination = max(0, M.hallucination - 10)
 	M.adjustToxLoss(10 * removed * chem_effective) // It used to be incredibly deadly due to an oversight. Not anymore!
 	M.add_chemical_effect(CE_PAINKILLER, 20 * chem_effective * M.species.chem_strength_pain)
 
 /datum/reagent/hyperzine
-	name = "Hyperzine"
-	id = "hyperzine"
-	description = "Hyperzine is a highly effective, long lasting, muscle stimulant."
+	name = REAGENT_HYPERZINE
+	id = REAGENT_ID_HYPERZINE
+	description = REAGENT_HYPERZINE + " is a highly effective, long lasting, muscle stimulant."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#FF3300"
@@ -627,9 +628,9 @@
 		to_chat(M, span_warning("Huh... Is this what a heart attack feels like?"))
 
 /datum/reagent/alkysine
-	name = "Alkysine"
-	id = "alkysine"
-	description = "Alkysine is a drug used to lessen the damage to neurological tissue after a catastrophic injury. Can heal brain tissue."
+	name = REAGENT_ALKYSINE
+	id = REAGENT_ID_ALKYSINE
+	description = REAGENT_ALKYSINE + " is a drug used to lessen the damage to neurological tissue after a catastrophic injury. Can heal brain tissue."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#FFFF66"
@@ -651,8 +652,8 @@
 	M.add_chemical_effect(CE_PAINKILLER, 10 * chem_effective * M.species.chem_strength_pain)
 
 /datum/reagent/imidazoline
-	name = "Imidazoline"
-	id = "imidazoline"
+	name = REAGENT_IMIDAZOLINE
+	id = REAGENT_ID_IMIDAZOLINE
 	description = "Heals eye damage"
 	taste_description = "dull toxin"
 	reagent_state = LIQUID
@@ -675,8 +676,8 @@
 				H.sdisabilities &= ~BLIND
 
 /datum/reagent/peridaxon
-	name = "Peridaxon"
-	id = "peridaxon"
+	name = REAGENT_PERIDAXON
+	id = REAGENT_ID_PERIDAXON
 	description = "Used to encourage recovery of internal organs and nervous systems. Medicate cautiously."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
@@ -708,8 +709,8 @@
 	M.hallucination = max(M.hallucination, 10)
 
 /datum/reagent/osteodaxon
-	name = "Osteodaxon"
-	id = "osteodaxon"
+	name = REAGENT_OSTEODAXON
+	id = REAGENT_ID_OSTEODAXON
 	description = "An experimental drug used to heal bone fractures."
 	reagent_state = LIQUID
 	color = "#C9BCE3"
@@ -724,7 +725,6 @@
 	M.heal_organ_damage(3 * removed, 0)	//Gives the bones a chance to set properly even without other meds
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		//CHOMPEdit Begin
 		var/totalvol = 0
 		if(H.ingested)
 			for(var/datum/reagent/R in H.ingested.reagent_list)
@@ -735,22 +735,22 @@
 			for(var/obj/item/organ/external/O in H.bad_external_organs)
 				if(O.status & ORGAN_BROKEN)
 					O.mend_fracture()		//Only works if the bone won't rebreak, as usual
-					H.custom_pain("You feel a terrible agony tear through your bones!",60)
+					H.custom_pain(span_danger(span_normal(span_bold("You feel a terrible agony tear through your [O.name]!"))),60,TRUE)
+					H.AdjustWeakened(10)		//Bones being regrown will knock you over
 					H.adjustHalLoss(60)
-					H.AdjustStunned(1)		//Bones being regrown will knock you over - CHOMPEdit - Crawling made this trivial, get stunned
-		//CHOMPEdit End
+					H.AdjustStunned(1)		//Bones being regrown will knock you over
 
 /datum/reagent/myelamine
-	name = "Myelamine"
-	id = "myelamine"
-	description = "Used to rapidly clot internal hemorrhages by increasing the effectiveness of platelets."
+	name = REAGENT_MYELAMINE
+	id = REAGENT_ID_MYELAMINE
+	description = "Used to rapidly clot hemorrhages by increasing the effectiveness of platelets. An ideal dosage of 10 units will fully heal any internal hemorrhages."
 	reagent_state = LIQUID
 	color = "#4246C7"
-	metabolism = REM * 0.75	//CHOMPEdit
+	metabolism = REM * 0.75
 	overdose = REAGENTS_OVERDOSE * 0.5
 	overdose_mod = 1.5
 	scannable = 1
-	var/repair_strength = 6	//CHOMPEdit
+	var/repair_strength = 6
 
 /datum/reagent/myelamine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
@@ -762,34 +762,34 @@
 		for(var/obj/item/organ/external/O in H.bad_external_organs)
 			for(var/datum/wound/W in O.wounds)
 				if(W.bleeding())
-					W.damage = max(W.damage - wound_heal, 0)
-					if(W.damage <= 0)
+					W.bandage() //This is the ACTUAL clotting being performed.
+					W.damage = max(W.damage - (wound_heal*3.5), 0) 	//Removed should be 0.15 (can be higher if you have high/apex metabolism). repair_strength is 6. Making wound_heal  .9. Multiply by 3.5 and that gives us a heal of 3.15 on our wounds.
+					if(W.damage <= 0)								//We do this since this will only happen once per bleeding wound, as it's then bandaged (clotted). We do the heal as we want it to be somewhat like slapping them with an advanceed/bruise_pack. (Bruise packs heal 3.5 on application, as of the time of writing.)
 						O.wounds -= W
-				if(W.internal)
-					W.damage = max(W.damage - wound_heal, 0)
-					if(W.damage <= 0)
-						O.wounds -= W
+					break //We only heal ONE external wound per go around.
+			for(var/datum/wound/internal_bleeding/W in O.wounds)
+				W.damage = max(W.damage - wound_heal, 0)
+				if(W.damage <= 0)
+					O.wounds -= W
+				else if(dose >= 9.5 && dose < 11) //If you are in the 'sweet zone' of 9.5u to 11u, your internal wounds instantly heal. This is to prevent people from using a clotting pen or taking a 10u clotting pill from medical and it not actually fixing their wounds.
+					W.damage = 0
+					O.wounds -= W
 
 /datum/reagent/myelamine/overdose(var/mob/living/carbon/M, var/alien, var/removed)
-	// Copypaste of affect_blood with slight adjustment. Heals slightly faster at the cost of high toxins
+	//Heals slightly faster at the cost of high toxins. Honestly you should never do this, but whatever.
 	..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/wound_heal = removed * repair_strength / 2
 		for(var/obj/item/organ/external/O in H.bad_external_organs)
-			for(var/datum/wound/W in O.wounds)
-				if(W.bleeding())
-					W.damage = max(W.damage - wound_heal, 0)
-					if(W.damage <= 0)
-						O.wounds -= W
-				if(W.internal)
-					W.damage = max(W.damage - wound_heal, 0)
-					if(W.damage <= 0)
-						O.wounds -= W
+			for(var/datum/wound/internal_bleeding/W in O.wounds)
+				W.damage = max(W.damage - wound_heal, 0)
+				if(W.damage <= 0)
+					O.wounds -= W
 
 /datum/reagent/respirodaxon
-	name = "Respirodaxon"
-	id = "respirodaxon"
+	name = REAGENT_RESPIRODAXON
+	id = REAGENT_ID_RESPIRODAXON
 	description = "Used to repair the tissue of the lungs and similar organs."
 	taste_description = "metallic"
 	reagent_state = LIQUID
@@ -811,7 +811,7 @@
 			if(I.damage > 0)
 				I.damage = max(I.damage - 4 * removed * repair_strength, 0)
 				H.Confuse(2)
-		if(M.reagents.has_reagent("gastirodaxon") || M.reagents.has_reagent("peridaxon"))
+		if(M.reagents.has_reagent(REAGENT_ID_GASTIRODAXON) || M.reagents.has_reagent(REAGENT_ID_PERIDAXON))
 			if(H.losebreath >= 15 && prob(H.losebreath))
 				H.Stun(2)
 			else
@@ -820,8 +820,8 @@
 			H.losebreath = max(H.losebreath - 4, 0)
 
 /datum/reagent/gastirodaxon
-	name = "Gastirodaxon"
-	id = "gastirodaxon"
+	name = REAGENT_GASTIRODAXON
+	id = REAGENT_ID_GASTIRODAXON
 	description = "Used to repair the tissues of the digestive system."
 	taste_description = "chalk"
 	reagent_state = LIQUID
@@ -843,7 +843,7 @@
 			if(I.damage > 0)
 				I.damage = max(I.damage - 4 * removed * repair_strength, 0)
 				H.Confuse(2)
-		if(M.reagents.has_reagent("hepanephrodaxon") || M.reagents.has_reagent("peridaxon"))
+		if(M.reagents.has_reagent(REAGENT_ID_HEPANEPHRODAXON) || M.reagents.has_reagent(REAGENT_ID_PERIDAXON))
 			if(prob(10))
 				H.vomit(1)
 			else if(H.nutrition > 30)
@@ -852,8 +852,8 @@
 			H.adjustToxLoss(-10 * removed) // Carthatoline based, considering cost.
 
 /datum/reagent/hepanephrodaxon
-	name = "Hepanephrodaxon"
-	id = "hepanephrodaxon"
+	name = REAGENT_HEPANEPHRODAXON
+	id = REAGENT_ID_HEPANEPHRODAXON
 	description = "Used to repair the common tissues involved in filtration."
 	taste_description = "glue"
 	reagent_state = LIQUID
@@ -875,7 +875,7 @@
 			if(I.damage > 0)
 				I.damage = max(I.damage - 4 * removed * repair_strength, 0)
 				H.Confuse(2)
-		if(M.reagents.has_reagent("cordradaxon") || M.reagents.has_reagent("peridaxon"))
+		if(M.reagents.has_reagent(REAGENT_ID_CORDRADAXON) || M.reagents.has_reagent(REAGENT_ID_PERIDAXON))
 			if(prob(5))
 				H.vomit(1)
 			else if(prob(5))
@@ -886,8 +886,8 @@
 			H.adjustToxLoss(-12 * removed) // Carthatoline based, considering cost.
 
 /datum/reagent/cordradaxon
-	name = "Cordradaxon"
-	id = "cordradaxon"
+	name = REAGENT_CORDRADAXON
+	id = REAGENT_ID_CORDRADAXON
 	description = "Used to repair the specialized tissues involved in the circulatory system."
 	taste_description = "rust"
 	reagent_state = LIQUID
@@ -909,14 +909,14 @@
 			if(I.damage > 0)
 				I.damage = max(I.damage - 4 * removed * repair_strength, 0)
 				H.Confuse(2)
-		if(M.reagents.has_reagent("respirodaxon") || M.reagents.has_reagent("peridaxon"))
+		if(M.reagents.has_reagent(REAGENT_ID_HYRONALIN) || M.reagents.has_reagent(REAGENT_ID_PERIDAXON))
 			H.losebreath = CLAMP(H.losebreath + 1, 0, 10)
 		else
 			H.adjustOxyLoss(-30 * removed) // Deals with blood oxygenation.
 
 /datum/reagent/immunosuprizine
-	name = "Immunosuprizine"
-	id = "immunosuprizine"
+	name = REAGENT_IMMUNOSUPRIZINE
+	id = REAGENT_ID_IMMUNOSUPRIZINE
 	description = "An experimental powder believed to have the ability to prevent any organ rejection."
 	taste_description = "flesh"
 	reagent_state = SOLID
@@ -924,29 +924,30 @@
 	overdose = 20
 	overdose_mod = 1.5
 	scannable = 1
+	metabolism = REM * 0.06
 
 /datum/reagent/immunosuprizine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	var/strength_mod = 1 * M.species.chem_strength_heal
+	var/strength_mod = 1 // * M.species.chem_strength_heal //Just removing the chem strength adjustment. It'd require division, which is best avoided.
 
 	if(alien == IS_DIONA)	// It's a tree.
-		strength_mod = 0.25
+		strength_mod = 4
 
 	if(alien == IS_SLIME)	// Diffculty bonding with internal cellular structure.
-		strength_mod = 0.75
+		strength_mod = 1.3
 
 	if(alien == IS_SKRELL)	// Natural inclination toward toxins.
-		strength_mod = 1.5
+		strength_mod = 0.66
 
 	if(alien == IS_UNATHI)	// Natural regeneration, robust biology.
-		strength_mod = 1.75
+		strength_mod = 0.6
 
 	if(alien == IS_TAJARA)	// Highest metabolism.
-		strength_mod = 2
+		strength_mod = 0.5
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(alien != IS_DIONA)
-			H.adjustToxLoss((30 / strength_mod) * removed)
+			H.adjustToxLoss((30 * strength_mod) * removed)
 
 		var/list/organtotal = list()
 		organtotal |= H.organs
@@ -962,23 +963,23 @@
 					I.rejecting = 0
 					I.can_reject = FALSE
 
-		if(H.reagents.has_reagent("spaceacillin") || H.reagents.has_reagent("corophizine"))	// Chemicals that increase your immune system's aggressiveness make this chemical's job harder.
+		if(H.reagents.has_reagent(REAGENT_ID_SPACEACILLIN) || H.reagents.has_reagent(REAGENT_ID_COROPHIZINE))	// Chemicals that increase your immune system's aggressiveness make this chemical's job harder.
 			for(var/obj/item/organ/I in organtotal)
 				if(I.transplant_data)
 					var/rejectmem = I.can_reject
 					I.can_reject = initial(I.can_reject)
 					if(rejectmem != I.can_reject)
-						H.adjustToxLoss((15 / strength_mod))
+						H.adjustToxLoss((15 / strength_mod) * removed) //Someone forgot a * removed here in the past. It made it so 1u of this chem would do (baseline) 1245 toxins per unit, or 15 toxins per tick.
 						I.take_damage(1)
 
-/datum/reagent/skrellimmuno
-	name = "Malish-Qualem"
-	id = "malish-qualem"
+/datum/reagent/skrellimmuno //skrell exist?
+	name = REAGENT_MALISHQUALEM
+	id = REAGENT_ID_MALISHQUALEM
 	description = "A strange, oily powder used by Malish-Katish to prevent organ rejection."
 	taste_description = "mordant"
 	reagent_state = SOLID
 	color = "#84B2B0"
-	metabolism = REM * 0.75
+	metabolism = REM * 0.06
 	overdose = 20
 	overdose_mod = 1.5
 	scannable = 1
@@ -1008,7 +1009,7 @@
 					I.rejecting = 0
 					I.can_reject = FALSE
 
-		if(H.reagents.has_reagent("spaceacillin") || H.reagents.has_reagent("corophizine"))
+		if(H.reagents.has_reagent(REAGENT_ID_SPACEACILLIN) || H.reagents.has_reagent(REAGENT_ID_COROPHIZINE))
 			for(var/obj/item/organ/I in organtotal)
 				if(I.transplant_data)
 					var/rejectmem = I.can_reject
@@ -1018,55 +1019,24 @@
 						I.take_damage(1)
 
 /datum/reagent/ryetalyn
-	name = "Ryetalyn"
-	id = "ryetalyn"
-	description = "Ryetalyn can cure all genetic abnomalities via a catalytic process."
+	name = REAGENT_RYETALYN
+	id = REAGENT_ID_RYETALYN
+	description = REAGENT_RYETALYN + " can cure DNA, Cloning, and genetic damage via a catalytic process."
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#004000"
 	overdose = REAGENTS_OVERDOSE
 
 /datum/reagent/ryetalyn/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	var/needs_update = M.mutations.len > 0
-
-	M.mutations = list()
-	M.disabilities = 0
-	M.sdisabilities = 0
-
-	var/mob/living/carbon/human/H = M
-	if(alien == IS_SLIME && istype(H)) //Shifts them toward white, faster than Rezadone does toward grey.
-		if(prob(50))
-			if(H.r_skin)
-				H.r_skin = round((H.r_skin + 510)/3)
-			if(H.r_hair)
-				H.r_hair = round((H.r_hair + 510)/3)
-			if(H.r_facial)
-				H.r_facial = round((H.r_facial + 510)/3)
-			H.adjustToxLoss(6 * removed)
-		if(prob(50))
-			if(H.g_skin)
-				H.g_skin = round((H.g_skin + 510)/3)
-			if(H.g_hair)
-				H.g_hair = round((H.g_hair + 510)/3)
-			if(H.g_facial)
-				H.g_facial = round((H.g_facial + 510)/3)
-			H.adjustToxLoss(6 * removed)
-		if(prob(50))
-			if(H.b_skin)
-				H.b_skin = round((H.b_skin + 510)/3)
-			if(H.b_hair)
-				H.b_hair = round((H.b_hair + 510)/3)
-			if(H.b_facial)
-				H.b_facial = round((H.b_facial + 510)/3)
-			H.adjustToxLoss(6 * removed)
-
-	// Might need to update appearance for hulk etc.
-	if(needs_update && ishuman(M))
-		H.update_mutations()
+	//Ryetalyn is for genetics damage curing not resetting mutations, breaks traitgenes
+	if(alien == IS_DIONA)
+		return
+	var/chem_effective = 1 * M.species.chem_strength_heal
+	M.adjustCloneLoss(-2 * removed * chem_effective)
 
 /*/datum/reagent/hyperzine
-	name = "Hyperzine"
-	id = "hyperzine"
+	name = REAGENT_HYPERZINE
+	id = REAGENT_ID_HYPERZINE
 	description = "Hyperzine is a highly effective, long lasting, muscle stimulant."
 	reagent_state = LIQUID
 	color = "#FF3300"
@@ -1082,8 +1052,8 @@
 	M.add_chemical_effect(CE_SPEEDBOOST, 1)
 */
 /datum/reagent/ethylredoxrazine
-	name = "Ethylredoxrazine"
-	id = "ethylredoxrazine"
+	name = REAGENT_ETHYLREDOXRAZINE
+	id = REAGENT_ID_ETHYLREDOXRAZINE
 	description = "A powerful oxidizer that reacts with ethanol."
 	taste_description = "bitterness"
 	reagent_state = SOLID
@@ -1115,9 +1085,9 @@
 				R.remove_self(removed * 20)
 
 /datum/reagent/hyronalin
-	name = "Hyronalin"
-	id = "hyronalin"
-	description = "Hyronalin is a medicinal drug used to counter the effect of radiation poisoning."
+	name = REAGENT_HYRONALIN
+	id = REAGENT_ID_HYRONALIN
+	description = REAGENT_HYRONALIN + " is a medicinal drug used to counter the effect of radiation poisoning."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#408000"
@@ -1132,9 +1102,9 @@
 	M.accumulated_rads = max(M.accumulated_rads - 30 * removed * M.species.chem_strength_heal, 0)
 
 /datum/reagent/arithrazine
-	name = "Arithrazine"
-	id = "arithrazine"
-	description = "Arithrazine is an unstable medication used for the most extreme cases of radiation poisoning."
+	name = REAGENT_ARITHRAZINE
+	id = REAGENT_ID_ARITHRAZINE
+	description = REAGENT_ARITHRAZINE + " is an unstable medication used for the most extreme cases of radiation poisoning."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
 	color = "#008000"
@@ -1153,8 +1123,8 @@
 		M.take_organ_damage(4 * removed, 0)
 
 /datum/reagent/spaceacillin
-	name = "Spaceacillin"
-	id = "spaceacillin"
+	name = REAGENT_SPACEACILLIN
+	id = REAGENT_ID_SPACEACILLIN
 	description = "An all-purpose antiviral agent."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
@@ -1182,8 +1152,8 @@
 	affect_blood(M, alien, removed * 0.8) // Not 100% as effective as injections, though still useful.
 
 /datum/reagent/corophizine
-	name = "Corophizine"
-	id = "corophizine"
+	name = REAGENT_COROPHIZINE
+	id = REAGENT_ID_COROPHIZINE
 	description = "A wide-spectrum antibiotic drug. Powerful and uncomfortable in equal doses."
 	taste_description = "burnt toast"
 	reagent_state = LIQUID
@@ -1231,7 +1201,7 @@
 			var/obj/item/organ/external/O = pick(H.organs)
 			if(prob(20) && !istype(O, /obj/item/organ/external/chest/unbreakable/slime) && !istype(O, /obj/item/organ/external/groin/unbreakable/slime))
 				to_chat(M, span_critical("You feel your [O] begin to dissolve, before it sloughs from your body."))
-				O.droplimb() //Splat.
+				O.droplimb(TRUE, DROPLIMB_ACID)
 		return
 
 	//Based roughly on Levofloxacin's rather severe side-effects
@@ -1245,13 +1215,13 @@
 		M.hallucination = max(M.hallucination, 10)
 
 	//One of the levofloxacin side effects is 'spontaneous tendon rupture', which I'll immitate here. 1:1000 chance, so, pretty darn rare.
-	if(ishuman(M) && rand(1,10000) == 1) //VOREStation Edit (more rare)
+	if(ishuman(M) && rand(1,10000) == 1) //Adjusted to 1:10000
 		var/obj/item/organ/external/eo = pick(H.organs) //Misleading variable name, 'organs' is only external organs
 		eo.fracture()
 
 /datum/reagent/spacomycaze
-	name = "Spacomycaze"
-	id = "spacomycaze"
+	name = REAGENT_SPACOMYCAZE
+	id = REAGENT_ID_SPACOMYCAZE
 	description = "An all-purpose painkilling antibiotic gel."
 	taste_description = "oil"
 	reagent_state = SOLID
@@ -1299,8 +1269,8 @@
 			remove_self(to_produce)
 
 /datum/reagent/sterilizine
-	name = "Sterilizine"
-	id = "sterilizine"
+	name = REAGENT_STERILIZINE
+	id = REAGENT_ID_STERILIZINE
 	description = "Sterilizes wounds in preparation for surgery and thoroughly removes blood."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
@@ -1351,8 +1321,8 @@
 		remove_self(amount)
 
 /datum/reagent/leporazine
-	name = "Leporazine"
-	id = "leporazine"
+	name = REAGENT_LEPORAZINE
+	id = REAGENT_ID_LEPORAZINE
 	description = "Leporazine can be use to stabilize an individuals body temperature."
 	taste_description = "bitterness"
 	reagent_state = LIQUID
@@ -1373,8 +1343,8 @@
 		M.bodytemperature = min(temp, M.bodytemperature + (40 * TEMPERATURE_DAMAGE_COEFFICIENT))
 
 /datum/reagent/rezadone
-	name = "Rezadone"
-	id = "rezadone"
+	name = REAGENT_REZADONE
+	id = REAGENT_ID_REZADONE
 	description = "A powder with almost magical properties, this substance can effectively treat genetic damage in humanoids, though excessive consumption has side effects."
 	taste_description = "bitterness"
 	reagent_state = SOLID
@@ -1421,8 +1391,8 @@
 
 // This exists to cut the number of chemicals a merc borg has to juggle on their hypo.
 /datum/reagent/healing_nanites
-	name = "Restorative Nanites"
-	id = "healing_nanites"
+	name = REAGENT_HEALINGNANITES
+	id = REAGENT_ID_HEALINGNANITES
 	description = "Miniature medical robots that swiftly restore bodily damage."
 	taste_description = "metal"
 	reagent_state = SOLID
@@ -1438,8 +1408,8 @@
 	M.adjustCloneLoss(-2 * removed)
 
 /datum/reagent/menthol
-	name = "Menthol"
-	id = "menthol"
+	name = REAGENT_MENTHOL
+	id = REAGENT_ID_MENTHOL
 	description = "Tastes naturally minty, and imparts a very mild numbing sensation."
 	taste_description = "mint"
 	reagent_state = LIQUID
@@ -1449,8 +1419,8 @@
 	scannable = 1
 
 /datum/reagent/earthsblood
-	name = "Earthsblood"
-	id = "earthsblood"
+	name = REAGENT_EARTHSBLOOD
+	id = REAGENT_ID_EARTHSBLOOD
 	description = "A rare plant extract with immense, almost magical healing capabilities. Induces a potent psychoactive state, damaging neurons with prolonged use."
 	taste_description = "honey and sunlight"
 	reagent_state = LIQUID

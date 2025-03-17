@@ -81,12 +81,12 @@
  */
 /mob/living/carbon/human/proc/nif_menu()
 	set name = "NIF Menu"
-	set category = "IC.Nif" //CHOMPEdit
+	set category = "IC.NIF"
 	set desc = "Open the NIF user interface."
 
 	var/obj/item/nif/N = nif
 	if(istype(N))
-		N.tgui_interact(usr)
+		N.tgui_interact(src)
 
 /**
  * The NIF State ensures that only our authorized implanted user can touch us.

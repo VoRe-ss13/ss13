@@ -79,7 +79,7 @@
 /mob/living/simple_mob/animal/sif/shantak/leader/verb/rally_pack()
 	set name = "Rally Pack"
 	set desc = "Commands your fellow packmembers to follow you, the leader."
-	set category = "Abilities.Shantak" //CHOMPEdit
+	set category = "Abilities.Shantak"
 
 	for(var/mob/living/simple_mob/animal/sif/shantak/S in hearers(7, src))
 		if(istype(S, /mob/living/simple_mob/animal/sif/shantak/leader)) // Leaders won't follow other leaders. Also avoids trying to follow ourselves.
@@ -93,7 +93,7 @@
 
 // Variant that automatically commands nearby allies to follow it when created.
 // Suggested to spawn last so it can rally up all the shantaks easily before hunting for tasty explorers.
-/mob/living/simple_mob/animal/sif/shantak/leader/autofollow/Initialize()
+/mob/living/simple_mob/animal/sif/shantak/leader/autofollow/Initialize(mapload)
 	rally_pack()
 	return ..()
 

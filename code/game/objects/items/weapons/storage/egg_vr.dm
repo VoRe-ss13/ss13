@@ -15,9 +15,9 @@
 	show_messages = 0
 	allow_quick_empty = TRUE
 	use_sound = 'sound/items/drop/flesh.ogg'
-	var/egg_name = null //CHOMPAdd
+	var/egg_name = null
 
-/obj/item/storage/vore_egg/Initialize()
+/obj/item/storage/vore_egg/Initialize(mapload)
 	. = ..()
 	randpixel_xy()
 
@@ -36,14 +36,8 @@
 		animate_shake()
 		drop_contents()
 		icon = open_egg_icon
-		if(user.transforming)
-			user.transforming = FALSE
-
-/obj/item/storage/vore_egg/proc/animate_shake()
-	var/init_px = pixel_x
-	var/shake_dir = pick(-1, 1)
-	animate(src, transform=turn(matrix(), 8*shake_dir), pixel_x=init_px + 2*shake_dir, time=1)
-	animate(transform=null, pixel_x=init_px, time=6, easing=ELASTIC_EASING)
+		if(user.transforming) //this is actually godawful and transforming should never be used as it skips life ticks
+			user.transforming = FALSE //but if something does still use transforming (Bad, please do not.), we want it to be removed from them.
 
 /obj/item/storage/vore_egg/unathi
 	name = "unathi egg"

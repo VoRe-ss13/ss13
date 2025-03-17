@@ -6,8 +6,8 @@ var/list/holder_mob_icon_cache = list()
 	desc = "You shouldn't ever see this."
 	icon = 'icons/obj/objects.dmi'
 	randpixel = 0
-	center_of_mass_x = 0 //CHOMPEdit
-	center_of_mass_y = 0 //CHOMPEdit
+	center_of_mass_x = 0
+	center_of_mass_y = 0
 	slot_flags = SLOT_HEAD | SLOT_HOLSTER
 	show_messages = 1
 
@@ -107,14 +107,14 @@ var/list/holder_mob_icon_cache = list()
 /obj/item/holder/proc/dump_mob()
 	if(!held_mob)
 		return
-	if (held_mob.loc == src || isnull(held_mob.loc)) //VOREStation edit
+	if (held_mob.loc == src || isnull(held_mob.loc))
 		held_mob.transform = original_transform
-		held_mob.update_transform() //VOREStation edit
+		held_mob.update_transform()
 		held_mob.vis_flags = original_vis_flags
-		held_mob.forceMove(get_turf(src))
 		held_mob.reset_view(null)
+		held_mob.forceMove(get_turf(src))
 		held_mob = null
-	invisibility = INVISIBILITY_ABSTRACT //VOREStation edit
+	invisibility = INVISIBILITY_ABSTRACT
 
 /obj/item/holder/throw_at(atom/target, range, speed, thrower)
 	if(held_mob)
@@ -311,7 +311,7 @@ var/list/holder_mob_icon_cache = list()
 	item_icons = null
 	w_class = ITEMSIZE_SMALL
 
-/obj/item/holder/bird/Initialize()
+/obj/item/holder/bird/Initialize(mapload)
 	. = ..()
 	held_mob?.lay_down()
 
@@ -337,8 +337,8 @@ var/list/holder_mob_icon_cache = list()
 		for(var/mob/living/M in src.contents)
 			if(user.size_multiplier > M.size_multiplier)
 				var/dam = (user.size_multiplier - M.size_multiplier)*(rand(2,5))
-				to_chat(user, "<span class='danger'>You roughly squeeze [M]!</span>")
-				to_chat(M, "<span class='danger'>You are roughly squeezed by [user]!</span>")
+				to_chat(user, span_danger("You roughly squeeze [M]!"))
+				to_chat(M, span_danger("You are roughly squeezed by [user]!"))
 				log_and_message_admins("[key_name(M)] has been harmsqueezed by [key_name(user)]")
 				M.apply_damage(dam)
 	//CHOMPADDITION: MicroHandCrush END
@@ -351,7 +351,7 @@ var/list/holder_mob_icon_cache = list()
 /mob/living/MouseDrop(var/atom/over_object)
 	var/mob/living/carbon/human/H = over_object
 	if(holder_type && issmall(src) && istype(H) && !H.lying && Adjacent(H) && (src.a_intent == I_HELP && H.a_intent == I_HELP)) //VOREStation Edit
-		if(!issmall(H) || !istype(src, /mob/living/carbon/human))
+		if(!issmall(H) || !ishuman(src))
 			get_scooped(H, (usr == src))
 		return
 	return ..()
@@ -370,9 +370,9 @@ var/list/holder_mob_icon_cache = list()
 	var/sizediff = grabber.size_multiplier - size_multiplier
 	if(sizediff < -0.5)
 		if(self_grab)
-			to_chat(src, "<span class='warning'>You are too big to fit in \the [grabber]\'s hands!</span>")
+			to_chat(src, span_warning("You are too big to fit in \the [grabber]\'s hands!"))
 		else
-			to_chat(grabber, "<span class='warning'>\The [src] is too big to fit in your hands!</span>")
+			to_chat(grabber, span_warning("\The [src] is too big to fit in your hands!"))
 		return
 	//end YW edit
 
@@ -395,3 +395,26 @@ var/list/holder_mob_icon_cache = list()
 	icon = 'icons/mob/holder_complex.dmi'
 	var/list/generate_for_slots = list(slot_l_hand_str, slot_r_hand_str, slot_back_str)
 	slot_flags = SLOT_BACK
+
+/obj/item/holder/proc/sync(var/mob/living/M)
+	dir = 2
+	overlays.Cut()
+	if(M.item_state)
+		item_state = M.item_state
+	color = M.color
+	name = M.name
+	desc = M.desc
+	overlays |= M.overlays
+
+/obj/item/holder/protoblob
+	slot_flags = SLOT_HEAD | SLOT_OCLOTHING | SLOT_HOLSTER | SLOT_ICLOTHING | SLOT_ID | SLOT_EARS
+	w_class = ITEMSIZE_TINY
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, POCKET_ALL_TANKS, POCKET_SUIT_REGULATORS, POCKET_EXPLO, /obj/item/storage/backpack)
+	item_icons = list(
+		slot_l_hand_str = 'icons/mob/lefthand_holder.dmi',
+		slot_r_hand_str = 'icons/mob/righthand_holder.dmi',
+		slot_head_str = 'icons/mob/head.dmi',
+		slot_w_uniform_str = 'icons/mob/uniform.dmi',
+		slot_wear_suit_str = 'icons/mob/suit.dmi',
+		slot_r_ear_str = 'icons/mob/ears.dmi',
+		slot_l_ear_str = 'icons/mob/ears.dmi')

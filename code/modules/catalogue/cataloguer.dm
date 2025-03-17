@@ -57,7 +57,7 @@ GLOBAL_LIST_EMPTY(all_cataloguers)
 	debug = TRUE
 
 
-/obj/item/cataloguer/Initialize()
+/obj/item/cataloguer/Initialize(mapload)
 	GLOB.all_cataloguers += src
 	return ..()
 
@@ -247,15 +247,15 @@ GLOBAL_LIST_EMPTY(all_cataloguers)
 
 	// Important buttons go on top since the scrollbar will default to the top of the window.
 	dat += "Contains <b>[points_stored]</b> Exploration Points."
-	dat += "<a href='?src=\ref[src];pulse_scan=1'>\[Highlight Scannables\]</a><a href='?src=\ref[src];refresh=1'>\[Refresh\]</a><a href='?src=\ref[src];close=1'>\[Close\]</a>"
+	dat += "<a href='byond://?src=\ref[src];pulse_scan=1'>\[Highlight Scannables\]</a><a href='byond://?src=\ref[src];refresh=1'>\[Refresh\]</a><a href='byond://?src=\ref[src];close=1'>\[Close\]</a>"
 
 	// If displayed_data exists, we show that, otherwise we show a list of all data in the mysterious global list.
 	if(displayed_data)
 		title = uppertext(displayed_data.name)
 
-		dat += "<a href='?src=\ref[src];show_data=null'>\[Back to List\]</a>"
+		dat += "<a href='byond://?src=\ref[src];show_data=null'>\[Back to List\]</a>"
 		if(debug && !displayed_data.visible)
-			dat += "<a href='?src=\ref[src];debug_unlock=\ref[displayed_data]'>\[(DEBUG) Force Discovery\]</a>"
+			dat += "<a href='byond://?src=\ref[src];debug_unlock=\ref[displayed_data]'>\[(DEBUG) Force Discovery\]</a>"
 		dat += "<hr>"
 
 		dat += span_italics("[displayed_data.desc]")
@@ -274,7 +274,7 @@ GLOBAL_LIST_EMPTY(all_cataloguers)
 			group_dat += span_bold("[group.name]")
 			for(var/datum/category_item/catalogue/item as anything in group.items)
 				if(item.visible || debug)
-					group_dat += "<a href='?src=\ref[src];show_data=\ref[item]'>[item.name]</a>"
+					group_dat += "<a href='byond://?src=\ref[src];show_data=\ref[item]'>[item.name]</a>"
 					show_group = TRUE
 
 			if(show_group || debug) // Avoid showing 'empty' groups on regular cataloguers.
@@ -326,7 +326,7 @@ GLOBAL_LIST_EMPTY(all_cataloguers)
 	Alt+click to highlight scannable objects around you."
 	icon = 'icons/obj/device_vr.dmi'
 	icon_state = "compact"
-	action_button_name = "Toggle Cataloguer"
+	actions_types = list(/datum/action/item_action/toggle_cataloguer)
 	var/deployed = TRUE
 	scan_range = 1
 	toolspeed = 1.2
@@ -346,7 +346,7 @@ GLOBAL_LIST_EMPTY(all_cataloguers)
 	else
 		icon_state = initial(icon_state)
 
-/obj/item/cataloguer/compact/ui_action_click()
+/obj/item/cataloguer/compact/ui_action_click(mob/user, actiontype)
 	toggle()
 
 /obj/item/cataloguer/compact/verb/toggle()
@@ -368,7 +368,7 @@ GLOBAL_LIST_EMPTY(all_cataloguers)
 
 	if (ismob(usr))
 		var/mob/M = usr
-		M.update_action_buttons()
+		M.update_mob_action_buttons()
 
 /obj/item/cataloguer/compact/afterattack(atom/target, mob/user, proximity_flag)
 	if(!deployed)

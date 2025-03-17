@@ -25,7 +25,7 @@
 	icon_state = "tallcabinet"
 
 
-/obj/structure/filingcabinet/Initialize()
+/obj/structure/filingcabinet/Initialize(mapload)
 	for(var/obj/item/I in loc)
 		if(istype(I, /obj/item/paper) || istype(I, /obj/item/folder) || istype(I, /obj/item/photo) || istype(I, /obj/item/paper_bundle))
 			I.loc = src
@@ -99,15 +99,15 @@
 
 	return list("contents" = files)
 
-/obj/structure/filingcabinet/tgui_act(action, params)
+/obj/structure/filingcabinet/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
 	switch(action)
 		if("retrieve")
 			var/obj/item/P = locate(params["ref"])
-			if(istype(P) && (P.loc == src) && usr.Adjacent(src))
-				usr.put_in_hands(P)
+			if(istype(P) && (P.loc == src) && ui.user.Adjacent(src))
+				ui.user.put_in_hands(P)
 				open_animation()
 				SStgui.update_uis(src)
 

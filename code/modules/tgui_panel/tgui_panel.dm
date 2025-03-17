@@ -50,7 +50,7 @@
 		))
 	window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/fontawesome))
 	window.send_asset(get_asset_datum(/datum/asset/simple/namespaced/tgfont))
-	window.send_asset(get_asset_datum(/datum/asset/spritesheet/chat))
+	window.send_asset(get_asset_datum(/datum/asset/spritesheet_batched/chat))
 	// Other setup
 	request_telemetry()
 	addtimer(CALLBACK(src, PROC_REF(on_initialize_timed_out)), 5 SECONDS)
@@ -63,7 +63,7 @@
  */
 /datum/tgui_panel/proc/on_initialize_timed_out()
 	// Currently does nothing but sending a message to old chat.
-	// SEND_TEXT(client, span_userdanger("Failed to load fancy chat, click <a href='?src=[REF(src)];reload_tguipanel=1'>HERE</a> to attempt to reload it."))
+	// SEND_TEXT(client, span_userdanger("Failed to load fancy chat, click <a href='byond://?src=[REF(src)];reload_tguipanel=1'>HERE</a> to attempt to reload it."))
 
 /**
  * private
@@ -73,15 +73,21 @@
 /datum/tgui_panel/proc/on_message(type, payload)
 	if(type == "ready")
 		broken = FALSE
-		window.send_message("connected", list("round_id" = GLOB.round_id)) // Sends the round ID to the chat, requires round IDs
+		var/list/stored_rounds = CONFIG_GET(flag/chatlog_database_backend) ? vchatlog_get_recent_roundids(client.ckey) : null
+		window.send_message("connected", list(
+			"round_id" = GLOB.round_id, // Sends the round ID to the chat, requires round IDs
+			"chatlog_db_backend" = CONFIG_GET(flag/chatlog_database_backend),
+			"chatlog_api_endpoint" = CONFIG_GET(string/chatlog_database_api_endpoint),
+			"chatlog_stored_rounds" = islist(stored_rounds) ? list("0") + stored_rounds : list("0"),
+		))
 		window.send_message("update", list(
 			"config" = list(
 				"client" = list(
 					"ckey" = client.ckey,
+					"chatlog_token" = client.chatlog_token,
 					"address" = client.address,
 					"computer_id" = client.computer_id,
 				),
-				// CHOMPEdit - "server" section
 				"server" = list(
 					"round_id" = GLOB.round_id,
 				),

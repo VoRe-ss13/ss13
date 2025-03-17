@@ -9,16 +9,16 @@
 	sharp = TRUE
 	edge =  TRUE
 
-/obj/item/material/star/New()
-	..()
-	src.pixel_x = rand(-12, 12)
-	src.pixel_y = rand(-12, 12)
+/obj/item/material/star/Initialize(mapload)
+	. = ..()
+	pixel_x = rand(-12, 12)
+	pixel_y = rand(-12, 12)
 
 /obj/item/material/star/throw_impact(atom/hit_atom)
 	..()
-	if(material.radioactivity>0 && istype(hit_atom,/mob/living))
+	if(material.radioactivity>0 && isliving(hit_atom))
 		var/mob/living/M = hit_atom
 		M.adjustToxLoss(rand(20,40))
 
 /obj/item/material/star/ninja
-	default_material = "uranium"
+	default_material = MAT_URANIUM

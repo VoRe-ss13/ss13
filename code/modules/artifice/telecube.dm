@@ -51,7 +51,7 @@
 
 	var/omniteleport = FALSE // Will this teleport anchored things too?
 
-/obj/item/telecube/Initialize()
+/obj/item/telecube/Initialize(mapload)
 	. = ..()
 
 	glow = image("[icon_state]-ready")
@@ -114,7 +114,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/telecube/dropped()
+/obj/item/telecube/dropped(mob/user)
 	. = ..()
 	update_icon()
 

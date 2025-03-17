@@ -9,12 +9,13 @@
 	desc = "It's a fossil."
 	var/animal = 1
 
-/obj/item/fossil/base/New()
+/obj/item/fossil/base/Initialize(mapload)
+	..()
 	var/list/l = list(/obj/item/fossil/bone = 9,/obj/item/fossil/skull = 3,
 	/obj/item/fossil/skull/horned = 2)
 	var/t = pickweight(l)
 	new t(src.loc)
-	qdel(src)
+	return INITIALIZE_HINT_QDEL
 
 /obj/item/fossil/bone
 	name = "Fossilised bone"
@@ -30,7 +31,7 @@
 	icon_state = "hskull"
 	desc = "It's a fossilised, horned skull."
 
-/obj/item/fossil/skull/attackby(obj/item/W as obj, mob/user as mob)
+/obj/item/fossil/skull/attackby(obj/item/W, mob/user)
 	if(istype(W,/obj/item/fossil/bone))
 		var/obj/o = new /obj/skeleton(get_turf(src))
 		var/a = new /obj/item/fossil/bone
@@ -50,18 +51,18 @@
 	var/bstate = 0
 	var/plaque_contents = "Unnamed alien creature"
 
-/obj/skeleton/New()
-	src.breq = rand(6)+3
-	src.desc = "An incomplete skeleton, looks like it could use [src.breq-src.bnum] more bones."
+/obj/skeleton/Initialize(mapload)
+	. = ..()
+	breq = rand(6)+3
+	desc = "An incomplete skeleton, looks like it could use [breq-bnum] more bones."
 
-/obj/skeleton/attackby(obj/item/W as obj, mob/user as mob)
+/obj/skeleton/attackby(obj/item/W, mob/user)
 	if(istype(W,/obj/item/fossil/bone))
 		if(!bstate)
 			bnum++
 			src.contents.Add(new/obj/item/fossil/bone)
 			qdel(W)
 			if(bnum==breq)
-				usr = user
 				icon_state = "skel"
 				src.bstate = 1
 				src.density = TRUE
@@ -76,7 +77,7 @@
 		else
 			..()
 	else if(istype(W,/obj/item/pen))
-		plaque_contents = sanitize(tgui_input_text(usr, "What would you like to write on the plaque:","Skeleton plaque",""))
+		plaque_contents = sanitize(tgui_input_text(user, "What would you like to write on the plaque:","Skeleton plaque",""))
 		user.visible_message("[user] writes something on the base of [src].","You relabel the plaque on the base of [icon2html(src,viewers(src))] [src].")
 		if(src.contents.Find(/obj/item/fossil/skull/horned))
 			src.desc = "A creature made of [src.contents.len-1] assorted bones and a horned skull. The plaque reads \'[plaque_contents]\'."
@@ -97,5 +98,6 @@
 	desc = "It's fossilised plant remains."
 	animal = 0
 
-/obj/item/fossil/plant/New()
+/obj/item/fossil/plant/Initialize(mapload)
+	. = ..()
 	icon_state = "plant[rand(1,4)]"

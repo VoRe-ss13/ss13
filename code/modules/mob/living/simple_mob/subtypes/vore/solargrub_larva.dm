@@ -88,7 +88,7 @@ var/global/list/grub_machine_overlays = list()
 		return
 
 	if(istype(loc, /obj/machinery))
-		if(machine_effect && air_master.current_cycle%30)
+		if(machine_effect && SSair.current_cycle%30)
 			for(var/mob/M in player_list)
 				M << machine_effect
 		if(prob(10))
@@ -253,13 +253,13 @@ var/global/list/grub_machine_overlays = list()
 		ignored_targets += A
 
 
-/obj/machinery/abstract_grub_machine/New()
-	..()
+/obj/machinery/abstract_grub_machine/Initialize(mapload)
+	. = ..()
 	shuffle_power_usages()
 	grub = loc
 	if(!istype(grub))
 		grub = null
-		qdel(src)
+		return INITIALIZE_HINT_QDEL
 
 /obj/machinery/abstract_grub_machine/Destroy()
 	grub = null
@@ -307,6 +307,6 @@ var/global/list/grub_machine_overlays = list()
 			var/mob/living/simple_mob/animal/solargrub_larva/grub = locate() in O
 			if(grub)
 				grub.eject_from_machine(O)
-				to_chat(user, "<span class='warning'>You disturb a grub nesting in \the [O]!</span>")
+				to_chat(user, span_warning("You disturb a grub nesting in \the [O]!"))
 				return
 	return ..()

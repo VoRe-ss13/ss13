@@ -452,10 +452,10 @@
 	name = "custom security cuirass"
 	desc = "An armored vest that protects against some damage. It appears to be created for a wolfhound. The name 'Serdykov L. Antoz' is written on a tag inside one of the haunchplates."
 	species_restricted = null //Species restricted since all it cares about is a taur half
-	icon = 'icons/mob/taursuits_wolf_vr.dmi'
+	icon = 'icons/mob/taursuits_wolf.dmi'
 	icon_state = "serdy_armor"
 	item_state = "serdy_armor"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS //It's a full body suit, minus hands and feet. Arms and legs should be protected, not just the torso. Retains normal security armor values still.
+	body_parts_covered = CHEST|LEGS|ARMS //It's a full body suit, minus hands and feet. Arms and legs should be protected, not just the torso. Retains normal security armor values still.
 
 /obj/item/clothing/suit/armor/vest/wolftaur/serdy/mob_can_equip(var/mob/living/carbon/human/H, slot, disable_warning = 0)
 	if(istype(H) && istype(H.tail_style, /datum/sprite_accessory/tail/taur/wolf))
@@ -475,9 +475,7 @@
 	armor = list(melee = 40, bullet = 30, laser = 30, energy = 10, bomb = 10, bio = 0, rad = 0)
 	icon_override = 'icons/vore/custom_clothes_vr.dmi'
 	item_state = "serdyhelm_mob"
-	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
-	heat_protection = HEAD
 	max_heat_protection_temperature = HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.7
 	w_class = ITEMSIZE_NORMAL
@@ -507,7 +505,7 @@
 	flags_inv = HIDEJUMPSUIT|HIDETIE|HIDEHOLSTER
 
 /obj/item/clothing/head/fluff/pink_tiara
-	name = "Pink Tourmaline Tiara"
+	name = "pink tourmaline tiara"
 	desc = "A small, steel tiara with a large, pink tourmaline gem in the center."
 	icon_state = "amp"
 	body_parts_covered = 0
@@ -532,8 +530,8 @@
 	var/client/owner_c = null //They'll be dead when we message them probably.
 	var/state = 0 //0 - New, 1 - Paired, 2 - Breaking, 3 - Broken (same as iconstates)
 
-/obj/item/clothing/accessory/collar/khcrystal/New()
-	..()
+/obj/item/clothing/accessory/collar/khcrystal/Initialize(mapload)
+	. = ..()
 	update_state(0)
 
 /obj/item/clothing/accessory/collar/khcrystal/Destroy() //Waitwaitwait
@@ -576,8 +574,8 @@
 	update_icon()
 
 /obj/item/paper/khcrystal_manual
-	name = "NT-LC91-1 manual"
-	info = {"<h4>NT-LC91-1 Life Crystal</h4>
+	name = "VM-LC91-1 manual"
+	info = {"<h4>VM-LC91-1 Life Crystal</h4>
 	<h5>Usage</h5>
 	<ol>
 		<li>Hold unlinked crystal in hand.</li>
@@ -586,8 +584,8 @@
 	</ol>
 	<br />
 	<h5>Purpose</h5>
-	<p>The NanoTrasen Life Crystal is a small device typically worn around the neck for the purpose of reporting your status to the off-world mind and body backup systems, so that appropriate measures can be taken in the case of your body's demise. The whole device is housed inside a pleasing-to-the-eye elongated quartz crystal.</p>
-	<p>Upon your body's desmise, the crystal will send a transmission to the location specified in your employee file.</p>
+	<p>The Vey-Medical Life Crystal is a small device typically worn around the neck for the purpose of reporting your status to the HAVENS (High-AVailability ENgram Storage) system, so that appropriate measures can be taken in the case of your body's demise. The whole device is housed inside a pleasing-to-the-eye elongated diamond.</p>
+	<p>Upon your body's demise, the crystal will send a transmission to HAVENS. Depending on your membership level, the appropriate actions can be taken to ensure that you are back up and enjoying existence as soon as possible.</p>
 
 	<p>While NanoTrasen distributes these devices to their employees for free, they do not provide revival services with the crystals. It is the employee's responsibility to either negotiate a service with NanoTrasen or from other companies that provide the service. </p>
 	<br />
@@ -611,15 +609,15 @@
 	name = "life crystal case"
 	icon = 'icons/vore/custom_items_vr.dmi'
 	icon_state = "khlifebox"
-	desc = "This case can only hold the NT-LC91-1 and a manual."
+	desc = "This case can only hold the VM-LC91-1 and a manual."
 	item_state_slots = list(slot_r_hand_str = "syringe_kit", slot_l_hand_str = "syringe_kit")
 	storage_slots = 2
 	can_hold = list(/obj/item/paper/khcrystal_manual, /obj/item/clothing/accessory/collar/khcrystal)
 	max_storage_space = ITEMSIZE_COST_SMALL * 2
 	w_class = ITEMSIZE_SMALL
 
-/obj/item/storage/box/khcrystal/New()
-	..()
+/obj/item/storage/box/khcrystal/Initialize(mapload)
+	. = ..()
 	new /obj/item/paper/khcrystal_manual(src)
 	new /obj/item/clothing/accessory/collar/khcrystal(src)
 
@@ -686,13 +684,13 @@
 	slowdown = 0
 	taurtype = /datum/sprite_accessory/tail/taur/feline/tempest
 	no_message = "These saddlebags seem to be fitted for someone else, and keep slipping off!"
-	action_button_name = "Toggle Mlembulance Mode"
+	actions_types = list(/datum/action/item_action/toggle_mlembulance)
 	var/ambulance = FALSE
 	var/datum/looping_sound/ambulance/soundloop
 	var/ambulance_state = FALSE
 	var/ambulance_last_switch = 0
 
-/obj/item/storage/backpack/saddlebag/tempest/Initialize()
+/obj/item/storage/backpack/saddlebag/tempest/Initialize(mapload)
 	soundloop = new(list(src), FALSE)
 	return ..()
 
@@ -700,7 +698,7 @@
 	QDEL_NULL(soundloop)
 	return ..()
 
-/obj/item/storage/backpack/saddlebag/tempest/ui_action_click()
+/obj/item/storage/backpack/saddlebag/tempest/ui_action_click(mob/user, actiontype)
 	ambulance = !(ambulance)
 	if(ambulance)
 		START_PROCESSING(SSobj, src)
@@ -776,6 +774,9 @@
 	icon_state = "amayarahlwahID"
 	desc = "A primarily blue ID with a holographic 'WAH' etched onto its back. The letters do not obscure anything important on the card. It is shiny and it feels very bumpy."
 	title_strings = list("Amaya Rahl's Wah-identification card", "Amaya Rahl's Wah-ID card")
+
+/obj/item/clothing/glasses/fluff
+	name = DEVELOPER_WARNING_NAME
 
 //General use, Verk felt like sharing.
 /obj/item/clothing/glasses/fluff/science_proper
@@ -870,7 +871,7 @@
 
 /obj/item/fluff/injector/monkey/attack(mob/living/M, mob/living/user)
 
-	if(usr == M) //Is the person using it on theirself?
+	if(user == M) //Is the person using it on theirself?
 		if(ishuman(M)) //If so, monkify them.
 			var/mob/living/carbon/human/H = user
 			H.monkeyize()
@@ -884,7 +885,7 @@
 
 /obj/item/fluff/injector/numb_bite/attack(mob/living/M, mob/living/user)
 
-	if(usr == M) //Is the person using it on theirself?
+	if(user == M) //Is the person using it on theirself?
 		if(ishuman(M)) //Give them numbing bites.
 			var/mob/living/carbon/human/H = user
 			H.species.give_numbing_bite() //This was annoying, but this is the easiest way of performing it.
@@ -902,8 +903,8 @@
 				slot_r_hand_str = 'icons/vore/custom_items_right_hand_vr.dmi',
 				)
 
-/obj/item/material/twohanded/fluff/New(var/newloc)
-	..(newloc," ") //See materials_vr_dmi for more information as to why this is a blank space.
+/obj/item/material/twohanded/fluff/Initialize(mapload)
+	. = ..(mapload," ") //See materials_vr_dmi for more information as to why this is a blank space.
 
 //jacknoir413:Areax Third
 /obj/item/melee/baton/fluff/stunstaff
@@ -926,11 +927,10 @@
 	var/wielded = 0
 	var/base_name = "stunstaff"
 
-/obj/item/melee/baton/fluff/stunstaff/New()
-	..()
+/obj/item/melee/baton/fluff/stunstaff/Initialize(mapload)
+	. = ..()
 	bcell = new/obj/item/cell/device/weapon(src)
 	update_icon()
-	return
 
 /obj/item/melee/baton/fluff/stunstaff/update_held_icon()
 	var/mob/living/M = loc
@@ -961,7 +961,7 @@
 	else
 		set_light(0)
 
-/obj/item/melee/baton/fluff/stunstaff/dropped()
+/obj/item/melee/baton/fluff/stunstaff/dropped(mob/user)
 	..()
 	if(wielded)
 		wielded = 0
@@ -996,8 +996,8 @@
 	max_w_class = ITEMSIZE_HUGE
 	max_storage_space = 16
 
-/obj/item/storage/backpack/fluff/stunstaff/New()
-	..()
+/obj/item/storage/backpack/fluff/stunstaff/Initialize(mapload)
+	. = ..()
 	new /obj/item/melee/baton/fluff/stunstaff(src)
 
 
@@ -1047,7 +1047,7 @@
 	else
 		activate(user)
 
-	if(istype(user,/mob/living/carbon/human))
+	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		H.update_inv_l_hand()
 		H.update_inv_r_hand()
@@ -1075,7 +1075,7 @@
 	allowed = list(/obj/item/shield/fluff/wolfgirlshield)
 	damtype = HALLOSS
 
-/obj/item/melee/fluffstuff/wolfgirlsword/dropped(var/mob/user)
+/obj/item/melee/fluffstuff/wolfgirlsword/dropped(mob/user)
 	..()
 	if(!istype(loc,/mob))
 		deactivate(user)
@@ -1156,28 +1156,27 @@
 	name = "flask of expensive alcohol"
 	desc = "A standard vacuum-flask filled with good and expensive drink."
 
-/obj/item/reagent_containers/food/drinks/flask/vacuumflask/fluff/viktor/Initialize()
+/obj/item/reagent_containers/food/drinks/flask/vacuumflask/fluff/viktor/Initialize(mapload)
 	. = ..()
-	reagents.add_reagent("pwine", 60)
+	reagents.add_reagent(REAGENT_ID_PWINE, 60)
 
 //RadiantAurora: Tiemli Kroto
 /obj/item/clothing/glasses/welding/tiemgogs
-   name = "custom-fitted welding goggles"
-   desc = "A pair of thick, custom-fitted goggles with LEDs above the lenses. Ruggedly engraved below the lenses is the name 'Tiemli Kroto'."
+	name = "custom-fitted welding goggles"
+	desc = "A pair of thick, custom-fitted goggles with LEDs above the lenses. Ruggedly engraved below the lenses is the name 'Tiemli Kroto'."
 
-   icon = 'icons/vore/custom_items_vr.dmi'
-   icon_state = "tiemgogs"
+	icon = 'icons/vore/custom_items_vr.dmi'
+	icon_state = "tiemgogs"
 
-   icon_override = 'icons/vore/custom_clothes_vr.dmi'
-   icon_state = "tiemgogs"
+	icon_override = 'icons/vore/custom_clothes_vr.dmi'
+	icon_state = "tiemgogs"
 
 /obj/item/clothing/glasses/welding/tiemgogs/mob_can_equip(var/mob/living/carbon/human/H, slot, disable_warning = 0)
-   if(..())
-      if(H.ckey != "radiantaurora")
-         to_chat(H, span_warning("These don't look like they were made to fit you..."))
-         return 0
-      else
-         return 1
+	if(..())
+		if(H.ckey != "radiantaurora")
+			to_chat(H, span_warning("These don't look like they were made to fit you..."))
+			return 0
+		return 1
 
 //Ryumi - Nikki Yumeno
 /obj/item/rig/nikki
@@ -1203,12 +1202,7 @@
 	glove_type = null
 	boot_type = null
 
-	allowed = list(
-		/obj/item/flashlight,
-		/obj/item/tank,
-		/obj/item/suit_cooling_unit,
-		/obj/item/storage,
-		)
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, POCKET_SUIT_REGULATORS, POCKET_STORAGE)
 
 /obj/item/rig/nikki/attackby(obj/item/W, mob/living/user)
 	//This thing accepts ONLY mounted sizeguns. That's IT. Nothing else!
@@ -1227,11 +1221,11 @@
 
 //Nickcrazy - Damon Bones Xrim
 /obj/item/clothing/suit/storage/toggle/bomber/bombersec
-    name = "Security Bomber Jacket"
-    desc = "A black bomber jacket with the security emblem sewn onto it."
-    icon = 'icons/vore/custom_items_vr.dmi'
-    icon_override = 'icons/vore/custom_items_vr.dmi'
-    icon_state = "bombersec"
+	name = "Security Bomber Jacket"
+	desc = "A black bomber jacket with the security emblem sewn onto it."
+	icon = 'icons/vore/custom_items_vr.dmi'
+	icon_override = 'icons/vore/custom_items_vr.dmi'
+	icon_state = "bombersec"
 
 
 //pimientopyro - Scylla Casmus
@@ -1267,15 +1261,15 @@
 	base_name = "Clara's Vacuum Flask"
 	base_icon = "claraflask"
 	icon = 'icons/vore/custom_items_vr.dmi'
-	center_of_mass_x = 15 //CHOMPEdit
-	center_of_mass_y= 4 //CHOMPEdit
+	center_of_mass_x = 15
+	center_of_mass_y = 4
 	filling_states = list(15, 30, 50, 60, 80, 100)
 	volume = 60
 
-/obj/item/reagent_containers/food/drinks/glass2/fluff/claraflask/Initialize()
+/obj/item/reagent_containers/food/drinks/glass2/fluff/claraflask/Initialize(mapload)
 	. = ..()
-	reagents.add_reagent("tea", 40)
-	reagents.add_reagent("milk", 20)
+	reagents.add_reagent(REAGENT_ID_TEA, 40)
+	reagents.add_reagent(REAGENT_ID_MILK, 20)
 
 /obj/item/reagent_containers/food/drinks/glass2/fluff/claraflask/update_icon()
 	..()
@@ -1349,12 +1343,12 @@ End CHOMP Removal*/
 	w_class = ITEMSIZE_TINY
 	starts_with = list(/obj/item/clothing/mask/smokable/cigarette = 7)
 
-/obj/item/storage/fancy/fluff/charlotte/New()
+/obj/item/storage/fancy/fluff/charlotte/Initialize(mapload)
 	if(!open_state)
 		open_state = "[initial(icon_state)]0"
 	if(!closed_state)
 		closed_state = "[initial(icon_state)]"
-	..()
+	. = ..()
 
 /obj/item/storage/fancy/fluff/charlotte/update_icon()
 	cut_overlays()
@@ -1383,7 +1377,7 @@ End CHOMP Removal*/
 	desc = "A mostly decorative knife made from thin ceramic and toothed with large black fangs. Printed on the flat is an eight-armed cross, like an asterisk with an extra stroke, ringed by a calligraphy-style crescent."
 	attack_verb = list("mauled", "bit", "sawed", "butchered")
 	dulled = 1
-	default_material = "glass"
+	default_material = MAT_GLASS
 
 
 //Ashling - Antoinette deKaultieste
@@ -1398,9 +1392,9 @@ End CHOMP Removal*/
 	desc = "A small bottle of finely ground poppyseed and mixed dried berries."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bottle3"
-	prefill = list("bicaridine" = 30, "nutriment" = 30)
+	prefill = list(REAGENT_ID_BICARIDINE = 30, REAGENT_ID_NUTRIMENT = 30)
 
-/obj/item/clothing/accessory/storage/ritualharness/fluff/antoinette/Initialize()
+/obj/item/clothing/accessory/storage/ritualharness/fluff/antoinette/Initialize(mapload)
 	. = ..()
 	hold.max_storage_space = ITEMSIZE_COST_SMALL * 2
 	hold.can_hold = list(/obj/item/material/knife, /obj/item/reagent_containers/glass/bottle)
@@ -1474,16 +1468,6 @@ End CHOMP Removal*/
 	sharp = TRUE
 	edge = TRUE
 
-//PastelPrinceDan - Kiyoshi/Masumi Maki
-/obj/item/toy/plushie/fluff/slimeowshi
-	name = "Slime-Cat " + JOB_RESEARCH_DIRECTOR + " plushie"
-	desc = "An adorable stuffed toy that resembles a slime. It's pink, and has little cat ears, as well as a tail! Atop its head is a small beret with a " + JOB_RESEARCH_DIRECTOR + "'s insignia."
-	icon = 'icons/vore/custom_items_vr.dmi'
-	icon_state = "kimeowshi"
-	attack_verb = list("blorbled", "slimed", "absorbed", "glomped")
-	gender = PLURAL // this seems like a good idea but probably prone to changing. todo: ask dan
-	// the only reason this thought is relevant because the base slimeplush has its gender set to female
-
 //YeCrowbarMan - Lemon Yellow
 /obj/item/toy/plushie/fluff/lemonplush
 	name = "yellow slime plushie"
@@ -1494,21 +1478,21 @@ End CHOMP Removal*/
 
 //Bricker98:Nettie Stough
 /obj/item/modular_computer/tablet/preset/custom_loadout/nettie
-  name = "Remodeled Tablet"
-  desc = "A tablet computer, looks quite high-tech and has some emblems on the back."
-  icon = 'icons/obj/modular_tablet.dmi'
-  icon_state = "elite"
-  icon_state_unpowered = "elite"
+	name = "Remodeled Tablet"
+	desc = "A tablet computer, looks quite high-tech and has some emblems on the back."
+	icon = 'icons/obj/modular_tablet.dmi'
+	icon_state = "elite"
+	icon_state_unpowered = "elite"
 
 /obj/item/modular_computer/tablet/preset/custom_loadout/nettie/install_default_hardware()
-  ..()
-  processor_unit = new/obj/item/computer_hardware/processor_unit/small(src)
-  tesla_link = new/obj/item/computer_hardware/tesla_link(src)
-  hard_drive = new/obj/item/computer_hardware/hard_drive/(src)
-  network_card = new/obj/item/computer_hardware/network_card/advanced(src)
-  nano_printer = new/obj/item/computer_hardware/nano_printer(src)
-  battery_module = new/obj/item/computer_hardware/battery_module(src)
-  battery_module.charge_to_full()
+	..()
+	processor_unit = new/obj/item/computer_hardware/processor_unit/small(src)
+	tesla_link = new/obj/item/computer_hardware/tesla_link(src)
+	hard_drive = new/obj/item/computer_hardware/hard_drive/(src)
+	network_card = new/obj/item/computer_hardware/network_card/advanced(src)
+	nano_printer = new/obj/item/computer_hardware/nano_printer(src)
+	battery_module = new/obj/item/computer_hardware/battery_module(src)
+	battery_module.charge_to_full()
 
 
 //Stobarico - Kyu Comet
@@ -1569,7 +1553,8 @@ End CHOMP Removal*/
 	..()
 	icon_state = "ceph_d6[result]"
 
-/obj/item/dice/loaded/ceph/New()
+/obj/item/dice/loaded/ceph/Initialize(mapload)
+	. = ..()
 	icon_state = "ceph_d6[rand(1,sides)]"
 
 
@@ -1580,3 +1565,11 @@ End CHOMP Removal*/
 
 	icon = 'icons/inventory/accessory/item.dmi'
 	icon_state = "silver"
+
+//beeholddrbeesphb: Evelynn
+/obj/item/laser_pointer/evelynn_fluff
+	name = "Evelynn's Laser Pointer"
+	desc = "A small, furry, and fluffy toy that looks like a bee. It has laser eyes. Upon firing, the lasers make a buzzing noise."
+	icon = 'icons/vore/custom_items_vr.dmi'
+	icon_state = "evelynn"
+	pointer_icon_state = "purple_laser"

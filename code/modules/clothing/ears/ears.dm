@@ -22,7 +22,7 @@
 	set name = "Toggle Headphone Music"
 	set category = "Object"
 	set src in usr
-	if(!istype(usr, /mob/living)) return
+	if(!isliving(usr)) return
 	if(usr.stat) return
 
 	var/base_icon = copytext(icon_state,1,(length(icon_state) - 3 + headphones_on))
@@ -42,7 +42,7 @@
 	Skrell tentacle wear
 */
 /obj/item/clothing/ears/skrell
-	name = "skrell tentacle wear"
+	name = DEVELOPER_WARNING_NAME // "skrell tentacle wear"
 	desc = "Some stuff worn by skrell to adorn their head tentacles."
 	icon = 'icons/inventory/ears/item.dmi'
 	w_class = ITEMSIZE_TINY

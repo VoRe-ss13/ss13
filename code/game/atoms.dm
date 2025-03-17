@@ -39,7 +39,7 @@
 	//Detective Work, used for the duplicate data points kept in the scanners
 	var/list/original_atom
 	// Track if we are already had initialize() called to prevent double-initialization.
-	//var/initialized = FALSE CHOMPEdit moved to flag
+	//var/initialized = FALSE // using the atom flags
 
 	/// Last name used to calculate a color for the chatmessage overlays
 	var/chat_color_name
@@ -56,6 +56,9 @@
 	 * its inherent color, the colored paint applied on it, special color effect etc...
 	 */
 	var/list/atom_colours
+	/// Lazylist of all images to update when we change z levels
+	/// You will need to manage adding/removing from this yourself, but I'll do the updating for you
+	var/list/image/update_on_z
 
 /atom/New(loc, ...)
 	// Don't call ..() unless /datum/New() ever exists
@@ -91,9 +94,9 @@
 /atom/proc/Initialize(mapload, ...)
 	if(QDELETED(src))
 		stack_trace("GC: -- [type] had initialize() called after qdel() --")
-	if(flags & ATOM_INITIALIZED) //CHOMPEdit moved initialized to flag
+	if(flags & ATOM_INITIALIZED)
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
-	flags |= ATOM_INITIALIZED //CHOMPEdit moved initialized to flag
+	flags |= ATOM_INITIALIZED
 	return INITIALIZE_HINT_NORMAL
 
 /atom/Destroy()
@@ -125,7 +128,7 @@
 //return flags that should be added to the viewer's sight var.
 //Otherwise return a negative number to indicate that the view should be cancelled.
 /atom/proc/check_eye(user as mob)
-	if (istype(user, /mob/living/silicon/ai)) // WHYYYY
+	if (isAI(user)) // WHYYYY
 		return 0
 	return -1
 
@@ -152,7 +155,7 @@
 // Used to be for the PROXMOVE flag, but that was terrible, so instead it's just here as a stub for
 // all the atoms that still have the proc, but get events other ways.
 /atom/proc/HasProximity(turf/T, datum/weakref/WF, old_loc)
-	SIGNAL_HANDLER // CHOMPAdd
+	SIGNAL_HANDLER
 	return
 
 //Register listeners on turfs in a certain range
@@ -224,6 +227,7 @@
 
 //All atoms
 /atom/proc/examine(mob/user, var/infix = "", var/suffix = "")
+	SHOULD_CALL_PARENT(TRUE)
 	//This reformat names to get a/an properly working on item descriptions when they are bloody
 	var/f_name = "\a [src][infix]."
 	if(src.blood_DNA && !istype(src, /obj/effect/decal))
@@ -292,6 +296,9 @@
 	return FALSE
 
 /atom/proc/rcd_act(mob/living/user, obj/item/rcd/the_rcd, passed_mode)
+	return
+
+/atom/proc/occult_act(mob/living/user)
 	return
 
 /atom/proc/melt()
@@ -479,7 +486,9 @@
 /atom/proc/add_vomit_floor(mob/living/carbon/M as mob, var/toxvomit = 0)
 	if( istype(src, /turf/simulated) )
 		var/obj/effect/decal/cleanable/vomit/this = new /obj/effect/decal/cleanable/vomit(src)
-		this.virus2 = virus_copylist(M.virus2)
+
+		for(var/datum/disease/D in M.GetViruses())
+			this.viruses |= D.Copy()
 
 		// Make toxins vomit look different
 		if(toxvomit)
@@ -620,17 +629,18 @@
 	. = ..()
 	var/custom_edit_name
 	if(!isliving(src))
-		custom_edit_name = "<a href='?_src_=vars;[HrefToken()];datumedit=\ref[src];varnameedit=name'><b>[src]</b></a>"
+		custom_edit_name = "<a href='byond://?_src_=vars;[HrefToken()];datumedit=\ref[src];varnameedit=name'><b>[src]</b></a>"
 	. += {"
-		[custom_edit_name]
-		<br><font size='1'>
-		<a href='?_src_=vars;[HrefToken()];rotatedatum=\ref[src];rotatedir=left'><<</a>
-		<a href='?_src_=vars;[HrefToken()];datumedit=\ref[src];varnameedit=dir'>[dir2text(dir)]</a>
-		<a href='?_src_=vars;[HrefToken()];rotatedatum=\ref[src];rotatedir=right'>>></a>
-		</font>
+		[custom_edit_name]<br>
 		"}
+	var/content = {"
+		<a href='byond://?_src_=vars;[HrefToken()];rotatedatum=\ref[src];rotatedir=left'><<</a>
+		<a href='byond://?_src_=vars;[HrefToken()];datumedit=\ref[src];varnameedit=dir'>[dir2text(dir)]</a>
+		<a href='byond://?_src_=vars;[HrefToken()];rotatedatum=\ref[src];rotatedir=right'>>></a>
+		"}
+	. += span_small(content)
 	var/turf/T = get_turf(src)
-	. += "<br><font size='1'>[ADMIN_COORDJMP(T)]</font>"
+	. += "<br>" + span_small("[ADMIN_COORDJMP(T)]")
 
 /atom/vv_edit_var(var_name, var_value)
 	switch(var_name)
@@ -791,3 +801,29 @@
 		var/mouseparams = list2params(paramslist)
 		usr_client.Click(src, loc, null, mouseparams)
 		return TRUE
+
+GLOBAL_LIST_EMPTY(icon_dimensions)
+
+/atom/proc/get_oversized_icon_offsets()
+	if (pixel_x == 0 && pixel_y == 0)
+		return list("x" = 0, "y" = 0)
+	var/list/icon_dimensions = get_icon_dimensions(icon)
+	var/icon_width = icon_dimensions["width"]
+	var/icon_height = icon_dimensions["height"]
+	return list(
+		"x" = icon_width > world.icon_size && pixel_x != 0 ? (icon_width - world.icon_size) * 0.5 : 0,
+		"y" = icon_height > world.icon_size /*&& pixel_y != 0*/ ? (icon_height - world.icon_size) * 0.5 : 0, // we don't have pixel_y in use
+	)
+
+/// Returns a list containing the width and height of an icon file
+/proc/get_icon_dimensions(icon_path)
+	// Icons can be a real file(), a rsc backed file(), a dynamic rsc (dyn.rsc) reference (known as a cache reference in byond docs), or an /icon which is pointing to one of those.
+	// Runtime generated dynamic icons are an unbounded concept cache identity wise, the same icon can exist millions of ways and holding them in a list as a key can lead to unbounded memory usage if called often by consumers.
+	// Check distinctly that this is something that has this unspecified concept, and thus that we should not cache.
+	if (!isfile(icon_path) || !length("[icon_path]"))
+		var/icon/my_icon = icon(icon_path)
+		return list("width" = my_icon.Width(), "height" = my_icon.Height())
+	if (isnull(GLOB.icon_dimensions[icon_path]))
+		var/icon/my_icon = icon(icon_path)
+		GLOB.icon_dimensions[icon_path] = list("width" = my_icon.Width(), "height" = my_icon.Height())
+	return GLOB.icon_dimensions[icon_path]

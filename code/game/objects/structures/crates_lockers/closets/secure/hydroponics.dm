@@ -8,7 +8,9 @@
 		/obj/item/clothing/under/rank/hydroponics,
 		/obj/item/clothing/gloves/botanic_leather,
 		/obj/item/analyzer/plant_analyzer,
-		/obj/item/radio/headset/headset_service,
+		/obj/item/radio/headset/service,
+		/obj/item/radio/headset/alt/service,
+		/obj/item/radio/headset/earbud/service,
 		/obj/item/clothing/head/greenbandana,
 		/obj/item/shovel/spade,
 		/obj/item/material/minihoe,
@@ -21,7 +23,7 @@
 		/obj/item/storage/belt/hydro,
 		/obj/item/material/fishing_net/butterfly_net)
 
-/obj/structure/closet/secure_closet/hydroponics/Initialize()
+/obj/structure/closet/secure_closet/hydroponics/Initialize(mapload)
 	if(prob(50))
 		starts_with += /obj/item/clothing/suit/storage/apron
 	else
@@ -33,7 +35,7 @@
 	req_access = list(access_xenobiology)
 	closet_appearance = /decl/closet_appearance/secure_closet/hydroponics/xenoflora
 
-/obj/structure/closet/secure_closet/hydroponics/sci/Initialize()
+/obj/structure/closet/secure_closet/hydroponics/sci/Initialize(mapload)
 	starts_with += /obj/item/clothing/head/bio_hood/scientist
 	starts_with += /obj/item/clothing/suit/bio_suit/scientist
 	starts_with += /obj/item/clothing/mask/gas/clear			// VOREStation Edit: Gasmasks we use are different //Chompedit: not anymore!

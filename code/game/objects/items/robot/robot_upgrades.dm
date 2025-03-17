@@ -158,6 +158,7 @@
 		return 0
 
 	R.emag_items = 1
+	R.robotact.update_static_data_for_all_viewers()
 	return 1
 
 /obj/item/borg/upgrade/basic/language
@@ -364,7 +365,7 @@
 		generic_error(R, type)
 		return 0
 
-	var/obj/T = R.has_upgrade_module(/obj/item/gun/energy/taser/mounted/cyborg)
+	var/obj/T = R.has_upgrade_module(/obj/item/gun/energy/robotic/taser)
 	if(!T)
 		to_chat(usr, span_warning("This robot has had its taser removed!"))
 		return 0
@@ -374,7 +375,7 @@
 		to_chat(usr, "There's no room for another cooling unit!")
 		return 0
 
-	var/obj/item/gun/energy/taser/mounted/cyborg/B = T
+	var/obj/item/gun/energy/robotic/taser/B = T
 	B.recharge_time = max(2 , B.recharge_time - 4)
 	return 1
 

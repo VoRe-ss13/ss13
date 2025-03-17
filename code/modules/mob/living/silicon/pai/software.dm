@@ -34,12 +34,12 @@ var/global/list/default_pai_software = list()
 			default_pai_software[P.id] = P
 	return r
 
-/mob/living/silicon/pai/New()
-	..()
+/mob/living/silicon/pai/Initialize(mapload)
+	. = ..()
 	software = default_pai_software.Copy()
 
 /mob/living/silicon/pai/verb/paiInterface()
-	set category = "pAI Commands"
+	set category = "Abilities.pAI Commands"
 	set name = "Software Interface"
 
 	tgui_interact(src)

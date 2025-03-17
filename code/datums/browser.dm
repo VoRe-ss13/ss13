@@ -87,7 +87,8 @@
 <html>
 	<meta charset=ISO-8859-1">
 	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 		[head_content]
 	</head>
 	<body scroll=auto>
@@ -202,13 +203,13 @@
 
 	var/output =  {"<center><b>[Message]</b></center><br />
 		<div style="text-align:center">
-		<a style="font-size:large;float:[( Button2 ? "left" : "right" )]" href="?src=\ref[src];button=1">[Button1]</a>"}
+		<a style="font-size:large;float:[( Button2 ? "left" : "right" )]" href="byond://?src=\ref[src];button=1">[Button1]</a>"}
 
 	if (Button2)
-		output += {"<a style="font-size:large;[( Button3 ? "" : "float:right" )]" href="?src=\ref[src];button=2">[Button2]</a>"}
+		output += {"<a style="font-size:large;[( Button3 ? "" : "float:right" )]" href="byond://?src=\ref[src];button=2">[Button2]</a>"}
 
 	if (Button3)
-		output += {"<a style="font-size:large;float:right" href="?src=\ref[src];button=3">[Button3]</a>"}
+		output += {"<a style="font-size:large;float:right" href="byond://?src=\ref[src];button=3">[Button3]</a>"}
 
 	output += {"</div>"}
 

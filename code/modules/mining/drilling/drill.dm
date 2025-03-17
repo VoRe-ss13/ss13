@@ -22,42 +22,42 @@
 	var/current_capacity = 0
 
 	var/list/stored_ore = list(
-		"sand" = 0,
-		"hematite" = 0,
-		"carbon" = 0,
-		"raw copper" = 0,
-		"raw tin" = 0,
-		"void opal" = 0,
-		"painite" = 0,
-		"quartz" = 0,
-		"raw bauxite" = 0,
-		"phoron" = 0,
-		"silver" = 0,
-		"gold" = 0,
-		"marble" = 0,
-		"uranium" = 0,
-		"diamond" = 0,
-		"platinum" = 0,
-		"lead" = 0,
-		"mhydrogen" = 0,
-		"verdantium" = 0,
-		"rutile" = 0)
+		ORE_SAND = 0,
+		ORE_HEMATITE = 0,
+		ORE_CARBON = 0,
+		ORE_COPPER = 0,
+		ORE_TIN = 0,
+		ORE_VOPAL = 0,
+		ORE_PAINITE = 0,
+		ORE_QUARTZ = 0,
+		ORE_BAUXITE = 0,
+		ORE_PHORON = 0,
+		ORE_SILVER = 0,
+		ORE_GOLD = 0,
+		ORE_MARBLE = 0,
+		ORE_URANIUM = 0,
+		ORE_DIAMOND = 0,
+		ORE_PLATINUM = 0,
+		ORE_LEAD = 0,
+		ORE_MHYDROGEN = 0,
+		ORE_VERDANTIUM = 0,
+		ORE_RUTILE = 0)
 
 	var/list/ore_types = list(
-		"hematite" = /obj/item/ore/iron,
-		"uranium" = /obj/item/ore/uranium,
-		"gold" = /obj/item/ore/gold,
-		"silver" = /obj/item/ore/silver,
-		"diamond" = /obj/item/ore/diamond,
-		"phoron" = /obj/item/ore/phoron,
-		"platinum" = /obj/item/ore/osmium,
-		"mhydrogen" = /obj/item/ore/hydrogen,
-		"sand" = /obj/item/ore/glass,
-		"carbon" = /obj/item/ore/coal,
-	//	"copper" = /obj/item/ore/copper,
-	//	"tin" = /obj/item/ore/tin,
-	//	"bauxite" = /obj/item/ore/bauxite,
-		"rutile" = /obj/item/ore/rutile
+		ORE_HEMATITE = /obj/item/ore/iron,
+		ORE_URANIUM = /obj/item/ore/uranium,
+		ORE_GOLD = /obj/item/ore/gold,
+		ORE_SILVER = /obj/item/ore/silver,
+		ORE_DIAMOND = /obj/item/ore/diamond,
+		ORE_PHORON = /obj/item/ore/phoron,
+		ORE_PLATINUM = /obj/item/ore/osmium,
+		ORE_MHYDROGEN = /obj/item/ore/hydrogen,
+		ORE_SAND = /obj/item/ore/glass,
+		ORE_CARBON = /obj/item/ore/coal,
+	//	ORE_COPPER = /obj/item/ore/copper,
+	//	ORE_TIN = /obj/item/ore/tin,
+	//	ORE_BAUXITE = /obj/item/ore/bauxite,
+		ORE_RUTILE = /obj/item/ore/rutile
 		)
 
 	//Upgrades
@@ -69,16 +69,16 @@
 
 	// Found with an advanced laser. exotic_drilling >= 1
 	var/list/ore_types_uncommon = list(
-		MAT_MARBLE = /obj/item/ore/marble,
-		//"painite" = /obj/item/ore/painite,
-		//"quartz" = /obj/item/ore/quartz,
-		MAT_LEAD = /obj/item/ore/lead
+		ORE_MARBLE = /obj/item/ore/marble,
+		//ORE_PAINITE = /obj/item/ore/painite,
+		//ORE_QUARTZ = /obj/item/ore/quartz,
+		ORE_LEAD = /obj/item/ore/lead
 		)
 
 	// Found with an ultra laser. exotic_drilling >= 2
 	var/list/ore_types_rare = list(
-		//"void opal" = /obj/item/ore/void_opal,
-		MAT_VERDANTIUM = /obj/item/ore/verdantium
+		//ORE_VOPAL = /obj/item/ore/void_opal,
+		ORE_VERDANTIUM = /obj/item/ore/verdantium
 		)
 
 	//Flags
@@ -104,7 +104,7 @@
 		if(capacity && current_capacity)
 			. += "The drill currently has [current_capacity] capacity taken up and can fit [capacity - current_capacity] more ore."
 
-/obj/machinery/mining/drill/Initialize()
+/obj/machinery/mining/drill/Initialize(mapload)
 	. = ..()
 	if(ispath(cell))
 		cell = new cell(src)
@@ -164,7 +164,7 @@
 		var/turf/simulated/harvesting = pick(resource_field)
 
 		while(resource_field.len && !harvesting.resources)
-			harvesting.has_resources = 0
+			harvesting.turf_resource_types &= ~(TURF_HAS_MINERALS)
 			harvesting.resources = null
 			resource_field -= harvesting
 			if(resource_field.len) // runtime protection
@@ -209,7 +209,7 @@
 					current_capacity++	// Adds the ore to the drill's capacity.
 
 		if(!found_resource)	// If a drill can't see an advanced material, it will destroy it while going through.
-			harvesting.has_resources = 0
+			harvesting.turf_resource_types &= ~(TURF_HAS_MINERALS)
 			harvesting.resources = null
 			resource_field -= harvesting
 	else
@@ -243,14 +243,14 @@
 	if(istype(O, /obj/item/cell))
 		if(cell)
 			// to_chat(user, "The drill already has a cell installed.")
-			balloon_alert(user, "The drill already has a cell installed.") // CHOMPEdit - Changed to balloon alert
+			balloon_alert(user, "the drill already has a cell installed.") // CHOMPEdit - Changed to balloon alert
 		else
 			user.drop_item()
 			O.forceMove(src)
 			cell = O
 			component_parts += O
 			// to_chat(user, "You install \the [O].")
-			balloon_alert(user, "You install \the [O]") // CHOMPEdit - Changed to balloon alert
+			balloon_alert(user, "you install \the [O]") // CHOMPEdit - Changed to balloon alert
 		return
 	..()
 
@@ -260,14 +260,14 @@
 
 	if (panel_open && cell && user.Adjacent(src))
 		// to_chat(user, "You take out \the [cell].")
-		balloon_alert(user, "You take out \the [cell]") // CHOMPEdit - Changed to balloon alert
+		balloon_alert(user, "you take out \the [cell]") // CHOMPEdit - Changed to balloon alert
 		user.put_in_hands(cell)
 		component_parts -= cell
 		cell = null
 		return
 	else if(need_player_check)
 		// to_chat(user, "You hit the manual override and reset the drill's error checking.")
-		balloon_alert(user, "Manual override hit, the drill's error checking resets.") // CHOMPEdit - Changed to balloon alert
+		balloon_alert(user, "manual override hit, the drill's error checking resets.") // CHOMPEdit - Changed to balloon alert
 		need_player_check = 0
 		if(anchored)
 			get_resource_field()
@@ -381,7 +381,7 @@
 		for(var/ix = 0, ix < drill_range, ix++)
 			mine_turf = locate(tx + ix, ty + iy, T.z)
 			if(!istype(mine_turf, /turf/space/))
-				if(mine_turf && mine_turf.has_resources)
+				if(mine_turf && mine_turf.turf_resource_types & TURF_HAS_MINERALS)
 					resource_field += mine_turf
 
 	if(!resource_field.len)
@@ -410,10 +410,10 @@
 				stored_ore[ore] = 0 				// Set the value of the ore in the satchel to 0.
 				current_capacity = 0				// Set the amount of ore in the drill to 0.
 		// to_chat(usr, span_notice("You unload the drill's storage cache into the ore box."))
-		balloon_alert(usr, "You onload the drill's storage cache into the ore box.") // CHOMPEdit - Changed to balloon alert
+		balloon_alert(usr, "you onload the drill's storage cache into the ore box.") // CHOMPEdit - Changed to balloon alert
 	else
 		// to_chat(usr, span_notice("You must move an ore box up to the drill before you can unload it."))
-		balloon_alert(usr, "Move an ore box to the droll before unloading it.") // CHOMPEdit - Changed to balloon alert
+		balloon_alert(usr, "move an ore box to the droll before unloading it.") // CHOMPEdit - Changed to balloon alert
 
 
 /obj/machinery/mining/brace
@@ -429,7 +429,7 @@
 	if(brace_tier >= 3)
 		. += span_notice("The internals of the brace look resilient enough to support a drill by itself.")
 
-/obj/machinery/mining/brace/Initialize()
+/obj/machinery/mining/brace/Initialize(mapload)
 	. = ..()
 	default_apply_parts()
 
@@ -442,7 +442,7 @@
 /obj/machinery/mining/brace/attackby(obj/item/W as obj, mob/user as mob)
 	if(connected && connected.active)
 		// to_chat(user, span_notice("You can't work with the brace of a running drill!"))
-		balloon_alert(user, "You can't work with the brace of a running drill.") // CHOMPEdit - Changed to balloon alert
+		balloon_alert(user, "you can't work with the brace of a running drill.") // CHOMPEdit - Changed to balloon alert
 		return
 
 	if(default_deconstruction_screwdriver(user, W))
@@ -456,7 +456,7 @@
 
 		if(istype(get_turf(src), /turf/space))
 			// to_chat(user, span_notice("You can't anchor something to empty space. Idiot."))
-			balloon_alert(user, "You can't anchor something to empty space. Idiot.") // CHOMPEdit - Changed to balloon alert
+			balloon_alert(user, "you can't anchor something to empty space. Idiot.") // CHOMPEdit - Changed to balloon alert
 			return
 
 		playsound(src, W.usesound, 100, 1)
@@ -510,7 +510,7 @@
 
 	if (src.anchored)
 		// to_chat(usr, "It is anchored in place!")
-		balloon_alert(usr, "It is anchored in place!") // CHOMPEdit - Changed to balloon alert
+		balloon_alert(usr, "it is anchored in place!") // CHOMPEdit - Changed to balloon alert
 		return 0
 
 	src.set_dir(turn(src.dir, 270))

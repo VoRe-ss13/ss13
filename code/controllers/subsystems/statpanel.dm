@@ -31,9 +31,9 @@ SUBSYSTEM_DEF(statpanels)
 			"Map: [using_map.name]",
 			//cached ? "Next Map: [cached.map_name]" : null,
 			//"Next Map: -- Not Available --",
-			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]", // CHOMPEdit
+			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]",
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
-			"Round Time: [ROUND_TIME()]",
+			"Round Time: [roundduration2text()]",
 			"Station Date: [stationdate2text()], [capitalize(GLOB.world_time_season)]", // CHOMPEdit
 			"Station Time: [stationtime2text()]",
 			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)"
@@ -136,7 +136,7 @@ SUBSYSTEM_DEF(statpanels)
 
 	target.stat_panel.send_message("update_stat", list(
 		global_data = global_data,
-		ping_str = "Ping: [round(target.lastping, 1)]ms (Average: [round(target.avgping, 1)]ms)", // CHOMPEdit
+		ping_str = "Ping: [round(target.lastping, 1)]ms (Average: [round(target.avgping, 1)]ms)",
 		other_str = target.mob?.get_status_tab_items(),
 	))
 
@@ -158,21 +158,27 @@ SUBSYSTEM_DEF(statpanels)
 		target.obj_window.atoms_to_show += target.obj_window.examine_target
 		START_PROCESSING(SSobj_tab_items, target.obj_window)
 		refresh_client_obj_view(target)
-	examine_update += "[target.examine_icon]&emsp;<font size='5'>[description_holders["name"]]</font>" //The name, written in big letters.
+	examine_update += "[target.examine_icon]&emsp;" + span_giant("[description_holders["name"]]") //The name, written in big letters.
 	examine_update += "[description_holders["desc"]]" //the default examine text.
 	if(description_holders["info"])
-		examine_update += "<font color='#084B8A'>" + span_bold("[replacetext(description_holders["info"], "\n", "<BR>")]") + "</font><br />" //Blue, informative text.
+		examine_update += span_blue(span_bold("[replacetext(description_holders["info"], "\n", "<BR>")]")) + "<br />" //Blue, informative text.
 	if(description_holders["interactions"])
 		for(var/line in description_holders["interactions"])
-			examine_update += "<font color='#084B8A'>" + span_bold("[line]") + "</font><br />"
+			examine_update += span_blue(span_bold("[line]")) + "<br />"
 	if(description_holders["fluff"])
-		examine_update += "<font color='#298A08'>" + span_bold("[replacetext(description_holders["fluff"], "\n", "<BR>")]") + "</font><br />" //Green, fluff-related text.
+		examine_update += span_green(span_bold("[replacetext(description_holders["fluff"], "\n", "<BR>")]")) + "<br />" //Green, fluff-related text.
 	if(description_holders["antag"])
-		examine_update += "<font color='#8A0808'>" + span_bold("[description_holders["antag"]]") + "</font><br />" //Red, malicious antag-related text
+		examine_update += span_red(span_bold("[description_holders["antag"]]")) + "<br />" //Red, malicious antag-related text
 
 	target.stat_panel.send_message("update_examine", examine_update)
 
 /datum/controller/subsystem/statpanels/proc/set_tickets_tab(client/target)
+	/* CHOMPRemove Start, our tickets are handled differently
+	var/list/tickets = list()
+	if(check_rights_for(target, R_ADMIN|R_SERVER|R_MOD)) //Prevents non-staff from opening the list of ahelp tickets
+		tickets += GLOB.ahelp_tickets.stat_entry(target)
+	tickets += GLOB.mhelp_tickets.stat_entry(target)
+	*/// CHOMPRemove End
 	var/list/tickets = GLOB.tickets.stat_entry(target) // CHOMPEdit
 	target.stat_panel.send_message("update_tickets", tickets)
 
@@ -202,12 +208,12 @@ SUBSYSTEM_DEF(statpanels)
 		return
 	var/list/overrides = list()
 	for(var/image/target_image as anything in target.images)
-		if(!target_image.loc || target_image.loc.loc != target_mob.listed_turf || !target_image.override)
+		if(!target_image.loc || target_image.loc.loc != target.tracked_turf || !target_image.override)
 			continue
 		overrides += target_image.loc
 
-	var/list/atoms_to_display = list(target_mob.listed_turf)
-	for(var/atom/movable/turf_content as anything in target_mob.listed_turf)
+	var/list/atoms_to_display = list(target.tracked_turf)
+	for(var/atom/movable/turf_content as anything in target.tracked_turf)
 		if(turf_content.mouse_opacity == MOUSE_OPACITY_TRANSPARENT)
 			continue
 		if(turf_content.invisibility > target_mob.see_invisible)
@@ -318,12 +324,11 @@ SUBSYSTEM_DEF(statpanels)
 
 	// Handle turfs
 
-	if(target_mob?.listed_turf)
-		if(!target_mob.TurfAdjacent(target_mob.listed_turf))
-			target.stat_panel.send_message("removed_listedturf")
-			target_mob.listed_turf = null
+	if(target.tracked_turf)
+		if(!target_mob.TurfAdjacent(target.tracked_turf))
+			target_mob.set_listed_turf(null)
 
-		else if(target.stat_tab == target_mob?.listed_turf.name || !(target_mob?.listed_turf.name in target.panel_tabs))
+		else if(target.stat_tab == target.tracked_turf.name || !(target.tracked_turf.name in target.panel_tabs))
 			set_turf_examine_tab(target, target_mob)
 			return TRUE
 
@@ -350,6 +355,8 @@ SUBSYSTEM_DEF(statpanels)
 
 /// Stat panel window declaration
 /client/var/datum/tgui_window/stat_panel
+/// Turf examine turf
+/client/var/turf/tracked_turf
 
 /// Datum that holds and tracks info about a client's object window
 /// Really only exists because I want to be able to do logic with signals
@@ -364,8 +371,6 @@ SUBSYSTEM_DEF(statpanels)
 	var/list/atoms_to_imagify = list()
 	/// Our owner client
 	var/client/parent
-	/// Are we currently tracking a turf?
-	var/actively_tracking = FALSE
 	///For reusing this logic for examines
 	var/atom/examine_target
 	var/flags = 0
@@ -417,28 +422,31 @@ SUBSYSTEM_DEF(statpanels)
 	if(!length(to_make))
 		return PROCESS_KILL
 
-/datum/object_window_info/proc/start_turf_tracking()
-	if(actively_tracking)
+/datum/object_window_info/proc/start_turf_tracking(turf/new_turf)
+	if(parent.tracked_turf)
 		stop_turf_tracking()
 	var/static/list/connections = list(
 		COMSIG_MOVABLE_MOVED = PROC_REF(on_mob_move),
 		COMSIG_MOB_LOGOUT = PROC_REF(on_mob_logout),
 	)
 	AddComponent(/datum/component/connect_mob_behalf, parent, connections)
-	RegisterSignal(parent.mob.listed_turf, COMSIG_ATOM_ENTERED, PROC_REF(turflist_changed))
-	RegisterSignal(parent.mob.listed_turf, COMSIG_ATOM_EXITED, PROC_REF(turflist_changed))
-	actively_tracking = TRUE
+	RegisterSignal(new_turf, COMSIG_ATOM_ENTERED, PROC_REF(turflist_changed))
+	RegisterSignal(new_turf, COMSIG_ATOM_EXITED, PROC_REF(turflist_changed))
+	parent.stat_panel.send_message("create_listedturf", new_turf)
+	parent.tracked_turf = new_turf
 
 /datum/object_window_info/proc/stop_turf_tracking()
-	qdel(GetComponent(/datum/component/connect_mob_behalf))
-	UnregisterSignal(parent.mob.listed_turf, COMSIG_ATOM_ENTERED)
-	UnregisterSignal(parent.mob.listed_turf, COMSIG_ATOM_EXITED)
-	actively_tracking = FALSE
+	if(GetComponent(/datum/component/connect_mob_behalf))
+		qdel(GetComponent(/datum/component/connect_mob_behalf))
+	if(parent.tracked_turf)
+		UnregisterSignal(parent.tracked_turf, COMSIG_ATOM_ENTERED)
+		UnregisterSignal(parent.tracked_turf, COMSIG_ATOM_EXITED)
+		parent.stat_panel.send_message("remove_listedturf")
+		parent.tracked_turf = null
 
 /datum/object_window_info/proc/on_mob_move(mob/source)
 	SIGNAL_HANDLER
-	var/turf/listed = source.listed_turf
-	if(!listed || !source.TurfAdjacent(listed))
+	if(!parent.tracked_turf || !source.TurfAdjacent(parent.tracked_turf))
 		source.set_listed_turf(null)
 
 /datum/object_window_info/proc/on_mob_logout(mob/source)
@@ -465,16 +473,12 @@ SUBSYSTEM_DEF(statpanels)
 
 /mob/proc/set_listed_turf(turf/new_turf)
 	if(!client)
-		listed_turf = new_turf
 		return
 	if(!client.obj_window)
 		client.obj_window = new(client)
+	if(client.tracked_turf == new_turf)
+		return
 	if(!new_turf)
 		client.obj_window.stop_turf_tracking() //Needs to go before listed_turf is set to null so signals can be removed
-	listed_turf = new_turf
-
-	if(listed_turf)
-		client.stat_panel.send_message("create_listedturf", listed_turf.name)
-		client.obj_window.start_turf_tracking()
-	else
-		client.stat_panel.send_message("remove_listedturf")
+		return
+	client.obj_window.start_turf_tracking(new_turf)

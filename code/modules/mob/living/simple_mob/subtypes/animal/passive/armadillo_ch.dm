@@ -114,7 +114,7 @@
 
 /obj/item/holder/armadillo
 	origin_tech = list(TECH_BIO = 1)
-	default_worn_icon = 'modular_chomp/icons/mob/head_ch.dmi'
+	default_worn_icon = 'icons/mob/head.dmi'
 	//item_state = "armadillo_rest" //Commented here as a reminder that holders will always set the item_state to icon_rest. You cannot override it like this.
 
 /mob/living/simple_mob/animal/passive/armadillo/torta
@@ -122,7 +122,7 @@
 	desc = "A small, armored mammal. It seems to be territorial and protective of the dorms."
 	ai_holder_type = /datum/ai_holder/simple_mob/armadillo/torta
 
-/mob/living/simple_mob/animal/passive/armadillo/torta/Initialize()
+/mob/living/simple_mob/animal/passive/armadillo/torta/Initialize(mapload)
 	. = ..()
 	if(!hat)
 		hat = new /obj/item/clothing/head/sombrero

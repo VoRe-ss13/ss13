@@ -55,11 +55,11 @@ var/datum/admin_secrets/admin_secrets = new()
 	return name
 
 /datum/admin_secret_item/proc/can_view(var/mob/user)
-	return check_rights(permissions, 0, user)
+	return check_rights_for(user.client, permissions)
 
 /datum/admin_secret_item/proc/can_execute(var/mob/user)
 	if(can_view(user))
-		if(!warn_before_use || tgui_alert(usr, "Execute the command '[name]'?", name, list("No","Yes")) == "Yes")
+		if(!warn_before_use || tgui_alert(user, "Execute the command '[name]'?", name, list("No","Yes")) == "Yes")
 			return 1
 	return 0
 

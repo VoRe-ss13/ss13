@@ -21,6 +21,19 @@ AI MODULES
 	matter = list(MAT_STEEL = 30, MAT_GLASS = 10)
 	var/datum/ai_laws/laws = null
 
+/obj/item/aiModule/examine(mob/user)
+	. = ..()
+	if(!laws)
+		return
+	laws.sort_laws()
+	for(var/datum/ai_law/law in laws.sorted_laws)
+		if(law == laws.zeroth_law_borg)
+			continue
+		if(law == laws.zeroth_law)
+			. += span_info(span_red("[law.get_index()]. [law.law]"))
+		else
+			. += span_infoplain("[law.get_index()]. [law.law]")
+
 /obj/item/aiModule/proc/install(var/atom/movable/AM, var/mob/living/user)
 	if(!user.IsAdvancedToolUser() && isanimal(user))
 		var/mob/living/simple_mob/S = user
@@ -30,53 +43,53 @@ AI MODULES
 	if (istype(AM, /obj/machinery/computer/aiupload))
 		var/obj/machinery/computer/aiupload/comp = AM
 		if(comp.stat & NOPOWER)
-			to_chat(usr, "The upload computer has no power!")
+			to_chat(user, "The upload computer has no power!")
 			return
 		if(comp.stat & BROKEN)
-			to_chat(usr, "The upload computer is broken!")
+			to_chat(user, "The upload computer is broken!")
 			return
 		if (!comp.current)
-			to_chat(usr, "You haven't selected an AI to transmit laws to!")
+			to_chat(user, "You haven't selected an AI to transmit laws to!")
 			return
 
 		if (comp.current.stat == 2 || comp.current.control_disabled == 1)
-			to_chat(usr, "Upload failed. No signal is being detected from the AI.")
+			to_chat(user, "Upload failed. No signal is being detected from the AI.")
 		else if (comp.current.see_in_dark == 0)
-			to_chat(usr, "Upload failed. Only a faint signal is being detected from the AI, and it is not responding to our requests. It may be low on power.")
+			to_chat(user, "Upload failed. Only a faint signal is being detected from the AI, and it is not responding to our requests. It may be low on power.")
 		else
-			src.transmitInstructions(comp.current, usr)
+			src.transmitInstructions(comp.current, user)
 			to_chat(comp.current,  "These are your laws now:")
 			comp.current.show_laws()
 			for(var/mob/living/silicon/robot/R in mob_list)
 				if(R.lawupdate && (R.connected_ai == comp.current))
 					to_chat(R, "These are your laws now:")
 					R.show_laws()
-			to_chat(usr, "Upload complete. The AI's laws have been modified.")
+			to_chat(user, "Upload complete. The AI's laws have been modified.")
 
 
 	else if (istype(AM, /obj/machinery/computer/borgupload))
 		var/obj/machinery/computer/borgupload/comp = AM
 		if(comp.stat & NOPOWER)
-			to_chat(usr, "The upload computer has no power!")
+			to_chat(user, "The upload computer has no power!")
 			return
 		if(comp.stat & BROKEN)
-			to_chat(usr, "The upload computer is broken!")
+			to_chat(user, "The upload computer is broken!")
 			return
 		if (!comp.current)
-			to_chat(usr, "You haven't selected a robot to transmit laws to!")
+			to_chat(user, "You haven't selected a robot to transmit laws to!")
 			return
 
 		if (comp.current.stat == 2 || comp.current.emagged)
-			to_chat(usr, "Upload failed. No signal is being detected from the robot.")
+			to_chat(user, "Upload failed. No signal is being detected from the robot.")
 		else if (comp.current.connected_ai)
-			to_chat(usr, "Upload failed. The robot is slaved to an AI.")
+			to_chat(user, "Upload failed. The robot is slaved to an AI.")
 		else
-			src.transmitInstructions(comp.current, usr)
+			src.transmitInstructions(comp.current, user)
 			to_chat(comp.current,  "These are your laws now:")
 			comp.current.show_laws()
-			to_chat(usr, "Upload complete. The robot's laws have been modified.")
+			to_chat(user, "Upload complete. The robot's laws have been modified.")
 
-	else if(istype(AM, /mob/living/silicon/robot))
+	else if(isrobot(AM))
 		var/mob/living/silicon/robot/R = AM
 		if(R.stat == DEAD)
 			to_chat(user, span_warning("Law Upload Error: Unit is nonfunctional."))
@@ -133,13 +146,13 @@ AI MODULES
 
 /obj/item/aiModule/safeguard/attack_self(var/mob/user as mob)
 	..()
-	var/targName = sanitize(tgui_input_text(usr, "Please enter the name of the person to safeguard.", "Safeguard who?", user.name))
+	var/targName = sanitize(tgui_input_text(user, "Please enter the name of the person to safeguard.", "Safeguard who?", user.name))
 	targetName = targName
 	desc = text("A 'safeguard' AI module: 'Safeguard []. Anyone threatening or attempting to harm [] is no longer to be considered a crew member, and is a threat which must be neutralized.'", targetName, targetName)
 
 /obj/item/aiModule/safeguard/install(var/obj/machinery/computer/C, var/mob/living/user)
 	if(!targetName)
-		to_chat(usr, "No name detected on module, please enter one.")
+		to_chat(user, "No name detected on module, please enter one.")
 		return 0
 	..()
 
@@ -159,13 +172,13 @@ AI MODULES
 
 /obj/item/aiModule/oneHuman/attack_self(var/mob/user as mob)
 	..()
-	var/targName = sanitize(tgui_input_text(usr, "Please enter the name of the person who is the only crew member.", "Who?", user.real_name))
+	var/targName = sanitize(tgui_input_text(user, "Please enter the name of the person who is the only crew member.", "Who?", user.real_name))
 	targetName = targName
 	desc = text("A 'one crew member' AI module: 'Only [] is a crew member.'", targetName)
 
 /obj/item/aiModule/oneHuman/install(var/obj/machinery/computer/C, var/mob/living/user)
 	if(!targetName)
-		to_chat(usr, "No name detected on module, please enter one.")
+		to_chat(user, "No name detected on module, please enter one.")
 		return 0
 	return ..()
 
@@ -240,11 +253,11 @@ AI MODULES
 
 /obj/item/aiModule/freeform/attack_self(var/mob/user as mob)
 	..()
-	var/new_lawpos = tgui_input_number(usr, "Please enter the priority for your new law. Can only write to law sectors 15 and above.", "Law Priority (15+)", lawpos)
+	var/new_lawpos = tgui_input_number(user, "Please enter the priority for your new law. Can only write to law sectors 15 and above.", "Law Priority (15+)", lawpos)
 	if(new_lawpos < MIN_SUPPLIED_LAW_NUMBER)	return
 	lawpos = min(new_lawpos, MAX_SUPPLIED_LAW_NUMBER)
 	var/newlaw = ""
-	var/targName = sanitize(tgui_input_text(usr, "Please enter a new law for the AI.", "Freeform Law Entry", newlaw))
+	var/targName = sanitize(tgui_input_text(user, "Please enter a new law for the AI.", "Freeform Law Entry", newlaw))
 	newFreeFormLaw = targName
 	desc = "A 'freeform' AI module: ([lawpos]) '[newFreeFormLaw]'"
 
@@ -257,7 +270,7 @@ AI MODULES
 
 /obj/item/aiModule/freeform/install(var/obj/machinery/computer/C, var/mob/living/user)
 	if(!newFreeFormLaw)
-		to_chat(usr, "No law detected on module, please create one.")
+		to_chat(user, "No law detected on module, please create one.")
 		return 0
 	..()
 
@@ -270,7 +283,7 @@ AI MODULES
 	origin_tech = list(TECH_DATA = 3, TECH_MATERIAL = 4)
 
 // VOREstation edit: use map default laws
-/obj/item/aiModule/reset/Initialize()
+/obj/item/aiModule/reset/Initialize(mapload)
 	. = ..()
 	laws = new global.using_map.default_law_type // Pull from loaded map
 
@@ -362,7 +375,7 @@ AI MODULES
 /obj/item/aiModule/freeformcore/attack_self(var/mob/user as mob)
 	..()
 	var/newlaw = ""
-	var/targName = sanitize(tgui_input_text(usr, "Please enter a new core law for the AI.", "Freeform Law Entry", newlaw))
+	var/targName = sanitize(tgui_input_text(user, "Please enter a new core law for the AI.", "Freeform Law Entry", newlaw))
 	newFreeFormLaw = targName
 	desc = "A 'freeform' Core AI module:  '[newFreeFormLaw]'"
 
@@ -373,7 +386,7 @@ AI MODULES
 
 /obj/item/aiModule/freeformcore/install(var/obj/machinery/computer/C, var/mob/living/user)
 	if(!newFreeFormLaw)
-		to_chat(usr, "No law detected on module, please create one.")
+		to_chat(user, "No law detected on module, please create one.")
 		return 0
 	..()
 
@@ -386,7 +399,7 @@ AI MODULES
 /obj/item/aiModule/syndicate/attack_self(var/mob/user as mob)
 	..()
 	var/newlaw = ""
-	var/targName = sanitize(tgui_input_text(usr, "Please enter a new law for the AI.", "Freeform Law Entry", newlaw))
+	var/targName = sanitize(tgui_input_text(user, "Please enter a new law for the AI.", "Freeform Law Entry", newlaw))
 	newFreeFormLaw = targName
 	desc = "A hacked AI law module:  '[newFreeFormLaw]'"
 
@@ -402,7 +415,7 @@ AI MODULES
 
 /obj/item/aiModule/syndicate/install(var/obj/machinery/computer/C, var/mob/living/user)
 	if(!newFreeFormLaw)
-		to_chat(usr, "No law detected on module, please create one.")
+		to_chat(user, "No law detected on module, please create one.")
 		return 0
 	..()
 

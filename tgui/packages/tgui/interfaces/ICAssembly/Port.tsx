@@ -1,8 +1,8 @@
-import { decodeHtmlEntities } from 'common/string';
 import { Component, createRef } from 'react';
 import { Box, Stack, Tooltip } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
 
-import { PortData } from './types';
+import type { PortData } from './types';
 
 export type PortProps = {
   port: PortData;

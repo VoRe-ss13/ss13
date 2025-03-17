@@ -29,6 +29,10 @@ export const SETTINGS_TABS = [
     id: 'chatPage',
     name: 'Chat Tabs',
   },
+  {
+    id: 'statPanel',
+    name: 'Stat Panel',
+  },
 ];
 
 export const FONTS_DISABLED = 'Default';
@@ -48,3 +52,5 @@ export const FONTS = [
 ];
 
 export const MAX_HIGHLIGHT_SETTINGS = 10;
+
+export const blacklisted_tags = ['a', 'iframe', 'link', 'video'];

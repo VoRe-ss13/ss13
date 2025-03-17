@@ -1,5 +1,5 @@
 /datum/admins/proc/capture_map(tx as null|num, ty as null|num, tz as null|num, range as null|num)
-	set category = "Server.Game" //CHOMPEdit
+	set category = "Server.Game"
 	set name = "Capture Map Part"
 	set desc = "Usage: Capture-Map-Part target_x_cord target_y_cord target_z_cord range (captures part of a map originating from bottom left corner)"
 
@@ -46,7 +46,7 @@
 			if(A)
 				var/icon/img = getFlatIcon(A)
 				if(istype(img, /icon))
-					if(istype(A, /mob/living) && A:lying)
+					if(isliving(A) && A:lying)
 						img.BecomeLying()
 					var/xoff = (A.x - tx) * 32
 					var/yoff = (A.y - ty) * 32

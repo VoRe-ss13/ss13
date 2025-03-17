@@ -50,13 +50,10 @@
 		set_light(0)
 
 
-/obj/machinery/power/shield_generator/Initialize()
+/obj/machinery/power/shield_generator/Initialize(mapload)
 	. = ..()
 	if(!wires)
 		wires = new(src)
-	// TODO - Remove this bit once machines are converted to Initialize
-	if(ispath(circuit))
-		circuit = new circuit(src)
 	default_apply_parts()
 	connect_to_network()
 
@@ -458,8 +455,8 @@
 		if("begin_shutdown")
 			if(running < SHIELD_RUNNING) // Discharging or off
 				return
-			var/alert = tgui_alert(usr, "Are you sure you wish to do this? It will drain the power inside the internal storage rapidly.", "Are you sure?", list("Yes", "No"))
-			if(tgui_status(usr, state) != STATUS_INTERACTIVE)
+			var/alert = tgui_alert(ui.user, "Are you sure you wish to do this? It will drain the power inside the internal storage rapidly.", "Are you sure?", list("Yes", "No"))
+			if(tgui_status(ui.user, state) != STATUS_INTERACTIVE)
 				return
 			if(running < SHIELD_RUNNING)
 				return
@@ -485,7 +482,7 @@
 			if(!running)
 				return TRUE
 
-			var/choice = tgui_alert(usr, "Are you sure that you want to initiate an emergency shield shutdown? This will instantly drop the shield, and may result in unstable release of stored electromagnetic energy. Proceed at your own risk.", "Confirmation", list("No", "Yes"))
+			var/choice = tgui_alert(ui.user, "Are you sure that you want to initiate an emergency shield shutdown? This will instantly drop the shield, and may result in unstable release of stored electromagnetic energy. Proceed at your own risk.", "Confirmation", list("No", "Yes"))
 			if((choice != "Yes") || !running)
 				return TRUE
 
@@ -493,7 +490,7 @@
 			offline_for = round(current_energy / (SHIELD_SHUTDOWN_DISPERSION_RATE / 1.5))
 			var/old_energy = current_energy
 			shutdown_field()
-			log_and_message_admins("has triggered \the [src]'s emergency shutdown!", usr)
+			log_and_message_admins("has triggered \the [src]'s emergency shutdown!", ui.user)
 			spawn()
 				empulse(src, old_energy / 60000000, old_energy / 32000000, 1) // If shields are charged at 450 MJ, the EMP will be 7.5, 14.0625. 90 MJ, 1.5, 2.8125
 			old_energy = 0
@@ -505,14 +502,14 @@
 
 	switch(action)
 		if("set_range")
-			var/new_range = tgui_input_number(usr, "Enter new field range (1-[world.maxx]). Leave blank to cancel.", "Field Radius Control", field_radius, world.maxx, 1)
+			var/new_range = tgui_input_number(ui.user, "Enter new field range (1-[world.maxx]). Leave blank to cancel.", "Field Radius Control", field_radius, world.maxx, 1)
 			if(!new_range)
 				return TRUE
 			target_radius = between(1, new_range, world.maxx)
 			return TRUE
 
 		if("set_input_cap")
-			var/new_cap = round(tgui_input_number(usr, "Enter new input cap (in kW). Enter 0 or nothing to disable input cap.", "Generator Power Control", round(input_cap / 1000)))
+			var/new_cap = round(tgui_input_number(ui.user, "Enter new input cap (in kW). Enter 0 or nothing to disable input cap.", "Generator Power Control", round(input_cap / 1000)))
 			if(!new_cap)
 				input_cap = 0
 				return
@@ -695,12 +692,12 @@
 
 
 // Starts fully charged
-/obj/machinery/power/shield_generator/charged/Initialize()
+/obj/machinery/power/shield_generator/charged/Initialize(mapload)
 	. = ..()
 	current_energy = max_energy
 
 // Starts with the best SMES coil and capacitor (and fully charged)
-/obj/machinery/power/shield_generator/upgraded/Initialize()
+/obj/machinery/power/shield_generator/upgraded/Initialize(mapload)
 	. = ..()
 	for(var/obj/item/smes_coil/sc in component_parts)
 		component_parts -= sc

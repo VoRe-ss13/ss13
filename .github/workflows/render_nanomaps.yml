@@ -9,7 +9,7 @@ on:
     branches:
       - master
     paths:
-      - 'maps/**'
+      - 'modular_chomp/maps/**'
   workflow_dispatch:
 
 permissions: {}
@@ -20,7 +20,7 @@ jobs:
       pull-requests: write # to create pull requests (repo-sync/pull-request)
 
     name: 'Generate NanoMaps'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
     - name: Clone
       uses: actions/checkout@v4
@@ -46,7 +46,7 @@ jobs:
       run: chmod -R +x ./tools/github-actions
 
     - name: Generate Maps
-      run: './tools/github-actions/nanomap-renderer-invoker.sh'
+      run: tools/github-actions/nanomap-renderer-invoker.sh
 
     - name: Commit Maps
       run: |

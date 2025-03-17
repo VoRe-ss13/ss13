@@ -2,7 +2,7 @@
 /client/proc/modify_robot(var/mob/living/silicon/robot/target in silicon_mob_list)
 	set name = "Modify Robot Module"
 	set desc = "Allows to add or remove modules to/from robots."
-	set category = "Admin.Silicon" //CHOMPEdit
+	set category = "Admin.Silicon"
 	if(!check_rights(R_ADMIN|R_FUN|R_VAREDIT|R_EVENT))
 		return
 
@@ -62,7 +62,7 @@
 			to_chat(usr, span_danger("[target] was recently reset, you must wait until module selection has been completed before continuing modifying."))
 			continue
 
-		log_and_message_admins("[key_name(src)] has used MODIFYROBOT ([modification_choice]) on [key_name(target)].")
+		log_and_message_admins("has used MODIFYROBOT ([modification_choice]) on [key_name(target)].", usr)
 		feedback_add_details("admin_verb","MODIFYROBOT") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 		switch(modification_choice)
@@ -90,8 +90,8 @@
 						robot.module.contents.Remove(add_item)
 						target.module.modules.Add(add_item)
 						target.module.contents.Add(add_item)
-						spawn(0) //ChompEDIT Must be after to allow the movement to finish
-							SEND_SIGNAL(add_item, COMSIG_OBSERVER_MOVED)//ChompEDIT - report the movement since setting loc doesn't call Move or Moved
+						spawn(0) Must be after to allow the movement to finish
+							SEND_SIGNAL(add_item, COMSIG_OBSERVER_MOVED)
 						target.hud_used.update_robot_modules_display()
 						to_chat(usr, span_danger("You added \"[add_item]\" to [target]."))
 						if(istype(add_item, /obj/item/stack/))
@@ -240,8 +240,8 @@
 						target.radio.keyslot = new /obj/item/encryptionkey/syndicate(target)
 						target.radio.syndie = 1
 					target.module.channels += list("[selected_radio_channel]" = 1)
-					target.radio.channels[selected_radio_channel] += target.module.channels[selected_radio_channel]
-					target.radio.secure_radio_connections[selected_radio_channel] += radio_controller.add_object(target.radio, radiochannels[selected_radio_channel],  RADIO_CHAT)
+					target.radio.channels[selected_radio_channel] = target.module.channels[selected_radio_channel]
+					target.radio.secure_radio_connections[selected_radio_channel] = radio_controller.add_object(target.radio, radiochannels[selected_radio_channel],  RADIO_CHAT)
 					available_channels -= selected_radio_channel
 					to_chat(usr, span_danger("You added \"[selected_radio_channel]\" channel to [target]."))
 			if(MODIFIY_ROBOT_RADIOC_REMOVE)
@@ -258,7 +258,7 @@
 						target.radio.syndie = 0
 					target.radio.channels = list()
 					for(var/n_chan in target.module.channels)
-						target.radio.channels[n_chan] -= target.module.channels[n_chan]
+						target.radio.channels[n_chan] = target.module.channels[n_chan]
 					radio_controller.remove_object(target.radio, radiochannels[selected_radio_channel])
 					target.radio.secure_radio_connections -= selected_radio_channel
 					to_chat(usr, span_danger("You removed \"[selected_radio_channel]\" channel from [target]."))

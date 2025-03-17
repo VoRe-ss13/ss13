@@ -93,7 +93,7 @@ I think I covered everything.
 	vore_pounce_maxhealth = 125
 	vore_bump_emote = "tries to snap up"
 	icon_dead = "dragon-dead"
-	faction = "dragon"
+	faction = FACTION_DRAGON
 	glow_range = 7
 	glow_intensity = 3
 	glow_color = "#ED9200"
@@ -187,7 +187,7 @@ I think I covered everything.
 /mob/living/simple_mob/vore/bigdragon/friendly
 	ai_holder_type = /datum/ai_holder/simple_mob/healbelly/retaliate/dragon
 	desc = "A large, intimidating creature reminiscent of the traditional idea of medieval fire breathing lizards. This one seems particularly relaxed and jovial."
-	faction = "neutral"
+	faction = FACTION_NEUTRAL
 	player_msg = "You're a variant of the large dragon stripped of its firebreath attack (harm intent). You can still charge (disarm) and tail sweep (grab). Rest to heal slowly. Check your abilities tab for functions."
 	norange = 1
 	noenrage = 1
@@ -247,10 +247,10 @@ I think I covered everything.
 	add_verb(src,/mob/living/simple_mob/vore/bigdragon/proc/special_toggle)
 	//verbs |= /mob/living/simple_mob/vore/bigdragon/proc/set_name //Implemented upstream
 	//verbs |= /mob/living/simple_mob/vore/bigdragon/proc/set_desc //Implemented upstream
-	faction = "neutral"
+	faction = FACTION_NEUTRAL
 
-/mob/living/simple_mob/vore/bigdragon/Initialize()
-	..()
+/mob/living/simple_mob/vore/bigdragon/Initialize(mapload)
+	. = ..()
 	src.adjust_nutrition(src.max_nutrition)
 	build_icons(1)
 	voremob_loaded = 1
@@ -323,7 +323,7 @@ I think I covered everything.
 		to_chat(src, span_userdanger("You've already set your name. Ask an admin to toggle \"nameset\" to 0 if you really must."))
 		return
 	var/newname
-	newname = sanitizeSafe(input(src,"Set your name. You only get to do this once. Max 52 chars.", "Name set","") as text, MAX_NAME_LEN)
+	newname = sanitizeSafe(tgui_input_text(src,"Set your name. You only get to do this once. Max 52 chars.", "Name set","", MAX_NAME_LEN), MAX_NAME_LEN)
 	if (newname)
 		name = newname
 		voice_name = newname
@@ -334,7 +334,7 @@ I think I covered everything.
 	set desc = "Set your description."
 	set category = "Abilities.Settings"
 	var/newdesc
-	newdesc = sanitizeSafe(input(src,"Set your description. Max 4096 chars.", "Description set","") as text, MAX_MESSAGE_LEN)
+	newdesc = sanitizeSafe(tgui_input_text(src,"Set your description. Max 4096 chars.", "Description set",""))
 	if(newdesc)
 		desc = newdesc
 */
@@ -457,7 +457,7 @@ I think I covered everything.
 			choice = show_radial_menu(src, src, options, radius = 90)
 			if(!choice || QDELETED(src) || src.incapacitated())
 				return 0
-			var/new_color = input("Pick underbelly color:","Underbelly Color", overlay_colors["Underbelly"]) as null|color
+			var/new_color = tgui_color_picker(src, "Pick underbelly color:","Underbelly Color", overlay_colors["Underbelly"])
 			if(!new_color)
 				return 0
 			under = choice
@@ -470,7 +470,7 @@ I think I covered everything.
 			choice = show_radial_menu(src, src, options, radius = 90)
 			if(!choice || QDELETED(src) || src.incapacitated())
 				return 0
-			var/new_color = input("Pick body color:","Body Color", overlay_colors["Body"]) as null|color
+			var/new_color = tgui_color_picker(src, "Pick body color:","Body Color", overlay_colors["Body"])
 			if(!new_color)
 				return 0
 			body = choice
@@ -483,7 +483,7 @@ I think I covered everything.
 			choice = show_radial_menu(src, src, options, radius = 90)
 			if(!choice || QDELETED(src) || src.incapacitated())
 				return 0
-			var/new_color = input("Pick ear color:","Ear Color", overlay_colors["Ears"]) as null|color
+			var/new_color = tgui_color_picker(src, "Pick ear color:","Ear Color", overlay_colors["Ears"])
 			if(!new_color)
 				return 0
 			ears = choice
@@ -496,7 +496,7 @@ I think I covered everything.
 			choice = show_radial_menu(src, src, options, radius = 90)
 			if(!choice || QDELETED(src) || src.incapacitated())
 				return 0
-			var/new_color = input("Pick mane color:","Mane Color", overlay_colors["Mane"]) as null|color
+			var/new_color = tgui_color_picker(src, "Pick mane color:","Mane Color", overlay_colors["Mane"])
 			if(!new_color)
 				return 0
 			mane = choice
@@ -509,7 +509,7 @@ I think I covered everything.
 			choice = show_radial_menu(src, src, options, radius = 90)
 			if(!choice || QDELETED(src) || src.incapacitated())
 				return 0
-			var/new_color = input("Pick horn color:","Horn Color", overlay_colors["Horns"]) as null|color
+			var/new_color = tgui_color_picker(src, "Pick horn color:","Horn Color", overlay_colors["Horns"])
 			if(!new_color)
 				return 0
 			horns = choice
@@ -522,7 +522,7 @@ I think I covered everything.
 			choice = show_radial_menu(src, src, options, radius = 90)
 			if(!choice || QDELETED(src) || src.incapacitated())
 				return 0
-			var/new_color = input("Pick eye color:","Eye Color", overlay_colors["Eyes"]) as null|color
+			var/new_color = tgui_color_picker(src, "Pick eye color:","Eye Color", overlay_colors["Eyes"])
 			if(!new_color)
 				return 0
 			eyes = choice
@@ -538,6 +538,8 @@ I think I covered everything.
 /mob/living/simple_mob/vore/bigdragon/init_vore()
 	//Ow my sanity
 	if(!voremob_loaded)
+		return
+	if(LAZYLEN(vore_organs))
 		return
 	var/obj/belly/B = new /obj/belly/dragon/maw(src)
 	B.affects_vore_sprites = FALSE
@@ -912,7 +914,7 @@ I think I covered everything.
 /mob/living/simple_mob/vore/bigdragon/do_tame(var/obj/O, var/mob/user)
 	if(!user)
 		return
-	if(faction == "neutral")
+	if(faction == FACTION_NEUTRAL)
 		return	//We're already friendly
 	if(enraged || notame)
 		say("NO FORGIVENESS")
@@ -921,7 +923,7 @@ I think I covered everything.
 	handle_tame_item(O, user)
 
 	qdel(ai_holder)	//Dragon goes to therapy
-	faction = "neutral"
+	faction = FACTION_NEUTRAL
 	norange = 1		//Don't start fires while friendly
 	vore_selected = gut2 //Just incase it eats someone right after being tamed
 	ai_holder = new /datum/ai_holder/simple_mob/healbelly/retaliate/dragon(src)
@@ -1012,7 +1014,7 @@ I think I covered everything.
 				//Alternatively bully a coder (me) to make a unique digest_mode for mob healbellies that prevents death, or something.
 				if(istype(A, /mob/living/carbon/human))
 					var/mob/living/carbon/human/P = L
-					var/list/to_inject = list("myelamine","osteodaxon","spaceacillin","peridaxon", "iron", "hyronalin")
+					var/list/to_inject = list(REAGENT_ID_MYELAMINE,REAGENT_ID_OSTEODAXON,REAGENT_ID_SPACEACILLIN,REAGENT_ID_PERIDAXON, REAGENT_ID_IRON, REAGENT_ID_HYRONALIN)
 					//Lets not OD them...
 					for(var/RG in to_inject)
 						if(!P.reagents.has_reagent(RG))
@@ -1052,7 +1054,7 @@ I think I covered everything.
 /mob/living/simple_mob/vore/bigdragon/proc/enrage(var/atom/movable/attacker)
 	enraged = 1
 	norange = 0
-	faction = "dragon"
+	faction = FACTION_DRAGON
 	say("HAVE IT YOUR WAY THEN")
 	qdel(ai_holder)
 	var/datum/ai_holder/simple_mob/intentional/dragon/D = new /datum/ai_holder/simple_mob/intentional/dragon(src)

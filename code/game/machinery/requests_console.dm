@@ -54,7 +54,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	light_range = 0
 	var/datum/announcement/announcement = new
 
-/obj/machinery/requests_console/Initialize()
+/obj/machinery/requests_console/Initialize(mapload)
 	. = ..()
 
 	announcement.title = "[department] announcement"
@@ -137,18 +137,18 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	data["announceAuth"] = announceAuth
 	return data
 
-/obj/machinery/requests_console/tgui_act(action, list/params)
+/obj/machinery/requests_console/tgui_act(action, list/params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 
 	switch(action)
 		if("write")
 			if(reject_bad_text(params["write"]))
 				recipient = params["write"] //write contains the string of the receiving department's name
 
-				var/new_message = sanitize(tgui_input_text(usr, "Write your message:", "Awaiting Input", ""))
+				var/new_message = sanitize(tgui_input_text(ui.user, "Write your message:", "Awaiting Input", ""))
 				if(new_message)
 					message = new_message
 					screen = RCS_MESSAUTH
@@ -164,7 +164,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 				. = TRUE
 
 		if("writeAnnouncement")
-			var/new_message = sanitize(tgui_input_text(usr, "Write your message:", "Awaiting Input", ""))
+			var/new_message = sanitize(tgui_input_text(ui.user, "Write your message:", "Awaiting Input", ""))
 			if(new_message)
 				message = new_message
 			else
@@ -233,9 +233,9 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	if(computer_deconstruction_screwdriver(user, O))
 		return
 	if(istype(O, /obj/item/multitool))
-		var/input = sanitize(tgui_input_text(usr, "What Department ID would you like to give this request console?", "Multitool-Request Console Interface", department))
+		var/input = sanitize(tgui_input_text(user, "What Department ID would you like to give this request console?", "Multitool-Request Console Interface", department))
 		if(!input)
-			to_chat(usr, "No input found. Please hang up and try your call again.")
+			to_chat(user, "No input found. Please hang up and try your call again.")
 			return
 		department = input
 		announcement.title = "[department] announcement"
@@ -255,7 +255,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 		if(inoperable(MAINT)) return
 		if(screen == RCS_MESSAUTH)
 			var/obj/item/card/id/T = O
-			msgVerified = text("<font color='green'><b>Verified by [T.registered_name] ([T.assignment])</b></font>")
+			msgVerified = span_green(span_bold("Verified by [T.registered_name] ([T.assignment])"))
 			SStgui.update_uis(src)
 		if(screen == RCS_ANNOUNCE)
 			var/obj/item/card/id/ID = O
@@ -270,7 +270,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 		if(inoperable(MAINT)) return
 		if(screen == RCS_MESSAUTH)
 			var/obj/item/stamp/T = O
-			msgStamped = text("<font color='blue'><b>Stamped with the [T.name]</b></font>")
+			msgStamped = span_blue(span_bold("Stamped with the [T.name]"))
 			SStgui.update_uis(src)
 	return
 

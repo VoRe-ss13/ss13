@@ -140,7 +140,7 @@
 
 		if(affecting)
 			to_chat(target, span_danger("\The [fruit]'s thorns pierce your [affecting.name] greedily!"))
-			target.apply_damage(damage, BRUTE, target_limb, blocked, soaked, TRUE, has_edge, "Thorns")
+			target.apply_damage(damage, BRUTE, target_limb, blocked, soaked, TRUE, has_edge)
 		else
 			to_chat(target, span_danger("\The [fruit]'s thorns pierce your flesh greedily!"))
 			target.adjustBruteLoss(damage)
@@ -149,7 +149,7 @@
 		has_edge = prob(get_trait(TRAIT_POTENCY)/5)
 		if(affecting)
 			to_chat(target, span_danger("\The [fruit]'s thorns dig deeply into your [affecting.name]!"))
-			target.apply_damage(damage, BRUTE, target_limb, blocked, soaked, TRUE, has_edge, "Thorns")
+			target.apply_damage(damage, BRUTE, target_limb, blocked, soaked, TRUE, has_edge)
 		else
 			to_chat(target, span_danger("\The [fruit]'s thorns dig deeply into your flesh!"))
 			target.adjustBruteLoss(damage)
@@ -160,7 +160,7 @@
 		return
 	if(chems && chems.len)
 
-		var/body_coverage = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+		var/body_coverage = HEAD|FACE|EYES|CHEST|LEGS|FEET|ARMS|HANDS
 
 		for(var/obj/item/clothing/clothes in target)
 			if(target.item_is_in_hands(clothes))
@@ -204,7 +204,7 @@
 		for(var/mob/living/M in T.contents)
 			if(!M.reagents)
 				continue
-			var/body_coverage = HEAD|FACE|EYES|UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+			var/body_coverage = HEAD|FACE|EYES|CHEST|LEGS|FEET|ARMS|HANDS
 			for(var/obj/item/clothing/clothes in M)
 				if(M.item_is_in_hands(clothes))
 					continue
@@ -254,11 +254,11 @@
 				var/no_los
 				var/turf/last_turf = origin_turf
 				for(var/turf/target_turf in getline(origin_turf,neighbor))
-					if(air_master.air_blocked(last_turf, target_turf))
+					if(SSair.air_blocked(last_turf, target_turf))
 						no_los = 1
 						break
 					last_turf = target_turf
-				if(!no_los && air_master.air_blocked(origin_turf, neighbor))
+				if(!no_los && SSair.air_blocked(origin_turf, neighbor))
 					no_los = 1
 				if(no_los)
 					closed_turfs |= neighbor
@@ -274,7 +274,7 @@
 		qdel(thrown)
 		return
 
-	if(istype(target,/mob/living))
+	if(isliving(target))
 		splatted = apply_special_effect(target,thrown)
 	else if(istype(target,/turf))
 		splatted = 1
@@ -445,29 +445,29 @@
 
 	if(prob(5))
 		consume_gasses = list()
-		var/gas = pick("oxygen","nitrogen","phoron","carbon_dioxide")
+		var/gas = pick(GAS_O2,GAS_N2,GAS_PHORON,GAS_CO2)
 		consume_gasses[gas] = rand(3,9)
 
 	if(prob(5))
 		exude_gasses = list()
-		var/gas = pick("oxygen","nitrogen","phoron","carbon_dioxide")
+		var/gas = pick(GAS_O2,GAS_N2,GAS_PHORON,GAS_CO2)
 		exude_gasses[gas] = rand(3,9)
 
 	chems = list()
 	if(prob(80))
-		chems["nutriment"] = list(rand(1,10),rand(10,20))
+		chems[REAGENT_ID_NUTRIMENT] = list(rand(1,10),rand(10,20))
 
 	var/additional_chems = rand(0,5)
 
 	if(additional_chems)
 		// VOREStation Edit Start: Modified exclusion list
 		var/list/banned_chems = list(
-			"adminordrazine",
-			"nutriment",
-			"macrocillin",
-			"microcillin",
-			"normalcillin",
-			"magicdust"
+			REAGENT_ID_ADMINORDRAZINE,
+			REAGENT_ID_NUTRIMENT,
+			REAGENT_ID_MACROCILLIN,
+			REAGENT_ID_MICROCILLIN,
+			REAGENT_ID_NORMALCILLIN,
+			REAGENT_ID_MAGICDUST
 			)
 		// VOREStation Edit End: Modified exclusion list
 
@@ -853,7 +853,7 @@
 				product.force = 1
 
 			//Handle spawning in living, mobile products (like dionaea).
-			if(istype(product,/mob/living))
+			if(isliving(product))
 				product.visible_message(span_notice("The pod disgorges [product]!"))
 				handle_living_product(product)
 

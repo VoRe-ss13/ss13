@@ -14,7 +14,7 @@
 		if((M.stat != 2) || (!M.client))
 			continue
 		//They need a brain!
-		if(istype(M, /mob/living/carbon/human))
+		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			if(!H.has_brain())
 				continue
@@ -49,7 +49,7 @@
 	var/speed_coeff
 	var/efficiency
 
-/obj/machinery/clonepod/Initialize()
+/obj/machinery/clonepod/Initialize(mapload)
 	. = ..()
 	default_apply_parts()
 	update_icon()
@@ -130,15 +130,13 @@
 
 	if(!R.dna)
 		H.dna = new /datum/dna()
-		H.dna.real_name = H.real_name
+		qdel_swap(H.dna, new /datum/dna())
 	else
-		H.dna = R.dna
+		qdel_swap(H.dna, R.dna)
 	H.UpdateAppearance()
+	H.sync_dna_traits(FALSE) // Traitgenes Sync traits to genetics if needed
 	H.sync_organ_dna()
-	if(heal_level < 60)
-		randmutb(H) //Sometimes the clones come out wrong.
-		H.dna.UpdateSE()
-		H.dna.UpdateUI()
+	H.initialize_vessel()
 
 	H.set_cloned_appearance()
 	update_icon()
@@ -195,8 +193,8 @@
 			occupant.adjustBrainLoss(-(CEILING(0.5*heal_rate, 1)))
 
 			//So clones don't die of oxyloss in a running pod.
-			if(occupant.reagents.get_reagent_amount("inaprovaline") < 30)
-				occupant.reagents.add_reagent("inaprovaline", 60)
+			if(occupant.reagents.get_reagent_amount(REAGENT_ID_INAPROVALINE) < 30)
+				occupant.reagents.add_reagent(REAGENT_ID_INAPROVALINE, 60)
 			occupant.Sleeping(30)
 			//Also heal some oxyloss ourselves because inaprovaline is so bad at preventing it!!
 			occupant.adjustOxyLoss(-4)
@@ -337,8 +335,9 @@
 	eject_wait = 0 //If it's still set somehow.
 	if(ishuman(occupant)) //Need to be safe.
 		var/mob/living/carbon/human/patient = occupant
-		if(!(patient.species.flags & NO_SCAN)) //If, for some reason, someone makes a genetically-unalterable clone, let's not make them permanently disabled.
+		if(!(patient.species.flags & NO_DNA)) //If, for some reason, someone makes a genetically-unalterable clone, let's not make them permanently disabled.
 			domutcheck(occupant) //Waiting until they're out before possible transforming.
+			occupant.UpdateAppearance()
 	occupant = null
 
 	update_icon()
@@ -350,7 +349,7 @@
 	if(LAZYLEN(containers))
 		for(var/obj/item/reagent_containers/glass/G in containers)
 			for(var/datum/reagent/R in G.reagents.reagent_list)
-				if(R.id == "biomass")
+				if(R.id == REAGENT_ID_BIOMASS)
 					biomass_count += R.volume
 
 	return biomass_count
@@ -362,7 +361,7 @@
 		for(var/obj/item/reagent_containers/glass/G in containers)
 			if(to_remove < amount)	//If we have what we need, we can stop. Checked every time we switch beakers
 				for(var/datum/reagent/R in G.reagents.reagent_list)
-					if(R.id == "biomass")		// Finds Biomass
+					if(R.id == REAGENT_ID_BIOMASS)		// Finds Biomass
 						var/need_remove = max(0, amount - to_remove)	//Figures out how much biomass is in this container
 						if(R.volume >= need_remove)						//If we have more than enough in this beaker, only take what we need
 							R.remove_self(need_remove)
@@ -407,15 +406,12 @@
 		mess = 1
 		update_icon()
 		occupant.ghostize()
-		spawn(5)
-			qdel(occupant)
-	return
+		QDEL_IN(occupant, 0.5 SECONDS)
 
-/obj/machinery/clonepod/relaymove(mob/user as mob)
+/obj/machinery/clonepod/relaymove(mob/user)
 	if(user.stat)
 		return
 	go_out()
-	return
 
 /obj/machinery/clonepod/emp_act(severity)
 	if(prob(100/severity))
@@ -444,7 +440,6 @@
 					ex_act(severity)
 				qdel(src)
 				return
-		else
 	return
 
 /obj/machinery/clonepod/update_icon()
@@ -456,8 +451,8 @@
 		icon_state = "pod_g"
 
 
-/obj/machinery/clonepod/full/New()
-	..()
+/obj/machinery/clonepod/full/Initialize(mapload)
+	. = ..()
 	for(var/i = 1 to container_limit)
 		containers += new /obj/item/reagent_containers/glass/bottle/biomass(src)
 
@@ -481,64 +476,6 @@
 
 #undef MINIMUM_HEAL_LEVEL
 
-//Disk stuff.
-//The return of data disks?? Just for transferring between genetics machine/cloning machine.
-//TO-DO: Make the genetics machine accept them.
-/obj/item/disk/data
-	name = "Cloning Data Disk"
-	icon = 'icons/obj/discs_vr.dmi' //VOREStation Edit
-	icon_state = "data-red" //VOREStation Edit
-	item_state = "card-id"
-	w_class = ITEMSIZE_SMALL
-	var/datum/dna2/record/buf = null
-	var/read_only = 0 //Well,it's still a floppy disk
-
-/obj/item/disk/data/proc/initializeDisk()
-	buf = new
-	buf.dna=new
-
-/obj/item/disk/data/demo
-	name = "data disk - 'God Emperor of Mankind'"
-	read_only = 1
-
-/obj/item/disk/data/demo/New()
-	initializeDisk()
-	buf.types=DNA2_BUF_UE|DNA2_BUF_UI
-	//data = "066000033000000000AF00330660FF4DB002690"
-	//data = "0C80C80C80C80C80C8000000000000161FBDDEF" - Farmer Jeff
-	buf.dna.real_name="God Emperor of Mankind"
-	buf.dna.unique_enzymes = md5(buf.dna.real_name)
-	buf.dna.UI=list(0x066,0x000,0x033,0x000,0x000,0x000,0xAF0,0x033,0x066,0x0FF,0x4DB,0x002,0x690)
-	//buf.dna.UI=list(0x0C8,0x0C8,0x0C8,0x0C8,0x0C8,0x0C8,0x000,0x000,0x000,0x000,0x161,0xFBD,0xDEF) // Farmer Jeff
-	buf.dna.UpdateUI()
-
-/obj/item/disk/data/monkey
-	name = "data disk - 'Mr. Muggles'"
-	read_only = 1
-
-/obj/item/disk/data/monkey/New()
-	..()
-	initializeDisk()
-	buf.types=DNA2_BUF_SE
-	var/list/new_SE=list(0x098,0x3E8,0x403,0x44C,0x39F,0x4B0,0x59D,0x514,0x5FC,0x578,0x5DC,0x640,0x6A4)
-	for(var/i=new_SE.len;i<=DNA_SE_LENGTH;i++)
-		new_SE += rand(1,1024)
-	buf.dna.SE=new_SE
-	buf.dna.SetSEValueRange(MONKEYBLOCK,0xDAC, 0xFFF)
-
-/obj/item/disk/data/New()
-	..()
-	var/diskcolor = pick(0,1,2)
-	icon_state = "datadisk[diskcolor]"
-
-/obj/item/disk/data/attack_self(mob/user as mob)
-	read_only = !read_only
-	to_chat(user, "You flip the write-protect tab to [read_only ? "protected" : "unprotected"].")
-
-/obj/item/disk/data/examine(mob/user)
-	. = ..()
-	. += "The write-protect tab is set to [read_only ? "protected" : "unprotected"]."
-
 /*
  *	Diskette Box
  */
@@ -547,15 +484,15 @@
 	name = "Diskette Box"
 	icon_state = "disk_kit"
 
-/obj/item/storage/box/disks/New()
-	..()
-	new /obj/item/disk/data(src)
-	new /obj/item/disk/data(src)
-	new /obj/item/disk/data(src)
-	new /obj/item/disk/data(src)
-	new /obj/item/disk/data(src)
-	new /obj/item/disk/data(src)
-	new /obj/item/disk/data(src)
+/obj/item/storage/box/disks/Initialize(mapload)
+	. = ..()
+	new /obj/item/disk/body_record(src)
+	new /obj/item/disk/body_record(src)
+	new /obj/item/disk/body_record(src)
+	new /obj/item/disk/body_record(src)
+	new /obj/item/disk/body_record(src)
+	new /obj/item/disk/body_record(src)
+	new /obj/item/disk/body_record(src)
 
 /*
  *	Manual -- A big ol' manual.
@@ -582,8 +519,7 @@
 	These diskettes are used to transfer genetic information between machines and profiles.
 	A load/save dialog will become available in each profile if a disk is inserted.</p><br>
 	<i>A good diskette is a great way to counter aforementioned genetic drift!</i><br>
-	<br>
-	<font size=1>This technology produced under license from Thinktronic Systems, LTD.</font>"}
+	<br>"} + span_small("This technology produced under license from Thinktronic Systems, LTD.")
 
 //SOME SCRAPS I GUESS
 /* EMP grenade/spell effect

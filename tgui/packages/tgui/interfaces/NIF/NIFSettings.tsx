@@ -1,6 +1,7 @@
-import { useBackend } from '../../backend';
-import { Button, Dropdown, Flex, LabeledList } from '../../components';
-import { Data } from './types';
+import { useBackend } from 'tgui/backend';
+import { Button, Dropdown, LabeledList, Stack } from 'tgui-core/components';
+
+import type { Data } from './types';
 
 export const NIFSettings = (props) => {
   const { act, data } = useBackend<Data>();
@@ -10,8 +11,8 @@ export const NIFSettings = (props) => {
   return (
     <LabeledList>
       <LabeledList.Item label="NIF Theme" verticalAlign="top">
-        <Flex>
-          <Flex.Item grow={1}>
+        <Stack>
+          <Stack.Item grow>
             <Dropdown
               autoScroll={false}
               width="100%"
@@ -19,9 +20,9 @@ export const NIFSettings = (props) => {
               options={valid_themes}
               onSelected={(val) => act('setTheme', { theme: val })}
             />
-          </Flex.Item>
+          </Stack.Item>
           {theme ? (
-            <Flex.Item>
+            <Stack.Item>
               <Button
                 width="22px"
                 icon="undo"
@@ -30,11 +31,11 @@ export const NIFSettings = (props) => {
                   act('setTheme', { theme: null });
                 }}
               />
-            </Flex.Item>
+            </Stack.Item>
           ) : (
             ''
           )}
-        </Flex>
+        </Stack>
       </LabeledList.Item>
     </LabeledList>
   );

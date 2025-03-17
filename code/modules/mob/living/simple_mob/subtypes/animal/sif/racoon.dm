@@ -78,7 +78,7 @@
 /mob/living/simple_mob/animal/sif/sakimm/verb/remove_hat()
 	set name = "Remove Hat"
 	set desc = "Remove the animal's hat. You monster."
-	set category = "Abilities.Sakimm" //CHOMPEdit
+	set category = "Abilities.Sakimm"
 	set src in view(1)
 
 	drop_hat(usr)
@@ -101,7 +101,7 @@
 /mob/living/simple_mob/animal/sif/sakimm/verb/give_hat()
 	set name = "Give Hat"
 	set desc = "Give the animal a hat. You hero."
-	set category = "Abilities.Sakimm" //CHOMPEdit
+	set category = "Abilities.Sakimm"
 	set src in view(1)
 
 	take_hat(usr)
@@ -156,7 +156,7 @@
 		I.appearance_flags = RESET_COLOR
 		add_overlay(I)
 
-/mob/living/simple_mob/animal/sif/sakimm/Initialize()
+/mob/living/simple_mob/animal/sif/sakimm/Initialize(mapload)
 	. = ..()
 
 	add_verb(src, /mob/living/proc/ventcrawl)
@@ -220,7 +220,7 @@
 		var/obj/item/I = A
 		I.attack_hand(holder)
 		lose_target()
-	if(istype(A,/mob/living) && holder.Adjacent(A))	// Not the dumbest tool in the shed. If we're fighting, we're gonna dance around them.
+	if(isliving(A) && holder.Adjacent(A))	// Not the dumbest tool in the shed. If we're fighting, we're gonna dance around them.
 		holder.IMove(get_step(holder, pick(alldirs)))
 		holder.face_atom(A)
 		request_help()	// And we're going to call friends, too.
@@ -264,7 +264,7 @@
 
 	for(var/possible_target in possible_targets)
 		var/atom/A = possible_target
-		if(istype(A, /mob/living) && !can_pick_mobs)
+		if(isliving(A) && !can_pick_mobs)
 			continue
 		if(can_attack(A)) // Can we attack it?
 			. += A

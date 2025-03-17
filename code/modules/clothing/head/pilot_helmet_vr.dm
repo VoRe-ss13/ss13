@@ -6,16 +6,14 @@
 	icon_state = "pilot1"
 	armor = list(melee = 20, bullet = 10, laser = 10, energy = 5, bomb = 10, bio = 0, rad = 0)
 	flags_inv = HIDEEARS
-	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
-	heat_protection = HEAD
 	max_heat_protection_temperature = HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 	w_class = ITEMSIZE_NORMAL
 	item_icons = list(slot_head_str = 'icons/inventory/head/mob_vr.dmi')
 	sprite_sheets = list(
 		SPECIES_TESHARI = 'icons/inventory/head/mob_vr_teshari.dmi'
 		)
-	action_button_name = "Toggle Visor"
+	actions_types = list(/datum/action/item_action/toggle_visor)
 
 /obj/item/clothing/head/pilot_vr/attack_self(mob/user as mob)
 	if(src.icon_state == initial(icon_state))
@@ -34,7 +32,7 @@
 	sprite_sheets = list(
 		SPECIES_TESHARI = 'icons/inventory/head/mob_vr_teshari.dmi'
 		)
-	action_button_name = "Toggle Visor"
+	actions_types = list(/datum/action/item_action/toggle_visor)
 
 /obj/item/clothing/head/pilot_vr/alt/attack_self(mob/user as mob)
 	if(src.icon_state == initial(icon_state))
@@ -55,7 +53,7 @@
 	sprite_sheets = list(
 		SPECIES_TESHARI = 'icons/inventory/head/mob_vr_teshari.dmi'
 		)
-	action_button_name = "Toggle Visor"
+	actions_types = list(/datum/action/item_action/toggle_visor)
 
 /obj/item/clothing/head/pilot_vr/talon/attack_self(mob/user as mob)
 	if(src.icon_state == initial(icon_state))
@@ -77,7 +75,7 @@
 	sprite_sheets = list(
 		SPECIES_TESHARI = 'icons/inventory/head/mob_vr_teshari.dmi'
 		)
-	action_button_name = "Toggle Visor"
+	actions_types = list(/datum/action/item_action/toggle_visor)
 
 /obj/item/clothing/head/pilot_vr/mbill/attack_self(mob/user as mob)
 	if(src.icon_state == initial(icon_state))

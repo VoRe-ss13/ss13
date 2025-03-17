@@ -1,11 +1,8 @@
 
 /client/verb/ooc(msg as text)
 	set name = "OOC"
-	set category = "OOC.Chat" //CHOMPEdit
+	set category = "OOC.Chat"
 
-	if(say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, span_warning("Speech is currently admin-disabled."))
-		return
 
 	if(!mob)	return
 	if(IsGuestKey(key))
@@ -20,26 +17,26 @@
 		return
 
 	if(!holder)
-		if(!CONFIG_GET(flag/ooc_allowed)) // CHOMPEdit
+		if(!CONFIG_GET(flag/ooc_allowed))
 			to_chat(src, span_danger("OOC is globally muted."))
 			return
-		if(!CONFIG_GET(flag/dooc_allowed) && (mob.stat == DEAD)) // CHOMPEdit
+		if(!CONFIG_GET(flag/dooc_allowed) && (mob.stat == DEAD))
 			to_chat(usr, span_danger("OOC for dead mobs has been turned off."))
 			return
 		if(prefs.muted & MUTE_OOC)
 			to_chat(src, span_danger("You cannot use OOC (muted)."))
 			return
-		if(findtext(msg, "byond://") && !CONFIG_GET(flag/allow_byond_links)) // CHOMPEdit
+		if(findtext(msg, "byond://") && !CONFIG_GET(flag/allow_byond_links))
 			to_chat(src, span_bold("Advertising other servers is not allowed."))
 			log_admin("[key_name(src)] has attempted to advertise in OOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to advertise in OOC: [msg]")
 			return
-		if(findtext(msg, "discord.gg") && !CONFIG_GET(flag/allow_discord_links)) // CHOMPEdit
+		if(findtext(msg, "discord.gg") && !CONFIG_GET(flag/allow_discord_links))
 			to_chat(src, span_bold("Advertising discords is not allowed."))
 			log_admin("[key_name(src)] has attempted to advertise a discord server in OOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to advertise a discord server in OOC: [msg]")
 			return
-		if((findtext(msg, "http://") || findtext(msg, "https://")) && !CONFIG_GET(flag/allow_url_links)) // CHOMPEdit
+		if((findtext(msg, "http://") || findtext(msg, "https://")) && !CONFIG_GET(flag/allow_url_links))
 			to_chat(src, span_bold("Posting external links is not allowed."))
 			log_admin("[key_name(src)] has attempted to post a link in OOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to post a link in OOC: [msg]")
@@ -54,13 +51,13 @@
 	if(holder && !holder.fakekey)
 		ooc_style = "elevated"
 
-		if(holder.rights & R_EVENT) //Retired Admins
+		if(check_rights(R_EVENT, FALSE)) //Retired Admins
 			ooc_style = "event_manager"
-		if(holder.rights & R_ADMIN && !(holder.rights & R_BAN)) //Game Masters
+		if(check_rights(R_ADMIN, FALSE) && !(check_rights(R_BAN, FALSE))) //Game Masters
 			ooc_style = "moderator"
-		if(holder.rights & R_DEBUG && !(holder.rights & R_BAN)) //Developers
+		if(check_rights(R_SERVER, FALSE) && !(check_rights(R_BAN, FALSE))) //Developers
 			ooc_style = "developer"
-		if(holder.rights & R_ADMIN && holder.rights & R_BAN) //Admins
+		if(check_rights(R_ADMIN, FALSE) && check_rights(R_BAN, FALSE)) //Admins
 			ooc_style = "admin"
 
 	msg = GLOB.is_valid_url.Replace(msg,span_linkify("$1"))
@@ -76,19 +73,16 @@
 						display_name = "[holder.fakekey]/([src.key])"
 					else
 						display_name = holder.fakekey
-			if(holder && !holder.fakekey && (holder.rights & R_ADMIN|R_FUN|R_EVENT) && CONFIG_GET(flag/allow_admin_ooccolor) && (src.prefs.ooccolor != initial(src.prefs.ooccolor))) // keeping this for the badmins // CHOMPEdit
-				to_chat(target, span_ooc("<font color='[src.prefs.ooccolor]'>" + create_text_tag("ooc", "OOC:", target) + " <EM>[display_name]:</EM> [span_message(msg)]</font>"))
+			var/pref_color = prefs.read_preference(/datum/preference/color/ooc_color)
+			if(holder && !holder.fakekey && (check_rights(R_ADMIN|R_FUN|R_EVENT, FALSE)) && CONFIG_GET(flag/allow_admin_ooccolor) && pref_color != "#010000") // keeping this for the badmins
+				to_chat(target, span_ooc("<font color='[pref_color]'>" + create_text_tag("ooc", "OOC:", target) + " <EM>[display_name]:</EM> [span_message(msg)]</font>"))
 			else
 				to_chat(target, span_ooc("<span class='[ooc_style]'>" + create_text_tag("ooc", "OOC:", target) + " <EM>[display_name]:</EM> " + span_message(msg)) + "</span>")
 
 /client/verb/looc(msg as text)
 	set name = "LOOC"
 	set desc = "Local OOC, seen only by those in view."
-	set category = "OOC.Chat" //CHOMPEdit
-
-	if(say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, span_danger("Speech is currently admin-disabled."))
-		return
+	set category = "OOC.Chat"
 
 	if(!mob)
 		return
@@ -106,26 +100,26 @@
 		return
 
 	if(!holder)
-		if(!CONFIG_GET(flag/looc_allowed)) // CHOMPEdit
+		if(!CONFIG_GET(flag/looc_allowed))
 			to_chat(src, span_danger("LOOC is globally muted."))
 			return
-		if(!CONFIG_GET(flag/dooc_allowed) && (mob.stat == DEAD)) // CHOMPEdit
+		if(!CONFIG_GET(flag/dooc_allowed) && (mob.stat == DEAD))
 			to_chat(usr, span_danger("OOC for dead mobs has been turned off."))
 			return
 		if(prefs.muted & MUTE_LOOC)
 			to_chat(src, span_danger("You cannot use OOC (muted)."))
 			return
-		if(findtext(msg, "byond://") && !CONFIG_GET(flag/allow_byond_links)) // CHOMPEdit
+		if(findtext(msg, "byond://") && !CONFIG_GET(flag/allow_byond_links))
 			to_chat(src, span_bold("Advertising other servers is not allowed."))
 			log_admin("[key_name(src)] has attempted to advertise in OOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to advertise in OOC: [msg]")
 			return
-		if(findtext(msg, "discord.gg") && !CONFIG_GET(flag/allow_discord_links)) // CHOMPEdit
+		if(findtext(msg, "discord.gg") && !CONFIG_GET(flag/allow_discord_links))
 			to_chat(src, span_bold("Advertising discords is not allowed."))
 			log_admin("[key_name(src)] has attempted to advertise a discord server in OOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to advertise a discord server in OOC: [msg]")
 			return
-		if((findtext(msg, "http://") || findtext(msg, "https://")) && !CONFIG_GET(flag/allow_url_links)) // CHOMPEdit
+		if((findtext(msg, "http://") || findtext(msg, "https://")) && !CONFIG_GET(flag/allow_url_links))
 			to_chat(src, span_bold("Posting external links is not allowed."))
 			log_admin("[key_name(src)] has attempted to post a link in OOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to post a link in OOC: [msg]")
@@ -161,7 +155,7 @@
 	for(var/mob/viewer in m_viewers)
 		if(viewer.client && viewer.client.prefs?.read_preference(/datum/preference/toggle/show_looc))
 			receivers |= viewer.client
-		else if(istype(viewer,/mob/observer/eye)) // For AI eyes and the like
+		else if(isEye(viewer)) // For AI eyes and the like
 			var/mob/observer/eye/E = viewer
 			if(E.owner && E.owner.client)
 				receivers |= E.owner.client
@@ -169,7 +163,7 @@
 	// Admins with RLOOC displayed who weren't already in
 	for(var/client/admin in GLOB.admins)
 		if(!(admin in receivers) && admin.prefs?.read_preference(/datum/preference/toggle/holder/show_rlooc))
-			if(check_rights(R_ADMIN|R_SERVER, FALSE, admin)) //Stop rLOOC showing for retired staff //CHOMPEdit, admins should see LOOC
+			if(check_rights_for(admin, R_ADMIN|R_SERVER)) //Stop rLOOC showing for retired staff //CHOMPEdit, admins should see LOOC
 				r_receivers |= admin
 
 	msg = GLOB.is_valid_url.Replace(msg,span_linkify("$1"))
@@ -198,7 +192,7 @@
 
 /client/verb/fit_viewport()
 	set name = "Fit Viewport"
-	set category = "OOC.Client Settings" //CHOMPEdit
+	set category = "OOC.Client Settings"
 	set desc = "Fit the width of the map window to match the viewport"
 
 	// Fetch aspect ratio

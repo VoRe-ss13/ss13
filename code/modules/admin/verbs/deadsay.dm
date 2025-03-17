@@ -1,5 +1,5 @@
 /client/proc/dsay(msg as text)
-	set category = "Admin.Chat" //CHOMPEdit
+	set category = "Admin.Chat"
 	set name = "Dsay" //Gave this shit a shorter name so you only have to time out "dsay" rather than "dead say" to use it --NeoFite
 	set hidden = 1
 	if(!src.holder)
@@ -18,7 +18,7 @@
 	if (src.handle_spam_prevention(msg,MUTE_DEADCHAT))
 		return
 
-	var/stafftype = uppertext(holder.rank)
+	var/stafftype = uppertext(holder.rank_names())
 
 	msg = sanitize(msg)
 	log_admin("DSAY: [key_name(src)] : [msg]")

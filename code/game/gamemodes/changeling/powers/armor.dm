@@ -37,18 +37,19 @@
 	desc = "A huge, bulky mass of pressure and temperature-resistant organic tissue, evolved to facilitate space travel."
 	flags = 0	//Not THICKMATERIAL because it's organic tissue, so if somebody tries to inject something into it,
 				//it still ends up in your blood. (also balance but muh fluff)
-	allowed = list(/obj/item/flashlight, /obj/item/tank/emergency/oxygen, /obj/item/tank/oxygen)
+	allowed = list(POCKET_GENERIC, POCKET_ALL_TANKS)
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0) //No armor at all.
 	canremove = FALSE
 
-/obj/item/clothing/suit/space/changeling/New()
-	..()
+/obj/item/clothing/suit/space/changeling/Initialize(mapload)
+	. = ..()
 	if(ismob(loc))
 		loc.visible_message(span_warning("[loc.name]\'s flesh rapidly inflates, forming a bloated mass around their body!"),
 		span_warning("We inflate our flesh, creating a spaceproof suit!"),
 		span_warningplain("You hear organic matter ripping and tearing!"))
 
-/obj/item/clothing/suit/space/changeling/dropped()
+/obj/item/clothing/suit/space/changeling/dropped(mob/user)
+	..()
 	qdel(src)
 
 /obj/item/clothing/head/helmet/space/changeling
@@ -60,14 +61,15 @@
 	body_parts_covered = HEAD|FACE|EYES
 	canremove = FALSE
 
-/obj/item/clothing/head/helmet/space/changeling/dropped()
+/obj/item/clothing/head/helmet/space/changeling/dropped(mob/user)
+	..()
 	qdel(src)
 
 /obj/item/clothing/shoes/magboots/changeling
 	desc = "A suction cupped mass of flesh, shaped like a foot."
 	name = "fleshy grippers"
 	icon_state = "lingspacesuit"
-	action_button_name = "Toggle Grippers"
+	actions_types = list(/datum/action/item_action/toggle_grippers)
 	canremove = FALSE
 
 /obj/item/clothing/shoes/magboots/changeling/set_slowdown()
@@ -89,7 +91,7 @@
 		force = 5
 		to_chat(user, "We cling to the terrain below us.")
 
-/obj/item/clothing/shoes/magboots/changeling/dropped()
+/obj/item/clothing/shoes/magboots/changeling/dropped(mob/user)
 	..()
 	qdel(src)
 
@@ -99,14 +101,14 @@
 	name = "chitinous mass"
 	desc = "A tough, hard covering of black chitin."
 	icon_state = "lingarmor"
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+	body_parts_covered = CHEST|LEGS|FEET|ARMS|HANDS
 	armor = list(melee = 75, bullet = 60, laser = 60, energy = 60, bomb = 60, bio = 0, rad = 0) //It costs 3 points, so it should be very protective.
 	siemens_coefficient = 0.3
 	max_heat_protection_temperature = FIRESUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	slowdown = 1.5
 
-/obj/item/clothing/suit/space/changeling/armored/New()
-	..()
+/obj/item/clothing/suit/space/changeling/armored/Initialize(mapload)
+	. = ..()
 	if(ismob(loc))
 		loc.visible_message(span_warning("[loc.name]\'s flesh turns black, quickly transforming into a hard, chitinous mass!"),
 		span_warning("We harden our flesh, creating a suit of armor!"),
@@ -124,12 +126,12 @@
 	desc = "A tough, hard mass of chitin, with long talons for digging into terrain."
 	name = "chitinous talons"
 	icon_state = "lingarmor"
-	action_button_name = "Toggle Talons"
+	actions_types = list(/datum/action/item_action/toggle_talons)
 
 /obj/item/clothing/gloves/combat/changeling //Combined insulated/fireproof gloves
 	name = "chitinous gauntlets"
 	desc = "Very resilient gauntlets made out of black chitin.  It looks very durable, and can probably resist electrical shock in addition to the elements."
-	icon_state = "lingarmorgloves"
+	icon_state = "ling"
 	armor = list(melee = 75, bullet = 60, laser = 60,energy = 60, bomb = 60, bio = 0, rad = 0) //No idea if glove armor gets checked
 	siemens_coefficient = 0
 
@@ -137,10 +139,8 @@
 	name = "chitinous boots"
 	desc = "Footwear made out of a hard, black chitinous material.  The bottoms of these appear to have spikes that can protrude or extract itself into and out \
 	of the floor at will, granting the wearer stability."
-	icon_state = "lingboots"
+	icon_state = "lingarmor"
 	armor = list(melee = 75, bullet = 60, laser = 70,energy = 60, bomb = 60, bio = 0, rad = 0)
 	siemens_coefficient = 0.3
-	cold_protection = FEET
 	min_cold_protection_temperature = SHOE_MIN_COLD_PROTECTION_TEMPERATURE
-	heat_protection = FEET
 	max_heat_protection_temperature = SHOE_MAX_HEAT_PROTECTION_TEMPERATURE

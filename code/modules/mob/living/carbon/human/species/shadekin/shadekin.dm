@@ -50,7 +50,7 @@
 	heat_level_2 = 1000
 	heat_level_3 = 1150
 
-	flags =  NO_SCAN | NO_MINOR_CUT | NO_INFECT
+	flags =  NO_DNA | NO_SLEEVE | NO_MINOR_CUT | NO_INFECT
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED | SPECIES_WHITELIST_SELECTABLE
 
 	reagent_tag = IS_SHADEKIN		// for shadekin-unqiue chem interactions
@@ -77,6 +77,7 @@
 	breath_type = null
 	poison_type = null
 	water_breather = TRUE	//They don't quite breathe
+	var/doing_phase = FALSE // Prevent bugs when spamming phase button
 
 	vision_flags = SEE_SELF|SEE_MOBS
 	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_SKIN_COLOR | HAS_EYE_COLOR | HAS_UNDERWEAR
@@ -122,7 +123,6 @@
 	var/energy_dark = 0.75
 	var/nutrition_conversion_scaling = 0.5 //CHOMPEdit - Add nutrition <-> dark energy conversion
 	var/phase_gentle = TRUE //CHOMPEdit - Add gentle phasing, defaults to on.
-	var/doing_phase = FALSE //CHOMPEdit - Prevent bugs when spamming phase button
 	var/manual_respite = FALSE //CHOMPEdit - Dark Respite
 	var/respite_activating = FALSE //CHOMPEdit - Dark Respite
 	var/nutrition_energy_conversion = TRUE //CHOMPEdit - Add toggle to nutrition and energy conversions
@@ -139,7 +139,7 @@
 	if(respite_activating)
 		return TRUE
 	var/area/current_area = get_area(H)
-	if((H.ability_flags & AB_DARK_RESPITE) || H.has_modifier_of_type(/datum/modifier/dark_respite) || current_area.limit_dark_respite)
+	if((H.ability_flags & AB_DARK_RESPITE) || H.has_modifier_of_type(/datum/modifier/dark_respite) || current_area.flag_check(AREA_LIMIT_DARK_RESPITE))
 		return
 	var/list/floors = list()
 	for(var/turf/unsimulated/floor/dark/floor in get_area_turfs(/area/shadekin))
@@ -165,7 +165,7 @@
 	H.adjustToxLoss(-(H.getToxLoss() * 0.75))
 	H.adjustCloneLoss(-(H.getCloneLoss() * 0.75))
 	H.germ_level = 0 // CHOMPAdd - Take away the germs, or we'll die AGAIN
-	H.vessel.add_reagent("blood",blood_volume-H.vessel.total_volume)
+	H.vessel.add_reagent(REAGENT_ID_BLOOD,blood_volume-H.vessel.total_volume)
 	for(var/obj/item/organ/external/bp in H.organs)
 		bp.bandage()
 		bp.disinfect()
@@ -179,7 +179,7 @@
 		//Yay digestion... presumably...
 		var/obj/belly/belly = H.loc
 		add_attack_logs(belly.owner, H, "Digested in [lowertext(belly.name)]")
-		to_chat(belly.owner, "<span class='notice'>\The [H.name] suddenly vanishes within your [belly.name]</span>")
+		to_chat(belly.owner, span_notice("\The [H.name] suddenly vanishes within your [belly.name]"))
 		H.forceMove(pick(floors))
 		if(H.ability_flags & AB_PHASE_SHIFTED)
 			H.phase_shift()
@@ -188,7 +188,7 @@
 			phaseanim.dir = H.dir
 		H.invisibility = initial(H.invisibility)
 		respite_activating = FALSE
-		belly.owner.update_fullness()
+		belly.owner.handle_belly_update() // CHOMPEdit
 		H.clear_fullscreen("belly")
 		if(H.hud_used)
 			if(!H.hud_used.hud_shown)
@@ -201,7 +201,7 @@
 
 		spawn(5 MINUTES)
 			H.ability_flags &= ~AB_DARK_RESPITE
-			to_chat(H, "<span class='notice'>You feel like you can leave the Dark again</span>")
+			to_chat(H, span_notice("You feel like you can leave the Dark again"))
 	else
 		H.add_modifier(/datum/modifier/dark_respite, 25 MINUTES)
 
@@ -217,7 +217,7 @@
 
 		spawn(15 MINUTES)
 			H.ability_flags &= ~AB_DARK_RESPITE
-			to_chat(H, "<span class='notice'>You feel like you can leave the Dark again</span>")
+			to_chat(H, span_notice("You feel like you can leave the Dark again"))
 
 	return TRUE
 
@@ -263,7 +263,7 @@
 		else
 			var/datum/species/shadekin/SK = H.species
 			if(SK.manual_respite)
-				to_chat(H, "<span class='notice'>As you leave the Dark, you stop focusing the Dark on healing yourself.</span>")
+				to_chat(H, span_notice("As you leave the Dark, you stop focusing the Dark on healing yourself."))
 				SK.manual_respite = FALSE
 				src.expire()
 			if(src.pain_immunity)
@@ -507,7 +507,7 @@
 
 	H.health = H.maxHealth
 
-/datum/species/shadekin/produceCopy(var/list/traits, var/mob/living/carbon/human/H, var/custom_base)
+/datum/species/shadekin/produceCopy(var/list/traits, var/mob/living/carbon/human/H, var/custom_base, var/reset_dna = TRUE) // Traitgenes reset_dna flag required, or genes get reset on resleeve
 
 	var/datum/species/shadekin/new_copy = ..()
 

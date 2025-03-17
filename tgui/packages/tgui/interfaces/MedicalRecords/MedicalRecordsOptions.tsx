@@ -3,7 +3,7 @@ import { Button, Section, Tabs } from 'tgui-core/components';
 
 import { MedicalRecordsViewGeneral } from './MedicalRecordsViewGeneral';
 import { MedicalRecordsViewMedical } from './MedicalRecordsViewMedical';
-import { Data } from './types';
+import type { Data } from './types';
 
 export const MedicalRecordsMaintenance = (props) => {
   const { act } = useBackend();
@@ -36,6 +36,14 @@ export const MedicalRecordsView = (props) => {
         <MedicalRecordsViewMedical />
       </Section>
       <Section title="Actions">
+        <Button
+          icon="upload"
+          disabled={!!medical!.empty}
+          color="good"
+          onClick={() => act('sync_r')}
+        >
+          Sync Medical Record
+        </Button>
         <Button.Confirm
           icon="trash"
           disabled={!!medical!.empty}

@@ -25,7 +25,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 	bump_flag =        SLIME
 	swap_flags =       MONKEY|SLIME|SIMPLE_ANIMAL
 	push_flags =       MONKEY|SLIME|SIMPLE_ANIMAL
-	flags =            NO_SCAN | NO_SLIP | NO_MINOR_CUT | NO_HALLUCINATION | NO_INFECT | NO_DEFIB
+	flags =            NO_DNA | NO_SLEEVE | NO_SLIP | NO_MINOR_CUT | NO_HALLUCINATION | NO_INFECT | NO_DEFIB
 	appearance_flags = HAS_SKIN_COLOR | HAS_EYE_COLOR | HAS_HAIR_COLOR | RADIATION_GLOWS | HAS_UNDERWEAR
 	spawn_flags		 = SPECIES_CAN_JOIN
 	health_hud_intensity = 2
@@ -36,7 +36,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 	assisted_langs = list(LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX)	// Prometheans are weird, let's just assume they can use basically any language.
 
 	blood_name = "gelatinous ooze"
-	blood_reagents = "slimejelly"
+	blood_reagents = REAGENT_ID_SLIMEJELLY
 
 	breath_type = null
 	poison_type = null
@@ -124,7 +124,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 		/mob/living/carbon/human/proc/regenerate
 		)
 
-	valid_transform_species = list(SPECIES_HUMAN, SPECIES_HUMAN_VATBORN, SPECIES_UNATHI, SPECIES_TAJ, SPECIES_SKRELL, SPECIES_DIONA, SPECIES_TESHARI, SPECIES_MONKEY)
+	valid_transform_species = list(SPECIES_HUMAN, SPECIES_HUMAN_VATBORN, SPECIES_UNATHI, SPECIES_TAJARAN, SPECIES_SKRELL, SPECIES_DIONA, SPECIES_TESHARI, SPECIES_MONKEY)
 
 	var/heal_rate = 0.5 // Temp. Regen per tick.
 
@@ -137,7 +137,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 		/decl/emote/visible/vibrate
 	)
 
-	footstep = FOOTSTEP_MOB_SLIME // CHOMPEdit
+	footstep = FOOTSTEP_MOB_SLIME
 
 /datum/species/shapeshifter/promethean/New()
 	..()

@@ -43,7 +43,7 @@
 	// CHOMPEdit End: Pain
 
 	//TODO: fix husking
-	if( ((getMaxHealth() - total_burn) < CONFIG_GET(number/health_threshold_dead) * huskmodifier) && stat == DEAD) // CHOMPEdit
+	if( ((getMaxHealth() - total_burn) < CONFIG_GET(number/health_threshold_dead) * huskmodifier) && stat == DEAD)
 		ChangeToHusk()
 	return
 
@@ -246,13 +246,13 @@
 	..()
 
 /mob/living/carbon/human/proc/Stasis(amount)
-	if((species.flags & NO_SCAN) || isSynthetic())
+	if((species.flags & NO_DNA) || isSynthetic())
 		in_stasis = 0
 	else
 		in_stasis = amount
 
 /mob/living/carbon/human/proc/getStasis()
-	if((species.flags & NO_SCAN) || isSynthetic())
+	if((species.flags & NO_DNA) || isSynthetic())
 		return 0
 
 	return in_stasis
@@ -266,12 +266,12 @@
 	return 0
 
 /mob/living/carbon/human/getCloneLoss()
-	if((species.flags & NO_SCAN) || isSynthetic())
+	if((species.flags & NO_DNA) || isSynthetic())
 		cloneloss = 0
 	return ..()
 
 /mob/living/carbon/human/setCloneLoss(var/amount)
-	if((species.flags & NO_SCAN) || isSynthetic())
+	if((species.flags & NO_DNA) || isSynthetic())
 		cloneloss = 0
 	else
 		..()
@@ -279,7 +279,7 @@
 /mob/living/carbon/human/adjustCloneLoss(var/amount)
 	..()
 
-	if((species.flags & NO_SCAN) || isSynthetic())
+	if((species.flags & NO_DNA) || isSynthetic())
 		cloneloss = 0
 		return
 
@@ -487,7 +487,7 @@ This function restores the subjects blood to max.
 	if(!should_have_organ(O_HEART))
 		return
 	if(vessel.total_volume < species.blood_volume)
-		vessel.add_reagent("blood", species.blood_volume - vessel.total_volume)
+		vessel.add_reagent(REAGENT_ID_BLOOD, species.blood_volume - vessel.total_volume)
 
 /*
 This function restores all organs.
@@ -515,10 +515,9 @@ This function restores all organs.
 	return organs_by_name[zone]
 */
 
-/mob/living/carbon/human/apply_damage(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/blocked = 0, var/soaked = 0, var/sharp = FALSE, var/edge = FALSE, var/obj/used_weapon = null)
+/mob/living/carbon/human/apply_damage(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/blocked = 0, var/soaked = 0, var/sharp = FALSE, var/edge = FALSE, var/obj/used_weapon = null, var/projectile = FALSE)
 	if(Debug2)
 		to_world_log("## DEBUG: human/apply_damage() was called on [src], with [damage] damage, an armor value of [blocked], and a soak value of [soaked].")
-
 	var/obj/item/organ/external/organ = null
 	if(isorgan(def_zone))
 		organ = def_zone
@@ -619,7 +618,7 @@ This function restores all organs.
 						M.energy_source.use(M.damage_cost*damage)
 					damage *= M.incoming_brute_damage_percent
 
-			if(organ.take_damage(damage, 0, sharp, edge, used_weapon))
+			if(organ.take_damage(damage, 0, sharp, edge, used_weapon, projectile=projectile))
 				UpdateDamageIcon()
 		if(BURN)
 			damageoverlaytemp = 20
@@ -636,7 +635,7 @@ This function restores all organs.
 						M.energy_source.use(M.damage_cost*damage)
 					damage *= M.incoming_fire_damage_percent
 
-			if(organ.take_damage(0, damage, sharp, edge, used_weapon))
+			if(organ.take_damage(0, damage, sharp, edge, used_weapon, projectile=projectile))
 				UpdateDamageIcon()
 
 	// CHOMPEdit: Pain Emotes!

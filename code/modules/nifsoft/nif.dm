@@ -15,9 +15,10 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 //Nanotech Implant Foundation
 /obj/item/nif
 	name = "nanite implant framework"
-	desc = "The product of a collaboration between NanoTrasen and Bishop Cybernetics. Can print new \
+	desc = "A mass-production model of a nano working surface, in a box. Can print new \
 	implants inside living hosts on the fly based on software uploads. Must be surgically \
-	implanted in the head to work. Will eventually require maintanence."
+	implanted in the head to work, and requires periodical maintenance. Warning: this device \
+	is extremely sensitive to electromagnetic pulse waves."
 
 	icon = 'icons/obj/device_alt.dmi'
 	icon_state = "nif_0"
@@ -72,8 +73,8 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 	var/list/planes_visible = list()
 
 //Constructor comes with a free AR HUD
-/obj/item/nif/New(var/newloc,var/wear,var/list/load_data)
-	..(newloc)
+/obj/item/nif/Initialize(mapload,var/wear,var/list/load_data)
+	. = ..()
 
 	//First one to spawn in the game, make a big icon
 	if(!big_icon)
@@ -89,13 +90,11 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 	examine_msg = saved_examine_msg
 
 	//If given a human on spawn (probably from persistence)
-	if(ishuman(newloc))
-		var/mob/living/carbon/human/H = newloc
+	if(ishuman(loc))
+		var/mob/living/carbon/human/H = loc
 		if(!quick_implant(H))
 			WARNING("NIF spawned in [H] failed to implant")
-			spawn(0)
-				qdel(src)
-			return FALSE
+			return INITIALIZE_HINT_QDEL
 
 	//If given wear (like when spawned) then done
 	if(wear)
@@ -120,7 +119,7 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 		should_be_in = brain.parent_organ
 
 	if(istype(H) && !H.nif && H.species && (loc == H.get_organ(should_be_in)))
-		if(!bioadap && (H.species.flags & NO_SCAN)) //NO_SCAN is the default 'too complicated' flag
+		if(!bioadap && (H.species.flags & NO_DNA)) //NO_DNA is the default 'too complicated' flag
 			return FALSE
 
 		human = H
@@ -151,16 +150,18 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 			return FALSE
 		forceMove(parent)
 		parent.implants += src
-		spawn(0) //Let the character finish spawning yo.
-			if(!H) //Or letting them get deleted
-				return
-			if(H.mind)
-				owner = H.mind.name
-				owner_key = H.ckey
-			implant(H)
+		addtimer(CALLBACK(src, PROC_REF(quick_install), H), 1)
 		return TRUE
 
 	return FALSE
+
+/obj/item/nif/proc/quick_install(var/mob/living/carbon/human/H)
+	if(QDELETED(H)) //Or letting them get deleted
+		return
+	if(H.mind)
+		owner = H.mind.name
+		owner_key = H.ckey
+	implant(H)
 
 //Being removed from some mob
 /obj/item/nif/proc/unimplant(var/mob/living/carbon/human/H)
@@ -629,8 +630,9 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 	starting_software = null
 
 /obj/item/nif/authentic
-	name = "Authentic NIF"
-	desc = "A much more expensive, advanced prototype of the NIF technology. Not usually found in the frontier."
+	name = "luxury NIF"
+	desc = "An actual nano working surface, in a box. These are the high-end models, usually only available to big spenders and those with serious contacts. \
+	Despite the all the marketing speak, they're really just a high-endurance NIF when it comes down to it."
 	durability = 1000
 
 /obj/item/nif/authenticbio
@@ -641,7 +643,7 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 
 /obj/item/nif/bioadap
 	name = "bioadaptive NIF"
-	desc = "A NIF that goes out of it's way to accomidate strange body types. \
+	desc = "A NIF that goes out of it's way to accomodate strange body types. \
 	Will function in species where it normally wouldn't."
 	durability = 75
 	bioadap = TRUE
@@ -697,7 +699,7 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 /mob/living/carbon/human/proc/set_nif_examine()
 	set name = "NIF Appearance"
 	set desc = "If your NIF alters your appearance in some way, describe it here."
-	set category = "OOC.Game Settings" //CHOMPEdit
+	set category = "OOC.Game Settings"
 
 	if(!nif)
 		remove_verb(src, /mob/living/carbon/human/proc/set_nif_examine)

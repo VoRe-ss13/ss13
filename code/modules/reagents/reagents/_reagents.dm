@@ -2,9 +2,9 @@
 
 
 /datum/reagent
-	var/name = "Reagent"
-	var/id = "reagent"
-	var/description = "A non-descript chemical."
+	var/name = REAGENT_DEVELOPER_WARNING
+	var/id = REAGENT_ID_DEVELOPER_WARNING
+	var/description = REAGENT_DESC_DEVELOPER_WARNING
 	var/taste_description = "bitterness"
 	var/taste_mult = 1 //how this taste compares to others. Higher values means it is more noticable
 	var/datum/reagents/holder = null
@@ -32,7 +32,9 @@
 	var/cup_icon_state = null
 	var/cup_name = null
 	var/cup_desc = null
-	var/cup_center_of_mass = null
+	var/cup_center_of_mass_x = 0
+	var/cup_center_of_mass_y = 0
+	var/cup_prefix = null
 
 	var/color = "#000000"
 	var/color_weight = 1
@@ -41,6 +43,8 @@
 	var/glass_name = "something"
 	var/glass_desc = "It's a glass of... what, exactly?"
 	var/list/glass_special = null // null equivalent to list()
+
+	var/from_belly = FALSE
 
 /datum/reagent/proc/remove_self(var/amount) // Shortcut
 	if(holder)

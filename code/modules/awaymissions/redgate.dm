@@ -30,7 +30,7 @@
 
 /obj/structure/redgate/proc/teleport(var/mob/M as mob)
 	var/keycheck = TRUE
-	if (!istype(M,/mob/living))		//We only want mob/living, no bullets or mechs or AI eyes or items
+	if (!isliving(M))		//We only want mob/living, no bullets or mechs or AI eyes or items
 		if(is_type_in_list(M, exceptions))
 			keycheck = FALSE		//we'll allow it
 		else
@@ -54,7 +54,7 @@
 	var/turf/ourturf = find_our_turf(M)		//Find the turf on the opposite side of the target
 	if(!ourturf.check_density(TRUE,TRUE))	//Make sure there isn't a wall there
 		M.unbuckle_all_mobs(TRUE)
-		if(istype(M,/mob/living) && M.pulling)
+		if(isliving(M) && M.pulling)
 			var/atom/movable/pulled = M.pulling
 			M.stop_pulling()
 			playsound(src,'sound/effects/ominous-hum-2.ogg', 100,1)
@@ -117,7 +117,7 @@
 	else
 		return ..()
 
-/obj/structure/redgate/away/Initialize()
+/obj/structure/redgate/away/Initialize(mapload)
 	. = ..()
 	if(!find_partner())
 		log_and_message_admins("An away redgate spawned but wasn't able to find a gateway to link to. If this appeared at roundstart, something has gone wrong, otherwise if you spawn another gate they should connect.")
@@ -1483,13 +1483,13 @@
 	var/start_pos
 	var/flag_return_delay = 3 SECONDS	//how long you have to hold onto your team's flag before it returns home
 
-/obj/item/laserdome_flag/Initialize()
+/obj/item/laserdome_flag/Initialize(mapload)
 	. = ..()
 	start_pos = src.loc	//save our starting location for later
 
 /*
 //TODO - make this not trigger when the flag is returned to its original location
-/obj/item/laserdome_flag/dropped()
+/obj/item/laserdome_flag/dropped(mob/user)
 	. = ..()
 	global_announcer.autosay("[src] dropped!","Laserdome Announcer","Entertainment")
 */
@@ -1618,7 +1618,7 @@
 	w_class = ITEMSIZE_NO_CONTAINER
 	redgate_allowed = FALSE //you can't take the demonstration balls and go home either
 
-/obj/item/laserdome_hyperball/Initialize()
+/obj/item/laserdome_hyperball/Initialize(mapload)
 	. = ..()
 	start_pos = src.loc	//save our starting location for later
 
@@ -1654,7 +1654,7 @@
 
 /*
 //TODO- make this not trigger when the ball is thrown or dunked, only when it's actually dropped
-/obj/item/laserdome_hyperball/dropped()
+/obj/item/laserdome_hyperball/dropped(mob/user)
 	. = ..()
 	global_announcer.autosay("[capitalize(last_team)] fumble!","Laserdome Announcer","Entertainment")
 */

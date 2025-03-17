@@ -1,7 +1,9 @@
-import { useBackend } from '../../backend';
-import { Box, Button, Section } from '../../components';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Section } from 'tgui-core/components';
+
 import { StandardControls, StatusDisplay } from './EmbeddedControllerHelpers';
-import { AirlockConsoleAdvancedData } from './types';
+import { PanelOpen } from './PanelOpen';
+import type { AirlockConsoleAdvancedData } from './types';
 
 /**
  * Advanced airlock consoles display the external pressure,
@@ -12,8 +14,13 @@ import { AirlockConsoleAdvancedData } from './types';
 export const AirlockConsoleAdvanced = (props) => {
   const { act, data } = useBackend<AirlockConsoleAdvancedData>();
 
-  const { external_pressure, chamber_pressure, internal_pressure, processing } =
-    data;
+  const {
+    external_pressure,
+    chamber_pressure,
+    internal_pressure,
+    processing,
+    panel_open,
+  } = data;
 
   const pressure_range = {
     external_pressure,
@@ -59,27 +66,31 @@ export const AirlockConsoleAdvanced = (props) => {
   return (
     <>
       <StatusDisplay bars={bars} />
-      <Section title="Controls">
-        <StandardControls pressure_range={pressure_range} />
-        <Box>
-          <Button icon="sync" onClick={() => act('purge')}>
-            Purge
-          </Button>
-          <Button icon="lock-open" onClick={() => act('secure')}>
-            Secure
-          </Button>
-        </Box>
-        <Box>
-          <Button
-            disabled={!processing}
-            icon="ban"
-            color="bad"
-            onClick={() => act('abort')}
-          >
-            Abort
-          </Button>
-        </Box>
-      </Section>
+      {panel_open ? (
+        <PanelOpen />
+      ) : (
+        <Section title="Controls">
+          <StandardControls pressure_range={pressure_range} />
+          <Box>
+            <Button icon="sync" onClick={() => act('purge')}>
+              Purge
+            </Button>
+            <Button icon="lock-open" onClick={() => act('secure')}>
+              Secure
+            </Button>
+          </Box>
+          <Box>
+            <Button
+              disabled={!processing}
+              icon="ban"
+              color="bad"
+              onClick={() => act('abort')}
+            >
+              Abort
+            </Button>
+          </Box>
+        </Section>
+      )}
     </>
   );
 };

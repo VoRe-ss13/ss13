@@ -23,7 +23,7 @@
 // Proc: New()
 // Parameters: None
 // Description: Adds components to the machine for deconstruction.
-/obj/machinery/exonet_node/Initialize() //CHOMPAdd Start
+/obj/machinery/exonet_node/map/Initialize(mapload)
 	. = ..()
 	default_apply_parts()
 	// CHOMPAdd: Exonet Machinery humming
@@ -41,7 +41,7 @@
 	soundloop.start() // CHOMPStation Edit: This starts on
 	// CHOMPAdd End
 
-/obj/machinery/exonet_node/map/Initialize()
+/obj/machinery/exonet_node/map/Initialize(mapload)
 	. = ..()
 	//default_apply_parts() //CHOMPEdit
 	desc = "This machine is one of many, many nodes inside [using_map.starsys_name]'s section of the Exonet, connecting the [using_map.station_short] to the rest of the system, at least \
@@ -156,7 +156,7 @@
 // Proc: tgui_act()
 // Parameters: 2 (standard tgui_act arguments)
 // Description: Responds to button presses on the TGUI interface.
-/obj/machinery/exonet_node/tgui_act(action, params)
+/obj/machinery/exonet_node/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
@@ -166,7 +166,7 @@
 			toggle = !toggle
 			update_power()
 			if(!toggle)
-				var/msg = "[usr.client.key] ([usr]) has turned [src] off, at [x],[y],[z]."
+				var/msg = "[ui.user.client.key] ([ui.user]) has turned [src] off, at [x],[y],[z]."
 				message_admins(msg)
 				log_game(msg)
 
@@ -178,7 +178,7 @@
 			. = TRUE
 			allow_external_communicators = !allow_external_communicators
 			if(!allow_external_communicators)
-				var/msg = "[usr.client.key] ([usr]) has turned [src]'s communicator port off, at [x],[y],[z]."
+				var/msg = "[ui.user.client.key] ([ui.user]) has turned [src]'s communicator port off, at [x],[y],[z]."
 				message_admins(msg)
 				log_game(msg)
 
@@ -186,12 +186,12 @@
 			. = TRUE
 			allow_external_newscasters = !allow_external_newscasters
 			if(!allow_external_newscasters)
-				var/msg = "[usr.client.key] ([usr]) has turned [src]'s newscaster port off, at [x],[y],[z]."
+				var/msg = "[ui.user.client.key] ([ui.user]) has turned [src]'s newscaster port off, at [x],[y],[z]."
 				message_admins(msg)
 				log_game(msg)
 
 	update_icon()
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 
 // Proc: get_exonet_node()
 // Parameters: None

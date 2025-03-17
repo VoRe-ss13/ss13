@@ -40,7 +40,7 @@
 
 	poison_chance = 15
 	poison_per_bite = 3
-	poison_type = "serotrotium_v"
+	poison_type = REAGENT_ID_SEROTROTIUMV
 
 //	ai_holder_type = /datum/ai_holder/simple_mob/melee/tunneler
 
@@ -155,6 +155,8 @@
 
 		// Update T.
 		T = get_step(src, get_dir(src, destination))
+		if(!T) //There is no turf in that direction.
+			return FALSE //Hit a non-existant turf.
 		if(T.check_density(ignore_mobs = TRUE))
 			to_chat(src, span_critical("You hit something really solid!"))
 			playsound(src, "punch", 75, 1)

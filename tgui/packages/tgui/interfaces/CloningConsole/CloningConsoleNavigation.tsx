@@ -1,6 +1,7 @@
-import { useBackend } from '../../backend';
-import { Tabs } from '../../components';
-import { Data } from './types';
+import { useBackend } from 'tgui/backend';
+import { Tabs } from 'tgui-core/components';
+
+import type { Data } from './types';
 
 export const CloningConsoleNavigation = (props) => {
   const { act, data } = useBackend<Data>();

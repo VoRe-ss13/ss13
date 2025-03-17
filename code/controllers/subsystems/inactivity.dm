@@ -6,7 +6,7 @@ SUBSYSTEM_DEF(inactivity)
 	var/number_kicked = 0
 
 /datum/controller/subsystem/inactivity/fire(resumed = FALSE)
-	if (!CONFIG_GET(number/kick_inactive)) // CHOMPEdit
+	if (!CONFIG_GET(number/kick_inactive))
 		can_fire = FALSE
 		return
 	if (!resumed)
@@ -15,8 +15,8 @@ SUBSYSTEM_DEF(inactivity)
 	while(client_list.len)
 		var/client/C = client_list[client_list.len]
 		client_list.len--
-		if(C.is_afk(CONFIG_GET(number/kick_inactive) MINUTES) && can_kick(C)) // CHOMPEdit
-			to_chat_immediate(C, world.time, span_warning("You have been inactive for more than [CONFIG_GET(number/kick_inactive)] minute\s and have been disconnected.")) // CHOMPEdit
+		if(C.is_afk(CONFIG_GET(number/kick_inactive) MINUTES) && can_kick(C))
+			to_chat_immediate(C, span_warning("You have been inactive for more than [CONFIG_GET(number/kick_inactive)] minute\s and have been disconnected."))
 
 			var/information
 			if(C.mob)
@@ -46,7 +46,7 @@ SUBSYSTEM_DEF(inactivity)
 						information = " while an AI."
 
 			var/adminlinks
-			adminlinks = " (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[C.mob.x];Y=[C.mob.y];Z=[C.mob.z]'>JMP</a>|<A HREF='?_src_=holder;[HrefToken()];cryoplayer=\ref[C.mob]'>CRYO</a>)"
+			adminlinks = " (<A href='byond://?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[C.mob.x];Y=[C.mob.y];Z=[C.mob.z]'>JMP</a>|<A href='byond://?_src_=holder;[HrefToken()];cryoplayer=\ref[C.mob]'>CRYO</a>)"
 
 			log_and_message_admins("being kicked for AFK[information][adminlinks]", C.mob)
 

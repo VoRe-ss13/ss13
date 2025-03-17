@@ -18,7 +18,7 @@
 	temperature = T20C
 	skip_init = FALSE
 
-/turf/unsimulated/wall/planetary/Initialize()
+/turf/unsimulated/wall/planetary/Initialize(mapload)
 	. = ..()
 	SSplanets.addTurf(src)
 
@@ -33,7 +33,7 @@
 	// Force ZAS to reconsider our connections because our temperature has changed
 	if(connections)
 		connections.erase_all()
-	air_master.mark_for_update(src)
+	SSair.mark_for_update(src)
 
 // Normal station/earth air.
 /turf/unsimulated/wall/planetary/normal

@@ -1,11 +1,12 @@
-import { useBackend } from '../../backend';
-import { Box, Button, Section } from '../../components';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Section } from 'tgui-core/components';
+
 import {
   DockStatus,
   StandardControls,
   StatusDisplay,
 } from './EmbeddedControllerHelpers';
-import { AirlockConsoleDockingData } from './types';
+import type { AirlockConsoleDockingData } from './types';
 
 /**
  * This is a mix airlock & docking console. It lets you control the dock status

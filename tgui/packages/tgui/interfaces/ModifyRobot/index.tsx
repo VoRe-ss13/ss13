@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
 import {
   Button,
   Divider,
@@ -10,8 +11,7 @@ import {
   Section,
   Stack,
   Tabs,
-} from 'tgui/components';
-import { Window } from 'tgui/layouts';
+} from 'tgui-core/components';
 
 import { LawManagerLaws, LawManagerLawSets } from '../LawManager';
 import { ModifyRobotNoModule } from './ModifyRobotNoModule';
@@ -21,7 +21,7 @@ import { ModifyRobotModules } from './ModifyRobotTabs/ModifyRobotModules';
 import { ModifyRobotPKA } from './ModifyRobotTabs/ModifyRobotPKA';
 import { ModifyRobotRadio } from './ModifyRobotTabs/ModifyRobotRadio';
 import { ModifyRobotUpgrades } from './ModifyRobotTabs/ModifyRobotUpgrades';
-import { Data } from './types';
+import type { Data } from './types';
 
 export const ModifyRobot = (props) => {
   const { act, data } = useBackend<Data>();
@@ -57,6 +57,13 @@ export const ModifyRobot = (props) => {
     channel,
     channels,
     law_sets,
+    camera_options,
+    radio_options,
+    actuator_options,
+    diagnosis_options,
+    comms_options,
+    armour_options,
+    current_gear,
   } = data;
 
   const [tab, setTab] = useState<number>(0);
@@ -82,7 +89,18 @@ export const ModifyRobot = (props) => {
   tabs[2] = <ModifyRobotPKA target={target!} />;
   tabs[3] = <ModifyRobotRadio target={target!} />;
   tabs[4] = (
-    <ModifyRobotComponent target={target!} cell={cell} cells={cell_options} />
+    <ModifyRobotComponent
+      target={target!}
+      cell={cell}
+      cells={cell_options}
+      cams={camera_options}
+      rads={radio_options}
+      acts={actuator_options}
+      diags={diagnosis_options}
+      comms={comms_options}
+      arms={armour_options}
+      gear={current_gear}
+    />
   );
   tabs[5] = (
     <ModifyRobotAccess
@@ -142,7 +160,7 @@ export const ModifyRobot = (props) => {
         )}
         <LabeledList>
           <LabeledList.Item label="Player Selection">
-            <Stack inline align="baseline">
+            <Stack align="baseline">
               <Stack.Item>
                 <Dropdown
                   selected={target ? target.name : ''}
@@ -175,7 +193,6 @@ export const ModifyRobot = (props) => {
                       Rename
                     </Button>
                   </Stack.Item>
-                  <Stack.Item grow />
                   <Stack.Item>
                     <Button
                       icon={target.emagged ? 'sd-card' : 'bolt'}
@@ -195,7 +212,7 @@ export const ModifyRobot = (props) => {
           </LabeledList.Item>
           <LabeledList.Item label="AI Selection">
             {!!target?.module && (
-              <Stack inline align="baseline">
+              <Stack align="baseline">
                 <Stack.Item>
                   <Dropdown
                     selected={selected_ai || ''}

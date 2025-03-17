@@ -22,7 +22,7 @@
 /obj/item/cane/concealed
 	var/concealed_blade
 
-/obj/item/cane/concealed/Initialize()
+/obj/item/cane/concealed/Initialize(mapload)
 	. = ..()
 	var/obj/item/material/butterfly/switchblade/temp_blade = new(src)
 	concealed_blade = temp_blade
@@ -72,11 +72,11 @@
 	icon_state = "whitecane"
 
 /obj/item/cane/white/attack(mob/M as mob, mob/user as mob)
-    if(user.a_intent == I_HELP)
-        user.visible_message(span_notice("\The [user] has lightly tapped [M] on the ankle with their white cane!"))
-        return TRUE
-    else
-        . = ..()
+	if(user.a_intent == I_HELP)
+		user.visible_message(span_notice("\The [user] has lightly tapped [M] on the ankle with their white cane!"))
+		return TRUE
+	else
+		. = ..()
 
 
 //Code for Telescopic White Cane writen by Gozulio
@@ -115,7 +115,7 @@
 		force = 3
 		attack_verb = list("hit", "poked", "prodded")
 
-	if(istype(user,/mob/living/carbon/human))
+	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		H.update_inv_l_hand()
 		H.update_inv_r_hand()

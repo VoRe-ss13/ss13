@@ -1,4 +1,4 @@
-/obj/item/storage/box/syndicate/Initialize()
+/obj/item/storage/box/syndicate/Initialize(mapload)
 	switch (pickweight(list("bloodyspai" = 1, "stealth" = 1, "screwed" = 1, "guns" = 1, "murder" = 1, "freedom" = 1, "hacker" = 1, "lordsingulo" = 1, "smoothoperator" = 1)))
 		if("bloodyspai")
 			new /obj/item/clothing/under/chameleon(src)
@@ -70,7 +70,7 @@
 /obj/item/storage/box/syndie_kit/imp_freedom
 	name = "boxed freedom implant (with injector)"
 
-/obj/item/storage/box/syndie_kit/imp_freedom/Initialize()
+/obj/item/storage/box/syndie_kit/imp_freedom/Initialize(mapload)
 	var/obj/item/implanter/O = new(src)
 	O.imp = new /obj/item/implant/freedom(O)
 	O.update()
@@ -87,7 +87,7 @@
 /obj/item/storage/box/syndie_kit/imp_uplink
 	name = "boxed uplink implant (with injector)"
 
-/obj/item/storage/box/syndie_kit/imp_uplink/Initialize()
+/obj/item/storage/box/syndie_kit/imp_uplink/Initialize(mapload)
 	var/obj/item/implanter/O = new(src)
 	O.imp = new /obj/item/implant/uplink(O)
 	O.update()
@@ -97,7 +97,7 @@
 	name = "boxed augment implant (with injector)"
 	var/case_type = /obj/item/implantcase/shades
 
-/obj/item/storage/box/syndie_kit/imp_aug/Initialize()
+/obj/item/storage/box/syndie_kit/imp_aug/Initialize(mapload)
 	new /obj/item/implanter(src)
 	new case_type(src)
 	. = ..()
@@ -191,36 +191,36 @@
 	name = "\improper Tricky smokes"
 	desc = "Comes with the following brands of cigarettes, in this order: 2xFlash, 2xSmoke, 1xMindBreaker, 1xTricordrazine. Avoid mixing them up."
 
-/obj/item/storage/box/syndie_kit/cigarette/Initialize()
+/obj/item/storage/box/syndie_kit/cigarette/Initialize(mapload)
 	. = ..()
 	var/obj/item/storage/fancy/cigarettes/pack
 
 	pack = new /obj/item/storage/fancy/cigarettes(src)
-	fill_cigarre_package(pack, list("aluminum" = 5, "potassium" = 5, "sulfur" = 5))
+	fill_cigarre_package(pack, list(REAGENT_ID_ALUMINIUM = 5, REAGENT_ID_POTASSIUM = 5, REAGENT_ID_SULFUR = 5))
 	pack.desc += " 'F' has been scribbled on it."
 
 	pack = new /obj/item/storage/fancy/cigarettes(src)
-	fill_cigarre_package(pack, list("aluminum" = 5, "potassium" = 5, "sulfur" = 5))
+	fill_cigarre_package(pack, list(REAGENT_ID_ALUMINIUM = 5, REAGENT_ID_POTASSIUM = 5, REAGENT_ID_SULFUR = 5))
 	pack.desc += " 'F' has been scribbled on it."
 
 	pack = new /obj/item/storage/fancy/cigarettes(src)
-	fill_cigarre_package(pack, list("potassium" = 5, "sugar" = 5, "phosphorus" = 5))
+	fill_cigarre_package(pack, list(REAGENT_ID_POTASSIUM = 5, REAGENT_ID_SUGAR = 5, REAGENT_ID_PHOSPHORUS = 5))
 	pack.desc += " 'S' has been scribbled on it."
 
 	pack = new /obj/item/storage/fancy/cigarettes(src)
-	fill_cigarre_package(pack, list("potassium" = 5, "sugar" = 5, "phosphorus" = 5))
+	fill_cigarre_package(pack, list(REAGENT_ID_POTASSIUM = 5, REAGENT_ID_SUGAR = 5, REAGENT_ID_PHOSPHORUS = 5))
 	pack.desc += " 'S' has been scribbled on it."
 
 	pack = new /obj/item/storage/fancy/cigarettes(src)
 	// Dylovene. Going with 1.5 rather than 1.6666666...
-	fill_cigarre_package(pack, list("potassium" = 1.5, "nitrogen" = 1.5, "silicon" = 1.5))
+	fill_cigarre_package(pack, list(REAGENT_ID_POTASSIUM = 1.5, REAGENT_ID_NITROGEN = 1.5, REAGENT_ID_SILICON = 1.5))
 	// Mindbreaker
-	fill_cigarre_package(pack, list("silicon" = 4.5, "hydrogen" = 4.5))
+	fill_cigarre_package(pack, list(REAGENT_ID_SILICON = 4.5, REAGENT_ID_HYDROGEN = 4.5))
 
 	pack.desc += " 'MB' has been scribbled on it."
 
 	pack = new /obj/item/storage/fancy/cigarettes(src)
-	pack.reagents.add_reagent("tricordrazine", 15 * pack.storage_slots)
+	pack.reagents.add_reagent(REAGENT_ID_TRICORDRAZINE, 15 * pack.storage_slots)
 	pack.desc += " 'T' has been scribbled on it."
 
 	new /obj/item/flame/lighter/zippo(src)
@@ -300,7 +300,7 @@
 
 /obj/item/storage/box/syndie_kit/viral
 	starts_with = list(
-		/obj/item/virusdish/random = 3
+		// /obj/item/virusdish/random = 3
 		)
 
 /obj/item/storage/secure/briefcase/rifle

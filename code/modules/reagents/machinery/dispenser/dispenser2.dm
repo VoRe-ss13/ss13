@@ -26,7 +26,7 @@
 	/// Saves all the recipes recorded by the machine
 	var/list/saved_recipes = list()
 
-/obj/machinery/chemical_dispenser/Initialize()
+/obj/machinery/chemical_dispenser/Initialize(mapload)
 	. = ..()
 	if(spawn_cartridges)
 		for(var/type in spawn_cartridges)
@@ -133,6 +133,10 @@
 
 		if(!RC.is_open_container())
 			to_chat(user, span_warning("You don't see how \the [src] could dispense reagents into \the [RC]."))
+			return
+
+		if(istype(RC, /obj/item/reagent_containers/glass/cooler_bottle))
+			to_chat(user, span_warning("You don't see how \the [RC] could fit into \the [src]."))
 			return
 
 		container =  RC

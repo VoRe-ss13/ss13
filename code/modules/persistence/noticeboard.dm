@@ -10,7 +10,7 @@
 	var/base_icon_state = "nboard0"
 	var/const/max_notices = 5
 
-/obj/structure/noticeboard/Initialize()
+/obj/structure/noticeboard/Initialize(mapload)
 	. = ..()
 
 	// Grab any mapped notices.
@@ -62,7 +62,7 @@
 
 /obj/structure/noticeboard/attackby(obj/item/I, mob/user)
 	if(I.has_tool_quality(TOOL_SCREWDRIVER))
-		var/choice = tgui_input_list(usr, "Which direction do you wish to place the noticeboard?", "Noticeboard Offset", list("North", "South", "East", "West", "No Offset"))
+		var/choice = tgui_input_list(user, "Which direction do you wish to place the noticeboard?", "Noticeboard Offset", list("North", "South", "East", "West", "No Offset"))
 		if(choice && Adjacent(user) && I.loc == user && !user.incapacitated())
 			playsound(loc, 'sound/items/Screwdriver.ogg', 50, 1)
 			switch(choice)
@@ -133,7 +133,7 @@
 	data["notices"] = tgui_notices
 	return data
 
-/obj/structure/noticeboard/tgui_act(action, params)
+/obj/structure/noticeboard/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
@@ -141,36 +141,36 @@
 		if("read")
 			var/obj/item/paper/P = locate(params["ref"])
 			if(P && P.loc == src)
-				P.show_content(usr)
+				P.show_content(ui.user)
 			. = TRUE
 
 		if("look")
 			var/obj/item/photo/P = locate(params["ref"])
 			if(P && P.loc == src)
-				P.show(usr)
+				P.show(ui.user)
 			. = TRUE
 
 		if("remove")
-			if(!in_range(src, usr))
+			if(!in_range(src, ui.user))
 				return FALSE
 			var/obj/item/I = locate(params["ref"])
 			remove_paper(I)
 			if(istype(I))
-				usr.put_in_hands(I)
-			add_fingerprint(usr)
+				ui.user.put_in_hands(I)
+			add_fingerprint(ui.user)
 			. = TRUE
 
 		if("write")
-			if(!in_range(src, usr))
+			if(!in_range(src, ui.user))
 				return FALSE
 			var/obj/item/P = locate(params["ref"])
 			if((P && P.loc == src)) //if the paper's on the board
-				var/mob/living/M = usr
+				var/mob/living/M = ui.user
 				if(istype(M))
 					var/obj/item/pen/E = M.get_type_in_hands(/obj/item/pen)
 					if(E)
 						add_fingerprint(M)
-						P.attackby(E, usr)
+						P.attackby(E, ui.user)
 					else
 						to_chat(M, span_notice("You'll need something to write with!"))
 						. = TRUE
@@ -179,7 +179,7 @@
 	notices = 5
 	icon_state = "nboard05"
 
-/obj/structure/noticeboard/anomaly/Initialize() //ChompEDIT New --> Initialize
+/obj/structure/noticeboard/anomaly/Initialize(mapload) //ChompEDIT New --> Initialize
 	var/obj/item/paper/P = new()
 	P.name = "Memo RE: proper analysis procedure"
 	P.info = "<br>We keep test dummies in pens here for a reason, so standard procedure should be to activate newfound alien artifacts and place the two in close proximity. Promising items I might even approve monkey testing on."

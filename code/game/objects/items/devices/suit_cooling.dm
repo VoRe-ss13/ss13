@@ -12,7 +12,7 @@
 	throwforce = 10.0
 	throw_speed = 1
 	throw_range = 4
-	action_button_name = "Toggle Heatsink"
+	actions_types = list(/datum/action/item_action/toggle_heatsink)
 
 	matter = list(MAT_STEEL = 15000, MAT_GLASS = 3500)
 	origin_tech = list(TECH_MAGNET = 2, TECH_MATERIAL = 2)
@@ -28,10 +28,10 @@
 
 	//TODO: make it heat up the surroundings when not in space
 
-/obj/item/suit_cooling_unit/ui_action_click()
-	toggle(usr)
+/obj/item/suit_cooling_unit/ui_action_click(mob/user, actiontype)
+	toggle(user)
 
-/obj/item/suit_cooling_unit/Initialize()
+/obj/item/suit_cooling_unit/Initialize(mapload)
 	. = ..()
 	if(ispath(cell))
 		cell = new cell(src)

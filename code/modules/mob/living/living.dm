@@ -19,6 +19,26 @@
 	selected_image = image(icon = buildmode_hud, loc = src, icon_state = "ai_sel")
 
 /mob/living/Destroy()
+	SSradiation.listeners -= src
+	remove_all_modifiers(TRUE)
+	QDEL_NULL(say_list)
+
+	for(var/datum/soul_link/S as anything in owned_soul_links)
+		S.owner_died(FALSE)
+		qdel(S) // If the owner is destroy()'d, the soullink is destroy()'d.
+	owned_soul_links = null
+	for(var/datum/soul_link/S as anything in shared_soul_links)
+		S.sharer_died(FALSE)
+		S.remove_soul_sharer(src) // If a sharer is destroy()'d, they are simply removed.
+	shared_soul_links = null
+
+	if(ai_holder)
+		ai_holder.holder = null
+		ai_holder.UnregisterSignal(src,COMSIG_MOB_STATCHANGE)
+		if(ai_holder.faction_friends && ai_holder.faction_friends.len) //This list is shared amongst the faction
+			ai_holder.faction_friends -= src
+			ai_holder.faction_friends = null
+		QDEL_NULL(ai_holder)
 	if(dsoverlay)
 		dsoverlay.loc = null //I'll take my coat with me
 		dsoverlay = null
@@ -74,7 +94,14 @@
 			internal_organs -= OR
 			qdel(OR)
 
-	return ..()
+	cultnet.updateVisibility(src, 0)
+
+	if(aiming)
+		qdel(aiming)
+		aiming = null
+	aimed.Cut()
+
+	. = ..()
 
 //mob verbs are faster than object verbs. See mob/verb/examine.
 /mob/living/verb/pulled(atom/movable/AM as mob|obj in oview(1))
@@ -87,18 +114,11 @@
 	return
 
 //mob verbs are faster than object verbs. See above.
-// CHOMPEdit Start - Point refactor
 /mob/living/pointed(atom/A as mob|obj|turf in view(client.view, src))
 	if(src.stat || src.restrained())
 		return FALSE
 	if(src.status_flags & FAKEDEATH)
 		return FALSE
-	/*
-	if(!..())
-		return 0
-
-	usr.visible_message(span_filter_notice(span_bold("[src]") + " points to [A]."))
-*/
 	return ..()
 
 /mob/living/_pointed(atom/pointing_at)
@@ -106,16 +126,15 @@
 		return FALSE
 
 	visible_message(span_info(span_bold("[src]") + " points at [pointing_at]."), span_info("You point at [pointing_at]."))
-// CHOMPEdit End
 
 /mob/living/verb/succumb()
 	set name = "Succumb to death"
-	set category = "IC.Game" //CHOMPEdit
+	set category = "IC.Game"
 	set desc = "Press this button if you are in crit and wish to die. Use this sparingly (ending a scene, no medical, etc.)"
-	var/confirm1 = tgui_alert(usr, "Pressing this button will kill you instantenously! Are you sure you wish to proceed?", "Confirm wish to succumb", list("No","Yes"))
+	var/confirm1 = tgui_alert(src, "Pressing this button will kill you instantenously! Are you sure you wish to proceed?", "Confirm wish to succumb", list("No","Yes"))
 	var/confirm2 = "No"
 	if(confirm1 == "Yes")
-		confirm2 = tgui_alert(usr, "Pressing this buttom will really kill you, no going back", "Are you sure?", list("Yes", "No")) //Swapped answers to protect from accidental double clicks.
+		confirm2 = tgui_alert(src, "Pressing this buttom will really kill you, no going back", "Are you sure?", list("Yes", "No")) //Swapped answers to protect from accidental double clicks.
 	if (src.health < 0 && stat != DEAD && confirm1 == "Yes" && confirm2 == "Yes") // Checking both confirm1 and confirm2 for good measure. I don't trust TGUI.
 		src.death()
 		to_chat(src, span_blue("You have given up life and succumbed to death."))
@@ -129,7 +148,7 @@
 
 /mob/living/verb/toggle_afk()
 	set name = "Toggle AFK"
-	set category = "IC.Game" //CHOMPEdit
+	set category = "IC.Game"
 	set desc = "Mark yourself as Away From Keyboard, or clear that status!"
 	if(away_from_keyboard)
 		remove_status_indicator("afk")
@@ -179,7 +198,7 @@
 
 //sort of a legacy burn method for /electrocute, /shock, and the e_chair
 /mob/living/proc/burn_skin(burn_amount)
-	if(istype(src, /mob/living/carbon/human))
+	if(ishuman(src))
 		//to_world("DEBUG: burn_skin(), mutations=[mutations]")
 		if(mShock in src.mutations) //shockproof
 			return 0
@@ -194,7 +213,7 @@
 				H.UpdateDamageIcon()
 		H.updatehealth()
 		return 1
-	else if(istype(src, /mob/living/silicon/ai))
+	else if(isAI(src))
 		return 0
 
 /mob/living/proc/adjustBodyTemp(actual, desired, incrementboost)
@@ -213,7 +232,7 @@
 		temperature -= change
 		if(actual < desired)
 			temperature = desired
-//	if(istype(src, /mob/living/carbon/human))
+//	if(ishuman(src))
 //		to_world("[src] ~ [src.bodytemperature] ~ [temperature]")
 	return temperature
 
@@ -641,6 +660,11 @@
 			L += D.wrapped
 			if(istype(D.wrapped, /obj/item/storage)) //this should never happen
 				L += get_contents(D.wrapped)
+
+		for(var/obj/item/rig/R in src.contents)	//Check rigsuit storage for items
+			if(R.rig_storage)
+				L += get_contents(R.rig_storage)
+
 		return L
 
 /mob/living/proc/check_contents_for(A)
@@ -699,6 +723,9 @@
 	disabilities = 0
 	resting = FALSE
 
+	if(viruses)
+		viruses.Cut()
+
 	// fix blindness and deafness
 	blinded = 0
 	SetBlinded(0)
@@ -736,28 +763,31 @@
 	return
 
 
-/mob/living/verb/Examine_OOC() //ChompEDIT - proc --> verb
+/mob/living/verb/Examine_OOC()
 	set name = "Examine Meta-Info (OOC)"
-	set category = "OOC.Game" //CHOMPEdit
+	set category = "OOC.Game"
 	set src in view()
+	do_examine_ooc(usr)
+
+/mob/living/proc/do_examine_ooc(mob/user)
 	//VOREStation Edit Start - Making it so SSD people have prefs with fallback to original style.
-	if(CONFIG_GET(flag/allow_metadata)) // CHOMPEdit
+	if(CONFIG_GET(flag/allow_metadata))
 		if(ooc_notes)
-			ooc_notes_window(usr)
-//			to_chat(usr, span_filter_notice("[src]'s Metainfo:<br>[ooc_notes]"))
+			ooc_notes_window(user)
+//			to_chat(user, span_filter_notice("[src]'s Metainfo:<br>[ooc_notes]"))
 		else if(client)
-			to_chat(usr, span_filter_notice("[src]'s Metainfo:<br>[client.prefs.metadata]"))
+			to_chat(user, span_filter_notice("[src]'s Metainfo:<br>[client.prefs.read_preference(/datum/preference/text/living/ooc_notes)]"))
 		else
-			to_chat(usr, span_filter_notice("[src] does not have any stored infomation!"))
+			to_chat(user, span_filter_notice("[src] does not have any stored infomation!"))
 	else
-		to_chat(usr, span_filter_notice("OOC Metadata is not supported by this server!"))
+		to_chat(user, span_filter_notice("OOC Metadata is not supported by this server!"))
 	//VOREStation Edit End - Making it so SSD people have prefs with fallback to original style.
 
 	return
 
 /mob/living/verb/resist()
 	set name = "Resist"
-	set category = "IC.Game" //CHOMPEdit
+	set category = "IC.Game"
 
 	if(!incapacitated(INCAPACITATION_KNOCKOUT) && (last_resist_time + RESIST_COOLDOWN < world.time))
 		last_resist_time = world.time
@@ -817,7 +847,7 @@
 
 /mob/living/verb/lay_down()
 	set name = "Rest"
-	set category = "IC.Game" //CHOMPEdit
+	set category = "IC.Game"
 
 	resting = !resting
 	to_chat(src, span_notice("You are now [resting ? "resting" : "getting up"]."))
@@ -854,17 +884,15 @@
 /mob/living/proc/slip(var/slipped_on,stun_duration=8)
 	return 0
 
-// CHOMPAdd - Drop both things on hands
+/mob/living/carbon/drop_from_inventory(var/obj/item/W, var/atom/target = null)
+	return !(W in internal_organs) && ..()
+
 /mob/living/proc/drop_both_hands()
 	if(l_hand)
 		unEquip(l_hand)
 	if(r_hand)
 		unEquip(r_hand)
 	return
-// CHOMPEnd
-
-/mob/living/carbon/drop_from_inventory(var/obj/item/W, var/atom/target = null)
-	return !(W in internal_organs) && ..()
 
 /mob/living/touch_map_edge()
 
@@ -1028,7 +1056,7 @@
 		density = initial(density)
 	// CHOMPEdit Start - Rest passtable when crawling
 		if(passtable_reset)
-			passtable_reset = TRUE
+			passtable_reset = FALSE
 			pass_flags &= ~PASSTABLE
 		passtable_crawl_checked = FALSE
 	// CHOMPEdit End
@@ -1041,6 +1069,7 @@
 	if(lying != lying_prev)
 		lying_prev = lying
 		update_transform()
+		update_mob_action_buttons()
 		//VOREStation Add
 		if(lying && LAZYLEN(buckled_mobs))
 			for(var/mob/living/L as anything in buckled_mobs)
@@ -1205,7 +1234,7 @@
 				add_attack_logs(src,M,"Thrown via grab to [end_T.x],[end_T.y],[end_T.z]")
 			if(ishuman(M))
 				var/mob/living/carbon/human/N = M
-				if((N.health + N.halloss) < CONFIG_GET(number/health_threshold_crit) || N.stat == DEAD) // CHOMPEdit
+				if((N.health + N.halloss) < CONFIG_GET(number/health_threshold_crit) || N.stat == DEAD)
 					N.adjustBruteLoss(rand(10,30))
 			src.drop_from_inventory(G)
 
@@ -1312,16 +1341,15 @@
 /mob/living/vv_get_header()
 	. = ..()
 	. += {"
-		<a href='?_src_=vars;[HrefToken()];rename=\ref[src]'><b>[src]</b></a><font size='1'>
-		<br><a href='?_src_=vars;[HrefToken()];datumedit=\ref[src];varnameedit=ckey'>[ckey ? ckey : "No ckey"]</a> / <a href='?_src_=vars;[HrefToken()];datumedit=\ref[src];varnameedit=real_name'>[real_name ? real_name : "No real name"]</a>
-		<br>
-		BRUTE:<a href='?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=brute'>[getBruteLoss()]</a>
-		FIRE:<a href='?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=fire'>[getFireLoss()]</a>
-		TOXIN:<a href='?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=toxin'>[getToxLoss()]</a>
-		OXY:<a href='?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=oxygen'>[getOxyLoss()]</a>
-		CLONE:<a href='?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=clone'>[getCloneLoss()]</a>
-		BRAIN:<a href='?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=brain'>[getBrainLoss()]</a>
-		</font>
+		<a href='byond://?_src_=vars;[HrefToken()];rename=\ref[src]'>"} + span_bold("[src]") + {"</a>
+		"} + span_small("<br><a href='byond://?_src_=vars;[HrefToken()];datumedit=\ref[src];varnameedit=ckey'>[ckey ? ckey : "No ckey"]</a> / <a href='byond://?_src_=vars;[HrefToken()];datumedit=\ref[src];varnameedit=real_name'>[real_name ? real_name : "No real name"]</a>") + {"
+		"} + span_small("<br>") + {"
+		"} + span_small("BRUTE:<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=brute'>[getBruteLoss()]</a>") + {"
+		"} + span_small("FIRE:<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=fire'>[getFireLoss()]</a>") + {"
+		"} + span_small("TOXIN:<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=toxin'>[getToxLoss()]</a>") + {"
+		"} + span_small("OXY:<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=oxygen'>[getOxyLoss()]</a>") + {"
+		"} + span_small("CLONE:<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=clone'>[getCloneLoss()]</a>") + {"
+		"} + span_small("BRAIN:<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=brain'>[getBrainLoss()]</a>") + {"
 		"}
 
 /mob/living/update_gravity(has_gravity)
@@ -1403,10 +1431,54 @@
 
 /mob/living/verb/mob_sleep()
 	set name = "Sleep"
-	set category = "IC.Game" //CHOMPEdit
-	if(!toggled_sleeping && alert(src, "Are you sure you wish to go to sleep? You will snooze until you use the Sleep verb again.", "Sleepy Time", "No", "Yes") == "No")
+	set category = "IC.Game"
+	if(!toggled_sleeping && tgui_alert(src, "Are you sure you wish to go to sleep? You will snooze until you use the Sleep verb again.", "Sleepy Time", list("No", "Yes")) != "Yes")
 		return
 	toggled_sleeping = !toggled_sleeping
 	to_chat(src, span_notice("You are [toggled_sleeping ? "now sleeping. Use the Sleep verb again to wake up" : "no longer sleeping"]."))
 	if(toggled_sleeping)
 		Sleeping(1)
+
+/mob/living/proc/handle_dripping()
+	if(prob(95))
+		return
+	if(!isturf(src.loc))
+		return
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		if(H.species && H.species.drippy)
+			// drip body color if human
+			var/obj/effect/decal/cleanable/blood/B
+			var/decal_type = /obj/effect/decal/cleanable/blood/splatter
+			var/turf/T = get_turf(src.loc)
+
+			// Are we dripping or splattering?
+			var/list/drips = list()
+			// Only a certain number of drips (or one large splatter) can be on a given turf.
+			for(var/obj/effect/decal/cleanable/blood/drip/drop in T)
+				drips |= drop.drips
+				qdel(drop)
+			if(drips.len < 6)
+				decal_type = /obj/effect/decal/cleanable/blood/drip
+
+			// Find a blood decal or create a new one.
+			B = locate(decal_type) in T
+			if(!B)
+				B = new decal_type(T)
+
+			var/obj/effect/decal/cleanable/blood/drip/drop = B
+			if(istype(drop) && drips && drips.len)
+				drop.add_overlay(drips)
+				drop.drips |= drips
+
+			// Update appearance.
+			drop.name = "drips of something"
+			drop.desc = "It's thick and gooey. Perhaps it's the chef's cooking?"
+			drop.dryname = "dried something"
+			drop.drydesc = "It's dry and crusty. The janitor isn't doing their job."
+			drop.basecolor = rgb(H.r_skin,H.g_skin,H.b_skin)
+			drop.update_icon()
+			drop.fluorescent  = 0
+			drop.invisibility = 0
+	//else
+		// come up with drips for other mobs someday

@@ -9,10 +9,10 @@
 	if(feedback)
 		if(status[1] == HUMAN_EATING_NO_MOUTH)
 			// to_chat(src, "Where do you intend to put [food]? You don't have a mouth!")
-			balloon_alert(src, "You don't have a mouth!") // CHOMPEdit - Changed to balloon alert
+			balloon_alert(src, "you don't have a mouth!") // CHOMPEdit - Changed to balloon alert
 		else if(status[1] == HUMAN_EATING_BLOCKED_MOUTH)
 			// to_chat(src, span_warning("\The [status[2]] is in the way!"))
-			balloon_alert(src, "\The [status[2]] is in the way!") // CHOMPEdit - Changed to balloon alert
+			balloon_alert(src, "\the [status[2]] is in the way!") // CHOMPEdit - Changed to balloon alert
 	return 0
 
 /mob/living/carbon/human/can_force_feed(var/feeder, var/food, var/feedback = 1)
@@ -22,10 +22,10 @@
 	if(feedback)
 		if(status[1] == HUMAN_EATING_NO_MOUTH)
 			// to_chat(feeder, "Where do you intend to put [food]? \The [src] doesn't have a mouth!")
-			balloon_alert(src, "\The [src] doesn't have a mouth!") // CHOMPEdit - Changed to balloon alert
+			balloon_alert(src, "\the [src] doesn't have a mouth!") // CHOMPEdit - Changed to balloon alert
 		else if(status[1] == HUMAN_EATING_BLOCKED_MOUTH)
 			// to_chat(feeder, span_warning("\The [status[2]] is in the way!"))
-			balloon_alert(feeder, "\The [status[2]] is in the way!") // CHOMPEdit - Changed to balloon alert
+			balloon_alert(feeder, "\the [status[2]] is in the way!") // CHOMPEdit - Changed to balloon alert
 	return 0
 
 /mob/living/carbon/human/proc/can_eat_status()
@@ -164,6 +164,10 @@
 	hud_list[IMPTRACK_HUD]    = gen_hud_image(ingame_hud, src, "hudblank", plane = PLANE_CH_IMPTRACK)
 	hud_list[SPECIALROLE_HUD] = gen_hud_image(ingame_hud, src, "hudblank", plane = PLANE_CH_SPECIAL)
 	hud_list[STATUS_HUD_OOC]  = gen_hud_image(ingame_hud, src, "hudhealthy", plane = PLANE_CH_STATUS_OOC)
+	hud_list[HEALTH_VR_HUD]   = gen_hud_image(ingame_hud_med_vr, src, "100", plane = PLANE_CH_HEALTH_VR)
+	hud_list[STATUS_R_HUD]    = gen_hud_image(ingame_hud_vr, src, "hudblank", plane = PLANE_CH_STATUS_R)
+	hud_list[BACKUP_HUD]      = gen_hud_image(ingame_hud_vr, src, "hudblank", plane = PLANE_CH_BACKUP)
+	hud_list[VANTAG_HUD]      = gen_hud_image(ingame_hud_vr, src, "hudblank", plane = PLANE_CH_VANTAG)
 	add_overlay(hud_list)
 
 /mob/living/carbon/human/recalculate_vis()
@@ -191,23 +195,17 @@
 				var/obj/item/clothing/glasses/V = rig.visor.vision.glasses
 				compiled_vis |= V.enables_planes
 
-	//VOREStation Add - NIF Support
 	if(nif)
 		compiled_vis |= nif.planes_visible()
 	//event hud
 	if(vantag_hud)
 		compiled_vis |= VIS_CH_VANTAG
-	//VOREStation Add End
 
-	//Vore Stomach addition start. This goes here.
 	if(stomach_vision)
 		compiled_vis += VIS_CH_STOMACH
-	//Vore Stomach addition end
 
-	//CHOMPAdd Start Soulcatcher
 	if(soulgem?.flag_check(SOULGEM_SEE_SR_SOULS))
 		compiled_vis += VIS_SOULCATCHER
-	//CHOMPAdd End
 
 	if(!compiled_vis.len && !vis_enabled.len)
 		return //Nothin' doin'.
