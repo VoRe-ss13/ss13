@@ -1141,7 +1141,10 @@ GLOBAL_LIST_EMPTY(damage_icon_parts) //see UpdateDamageIcon()
 
 	var/image/wing_image = get_wing_image(FALSE)
 
+<<<<<<< HEAD
 	//var/obj/item/organ/external/chest = organs_by_name[BP_TORSO] TORCHEdit throwing warning >:c
+=======
+>>>>>>> d00cd1e398 ([MIRROR] Make the belly Visibility pref a client one as opposed to a per-character one. (#10467))
 
 	if(wing_image)
 		wing_image.layer = BODY_LAYER+WING_LAYER
