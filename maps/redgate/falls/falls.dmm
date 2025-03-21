@@ -1,4 +1,5 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+<<<<<<< HEAD
 "ac" = (
 /obj/structure/waterfall,
 /obj/structure/waterfall/mist,
@@ -14,6 +15,11 @@
 	dir = 1
 	},
 /turf/simulated/floor/water/atoll,
+=======
+"aa" = (
+/obj/structure/ghost_pod/ghost_activated/maint_lurker/redgate,
+/turf/simulated/floor/atoll,
+>>>>>>> f98ce0575a ([MIRROR] Redgate Inhabitants (#10483))
 /area/gateway/atoll/falls)
 "af" = (
 /obj/effect/decal/shadow/floor,
@@ -19602,7 +19608,7 @@ YG
 gI
 vl
 Du
-VM
+aa
 jD
 Jk
 PC
