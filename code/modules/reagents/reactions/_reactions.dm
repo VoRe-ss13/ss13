@@ -101,7 +101,14 @@
 	//add the product
 	var/amt_produced = result_amount * reaction_progress
 	if(result)
+<<<<<<< HEAD
 		holder.add_reagent(result, amt_produced, data, safety = 1)
+=======
+		holder.add_reagent(result, amt_produced, data, safety = 1, was_from_belly = belly_reagent)
+		// #ifdef UNIT_TEST
+		// log_unit_test("[name] - Reagent reaction result: [result] [amt_produced]") // Uncomment for UNIT_TEST debug assistance
+		// #endif
+>>>>>>> 848d52a683 ([MIRROR] Recipie conflict unit test + Chemanalyzer PRO  (#10494))
 
 	on_reaction(holder, amt_produced)
 
