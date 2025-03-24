@@ -63,7 +63,7 @@
 		if(!T) return
 
 		if(client)
-			playsound(T, pick(emote_sound), 25, TRUE, falloff = 1 , is_global = TRUE, frequency = voice_freq, ignore_walls = FALSE, preference = /datum/preference/toggle/emote_sounds)
+			playsound(T, pick(voice_sounds_list), 75, TRUE, falloff = 1 , is_global = TRUE, frequency = voice_freq, ignore_walls = TRUE, preference = /datum/preference/toggle/emote_sounds) //CHOMPEdit - use say prefs instead //ChompEDIT - also ignore walls
 
 		var/list/in_range = get_mobs_and_objs_in_view_fast(T,range,2,remote_ghosts = client ? TRUE : FALSE)
 		var/list/m_viewers = in_range["mobs"]
@@ -71,17 +71,21 @@
 
 		for(var/mob/M as anything in m_viewers)
 			if(M)
+				var/final_message = message
 				if(isobserver(M))
-					message = span_emote(span_bold("[src]") + " ([ghost_follow_link(src, M)]) [input]")
+					final_message = span_emote(span_bold("[src]") + " ([ghost_follow_link(src, M)]) [input]")
 				if(src.client && M && !(get_z(src) == get_z(M)))
-					message = span_multizsay("[message]")
+					final_message = span_multizsay("[final_message]")
 				// If you are in the same tile, right next to, or being held by a person doing an emote, you should be able to see it while blind
 				if(m_type != AUDIBLE_MESSAGE && (src.Adjacent(M) || (istype(src.loc, /obj/item/holder) && src.loc.loc == M)))
-					M.show_message(message)
+					M.show_message(final_message)
 				else
-					M.show_message(message, m_type)
+					M.show_message(final_message, m_type)
 				M.create_chat_message(src, "[runemessage]", FALSE, list("emote"), (m_type == AUDIBLE_MESSAGE))
 
 		for(var/obj/O as anything in o_viewers)
 			if(O)
-				O.see_emote(src, message, m_type)
+				var/final_message = message
+				if(src.client && O && !(get_z(src) == get_z(O)))
+					final_message = span_multizsay("[final_message]")
+				O.see_emote(src, final_message, m_type)

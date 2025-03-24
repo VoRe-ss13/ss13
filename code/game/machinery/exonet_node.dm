@@ -23,9 +23,7 @@
 // Proc: New()
 // Parameters: None
 // Description: Adds components to the machine for deconstruction.
-/obj/machinery/exonet_node/map/Initialize(mapload)
-	. = ..()
-	default_apply_parts()
+/obj/machinery/exonet_node/Initialize(mapload)
 	// CHOMPAdd: Exonet Machinery humming
 	soundloop = new(list(src), FALSE)
 	if(prob(60)) // 60% chance to change the midloop
@@ -40,12 +38,11 @@
 			soundloop.mid_length = 30
 	soundloop.start() // CHOMPStation Edit: This starts on
 	// CHOMPAdd End
-
-/obj/machinery/exonet_node/map/Initialize(mapload)
 	. = ..()
-	//default_apply_parts() //CHOMPEdit
-	desc = "This machine is one of many, many nodes inside [using_map.starsys_name]'s section of the Exonet, connecting the [using_map.station_short] to the rest of the system, at least \
-	electronically."
+	default_apply_parts()
+	if(mapload)
+		desc = "This machine is one of many, many nodes inside [using_map.starsys_name]'s section of the Exonet, connecting the [using_map.station_short] to the rest of the system, at least \
+		electronically."
 
 /obj/machinery/exonet_node/Destroy() // CHOMPAdd: Just in case.
 	QDEL_NULL(soundloop) // CHOMPAdd: Exonet noises
