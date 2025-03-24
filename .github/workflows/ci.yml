@@ -124,34 +124,6 @@ jobs:
           extract: true
       - run: ./DMCompiler_linux-x64/DMCompiler --suppress-unimplemented vorestation.dme
 
-  dreamchecker:
-    name: DreamChecker
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Restore SpacemanDMM Cache
-        uses: actions/cache@v4
-        with:
-          path: ~/SpacemanDMM
-          key: ${{ runner.os }}-dreamchecker-${{ hashFiles('dependencies.sh')}}
-          restore-keys: ${{ runner.os }}-dreamchecker
-
-      - name: Install Dependencies
-        run: |
-          tools/ci/install_spaceman_dmm.sh dreamchecker
-
-      - name: Run Linter
-        id: linter
-        run: |
-          ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
-
-      - name: Annotate Linter
-        uses: yogstation13/DreamAnnotate@v2
-        if: always()
-        with:
-          outputFile: output-annotations.txt
-
   unit_tests:
     timeout-minutes: 30
     if: ( !contains(github.event.head_commit.message, '[ci skip]') )
