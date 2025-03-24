@@ -14,4 +14,8 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 5
 	vore_upper_transfer_chance = 75
+<<<<<<< HEAD
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/evasive // Aggressive!
+=======
+	ai_holder_type = /datum/ai_holder/simple_mob/melee/evasive
+>>>>>>> ca9b47057c ([MIRROR] Makes a few loadout fluff items NOT give you 50% armor (#10463))
