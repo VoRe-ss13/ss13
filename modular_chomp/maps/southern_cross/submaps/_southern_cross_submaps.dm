@@ -58,13 +58,6 @@
 	mappath = "modular_chomp/maps/southern_cross/submaps/gateway/diescraper.dmm"
 	associated_map_datum = /datum/map_z_level/sc_lateload/gateway_destination
 
-#include "gateway/diescraper.dm"
-/datum/map_template/sc_lateload/gateway/diescraper
-	name = "Skyscraper"
-	desc = "A skyscraper of various businesses, apartments, and recreations. Do not fall"
-	mappath = "modular_chomp/maps/southern_cross/submaps/gateway/diescraper.dmm"
-	associated_map_datum = /datum/map_z_level/sc_lateload/gateway_destination
-
 #include "gateway/BaseBlep.dm"
 /datum/map_template/sc_lateload/gateway/baseblep
 	name = "Base Blep"
