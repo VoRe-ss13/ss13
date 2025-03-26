@@ -6110,6 +6110,19 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/maintenance/Engineering_Substation)
+"ajU" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/grille,
+/obj/structure/window/titanium,
+/obj/structure/window/titanium{
+	dir = 4
+	},
+/obj/structure/window/titanium{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/Deck2_Civilian_PortChamber1)
 "ajV" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -10909,10 +10922,6 @@
 	req_access = list(28)
 	},
 /obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/maintenance/int,
 /turf/simulated/floor/tiled/techmaint,
 /area/crew_quarters/Chomp_Kitchen)
 "auf" = (
@@ -20027,6 +20036,8 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark,
 /area/security/Armory)
 "aZQ" = (
@@ -45620,9 +45631,6 @@
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 5
 	},
-/obj/structure/cable/green{
-	icon_state = "2-4"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/engineering/Storage)
 "dqa" = (
@@ -46040,10 +46048,6 @@
 	},
 /obj/effect/floor_decal/corner/brown/border{
 	dir = 1
-	},
-/obj/machinery/camera/network/security{
-	c_tag = "D2-Com-Port Corridor1";
-	network = list("Commons")
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/Port_2_Deck_Corridor_1)
@@ -59753,9 +59757,6 @@
 /obj/effect/floor_decal/corner/lightgrey/bordercorner{
 	dir = 1
 	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 1
-	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_2_Deck_Hall)
 "gSJ" = (
@@ -67861,10 +67862,6 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 1;
-	icon_state = "pipe-c"
-	},
 /turf/simulated/floor/tiled,
 /area/hallway/Star_2_Deck_Corridor_1)
 "jai" = (
@@ -71826,9 +71823,6 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 9
-	},
-/obj/structure/window/basic{
-	dir = 1
 	},
 /turf/simulated/floor/wood/alt/parquet,
 /area/bridge/Vault_Reception)
@@ -79438,26 +79432,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/Chapel_Morgue)
-"myK" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/industrial/hatch,
-/obj/structure/grille,
-/obj/structure/window/titanium,
-/obj/structure/window/titanium{
-	dir = 4
-	},
-/turf/simulated/floor/plating,
-/area/crew_quarters/Chapel_Morgue)
-"myK" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/industrial/hatch,
-/obj/structure/grille,
-/obj/structure/window/titanium,
-/obj/structure/window/titanium{
-	dir = 1
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/Deck2_Civilian_PortChamber1)
 "myX" = (
 /obj/item/paper_bin{
 	pixel_x = 5
@@ -96279,7 +96253,6 @@
 /obj/effect/floor_decal/corner/lightgrey/bordercorner{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled,
 /area/hallway/Central_2_Deck_Hall)
 "rla" = (
@@ -106557,12 +106530,6 @@
 	},
 /obj/effect/floor_decal/corner/lightgrey/border{
 	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/light/spot{
-	dir = 8;
-	color = "#ccc9ff";
-	desc = "An extra bright lighting fixture."
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_2_Deck_Hall)
@@ -116921,12 +116888,6 @@
 	dir = 1
 	},
 /obj/machinery/door/airlock/maintenance/common,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/Deck2_AftStar_Corridor)
 "xak" = (
@@ -118120,7 +118081,6 @@
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 9
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/tiled/old_tile/yellow,
 /area/crew_quarters/Library_Cafe)
 "xqE" = (
@@ -118771,12 +118731,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/Deck2_AftStar_Corridor)
@@ -140337,7 +140291,7 @@ aaa
 aaa
 aaa
 aaa
-myK
+ajU
 nDk
 pAW
 jBe
@@ -140346,7 +140300,7 @@ gDe
 jBe
 nDk
 aRu
-myK
+ajU
 aaa
 aaa
 aaa
@@ -141669,7 +141623,7 @@ cfY
 ssv
 npz
 uet
-myK
+ajU
 aaa
 aaa
 aaa
@@ -142143,7 +142097,7 @@ aaf
 aaa
 aaa
 bFW
-myK
+ajU
 uZc
 pAW
 weY
@@ -149027,7 +148981,7 @@ aaa
 aaa
 aaa
 aaa
-mhW
+atX
 pFy
 avM
 aKf
@@ -150706,10 +150660,10 @@ bHD
 qGP
 bHD
 bHD
-bHD
-qGP
-bHD
-bHD
+aaa
+aaa
+aaa
+aaa
 aaa
 aaa
 aaa
@@ -151738,10 +151692,10 @@ bHD
 xZV
 bHD
 bHD
-bHD
-xZV
-bHD
-bHD
+aaa
+aaa
+aaa
+aaa
 aaa
 aaa
 aaa

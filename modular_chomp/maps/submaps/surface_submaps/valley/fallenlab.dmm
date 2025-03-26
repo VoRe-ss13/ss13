@@ -54,9 +54,6 @@
 /obj/structure/salvageable/implant_container,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/corner/orange/diagonal,
-/mob/living/simple_mob/mechanical/cyber_horror/tajaran{
-	loot_list = list(/obj/item/gun/projectile/cell_loaded/medical = 5)
-	},
 /turf/simulated/floor/tiled/dark,
 /area/submap/fallenlab)
 "fL" = (

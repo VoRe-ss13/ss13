@@ -45,6 +45,7 @@
 		/obj/item/clothing/head/helmet/explorer,
 		/obj/item/clothing/suit/storage/hooded/explorer,
 		/obj/item/clothing/mask/gas/explorer,
+		/obj/item/storage/belt/explorer, //CHOMPADD
 		/obj/item/clothing/shoes/boots/winter/explorer,
 		/obj/item/clothing/gloves/black,
 		/obj/item/radio/headset/explorer,
@@ -54,8 +55,9 @@
 		/obj/item/storage/box/flare,
 		/obj/item/geiger,
 		/obj/item/cell/device,
-		/obj/item/radio,
 		/obj/item/stack/marker_beacon/thirty,
+		/obj/item/reagent_containers/food/snacks/liquidfood, //CHOMPADD
+		/obj/item/reagent_containers/food/snacks/liquidprotein, //CHOMPADD
 		/obj/item/cataloguer
 		)
 

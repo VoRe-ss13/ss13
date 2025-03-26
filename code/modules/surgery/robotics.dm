@@ -130,7 +130,7 @@
 /datum/surgery_step/robotics/insertion_preparation/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	user.visible_message(span_notice("[user] modifies the wiring in [target]'s [affected.name] with \the [tool]."), \
-	 span_notice("You modify the wiring in [target]'s [affected.name] with \the [tool]."))
+		span_notice("You modify the wiring in [target]'s [affected.name] with \the [tool]."))
 	affected.open = 2
 
 /datum/surgery_step/robotics/insertion_preparation/fail_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)

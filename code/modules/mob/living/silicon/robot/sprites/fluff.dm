@@ -90,7 +90,7 @@
 	whitelist_charname = "B.A.U-Kingside"
 
 // L
-
+/* TORCH Removal fails unit tests
 /datum/robot_sprite/fluff/lunarfleet
 	name = CUSTOM_BORGSPRITE("Clea-Nor")
 	module_type = "Engineering"
@@ -111,7 +111,7 @@
 
 	whitelist_ckey = "lunarfleet"
 	whitelist_charname = "Clea-Nor"
-
+*/
 /// S
 
 //Somememeguy's custom catborg.
