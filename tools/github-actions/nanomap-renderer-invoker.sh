@@ -3,7 +3,6 @@
 BASEDIR=$PWD
 #Put directories to get maps from here. One per line.
 mapdirs=(
-    "maps/relic_base"
     "modular_chomp/maps/southern_cross"
     "modular_chomp/maps/soluna_nexus"
     "modular_chomp/maps/relic_base"
