@@ -228,7 +228,8 @@
 	icon_state = "debris"
 	w_class = ITEMSIZE_NORMAL
 
-/obj/item/debris_pack/Initialize(mapload, list/matter)
+/obj/item/debris_pack/Initialize(mapload, list/matter_init)
+	matter = matter_init.Copy()
 	. = ..()
 	matter = matter.Copy()
 
