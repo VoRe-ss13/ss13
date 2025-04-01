@@ -23,17 +23,11 @@
 		if("JoinLate") // Bit difference, since we need the spawn point to move.
 			latejoin += src
 			simulated = TRUE
-		//	delete_me = 1
-		//VOREStation Add end
-		if("Observer-Start") // Ghosts are the only thing that use the latejoin list afaik and it complains if there's nothing in the list.
-			latejoin += src
-			simulated = TRUE
-		//VOREStation Add end
+			//delete_me = TRUE // see above, moving, always use this list with get_turf
 		if("JoinLateGateway")
 			latejoin_gateway += loc
-			// CHOMPEdit Start
+			// latejoin += loc				//VOREStation Addition // CHOMPRemove
 			delete_me = TRUE
-			// CHOMPEdit End
 		//CHOMPEdit Begin
 		if("JoinLateStationGateway")
 			GLOB.latejoin_gatewaystation += loc
