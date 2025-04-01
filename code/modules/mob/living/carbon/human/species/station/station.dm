@@ -3,13 +3,17 @@
 	name_plural = "Humans"
 	icobase = 'icons/mob/human_races/r_human_vr.dmi'
 	deform = 'icons/mob/human_races/r_def_human_vr.dmi'
+	icobase = 'icons/mob/human_races/r_human_vr.dmi'
+	deform = 'icons/mob/human_races/r_def_human_vr.dmi'
 	primitive_form = SPECIES_MONKEY
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite)
+	blurb = "Humanity originated in the Sol system, and over the last three centuries has spread \
 	blurb = "Humanity originated in the Sol system, and over the last three centuries has spread \
 	colonies across a wide swathe of space. They hold a wide range of forms and creeds.<br/><br/> \
 	While the central Sol government maintains control of its far-flung people, powerful corporate \
 	interests, rampant cyber and bio-augmentation and secretive factions make life on most human \
 	worlds tumultous at best."
+	wikilink="https://wiki.vore-station.net/Human"
 	wikilink="https://wiki.vore-station.net/Human"
 	catalogue_data = list(/datum/category_item/catalogue/fauna/humans)
 	num_alternate_languages = 3
@@ -21,6 +25,7 @@
 	min_age = 18
 	max_age = 130
 	genders = list(MALE, FEMALE, PLURAL, NEUTER)
+	genders = list(MALE, FEMALE, PLURAL, NEUTER)
 
 	economic_modifier = 10
 
@@ -28,8 +33,12 @@
 	base_color = "#EECEB3"
 	color_mult = 1
 
+	base_color = "#EECEB3"
+	color_mult = 1
+
 
 	spawn_flags = SPECIES_CAN_JOIN
+	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
 	appearance_flags = HAS_HAIR_COLOR | HAS_SKIN_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_EYE_COLOR
 
 	has_organ = list(
@@ -62,13 +71,20 @@
 /datum/species/human/vatgrown
 	spawn_flags = SPECIES_IS_RESTRICTED
 
+/datum/species/human/vatgrown
+	spawn_flags = SPECIES_IS_RESTRICTED
+
 /datum/species/unathi
 	name = SPECIES_UNATHI
 	name_plural = "Unathi"
 	icobase = 'icons/mob/human_races/r_lizard_vr.dmi'
 	deform = 'icons/mob/human_races/r_def_lizard_vr.dmi'
 	tail_animation = 'icons/mob/species/unathi/tail_vr.dmi'
+	icobase = 'icons/mob/human_races/r_lizard_vr.dmi'
+	deform = 'icons/mob/human_races/r_def_lizard_vr.dmi'
+	tail_animation = 'icons/mob/species/unathi/tail_vr.dmi'
 	tail = "sogtail"
+	vore_belly_default_variant = "L"
 	vore_belly_default_variant = "L"
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/bite/sharp)
 	primitive_form = SPECIES_MONKEY_UNATHI
@@ -81,6 +97,7 @@
 	metabolic_rate = 0.85
 	item_slowdown_mod = 0.25
 	mob_size = MOB_MEDIUM
+	mob_size = MOB_MEDIUM
 	blood_volume = 840
 	bloodloss_rate = 0.75
 	num_alternate_languages = 3
@@ -92,7 +109,9 @@
 	throwforce_absorb_threshold = 10
 	digi_allowed = TRUE
 	genders = list(MALE, FEMALE, PLURAL, NEUTER)
+	genders = list(MALE, FEMALE, PLURAL, NEUTER)
 
+	min_age = 18
 	min_age = 18
 	max_age = 260
 
@@ -105,6 +124,16 @@
 
 	pain_verb_1p = list("hiss", "growl") // CHOMPEdit: Unathi pain emotes
 	pain_verb_3p = list("hisses", "growls") // CHOMPEdit: Pain emotes
+
+	blurb = "Heavily reptilian in appearance, the Unathi hail from the Uueoa-Esa system, roughly translated as 'Burning Mother'. \
+			Their home planet, Moghes, is an arid climate with hot rocky plains and deserts, and a temperate band of swamps and savannas with \
+			massive saltwater lakes being the closest equivalent to oceans. This environment bred a very hardy people who value ideals of honesty, \
+			virtue, proficiency and bravery above all else, frequently even one's own life. These same values lend them culturally to imperialistic \
+			politics, as well as often being viewed as haughty and arrogant by other interstellar species.<br><br>\
+			On the stage of the interstellar political realm the Unathi are noteworthy contenders, the Moghes Hegemony possesses vast technological and \
+			material prowess when compared to human contemporaries such as the Sol-Procyon Commonwealth or Ares Confederation. The Hegemony War nearly one \
+			hundred years ago is a prime example of this, having engaged in brutal warfare that ultimately fell to a stalemate between all involved parties. \
+			Nowadays relations remain cool and somewhat tense, although this does not prevent individual Unathi from finding reasonable career success within Human space."
 
 	blurb = "Heavily reptilian in appearance, the Unathi hail from the Uueoa-Esa system, roughly translated as 'Burning Mother'. \
 			Their home planet, Moghes, is an arid climate with hot rocky plains and deserts, and a temperate band of swamps and savannas with \
@@ -144,6 +173,7 @@
 	flesh_color = "#34AF10"
 	blood_color = "#b3cbc3"
 	base_color = "#066000"
+	color_mult = 1
 	color_mult = 1
 
 	reagent_tag = IS_UNATHI
@@ -205,6 +235,9 @@
 	inherent_verbs = list(/mob/living/carbon/human/proc/tie_hair)
 	wikilink="https://wiki.vore-station.net/Unathi"
 
+	inherent_verbs = list(/mob/living/carbon/human/proc/tie_hair)
+	wikilink="https://wiki.vore-station.net/Unathi"
+
 /datum/species/unathi/equip_survival_gear(var/mob/living/carbon/human/H)
 	..()
 	H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal(H),slot_shoes)
@@ -214,7 +247,10 @@
 	name_plural = "Tajaran"
 	icobase = 'icons/mob/human_races/r_tajaran_vr.dmi'
 	deform = 'icons/mob/human_races/r_def_tajaran_vr.dmi'
+	icobase = 'icons/mob/human_races/r_tajaran_vr.dmi'
+	deform = 'icons/mob/human_races/r_def_tajaran_vr.dmi'
 	tail = "tajtail"
+	tail_animation = 'icons/mob/species/tajaran/tail_vr.dmi'
 	tail_animation = 'icons/mob/species/tajaran/tail_vr.dmi'
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/bite/sharp)
 	darksight = 8
@@ -234,8 +270,12 @@
 	agility = 90
 	can_climb = TRUE
 	climbing_delay = 1.00 //Cats are good climbers.
+	agility = 90
+	can_climb = TRUE
+	climbing_delay = 1.00 //Cats are good climbers.
 
 	min_age = 18
+	max_age = 80
 	max_age = 80
 
 	economic_modifier = 10
@@ -254,6 +294,7 @@
 	and have accelerated the fledgling culture into the interstellar age. Their history is full of war and highly fractious \
 	governments, something that permeates even to today's times. They prefer colder, tundra-like climates, much like their \
 	home worlds and speak a variety of languages, especially Siik and Akhani."
+	wikilink="https://wiki.vore-station.net/Tajaran"
 	wikilink="https://wiki.vore-station.net/Tajaran"
 	catalogue_data = list(/datum/category_item/catalogue/fauna/tajaran)
 
@@ -280,18 +321,22 @@
 	spawn_flags = SPECIES_CAN_JOIN
 	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR
 	genders = list(MALE, FEMALE, PLURAL, NEUTER)
+	genders = list(MALE, FEMALE, PLURAL, NEUTER)
 
 	flesh_color = "#AFA59E"
 	base_color = "#333333"
 	color_mult = 1
+	color_mult = 1
 
 	reagent_tag = IS_TAJARA
+	allergens = null
 	allergens = null
 
 	climb_mult = 0.75
 
 	move_trail = /obj/effect/decal/cleanable/blood/tracks/paw
 
+	heat_discomfort_level = 295 //Prevents heat discomfort spam at 20c
 	heat_discomfort_level = 295 //Prevents heat discomfort spam at 20c
 	heat_discomfort_strings = list(
 		"Your fur prickles in the heat.",
@@ -328,6 +373,7 @@
 		/decl/emote/human/stopsway
 	)
 	inherent_verbs = list(/mob/living/carbon/human/proc/lick_wounds, /mob/living/carbon/human/proc/tie_hair)
+	inherent_verbs = list(/mob/living/carbon/human/proc/lick_wounds, /mob/living/carbon/human/proc/tie_hair)
 
 /datum/species/tajaran/equip_survival_gear(var/mob/living/carbon/human/H)
 	..()
@@ -338,6 +384,8 @@
 	name_plural = "Skrell"
 	icobase = 'icons/mob/human_races/r_skrell_vr.dmi'
 	deform = 'icons/mob/human_races/r_def_skrell_vr.dmi'
+	icobase = 'icons/mob/human_races/r_skrell_vr.dmi'
+	deform = 'icons/mob/human_races/r_def_skrell_vr.dmi'
 	primitive_form = SPECIES_MONKEY_SKRELL
 	unarmed_types = list(/datum/unarmed_attack/punch)
 	blurb = "An amphibious species, Skrell come from the star system known as Qerr'Vallis, which translates to 'Star of \
@@ -345,6 +393,7 @@
 	of the Qerr'Katish, a caste within their society which keeps the empire of the Skrell running smoothly. Skrell are \
 	herbivores on the whole and tend to be co-operative with the other species of the galaxy, although they rarely reveal \
 	the secrets of their empire to their allies."
+	wikilink="https://wiki.vore-station.net/Skrell"
 	wikilink="https://wiki.vore-station.net/Skrell"
 	catalogue_data = list(/datum/category_item/catalogue/fauna/skrell)
 	num_alternate_languages = 3
@@ -357,6 +406,7 @@
 
 	water_movement = -3
 
+	min_age = 18
 	min_age = 18
 	max_age = 130
 
@@ -381,6 +431,7 @@
 	blood_color = "#0081CD"
 	base_color = "#006666"
 	color_mult = 1
+	color_mult = 1
 
 	cold_level_1 = 280 //Default 260 - Lower is better
 	cold_level_2 = 220 //Default 200
@@ -402,8 +453,13 @@
 	allergens = null
 
 	genders = list(MALE, FEMALE, PLURAL, NEUTER)
+	reagent_tag = null //I am going to just NUKE reagent_tag omfg...This is ridiculous
+	allergens = null
+
+	genders = list(MALE, FEMALE, PLURAL, NEUTER)
 
 	water_breather = TRUE
+	water_movement = -4 //Negates shallow. Halves deep.
 	water_movement = -4 //Negates shallow. Halves deep.
 
 	has_limbs = list(
@@ -442,6 +498,8 @@
 	)
 	inherent_verbs = list(/mob/living/carbon/human/proc/tie_hair, /mob/living/carbon/human/proc/water_stealth, /mob/living/carbon/human/proc/underwater_devour)
 
+	inherent_verbs = list(/mob/living/carbon/human/proc/tie_hair, /mob/living/carbon/human/proc/water_stealth, /mob/living/carbon/human/proc/underwater_devour)
+
 
 /datum/species/skrell/can_breathe_water()
 	return TRUE
@@ -473,6 +531,7 @@
 	economic_modifier = 3
 
 	min_age = 18
+	min_age = 18
 	max_age = 90
 
 	// male_scream_sound = null //CHOMPedit
@@ -494,7 +553,9 @@
 	ideal_air_type = /datum/gas_mixture/belly_air/zaddat
 
 	genders = list(MALE, FEMALE, PLURAL, NEUTER)
+	genders = list(MALE, FEMALE, PLURAL, NEUTER)
 
+	spawn_flags = SPECIES_CAN_JOIN
 	spawn_flags = SPECIES_CAN_JOIN
 	appearance_flags = null
 
@@ -533,6 +594,7 @@
 		/decl/emote/audible/chirp
 	)
 	inherent_verbs = list(/mob/living/carbon/human/proc/tie_hair)
+	inherent_verbs = list(/mob/living/carbon/human/proc/tie_hair)
 
 /datum/species/zaddat/equip_survival_gear(var/mob/living/carbon/human/H)
 	..()
@@ -565,6 +627,7 @@
 			H.apply_damage(light_amount/4, BURN, K, 0, 0)
 
 /datum/species/diona
+
 
 	name = SPECIES_DIONA
 	name_plural = "Dionaea"
@@ -606,6 +669,7 @@
 	all known species, especially the Skrell. Their communal mind makes them slow to react, and they have difficulty understanding \
 	even the simplest concepts of other minds. Their alien physiology allows them survive happily off a diet of nothing but light, \
 	water and other radiation."
+	wikilink="https://wiki.vore-station.net/Diona"
 	wikilink="https://wiki.vore-station.net/Diona"
 	catalogue_data = list(/datum/category_item/catalogue/fauna/dionaea)
 
@@ -660,6 +724,7 @@
 
 	reagent_tag = IS_DIONA
 
+	genders = list(MALE, FEMALE, PLURAL, NEUTER)
 	genders = list(MALE, FEMALE, PLURAL, NEUTER)
 
 	default_emotes = list(

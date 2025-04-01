@@ -8,7 +8,9 @@
 	var/obj/structure/prop/dark_node/linked_node = null
 
 /obj/effect/dark/Initialize(mapload, check_glow)
+/obj/effect/dark/Initialize(mapload, check_glow)
 	. = ..()
+	if(check_glow && prob(5))
 	if(check_glow && prob(5))
 		add_glow()
 
@@ -80,6 +82,7 @@
 
 /obj/effect/dark/proc/unlinked()
 	linked_node.children_effects -= src
+	linked_node.children_effects -= src
 	linked_node = null
 	addtimer(CALLBACK(src, PROC_REF(perform_unlink), rand(20, 70), TIMER_DELETE_ME))
 
@@ -87,6 +90,15 @@
 	PRIVATE_PROC(TRUE)
 	if(!linked_node)
 		qdel(src)
+	addtimer(CALLBACK(src, PROC_REF(perform_unlink), rand(20, 70), TIMER_DELETE_ME))
+
+/obj/effect/dark/proc/perform_unlink()
+	PRIVATE_PROC(TRUE)
+	if(!linked_node)
+		qdel(src)
+
+/obj/effect/dark/floor/Initialize(mapload, check_glow, var/node)
+	. = ..(mapload, !isspace(loc))
 
 /obj/effect/dark/floor/Initialize(mapload, check_glow, var/node)
 	. = ..(mapload, !isspace(loc))
