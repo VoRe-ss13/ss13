@@ -1,0 +1,25 @@
+2025-04-02:
+  Diana:
+  - bugfix: Removes the yawn edit that removed Fennec's ability to use rig gauntlets
+      or helmet (This made fennecs unable to use any rigsuits)
+  Tost:
+  - rscadd: Adds modern labcoat to loadout, under the public labcoat selector.
+  - rscadd: Adds 3 different leg warmers accessories.
+  VoRe-bot:
+  - admin: 'fix spawn at arrivals will not either pick from the secondary list or
+      sanely fail
+
+      fix latespawn loc code'
+  - qol: Changed the default setting for Save Organs and Save Markings to No in character
+      setup
+  - bugfix: xenoarch organ spawn
+  - rscadd: Added a treadmill fitness machine.
+  - rscadd: Added a non-alcohol version of the booze-o-mat, the virgin-o-mat!
+  - maptweak: Major changes to the pool area to include a poolside bar, new gym, locker
+      room, sauna and massage room.
+  - maptweak: Added a designated smoking area to the stellar delight.
+  - bugfix: more dark turf stuff
+  - bugfix: deck 0 crashing the server
+  - bugfix: useless light recalcs, which might even have caused darker than supposed
+      areas
+  - bugfix: multiple bugs in outdoor and turf open / space handling
