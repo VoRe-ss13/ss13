@@ -126,6 +126,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/removetickets,
 	/client/proc/delbook,
 	/client/proc/toggle_spawning_with_recolour,
+	/client/proc/modify_shift_end,
 	/client/proc/start_vote,
 	/client/proc/hide_motion_tracker_feedback,
 	/client/proc/reload_jobwhitelist, //ChompADD
@@ -575,6 +576,7 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/toggle_random_events,
 	/client/proc/modify_server_news,
 	/client/proc/toggle_spawning_with_recolour,
+	/client/proc/modify_shift_end,
 	/client/proc/start_vote,
 	/client/proc/AdminCreateVirus,
 	/client/proc/ReleaseVirus,
