@@ -9,7 +9,11 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tgui": "workspace:*",
+<<<<<<< HEAD
     "tgui-core": "^1.8.2",
     "tgui-polyfill": "workspace:*"
+=======
+    "tgui-core": "^1.8.4"
+>>>>>>> f81b273417 ([MIRROR] dependency update (#10589))
   }
 }
