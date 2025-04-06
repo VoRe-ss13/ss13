@@ -16,7 +16,12 @@ package-lock.json
 /public/.tmp/**/*
 /public/**/*
 !/public/*.html
+<<<<<<< HEAD
 !/public/tgui-polyfill.min.js
+=======
+!/public/ntos-error.min.css
+!/public/helpers.min.js
+>>>>>>> dd0ab1d10c ([MIRROR] split tgui html (#10594))
 /coverage
 
 ## Previously ignored locations that are kept to avoid confusing git
