@@ -16,7 +16,10 @@ package-lock.json
 /public/.tmp/**/*
 /public/**/*
 !/public/*.html
+<<<<<<< HEAD
 !/public/tgui-polyfill.min.js
+=======
+>>>>>>> e67d91e80b (Revert "[MIRROR] split tgui html" (#10597))
 /coverage
 
 ## Previously ignored locations that are kept to avoid confusing git
