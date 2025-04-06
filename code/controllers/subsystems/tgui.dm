@@ -26,10 +26,13 @@ SUBSYSTEM_DEF(tgui)
 
 /datum/controller/subsystem/tgui/PreInit()
 	basehtml = file2text('tgui/public/tgui.html')
+<<<<<<< HEAD
 	// Inject inline polyfills
 	var/polyfill = file2text('tgui/public/tgui-polyfill.min.js')
 	polyfill = "<script>\n[polyfill]\n</script>"
 	basehtml = replacetextEx(basehtml, "<!-- tgui:inline-polyfill -->", polyfill)
+=======
+>>>>>>> e67d91e80b (Revert "[MIRROR] split tgui html" (#10597))
 	basehtml = replacetextEx(basehtml, "<!-- tgui:nt-copyright -->", "Nanotrasen (c) 2284-[CURRENT_STATION_YEAR]")
 
 /datum/controller/subsystem/tgui/Shutdown()
