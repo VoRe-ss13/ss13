@@ -2088,7 +2088,11 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "adZ" = (
 /obj/machinery/hologram/holopad,
@@ -4467,7 +4471,11 @@
 /area/hallway/Star_1Deck_Atrium)
 "aqp" = (
 /obj/structure/flora/lily2,
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "aqv" = (
 /obj/machinery/door/firedoor/border_only,
@@ -4750,7 +4758,11 @@
 	name = "Sol";
 	faction = "nanotrasen"
 	},
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "asm" = (
 /obj/machinery/alarm{
@@ -10577,7 +10589,11 @@
 	color = "#ccc9ff";
 	desc = "An extra bright lighting fixture."
 	},
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "bBI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -24810,7 +24826,11 @@
 	name = "Pon";
 	faction = "nanotrasen"
 	},
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "fYR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -25809,7 +25829,11 @@
 	c_tag = "D1-Com-Star Atrium3";
 	network = list("Commons")
 	},
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "gqi" = (
 /turf/simulated/wall/r_wall,
@@ -28740,7 +28764,11 @@
 	name = "Spike";
 	faction = "nanotrasen"
 	},
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "hwK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -34720,7 +34748,11 @@
 	name = "Bon";
 	faction = "nanotrasen"
 	},
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "jLi" = (
 /obj/structure/cable/white{
@@ -36875,7 +36907,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/hallway/Star_1Deck_Central_Corridor_1)
 "kEx" = (
-/turf/simulated/floor/water/indoors,
+/turf/simulated/floor/water/indoors{
+	outdoors = -1;
+	temperature = 293.15;
+	nitrogen = 82.1472;
+	oxygen = 21.8366
+	},
 /area/hallway/Star_1Deck_Atrium)
 "kED" = (
 /obj/machinery/light/small/emergency{
@@ -36894,7 +36931,11 @@
 /area/maintenance/Deck1_AftPort_Chamber3)
 "kEK" = (
 /obj/structure/flora/log1,
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "kFh" = (
 /obj/random/junk,
@@ -37066,7 +37107,11 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/Supply_Ship_Bay)
 "kHT" = (
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "kHV" = (
 /obj/structure/dispenser/phoron,
@@ -37223,7 +37268,11 @@
 /area/maintenance/ab_Hydroponics)
 "kKU" = (
 /obj/structure/flora/lily1,
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "kLb" = (
 /obj/random/junk,
@@ -37410,7 +37459,11 @@
 /area/harbor/Ship_Bay3)
 "kPi" = (
 /obj/structure/flora/lily3,
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "kPp" = (
 /obj/effect/catwalk_plated/techmaint,
@@ -37849,7 +37902,12 @@
 /area/crew_quarters/Public_EVA)
 "kXb" = (
 /obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/water/indoors,
+/turf/simulated/floor/water/indoors{
+	outdoors = -1;
+	temperature = 293.15;
+	nitrogen = 82.1472;
+	oxygen = 21.8366
+	},
 /area/hallway/Star_1Deck_Atrium)
 "kXg" = (
 /obj/structure/sign/directions/science/xenoflora{
@@ -39339,7 +39397,12 @@
 /area/maintenance/ab_StripBar)
 "lxX" = (
 /obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/water/indoors,
+/turf/simulated/floor/water/indoors{
+	outdoors = -1;
+	temperature = 293.15;
+	nitrogen = 82.1472;
+	oxygen = 21.8366
+	},
 /area/hallway/Star_1Deck_Atrium)
 "lyO" = (
 /obj/structure/cable/green{
@@ -41575,7 +41638,11 @@
 	name = "Pancrasia";
 	faction = "nanotrasen"
 	},
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "mnR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -43769,11 +43836,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_1_Deck_Hall)
-"mYa" = (
-/turf/simulated/floor/water/indoors{
-	outdoors = -1
-	},
-/area/hallway/Star_1Deck_Atrium)
 "mYA" = (
 /obj/effect/floor_decal/industrial/hatch,
 /obj/machinery/shield_diffuser,
@@ -44552,7 +44614,12 @@
 /area/maintenance/ab_Medical)
 "nrg" = (
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/simulated/floor/water/indoors,
+/turf/simulated/floor/water/indoors{
+	outdoors = -1;
+	temperature = 293.15;
+	nitrogen = 82.1472;
+	oxygen = 21.8366
+	},
 /area/hallway/Star_1Deck_Atrium)
 "nrk" = (
 /obj/effect/catwalk_plated/techmaint,
@@ -45655,11 +45722,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/Telecomms_Foyer)
-"nLm" = (
-/turf/simulated/floor/water/deep/indoors{
-	outdoors = -1
-	},
-/area/hallway/Star_1Deck_Atrium)
 "nLC" = (
 /obj/structure/reagent_dispensers/coolanttank,
 /turf/simulated/floor/plating,
@@ -49614,7 +49676,12 @@
 /area/shuttle/cryo/station)
 "pat" = (
 /obj/structure/railing,
-/turf/simulated/floor/water/indoors,
+/turf/simulated/floor/water/indoors{
+	outdoors = -1;
+	temperature = 293.15;
+	nitrogen = 82.1472;
+	oxygen = 21.8366
+	},
 /area/hallway/Star_1Deck_Atrium)
 "paG" = (
 /obj/structure/disposalpipe/segment{
@@ -50932,12 +50999,21 @@
 "pvG" = (
 /obj/structure/railing,
 /obj/structure/flora/ausbushes/fullgrass,
-/turf/simulated/floor/water/indoors,
+/turf/simulated/floor/water/indoors{
+	outdoors = -1;
+	temperature = 293.15;
+	nitrogen = 82.1472;
+	oxygen = 21.8366
+	},
 /area/hallway/Star_1Deck_Atrium)
 "pvH" = (
 /obj/structure/railing,
 /obj/structure/flora/lily3,
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "pwh" = (
 /obj/random/maintenance/misc,
@@ -50974,7 +51050,11 @@
 /area/quartermaster/Mining_Ship_Bay)
 "pwH" = (
 /obj/structure/railing,
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "pwO" = (
 /obj/structure/cable/green{
@@ -61785,7 +61865,12 @@
 	dir = 1
 	},
 /obj/structure/flora/ausbushes/reedbush,
-/turf/simulated/floor/water/indoors,
+/turf/simulated/floor/water/indoors{
+	outdoors = -1;
+	temperature = 293.15;
+	nitrogen = 82.1472;
+	oxygen = 21.8366
+	},
 /area/hallway/Star_1Deck_Atrium)
 "tsf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -62401,7 +62486,12 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/simulated/floor/water/indoors,
+/turf/simulated/floor/water/indoors{
+	outdoors = -1;
+	temperature = 293.15;
+	nitrogen = 82.1472;
+	oxygen = 21.8366
+	},
 /area/hallway/Star_1Deck_Atrium)
 "tCJ" = (
 /obj/machinery/door/firedoor/glass,
@@ -62499,7 +62589,11 @@
 /obj/effect/landmark{
 	name = "lightsout"
 	},
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "tDP" = (
 /obj/structure/flora/rocks2,
@@ -65652,7 +65746,12 @@
 /area/hallway/Deck1_Transit_Hall)
 "uMv" = (
 /obj/structure/flora/lily1,
-/turf/simulated/floor/water/indoors,
+/turf/simulated/floor/water/indoors{
+	outdoors = -1;
+	temperature = 293.15;
+	nitrogen = 82.1472;
+	oxygen = 21.8366
+	},
 /area/hallway/Star_1Deck_Atrium)
 "uMU" = (
 /turf/simulated/wall/r_wall,
@@ -68460,7 +68559,11 @@
 /area/harbor/Port_Docking_Foyer)
 "vFX" = (
 /obj/structure/flora/log2,
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "vGa" = (
 /obj/structure/cable/green{
@@ -70783,7 +70886,11 @@
 	name = "Eliz";
 	faction = "nanotrasen"
 	},
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "wzW" = (
 /obj/structure/table/standard,
@@ -71262,7 +71369,11 @@
 	color = "#6457f7";
 	faction = "nanotrasen"
 	},
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "wJV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -73284,7 +73395,12 @@
 	color = "#ccc9ff";
 	desc = "An extra bright lighting fixture."
 	},
-/turf/simulated/floor/water/indoors,
+/turf/simulated/floor/water/indoors{
+	outdoors = -1;
+	temperature = 293.15;
+	nitrogen = 82.1472;
+	oxygen = 21.8366
+	},
 /area/hallway/Star_1Deck_Atrium)
 "xsD" = (
 /obj/effect/floor_decal/techfloor/corner{
@@ -74114,7 +74230,11 @@
 	name = "Chayote";
 	faction = "nanotrasen"
 	},
-/turf/simulated/floor/water/deep/indoors,
+/turf/simulated/floor/water/deep/indoors{
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 293.15
+	},
 /area/hallway/Star_1Deck_Atrium)
 "xNN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -115906,7 +116026,7 @@ pPv
 gdQ
 awX
 nrg
-mYa
+kEx
 kXb
 iEe
 nrb
@@ -116681,7 +116801,7 @@ nVj
 awX
 gpT
 xNM
-nLm
+kHT
 fYQ
 wzV
 pwH
