@@ -1,8 +1,13 @@
 {
   "private": true,
   "name": "tgui-workspace",
+<<<<<<< HEAD
   "version": "5.0.3",
   "packageManager": "yarn@4.7.0",
+=======
+  "version": "6.0.0",
+  "packageManager": "yarn@4.8.1",
+>>>>>>> 8164837ba0 ([MIRROR] [TGUI v6] Migration to CSS Variables, styles refactor & React 19  (#10615))
   "workspaces": [
     "packages/*"
   ],
@@ -26,8 +31,8 @@
     "@swc/jest": "^0.2.37",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.9.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
     "@types/webpack-env": "^1.18.5",
     "@types/wicg-file-system-access": "^2023.10.5",
     "@typescript-eslint/eslint-plugin": "7.18.0",
@@ -48,14 +53,19 @@
     "jsdom": "^25.0.1",
     "mini-css-extract-plugin": "^2.9.2",
     "prettier": "^3.2.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "sass": "^1.80.6",
     "sass-loader": "^16.0.3",
     "style-loader": "^4.0.0",
     "swc-loader": "^0.2.6",
+<<<<<<< HEAD
     "tgui-core": "^1.8.2",
     "typescript": "5.6.3",
+=======
+    "tgui-core": "^2.0.5",
+    "typescript": "5.8.3",
+>>>>>>> 8164837ba0 ([MIRROR] [TGUI v6] Migration to CSS Variables, styles refactor & React 19  (#10615))
     "typescript-eslint": "^8.28.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.96.1",
