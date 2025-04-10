@@ -79,9 +79,20 @@
 		user << browse_rsc(scripts[key], filename)
 		head_content += "<script type='text/javascript' src='[filename]'></script>"
 
+<<<<<<< HEAD
 	var/title_attributes = "class='uiTitle'"
 	if (title_image)
 		title_attributes = "class='uiTitle icon' style='background-image: url([title_image]);'"
+=======
+	if(user.client?.window_scaling && user.client?.window_scaling != 1 && !user.client?.prefs.read_preference(/datum/preference/toggle/ui_scale) && width && height)
+		head_content += {"
+			<style>
+				body {
+					zoom: [100 / user.client?.window_scaling]%;
+				}
+			</style>
+			"}
+>>>>>>> 8164837ba0 ([MIRROR] [TGUI v6] Migration to CSS Variables, styles refactor & React 19  (#10615))
 
 	return {"<!DOCTYPE html>
 <html>
@@ -117,8 +128,23 @@
 		to_chat(user, span_userdanger("The [title] browser you tried to open failed a sanity check! Please report this on github!"))
 		return
 	var/window_size = ""
+<<<<<<< HEAD
 	if (width && height)
 		window_size = "size=[width]x[height];"
+=======
+	if(width && height)
+		if(user.client?.prefs?.read_preference(/datum/preference/toggle/ui_scale))
+			var/scaling = user.client.window_scaling
+			window_size = "size=[width * scaling]x[height * scaling];"
+		else
+			window_size = "size=[width]x[height];"
+	var/datum/asset/simple/namespaced/common/common_asset = get_asset_datum(/datum/asset/simple/namespaced/common)
+	common_asset.send(user)
+	if (stylesheets.len)
+		SSassets.transport.send_assets(user, stylesheets)
+	if (scripts.len)
+		SSassets.transport.send_assets(user, scripts)
+>>>>>>> 8164837ba0 ([MIRROR] [TGUI v6] Migration to CSS Variables, styles refactor & React 19  (#10615))
 	user << browse(get_content(), "window=[window_id];[window_size][window_options]")
 	if (use_onclose)
 		onclose(user, window_id, ref)

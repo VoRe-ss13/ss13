@@ -1,6 +1,10 @@
 {
   "name": "typescript",
+<<<<<<< HEAD
   "version": "5.6.3-sdk",
+=======
+  "version": "5.8.3-sdk",
+>>>>>>> 8164837ba0 ([MIRROR] [TGUI v6] Migration to CSS Variables, styles refactor & React 19  (#10615))
   "main": "./lib/typescript.js",
   "type": "commonjs",
   "bin": {
