@@ -1,5 +1,17 @@
 import { useBackend } from 'tgui/backend';
+<<<<<<< HEAD
 import { Box, Button, Input, LabeledList, Section } from 'tgui-core/components';
+=======
+import {
+  Box,
+  Button,
+  Divider,
+  Input,
+  LabeledList,
+  Section,
+  Stack,
+} from 'tgui-core/components';
+>>>>>>> da9d408106 ([MIRROR] re adds the gap beteen section buttons (#10632))
 
 import { PaginationChevrons } from '..';
 import type { Data } from '../data';
@@ -14,12 +26,14 @@ export const DesignList = (props) => {
       textAlign="center"
       scrollable
       buttons={
-        <>
-          <Button icon="print" onClick={() => act('print', { print: 2 })}>
-            Print This Page
-          </Button>
+        <Stack>
+          <Stack.Item>
+            <Button icon="print" onClick={() => act('print', { print: 2 })}>
+              Print This Page
+            </Button>
+          </Stack.Item>
           <PaginationChevrons target="design_page" />
-        </>
+        </Stack>
       }
     >
       <Input
