@@ -184,9 +184,17 @@ const BuildTab = (props: {
     <Section
       title={`Designs (Page ${data.builder_page + 1})`}
       fill
+<<<<<<< HEAD
       height="85%"
       buttons={<PaginationChevrons target="builder_page" />}
       scrollable
+=======
+      buttons={
+        <Stack>
+          <PaginationChevrons target="builder_page" />
+        </Stack>
+      }
+>>>>>>> da9d408106 ([MIRROR] re adds the gap beteen section buttons (#10632))
     >
       <Input
         fluid
@@ -324,50 +332,56 @@ const MatStorageTab = (props: {
             key={mat}
             label={capitalizeAll(mat)}
             buttons={
-              <>
-                <NumberInput
-                  value={matEjectStates[mat] || 0}
-                  minValue={0}
-                  maxValue={Math.floor(amount / data.sheet_material_amount)}
-                  step={1}
-                  width="100px"
-                  onDrag={(val) => {
-                    setMatEjectStates({
-                      ...matEjectStates,
-                      [mat]: val,
-                    });
-                  }}
-                />
-                <Button
-                  icon="eject"
-                  disabled={amount < data.sheet_material_amount}
-                  onClick={() => {
-                    setMatEjectStates({
-                      ...matEjectStates,
-                      [mat]: 0,
-                    });
-                    act(ejectAction, {
-                      [ejectAction]: mat,
-                      amount: matEjectStates[mat] || 0,
-                    });
-                  }}
-                >
-                  Num
-                </Button>
-                <Button
-                  icon="eject"
-                  disabled={amount < data.sheet_material_amount}
-                  onClick={() => {
-                    setMatEjectStates({
-                      ...matEjectStates,
-                      [mat]: 0,
-                    });
-                    act(ejectAction, { [ejectAction]: mat, amount: 50 });
-                  }}
-                >
-                  All
-                </Button>
-              </>
+              <Stack>
+                <Stack.Item>
+                  <NumberInput
+                    value={matEjectStates[mat] || 0}
+                    minValue={0}
+                    maxValue={Math.floor(amount / data.sheet_material_amount)}
+                    step={1}
+                    width="100px"
+                    onDrag={(val) => {
+                      setMatEjectStates({
+                        ...matEjectStates,
+                        [mat]: val,
+                      });
+                    }}
+                  />
+                </Stack.Item>
+                <Stack.Item>
+                  <Button
+                    icon="eject"
+                    disabled={amount < data.sheet_material_amount}
+                    onClick={() => {
+                      setMatEjectStates({
+                        ...matEjectStates,
+                        [mat]: 0,
+                      });
+                      act(ejectAction, {
+                        [ejectAction]: mat,
+                        amount: matEjectStates[mat] || 0,
+                      });
+                    }}
+                  >
+                    Num
+                  </Button>
+                </Stack.Item>
+                <Stack.Item>
+                  <Button
+                    icon="eject"
+                    disabled={amount < data.sheet_material_amount}
+                    onClick={() => {
+                      setMatEjectStates({
+                        ...matEjectStates,
+                        [mat]: 0,
+                      });
+                      act(ejectAction, { [ejectAction]: mat, amount: 50 });
+                    }}
+                  >
+                    All
+                  </Button>
+                </Stack.Item>
+              </Stack>
             }
           >
             {amount} cm&sup3;
