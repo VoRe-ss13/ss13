@@ -2663,6 +2663,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/Central_1_Deck_Hall)
 "agy" = (
+<<<<<<< HEAD
 /obj/machinery/turretid/lethal{
 	ailock = 1;
 	control_area = "\improper GravGen Room";
@@ -2673,6 +2674,8 @@
 	check_records = 0;
 	req_one_access = list(17,11,24)
 	},
+=======
+>>>>>>> a64ae69661 (Soluna Nexus mapfix 2.2 (#10647))
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -2687,6 +2690,14 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 1
+	},
+/obj/machinery/turretid/stun{
+	check_records = 0;
+	control_area = "\improper GravGen Room";
+	name = "GravityGen lethal turret control";
+	req_access = list(11, 19);
+	req_one_access = list(17,11,24);
+	pixel_y = 29
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/GravGen_Room)
@@ -34230,6 +34241,7 @@
 	pixel_y = -14
 	},
 /obj/machinery/shield_diffuser,
+/obj/structure/fans/tiny,
 /turf/simulated/floor/tiled/techmaint,
 /area/harbor/Dock5)
 "jEl" = (
@@ -55558,12 +55570,12 @@
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 4
 	},
+/obj/effect/floor_decal/techfloor{
+	dir = 8
+	},
 /obj/machinery/light/floortube{
 	dir = 8;
 	pixel_x = -3
-	},
-/obj/effect/floor_decal/techfloor{
-	dir = 8
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/Star_1Deck_Atrium)
@@ -59231,6 +59243,7 @@
 	pixel_y = -14
 	},
 /obj/machinery/shield_diffuser,
+/obj/structure/fans/tiny,
 /turf/simulated/floor/tiled/techmaint,
 /area/harbor/Dock5)
 "ssD" = (
@@ -72048,6 +72061,7 @@
 	},
 /obj/effect/map_helper/airlock/door/ext_door,
 /obj/machinery/shield_diffuser,
+/obj/structure/fans/tiny,
 /turf/simulated/floor/tiled/techmaint,
 /area/harbor/Dock5)
 "wXu" = (
@@ -101305,7 +101319,7 @@ pFU
 pFU
 pFU
 pFU
-vXj
+pFU
 pFU
 pFU
 pFU
@@ -103369,7 +103383,7 @@ pFU
 pFU
 pFU
 pFU
-pFU
+vXj
 pFU
 pFU
 pFU
