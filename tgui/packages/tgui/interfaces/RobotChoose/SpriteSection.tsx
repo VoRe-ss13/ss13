@@ -31,6 +31,7 @@ export const SpriteSection = (props: {
       scrollable
       width="30%"
       buttons={
+<<<<<<< HEAD
         <>
           <Button.Checkbox
             checked={includeDefault}
@@ -51,6 +52,34 @@ export const SpriteSection = (props: {
             Tall
           </Button.Checkbox>
         </>
+=======
+        <Stack g={0.2}>
+          <Stack.Item>
+            <Button.Checkbox
+              checked={includeDefault}
+              onClick={() => setIncludeDefault(!includeDefault)}
+            >
+              Def
+            </Button.Checkbox>
+          </Stack.Item>
+          <Stack.Item>
+            <Button.Checkbox
+              checked={includeWide}
+              onClick={() => setInclideDog(!includeWide)}
+            >
+              Wide
+            </Button.Checkbox>
+          </Stack.Item>
+          <Stack.Item>
+            <Button.Checkbox
+              checked={includeTall}
+              onClick={() => setIncludeTall(!includeTall)}
+            >
+              Tall
+            </Button.Checkbox>
+          </Stack.Item>
+        </Stack>
+>>>>>>> 8dbb9f68e9 ([MIRROR] some robot file splitting (#10643))
       }
     >
       <Stack.Item mb={'10px'}>
