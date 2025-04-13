@@ -50,6 +50,7 @@ export const GenericUplink = (props: {
         </Box>
       }
       buttons={
+<<<<<<< HEAD
         <>
           Search
           <Input
@@ -64,6 +65,26 @@ export const GenericUplink = (props: {
           >
             {compactMode ? 'Compact' : 'Detailed'}
           </Button>
+=======
+        <Stack>
+          <Stack.Item>Search</Stack.Item>{' '}
+          <Stack.Item>
+            <Input
+              autoFocus
+              value={searchText}
+              onChange={(value: string) => setSearchText(value)}
+              mx={1}
+            />
+          </Stack.Item>
+          <Stack.Item>
+            <Button
+              icon={compactMode ? 'list' : 'info'}
+              onClick={() => act('compact_toggle')}
+            >
+              {compactMode ? 'Compact' : 'Detailed'}
+            </Button>
+          </Stack.Item>
+>>>>>>> fb18560061 ([MIRROR] RS pack port and tgui core 3.0.4 (#10638))
           {!!lockable && (
             <Button icon="lock" onClick={() => act('lock')}>
               Lock

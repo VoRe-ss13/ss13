@@ -3,13 +3,25 @@
   "name": "tgui-say",
   "version": "1.0.0",
   "dependencies": {
+<<<<<<< HEAD
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+=======
+>>>>>>> fb18560061 ([MIRROR] RS pack port and tgui core 3.0.4 (#10638))
     "common": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tgui": "workspace:*",
+<<<<<<< HEAD
     "tgui-core": "^1.8.2",
     "tgui-polyfill": "workspace:*"
+=======
+    "tgui-core": "^3.0.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.2",
+    "vitest": "^3.1.1"
+>>>>>>> fb18560061 ([MIRROR] RS pack port and tgui core 3.0.4 (#10638))
   }
 }

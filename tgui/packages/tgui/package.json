@@ -3,10 +3,14 @@
   "name": "tgui",
   "version": "5.0.3",
   "dependencies": {
+<<<<<<< HEAD
     "@popperjs/core": "^2.11.8",
     "@types/marked": "4.3.2",
     "@types/react": "^18.3.12",
     "blob-polyfill": "^9.0.20240710",
+=======
+    "@floating-ui/react": "^0.27.5",
+>>>>>>> fb18560061 ([MIRROR] RS pack port and tgui core 3.0.4 (#10638))
     "common": "workspace:*",
     "dateformat": "^5.0.3",
     "dompurify": "^3.2.4",
@@ -15,11 +19,24 @@
     "jest": "^29.7.0",
     "js-yaml": "^4.1.0",
     "marked": "^4.3.0",
+<<<<<<< HEAD
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-popper": "^2.3.0",
     "tgui-core": "^1.8.2",
     "tgui-dev-server": "workspace:*",
     "tgui-polyfill": "workspace:*"
+=======
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tgui-core": "^3.0.4",
+    "tgui-dev-server": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/marked": "4.3.2",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.2",
+    "vitest": "^3.1.1"
+>>>>>>> fb18560061 ([MIRROR] RS pack port and tgui core 3.0.4 (#10638))
   }
 }

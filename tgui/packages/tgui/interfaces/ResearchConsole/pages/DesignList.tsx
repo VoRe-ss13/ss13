@@ -24,10 +24,10 @@ export const DesignList = (props) => {
     >
       <Input
         fluid
-        updateOnPropsChange
+        expensive
         placeholder="Search for..."
         value={data.search}
-        onInput={(e, v) => act('search', { search: v })}
+        onChange={(v) => act('search', { search: v })}
         mb={1}
       />
       {(!!data.designs?.length && (
