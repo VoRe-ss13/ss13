@@ -293,10 +293,10 @@ export const LawManagerLaws = (props: {
                 <Table.Cell collapsing>Zero</Table.Cell>
                 <Table.Cell>
                   <Input
-                    updateOnPropsChange
+                    expensive
                     value={zeroth_law}
                     fluid
-                    onChange={(e, val: string) =>
+                    onChange={(val: string) =>
                       act('change_zeroth_law', { val: val })
                     }
                   />
@@ -315,10 +315,10 @@ export const LawManagerLaws = (props: {
               <Table.Cell collapsing>Ion</Table.Cell>
               <Table.Cell>
                 <Input
-                  updateOnPropsChange
+                  expensive
                   value={ion_law}
                   fluid
-                  onChange={(e, val: string) =>
+                  onChange={(val: string) =>
                     act('change_ion_law', { val: val })
                   }
                 />
@@ -334,10 +334,10 @@ export const LawManagerLaws = (props: {
               <Table.Cell>Inherent</Table.Cell>
               <Table.Cell>
                 <Input
-                  updateOnPropsChange
+                  expensive
                   value={inherent_law}
                   fluid
-                  onChange={(e, val: string) =>
+                  onChange={(val: string) =>
                     act('change_inherent_law', { val: val })
                   }
                 />
@@ -353,10 +353,10 @@ export const LawManagerLaws = (props: {
               <Table.Cell>Supplied</Table.Cell>
               <Table.Cell>
                 <Input
-                  updateOnPropsChange
+                  expensive
                   value={supplied_law}
                   fluid
-                  onChange={(e, val: string) =>
+                  onChange={(val: string) =>
                     act('change_supplied_law', { val: val })
                   }
                 />
@@ -495,7 +495,7 @@ export const LawManagerLawSets = (props: {
         fluid
         value={searchLawName}
         placeholder="Search for laws..."
-        onInput={(e, value: string) => onSearchLawName(value)}
+        onChange={(value: string) => onSearchLawName(value)}
       />
       {law_sets.length
         ? prepareSearch(law_sets, searchLawName).map((laws) => (
