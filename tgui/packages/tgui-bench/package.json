@@ -13,6 +13,14 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tgui": "workspace:*",
+<<<<<<< HEAD
     "tgui-core": "^1.8.2"
+=======
+    "tgui-core": "^3.0.5"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.2"
+>>>>>>> b4055c2c48 ([MIRROR] tgui core update (#10650))
   }
 }
