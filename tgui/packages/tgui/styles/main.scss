@@ -20,6 +20,7 @@
 @include meta.load-css('./atomic/text.scss');
 
 // Components
+<<<<<<< HEAD
 @include meta.load-css('~tgui-core/styles/components/BlockQuote.scss');
 @include meta.load-css('~tgui-core/styles/components/Button.scss');
 @include meta.load-css('~tgui-core/styles/components/ColorBox.scss');
@@ -47,6 +48,9 @@
 @include meta.load-css('~tgui-core/styles/components/Tabs.scss');
 @include meta.load-css('~tgui-core/styles/components/TextArea.scss');
 @include meta.load-css('~tgui-core/styles/components/Tooltip.scss');
+=======
+@include meta.load-css('./components/NanoMap.scss');
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 
 // Interfaces
 @include meta.load-css('./interfaces/AutomatedTellerMachine.scss');
