@@ -529,7 +529,7 @@
 	if(damage_desc)
 		var/fix_verb = (damage_amount > repair_amount) ? "patches" : "finishes patching"
 		if(user == src.owner)
-			var/datum/gender/T = gender_datums[user.get_visible_gender()]
+			var/datum/gender/T = GLOB.gender_datums[user.get_visible_gender()]
 			user.visible_message(span_infoplain(span_bold("\The [user]") + " [fix_verb] [damage_desc] on [T.his] [src.name] with [tool]."))
 		else
 			user.visible_message(span_infoplain(span_bold("\The [user]") + " [fix_verb] [damage_desc] on [owner]'s [src.name] with [tool]."))
@@ -1204,9 +1204,15 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 	if(company)
 		model = company
+<<<<<<< HEAD
 		var/datum/robolimb/R = all_robolimbs[company]
 		if(!R || (species && (species.name in R.species_cannot_use)))
 			R = basic_robolimb
+=======
+		var/datum/robolimb/R = GLOB.all_robolimbs[company]
+		if(!R || (data.get_species_name() in R.species_cannot_use))
+			R = GLOB.basic_robolimb
+>>>>>>> f7219329ca ([MIRROR] Conversion many Globals to Managed Globals (Part 1) (#10665))
 		if(R)
 			force_icon = R.icon
 			brute_mod *= R.robo_brute_mod

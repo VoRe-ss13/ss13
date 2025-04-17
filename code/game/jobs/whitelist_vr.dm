@@ -1,4 +1,4 @@
-GLOBAL_LIST_EMPTY(job_whitelist) // CHOMPEdit - Managed Globals
+GLOBAL_LIST_EMPTY(job_whitelist)
 
 /hook/startup/proc/loadJobWhitelist()
 	if(CONFIG_GET(flag/use_jobwhitelist)) // CHOMPedit
@@ -10,7 +10,7 @@ GLOBAL_LIST_EMPTY(job_whitelist) // CHOMPEdit - Managed Globals
 	if (!text)
 		log_misc("Failed to load config/jobwhitelist.txt")
 	else
-		GLOB.job_whitelist = splittext(text, "\n") // CHOMPEdit - Managed Globals
+		GLOB.job_whitelist = splittext(text, "\n")
 
 /proc/is_job_whitelisted(mob/M, var/rank)
 	//TORCHEdit begin
@@ -27,11 +27,17 @@ GLOBAL_LIST_EMPTY(job_whitelist) // CHOMPEdit - Managed Globals
 		return 1
 	if(rank == JOB_ALT_VISITOR) //VOREStation Edit - Visitor not Assistant
 		return 1
+<<<<<<< HEAD
 	//TORCH Removal. Moved this upwards
 	if(!GLOB.job_whitelist) // CHOMPEdit - Managed Globals
+=======
+	if(check_rights(R_ADMIN, 0) || check_rights(R_DEBUG, 0) || check_rights(R_EVENT, 0)) // CHOMPedit
+		return 1
+	if(!GLOB.job_whitelist)
+>>>>>>> f7219329ca ([MIRROR] Conversion many Globals to Managed Globals (Part 1) (#10665))
 		return 0
 	if(M && rank)
-		for (var/s in GLOB.job_whitelist) // CHOMPEdit - Managed Globals
+		for (var/s in GLOB.job_whitelist)
 			if(findtext(s,"[lowertext(M.ckey)] - [lowertext(rank)]"))
 				return 1
 			if(findtext(s,"[M.ckey] - All"))

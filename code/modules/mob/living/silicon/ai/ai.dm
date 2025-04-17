@@ -174,12 +174,17 @@ var/list/ai_verbs_default = list(
 
 	if(!safety)//Only used by AIize() to successfully spawn an AI.
 		if (!B)//If there is no player/brain inside.
+<<<<<<< HEAD
 			empty_playable_ai_cores += new/obj/structure/AIcore/deactivated(loc)//New empty terminal.
 			qdel(src)//Delete AI.
 			return
 		else
 			if (B.brainmob.mind)
 				B.brainmob.mind.transfer_to(src)
+=======
+			GLOB.empty_playable_ai_cores += new/obj/structure/AIcore/deactivated(loc)//New empty terminal.
+			return INITIALIZE_HINT_QDEL //Delete AI.
+>>>>>>> f7219329ca ([MIRROR] Conversion many Globals to Managed Globals (Part 1) (#10665))
 
 			on_mob_init()
 
