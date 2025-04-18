@@ -71,7 +71,7 @@ var/global/moth_amount = 0 // CHOMPEnable, Rykka waz here. *pawstamp*
 
 /mob/living/simple_mob/vore/solargrub/Initialize(mapload)
 	. = ..()
-	existing_solargrubs += src
+	GLOB.existing_solargrubs += src
 
 /mob/living/simple_mob/vore/solargrub/Life()
 	. = ..()
@@ -165,8 +165,13 @@ var/global/moth_amount = 0 // CHOMPEnable, Rykka waz here. *pawstamp*
 	..()
 
 /mob/living/simple_mob/vore/solargrub/Destroy()
+<<<<<<< HEAD
 	existing_solargrubs -= src
 	..()
+=======
+	GLOB.existing_solargrubs -= src
+	. = ..()
+>>>>>>> f7219329ca ([MIRROR] Conversion many Globals to Managed Globals (Part 1) (#10665))
 
 /mob/living/simple_mob/vore/solargrub/handle_light()
 	. = ..()
