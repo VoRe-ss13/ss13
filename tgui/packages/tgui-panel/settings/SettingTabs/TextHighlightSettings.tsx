@@ -181,6 +181,11 @@ const TextHighlightSetting = (props) => {
         </Stack.Item>
       </Stack>
       <TextArea
+<<<<<<< HEAD
+=======
+        fluid
+        expensive
+>>>>>>> 7690b890b3 ([MIRROR] Fix highlight input size (#10667))
         height="3em"
         value={highlightText}
         placeholder="Put words to highlight here. Separate terms with commas, i.e. (term1, term2, term3)"
@@ -195,6 +200,11 @@ const TextHighlightSetting = (props) => {
       />
       {!!highlightBlacklist && (
         <TextArea
+<<<<<<< HEAD
+=======
+          fluid
+          expensive
+>>>>>>> 7690b890b3 ([MIRROR] Fix highlight input size (#10667))
           height="3em"
           value={blacklistText}
           placeholder="Put names of senders you don't want highlighted here. Separate names with commas, i.e. (name1, name2, name3)"
