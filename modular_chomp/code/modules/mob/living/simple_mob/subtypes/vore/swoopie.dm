@@ -164,6 +164,12 @@
 	B.vore_sound = "Stomach Move"
 	B.sound_volume = 20
 
+<<<<<<< HEAD
+=======
+	// This needs to go here as swoopies can't call simple mob init_vore...They shouldn't be a subtype of corrupt hound.
+	AddElement(/datum/element/slosh)
+
+>>>>>>> 5a17ded0b8 (swoopies again (#10675))
 	if(!soulgem)
 		soulgem = new(src)
 
