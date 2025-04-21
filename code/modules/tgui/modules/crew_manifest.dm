@@ -4,9 +4,15 @@
 
 /datum/tgui_module/crew_manifest/tgui_data(mob/user, datum/tgui/ui, datum/tgui_state/state)
 	var/list/data = ..()
+<<<<<<< HEAD
 	if(data_core)
 		data_core.get_manifest_list()
 	data["manifest"] = PDA_Manifest
+=======
+	if(GLOB.data_core)
+		GLOB.data_core.get_manifest_list()
+	data["manifest"] = GLOB.PDA_Manifest
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 	return data
 
 /datum/tgui_module/crew_manifest/robot

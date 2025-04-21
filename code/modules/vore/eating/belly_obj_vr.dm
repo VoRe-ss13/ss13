@@ -1212,8 +1212,13 @@
 	//Sketchy fallback for safety, put them somewhere safe.
 	else
 		log_debug("[src] (\ref[src]) doesn't have an owner, and dropped someone at a latespawn point!")
+<<<<<<< HEAD
 		var/fallback = pick(latejoin)
 		return fallback
+=======
+		var/fallback = pick(GLOB.latejoin)
+		return get_turf(fallback)
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 
 //Yes, it's ""safe"" to drop items here
 /obj/belly/AllowDrop()

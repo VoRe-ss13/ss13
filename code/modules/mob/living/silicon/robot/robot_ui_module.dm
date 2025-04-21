@@ -39,19 +39,24 @@
 		if(LAZYLEN(R.restrict_modules_to) > 0)
 			modules.Add(R.restrict_modules_to)
 		else if(R.shell)
-			modules.Add(robot_module_types) // CHOMPEdit
+			modules.Add(GLOB.robot_module_types) // CHOMPEdit
 			// CHOMPAdd Start, shell blacklist and crisis mode for shells
 			modules.Remove(GLOB.shell_module_blacklist)
 			if(R.crisis || security_level == SEC_LEVEL_RED || R.crisis_override)
 				to_chat(src, span_red("Crisis mode active. Combat module available."))
-				modules |= emergency_module_types
+				modules |= GLOB.emergency_module_types
 			// CHOMPAdd End
 		else
+<<<<<<< HEAD
 			modules.Add(robot_module_types)
 			if(R.crisis || security_level >= SEC_LEVEL_RED || R.crisis_override)
+=======
+			modules.Add(GLOB.robot_module_types)
+			if(R.crisis || GLOB.security_level >= SEC_LEVEL_RED || R.crisis_override)
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 				to_chat(R, span_red("Crisis mode active. Combat module available."))
-				modules |= emergency_module_types
-			for(var/module_name in whitelisted_module_types)
+				modules |= GLOB.emergency_module_types
+			for(var/module_name in GLOB.whitelisted_module_types)
 				if(is_borg_whitelisted(R, module_name))
 					modules |= module_name
 	data["possible_modules"] = modules

@@ -423,8 +423,13 @@ var/bomb_set
 	nuke_disks += src
 
 /obj/item/disk/nuclear/Destroy()
+<<<<<<< HEAD
 	if(!nuke_disks.len && blobstart.len > 0)
 		var/obj/D = new /obj/item/disk/nuclear(pick(blobstart))
+=======
+	if(!GLOB.nuke_disks.len && GLOB.blobstart.len > 0)
+		var/obj/D = new /obj/item/disk/nuclear(pick(GLOB.blobstart))
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 		message_admins("[src], the last authentication disk, has been destroyed. Spawning [D] at ([D.x], [D.y], [D.z]).")
 		log_game("[src], the last authentication disk, has been destroyed. Spawning [D] at ([D.x], [D.y], [D.z]).")
 	..()

@@ -29,7 +29,7 @@ var/global/datum/controller/occupations/job_master
 
 
 /datum/controller/occupations/proc/Debug(var/text)
-	if(!Debug2)	return 0
+	if(!GLOB.Debug2)	return 0
 	job_debug.Add(text)
 	return 1
 
@@ -976,12 +976,21 @@ var/global/datum/controller/occupations/job_master
 				to_chat(C, span_warning("Your chosen spawnpoint ([spawnpos.display_name]) is unavailable for your chosen job. Please correct your spawn point choice."))
 				return
 			to_chat(C, span_filter_warning("Your chosen spawnpoint ([spawnpos.display_name]) is unavailable for your chosen job. Spawning you at the Arrivals shuttle instead."))
+<<<<<<< HEAD
 			var/spawning = pick(latejoin)
 			.["turf"] = spawning
 			.["msg"] = "will arrive at the station shortly"
 	else if(!fail_deadly)
 		var/spawning = pick(latejoin)
 		.["turf"] = spawning
+=======
+			var/spawning = pick(GLOB.latejoin)
+			.["turf"] = get_turf(spawning)
+			.["msg"] = "will arrive at the station shortly"
+	else if(!fail_deadly)
+		var/spawning = pick(GLOB.latejoin)
+		.["turf"] = get_turf(spawning)
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 		.["msg"] = "has arrived on the station"
 
 /datum/controller/occupations/proc/m_backup_client(var/client/C)	//Same as m_backup, but takes a client entry. Used for vore late joining.

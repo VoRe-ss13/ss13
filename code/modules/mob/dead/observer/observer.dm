@@ -129,10 +129,17 @@
 		if(ishuman(body))
 			var/mob/living/carbon/human/H = body
 			add_overlay(H.overlays_standing)
+<<<<<<< HEAD
 		default_pixel_x = body.default_pixel_x
 		default_pixel_y = body.default_pixel_y
 	if(!T && length(latejoin))
 		T = get_turf(pick(latejoin))			//Safety in case we cannot find the body's position
+=======
+		default_pixel_x = M.default_pixel_x
+		default_pixel_y = M.default_pixel_y
+	if(!T && length(GLOB.latejoin))
+		T = get_turf(pick(GLOB.latejoin))			//Safety in case we cannot find the body's position
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 	if(T)
 		forceMove(T, just_spawned = TRUE)
 	else
@@ -722,10 +729,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 
 	var/timedifference = world.time - client.time_died_as_mouse
-	if(client.time_died_as_mouse && timedifference <= mouse_respawn_time * 600)
+	if(client.time_died_as_mouse && timedifference <= CONFIG_GET(number/mouse_respawn_time) MINUTES)
 		var/timedifference_text
-		timedifference_text = time2text(mouse_respawn_time * 600 - timedifference,"mm:ss")
-		to_chat(src, span_warning("You may only spawn again as a mouse more than [mouse_respawn_time] minutes after your death. You have [timedifference_text] left."))
+		timedifference_text = time2text(CONFIG_GET(number/mouse_respawn_time) MINUTES - timedifference,"mm:ss")
+		to_chat(src, span_warning("You may only spawn again as a mouse more than [CONFIG_GET(number/mouse_respawn_time)] minutes after your death. You have [timedifference_text] left."))
 		return
 
 	var/response = tgui_alert(src, "Are you -sure- you want to become a mouse? You will have no rights or OOC protections.","Are you sure you want to squeek? You will have no rights or OOC protections.",list("Squeek!","Nope!")) //CHOMP Edit
@@ -736,7 +743,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/mob/living/simple_mob/animal/passive/mouse/host
 	var/obj/machinery/atmospherics/unary/vent_pump/vent_found
 	var/list/found_vents = list()
-	for(var/obj/machinery/atmospherics/unary/vent_pump/v in machines)
+	for(var/obj/machinery/atmospherics/unary/vent_pump/v in GLOB.machines)
 		if(!v.welded && v.z == T.z && v.network && v.network.normal_members.len > 20)
 			found_vents.Add(v)
 	if(found_vents.len)

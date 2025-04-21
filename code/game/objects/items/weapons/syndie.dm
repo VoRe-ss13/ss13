@@ -51,9 +51,18 @@
 	playsound(src, 'sound/weapons/armbomb.ogg', 75, 1)
 	for(var/mob/O in hearers(src, null))
 		O.show_message("[icon2html(src, O.client)] " + span_warning(" The [src.name] beeps!"))
+<<<<<<< HEAD
 	sleep(50)
 	explosion(get_turf(src), devastate, heavy_impact, light_impact, flash_range)
 	for(var/dirn in cardinal)		//This is to guarantee that C4 at least breaks down all immediately adjacent walls and doors.
+=======
+	addtimer(CALLBACK(src, PROC_REF(do_detonate)), 5 SECONDS, TIMER_DELETE_ME)
+
+/obj/item/syndie/c4explosive/proc/do_detonate()
+	SHOULD_NOT_OVERRIDE(TRUE)
+	PRIVATE_PROC(TRUE)
+	for(var/dirn in GLOB.cardinal)		//This is to guarantee that C4 at least breaks down all immediately adjacent walls and doors.
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 		var/turf/simulated/wall/T = get_step(src,dirn)
 		if(locate(/obj/machinery/door/airlock) in T)
 			var/obj/machinery/door/airlock/D = locate() in T
