@@ -34,12 +34,19 @@
 	movement_range = 25
 	energy = 50
 
+<<<<<<< HEAD
 /obj/effect/accelerated_particle/New(loc, dir = 2)
 	src.loc = loc
 	src.set_dir(dir)
 	spawn(0)
 		move(1)
 
+=======
+/obj/effect/accelerated_particle/Initialize(mapload, dir = 2)
+	. = ..()
+	set_dir(dir)
+	move(0.1 SECONDS)
+>>>>>>> f7eddc1071 ([MIRROR] tgui core 3.1.2 (#10697))
 
 /obj/effect/accelerated_particle/Bump(atom/A)
 	if (A)
