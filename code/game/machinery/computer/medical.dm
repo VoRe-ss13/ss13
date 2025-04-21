@@ -172,8 +172,13 @@
 					medical["empty"] = 1
 			if(MED_DATA_V_DATA)
 				data["virus"] = list()
+<<<<<<< HEAD
 				for(var/datum/disease/D in active_diseases)
 					if(!D.discovered)
+=======
+				for(var/datum/disease/D in GLOB.active_diseases)
+					if(!global_flag_check(D.virus_modifiers, DISCOVERED))
+>>>>>>> 5193d70d2b ([MIRROR] Virology Update #3 (#10690))
 						continue
 					var/datum/data/record/v = active_diseases[D]
 					data["virus"] += list(list("name" = v.fields["name"], "D" = "\ref[v]"))

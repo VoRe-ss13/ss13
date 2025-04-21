@@ -31129,11 +31129,11 @@
 	},
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/paleblue/border,
-/obj/item/reagent_containers/glass/bottle/culture/cold{
+/obj/item/reagent_containers/glass/beaker/vial/culture/cold{
 	pixel_y = 5;
 	pixel_x = -5
 	},
-/obj/item/reagent_containers/glass/bottle/culture/flu,
+/obj/item/reagent_containers/glass/beaker/vial/culture/flu,
 /turf/simulated/floor/tiled/white{
 	color = "#8bbbd5"
 	},
@@ -45490,11 +45490,11 @@
 	dir = 1
 	},
 /obj/structure/table/glass,
-/obj/item/reagent_containers/glass/bottle/culture/cold{
+/obj/item/reagent_containers/glass/beaker/vial/culture/cold{
 	pixel_y = 5;
 	pixel_x = -5
 	},
-/obj/item/reagent_containers/glass/bottle/culture/flu,
+/obj/item/reagent_containers/glass/beaker/vial/culture/flu,
 /turf/simulated/floor/tiled/white{
 	color = "#8bbbd5"
 	},
