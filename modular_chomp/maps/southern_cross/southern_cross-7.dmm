@@ -3626,14 +3626,15 @@
 	dir = 4;
 	pixel_x = -23
 	},
+/obj/structure/catwalk,
+/obj/structure/cable/yellow,
 /obj/machinery/power/port_gen/pacman/super/potato{
 	active = 1;
 	power_gen = 200000;
 	power_output = 4;
-	sheets = 50
+	sheets = 50;
+	active = 1
 	},
-/obj/structure/catwalk,
-/obj/structure/cable/yellow,
 /turf/simulated/floor,
 /area/expoutpost/engstorage)
 "dgK" = (
@@ -22285,7 +22286,8 @@
 	active = 1;
 	power_gen = 200000;
 	power_output = 4;
-	sheets = 50
+	sheets = 50;
+	active = 1
 	},
 /obj/structure/catwalk,
 /obj/structure/cable/yellow,
