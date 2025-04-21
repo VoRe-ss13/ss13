@@ -192,9 +192,17 @@
 	return after_unwrap(user)
 
 /obj/item/mail/proc/unwrap(mob/user)
+<<<<<<< HEAD
 	if(recipient && user != recipient)
 		to_chat(user, span_danger("You can't open somebody's mail! That's <em>illegal</em>"))
 		return FALSE
+=======
+	if(recipient_ref)
+		var/datum/mind/recipient = recipient_ref.resolve()
+		if(recipient && recipient.current?.dna.unique_enzymes != user.dna.unique_enzymes)
+			to_chat(user, span_danger("You can't open somebody's mail! That's <em>illegal</em>"))
+			return FALSE
+>>>>>>> b672ca8693 ([MIRROR] fix a bunch of runtimes (#10683))
 
 	if(opening)
 		to_chat(user, span_danger("You are already opening that!"))
