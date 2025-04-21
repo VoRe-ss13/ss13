@@ -26,7 +26,23 @@ const createStats = (verbose) => ({
 module.exports = (env = {}, argv) => {
   const mode = argv.mode || 'production';
   const bench = env.TGUI_BENCH;
+<<<<<<< HEAD:tgui/webpack.config.js
   const config = {
+=======
+
+  /** @type {import('@rspack/core').Configuration} */
+  const config = defineConfig({
+    cache: true,
+    experiments: {
+      cache: {
+        type: 'persistent',
+        storage: {
+          type: 'filesystem',
+          directory: path.resolve(__dirname, '.yarn/rspack'),
+        },
+      },
+    },
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681)):tgui/rspack.config.cjs
     mode: mode === 'production' ? 'production' : 'development',
     context: path.resolve(__dirname),
     target: ['web', 'browserslist:last 2 Edge versions'],
@@ -63,7 +79,17 @@ module.exports = (env = {}, argv) => {
           test: /\.(s)?css$/,
           use: [
             {
+<<<<<<< HEAD:tgui/webpack.config.js
               loader: ExtractCssPlugin.loader,
+=======
+              loader: rspack.CssExtractRspackPlugin.loader,
+            },
+            {
+              loader: require.resolve('css-loader'),
+            },
+            {
+              loader: require.resolve('sass-loader'),
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681)):tgui/rspack.config.cjs
               options: {
                 esModule: false,
               },
@@ -78,6 +104,10 @@ module.exports = (env = {}, argv) => {
               loader: require.resolve('sass-loader'),
             },
           ],
+<<<<<<< HEAD:tgui/webpack.config.js
+=======
+          type: 'javascript/auto',
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681)):tgui/rspack.config.cjs
         },
         {
           test: /\.(png|jpg|svg)$/,

@@ -22,7 +22,7 @@ export const meta = {
   render: () => <Story />,
 };
 
-const Story = (props) => {
+function Story() {
   const [number, setNumber] = useState(0);
   const [text, setText] = useState('Sample text');
   return (
@@ -32,7 +32,11 @@ const Story = (props) => {
           <Input value={text} onChange={(e, value) => setText(value)} />
         </LabeledList.Item>
         <LabeledList.Item label="Input (onInput)">
+<<<<<<< HEAD
           <Input value={text} onInput={(e, value) => setText(value)} />
+=======
+          <Input value={text} onChange={(value) => setText(value)} />
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681))
         </LabeledList.Item>
         <LabeledList.Item label="NumberInput (onChange)">
           <NumberInput
@@ -120,4 +124,4 @@ const Story = (props) => {
       </LabeledList>
     </Section>
   );
-};
+}

@@ -4,9 +4,8 @@
  * @license MIT
  */
 
-import fs from 'fs';
-import { createRequire } from 'module';
-import { dirname } from 'path';
+import fs from 'node:fs';
+import { createRequire } from 'node:module';
 
 import { loadSourceMaps, setupLink } from './link/server.js';
 import { createLogger } from './logging.js';
@@ -19,19 +18,32 @@ const logger = createLogger('webpack');
  * @param {any} config
  * @return {WebpackCompiler}
  */
+<<<<<<< HEAD
 export const createCompiler = async (options) => {
   const compiler = new WebpackCompiler();
+=======
+export async function createCompiler(options) {
+  const compiler = new RspackCompiler();
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681))
   await compiler.setup(options);
+
   return compiler;
-};
+}
 
 class WebpackCompiler {
   async setup(options) {
     // Create a require context that is relative to project root
     // and retrieve all necessary dependencies.
+<<<<<<< HEAD
     const requireFromRoot = createRequire(dirname(import.meta.url) + '/../..');
     const webpack = await requireFromRoot('webpack');
     const createConfig = await requireFromRoot('./webpack.config.js');
+=======
+    const requireFromRoot = createRequire(import.meta.dirname + '/../../..');
+    /** @type {typeof import('@rspack/core')} */
+    const rspack = await requireFromRoot('@rspack/core');
+    const createConfig = await requireFromRoot('./rspack.config.cjs');
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681))
     const config = createConfig({}, options);
     // Inject the HMR plugin into the config if we're using it
     if (options.hot) {
@@ -76,7 +88,7 @@ class WebpackCompiler {
         return;
       }
       stats
-        .toString(this.config.devServer.stats)
+        ?.toString(this.config.devServer.stats)
         .split('\n')
         .forEach((line) => logger.log(line));
     });
