@@ -25,6 +25,7 @@
 /mob/new_player/New()
 	mob_list += src
 	add_verb(src, /mob/proc/insidePanel)
+<<<<<<< HEAD
 	//CHOMPEdit Begin
 	if(length(GLOB.newplayer_start))
 		forceMove(pick(GLOB.newplayer_start))
@@ -33,6 +34,8 @@
 	//CHOMPEdit End
 	flags |= ATOM_INITIALIZED // Explicitly don't use Initialize().  New players join super early and use New()
 
+=======
+>>>>>>> f282db8201 (move to login (#10726))
 
 /mob/new_player/Destroy()
 	if(panel)
