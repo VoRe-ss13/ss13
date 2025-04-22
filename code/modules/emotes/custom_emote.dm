@@ -62,8 +62,13 @@
 
 		if(!T) return
 
+<<<<<<< HEAD
 		if(client)
 			playsound(T, pick(voice_sounds_list), 75, TRUE, falloff = 1 , is_global = TRUE, frequency = voice_freq, ignore_walls = TRUE, preference = /datum/preference/toggle/emote_sounds) //CHOMPEdit - use say prefs instead //ChompEDIT - also ignore walls
+=======
+	if(client)
+		playsound(T, pick(voice_sounds_list), 75, TRUE, falloff = 1 , is_global = TRUE, frequency = voice_freq, ignore_walls = TRUE, preference = /datum/preference/toggle/emote_sounds) //CHOMPEdit - use say prefs instead
+>>>>>>> 3c98280038 ([MIRROR] Removes more sleeps in the code (#10722))
 
 		var/list/in_range = get_mobs_and_objs_in_view_fast(T,range,2,remote_ghosts = client ? TRUE : FALSE)
 		var/list/m_viewers = in_range["mobs"]
