@@ -92,6 +92,11 @@
 // Other parameters are passed from New (excluding loc), this does not happen if mapload is TRUE
 // Must return an Initialize hint. Defined in code/__defines/subsystems.dm
 /atom/proc/Initialize(mapload, ...)
+<<<<<<< HEAD
+=======
+	SHOULD_NOT_SLEEP(TRUE)
+	SHOULD_CALL_PARENT(TRUE)
+>>>>>>> b34a389663 ([MIRROR] Removing the last sleeps in Init (#10715))
 	if(QDELETED(src))
 		stack_trace("GC: -- [type] had initialize() called after qdel() --")
 	if(flags & ATOM_INITIALIZED)

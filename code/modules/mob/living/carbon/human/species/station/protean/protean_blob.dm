@@ -68,6 +68,7 @@
 	emote_see = list("shifts wetly","undulates placidly")
 
 //Constructor allows passing the human to sync damages
+<<<<<<< HEAD
 /mob/living/simple_mob/protean_blob/New(var/newloc, var/mob/living/carbon/human/H)
 	..()
 	if(H)
@@ -86,6 +87,27 @@
 		remove_verb(src,/mob/living/simple_mob/proc/nutrition_heal) // CHOMPAdd
 	else
 		update_icon()
+=======
+/mob/living/simple_mob/protean_blob/Initialize(mapload, var/mob/living/carbon/human/H)
+	. = ..()
+	if(!H)
+		stack_trace("URGENT: A protean blob was created without a humanform! src = [src] ckey = [ckey]! The blob has been deleted.")
+		return INITIALIZE_HINT_QDEL
+
+	humanform = H
+	calculate_health()
+	refactory = locate() in humanform.internal_organs
+	// add_verb(src,/mob/living/proc/ventcrawl) // CHOMPRemove
+	add_verb(src,/mob/living/proc/usehardsuit)
+	add_verb(src,/mob/living/simple_mob/protean_blob/proc/nano_partswap)
+	add_verb(src,/mob/living/simple_mob/protean_blob/proc/nano_regenerate)
+	add_verb(src,/mob/living/simple_mob/protean_blob/proc/nano_metalnom)
+	add_verb(src,/mob/living/simple_mob/protean_blob/proc/nano_blobform)
+	add_verb(src,/mob/living/simple_mob/protean_blob/proc/nano_rig_transform)
+	add_verb(src,/mob/living/simple_mob/protean_blob/proc/appearance_switch)
+	add_verb(src,/mob/living/simple_mob/protean_blob/proc/nano_latch)
+	remove_verb(src,/mob/living/simple_mob/proc/nutrition_heal) // CHOMPAdd
+>>>>>>> b34a389663 ([MIRROR] Removing the last sleeps in Init (#10715))
 	add_verb(src,/mob/living/simple_mob/proc/animal_mount)
 	add_verb(src,/mob/living/proc/toggle_rider_reins)
 
@@ -205,18 +227,20 @@
 		CRASH("A protean blob does not have a humanform! src = [src] ckey = [ckey]")
 	if(humanform.nano_dead_check(src))
 		return
+	calculate_health()
+	//Alive, becoming dead
+	if((stat < DEAD) && (health <= 0))
+		humanform.death()
 
+/mob/living/simple_mob/protean_blob/proc/calculate_health()
 	//Set the max
 	maxHealth = humanform.getMaxHealth()*2 //HUMANS, and their 'double health', bleh.
 	human_brute = humanform.getActualBruteLoss()
 	human_burn = humanform.getActualFireLoss()
 	health = maxHealth - humanform.getOxyLoss() - humanform.getToxLoss() - humanform.getCloneLoss() - humanform.getBruteLoss() - humanform.getFireLoss()
 
-	//Alive, becoming dead
-	if((stat < DEAD) && (health <= 0))
-		humanform.death()
-
 	nutrition = humanform.nutrition
+
 
 	//Overhealth
 	if(health > getMaxHealth())

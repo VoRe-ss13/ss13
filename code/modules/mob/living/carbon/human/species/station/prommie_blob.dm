@@ -108,23 +108,28 @@
 		humanform = H
 		updatehealth()
 
+<<<<<<< HEAD
 	else
 		qdel(src)
+=======
+	humanform = H
+	calculate_health()
+>>>>>>> b34a389663 ([MIRROR] Removing the last sleeps in Init (#10715))
 
 /mob/living/simple_mob/slime/promethean/updatehealth()
 	if(!humanform)
 		return ..()
+	calculate_health()
+	if((stat < DEAD) && (health <= 0))
+		death()
 
+/mob/living/simple_mob/slime/promethean/proc/calculate_health()
 	//Set the max
 	maxHealth = humanform.getMaxHealth()*2 //HUMANS, and their 'double health', bleh.
 	//Set us to their health, but, human health ignores robolimbs so we do it 'the hard way'
 	human_brute = humanform.getActualBruteLoss()
 	human_burn = humanform.getActualFireLoss()
 	health = maxHealth - humanform.getOxyLoss() - humanform.getToxLoss() - humanform.getCloneLoss() - human_brute - human_burn
-
-	//Alive, becoming dead
-	if((stat < DEAD) && (health <= 0))
-		death()
 
 	//Overhealth
 	if(health > getMaxHealth())
