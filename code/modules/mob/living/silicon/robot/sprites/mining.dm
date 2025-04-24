@@ -193,8 +193,15 @@
 	sprite_icon_state = "dullahanmine"
 	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_mine.dmi'
 	has_vore_belly_sprites = TRUE
+<<<<<<< HEAD
 	has_custom_open_sprites = FALSE
 	has_eye_light_sprites = TRUE
+=======
+	has_vore_belly_resting_sprites = TRUE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	sprite_decals = list("breastplate","loincloth","eyecover")
+>>>>>>> 9ab4e3681d ([MIRROR] fixes code that makes resting borgs show missing sprite error (#10735))
 	rest_sprite_options = list("Default", "sit")
 	icon_x = 32
 	pixel_x = 0
@@ -219,6 +226,12 @@
 	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_cargo.dmi'
 	has_eye_light_sprites = TRUE
 	has_vore_belly_sprites = TRUE
+<<<<<<< HEAD
+=======
+	has_vore_belly_resting_sprites = TRUE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+>>>>>>> 9ab4e3681d ([MIRROR] fixes code that makes resting borgs show missing sprite error (#10735))
 	rest_sprite_options = list("Default", "Sit")
 	icon_x = 32
 	pixel_x = 0

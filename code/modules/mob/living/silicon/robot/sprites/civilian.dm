@@ -320,6 +320,13 @@
 	rest_sprite_options = list("Default", "Sit")
 	has_eye_light_sprites = TRUE
 	has_vore_belly_sprites = TRUE
+<<<<<<< HEAD
+=======
+	has_vore_belly_resting_sprites = TRUE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	sprite_decals = list("breastplate", "loincloth","loinclothbreastplate","eyecover")
+>>>>>>> 9ab4e3681d ([MIRROR] fixes code that makes resting borgs show missing sprite error (#10735))
 	pixel_x = 0
 	icon_x = 32
 
@@ -338,8 +345,8 @@
 	icon_x = 64
 	pixel_x = -16
 
-/datum/robot_sprite/dogborg/tall/service/dullahan/servicealt3
-	name = "Dullahan v4 matcha"
+/datum/robot_sprite/dogborg/tall/service/dullahanv3/servicealt3
+	name = "Dullahan v3 matcha"
 	sprite_icon = 'icons/mob/robot/dullahan/v3/barista.dmi'
 	sprite_icon_state = "dullahanbarista"
 	sprite_decals = list("decals")

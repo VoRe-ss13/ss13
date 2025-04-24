@@ -216,7 +216,13 @@
 	sprite_icon_state = "dullahansci"
 	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_sci.dmi'
 	has_vore_belly_sprites = TRUE
+<<<<<<< HEAD
 	has_eye_light_sprites = TRUE
+=======
+	has_vore_belly_resting_sprites = TRUE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+>>>>>>> 9ab4e3681d ([MIRROR] fixes code that makes resting borgs show missing sprite error (#10735))
 	sprite_hud_icon_state = "sci-borg"
 	rest_sprite_options = list("Default", "Sit")
 	icon_x = 32

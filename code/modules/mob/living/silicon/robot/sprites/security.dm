@@ -225,6 +225,12 @@
 	sprite_hud_icon_state = "k9"
 	has_eye_light_sprites = TRUE
 	has_vore_belly_sprites = TRUE
+<<<<<<< HEAD
+=======
+	has_vore_belly_resting_sprites = TRUE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+>>>>>>> 9ab4e3681d ([MIRROR] fixes code that makes resting borgs show missing sprite error (#10735))
 	rest_sprite_options = list("Default", "Sit")
 	icon_x = 32
 	pixel_x = 0

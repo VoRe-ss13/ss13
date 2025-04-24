@@ -18,6 +18,8 @@
 	var/has_vore_struggle_sprite = FALSE
 	var/max_belly_size = 1 //If larger bellies are made, set this to the value of the largest size
 	var/has_rest_sprites = FALSE
+	var/has_rest_eyes_sprites = FALSE
+	var/has_rest_lights_sprites = FALSE
 	var/list/rest_sprite_options
 	var/has_dead_sprite = FALSE
 	var/has_dead_sprite_overlay = FALSE
@@ -140,12 +142,22 @@
 /datum/robot_sprite/proc/get_eyes_overlay(var/mob/living/silicon/robot/ourborg)
 	if(!(ourborg.resting && has_rest_sprites))
 		return "[sprite_icon_state]-eyes"
+<<<<<<< HEAD
+=======
+	else if(ourborg.resting && has_rest_eyes_sprites)
+		return "[get_rest_sprite(ourborg)]-eyes"
+>>>>>>> 9ab4e3681d ([MIRROR] fixes code that makes resting borgs show missing sprite error (#10735))
 	else
 		return
 
 /datum/robot_sprite/proc/get_eye_light_overlay(var/mob/living/silicon/robot/ourborg)
 	if(!(ourborg.resting && has_rest_sprites))
 		return "[sprite_icon_state]-lights"
+<<<<<<< HEAD
+=======
+	else if(ourborg.resting && has_rest_lights_sprites)
+		return "[get_rest_sprite(ourborg)]-lights"
+>>>>>>> 9ab4e3681d ([MIRROR] fixes code that makes resting borgs show missing sprite error (#10735))
 	else
 		return
 
