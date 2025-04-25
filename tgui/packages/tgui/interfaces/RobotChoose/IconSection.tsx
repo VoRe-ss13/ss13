@@ -1,13 +1,5 @@
-import { useState } from 'react';
 import { useBackend } from 'tgui/backend';
-import {
-  Box,
-  Button,
-  Input,
-  Section,
-  Stack,
-  Tooltip,
-} from 'tgui-core/components';
+import { Box, Button, Input, Section, Stack } from 'tgui-core/components';
 import { classes } from 'tgui-core/react';
 
 export const IconSection = (props: {
@@ -19,7 +11,6 @@ export const IconSection = (props: {
 }) => {
   const { act } = useBackend();
   const { currentName, mindName, isDefaultName, sprite, size } = props;
-  const [robotName, setRobotName] = useState<string>(currentName);
 
   return (
     <Section
@@ -39,6 +30,7 @@ export const IconSection = (props: {
             <Box>Name: </Box>
           </Stack.Item>
           <Stack.Item grow>
+<<<<<<< HEAD
             <Tooltip content="Adjust your name">
               <Input
                 updateOnPropsChange
@@ -52,6 +44,17 @@ export const IconSection = (props: {
                 textColor={isDefaultName ? 'red' : undefined}
               />
             </Tooltip>
+=======
+            <Input
+              fluid
+              value={currentName}
+              onChange={(value) => {
+                act('rename', { value });
+              }}
+              maxLength={52}
+              textColor={isDefaultName ? 'red' : undefined}
+            />
+>>>>>>> 0448e8c0b2 ([MIRROR] bunch of fixes (#10742))
           </Stack.Item>
           <Stack.Item>
             <Button
@@ -59,7 +62,6 @@ export const IconSection = (props: {
               tooltip="Load character slot name"
               onClick={() => {
                 act('rename', { value: mindName });
-                setRobotName(mindName);
               }}
             />
           </Stack.Item>
