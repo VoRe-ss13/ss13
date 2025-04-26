@@ -69,6 +69,7 @@
 		var/list/m_viewers = in_range["mobs"]
 		var/list/o_viewers = in_range["objs"]
 
+<<<<<<< HEAD
 		for(var/mob/M as anything in m_viewers)
 			if(M)
 				var/final_message = message
@@ -82,6 +83,24 @@
 				else
 					M.show_message(final_message, m_type)
 				M.create_chat_message(src, "[runemessage]", FALSE, list("emote"), (m_type == AUDIBLE_MESSAGE))
+=======
+	for(var/obj/o in contents)
+		o_viewers |= o
+
+	for(var/mob/M as anything in m_viewers)
+		if(M)
+			var/final_message = message
+			if(isobserver(M))
+				final_message = span_emote(span_bold("[src]") + " ([ghost_follow_link(src, M)]) [input]")
+			if(src.client && M && !(get_z(src) == get_z(M)))
+				final_message = span_multizsay("[final_message]")
+			// If you are in the same tile, right next to, or being held by a person doing an emote, you should be able to see it while blind
+			if(m_type != AUDIBLE_MESSAGE && (src.Adjacent(M) || (istype(src.loc, /obj/item/holder) && src.loc.loc == M)))
+				M.show_message(final_message)
+			else
+				M.show_message(final_message, m_type)
+			M.create_chat_message(src, "[runemessage]", FALSE, list("emote"), (m_type == AUDIBLE_MESSAGE))
+>>>>>>> 7f2f47325f ([MIRROR] Maint Recycler and Vendor (#10773))
 
 		for(var/obj/O as anything in o_viewers)
 			if(O)
