@@ -159,6 +159,12 @@ GLOBAL_LIST_INIT(advance_cures, list(
 			AssignName()
 		GLOB.archive_diseases[GetDiseaseID()] = src // So we don't infinite loop
 		GLOB.archive_diseases[GetDiseaseID()] = new /datum/disease/advance(0, src, 1)
+	else
+		var/datum/disease/advance/A = GLOB.archive_diseases[GetDiseaseID()]
+		var/actual_name = A.name
+		if(actual_name != "Unknown")
+			name = actual_name
+
 
 	var/datum/disease/advance/A = GLOB.archive_diseases[GetDiseaseID()]
 	AssignName(A.name)
@@ -263,9 +269,18 @@ GLOBAL_LIST_INIT(advance_cures, list(
 	return
 
 // Name the disease.
+<<<<<<< HEAD
 /datum/disease/advance/proc/AssignName(name = "Unknown")
 	src.name = name
 	return
+=======
+/datum/disease/advance/proc/AssignName(new_name = "Unknown")
+	Refresh()
+	var/datum/disease/advance/A = GLOB.archive_diseases[GetDiseaseID()]
+	A.name = new_name
+	for(var/datum/disease/advance/AD in GLOB.active_diseases)
+		AD.Refresh()
+>>>>>>> 01cae2f492 ([MIRROR] Couple of virology fixes + additions (#10767))
 
 // Return a unique ID of the disease.
 /datum/disease/advance/GetDiseaseID()

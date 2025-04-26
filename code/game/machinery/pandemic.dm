@@ -185,6 +185,7 @@
 			var/datum/disease/advance/A = GLOB.archive_diseases[type]
 			if(!A)
 				atom_say("Unable to find requested strain.")
+<<<<<<< HEAD
 				return
 			print_form(A, ui.user)
 		if("name_strain")
@@ -220,6 +221,11 @@
 				atom_say("Unable to find requested strain.")
 				return
 			selected_strain_index = strain_index;
+=======
+				return FALSE
+			print_form(A, ui.user)
+			return TRUE
+>>>>>>> 01cae2f492 ([MIRROR] Couple of virology fixes + additions (#10767))
 		else
 			return FALSE
 
