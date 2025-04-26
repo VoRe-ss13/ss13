@@ -71,7 +71,18 @@ module.exports = (env = {}, argv) => {
             {
               loader: require.resolve('css-loader'),
               options: {
+<<<<<<< HEAD:tgui/webpack.config.js
                 esModule: false,
+=======
+                url: {
+                  filter: (url, resourcePath) => {
+                    if (url.includes('.ttf')) {
+                      return false;
+                    }
+                    return true;
+                  },
+                },
+>>>>>>> e55a9bbf23 ([MIRROR] Port all of /tg/'s fonts and switch maptext to Grand9K (#10751)):tgui/rspack.config.cjs
               },
             },
             {
