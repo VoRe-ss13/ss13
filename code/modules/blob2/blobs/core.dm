@@ -181,6 +181,7 @@ var/list/blob_cores = list()
 		overmind_creation(C)
 
 /obj/structure/blob/core/proc/get_winner()
+	SIGNAL_HANDLER
 	if(Q && Q.candidates.len) //Q should NEVER get deleted but...whatever, sanity.
 		var/mob/observer/dead/D = Q.candidates[1]
 		var/client/C

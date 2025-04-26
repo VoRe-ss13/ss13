@@ -179,6 +179,14 @@
 				. = TRUE
 
 /datum/tgui_module/camera/proc/update_active_camera_screen()
+<<<<<<< HEAD
+=======
+	SIGNAL_HANDLER
+	if(!active_camera)
+		show_camera_static()
+		return TRUE
+
+>>>>>>> ed532c2574 ([MIRROR] adds missing SIGNAL_HANDLERs (#10768))
 	var/turf/newturf = get_turf(active_camera)
 	var/area/B = newturf?.loc // No cam tracking in dorms!
 	// Show static if can't use the camera
