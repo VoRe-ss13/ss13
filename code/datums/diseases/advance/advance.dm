@@ -168,7 +168,29 @@ GLOBAL_LIST_INIT(advance_cures, list(
 	if(!symptoms || !length(symptoms))
 		CRASH("We did not have any symptoms before generating properties.")
 
+<<<<<<< HEAD
 	var/list/properties = list("resistance" = 1, "stealth" = 0, "stage rate" = 1, "transmittable" = 1, "severity" = 0)
+=======
+	for(var/datum/symptom/S as() in symptoms)
+		resistance += S.resistance
+		stealth += S.stealth
+		stage_rate += S.stage_speed
+		transmission += S.transmission
+	for(var/datum/symptom/S as() in symptoms)
+		S.severityset(src)
+		switch(S.severity)
+			if(-INFINITY to 0)
+				c1sev += S.severity
+			if(1 to 2)
+				c2sev = max(c2sev, min(3, (S.severity + c2sev)))
+			if(3 to 4)
+				c2sev = max(c2sev, min(4, (S.severity + c2sev)))
+			if(5 to INFINITY)
+				if(c3sev >= 5)
+					c3sev += (S.severity -3)
+				else
+					c3sev += S.severity
+>>>>>>> 5a23d96c67 ([MIRROR] Fixes a small typo in viro code logic (#10772))
 
 	for(var/datum/symptom/S in symptoms)
 
