@@ -229,9 +229,24 @@
 	icon_x = 32
 	pixel_x = 0
 
+<<<<<<< HEAD
 /datum/robot_sprite/dogborg/tall/security/dullahan/secalt
 	name = "Dullahan v2"
 	sprite_icon_state = "dullahansec_alt"
+=======
+/datum/robot_sprite/dogborg/tall/security/dullataur
+	name = "Dullataur"
+	sprite_icon_state = "dullataursec"
+	sprite_icon = 'icons/mob/robot/dullahan/dullataurs/dullataur.dmi'
+	rest_sprite_options = list("Default")
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = FALSE
+	has_vore_belly_resting_sprites = FALSE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	sprite_decals = list("breastplate")
+>>>>>>> cdd34d1df9 ([MIRROR] dullahan taurs (#10769))
 	icon_x = 32
 	pixel_x = 0
 

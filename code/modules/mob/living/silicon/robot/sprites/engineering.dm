@@ -230,6 +230,7 @@
 	icon_x = 32
 	pixel_x = 0
 
+<<<<<<< HEAD
 /datum/robot_sprite/dogborg/tall/engineering/dullahan/engineerv2
 	name = "Dullahan v2"
 	sprite_icon_state = "dullahaneng_alt"
@@ -237,6 +238,39 @@
 	pixel_x = 0
 
 /datum/robot_sprite/dogborg/tall/engineering/dullahan/engineerv3
+=======
+/datum/robot_sprite/dogborg/tall/engineering/dullataurengi
+	name = "Dullataur"
+	sprite_icon_state = "dullataurengi"
+	sprite_icon = 'icons/mob/robot/dullahan/dullataurs/dullataur.dmi'
+	rest_sprite_options = list("Default")
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = FALSE
+	has_vore_belly_resting_sprites = FALSE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	sprite_decals = list("breastplate")
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/engineering/dullataurengitwo
+	name = "Dullataur v2"
+	sprite_icon_state = "dullataurengitwo"
+	sprite_icon = 'icons/mob/robot/dullahan/dullataurs/dullataur.dmi'
+	rest_sprite_options = list("Default")
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = FALSE
+	has_vore_belly_resting_sprites = FALSE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	sprite_decals = list("breastplate","loincloth","maidoutfit")
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/engineering/dullahanv3
+>>>>>>> cdd34d1df9 ([MIRROR] dullahan taurs (#10769))
 	name = "Dullahan v3"
 	sprite_icon = 'icons/mob/robot/dullahan/v3/engineer.dmi'
 	sprite_icon_state = "dullahanengineer"
