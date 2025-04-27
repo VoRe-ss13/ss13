@@ -124,9 +124,11 @@ var/global/list/latejoin_tram   = list()
 	display_name = "Vorespawn - Pred"
 	msg = "has arrived on the station"
 
+// CHOMPEnable Start
 /datum/spawnpoint/vore/itemtf
 	display_name = "Item TF spawn"
 	msg = "has arrived on the station"
+// CHOMPEnable End
 
 /datum/spawnpoint/vore/New()
 	..()
