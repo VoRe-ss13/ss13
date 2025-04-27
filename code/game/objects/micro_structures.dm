@@ -448,7 +448,7 @@ var/global/list/micro_tunnels = list()
 	name = "mouse hole spawner"
 	icon = 'icons/obj/landmark_vr.dmi'
 	icon_state = "blue-x"
-	invisibility = 101
+	invisibility = INVISIBILITY_ABSTRACT
 
 	var/chance_to_spawn = 25
 

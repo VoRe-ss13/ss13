@@ -1272,7 +1272,7 @@ var/mob/dview/dview_mob = new
 	dview_mob.loc = null
 
 /mob/dview
-	invisibility = 101
+	invisibility = INVISIBILITY_ABSTRACT
 	density = FALSE
 
 	anchored = TRUE
