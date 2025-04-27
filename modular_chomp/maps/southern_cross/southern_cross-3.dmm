@@ -57021,9 +57021,13 @@
 /turf/simulated/floor/plating,
 /area/maintenance/research)
 "kQH" = (
+<<<<<<< HEAD
 /obj/machinery/r_n_d/protolathe{
 	name = "Core R&D Protolathe"
 	},
+=======
+/obj/machinery/r_n_d/protolathe,
+>>>>>>> 8e1c61316c (Reverts the protolathe change (#10779))
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/acid{
 	pixel_x = -30
