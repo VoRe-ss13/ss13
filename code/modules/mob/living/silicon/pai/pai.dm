@@ -140,10 +140,16 @@
 		pda.owner = text("[]", src)
 		pda.name = pda.owner + " (" + pda.ownjob + ")"
 
+<<<<<<< HEAD
 		var/datum/data/pda/app/messenger/M = pda.find_program(/datum/data/pda/app/messenger)
 		if(M)
 			M.toff = FALSE
 	..()
+=======
+	var/datum/data/pda/app/messenger/M = pda.find_program(/datum/data/pda/app/messenger)
+	if(M)
+		M.toff = FALSE
+>>>>>>> da31fd3b5c ([MIRROR] Recycler hotfix 1 (#10795))
 
 /mob/living/silicon/pai/Login()
 	..()
