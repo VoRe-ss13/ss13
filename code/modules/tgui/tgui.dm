@@ -260,7 +260,14 @@
 	json_data["config"] = list(
 		"title" = title,
 		"status" = status,
+<<<<<<< HEAD
 		"interface" = interface,
+=======
+		"interface" = list(
+			"name" = interface,
+			"layout" = null, // user.read_preference(/datum/preference/choiced/tgui_layout), // unused
+		),
+>>>>>>> 305b11e7c0 ([MIRROR] fix those (#10789))
 		//"refreshing" = refreshing,
 		"refreshing" = FALSE,
 		"map" = (using_map && using_map.path) ? using_map.path : "Unknown",
@@ -270,6 +277,10 @@
 			"size" = window_size,
 			"fancy" = user.read_preference(/datum/preference/toggle/tgui_fancy),
 			"locked" = user.read_preference(/datum/preference/toggle/tgui_lock),
+<<<<<<< HEAD
+=======
+			"scale" = user.read_preference(/datum/preference/toggle/ui_scale),
+>>>>>>> 305b11e7c0 ([MIRROR] fix those (#10789))
 		),
 		"client" = list(
 			"ckey" = user.client.ckey,
