@@ -317,6 +317,7 @@
 	downfour_leftfour(target)
 	attackcycle = next_cycle
 
+<<<<<<< HEAD
 /mob/living/simple_mob/mechanical/mecha/eclipse/proc/miniburst_b(atom/target, var/next_cycle)
 	if(!target)
 		return
@@ -325,4 +326,202 @@
 	downfour_rightfour(target)
 	downfour_leftfour(target)
 	attackcycle = next_cycle
+=======
+/mob/living/simple_mob/mechanical/mecha/eclipse/hivebot/green/event
+	maxHealth = 3000
+	health = 3000
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/hivebot/green/do_special_attack(atom/A)
+	. = TRUE // So we don't fire a bolt as well.
+	switch(a_intent)
+		if(I_DISARM) // Phase 3
+			if(attackcycle == 1)
+				say("PROTOCOL: LASERBLADE.")
+				specialattackprojectile = /obj/item/projectile/beam/midlaser/shortrange
+				addtimer(CALLBACK(src, PROC_REF(burst), A, 2), 2 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 2)
+				say("PROTOCOL: TELEPORT.")
+				addtimer(CALLBACK(src, PROC_REF(teleport_attack), A, 1), 1 SECOND, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle > 2)
+				attackcycle = 1
+
+		if(I_HURT) //phase 1
+			if(attackcycle == 1)
+				say("PROTOCOL: SWEEP. FIGURATION: A.")
+				specialattackprojectile = /obj/item/projectile/energy/burninglaser/boss
+				addtimer(CALLBACK(src, PROC_REF(dualsweep_one), A, 2), 3 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 2)
+				say("PROTOCOL: SWEEP. FIGURATION: B.")
+				specialattackprojectile = /obj/item/projectile/energy/burninglaser/boss
+				addtimer(CALLBACK(src, PROC_REF(dualsweep_one_r), A, 3), 3 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 3)
+				say("PROTOCOL: LASERBLADE.")
+				specialattackprojectile = /obj/item/projectile/beam/midlaser/shortrange
+				addtimer(CALLBACK(src, PROC_REF(burst), A, 1), 3 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+
+		if(I_GRAB) // Phase 2
+			if(attackcycle == 1)
+				say("PROTOCOL: SWEEP. FIGURATION: A.")
+				specialattackprojectile = /obj/item/projectile/energy/burninglaser/boss
+				addtimer(CALLBACK(src, PROC_REF(dualsweep_one), A, 2), 3 SECOND, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 2)
+				say("PROTOCOL: TELEPORT.")
+				addtimer(CALLBACK(src, PROC_REF(teleport_attack), A, 3), 1 SECOND, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 3)
+				say("PROTOCOL: SWEEP. FIGURATION: B.")
+				specialattackprojectile = /obj/item/projectile/energy/burninglaser/boss
+				addtimer(CALLBACK(src, PROC_REF(dualsweep_one), A, 4), 3 SECOND, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 4)
+				say("PROTOCOL: TELEPORT.")
+				addtimer(CALLBACK(src, PROC_REF(teleport_attack), A, 5), 1 SECOND, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 5)
+				say("PROTOCOL: LASERBLADE.")
+				specialattackprojectile = /obj/item/projectile/beam/midlaser/shortrange
+				addtimer(CALLBACK(src, PROC_REF(burst), A, 6), 3 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 6)
+				say("PROTOCOL: TELEPORT.")
+				addtimer(CALLBACK(src, PROC_REF(teleport_attack), A, 1), 1 SECOND, TIMER_DELETE_ME)
+				attackcycle = 0
+
+
+
+
+//lore things
+/obj/item/prop/nanoweave
+	name = "alien disc"
+	desc = "A disc for storing data."
+	icon = 'modular_chomp/icons/mob/hivebot.dmi'
+	w_class = ITEMSIZE_SMALL
+
+/obj/item/prop/nanoweave/lime
+	catalogue_data = list(/datum/category_item/catalogue/anomalous/limedisc)
+	icon_state = "limedisc"
+
+/obj/item/prop/nanoweave/cyan
+	catalogue_data = list(/datum/category_item/catalogue/anomalous/cyandisc)
+	icon_state = "cyandisc"
+
+/obj/item/prop/nanoweave/orange
+	catalogue_data = list(/datum/category_item/catalogue/anomalous/orangedisc)
+	icon_state = "orangedisc"
+
+/obj/item/prop/nanoweave/terraformers
+	catalogue_data = list(/datum/category_item/catalogue/anomalous/orangedisc)
+	icon_state = "orangedisc"
+
+
+/datum/category_item/catalogue/anomalous/cyandisc
+	name = "Precursor Object - Data Disc Cyan"
+	desc = "End of time measures are now to be taken. Aimming several survial pods. \
+	amongst our lands, and allies. \
+	They shall burrow deep beneath the earth and overseen by the Overlord program. \
+	Survival outlook likly.\
+	<br><br>\
+	Error file corruption.\
+	<br><br>\
+	T3e cr7at1re dv8s n07 4pp5ar to f000o5 3ur 1u228nt 3n0w1e1ge of 3c4e2ce. \
+	6v3n 15e 01h5rs e5pe12m3nta1 t02h501ogy d0es n0t m1m73 1t's c8rr3n1 m0vem3nt.. \
+	1t's 94th 6s u7pr3di21abl3."
+	value = CATALOGUER_REWARD_HARD
+
+/datum/category_item/catalogue/anomalous/orangedisc
+	name = "Precursor Object - Data Disc Orange"
+	desc = "The voidwalkers are launching themselves into the void. \
+	The beast callers venture into the unknown. \
+	The abyss divers never plan to surface. \
+	The terraformers are following a similiar plan to us, burrowing beneath the surface.\
+	<br><br>\
+	Error file corruption.\
+	<br><br>\
+	Ew ahev rna teh acclsuaotiln. Uor rpooptytse rae sceduer... \
+	Spyretonlia csroe vaeh ebne eplemmidnet fi we rae ot lalf... \
+	Oru ofmsr erbrno in a enw dtiiag; oybd if oru eral nose dei.."
+	value = CATALOGUER_REWARD_HARD
+
+/datum/category_item/catalogue/anomalous/limedisc
+	name = "Precursor Object - Data Disc Lime"
+	desc = "We have secured our technoly within the vaults. Settled upon the core. \
+	of the planet. It should be safe from tampering..\
+	Our pods should land a few hundred meters above them. \
+	Survival outlook likly.\
+	<br><br>\
+	Error file corruption.\
+	<br><br>\
+	W3 h4v3 s3t 07r c0mp7t3rs t0 b71lt c07nt3r m34sur3s 1n c4s3 th3 0th3rs s7rv1v3 th3 p7rg3.. \
+	B7t the 0th3rs s7rv1val s33ms 7nl1k3ly... \
+	Th3 t3rr4f0rm3rs ar3 4lr3ady 4ffl1ct3d by 4 pl4g73.."
+	value = CATALOGUER_REWARD_HARD
+
+/datum/category_item/catalogue/anomalous/terraformers
+	name = "Precursor Object - Data Disc Styx"
+	desc = "We have secured our technoly within the vaults. Settled upon the core. \
+	of the planet. It should be safe from tampering..\
+	Our pods should land a few hundred meters above them. \
+	Survival outlook likly.\
+	<br><br>\
+	Error file corruption.\
+	<br><br>\
+	W3 h4v3 s3t 07r c0mp7t3rs t0 b71lt c07nt3r m34sur3s 1n c4s3 th3 0th3rs s7rv1v3 th3 p7rg3.. \
+	B7t the 0th3rs s7rv1val s33ms 7nl1k3ly... \
+	Th3 t3rr4f0rm3rs ar3 4lr3ady 4ffl1ct3d by 4 pl4g73.."
+	value = CATALOGUER_REWARD_HARD
+
+
+
+/*
+/mob/living/simple_mob/mechanical/mecha/eclipse/hivebot/green/do_special_attack(atom/A)
+	. = TRUE // So we don't fire a bolt as well.
+	switch(a_intent)
+		if(I_DISARM) // Phase 3 1 safe zone
+			if(attackcycle == 1)
+				say("PROTOCOL: LASERBLADE.")
+				specialattackprojectile = /obj/item/projectile/beam/midlaser/shortrange
+				addtimer(CALLBACK(src, PROC_REF(burst), A, 2), 2 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 2)
+				say("PROTOCOL: TELEPORT.")
+				addtimer(CALLBACK(src, PROC_REF(teleport_attack), A, 1), 1 SECOND, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 2)
+				say("PROTOCOL: TELEPORT.")
+				addtimer(CALLBACK(src, PROC_REF(teleport_attack), A, 1), 1 SECOND, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 2)
+				say("PROTOCOL: TELEPORT.")
+				addtimer(CALLBACK(src, PROC_REF(teleport_attack), A, 1), 1 SECOND, TIMER_DELETE_ME)
+				attackcycle = 0
+
+		if(I_HURT) //phase 1 3 safe zones
+			if(attackcycle == 1)
+				say("PROTOCOL: SWEEP. FIGURATION: A.")
+
+				attackcycle = 0
+			else if(attackcycle == 2)
+				say("PROTOCOL: SWEEP. FIGURATION: B.")
+
+				attackcycle = 0
+			else if(attackcycle == 3)
+				say("PROTOCOL: LASERBLADE.")
+
+				attackcycle = 0
+
+		if(I_GRAB) // Phase 2 2 safe zones
+			if(attackcycle == 1)
+				say("PROTOCOL: SWEEP. FIGURATION: A.")
+
+				attackcycle = 0
+			else if(attackcycle == 2)
+
+*/
+>>>>>>> 4f90d2f057 (Tyr Update (#10780))
 
