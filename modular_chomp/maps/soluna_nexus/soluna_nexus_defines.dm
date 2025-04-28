@@ -38,9 +38,14 @@ but they don't actually change anything about the load order
 	full_name = "Soluna Nexus"
 	path = "soluna_nexus"
 
+<<<<<<< HEAD
 	lobby_icon = 'icons/misc/splash_screen.dmi'	//CHOMPStation Edit
 	lobby_screens = list() //CHOMPStation Edit - CHOMPStation image
 	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'	//CHOMPStation Edit - Job icons for off-duty/exploration
+=======
+	lobby_screens = list('icons/misc/CHOMPSTATION_BG_eggman.gif')
+	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'
+>>>>>>> 75ae8d7b15 ([MIRROR] Overhaul title screens to be more compatible with TGUI (#10794))
 
 	holomap_smoosh = list(list(
 		Z_LEVEL_STATION_ONE,

@@ -22,6 +22,7 @@
 
 /datum/map/stellar_delight/New()
 	..()
+<<<<<<< HEAD
 /*	var/choice = pickweight(list(
 		"logo1" = 50,
 		"logo2" = 50,
@@ -29,6 +30,15 @@
 		"youcanttaketheskyfromme" = 200,
 		"intothedark" = 200,
 		"above3b" = 200
+=======
+	var/choice = pickweight(list(
+		'html/lobby/logo1.gif' = 50,
+		'html/lobby/logo2.gif' = 50,
+		'html/lobby/gateway.gif' = 5,
+		'html/lobby/youcanttaketheskyfromme.gif' = 200,
+		'html/lobby/intothedark.gif' = 200,
+		'html/lobby/above3b.gif' = 200,
+>>>>>>> 75ae8d7b15 ([MIRROR] Overhaul title screens to be more compatible with TGUI (#10794))
 	))
 	if(choice)
 		lobby_screens = list(choice)*/
@@ -46,8 +56,12 @@
 
 	zlevel_datum_type = /datum/map_z_level/stellar_delight
 
+<<<<<<< HEAD
 	lobby_icon = 'icons/misc/title_vr_2.dmi' //remove the _2 after the event
 	lobby_screens = list("sparkles") //set back to youcanttaketheskyfromme
+=======
+	lobby_screens = list('html/lobby/youcanttaketheskyfromme.gif') //set back to youcanttaketheskyfromme
+>>>>>>> 75ae8d7b15 ([MIRROR] Overhaul title screens to be more compatible with TGUI (#10794))
 	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'
 
 
