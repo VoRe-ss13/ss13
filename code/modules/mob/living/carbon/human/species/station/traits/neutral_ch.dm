@@ -85,6 +85,7 @@
 	cost = 0
 	var_changes = list("bite_mod" = 16) // Setting this intentionally ridiculously high, so anything will overflow and be eaten in one go.
 	custom_only = FALSE
+<<<<<<< HEAD
 
 // CHOMPNote: Moving YW additions here, to sync our files better with VORE in the event of edits.
 /datum/trait/neutral/autohiss_vassilian
@@ -102,6 +103,8 @@
 	),
 	autohiss_exempt = list("Vespinae"))
 	excludes = list(/datum/trait/neutral/autohiss_tajaran, /datum/trait/neutral/autohiss_unathi)
+=======
+>>>>>>> d1b63d8538 (fix a small deconf error (#10797))
 
 /datum/trait/neutral/slip_reflex
 	name ="Slippery Reflexes"
