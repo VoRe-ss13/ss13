@@ -38,6 +38,8 @@ type Props = Partial<{
   theme: string;
   title: string;
   width: number;
+  fitted: boolean;
+  scrollbars: boolean;
 }> &
   PropsWithChildren;
 
@@ -50,6 +52,8 @@ export const Window = (props: Props) => {
     buttons,
     width,
     height,
+    fitted,
+    scrollbars = true,
   } = props;
 
   const { config, suspended } = useBackend();
@@ -69,13 +73,24 @@ export const Window = (props: Props) => {
         if (config.window?.key) {
           setWindowKey(config.window.key);
         }
+<<<<<<< HEAD
         recallWindowGeometry(options);
+=======
+        if (!fitted) {
+          recallWindowGeometry(options);
+        }
+        Byond.winset(Byond.windowId, {
+          'is-visible': true,
+        });
+        logger.log('set to visible');
+>>>>>>> 66a437de08 ([MIRROR] CMSS Lobby Screen (#10774))
       };
 
       Byond.winset(Byond.windowId, {
         'can-close': Boolean(canClose),
       });
       logger.log('mounting');
+
       updateGeometry();
 
       return () => {
@@ -96,25 +111,33 @@ export const Window = (props: Props) => {
 
   return suspended ? null : (
     <Layout className="Window" theme={theme}>
-      <TitleBar
-        className="Window__titleBar"
-        title={title || decodeHtmlEntities(config.title)}
-        status={config.status}
-        fancy={fancy}
-        onDragStart={dragStartHandler}
-        onClose={() => {
-          logger.log('pressed close');
-          dispatch(backendSuspendStart());
-        }}
-        canClose={canClose}
+      {!fitted && (
+        <TitleBar
+          className="Window__titleBar"
+          title={title || decodeHtmlEntities(config.title)}
+          status={config.status}
+          fancy={fancy}
+          onDragStart={dragStartHandler}
+          onClose={() => {
+            logger.log('pressed close');
+            dispatch(backendSuspendStart());
+          }}
+          canClose={canClose}
+        >
+          {buttons}
+        </TitleBar>
+      )}
+      <div
+        className={classes([
+          'Window__rest',
+          !fitted && 'Window__restwithTitlebar',
+          debugLayout && 'debug-layout',
+        ])}
       >
-        {buttons}
-      </TitleBar>
-      <div className={classes(['Window__rest', debugLayout && 'debug-layout'])}>
         {!suspended && children}
         {showDimmer && <div className="Window__dimmer" />}
       </div>
-      {fancy && (
+      {fancy && scrollbars && (
         <>
           <div
             className="Window__resizeHandle__e"

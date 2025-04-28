@@ -361,6 +361,7 @@ const GeneralMobSettings = (props: {
             Description:
             <br />
             <TextArea
+              fluid
               height={'18rem'}
               onChange={(e, val: string) => props.onDesc(val)}
               value={data.desc}
@@ -370,6 +371,7 @@ const GeneralMobSettings = (props: {
             Flavor Text:
             <br />
             <TextArea
+              fluid
               height={'18rem'}
               value={data.flavor_text}
               onChange={(e, val: string) => props.onFlavor(val)}

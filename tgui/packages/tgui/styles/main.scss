@@ -60,6 +60,11 @@
 @include meta.load-css('./interfaces/CrewManifest.scss');
 @include meta.load-css('./interfaces/ExperimentConfigure.scss');
 @include meta.load-css('./interfaces/FishingMinigame.scss');
+<<<<<<< HEAD
+=======
+@include meta.load-css('./interfaces/LobbyMenu.scss');
+@include meta.load-css('./interfaces/Microwave.scss');
+>>>>>>> 66a437de08 ([MIRROR] CMSS Lobby Screen (#10774))
 @include meta.load-css('./interfaces/NuclearBomb.scss');
 @include meta.load-css('./interfaces/Paper.scss');
 @include meta.load-css('./interfaces/Pda.scss');
