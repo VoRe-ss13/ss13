@@ -6,8 +6,12 @@
 	full_name = "NSS Ade-testing"
 	path = "virgo_minitest"
 
+<<<<<<< HEAD
 	lobby_icon = 'icons/misc/title_vr.dmi'
 	lobby_screens = list("logo2")
+=======
+	lobby_screens = list('modular_chomp/html/lobby/chompstation_eggman.gif')
+>>>>>>> 0c62dd09b2 ([MIRROR] Convert all of the lobby gifs to either png or webp (#10800))
 
 	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'
 

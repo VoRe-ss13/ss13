@@ -122,10 +122,14 @@ var/list/all_maps = list()
 
 	var/datum/skybox_settings/default_skybox // What skybox do we use if a zlevel doesn't have a custom one? Provide a type.
 
+<<<<<<< HEAD
 	//CHOMPStation Edit Start TFF 24/12/19 - Chompers welcome screen message
 	var/lobby_icon = 'icons/misc/splash_screen.dmi' // The icon which contains the lobby image(s)
 	var/list/lobby_screens = list()				 // The list of lobby screen to pick() from. If left unset the first icon state is always selected.
 	//CHOMPStation Edit End
+=======
+	var/list/lobby_screens = list('modular_chomp/html/lobby/chompstation.webp')				 // The list of lobby screen to pick() from. If left unset the first icon state is always selected.
+>>>>>>> 0c62dd09b2 ([MIRROR] Convert all of the lobby gifs to either png or webp (#10800))
 
 	var/default_law_type = /datum/ai_laws/nanotrasen // The default lawset use by synth units, if not overriden by their laws var.
 

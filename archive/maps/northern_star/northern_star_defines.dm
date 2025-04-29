@@ -11,8 +11,12 @@
 	full_name = "NCS Northern Star"
 	path = "northern_star"
 
+<<<<<<< HEAD
 	lobby_icon = 'icons/misc/title.dmi'
 	lobby_screens = list("mockingjay00")
+=======
+	lobby_screens = list('html/lobby/mockingjay00.webp')
+>>>>>>> 0c62dd09b2 ([MIRROR] Convert all of the lobby gifs to either png or webp (#10800))
 
 	zlevel_datum_type = /datum/map_z_level/northern_star
 

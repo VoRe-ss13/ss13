@@ -38,9 +38,14 @@ but they don't actually change anything about the load order
 	full_name = "Soluna Nexus"
 	path = "soluna_nexus"
 
+<<<<<<< HEAD
 	lobby_icon = 'icons/misc/splash_screen.dmi'	//CHOMPStation Edit
 	lobby_screens = list() //CHOMPStation Edit - CHOMPStation image
 	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'	//CHOMPStation Edit - Job icons for off-duty/exploration
+=======
+	lobby_screens = list('modular_chomp/html/lobby/chompstation.webp')
+	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'
+>>>>>>> 0c62dd09b2 ([MIRROR] Convert all of the lobby gifs to either png or webp (#10800))
 
 	holomap_smoosh = list(list(
 		Z_LEVEL_STATION_ONE,

@@ -16,8 +16,12 @@
 	full_name = "Southern Cross"
 	path = "southern_cross"
 
+<<<<<<< HEAD
 	lobby_icon = 'icons/misc/title.dmi'
 	lobby_screens = list("mockingjay00") // New lobby screen if possible.
+=======
+	lobby_screens = list('html/lobby/mockingjay00.webp') // New lobby screen if possible.
+>>>>>>> 0c62dd09b2 ([MIRROR] Convert all of the lobby gifs to either png or webp (#10800))
 
 	holomap_smoosh = list(list(
 		Z_LEVEL_STATION_ONE,
