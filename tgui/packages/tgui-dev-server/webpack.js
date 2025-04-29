@@ -29,16 +29,37 @@ class WebpackCompiler {
   async setup(options) {
     // Create a require context that is relative to project root
     // and retrieve all necessary dependencies.
+<<<<<<< HEAD
     const requireFromRoot = createRequire(dirname(import.meta.url) + '/../..');
     const webpack = await requireFromRoot('webpack');
     const createConfig = await requireFromRoot('./webpack.config.js');
+=======
+    const requireFromRoot = createRequire(import.meta.dirname + '/../../..');
+    /** @type {typeof import('@rspack/core')} */
+    const rspack = await requireFromRoot('@rspack/core');
+
+    const createConfig = await requireFromRoot('./rspack.config.cjs');
+    const createDevConfig = await requireFromRoot('./rspack.config-dev.cjs');
+
+>>>>>>> 6a60c4597b ([MIRROR] another tgui update (#10803))
     const config = createConfig({}, options);
+    const devConfig = createDevConfig({}, options);
+
+    const mergedConfig = { ...config, ...devConfig };
+
     // Inject the HMR plugin into the config if we're using it
     if (options.hot) {
+<<<<<<< HEAD
       config.plugins.push(new webpack.HotModuleReplacementPlugin());
     }
     this.webpack = webpack;
     this.config = config;
+=======
+      mergedConfig.plugins.push(new rspack.HotModuleReplacementPlugin());
+    }
+    this.rspack = rspack;
+    this.config = mergedConfig;
+>>>>>>> 6a60c4597b ([MIRROR] another tgui update (#10803))
     this.bundleDir = config.output.path;
   }
 
