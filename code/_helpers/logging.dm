@@ -265,9 +265,14 @@
 
 /proc/log_to_dd(text)
 	to_world_log(text) //this comes before the config check because it can't possibly runtime
+<<<<<<< HEAD
 	//if(CONFIG_GET(flag/log_world_output)) // CHOMPRemove
 	//	WRITE_LOG(diary, "DD_OUTPUT: [text]") // CHOMPRemove
 	WRITE_LOG(diary, "DD_OUTPUT: [text]")
+=======
+	if(config?.loaded && CONFIG_GET(flag/log_world_output))
+		WRITE_LOG(GLOB.diary, "DD_OUTPUT: [text]")
+>>>>>>> 94ab1723ba ([MIRROR] Makes sure log_to_dd doesn't fire if the config has not actually loaded yet (#10806))
 
 /proc/log_error(text)
 	to_world_log(text)
