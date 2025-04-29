@@ -65,7 +65,20 @@ module.exports = (env = {}, argv) => {
             {
               loader: ExtractCssPlugin.loader,
               options: {
+<<<<<<< HEAD:tgui/webpack.config.js
                 esModule: false,
+=======
+                api: 'modern-compiler',
+                implementation: 'sass-embedded',
+                url: {
+                  filter: (url, resourcePath) => {
+                    if (url.includes('.ttf')) {
+                      return false;
+                    }
+                    return true;
+                  },
+                },
+>>>>>>> d3e7a1270f ([MIRROR] ignore fonts (#10805)):tgui/rspack.config.cjs
               },
             },
             {
