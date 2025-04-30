@@ -129,6 +129,11 @@
 	flush_queue |= window.send_asset(get_asset_datum(
 		/datum/asset/simple/namespaced/tgfont))
 	flush_queue |= window.send_asset(get_asset_datum(
+<<<<<<< HEAD
+=======
+		/datum/asset/simple/namespaced/tgui_extra_fonts))
+	flush_queue |= window.send_asset(get_asset_datum(
+>>>>>>> 2e939f46bf (Manually ports Virgo's #17646 (#10817))
 		/datum/asset/json/icon_ref_map))
 	for(var/datum/asset/asset in src_object.ui_assets(user))
 		flush_queue |= window.send_asset(asset)

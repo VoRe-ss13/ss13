@@ -18,3 +18,19 @@
 		"tgui-panel.bundle.js" = file("tgui/public/tgui-panel.bundle.js"),
 		"tgui-panel.bundle.css" = file("tgui/public/tgui-panel.bundle.css"),
 	)
+<<<<<<< HEAD
+=======
+
+// Let TGUI use all of our custom fonts
+/datum/asset/simple/namespaced/tgui_extra_fonts
+	assets = list(
+		"Grand9K_Pixel.ttf" = file("interface/fonts/Grand9K_Pixel.ttf"),
+		"Pixellari.ttf" = file("interface/fonts/Pixellari.ttf"),
+		"TinyUnicode.ttf" = file("interface/fonts/TinyUnicode.ttf"),
+		"VCR_OSD_Mono.ttf" = file("interface/fonts/VCR_OSD_Mono.ttf"),
+	)
+
+	parents = list(
+		"fonts.css" = file("interface/fonts/fonts.css"),
+	)
+>>>>>>> 2e939f46bf (Manually ports Virgo's #17646 (#10817))
