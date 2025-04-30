@@ -49,6 +49,18 @@ module.exports = (env = {}, argv) => {
       alias: {},
     },
     module: {
+      parser: {
+        css: {
+          url: {
+            filter: (url, resourcePath) => {
+              if (url.includes('.ttf')) {
+                return false;
+              }
+              return true;
+            },
+          },
+        },
+      },
       rules: [
         {
           test: /\.([tj]s(x)?|cjs)$/,
@@ -65,7 +77,12 @@ module.exports = (env = {}, argv) => {
             {
               loader: ExtractCssPlugin.loader,
               options: {
+<<<<<<< HEAD:tgui/webpack.config.js
                 esModule: false,
+=======
+                api: 'modern-compiler',
+                implementation: 'sass-embedded',
+>>>>>>> 608ac42e34 (Manually ports Virgo's #17642 (#10813)):tgui/rspack.config.cjs
               },
             },
             {
