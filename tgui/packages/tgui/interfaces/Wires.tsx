@@ -22,19 +22,33 @@ export const Wires = (props) => {
   return (
     <Window width={350} height={150 + wires.length * 30}>
       <Window.Content>
+<<<<<<< HEAD
         <WiresWires />
         <WiresStatus />
+=======
+        <Stack vertical fill>
+          <Stack.Item grow>
+            <WiresWires />
+          </Stack.Item>
+          <Stack.Item>
+            <WiresStatus />
+          </Stack.Item>
+        </Stack>
+>>>>>>> 705ca6c89d ([MIRROR] Fix wires working for anything other than airlocks (#10828))
       </Window.Content>
     </Window>
   );
 };
 
 export const WiresWires = (props) => {
-  const { act, data } = useBackend<WireData>();
+  const { data } = useBackend<WireData>();
 
   const { wires = [] } = data;
+<<<<<<< HEAD
   const statuses = data.status || [];
 
+=======
+>>>>>>> 705ca6c89d ([MIRROR] Fix wires working for anything other than airlocks (#10828))
   return (
     <Section>
       <LabeledList>
@@ -86,9 +100,7 @@ export const WiresWires = (props) => {
 };
 
 export const WiresStatus = (props) => {
-  const { act, data } = useBackend<WireData>();
-
-  const { wires = [] } = data;
+  const { data } = useBackend<WireData>();
   const statuses = data.status || [];
 
   return statuses.length ? (
