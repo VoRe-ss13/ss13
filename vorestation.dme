@@ -5087,8 +5087,11 @@
 #include "modular_chomp\code\modules\mob\new_player\sprite_accessories.dm"
 #include "modular_chomp\code\modules\mob\new_player\sprite_accessories_ear.dm"
 #include "modular_chomp\code\modules\mob\new_player\sprite_accessories_extra.dm"
+<<<<<<< HEAD
 #include "modular_chomp\code\modules\mob\new_player\sprite_accessories_tail.dm"
 #include "modular_chomp\code\modules\organs\organ_icon.dm"
+=======
+>>>>>>> aeb6981f50 ([MIRROR] Adds optional Big Leggies Markings (#10843))
 #include "modular_chomp\code\modules\organs\robolimbs.dm"
 #include "modular_chomp\code\modules\organs\internal\malignant\malignant.dm"
 #include "modular_chomp\code\modules\overmap\dynamic_sector.dm"
