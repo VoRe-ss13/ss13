@@ -555,7 +555,12 @@ var/global/list/remainless_species = list(SPECIES_PROMETHEAN,
 				JOB_ALT_JR_EXPLORER, //CHOMP explo keep
 				JOB_ALT_SERVER,
 				JOB_ALT_ELECTRICIAN,
+<<<<<<< HEAD
 				JOB_ALT_BARISTA)
+=======
+				JOB_ALT_FIREFIGHTER,
+				JOB_ALT_BARISTA))
+>>>>>>> 7b304ce024 ([MIRROR] Moved firefighter pr to a branch and did , sorrry (#10842))
 
 /var/global/list/existing_solargrubs = list()
 
