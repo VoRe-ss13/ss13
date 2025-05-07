@@ -1252,7 +1252,11 @@
 	if(!item)
 		return FALSE //Grab processing has a chance of returning null
 
+<<<<<<< HEAD
 /* CHOMPEdit. If I want to do a nice little give I use the actual verb for it.
+=======
+	// Help intent + Adjacent = pass item to other
+>>>>>>> a855d6b9ff ([MIRROR] Fix a handful of bugs introduced in VOREStation/VOREStation#17515 (#10838))
 	if(a_intent == I_HELP && Adjacent(target) && isitem(item) && ishuman(target))
 		var/obj/item/I = item
 		var/mob/living/carbon/human/H = target
@@ -1263,7 +1267,10 @@
 			to_chat(src, span_notice("You offer \the [I] to \the [target]."))
 			do_give(H)
 		return TRUE
+<<<<<<< HEAD
 */
+=======
+>>>>>>> a855d6b9ff ([MIRROR] Fix a handful of bugs introduced in VOREStation/VOREStation#17515 (#10838))
 
 	drop_from_inventory(item)
 

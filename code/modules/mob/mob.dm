@@ -1139,7 +1139,11 @@
 	in_throw_mode = 1
 	if(throw_icon && !issilicon(src)) // Silicon use this for something else. Do not overwrite their HUD icon
 		throw_icon.icon_state = "act_throw_on"
+<<<<<<< HEAD
 /* CHOMPedit removal begin
+=======
+
+>>>>>>> a855d6b9ff ([MIRROR] Fix a handful of bugs introduced in VOREStation/VOREStation#17515 (#10838))
 /mob/verb/spacebar_throw_on()
 	set name = ".throwon"
 	set hidden = TRUE
@@ -1151,7 +1155,11 @@
 	set hidden = TRUE
 	set instant = TRUE
 	throw_mode_off()
+<<<<<<< HEAD
 ChompEdit removal end*/
+=======
+
+>>>>>>> a855d6b9ff ([MIRROR] Fix a handful of bugs introduced in VOREStation/VOREStation#17515 (#10838))
 /mob/proc/isSynthetic()
 	return 0
 
