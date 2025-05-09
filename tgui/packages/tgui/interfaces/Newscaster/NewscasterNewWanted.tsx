@@ -31,17 +31,27 @@ export const NewscasterNewWanted = (props: { setScreen: Function }) => {
         <LabeledList.Item label="Criminal Name">
           <Input
             fluid
+<<<<<<< HEAD
             updateOnPropsChange
             value={decodeHtmlEntities(channel_name)}
             onInput={(e, val) => act('set_channel_name', { val: val })}
+=======
+            value={decodeHtmlEntities(channel_name)}
+            onBlur={(val) => act('set_channel_name', { val: val })}
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
           />
         </LabeledList.Item>
         <LabeledList.Item label="Description">
           <Input
             fluid
+<<<<<<< HEAD
             updateOnPropsChange
             value={decodeHtmlEntities(msg)}
             onInput={(e, val) => act('set_wanted_desc', { val: val })}
+=======
+            value={decodeHtmlEntities(msg)}
+            onBlur={(val) => act('set_wanted_desc', { val: val })}
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
           />
         </LabeledList.Item>
         <LabeledList.Item label="Attach Photo">

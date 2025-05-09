@@ -185,7 +185,11 @@ export const NarrationInput = (props) => {
         <Stack.Item width="85%">
           <TextArea
             height={'18rem'}
+<<<<<<< HEAD
             onChange={(e, val) => setNarration(val)}
+=======
+            onBlur={(val) => setNarration(val)}
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
             value={narration || ''}
           />
         </Stack.Item>

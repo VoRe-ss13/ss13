@@ -25,7 +25,11 @@ export const MessageMonitorLogin = (props) => {
         <Input
           placeholder="Decryption Key"
           ml="0.5rem"
+<<<<<<< HEAD
           onChange={(e, val) => act('auth', { key: val })}
+=======
+          onBlur={(val) => act('auth', { key: val })}
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
         />
       </Box>
       {!!isMalfAI && (

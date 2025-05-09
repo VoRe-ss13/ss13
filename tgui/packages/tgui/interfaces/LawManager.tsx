@@ -293,10 +293,16 @@ export const LawManagerLaws = (props: {
                 <Table.Cell collapsing>Zero</Table.Cell>
                 <Table.Cell>
                   <Input
+<<<<<<< HEAD
                     updateOnPropsChange
                     value={zeroth_law}
                     fluid
                     onChange={(e, val: string) =>
+=======
+                    value={zeroth_law}
+                    fluid
+                    onBlur={(val: string) =>
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
                       act('change_zeroth_law', { val: val })
                     }
                   />
@@ -315,12 +321,18 @@ export const LawManagerLaws = (props: {
               <Table.Cell collapsing>Ion</Table.Cell>
               <Table.Cell>
                 <Input
+<<<<<<< HEAD
                   updateOnPropsChange
                   value={ion_law}
                   fluid
                   onChange={(e, val: string) =>
                     act('change_ion_law', { val: val })
                   }
+=======
+                  value={ion_law}
+                  fluid
+                  onBlur={(val: string) => act('change_ion_law', { val: val })}
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
                 />
               </Table.Cell>
               <Table.Cell>N/A</Table.Cell>
@@ -334,10 +346,16 @@ export const LawManagerLaws = (props: {
               <Table.Cell>Inherent</Table.Cell>
               <Table.Cell>
                 <Input
+<<<<<<< HEAD
                   updateOnPropsChange
                   value={inherent_law}
                   fluid
                   onChange={(e, val: string) =>
+=======
+                  value={inherent_law}
+                  fluid
+                  onBlur={(val: string) =>
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
                     act('change_inherent_law', { val: val })
                   }
                 />
@@ -353,10 +371,16 @@ export const LawManagerLaws = (props: {
               <Table.Cell>Supplied</Table.Cell>
               <Table.Cell>
                 <Input
+<<<<<<< HEAD
                   updateOnPropsChange
                   value={supplied_law}
                   fluid
                   onChange={(e, val: string) =>
+=======
+                  value={supplied_law}
+                  fluid
+                  onBlur={(val: string) =>
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
                     act('change_supplied_law', { val: val })
                   }
                 />

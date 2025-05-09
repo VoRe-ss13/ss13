@@ -157,14 +157,22 @@ export const MessageMonitorAdmin = (props) => {
           <Input
             fluid
             value={customsender}
+<<<<<<< HEAD
             onChange={(e, val) => act('set_sender', { val: val })}
+=======
+            onBlur={(val) => act('set_sender', { val: val })}
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
           />
         </LabeledList.Item>
         <LabeledList.Item label="Sender's Job">
           <Input
             fluid
             value={customjob}
+<<<<<<< HEAD
             onChange={(e, val) => act('set_sender_job', { val: val })}
+=======
+            onBlur={(val) => act('set_sender_job', { val: val })}
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
           />
         </LabeledList.Item>
         <LabeledList.Item label="Recipient">
@@ -186,7 +194,11 @@ export const MessageMonitorAdmin = (props) => {
             fluid
             mb={0.5}
             value={custommessage}
+<<<<<<< HEAD
             onChange={(e, val: string) => act('set_message', { val: val })}
+=======
+            onBlur={(val: string) => act('set_message', { val: val })}
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
           />
         </LabeledList.Item>
       </LabeledList>

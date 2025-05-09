@@ -187,7 +187,11 @@ export const SettingsGeneral = (props) => {
               monospace
               placeholder="#ffffff"
               value={interleaveColor}
+<<<<<<< HEAD
               onInput={(e, value) =>
+=======
+              onBlur={(value) =>
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
                 dispatch(
                   updateSettings({
                     interleaveColor: value,

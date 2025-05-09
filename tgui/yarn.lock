@@ -19228,6 +19228,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     tgui: "workspace:*"
+<<<<<<< HEAD
     tgui-core: "npm:^1.8.2"
   languageName: unknown
   linkType: soft
@@ -19239,6 +19240,21 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
   checksum: 10c0/05859f1affcf2cc08eec5b9227446e165ebdd7d7e6568845b9e0577ee91e166c8b5452bababe675ff031c0ba29f2f25d598258c90ee1d31ead8b1f474cbb6e22
+=======
+    tgui-core: "npm:^3.1.4"
+  languageName: unknown
+  linkType: soft
+
+"tgui-core@npm:^3.1.4":
+  version: 3.1.4
+  resolution: "tgui-core@npm:3.1.4"
+  dependencies:
+    "@floating-ui/react": "npm:^0.27.6"
+  peerDependencies:
+    react: ^19.1.0
+    react-dom: ^19.1.0
+  checksum: 10c0/1f0caef121de74275c08dceef926d4d1e6260eaee32cbe1ee5614456d339de4c887ce13b7b2774674feba37b56bd99204519d3eadcc57b0df3f172aa37644704
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
   languageName: node
   linkType: hard
 
@@ -19266,7 +19282,11 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     tgui: "workspace:*"
+<<<<<<< HEAD
     tgui-core: "npm:^1.8.2"
+=======
+    tgui-core: "npm:^3.1.4"
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
     tgui-dev-server: "workspace:*"
     tgui-polyfill: "workspace:*"
   languageName: unknown
@@ -19293,8 +19313,22 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     tgui: "workspace:*"
+<<<<<<< HEAD
     tgui-core: "npm:^1.8.2"
     tgui-polyfill: "workspace:*"
+=======
+    tgui-core: "npm:^3.1.4"
+    vitest: "npm:^3.1.1"
+  languageName: unknown
+  linkType: soft
+
+"tgui-setup@workspace:packages/tgui-setup":
+  version: 0.0.0-use.local
+  resolution: "tgui-setup@workspace:packages/tgui-setup"
+  dependencies:
+    clean-css-cli: "npm:^5.6.3"
+    terser: "npm:^5.39.0"
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
   languageName: unknown
   linkType: soft
 
@@ -19360,10 +19394,16 @@ __metadata:
     jest: "npm:^29.7.0"
     js-yaml: "npm:^4.1.0"
     marked: "npm:^4.3.0"
+<<<<<<< HEAD
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-popper: "npm:^2.3.0"
     tgui-core: "npm:^1.8.2"
+=======
+    react: "npm:^19.1.0"
+    react-dom: "npm:^19.1.0"
+    tgui-core: "npm:^3.1.4"
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
     tgui-dev-server: "workspace:*"
     tgui-polyfill: "workspace:*"
   languageName: unknown

@@ -243,12 +243,18 @@ export const ColorMateMatrix = (props) => {
         <LabeledList>
           <LabeledList.Item label="Config">
             <Input
+<<<<<<< HEAD
               updateOnPropsChange
               fluid
               value={Object.values(matrixcolors).toString()}
               onChange={(e, value: string) =>
                 act('set_matrix_string', { value })
               }
+=======
+              fluid
+              value={Object.values(matrixcolors).toString()}
+              onBlur={(value: string) => act('set_matrix_string', { value })}
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
             />
           </LabeledList.Item>
         </LabeledList>

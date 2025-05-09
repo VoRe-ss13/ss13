@@ -169,7 +169,11 @@ const TextHighlightSetting = (props) => {
             monospace
             placeholder="#ffffff"
             value={highlightColor}
+<<<<<<< HEAD
             onInput={(e, value) =>
+=======
+            onBlur={(value) =>
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
               dispatch(
                 updateHighlightSetting({
                   id: id,
@@ -181,10 +185,18 @@ const TextHighlightSetting = (props) => {
         </Stack.Item>
       </Stack>
       <TextArea
+<<<<<<< HEAD
         height="3em"
         value={highlightText}
         placeholder="Put words to highlight here. Separate terms with commas, i.e. (term1, term2, term3)"
         onChange={(e, value) =>
+=======
+        fluid
+        height="3em"
+        value={highlightText}
+        placeholder="Put words to highlight here. Separate terms with commas, i.e. (term1, term2, term3)"
+        onBlur={(value) =>
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
           dispatch(
             updateHighlightSetting({
               id: id,
@@ -195,10 +207,18 @@ const TextHighlightSetting = (props) => {
       />
       {!!highlightBlacklist && (
         <TextArea
+<<<<<<< HEAD
           height="3em"
           value={blacklistText}
           placeholder="Put names of senders you don't want highlighted here. Separate names with commas, i.e. (name1, name2, name3)"
           onChange={(e, value) =>
+=======
+          fluid
+          height="3em"
+          value={blacklistText}
+          placeholder="Put names of senders you don't want highlighted here. Separate names with commas, i.e. (name1, name2, name3)"
+          onBlur={(value) =>
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
             dispatch(
               updateHighlightSetting({
                 id: id,

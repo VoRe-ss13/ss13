@@ -362,7 +362,11 @@ const GeneralMobSettings = (props: {
             <br />
             <TextArea
               height={'18rem'}
+<<<<<<< HEAD
               onChange={(e, val: string) => props.onDesc(val)}
+=======
+              onBlur={(val: string) => props.onDesc(val)}
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
               value={data.desc}
             />
           </Stack.Item>
@@ -372,7 +376,11 @@ const GeneralMobSettings = (props: {
             <TextArea
               height={'18rem'}
               value={data.flavor_text}
+<<<<<<< HEAD
               onChange={(e, val: string) => props.onFlavor(val)}
+=======
+              onBlur={(val: string) => props.onFlavor(val)}
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
             />
           </Stack.Item>
         </Stack>

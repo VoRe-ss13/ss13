@@ -25,9 +25,14 @@ export const NewscasterNewChannel = (props: { setScreen: Function }) => {
         <LabeledList.Item label="Channel Name">
           <Input
             fluid
+<<<<<<< HEAD
             updateOnPropsChange
             value={decodeHtmlEntities(channel_name)}
             onInput={(e, val: string) => act('set_channel_name', { val: val })}
+=======
+            value={decodeHtmlEntities(channel_name)}
+            onBlur={(val: string) => act('set_channel_name', { val: val })}
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
           />
         </LabeledList.Item>
         <LabeledList.Item label="Channel Author" color="good">
