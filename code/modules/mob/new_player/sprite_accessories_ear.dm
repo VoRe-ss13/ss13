@@ -1154,6 +1154,30 @@
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "demi-tesh-kit-ears_male"
 
+<<<<<<< HEAD
+=======
+/datum/sprite_accessory/ears/naga_ears
+	name = "naga ears"
+	desc = ""
+	icon_state = "naga-ears"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/axehorn
+	name = "axe horn"
+	icon = 'icons/mob/vore/ears_32x64.dmi'
+	icon_state = "axehorn"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/axehorn_alt
+	name = "axe horn, alt"
+	icon = 'icons/mob/vore/ears_32x64.dmi'
+	icon_state = "axehornalt"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+>>>>>>> 9022c2f163 ([MIRROR] Adds two new unicorn horns except they're basically axes for a horn (#10865))
 //Dino frills
 /datum/sprite_accessory/ears/dino_frills
 	name = "triceratops frills"
