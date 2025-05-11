@@ -1,10 +1,16 @@
 /mob/new_player/Logout()
 	ready = 0
 
+<<<<<<< HEAD
 	// see login.dm
 	if(my_client)
 		my_client.screen -= lobby_image
 		my_client = null
+=======
+	GLOB.new_player_list -= src
+	QDEL_NULL(lobby_window)
+	disable_lobby_browser()
+>>>>>>> 56a4a1a592 ([MIRROR] lobby screen subsystem (#10859))
 
 	..()
 

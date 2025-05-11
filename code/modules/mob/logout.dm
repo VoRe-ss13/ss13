@@ -1,4 +1,8 @@
 /mob/Logout()
+<<<<<<< HEAD
+=======
+	SEND_SIGNAL(src, COMSIG_MOB_LOGOUT)
+>>>>>>> 56a4a1a592 ([MIRROR] lobby screen subsystem (#10859))
 	SStgui.on_logout(src) // Cleanup any TGUIs the user has open
 	player_list -= src
 	disconnect_time = world.realtime	//VOREStation Addition: logging when we disappear.

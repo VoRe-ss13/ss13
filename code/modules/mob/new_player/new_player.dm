@@ -35,8 +35,12 @@
 
 
 /mob/new_player/Destroy()
+<<<<<<< HEAD
 	if(panel)
 		QDEL_NULL(panel)
+=======
+	GLOB.new_player_list -= src
+>>>>>>> 56a4a1a592 ([MIRROR] lobby screen subsystem (#10859))
 	if(manifest_dialog)
 		QDEL_NULL(manifest_dialog)
 	if(late_choices_dialog)

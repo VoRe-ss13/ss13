@@ -29,6 +29,20 @@ export const Wires = (props) => {
   );
 };
 
+<<<<<<< HEAD
+=======
+export const standardizeColor = (color: string): string => {
+  const canvas = new OffscreenCanvas(1, 1);
+  const ctx = canvas.getContext('2d');
+  if (ctx) {
+    ctx.fillStyle = color;
+    return ctx.fillStyle;
+  } else {
+    return '#000000';
+  }
+};
+
+>>>>>>> 56a4a1a592 ([MIRROR] lobby screen subsystem (#10859))
 export const WiresWires = (props) => {
   const { act, data } = useBackend<WireData>();
 

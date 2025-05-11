@@ -19228,6 +19228,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     tgui: "workspace:*"
+<<<<<<< HEAD
     tgui-core: "npm:^1.8.2"
   languageName: unknown
   linkType: soft
@@ -19239,6 +19240,21 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
   checksum: 10c0/05859f1affcf2cc08eec5b9227446e165ebdd7d7e6568845b9e0577ee91e166c8b5452bababe675ff031c0ba29f2f25d598258c90ee1d31ead8b1f474cbb6e22
+=======
+    tgui-core: "npm:^3.1.5"
+  languageName: unknown
+  linkType: soft
+
+"tgui-core@npm:^3.1.5":
+  version: 3.1.5
+  resolution: "tgui-core@npm:3.1.5"
+  dependencies:
+    "@floating-ui/react": "npm:^0.27.6"
+  peerDependencies:
+    react: ^19.1.0
+    react-dom: ^19.1.0
+  checksum: 10c0/fdaa2c55b323f51609e8207e0d58859ff757de9b98464d44f67fbc5237f94e8eb03c9995933a92cb33a02c109c53d4937088a77b8da0395376b8a911eac9d6e8
+>>>>>>> 56a4a1a592 ([MIRROR] lobby screen subsystem (#10859))
   languageName: node
   linkType: hard
 
@@ -19266,7 +19282,11 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     tgui: "workspace:*"
+<<<<<<< HEAD
     tgui-core: "npm:^1.8.2"
+=======
+    tgui-core: "npm:^3.1.5"
+>>>>>>> 56a4a1a592 ([MIRROR] lobby screen subsystem (#10859))
     tgui-dev-server: "workspace:*"
     tgui-polyfill: "workspace:*"
   languageName: unknown
@@ -19293,8 +19313,22 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     tgui: "workspace:*"
+<<<<<<< HEAD
     tgui-core: "npm:^1.8.2"
     tgui-polyfill: "workspace:*"
+=======
+    tgui-core: "npm:^3.1.5"
+    vitest: "npm:^3.1.1"
+  languageName: unknown
+  linkType: soft
+
+"tgui-setup@workspace:packages/tgui-setup":
+  version: 0.0.0-use.local
+  resolution: "tgui-setup@workspace:packages/tgui-setup"
+  dependencies:
+    clean-css-cli: "npm:^5.6.3"
+    terser: "npm:^5.39.0"
+>>>>>>> 56a4a1a592 ([MIRROR] lobby screen subsystem (#10859))
   languageName: unknown
   linkType: soft
 
@@ -19360,10 +19394,16 @@ __metadata:
     jest: "npm:^29.7.0"
     js-yaml: "npm:^4.1.0"
     marked: "npm:^4.3.0"
+<<<<<<< HEAD
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-popper: "npm:^2.3.0"
     tgui-core: "npm:^1.8.2"
+=======
+    react: "npm:^19.1.0"
+    react-dom: "npm:^19.1.0"
+    tgui-core: "npm:^3.1.5"
+>>>>>>> 56a4a1a592 ([MIRROR] lobby screen subsystem (#10859))
     tgui-dev-server: "workspace:*"
     tgui-polyfill: "workspace:*"
   languageName: unknown

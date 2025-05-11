@@ -46,6 +46,7 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 	my_client = client
 	sight |= SEE_TURFS
 	player_list |= src
+	GLOB.new_player_list += src
 
 	created_for = ckey
 

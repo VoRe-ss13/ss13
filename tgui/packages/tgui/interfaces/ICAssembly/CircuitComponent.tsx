@@ -152,7 +152,12 @@ export class CircuitComponent extends Component<CircuitProps, CircuitState> {
     }
 
     return (
+<<<<<<< HEAD
       <Box
+=======
+      <Box<HTMLDivElement>
+        className="ObjectComponent"
+>>>>>>> 56a4a1a592 ([MIRROR] lobby screen subsystem (#10859))
         position="absolute"
         left={x_pos + 'px'}
         top={y_pos + 'px'}
