@@ -164,6 +164,7 @@
 	sprite_icon = 'icons/mob/robot/dullahan/v3/medical.dmi'
 	sprite_icon_state = "dullahanmedical"
 	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("decals")
 	icon_x = 64
 	pixel_x = -16
 
