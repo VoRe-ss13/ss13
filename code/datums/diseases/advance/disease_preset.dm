@@ -35,6 +35,10 @@
 			symptoms += new chosen_symptom
 	for(var/guaranteed_symptom in guaranteed_symptoms)
 		symptoms += new guaranteed_symptom
+<<<<<<< HEAD
+=======
+	Finalize()
+>>>>>>> 92b1bc3f74 ([MIRROR] Various virology fixes (#10871))
 
 /datum/disease/advance/random/macrophage
 	name = "Unknown Disease"

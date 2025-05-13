@@ -394,3 +394,150 @@
 		icon_state = "pandemic1"
 	else
 		return ..()
+<<<<<<< HEAD
+=======
+
+/obj/machinery/computer/pandemic/proc/get_viruses_data(datum/reagent/blood/blood)
+	. = list()
+	var/list/viruses = blood.get_diseases()
+	var/index = 1
+
+	for(var/datum/disease/disease as anything in viruses)
+		if(CHECK_BITFIELD(disease.visibility_flags, HIDDEN_PANDEMIC))
+			continue
+
+		var/list/traits = list()
+		traits["name"] = disease.name
+		if(istype(disease, /datum/disease/advance))
+			var/datum/disease/advance/adv_disease = disease
+			traits["can_rename"] = (adv_disease.name == "Unknown")
+			traits["name"] = disease.name
+			traits["is_adv"] = TRUE
+			traits["symptoms"] = list()
+			for(var/datum/symptom/symptom as anything in adv_disease.symptoms)
+				traits["symptoms"] += list(symptom.get_symptom_data())
+			traits["resistance"] = adv_disease.resistance
+			traits["stealth"] = adv_disease.stealth
+			traits["stage_speed"] = adv_disease.stage_rate
+			traits["transmission"] = adv_disease.transmission
+			traits["symptom_severity"] = adv_disease.severity
+
+		traits["index"] = index++
+		traits["agent"] = disease.agent
+		traits["description"] = disease.desc || "none"
+		traits["spread"] = disease.spread_text || "none"
+		traits["cure"] = disease.cure_text || "none"
+		traits["danger"] = disease.danger || "none"
+
+		. += list(traits)
+
+/obj/machinery/computer/pandemic/proc/get_resistance_data(datum/reagent/blood/blood)
+	var/list/data = list()
+	if(!islist(blood.data["resistances"]))
+		return data
+	var/list/resistances = blood.data["resistances"]
+	for(var/id in resistances)
+		var/list/resistance = list()
+		var/datum/disease/disease = GLOB.archive_diseases[id]
+		if(disease)
+			resistance["id"] = id
+			resistance["name"] = disease.name
+		data += list(resistance)
+	return data
+
+/obj/machinery/computer/pandemic/proc/get_by_index(thing, index)
+	if(!beaker || !beaker.reagents)
+		return FALSE
+	var/datum/reagent/blood/blood = locate() in beaker.reagents.reagent_list
+	if(blood?.data[thing])
+		return blood.data[thing][index]
+	return FALSE
+
+/obj/machinery/computer/pandemic/proc/get_virus_id_by_index(index)
+	var/datum/disease/disease = get_by_index("viruses", index)
+	if(!disease)
+		return FALSE
+	return disease.GetDiseaseID()
+
+/obj/machinery/computer/pandemic/proc/create_vaccine_bottle(index)
+	use_power(active_power_usage)
+	var/id = index
+	var/datum/disease/disease = GLOB.archive_diseases[id]
+	var/obj/item/reagent_containers/glass/beaker/vial/bottle = new(drop_location())
+	bottle.name = "[disease.name] vaccine"
+	bottle.reagents.add_reagent(REAGENT_ID_VACCINE, 15, list(get_by_index("resistances", id)))
+	beaker.reagents.remove_reagent(REAGENT_ID_BLOOD, 5)
+	wait = TRUE
+	addtimer(CALLBACK(src, PROC_REF(reset_replicator_cooldown)), 20 SECONDS)
+	return TRUE
+
+/obj/machinery/computer/pandemic/proc/create_culture_bottle(index)
+	var/id = get_virus_id_by_index(text2num(index))
+	var/datum/disease/advance/adv_disease = GLOB.archive_diseases[id]
+
+	if(!istype(adv_disease))
+		to_chat(usr, span_warning("ERROR: Cannot replicate virus strain."))
+		return FALSE
+
+	if(!beaker.reagents.has_reagent(REAGENT_ID_BLOOD, 10))
+		to_chat(usr, span_warning("ERROR: Not enough blood in the sample."))
+		return
+
+	var/old_name = adv_disease.name
+
+	use_power(active_power_usage)
+	adv_disease = adv_disease.Copy()
+	adv_disease.name = old_name
+	var/list/cures = get_beaker_cures(id)
+	if(cures.len)
+		adv_disease.cures = cures[1]
+		adv_disease.cure_text = cures[2]
+	var/list/data = list("viruses" = list(adv_disease))
+
+	var/obj/item/reagent_containers/glass/beaker/vial/bottle = new(drop_location())
+	bottle.name = "[adv_disease.name] culture vial"
+	bottle.desc = "A small vial containing [adv_disease.agent] culture in synthblood."
+	bottle.reagents.add_reagent(REAGENT_ID_BLOOD, 10, data)
+	beaker.reagents.remove_reagent(REAGENT_ID_BLOOD, 10)
+	wait = TRUE
+	addtimer(CALLBACK(src, PROC_REF(reset_replicator_cooldown)), 5 SECONDS)
+	return TRUE
+
+/obj/machinery/computer/pandemic/proc/get_beaker_cures(disease_id)
+	var/list/cures = list()
+	if(!beaker)
+		return cures
+
+	var/datum/reagent/blood/blood = beaker.reagents.get_reagent(REAGENT_ID_BLOOD)
+	if(!blood)
+		return cures
+
+	var/list/viruses = blood.get_diseases()
+	if(!length(viruses))
+		return cures
+
+	for(var/datum/disease/advance/disease in viruses)
+		if(disease.GetDiseaseID() == disease_id)
+			cures.Add(disease.cures)
+			cures.Add(disease.cure_text)
+			break
+
+	return cures
+
+/obj/machinery/computer/pandemic/proc/rename_disease(index, name)
+	var/id = get_virus_id_by_index(text2num(index))
+	var/datum/disease/advance/adv_disease = GLOB.archive_diseases[id]
+
+	if(adv_disease)
+		if(!name)
+			return FALSE
+		adv_disease.AssignName(name)
+		return TRUE
+	return FALSE
+
+/obj/machinery/computer/pandemic/proc/reset_replicator_cooldown()
+	wait = FALSE
+	SStgui.update_uis(src)
+	playsound(src, 'sound/machines/ping.ogg', 30, TRUE)
+	return TRUE
+>>>>>>> 92b1bc3f74 ([MIRROR] Various virology fixes (#10871))

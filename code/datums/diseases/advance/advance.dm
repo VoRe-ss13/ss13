@@ -69,15 +69,11 @@ GLOBAL_LIST_INIT(advance_cures, list(
 	return TRUE
 
 /datum/disease/advance/IsSame(datum/disease/advance/D)
-	if(ispath(D))
-		return FALSE
-
 	if(!istype(D, /datum/disease/advance))
 		return FALSE
 
 	if(GetDiseaseID() != D.GetDiseaseID())
 		return FALSE
-
 	return TRUE
 
 /datum/disease/advance/cure(resistance=1)
@@ -88,14 +84,27 @@ GLOBAL_LIST_INIT(advance_cures, list(
 		remove_virus()
 	qdel(src)
 
-/datum/disease/advance/Copy(process = 0)
-	return new /datum/disease/advance(process, src, 1)
+/datum/disease/advance/Copy()
+	var/datum/disease/advance/A = ..()
+	QDEL_LIST(A.symptoms)
+	for(var/datum/symptom/S as anything in symptoms)
+		A.symptoms += S.Copy()
+	A.disease_flags = disease_flags
+	A.resistance = resistance
+	A.stealth = stealth
+	A.stage_rate = stage_rate
+	A.transmission = transmission
+	A.severity = severity
+	A.speed = speed
+	A.id = id
+	A.Refresh()
+	return A
 
 /datum/disease/advance/proc/Mix(datum/disease/advance/D)
 	if(!(IsSame(D)))
 		var/list/possible_symptoms = shuffle(D.symptoms)
 		for(var/datum/symptom/S in possible_symptoms)
-			AddSymptom(new S.type)
+			AddSymptom(S.Copy())
 
 /datum/disease/advance/proc/HasSymptom(datum/symptom/S)
 	for(var/datum/symptom/symp in symptoms)
@@ -168,7 +177,29 @@ GLOBAL_LIST_INIT(advance_cures, list(
 	if(!symptoms || !length(symptoms))
 		CRASH("We did not have any symptoms before generating properties.")
 
+<<<<<<< HEAD
 	var/list/properties = list("resistance" = 1, "stealth" = 0, "stage rate" = 1, "transmittable" = 1, "severity" = 0)
+=======
+	for(var/datum/symptom/S as anything in symptoms)
+		resistance += S.resistance
+		stealth += S.stealth
+		stage_rate += S.stage_speed
+		transmission += S.transmission
+	for(var/datum/symptom/S as anything in symptoms)
+		S.severityset(src)
+		switch(S.severity)
+			if(-INFINITY to 0)
+				c1sev += S.severity
+			if(1 to 2)
+				c2sev = max(c2sev, min(3, (S.severity + c2sev)))
+			if(3 to 4)
+				c2sev = max(c2sev, min(4, (S.severity + c2sev)))
+			if(5 to INFINITY)
+				if(c3sev >= 5)
+					c3sev += (S.severity -3)
+				else
+					c3sev += S.severity
+>>>>>>> 92b1bc3f74 ([MIRROR] Various virology fixes (#10871))
 
 	for(var/datum/symptom/S in symptoms)
 
@@ -272,7 +303,10 @@ GLOBAL_LIST_INIT(advance_cures, list(
 	if(!id)
 		var/list/L = list()
 		for(var/datum/symptom/S in symptoms)
-			L += S.id
+			if(S.neutered)
+				L += "[S.id]N"
+			else
+				L += S.id
 		L = sortList(L) // Sort the list so it doesn't matter which order the symptoms are in.
 		var/result = jointext(L, ":")
 		id = result
@@ -290,7 +324,7 @@ GLOBAL_LIST_INIT(advance_cures, list(
 	else
 		RemoveSymptom(pick(symptoms))
 		symptoms += S
-	return
+	Refresh()
 
 // Simply removes the symptom.
 /datum/disease/advance/proc/RemoveSymptom(datum/symptom/S)
