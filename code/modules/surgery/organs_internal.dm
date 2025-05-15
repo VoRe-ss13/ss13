@@ -310,7 +310,12 @@
 		to_chat(user, span_notice("You decide against preparing any organs for removal."))
 		user.visible_message(span_filter_notice("[user] starts pulling \the [tool] from [target]'s [affected]."), \
 		span_filter_notice("You start pulling \the [tool] from [target]'s [affected]."))
+<<<<<<< HEAD
 		user.balloon_alert_visible("starts pulling \the [tool] from [target]'s [affected]", "pulling \the [tool] from \the [affected]") // CHOMPEdit
+=======
+		user.balloon_alert_visible("starts pulling \the [tool] from [target]'s [affected]", "pulling \the [tool] from \the [affected]")
+		return
+>>>>>>> 9f4735e365 ([MIRROR] some small things (#10877))
 
 	target.op_stage.current_organ = organ_to_remove
 

@@ -20,6 +20,7 @@
 #define MAT_SIFLOG			"alien log"
 #define MAT_HARDWOOD		"hardwood"
 #define MAT_HARDLOG			"hardwood log"
+#define MAT_WOODEN_STICK	"wooden stick"
 #define MAT_STEELHULL		"steel hull"
 #define MAT_PLASTEEL		"plasteel"
 #define MAT_PLASTEELHULL	"plasteel hull"
@@ -68,6 +69,11 @@
 #define MAT_FLESH			"flesh"
 #define MAT_FANCYBLACK		"fancyblack"
 #define MAT_FOAM			"foam"
+<<<<<<< HEAD
+=======
+#define MAT_FLOKIUM			"flockium"
+#define MAT_SMOLEBRICKS		"smolebricks"
+>>>>>>> 9f4735e365 ([MIRROR] some small things (#10877))
 
 // cloth materials
 #define MAT_WOOL			"wool"

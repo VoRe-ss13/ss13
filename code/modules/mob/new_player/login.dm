@@ -49,7 +49,10 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 
 	created_for = ckey
 
+<<<<<<< HEAD
 	new_player_panel()
+=======
+>>>>>>> 9f4735e365 ([MIRROR] some small things (#10877))
 	addtimer(CALLBACK(src, PROC_REF(do_after_login)), 4 SECONDS, TIMER_DELETE_ME)
 
 /mob/new_player/proc/do_after_login()
