@@ -81,7 +81,11 @@
 
 	//CHOMPEDIT Global voice lookup
 	if(!pref.voice_sound)
+<<<<<<< HEAD
 		character.voice_sounds_list = talk_sound
+=======
+		character.voice_sounds_list = DEFAULT_TALK_SOUNDS
+>>>>>>> 70aa13c9a6 ([MIRROR] Talk Sound Refactor (#10883))
 	else
 		character.voice_sounds_list = get_talk_sound(pref.voice_sound)
 	character.custom_speech_bubble = pref.custom_speech_bubble
@@ -190,6 +194,7 @@
 		pref.voice_freq = choice
 		return TOPIC_REFRESH
 	else if(href_list["voice_sounds_list"])
+<<<<<<< HEAD
 		var/list/possible_voice_types = list(
 			"beep-boop",
 			"goon speak 1",
@@ -207,6 +212,9 @@
 			"goon speak skelly",
 			"xeno speak") // CHOMPedit
 		var/choice = tgui_input_list(user, "Which set of sounds would you like to use for your character's speech sounds?", "Voice Sounds", possible_voice_types)
+=======
+		var/choice = tgui_input_list(user, "Which set of sounds would you like to use for your character's speech sounds?", "Voice Sounds", SSsounds.talk_sound_map)
+>>>>>>> 70aa13c9a6 ([MIRROR] Talk Sound Refactor (#10883))
 		if(!pref.voice_sound)
 			pref.voice_sound = "goon speak 1"	//CHOMPEdit - Defaults voice to a less jarring sound
 		else if(!choice)
@@ -230,6 +238,7 @@
 			return TOPIC_REFRESH
 
 	else if(href_list["voice_test"])
+<<<<<<< HEAD
 		var/sound/S
 		switch(pref.voice_sound)
 			if("beep-boop")
@@ -264,6 +273,9 @@
 			if("xeno speak")
 				S = sound(pick(xeno_speak_sound))
 //CHOMPedit end.
+=======
+		var/sound/S = sound(pick(SSsounds.talk_sound_map[pref.voice_sound])) // talk_sound_map returns a list of sounds
+>>>>>>> 70aa13c9a6 ([MIRROR] Talk Sound Refactor (#10883))
 		if(S)
 			S.frequency = pick(pref.voice_freq)
 			S.volume = 50

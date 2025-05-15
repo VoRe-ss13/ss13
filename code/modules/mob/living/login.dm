@@ -44,6 +44,12 @@
 			var/prefsound = client.prefs.voice_sound
 			voice_sounds_list = get_talk_sound(prefsound)
 		else
+<<<<<<< HEAD
 			voice_sounds_list = talk_sound
 	//VOREStation Add End
+=======
+			voice_sounds_list = DEFAULT_TALK_SOUNDS
+	resize(size_multiplier, animate = FALSE, uncapped = has_large_resize_bounds(), ignore_prefs = TRUE, aura_animation = FALSE)
+
+>>>>>>> 70aa13c9a6 ([MIRROR] Talk Sound Refactor (#10883))
 	return .

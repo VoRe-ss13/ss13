@@ -653,7 +653,11 @@ var/list/preferences_datums = list()
 					character.species.vars[to_edit] = instance.var_changes[to_edit]
 	character.update_transform()
 	if(!voice_sound)
+<<<<<<< HEAD
 		character.voice_sounds_list = talk_sound
+=======
+		character.voice_sounds_list = DEFAULT_TALK_SOUNDS
+>>>>>>> 70aa13c9a6 ([MIRROR] Talk Sound Refactor (#10883))
 	else
 		character.voice_sounds_list = get_talk_sound(voice_sound)
 
