@@ -975,6 +975,7 @@
 	pass_flags ^= PASSTABLE //I dunno what this fancy ^= is but Aronai gave it to me.
 	to_chat(src, "You [pass_flags&PASSTABLE ? "will" : "will NOT"] move over tables/railings/trays!")
 
+<<<<<<< HEAD
 /mob/living/carbon/human/proc/check_silk_amount()
 	set name = "Check Silk Amount"
 	set category = "Abilities.Weaver"
@@ -1120,6 +1121,8 @@
 	if(new_silk_color)
 		species.silk_color = new_silk_color
 
+=======
+>>>>>>> b65ce59551 ([MIRROR] Component Traits. (#10886))
 /mob/living/carbon/human/proc/toggle_eye_glow()
 	set name = "Toggle Eye Glowing"
 	set category = "Abilities.General"
@@ -1127,8 +1130,6 @@
 	species.has_glowing_eyes = !species.has_glowing_eyes
 	update_eyes()
 	to_chat(src, "Your eyes [species.has_glowing_eyes ? "are now" : "are no longer"] glowing.")
-
-
 
 /mob/living/carbon/human/proc/enter_cocoon()
 	set name = "Spin Cocoon"
