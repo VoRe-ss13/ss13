@@ -5,6 +5,23 @@
 			return TRUE
 	return FALSE
 
+<<<<<<< HEAD
+=======
+/mob/proc/RemoveDisease(datum/disease/D)
+	LAZYREMOVE(viruses, D)
+	return TRUE
+
+/mob/proc/HasResistance(resistance)
+	if(LAZYFIND(resistances, resistance))
+		return TRUE
+	return FALSE
+
+/mob/proc/IsInfected()
+	if(isemptylist(GetViruses()))
+		return FALSE
+	return TRUE
+
+>>>>>>> 72e81d6e5c ([MIRROR] Changes virus removal to use lazy instead (#10898))
 /mob/proc/CanContractDisease(datum/disease/D)
 	if(stat == DEAD && !D.allow_dead)
 		return FALSE
