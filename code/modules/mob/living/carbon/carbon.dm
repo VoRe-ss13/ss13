@@ -166,11 +166,16 @@
 	return shock_damage
 
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
-	if (src.health >= CONFIG_GET(number/health_threshold_crit))
+	if (health >= get_crit_point())
 		if(src == M && ishuman(src))
 			var/mob/living/carbon/human/H = src
+<<<<<<< HEAD
 			var/datum/gender/T = gender_datums[H.get_visible_gender()]
 			src.visible_message( \
+=======
+			var/datum/gender/T = GLOB.gender_datums[H.get_visible_gender()]
+			visible_message( \
+>>>>>>> 4ce45f8cc4 ([MIRROR] Proper MaxHealth checks and Crit Point (#10881))
 				span_notice("[src] examines [T.himself]."), \
 				span_notice("You check yourself for injuries.") \
 				)

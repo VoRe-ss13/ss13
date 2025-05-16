@@ -295,11 +295,19 @@
 	H.updatehealth()
 
 	if(H.isSynthetic())
+<<<<<<< HEAD
 		if(H.health + H.getOxyLoss() + H.getToxLoss() <= CONFIG_GET(number/health_threshold_dead))
 			return "buzzes, \"Resuscitation failed - Severe damage detected. Begin manual repair before further attempts futile.\""
 
 	else if(H.health + H.getOxyLoss() <= CONFIG_GET(number/health_threshold_dead) || (HUSK in H.mutations) || !H.can_defib)
 		return "buzzes, \"Resuscitation failed - Severe tissue damage makes recovery of patient impossible via defibrillator. Further attempts futile.\""
+=======
+		if(H.health + H.getOxyLoss() + H.getToxLoss() <= -(H.getMaxHealth()))
+			return "buzzes, \"Resuscitation failed - Severe damage detected. Begin damage restoration before further attempts.\""
+
+	else if(H.health + H.getOxyLoss() <= -(H.getMaxHealth())) //They need to be healed first.
+		return "buzzes, \"Resuscitation failed - Severe tissue damage detected. Repair of anatomical damage required.\""
+>>>>>>> 4ce45f8cc4 ([MIRROR] Proper MaxHealth checks and Crit Point (#10881))
 
 	var/bad_vital_organ = check_vital_organs(H)
 	if(bad_vital_organ)
@@ -431,7 +439,7 @@
 	H.apply_damage(burn_damage_amt, BURN, BP_TORSO)
 
 	//set oxyloss so that the patient is just barely in crit, if possible
-	var/barely_in_crit = CONFIG_GET(number/health_threshold_crit) - 1
+	var/barely_in_crit = H.get_crit_point() - 1
 	var/adjust_health = barely_in_crit - H.health //need to increase health by this much
 	H.adjustOxyLoss(-adjust_health)
 
