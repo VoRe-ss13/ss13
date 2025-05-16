@@ -1444,7 +1444,11 @@
 	name = "Drippy"
 	desc = "You cannot hold your form together, or produce a constant film of sludge that drips off of your body. Hope the station has a janitor."
 	cost = 0
+<<<<<<< HEAD
 	var_changes = list("drippy" = 1)
+=======
+	custom_only = FALSE // CHOMPAdd, enables all races to take the trait
+>>>>>>> 1cbd6d8b8a (Enables the drippy trait. (#10861))
 
 	// Traitgenes Made into a genetrait
 	is_genetrait = TRUE
