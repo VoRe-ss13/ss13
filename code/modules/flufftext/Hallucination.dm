@@ -8,100 +8,26 @@ Brief flashes of fire/space/bombs/c4/dangerous shit (done)
 Items that are rare/traitorous/don't exist appearing in your inventory slots (done)
 Strange audio (should be rare) (done)
 Gunshots/explosions/opening doors/less rare audio (done)
-
 */
 
-/mob/living/carbon/var
-	image/halimage
-	image/halbody
-	obj/halitem
-	hal_screwyhud = 0 //1 - critical, 2 - dead, 3 - oxygen indicator, 4 - toxin indicator
-	handling_hal = 0
-	hal_crit = 0
+/datum/component/hallucinations
+	dupe_mode = COMPONENT_DUPE_UNIQUE // First come first serve
 
-/mob/living/carbon/proc/handle_hallucinations()
-	if(handling_hal) return
-	handling_hal = 1
-	while(client && hallucination > 20)
-		sleep(rand(200,500)/(hallucination/25))
-		var/halpick = rand(1,100)
-		switch(halpick)
-			if(0 to 15)
-				//Screwy HUD
-				//to_chat(src, "Screwy HUD")
-				hal_screwyhud = pick(1,2,3,3,4,4)
-				spawn(rand(100,250))
-					hal_screwyhud = 0
-			if(16 to 25)
-				//Strange items
-				//to_chat(src, "Traitor Items")
-				if(!halitem)
-					halitem = new
-					var/list/slots_free = list(ui_lhand,ui_rhand)
-					if(l_hand) slots_free -= ui_lhand
-					if(r_hand) slots_free -= ui_rhand
-					if(ishuman(src))
-						var/mob/living/carbon/human/H = src
-						if(!H.belt) slots_free += ui_belt
-						if(!H.l_store) slots_free += ui_storage1
-						if(!H.r_store) slots_free += ui_storage2
-					if(slots_free.len)
-						halitem.screen_loc = pick(slots_free)
-						halitem.hud_layerise()
-						switch(rand(1,6))
-							if(1) //revolver
-								halitem.icon = 'icons/obj/gun.dmi'
-								halitem.icon_state = "revolver"
-								halitem.name = "Revolver"
-							if(2) //c4
-								halitem.icon = 'icons/obj/assemblies.dmi'
-								halitem.icon_state = "plastic-explosive0"
-								halitem.name = "Mysterious Package"
-								if(prob(25))
-									halitem.icon_state = "c4small_1"
-							if(3) //sword
-								halitem.icon = 'icons/obj/weapons.dmi'
-								halitem.icon_state = "sword1"
-								halitem.name = "Sword"
-							if(4) //stun baton
-								halitem.icon = 'icons/obj/weapons.dmi'
-								halitem.icon_state = "stunbaton"
-								halitem.name = "Stun Baton"
-							if(5) //emag
-								halitem.icon = 'icons/obj/card.dmi'
-								halitem.icon_state = "emag"
-								halitem.name = "Cryptographic Sequencer"
-							if(6) //flashbang
-								halitem.icon = 'icons/obj/grenade.dmi'
-								halitem.icon_state = "flashbang1"
-								halitem.name = "Flashbang"
-						if(client) client.screen += halitem
-						spawn(rand(100,250))
-							if(client)
-								client.screen -= halitem
-							halitem = null
-			if(26 to 40)
-				//Flashes of danger
-				//to_chat(src, "Danger Flash")
-				if(!halimage)
-					var/list/possible_points = list()
-					for(var/turf/simulated/floor/F in view(src,world.view))
-						possible_points += F
-					if(possible_points.len)
-						var/turf/simulated/floor/target = pick(possible_points)
+	VAR_PRIVATE/mob/living/carbon/human/our_human = null
+	VAR_PRIVATE/datum/weakref/halimage
+	VAR_PRIVATE/datum/weakref/halbody
+	VAR_PRIVATE/list/halitem = list() // weakref pair of obj-key, client-value
 
-						switch(rand(1,3))
-							if(1)
-								//to_chat(src, "Space")
-								halimage = image('icons/turf/space.dmi',target,"[rand(1,25)]",TURF_LAYER)
-							if(2)
-								//to_chat(src, "Fire")
-								halimage = image('icons/effects/fire.dmi',target,"1",TURF_LAYER)
-							if(3)
-								//to_chat(src, "C4")
-								halimage = image('icons/obj/assemblies.dmi',target,"plastic-explosive2",OBJ_LAYER+0.01)
+	VAR_PRIVATE/hal_crit = FALSE
+	VAR_PRIVATE/hal_screwyhud = HUD_HALLUCINATION_NONE
 
+/datum/component/hallucinations/Initialize()
+	if(!ishuman(parent))
+		return COMPONENT_INCOMPATIBLE
+	our_human = parent
+	make_timer()
 
+<<<<<<< HEAD
 						if(client) client.images += halimage
 						spawn(rand(10,50)) //Only seen for a brief moment.
 							if(client) client.images -= halimage
@@ -265,16 +191,27 @@ Gunshots/explosions/opening doors/less rare audio (done)
 	QDEL_IN(src, 30 SECONDS)
 	step_away(src,my_target,2)
 	spawn attack_loop()
+=======
+/datum/component/hallucinations/Destroy(force)
+	if(halitem.len)
+		remove_hallucination_item()
+	our_human = null
+	. = ..()
+>>>>>>> 2f4ae557ee ([MIRROR] Hallucination Refactor (#10879))
 
-/obj/effect/fake_attacker/Destroy()
-	if(my_target)
-		my_target.hallucinations -= src
-	return ..()
+/datum/component/hallucinations/proc/make_timer()
+	PROTECTED_PROC(TRUE)
+	addtimer(CALLBACK(src, PROC_REF(trigger)), ((rand(20,50) SECONDS) / (min(our_human.hallucination,100)/25)), TIMER_DELETE_ME)
 
+/datum/component/hallucinations/proc/get_fakecrit()
+	SHOULD_NOT_OVERRIDE(TRUE)
+	return hal_crit
 
-/obj/effect/fake_attacker/proc/updateimage()
-//	qdel(src.currentimage)
+/datum/component/hallucinations/proc/get_hud_state()
+	SHOULD_NOT_OVERRIDE(TRUE)
+	return hal_screwyhud
 
+<<<<<<< HEAD
 
 	if(src.dir == NORTH)
 		qdel(src.currentimage)
@@ -364,55 +301,97 @@ var/list/non_fakeattack_weapons = list(/obj/item/gun/projectile, /obj/item/ammo_
 //		break	//changed the code a bit. Less randomised, but less work to do. Should be ok, world.contents aren't stored in any particular order.
 
 	if(!possible_clones.len)
+=======
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// Traditional hallucinations
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/mob/living/carbon/proc/handle_hallucinations()
+	if(get_hallucination_component() || !client)
 		return
-	clone = pick(possible_clones)
-	if(!clone)
+	LoadComponent(/datum/component/hallucinations)
+
+/mob/living/carbon/proc/get_hallucination_component()
+	RETURN_TYPE(/datum/component/hallucinations)
+	return GetComponent(/datum/component/hallucinations)
+
+/datum/component/hallucinations/proc/trigger()
+	PROTECTED_PROC(TRUE)
+	if(QDELETED(our_human))
+		qdel(src)
 		return
+	if(!our_human.client)
+		qdel(src)
+		return
+	if(our_human.hallucination < HALLUCINATION_THRESHOLD)
+		qdel(src)
+		return
+	handle_hallucinating()
+	make_timer()
 
-	//var/obj/effect/fake_attacker/F = new/obj/effect/fake_attacker(outside_range(target))
-	var/obj/effect/fake_attacker/F = new/obj/effect/fake_attacker(target.loc)
-	if(clone.l_hand)
-		if(!(locate(clone.l_hand) in non_fakeattack_weapons))
-			clone_weapon = clone.l_hand.name
-			F.weap = clone.l_hand
-	else if (clone.r_hand)
-		if(!(locate(clone.r_hand) in non_fakeattack_weapons))
-			clone_weapon = clone.r_hand.name
-			F.weap = clone.r_hand
+/datum/component/hallucinations/proc/handle_hallucinating()
+	PROTECTED_PROC(TRUE)
+	var/halpick = rand(1,100)
+	switch(halpick)
+		if(0 to 15)
+			event_hudscrew()
+		if(16 to 25)
+			event_fake_item()
+		if(26 to 40)
+			event_flash_environmental_threats()
+		if(41 to 65)
+			event_strange_sound()
+		if(66 to 70)
+			if(prob(20) && our_human.nutrition < 100)
+				event_hunger() // Hungi, meant for xenochi but this is too funny to pass up
+			else
+				event_flash_monsters()
+		if(71 to 72)
+			event_sleeping()
+		if(73 to 75) // If you don't want hallucination beatdowns, comment this out
+			event_attacker()
+		if(76 to 80)
+			event_painmessage()
 
-	F.name = clone.name
-	F.my_target = target
-	F.weapon_name = clone_weapon
-	target.hallucinations += F
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// Xenochimera hallucinations
+// Unlike normal hallucinations this one is triggered from handle_feral randomly.
+// So it destroys itself after it triggers, freeing up space for the next run of it.
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/datum/component/hallucinations/xenochimera/make_timer()
+	var/datum/component/xenochimera/XC = our_human.GetComponent(/datum/component/xenochimera)
+	var/F = XC ? (XC.feral / 10) : 1
+	addtimer(CALLBACK(src, PROC_REF(trigger)), ((rand(20,50) SECONDS) / F), TIMER_DELETE_ME)
 
+/datum/component/hallucinations/xenochimera/trigger()
+	if(QDELETED(our_human))
+		qdel(src)
+>>>>>>> 2f4ae557ee ([MIRROR] Hallucination Refactor (#10879))
+		return
+	if(!our_human.client)
+		qdel(src)
+		return
+	var/datum/component/xenochimera/XC = our_human.GetComponent(/datum/component/xenochimera)
+	if(!XC || XC.feral < XENOCHIFERAL_THRESHOLD)
+		qdel(src)
+		return
+	handle_hallucinating()
+	QDEL_IN(src,rand(3,9)SECONDS)
 
-	F.left = image(clone,dir = WEST)
-	F.right = image(clone,dir = EAST)
-	F.up = image(clone,dir = NORTH)
-	F.down = image(clone,dir = SOUTH)
-
-//	F.base = new /icon(clone.stand_icon)
-//	F.currentimage = new /image(clone)
-
-/*
-
-
-
-	F.left = new /icon(clone.stand_icon,dir=WEST)
-	for(var/icon/i in clone.overlays)
-		F.left.Blend(i)
-	F.up = new /icon(clone.stand_icon,dir=NORTH)
-	for(var/icon/i in clone.overlays)
-		F.up.Blend(i)
-	F.down = new /icon(clone.stand_icon,dir=SOUTH)
-	for(var/icon/i in clone.overlays)
-		F.down.Blend(i)
-	F.right = new /icon(clone.stand_icon,dir=EAST)
-	for(var/icon/i in clone.overlays)
-		F.right.Blend(i)
-
-	target << F.up
-	*/
-
-	F.updateimage()
-*/ //ChompREMOVE End
+/datum/component/hallucinations/xenochimera/handle_hallucinating()
+	var/halpick = rand(1,100)
+	switch(halpick)
+		if(0 to 15) //15% chance
+			//Screwy HUD
+			event_hudscrew()
+		if(16 to 25) //10% chance
+			event_fake_item()
+		if(26 to 35) //10% chance
+			event_flash_environmental_threats()
+		if(36 to 55) //20% chance
+			event_strange_sound()
+		if(56 to 60) //5% chance
+			event_flash_monsters()
+		if(61 to 85) //25% chance
+			event_hunger()
+		if(86 to 100) //15% chance
+			event_hear_voices()
