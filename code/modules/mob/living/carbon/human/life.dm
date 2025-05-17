@@ -1872,7 +1872,11 @@
 			/* CHOMPEdit Start
 			if(text2num(time2text(world.timeofday, "MM")) == 4)
 				if(text2num(time2text(world.timeofday, "DD")) == 1)
+<<<<<<< HEAD
 					playsound_local(src,pick(scawwySownds),50, 0)
+=======
+					playsound_local(src,pick(GLOB.scawwysownds),50, 0)
+>>>>>>> 55215f896f ([MIRROR] Properly paths sound files and folders (#10899))
 					return
 			*/ // CHOMPedit End
 			playsound_local(src,pick(scarySounds),50, 1, -1)
