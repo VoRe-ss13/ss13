@@ -929,7 +929,20 @@
 		ear_damage = damage
 	if(deaf >= 0)
 		ear_deaf = deaf
+<<<<<<< HEAD
 		deaf_loop.start() // CHOMPStation Add: Ear Ringing/Deafness - Not sure if we need this, but, safety.
+=======
+		deaf_loop.start() // Ear Ringing/Deafness - Not sure if we need this, but, safety. NYI. Used downstream. //CHOMPStation Enable
+
+/mob/living/proc/vomit(lost_nutrition = 10, blood = FALSE, stun = 5, distance = 1, message = TRUE, toxic = VOMIT_TOXIC, purge = FALSE)
+	if(!lastpuke)
+		lastpuke = TRUE
+		to_chat(src, span_warning("You feel nauseous..."))
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), src, span_warning("You feel like you're about to throw up!")), 15 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(do_vomit), lost_nutrition, blood, stun, distance, message, toxic, purge), 25 SECONDS)
+
+/mob/living/proc/do_vomit(lost_nutrition = 10, blood = FALSE, stun = 5, distance = 1, message = TRUE, toxic = VOMIT_TOXIC, purge = FALSE)
+>>>>>>> 86efdca101 ([MIRROR] Vomit proc adjustments (#10920))
 
 /mob/living/proc/vomit(var/skip_wait, var/blood_vomit)
 	if(!check_has_mouth())
@@ -947,6 +960,7 @@
 			else
 				to_chat(src, span_warning("You feel nauseous..."))
 
+<<<<<<< HEAD
 				if(ishuman(src))
 					var/mob/living/carbon/human/Hu = src
 					if(CE_ANTACID in Hu.chem_effects)
@@ -954,6 +968,18 @@
 							spawn(rand(30 SECONDS, 2 MINUTES))
 								lastpuke = FALSE
 							return
+=======
+	// Hurt liver means throwing up blood
+	if(!blood && ishuman(src))
+		var/mob/living/carbon/human/H = src
+		if(!H.isSynthetic())
+			var/obj/item/organ/internal/liver/L = H.internal_organs_by_name[O_LIVER]
+			if(!L || L.is_broken())
+				blood = TRUE
+
+	if(stun)
+		Stun(stun)
+>>>>>>> 86efdca101 ([MIRROR] Vomit proc adjustments (#10920))
 
 				spawn()
 					if(!skip_wait)
@@ -974,12 +1000,29 @@
 					src.visible_message(span_warning("[src] throws up!"),span_warning("You throw up!"))
 					playsound(src, 'sound/effects/splat.ogg', 50, 1)
 
+<<<<<<< HEAD
 					var/turf/simulated/T = get_turf(src)	//TODO: Make add_blood_floor remove blood from human mobs
 					if(istype(T))
 						if(blood_vomit)
 							T.add_blood_floor(src)
 						else
 							T.add_vomit_floor(src, 1)
+=======
+	if(distance)
+		for(var/i=0 to distance)
+			if(blood)
+				if(T)
+					blood_splatter(T, large = TRUE)
+				if(stun)
+					adjustBruteLoss(2)
+			else if(T)
+				T.add_vomit_floor(src, vomit_type, purge)
+			T = get_step(T, dir)
+
+	VARSET_IN(src, lastpuke, FALSE, 10 SECONDS)
+
+	return TRUE
+>>>>>>> 86efdca101 ([MIRROR] Vomit proc adjustments (#10920))
 
 					if(blood_vomit)
 						if(getBruteLoss() < 50)
