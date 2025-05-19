@@ -451,8 +451,13 @@ var/global/list/obj/item/communicator/all_communicators = list()
 
 /obj/machinery/camera/communicator/Initialize(mapload)
 	. = ..()
+<<<<<<< HEAD
 	client_huds |= global_hud.whitense
 	client_huds |= global_hud.darkMask
+=======
+	LAZYOR(client_huds, GLOB.global_hud.whitense)
+	LAZYOR(client_huds, GLOB.global_hud.darkMask)
+>>>>>>> 209934afa8 ([MIRROR] Reduce Lists Memory usage, update CI  (#10929))
 
 //It's the 26th century. We should have smart watches by now.
 /obj/item/communicator/watch
