@@ -1534,4 +1534,136 @@
 			"r" = list("rr", "rrr", "rrrr")
 		),
 	autohiss_exempt = list("Siik"))
+<<<<<<< HEAD
 	excludes = list(/datum/trait/neutral/autohiss_unathi)
+=======
+	excludes = list(
+		/datum/trait/neutral/autohiss_unathi,
+		/datum/trait/neutral/autohiss_tajaran,
+		/datum/trait/neutral/autohiss_zaddat,
+		/datum/trait/neutral/autohiss_vassilian,
+		/datum/trait/neutral/autohiss_yingish,
+		/datum/trait/neutral/autohiss_unathi/xenochimera,
+		/datum/trait/neutral/autohiss_zaddat/xenochimera,
+		/datum/trait/neutral/autohiss_vassilian/xenochimera,
+		/datum/trait/neutral/autohiss_yingish/xenochimera)
+
+/datum/trait/neutral/autohiss_zaddat/xenochimera
+	sort = TRAIT_SORT_SPECIES
+	allowed_species = list(SPECIES_XENOCHIMERA)
+	name = "Xenochimera: Autohiss (Zaddat)"
+	desc = "You buzz your S's and F's."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list(
+	autohiss_basic_map = list(
+			"f" = list("v","vh"),
+			"ph" = list("v", "vh")
+		),
+	autohiss_extra_map = list(
+			"s" = list("z", "zz", "zzz"),
+			"ce" = list("z", "zz"),
+			"ci" = list("z", "zz"),
+			"v" = list("vv", "vvv")
+		),
+	autohiss_exempt = list(LANGUAGE_ZADDAT,LANGUAGE_VESPINAE))
+	excludes = list(
+		/datum/trait/neutral/autohiss_tajaran,
+		/datum/trait/neutral/autohiss_unathi,
+		/datum/trait/neutral/autohiss_zaddat,
+		/datum/trait/neutral/autohiss_vassilian,
+		/datum/trait/neutral/autohiss_yingish,
+		/datum/trait/neutral/autohiss_unathi/xenochimera,
+		/datum/trait/neutral/autohiss_tajaran/xenochimera,
+		/datum/trait/neutral/autohiss_vassilian/xenochimera,
+		/datum/trait/neutral/autohiss_yingish/xenochimera)
+
+/datum/trait/neutral/autohiss_vassilian/xenochimera
+	sort = TRAIT_SORT_SPECIES
+	allowed_species = list(SPECIES_XENOCHIMERA)
+	name = "Xenochimera: Autohiss (Vassilian)"
+	desc = "You buzz your S's, F's, Th's, and R's."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list(
+	autohiss_basic_map = list(
+		"s" = list("sz", "z", "zz"),
+		"f" = list("zk")
+		),
+	autohiss_extra_map = list(
+		"th" = list("zk", "szk"),
+		"r" = list("rk")
+	),
+	autohiss_exempt = list(LANGUAGE_VESPINAE))
+	excludes = list(
+		/datum/trait/neutral/autohiss_tajaran,
+		/datum/trait/neutral/autohiss_unathi,
+		/datum/trait/neutral/autohiss_zaddat,
+		/datum/trait/neutral/autohiss_vassilian,
+		/datum/trait/neutral/autohiss_yingish,
+		/datum/trait/neutral/autohiss_unathi/xenochimera,
+		/datum/trait/neutral/autohiss_tajaran/xenochimera,
+		/datum/trait/neutral/autohiss_zaddat/xenochimera,
+		/datum/trait/neutral/autohiss_yingish/xenochimera)
+
+/datum/trait/neutral/autohiss_yingish/xenochimera
+	sort = TRAIT_SORT_SPECIES
+	allowed_species = list(SPECIES_XENOCHIMERA)
+	name = "Xenochimera: Autohiss (Yingish)"
+	desc = "You pronounce th's with a lisp, a bit like zhis!"
+	cost = 0
+	custom_only = FALSE
+	var_changes = list(
+	autohiss_basic_map = list(
+			"thi" = list("z"),
+			"shi" = list("z"),
+			"tha" = list("z"),
+			"tho" = list("z")
+		),
+	autohiss_extra_map = list(
+			"the" = list("z"),
+			"so" = list("z")
+		),
+	autohiss_exempt = list())
+	excludes = list(
+		/datum/trait/neutral/autohiss_tajaran,
+		/datum/trait/neutral/autohiss_unathi,
+		/datum/trait/neutral/autohiss_zaddat,
+		/datum/trait/neutral/autohiss_vassilian,
+		/datum/trait/neutral/autohiss_yingish,
+		/datum/trait/neutral/autohiss_unathi/xenochimera,
+		/datum/trait/neutral/autohiss_tajaran/xenochimera,
+		/datum/trait/neutral/autohiss_zaddat/xenochimera,
+		/datum/trait/neutral/autohiss_vassilian/xenochimera)
+
+/datum/trait/neutral/waddle
+	name = "Waddle / Animated Movement (Adjustable)"
+	desc = "You move with a waddle or otherwise animated movement! Has adjustable settings with more adjustments able to be made in game!"
+	cost = 0
+	custom_only = FALSE
+	is_genetrait = TRUE
+	hidden = FALSE
+	has_preferences = list("waddler" = list(TRAIT_PREF_TYPE_BOOLEAN, "Waddle on Spawn", TRAIT_NO_VAREDIT_TARGET, TRUE))
+	added_component_path = /datum/component/waddle_trait
+
+/datum/trait/neutral/waddle/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/list/trait_prefs)
+	..()
+	var/datum/component/waddle_trait/G = H.GetComponent(added_component_path)
+	G.waddling = trait_prefs["waddler"]
+
+/datum/trait/neutral/nutritiongrow
+	name = "Growing"
+	desc = "After you consume enough nutrition, you start to slowly grow while metabolizing nutrition faster."
+	excludes = list(/datum/trait/neutral/nutritionshrink)
+	cost = 0
+	hidden = FALSE //Disabled on Virgo // CHOMPEdit
+	added_component_path = /datum/component/nutrition_size_change/growing
+
+/datum/trait/neutral/nutritionshrink
+	name = "Shrinking"
+	desc = "If you don't eat enough, your body starts shrinking to make up the difference!"
+	excludes = list(/datum/trait/neutral/nutritiongrow)
+	cost = 0
+	hidden = FALSE //Disabled on Virgo // CHOMPEdit
+	added_component_path = /datum/component/nutrition_size_change/shrinking
+>>>>>>> 0f390c4e92 ([MIRROR] Nutrition Resizing Component (#10904))
