@@ -166,7 +166,11 @@
 	return shock_damage
 
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
+<<<<<<< HEAD
 	if (src.health >= CONFIG_GET(number/health_threshold_crit))
+=======
+	if (health >= get_crit_point() || on_fire)
+>>>>>>> 40152ecfe5 ([MIRROR] Extinguishing Paincrit Mobs or Bodies (#10907))
 		if(src == M && ishuman(src))
 			var/mob/living/carbon/human/H = src
 			var/datum/gender/T = gender_datums[H.get_visible_gender()]
