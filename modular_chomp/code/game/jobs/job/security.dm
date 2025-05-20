@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 // /datum/job/hos //TORCHRemoval - We don't need camp protection yet
 	// camp_protection = TRUE //TORCHRemoval
 
+=======
+/datum/job/hos
+	camp_protection = TRUE
+/*
+>>>>>>> 86b98bd2cb (Removes SecMed (#10918))
 /datum/job/brigphysician
 	title = JOB_BRIG_PHYSICIAN
 	flag = BRIGPHYS
@@ -40,3 +46,4 @@
 
 /datum/alt_title/detention_med
 	title = JOB_ALT_DETENTION_HEALTH_OFFICER
+*/
