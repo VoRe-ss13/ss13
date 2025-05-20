@@ -35,6 +35,18 @@
 	icon_x = 32
 	pixel_x = 0
 
+<<<<<<< HEAD
+=======
+/datum/robot_sprite/dogborg/explorer/smolraptor
+	sprite_icon = 'icons/mob/robot/smallraptors/smolraptor_ninja.dmi'
+	name = "Small Raptor"
+	sprite_icon_state = "smolraptor"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+	rest_sprite_options = list("Default", "Sit", "Bellyup")
+
+>>>>>>> 96d877eacd ([MIRROR] Smolraptor updates (#10934))
 /* placeholder
 /datum/robot_sprite/dogborg/tall/explorer
 	module_type = "Exploration"
