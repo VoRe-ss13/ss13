@@ -6,23 +6,34 @@
 	},
 /area/submap/XenoHive)
 "ab" = (
+/obj/effect/alien/weeds,
+/obj/effect/landmark/loot_spawn/low,
+/turf/simulated/floor/outdoors/dirt/turfpack/sif{
+	outdoors = 0
+	},
+/area/submap/XenoHive)
+"ac" = (
 /obj/structure/alien/wall,
 /turf/simulated/floor/outdoors/dirt/turfpack/sif,
 /area/submap/XenoHive)
-"ac" = (
+"ad" = (
 /mob/living/simple_mob/animal/space/alien/sentinel,
 /obj/effect/alien/weeds,
 /turf/simulated/floor/outdoors/dirt/turfpack/sif,
 /area/submap/XenoHive)
-"ad" = (
+"ae" = (
 /turf/simulated/floor/outdoors/dirt/turfpack/sif,
 /area/submap/XenoHive)
-"ae" = (
+"af" = (
+/obj/effect/alien/weeds,
+/turf/simulated/floor/outdoors/dirt/turfpack/sif,
+/area/submap/XenoHive)
+"ag" = (
 /obj/effect/alien/weeds,
 /obj/effect/landmark/loot_spawn/low,
 /turf/simulated/floor/outdoors/dirt/turfpack/sif,
 /area/submap/XenoHive)
-"af" = (
+"ah" = (
 /obj/structure/loot_pile/surface/bones,
 /turf/simulated/floor/outdoors/dirt/turfpack/sif,
 /area/submap/XenoHive)
@@ -68,10 +79,6 @@
 /turf/simulated/floor/outdoors/rocks{
 	outdoors = 0
 	},
-/area/submap/XenoHive)
-"dn" = (
-/obj/effect/alien/weeds,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif,
 /area/submap/XenoHive)
 "eM" = (
 /obj/structure/loot_pile/surface/bones,
@@ -461,13 +468,6 @@
 	outdoors = 0
 	},
 /area/submap/XenoHive)
-"MZ" = (
-/obj/effect/alien/weeds,
-/obj/effect/landmark/loot_spawn/low,
-/turf/simulated/floor/outdoors/dirt/turfpack/sif{
-	outdoors = 0
-	},
-/area/submap/XenoHive)
 "Or" = (
 /obj/effect/alien/weeds,
 /obj/effect/alien/weeds,
@@ -819,8 +819,8 @@ lb
 "}
 (13,1,1) = {"
 Hr
-dn
-dn
+af
+af
 Et
 Et
 Et
@@ -836,9 +836,9 @@ lb
 "}
 (14,1,1) = {"
 sy
-ab
-dn
 ac
+af
+ad
 Et
 Et
 AB
@@ -853,14 +853,14 @@ lb
 "}
 (15,1,1) = {"
 eM
-dn
-ae
+af
+ag
 Et
 Et
 AB
 WE
 rL
-MZ
+ab
 AB
 Et
 Et
@@ -896,7 +896,7 @@ Zc
 Pv
 AB
 Et
-MZ
+ab
 Dh
 sy
 sy
@@ -913,7 +913,7 @@ Zx
 rL
 Et
 Et
-MZ
+ab
 rL
 gS
 sy
@@ -938,10 +938,10 @@ lb
 "}
 (20,1,1) = {"
 Hr
-ae
+ag
 Et
 Et
-MZ
+ab
 kl
 rL
 Et
@@ -955,7 +955,7 @@ lb
 "}
 (21,1,1) = {"
 lb
-dn
+af
 yx
 Et
 AB
@@ -972,8 +972,8 @@ lb
 "}
 (22,1,1) = {"
 lb
-ab
-dn
+ac
+af
 Et
 Et
 Pv
@@ -990,15 +990,15 @@ lb
 (23,1,1) = {"
 sy
 sy
-af
-ad
+ah
+ae
 Et
 AB
 xQ
 sp
 Pq
 Tq
-ab
+ac
 Et
 Et
 lb

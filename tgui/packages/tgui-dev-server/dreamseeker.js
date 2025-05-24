@@ -83,6 +83,7 @@ export class DreamSeeker {
       // proto addr mask mode pid
       const entries = [];
       const lines = stdout.split('\r\n');
+
       for (const line of lines) {
         const words = line.match(/\S+/g);
         if (!words || words.length === 0) {
