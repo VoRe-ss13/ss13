@@ -200,8 +200,6 @@
 		humanform.species.update_misc_tabs(src)
 
 /mob/living/simple_mob/protean_blob/updatehealth()
-	if(humanform.nano_dead_check(src))
-		return
 	if(!humanform)
 		to_chat(src, span_giant(span_boldwarning("You are currently a blob without a humanform and should be deleted shortly Please report what you were doing when this error occurred to the admins.")))
 		stack_trace("URGENT, SERVER-CRASHING ISSUE: A protean blob does not have a humanform! src = [src] ckey = [ckey]! The blob has been deleted.")

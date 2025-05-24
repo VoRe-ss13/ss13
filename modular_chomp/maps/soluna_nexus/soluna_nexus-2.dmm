@@ -199,6 +199,12 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techmaint,
 /area/security/HoS_Office)
+"aan" = (
+/obj/machinery/computer/cryopod/robot{
+	pixel_x = 30
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/Drone_Fab)
 "aao" = (
 /obj/random/trash,
 /obj/structure/table/standard,
@@ -6120,15 +6126,14 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/floor_decal/industrial/hatch,
 /obj/structure/grille,
-/obj/structure/window/titanium,
 /obj/structure/window/titanium{
 	dir = 4
 	},
 /obj/structure/window/titanium{
-	dir = 1
+	dir = 8
 	},
 /turf/simulated/floor/plating,
-/area/maintenance/Deck2_Civilian_PortChamber1)
+/area/maintenance/Deck2_Civilian_AftPortCorridor1)
 "ajV" = (
 /obj/machinery/door/firedoor/glass,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -6498,17 +6503,12 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck2_Port_Corridor)
 "akz" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/floor_decal/industrial/hatch,
-/obj/structure/grille,
-/obj/structure/window/titanium{
-	dir = 4
-	},
-/obj/structure/window/titanium{
-	dir = 8
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/Deck2_Civilian_AftPortCorridor1)
+/obj/random/junk,
+/obj/random/trash,
+/obj/random/tech_supply,
+/obj/random/maintenance/clean,
+/turf/simulated/floor/tiled/techmaint,
+/area/maintenance/Deck2_Civilian_StarChamber2)
 "akA" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -6525,10 +6525,8 @@
 /area/quartermaster/Breakroom)
 "akB" = (
 /obj/random/junk,
-/obj/random/trash,
-/obj/random/tech_supply,
 /obj/random/maintenance/clean,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/plating,
 /area/maintenance/Deck2_Civilian_StarChamber2)
 "akC" = (
 /obj/effect/floor_decal/steeldecal/steel_decals4{
@@ -7984,10 +7982,15 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/Chomp_Kitchen)
 "ani" = (
-/obj/random/junk,
-/obj/random/maintenance/clean,
-/turf/simulated/floor/plating,
-/area/maintenance/Deck2_Civilian_StarChamber2)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/rnd/Toxins_Viewing_Port)
 "anj" = (
 /obj/effect/floor_decal/milspec/box,
 /turf/simulated/floor/tiled/steel_ridged,
@@ -8572,15 +8575,13 @@
 /turf/simulated/floor/plating,
 /area/crew_quarters/Midnight_Kitchen)
 "aor" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 9
+/obj/effect/catwalk_plated,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 6;
+	pixel_x = -1
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals4{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/rnd/Toxins_Viewing_Port)
+/turf/simulated/floor/plating/turfpack/airless,
+/area/harbor/Port_Shuttlebay)
 "aos" = (
 /obj/structure/cable/white{
 	icon_state = "1-4"
@@ -8588,10 +8589,12 @@
 /turf/simulated/wall/r_wall,
 /area/crew_quarters/Emergency_EVA)
 "aot" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
 /obj/effect/catwalk_plated,
 /obj/effect/floor_decal/steeldecal/steel_decals6{
-	dir = 6;
-	pixel_x = -1
+	dir = 5
 	},
 /turf/simulated/floor/plating/turfpack/airless,
 /area/harbor/Port_Shuttlebay)
@@ -10492,23 +10495,13 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck2_Security_AftStarCorridor2)
 "ash" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/effect/catwalk_plated,
-/obj/effect/floor_decal/steeldecal/steel_decals6{
-	dir = 5
-	},
-/turf/simulated/floor/plating/turfpack/airless,
-/area/harbor/Port_Shuttlebay)
-"asi" = (
 /obj/effect/catwalk_plated,
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 9
 	},
 /turf/simulated/floor/plating/turfpack/airless,
 /area/harbor/Port_Shuttlebay)
-"asj" = (
+"asi" = (
 /obj/effect/catwalk_plated,
 /obj/machinery/shield_diffuser,
 /obj/effect/floor_decal/steeldecal/steel_decals6{
@@ -10528,12 +10521,6 @@
 "asl" = (
 /turf/simulated/wall,
 /area/hallway/Port_2_Deck_Corridor_2)
-"asm" = (
-/obj/machinery/computer/cryopod/robot{
-	pixel_x = 30
-	},
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/engineering/Drone_Fab)
 "aso" = (
 /obj/structure/table/steel,
 /obj/random/maintenance/cargo,
@@ -79506,6 +79493,19 @@
 	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/Chapel_Morgue)
+"myK" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/grille,
+/obj/structure/window/titanium,
+/obj/structure/window/titanium{
+	dir = 4
+	},
+/obj/structure/window/titanium{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/Deck2_Civilian_PortChamber1)
 "myX" = (
 /obj/item/paper_bin{
 	pixel_x = 5
@@ -135132,8 +135132,8 @@ aop
 oGx
 uhW
 bNF
-asi
-aot
+ash
+aor
 klj
 paJ
 amH
@@ -137196,8 +137196,8 @@ foi
 foi
 foi
 foi
-asj
-ash
+asi
+aot
 klj
 gKx
 lVo
@@ -140033,7 +140033,7 @@ aaa
 aaa
 uZK
 bNY
-asm
+aan
 cge
 cgc
 tNw
@@ -140383,7 +140383,7 @@ aaa
 aaa
 aaa
 aaa
-ajU
+myK
 nDk
 pAW
 jBe
@@ -140392,7 +140392,7 @@ gDe
 jBe
 nDk
 aRu
-ajU
+myK
 aaa
 aaa
 aaa
@@ -141715,7 +141715,7 @@ cfY
 ssv
 npz
 uet
-ajU
+myK
 aaa
 aaa
 aaa
@@ -142189,7 +142189,7 @@ aaf
 aaa
 aaa
 bFW
-ajU
+myK
 uZc
 pAW
 weY
@@ -143489,7 +143489,7 @@ scW
 apX
 wZn
 oEW
-akz
+ajU
 jnk
 wZn
 aaa
@@ -167994,7 +167994,7 @@ aqp
 aaf
 aaa
 qcZ
-ani
+akB
 iHv
 sQq
 qcZ
@@ -168253,7 +168253,7 @@ onO
 aaa
 qcZ
 xss
-akB
+akz
 lGm
 qcZ
 aaa
@@ -172805,7 +172805,7 @@ wWX
 wWX
 cAy
 tZJ
-aor
+ani
 uRn
 moa
 hcl

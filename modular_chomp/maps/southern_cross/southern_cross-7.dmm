@@ -72,43 +72,43 @@
 	},
 /turf/space,
 /area/expoutpost/reactorroom)
-"aao" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
-	dir = 1
-	},
-/turf/simulated/wall/r_wall,
-/area/expoutpost/reactorroom)
 "aap" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
-	dir = 4
-	},
-/turf/simulated/wall/r_wall,
-/area/expoutpost/reactorroom)
-"aaq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 6
 	},
 /turf/simulated/wall/r_wall,
 /area/expoutpost/atmospherics)
-"aar" = (
+"aaq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 9
 	},
 /turf/simulated/wall/r_wall,
 /area/expoutpost/atmospherics)
-"aas" = (
+"aar" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 5
 	},
 /turf/simulated/wall/r_wall,
 /area/expoutpost/techstorage)
-"aat" = (
+"aas" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 10
 	},
 /turf/simulated/wall/r_wall,
 /area/expoutpost/techstorage)
+"aat" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
+	dir = 8
+	},
+/turf/simulated/wall/r_wall,
+/area/expoutpost/reactorroom)
 "aau" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
+	dir = 4
+	},
+/turf/simulated/wall/r_wall,
+/area/expoutpost/reactorroom)
+"aav" = (
 /obj/effect/wingrille_spawn/reinforced_phoron,
 /obj/machinery/door/blast/radproof{
 	id = "Aeg_CoreShroud";
@@ -119,7 +119,7 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/expoutpost/reactorroom)
-"aav" = (
+"aaw" = (
 /obj/effect/wingrille_spawn/reinforced_phoron,
 /obj/machinery/door/blast/radproof{
 	id = "Aeg_CoreShroud";
@@ -130,7 +130,7 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/expoutpost/reactorroom)
-"aaw" = (
+"aax" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/fusion_fuel_injector/mapped{
 	dir = 4;
@@ -141,7 +141,7 @@
 	},
 /turf/simulated/floor,
 /area/expoutpost/reactorroom)
-"aax" = (
+"aay" = (
 /obj/machinery/computer/card{
 	dir = 1
 	},
@@ -153,13 +153,13 @@
 	},
 /turf/simulated/floor/tiled/milspec/raised,
 /area/expoutpost/cic)
-"aay" = (
+"aaz" = (
 /obj/structure/bed/chair/bay/shuttle{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/cic)
-"aaz" = (
+"aaA" = (
 /obj/item/modular_computer/console/preset/engineering{
 	dir = 4
 	},
@@ -174,14 +174,14 @@
 	},
 /turf/simulated/floor/tiled/milspec/raised,
 /area/expoutpost/cic)
-"aaA" = (
+"aaB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/cic)
-"aaB" = (
+"aaC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
@@ -190,7 +190,7 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/cic)
-"aaC" = (
+"aaD" = (
 /obj/item/modular_computer/console/preset/medical{
 	dir = 8
 	},
@@ -206,26 +206,26 @@
 	},
 /turf/simulated/floor/tiled/milspec/raised,
 /area/expoutpost/cic)
-"aaD" = (
+"aaE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/cic)
-"aaE" = (
+"aaF" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/cic)
-"aaF" = (
+"aaG" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/cic)
-"aaG" = (
+"aaH" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/cic)
-"aaH" = (
+"aaI" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/overhang/waterless/grey,
 /obj/effect/floor_decal/techfloor{
@@ -233,13 +233,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/expoutpost/cic)
-"aaI" = (
+"aaJ" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/overhang/waterless/grey,
 /obj/effect/floor_decal/techfloor,
 /turf/simulated/floor/tiled/techfloor,
 /area/expoutpost/cic)
-"aaJ" = (
+"aaK" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/overhang/waterless/grey,
 /obj/effect/floor_decal/techfloor{
@@ -247,13 +247,13 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/expoutpost/cic)
-"aaK" = (
+"aaL" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/cic)
-"aaL" = (
+"aaM" = (
 /obj/item/modular_computer/console/preset/command{
 	dir = 4
 	},
@@ -262,18 +262,12 @@
 	},
 /turf/simulated/floor/tiled/milspec/raised,
 /area/expoutpost/cic)
-"aaM" = (
+"aaN" = (
 /obj/structure/bed/chair/bay/shuttle{
 	dir = 1
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 1
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/expoutpost/cic)
-"aaN" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 5
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/expoutpost/cic)
@@ -285,6 +279,12 @@
 /turf/simulated/floor/grass2,
 /area/expoutpost/slingcarrierdock)
 "aaP" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/expoutpost/cic)
+"aaQ" = (
 /obj/machinery/computer/ship/engines{
 	dir = 8
 	},
@@ -294,7 +294,7 @@
 	},
 /turf/simulated/floor/tiled/milspec/raised,
 /area/expoutpost/cic)
-"aaQ" = (
+"aaR" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 10
 	},
@@ -309,19 +309,19 @@
 /obj/item/storage/mre/menu10,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/expoutpost/cic)
-"aaR" = (
+"aaS" = (
 /obj/effect/floor_decal/techfloor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/expoutpost/cic)
-"aaS" = (
+"aaT" = (
 /obj/machinery/computer/ship/helm{
 	req_one_access = list(19,62,67)
 	},
 /turf/simulated/floor/tiled/milspec/raised,
 /area/expoutpost/cic)
-"aaT" = (
+"aaU" = (
 /obj/machinery/computer/ship/navigation,
 /obj/item/radio/intercom{
 	dir = 4;
@@ -330,13 +330,6 @@
 	},
 /turf/simulated/floor/tiled/milspec/raised,
 /area/expoutpost/cic)
-"aaU" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 10
-	},
-/obj/structure/closet/emcloset,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/expoutpost/cic)
 "aaV" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -344,6 +337,13 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/engoffice)
 "aaW" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 10
+	},
+/obj/structure/closet/emcloset,
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/expoutpost/cic)
+"aaX" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
@@ -361,7 +361,7 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/expoutpost/cic)
-"aaX" = (
+"aaY" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
@@ -373,12 +373,12 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/expoutpost/cic)
-"aaY" = (
+"aaZ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
 /turf/simulated/floor/plating,
 /area/expoutpost/cic)
-"aaZ" = (
+"aba" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 8
 	},
@@ -388,7 +388,7 @@
 /obj/structure/closet/emcloset,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/expoutpost/cic)
-"aba" = (
+"abb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
@@ -397,7 +397,7 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/expoutpost/cic)
-"abb" = (
+"abc" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
@@ -424,7 +424,7 @@
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/expoutpost/cic)
-"abc" = (
+"abd" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},
@@ -442,21 +442,27 @@
 /obj/item/storage/firstaid/adv,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/expoutpost/cic)
-"abd" = (
+"abe" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},
 /obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/expoutpost/cic)
-"abe" = (
+"abf" = (
 /obj/effect/shuttle_landmark/southern_cross/carrier/port_dock,
 /turf/space,
 /area/space)
-"abf" = (
+"abg" = (
 /obj/effect/shuttle_landmark/southern_cross/carrier/starboard_dock,
 /turf/space,
 /area/space)
+"abh" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
+	dir = 1
+	},
+/turf/simulated/wall/r_wall,
+/area/expoutpost/reactorroom)
 "abn" = (
 /obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 1
@@ -8140,12 +8146,6 @@
 /obj/structure/table/wooden_reinforced,
 /turf/simulated/floor/carpet,
 /area/expoutpost/explodorm2)
-"gGg" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
-	dir = 8
-	},
-/turf/simulated/wall/r_wall,
-/area/expoutpost/reactorroom)
 "gHs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -56501,7 +56501,7 @@ cwA
 cwA
 cwA
 cwA
-abe
+abf
 cwA
 cwA
 cwA
@@ -61561,7 +61561,7 @@ uap
 ybK
 eVg
 vxU
-aaq
+aap
 aah
 aah
 aah
@@ -61792,12 +61792,12 @@ juR
 jia
 svh
 bSp
-aaQ
+aaR
 jia
 ejR
 jia
 hFP
-aaz
+aaA
 dJj
 jia
 jia
@@ -61818,8 +61818,8 @@ vEk
 kAG
 thG
 vpK
-gGg
-aar
+aat
+aaq
 ohy
 vMd
 vUX
@@ -62050,11 +62050,11 @@ juR
 jia
 gFl
 gzz
-aaR
+aaS
 vLz
-aaD
-aaD
-aaD
+aaE
+aaE
+aaE
 hpq
 swe
 cgb
@@ -62306,13 +62306,13 @@ cXC
 faz
 juR
 jia
-abc
-aaX
+abd
+aaY
 azg
 jia
 vaT
 vaT
-aaE
+aaF
 uvP
 vaT
 wmN
@@ -62568,10 +62568,10 @@ jia
 jia
 jia
 jia
-aaG
+aaH
 wWs
-aaF
-aaA
+aaG
+aaB
 vaT
 dLo
 jia
@@ -62590,12 +62590,12 @@ ved
 hHm
 vEk
 auD
-aaw
+aax
 aDR
 wtu
 vUT
 wfX
-gGg
+aat
 aam
 aak
 aXP
@@ -62825,7 +62825,7 @@ jia
 jia
 jia
 jia
-aaL
+aaM
 unp
 mvF
 nFl
@@ -62848,8 +62848,8 @@ oXb
 wDi
 vxU
 dMs
-aau
-aau
+aav
+aav
 vxU
 vEk
 vEk
@@ -63081,10 +63081,10 @@ tAp
 juR
 jia
 juu
-aaY
+aaZ
 udf
 rIV
-aaH
+aaI
 jCv
 vaT
 upY
@@ -63111,7 +63111,7 @@ ucP
 lWC
 kLE
 gSi
-aao
+abh
 vfD
 aai
 aai
@@ -63339,10 +63339,10 @@ tAp
 juR
 jia
 juu
-aaY
-aaS
-aaM
-aaI
+aaZ
+aaT
+aaN
+aaJ
 vnP
 hCj
 jUX
@@ -63597,10 +63597,10 @@ aWj
 juR
 jia
 juu
-aaY
-aaT
-aaN
-aaJ
+aaZ
+aaU
+aaP
+aaK
 jCv
 vaT
 jUX
@@ -63627,7 +63627,7 @@ ucP
 lWC
 kLE
 gSi
-aao
+abh
 vfD
 aai
 aXP
@@ -63857,7 +63857,7 @@ jia
 jia
 jia
 jia
-aaP
+aaQ
 vbE
 lId
 nFl
@@ -63880,8 +63880,8 @@ lPp
 tGw
 nyb
 qiB
-aav
-aav
+aaw
+aaw
 vxU
 vEk
 vEk
@@ -64116,10 +64116,10 @@ jia
 jia
 jia
 jia
-aaK
+aaL
 lgz
-aaF
-aaA
+aaG
+aaB
 vaT
 isR
 jia
@@ -64143,7 +64143,7 @@ aDR
 qzs
 vUT
 jfA
-aap
+aau
 aan
 aal
 aai
@@ -64370,13 +64370,13 @@ iGn
 tAp
 juR
 jia
-abd
-aaZ
-aaU
+abe
+aba
+aaW
 jia
 vaT
 vaT
-aaE
+aaF
 uvP
 vaT
 oKo
@@ -64629,15 +64629,15 @@ eWZ
 juR
 jia
 hAx
-aba
-aaR
+abb
+aaS
 klw
-aaD
-aaD
-aaD
-aaB
+aaE
+aaE
+aaE
+aaC
+aaz
 aay
-aax
 jia
 qKs
 jtd
@@ -64887,13 +64887,13 @@ tAp
 emn
 jia
 pVF
-abb
-aaW
+abc
+aaX
 jia
 oks
 jia
 sqv
-aaC
+aaD
 usS
 jia
 jia
@@ -64914,8 +64914,8 @@ ihr
 tEx
 tEx
 gAe
-aap
-aas
+aau
+aar
 mbg
 iKm
 rto
@@ -65173,7 +65173,7 @@ eHk
 krN
 fwT
 vxU
-aat
+aas
 aaj
 aaj
 aaj
@@ -69917,7 +69917,7 @@ cwA
 cwA
 cwA
 cwA
-abf
+abg
 cwA
 cwA
 cwA
