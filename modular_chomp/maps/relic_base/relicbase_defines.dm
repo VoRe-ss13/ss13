@@ -4,21 +4,21 @@
 #define Z_LEVEL_UNDERGROUND				2
 #define Z_LEVEL_SURFACE					3
 #define Z_LEVEL_UPPER_FLOORS			4
-#define Z_LEVEL_THE_SKY					5
-#define Z_LEVEL_UNDERMINES				6
-#define Z_LEVEL_SURFACE_WILDS			7
-#define Z_LEVEL_WILDERNESS_SKY			8
-#define Z_LEVEL_SURFACE_OCEAN			9
-#define Z_LEVEL_SURFACE_MINES			10
-#define Z_LEVEL_CARRIER 				11
-#define Z_LEVEL_CENTCOM					12
-#define Z_LEVEL_TRANSIT					13
+//#define Z_LEVEL_THE_SKY					5 //TORCH Removal
+#define Z_LEVEL_UNDERMINES				5 //TORCHEdit
+#define Z_LEVEL_SURFACE_WILDS			6 //TORCHEdit
+//#define Z_LEVEL_WILDERNESS_SKY			8 //TORCH Removal
+#define Z_LEVEL_SURFACE_OCEAN			7 //TORCHEdit
+//#define Z_LEVEL_SURFACE_MINES			10 //TORCH Removal
+#define Z_LEVEL_CARRIER 				8 //TORCHEdit
+#define Z_LEVEL_CENTCOM					9 //TORCHEdit
+#define Z_LEVEL_TRANSIT					10 //TORCHEdit
 
 
 
-#define Z_LEVEL_FUELDEPOT				14
-#define Z_LEVEL_GATEWAY					15
-#define Z_LEVEL_REDGATE					16
+#define Z_LEVEL_FUELDEPOT				11 //TORCHEdit
+#define Z_LEVEL_GATEWAY					12 //TORCHEdit
+#define Z_LEVEL_REDGATE					13 //TORCHEdit
 
 // Camera Network Additions
 #define NETWORK_EXTERIOR "Exterior" // Exterior Cameras
@@ -28,8 +28,7 @@
 	full_name = "NLS Relic Base"
 	path = "relicbase"
 
-	lobby_icon = 'icons/misc/title_tc.dmi' //TORCHEdit
-	lobby_screens = list("thor") //CHOMPStation Edit TFF 24/12/19 - CHOMPStation image
+	lobby_screens = list('icons/misc/torchstation.gif') //CHOMPStation Edit TFF 24/12/19 - CHOMPStation image //TORCHEdit
 	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'	//CHOMPStation Edit 25/1/20 TFF - Job icons for off-duty/exploration
 
 	holomap_smoosh = list(list(
@@ -103,10 +102,10 @@
 			Z_LEVEL_UPPER_FLOORS,
 			Z_LEVEL_UNDERMINES,
 			Z_LEVEL_SURFACE_WILDS,
-			Z_LEVEL_SURFACE_MINES,
-			Z_LEVEL_WILDERNESS_SKY,
+//			Z_LEVEL_SURFACE_MINES, //TORCH Removal
+//			Z_LEVEL_WILDERNESS_SKY, //TORCH Removal
 			Z_LEVEL_SURFACE_OCEAN,
-			Z_LEVEL_THE_SKY,
+//			Z_LEVEL_THE_SKY, //TORCH Removal
 			Z_LEVEL_CATACOMBS
 		)
 
@@ -179,7 +178,7 @@
 	// Cave submaps are first.
 	seed_submaps(list(Z_LEVEL_UNDERMINES), 140, /area/surface/cave/unexplored/normal, /datum/map_template/surface/mountains/normal)
 	seed_submaps(list(Z_LEVEL_UNDERMINES), 140, /area/surface/cave/unexplored/deep, /datum/map_template/surface/mountains/deep)
-	seed_submaps(list(Z_LEVEL_SURFACE_MINES), 140, /area/surface/outside/wilderness/mountains, /datum/map_template/surface/mountains/normal)
+//	seed_submaps(list(Z_LEVEL_SURFACE_MINES), 140, /area/surface/outside/wilderness/mountains, /datum/map_template/surface/mountains/normal) //TORCH Removal
 	// Plains to make them less plain.
 	seed_submaps(list(Z_LEVEL_SURFACE), 220, /area/surface/outside/plains/normal, /datum/map_template/surface/plains) // Both of these will need a massive POI overhaul. The framework is in, and tiles will be mass-edited to match, but better POIs are wanted.
 	seed_submaps(list(Z_LEVEL_SURFACE_OCEAN), 220, /area/surface/outside/plains/normal, /datum/map_template/surface/plains) // Both of these will need a massive POI overhaul. The framework is in, and tiles will be mass-edited to match, but better POIs are wanted.
@@ -192,8 +191,8 @@
 	// Now for the tunnels. (This decides the load order of ore generation and cave generation. Check Random_Map to see % )
 	new /datum/random_map/automata/cave_system/no_cracks(null, 1, 1, Z_LEVEL_UNDERMINES, world.maxx, world.maxy) // Create the mining Z-level.
 	new /datum/random_map/noise/ore(null, 1, 1, Z_LEVEL_UNDERMINES, 64, 64)         // Create the mining ore distribution map.
-	new /datum/random_map/automata/cave_system/no_cracks(null, 1, 1, Z_LEVEL_SURFACE_MINES, world.maxx, world.maxy) // Create the mining Z-level.
-	new /datum/random_map/noise/ore(null, 1, 1, Z_LEVEL_SURFACE_MINES, 64, 64)
+//	new /datum/random_map/automata/cave_system/no_cracks(null, 1, 1, Z_LEVEL_SURFACE_MINES, world.maxx, world.maxy) // Create the mining Z-level. //TORCH Removal
+//	new /datum/random_map/noise/ore(null, 1, 1, Z_LEVEL_SURFACE_MINES, 64, 64) //TORCH Removal
 	// Todo: Forest generation.
 	return 1
 
@@ -256,13 +255,13 @@
 	name = "Underground Mines"
 	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONSOLES
 	base_turf = /turf/simulated/floor/outdoors/rocks
-
+/* //TORCH Removal
 /datum/map_z_level/relicbase/surface_mine
 	z = Z_LEVEL_SURFACE_MINES
 	name = "Surface Mines"
 	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONSOLES
 	base_turf = /turf/simulated/floor/outdoors/rocks
-
+*/
 /datum/map_z_level/relicbase/surface_wild
 	z = Z_LEVEL_SURFACE_WILDS
 	name = "Wilderness"
@@ -296,13 +295,13 @@
 	name = "Catacombs"
 	base_turf = /turf/simulated/mineral/floor/cave
 	transit_chance = 10
-
+/* //TORCH Removal
 /datum/map_z_level/relicbase/station/thesky
 	z = Z_LEVEL_THE_SKY
 	name = "Sky"
 	base_turf = /turf/simulated/open
 	transit_chance = 10
-
+*/
 
 /* KSC 9/29/20 = No longer relevant code as we have nonencludian portals to jump between outpost,caves and wilderness
 //Teleport to Mine
@@ -340,11 +339,11 @@
 		Z_LEVEL_UNDERGROUND,
 		Z_LEVEL_UPPER_FLOORS,
 		Z_LEVEL_SURFACE_WILDS,
-		Z_LEVEL_SURFACE_MINES,
-		Z_LEVEL_WILDERNESS_SKY,
+//		Z_LEVEL_SURFACE_MINES, //TORCH Removal
+//		Z_LEVEL_WILDERNESS_SKY, //TORCH Removal
 		Z_LEVEL_UNDERMINES,
 		Z_LEVEL_SURFACE_OCEAN,
-		Z_LEVEL_THE_SKY,
+//		Z_LEVEL_THE_SKY, //TORCH Removal
 		Z_LEVEL_CATACOMBS
 	)
 

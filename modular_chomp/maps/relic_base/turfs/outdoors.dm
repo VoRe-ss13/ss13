@@ -336,11 +336,13 @@
 	. = ..()
 	if(istype(src, /turf/simulated/mineral/thor) || istype(src, /turf/simulated/mineral/sif) || istype(src, /turf/simulated/mineral/floor/sif) || istype(src, /turf/simulated/mineral/ignore_mapgen/sif) || istype(src, /turf/simulated/mineral/floor/ignore_mapgen/sif))
 		return
+#if defined(Z_LEVEL_SURFACE_MINES) //TORCHEdit
 	if(src.z == Z_LEVEL_SURFACE_MINES)
 		if(density)
 			ChangeTurf(/turf/simulated/mineral/ignore_mapgen/sif)
 		else
 			ChangeTurf(/turf/simulated/mineral/floor/ignore_mapgen/sif)
+#endif //TORCHEdit
 	if(src.z == Z_LEVEL_UNDERMINES)
 		if(density)
 			ChangeTurf(/turf/simulated/mineral/thor/ignore_mapgen)
