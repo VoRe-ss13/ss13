@@ -16,6 +16,7 @@ export function resolveGlob(...sections) {
 
   /** @type {string[]} */
   const safePaths = [];
+
   for (const path of unsafePaths) {
     try {
       fs.statSync(path);
