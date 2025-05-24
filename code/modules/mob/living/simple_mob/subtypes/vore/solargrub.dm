@@ -71,7 +71,7 @@ var/global/moth_amount = 0 // CHOMPEnable, Rykka waz here. *pawstamp*
 
 /mob/living/simple_mob/vore/solargrub/Initialize(mapload)
 	. = ..()
-	existing_solargrubs += src
+	GLOB.existing_solargrubs += src
 
 /mob/living/simple_mob/vore/solargrub/Life()
 	. = ..()
@@ -139,7 +139,7 @@ var/global/moth_amount = 0 // CHOMPEnable, Rykka waz here. *pawstamp*
 		var/mob/living/L = A
 		if(prob(shock_chance))
 			A.emp_act(4) //The weakest strength of EMP
-			playsound(src, 'sound/weapons/Egloves.ogg', 75, 1)
+			playsound(src, 'sound/weapons/egloves.ogg', 75, 1)
 			L.Weaken(4)
 			L.Stun(4)
 			L.stuttering = max(L.stuttering, 4)
@@ -165,8 +165,8 @@ var/global/moth_amount = 0 // CHOMPEnable, Rykka waz here. *pawstamp*
 	..()
 
 /mob/living/simple_mob/vore/solargrub/Destroy()
-	existing_solargrubs -= src
-	..()
+	GLOB.existing_solargrubs -= src
+	. = ..()
 
 /mob/living/simple_mob/vore/solargrub/handle_light()
 	. = ..()

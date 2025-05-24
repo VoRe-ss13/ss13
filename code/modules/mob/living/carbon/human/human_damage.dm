@@ -1,6 +1,6 @@
 //Updates the mob's health from organs and mob damage variables
 /mob/living/carbon/human/updatehealth()
-	var/huskmodifier = 2.5 //VOREStation Edit // With 1.5, you need 250 burn instead of 200 to husk a human.
+	var/huskmodifier = 2.5 // With 1.5, you need 250 burn instead of 200 to husk a human.
 
 	if(status_flags & GODMODE)
 		health = getMaxHealth()
@@ -28,7 +28,7 @@
 			switch(damage)
 				if(-INFINITY to 0)
 					//TODO: fix husking
-					if( ((getMaxHealth() - total_burn) < CONFIG_GET(number/health_threshold_dead) * huskmodifier) && stat == DEAD) // CHOMPEdit
+					if( ((getMaxHealth() - total_burn) < (-getMaxHealth()) * huskmodifier) && stat == DEAD) // CHOMPEdit
 						ChangeToHusk()
 					return
 				if(1 to 25)
@@ -43,7 +43,7 @@
 	// CHOMPEdit End: Pain
 
 	//TODO: fix husking
-	if( ((getMaxHealth() - total_burn) < CONFIG_GET(number/health_threshold_dead) * huskmodifier) && stat == DEAD)
+	if( ((getMaxHealth() - total_burn) < (-getMaxHealth()) * huskmodifier) && stat == DEAD)
 		ChangeToHusk()
 	return
 
@@ -516,7 +516,7 @@ This function restores all organs.
 */
 
 /mob/living/carbon/human/apply_damage(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/blocked = 0, var/soaked = 0, var/sharp = FALSE, var/edge = FALSE, var/obj/used_weapon = null, var/projectile = FALSE)
-	if(Debug2)
+	if(GLOB.Debug2)
 		to_world_log("## DEBUG: human/apply_damage() was called on [src], with [damage] damage, an armor value of [blocked], and a soak value of [soaked].")
 	var/obj/item/organ/external/organ = null
 	if(isorgan(def_zone))
@@ -599,7 +599,7 @@ This function restores all organs.
 	if(soaked)
 		damage -= soaked
 
-	if(Debug2)
+	if(GLOB.Debug2)
 		to_world_log("## DEBUG: [src] was hit for [damage].")
 
 	switch(damagetype)

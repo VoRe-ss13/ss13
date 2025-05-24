@@ -231,17 +231,18 @@ class ChatRenderer {
     this.lastScrollHeight = 0;
     this.handleScroll = (type) => {
       const node = this.scrollNode;
-      if (node) {
-        const height = node.scrollHeight;
-        const bottom = node.scrollTop + node.offsetHeight;
-        const scrollTracking =
-          Math.abs(height - bottom) < SCROLL_TRACKING_TOLERANCE ||
-          this.lastScrollHeight === 0;
-        if (scrollTracking !== this.scrollTracking) {
-          this.scrollTracking = scrollTracking;
-          this.events.emit('scrollTrackingChanged', scrollTracking);
-          logger.debug('tracking', this.scrollTracking);
-        }
+      if (!node) {
+        return;
+      }
+      const height = node.scrollHeight;
+      const bottom = node.scrollTop + node.offsetHeight;
+      const scrollTracking =
+        Math.abs(height - bottom) < SCROLL_TRACKING_TOLERANCE ||
+        this.lastScrollHeight === 0;
+      if (scrollTracking !== this.scrollTracking) {
+        this.scrollTracking = scrollTracking;
+        this.events.emit('scrollTrackingChanged', scrollTracking);
+        logger.debug('tracking', this.scrollTracking);
       }
     };
     this.ensureScrollTracking = () => {
@@ -266,18 +267,8 @@ class ChatRenderer {
     else {
       this.rootNode = node;
     }
-    // Find scrollable parent
-    if (this.rootNode) {
-      this.scrollNode = findNearestScrollableParent(
-        this.rootNode,
-      ) as HTMLElement;
-    }
-    if (this.scrollNode) {
-      this.scrollNode.addEventListener('scroll', this.handleScroll);
-    }
-    setTimeout(() => {
-      this.scrollToBottom();
-    });
+    // Attempts to find the scroll node on mount
+    this.tryFindScrollable();
     // Flush the queue
     this.tryFlushQueue();
   }
@@ -291,6 +282,11 @@ class ChatRenderer {
     if (this.isReady() && this.queue.length > 0) {
       this.processBatch(this.queue, { doArchive: doArchive });
       this.queue = [];
+      // In case we had no vaclid scroll node before
+      setTimeout(() => {
+        this.tryFindScrollable();
+        this.scrollToBottom();
+      });
     }
   }
 
@@ -364,18 +360,13 @@ class ChatRenderer {
             }
             blacklistRegexExpressions.push(expr);
           } else {
-            // Lazy init
-            if (!blacklistWords) {
-              blacklistWords = [];
-            }
             // We're not going to let regex characters fuck up our RegEx operation.
             line = line.replace(regexEscapeCharacters, '\\$&');
 
-            blacklistWords.push('^\\s*' + line);
-            blacklistWords.push('^\\[\\d+:\\d+\\]\\s*' + line);
+            blacklistRegexExpressions.push('^' + line);
           }
         }
-        const regexStrBL = blacklistWords.join('|');
+        const regexStrBL = blacklistRegexExpressions.join('|');
         const flagsBL = 'i';
         // We wrap this in a try-catch to ensure that broken regex doesn't break
         // the entire chat.
@@ -446,6 +437,20 @@ class ChatRenderer {
     // automatically clamped to the valid range.
     if (this.scrollNode) {
       this.scrollNode.scrollTop = this.scrollNode.scrollHeight;
+    }
+  }
+
+  tryFindScrollable() {
+    // Find scrollable parent
+    if (this.rootNode) {
+      if (!this.scrollNode || this.scrollNode.scrollHeight === undefined) {
+        this.scrollNode = findNearestScrollableParent(
+          this.rootNode,
+        ) as HTMLElement;
+        if (this.scrollNode) {
+          this.scrollNode.addEventListener('scroll', this.handleScroll);
+        }
+      }
     }
   }
 
@@ -642,10 +647,12 @@ class ChatRenderer {
 
           /* eslint-disable react/no-danger */
           reactRoot.render(
-            <Element {...outputProps}>
-              <span dangerouslySetInnerHTML={oldHtml} />
-            </Element>,
-            childNode,
+            <>
+              <Element {...outputProps}>
+                <span dangerouslySetInnerHTML={oldHtml} />
+              </Element>
+              {childNode}
+            </>,
           );
           /* eslint-enable react/no-danger */
         }
@@ -653,11 +660,16 @@ class ChatRenderer {
         // Highlight text
         if (!message.avoidHighlighting && this.highlightParsers) {
           this.highlightParsers.map((parser) => {
+            const ourUser = node.getElementsByClassName('name');
+            const isEmote = node.getElementsByClassName('emote');
             if (
               !(
                 parser.highlightBlacklist &&
                 parser.blacklistregex &&
-                parser.blacklistregex.test(node.textContent)
+                ((ourUser.length > 0 &&
+                  parser.blacklistregex.test(ourUser[0].textContent)) ||
+                  (isEmote.length > 0 &&
+                    parser.blacklistregex.test(isEmote[0].textContent)))
               )
             ) {
               const highlighted = highlightNode(

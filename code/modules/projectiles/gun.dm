@@ -183,6 +183,19 @@
 			return 0
 
 	var/mob/living/M = user
+	if(istype(M))
+		if(M.has_modifier_of_type(/datum/modifier/underwater_stealth))
+			to_chat(user,span_warning("You cannot use guns whilst hiding underwater!"))
+			return 0
+		else if(M.has_modifier_of_type(/datum/modifier/rednet))
+			to_chat(user,span_warning("Your gun refuses to fire!"))
+			return 0
+		else if(M.has_modifier_of_type(/datum/modifier/trait/thickdigits))
+			to_chat(user,span_warning("Your hands can't pull the trigger!!"))
+			return 0
+		else if(M.has_modifier_of_type(/datum/modifier/shield_projection/melee_focus))
+			to_chat(user,span_warning("The shield projection around you prevents you from using anything but melee!!"))
+			return 0
 	if(dna_lock && attached_lock.stored_dna)
 		if(!authorized_user(user))
 			if(attached_lock.safety_level == 0)
@@ -206,7 +219,7 @@
 		if(P)
 			if(process_projectile(P, user, user, pick(BP_L_FOOT, BP_R_FOOT)))
 				handle_post_fire(user, user)
-				var/datum/gender/TU = gender_datums[user.get_visible_gender()]
+				var/datum/gender/TU = GLOB.gender_datums[user.get_visible_gender()]
 				user.visible_message(
 					span_danger("\The [user] shoots [TU.himself] in the foot with \the [src]!"),
 					span_danger("You shoot yourself in the foot with \the [src]!")
@@ -251,7 +264,7 @@
 		else//Otherwise just make a new one
 			auto_target = new/obj/screen/auto_target(get_turf(A), src)
 			visible_message(span_danger("\The [user] readies the [src]!"))
-			playsound(src, 'sound/weapons/TargetOn.ogg', 50, 1)
+			playsound(src, 'sound/weapons/targeton.ogg', 50, 1)
 			to_chat(user, span_notice("You ready \the [src]!  Click and drag the target around to shoot."))
 			return
 	Fire(A,user,params) //Otherwise, fire normally.
@@ -417,7 +430,8 @@
 				if(one_handed_penalty >= 20)
 					to_chat(user, span_warning("You struggle to keep \the [src] pointed at the correct position with just one hand!"))
 
-			accuracy = initial(accuracy) //Reset our accuracy
+			if(!zoom) //If we're not zoomed, reset our accuracy to our initial accuracy.
+				accuracy = initial(accuracy) //Reset our accuracy
 			last_shot = world.time
 			user.hud_used.update_ammo_hud(user, src)
 			user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
@@ -742,7 +756,7 @@
 		mouthshoot = 0
 		return
 
-/obj/item/gun/proc/toggle_scope(var/zoom_amount=2.0)
+/obj/item/gun/proc/toggle_scope(zoom_amount=2.0)
 	//looking through a scope limits your periphereal vision
 	//still, increase the view size by a tiny amount so that sniping isn't too restricted to NSEW
 	var/zoom_offset = round(world.view * zoom_amount)

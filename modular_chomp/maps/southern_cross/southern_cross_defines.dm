@@ -38,9 +38,8 @@ but they don't actually change anything about the load order
 	full_name = "Southern Cross"
 	path = "southern_cross"
 
-	lobby_icon = 'icons/misc/splash_screen.dmi'	//CHOMPStation Edit
-	lobby_screens = list() //CHOMPStation Edit - CHOMPStation image
-	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'	//CHOMPStation Edit - Job icons for off-duty/exploration
+	lobby_screens = list('modular_chomp/html/lobby/chompstation.webp')
+	id_hud_icons = 'icons/mob/hud_jobs_vr.dmi'
 
 	holomap_smoosh = list(list(
 		Z_LEVEL_STATION_ONE,
@@ -105,7 +104,7 @@ but they don't actually change anything about the load order
 							NETWORK_SUPPLY
 							)
 	usable_email_tlds = list("freemail.nt")
-	allowed_spawns = list("Arrivals Shuttle","Gateway", "Cryogenic Storage", "Cyborg Storage", "Station gateway", "Sif plains", "Fuel Depot", "Tyr Wreckage")
+	allowed_spawns = list("Arrivals Shuttle","Gateway", "Cryogenic Storage", "Cyborg Storage", "Station gateway", "Sif plains", "Fuel Depot", "Tyr Wreckage", "The Dark")
 	default_skybox = /datum/skybox_settings/southern_cross
 	unit_test_exempt_areas = list(/area/ninja_dojo, /area/shuttle/ninja)
 	unit_test_exempt_from_atmos = list(/area/tcomm/chamber)

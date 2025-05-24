@@ -206,6 +206,9 @@
 						if(voice_sounds_list)	//CHOMPEdit, changes to subtle emotes to use mob voice instead
 							M << sound(pick(voice_sounds_list), volume = 25)
 
+		for(var/obj/o in contents)
+			vis_objs |= o
+
 		for(var/obj/O as anything in vis_objs)
 			spawn(0)
 				O.see_emote(src, message, 2)
@@ -490,7 +493,7 @@
 		ourfreq = voice_freq
 
 	if(client)
-		playsound(T, pick(emote_sound), 25, TRUE, falloff = 1 , is_global = TRUE, frequency = ourfreq, ignore_walls = TRUE, preference = /datum/preference/toggle/emote_sounds) //ChompEDIT - ignore walls
+		playsound(T, pick(GLOB.emote_sound), 25, TRUE, falloff = 1 , is_global = TRUE, frequency = ourfreq, ignore_walls = TRUE, preference = /datum/preference/toggle/emote_sounds) //ChompEDIT - ignore walls
 
 	var/list/in_range = get_mobs_and_objs_in_view_fast(T,world.view,2,remote_ghosts = client ? TRUE : FALSE)
 	var/list/m_viewers = in_range["mobs"]
@@ -508,6 +511,6 @@
 	set name = "Select Speech Bubble"
 	set category = "OOC.Chat Settings" //CHOMPEdit
 
-	var/new_speech_bubble = tgui_input_list(src, "Pick new voice (default for automatic selection)", "Character Preference", selectable_speech_bubbles)
+	var/new_speech_bubble = tgui_input_list(src, "Pick new voice (default for automatic selection)", "Character Preference", GLOB.selectable_speech_bubbles)
 	if(new_speech_bubble)
 		custom_speech_bubble = new_speech_bubble

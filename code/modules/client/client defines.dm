@@ -171,7 +171,7 @@
 
 	#ifdef CARDINAL_INPUT_ONLY
 
-	/// Movement dir of the most recently pressed movement key.  Used in cardinal-only movement mode.
+	/// Movement dir of the most recently pressed movement key.  Used in GLOB.cardinal-only movement mode.
 	var/last_move_dir_pressed = NONE
 
 	#endif
@@ -181,3 +181,6 @@
 
 	/// Token used for the external chatlog api. Only valid for the current round.
 	var/chatlog_token
+
+	/// The DPI scale of the client. 1 is equivalent to 100% window scaling, 2 will be 200% window scaling
+	var/window_scaling

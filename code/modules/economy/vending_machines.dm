@@ -459,6 +459,7 @@
 					/obj/item/reagent_containers/glass/bottle/toxin = 4,
 					/obj/item/reagent_containers/syringe/antiviral = 4,
 					/obj/item/reagent_containers/syringe = 12,
+					/obj/item/reagent_containers/hypospray/autoinjector/allergen = 6,
 					/obj/item/healthanalyzer = 5,
 					/obj/item/reagent_containers/glass/beaker = 4,
 					/obj/item/reagent_containers/dropper = 2,
@@ -887,11 +888,12 @@
 					/obj/item/toy/plushie/teshari/y_yw = 1,
 					//YawnWider Add End
 					//CHOMPStation Add Start
-					/obj/item/toy/plushie/red_dragon = 1,
-					/obj/item/toy/plushie/green_dragon = 1,
-					/obj/item/toy/plushie/red_eastdragon = 1,
-					/obj/item/toy/plushie/green_eastdragon = 1,
-					/obj/item/toy/plushie/gold_eastdragon = 1,
+					/obj/item/toy/plushie/dragon = 1,
+					/obj/item/toy/plushie/dragon/green = 1,
+					/obj/item/toy/plushie/dragon/red_east = 1,
+					/obj/item/toy/plushie/dragon/green_east = 1,
+					/obj/item/toy/plushie/dragon/gold_east = 1,
+					/obj/item/toy/plushie/dragon/customizable = 10,
 					/obj/item/toy/plushie/teppi = 1,
 					/obj/item/toy/plushie/teppi/alt = 1
 					//CHOMPStation Add End
@@ -947,11 +949,12 @@
 					/obj/item/toy/plushie/teshari/y_yw = 150,
 					//YawnWider Add End
 					//CHOMPStation Add Start
-					/obj/item/toy/plushie/red_dragon = 50,
-					/obj/item/toy/plushie/green_dragon = 50,
-					/obj/item/toy/plushie/red_eastdragon = 50,
-					/obj/item/toy/plushie/green_eastdragon = 50,
-					/obj/item/toy/plushie/gold_eastdragon = 500,
+					/obj/item/toy/plushie/dragon = 50,
+					/obj/item/toy/plushie/dragon/green = 50,
+					/obj/item/toy/plushie/dragon/red_east = 50,
+					/obj/item/toy/plushie/dragon/green_east = 50,
+					/obj/item/toy/plushie/dragon/gold_east = 500,
+					/obj/item/toy/plushie/dragon/customizable = 50,
 					/obj/item/toy/plushie/teppi = 50,
 					/obj/item/toy/plushie/teppi/alt = 50
 					//CHOMPStation Add End

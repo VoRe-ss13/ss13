@@ -166,11 +166,11 @@
 	return shock_damage
 
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
-	if (src.health >= CONFIG_GET(number/health_threshold_crit))
+	if (health >= get_crit_point() || on_fire)
 		if(src == M && ishuman(src))
 			var/mob/living/carbon/human/H = src
-			var/datum/gender/T = gender_datums[H.get_visible_gender()]
-			src.visible_message( \
+			var/datum/gender/T = GLOB.gender_datums[H.get_visible_gender()]
+			visible_message( \
 				span_notice("[src] examines [T.himself]."), \
 				span_notice("You check yourself for injuries.") \
 				)
@@ -251,7 +251,7 @@
 
 			var/show_ssd
 			var/mob/living/carbon/human/H = src
-			var/datum/gender/T = gender_datums[H.get_visible_gender()] // make sure to cast to human before using get_gender() or get_visible_gender()!
+			var/datum/gender/T = GLOB.gender_datums[H.get_visible_gender()] // make sure to cast to human before using get_gender() or get_visible_gender()!
 			if(istype(H)) show_ssd = H.species.show_ssd
 			if(show_ssd && !client && !teleop)
 				M.visible_message(span_notice("[M] shakes [src] trying to wake [T.him] up!"), \
@@ -265,7 +265,7 @@
 									span_notice("You shake [src] trying to wake [T.him] up!"))
 			else
 				var/mob/living/carbon/human/hugger = M
-				var/datum/gender/TM = gender_datums[M.get_visible_gender()]
+				var/datum/gender/TM = GLOB.gender_datums[M.get_visible_gender()]
 				if(M.resting == 1) //Are they resting on the ground?
 					M.visible_message(span_notice("[M] grabs onto [src] and pulls [TM.himself] up"), \
 							span_notice("You grip onto [src] and pull yourself up off the ground!"))
@@ -372,7 +372,7 @@
 	if(istype(A, /mob/living/carbon) && prob(10))
 		var/mob/living/carbon/human/H = A
 		for(var/datum/disease/D in GetViruses())
-			if(D.spread_flags & CONTACT_GENERAL)
+			if(D.spread_flags & DISEASE_SPREAD_CONTACT)
 				H.ContractDisease(D)
 
 /mob/living/carbon/cannot_use_vents()
@@ -530,5 +530,5 @@
 		if(prob(D.infectivity))
 			D.spread()
 
-		if(stat != DEAD || D.allow_dead)
+		if(stat != DEAD || global_flag_check(D.virus_modifiers, SPREAD_DEAD))
 			D.stage_act()

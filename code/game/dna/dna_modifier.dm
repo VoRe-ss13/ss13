@@ -227,7 +227,7 @@
 		WC.forceMove(get_turf(src))
 		occupant = null
 	// Disconnect from our terminal
-	for(var/dirfind in cardinal)
+	for(var/dirfind in GLOB.cardinal)
 		var/obj/machinery/computer/scan_consolenew/console = locate(/obj/machinery/computer/scan_consolenew, get_step(src, dirfind))
 		if(console && console.connected == src)
 			console.connected = null
@@ -368,7 +368,7 @@
 		R.mydna.dna.ResetSE()
 		buffers[i+1]=R
 	// Traitgenes don't alter direction of computer as this scans for neighbour
-	for(var/dirfind in cardinal)
+	for(var/dirfind in GLOB.cardinal)
 		connected = locate(/obj/machinery/dna_scannernew, get_step(src, dirfind))
 		if(connected)
 			break
@@ -478,8 +478,8 @@
 		if(!allowed || (NOCLONE in WC.mutations) || !WC.dna)
 			occupantData["isViableSubject"] = 0
 		occupantData["health"] = WC.health
-		occupantData["maxHealth"] = WC.maxHealth
-		occupantData["minHealth"] = CONFIG_GET(number/health_threshold_dead)
+		occupantData["maxHealth"] = WC.getMaxHealth()
+		occupantData["minHealth"] = -(WC.getMaxHealth())
 		occupantData["uniqueEnzymes"] = WC.dna.unique_enzymes
 		occupantData["uniqueIdentity"] = WC.dna.uni_identity
 		occupantData["structuralEnzymes"] = WC.dna.struc_enzymes

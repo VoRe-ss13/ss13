@@ -81,16 +81,8 @@
 	//Soundy emotey things.
 	var/scream_verb_1p = "scream"
 	var/scream_verb_3p = "screams"
-	// CHOMPEdit Start: Overriding with our own species-specific sounds.
-	// If you're wanting to know where the lists are per-species, go to sound.dm
-	/*
-	var/male_scream_sound = list('sound/effects/mob_effects/m_scream_1.ogg','sound/effects/mob_effects/m_scream_2.ogg','sound/effects/mob_effects/m_scream_3.ogg','sound/effects/mob_effects/m_scream_4.ogg') //CHOMpedit start : Added tgstation screams
-	var/female_scream_sound = list('sound/effects/mob_effects/f_scream_1.ogg','sound/effects/mob_effects/f_scream_2.ogg','sound/effects/mob_effects/f_scream_3.ogg','sound/effects/mob_effects/f_scream_4.ogg') //CHOMPedit end
-	var/male_cough_sounds = list('sound/effects/mob_effects/m_cougha.ogg','sound/effects/mob_effects/m_coughb.ogg', 'sound/effects/mob_effects/m_coughc.ogg')
-	var/female_cough_sounds = list('sound/effects/mob_effects/f_cougha.ogg','sound/effects/mob_effects/f_coughb.ogg')
-	var/male_sneeze_sound = 'sound/effects/mob_effects/sneeze.ogg'
-	var/female_sneeze_sound = 'sound/effects/mob_effects/f_sneeze.ogg'
-	*/
+	var/pain_verb_1p = list("shout", "growl", "grunt", "gasp")
+	var/pain_verb_3p = list("shouts", "growls", "grunts", "gasps")
 	/* Our base species sounds.
 	 * Note that species_sounds is meant to be used in the place of gendered sound.
 	 * If your species has gendered sounds, set 'gender_specific_species_sounds' to TRUE, and define your gendered sounds below.
@@ -106,7 +98,6 @@
 	var/gasp_volume = 50 // Self-explanatory, define this separately on your species if the sound files are louder.
 	var/death_volume = 50 // Self-explanatory, define this separately on your species if the sound files are louder.
 	// var/species_sounds_herm // If you want a custom sound played for other genders, just add them like so
-	// CHOMPEdit End
 
 	var/footstep = FOOTSTEP_MOB_HUMAN
 	var/list/special_step_sounds = null
@@ -253,10 +244,6 @@
 	var/gluttonous											// Can eat some mobs. 1 for mice, 2 for monkeys, 3 for people.
 	var/soft_landing = FALSE								// Can fall down and land safely on small falls.
 
-	var/drippy = FALSE 										// If we drip or not. Primarily for goo beings.
-	var/photosynthesizing = FALSE							// If we get nutrition from light or not.
-	var/shrinks = FALSE										// If we shrink when we have no nutrition. Not added but here for downstream's sake.
-	var/grows = FALSE										// Same as above but if we grow when >1000 nutrition.
 	var/crit_mod = 1										// Used for when we go unconscious. Used downstream.
 	var/list/env_traits = list()
 	var/pixel_offset_x = 0									// Used for offsetting 64x64 and up icons.
@@ -357,12 +344,6 @@
 	var/bloodsucker = FALSE // Allows safely getting nutrition from blood.
 	var/bloodsucker_controlmode = "always loud" //Allows selecting between bloodsucker control modes. Always Loud corresponds to original implementation.
 
-	var/is_weaver = FALSE
-	var/silk_production = FALSE
-	var/silk_reserve = 100
-	var/silk_max_reserve = 500
-	var/silk_color = "#FFFFFF"
-
 	var/list/traits = list()
 	//Vars that need to be copied when producing a copy of species.
 	var/list/copy_vars = list("base_species", "icobase", "deform", "tail", "tail_animation", "icobase_tail", "color_mult", "primitive_form", "appearance_flags", "flesh_color", "base_color", "blood_mask", "damage_mask", "damage_overlays", "move_trail", "has_floating_eyes")
@@ -380,6 +361,7 @@
 	var/list/food_preference = list() //RS edit
 	var/food_preference_bonus = 0
 
+	var/datum/component/species_component = null // The component that this species uses. Example: Xenochimera use /datum/component/xenochimera
 
 	// For Lleill and Hanner
 	var/lleill_energy = 200
@@ -550,7 +532,6 @@
 			span_notice("[target] moves to avoid being touched by you!"), )
 		return
 
-	//VOREStation Edit Start - Headpats and Handshakes.
 	if(H.zone_sel.selecting == BP_HEAD)
 		if(target.touch_reaction_flags & SPECIES_TRAIT_PATTING_DEFENCE)
 			H.visible_message( \
@@ -615,6 +596,23 @@
 	for(var/datum/trait/env_trait in env_traits)
 		env_trait.handle_environment_special(H)
 	return
+
+/datum/species/proc/handle_species_components(var/mob/living/carbon/human/H)
+	SHOULD_NOT_OVERRIDE(TRUE)
+
+	//Xenochimera Species Component
+	var/datum/component/xenochimera/xc = H.get_xenochimera_component()
+	if(xc)
+		if(!H.stat || !(xc.revive_ready == REVIVING_NOW || xc.revive_ready == REVIVING_DONE))
+			SEND_SIGNAL(H, COMSIG_XENOCHIMERA_COMPONENT)
+
+	//Shadekin Species Component.
+	/* //For when shadekin actually have their component control everything.
+	var/datum/component/shadekin/sk = H.get_xenochimera_component()
+	if(sk)
+		if(!H.stat || !(xc.revive_ready == REVIVING_NOW || xc.revive_ready == REVIVING_DONE))
+			SEND_SIGNAL(H, COMSIG_SHADEKIN_COMPONENT)
+	*/
 
 // Used to update alien icons for aliens.
 /datum/species/proc/handle_login_special(var/mob/living/carbon/human/H)
@@ -767,6 +765,10 @@
 	else
 		..()
 
+/datum/species/proc/apply_components(var/mob/living/carbon/human/H)
+	if(species_component)
+		H.LoadComponent(species_component)
+
 /datum/species/proc/produceCopy(var/list/traits, var/mob/living/carbon/human/H, var/custom_base, var/reset_dna = TRUE) // Traitgenes reset_dna flag required, or genes get reset on resleeve
 	ASSERT(src)
 	ASSERT(istype(H))
@@ -789,7 +791,7 @@
 	//If you had traits, apply them
 	if(new_copy.traits)
 		for(var/trait in new_copy.traits)
-			var/datum/trait/T = all_traits[trait]
+			var/datum/trait/T = GLOB.all_traits[trait]
 			T.apply(new_copy, H, new_copy.traits[trait])
 
 	//Set up a mob

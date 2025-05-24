@@ -25,7 +25,7 @@
 	var_changes = list("unusual_running" = 1)
 
 	custom_only = FALSE //I think this is probably fine since it's half RP trait and half mechanical trait. also you can't have speed and use your hands so this is kinda niche outside of travel time reduction.
-	banned_species = list(SPECIES_ALRAUNE, SPECIES_SHADEKIN_CREW, SPECIES_TESHARI, SPECIES_TAJARAN, SPECIES_DIONA, SPECIES_UNATHI, SPECIES_VASILISSAN, SPECIES_XENOCHIMERA) //i assume if a dev made your base slowdown different then you shouldn't have this.
+	banned_species = list(SPECIES_ALRAUNE, SPECIES_SHADEKIN_CREW, SPECIES_TESHARI, SPECIES_TAJARAN, SPECIES_DIONA, SPECIES_UNATHI, SPECIES_VASILISSAN, SPECIES_XENOCHIMERA, SPECIES_VOX) //i assume if a dev made your base slowdown different then you shouldn't have this.
 	excludes = list(/datum/trait/positive/speed_fast) // olympic sprinters don't naruto run
 
 /datum/trait/positive/hardy
@@ -203,21 +203,25 @@
 /datum/trait/positive/weaver
 	name = "Weaver"
 	desc = "You can produce silk and create various articles of clothing and objects."
-	category = 0 //CHOMPEdit making weaver a neutral trait instead
-	cost = 0 //Also not worth 2 points, wtf, this is literally just fluff
-	var_changes = list("is_weaver" = 1)
-//	allowed_species = list(SPECIES_HANNER, SPECIES_CUSTOM) //So it only shows up for custom species and hanner CHOMPedit: We allowed further access of this.
-	custom_only = FALSE
-	has_preferences = list("silk_production" = list(TRAIT_PREF_TYPE_BOOLEAN, "Silk production on spawn", TRAIT_VAREDIT_TARGET_SPECIES), \
-							"silk_color" = list(TRAIT_PREF_TYPE_COLOR, "Silk color", TRAIT_VAREDIT_TARGET_SPECIES))
+	// CHOMPEdit Start, making weaver a neutral trait instead, 2 -> 0 cost
+	category = 0
+	cost = 0
+	// CHOMPEdit End
+	// allowed_species = list(SPECIES_HANNER, SPECIES_CUSTOM) //So it only shows up for custom species and hanner // CHOMPRemove
 
-/datum/trait/positive/weaver/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	custom_only = FALSE
+	has_preferences = list("silk_production" = list(TRAIT_PREF_TYPE_BOOLEAN, "Silk production on spawn", TRAIT_NO_VAREDIT_TARGET), \
+							"silk_color" = list(TRAIT_PREF_TYPE_COLOR, "Silk color", TRAIT_NO_VAREDIT_TARGET))
+	added_component_path = /datum/component/weaver
+
+/datum/trait/positive/weaver/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/list/trait_prefs)
 	..()
-	add_verb(H, /mob/living/carbon/human/proc/check_silk_amount)
-	add_verb(H, /mob/living/carbon/human/proc/toggle_silk_production)
-	add_verb(H, /mob/living/carbon/human/proc/weave_structure)
-	add_verb(H, /mob/living/carbon/human/proc/weave_item)
-	add_verb(H, /mob/living/carbon/human/proc/set_silk_color)
+	var/datum/component/weaver/W = H.GetComponent(added_component_path)
+	if(S.get_bodytype() == SPECIES_VASILISSAN)
+		W.silk_reserve = 500
+		W.silk_max_reserve = 1000
+	W.silk_production = trait_prefs["silk_production"]
+	W.silk_color = lowertext(trait_prefs["silk_color"])
 
 /datum/trait/positive/aquatic
 	name = "Aquatic"
@@ -370,8 +374,8 @@
 	name = "Photosynthesis"
 	desc = "Your body is able to produce nutrition from being in light."
 	cost = 3
-	var_changes = list("photosynthesizing" = TRUE)
 	can_take = ORGANICS|SYNTHETICS //Synths actually use nutrition, just with a fancy covering.
+	added_component_path = /datum/component/photosynth
 
 /datum/trait/positive/rad_resistance
 	name = "Radiation Resistance"
