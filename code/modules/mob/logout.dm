@@ -1,4 +1,5 @@
 /mob/Logout()
+	SEND_SIGNAL(src, COMSIG_MOB_LOGOUT)
 	SStgui.on_logout(src) // Cleanup any TGUIs the user has open
 	player_list -= src
 	disconnect_time = world.realtime	//VOREStation Addition: logging when we disappear.
@@ -6,7 +7,7 @@
 	log_access_out(src)
 	unset_machine()
 	if(GLOB.admin_datums[src.ckey])
-		message_admins("Staff logout: [key_name(src)]") // CHOMPEdit: Admin logout notice displays no matter what//Edit2: STAFF
+		message_admins("Staff logout: [key_name(src)]") // Staff logout notice displays no matter what
 		if (ticker && ticker.current_state == GAME_STATE_PLAYING) //Only report this stuff if we are currently playing.
 			var/admins_number = GLOB.admins.len
 

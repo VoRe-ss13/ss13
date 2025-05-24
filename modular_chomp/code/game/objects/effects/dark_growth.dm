@@ -46,15 +46,14 @@
 				to_chat(L, span_danger("The more you move through this darkness, the more you can feel a throbbing, shooting ache in your bones."))
 			if(prob(5))
 				L.visible_message("[L]'s body gives off a faint, sparking, haze...", "Your body gives off a faint, sparking, haze...", runemessage = "gives off a faint, sparking haze")
-		else if(istype(L.species, /datum/species/shadekin))
-			var/obj/item/organ/internal/brain/shadekin/B = L.internal_organs_by_name["brain"]
-			B.dark_energy += 10
+		var/datum/component/shadekin/comp = L.GetComponent(/datum/component/shadekin)
+		if(comp)
+			comp.dark_energy += 10
 			if(prob(10))
 				to_chat(L, span_notice("You can feel the energy flowing into you!"))
-		else
-			if(prob(0.25))
-				to_chat(L, span_danger("The darkness seethes under your feet..."))
-				L.hallucination += 50
+		else if(prob(0.25))
+			to_chat(L, span_danger("The darkness seethes under your feet..."))
+			L.hallucination += 50
 
 /obj/effect/dark/proc/light_check()
 	var/turf/T = get_turf(src)
@@ -142,7 +141,7 @@
 
 	var/turf/T1 = get_turf(src)
 	if(T1.get_lumcount() < 0.4)
-		for(var/dirn in cardinal)
+		for(var/dirn in GLOB.cardinal)
 			var/turf/T2 = get_step(src, dirn)
 
 			if(!istype(T2) || locate(/obj/effect/dark) in T2 || istype(T2.loc, /area/arrival) || isspace(T2) || istype(T2, /turf/simulated/open))

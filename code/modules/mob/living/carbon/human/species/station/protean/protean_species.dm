@@ -61,7 +61,7 @@
 
 	rarity_value = 5
 
-	species_sounds = "Robotic" // CHOMPEnable
+	species_sounds = "Robotic"
 
 	crit_mod = 4	//Unable to go crit  // CHOMPEnable
 	var/obj/item/rig/protean/OurRig
@@ -172,7 +172,7 @@
 	return S.get_icobase(H, get_deform)
 
 /datum/species/protean/get_valid_shapeshifter_forms(var/mob/living/carbon/human/H)
-	var/static/list/protean_shapeshifting_forms = GLOB.playable_species.Copy() - SPECIES_PROMETHEAN
+	var/list/protean_shapeshifting_forms = GLOB.playable_species.Copy() - SPECIES_PROMETHEAN //Removing the 'static' here fixes it returning an empty list. I do not know WHY that is the case, but it is for some reason. This needs to be investigated further, but this fixes the issue at the moment.
 	return protean_shapeshifting_forms
 
 /datum/species/protean/get_tail(var/mob/living/carbon/human/H)
@@ -266,7 +266,7 @@
 	pseudodead = 1
 
 /datum/species/protean/handle_environment_special(var/mob/living/carbon/human/H)
-	if((H.getActualBruteLoss() + H.getActualFireLoss()) > H.maxHealth*0.5 && isturf(H.loc)) //So, only if we're not a blob (we're in nullspace) or in someone (or a locker, really, but whatever)
+	if((H.getActualBruteLoss() + H.getActualFireLoss()) > H.getMaxHealth()*0.5 && isturf(H.loc)) //So, only if we're not a blob (we're in nullspace) or in someone (or a locker, really, but whatever)
 		return ..() //Any instakill shot runtimes since there are no organs after this. No point to not skip these checks, going to nullspace anyway.
 
 /*CHOMP Station removal start

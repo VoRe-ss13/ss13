@@ -253,7 +253,8 @@
 		/obj/item/sleevemate,
 		/obj/item/mass_spectrometer,
 		/obj/item/surgical,
-		/obj/item/clothing/mask/chewable/candy/lolli // VOREstation edit end
+		/obj/item/clothing/mask/chewable/candy/lolli,
+		/obj/item/extrapolator
 		)
 
 /obj/item/storage/belt/medical/emt
@@ -530,7 +531,8 @@
 		/obj/item/ano_scanner,
 		/obj/item/pickaxe/hand,
 		/obj/item/xenoarch_multi_tool,
-		/obj/item/pickaxe/excavationdrill
+		/obj/item/pickaxe/excavationdrill,
+		/obj/item/storage/sample_container
 		)
 
 /obj/item/storage/belt/fannypack

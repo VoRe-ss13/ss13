@@ -48,15 +48,15 @@
 	#include "relicbase-2.dmm" //Underground - Z2
 	#include "relicbase-3.dmm" //Ground level - Z3
 	#include "relicbase-4.dmm" //Upper outpost levels - Z4
-	#include "relicbase-5.dmm" //the SKY - Z5
-	#include "relicbase-6.dmm" //Mines - Z6
-	#include "relicbase-7.dmm"	//Wilderness - Z7
-	#include "relicbase-8.dmm"  //Wilderness sky - Z8
-	#include "relicbase-9.dmm" //Ocean/Plains - Z9
-	#include "relicbase-10.dmm" //Surface Mines - Z10
-	#include "relicbase-11.dmm" //Explo carrier - Z11
-	#include "relicbase-12.dmm" //CC - Z12
-	#include "relicbase-13.dmm" //Transit - Z13
+	// #include "relicbase-5.dmm" //the SKY - Z5 //TORCH Removal
+	#include "relicbase-6.dmm" //Mines - Z5 //TORCHEdit
+	#include "relicbase-7.dmm"	//Wilderness - Z6 //TORCHEdit
+	//#include "relicbase-8.dmm"  //Wilderness sky - Z8 //TORCH Removal
+	#include "relicbase-9.dmm" //Ocean/Plains - Z7 //TORCHEdit
+	//#include "relicbase-10.dmm" //Surface Mines - Z10 //TORCH Removal
+	#include "relicbase-11.dmm" //Explo carrier - Z8 //TORCHEdit
+	#include "relicbase-12.dmm" //CC - Z9 //TORCHEdit
+	#include "relicbase-13.dmm" //Transit - Z10 //TORCHEdit
 
 
 //	#include "southern_cross-casino.dmm" //CHOMPedit: Disabled to save resources and loaded in during events - Jack

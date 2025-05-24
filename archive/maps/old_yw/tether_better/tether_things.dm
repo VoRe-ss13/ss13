@@ -29,32 +29,32 @@
 	external_pressure_bound = ONE_ATMOSPHERE * 1.1
 
 
-/obj/effect/step_trigger/teleporter/to_mining/New()
-	..()
+/obj/effect/step_trigger/teleporter/to_mining/Initialize(mapload)
+	. = ..()
 	teleport_x = src.x
 	teleport_y = 2
 	teleport_z = Z_LEVEL_SURFACE_MINE
 
-/obj/effect/step_trigger/teleporter/from_mining/New()
-	..()
+/obj/effect/step_trigger/teleporter/from_mining/Initialize(mapload)
+	. = ..()
 	teleport_x = src.x
 	teleport_y = world.maxy - 1
 	teleport_z = Z_LEVEL_SURFACE_LOW
 
-/obj/effect/step_trigger/teleporter/to_solars/New()
-	..()
+/obj/effect/step_trigger/teleporter/to_solars/Initialize(mapload)
+	. = ..()
 	teleport_x = world.maxx - 1
 	teleport_y = src.y
 	teleport_z = Z_LEVEL_SOLARS
 
-/obj/effect/step_trigger/teleporter/from_solars/New()
-	..()
+/obj/effect/step_trigger/teleporter/from_solars/Initialize(mapload)
+	. = ..()
 	teleport_x = 2
 	teleport_y = src.y
 	teleport_z = Z_LEVEL_SURFACE_LOW
 
-/obj/effect/step_trigger/teleporter/wild/New()
-	..()
+/obj/effect/step_trigger/teleporter/wild/Initialize(mapload)
+	. = ..()
 
 	//If starting on east/west edges.
 	if (src.x == 1)
@@ -74,7 +74,7 @@
 /obj/effect/step_trigger/teleporter/to_underdark
 	icon = 'icons/obj/structures/stairs_64x64.dmi'
 	icon_state = ""
-	invisibility = 0
+	invisibility = INVISIBILITY_NONE
 
 /obj/effect/step_trigger/teleporter/to_underdark/Initialize(mapload)
 	. = ..()
@@ -88,7 +88,7 @@
 /obj/effect/step_trigger/teleporter/from_underdark
 	icon = 'icons/obj/structures/stairs_64x64.dmi'
 	icon_state = ""
-	invisibility = 0
+	invisibility = INVISIBILITY_NONE
 
 /obj/effect/step_trigger/teleporter/from_underdark/Initialize(mapload)
 	. = ..()
@@ -99,14 +99,14 @@
 		if(Z.name == "Mining Outpost")
 			teleport_z = Z.z
 
-/obj/effect/step_trigger/teleporter/to_plains/New()
-	..()
+/obj/effect/step_trigger/teleporter/to_plains/Initialize(mapload)
+	. = ..()
 	teleport_x = src.x
 	teleport_y = world.maxy - 1
 	teleport_z = Z_LEVEL_PLAINS
 
-/obj/effect/step_trigger/teleporter/from_plains/New()
-	..()
+/obj/effect/step_trigger/teleporter/from_plains/Initialize(mapload)
+	. = ..()
 	teleport_x = src.x
 	teleport_y = 2
 	teleport_z = Z_LEVEL_SURFACE_LOW
@@ -142,7 +142,7 @@
 
 // Invisible object that blocks z transfer to/from its turf and the turf above.
 /obj/effect/ceiling
-	invisibility = 101 // nope cant see this
+	invisibility = INVISIBILITY_ABSTRACT // nope cant see this
 	anchored = 1
 
 /obj/effect/ceiling/CheckExit(atom/movable/O as mob|obj, turf/target as turf)
@@ -346,8 +346,8 @@ var/global/list/latejoin_tram   = list()
 	desc = "Neutralizes toxins and provides a mild analgesic effect."
 	icon_state = "pill2"
 
-/obj/item/reagent_containers/pill/airlock/New()
-	..()
+/obj/item/reagent_containers/pill/airlock/Initialize(mapload)
+	. = ..()
 	reagents.add_reagent(REAGENT_ID_ANTITOXIN, 15)
 	reagents.add_reagent(REAGENT_ID_PARACETAMOL, 5)
 
@@ -366,8 +366,8 @@ var/global/list/latejoin_tram   = list()
 	name = "expedition weaponry cabinet"
 	req_one_access = list(access_explorer,access_armory)
 
-/obj/structure/closet/secure_closet/guncabinet/excursion/New()
-	..()
+/obj/structure/closet/secure_closet/guncabinet/excursion/Initialize(mapload)
+	. = ..()
 	for(var/i = 1 to 2)
 		new /obj/item/gun/energy/locked/frontier(src)
 	for(var/i = 1 to 2)
