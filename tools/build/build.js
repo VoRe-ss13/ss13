@@ -450,8 +450,13 @@ export const ServerTarget = new Juke.Target({
     const options = {
       dmbFile: `${DME_NAME}.dmb`,
       namedDmVersion: get(DmVersionParameter),
+<<<<<<< HEAD
     }
     await DreamDaemon(options, port, '-trusted -invisible');
+=======
+    };
+    await DreamDaemon(options, port, "-trusted -invisible");
+>>>>>>> 991f558472 ([MIRROR] Nutrition fix (#11001))
   },
 });
 
