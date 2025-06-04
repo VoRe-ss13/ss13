@@ -805,3 +805,34 @@ GLOBAL_LIST_EMPTY(icon_dimensions)
 /atom/proc/extrapolator_act(mob/living/user, obj/item/extrapolator/extrapolator, dry_run = FALSE)
 	. = list(EXTRAPOLATOR_RESULT_DISEASES = list())
 	SEND_SIGNAL(src, COMSIG_ATOM_EXTRAPOLATOR_ACT, user, extrapolator, dry_run, .)
+<<<<<<< HEAD
+=======
+
+/**
+*	Wash this atom
+*
+*	This will clean it off any temporary stuff like blood. Override this in your item to add custom cleaning behavior.
+*	Returns true if any washing was necessary and thus performed
+*	Arguments:
+*	clean_types: any of the CLEAN_ constants
+*/
+/atom/proc/wash(clean_types)
+	SHOULD_CALL_PARENT(TRUE)
+
+	. = FALSE
+	if(SEND_SIGNAL(src, COMSIG_COMPONENT_CLEAN_ACT, clean_types))
+		. = TRUE
+
+	// Basically "if has washable coloration"
+	if(length(atom_colours) >= WASHABLE_COLOUR_PRIORITY && atom_colours[WASHABLE_COLOUR_PRIORITY])
+		remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
+		return TRUE
+
+	if(istype(blood_DNA, /list))
+		blood_DNA = null
+		return TRUE
+
+	blood_color = null
+	germ_level = 0
+	fluorescent = 0
+>>>>>>> 21be1859ac ([MIRROR] Fixes washing related issues (#11007))

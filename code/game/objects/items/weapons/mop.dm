@@ -34,7 +34,12 @@ GLOBAL_LIST_BOILERPLATE(all_mops, /obj/item/mop)
 		if(do_after(user, 40))
 			var/turf/T = get_turf(A)
 			if(T)
+<<<<<<< HEAD
 				T.clean(src, user)
+=======
+				T.wash(CLEAN_SCRUB)
+				reagents.trans_to_turf(T, 1, 10)
+>>>>>>> 21be1859ac ([MIRROR] Fixes washing related issues (#11007))
 			to_chat(user, span_notice("You have finished mopping!"))
 
 
@@ -75,5 +80,10 @@ GLOBAL_LIST_BOILERPLATE(all_mops, /obj/item/mop)
 		if(do_after(user, 20))
 			var/turf/T = get_turf(A)
 			if(T)
+<<<<<<< HEAD
 				T.clean(src, user)
+=======
+				T.wash(CLEAN_SCRUB)
+				reagents.trans_to_turf(T, 1, 10)
+>>>>>>> 21be1859ac ([MIRROR] Fixes washing related issues (#11007))
 			to_chat(user, span_notice("You have finished mopping!"))
