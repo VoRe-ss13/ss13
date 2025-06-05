@@ -122,6 +122,7 @@ export const SubtabBody = (props: {
                       </Button>
                     </LabeledList.Item>
                   ) : null}
+<<<<<<< HEAD
                   {digi_allowed ? (
                     <LabeledList.Item label="Digitigrade">
                       <Button
@@ -133,6 +134,17 @@ export const SubtabBody = (props: {
                       </Button>
                     </LabeledList.Item>
                   ) : null}
+=======
+                  <LabeledList.Item label="Digitigrade">
+                    <Button
+                      inline
+                      onClick={() => act('digitigrade')}
+                      selected={digitigrade}
+                    >
+                      {digitigrade ? 'Yes' : 'No'}
+                    </Button>
+                  </LabeledList.Item>
+>>>>>>> 05d03bf5ae ([MIRROR] Xenoarch adjustments (#11011))
                   <LabeledList.Item label="Blood Type">
                     <Button inline onClick={() => act('blood_type')}>
                       {b_type}
