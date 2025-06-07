@@ -1171,3 +1171,13 @@ Note: This proc can be overwritten to allow for different types of auto-alignmen
 	transform = animation_matrix
 
 	animate(src, alpha = old_alpha, pixel_x = old_x, pixel_y = old_y, transform = old_transform, time = 3, easing = CUBIC_EASING)
+<<<<<<< HEAD
+=======
+
+/obj/item/wash(clean_types)
+	. = ..()
+	if(cleanname)
+		name = cleanname
+	if(cleandesc)
+		desc = cleandesc
+>>>>>>> 559e5b43a0 ([MIRROR] desc not name! (#11029))
