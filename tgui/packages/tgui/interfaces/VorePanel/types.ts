@@ -322,6 +322,42 @@ export type DropdownEntry = {
   value: string;
 };
 
+<<<<<<< HEAD
+=======
+export type checkBoxEntry = {
+  label: string;
+  selection: BooleanLike;
+  ref?: string;
+};
+
+export type generalPrefData = {
+  active_belly: string | null;
+  belly_rub_target: string | null;
+  aestethic_messages: aestMessageData;
+  vore_sprite_color: Record<string, string | undefined>;
+  vore_sprite_multiply: Record<string, BooleanLike>;
+  vore_icon_options: string[];
+};
+
+export type aestMessageData = {
+  possible_messages: string[];
+  aest_subtab: string;
+  max_length: number;
+  active_message:
+    | string
+    | string[]
+    | null
+    | Record<string | number, string | number>; // The record is an ancient data corruption, it's not valid!
+  set_action: string;
+  tooltip: string;
+  sub_action?: string;
+  button_action?: string;
+  button_data?: BooleanLike;
+  button_label?: string;
+  button_tooltip?: string;
+};
+
+>>>>>>> 0fc7bb29d1 ([MIRROR] browse to browser part 1 (#11017))
 export type localPrefs = {
   digestion: preferenceData;
   absorbable: preferenceData;

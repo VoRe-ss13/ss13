@@ -220,3 +220,17 @@
 	var/shake_dir = pick(-1, 1)
 	animate(src, transform=turn(matrix(), 8*shake_dir), pixel_x=init_px + 2*shake_dir, time=1)
 	animate(transform=null, pixel_x=init_px, time=6, easing=ELASTIC_EASING)
+<<<<<<< HEAD
+=======
+
+/obj/item/wash(clean_types)
+	. = ..()
+	if(blood_overlay && clean_types & CLEAN_WASH)
+		overlays.Remove(blood_overlay)
+	if(gurgled && clean_types & CLEAN_WASH)
+		gurgled = FALSE
+		cut_overlay(gurgled_overlays[gurgled_color])
+	if(contaminated && clean_types & CLEAN_RAD) // Phoron and stuff, washing machine needed
+		contaminated = FALSE
+		cut_overlay(contamination_overlay)
+>>>>>>> 0fc7bb29d1 ([MIRROR] browse to browser part 1 (#11017))
