@@ -132,32 +132,29 @@
 	return output
 
 // Use mob.UpdateAppearance()
+/mob/proc/UpdateAppearance(var/list/UI=null)
+	return FALSE
 
 // Simpler. Don't specify UI in order for the mob to use its own.
-/mob/proc/UpdateAppearance(var/list/UI=null)
-	if(ishuman(src))
-		if(UI!=null)
-			src.dna.UI=UI
-			src.dna.UpdateUI()
-		dna.check_integrity()
-		var/mob/living/carbon/human/H = src
-		H.r_hair   = dna.GetUIValueRange(DNA_UI_HAIR_R,    255)
-		H.g_hair   = dna.GetUIValueRange(DNA_UI_HAIR_G,    255)
-		H.b_hair   = dna.GetUIValueRange(DNA_UI_HAIR_B,    255)
+/mob/living/carbon/human/UpdateAppearance(var/list/UI=null)
+	// Rebuild off UI arg if not null
+	if(UI!=null)
+		src.dna.UI=UI
+		src.dna.UpdateUI()
 
-		H.r_facial = dna.GetUIValueRange(DNA_UI_BEARD_R,   255)
-		H.g_facial = dna.GetUIValueRange(DNA_UI_BEARD_G,   255)
-		H.b_facial = dna.GetUIValueRange(DNA_UI_BEARD_B,   255)
+	// Setup dna
+	dna.check_integrity()
+	dna.ApplyToMob(src)
 
-		H.r_skin   = dna.GetUIValueRange(DNA_UI_SKIN_R,    255)
-		H.g_skin   = dna.GetUIValueRange(DNA_UI_SKIN_G,    255)
-		H.b_skin   = dna.GetUIValueRange(DNA_UI_SKIN_B,    255)
+	// Apply dna changes to organ icons
+	force_update_organs()
+	force_update_limbs()
 
-		H.r_eyes   = dna.GetUIValueRange(DNA_UI_EYES_R,    255)
-		H.g_eyes   = dna.GetUIValueRange(DNA_UI_EYES_G,    255)
-		H.b_eyes   = dna.GetUIValueRange(DNA_UI_EYES_B,    255)
-		H.update_eyes()
+	//H.update_body(0) //Done in force_update_limbs already
+	update_eyes()
+	update_hair()
 
+<<<<<<< HEAD
 		H.s_tone   = 35 - dna.GetUIValueRange(DNA_UI_SKIN_TONE, 220) // Value can be negative.
 
 		if(H.gender != NEUTER)
@@ -298,6 +295,9 @@
 		return 1
 	else
 		return 0
+=======
+	return TRUE
+>>>>>>> 75e167a92f ([MIRROR] Dna, Bodyrecord, Xenochi Revive Refactor (#11038))
 
 /mob/living/carbon/human/proc/force_update_organs()
 	for(var/obj/item/organ/O as anything in organs + internal_organs)
