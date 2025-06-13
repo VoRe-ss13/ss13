@@ -204,6 +204,11 @@
 	var/indoor_sounds_type = null
 	var/effect_flags = NONE
 
+<<<<<<< HEAD
+=======
+	VAR_PROTECTED/color_grading = null // Color blending for weather to feel hotter, colder, or stranger
+
+>>>>>>> c60d92bc96 ([MIRROR] small fixes for color grading (#11064))
 /datum/weather/New()
 	if(outdoor_sounds_type)
 		outdoor_sounds = new outdoor_sounds_type(list(), FALSE, TRUE)
