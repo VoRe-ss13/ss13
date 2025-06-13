@@ -92,6 +92,11 @@
 	var/belly_rub_target = null
 	var/soulcatcher_pref_flags = 0
 	var/list/soulcatcher_prefs = list()
+<<<<<<< HEAD
+=======
+	var/max_voreoverlay_alpha = 255
+	var/persistend_edit_mode = FALSE
+>>>>>>> 7ee1ac6c7d ([MIRROR] Minor Tweaks & Changes (#11063))
 
 	var/list/belly_prefs = list()
 	var/vore_taste = "nothing in particular"
@@ -248,6 +253,11 @@
 	belly_rub_target = json_from_file["belly_rub_target"]
 	soulcatcher_pref_flags = json_from_file["soulcatcher_pref_flags"]
 	soulcatcher_prefs = json_from_file["soulcatcher_prefs"]
+<<<<<<< HEAD
+=======
+	persistend_edit_mode = json_from_file["persistend_edit_mode"]
+	max_voreoverlay_alpha = json_from_file["max_voreoverlay_alpha"]
+>>>>>>> 7ee1ac6c7d ([MIRROR] Minor Tweaks & Changes (#11063))
 
 	//Quick sanitize
 	if(isnull(digestable))
@@ -377,6 +387,13 @@
 		soulcatcher_pref_flags = 0
 	if(isnull(soulcatcher_prefs))
 		soulcatcher_prefs = list()
+<<<<<<< HEAD
+=======
+	if(isnull(persistend_edit_mode))
+		persistend_edit_mode = FALSE
+	if(isnull(max_voreoverlay_alpha))
+		max_voreoverlay_alpha = 255
+>>>>>>> 7ee1ac6c7d ([MIRROR] Minor Tweaks & Changes (#11063))
 
 	return TRUE
 
@@ -438,7 +455,13 @@
 			"no_latejoin_prey_warning_persists"		= no_latejoin_prey_warning_persists,
 			"belly_rub_target" = belly_rub_target,
 			"soulcatcher_pref_flags" = soulcatcher_pref_flags,
+<<<<<<< HEAD
 			"soulcatcher_prefs"			= soulcatcher_prefs
+=======
+			"soulcatcher_prefs"			= soulcatcher_prefs,
+			"persistend_edit_mode" = persistend_edit_mode,
+			"max_voreoverlay_alpha" = max_voreoverlay_alpha,
+>>>>>>> 7ee1ac6c7d ([MIRROR] Minor Tweaks & Changes (#11063))
 		)
 
 	//List to JSON
