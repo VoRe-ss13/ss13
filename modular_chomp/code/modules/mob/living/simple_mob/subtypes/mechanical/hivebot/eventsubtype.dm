@@ -146,6 +146,24 @@
 	maxHealth = 5000
 	health = 5000
 
+<<<<<<< HEAD
+=======
+/mob/living/simple_mob/mechanical/mecha/eclipse/hivebot/boss/sifpoi
+	maxHealth = 600
+	health = 600
+	loot_list = list(/obj/item/prop/alien/junk = 100,
+		/obj/item/multitool/alien = 60,
+		/obj/item/stack/cable_coil/alien = 60,
+		/obj/item/tool/crowbar/alien = 60,
+		/obj/item/tool/screwdriver/alien = 60,
+		/obj/item/weldingtool/alien = 60,
+		/obj/item/tool/wirecutters/alien = 60,
+		/obj/item/tool/wrench/alien = 60,
+		/obj/item/cell/device/weapon/recharge/alien = 30,
+		/obj/item/perfect_tele/alien = 100
+			)
+
+>>>>>>> 08c6bdc006 (Small POI fixes (#11050))
 /mob/living/simple_mob/mechanical/mecha/eclipse/hivebot/boss/do_special_attack(atom/A)
 	. = TRUE // So we don't fire a bolt as well.
 	switch(a_intent)
@@ -409,19 +427,24 @@
 
 /obj/item/prop/nanoweave/lime
 	catalogue_data = list(/datum/category_item/catalogue/anomalous/limedisc)
-	icon_state = "limedisc"
+	icon_state = "limedisk"
 
 /obj/item/prop/nanoweave/cyan
 	catalogue_data = list(/datum/category_item/catalogue/anomalous/cyandisc)
-	icon_state = "cyandisc"
+	icon_state = "cyandisk"
 
 /obj/item/prop/nanoweave/orange
 	catalogue_data = list(/datum/category_item/catalogue/anomalous/orangedisc)
-	icon_state = "orangedisc"
+	icon_state = "orangedisk"
 
 /obj/item/prop/nanoweave/terraformers
+<<<<<<< HEAD
 	catalogue_data = list(/datum/category_item/catalogue/anomalous/orangedisc)
 	icon_state = "orangedisc"
+=======
+	catalogue_data = list(/datum/category_item/catalogue/anomalous/terraformers)
+	icon_state = "reddisk"
+>>>>>>> 08c6bdc006 (Small POI fixes (#11050))
 
 
 /datum/category_item/catalogue/anomalous/cyandisc
