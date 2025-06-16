@@ -545,6 +545,13 @@
 #include "code\datums\components\disabilities\nervousness.dm"
 #include "code\datums\components\disabilities\rotting.dm"
 #include "code\datums\components\disabilities\tourettes.dm"
+<<<<<<< HEAD
+=======
+#include "code\datums\components\reagent_hose\connector.dm"
+#include "code\datums\components\reagent_hose\datum.dm"
+#include "code\datums\components\reagent_hose\inflation.dm"
+#include "code\datums\components\reagent_hose\item.dm"
+>>>>>>> 4d08255ebd ([MIRROR] Mob Hose Inflation and Draining (#11070))
 #include "code\datums\components\species\shadekin.dm"
 #include "code\datums\components\species\xenochimera.dm"
 #include "code\datums\components\traits\drippy.dm"
@@ -1781,6 +1788,7 @@
 #include "code\game\objects\structures\electricchair.dm"
 #include "code\game\objects\structures\extinguisher.dm"
 #include "code\game\objects\structures\fence.dm"
+#include "code\game\objects\structures\fence_electric.dm"
 #include "code\game\objects\structures\fireaxe.dm"
 #include "code\game\objects\structures\fitness.dm"
 #include "code\game\objects\structures\fitness_vr.dm"
