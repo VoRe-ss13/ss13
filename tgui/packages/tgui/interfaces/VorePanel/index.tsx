@@ -164,6 +164,12 @@ export const VorePanel = () => {
     host_mobtype,
     unsaved_changes,
     vore_words,
+<<<<<<< HEAD
+=======
+    general_pref_data,
+    min_belly_name,
+    max_belly_name,
+>>>>>>> 87f031d72b ([MIRROR] tgui core 4.3.1 (#11083))
   } = data;
 
   const [tabIndex, setTabIndex] = useState(0);
@@ -178,6 +184,14 @@ export const VorePanel = () => {
       host_mobtype={host_mobtype}
       icon_overflow={icon_overflow}
       vore_words={vore_words}
+<<<<<<< HEAD
+=======
+      toggleEditMode={setEditMode}
+      editMode={editMode}
+      persist_edit_mode={persist_edit_mode}
+      minBellyName={min_belly_name}
+      maxBellyName={max_belly_name}
+>>>>>>> 87f031d72b ([MIRROR] tgui core 4.3.1 (#11083))
     />
   );
   tabs[1] = (

@@ -20,6 +20,14 @@ export const VoreBellySelectionAndCustomization = (props: {
   host_mobtype: hostMob;
   icon_overflow: BooleanLike;
   vore_words: Record<string, string[]>;
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreBellySelectionAndCustomization.tsx
+=======
+  toggleEditMode: React.Dispatch<React.SetStateAction<boolean>>;
+  editMode: boolean;
+  persist_edit_mode: BooleanLike;
+  minBellyName: number;
+  maxBellyName: number;
+>>>>>>> 87f031d72b ([MIRROR] tgui core 4.3.1 (#11083)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreBellySelectionAndCustomization.tsx
 }) => {
   const { act } = useBackend();
 
@@ -30,16 +38,72 @@ export const VoreBellySelectionAndCustomization = (props: {
     host_mobtype,
     icon_overflow,
     vore_words,
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreBellySelectionAndCustomization.tsx
   } = props;
 
+=======
+    toggleEditMode,
+    editMode,
+    persist_edit_mode,
+    minBellyName,
+    maxBellyName,
+  } = props;
+
+  const [showSearch, setShowSearch] = useState(false);
+  const [createNewBelly, setCreateNewBelly] = useState(false);
+  const [currentNewName, setCurrentNewName] = useState('');
+  const [searchedBellies, setSearchedBellies] = useState('');
+
+  const bellySearch = createSearch(
+    searchedBellies,
+    (belly: bellyData) => belly.name,
+  );
+
+  const belliesToDisplay = our_bellies.filter(bellySearch);
+
+  const bellyDropdownNames = our_bellies.map((belly) => {
+    return { displayText: belly.name, value: belly.ref };
+  });
+
+  function applyNewBelly(newName: string) {
+    act('newbelly', { val: newName });
+    clearBellyNameInput();
+  }
+
+  function clearBellyNameInput() {
+    setCreateNewBelly(false);
+    setCurrentNewName('');
+  }
+
+>>>>>>> 87f031d72b ([MIRROR] tgui core 4.3.1 (#11083)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreBellySelectionAndCustomization.tsx
   return (
     <Stack fill>
       <Stack.Item shrink basis="20%">
         <Section title="My Bellies" scrollable fill>
           <Tabs vertical>
-            <Tabs.Tab onClick={() => act('newbelly')}>
-              New
-              <Icon name="plus" ml={0.5} />
+            <Tabs.Tab onClick={() => setCreateNewBelly(true)}>
+              {createNewBelly ? (
+                <Input
+                  fluid
+                  autoFocus
+                  value={currentNewName}
+                  color={
+                    currentNewName.length < minBellyName ? 'red' : undefined
+                  }
+                  maxLength={maxBellyName}
+                  onEnter={(value) => {
+                    applyNewBelly(value);
+                  }}
+                  onChange={(value) => setCurrentNewName(value)}
+                  onEscape={() => clearBellyNameInput()}
+                  onBlur={() => clearBellyNameInput()}
+                />
+              ) : (
+                <>
+                  New
+                  <Icon name="plus" ml={0.5} />
+                </>
+              )}
             </Tabs.Tab>
             <Tabs.Tab onClick={() => act('exportpanel')}>
               Export
