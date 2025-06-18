@@ -698,8 +698,10 @@
 		dat += "</table>"
 
 		qdel(query)
-	usr << browse("<html>[dat]</html>", "window=library")
-	onclose(usr, "library")
+
+	var/datum/browser/popup = new(src, "library", "Delete Book")
+	popup.set_content(dat)
+	popup.open()
 
 /client/proc/toggle_spawning_with_recolour()
 	set name = "Toggle Simple/Robot recolour verb"
