@@ -39,8 +39,15 @@
 		blood_splatter(T, src, 1)
 	else if(istype(data["donor"], /mob/living/carbon/alien))
 		var/obj/effect/decal/cleanable/blood/B = blood_splatter(T, src, 1)
+<<<<<<< HEAD
 		if(B)
 			B.blood_DNA["UNKNOWN DNA STRUCTURE"] = "X*"
+=======
+		B.add_blooddna(A.dna,A)
+	else
+		var/obj/effect/decal/cleanable/blood/B = blood_splatter(T, src, 1)
+		B.add_blooddna(null,null)
+>>>>>>> 4a900ad6c5 ([MIRROR] allow nondna blood smearing (#11091))
 
 /datum/reagent/blood/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 
