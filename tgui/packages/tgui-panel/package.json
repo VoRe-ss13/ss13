@@ -1,18 +1,18 @@
 {
-  "private": true,
   "name": "tgui-panel",
   "version": "6.0.0",
   "dependencies": {
     "common": "workspace:*",
-    "dompurify": "^3.2.4",
+    "dompurify": "^3.2.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tgui": "workspace:*",
+<<<<<<< HEAD
     "tgui-core": "^3.2.0",
+=======
+    "tgui-core": "^4.3.2",
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128))
     "tgui-dev-server": "workspace:*"
   },
-  "devDependencies": {
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.2"
-  }
+  "private": true
 }

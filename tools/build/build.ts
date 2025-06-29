@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 /**
- * Build script for CHOMPStation codebase.
+ * Build script for /tg/station 13 codebase.
  *
  * This script uses Juke Build, read the docs here:
  * https://github.com/stylemistake/juke-build
  */
 
+<<<<<<< HEAD:tools/build/build.js
 import fs from 'fs';
 import https from 'https';
 import { env } from 'process';
@@ -48,14 +49,47 @@ const dependencies = fs.readFileSync('dependencies.sh', 'utf8')
     acc[kv_pair[0]] = kv_pair[1];
     return acc
   }, {})
+=======
+import Bun from "bun";
+import fs from "node:fs";
+import Juke from "./juke/index.js";
+import { bun } from "./lib/bun";
+import { DreamDaemon, DreamMaker, NamedVersionFile } from "./lib/byond";
+import { downloadFile } from "./lib/download";
+import { formatDeps } from "./lib/helpers";
+import { prependDefines } from "./lib/tgs";
+
+export const TGS_MODE = process.env.CBT_BUILD_MODE === "TGS";
+
+export const DME_NAME = "vorestation";
+
+Juke.chdir("../..", import.meta.url);
+
+const dependencies: Record<string, any> = await Bun.file("dependencies.sh")
+  .text()
+  .then(formatDeps)
+  .catch((err) => {
+    Juke.logger.error(
+      "Failed to read dependencies.sh, please ensure it exists and is formatted correctly."
+    );
+    Juke.logger.error(err);
+    throw new Juke.ExitCode(1);
+  });
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
 
 // Canonical path for the cutter exe at this moment
-const getCutterPath = () => {
+function getCutterPath() {
   const ver = dependencies.CUTTER_VERSION;
+<<<<<<< HEAD:tools/build/build.js
   const suffix = process.platform === 'win32' ? '.exe' : '';
   const file_ver = ver.split('.').join('-');
+=======
+  const suffix = process.platform === "win32" ? ".exe" : "";
+  const file_ver = ver.split(".").join("-");
+
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
   return `tools/icon_cutter/cache/hypnagogic${file_ver}${suffix}`;
-};
+}
 
 const cutter_path = getCutterPath();
 
@@ -98,6 +132,7 @@ export const CutterTarget = new Juke.Target({
   executes: async () => {
     const repo = dependencies.CUTTER_REPO;
     const ver = dependencies.CUTTER_VERSION;
+<<<<<<< HEAD:tools/build/build.js
     const suffix = process.platform === 'win32' ? '.exe' : '';
     const download_from = `https://github.com/${repo}/releases/download/${ver}/hypnagogic${suffix}`
     await download_file(download_from, cutter_path);
@@ -106,10 +141,18 @@ export const CutterTarget = new Juke.Target({
         '+x',
         cutter_path,
       ]);
+=======
+    const suffix = process.platform === "win32" ? ".exe" : "";
+    const download_from = `https://github.com/${repo}/releases/download/${ver}/hypnagogic${suffix}`;
+    await downloadFile(download_from, cutter_path);
+    if (process.platform !== "win32") {
+      await Juke.exec("chmod", ["+x", cutter_path]);
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
     }
   },
 });
 
+<<<<<<< HEAD:tools/build/build.js
 async function download_file(url, file) {
   return new Promise((resolve, reject) => {
     let file_stream = fs.createWriteStream(file);
@@ -155,11 +198,40 @@ export const IconCutterTarget = new Juke.Target({
     `tgui/public/tgui.html`,
     cutter_path,
   ],
+=======
+export const IconCutterTarget = new Juke.Target({
+  parameters: [ForceRecutParameter],
+  dependsOn: () => [CutterTarget],
+  inputs: () => {
+    const standard_inputs = [
+      `icons/**/*.png.toml`,
+      `icons/**/*.dmi.toml`,
+      `cutter_templates/**/*.toml`,
+      "tgui/public/tgui.html",
+      cutter_path,
+    ];
+    // Alright we're gonna search out any existing toml files and convert
+    // them to their matching .dmi or .png file
+    const existing_configs = [
+      ...Juke.glob(`icons/**/*.png.toml`),
+      ...Juke.glob(`icons/**/*.dmi.toml`),
+    ];
+    return [
+      ...standard_inputs,
+      ...existing_configs.map((file) => file.replace(".toml", "")),
+    ];
+  },
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
   outputs: ({ get }) => {
     if(get(ForceRecutParameter))
       return [];
     const folders = [
+<<<<<<< HEAD:tools/build/build.js
       ...Juke.glob(`icons/**/*${CUTTER_SUFFIX}`, `modular_chomp/icons/**/*${CUTTER_SUFFIX}`),
+=======
+      ...Juke.glob(`icons/**/*.png.toml`),
+      ...Juke.glob(`icons/**/*.dmi.toml`),
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
     ];
     return folders
       .map((file) => file.replace(`${CUTTER_SUFFIX}`, '.dmi'));
@@ -177,6 +249,7 @@ export const IconCutterTarget = new Juke.Target({
 export const DmMapsIncludeTarget = new Juke.Target({
   executes: async () => {
     const folders = [
+<<<<<<< HEAD:tools/build/build.js
       //...Juke.glob('_maps/map_files/**/modular_pieces/*.dmm'),
       //...Juke.glob('_maps/RandomRuins/**/*.dmm'),
       //...Juke.glob('_maps/RandomZLevels/**/*.dmm'),
@@ -187,6 +260,13 @@ export const DmMapsIncludeTarget = new Juke.Target({
       ...Juke.glob('modular_chomp/maps/relic_base/**/*.dmm'),
       ...Juke.glob('modular_chomp/maps/submap/**/*.dmm'),
       ...Juke.glob('maps/relic_base/**/*.dmm'),
+=======
+      ...Juke.glob("_maps/map_files/**/modular_pieces/*.dmm"),
+      ...Juke.glob("_maps/RandomRuins/**/*.dmm"),
+      ...Juke.glob("_maps/RandomZLevels/**/*.dmm"),
+      ...Juke.glob("_maps/shuttles/**/*.dmm"),
+      ...Juke.glob("_maps/templates/**/*.dmm"),
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
     ];
     const content = folders
       .map((file) => file.replace('_maps/', ''))
@@ -203,6 +283,7 @@ export const DmTarget = new Juke.Target({
     IconCutterTarget,
   ],
   inputs: [
+<<<<<<< HEAD:tools/build/build.js
     '_maps/map_files/generic/**',
     'maps/**/*.dm',
     'maps/relic_base/**/*.dmm', // Placed here so it recompiles on map changes //TORCHEdit - Changing to forbearance
@@ -220,6 +301,16 @@ export const DmTarget = new Juke.Target({
     'modular_chomp/maps/southern_cross/**/*.dmm', // Placed here so it recompiles on map changes
     'modular_chomp/maps/relic_base/**/*.dmm', // Placed here so it recompiles on map changes
     'modular_chomp/maps/submap/**/*.dmm', // Placed here so it recompiles on map changes
+=======
+    "_maps/map_files/generic/**",
+    "maps/**/*.dm",
+    "code/**",
+    "html/**",
+    "icons/**",
+    "interface/**",
+    "sound/**",
+    "tgui/public/tgui.html",
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
     `${DME_NAME}.dme`,
     NamedVersionFile,
   ],
@@ -263,8 +354,16 @@ export const DmTestTarget = new Juke.Target({
     }
     await DreamDaemon(
       options,
+<<<<<<< HEAD:tools/build/build.js
       '-close', '-trusted', '-verbose', '-invisible',
       '-params', 'log-directory=ci'
+=======
+      "-close",
+      "-trusted",
+      "-verbose",
+      "-params",
+      "log-directory=ci"
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
     );
     Juke.rm('*.test.*');
     try {
@@ -278,7 +377,6 @@ export const DmTestTarget = new Juke.Target({
   },
 });
 
-/* We don't have Autowiki
 export const AutowikiTarget = new Juke.Target({
   parameters: [DefineParameter, DmVersionParameter, WarningParameter, NoWarningParameter],
   dependsOn: ({ get }) => [
@@ -306,8 +404,16 @@ export const AutowikiTarget = new Juke.Target({
     }
     await DreamDaemon(
       options,
+<<<<<<< HEAD:tools/build/build.js
       '-close', '-trusted', '-invisible', '-verbose',
       '-params', 'log-directory=ci',
+=======
+      "-close",
+      "-trusted",
+      "-verbose",
+      "-params",
+      "log-directory=ci"
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
     );
     Juke.rm('*.test.*');
     if (!fs.existsSync('data/autowiki_edits.txt')) {
@@ -315,11 +421,11 @@ export const AutowikiTarget = new Juke.Target({
       throw new Juke.ExitCode(1);
     }
   },
-})
-*/
+});
 
-export const YarnTarget = new Juke.Target({
+export const BunTarget = new Juke.Target({
   parameters: [CiParameter],
+<<<<<<< HEAD:tools/build/build.js
   inputs: [
     'tgui/.yarn/+(cache|releases|plugins|sdks)/**/*',
     'tgui/**/package.json',
@@ -329,14 +435,25 @@ export const YarnTarget = new Juke.Target({
     'tgui/.yarn/install-target',
   ],
   executes: ({ get }) => yarn('install', get(CiParameter) && '--immutable'),
+=======
+  inputs: ["tgui/**/package.json"],
+  executes: () => {
+    return bun("install", "--frozen-lockfile", "--ignore-scripts");
+  },
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
 });
 
 export const TgFontTarget = new Juke.Target({
-  dependsOn: [YarnTarget],
+  dependsOn: [BunTarget],
   inputs: [
+<<<<<<< HEAD:tools/build/build.js
     'tgui/.yarn/install-target',
     'tgui/packages/tgfont/**/*.+(js|cjs|svg)',
     'tgui/packages/tgfont/package.json',
+=======
+    "tgui/packages/tgfont/**/*.+(js|mjs|svg)",
+    "tgui/packages/tgfont/package.json",
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
   ],
   outputs: [
     'tgui/packages/tgfont/dist/tgfont.css',
@@ -344,20 +461,40 @@ export const TgFontTarget = new Juke.Target({
     'tgui/packages/tgfont/dist/tgfont.woff2',
   ],
   executes: async () => {
+<<<<<<< HEAD:tools/build/build.js
     await yarn('tgfont:build');
     fs.copyFileSync('tgui/packages/tgfont/dist/tgfont.css', 'tgui/packages/tgfont/static/tgfont.css');
     fs.copyFileSync('tgui/packages/tgfont/dist/tgfont.eot', 'tgui/packages/tgfont/static/tgfont.eot');
     fs.copyFileSync('tgui/packages/tgfont/dist/tgfont.woff2', 'tgui/packages/tgfont/static/tgfont.woff2');
   }
+=======
+    await bun("tgfont:build");
+    fs.mkdirSync("tgui/packages/tgfont/static", { recursive: true });
+    fs.copyFileSync(
+      "tgui/packages/tgfont/dist/tgfont.css",
+      "tgui/packages/tgfont/static/tgfont.css"
+    );
+    fs.copyFileSync(
+      "tgui/packages/tgfont/dist/tgfont.woff2",
+      "tgui/packages/tgfont/static/tgfont.woff2"
+    );
+  },
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
 });
 
 export const TguiTarget = new Juke.Target({
-  dependsOn: [YarnTarget],
+  dependsOn: [BunTarget],
   inputs: [
+<<<<<<< HEAD:tools/build/build.js
     'tgui/.yarn/install-target',
     'tgui/rspack.config.cjs',
     'tgui/**/package.json',
     'tgui/packages/**/*.+(js|cjs|ts|tsx|jsx|scss)',
+=======
+    "tgui/webpack.config.js",
+    "tgui/**/package.json",
+    "tgui/packages/**/*.+(js|cjs|ts|tsx|jsx|scss)",
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
   ],
   outputs: [
     'tgui/public/tgui.bundle.css',
@@ -367,11 +504,16 @@ export const TguiTarget = new Juke.Target({
     'tgui/public/tgui-say.bundle.css',
     'tgui/public/tgui-say.bundle.js',
   ],
+<<<<<<< HEAD:tools/build/build.js
   executes: () => yarn('tgui:build'),
+=======
+  executes: () => bun("tgui:build"),
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
 });
 
 export const TguiEslintTarget = new Juke.Target({
   parameters: [CiParameter],
+<<<<<<< HEAD:tools/build/build.js
   dependsOn: [YarnTarget],
   executes: ({ get }) => yarn('tgui:lint', !get(CiParameter) && '--fix'),
 });
@@ -389,19 +531,44 @@ export const TguiSonarTarget = new Juke.Target({
 export const TguiTscTarget = new Juke.Target({
   dependsOn: [YarnTarget],
   executes: () => yarn('tgui:tsc'),
+=======
+  dependsOn: [BunTarget],
+  executes: ({ get }) => bun("tgui:lint", !get(CiParameter) && "--fix"),
+});
+
+export const TguiPrettierTarget = new Juke.Target({
+  dependsOn: [BunTarget],
+  executes: () => bun("tgui:prettier"),
+});
+
+export const TguiSonarTarget = new Juke.Target({
+  dependsOn: [BunTarget],
+  executes: () => bun("tgui:sonar"),
+});
+
+export const TguiTscTarget = new Juke.Target({
+  dependsOn: [BunTarget],
+  executes: () => bun("tgui:tsc"),
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
 });
 
 export const TguiTestTarget = new Juke.Target({
   parameters: [CiParameter],
+<<<<<<< HEAD:tools/build/build.js
   dependsOn: [YarnTarget],
   executes: ({ get }) => yarn(`tgui:test-${get(CiParameter) ? 'ci' : 'simple'}`),
+=======
+  dependsOn: [BunTarget],
+  executes: () => bun("tgui:test"),
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
 });
 
 export const TguiLintTarget = new Juke.Target({
-  dependsOn: [YarnTarget, TguiPrettierTarget, TguiEslintTarget, TguiTscTarget],
+  dependsOn: [BunTarget, TguiPrettierTarget, TguiEslintTarget, TguiTscTarget],
 });
 
 export const TguiDevTarget = new Juke.Target({
+<<<<<<< HEAD:tools/build/build.js
   dependsOn: [YarnTarget],
   executes: ({ args }) => yarn('tgui:dev', ...args),
 });
@@ -424,6 +591,30 @@ export const TguiPrettierFix = new Juke.Target({
 export const TguiEslintFix = new Juke.Target({
   dependsOn: [YarnTarget],
   executes: () => yarn('tgui:eslint-fix'),
+=======
+  dependsOn: [BunTarget],
+  executes: ({ args }) => bun("tgui:dev", ...args),
+});
+
+export const TguiAnalyzeTarget = new Juke.Target({
+  dependsOn: [BunTarget],
+  executes: () => bun("tgui:analyze"),
+});
+
+export const TguiBenchTarget = new Juke.Target({
+  dependsOn: [BunTarget],
+  executes: () => bun("tgui:bench"),
+});
+
+export const TguiPrettierFix = new Juke.Target({
+  dependsOn: [BunTarget],
+  executes: () => bun("tgui:prettier-fix"),
+});
+
+export const TguiEslintFix = new Juke.Target({
+  dependsOn: [BunTarget],
+  executes: () => bun("tgui:eslint-fix"),
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
 });
 
 export const TguiFix = new Juke.Target({
@@ -461,6 +652,7 @@ export const AllTarget = new Juke.Target({
 
 export const TguiCleanTarget = new Juke.Target({
   executes: async () => {
+<<<<<<< HEAD:tools/build/build.js
     Juke.rm('tgui/public/.tmp', { recursive: true });
     Juke.rm('tgui/public/*.map');
     Juke.rm('tgui/public/*.{chunk,bundle,hot-update}.*');
@@ -470,6 +662,13 @@ export const TguiCleanTarget = new Juke.Target({
     Juke.rm('tgui/.yarn/install-state.gz');
     Juke.rm('tgui/.yarn/install-target');
     Juke.rm('tgui/.pnp.*');
+=======
+    Juke.rm("tgui/public/.tmp", { recursive: true });
+    Juke.rm("tgui/public/*.map");
+    Juke.rm("tgui/public/*.{chunk,bundle,hot-update}.*");
+    Juke.rm("tgui/packages/tgfont/dist", { recursive: true });
+    Juke.rm("tgui/node_modules", { recursive: true });
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
   },
 });
 
@@ -487,6 +686,7 @@ export const CleanTarget = new Juke.Target({
 export const CleanAllTarget = new Juke.Target({
   dependsOn: [CleanTarget],
   executes: async () => {
+<<<<<<< HEAD:tools/build/build.js
     Juke.logger.info('Cleaning up data/logs');
     Juke.rm('data/logs', { recursive: true });
     Juke.logger.info('Cleaning up global yarn cache');
@@ -505,6 +705,13 @@ const prependDefines = (...defines) => {
   fs.writeFileSync(`${DME_NAME}.dme`, `${textToWrite}\n${dmeContents}`);
 };
 
+=======
+    Juke.logger.info("Cleaning up data/logs");
+    Juke.rm("data/logs", { recursive: true });
+  },
+});
+
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
 export const TgsTarget = new Juke.Target({
   dependsOn: [TguiTarget],
   executes: async () => {
@@ -513,5 +720,24 @@ export const TgsTarget = new Juke.Target({
   },
 });
 
+<<<<<<< HEAD:tools/build/build.js
+=======
+Juke.setup({ file: import.meta.url }).then((code) => {
+  // We're using the currently available quirk in Juke Build, which
+  // prevents it from exiting on Windows, to wait on errors.
+  if (code !== 0 && process.argv.includes("--wait-on-error")) {
+    Juke.logger.error("Please inspect the error and close the window.");
+    return;
+  }
+
+  if (TGS_MODE) {
+    // workaround for ESBuild process lingering
+    // Once https://github.com/privatenumber/esbuild-loader/pull/354 is merged and updated to, this can be removed
+    setTimeout(() => process.exit(code), 10000);
+  } else {
+    process.exit(code);
+  }
+});
+>>>>>>> 80972b240c ([Manual MIRROR] manual port of the bun migration (#11128)):tools/build/build.ts
 
 export default TGS_MODE ? TgsTarget : BuildTarget;
