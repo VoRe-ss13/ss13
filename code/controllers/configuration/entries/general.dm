@@ -735,3 +735,21 @@
 
 /datum/config_entry/flag/pixel_size_limit
 	default = FALSE
+<<<<<<< HEAD
+=======
+
+/// These are for tgs4 channels, for discord chatbots used in TGS.
+/datum/config_entry/string/ahelp_channel_tag
+
+/// Turn this off if you don't want the TGS bot sending you messages whenever an ahelp ticket is created.
+/datum/config_entry/flag/discord_ahelps_disabled
+	default = FALSE
+
+/// Turn this on if you want all admin-PMs to go to be sent to discord, and not only the first message of a ticket.
+/datum/config_entry/flag/discord_ahelps_all
+	default = FALSE
+
+/datum/config_entry/number/rounds_until_hard_restart
+	default = -1
+	min_val = 0
+>>>>>>> c71ab6c9bd ([Manual MIRROR] dmapi manual update port (#11138))

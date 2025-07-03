@@ -57,6 +57,7 @@ However, if you want finer control over the installation or build process, you w
 
 **Via Juke Build (cross-platform)**:
 
+<<<<<<< HEAD
 - `tools/build/build tgui` - Build tgui in production mode.
 - `tools/build/build tgui-dev` - Build tgui in production mode.
   - `tools/build/build tgui-dev --reload` - Reload byond cache once.
@@ -68,10 +69,21 @@ However, if you want finer control over the installation or build process, you w
 - `tools/build/build tgui-analyze` - Run a bundle analyzer.
 - `tools/build/build tgui-bench` - Run benchmarks.
 - `tools/build/build tgui-clean` - Clean up tgui folder.
+=======
+- `tools/build/build.sh tgui` - Build tgui in production mode.
+- `tools/build/build.sh tgui-dev` - Build tgui in production mode.
+  - `tools/build/build.sh tgui-dev --reload` - Reload byond cache once.
+  - `tools/build/build.sh tgui-dev --debug` - Run server with debug logging
+    enabled.
+- `tools/build/build.sh tgui-lint` - Show (and auto-fix) problems with the code.
+- `tools/build/build.sh tgui-test` - Run unit and integration tests.
+- `tools/build/build.sh tgui-analyze` - Run a bundle analyzer.
+- `tools/build/build.sh tgui-clean` - Clean up tgui folder.
+>>>>>>> c71ab6c9bd ([Manual MIRROR] dmapi manual update port (#11138))
 
 > With Juke Build, you can run multiple targets together, e.g.:
 > ```
-> tools/build/build tgui tgui-lint tgui-tsc tgui-test
+> tools/build/build.sh tgui tgui-lint tgui-tsc tgui-test
 > ```
 
 **Via Yarn (cross-platform)**:
