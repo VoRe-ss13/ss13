@@ -4,6 +4,7 @@
 ////////////////////////////////
 
 /mob/living/carbon/human/var/resleeve_lock
+/mob/living/carbon/human/var/changeling_locked
 /mob/living/carbon/human/var/original_player
 
 /////// Mind-backup record ///////
@@ -79,6 +80,7 @@
 	//These may or may not be set, mostly irrelevant since it's just a body record.
 	var/ckey
 	var/locked
+	var/changeling_locked
 	var/client/client_ref
 	var/datum/mind/mind_ref
 	var/synthetic
@@ -123,7 +125,15 @@
 	//Person OOCly doesn't want people impersonating them
 	locked = ckeylock
 
+<<<<<<< HEAD
 	//Prevent people from printing restricted and whitelisted species
+=======
+	//The mob is a changeling, don't allow anyone to possess them. Not using locked as locked gives OOC notices.
+	if(is_changeling(M))
+		changeling_locked = TRUE
+
+
+>>>>>>> a0c273ce1f ([MIRROR] Changing changeling (Refactor) (#11142))
 	var/datum/species/S = GLOB.all_species["[M.dna.species]"]
 	if(S)
 		toocomplex = (S.spawn_flags & SPECIES_IS_WHITELISTED) || (S.spawn_flags & SPECIES_IS_RESTRICTED)
