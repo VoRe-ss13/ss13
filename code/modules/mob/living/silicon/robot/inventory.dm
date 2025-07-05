@@ -135,6 +135,18 @@
 	else
 		return 0
 
+<<<<<<< HEAD
+=======
+/mob/living/silicon/robot/proc/using_multibelt(obj/item/O)
+	for(var/obj/item/robotic_multibelt/materials/material_belt in contents)
+		if(material_belt.selected_item == O)
+			return TRUE
+	for(var/obj/item/gripper/gripper in contents)
+		if(gripper.current_pocket == O)
+			return TRUE
+	return FALSE
+
+>>>>>>> f34807d34e ([MIRROR] More gripper fixes v2.0 (#11143))
 /mob/living/silicon/robot/proc/get_active_modules()
 	return list(module_state_1, module_state_2, module_state_3)
 
