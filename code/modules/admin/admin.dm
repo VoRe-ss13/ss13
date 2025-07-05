@@ -53,8 +53,12 @@ GLOBAL_VAR_INIT(floorIsLava, 0)
 		to_chat(usr, "Error: you are not an admin!")
 		return
 
+<<<<<<< HEAD
 	var/body = "<html><head><title>Options for [M.key]</title></head>"
 	body += "<body>Options panel for" + span_bold("[M]")
+=======
+	var/body = "Options panel for " + span_bold("[M]")
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 	if(M.client)
 		body += " played by " + span_bold("[M.client]")
 		body += "\[<A href='byond://?src=\ref[src];[HrefToken()];editrights=show'>[M.client.holder ? M.client.holder.rank_names() : "Player"]</A>\]"
@@ -585,8 +589,14 @@ GLOBAL_VAR_INIT(floorIsLava, 0)
 		<A href='byond://?src=\ref[src];[HrefToken()];vsc=default'>Choose a default ZAS setting</A><br></html>
 		"}
 
+<<<<<<< HEAD
 	usr << browse(dat, "window=admin2;size=210x280")
 	return
+=======
+	var/datum/browser/popup = new(owner, "admin2", "Game Panel", 220, 295)
+	popup.set_content(dat)
+	popup.open()
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 
 /datum/admins/proc/Secrets(var/datum/admin_secret_category/active_category = null)
 	if(!check_rights(0))	return
