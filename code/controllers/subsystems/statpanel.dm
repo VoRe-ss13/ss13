@@ -63,7 +63,13 @@ SUBSYSTEM_DEF(statpanels)
 			//target.stat_panel.send_message("update_split_admin_tabs", !!(target.prefs.toggles & SPLIT_ADMIN_TABS))
 			target.stat_panel.send_message("update_split_admin_tabs", FALSE)
 
+<<<<<<< HEAD
 			if(!("MC" in target.panel_tabs) || !("Tickets" in target.panel_tabs))
+=======
+			if(check_rights_for(target, R_MENTOR))
+				target.stat_panel.send_message("add_tickets_tabs", target.holder.href_token)
+			if(check_rights_for(target, R_HOLDER) && (!("MC" in target.panel_tabs) || !("Tickets" in target.panel_tabs)))
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 				target.stat_panel.send_message("add_admin_tabs", target.holder.href_token)
 
 			//if(target.stat_tab == "MC" && ((num_fires % mc_wait == 0) || target?.prefs.read_preference(/datum/preference/toggle/fast_mc_refresh)))

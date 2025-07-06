@@ -199,7 +199,7 @@
 
 
 /datum/entity_narrate/tgui_state(mob/user)
-	return GLOB.tgui_admin_state
+	return ADMIN_STATE(R_FUN)
 
 /datum/entity_narrate/tgui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

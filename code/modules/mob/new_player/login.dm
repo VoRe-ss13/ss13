@@ -37,6 +37,16 @@
 /mob/new_player/proc/do_after_login()
 	PRIVATE_PROC(TRUE)
 	if(client)
+<<<<<<< HEAD
+=======
+		var/motd = global.config.motd
+		if(motd)
+			to_chat(src, examine_block("<div class=\"motd\">[motd]</div>"))
+
+		if(has_respawned)
+			to_chat(src, CONFIG_GET(string/respawn_message))
+		has_respawned = FALSE
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 		handle_privacy_poll()
 		client.playtitlemusic()
 		version_warnings()
