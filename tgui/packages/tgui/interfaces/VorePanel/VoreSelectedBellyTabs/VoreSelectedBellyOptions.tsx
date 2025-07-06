@@ -2,6 +2,7 @@ import { useBackend } from 'tgui/backend';
 import { Button, LabeledList, Stack } from 'tgui-core/components';
 import { capitalize } from 'tgui-core/string';
 
+<<<<<<< HEAD
 import { vorespawnAbsorbedColor, vorespawnAbsorbedText } from '../constants';
 import type { hostMob, selectedData } from '../types';
 import { VoreSelectedMobTypeBellyButtons } from './VoreSelectedMobTypeBellyButtons';
@@ -46,10 +47,22 @@ export const VoreSelectedBellyOptions = (props: {
     private_struggle,
     drainmode,
   } = belly;
+=======
+import type { bellyOptionData } from '../types';
+import { BellyOptionsLeft } from './OptionTab/BellyOptionsLeft';
+import { BellyOptionsRight } from './OptionTab/BellyOptionsRight';
+
+export const VoreSelectedBellyOptions = (props: {
+  editMode: boolean;
+  bellyOptionData: bellyOptionData;
+}) => {
+  const { editMode, bellyOptionData } = props;
+>>>>>>> fe5e55c2df ([MIRROR] move that to visual section (#11150))
 
   return (
     <Stack wrap="wrap">
       <Stack.Item basis="49%" grow>
+<<<<<<< HEAD
         <LabeledList>
           <LabeledList.Item label="Can Taste">
             <Button
@@ -175,6 +188,11 @@ export const VoreSelectedBellyOptions = (props: {
         <VoreSelectedMobTypeBellyButtons
           belly={belly}
           host_mobtype={host_mobtype}
+=======
+        <BellyOptionsLeft
+          editMode={editMode}
+          bellyOptionData={bellyOptionData}
+>>>>>>> fe5e55c2df ([MIRROR] move that to visual section (#11150))
         />
       </Stack.Item>
       <Stack.Item basis="49%" grow>
