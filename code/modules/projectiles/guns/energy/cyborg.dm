@@ -160,7 +160,7 @@
 	name = "combat jaws"
 	icon_state = "jaws"
 	desc = "The jaws of the law."
-	force = 25
+	force = 30
 	armor_penetration = 25
 	defend_chance = 15
 	attack_verb = list("chomped", "bit", "ripped", "mauled", "enforced")
@@ -186,6 +186,7 @@
 			defend_chance = 15
 			attack_verb = list("chomped", "bit", "ripped", "mauled", "enforced")
 		else
+<<<<<<< HEAD
 			name = "puppy jaws"
 			icon_state = "smalljaws"
 			desc = "The jaws of a small dog."
@@ -193,6 +194,28 @@
 			armor_penetration = 0
 			defend_chance = 5
 			attack_verb = list("nibbled", "bit", "gnawed", "chomped", "nommed")
+=======
+			if(emagged)
+				name = "claymore"
+				desc = "Now this is a knife!"
+				icon = 'icons/obj/tools_robot.dmi'
+				icon_state = "claymore_cyborg"
+				hitsound = 'sound/weapons/slice.ogg'
+				attack_verb = list("sliced", "slashed", "jabbed", "stabbed")
+				force = 30
+				armor_penetration = 25
+				defend_chance = 15
+			else
+				name = "self defense knife"
+				icon = 'icons/obj/tools_robot.dmi'
+				icon_state = "knife_cyborg"
+				hitsound = 'sound/weapons/slash.ogg'
+				desc = "A sharp knife used for defending crew against hostile threats. Not effective for non-defense use."
+				attack_verb = list("sliced", "slashed", "jabbed", "stabbed")
+				force = 15
+				armor_penetration = 0
+				defend_chance = 5
+>>>>>>> 41408d7143 ([MIRROR] fixes borg jaws (#11158))
 		update_icon()
 
 
