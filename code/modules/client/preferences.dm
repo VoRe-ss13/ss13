@@ -404,9 +404,16 @@ var/list/preferences_datums = list()
 
 	if(tgui_alert(user, "Are you sure you want to override slot [slotnum], [choice]'s savedata?", "Confirm Override", list("No", "Yes")) == "Yes")
 		overwrite_character(slotnum)
+<<<<<<< HEAD
 		sanitize_preferences()
 		save_character()
 		save_preferences()
+=======
+		save_character()
+		save_preferences()
+		load_preferences(TRUE)
+		load_character()
+>>>>>>> c7b2ddd4db ([MIRROR] Fix copyslot (#11161))
 		attempt_vr(user.client?.prefs_vr,"load_vore","")
 		ShowChoices(user)
 
