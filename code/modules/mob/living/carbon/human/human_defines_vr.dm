@@ -11,6 +11,7 @@
 	var/markings_len = 0 //mostly an arbitrary number
 	var/low_sorting_priority = FALSE
 
+<<<<<<< HEAD
 /mob/living/carbon/human/proc/shadekin_get_energy()
 	var/datum/species/shadekin/SK = species
 
@@ -50,3 +51,8 @@
 		return 0
 
 	SK.set_energy(src, SK.get_energy(src) + amount)
+=======
+	tail_alt = TAIL_UPPER_LAYER // not a toggle for humans but a pointer for what layer the tail should be when facing North/East/West
+
+	var/list/body_writing // assoc list by BP_ key
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))

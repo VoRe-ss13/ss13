@@ -1,9 +1,9 @@
-/datum/power/shadekin
-
 /mob/living/carbon/human/is_incorporeal()
-	if(ability_flags & AB_PHASE_SHIFTED) //Shadekin
+	var/datum/component/shadekin/SK = get_shadekin_component()
+	if(SK && SK.in_phase) //Shadekin
 		return TRUE
 	return ..()
+<<<<<<< HEAD
 
 /////////////////////
 ///  PHASE SHIFT  ///
@@ -471,3 +471,5 @@
 	shadekin_adjust_energy(-20) // loss of energy for the interception
 	// apply a little extra stun for good measure
 	src.Weaken(3)
+=======
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
