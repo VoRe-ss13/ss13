@@ -2,15 +2,24 @@
   "private": true,
   "name": "tgui-workspace",
   "version": "6.0.0",
+<<<<<<< HEAD
   "packageManager": "yarn@4.9.1",
+=======
+  "packageManager": "bun@1.2.18",
+>>>>>>> 222559a464 ([Manual Mirror] RS Pack try 2 (#11172))
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "tgui:analyze": "rspack --analyze",
+<<<<<<< HEAD
     "tgui:bench": "rspack --env TGUI_BENCH=1 && node packages/tgui-bench/index.js",
     "tgui:build": "rspack build",
     "tgui:dev": "node --experimental-modules packages/tgui-dev-server/index.js",
+=======
+    "tgui:build": "rspack build",
+    "tgui:dev": "bun packages/tgui-dev-server/index.ts",
+>>>>>>> 222559a464 ([Manual Mirror] RS Pack try 2 (#11172))
     "tgui:lint": "eslint packages --ext .js,.cjs,.ts,.tsx",
     "tgui:prettier": "prettier --check .",
     "tgui:sonar": "eslint packages -c .eslintrc-sonar.yml",
@@ -22,8 +31,13 @@
     "tgui:eslint-fix": "eslint --fix packages --ext .js,.cjs,.ts,.jsx,.tsx"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@rspack/cli": "^1.3.7",
     "@rspack/core": "^1.3.7",
+=======
+    "@rspack/cli": "^1.4.3",
+    "@rspack/core": "^1.4.3",
+>>>>>>> 222559a464 ([Manual Mirror] RS Pack try 2 (#11172))
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",
     "@typescript-eslint/utils": "^8.28.0",
@@ -34,6 +48,7 @@
     "eslint-plugin-simple-import-sort": "^12.0.0",
     "eslint-plugin-sonarjs": "^0.25.0",
     "eslint-plugin-unused-imports": "^4.1.4",
+<<<<<<< HEAD
     "jsdom": "^26.0.0",
     "prettier": "^3.5.3",
     "sass": "^1.80.6",
@@ -41,6 +56,12 @@
     "sass-loader": "^16.0.3",
     "typescript": "5.8.3",
     "url-loader": "^4.1.1"
+=======
+    "prettier": "^3.5.3",
+    "sass-embedded": "^1.89.2",
+    "sass-loader": "^16.0.5",
+    "typescript": "^5.8.3"
+>>>>>>> 222559a464 ([Manual Mirror] RS Pack try 2 (#11172))
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
