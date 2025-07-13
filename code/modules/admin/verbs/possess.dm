@@ -26,6 +26,7 @@
 	usr.control_object = O
 	feedback_add_details("admin_verb","PO") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+<<<<<<< HEAD
 /proc/release(obj/O as obj in world)
 	set name = "Release Obj"
 	set category = "Object"
@@ -36,6 +37,14 @@
 		usr.name = usr.real_name
 		if(ishuman(usr))
 			var/mob/living/carbon/human/H = usr
+=======
+ADMIN_VERB_AND_CONTEXT_MENU(release, R_POSSESS, "Release Object", "Stop possessing an object.", ADMIN_CATEGORY_OBJECT, obj/O as obj in world)
+	if(user.mob.control_object && user.mob.name_archive) //if you have a name archived and if you are actually relassing an object
+		user.mob.real_name = user.mob.name_archive
+		user.mob.name = user.mob.real_name
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+>>>>>>> ec90bd33a4 ([MIRROR] some fixes (#11182))
 			H.name = H.get_visible_name()
 
 	usr.loc = O.loc // Appear where the object you were controlling is -- TLE

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /client/proc/resize(var/mob/living/L in mob_list)
 	set name = "Resize"
 	set desc = "Resizes any living mob without any restrictions on size."
@@ -6,6 +7,10 @@
 		return
 
 	do_resize(L) //CHOMPEdit
+=======
+ADMIN_VERB_AND_CONTEXT_MENU(resize, (R_ADMIN|R_FUN|R_VAREDIT), "Resize", "Resizes any living mob without any restrictions on size.", "Fun.Event Kit", mob/living/L in mob_list)
+	user.do_resize(L) //CHOMPEdit
+>>>>>>> ec90bd33a4 ([MIRROR] some fixes (#11182))
 
 /client/proc/do_resize(var/mob/living/L) //CHOMPEdit
 	var/size_multiplier = tgui_input_number(usr, "Input size multiplier.", "Resize", 1, round_value=FALSE)
