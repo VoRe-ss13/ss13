@@ -3,6 +3,7 @@ import { type RefObject, useEffect, useRef, useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
 import {
+  Blink,
   Box,
   Button,
   Divider,
@@ -62,6 +63,7 @@ type Ticket = {
   state: string;
   level: number;
   handler: string;
+  ishandled: BooleanLike;
   opened_at: number;
   closed_at: number;
   opened_at_date: string;
@@ -131,6 +133,7 @@ export const TicketsPanel = (props) => {
     <Window width={1000} height={600}>
       <Window.Content>
         <Stack fill>
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/TicketsPanel.tsx
           <Stack.Item shrink>
             <Section title="Filter">
               <Dropdown
@@ -190,6 +193,90 @@ export const TicketsPanel = (props) => {
                 ))}
               </Tabs>
             </Section>
+=======
+          <Stack.Item basis="25%">
+            <Stack vertical fill>
+              <Stack.Item>
+                <Section title="Filter">
+                  <Dropdown
+                    options={Object.values(State)}
+                    selected={State[stateFilter]}
+                    onSelected={(val) =>
+                      setStateFilter(
+                        Object.keys(State)[Object.values(State).indexOf(val)],
+                      )
+                    }
+                  />
+                  <Divider />
+                  <Dropdown
+                    options={Object.values(availableLevel)}
+                    selected={availableLevel[levelFilter]}
+                    onSelected={(val) =>
+                      setLevelFilter(Object.values(availableLevel).indexOf(val))
+                    }
+                  />
+                </Section>
+              </Stack.Item>
+              <Stack.Item grow>
+                <Section title="Tickets" scrollable fill>
+                  <Tabs vertical>
+                    <Tabs.Tab onClick={() => act('new_ticket')}>
+                      New Ticket
+                      <Icon name="plus" ml={0.5} />
+                    </Tabs.Tab>
+                    <Divider />
+                    {filtered_tickets.map((ticket) => (
+                      <Tabs.Tab
+                        key={ticket.id}
+                        selected={ticket.id === selected_ticket?.id}
+                        onClick={() =>
+                          act('pick_ticket', { ticket_id: ticket.id })
+                        }
+                      >
+                        <Stack vertical>
+                          <Stack.Item>
+                            <Stack align="center">
+                              <Stack.Item>
+                                {ticket.ishandled ? (
+                                  <Box
+                                    textColor="white"
+                                    className="TicketPanel__Label"
+                                    backgroundColor={LevelColor[ticket.level]}
+                                  >
+                                    {availableLevel[ticket.level]}
+                                  </Box>
+                                ) : (
+                                  <Blink>
+                                    <Box
+                                      textColor="white"
+                                      className="TicketPanel__Label"
+                                      backgroundColor={LevelColor[ticket.level]}
+                                    >
+                                      {availableLevel[ticket.level]}
+                                    </Box>
+                                  </Blink>
+                                )}
+                              </Stack.Item>
+                              <Stack.Item>{ticket.name}</Stack.Item>
+                            </Stack>
+                          </Stack.Item>
+                          <Stack.Item>
+                            <Box
+                              fontSize={0.9}
+                              textColor={StateColor[ticket.state]}
+                            >
+                              State: {State[ticket.state]} | Assignee:
+                              {ticket.handler}
+                            </Box>
+                          </Stack.Item>
+                        </Stack>
+                      </Tabs.Tab>
+                    ))}
+                  </Tabs>
+                </Section>
+              </Stack.Item>
+            </Stack>
+>>>>>>> 0160eb3e68 ([MIRROR] up ports a bunch of TGS commands (#11173)):tgui/packages/tgui/interfaces/TicketsPanel.tsx
           </Stack.Item>
           <Stack.Item grow>
             {(selected_ticket && (
@@ -221,21 +308,34 @@ export const TicketsPanel = (props) => {
                           </Button>
                         </Stack.Item>
                         <Stack.Item>
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/TicketsPanel.tsx
                           <Button color={LevelColor[selected_ticket.level]}>
                             {Level[selected_ticket.level]}
                           </Button>
+=======
+                          <Box
+                            className="TicketPanel__Label"
+                            backgroundColor={LevelColor[selected_ticket.level]}
+                          >
+                            {availableLevel[selected_ticket.level]}
+                          </Box>
+>>>>>>> 0160eb3e68 ([MIRROR] up ports a bunch of TGS commands (#11173)):tgui/packages/tgui/interfaces/TicketsPanel.tsx
                         </Stack.Item>
                       </Stack>
                     }
                   >
                     <LabeledList>
                       <LabeledList.Item label="Ticket ID">
-                        #{selected_ticket.id}:
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: selected_ticket.name,
-                          }}
-                        />
+                        <Stack>
+                          <Stack.Item>#{selected_ticket.id}:</Stack.Item>
+                          <Stack.Item>
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: selected_ticket.name,
+                              }}
+                            />
+                          </Stack.Item>
+                        </Stack>
                       </LabeledList.Item>
                       <LabeledList.Item label="Type">
                         {Level[selected_ticket.level]}
@@ -259,17 +359,25 @@ export const TicketsPanel = (props) => {
                         </LabeledList.Item>
                       ) : (
                         <LabeledList.Item label="Closed At">
-                          {selected_ticket.closed_at_date +
-                            ' (' +
-                            toFixed(
-                              round((selected_ticket.closed_at / 600) * 10, 0) /
-                                10,
-                              1,
-                            ) +
-                            ' minutes ago.)'}
-                          <Button onClick={() => act('reopen_ticket')}>
-                            Reopen
-                          </Button>
+                          <Stack>
+                            <Stack.Item>
+                              {selected_ticket.closed_at_date +
+                                ' (' +
+                                toFixed(
+                                  round(
+                                    (selected_ticket.closed_at / 600) * 10,
+                                    0,
+                                  ) / 10,
+                                  1,
+                                ) +
+                                ' minutes ago.)'}
+                            </Stack.Item>
+                            <Stack.Item>
+                              <Button onClick={() => act('reopen_ticket')}>
+                                Reopen
+                              </Button>
+                            </Stack.Item>
+                          </Stack>
                         </LabeledList.Item>
                       )}
                       <LabeledList.Item label="Actions">
@@ -279,13 +387,12 @@ export const TicketsPanel = (props) => {
                           }}
                         />
                       </LabeledList.Item>
-                      <LabeledList.Item label="Log" />
                     </LabeledList>
                   </Section>
-                  <Divider />
+                  <Stack.Divider />
                 </Stack.Item>
                 <Stack.Item grow>
-                  <Section fill ref={messagesEndRef} scrollable>
+                  <Section fill ref={messagesEndRef} scrollable title="Log">
                     <Stack fill direction="column">
                       <Stack.Item grow>
                         {Object.keys(selected_ticket.log)

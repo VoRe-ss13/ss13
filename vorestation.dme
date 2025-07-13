@@ -4536,6 +4536,10 @@
 #include "code\modules\tgchat\message.dm"
 #include "code\modules\tgchat\to_chat.dm"
 #include "code\modules\tgs\includes.dm"
+<<<<<<< HEAD
+=======
+#include "code\modules\tgs_commands\vorestation.dm"
+>>>>>>> 0160eb3e68 ([MIRROR] up ports a bunch of TGS commands (#11173))
 #include "code\modules\tgui\external.dm"
 #include "code\modules\tgui\modal.dm"
 #include "code\modules\tgui\states.dm"

@@ -56,6 +56,7 @@
 				"state" = get_ticket_state(T.state),
 				"level" = T.level,
 				"handler" = T.handler,
+				"ishandled" = !!T.handler_ref?.resolve(),
 				"opened_at" = (world.time - T.opened_at),
 				"closed_at" = (world.time - T.closed_at),
 				"opened_at_date" = gameTimestamp(wtime = T.opened_at),
@@ -70,6 +71,7 @@
 				"state" = get_ticket_state(T.state),
 				"level" = T.level,
 				"handler" = T.handler,
+				"ishandled" = !!T.handler_ref?.resolve(),
 				"opened_at" = (world.time - T.opened_at),
 				"closed_at" = (world.time - T.closed_at),
 				"opened_at_date" = gameTimestamp(wtime = T.opened_at),
@@ -84,6 +86,7 @@
 				"state" = get_ticket_state(T.state),
 				"level" = T.level,
 				"handler" = T.handler,
+				"ishandled" = !!T.handler_ref?.resolve(),
 				"opened_at" = (world.time - T.opened_at),
 				"closed_at" = (world.time - T.closed_at),
 				"opened_at_date" = gameTimestamp(wtime = T.opened_at),
@@ -143,17 +146,31 @@
 					else
 						to_chat(usr, span_warning("Ticket not found, creating new one..."))
 				else
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets_ui.dm
 					player.current_ticket.AddInteraction("[key_name_admin(usr)] opened a new ticket.")
 					player.current_ticket.Close()
+=======
+					player.current_ticket.AddInteraction("[key_name_admin(ui.user)] opened a new ticket.")
+					player.current_ticket.Close(ui.user)
+>>>>>>> 0160eb3e68 ([MIRROR] up ports a bunch of TGS commands (#11173)):code/modules/tickets/tickets_ui.dm
 
 			// Create a new ticket and handle it. You created it afterall!
 			var/datum/ticket/T = new /datum/ticket(ticket_text, player, TRUE, level)
 			if(level == "Admin")
 				T.level = 0
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets_ui.dm
 			else
 				T.level = 1
 			T.HandleIssue()
 			usr.client.cmd_admin_pm(player, ticket_text, T)
+=======
+			T.HandleIssue(ui.user)
+			switch(T.level)
+				if (0)
+					ui.user.client.cmd_mentor_pm(player, ticket_text, T)
+				if (1)
+					ui.user.client.cmd_admin_pm(player, ticket_text, T)
+>>>>>>> 0160eb3e68 ([MIRROR] up ports a bunch of TGS commands (#11173)):code/modules/tickets/tickets_ui.dm
 			. = TRUE
 		if("pick_ticket")
 			var/datum/ticket/T = ID2Ticket(params["ticket_id"])
@@ -163,7 +180,11 @@
 			usr.client.selected_ticket.Retitle()
 			. = TRUE
 		if("reopen_ticket")
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets_ui.dm
 			usr.client.selected_ticket.Reopen()
+=======
+			ui.user.client.selected_ticket.Reopen(ui.user)
+>>>>>>> 0160eb3e68 ([MIRROR] up ports a bunch of TGS commands (#11173)):code/modules/tickets/tickets_ui.dm
 			. = TRUE
 		if("undock_ticket")
 			usr.client.selected_ticket.tgui_interact(usr)
@@ -240,7 +261,7 @@
 			Retitle()
 			. = TRUE
 		if("reopen")
-			Reopen()
+			Reopen(ui.user)
 			. = TRUE
 		if("legacy")
 			TicketPanelLegacy()
