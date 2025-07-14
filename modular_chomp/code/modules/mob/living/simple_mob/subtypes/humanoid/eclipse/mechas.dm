@@ -12,9 +12,17 @@
 	special_attack_cooldown = 10 //This things attack soley via speical attacks hence basically no cooldown
 	grab_resist = 100
 	shock_resist = -0.2
+	deflect_chance = 0
 	movement_cooldown = 10
 	var/specialattackprojectile = /obj/item/projectile/energy/phase/bolt
 	var/attackcycle = 1
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/handle_special()
+	if(stat != DEAD)
+		src.SetStunned(0)
+		src.SetWeakened(0)
+		src.SetParalysis(0)
+	..()
 
 /mob/living/simple_mob/mechanical/mecha/eclipse/do_special_attack(atom/A)
 	upfour_leftfour(A)
@@ -1472,3 +1480,107 @@
 		addtimer(CALLBACK(src, PROC_REF(singleproj), A, 1), 1 SECOND, TIMER_DELETE_ME)
 		attackcycle = 0
 
+<<<<<<< HEAD
+=======
+/mob/living/simple_mob/mechanical/mecha/eclipse/battle_top
+	name = "eclipse cryo top"
+	icon_state = "mecha_top"
+	icon_living = "mecha_top"
+	armor = list(melee = 20, bullet = 20, laser = 20, energy = 20, bomb = 80, bio = 100, rad = 100) //Smol armor to compensate for the gimmick
+	wreckage = /obj/item/melee/energy/sword/top_shield
+	specialattackprojectile = /obj/item/projectile/energy/eclipse/chillingwind
+	desc = "It appears to be spinning at rapid speeds; enough to deflect projectiles. The air around it feels frigid.."
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/battle_top/do_special_attack(atom/A)
+	var/rng_cycle
+	if(attackcycle == 1)
+		rng_cycle = rand(1,2)
+		addtimer(CALLBACK(src, PROC_REF(quad_random_firing), A, 20, rng_cycle, 25), 0.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 2)
+		rng_cycle = rand(1,2)
+		addtimer(CALLBACK(src, PROC_REF(dual_spin), A, rng_cycle, 15), 0.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/battle_top/handle_special()
+	if(stat != DEAD)
+		frozen_aura()
+	..()
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/battle_top/proc/frozen_aura()
+	for(var/mob/living/L in view(src, 14))
+		if(!IIsAlly(L))
+			L.add_modifier(/datum/modifier/chilled, 3, src)
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/excavate_head
+	name = "Xenoarch Lead"
+	desc = "A unathi wearing what appears to be a modified breacher suit. Something seems off though"
+	icon_state = "cursor_guard"
+	icon_living = "cursor_guard"
+	armor = list(melee = 80, bullet = 80, laser = 80, energy = 80, bomb = 80, bio = 100, rad = 100)
+	pilot_type = /obj/item/prop/tyrlore/stolenbreacher
+	wreckage = /obj/item/pickaxe/diamonddrill/alien
+	specialattackprojectile = /obj/item/projectile/energy/eclipse/mining
+	desc = "A being wearing what appears to be a modified breacher outfit."
+	projectiletype = /obj/item/projectile/arc/explosive_rocket
+	ranged_cooldown = 50
+
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/excavate_head/updatehealth()
+	. = ..()
+	if(health < maxHealth*0.3)
+		armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 100)
+	else if(health < maxHealth*0.6)
+		armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 100, rad = 100)
+	else if (health < maxHealth*0.9)
+		armor = list(melee = 60, bullet = 60, laser = 60, energy = 50, bomb = 60, bio = 100, rad = 100)
+
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/excavate_head/do_special_attack(atom/A)
+	var/rng_cycle
+	switch(a_intent)
+		if(I_DISARM) //phase3
+			if(attackcycle == 1)
+				rng_cycle = rand(1,3)
+				addtimer(CALLBACK(src, PROC_REF(random_firing), A, 20, rng_cycle, 10), 0.5 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 2)
+				rng_cycle = rand(1,3)
+				addtimer(CALLBACK(src, PROC_REF(dual_spin), A, rng_cycle, 10), 0.5 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 3)
+				rng_cycle = rand(1,3)
+				Beam(A, icon_state = "solar_beam", time = 2 SECONDS, maxdistance = INFINITY)
+				addtimer(CALLBACK(src, PROC_REF(singleproj), A, rng_cycle), 2 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+
+		if(I_HURT) //phase1
+			if(attackcycle == 1)
+				rng_cycle = rand(1,3)
+				addtimer(CALLBACK(src, PROC_REF(random_firing), A, 8, rng_cycle, 15), 0.5 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 2)
+				rng_cycle = rand(1,3)
+				addtimer(CALLBACK(src, PROC_REF(cross_spin), A, rng_cycle, 15), 0.5 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 3)
+				rng_cycle = rand(1,3)
+				Beam(A, icon_state = "solar_beam", time = 2 SECONDS, maxdistance = INFINITY)
+				addtimer(CALLBACK(src, PROC_REF(singleproj), A, rng_cycle), 2 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+		if(I_GRAB) // Phase 2
+			if(attackcycle == 1)
+				rng_cycle = rand(1,3)
+				addtimer(CALLBACK(src, PROC_REF(random_firing), A, 12, rng_cycle, 10), 0.5 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 2)
+				rng_cycle = rand(1,3)
+				addtimer(CALLBACK(src, PROC_REF(cross_spin), A, rng_cycle, 10), 0.5 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+			else if(attackcycle == 3)
+				rng_cycle = rand(1,3)
+				Beam(A, icon_state = "solar_beam", time = 1.5 SECONDS, maxdistance = INFINITY)
+				addtimer(CALLBACK(src, PROC_REF(singleproj), A, rng_cycle), 1 SECONDS, TIMER_DELETE_ME)
+				attackcycle = 0
+
+>>>>>>> 659a4304cb (Tyr Update attempt 2 (#11191))
