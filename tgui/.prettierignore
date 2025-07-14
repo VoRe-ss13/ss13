@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## NPM
 /**/node_modules
 
@@ -13,8 +14,10 @@
 **/*.json
 **/*.yml
 **/*.md
+=======
+node_modules
+public
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
 
-# Avoid running on any bundles.
-/public/**/*
 # Running it on tgui.html is fine, however.
 !/public/tgui.html

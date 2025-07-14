@@ -150,6 +150,7 @@ export const ModifyRobot = (props) => {
   return (
     <Window width={target?.module ? 900 : 400} height={700}>
       <Window.Content>
+<<<<<<< HEAD
         {target ? (
           <NoticeBox info>
             {target.name}
@@ -174,6 +175,23 @@ export const ModifyRobot = (props) => {
               </Stack.Item>
               {!!target?.module && (
                 <>
+=======
+        <Stack fill vertical>
+          <Stack.Item>
+            {target ? (
+              <NoticeBox info>
+                {target.name}
+                {!!target.ckey && ` played by ${target.ckey}`}.
+              </NoticeBox>
+            ) : (
+              <NoticeBox danger>No target selected. Please pick one.</NoticeBox>
+            )}
+          </Stack.Item>
+          <Stack.Item>
+            <LabeledList>
+              <LabeledList.Item label="Player Selection">
+                <Stack align="baseline">
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
                   <Stack.Item>
                     <Input
                       width="200px"

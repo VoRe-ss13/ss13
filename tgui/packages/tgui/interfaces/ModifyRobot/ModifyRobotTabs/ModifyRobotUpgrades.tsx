@@ -44,6 +44,7 @@ export const ModifyRobotUpgrades = (props: { target: Target }) => {
             action="add_compatibility"
           />
         </Stack.Item>
+<<<<<<< HEAD
         <Stack.Item width="40%">
           <Stack>
             <Stack.Item grow />
@@ -104,6 +105,83 @@ export const ModifyRobotUpgrades = (props: { target: Target }) => {
         </Stack.Item>
       </Stack>
     </>
+=======
+      )}
+      <Stack.Item basis="45%">
+        <Stack fill>
+          <Stack.Item width="30%">
+            <UpgradeSection
+              title="Add Compatibility"
+              searchText={searchAddCompatibilityText}
+              onSearchText={setSearchAddCompatibilityText}
+              upgrades={target.whitelisted_upgrades}
+              action="add_compatibility"
+            />
+          </Stack.Item>
+          <Stack.Item width="40%">
+            <Stack>
+              <Stack.Item grow />
+              <Stack.Item>
+                <Box
+                  className={classes([target.sprite_size, `${target.sprite}W`])}
+                />
+              </Stack.Item>
+              <Stack.Item grow />
+            </Stack>
+          </Stack.Item>
+          <Stack.Item width="30%">
+            <UpgradeSection
+              title="Remove Compatibility"
+              searchText={searchRemoveCompatibilityText}
+              onSearchText={setSearchRemoveCompatibilityText}
+              upgrades={target.blacklisted_upgrades}
+              action="rem_compatibility"
+            />
+          </Stack.Item>
+        </Stack>
+      </Stack.Item>
+      <Stack.Item grow>
+        <Stack fill>
+          <Stack.Item width="25%">
+            <UpgradeSection
+              title="Utility Upgrade"
+              searchText={searchUtilityUpgradeText}
+              onSearchText={setsearchUtilityUpgradeText}
+              upgrades={target.utility_upgrades}
+              action="add_upgrade"
+            />
+          </Stack.Item>
+          <Stack.Item width="25%">
+            <UpgradeSection
+              title="Basic Upgrade"
+              searchText={searchBasicUpgradeText}
+              onSearchText={setSearchBasicUpgradeText}
+              upgrades={target.basic_upgrades}
+              action="add_upgrade"
+            />
+          </Stack.Item>
+          <Stack.Item width="25%">
+            <UpgradeSection
+              title="Advanced Upgrade"
+              searchText={searchAdvancedUpgradeText}
+              onSearchText={setSearchAdvancedUpgradeText}
+              upgrades={target.advanced_upgrades}
+              action="add_upgrade"
+            />
+          </Stack.Item>
+          <Stack.Item width="25%">
+            <UpgradeSection
+              title="Restricted Upgrade"
+              searchText={searchRestrictedUpgradeText}
+              onSearchText={setSearchRestrictedUpgradeText}
+              upgrades={target.restricted_upgrades}
+              action="add_upgrade"
+            />
+          </Stack.Item>
+        </Stack>
+      </Stack.Item>
+    </Stack>
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
   );
 };
 
