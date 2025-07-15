@@ -567,6 +567,18 @@
 									msg = ""
 								owner.flavor_texts[select_key] = msg
 								return TRUE
+<<<<<<< HEAD
+=======
+		if("load_saveslot") //saveslot_load
+			if(can_change(owner, APPEARANCE_ALL_COSMETIC))
+				if(tgui_alert(owner, "Are you certain you wish to load the currently selected savefile?", "Load Savefile", list("No","Yes")) == "Yes")
+					if(owner && owner.client) //sanity
+						owner.client.prefs.vanity_copy_to(owner, FALSE, TRUE, FALSE, FALSE, FALSE)
+						return TRUE
+					return TRUE
+				else
+					return TRUE
+>>>>>>> 1906ebf2b0 ([MIRROR] Transformation fixes (#11195))
 		// ***********************************
 		// Body designer UI
 		// ***********************************
