@@ -25,9 +25,13 @@
 	loc = null
 	sight |= SEE_TURFS
 
+<<<<<<< HEAD
 	initialize_lobby_screen()
 
 	player_list |= src
+=======
+	GLOB.player_list |= src
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 	GLOB.new_player_list += src
 
 	created_for = ckey

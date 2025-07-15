@@ -1,3 +1,4 @@
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/fabricate_clothing.dm
 var/global/list/changeling_fabricated_clothing = list(
 	"w_uniform" = /obj/item/clothing/under/chameleon/changeling,
 	"head" = /obj/item/clothing/head/chameleon/changeling,
@@ -11,6 +12,8 @@ var/global/list/changeling_fabricated_clothing = list(
 	"wear_id" = /obj/item/card/id/syndicate/changeling
 	)
 
+=======
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193)):code/datums/components/antags/changeling/powers/fabricate_clothing.dm
 /datum/power/changeling/fabricate_clothing
 	name = "Fabricate Clothing"
 	desc = "We reform our flesh to resemble various cloths, leathers, and other materials, allowing us to quickly create a disguise.  \
@@ -26,7 +29,7 @@ var/global/list/changeling_fabricated_clothing = list(
 	set category = "Changeling"
 	set name = "Fabricate Clothing (10)"
 
-	if(changeling_generic_equip_all_slots(changeling_fabricated_clothing, cost = 10))
+	if(changeling_generic_equip_all_slots(GLOB.changeling_fabricated_clothing, cost = 10))
 		return 1
 	return 0
 

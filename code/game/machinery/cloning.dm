@@ -9,7 +9,7 @@
 		return
 
 	var/mob/selected = null
-	for(var/mob/living/M in player_list)
+	for(var/mob/living/M in GLOB.player_list)
 		//Dead people only thanks!
 		if((M.stat != 2) || (!M.client))
 			continue
@@ -81,8 +81,13 @@
 		if(ckey(clonemind.key) != R.ckey)
 			return 0
 	else
+<<<<<<< HEAD
 		for(var/mob/observer/dead/G in player_list)
 			if(G.ckey == R.ckey)
+=======
+		for(var/mob/observer/dead/G in GLOB.player_list)
+			if(G.ckey == BR.ckey)
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 				if(G.can_reenter_corpse)
 					break
 				else

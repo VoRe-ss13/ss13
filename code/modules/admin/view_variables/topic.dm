@@ -16,7 +16,11 @@
 	else if(href_list["rename"])
 		if(!check_rights(R_VAREDIT))	return
 
+<<<<<<< HEAD
 		var/mob/M = locate(href_list["rename"])
+=======
+		var/mob/M = locate(href_list["rename"]) in GLOB.mob_list
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 		if(!istype(M))
 			to_chat(usr, "This can only be used on instances of type /mob")
 			return
@@ -532,8 +536,14 @@
 	else if(href_list["adjustDamage"] && href_list["mobToDamage"])
 		if(!check_rights(R_DEBUG|R_ADMIN|R_FUN|R_EVENT))	return
 
+<<<<<<< HEAD
 		var/mob/living/L = locate(href_list["mobToDamage"])
 		if(!istype(L)) return
+=======
+		var/mob/living/L = locate(href_list["mobToDamage"]) in GLOB.mob_list
+		if(!istype(L))
+			return
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 		var/Text = href_list["adjustDamage"]
 

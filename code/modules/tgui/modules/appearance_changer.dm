@@ -409,29 +409,29 @@
 				switch (todo)
 					if (0) //delete
 						if (name_marking)
-							var/datum/sprite_accessory/marking/mark_datum = body_marking_styles_list[name_marking]
+							var/datum/sprite_accessory/marking/mark_datum = GLOB.body_marking_styles_list[name_marking]
 							if (owner.remove_marking(mark_datum))
 								changed_hook(APPEARANCECHANGER_CHANGED_HAIRSTYLE)
 								return TRUE
 					if (1) //add
 						if(name_marking && can_still_topic(ui.user, state))
-							var/datum/sprite_accessory/marking/mark_datum = body_marking_styles_list[name_marking]
+							var/datum/sprite_accessory/marking/mark_datum = GLOB.body_marking_styles_list[name_marking]
 							if (owner.add_marking(mark_datum))
 								changed_hook(APPEARANCECHANGER_CHANGED_HAIRSTYLE)
 								return TRUE
 					if (2) //move up
-						var/datum/sprite_accessory/marking/mark_datum = body_marking_styles_list[name_marking]
+						var/datum/sprite_accessory/marking/mark_datum = GLOB.body_marking_styles_list[name_marking]
 						if (owner.change_priority_of_marking(mark_datum, FALSE))
 							return TRUE
 					if (3) //move down
-						var/datum/sprite_accessory/marking/mark_datum = body_marking_styles_list[name_marking]
+						var/datum/sprite_accessory/marking/mark_datum = GLOB.body_marking_styles_list[name_marking]
 						if (owner.change_priority_of_marking(mark_datum, TRUE))
 							return TRUE
 					if (4) //color
 						var/current = markings[name_marking] ? markings[name_marking]["color"] : "#000000"
 						var/marking_color = tgui_color_picker(ui.user, "Please select marking color", "Marking color", current)
 						if(marking_color && can_still_topic(ui.user, state))
-							var/datum/sprite_accessory/marking/mark_datum = body_marking_styles_list[name_marking]
+							var/datum/sprite_accessory/marking/mark_datum = GLOB.body_marking_styles_list[name_marking]
 							if (owner.change_marking_color(mark_datum, marking_color))
 								return TRUE
 		if("rotate_view")
@@ -465,6 +465,7 @@
 				owner.custom_species = new_name
 				return TRUE
 		if("base_icon")
+<<<<<<< HEAD
 			if(owner.species.selects_bodytype == SELECTS_BODYTYPE_FALSE)
 				var/datum/species/S = GLOB.all_species[owner.species.name]
 				owner.species.base_species = S.base_species // Return to original form
@@ -490,6 +491,28 @@
 				owner.dna.blood_reagents = new_blood_reagents
 				changed_hook(APPEARANCECHANGER_CHANGED_RACE)
 				return TRUE
+=======
+			if(can_change(owner, APPEARANCE_MISC))
+				var/new_species = tgui_input_list(ui.user, "Please select basic shape.", "Body Shape", GLOB.custom_species_bases)
+				if(new_species)
+					owner.species.base_species = new_species
+					owner.species.icobase = owner.species.get_icobase()
+					owner.species.deform = owner.species.get_icobase(get_deform = TRUE)
+					owner.species.vanity_base_fit = new_species
+					if(istype(owner.species, /datum/species/shapeshifter)) //TODO: See if this is still needed.
+						wrapped_species_by_ref["\ref[owner]"] = new_species
+					owner.regenerate_icons()
+					generate_data(ui.user, owner)
+					changed_hook(APPEARANCECHANGER_CHANGED_RACE)
+					return TRUE
+		if("blood_reagent") //you know, this feels REALLY odd to be able to change at will but WHATEVER, WE BALL.
+			if(can_change(owner, APPEARANCE_MISC))
+				var/new_blood_reagents = tgui_input_list(ui.user, "Please select blood restoration reagent:", "Character Preference", GLOB.valid_bloodreagents)
+				if(new_blood_reagents)
+					owner.dna.blood_reagents = new_blood_reagents
+					changed_hook(APPEARANCECHANGER_CHANGED_RACE)
+					return TRUE
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 		if("blood_color")
 			var/current = owner.species.blood_color ? owner.species.blood_color : "#A10808"
 			var/blood_col = tgui_color_picker(ui.user, "Please select marking color", "Marking color", current)
@@ -678,7 +701,7 @@
 	if(can_change(owner, APPEARANCE_HAIR))
 		var/hair_styles[0]
 		for(var/hair_style in valid_hairstyles)
-			var/datum/sprite_accessory/hair/S = hair_styles_list[hair_style]
+			var/datum/sprite_accessory/hair/S = GLOB.hair_styles_list[hair_style]
 			hair_styles[++hair_styles.len] = list("name" = hair_style, "icon" = S.icon, "icon_state" = "[S.icon_state]_s")
 		data["hair_styles"] = hair_styles
 		data["ear_styles"] = valid_earstyles
@@ -686,12 +709,12 @@
 		data["wing_styles"] = valid_wingstyles
 
 		markings = owner.get_prioritised_markings()
-		var/list/usable_markings = markings.Copy() ^ body_marking_styles_list.Copy()
+		var/list/usable_markings = markings.Copy() ^ GLOB.body_marking_styles_list.Copy()
 		var/marking_styles[0]
 		for(var/marking_style in usable_markings)
 			if(marking_style == DEVELOPER_WARNING_NAME)
 				continue
-			var/datum/sprite_accessory/marking/S = body_marking_styles_list[marking_style]
+			var/datum/sprite_accessory/marking/S = GLOB.body_marking_styles_list[marking_style]
 			var/our_iconstate = S.icon_state
 			if(LAZYLEN(S.body_parts))
 				our_iconstate += "-[S.body_parts[1]]"
@@ -701,7 +724,7 @@
 	if(can_change(owner, APPEARANCE_FACIAL_HAIR))
 		var/facial_hair_styles[0]
 		for(var/facial_hair_style in valid_facial_hairstyles)
-			var/datum/sprite_accessory/facial_hair/S = facial_hair_styles_list[facial_hair_style]
+			var/datum/sprite_accessory/facial_hair/S = GLOB.facial_hair_styles_list[facial_hair_style]
 			facial_hair_styles[++facial_hair_styles.len] = list("name" = facial_hair_style, "icon" = S.icon, "icon_state" = "[S.icon_state]_s")
 		data["facial_hair_styles"] = facial_hair_styles
 
@@ -906,8 +929,8 @@
 		valid_facial_hairstyles = target.generate_valid_facial_hairstyles()
 
 	if(!LAZYLEN(valid_earstyles))
-		for(var/path in ear_styles_list)
-			var/datum/sprite_accessory/ears/instance = ear_styles_list[path]
+		for(var/path in GLOB.ear_styles_list)
+			var/datum/sprite_accessory/ears/instance = GLOB.ear_styles_list[path]
 			if(can_use_sprite(instance, target, user))
 				valid_earstyles.Add(list(list(
 					"name" = instance.name,
@@ -919,8 +942,8 @@
 				)))
 
 	if(!LAZYLEN(valid_tailstyles))
-		for(var/path in tail_styles_list)
-			var/datum/sprite_accessory/tail/instance = tail_styles_list[path]
+		for(var/path in GLOB.tail_styles_list)
+			var/datum/sprite_accessory/tail/instance = GLOB.tail_styles_list[path]
 			if(can_use_sprite(instance, target, user))
 				valid_tailstyles.Add(list(list(
 					"name" = instance.name,
@@ -932,8 +955,8 @@
 				)))
 
 	if(!LAZYLEN(valid_wingstyles))
-		for(var/path in wing_styles_list)
-			var/datum/sprite_accessory/wing/instance = wing_styles_list[path]
+		for(var/path in GLOB.wing_styles_list)
+			var/datum/sprite_accessory/wing/instance = GLOB.wing_styles_list[path]
 			if(can_use_sprite(instance, target, user))
 				valid_wingstyles.Add(list(list(
 					"name" = instance.name,

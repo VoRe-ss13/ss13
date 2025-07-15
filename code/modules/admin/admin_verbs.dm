@@ -377,7 +377,7 @@
 
 	if(!check_rights(R_ADMIN|R_FUN|R_EVENT)) return
 
-	var/mob/living/silicon/S = tgui_input_list(usr, "Select silicon.", "Rename Silicon.", silicon_mob_list)
+	var/mob/living/silicon/S = tgui_input_list(usr, "Select silicon.", "Rename Silicon.", GLOB.silicon_mob_list)
 	if(!S) return
 
 	var/new_name = sanitizeSafe(tgui_input_text(src, "Enter new name. Leave blank or as is to cancel.", "[S.real_name] - Enter new silicon name", S.real_name))
@@ -392,7 +392,7 @@
 
 	if(!check_rights(R_ADMIN|R_EVENT)) return
 
-	var/mob/living/silicon/S = tgui_input_list(usr, "Select silicon.", "Manage Silicon Laws", silicon_mob_list)
+	var/mob/living/silicon/S = tgui_input_list(usr, "Select silicon.", "Manage Silicon Laws", GLOB.silicon_mob_list)
 	if(!S) return
 
 	var/datum/tgui_module/law_manager/admin/L = new(S)
@@ -475,7 +475,7 @@
 		CONFIG_SET(flag/allow_drone_spawn, !CONFIG_GET(flag/allow_drone_spawn))
 		message_admins("Admin [key_name_admin(usr)] has [CONFIG_GET(flag/allow_drone_spawn) ? "en" : "dis"]abled maintenance drones.", 1)
 
-/client/proc/man_up(mob/T as mob in mob_list)
+/client/proc/man_up(mob/T as mob in GLOB.mob_list)
 	set category = "Fun.Do Not"
 	set name = "Man Up"
 	set desc = "Tells mob to man up and deal with it."
@@ -496,7 +496,7 @@
 
 	if(tgui_alert(usr, "Are you sure you want to tell the whole server up?","Confirmation",list("Deal with it","No")) != "Deal with it") return
 
-	for (var/mob/T as mob in mob_list)
+	for (var/mob/T as mob in GLOB.mob_list)
 		to_chat(T, "<br><center>" + span_filter_system(span_notice(span_bold(span_huge("Man up.<br> Deal with it.")) + "<br>Move along.")) + "</center><br>")
 		T << 'sound/voice/manup1.ogg'
 
