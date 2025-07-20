@@ -2,7 +2,14 @@
 	set category = "Admin.Logs"
 	set name = "Check Player Attack Logs"
 	set desc = "Check a player's attack logs."
+<<<<<<< HEAD
 	show_cmd_admin_check_player_logs(M) //CHOMPEdit
+=======
+	show_cmd_admin_check_player_logs(M)
+
+	show_cmd_admin_check_player_logs(M)
+
+>>>>>>> 47c7add324 ([MIRROR] simple ghost pod find (#11205))
 //Views specific attack logs belonging to one player.
 /client/proc/show_cmd_admin_check_player_logs(mob/living/M) //CHOMPEdit
 	var/dat = span_bold("[M]'s Attack Log:<HR>")
@@ -44,8 +51,12 @@
 	set desc = "Check a player's dialogue logs."
 	show_cmd_admin_check_dialogue_logs(M) //CHOMPEdit
 
+<<<<<<< HEAD
 /client/proc/show_cmd_admin_check_dialogue_logs(mob/living/M) //CHOMPEdit
+=======
+>>>>>>> 47c7add324 ([MIRROR] simple ghost pod find (#11205))
 //Views specific dialogue logs belonging to one player.
+/client/proc/show_cmd_admin_check_dialogue_logs(mob/living/M)
 	var/dat = span_bold("[M]'s Dialogue Log:<HR>")
 	dat += span_bold("Viewing say and emote logs of [M]") + " - (Played by ([key_name(M)]).<br>"
 	if(M.mind)
