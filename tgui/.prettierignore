@@ -1,6 +1,7 @@
 ## NPM
 /**/node_modules
 
+<<<<<<< HEAD
 ## Yarn
 /.yarn
 /yarn.lock
@@ -16,5 +17,14 @@
 
 # Avoid running on any bundles.
 /public/**/*
+=======
+*.js
+*.ts
+*.tsx
+*.css
+*.jsx
+*.json
+
+>>>>>>> f39fdae47c (Manualbiome (#11216))
 # Running it on tgui.html is fine, however.
 !/public/tgui.html

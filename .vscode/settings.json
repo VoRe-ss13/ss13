@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"eslint.nodePath": "./tgui/.yarn/sdks",
 	"eslint.workingDirectories": ["./tgui"],
 	"prettier.prettierPath": "./tgui/.yarn/sdks/prettier/index.cjs",
@@ -13,12 +14,17 @@
 	},
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
+=======
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "explicit"
+>>>>>>> f39fdae47c (Manualbiome (#11216))
 	},
 	"files.eol": "\n",
 	"files.encoding": "utf8",
 	"files.insertFinalNewline": true,
 	"files.trimFinalNewlines": true,
 	"files.trimTrailingWhitespace": true,
+<<<<<<< HEAD
 	"files.associations": {
 		"*.{dme,dmf,dmm,dm}": "dm",
 	},
@@ -69,10 +75,35 @@
 		"editor.rulers": [120],
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSave": true
+=======
+	"editor.insertSpaces": false,
+	"git.branchProtection": ["master"],
+	"gitlens.advanced.blame.customArguments": ["-w"],
+	"tgstationTestExplorer.project.resultsType": "json",
+	"[javascript][typescript][javascriptreact][typescriptreact][css][json][jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.formatOnSave": true,
+		"editor.rulers": [80]
+	},
+	"[yaml][markdown][html][scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true,
+		"editor.rulers": [80]
+	},
+	"workbench.editorAssociations": {
+		"*.dmi": "dmiEditor.dmiEditor"
+	},
+	"search.exclude": {
+		"**/node_modules": true
+>>>>>>> f39fdae47c (Manualbiome (#11216))
 	},
 	"debug.onTaskErrors": "abort",
 	"dreammaker.objectTreePane": true,
 	"dreammaker.autoUpdate": true,
 	"dreammaker.tickOnCreate": true,
+<<<<<<< HEAD
 	"tgstationTestExplorer.project.DMEName": "tgmc.dme"
+=======
+	"tgstationTestExplorer.project.DMEName": "vorestation.dme"
+>>>>>>> f39fdae47c (Manualbiome (#11216))
 }

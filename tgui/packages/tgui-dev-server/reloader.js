@@ -56,8 +56,13 @@ export async function findCacheRoot() {
       'userpath',
     );
     if (userpath) {
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/reloader.js
       cacheRoot = userpath.replace(/\\$/, '').replace(/\\/g, '/') + '/cache';
       onCacheRootFound(cacheRoot);
+=======
+      cacheRoot = `${userpath.replace(/\\$/, '').replace(/\\/g, '/')}/cache`;
+      await onCacheRootFound(cacheRoot);
+>>>>>>> f39fdae47c (Manualbiome (#11216)):tgui/packages/tgui-dev-server/reloader.ts
       return cacheRoot;
     }
   }
@@ -67,7 +72,11 @@ export async function findCacheRoot() {
 function onCacheRootFound(cacheRoot) {
   logger.log(`found cache at '${cacheRoot}'`);
   // Plant a dummy browser window file, we'll be using this to avoid world topic. For byond 514.
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/reloader.js
   fs.closeSync(fs.openSync(cacheRoot + '/dummy.htm', 'w'));
+=======
+  await Bun.write(`${cacheRoot}/dummy.htm`, '');
+>>>>>>> f39fdae47c (Manualbiome (#11216)):tgui/packages/tgui-dev-server/reloader.ts
 }
 
 export async function reloadByondCache(bundleDir) {
@@ -100,7 +109,11 @@ export async function reloadByondCache(bundleDir) {
     );
     try {
       // Plant a dummy browser window file, we'll be using this to avoid world topic. For byond 515-516.
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/reloader.js
       fs.closeSync(fs.openSync(cacheDir + '/dummy.htm', 'w'));
+=======
+      await Bun.write(`${cacheDir}/dummy.htm`, '');
+>>>>>>> f39fdae47c (Manualbiome (#11216)):tgui/packages/tgui-dev-server/reloader.ts
 
       for (const file of garbage) {
         fs.unlinkSync(file);

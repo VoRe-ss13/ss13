@@ -39,13 +39,13 @@ export class DreamSeeker {
     const query = Object.keys(params)
       .map(
         (key) =>
-          encodeURIComponent(key) + '=' + encodeURIComponent(params[key]),
+          `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`,
       )
       .join('&');
     logger.log(
       `topic call at ${this.client.defaults.baseURL}/dummy.htm?${query}`,
     );
-    return this.client.get('/dummy.htm?' + query);
+    return this.client.get(`/dummy.htm?${query}`);
   }
 
   /**
@@ -118,6 +118,11 @@ export class DreamSeeker {
   }
 }
 
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/dreamseeker.js
 function plural(word, n) {
   return n !== 1 ? word + 's' : word;
+=======
+function plural(word: string, n: number): string {
+  return n !== 1 ? `${word}s` : word;
+>>>>>>> f39fdae47c (Manualbiome (#11216)):tgui/packages/tgui-dev-server/dreamseeker.ts
 }

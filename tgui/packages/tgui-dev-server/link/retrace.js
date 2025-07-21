@@ -83,5 +83,10 @@ export function retrace(stack) {
       return `  at ${methodName} (${compactPath}:${lineNumber})`;
     })
     .join('\n');
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/link/retrace.js
   return header + '\n' + mappedStack;
+=======
+
+  return `${header}\n${mappedStack}`;
+>>>>>>> f39fdae47c (Manualbiome (#11216)):tgui/packages/tgui-dev-server/link/retrace.ts
 }

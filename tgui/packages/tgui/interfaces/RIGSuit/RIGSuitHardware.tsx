@@ -104,11 +104,16 @@ export const RIGSuitHardware = (props) => {
               >
                 <Tooltip
                   content={
+<<<<<<< HEAD
                     'Suit Seals: ' + sealing
                       ? 'Sealing'
                       : sealed
                         ? 'Sealed'
                         : 'UNSEALED'
+=======
+                    'Suit Seals: ' +
+                    (sealing ? 'Sealing' : sealed ? 'Sealed' : 'UNSEALED')
+>>>>>>> f39fdae47c (Manualbiome (#11216))
                   }
                 >
                   <Box

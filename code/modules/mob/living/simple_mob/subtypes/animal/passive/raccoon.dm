@@ -1,17 +1,17 @@
 //raccoon
-/mob/living/simple_mob/animal/passive/raccoon_ch
+/mob/living/simple_mob/animal/passive/raccoon
 	name = "raccoon"
 	desc = "A raccoon, also known as a trash panda."
 	tt_desc = "E purgamentum raccoonus"
-	icon = 'modular_chomp/icons/mob/animal_ch.dmi'
+	icon = 'icons/mob/animal_vr.dmi'
 	icon_state = "raccoon"
 	item_state = "raccoon"
 	icon_living = "raccoon"
 	icon_dead = "raccoon_dead"
 	icon_rest = "raccoon_rest"
 
-	ai_holder_type = /datum/ai_holder/simple_mob/passive/raccoon_ch
-	say_list_type = /datum/say_list/raccoon_ch
+	ai_holder_type = /datum/ai_holder/simple_mob/passive/raccoon
+	say_list_type = /datum/say_list/raccoon
 
 	see_in_dark = 6
 	movement_cooldown = 3
@@ -37,22 +37,28 @@
 	pain_emote_1p = list("chitter")
 	pain_emote_3p = list("chitters")
 
-/mob/living/simple_mob/animal/passive/raccoon_ch/Initialize(mapload)
+/mob/living/simple_mob/animal/passive/raccoon/Initialize(mapload)
 	. = ..()
 	ghostjoin = 1
 	ghostjoin_icon()
 	active_ghost_pods |= src
 
+<<<<<<< HEAD:code/modules/mob/living/simple_mob/subtypes/animal/passive/raccoon_ch.dm
 /mob/living/simple_mob/animal/passive/raccoon_ch/Destroy()
 	active_ghost_pods -= src
 	return ..()
+=======
+/mob/living/simple_mob/animal/passive/raccoon/Destroy()
+	GLOB.active_ghost_pods -= src
+	. = ..()
+>>>>>>> f39fdae47c (Manualbiome (#11216)):code/modules/mob/living/simple_mob/subtypes/animal/passive/raccoon.dm
 
-/datum/say_list/raccoon_ch
+/datum/say_list/raccoon
 	speak = list("HSSSSS")
 	emote_see = list("shakes their head", "shivers","grooms self", "nibbles on some trash")
 	emote_hear = list("purrs")
 
-/datum/ai_holder/simple_mob/passive/raccoon_ch
+/datum/ai_holder/simple_mob/passive/raccoon
 	flee_when_dying = TRUE
 	dying_threshold = 0.9
 	speak_chance = 1

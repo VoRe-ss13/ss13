@@ -140,7 +140,11 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	if(C.current_ticket)
 		var/datum/ticket/T = C.current_ticket
 		T.AddInteraction("Client disconnected.")
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets.dm
 		// T.initiator.mob.clear_alert("open ticket") // Uncomment this line to enable player-side ticket ui
+=======
+		T.initiator.mob?.clear_alert("open ticket")
+>>>>>>> f39fdae47c (Manualbiome (#11216)):code/modules/tickets/tickets.dm
 		T.initiator = null
 		T = null
 
@@ -375,6 +379,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/statclick/ticket_list)
 	AddInteraction(span_red("[LinkedReplyName(ref_src)]: [msg]"))
 	//send this msg to all admins
 
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets.dm
 	if(level == 1)
 		for (var/client/C in GLOB.mentors)
 			if (C.prefs?.read_preference(/datum/preference/toggle/play_mentorhelp_ping))
@@ -389,6 +394,24 @@ INITIALIZE_IMMEDIATE(/obj/effect/statclick/ticket_list)
 				X << 'sound/effects/adminhelp.ogg'
 			window_flash(X)
 			to_chat(X, chat_msg)
+=======
+	switch(level)
+		if(0)
+			for (var/client/C in GLOB.admins)
+				var/chat_msg = span_mentor_channel(span_admin_pm_notice(span_adminhelp("Ticket [TicketHref("#[id]", ref_src)]") + span_bold(" (Mentor): [LinkedReplyName(ref_src)] [FullMonty(ref_src, check_rights_for(C, (R_ADMIN|R_SERVER|R_MOD)))]: ") + msg))
+				if (C.prefs?.read_preference(/datum/preference/toggle/play_mentorhelp_ping))
+					C << 'sound/effects/mentorhelp.mp3'
+				to_chat(C, chat_msg)
+		if(1)
+			for(var/client/X in GLOB.admins)
+				var/chat_msg = span_admin_pm_notice(span_adminhelp("Ticket [TicketHref("#[id]", ref_src)] (Admin)") + span_bold(": [LinkedReplyName(ref_src)] [FullMonty(ref_src, check_rights_for(X, (R_ADMIN|R_SERVER|R_MOD)))]:") + msg)
+				if(!check_rights_for(X, R_HOLDER))
+					continue
+				if(X.prefs?.read_preference(/datum/preference/toggle/holder/play_adminhelp_ping))
+					X << 'sound/effects/adminhelp.ogg'
+				window_flash(X)
+				to_chat(X, chat_msg)
+>>>>>>> f39fdae47c (Manualbiome (#11216)):code/modules/tickets/tickets.dm
 
 /*
 //Reopen a closed ticket
