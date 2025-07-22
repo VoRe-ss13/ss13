@@ -588,4 +588,524 @@ var/global/list/vr_mob_spawner_options = list(
 	"Neaera" = /mob/living/carbon/human/neaera,
 	"Stok" = /mob/living/carbon/human/stok,
 	//"Gryphon" = /mob/living/simple_mob/vore/gryphon // Disabled until tested
+<<<<<<< HEAD
+=======
+	))
+
+//global lists I found in various files and moved here for housekeeping
+GLOBAL_LIST_EMPTY(stool_cache) //haha stool
+GLOBAL_LIST_EMPTY(emotes_by_key)
+GLOBAL_LIST_EMPTY(random_maps)
+GLOBAL_LIST_EMPTY(map_count)
+GLOBAL_LIST_EMPTY(narsie_list)
+GLOBAL_LIST_EMPTY(id_card_states)
+GLOBAL_LIST_EMPTY(allocated_gamma_loot)
+GLOBAL_LIST_EMPTY(semirandom_mob_spawner_decisions)
+
+GLOBAL_LIST_INIT(unique_gamma_loot, list(
+	/obj/item/perfect_tele,
+	/obj/item/bluespace_harpoon,
+	/obj/item/clothing/glasses/thermal/syndi,
+	/obj/item/gun/energy/netgun,
+	/obj/item/gun/projectile/pirate, // CHOMPAdd
+	/obj/item/gun/projectile/dartgun,
+	/obj/item/clothing/gloves/black/bloodletter,
+	/obj/item/gun/energy/mouseray/metamorphosis
+	))
+
+GLOBAL_LIST_INIT(newscaster_standard_feeds, list(/datum/news_announcement/bluespace_research, /datum/news_announcement/lotus_tree, /datum/news_announcement/random_junk,  /datum/news_announcement/food_riots))
+
+GLOBAL_LIST_INIT(changeling_fabricated_clothing, list(
+	"w_uniform" = /obj/item/clothing/under/chameleon/changeling,
+	"head" = /obj/item/clothing/head/chameleon/changeling,
+	"wear_suit" = /obj/item/clothing/suit/chameleon/changeling,
+	"shoes" = /obj/item/clothing/shoes/chameleon/changeling,
+	"gloves" = /obj/item/clothing/gloves/chameleon/changeling,
+	"wear_mask" = /obj/item/clothing/mask/chameleon/changeling,
+	"glasses" = /obj/item/clothing/glasses/chameleon/changeling,
+	"back" = /obj/item/storage/backpack/chameleon/changeling,
+	"belt" = /obj/item/storage/belt/chameleon/changeling,
+	"wear_id" = /obj/item/card/id/syndicate/changeling
+	))
+
+//  Defines which values mean "on" or "off".
+//  This is to make some of the more OP superpowers a larger PITA to activate,
+//  and to tell our new DNA datum which values to set in order to turn something
+//  on or off.
+var/global/list/dna_activity_bounds[DNA_SE_LENGTH]
+
+// Used to determine what each block means (admin hax and species stuff on /vg/, mostly)
+var/global/list/assigned_blocks[DNA_SE_LENGTH]
+
+GLOBAL_LIST_EMPTY(gear_distributed_to)
+GLOBAL_LIST_EMPTY(overlay_cache) //cache recent overlays
+
+var/global/list/all_technomancer_gambit_spells = typesof(/obj/item/spell) - list(
+	/obj/item/spell,
+	/obj/item/spell/gambit,
+	/obj/item/spell/projectile,
+	/obj/item/spell/aura,
+//	/obj/item/spell/insert,
+	/obj/item/spell/spawner,
+	/obj/item/spell/summon,
+	/obj/item/spell/modifier)
+
+var/global/list/image/splatter_cache=list()
+var/global/list/obj/cortical_stacks = list() //Stacks for 'leave nobody behind' objective. Clumsy, rewrite sometime.
+var/global/list/obj/machinery/telecomms/telecomms_list = list()
+
+// color-dir-dry
+var/global/list/image/fluidtrack_cache=list()
+
+var/global/list/datum/stack_recipe/sandbag_recipes = list( \
+	new/datum/stack_recipe("barricade", /obj/structure/barricade/sandbag, 3, time = 5 SECONDS, one_per_turf = 1, on_floor = 1, pass_stack_color = TRUE))
+
+var/global/list/datum/stack_recipe/wax_recipes = list( \
+	new/datum/stack_recipe("candle", /obj/item/flame/candle) \
+)
+var/global/list/datum/stack_recipe/rods_recipes = list( \
+	new/datum/stack_recipe("grille", /obj/structure/grille, 2, time = 10, one_per_turf = 1, on_floor = 0),
+	new/datum/stack_recipe("catwalk", /obj/structure/catwalk, 2, time = 80, one_per_turf = 1, on_floor = 1))
+
+
+GLOBAL_LIST_INIT(possible_plants, list(
+	"plant-1",
+	"plant-10",
+	"plant-09",
+	"plant-15",
+	"plant-13"
+))
+
+GLOBAL_LIST_INIT(radio_channels_by_freq, list(
+	num2text(PUB_FREQ) = CHANNEL_COMMON,
+	num2text(AI_FREQ)  = CHANNEL_AI_PRIVATE,
+	num2text(ENT_FREQ) = CHANNEL_ENTERTAINMENT,
+	num2text(ERT_FREQ) = CHANNEL_RESPONSE_TEAM,
+	num2text(COMM_FREQ)= CHANNEL_COMMAND,
+	num2text(ENG_FREQ) = CHANNEL_ENGINEERING,
+	num2text(MED_FREQ) = CHANNEL_MEDICAL,
+	num2text(MED_I_FREQ)=CHANNEL_MEDICAL_1,
+	num2text(BDCM_FREQ) =CHANNEL_BODYCAM, // CHOMPEdit
+	num2text(SEC_FREQ) = CHANNEL_SECURITY,
+	num2text(SEC_I_FREQ)=CHANNEL_SECURITY_1,
+	num2text(SCI_FREQ) = CHANNEL_SCIENCE,
+	num2text(SUP_FREQ) = CHANNEL_SUPPLY,
+	num2text(SRV_FREQ) = CHANNEL_SERVICE,
+	num2text(EXP_FREQ) = CHANNEL_EXPLORATION
+	))
+
+GLOBAL_LIST_BOILERPLATE(all_pai_cards, /obj/item/paicard)
+
+// Access check is of the type requires one. These have been carefully selected to avoid allowing the janitor to see channels he shouldn't
+GLOBAL_LIST_INIT(default_internal_channels, list(
+	num2text(PUB_FREQ) = list(),
+	num2text(AI_FREQ)  = list(access_synth),
+	num2text(ENT_FREQ) = list(),
+	num2text(ERT_FREQ) = list(access_cent_specops),
+	num2text(COMM_FREQ)= list(access_heads),
+	num2text(ENG_FREQ) = list(access_engine_equip, access_atmospherics),
+	num2text(MED_FREQ) = list(access_medical_equip),
+	num2text(MED_I_FREQ)=list(access_medical_equip),
+	num2text(BDCM_FREQ) =list(access_security), // CHOMPAdd
+	num2text(SEC_FREQ) = list(access_security),
+	num2text(SEC_I_FREQ)=list(access_security),
+	num2text(SCI_FREQ) = list(access_tox, access_robotics, access_xenobiology),
+	num2text(SUP_FREQ) = list(access_cargo, access_mining_station),
+	num2text(SRV_FREQ) = list(access_janitor, access_library, access_hydroponics, access_bar, access_kitchen),
+	num2text(EXP_FREQ) = list(access_explorer, access_pilot) // CHOMPEdit
+))
+
+GLOBAL_LIST_INIT(default_medbay_channels, list(
+	num2text(PUB_FREQ) = list(),
+	num2text(MED_FREQ) = list(),
+	num2text(MED_I_FREQ) = list()
+))
+
+GLOBAL_LIST_INIT(valid_ringtones, list(
+		"beep",
+		"boom",
+		"slip",
+		"honk",
+		"SKREE",
+		"xeno",
+		"dust", // CHOMPEdit - Keeps dust as ringtone
+		"spark",
+		"rad",
+		"servo",
+		// "buh-boop", // CHOMPEdit - No.
+		"trombone",
+		"whistle",
+		"chirp",
+		"slurp",
+		"pwing",
+		"clack",
+		"bzzt",
+		"chimes",
+		"prbt",
+		"bark",
+		"bork",
+		"roark",
+		"chitter",
+		"squish"
+		))
+
+GLOBAL_LIST_EMPTY(seen_citizenships)
+GLOBAL_LIST_EMPTY(seen_systems)
+GLOBAL_LIST_EMPTY(seen_factions)
+GLOBAL_LIST_EMPTY(seen_religions)
+
+GLOBAL_LIST_INIT(citizenship_choices, list(
+	"Earth",
+	"Mars",
+	"Sif",
+	"Binma",
+	"Moghes",
+	"Meralar",
+	"Qerr'balak"
+	))
+
+GLOBAL_LIST_INIT(home_system_choices, list(
+	"Virgo-Erigone",
+	"Sol",
+	"Earth, Sol",
+	"Luna, Sol",
+	"Mars, Sol",
+	"Venus, Sol",
+	"Titan, Sol",
+	"Toledo, New Ohio",
+	"The Pact, Myria",
+	"Kishar, Alpha Centauri",
+	"Anshar, Alpha Centauri",
+	"Heaven Complex, Alpha Centauri",
+	"Procyon",
+	"Altair",
+	"Kara, Vir",
+	"Sif, Vir",
+	"Brinkburn, Nyx",
+	"Binma, Tau Ceti",
+	"Qerr'balak, Qerr'valis",
+	"Epsilon Ursae Minoris",
+	"Meralar, Rarkajar",
+	"Tal, Vilous",
+	"Menhir, Alat-Hahr",
+	"Altam, Vazzend",
+	"Uh'Zata, Kelezakata",
+	"Moghes, Uuoea-Esa",
+	"Xohok, Uuoea-Esa",
+	"Varilak, Antares",
+	"Sanctorum, Sanctum",
+	"Infernum, Sanctum",
+	"Abundance in All Things Serene, Beta-Carnelium Ventrum",
+	"Jorhul, Barkalis",
+	"Shelf Flotilla",
+	"Ue-Orsi Flotilla",
+	"AH-CV Prosperity",
+	"AH-CV Migrant",
+	"Altevian Colony Ship"
+	))
+
+GLOBAL_LIST_INIT(faction_choices, list(
+	"Sol Central", // CHOMPAdd
+	"NanoTrasen Incorporated",
+	"Hephaestus Industries",
+	"Vey-Medical",
+	"Zeng-Hu Pharmaceuticals",
+	"Ward-Takahashi GMC",
+	"Bishop Cybernetics",
+	"Morpheus Cyberkinetics",
+	"Xion Manufacturing Group",
+	"Free Trade Union",
+	"Major Bill's Transportation",
+	"Ironcrest Transport Group",
+	"Grayson Manufactories Ltd.",
+	"Aether Atmospherics",
+	"Focal Point Energistics",
+	"StarFlight Inc.",
+	"Oculum Broadcasting Network",
+	"Periphery Post",
+	"Free Anur Tribune",
+	"Centauri Provisions",
+	"Einstein Engines",
+	"Wulf Aeronautics",
+	"Gilthari Exports",
+	"Coyote Salvage Corp.",
+	"Chimera Genetics Corp.",
+	"Independent Pilots Association",
+	"Local System Defense Force",
+	"United Solar Defense Force",
+	"Proxima Centauri Risk Control",
+	"HIVE Security",
+	"Stealth Assault Enterprises",
+	"Teshari Union"
+	))
+
+GLOBAL_LIST_EMPTY(antag_faction_choices)	//Should be populated after brainstorming. Leaving as blank in case brainstorming does not occur.
+
+GLOBAL_LIST_INIT(antag_visiblity_choices, list(
+	"Hidden",
+	"Shared",
+	"Known"
+	))
+
+GLOBAL_LIST_INIT(religion_choices, list(
+	"Unitarianism",
+	"Neopaganism",
+	"Islam",
+	"Christianity",
+	"Judaism",
+	"Hinduism",
+	"Buddhism",
+	"Pleromanism",
+	"Spectralism",
+	"Phact Shintoism",
+	"Kishari Faith",
+	"Hauler Faith",
+	"Nock",
+	"Singulitarian Worship",
+	"Xilar Qall",
+	"Tajr-kii Rarkajar",
+	"Agnosticism",
+	"Deism",
+	"Neo-Moreauism",
+	"Orthodox Moreauism"
+	))
+
+GLOBAL_LIST_INIT(xenoChemList, list(REAGENT_ID_MUTATIONTOXIN,
+						REAGENT_ID_PSILOCYBIN,
+						REAGENT_ID_MINDBREAKER,
+						REAGENT_ID_IMPEDREZENE,
+						REAGENT_ID_CRYPTOBIOLIN,
+						REAGENT_ID_BLISS,
+						REAGENT_ID_CHLORALHYDRATE,
+						REAGENT_ID_STOXIN,
+						REAGENT_ID_MUTAGEN,
+						REAGENT_ID_LEXORIN,
+						REAGENT_ID_PACID,
+						REAGENT_ID_CYANIDE,
+						REAGENT_ID_PHORON,
+						REAGENT_ID_PLASTICIDE,
+						REAGENT_ID_AMATOXIN,
+						REAGENT_ID_CARBON,
+						REAGENT_ID_RADIUM,
+						REAGENT_ID_SACID,
+						REAGENT_ID_SUGAR,
+						REAGENT_ID_KELOTANE,
+						REAGENT_ID_DERMALINE,
+						REAGENT_ID_ANTITOXIN,
+						REAGENT_ID_DEXALIN,
+						REAGENT_ID_SYNAPTIZINE,
+						REAGENT_ID_ALKYSINE,
+						REAGENT_ID_IMIDAZOLINE,
+						REAGENT_ID_PERIDAXON,
+						REAGENT_ID_REZADONE))
+
+//Chemlist of what was banned in xenobio2. Kept for legacy purposes.
+GLOBAL_LIST_INIT(xeno2ChemList, list(REAGENT_ID_INAPROVALINE,
+						REAGENT_ID_BICARIDINE,
+						REAGENT_ID_DEXALINP,
+						REAGENT_ID_TRICORDRAZINE,
+						REAGENT_ID_CRYOXADONE,
+						REAGENT_ID_CLONEXADONE,
+						REAGENT_ID_PARACETAMOL,
+						REAGENT_ID_TRAMADOL,
+						REAGENT_ID_OXYCODONE,
+						REAGENT_ID_RYETALYN,
+						REAGENT_ID_HYPERZINE,
+						REAGENT_ID_ETHYLREDOXRAZINE,
+						REAGENT_ID_HYRONALIN,
+						REAGENT_ID_ARITHRAZINE,
+						REAGENT_ID_SPACEACILLIN,
+						REAGENT_ID_STERILIZINE,
+						REAGENT_ID_LEPORAZINE,
+						REAGENT_ID_METHYLPHENIDATE,
+						REAGENT_ID_CITALOPRAM,
+						REAGENT_ID_PAROXETINE,
+						REAGENT_ID_MACROCILLIN,
+						REAGENT_ID_MICROCILLIN,
+						REAGENT_ID_NORMALCILLIN,
+						REAGENT_ID_SIZEOXADONE,
+						REAGENT_ID_ICKYPAK,
+						REAGENT_ID_UNSORBITOL,
+						REAGENT_ID_TOXIN,
+						REAGENT_ID_CARPOTOXIN,
+						REAGENT_ID_POTASSIUMCHLORIDE,
+						REAGENT_ID_POTASSIUMCHLOROPHORIDE,
+						REAGENT_ID_ZOMBIEPOWDER,
+						REAGENT_ID_FERTILIZER,
+						REAGENT_ID_EZNUTRIENT,
+						REAGENT_ID_LEFT4ZED,
+						REAGENT_ID_ROBUSTHARVEST,
+						REAGENT_ID_PLANTBGONE,
+						REAGENT_ID_SEROTROTIUM,
+						REAGENT_ID_NICOTINE,
+						REAGENT_ID_URANIUM,
+						REAGENT_ID_SILVER,
+						REAGENT_ID_GOLD,
+						REAGENT_ID_ADRENALINE,
+						REAGENT_ID_HOLYWATER,
+						REAGENT_ID_AMMONIA,
+						REAGENT_ID_DIETHYLAMINE,
+						REAGENT_ID_FLUOROSURFACTANT,
+						REAGENT_ID_FOAMINGAGENT,
+						REAGENT_ID_THERMITE,
+						REAGENT_ID_CLEANER,
+						REAGENT_ID_LUBE,
+						REAGENT_ID_SILICATE,
+						REAGENT_ID_GLYCEROL,
+						REAGENT_ID_COOLANT,
+						REAGENT_ID_LUMINOL,
+						REAGENT_ID_NUTRIMENT,
+						REAGENT_ID_CORNOIL,
+						REAGENT_ID_LIPOZINE,
+						REAGENT_ID_SODIUMCHLORIDE,
+						REAGENT_ID_FROSTOIL,
+						REAGENT_ID_CAPSAICIN,
+						REAGENT_ID_CONDENSEDCAPSAICIN,
+						REAGENT_ID_NEUROTOXIN))
+
+//keep synced with the defines BE_* in setup.dm --rastaf
+//some autodetection here.
+//Change these to 0 if the equivalent mode is disabled for whatever reason!
+GLOBAL_LIST_INIT(special_roles, list(
+	"traitor" = 0,										// 0
+	"operative" = 0,									// 1
+	"changeling" = 0,									// 2
+	"wizard" = 0,										// 3
+	"malf AI" = 0,										// 4
+	"revolutionary" = 0,								// 5
+	"alien candidate" = 0,								// 6
+	"positronic brain" = 1,								// 7
+	"cultist" = 0,										// 8
+	"renegade" = 0,										// 9
+	"ninja" = 0,										// 10
+	"raider" = 0,										// 11
+	"diona" = 0,										// 12
+	"mutineer" = 0,										// 13
+	"loyalist" = 0,										// 14
+	"pAI candidate" = 1,								// 15
+	"lost drone" = 1,									// 16
+	"maint pred" = 1,									// 17
+	"stowaway" = 1,										// 18 // CHOMPEdit
+	"morph" = 1,										// 19
+	"corgi" = 1,										// 20
+	"cursed sword" = 1,									// 21
+	"Ship Survivor" = 1,								// 22
+))
+
+
+// GLOB.alldirs in global.dm is the same list of directions, but since
+//  the specific order matters to get a usable icon_state, it is
+//  copied here so that, in the unlikely case that GLOB.alldirs is changed, transit_tube.dm
+//  continues to work.
+GLOBAL_LIST_INIT(tube_dir_list, list(
+	NORTH,
+	SOUTH,
+	EAST,
+	WEST,
+	NORTHEAST,
+	NORTHWEST,
+	SOUTHEAST,
+	SOUTHWEST))
+
+GLOBAL_LIST_EMPTY(direction_table)
+
+GLOBAL_LIST_INIT(valid_bloodreagents, list("default",REAGENT_ID_IRON,REAGENT_ID_COPPER,REAGENT_ID_PHORON,REAGENT_ID_SILVER,REAGENT_ID_GOLD,REAGENT_ID_SLIMEJELLY))	//allowlist-based so people don't make their blood restored by alcohol or something really silly. use reagent IDs!
+
+GLOBAL_LIST_EMPTY(monitor_states)
+
+GLOBAL_LIST_EMPTY(random_junk)
+GLOBAL_LIST_EMPTY(random_junk_)
+GLOBAL_LIST_EMPTY(random_useful_)
+GLOBAL_LIST_INIT(valid_bloodtypes, list("A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"))
+
+//Some simple descriptors for breaches. Global because lazy, TODO: work out a better way to do this.
+
+GLOBAL_LIST_INIT(breach_brute_descriptors, list(
+	"tiny puncture",
+	"ragged tear",
+	"large split",
+	"huge tear",
+	"gaping wound"
+	))
+
+GLOBAL_LIST_INIT(breach_burn_descriptors, list(
+	"small burn",
+	"melted patch",
+	"sizable burn",
+	"large scorched area",
+	"huge scorched area"
+	))
+
+GLOBAL_LIST_INIT(wide_chassis, list(
+	"rat",
+	"panther",
+	"teppi",
+	"pai-diredog",
+	"pai-horse_lune",
+	"pai-horse_soleil",
+	"pai-pdragon",
+	"pai-protodog"
+	))
+
+GLOBAL_LIST_INIT(flying_chassis, list(
+	"pai-parrot",
+	"pai-bat",
+	"pai-butterfly",
+	"pai-hawk",
+	"cyberelf"
+	))
+
+//Sure I could spend all day making wacky overlays for all of the different forms
+//but quite simply most of these sprites aren't made for that, and I'd rather just make new ones
+//the birds especially! Just naw. If someone else wants to mess with 12x4 frames of animation where
+//most of the pixels are different kinds of green and tastefully translate that to whitescale
+//they can have fun with that! I not doing it!
+GLOBAL_LIST_INIT(allows_eye_color, list(
+	"pai-repairbot",
+	"pai-typezero",
+	"pai-bat",
+	"pai-butterfly",
+	"pai-mouse",
+	"pai-monkey",
+	"pai-raccoon",
+	"pai-cat",
+	"rat",
+	"panther",
+	"pai-bear",
+	"pai-fen",
+	"cyberelf",
+	"teppi",
+	"catslug",
+	"car",
+	"typeone",
+	"13",
+	"pai-raptor",
+	"pai-diredog",
+	"pai-horse_lune",
+	"pai-horse_soleil",
+	"pai-pdragon",
+	"pai-protodog"
+	))
+
+
+GLOBAL_LIST_EMPTY(entopic_images)
+GLOBAL_LIST_EMPTY(entopic_users)
+
+GLOBAL_LIST_EMPTY(alt_farmanimals)
+
+GLOBAL_LIST_EMPTY(acceptable_items) // List of the items you can put in
+GLOBAL_LIST_EMPTY(available_recipes) // List of the recipes you can use
+GLOBAL_LIST_EMPTY(acceptable_reagents) // List of the reagents you can put in
+
+
+
+/var/all_ui_styles = list(
+	"Midnight"     = 'icons/mob/screen/midnight.dmi',
+	"Orange"       = 'icons/mob/screen/orange.dmi',
+	"old"          = 'icons/mob/screen/old.dmi',
+	"White"        = 'icons/mob/screen/white.dmi',
+	"old-noborder" = 'icons/mob/screen/old-noborder.dmi',
+	"minimalist"   = 'icons/mob/screen/minimalist.dmi',
+	"Hologram"     = 'icons/mob/screen/holo.dmi'
+>>>>>>> 6865dc5903 ([MIRROR] loot element uses proper global lists (#11219))
 	)
