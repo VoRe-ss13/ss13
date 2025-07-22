@@ -2,7 +2,11 @@
   "private": true,
   "name": "tgui-workspace",
   "version": "6.0.0",
+<<<<<<< HEAD
   "packageManager": "yarn@4.9.1",
+=======
+  "packageManager": "bun@1.2.19",
+>>>>>>> 2bc6485c7b ([MIRROR] some fixes (#11217))
   "workspaces": [
     "packages/*"
   ],
@@ -43,7 +47,16 @@
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@types/node": "^22.14.0",
+=======
+    "@happy-dom/global-registrator": "^17.6.3",
+    "@rspack/cli": "^1.4.8",
+    "@rspack/core": "^1.4.8",
+    "@types/bun": "^1.2.19",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+>>>>>>> 2bc6485c7b ([MIRROR] some fixes (#11217))
     "@types/webpack-env": "^1.18.8",
     "@types/wicg-file-system-access": "^2023.10.6",
     "vitest": "^3.1.1"
