@@ -1,4 +1,3 @@
-/* eslint react/no-danger: "off" */
 import { type RefObject, useEffect, useRef, useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
@@ -230,12 +229,26 @@ export const TicketsPanel = (props) => {
                   >
                     <LabeledList>
                       <LabeledList.Item label="Ticket ID">
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/TicketsPanel.tsx
                         #{selected_ticket.id}:
                         <div
                           dangerouslySetInnerHTML={{
                             __html: selected_ticket.name,
                           }}
                         />
+=======
+                        <Stack>
+                          <Stack.Item>#{selected_ticket.id}:</Stack.Item>
+                          <Stack.Item>
+                            <div
+                              // biome-ignore lint/security/noDangerouslySetInnerHtml: Ticket data
+                              dangerouslySetInnerHTML={{
+                                __html: selected_ticket.name,
+                              }}
+                            />
+                          </Stack.Item>
+                        </Stack>
+>>>>>>> 457fff752f ([MIRROR] dangerously set html change (#11231)):tgui/packages/tgui/interfaces/TicketsPanel.tsx
                       </LabeledList.Item>
                       <LabeledList.Item label="Type">
                         {Level[selected_ticket.level]}
@@ -274,6 +287,7 @@ export const TicketsPanel = (props) => {
                       )}
                       <LabeledList.Item label="Actions">
                         <div
+                          // biome-ignore lint/security/noDangerouslySetInnerHtml: Ticket data
                           dangerouslySetInnerHTML={{
                             __html: selected_ticket.actions,
                           }}
@@ -293,6 +307,7 @@ export const TicketsPanel = (props) => {
                           .map((L, i) => (
                             <div
                               key={i}
+                              // biome-ignore lint/security/noDangerouslySetInnerHtml: Ticket data
                               dangerouslySetInnerHTML={{
                                 __html: selected_ticket.log[L],
                               }}
