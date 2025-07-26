@@ -131,6 +131,7 @@
 
 //CHOMPEdit Begin - Actually phase to the Dark on death
 /datum/species/shadekin/handle_death(var/mob/living/carbon/human/H)
+<<<<<<< HEAD
 	H.clear_dark_maws() //CHOMPEdit - clear dark maws on death or similar
 	if(respite_activating)
 		return TRUE
@@ -197,6 +198,27 @@
 			to_chat(H, span_notice("You feel like you can leave the Dark again"))
 	else
 		H.add_modifier(/datum/modifier/dark_respite, 25 MINUTES)
+=======
+	var/special_handling = TRUE //varswitch for downstream //CHOMPEdit - Enable.
+	H.clear_dark_maws() //clear dark maws on death or similar
+	var/datum/component/shadekin/SK = H.get_shadekin_component()
+	if(!special_handling || (SK && SK.no_retreat))
+		spawn(1)
+			for(var/obj/item/W in H)
+				H.drop_from_inventory(W)
+			qdel(H)
+	else
+		if(!SK)
+			return
+		if(SK.respite_activating)
+			return TRUE
+		var/area/current_area = get_area(H)
+		if((SK.in_dark_respite) || H.has_modifier_of_type(/datum/modifier/dark_respite) || current_area.flag_check(AREA_LIMIT_DARK_RESPITE))
+			return
+		if(!LAZYLEN(GLOB.latejoin_thedark))
+			log_and_message_admins("[H] died outside of the dark but there were no valid floors to warp to")
+			return
+>>>>>>> f51b2c3f7d ([MIRROR] more TG prefs (#11241))
 
 		spawn(1 SECOND)
 			H.forceMove(pick(GLOB.latejoin_thedark))
