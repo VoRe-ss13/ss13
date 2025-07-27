@@ -52,6 +52,9 @@ GLOBAL_LIST_INIT(diseases, subtypesof(/datum/disease))
 	if(global_flag_check(virus_modifiers, CARRIER) && !cure)
 		return FALSE
 
+	if(global_flag_check(virus_modifiers, DORMANT))
+		return FALSE
+
 	if(!global_flag_check(virus_modifiers, PROCESSING))
 		virus_modifiers |= PROCESSING
 		Start()
@@ -176,6 +179,7 @@ GLOBAL_LIST_INIT(diseases, subtypesof(/datum/disease))
 /datum/disease/proc/Copy()
 	var/datum/disease/D = new type()
 	D.strain_data = strain_data.Copy()
+	D.virus_modifiers = virus_modifiers
 	return D
 
 /datum/disease/proc/GetDiseaseID()
