@@ -75,6 +75,19 @@ includes scars and tattoos
 	body_parts = list (BP_L_LEG)
 //END TODO
 
+<<<<<<< HEAD
+=======
+/datum/sprite_accessory/marking/tat_zigs
+	name = "Tattoo (Zigs)"
+	icon_state = "tat_zigs"
+	body_parts = list(BP_L_LEG, BP_R_LEG)
+
+/datum/sprite_accessory/marking/tat_circle/legs
+	name = "Modified Tattoo (Circle, Legs)"
+	icon_state = "tat_circle"
+	body_parts = list(BP_R_LEG,BP_L_LEG)
+
+>>>>>>> d7e9e7c1d3 ([MIRROR] Itsaidmybranchwasbad (#11261))
 /datum/sprite_accessory/marking/tat_silverburgh
 	name = "Tattoo (Silverburgh, R.Leg)"
 	icon_state = "tat_silverburgh"
