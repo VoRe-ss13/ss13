@@ -72,7 +72,11 @@
 /mob/living/simple_mob/mechanical/mecha/eclipse/hivebot/tyr/proc/summon_janitor(atom/target, var/amount, var/next_cycle)
 	if(!target)
 		return
+<<<<<<< HEAD
 	new /mob/living/simple_mob/mechanical/combat_drone/artillery
+=======
+	new /mob/living/simple_mob/mechanical/hivebot/tyr(src.loc)
+>>>>>>> 5e764c5c63 (Tyr Fixes (#11277))
 	amount--
 	if(amount > 0)
 		addtimer(CALLBACK(src, PROC_REF(summon_drones), target, amount, next_cycle), 0.5 SECONDS, TIMER_DELETE_ME)
