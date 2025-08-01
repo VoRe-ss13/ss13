@@ -1054,6 +1054,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 6
 	},
+/obj/machinery/rnd/server/master,
 /turf/simulated/floor/tiled/dark{
 	nitrogen = 100;
 	oxygen = 0;
@@ -1064,6 +1065,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 9
 	},
+/obj/machinery/rnd/server,
 /turf/simulated/floor/tiled/dark{
 	nitrogen = 100;
 	oxygen = 0;
@@ -3207,6 +3209,74 @@
 	nitrogen = 82.1472
 	},
 /area/engineering/workshop)
+<<<<<<< HEAD
+=======
+"im" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/closet/secure_closet/freezer/fridge,
+/turf/simulated/floor/tiled/eris/cafe,
+/area/crew_quarters/kitchen)
+"in" = (
+/obj/structure/closet/secure_closet/freezer/meat,
+/turf/simulated/floor/tiled/eris/cafe,
+/area/crew_quarters/kitchen)
+"io" = (
+/obj/machinery/chem_master/condimaster,
+/obj/machinery/light/floortube,
+/turf/simulated/floor/tiled/eris/cafe,
+/area/crew_quarters/kitchen)
+"ip" = (
+/obj/machinery/appliance/cooker/fryer,
+/turf/simulated/floor/tiled/eris/cafe,
+/area/crew_quarters/kitchen)
+"iq" = (
+/obj/machinery/appliance/cooker/grill,
+/turf/simulated/floor/tiled/eris/cafe,
+/area/crew_quarters/kitchen)
+"ir" = (
+/obj/machinery/appliance/cooker/oven,
+/turf/simulated/floor/tiled/eris/cafe,
+/area/crew_quarters/kitchen)
+"is" = (
+/obj/structure/table/standard,
+/obj/machinery/microwave,
+/obj/machinery/light/floortube,
+/turf/simulated/floor/tiled/eris/cafe,
+/area/crew_quarters/kitchen)
+"it" = (
+/obj/structure/table/standard,
+/obj/machinery/microwave,
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/turf/simulated/floor/tiled/eris/cafe,
+/area/crew_quarters/kitchen)
+"iu" = (
+/obj/structure/sink/kitchen{
+	pixel_y = 20
+	},
+/turf/simulated/floor/tiled/eris/cafe,
+/area/crew_quarters/kitchen)
+"iv" = (
+/obj/machinery/camera/network/civilian,
+/turf/simulated/floor/tiled/eris/cafe,
+/area/medical/medbay)
+"iw" = (
+/obj/structure/grille,
+/obj/structure/window/reinforced{
+	dir = 1;
+	health = 1e+006
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/crew_quarters/kitchen)
+"ix" = (
+/obj/machinery/mecha_part_fabricator_tg,
+/turf/simulated/floor/tiled,
+/area/bridge)
+>>>>>>> eb3409d304 (Techwebs (#11249))
 "iy" = (
 /obj/structure/lattice,
 /turf/simulated/floor/airless,
@@ -3217,6 +3287,32 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/engine_monitoring)
+"iA" = (
+/obj/machinery/mecha_part_fabricator_tg/prosthetics,
+/turf/simulated/floor/tiled,
+/area/bridge)
+"iB" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/rnd/production/circuit_imprinter,
+/turf/simulated/floor/tiled,
+/area/bridge)
+"iC" = (
+/obj/machinery/rnd/production/protolathe,
+/turf/simulated/floor/tiled,
+/area/bridge)
+"iD" = (
+/obj/machinery/computer/rdconsole_tg,
+/turf/simulated/floor/tiled,
+/area/bridge)
+"iE" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/ore_silo,
+/turf/simulated/floor/tiled,
+/area/bridge)
 "iJ" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -9228,7 +9324,7 @@ aa
 aa
 aa
 fY
-gk
+iE
 gf
 gr
 gf
@@ -9637,9 +9733,9 @@ eM
 eM
 gc
 gh
-gf
-gt
-gf
+iC
+iB
+ix
 gf
 gf
 gf
@@ -9841,9 +9937,9 @@ aa
 aa
 fY
 gf
-gf
+iD
 gv
-gf
+iA
 gf
 pG
 gv
