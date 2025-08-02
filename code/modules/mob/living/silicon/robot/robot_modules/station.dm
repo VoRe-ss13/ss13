@@ -795,12 +795,16 @@ var/global/list/robot_modules = list(
 
 /obj/item/robot_module/robot/research/create_equipment(var/mob/living/silicon/robot/robot)
 	..()
+<<<<<<< HEAD
 	src.modules += new /obj/item/portable_destructive_analyzer(src)
 	src.modules += new /obj/item/gripper/research(src)
 	src.modules += new /obj/item/gripper/circuit(src)
 	src.modules += new /obj/item/gripper/no_use/organ/robotics(src)
 	src.modules += new /obj/item/gripper/no_use/mech(src)
 	src.modules += new /obj/item/gripper/no_use/loader(src)
+=======
+	src.modules += new /obj/item/experi_scanner(src)
+>>>>>>> eb3409d304 (Techwebs (#11249))
 	src.modules += new /obj/item/robotanalyzer(src)
 	src.modules += new /obj/item/card/robot(src)
 	src.modules += new /obj/item/weldingtool/electric/mounted/cyborg(src)

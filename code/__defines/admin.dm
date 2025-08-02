@@ -51,6 +51,17 @@
 #define SMITE_SPONTANEOUSCOMBUSTION	"Spontaneous Combustion"
 #define SMITE_LIGHTNINGBOLT			"Lightning Bolt"
 #define SMITE_TERROR				"Terrify"
+<<<<<<< HEAD
+=======
+#define SMITE_SHADEKIN_ATTACK		"Shadekin (Attack)"
+#define SMITE_SHADEKIN_NOMF			"Shadekin (Devour)"
+#define SMITE_REDSPACE_ABDUCT		"Redspace Abduction"
+#define SMITE_AD_SPAM				"Ad Spam"
+#define SMITE_AUTOSAVE				"10 Second Autosave"
+#define SMITE_AUTOSAVE_WIDE			"10 Second Autosave (AoE)"
+#define SMITE_SPICEREQUEST			"Give Them Spice (Harmless)"
+#define SMITE_PEPPERNADE			"Give Them Spice (Extra Spicy)"
+>>>>>>> eb3409d304 (Techwebs (#11249))
 
 #define ADMIN_QUE(user) "(<a href='byond://?_src_=holder;[HrefToken(TRUE)];adminmoreinfo=\ref[user]'>?</a>)"
 #define ADMIN_FLW(user) "(<a href='byond://?_src_=holder;[HrefToken(TRUE)];adminplayerobservefollow=\ref[user]'>FLW</a>)"
