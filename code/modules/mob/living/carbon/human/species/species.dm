@@ -373,6 +373,8 @@
 	var/waking_speed = 1 //NYI - Used Downstream
 	var/lightweight_light = 0 //NYI - Used Downstream
 
+	var/default_custom_base = SPECIES_HUMAN
+
 /datum/species/proc/update_attack_types()
 	unarmed_attacks = list()
 	for(var/u_type in unarmed_types)
@@ -765,7 +767,7 @@
 	new_copy.race_key = race_key
 	if (selects_bodytype && custom_base)
 		new_copy.base_species = custom_base
-		if(selects_bodytype == SELECTS_BODYTYPE_CUSTOM) //If race selects a bodytype, retrieve the custom_base species and copy needed variables.
+		if(selects_bodytype == SELECTS_BODYTYPE_CUSTOM || SELECTS_BODYTYPE_ZORREN) //If race selects a bodytype, retrieve the custom_base species and copy needed variables.
 			var/datum/species/S = GLOB.all_species[custom_base]
 			S.copy_variables(new_copy, copy_vars)
 
