@@ -272,12 +272,10 @@ SUBSYSTEM_DEF(internal_wiki)
 			var/list/assemble_reaction = list()
 			assemble_reaction["temp_min"] = CR.temp_range[1]
 			assemble_reaction["temp_max"] = CR.temp_range[2]
-			/* Downstream features
 			assemble_reaction["xgm_min"] = CR.minimum_xgm_pressure
 			assemble_reaction["xgm_max"] = CR.maximum_xgm_pressure
-			assemble_reaction["require_xgm_gas"] = CR.require_xgm_gas
-			assemble_reaction["rejects_xgm_gas"] = CR.rejects_xgm_gas
-			*/
+			assemble_reaction["require_xgm_gas"] = CR.require_xgm_gas ? GLOB.gas_data.name[CR.require_xgm_gas] : null
+			assemble_reaction["rejects_xgm_gas"] = CR.rejects_xgm_gas ? GLOB.gas_data.name[CR.rejects_xgm_gas] : null
 			var/list/reqs = list()
 			for(var/RQ in CR.required_reagents)
 				var/decl/chemical_reaction/r_RQ = SSchemistry.chemical_reagents[RQ]
@@ -408,6 +406,15 @@ SUBSYSTEM_DEF(internal_wiki)
 		*/
 		return allergies
 	return null
+
+/datum/controller/subsystem/internal_wiki/proc/assemble_sintering(var/sinter)
+	if(sinter == REFINERY_SINTERING_EXPLODE)
+		return "violent detonation"
+	if(sinter == REFINERY_SINTERING_SMOKE)
+		return "toxic fumes"
+	if(sinter == REFINERY_SINTERING_SPIDERS)
+		return "OH GOD WHY!?"
+	return sinter
 
 /datum/controller/subsystem/internal_wiki/proc/add_icon(var/list/data, var/ic, var/is, var/col)
 	var/load_data = list()
@@ -1092,17 +1099,22 @@ SUBSYSTEM_DEF(internal_wiki)
 	SSinternal_wiki.add_icon(data, initial(beaker_path.icon), initial(beaker_path.icon_state), R.color)
 	// Get internal data
 	data["description"] = R.description
+<<<<<<< HEAD
 	/* Downstream features
 	data["addictive"] = 0
 	if(R.id in addictives)
 		data["addictive"] = (R.id in fast_addictives) ? 2 : 1
+=======
+	data["addictive"] = 0
+	if(R.id in get_addictive_reagents(ADDICT_ALL))
+		data["addictive"] = TRUE
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 	data["industrial_use"] = R.industrial_use
 	data["supply_points"] = R.supply_conversion_value ? R.supply_conversion_value : 0
 	var/value = R.supply_conversion_value * REAGENTS_PER_SHEET * SSsupply.points_per_money
 	value = FLOOR(value * 100,1) / 100 // Truncate decimals
 	data["market_price"] = value
-	data["sintering"] = global.reagent_sheets[R.id]
-	*/
+	data["sintering"] = SSinternal_wiki.assemble_sintering(GLOB.reagent_sheets[R.id])
 	data["overdose"] = R.overdose
 	data["flavor"] = R.taste_description
 	data["allergen"] = SSinternal_wiki.assemble_allergens(R.allergen_type)
@@ -1111,9 +1123,14 @@ SUBSYSTEM_DEF(internal_wiki)
 /datum/internal_wiki/page/chemical/get_print()
 	var/body = ""
 	body += "<b>Description: </b>[data["description"]]<br>"
+<<<<<<< HEAD
 	/* Downstream features
 	if(data["addictive"])
 		body += "<b>DANGER, [data["addictive"] > 1 ? "highly " : ""]addictive.</b><br>"
+=======
+	if(data["addictive"])
+		body += "<b>DANGER, addictive.</b><br>"
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 	if(data["industrial_use"])
 		body  += "<b>Industrial Use: </b>[data["industrial_use"]]<br>"
 	var/tank_size = CARGOTANKER_VOLUME
@@ -1124,16 +1141,16 @@ SUBSYSTEM_DEF(internal_wiki)
 	if(data["sintering"])
 		var/mat_id = data["sintering"]
 		switch(mat_id)
-			if("FLAG_SMOKE")
+			if(REFINERY_SINTERING_SMOKE)
 				body += "<b>Sintering Results: COMBUSTION</b><br>"
-			if("FLAG_EXPLODE")
+			if(REFINERY_SINTERING_EXPLODE)
 				body += "<b>Sintering Results: DETONATION</b><br>"
-			if("FLAG_SPIDERS")
+			if(REFINERY_SINTERING_SPIDERS)
 				body += "<b>Sintering Results: DO NOT EVER</b><br>"
 			else
 				var/datum/material/C = get_material_by_name(data["sintering"])
-				body += "<b>Sintering Results: [C.display_name] [C.sheet_plural_name]</b><br>"
-	*/
+				if(C)
+					body += "<b>Sintering Results: [C.display_name] [C.sheet_plural_name]</b><br>"
 	if(data["overdose"] > 0)
 		body += "<b>Overdose: </b>[data["overdose"]]u<br>"
 	body += "<b>Flavor: </b>[data["flavor"]]<br>"
@@ -1356,13 +1373,11 @@ SUBSYSTEM_DEF(internal_wiki)
 			else
 				body += "<b>Potential Chemical breakdown [segment]: </b><br>"
 				segment++
-			/* Downstream features
 			body += " <b>-Temperature: </b> [react["xgm_min"]]K - [react["xgm_max"]]K | ([react["xgm_min"] - T0C]C - [react["xgm_max"] - T0C]C)<br>"
 			if(react["require_xgm_gas"])
-				body += " <b>-Requires Gas: </b> [react["require_xgm_gas"])]<br>"
+				body += " <b>-Requires Gas: </b> [react["require_xgm_gas"]]<br>"
 			if(react["rejects_xgm_gas"])
 				body += " <b>-Rejects Gas: </b> [react["rejects_xgm_gas"]]<br>"
-			*/
 			for(var/RQ in react["required"])
 				body += " <b>-Component: </b>[RQ]<br>"
 			for(var/IH in react["inhibitor"])
