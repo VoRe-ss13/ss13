@@ -168,6 +168,9 @@ var/list/organ_cache = list()
 
 	handle_organ_proc_special()
 
+	for(var/datum/medical_issue/I in medical_issues)
+		I.handle_effects()
+
 	//Process infections
 	if(robotic >= ORGAN_ROBOT || (istype(owner) && (owner.species && (owner.species.flags & (IS_PLANT | NO_INFECT)))))
 		germ_level = 0
