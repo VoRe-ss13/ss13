@@ -191,7 +191,7 @@
 	if(on)
 		soundloop.start()
 		if (M.loc == loc)
-			wash(M)
+			do_wash(M)
 			process_heat(M)
 		for (var/atom/movable/G in src.loc)
 			G.clean_blood(TRUE)
@@ -262,7 +262,11 @@
 			var/remove_amount = M.touching.maximum_volume * M.reagent_permeability() //take off your suit first
 			M.touching.remove_any(remove_amount)
 
+<<<<<<< HEAD
 		M.clean_blood()
+=======
+	O.wash(CLEAN_SCRUB)
+>>>>>>> bdd5e224e4 ([MIRROR] Fixes showers not showering (#11000))
 
 	reagents.splash(O, 10, min_spill = 0, max_spill = 0)
 
