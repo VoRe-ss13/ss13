@@ -14,8 +14,13 @@ Choose “Open”
 You will be greeted with:
 https://i.imgur.com/oAbOjwR.png
 
+<<<<<<< HEAD
 If  you’d prefer to skip right to codestuff/the wiki, this is a good start. Otherwise, continue below:
 https://wiki.torchstation13.net/index.php?title=Basics_of_Coding_in_BYOND
+=======
+If you’d prefer to skip right to codestuff/the wiki, this is a good start. Otherwise, continue below:
+https://wiki.chompstation13.net/index.php?title=Basics_of_Coding_in_BYOND
+>>>>>>> f39fdae47c (Manualbiome (#11216))
 
 MAPPERS:
 If you are looking to MAP, the first thing we need to do is go to the top of the screen, choose “Build”, and Compile.
@@ -24,7 +29,7 @@ Southern Cross is located in /maps/southern_cross/, and each level of the statio
 Submaps are in the /submaps/ folder, and, for instance, if you are looking to add new submaps to the Underdark, you’ll expand underdark_pois and create a new .dmm in the folder by clicking on it, and then going to New. Example here:
 https://i.imgur.com/Q1Cqfll.png
 
-If you are adding a submap, ensure you add it to _templates.dm, a small snippet is here:
+If you are adding a submap, ensure you add it to \_templates.dm, a small snippet is here:
 https://i.imgur.com/Ek9jaCe.png
 
 Cost is how much the POI system has to spend to spawn that .dmm, and name/mappath are self-explanatory.
@@ -32,7 +37,7 @@ Cost is how much the POI system has to spend to spawn that .dmm, and name/mappat
 If you have questions, ask in Discord in #ss13-development! <3
 
 SPRITERS:
-If you are looking to edit icons, skip that, and just go to “icons” (expand it by hitting the +), and then find the icon file you’re looking for. Most people go to adding new drinks + foods for their first foray into DM, so: 
+If you are looking to edit icons, skip that, and just go to “icons” (expand it by hitting the +), and then find the icon file you’re looking for. Most people go to adding new drinks + foods for their first foray into DM, so:
 If you want to add a new drink, CHOMPStation-specific drinks are in icons/obj/drinks_ch.dmi, and CHOMPStation-specific food is icons/obj/food_ch.dmi.
 
 If you have questions, ask in Discord in #ss13-development! <3

@@ -151,6 +151,7 @@ SUBSYSTEM_DEF(statpanels)
 	var/description_holders = target.description_holders
 	var/list/examine_update = list()
 
+<<<<<<< HEAD
 	if(!target.obj_window)
 		target.obj_window = new(target)
 	if(!target.examine_icon && !target.obj_window.examine_target && target.stat_tab == "Examine")
@@ -159,6 +160,19 @@ SUBSYSTEM_DEF(statpanels)
 		START_PROCESSING(SSobj_tab_items, target.obj_window)
 		refresh_client_obj_view(target)
 	examine_update += "[target.examine_icon]&emsp;" + span_giant("[description_holders["name"]]") //The name, written in big letters.
+=======
+	var/atom/atom_icon = description_holders["icon"]
+	var/shown_icon = target.examine_icon
+	if(!shown_icon && atom_icon)
+		if(ismob(atom_icon) || length(atom_icon.overlays) > 0)
+			var/force_south = FALSE
+			if(isliving(atom_icon))
+				force_south = TRUE
+			shown_icon = costly_icon2html(atom_icon, target, sourceonly=TRUE, force_south = force_south)
+		else
+			shown_icon = icon2html(atom_icon, target, sourceonly=TRUE)
+	examine_update += "<img src=\"[shown_icon]\" />&emsp;" + span_giant("[description_holders["name"]]") //The name, written in big letters.
+>>>>>>> f39fdae47c (Manualbiome (#11216))
 	examine_update += "[description_holders["desc"]]" //the default examine text.
 	if(description_holders["info"])
 		examine_update += span_blue(span_bold("[replacetext(description_holders["info"], "\n", "<BR>")]")) + "<br />" //Blue, informative text.

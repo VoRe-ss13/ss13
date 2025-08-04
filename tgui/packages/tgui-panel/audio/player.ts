@@ -19,8 +19,8 @@ export class AudioPlayer {
   options: AudioOptions;
   volume: number;
 
-  onPlaySubscribers: { (): void }[];
-  onStopSubscribers: { (): void }[];
+  onPlaySubscribers: (() => void)[];
+  onStopSubscribers: (() => void)[];
 
   constructor() {
     this.element = null;

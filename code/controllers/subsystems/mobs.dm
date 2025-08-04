@@ -97,3 +97,40 @@ SUBSYSTEM_DEF(mobs)
 /datum/controller/subsystem/mobs/critfail()
 	..()
 	log_recent()
+<<<<<<< HEAD
+=======
+
+/datum/controller/subsystem/mobs/proc/report_death(var/mob/living/L)
+	if(!L)
+		return
+	if(!L.key || !L.mind)
+		return
+	if(!ticker || !ticker.mode)
+		return
+	ticker.mode.check_win()
+
+	// Don't bother with the rest if we've not got a DB to do anything with
+	if(!CONFIG_GET(flag/enable_stat_tracking) || !CONFIG_GET(flag/sql_enabled))
+		return
+
+	var/area/placeofdeath = get_area(L)
+	var/podname = placeofdeath ? placeofdeath.name : "Unknown area"
+
+	var/list/data = list(
+	"name" = "[L.real_name]",
+	"byondkey" = "[L.key]",
+	"job" = "[L.mind.assigned_role]",
+	"special" = "[L.mind.special_role]",
+	"pod" = podname,
+	"tod" = time2text(world.realtime, "YYYY-MM-DD hh:mm:ss"),
+	"laname" = L.lastattacker ? L.lastattacker:real_name : "",
+	"lakey" = L.lastattacker ? L.lastattacker:key : "",
+	"gender" = L.gender,
+	"bruteloss" = L.getBruteLoss(),
+	"fireloss" = L.getFireLoss(),
+	"brainloss" = L.brainloss,
+	"oxyloss" = L.getOxyLoss(),
+	"coord" = "[L.x], [L.y], [L.z]"
+	)
+	death_list += list(data)
+>>>>>>> f39fdae47c (Manualbiome (#11216))

@@ -8,22 +8,14 @@ import type { mobEntry } from './types';
 
 export const CharacterDirectoryList = (props: {
   directory: mobEntry[];
-  onOverlay: Function;
+  onOverlay: React.Dispatch<React.SetStateAction<mobEntry | null>>;
 }) => {
   const { act } = useBackend();
 
   const { onOverlay, directory } = props;
 
   const [sortId, setSortId] = useState<string>('name');
-  const [sortOrder, setSortOrder] = useState<string>('name');
-
-  function handleSortId(value: string) {
-    setSortId(value);
-  }
-
-  function handleSortOrder(value: string) {
-    setSortOrder(value);
-  }
+  const [sortOrder, setSortOrder] = useState<boolean>(true);
 
   return (
     <Section
@@ -40,8 +32,8 @@ export const CharacterDirectoryList = (props: {
             id="name"
             sortId={sortId}
             sortOrder={sortOrder}
-            onSortId={handleSortId}
-            onSortOrder={handleSortOrder}
+            onSortId={setSortId}
+            onSortOrder={setSortOrder}
           >
             Name
           </SortButton>
@@ -49,8 +41,8 @@ export const CharacterDirectoryList = (props: {
             id="species"
             sortId={sortId}
             sortOrder={sortOrder}
-            onSortId={handleSortId}
-            onSortOrder={handleSortOrder}
+            onSortId={setSortId}
+            onSortOrder={setSortOrder}
           >
             Species
           </SortButton>
@@ -58,8 +50,8 @@ export const CharacterDirectoryList = (props: {
             id="tag"
             sortId={sortId}
             sortOrder={sortOrder}
-            onSortId={handleSortId}
-            onSortOrder={handleSortOrder}
+            onSortId={setSortId}
+            onSortOrder={setSortOrder}
           >
             Vore Tag
           </SortButton>
@@ -67,8 +59,8 @@ export const CharacterDirectoryList = (props: {
             id="gendertag"
             sortId={sortId}
             sortOrder={sortOrder}
-            onSortId={handleSortId}
-            onSortOrder={handleSortOrder}
+            onSortId={setSortId}
+            onSortOrder={setSortOrder}
           >
             Gender
           </SortButton>
@@ -76,8 +68,8 @@ export const CharacterDirectoryList = (props: {
             id="sexualitytag"
             sortId={sortId}
             sortOrder={sortOrder}
-            onSortId={handleSortId}
-            onSortOrder={handleSortOrder}
+            onSortId={setSortId}
+            onSortOrder={setSortOrder}
           >
             Sexuality
           </SortButton>
@@ -85,8 +77,8 @@ export const CharacterDirectoryList = (props: {
             id="erptag"
             sortId={sortId}
             sortOrder={sortOrder}
-            onSortId={handleSortId}
-            onSortOrder={handleSortOrder}
+            onSortId={setSortId}
+            onSortOrder={setSortOrder}
           >
             ERP Tag
           </SortButton>
@@ -94,8 +86,8 @@ export const CharacterDirectoryList = (props: {
             id="eventtag"
             sortId={sortId}
             sortOrder={sortOrder}
-            onSortId={handleSortId}
-            onSortOrder={handleSortOrder}
+            onSortId={setSortId}
+            onSortOrder={setSortOrder}
           >
             Event Pref
           </SortButton>

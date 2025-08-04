@@ -5,7 +5,7 @@ import type { mobEntry } from './types';
 
 export const ViewCharacter = (props: {
   overlay: mobEntry;
-  onOverlay: Function;
+  onOverlay: React.Dispatch<React.SetStateAction<mobEntry | null>>;
 }) => {
   const { overlay, onOverlay } = props;
 

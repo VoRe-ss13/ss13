@@ -1,11 +1,11 @@
-import React, { Component, type PropsWithChildren } from 'react';
+import { Component, type CSSProperties, type PropsWithChildren } from 'react';
 import { resolveAsset } from 'tgui/assets';
 import { useBackend } from 'tgui/backend';
-import { KeyListener } from 'tgui-core/components';
 import {
   Box,
   Button,
   Icon,
+  KeyListener,
   LabeledList,
   Slider,
   Tooltip,
@@ -180,6 +180,7 @@ export class NanoMap extends Component<Props, State> {
     const { dragging, offsetX, offsetY, zoom = 1 } = this.state;
     const { children } = this.props;
 
+<<<<<<< HEAD
     const mapUrl = resolveAsset(
       config.map + '_nanomap_z' + config.mapZLevel + '.png',
     );
@@ -196,6 +197,23 @@ export class NanoMap extends Component<Props, State> {
       'background-size': 'cover',
       'background-repeat': 'no-repeat',
       'text-align': 'center',
+=======
+    const WxH = this.getWxH(zoom);
+
+    const mapUrl = resolveAsset(`minimap_${config.mapZLevel}.png`);
+    const newStyle: CSSProperties = {
+      width: `${WxH[0]}px`,
+      height: `${WxH[1]}px`,
+      marginTop: `${offsetY}px`,
+      marginLeft: `${offsetX}px`,
+      overflow: 'hidden',
+      position: 'relative',
+      imageRendering: 'pixelated',
+      backgroundImage: `url(${mapUrl})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      textAlign: 'center',
+>>>>>>> f39fdae47c (Manualbiome (#11216))
       cursor: dragging ? 'move' : 'auto',
     };
 
