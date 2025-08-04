@@ -33,11 +33,16 @@ import './styles/themes/algae.scss';
 
 import { perf } from 'common/perf';
 import { setupGlobalEvents } from 'tgui-core/events';
+<<<<<<< HEAD
 import { setupHotKeys } from 'tgui-core/hotkeys';
 import { setupHotReloading } from 'tgui-dev-server/link/client.mjs';
+=======
+import { setupHotReloading } from 'tgui-dev-server/link/client';
+>>>>>>> 23fee17c6d ([MIRROR] Replace the alt click menu with the RPG Lootpanel (#11170))
 
 import { App } from './App';
 import { setGlobalStore } from './backend';
+import { setupHotKeys } from './hotkeys';
 import { captureExternalLinks } from './links';
 import { render } from './renderer';
 import { configureStore } from './store';
