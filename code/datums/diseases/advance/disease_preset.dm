@@ -35,6 +35,42 @@
 		symptoms += new guaranteed_symptom
 	Finalize()
 
+<<<<<<< HEAD
+=======
+	if(randomname)
+		var/randname = random_disease_name(infected)
+		AssignName(randname)
+		name = randname
+
+/mob/living/carbon/human/proc/give_random_dormant_disease(biohazard = 25, min_symptoms = 2, max_symptoms = 4, min_level = 4, max_level = 9, list/guaranteed_symptoms = list())
+	. = FALSE
+	var/sickrisk = 1
+
+	if(isSynthetic() || HAS_TRAIT(src, STRONG_IMMUNITY_TRAIT)) // Don't bother
+		return
+
+	switch(get_species())
+		if(SPECIES_UNATHI, SPECIES_TAJARAN) // Mice devourers
+			sickrisk = 0.5
+		if(SPECIES_XENOCHIMERA)
+			var/datum/disease/advance/dormant_roanoake = new /datum/disease/roanoake
+			dormant_roanoake.virus_modifiers |= DORMANT
+			ForceContractDisease(dormant_roanoake, TRUE)
+			return
+		if(SPECIES_PROMETHEAN) // Too clean
+			return
+
+	if(prob(min(100, (biohazard * sickrisk))))
+		var/symptom_amt = rand(min_symptoms, max_symptoms)
+		var/datum/disease/advance/dormant_disease = new /datum/disease/advance/random(symptom_amt, max_level, min_level, guaranteed_symptoms, infected = src)
+		dormant_disease.virus_modifiers |= DORMANT
+		dormant_disease.spread_flags = DISEASE_SPREAD_NON_CONTAGIOUS
+		dormant_disease.spread_text = "None"
+		dormant_disease.visibility_flags |= HIDDEN_SCANNER
+		ForceContractDisease(dormant_disease, TRUE)
+		return TRUE
+
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 /datum/disease/advance/random/macrophage
 	setsymptom = /datum/symptom/macrophage
 
