@@ -31,6 +31,7 @@ DEFINE_BITFIELD(admin_flags, list(
 	"SPAWN" = R_SPAWN,
 	"STEALTH" = R_STEALTH,
 	"VAREDIT" = R_VAREDIT,
+	"MENTOR" = R_MENTOR,
 ))
 
 DEFINE_BITFIELD(datum_flags, list(
