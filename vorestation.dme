@@ -2622,6 +2622,14 @@
 #include "code\modules\error_handler\error_viewer.dm"
 #include "code\modules\error_handler\~defines.dm"
 #include "code\modules\eventkit\event_machinery.dm"
+<<<<<<< HEAD
+=======
+#include "code\modules\eventkit\medical_issues.dm"
+#include "code\modules\eventkit\collector_event\admin_commands.dm"
+#include "code\modules\eventkit\collector_event\blockers.dm"
+#include "code\modules\eventkit\collector_event\event_collector.dm"
+#include "code\modules\eventkit\collector_event\nukies_maker\nukies_collector.dm"
+>>>>>>> 1a1824e48a ([MIRROR] GM Tool - Create Medical Issue (#11237))
 #include "code\modules\eventkit\generic_objects\generic_item.dm"
 #include "code\modules\eventkit\generic_objects\generic_structure.dm"
 #include "code\modules\eventkit\gm_interfaces\fake_pda_conversations.dm"
