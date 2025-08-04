@@ -581,7 +581,28 @@
 		to_chat(C, "[holder.fakekey ? "an Administrator" : "[usr.client.key]"] has granted you access to view a View Variables window")
 		C.debug_variables(thing)
 
+<<<<<<< HEAD
 	if(href_list["datumrefresh"])
 		var/datum/DAT = locate(href_list["datumrefresh"])
 		if(istype(DAT, /datum) || istype(DAT, /client) || islist(DAT))
+=======
+		switch(href_list["var_tweak"])
+			if("damtype")
+				editing.damtype = new_val
+			if("force")
+				editing.force = new_val
+			//if("wound")
+			//	editing.wound_bonus = new_val
+			//if("bare wound")
+			//	editing.exposed_wound_bonus = new_val
+
+		message_admins("[key_name(usr)] set [editing]'s [href_list["var_tweak"]] to [new_val] (was [existing_val])")
+		log_admin("[key_name(usr)] set [editing]'s [href_list["var_tweak"]] to [new_val] (was [existing_val])")
+		vv_update_display(editing, href_list["var_tweak"], istext(new_val) ? uppertext(new_val) : new_val)
+
+	//Finally, refresh if something modified the list.
+	if(href_list[VV_HK_DATUM_REFRESH])
+		var/datum/DAT = locate(href_list[VV_HK_DATUM_REFRESH])
+		if(isdatum(DAT) || istype(DAT, /client) || islist(DAT))
+>>>>>>> 668bc1e4e9 ([MIRROR] missing VV options (#11180))
 			debug_variables(DAT)

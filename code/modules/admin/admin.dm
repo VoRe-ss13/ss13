@@ -119,7 +119,11 @@ GLOBAL_VAR_INIT(floorIsLava, 0)
 			if(issmall(M))
 				body += span_bold("Monkeyized") + " | "
 			else
+<<<<<<< HEAD
 				body += "<A href='byond://?src=\ref[src];[HrefToken()];monkeyone=\ref[M]'>Monkeyize</A> | "
+=======
+				body += "<A href='byond://?_src_=holder;[HrefToken()];turn_monkey=\ref[player]'>Monkeyize</A> | "
+>>>>>>> 668bc1e4e9 ([MIRROR] missing VV options (#11180))
 
 			//Corgi
 			if(iscorgi(M))
@@ -130,10 +134,17 @@ GLOBAL_VAR_INIT(floorIsLava, 0)
 			//AI / Cyborg
 			if(isAI(M))
 				body += span_bold("Is an AI ")
+<<<<<<< HEAD
 			else if(ishuman(M))
 				body += {"<A href='byond://?src=\ref[src];[HrefToken()];makeai=\ref[M]'>Make AI</A> |
 					<A href='byond://?src=\ref[src];[HrefToken()];makerobot=\ref[M]'>Make Robot</A> |
 					<A href='byond://?src=\ref[src];[HrefToken()];makealien=\ref[M]'>Make Alien</A>
+=======
+			else if(ishuman(player))
+				body += {"<A href='byond://?_src_=holder;[HrefToken()];turn_ai=\ref[player]'>Make AI</A> |
+					<A href='byond://?_src_=holder;[HrefToken()];turn_robot=\ref[player]'>Make Robot</A> |
+					<A href='byond://?_src_=holder;[HrefToken()];turn_alien=\ref[player]'>Make Alien</A>
+>>>>>>> 668bc1e4e9 ([MIRROR] missing VV options (#11180))
 				"}
 
 			//Simple Animals
