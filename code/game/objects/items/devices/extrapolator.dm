@@ -169,7 +169,14 @@
 				for(var/datum/symptom/symptom in advance_disease.symptoms)
 					message += "[symptom.name]"
 			else
+<<<<<<< HEAD
 				message += span_info("<b>[disease.name]</b>, stage [disease.stage]/[disease.max_stages].")
+=======
+				message += span_info("<b>[disease.name]</b>, [global_flag_check(disease.virus_modifiers, DORMANT) ? "<i>dormant virus</i>" : "stage [disease.stage]/[disease.max_stages]"].")
+
+			disease.addToDB()
+
+>>>>>>> 66424e44b2 ([MIRROR] Virology Fixes (#11254))
 	to_chat(user, examine_block(jointext(message, "\n")), avoid_highlighting = TRUE, trailing_newline = FALSE, type = MESSAGE_TYPE_INFO)
 
 /obj/item/extrapolator/proc/extrapolate(mob/living/user, atom/target, isolate = FALSE)
