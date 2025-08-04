@@ -1,15 +1,23 @@
 /mob/living/carbon/human/dummy
 	real_name = "Test Dummy"
-	status_flags = GODMODE|CANPUSH
+	status_flags = CANPUSH
 	has_huds = FALSE
 	blocks_emissive = FALSE
 
 /mob/living/carbon/human/dummy/Initialize(mapload)
 	. = ..()
+<<<<<<< HEAD
 	mob_list -= src
 	living_mob_list -= src
 	dead_mob_list -= src
 	human_mob_list -= src
+=======
+	AddElement(/datum/element/godmode)
+	GLOB.mob_list -= src
+	GLOB.living_mob_list -= src
+	GLOB.dead_mob_list -= src
+	GLOB.human_mob_list -= src
+>>>>>>> 23a48feba4 ([MIRROR] Signals and God (#11242))
 
 /mob/living/carbon/human/dummy/Life()
 	mob_list -= src
