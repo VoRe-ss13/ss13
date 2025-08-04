@@ -138,12 +138,84 @@ export const VoreSelectedBellyDescriptions = (props: {
           </Box>
         </Stack.Item>
         <Stack.Item>
+<<<<<<< HEAD
           <Button
             icon="pencil"
             onClick={() => act('set_attribute', { attribute: 'b_desc' })}
           >
             Edit
           </Button>
+=======
+          <Stack fill>
+            <Stack.Item basis="49%" grow>
+              <LabeledList>
+                <LabeledList.Item label="Idle Emotes">
+                  <VorePanelEditSwitch
+                    action="set_attribute"
+                    subAction="b_emoteactive"
+                    editMode={editMode}
+                    active={!!emote_active}
+                    content={emote_active ? 'Active' : 'Inactive'}
+                    tooltip={`${emote_active ? 'Dis' : 'En'}ables idle emotes.`}
+                  />
+                </LabeledList.Item>
+                <LabeledList.Item label="Idle Emote Delay">
+                  <VorePanelEditNumber
+                    action="set_attribute"
+                    subAction="b_emotetime"
+                    editMode={editMode}
+                    value={emote_time}
+                    unit="seconds"
+                    tooltip="Choose the period it takes for idle belly emotes to be shown to prey."
+                    maxValue={600}
+                    minValue={60}
+                  />
+                </LabeledList.Item>
+                <LabeledList.Item label="Liquid Fullness Examines">
+                  <VorePanelEditSwitch
+                    action="set_attribute"
+                    subAction="b_show_liq_fullness"
+                    editMode={editMode}
+                    active={!!show_liq_fullness}
+                    content={show_liq_fullness ? 'Active' : 'Inactive'}
+                    tooltip={
+                      (show_liq_fullness ? 'Dis' : 'En') +
+                      'ables liquid fullness examine messages.'
+                    }
+                  />
+                </LabeledList.Item>
+              </LabeledList>
+            </Stack.Item>
+            <Stack.Item basis="49%" grow>
+              <LabeledList>
+                <LabeledList.Item label="Entrance Logs">
+                  <VorePanelEditSwitch
+                    action="set_attribute"
+                    subAction="b_entrance_logs"
+                    editMode={editMode}
+                    active={!!entrance_logs}
+                    tooltip={
+                      (entrance_logs ? 'Dis' : 'En') +
+                      'ables auto transfer messages and spawn messages being shown to yourself.'
+                    }
+                  />
+                </LabeledList.Item>
+                <LabeledList.Item label="Item Digestion Logs">
+                  <VorePanelEditSwitch
+                    action="set_attribute"
+                    subAction="b_item_digest_logs"
+                    editMode={editMode}
+                    active={!!item_digest_logs}
+                    tooltip={
+                      (item_digest_logs ? 'Dis' : 'En') +
+                      'ables item digest messages being shown to yourself.'
+                    }
+                  />
+                </LabeledList.Item>
+              </LabeledList>
+            </Stack.Item>
+          </Stack>
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
         </Stack.Item>
         <Stack.Item>
           <Button

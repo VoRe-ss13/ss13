@@ -67,7 +67,11 @@ export const VoreInsidePanel = (props: {
       </Box>
       &nbsp;
       <Box color="label">{desc}</Box>
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreInsidePanel.tsx
       {(contents!.length && (
+=======
+      {contents?.length ? (
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreInsidePanel.tsx
         <Collapsible title="Belly Contents">
           <VoreContentsPanel
             contents={contents!}

@@ -133,7 +133,7 @@ export const SupplyEntry = (props: {
           supply_points +
           ' per sheet, ' +
           (!!stack_size &&
-            supply_points * stack_size + ' per stack of ' + stack_size)
+            `${supply_points * stack_size} per stack of ${stack_size}`)
         ) : (
           <NotAvilableBox />
         )}
