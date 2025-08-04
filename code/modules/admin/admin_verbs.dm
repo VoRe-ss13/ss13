@@ -341,6 +341,7 @@
 	log_admin("[key_name(usr)] used 'kill air'.")
 	message_admins(span_blue("[key_name_admin(usr)] used 'kill air'."), 1)
 
+<<<<<<< HEAD
 /client/proc/deadmin()
 	set name = "DeAdmin"
 	set category = "Admin.Misc"
@@ -356,6 +357,19 @@
 	if(isobserver(mob))
 		var/mob/observer/dead/our_mob = mob
 		our_mob.visualnet?.removeVisibility(our_mob, src)
+=======
+ADMIN_VERB(deadmin, R_NONE, "DeAdmin", "Shed your admin powers.", ADMIN_CATEGORY_MAIN)
+	user.holder.deactivate()
+	to_chat(user, span_interface("You are now a normal player."))
+	log_admin("[key_name(user)] deadminned themselves.")
+	message_admins("[key_name_admin(user)] deadminned themselves.")
+	//BLACKBOX_LOG_ADMIN_VERB("Deadmin")
+	feedback_add_details("admin_verb","DAS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+	if(isobserver(user.mob))
+		var/mob/observer/dead/our_mob = user.mob
+		our_mob.visualnet?.removeVisibility(our_mob, user)
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 
 /client/proc/toggle_log_hrefs()
 	set name = "Toggle href logging"

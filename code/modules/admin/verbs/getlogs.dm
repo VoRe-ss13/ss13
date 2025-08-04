@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //This proc allows download of past server logs saved within the data/logs/ folder.
 //It works similarly to show-server-log.
 /client/proc/getserverlog()
@@ -6,6 +7,13 @@
 	set category = "Admin.Logs"
 	browseserverlogs()
 
+=======
+ADMIN_VERB(get_server_logs, (R_ADMIN | R_SERVER), "Get Server Logs", "View or retrieve logfiles.", ADMIN_CATEGORY_MAIN)
+	user.browseserverlogs()
+
+ADMIN_VERB(get_current_logs, (R_ADMIN | R_SERVER), "Get Current Logs", "View or retrieve logfiles for the current round.", ADMIN_CATEGORY_MAIN)
+	user.browseserverlogs(current=TRUE)
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 
 /client/proc/browseserverlogs(current=FALSE, runtimes=FALSE)
 	var/log_choice = BROWSE_ROOT_ALL_LOGS

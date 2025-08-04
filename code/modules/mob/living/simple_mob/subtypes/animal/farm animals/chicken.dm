@@ -148,8 +148,12 @@ GLOBAL_VAR_INIT(chicken_count, 0)	// How mant chickens DO we have?
 			var/mob/living/simple_mob/animal/passive/chicken/C = new (src.loc)
 			C.ghostjoin = 1
 			C.ghostjoin_icon()
+<<<<<<< HEAD
 			active_ghost_pods |= C
 		//VOREStation Edit End
+=======
+			GLOB.active_ghost_pods += C
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 			qdel(src)
 
 // Say Lists
