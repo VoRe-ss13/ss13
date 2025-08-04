@@ -91,7 +91,8 @@
 
 /datum/admins/proc/DB_ban_unban(var/ckey, var/bantype, var/job = "")
 
-	if(!check_rights(R_BAN))	return
+	if(!check_rights(R_BAN))
+		return
 
 	var/bantype_str
 	if(bantype)
@@ -112,7 +113,8 @@
 			if(BANTYPE_ANY_FULLBAN)
 				bantype_str = "ANY"
 				bantype_pass = 1
-		if( !bantype_pass ) return
+		if(!bantype_pass)
+			return
 
 	var/bantype_sql
 	if(bantype_str == "ANY")
@@ -153,12 +155,13 @@
 
 	DB_ban_unban_by_id(ban_id)
 
-/datum/admins/proc/DB_ban_edit(var/banid = null, var/param = null)
+/datum/admins/proc/DB_ban_edit(client/user, var/banid = null, var/param = null)
 
-	if(!check_rights(R_BAN))	return
+	if(!check_rights_for(user, R_BAN))
+		return
 
 	if(!isnum(banid) || !istext(param))
-		to_chat(usr, "Cancelled")
+		to_chat(user, "Cancelled")
 		return
 
 	var/datum/db_query/query = SSdbcore.NewQuery("SELECT ckey, duration, reason FROM erro_ban WHERE id = [banid]")
@@ -174,7 +177,7 @@
 		duration = query.item[2]
 		reason = query.item[3]
 	else
-		to_chat(usr, span_filter_adminlog("Invalid ban id. Contact the database admin"))
+		to_chat(user, span_filter_adminlog("Invalid ban id. Contact the database admin"))
 		qdel(query)
 		return
 
@@ -185,32 +188,34 @@
 	switch(param)
 		if("reason")
 			if(!value)
-				value = sanitize(tgui_input_text(usr, "Insert the new reason for [pckey]'s ban", "New Reason", "[reason]", null))
+				value = sanitize(tgui_input_text(user, "Insert the new reason for [pckey]'s ban", "New Reason", "[reason]", null))
 				value = sql_sanitize_text(value)
 				if(!value)
-					to_chat(usr, "Cancelled")
+					to_chat(user, "Cancelled")
 					return
 
-			var/datum/db_query/update_query = SSdbcore.NewQuery("UPDATE erro_ban SET reason = '[value]', edits = CONCAT(edits,'- [eckey] changed ban reason from <cite>" + span_bold("\\\"[reason]\\\"") + "</cite> to <cite>" + span_bold("\\\"[value]\\\"") + "</cite><BR>') WHERE id = [banid]")
+			var/datum/db_query/update_query = SSdbcore.NewQuery("UPDATE erro_ban SET reason = '[value]', edits = CONCAT(edits,'- [eckey] changed ban reason from <cite><b>\\\"[reason]\\\"</b></cite> to <cite><b>\\\"[value]\\\"</b></cite><BR>') WHERE id = [banid]")
 			update_query.Execute()
-			message_admins("[key_name_admin(usr)] has edited a ban for [pckey]'s reason from [reason] to [value]",1)
+			message_admins("[key_name_admin(user)] has edited a ban for [pckey]'s reason from [reason] to [value]",1)
 			qdel(update_query)
+			return
 		if("duration")
 			if(!value)
-				value = tgui_input_number(usr, "Insert the new duration (in minutes) for [pckey]'s ban", "New Duration", "[duration]", null)
+				value = tgui_input_number(user, "Insert the new duration (in minutes) for [pckey]'s ban", "New Duration", "[duration]", null)
 				if(!isnum(value) || !value)
-					to_chat(usr, "Cancelled")
+					to_chat(user, "Cancelled")
 					return
 
 			var/datum/db_query/update_query = SSdbcore.NewQuery("UPDATE erro_ban SET duration = [value], edits = CONCAT(edits,'- [eckey] changed ban duration from [duration] to [value]<br>'), expiration_time = DATE_ADD(bantime, INTERVAL [value] MINUTE) WHERE id = [banid]")
-			message_admins("[key_name_admin(usr)] has edited a ban for [pckey]'s duration from [duration] to [value]",1)
+			message_admins("[key_name_admin(user)] has edited a ban for [pckey]'s duration from [duration] to [value]",1)
 			update_query.Execute()
 			qdel(update_query)
+			return
 		if("unban")
-			if(tgui_alert(usr, "Unban [pckey]?", "Unban?", list("Yes", "No")) == "Yes")
+			if(tgui_alert(user, "Unban [pckey]?", "Unban?", list("Yes", "No")) == "Yes")
 				DB_ban_unban_by_id(banid)
 				return
-	to_chat(usr, span_filter_adminlog("Cancelled"))
+	to_chat(user, span_filter_adminlog("Cancelled"))
 	return
 
 /datum/admins/proc/DB_ban_unban_by_id(var/id)
@@ -261,20 +266,22 @@
 	if(!holder)
 		return
 
-	holder.DB_ban_panel()
+	holder.DB_ban_panel(src)
 
 
-/datum/admins/proc/DB_ban_panel(var/playerckey = null, var/adminckey = null, var/playerip = null, var/playercid = null, var/dbbantype = null, var/match = null)
-	if(!usr.client)
+/datum/admins/proc/DB_ban_panel(client/user, var/playerckey = null)
+	if(!user)
 		return
 
-	if(!check_rights(R_BAN))	return
+	if(!check_rights_for(user, R_BAN))
+		return
 
 	establish_db_connection()
 	if(!SSdbcore.IsConnected())
 		to_chat(usr, span_filter_adminlog("[span_red("Failed to establish database connection")]"))
 		return
 
+<<<<<<< HEAD
 	var/output = "<div align='center'><table width='90%'><tr>"
 
 	output += "<td width='35%' align='center'>"
@@ -484,3 +491,7 @@
 			qdel(select_query)
 
 	usr << browse("<html>[output]</html>","window=lookupbans;size=900x700")
+=======
+	var/datum/tgui_ban_panel/tgui = new(user, playerckey, src)
+	tgui.tgui_interact(user.mob)
+>>>>>>> 2e85d4421a ([MIRROR] ban panel as tgui (#11222))

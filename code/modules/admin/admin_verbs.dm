@@ -127,6 +127,7 @@
 	feedback_add_details("admin_verb","CHA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
+<<<<<<< HEAD
 /client/proc/jobbans()
 	set name = "Display Job bans"
 	set category = "Admin.Investigate"
@@ -135,9 +136,17 @@
 			holder.Jobbans()
 		else
 			holder.DB_ban_panel()
+=======
+ADMIN_VERB(jobbans, R_BAN, "Display Job bans", "View job bans here.", "Admin.Investigate")
+	if(CONFIG_GET(flag/ban_legacy_system))
+		user.holder.Jobbans()
+	else
+		user.holder.DB_ban_panel(user)
+>>>>>>> 2e85d4421a ([MIRROR] ban panel as tgui (#11222))
 	feedback_add_details("admin_verb","VJB") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
+<<<<<<< HEAD
 /client/proc/unban_panel()
 	set name = "Unban Panel"
 	set category = "Admin.Game"
@@ -146,6 +155,13 @@
 			holder.unbanpanel()
 		else
 			holder.DB_ban_panel()
+=======
+ADMIN_VERB(unban_panel, R_BAN, "Unbanning Panel", "Unban players here.", ADMIN_CATEGORY_GAME)
+	if(CONFIG_GET(flag/ban_legacy_system))
+		user.holder.unbanpanel()
+	else
+		user.holder.DB_ban_panel(user)
+>>>>>>> 2e85d4421a ([MIRROR] ban panel as tgui (#11222))
 	feedback_add_details("admin_verb","UBP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 

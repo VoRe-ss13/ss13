@@ -235,7 +235,11 @@ h4
 }
 
 .blue {
+<<<<<<< HEAD
 	color: #0000ff;
+=======
+  color: #4ea0ff;
+>>>>>>> 2e85d4421a ([MIRROR] ban panel as tgui (#11222))
 }
 
 .black {

@@ -8,12 +8,21 @@ export const generateSoulcatcherString = (soulcatcher: Soulcatcher) => {
   const index = "sc_1";
 
   let result = '';
+<<<<<<< HEAD
   result += '<div class="accordion-item"><h2 class="accordion-header" id="heading' + index + '">';
   result += '<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + index + '" aria-expanded="false" aria-controls="collapse' + index + '">';
   result += name + " (Soulcatcher)";
   result += '</button></h2>';
 
   result += '<div id="collapse' + index + '" class="accordion-collapse collapse" aria-labelledby="heading' + index + '" data-bs-parent="#accordionBellies">';
+=======
+  result += `<div class="accordion-item"><h2 class="accordion-header" id="heading${index}">`;
+  result += `<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">`;
+  result += `${name} (Soulcatcher)`;
+  result += '</button></h2>';
+
+  result += `<div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" data-bs-parent="#accordionBellies">`;
+>>>>>>> 2e85d4421a ([MIRROR] ban panel as tgui (#11222))
   result += '<div class="accordion-body">';
 
   result += '<b>== Settings ==</b><br>';
@@ -23,12 +32,20 @@ export const generateSoulcatcherString = (soulcatcher: Soulcatcher) => {
     arr.push(String(parsedFlag));
     parsedFlag = Math.floor(parsedFlag / 2);
   }
+<<<<<<< HEAD
   for(const flag in SoulcatcherSettingsFlag) {
     if(arr.includes(flag)) {
       result += '<span class="badge text-bg-success">' + SoulcatcherSettingsFlag[flag] + '</span>';
     } else {
       result += '<span class="badge text-bg-danger">' + SoulcatcherSettingsFlag[flag] + '</span>';
 
+=======
+  for (const flag in SoulcatcherSettingsFlag) {
+    if (arr.includes(flag)) {
+      result += `<span class="badge text-bg-success">${SoulcatcherSettingsFlag[flag]}</span>`;
+    } else {
+      result += `<span class="badge text-bg-danger">${SoulcatcherSettingsFlag[flag]}</span>`;
+>>>>>>> 2e85d4421a ([MIRROR] ban panel as tgui (#11222))
     }
 
   }
