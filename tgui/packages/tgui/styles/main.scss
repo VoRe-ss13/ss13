@@ -52,6 +52,11 @@
 @include meta.load-css('./interfaces/IDCard.scss');
 @include meta.load-css('./interfaces/TinderMessaging.scss');
 @include meta.load-css('./interfaces/Turbolift.scss');
+<<<<<<< HEAD
+=======
+@include meta.load-css('./interfaces/TicketPanel.scss');
+@include meta.load-css('./interfaces/VorePanel.scss');
+>>>>>>> 0160eb3e68 ([MIRROR] up ports a bunch of TGS commands (#11173))
 @include meta.load-css('./interfaces/Wires.scss');
 
 // Layouts

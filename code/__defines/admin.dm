@@ -44,7 +44,12 @@
 
 #define R_DEFAULT R_NONE
 
+<<<<<<< HEAD
 #define R_EVERYTHING (1<<16)-1 //the sum of all other rank permissions, used for +EVERYTHING
+=======
+#define R_EVERYTHING (1<<17)-1 //the sum of all other rank permissions, used for +EVERYTHING
+#define R_HOLDER ((R_EVERYTHING) & (~(R_MENTOR | R_STEALTH)))
+>>>>>>> 0160eb3e68 ([MIRROR] up ports a bunch of TGS commands (#11173))
 
 #define SMITE_BREAKLEGS				"Break Legs"
 #define SMITE_BLUESPACEARTILLERY	"Bluespace Artillery"

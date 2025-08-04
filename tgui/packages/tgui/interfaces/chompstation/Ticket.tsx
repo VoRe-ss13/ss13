@@ -4,7 +4,6 @@ import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
 import {
   Button,
-  Divider,
   Input,
   LabeledList,
   Section,
@@ -113,14 +112,28 @@ export const Ticket = (props) => {
                     <Button onClick={() => act('legacy')}>Legacy UI</Button>
                   </Stack.Item>
                   <Stack.Item>
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/Ticket.tsx
                     <Button color={LevelColor[level]}>{Level[level]}</Button>
+=======
+                    <Box
+                      className="TicketPanel__Label"
+                      backgroundColor={LevelColor[level]}
+                    >
+                      {Level[level]}
+                    </Box>
+>>>>>>> 0160eb3e68 ([MIRROR] up ports a bunch of TGS commands (#11173)):tgui/packages/tgui/interfaces/Ticket.tsx
                   </Stack.Item>
                 </Stack>
               }
             >
               <LabeledList>
                 <LabeledList.Item label="Ticket ID">
-                  #{id}: <div dangerouslySetInnerHTML={{ __html: name }} />
+                  <Stack>
+                    <Stack.Item>#{id}:</Stack.Item>
+                    <Stack.Item>
+                      <div dangerouslySetInnerHTML={{ __html: name }} />
+                    </Stack.Item>
+                  </Stack>
                 </LabeledList.Item>
                 <LabeledList.Item label="Type">{Level[level]}</LabeledList.Item>
                 <LabeledList.Item label="State">
@@ -136,23 +149,28 @@ export const Ticket = (props) => {
                   </LabeledList.Item>
                 ) : (
                   <LabeledList.Item label="Closed At">
-                    {closed_at_date +
-                      ' (' +
-                      toFixed(round((closed_at / 600) * 10, 0) / 10, 1) +
-                      ' minutes ago.)'}
-                    <Button onClick={() => act('reopen')}>Reopen</Button>
+                    <Stack>
+                      <Stack.Item>
+                        {closed_at_date +
+                          ' (' +
+                          toFixed(round((closed_at / 600) * 10, 0) / 10, 1) +
+                          ' minutes ago.)'}
+                      </Stack.Item>
+                      <Stack.Item>
+                        <Button onClick={() => act('reopen')}>Reopen</Button>
+                      </Stack.Item>
+                    </Stack>
                   </LabeledList.Item>
                 )}
                 <LabeledList.Item label="Actions">
                   <div dangerouslySetInnerHTML={{ __html: actions }} />
                 </LabeledList.Item>
-                <LabeledList.Item label="Log" />
               </LabeledList>
             </Section>
-            <Divider />
+            <Stack.Divider />
           </Stack.Item>
           <Stack.Item grow>
-            <Section scrollable ref={messagesEndRef} fill>
+            <Section scrollable ref={messagesEndRef} fill title="Log">
               <Stack fill direction="column">
                 <Stack.Item grow>
                   {Object.keys(log)

@@ -871,7 +871,7 @@
 				// CHOMPedit Start - Tickets System
 				var/datum/ticket/T = M.client ? M.client.current_ticket : null
 				if(T)
-					T.Resolve()
+					T.Resolve(usr)
 				qdel(M.client)
 				// CHOMPedit End
 				//qdel(M)	// See no reason why to delete mob. Important stuff can be lost. And ban can be lifted before round ends.
@@ -901,8 +901,12 @@
 				// CHOMPedit Start - Tickets System
 				var/datum/ticket/T = M.client ? M.client.current_ticket : null
 				if(T)
+<<<<<<< HEAD
 					T.Resolve()
 				// CHOMPedit End
+=======
+					T.Resolve(usr)
+>>>>>>> 0160eb3e68 ([MIRROR] up ports a bunch of TGS commands (#11173))
 				qdel(M.client)
 				//qdel(M)
 			if("Cancel")
