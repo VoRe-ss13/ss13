@@ -88,6 +88,7 @@ export type selectedData = {
   digest_clone: number;
   bulge_size: number;
   save_digest_mode: BooleanLike;
+<<<<<<< HEAD
   display_absorbed_examine: BooleanLike;
   shrink_grow_size: number;
   emote_time: number;
@@ -95,6 +96,32 @@ export type selectedData = {
   selective_preference: string;
   nutrition_ex: BooleanLike;
   weight_ex: BooleanLike;
+=======
+  eating_privacy_local: string;
+  vorespawn_blacklist: BooleanLike;
+  vorespawn_whitelist: string[];
+  vorespawn_absorbed: number;
+  private_struggle: BooleanLike;
+  drainmode_options: string[];
+  drainmode: string;
+};
+
+export type bellySoundData = {
+  is_wet: BooleanLike;
+  wet_loop: BooleanLike;
+  fancy: BooleanLike;
+  sound: string;
+  release_sound: string;
+  sound_volume: number;
+  noise_freq: number;
+  min_voice_freq: number;
+  max_voice_freq: number;
+  vore_sound_list: Record<string, string>;
+  release_sound_list: Record<string, string>;
+};
+
+export type bellyVisualData = {
+>>>>>>> fe5e55c2df ([MIRROR] move that to visual section (#11150))
   belly_fullscreen: string;
   eating_privacy_local: string;
   silicon_belly_overlay_preference: string;
@@ -145,6 +172,7 @@ export type selectedData = {
   belly_sprite_option_shown: BooleanLike;
   tail_option_shown: BooleanLike;
   tail_to_change_to: BooleanLike | string;
+<<<<<<< HEAD
   tail_colouration: BooleanLike;
   tail_extra_overlay: BooleanLike;
   tail_extra_overlay2: BooleanLike;
@@ -156,6 +184,13 @@ export type selectedData = {
   contaminates: BooleanLike;
   contaminate_flavor: string | null;
   contaminate_color: string | null;
+=======
+  tail_sprite_options: string[];
+  mob_belly_controls: siliconeBellyControls;
+};
+
+export type bellyInteractionData = {
+>>>>>>> fe5e55c2df ([MIRROR] move that to visual section (#11150))
   escapable: BooleanLike;
   interacts: interactData;
   autotransfer_enabled: BooleanLike;
