@@ -879,7 +879,11 @@ GLOBAL_LIST_EMPTY(damage_icon_parts) //see UpdateDamageIcon()
 		suit_sprite = INV_SUIT_DEF_ICON
 
 	var/icon/c_mask = null
+<<<<<<< HEAD
 	var/tail_is_rendered = (overlays_standing[TAIL_UPPER_LAYER] || overlays_standing[TAIL_UPPER_LAYER_ALT] || overlays_standing[TAIL_LOWER_LAYER])
+=======
+	var/tail_is_rendered = overlays_standing[TAIL_LOWER_LAYER] || overlays_standing[tail_layering]
+>>>>>>> f51b2c3f7d ([MIRROR] more TG prefs (#11241))
 	var/valid_clip_mask = tail_style?.clip_mask
 
 	if(tail_is_rendered && valid_clip_mask && !(istype(suit) && suit.taurized)) //Clip the lower half of the suit off using the tail's clip mask for taurs since taur bodies aren't hidden.
@@ -1018,8 +1022,13 @@ GLOBAL_LIST_EMPTY(damage_icon_parts) //see UpdateDamageIcon()
 	var/tail_layer = get_tail_layer()
 	if(src.tail_style && src.tail_style.clip_mask_state)
 		tail_layer = TAIL_UPPER_LAYER		// Use default, let clip mask handle everything
+<<<<<<< HEAD
 	if(tail_alt && tail_layer == TAIL_UPPER_LAYER)
 		tail_layer = TAIL_UPPER_LAYER_ALT
+=======
+	if(tail_layer == TAIL_UPPER_LAYER)
+		tail_layer = tail_layering
+>>>>>>> f51b2c3f7d ([MIRROR] more TG prefs (#11241))
 
 	var/obj/item/organ/external/chest = organs_by_name[BP_TORSO]
 
@@ -1065,8 +1074,13 @@ GLOBAL_LIST_EMPTY(damage_icon_parts) //see UpdateDamageIcon()
 	var/tail_layer = get_tail_layer()
 	if(src.tail_style && src.tail_style.clip_mask_state)
 		tail_layer = TAIL_UPPER_LAYER		// Use default, let clip mask handle everything
+<<<<<<< HEAD
 	if(tail_alt && tail_layer == TAIL_UPPER_LAYER)
 		tail_layer = TAIL_UPPER_LAYER_ALT
+=======
+	if(tail_layer == TAIL_UPPER_LAYER)
+		tail_layer = tail_layering
+>>>>>>> f51b2c3f7d ([MIRROR] more TG prefs (#11241))
 	var/image/tail_overlay = overlays_standing[tail_layer]
 
 	remove_layer(TAIL_UPPER_LAYER)

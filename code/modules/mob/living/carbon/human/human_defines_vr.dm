@@ -11,8 +11,12 @@
 	var/markings_len = 0 //mostly an arbitrary number
 	var/low_sorting_priority = FALSE
 
+<<<<<<< HEAD
 /mob/living/carbon/human/proc/shadekin_get_energy()
 	var/datum/species/shadekin/SK = species
+=======
+	tail_layering = TAIL_UPPER_LAYER // not a toggle for humans but a pointer for what layer the tail should be when facing North/East/West
+>>>>>>> f51b2c3f7d ([MIRROR] more TG prefs (#11241))
 
 	if(!istype(SK))
 		return 0
