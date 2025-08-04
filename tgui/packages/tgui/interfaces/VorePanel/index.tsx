@@ -153,6 +153,12 @@ export const VorePanel = () => {
   const { act, data } = useBackend<Data>();
 
   const {
+<<<<<<< HEAD
+=======
+    active_tab,
+    active_vore_tab,
+    persist_edit_mode,
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970))
     inside,
     our_bellies,
     selected,
@@ -166,7 +172,11 @@ export const VorePanel = () => {
     vore_words,
   } = data;
 
+<<<<<<< HEAD
   const [tabIndex, setTabIndex] = useState(0);
+=======
+  const [editMode, setEditMode] = useState(!!persist_edit_mode);
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970))
 
   const tabs: React.JSX.Element[] = [];
 
@@ -178,6 +188,12 @@ export const VorePanel = () => {
       host_mobtype={host_mobtype}
       icon_overflow={icon_overflow}
       vore_words={vore_words}
+<<<<<<< HEAD
+=======
+      toggleEditMode={setEditMode}
+      editMode={editMode}
+      persist_edit_mode={persist_edit_mode}
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970))
     />
   );
   tabs[1] = (
@@ -185,9 +201,27 @@ export const VorePanel = () => {
       our_bellies={our_bellies}
       soulcatcher={soulcatcher}
       abilities={abilities}
+<<<<<<< HEAD
     />
   );
   tabs[2] = (
+=======
+      toggleEditMode={setEditMode}
+      editMode={editMode}
+      persist_edit_mode={persist_edit_mode}
+    />
+  );
+  tabs[2] = general_pref_data && our_bellies && (
+    <VoreUserGeneral
+      general_pref_data={general_pref_data}
+      our_bellies={our_bellies}
+      editMode={editMode}
+      toggleEditMode={setEditMode}
+      persist_edit_mode={persist_edit_mode}
+    />
+  );
+  tabs[3] = prefs && (
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970))
     <VoreUserPreferences
       prefs={prefs}
       selected={selected}

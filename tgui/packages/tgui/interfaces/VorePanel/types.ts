@@ -4,6 +4,7 @@ export type Data = {
   unsaved_changes: BooleanLike;
   show_pictures: BooleanLike;
   icon_overflow: BooleanLike;
+<<<<<<< HEAD
   inside: insideData;
   host_mobtype: hostMob;
   our_bellies: bellyData[];
@@ -12,6 +13,18 @@ export type Data = {
   soulcatcher: soulcatcherData | null;
   abilities: abilities;
   vore_words: Record<string, string[]>;
+=======
+  active_tab: number;
+  persist_edit_mode: BooleanLike;
+  host_mobtype: hostMob | null;
+  our_bellies?: bellyData[] | null;
+  selected?: selectedData | null;
+  prefs?: prefData | null;
+  soulcatcher?: soulcatcherData | null;
+  abilities?: abilities | null;
+  active_vore_tab?: number;
+  general_pref_data?: generalPrefData | null;
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970))
 };
 
 export type abilities = {
@@ -87,6 +100,23 @@ export type selectedData = {
   digest_tox: number;
   digest_clone: number;
   bulge_size: number;
+<<<<<<< HEAD
+=======
+  shrink_grow_size: number;
+  contaminates: BooleanLike;
+  contaminate_flavor: string | null;
+  contaminate_color: string | null;
+  contaminate_options: Record<string, string>[] | null;
+  contaminate_colors: string[] | null;
+  egg_type: string;
+  egg_types: string[];
+  egg_name: string | null;
+  egg_name_length: number;
+  egg_size: number;
+  recycling: BooleanLike;
+  storing_nutrition: BooleanLike;
+  selective_preference: string;
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970))
   save_digest_mode: BooleanLike;
   display_absorbed_examine: BooleanLike;
   shrink_grow_size: number;

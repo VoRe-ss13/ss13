@@ -20,6 +20,12 @@ export const VoreBellySelectionAndCustomization = (props: {
   host_mobtype: hostMob;
   icon_overflow: BooleanLike;
   vore_words: Record<string, string[]>;
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreBellySelectionAndCustomization.tsx
+=======
+  toggleEditMode: React.Dispatch<React.SetStateAction<boolean>>;
+  editMode: boolean;
+  persist_edit_mode: BooleanLike;
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreBellySelectionAndCustomization.tsx
 }) => {
   const { act } = useBackend();
 
@@ -30,6 +36,12 @@ export const VoreBellySelectionAndCustomization = (props: {
     host_mobtype,
     icon_overflow,
     vore_words,
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreBellySelectionAndCustomization.tsx
+=======
+    toggleEditMode,
+    editMode,
+    persist_edit_mode,
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreBellySelectionAndCustomization.tsx
   } = props;
 
   return (
@@ -87,7 +99,22 @@ export const VoreBellySelectionAndCustomization = (props: {
       </Stack.Item>
       <Stack.Item grow>
         {selected && (
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreBellySelectionAndCustomization.tsx
           <Section title={selected.belly_name} fill scrollable>
+=======
+          <Section
+            title={selected.belly_name}
+            buttons={
+              <VorePanelEditToggle
+                editMode={editMode}
+                persistEditMode={persist_edit_mode}
+                toggleEditMode={toggleEditMode}
+              />
+            }
+            fill
+            scrollable
+          >
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreBellySelectionAndCustomization.tsx
             <VoreSelectedBelly
               vore_words={vore_words}
               belly={selected}
