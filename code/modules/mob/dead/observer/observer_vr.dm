@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /mob/observer/dead/verb/nifjoin()
 	set category = "Ghost.Join"
 	set name = "Join Into Soulcatcher"
@@ -57,6 +58,8 @@
 
 		SC.catch_mob(src) //This will result in us being deleted so...
 
+=======
+>>>>>>> 47c7add324 ([MIRROR] simple ghost pod find (#11205))
 /mob/observer/dead/verb/backup_ping()
 	set category = "Ghost.Join"
 	set name = "Notify Transcore"
@@ -106,13 +109,13 @@
 
 /mob/observer/dead/verb/findghostpod() //Moves the ghost instead of just changing the ghosts's eye -Nodrak
 	set category = "Ghost.Join"
-	set name = "Find Ghost Pod"
-	set desc = "Find an active ghost pod"
-	set popup_menu = FALSE
+	set name = "Ghost Spawn"
+	set desc = "Open Ghost Spawn Menu"
 
 	if(!isobserver(src)) //Make sure they're an observer!
 		return
 
+<<<<<<< HEAD
 	var/input = tgui_input_list(src, "Select a ghost pod:", "Ghost Jump", observe_list_format(active_ghost_pods))
 	if(!input)
 		to_chat(src, span_filter_notice("No active ghost pods detected."))
@@ -130,6 +133,13 @@
 			stop_following()
 		else
 			to_chat(src, span_filter_notice("This ghost pod is not located in the game world."))
+=======
+	if(selecting_ghostrole)
+		return
+
+	var/datum/tgui_module/ghost_spawn_menu/ui = new(src)
+	ui.tgui_interact(src)
+>>>>>>> 47c7add324 ([MIRROR] simple ghost pod find (#11205))
 
 /mob/observer/dead/verb/findautoresleever()
 	set category = "Ghost.Join"

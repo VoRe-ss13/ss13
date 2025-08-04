@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /mob/observer/dead/verb/spawn_in_belly()
 	set category = "Ghost.Join"
 	set name = "Spawn In Belly"
@@ -63,6 +64,8 @@ Please do not abuse this ability.
 	to_chat(src, span_notice("Inbelly spawn request sent to predator."))
 	target.inbelly_spawn_prompt(client)			// Hand reins over to them
 
+=======
+>>>>>>> 47c7add324 ([MIRROR] simple ghost pod find (#11205))
 /mob/living/proc/inbelly_spawn_prompt(client/potential_prey)
 	if(!potential_prey || !istype(potential_prey))		// Did our prey cease to exist?
 		return
@@ -127,7 +130,6 @@ Please do not abuse this ability.
 	else
 		to_chat(potential_prey, span_notice("Inbelly spawn cancelled."))
 		to_chat(src, span_notice("Prey cancelled their inbelly spawn request."))
-		return
 
 /proc/inbelly_spawn(client/prey, mob/living/pred, obj/belly/target_belly, var/absorbed = FALSE)
 	// All this is basically admin late spawn-in, but skipping all parts related to records and equipment and with predteremined location
