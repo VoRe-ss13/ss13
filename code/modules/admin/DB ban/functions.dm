@@ -185,7 +185,11 @@
 	switch(param)
 		if("reason")
 			if(!value)
+<<<<<<< HEAD
 				value = sanitize(tgui_input_text(usr, "Insert the new reason for [pckey]'s ban", "New Reason", "[reason]", null))
+=======
+				value = tgui_input_text(user, "Insert the new reason for [pckey]'s ban", "New Reason", "[reason]", MAX_MESSAGE_LEN)
+>>>>>>> 4e2361f8df ([MIRROR] Encode changes (#11301))
 				value = sql_sanitize_text(value)
 				if(!value)
 					to_chat(usr, "Cancelled")

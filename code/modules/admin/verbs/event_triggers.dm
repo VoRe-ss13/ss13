@@ -67,8 +67,13 @@ Eventkit verb to be used to spawn the obj/effect/landmarks defined under code\ga
 					ET.delete_me = TRUE
 					qdel(ET)
 		if("Manage Other's Triggers")
+<<<<<<< HEAD
 			var/other_ckey = sanitize(tgui_input_text(src, "input trigger owner's ckey", "CKEY", ""))
 			var/others_list = event_triggers[other_ckey]
+=======
+			var/other_ckey = tgui_input_text(src, "input trigger owner's ckey", "CKEY", "", MAX_MESSAGE_LEN)
+			var/others_list = GLOB.event_triggers[other_ckey]
+>>>>>>> 4e2361f8df ([MIRROR] Encode changes (#11301))
 			if(!LAZYLEN(others_list))
 				to_chat(src, span_notice("[other_ckey] doesn't have any landmarks to manage!"))
 				return

@@ -310,8 +310,72 @@
 			if ("close", "button", "src")
 				continue
 			else
+<<<<<<< HEAD
 				valueslist[item] = href_list[item]
 	opentime = 0
+=======
+				display_list += "<b>[setting["desc"]]:</b> <a href='byond://?src=[REF(src)];setting=[name];task=input;type=datum;path=[setting["path"]]'>[setting["value"]]</a><BR>"
+		else
+			display_list += "<b>[setting["desc"]]:</b> <a href='byond://?src=[REF(src)];setting=[name];task=input;type=[setting["type"]]'>[setting["value"]]</a><BR>"
+
+	if (preview_icon)
+		display_list += "<td valign='center'>"
+		display_list += "<div class='statusDisplay'><center><img src=previewicon.png width=[preview_icon.Width()] height=[preview_icon.Height()]></center></div>"
+		display_list += "</td>"
+
+	display_list += "</tr></table>"
+	display_list += "<hr><center><a href='byond://?src=[REF(src)];button=1'>Ok</a> "
+	display_list += "</center>"
+
+	return display_list.Join()
+
+/datum/browser/modal/pref_like_picker/Topic(href,href_list)
+	if (href_list["close"] || !user || !user.client)
+		open_time = 0
+		return
+
+	if (href_list["task"] == "input")
+		var/setting_key = href_list["setting"]
+		var/list/setting = settings["mainsettings"][setting_key]
+		switch (href_list["type"])
+			if ("datum")
+				var/parent_path = text2path(href_list["path"])
+				var/list/paths
+				if (href_list["subtypesonly"])
+					paths = subtypesof(parent_path)
+				else
+					paths = typesof(parent_path)
+
+				var/new_value = pick_closest_path(null, make_types_fancy(paths))
+				if (!isnull(new_value))
+					setting["value"] = new_value
+
+			if ("string")
+				setting["value"] = tgui_input_text(user, "Enter new value for [setting["desc"]]", "Enter new value for [setting["desc"]]", setting["value"])
+			if ("number")
+				setting["value"] = tgui_input_number(user, "Enter new value for [setting["desc"]]", "Enter new value for [setting["desc"]]")
+			if ("color")
+				setting["value"] = tgui_color_picker(user, "Enter new value for [setting["desc"]]", "Enter new value for [setting["desc"]]", setting["value"])
+			if ("boolean")
+				setting["value"] = (setting["value"] == "Yes") ? "No" : "Yes"
+			if ("ckey")
+				setting["value"] = tgui_input_list(user, "[setting["desc"]]?", (list("none") + GLOB.directory))
+		if (setting["callback"])
+			var/datum/callback/callback = setting["callback"]
+			settings = callback.Invoke(settings)
+
+	if (href_list["button"])
+		var/button = text2num(href_list["button"])
+		if (button <= 3 && button >= 1)
+			selected_button = button
+
+	if (selected_button != 1)
+		set_content(show_choices(user))
+		open()
+		return
+
+	open_time = 0
+>>>>>>> 4e2361f8df ([MIRROR] Encode changes (#11301))
 	close()
 
 /proc/presentpicker(mob/User,Message, Title, Button1="Ok", Button2, Button3, StealFocus = 1,Timeout = 6000,list/values, inputtype = "checkbox", width, height, slidecolor)

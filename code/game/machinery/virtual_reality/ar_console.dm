@@ -135,7 +135,13 @@
 			avatar.sync_organ_dna()
 			avatar.initialize_vessel()
 
+<<<<<<< HEAD
 		var/newname = sanitize(tgui_input_text(avatar, "Your mind feels foggy. You're certain your name is [occupant.real_name], but it could also be [avatar.name]. Would you like to change it to something else?", "Name change", null, MAX_NAME_LEN), MAX_NAME_LEN)
+=======
+		SEND_SIGNAL(avatar, COMSIG_HUMAN_DNA_FINALIZED)
+
+		var/newname = tgui_input_text(avatar, "Your mind feels foggy. You're certain your name is [occupant.real_name], but it could also be [avatar.name]. Would you like to change it to something else?", "Name change", null, MAX_NAME_LEN)
+>>>>>>> 4e2361f8df ([MIRROR] Encode changes (#11301))
 		if (newname)
 			avatar.real_name = newname
 
@@ -145,7 +151,7 @@
 	else
 
 		// There's only one body per one of these pods, so let's be kind.
-		var/newname = sanitize(tgui_input_text(avatar, "Your mind feels foggy. You're certain your name is [occupant.real_name], but it feels like it is [avatar.name]. Would you like to change it to something else?", "Name change", null, MAX_NAME_LEN), MAX_NAME_LEN)
+		var/newname = tgui_input_text(avatar, "Your mind feels foggy. You're certain your name is [occupant.real_name], but it feels like it is [avatar.name]. Would you like to change it to something else?", "Name change", null, MAX_NAME_LEN)
 		if(newname)
 			avatar.real_name = newname
 			avatar.name = newname
