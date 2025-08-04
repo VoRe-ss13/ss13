@@ -1705,6 +1705,7 @@
 		if("b_name")
 			var/new_name = html_encode(tgui_input_text(user,"Belly's new name:","New Name"))
 
+<<<<<<< HEAD
 			var/failure_msg
 			if(length(new_name) > BELLIES_NAME_MAX || length(new_name) < BELLIES_NAME_MIN)
 				failure_msg = "Entered belly name length invalid (must be longer than [BELLIES_NAME_MIN], no more than than [BELLIES_NAME_MAX])."
@@ -1714,6 +1715,10 @@
 					if(lowertext(new_name) == lowertext(B.name))
 						failure_msg = "No duplicate belly names, please."
 						break
+=======
+	for(var/i = 1, i <= messages.len, i++)
+		messages[i] = sanitize(messages[i], limit, FALSE, TRUE, FALSE) || ""
+>>>>>>> 9d12fa67bb ([MIRROR] Panel tweak (#11066))
 
 			if(failure_msg) //Something went wrong.
 				tgui_alert_async(user,failure_msg,"Error!")

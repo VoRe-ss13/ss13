@@ -20,6 +20,7 @@ export const VoreUserPreferencesAesthetic = (props: {
             Set Taste
           </Button>
         </Stack.Item>
+<<<<<<< HEAD
         <Stack.Item basis="49%">
           <Button fluid icon="wind" onClick={() => act('setsmell')}>
             Set Smell
@@ -65,6 +66,39 @@ export const VoreUserPreferencesAesthetic = (props: {
                 ? belly_rub_target
                 : 'Current Active (' + (selected && selected.belly_name) + ')')}
           </Button>
+=======
+        <Stack.Divider />
+        <Stack.Item grow>
+          <Section fill>
+            {!!sanitizeCorruption.corrupted && (
+              <Stack.Item>
+                <NoticeBox danger>
+                  Your {'>' + aestethicMessages.aest_subtab + '<'} messages are
+                  corrupted, please edit and save them!
+                </NoticeBox>
+              </Stack.Item>
+            )}
+            <VorePanelEditTextTabs
+              exactLength
+              editMode={editMode}
+              messsageOptions={aestethicMessages.possible_messages}
+              activeTab={aestethicMessages.aest_subtab}
+              tabAction="change_aset_message_option"
+              tabsToIcons={aestehticTabsToIcons}
+              tooltip={aestethicMessages.tooltip}
+              maxLength={aestethicMessages.max_length}
+              activeMessage={sanitizeCorruption.data}
+              action={aestethicMessages.set_action}
+              listAction="b_msgs"
+              disableLegacyInput={!Array.isArray(sanitizeCorruption.data)}
+              subAction={aestethicMessages.sub_action}
+              button_action={aestethicMessages.button_action}
+              button_label={aestethicMessages.button_label}
+              button_data={!!aestethicMessages.button_data}
+              button_tooltip={aestethicMessages.button_tooltip}
+            />
+          </Section>
+>>>>>>> 9d12fa67bb ([MIRROR] Panel tweak (#11066))
         </Stack.Item>
       </Stack>
     </Section>
