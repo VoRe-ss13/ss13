@@ -23,6 +23,7 @@
 		"*.{dme,dmf,dmm,dm}": "dm",
 	},
 	"git.branchProtection": ["master"],
+<<<<<<< HEAD
 	"gitlens.advanced.blame.customArguments": [
 		"-w", "--ignore-revs-file", ".git-blame-ignore-revs"
 	],
@@ -46,6 +47,49 @@
 		"editor.tabSize": 2
 	},
 	"[javascript]": {
+=======
+    "gitlens.advanced.blame.customArguments": [
+        "-w", "--ignore-revs-file", ".git-blame-ignore-revs"
+    ],
+    "search.exclude": {
+        "**/node_modules": true,
+    },
+    "tgstationTestExplorer.project.resultsType": "json",
+    "[dm]": {
+        "files.eol": "\n",
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": false
+    },
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
+    },
+    "[python]": {
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "[yaml]": {
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.rulers": [120],
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+    },
+    "[javascriptreact]": {
+            "editor.rulers": [120],
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.rulers": [120],
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+>>>>>>> 222559a464 ([Manual Mirror] RS Pack try 2 (#11172))
 		"editor.rulers": [120],
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSave": true

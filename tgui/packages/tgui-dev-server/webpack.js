@@ -1,3 +1,4 @@
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/webpack.js
 /**
  * @file
  * @copyright 2020 Aleksej Komarov
@@ -48,18 +49,51 @@ class RspackCompiler {
     this.rspack = rspack;
     this.config = mergedConfig;
     this.bundleDir = config.output.path;
+=======
+import { createRequire } from 'node:module';
+
+import { config } from '../../rspack.config-dev';
+import { loadSourceMaps } from './link/retrace';
+import { broadcastMessage, setupLink } from './link/server';
+import { createLogger } from './logging';
+import { reloadByondCache } from './reloader';
+import { resolveGlob } from './util';
+
+const logger = createLogger('rspack');
+
+export class RspackCompiler {
+  rspack: any;
+  config: any;
+  bundleDir: string;
+
+  async setup() {
+    // Create a require context that is relative to project root
+    // and retrieve all necessary dependencies.
+    const requireFromRoot = createRequire(`${import.meta.dirname}/../../..`);
+    const rspack = await requireFromRoot('@rspack/core');
+
+    this.rspack = rspack;
+    this.config = config;
+    this.bundleDir = config.output?.path || '';
+>>>>>>> 222559a464 ([Manual Mirror] RS Pack try 2 (#11172)):tgui/packages/tgui-dev-server/webpack.ts
   }
 
   async watch() {
     logger.log('setting up');
-    // Setup link
-    const link = setupLink();
+    setupLink();
     // Instantiate the compiler
     const compiler = this.rspack.rspack(this.config);
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/webpack.js
     // Clear garbage before compiling
     compiler.hooks.watchRun.tapPromise('tgui-dev-server', async () => {
       const files = await resolveGlob(this.bundleDir, './*.hot-update.*');
       logger.log(`clearing garbage (${files.length} files)`);
+=======
+
+    // Clear garbage before compiling
+    compiler.hooks.watchRun.tapPromise('tgui-dev-server', async () => {
+      const files = await resolveGlob(this.bundleDir, '*.hot-update.*');
+>>>>>>> 222559a464 ([Manual Mirror] RS Pack try 2 (#11172)):tgui/packages/tgui-dev-server/webpack.ts
       for (const file of files) {
         fs.unlinkSync(file);
       }
@@ -84,7 +118,11 @@ class RspackCompiler {
         return;
       }
       stats
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/webpack.js
         ?.toString(this.config.devServer.stats)
+=======
+        ?.toString(this.config.stats)
+>>>>>>> 222559a464 ([Manual Mirror] RS Pack try 2 (#11172)):tgui/packages/tgui-dev-server/webpack.ts
         .split('\n')
         .forEach((line) => logger.log(line));
     });
