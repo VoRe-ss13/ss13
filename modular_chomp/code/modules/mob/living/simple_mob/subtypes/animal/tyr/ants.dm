@@ -17,7 +17,7 @@
 	attack_edge = 1
 
 	meat_amount = 3
-	meat_type = /obj/item/reagent_containers/food/snacks/ant
+	meat_type = /obj/item/reagent_containers/food/snacks/tyrant
 
 	tame_items = list(/obj/item/reagent_containers/food/snacks/crabmeat = 20)
 
@@ -57,7 +57,8 @@
 	B.absorbchance = 0
 	B.escapechance = 25
 
-/mob/living/simple_mob/animal/tyr/mineral_ants/bronze //shockers
+/mob/living/simple_mob/animal/tyr/mineral_ants/bronze //knock back ant
+	name = "bronze metal ant"
 	icon_state = "bronze_ant"
 	icon_living = "bronze_ant"
 	butchery_loot = list(\
@@ -66,7 +67,24 @@
 	meat_amount = 3
 	meat_type = /obj/item/reagent_containers/food/snacks/bronzeant
 
-/mob/living/simple_mob/animal/tyr/mineral_ants/copper
+/mob/living/simple_mob/animal/tyr/mineral_ants/bronze/apply_melee_effects(atom/A)
+	..()
+
+	if(isliving(A) && a_intent == I_HURT)
+		var/mob/living/L = A
+		if(L.mob_size <= MOB_MEDIUM)
+			visible_message(span_danger("\The [src] sends \the [L] flying with the impact!"))
+			playsound(src, "punch", 50, 1)
+			L.Weaken(1)
+			var/throwdir = get_dir(src, L)
+			L.throw_at(get_edge_target_turf(L, throwdir), 3, 1, src)
+		else
+			to_chat(L, span_warning("\The [src] hits you with incredible force, but you remain in place."))
+			visible_message(span_danger("\The [src] hits \the [L] with incredible force, to no visible effect!")) // CHOMPEdit: Visible/audible feedback for *resisting* the slam.
+			playsound(src, "punch", 50, 1) // CHOMPEdit: Visible/audible feedback for *resisting* the slam.
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/copper //emp ants
+	name = "copper metal ant"
 	icon_state = "copper_ant"
 	icon_living = "copper_ant"
 	butchery_loot = list(\
@@ -75,18 +93,34 @@
 	meat_amount = 3
 	meat_type = /obj/item/reagent_containers/food/snacks/copperant
 
-/mob/living/simple_mob/animal/tyr/mineral_ants/agate //shockers
+/mob/living/simple_mob/animal/tyr/mineral_ants/copper/apply_melee_effects(var/atom/A)
+	if(isliving(A))
+		A.emp_act(4) //The weakest strength of EMP
+		playsound(src, 'sound/weapons/Egloves.ogg', 75, 1)
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/agate //rushes at you and explodes
+	name = "agate metal ant"
 	icon_state = "agate_ant"
 	icon_living = "agate_ant"
+	movement_cooldown = -3
 	butchery_loot = list(\
 		/obj/item/stack/material/weathered_agate = 18\
 		)
 	meat_amount = 3
 	meat_type = /obj/item/reagent_containers/food/snacks/agateant
 
-/mob/living/simple_mob/animal/tyr/mineral_ants/quartz
+	special_attack_min_range = 1
+	special_attack_max_range = 2
+	special_attack_cooldown = 10 SECONDS
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/agate/do_special_attack(atom/A)
+	explosion(src.loc, 2, 1, 1, 1)
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/quartz //irl quartz is apparently tough?
+	name = "quartz metal ant"
 	icon_state = "quartz_ant"
 	icon_living = "quartz_ant"
+	armor = list(melee = 60, bullet = 50, laser = 0, energy = 0, bomb = 0, bio = 100, rad = 100)
 	butchery_loot = list(\
 		/obj/item/stack/material/quartz = 18\
 		)
@@ -94,6 +128,8 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/quartzant
 
 /mob/living/simple_mob/animal/tyr/mineral_ants/painite
+	name = "painite metal ant"
+	ai_holder_type = /datum/ai_holder/simple_mob/melee/evasive
 	icon_state = "painite_ant"
 	icon_living = "painite_ant"
 	butchery_loot = list(\
@@ -102,9 +138,46 @@
 	meat_amount = 3
 	meat_type = /obj/item/reagent_containers/food/snacks/painiteant
 
+<<<<<<< HEAD
 
+=======
+/mob/living/simple_mob/animal/tyr/mineral_ants/diamond
+	name = "diamond metal ant"
+	icon_state = "diamond_ant"
+	icon_living = "diamond_ant"
+	butchery_loot = list(\
+		/obj/item/stack/material/diamond = 18\
+		)
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/verdantium
+	name = "green metal ant"
+	icon_state = "verdantium_ant"
+	icon_living = "verdantium_ant"
+	butchery_loot = list(\
+		/obj/item/stack/material/verdantium = 18\
+		)
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/uranium
+	name = "glowing metal ant"
+	icon_state = "rad_ant"
+	icon_living = "rad_ant"
+	butchery_loot = list(\
+		/obj/item/stack/material/uranium = 18\
+		)
+/mob/living/simple_mob/animal/tyr/mineral_ants/uranium/do_special_attack(atom/A)
+	SSradiation.radiate(src, 15)
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/tritium
+	name = "ritium ant"
+	icon_state = "tritium_ant"
+	icon_living = "tritium_ant"
+	butchery_loot = list(\
+		/obj/item/stack/material/tritium = 18\
+		)
+>>>>>>> e2e77aa5bd (Tyr Misc Changes (#11245))
 
 /mob/living/simple_mob/animal/tyr/mineral_ants/builder
+	name = "concrete ant"
 	icon_state = "builder_ant"
 	icon_living = "builder_ant"
 	butchery_loot = list(\
