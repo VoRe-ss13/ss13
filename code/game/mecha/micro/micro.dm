@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* //CHOMPedit commented micromech stuff, because fuck this trash
 /obj/mecha
 	var/max_micro_utility_equip = 0
@@ -7,6 +8,8 @@
 
 
 
+=======
+>>>>>>> f7e20d021e ([MIRROR] Better borg modules (#11095))
 /obj/mecha/micro
 	icon = 'icons/mecha/micro.dmi'
 	force = 10 //still a robot
@@ -154,4 +157,4 @@
 	return result
 
 /obj/effect/decal/mecha_wreckage/micro
-	icon = 'icons/mecha/micro.dmi' */
+	icon = 'icons/mecha/micro.dmi'
