@@ -1,35 +1,3 @@
-/*
- * Crap
- */
-/obj/item/cell/crap
-	name = "\improper rechargable AA battery"
-	desc = "You can't top the plasma top." //TOTALLY TRADEMARK INFRINGEMENT
-	origin_tech = list(TECH_POWER = 0)
-	icon_state = "crap"
-	charge = 500
-	maxcharge = 500
-	matter = list(MAT_STEEL = 700, MAT_GLASS = 40)
-
-/obj/item/cell/crap/empty
-	charge = 0
-
-/*
- * Robot
- */
-/obj/item/cell/robot_station
-	name = "standard robot power cell"
-	charge = 7500
-	maxcharge = 7500
-
-/*
- * Syndicate
- */
-/obj/item/cell/robot_syndi
-	name = "syndicate robot power cell"
-	description_fluff = "Almost as good as a hyper."
-	icon_state = "b_sup" //We don't want roboticists confuse it with a low standard cell
-	charge = 25000
-	maxcharge = 25000
 
 /*
  * Security Borg
@@ -46,59 +14,6 @@
 	charge = 0
 
 /*
- * APC
- */
-/obj/item/cell/apc
-	name = "heavy-duty power cell"
-	origin_tech = list(TECH_POWER = 1)
-	icon_state = "apc"
-	charge = 5000
-	maxcharge = 5000
-	matter = list(MAT_STEEL = 700, MAT_GLASS = 50)
-
-/*
- * High
- */
-/obj/item/cell/high
-	name = "high-capacity power cell"
-	origin_tech = list(TECH_POWER = 2)
-	icon_state = "b_hi"
-	charge = 10000
-	maxcharge = 10000
-	matter = list(MAT_STEEL = 700, MAT_GLASS = 60)
-
-/obj/item/cell/high/empty
-	charge = 0
-
-/*
- * Super
- */
-/obj/item/cell/super
-	name = "super-capacity power cell"
-	origin_tech = list(TECH_POWER = 5)
-	icon_state = "b_sup"
-	charge = 20000
-	maxcharge = 20000
-	matter = list(MAT_STEEL = 700, MAT_GLASS = 70)
-
-/obj/item/cell/super/empty
-	charge = 0
-
-/*
- * Hyper
- */
-/obj/item/cell/hyper
-	name = "hyper-capacity power cell"
-	origin_tech = list(TECH_POWER = 6)
-	icon_state = "b_hy"
-	charge = 30000
-	maxcharge = 30000
-	matter = list(MAT_STEEL = 700, MAT_GLASS = 80)
-
-/obj/item/cell/hyper/empty
-	charge = 0
-
-/*
  * Giga
  */
 /obj/item/cell/giga
@@ -111,6 +26,7 @@
 
 /obj/item/cell/giga/empty
 	charge = 0
+<<<<<<< HEAD
 /*
  * Mecha
  */
@@ -242,3 +158,5 @@
 	cut_overlays()
 	target.adjust_nutrition(amount)
 	user.custom_emote(message = "connects \the [src] to [user == target ? "their" : "[target]'s"] charging port, expending it.")
+=======
+>>>>>>> ac77b94d4b ([MIRROR] Techweb Fixes (#11299))
