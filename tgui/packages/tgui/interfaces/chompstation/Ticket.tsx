@@ -1,4 +1,3 @@
-/* eslint react/no-danger: "off" */
 import { type RefObject, useEffect, useRef, useState } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
@@ -120,7 +119,17 @@ export const Ticket = (props) => {
             >
               <LabeledList>
                 <LabeledList.Item label="Ticket ID">
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/Ticket.tsx
                   #{id}: <div dangerouslySetInnerHTML={{ __html: name }} />
+=======
+                  <Stack>
+                    <Stack.Item>#{id}:</Stack.Item>
+                    <Stack.Item>
+                      {/** biome-ignore lint/security/noDangerouslySetInnerHtml: Ticket data */}
+                      <div dangerouslySetInnerHTML={{ __html: name }} />
+                    </Stack.Item>
+                  </Stack>
+>>>>>>> 457fff752f ([MIRROR] dangerously set html change (#11231)):tgui/packages/tgui/interfaces/Ticket.tsx
                 </LabeledList.Item>
                 <LabeledList.Item label="Type">{Level[level]}</LabeledList.Item>
                 <LabeledList.Item label="State">
@@ -144,6 +153,7 @@ export const Ticket = (props) => {
                   </LabeledList.Item>
                 )}
                 <LabeledList.Item label="Actions">
+                  {/** biome-ignore lint/security/noDangerouslySetInnerHtml: Ticket data */}
                   <div dangerouslySetInnerHTML={{ __html: actions }} />
                 </LabeledList.Item>
                 <LabeledList.Item label="Log" />
@@ -160,6 +170,7 @@ export const Ticket = (props) => {
                     .map((L, i) => (
                       <div
                         key={i}
+                        // biome-ignore lint/security/noDangerouslySetInnerHtml: Ticket data
                         dangerouslySetInnerHTML={{ __html: log[L] }}
                       />
                     ))}
