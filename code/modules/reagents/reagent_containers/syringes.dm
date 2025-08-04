@@ -496,6 +496,20 @@
 	icon_state = "[rounded_vol]"
 	item_state = "syringe_[rounded_vol]"
 
+<<<<<<< HEAD
+=======
+/obj/item/reagent_containers/syringe/old
+	name = "old syringe"
+	desc = "An old, broken syringe. Are you sure it's a good idea to pick it up without gloves?"
+	mode = SYRINGE_BROKEN
+
+/obj/item/reagent_containers/syringe/old/Initialize(mapload)
+	. = ..()
+	if(prob(75))
+		var/datum/disease/advance/new_disease = new /datum/disease/advance/random(rand(1, 3), rand(7, 9), 2, infected = src)
+		src.viruses += new_disease
+
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 #undef SYRINGE_DRAW
 #undef SYRINGE_INJECT
 #undef SYRINGE_BROKEN
