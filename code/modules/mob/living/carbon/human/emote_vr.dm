@@ -46,7 +46,22 @@
 	set name = "Switch tail layer"
 	set category = "IC.Game"
 	set desc = "Switch tail layer on top."
+<<<<<<< HEAD
 	tail_alt = !tail_alt
+=======
+
+	var/input = tgui_input_list(src, "Select a tail layer.", "Set Tail Layer", list(SWITCH_TAIL_LAYER_UPPER, SWITCH_TAIL_LAYER_STANDARD, SWITCH_TAIL_LAYER_LOWER))
+	if(isnull(input))
+		return
+	switch(input)
+		if(SWITCH_TAIL_LAYER_UPPER)
+			tail_alt = TAIL_UPPER_LAYER_HIGH
+		if(SWITCH_TAIL_LAYER_STANDARD)
+			tail_alt = TAIL_UPPER_LAYER
+		if(SWITCH_TAIL_LAYER_LOWER)
+			tail_alt = TAIL_UPPER_LAYER_LOW
+
+>>>>>>> 3132e7543c ([MIRROR] Fixes wolf 3 fat vwag sprite (#11146))
 	update_tail_showing()
 
 /mob/living/carbon/human/verb/hide_wings_vr()
