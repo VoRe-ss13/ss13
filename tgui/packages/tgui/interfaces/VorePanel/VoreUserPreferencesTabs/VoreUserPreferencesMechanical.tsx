@@ -109,7 +109,7 @@ export const VoreUserPreferencesMechanical = (props: {
             tooltipPosition="left"
           />
         </Stack.Item>
-        <Stack.Item basis="32%">
+        <Stack.Item basis="34%">
           <VoreUserPreferenceItem
             spec={preferences.allow_mimicry}
             tooltipPosition="right"

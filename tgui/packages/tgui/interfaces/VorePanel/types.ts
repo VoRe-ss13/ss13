@@ -4,6 +4,7 @@ export type Data = {
   unsaved_changes: BooleanLike;
   show_pictures: BooleanLike;
   icon_overflow: BooleanLike;
+<<<<<<< HEAD
   inside: insideData;
   host_mobtype: hostMob;
   our_bellies: bellyData[];
@@ -12,6 +13,20 @@ export type Data = {
   soulcatcher: soulcatcherData | null;
   abilities: abilities;
   vore_words: Record<string, string[]>;
+=======
+  active_tab: number;
+  persist_edit_mode: BooleanLike;
+  host_mobtype: hostMob | null;
+  our_bellies?: bellyData[] | null;
+  min_belly_name: number;
+  max_belly_name: number;
+  selected?: selectedData | null;
+  prefs?: prefData | null;
+  soulcatcher?: soulcatcherData | null;
+  abilities?: abilities | null;
+  active_vore_tab?: number;
+  general_pref_data?: generalPrefData | null;
+>>>>>>> 87f031d72b ([MIRROR] tgui core 4.3.1 (#11083))
 };
 
 export type abilities = {
@@ -202,7 +217,23 @@ export type autotransferData = {
   autotransfer_secondary_blacklist_items: string[];
 };
 
+<<<<<<< HEAD
 type liqInteractData = {
+=======
+export type autoTransferOption = {
+  autotransferchance: number;
+  autotransferlocation: string | null;
+  autotransferextralocation: string[];
+  autotransfer_whitelist: checkBoxEntry[];
+  autotransfer_blacklist: checkBoxEntry[];
+  autotransfer_whitelist_items: checkBoxEntry[];
+  autotransfer_blacklist_items: checkBoxEntry[];
+};
+
+type bellyReagent = { name: string; volume: number };
+
+export type liqInteractData = {
+>>>>>>> 87f031d72b ([MIRROR] tgui core 4.3.1 (#11083))
   liq_reagent_gen: BooleanLike;
   liq_reagent_type: string;
   liq_reagent_name: string;
@@ -227,6 +258,8 @@ type liqInteractData = {
   max_ingested: number;
   custom_ingested_color: string;
   custom_ingested_alpha: number;
+  total_volume: number;
+  current_reagents: bellyReagent[];
 };
 
 type liqMessageData = {
