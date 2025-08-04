@@ -34,6 +34,7 @@
 
 	if(user.client.selected_ticket)
 		var/datum/ticket/T = user.client.selected_ticket
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets_ui.dm
 		selected_ticket = list(
 			"id" = T.id,
 			"name" = T.LinkedReplyName(),
@@ -47,6 +48,22 @@
 			"actions" = T.FullMonty(),
 			"log" = T._interactions,
 		)
+=======
+		if(check_rights_for(user.client, (R_ADMIN|R_SERVER|R_MOD)) || (check_rights_for(user.client, R_MENTOR) && T.level < 1))
+			selected_ticket = list(
+				"id" = T.id,
+				"name" = T.LinkedReplyName(),
+				"state" = get_ticket_state(T.state),
+				"level" = T.level,
+				"handler" = T.handler,
+				"opened_at" = (world.time - T.opened_at),
+				"closed_at" = (world.time - T.closed_at),
+				"opened_at_date" = gameTimestamp(wtime = T.opened_at),
+				"closed_at_date" = gameTimestamp(wtime = T.closed_at),
+				"actions" = T.FullMonty(null, check_rights_for(user.client, (R_ADMIN|R_SERVER|R_MOD))),
+				"log" = T._interactions,
+			)
+>>>>>>> c71ab6c9bd ([Manual MIRROR] dmapi manual update port (#11138)):code/modules/tickets/tickets_ui.dm
 
 	for(var/datum/ticket/T as anything in GLOB.tickets.active_tickets)
 		if(user.client.holder || (has_mentor_powers(user.client) && T.level > 0))
@@ -226,7 +243,11 @@
 	data["opened_at_date"] = gameTimestamp(wtime = opened_at)
 	data["closed_at_date"] = gameTimestamp(wtime = closed_at)
 
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets_ui.dm
 	data["actions"] = FullMonty(ref_src)
+=======
+	data["actions"] = FullMonty(ref_src, check_rights_for(user.client, (R_ADMIN|R_SERVER|R_MOD)))
+>>>>>>> c71ab6c9bd ([Manual MIRROR] dmapi manual update port (#11138)):code/modules/tickets/tickets_ui.dm
 
 	data["log"] = _interactions
 
@@ -311,7 +332,11 @@
 		dat += "<br>Closed at: [gameTimestamp(wtime = closed_at)] (Approx [(world.time - closed_at) / 600] minutes ago)"
 	dat += "<br><br>"
 	if(initiator)
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets_ui.dm
 		dat += span_bold("Actions:") + " [FullMonty(ref_src)]<br>"
+=======
+		dat += span_bold("Actions:") + " [FullMonty(ref_src, check_rights_for(user.client, (R_ADMIN|R_SERVER|R_MOD)))]<br>"
+>>>>>>> c71ab6c9bd ([Manual MIRROR] dmapi manual update port (#11138)):code/modules/tickets/tickets_ui.dm
 	else
 		dat += span_bold("DISCONNECTED") + "[GLOB.TAB][ClosureLinks(ref_src)]<br>"
 	dat += "<br><b>Log:</b><br><br>"

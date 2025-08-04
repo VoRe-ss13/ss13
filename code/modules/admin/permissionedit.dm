@@ -459,7 +459,13 @@
 
 #undef RANK_DONE
 
+/// Changes, for this round only, the flags a particular admin gets to use
 /datum/admins/proc/change_admin_flags(admin_ckey, admin_key, datum/admins/admin_holder)
+	if(!check_rights(R_PERMISSIONS))
+		return
+	if(IsAdminAdvancedProcCall())
+		to_chat(usr, span_adminprefix("Rank Modification blocked: Advanced ProcCall detected."), confidential = TRUE)
+		return
 	var/new_flags = input_bitfield(
 		usr,
 		"Admin rights<br>This will affect only the current admin [admin_key]",
@@ -469,6 +475,8 @@
 		590,
 		allowed_edit_list = usr.client.holder.can_edit_rights_flags(),
 	)
+	if(isnull(new_flags))
+		return
 
 	admin_holder.disassociate()
 
