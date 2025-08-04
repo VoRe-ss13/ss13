@@ -2,7 +2,14 @@
   "private": true,
   "name": "common",
   "version": "4.3.1",
+<<<<<<< HEAD
   "devDependencies": {
     "vitest": "^3.1.1"
   }
+=======
+  "dependencies": {
+    "es-toolkit": "^1.39.3"
+  },
+  "private": true
+>>>>>>> 66b765887f ([MIRROR] another update and es-toolkit (#11212))
 }
