@@ -330,6 +330,7 @@
 				if(A.talking_atom)
 					data = " - Exhibits properties consistent with sonic reproduction and audio capture technologies.<br>"
 
+<<<<<<< HEAD
 		var/anom_found = 0
 		if(G)
 			data = " - Spectometric analysis on mineral sample has determined type [finds_as_strings[responsive_carriers.Find(G.source_mineral)]]<br>"
@@ -345,6 +346,23 @@
 					var/index = responsive_carriers.Find(carrier)
 					if(index > 0 && index <= finds_as_strings.len)
 						data += "	> [100 * G.find_presence[carrier]]% [finds_as_strings[index]]<br>"
+=======
+	var/anom_found = 0
+	if(G)
+		data = " - Spectometric analysis on mineral sample has determined type [GLOB.finds_as_strings[GLOB.responsive_carriers.Find(G.source_mineral)]]<br>"
+		if(G.age_billion > 0)
+			data += " - Radiometric dating shows age of [G.age_billion].[G.age_million] billion years<br>"
+		else if(G.age_million > 0)
+			data += " - Radiometric dating shows age of [G.age_million].[G.age_thousand] million years<br>"
+		else
+			data += " - Radiometric dating shows age of [G.age_thousand * 1000 + G.age] years<br>"
+		data += " - Chromatographic analysis shows the following materials present:<br>"
+		for(var/carrier in G.find_presence)
+			if(G.find_presence[carrier])
+				var/index = GLOB.responsive_carriers.Find(carrier)
+				if(index > 0 && index <= LAZYLEN(GLOB.finds_as_strings))
+					data += "	> [100 * G.find_presence[carrier]]% [GLOB.finds_as_strings[index]]<br>"
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 			if(G.artifact_id && G.artifact_distance >= 0)
 				anom_found = 1

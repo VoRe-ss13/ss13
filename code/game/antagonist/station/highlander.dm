@@ -63,7 +63,18 @@ var/datum/antagonist/highlander/highlanders
 		tgui_alert_async(usr,"The game hasn't started yet!")
 		return
 
+<<<<<<< HEAD
 	for(var/mob/living/carbon/human/H in player_list)
+=======
+	if(was_delayed) //sends more accurate logs
+		message_admins(span_adminnotice("[key_name_admin(usr)]'s delayed THERE CAN ONLY BE ONE started!"))
+		log_admin("[key_name(usr)] delayed THERE CAN ONLY BE ONE started.")
+	else
+		message_admins(span_adminnotice("[key_name_admin(usr)] used THERE CAN BE ONLY ONE!"))
+		log_admin("[key_name(usr)] used THERE CAN BE ONLY ONE.")
+
+	for(var/mob/living/carbon/human/H in GLOB.player_list)
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 		if(H.stat == 2 || !(H.client)) continue
 		if(is_special_character(H)) continue
 		highlanders.add_antagonist(H.mind)
