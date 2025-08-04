@@ -23,6 +23,15 @@ generic_filth = TRUE means when the decal is saved, it will be switched out for 
 	. = ..()
 	update_icon()
 
+<<<<<<< HEAD
+=======
+/obj/effect/decal/cleanable/wash(clean_types)
+	. = ..()
+	if (. || (clean_types & clean_type))
+		qdel(src)
+		return TRUE
+
+>>>>>>> 66987cb756 ([MIRROR] New Janicart (#11016))
 /obj/effect/decal/cleanable/Destroy()
 	SSpersistence.forget_value(src, /datum/persistent/filth)
 	. = ..()
