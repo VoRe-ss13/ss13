@@ -59,6 +59,7 @@
 	damage = 25
 	armor_penetration = 60
 	speed = 10
+	crawl_destroy = TRUE
 
 /obj/item/projectile/bullet/alterhivebot
 	damage = 25
@@ -69,12 +70,15 @@
 /obj/item/projectile/bullet/alterhivebot/boss
 	damage = 35
 	speed = 10
+	crawl_destroy = TRUE
 
 /obj/item/projectile/beam/midlaser/shortrange
 	range = 3
+	crawl_destroy = TRUE
 
 /obj/item/projectile/beam/midlaser/veryshortrange
 	range = 2
+	crawl_destroy = TRUE
 
 /obj/item/projectile/energy/burninglaser
 	name = "energy bolt"
@@ -84,6 +88,7 @@
 	penetrating = 5
 	speed = 3
 
+<<<<<<< HEAD
 /obj/item/projectile/energy/burninglaser/Move()
 	. = ..()
 	new /obj/fire(src.loc)
@@ -91,6 +96,17 @@
 /obj/item/projectile/energy/burninglaser/boss
 	armor_penetration = 50
 	speed = 10
+=======
+/obj/item/projectile/energy/lightingspark/nanoweave
+	damage = 15
+	armor_penetration = 40
+	damage_type = BURN
+	nodamage = 0
+	penetrating = 10
+	icon_state = "tesla_projectile"
+	speed = 15
+	crawl_destroy = TRUE
+>>>>>>> e5c574285d (Tyr Update 9000 (#11107))
 
 /obj/item/projectile/knockback
 	name = "sonic blast"
@@ -148,6 +164,7 @@
 
 /mob/living/simple_mob/mechanical/mecha/eclipse/hivebot/boss/do_special_attack(atom/A)
 	. = TRUE // So we don't fire a bolt as well.
+<<<<<<< HEAD
 	switch(a_intent)
 		if(I_DISARM) // Phase 3
 			if(attackcycle == 1)
@@ -275,7 +292,49 @@
 					addtimer(CALLBACK(src, PROC_REF(miniburst_a), A, 1), 3 SECONDS, TIMER_DELETE_ME)
 				else
 					addtimer(CALLBACK(src, PROC_REF(miniburst_b), A, 1), 3 SECONDS, TIMER_DELETE_ME)
+=======
+	var/rng_cycle
+	if(attackcycle == 1)
+		specialattackprojectile = /obj/item/projectile/beam/burstlaser
+		rng_cycle = rand(1,5)
+		say("PROTOCOL: LASER. BLADE.")
+		addtimer(CALLBACK(src, PROC_REF(giant_burst), A, rng_cycle), 2 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 2)
+		specialattackprojectile = /obj/item/projectile/energy/wallbreaker/boss
+		rng_cycle = rand(1,5)
+		say("PROTOCOL: RANDOM. SWEEP")
+		addtimer(CALLBACK(src, PROC_REF(quad_random_firing), A, 12, 1, 0.5 SECONDS), 1 SECOND, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 3)
+		specialattackprojectile = /obj/item/projectile/energy/lightingspark/nanoweave
+		rng_cycle = rand(1,5)
+		say("PROTOCOL: WARP. DRIVE.")
+		addtimer(CALLBACK(src, PROC_REF(teleport_attack), A, rng_cycle, 3), 2 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 4)
+		specialattackprojectile = /obj/item/projectile/knockback
+		rng_cycle = rand(1,5)
+		say("PROTOCOL: SHOCKWAVE.")
+		addtimer(CALLBACK(src, PROC_REF(giant_burst), A, rng_cycle), 2 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 5)
+		specialattackprojectile = /obj/item/projectile/metalball
+		Beam(A, icon_state = "solar_beam", time = 0.5 SECONDS, maxdistance = INFINITY)
+		say("PROTOCOL: RESTRAIN.")
+		addtimer(CALLBACK(src, PROC_REF(singleproj), A, 6), 1 SECOND, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 6)
+		specialattackprojectile = /obj/item/projectile/beam/heavylaser
+		Beam(A, icon_state = "solar_beam", time = 0.5 SECONDS, maxdistance = INFINITY)
+		rng_cycle = rand(1,5)
+		say("PROTOCOL: DESTROY.")
+		addtimer(CALLBACK(src, PROC_REF(singleproj), A, rng_cycle), 2 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
 
+>>>>>>> e5c574285d (Tyr Update 9000 (#11107))
+
+/*
 /mob/living/simple_mob/mechanical/mecha/eclipse/hivebot/cyan
 	name = "command hivebot"
 	desc = "A large, very important looking robot."
