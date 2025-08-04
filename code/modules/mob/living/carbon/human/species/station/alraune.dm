@@ -391,6 +391,7 @@
 			fruit_gland = F
 			break
 
+<<<<<<< HEAD
 	if(fruit_gland)
 		var/selection = tgui_input_list(src, "Choose your character's fruit type. Choosing nothing will result in a default of apples.", "Fruit Type", GLOB.acceptable_fruit_types)
 		if(selection)
@@ -401,8 +402,20 @@
 		fruit_gland.emote_descriptor = list("fruit right off of [fruit_gland.organ_owner]!", "a fruit from [fruit_gland.organ_owner]!")
 
 	else
+=======
+	if(!fruit_gland)
+>>>>>>> 8cec277367 ([MIRROR] dropdown vore examines (#11297))
 		to_chat(src, span_notice("You lack the organ required to produce fruit."))
 		return
+	var/selection = tgui_input_list(src, "Choose your character's fruit type. Choosing nothing will result in a default of apples.", "Fruit Type", GLOB.acceptable_fruit_types)
+	if(!selection)
+		return
+	fruit_gland.fruit_type = selection
+	add_verb(src, /mob/living/carbon/human/proc/alraune_fruit_pick)
+	add_verb(src, /mob/living/carbon/human/proc/alraune_fruit_reagent)
+	// remove_verb(src, /mob/living/carbon/human/proc/alraune_fruit_select)
+	fruit_gland.organ_owner = src
+	fruit_gland.emote_descriptor = list("fruit right off of [fruit_gland.organ_owner]!", "a fruit from [fruit_gland.organ_owner]!")
 
 /mob/living/carbon/human/proc/alraune_fruit_pick()
 	set name = "Pick Fruit"

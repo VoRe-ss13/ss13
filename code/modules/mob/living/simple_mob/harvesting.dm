@@ -25,9 +25,13 @@
 		else
 			. += span_notice("It can be [harvest_verb] now.")
 
+<<<<<<< HEAD
 	. += attempt_vr(src,"examine_reagent_bellies",args)
 
 	. += attempt_vr(src,"examine_bellies",args)
+=======
+	. += formatted_vore_examine()
+>>>>>>> 8cec277367 ([MIRROR] dropdown vore examines (#11297))
 	. += ""
 
 	if(print_flavor_text()) . += "<br>[print_flavor_text()]"
