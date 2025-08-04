@@ -36,7 +36,10 @@
 
 /obj/machinery/pump/Destroy()
 	QDEL_NULL(cell)
+<<<<<<< HEAD
 	QDEL_NULL(Output)
+=======
+>>>>>>> 4d08255ebd ([MIRROR] Mob Hose Inflation and Draining (#11070))
 	. = ..()
 
 /obj/machinery/pump/RefreshParts()
@@ -94,11 +97,15 @@
 	T.pump_reagents(reagents, reagents_per_cycle)
 	update_icon()
 
+<<<<<<< HEAD
 	if(Output.get_pairing())
 		reagents.trans_to_holder(Output.reagents, Output.reagents.maximum_volume)
 		if(prob(5))
 			visible_message(span_notice("\The [src] gurgles as it pumps fluid."))
 
+=======
+	SEND_SIGNAL(src, COMSIG_HOSE_FORCEPUMP)
+>>>>>>> 4d08255ebd ([MIRROR] Mob Hose Inflation and Draining (#11070))
 
 // Sets the power state, if possible.
 // Returns TRUE/FALSE on power state changing

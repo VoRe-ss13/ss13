@@ -64,10 +64,14 @@ GLOBAL_LIST_EMPTY(fusion_cores)
 	if((stat & BROKEN) || !powernet || !owned_field)
 		Shutdown()
 
+<<<<<<< HEAD
 	if(Output.get_pairing())
 		reagents.trans_to_holder(Output.reagents, Output.reagents.maximum_volume)
 		if(prob(5))
 			visible_message(span_infoplain(span_bold("\The [src]") + " gurgles as it exports fluid."))
+=======
+	SEND_SIGNAL(src, COMSIG_HOSE_FORCEPUMP)
+>>>>>>> 4d08255ebd ([MIRROR] Mob Hose Inflation and Draining (#11070))
 
 	if(owned_field)
 

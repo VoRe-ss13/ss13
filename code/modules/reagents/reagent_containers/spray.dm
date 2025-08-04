@@ -233,7 +233,18 @@
 /obj/item/reagent_containers/spray/chemsprayer/hosed/Initialize(mapload)
 	. = ..()
 
+<<<<<<< HEAD
 	InputSocket = new(src)
+=======
+/obj/item/reagent_containers/spray/chemsprayer/hosed/Destroy()
+	UnregisterSignal(src, COMSIG_OBSERVER_MOVED)
+	. = ..()
+
+/obj/item/reagent_containers/spray/chemsprayer/hosed/proc/update_hose(atom/source, atom/oldloc, direction, forced, list/old_locs, momentum_change)
+	SIGNAL_HANDLER
+	for(var/datum/component/hose_connector/HC in GetComponents(/datum/component/hose_connector))
+		HC.update_hose_beam()
+>>>>>>> 4d08255ebd ([MIRROR] Mob Hose Inflation and Draining (#11070))
 
 /obj/item/reagent_containers/spray/chemsprayer/hosed/update_icon()
 	..()
@@ -243,8 +254,15 @@
 	if(!hose_overlay)
 		hose_overlay = new/icon(icon, "[icon_state]+hose")
 
+<<<<<<< HEAD
 	if(InputSocket.get_pairing())
 		add_overlay(hose_overlay)
+=======
+	for(var/datum/component/hose_connector/HC in GetComponents(/datum/component/hose_connector))
+		if(HC.get_pairing())
+			add_overlay(hose_overlay)
+			break
+>>>>>>> 4d08255ebd ([MIRROR] Mob Hose Inflation and Draining (#11070))
 
 /obj/item/reagent_containers/spray/chemsprayer/hosed/AltClick(mob/living/carbon/user)
 	if(++spray_particles > 3) spray_particles = 1
