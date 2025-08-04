@@ -227,7 +227,7 @@
 	if(admin_ckey)
 		. = admin_ckey
 	else
-		admin_key = input("New admin's key","Admin key") as text|null
+		admin_key = tgui_input_text(usr, "New admin's key","Admin key")
 		. = ckey(admin_key)
 	if(!.)
 		return FALSE
@@ -337,7 +337,7 @@
 			if (!(rank_name in display_rank_names))
 				display_rank_names += rank_name
 
-		var/next_rank = input("Please select a rank, or select [RANK_DONE] if you are finished.") as null|anything in display_rank_names
+		var/next_rank = tgui_input_list(usr, "Please select a rank, or select [RANK_DONE] if you are finished.", "Pick Rank", display_rank_names)
 
 		if (isnull(next_rank))
 			return
@@ -354,7 +354,7 @@
 			continue
 
 		if (next_rank == "*New Rank*")
-			var/new_rank_name = input("Please input a new rank", "New custom rank") as text|null
+			var/new_rank_name = tgui_input_text(usr, "Please input a new rank", "New custom rank")
 			if (!new_rank_name)
 				return
 

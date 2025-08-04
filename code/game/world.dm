@@ -173,13 +173,13 @@ var/world_topic_spam_protect_time = world.timeofday
 					active++
 
 			s["players"] = players.len
-			s["playerlist"] = list2params(players)
+			//s["playerlist"] = list2params(players)
 			s["active_players"] = active
 			var/list/adm = get_admin_counts()
 			var/list/presentmins = adm["present"]
 			var/list/afkmins = adm["afk"]
 			s["admins"] = presentmins.len + afkmins.len //equivalent to the info gotten from adminwho
-			s["adminlist"] = list2params(admins)
+			//s["adminlist"] = list2params(admins)
 		else // Legacy.
 			var/n = 0
 			var/admins = 0
@@ -280,84 +280,6 @@ var/world_topic_spam_protect_time = world.timeofday
 		else
 			return "unknown"
 
-	else if(copytext(T,1,5) == "info")
-		var/input[] = params2list(T)
-		var/password = CONFIG_GET(string/comms_password)
-		if(!password || input["key"] != password)
-			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
-
-				spawn(50)
-					world_topic_spam_protect_time = world.time
-					return
-
-			world_topic_spam_protect_time = world.time
-			world_topic_spam_protect_ip = addr
-
-			return "Bad Key"
-
-		var/list/search = params2list(input["info"])
-		var/list/ckeysearch = list()
-		for(var/text in search)
-			ckeysearch += ckey(text)
-
-		var/list/match = list()
-
-		for(var/mob/M in mob_list)
-			var/strings = list(M.name, M.ckey)
-			if(M.mind)
-				strings += M.mind.assigned_role
-				strings += M.mind.special_role
-			for(var/text in strings)
-				if(ckey(text) in ckeysearch)
-					match[M] += 10 // an exact match is far better than a partial one
-				else
-					for(var/searchstr in search)
-						if(findtext(text, searchstr))
-							match[M] += 1
-
-		var/maxstrength = 0
-		for(var/mob/M in match)
-			maxstrength = max(match[M], maxstrength)
-		for(var/mob/M in match)
-			if(match[M] < maxstrength)
-				match -= M
-
-		if(!match.len)
-			return "No matches"
-		else if(match.len == 1)
-			var/mob/M = match[1]
-			var/info = list()
-			info["key"] = M.key
-			info["name"] = M.name == M.real_name ? M.name : "[M.name] ([M.real_name])"
-			info["role"] = M.mind ? (M.mind.assigned_role ? M.mind.assigned_role : "No role") : "No mind"
-			var/turf/MT = get_turf(M)
-			info["loc"] = M.loc ? "[M.loc]" : "null"
-			info["turf"] = MT ? "[MT] @ [MT.x], [MT.y], [MT.z]" : "null"
-			info["area"] = MT ? "[MT.loc]" : "null"
-			info["antag"] = M.mind ? (M.mind.special_role ? M.mind.special_role : "Not antag") : "No mind"
-			info["hasbeenrev"] = M.mind ? M.mind.has_been_rev : "No mind"
-			info["stat"] = M.stat
-			info["type"] = M.type
-			if(isliving(M))
-				var/mob/living/L = M
-				info["damage"] = list2params(list(
-							oxy = L.getOxyLoss(),
-							tox = L.getToxLoss(),
-							fire = L.getFireLoss(),
-							brute = L.getBruteLoss(),
-							clone = L.getCloneLoss(),
-							brain = L.getBrainLoss()
-						))
-			else
-				info["damage"] = "non-living"
-			info["gender"] = M.gender
-			return list2params(info)
-		else
-			var/list/ret = list()
-			for(var/mob/M in match)
-				ret[M.key] = M.name
-			return list2params(ret)
-
 	else if(copytext(T,1,9) == "adminmsg")
 		/*
 			We got an adminmsg from IRC bot lets split the input then validate the input.
@@ -413,6 +335,7 @@ var/world_topic_spam_protect_time = world.timeofday
 
 		return "Message Successful"
 
+<<<<<<< HEAD
 	else if(copytext(T,1,6) == "notes")
 		/*
 			We got a request for notes from the IRC Bot
@@ -457,6 +380,27 @@ var/world_topic_spam_protect_time = world.timeofday
 		else
 			return "Database connection failed or not set up"
 
+=======
+/// Returns TRUE if the world should do a TGS hard reboot.
+/world/proc/check_hard_reboot()
+	if(!TgsAvailable())
+		return FALSE
+	// byond-tracy can't clean up itself, and thus we should always hard reboot if its enabled, to avoid an infinitely growing trace.
+	//if(Tracy?.enabled)
+	//	return TRUE
+	var/ruhr = CONFIG_GET(number/rounds_until_hard_restart)
+	switch(ruhr)
+		if(-1)
+			return FALSE
+		if(0)
+			return TRUE
+		else
+			if(GLOB.restart_counter >= ruhr)
+				return TRUE
+			else
+				text2file("[++GLOB.restart_counter]", RESTART_COUNTER_PATH)
+				return FALSE
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 
 /world/Reboot(reason = 0, fast_track = FALSE)
 	/*spawn(0)
@@ -501,6 +445,7 @@ var/world_topic_spam_protect_time = world.timeofday
 	fdel(F)
 	F << the_mode
 
+<<<<<<< HEAD
 
 /hook/startup/proc/loadMOTD()
 	world.load_motd()
@@ -518,6 +463,8 @@ var/world_topic_spam_protect_time = world.timeofday
 	config.loadforumsql("config/forumdbconfig.txt")
 */
 
+=======
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 /hook/startup/proc/loadMods()
 	world.load_mods()
 	world.load_mentors() // no need to write another hook.
@@ -767,33 +714,6 @@ var/failed_old_db_connections = 0
 		. += CONFIG_GET(string/server)
 	else
 		. += "[world.address]:[world.port]"
-
-var/global/game_id = null
-
-/hook/startup/proc/generate_gameid()
-	if(game_id != null)
-		return
-	game_id = ""
-
-	var/list/c = list(
-		"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-		"n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
-		"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
-		"N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-		"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
-		)
-	var/l = c.len
-
-	var/t = world.timeofday
-	for(var/_ = 1 to 4)
-		game_id = "[c[(t % l) + 1]][game_id]"
-		t = round(t / l)
-	game_id = "-[game_id]"
-	t = round(world.realtime / (10 * 60 * 60 * 24))
-	for(var/_ = 1 to 3)
-		game_id = "[c[(t % l) + 1]][game_id]"
-		t = round(t / l)
-	return 1
 
 /proc/auxtools_stack_trace(msg)
 	CRASH(msg)

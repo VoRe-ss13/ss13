@@ -4,9 +4,12 @@
 //Picks from the list, with some safeties, and returns the "default" arg if it fails
 #define DEFAULTPICK(L, default) ((istype(L, /list) && L:len) ? pick(L) : default)
 
+<<<<<<< HEAD
 // Ensures L is initailized after this point
 #define LAZYINITLIST(L) if (!L) L = list()
 
+=======
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 // Sets a L back to null iff it is empty
 #define UNSETEMPTY(L) if (L && !length(L)) L = null
 
@@ -21,8 +24,11 @@
 // Adds I to L, initalizing L if necessary, if I is not already in L
 #define LAZYDISTINCTADD(L, I) if(!L) { L = list(); } L |= I;
 
+<<<<<<< HEAD
 #define LAZYFIND(L, V) L ? L.Find(V) : 0
 
+=======
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 // Reads I from L safely - Works with both associative and traditional lists.
 #define LAZYACCESS(L, I) (L ? (isnum(I) ? (I > 0 && I <= length(L) ? L[I] : null) : L[I]) : null)
 

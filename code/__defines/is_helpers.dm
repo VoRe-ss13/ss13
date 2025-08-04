@@ -4,6 +4,12 @@
 
 //#define islist(D)		istype(D, /list)	//Built in
 
+// The filters list has the same ref type id as a filter, but isnt one and also isnt a list, so we have to check if the thing has Cut() instead
+GLOBAL_VAR_INIT(refid_filter, TYPEID(filter(type="angular_blur")))
+#define isfilter(thing) (!hascall(thing, "Cut") && TYPEID(thing) == GLOB.refid_filter)
+
+#define isgenerator(A) (istype(A, /generator))
+
 //---------------
 #define isatom(D)		istype(D, /atom)
 #define isclient(D)		istype(D, /client)

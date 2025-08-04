@@ -1,23 +1,31 @@
 //DO NOT ADD MORE TO THIS FILE.
-//Use vv_do_topic()!
+//Use vv_do_topic() for datums!
 /client/proc/view_var_Topic(href, href_list, hsrc)
+<<<<<<< HEAD
 	if((usr.client != src) || !src.holder)
+=======
+	if(!check_rights_for(src, R_VAREDIT) || !holder.CheckAdminHref(href, href_list))
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 		return
-	var/datum/target = locate(href_list["target"])
-	if(istype(target))
-		target.vv_do_topic(href_list)
+	var/target = GET_VV_TARGET
+	vv_do_basic(target, href_list, href)
+	if(isdatum(target))
+		var/datum/D = target
+		D.vv_do_topic(href_list)
 	else if(islist(target))
 		vv_do_list(target, href_list)
-
 	if(href_list["Vars"])
-		debug_variables(locate(href_list["Vars"]))
+		var/datum/vars_target = locate(href_list["Vars"])
+		if(href_list["special_varname"]) // Some special vars can't be located even if you have their ref, you have to use this instead
+			vars_target = vars_target.vars[href_list["special_varname"]]
+		debug_variables(vars_target)
 
-	//~CARN: for renaming mobs (updates their name, real_name, mind.name, their ID/PDA and datacore records).
-	else if(href_list["rename"])
-		if(!check_rights(R_VAREDIT))	return
+//~CARN: for renaming mobs (updates their name, real_name, mind.name, their ID/PDA and datacore records).
+	if(href_list["rename"])
 
-		var/mob/M = locate(href_list["rename"])
+		var/mob/M = locate(href_list["rename"]) in mob_list
 		if(!istype(M))
+<<<<<<< HEAD
 			to_chat(usr, "This can only be used on instances of type /mob")
 			return
 
@@ -271,20 +279,45 @@
 			return
 
 		P.createPropFakeConversation_admin(usr)
+=======
+			to_chat(usr, "This can only be used on instances of type /mob", confidential = TRUE)
+			return
+
+		var/new_name = stripped_input(usr,"What would you like to name this mob?","Input a name",M.real_name,MAX_NAME_LEN)
+
+		// If the new name is something that would be restricted by IC chat filters,
+		// give the admin a warning but allow them to do it anyway if they want.
+		//if(is_ic_filtered(new_name) || is_soft_ic_filtered(new_name) && tgui_alert(usr, "Your selected name contains words restricted by IC chat filters. Confirm this new name?", "IC Chat Filter Conflict", list("Confirm", "Cancel")) == "Cancel")
+		//	return
+
+		if( !new_name || !M )
+			return
+
+		message_admins("Admin [key_name_admin(usr)] renamed [key_name_admin(M)] to [new_name].")
+		M.fully_replace_character_name(M.real_name,new_name)
+		vv_update_display(M, "name", new_name)
+		vv_update_display(M, "real_name", M.real_name || "No real name")
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 
 	else if(href_list["rotatedatum"])
-		if(!check_rights(0))	return
 
 		var/atom/A = locate(href_list["rotatedatum"])
 		if(!istype(A))
+<<<<<<< HEAD
 			to_chat(usr, "This can only be done to instances of type /atom")
+=======
+			to_chat(usr, "This can only be done to instances of type /atom", confidential = TRUE)
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 			return
 
 		switch(href_list["rotatedir"])
-			if("right")	A.set_dir(turn(A.dir, -45))
-			if("left")	A.set_dir(turn(A.dir, 45))
-		href_list["datumrefresh"] = href_list["rotatedatum"]
+			if("right")
+				A.set_dir(turn(A.dir, -45))
+			if("left")
+				A.set_dir(turn(A.dir, 45))
+		vv_update_display(A, "dir", dir2text(A.dir))
 
+<<<<<<< HEAD
 	else if(href_list["makemonkey"])
 		if(!check_rights(R_SPAWN))	return
 
@@ -528,29 +561,61 @@
 			to_chat(usr, "This can only be done to instances of type /mob")
 			return
 		M.regenerate_icons()
+=======
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 
 	else if(href_list["adjustDamage"] && href_list["mobToDamage"])
-		if(!check_rights(R_DEBUG|R_ADMIN|R_FUN|R_EVENT))	return
 
-		var/mob/living/L = locate(href_list["mobToDamage"])
-		if(!istype(L)) return
+		var/mob/living/L = locate(href_list["mobToDamage"]) in mob_list
+		if(!istype(L))
+			return
 
 		var/Text = href_list["adjustDamage"]
 
+<<<<<<< HEAD
 		var/amount =  tgui_input_number(usr, "Deal how much damage to mob? (Negative values here heal)","Adjust [Text]loss",0, min_value=-INFINITY, round_value=FALSE)
 
 		if(!L)
 			to_chat(usr, "Mob doesn't exist anymore")
+=======
+		var/amount = tgui_input_number(src, "Deal how much damage to mob? (Negative values here heal)", "Adjust [Text]loss", 0, min_value=-INFINITY, round_value=FALSE)
+
+		if (isnull(amount))
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 			return
 
+		if(!L)
+			to_chat(usr, "Mob doesn't exist anymore", confidential = TRUE)
+			return
+
+		var/newamt
 		switch(Text)
-			if("brute")	L.adjustBruteLoss(amount)
-			if("fire")	L.adjustFireLoss(amount)
-			if("toxin")	L.adjustToxLoss(amount)
-			if("oxygen")L.adjustOxyLoss(amount)
-			if("brain")	L.adjustBrainLoss(amount)
-			if("clone")	L.adjustCloneLoss(amount)
+			if("brute")
+				L.adjustBruteLoss(amount)
+				newamt = L.getBruteLoss()
+			if("fire")
+				L.adjustFireLoss(amount)
+				newamt = L.getFireLoss()
+			if("toxin")
+				L.adjustToxLoss(amount)
+				newamt = L.getToxLoss()
+			if("oxygen")
+				L.adjustOxyLoss(amount)
+				newamt = L.getOxyLoss()
+			if("brain")
+				L.adjustBrainLoss(amount)
+				newamt = L.getBrainLoss()
+			if("clone")
+				L.adjustCloneLoss(amount)
+				newamt = L.getCloneLoss()
+			//if("brain")
+			//	L.adjustOrganLoss(ORGAN_SLOT_BRAIN, amount)
+			//	newamt = L.get_organ_loss(ORGAN_SLOT_BRAIN)
+			//if("stamina")
+			//	L.adjustStaminaLoss(amount, forced = TRUE)
+			//	newamt = L.getStaminaLoss()
 			else
+<<<<<<< HEAD
 				to_chat(usr, "You caused an error. DEBUG: Text:[Text] Mob:[L]")
 				return
 
@@ -580,8 +645,62 @@
 		log_admin("Admin [key_name(usr)] Showed [key_name(C)] a VV window of a [src]")
 		to_chat(C, "[holder.fakekey ? "an Administrator" : "[usr.client.key]"] has granted you access to view a View Variables window")
 		C.debug_variables(thing)
+=======
+				to_chat(usr, "You caused an error. DEBUG: Text:[Text] Mob:[L]", confidential = TRUE)
+				return
 
+		if(amount != 0)
+			var/log_msg = "[key_name(usr)] dealt [amount] amount of [Text] damage to [key_name(L)]"
+			message_admins("[key_name(usr)] dealt [amount] amount of [Text] damage to [ADMIN_LOOKUPFLW(L)]")
+			log_admin(log_msg)
+			admin_ticket_log(L, "<font color='blue'>[log_msg]</font>")
+			vv_update_display(L, Text, "[newamt]")
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
+
+	else if(href_list["item_to_tweak"] && href_list["var_tweak"])
+
+		var/obj/item/editing = locate(href_list["item_to_tweak"])
+		if(!istype(editing) || QDELING(editing))
+			return
+
+		var/existing_val = -1
+		switch(href_list["var_tweak"])
+			if("damtype")
+				existing_val = editing.damtype
+			if("force")
+				existing_val = editing.force
+			//if("wound")
+			//	existing_val = editing.wound_bonus
+			//if("bare wound")
+			//	existing_val = editing.exposed_wound_bonus
+			else
+				CRASH("Invalid var_tweak passed to item vv set var: [href_list["var_tweak"]]")
+
+		var/new_val
+		if(href_list["var_tweak"] == "damtype")
+			//new_val = tgui_input_list(usr, "Enter the new damage type for [editing]", "Set Damtype", list(BRUTE, BURN, TOX, OXY, STAMINA, BRAIN), existing_val)
+			new_val = tgui_input_list(usr, "Enter the new damage type for [editing]","Set Damtype", list(BRUTE, BURN, TOX, OXY, CLONE, HALLOSS, ELECTROCUTE, BIOACID, SEARING, ELECTROMAG), existing_val)
+		else
+			new_val = tgui_input_number(usr, "Enter the new value for [editing]'s [href_list["var_tweak"]]","Set [href_list["var_tweak"]]", existing_val)
+		if(isnull(new_val) || new_val == existing_val || QDELETED(editing) || !check_rights(R_VAREDIT))
+			return
+
+		switch(href_list["var_tweak"])
+			if("damtype")
+				editing.damtype = new_val
+			if("force")
+				editing.force = new_val
+			//if("wound")
+			//	editing.wound_bonus = new_val
+			//if("bare wound")
+			//	editing.exposed_wound_bonus = new_val
+
+		message_admins("[key_name(usr)] set [editing]'s [href_list["var_tweak"]] to [new_val] (was [existing_val])")
+		log_admin("[key_name(usr)] set [editing]'s [href_list["var_tweak"]] to [new_val] (was [existing_val])")
+		vv_update_display(editing, href_list["var_tweak"], istext(new_val) ? uppertext(new_val) : new_val)
+
+	//Finally, refresh if something modified the list.
 	if(href_list["datumrefresh"])
 		var/datum/DAT = locate(href_list["datumrefresh"])
-		if(istype(DAT, /datum) || istype(DAT, /client) || islist(DAT))
+		if(isdatum(DAT) || istype(DAT, /client) || islist(DAT))
 			debug_variables(DAT)
