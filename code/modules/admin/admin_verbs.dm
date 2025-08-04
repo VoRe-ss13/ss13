@@ -149,11 +149,16 @@
 	feedback_add_details("admin_verb","UBP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
+<<<<<<< HEAD
 /client/proc/game_panel()
 	set name = "Game Panel"
 	set category = "Admin.Game"
 	if(holder)
 		holder.Game()
+=======
+ADMIN_VERB(game_panel, R_ADMIN|R_SERVER|R_FUN, "Game Panel", "Look at the state of the game.", ADMIN_CATEGORY_GAME)
+	user.holder.Game()
+>>>>>>> b465897f46 ([MIRROR] some small fixes (#11041))
 	feedback_add_details("admin_verb","GP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
