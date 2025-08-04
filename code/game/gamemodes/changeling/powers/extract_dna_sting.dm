@@ -12,14 +12,16 @@
 	set name = "Extract DNA Sting (40)"
 	set desc="Stealthily sting a target to extract their DNA."
 
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/extract_dna_sting.dm
 	var/datum/changeling/changeling = null
 	if(src.mind && src.mind.changeling)
 		changeling = src.mind.changeling
 	if(!changeling)
 		return 0
 
+=======
+>>>>>>> 36a00e6012 ([MIRROR] Few fixes (#11176)):code/datums/components/antags/changeling/powers/extract_dna_sting.dm
 	var/mob/living/carbon/human/T = changeling_sting(40, /mob/proc/changeling_extract_dna_sting)
-
 	if(!T)
 		return
 
