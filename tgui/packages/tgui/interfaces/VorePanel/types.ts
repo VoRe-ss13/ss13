@@ -295,6 +295,7 @@ export type prefData = {
   soulcatcher_allow_transfer: BooleanLike;
   soulcatcher_allow_deletion: BooleanLike;
   soulcatcher_allow_takeover: BooleanLike;
+  max_voreoverlay_alpha: number;
 };
 
 export type soulcatcherData = {

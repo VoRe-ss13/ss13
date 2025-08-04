@@ -2,6 +2,7 @@ import { useBackend } from 'tgui/backend';
 import { Button, Divider, Section, Stack } from 'tgui-core/components';
 import type { BooleanLike } from 'tgui-core/react';
 
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferences.tsx
 import { digestModeToColor } from './constants';
 import type { localPrefs, prefData, selectedData } from './types';
 import { VoreUserPreferencesAesthetic } from './VoreUserPreferencesTabs/VoreUserPreferencesAesthetic';
@@ -10,6 +11,16 @@ import { VoreUserPreferencesMechanical } from './VoreUserPreferencesTabs/VoreUse
 import { VoreUserPreferencesSoulcatcher } from './VoreUserPreferencesTabs/VoreUserPreferencesSoulcatcher';
 import { VoreUserPreferencesSpawn } from './VoreUserPreferencesTabs/VoreUserPreferencesSpawn';
 import { VoreUserPreferencesSpontaneous } from './VoreUserPreferencesTabs/VoreUserPreferencesSpontaneous';
+=======
+import { digestModeToColor } from '../constants';
+import type { localPrefs, prefData } from '../types';
+import { VoreUserPreferencesDevouring } from '../VoreUserPreferencesTabs/VoreUserPreferencesDevouring';
+import { VoreUserPreferencesFX } from '../VoreUserPreferencesTabs/VoreUserPreferencesFX';
+import { VoreUserPreferencesMechanical } from '../VoreUserPreferencesTabs/VoreUserPreferencesMechanical';
+import { VoreUserPreferencesSoulcatcher } from '../VoreUserPreferencesTabs/VoreUserPreferencesSoulcatcher';
+import { VoreUserPreferencesSpawn } from '../VoreUserPreferencesTabs/VoreUserPreferencesSpawn';
+import { VoreUserPreferencesSpontaneous } from '../VoreUserPreferencesTabs/VoreUserPreferencesSpontaneous';
+>>>>>>> 7ee1ac6c7d ([MIRROR] Minor Tweaks & Changes (#11063)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreUserPreferences.tsx
 
 export const VoreUserPreferences = (props: {
   prefs: prefData;
@@ -69,6 +80,7 @@ export const VoreUserPreferences = (props: {
     soulcatcher_allow_transfer,
     soulcatcher_allow_deletion,
     soulcatcher_allow_takeover,
+    max_voreoverlay_alpha,
   } = prefs;
 
   const preferences: localPrefs = {
@@ -748,6 +760,7 @@ export const VoreUserPreferences = (props: {
         no_spawnprey_warning_time={no_spawnprey_warning_time}
         no_spawnprey_warning_save={no_spawnprey_warning_save}
       />
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferences.tsx
       <VoreUserPreferencesAesthetic
         preferences={preferences}
         belly_rub_target={belly_rub_target}
@@ -768,6 +781,13 @@ export const VoreUserPreferences = (props: {
           </Stack.Item>
         </Stack>
       </Section>
+=======
+      <VoreUserPreferencesFX
+        preferences={preferences}
+        show_vore_fx={show_vore_fx}
+        max_voreoverlay_alpha={max_voreoverlay_alpha}
+      />
+>>>>>>> 7ee1ac6c7d ([MIRROR] Minor Tweaks & Changes (#11063)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreUserPreferences.tsx
     </Section>
   );
 };
