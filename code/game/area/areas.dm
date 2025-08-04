@@ -51,6 +51,10 @@ GLOBAL_LIST_EMPTY(areas_by_type)
 	var/list/forced_ambience = null
 	var/sound_env = STANDARD_STATION
 	var/turf/base_turf //The base turf type of the area, which can be used to override the z-level's base turf
+<<<<<<< HEAD
+=======
+	VAR_PROTECTED/color_grading = null // Color blending for clients that enter this area
+>>>>>>> c60d92bc96 ([MIRROR] small fixes for color grading (#11064))
 
 /area/New()
 	// Used by the maploader, this must be done in New, not init
@@ -397,6 +401,13 @@ var/list/mob/living/forced_ambiance_list = new
 		L.disable_spoiler_vision()
 	check_phase_shift(M)	//RS Port #658
 
+<<<<<<< HEAD
+=======
+	// Update the area's color grading
+	if(L.client && L.client.color != get_color_tint()) // Try to check if we should bother changing before doing blending
+		L.update_client_color()
+
+>>>>>>> c60d92bc96 ([MIRROR] small fixes for color grading (#11064))
 /area/proc/play_ambience(var/mob/living/L, initial = TRUE)
 	// Ambience goes down here -- make sure to list each area seperately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
 	if(!L?.read_preference(/datum/preference/toggle/play_ambience))
