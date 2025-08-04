@@ -105,7 +105,11 @@
 
 		var/datum/trait/instance_test = GLOB.all_traits[P]
 		if(path in instance_test.excludes)
+<<<<<<< HEAD
 			conflict_traits[P] = TRUE
+=======
+			conflict_traits |= P
+>>>>>>> 5886b748bf ([MIRROR] Bingle them viruses (#11094))
 			has_conflict = TRUE
 			// depending on scan mode we want to scan all, or only the first failure
 			if(quick_scan)
@@ -115,7 +119,11 @@
 			if(V == "flags")
 				continue
 			if(V in instance_test.var_changes)
+<<<<<<< HEAD
 				conflict_traits[P] = TRUE
+=======
+				conflict_traits |= P
+>>>>>>> 5886b748bf ([MIRROR] Bingle them viruses (#11094))
 				has_conflict = TRUE
 				// depending on scan mode we want to scan all, or only the first failure
 				if(quick_scan)
@@ -123,7 +131,11 @@
 				continue
 		for(var/V in linked_trait.var_changes_pref)
 			if(V in instance_test.var_changes_pref)
+<<<<<<< HEAD
 				conflict_traits[P] = TRUE
+=======
+				conflict_traits |= P
+>>>>>>> 5886b748bf ([MIRROR] Bingle them viruses (#11094))
 				has_conflict = TRUE
 				// depending on scan mode we want to scan all, or only the first failure
 				if(quick_scan)
