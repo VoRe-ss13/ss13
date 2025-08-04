@@ -48,6 +48,18 @@ export const ControlAbilities = (props) => {
       <Button fluid onClick={() => act('active_cloaking')}>
         Give Active Cloaking
       </Button>
+<<<<<<< HEAD
+=======
+      <Button fluid onClick={() => act('colormater')}>
+        Give ColorMate to simplemob/borg
+      </Button>
+      <Button fluid onClick={() => act('be_event_invis')}>
+        Set Plane to Event Invisible
+      </Button>
+      <Button fluid onClick={() => act('see_event_invis')}>
+        Toggle Vision of Event Invisible
+      </Button>
+>>>>>>> 399e4948e8 ([MIRROR] Invisibility GM tool and Glamour Mob (#11296))
     </Section>
   );
 };
