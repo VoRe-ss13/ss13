@@ -1,3 +1,44 @@
+<<<<<<< HEAD
+=======
+/client/proc/add_admin_verbs()
+	// OLD ADMIN VERB SYSTEM
+	var/rights = holder.rank_flags()
+	if(rights & R_HOLDER)
+		if(rights & R_BUILDMODE)		add_verb(src, /client/proc/togglebuildmodeself)
+		if(rights & R_ADMIN)			add_verb(src, admin_verbs_admin)
+		if(rights & R_FUN)			add_verb(src, admin_verbs_fun)
+		if(rights & R_SERVER)		add_verb(src, admin_verbs_server)
+		if(rights & R_DEBUG)
+			add_verb(src, admin_verbs_debug)
+			if(CONFIG_GET(flag/debugparanoid) && !(rights & R_ADMIN))
+				remove_verb(src, admin_verbs_paranoid_debug)			//Right now it's just callproc but we can easily add others later on.
+		if(rights & R_STEALTH)		add_verb(src, /client/proc/stealth)
+		if(rights & R_SOUNDS)		add_verb(src, admin_verbs_sounds)
+		if(rights & R_SPAWN)			add_verb(src, admin_verbs_spawn)
+		if(rights & R_MOD)			add_verb(src, admin_verbs_mod)
+		if(rights & R_EVENT)			add_verb(src, admin_verbs_event_manager)
+
+	// NEW ADMIN VERBS SYSTEM
+	SSadmin_verbs.assosciate_admin(src)
+
+/client/proc/remove_admin_verbs()
+	// OLD ADMIN VERB SYSTEM
+	remove_verb(src, list(
+		/client/proc/togglebuildmodeself,
+		admin_verbs_admin,
+		admin_verbs_fun,
+		admin_verbs_server,
+		admin_verbs_debug,
+		/client/proc/stealth,
+		admin_verbs_sounds,
+		admin_verbs_spawn,
+		debug_verbs
+		))
+
+	// NEW ADMIN VERBS SYSTEM
+	SSadmin_verbs.deassosciate_admin(src)
+
+>>>>>>> a3028dcb9e ([MIRROR] More admin verb conversion & Secrets panel overhaul (#11124))
 /client/proc/hide_most_verbs()//Allows you to keep some functionality while hiding some verbs
 	set name = "Adminverbs - Hide Most"
 	set category = "Admin.Misc"
@@ -101,6 +142,21 @@
 		to_chat(mob, span_filter_system(span_boldnotice("Invisimin on. You are now as invisible as a ghost.")))
 		mob.alpha = max(mob.alpha - 100, 0)
 
+ADMIN_VERB(list_bombers, R_ADMIN, "List Bombers", "Look at all bombs and their likely culprit.", ADMIN_CATEGORY_GAME)
+	user.holder.list_bombers()
+	//BLACKBOX_LOG_ADMIN_VERB("List Bombers")
+
+ADMIN_VERB(list_signalers, R_ADMIN, "List Signalers", "View all signalers.", ADMIN_CATEGORY_GAME)
+	user.holder.list_signalers()
+	//BLACKBOX_LOG_ADMIN_VERB("List Signalers")
+
+ADMIN_VERB(list_law_changes, R_ADMIN, "List Law Changes", "View all AI law changes.", ADMIN_CATEGORY_DEBUG)
+	user.holder.list_law_changes()
+	//BLACKBOX_LOG_ADMIN_VERB("List Law Changes")
+
+ADMIN_VERB(show_manifest, R_ADMIN, "Show Manifest", "View the shift's Manifest.", ADMIN_CATEGORY_DEBUG)
+	user.holder.show_manifest()
+	//BLACKBOX_LOG_ADMIN_VERB("Show Manifest")
 
 /client/proc/player_panel()
 	set name = "Player Panel"
@@ -157,6 +213,7 @@
 	feedback_add_details("admin_verb","GP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
+<<<<<<< HEAD
 /client/proc/secrets()
 	set name = "Secrets"
 	set category = "Admin.Secrets"
@@ -165,6 +222,8 @@
 	feedback_add_details("admin_verb","S") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
+=======
+>>>>>>> a3028dcb9e ([MIRROR] More admin verb conversion & Secrets panel overhaul (#11124))
 /client/proc/findStealthKey(txt)
 	if(txt)
 		for(var/P in GLOB.stealthminID)
@@ -514,11 +573,16 @@
 	log_admin("[key_name(usr)] gave [key_name(T)] the spell [S].")
 	message_admins(span_blue("[key_name_admin(usr)] gave [key_name(T)] the spell [S]."), 1)
 
+<<<<<<< HEAD
 /client/proc/debugstatpanel()
 	set name = "Debug Stat Panel"
 	set category = "Debug.Misc"
 
 	src.stat_panel.send_message("create_debug")
+=======
+ADMIN_VERB(debug_statpanel, R_DEBUG, "Debug Stat Panel", "Toggles local debug of the stat panel", "Debug.Misc")
+	user.stat_panel.send_message("create_debug")
+>>>>>>> a3028dcb9e ([MIRROR] More admin verb conversion & Secrets panel overhaul (#11124))
 
 /client/proc/spawn_reagent()
 	set name = "Spawn Reagent"
