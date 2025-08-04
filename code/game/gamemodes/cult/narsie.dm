@@ -259,7 +259,7 @@ var/global/list/narsie_list = list()
 				if(!(AM2.singuloCanEat()))
 					continue
 
-				if (101 == AM2.invisibility)
+				if (INVISIBILITY_ABSTRACT == AM2.invisibility)
 					continue
 
 				spawn (0)

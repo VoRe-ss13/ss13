@@ -4613,8 +4613,12 @@
 	dir = 9
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
+<<<<<<< HEAD
 	pixel_y = 26;
 	frequency = 1380;
+=======
+	frequency = 1381;
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	id_tag = "shuttle3_shuttle";
 	tag_exterior_door = "shuttle3_outer";
 	tag_interior_door = "shuttle3_inner";
@@ -4622,7 +4626,7 @@
 	tag_chamber_sensor = "shuttle3_sensor"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "shuttle3_pump"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -5184,7 +5188,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "shuttle3_pump"
 	},
 /obj/structure/closet/emcloset,
@@ -6456,11 +6460,22 @@
 /area/rnd/xenobiology/xenoflora_isolation)
 "fZT" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
+<<<<<<< HEAD
 	name = "External Access";
 	frequency = 1380;
 	id_tag = "shuttle3_outer"
 	},
 /obj/machinery/access_button{
+=======
+	frequency = 1381;
+	id_tag = "shuttle3_outer";
+	name = "External Access"
+	},
+/obj/machinery/access_button{
+	command = "cycle_exterior";
+	frequency = 1381;
+	master_tag = "shuttle3_shuttle";
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	name = "exterior access button";
 	pixel_y = 26;
 	frequency = 1380;
@@ -9570,9 +9585,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/meter,
 /obj/machinery/airlock_sensor{
+<<<<<<< HEAD
 	pixel_y = 28;
 	frequency = 1380;
 	id_tag = "ursula_sensor"
+=======
+	frequency = 1381;
+	id_tag = "ursula_sensor";
+	pixel_y = 28
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	},
 /obj/effect/shuttle_landmark{
 	name = "Ursula Dock";
@@ -9588,11 +9609,22 @@
 /area/shuttle/ursula)
 "iTN" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
+<<<<<<< HEAD
 	name = "Internal Access";
 	frequency = 1380;
 	id_tag = "shuttle3_inner"
 	},
 /obj/machinery/access_button{
+=======
+	frequency = 1381;
+	id_tag = "shuttle3_inner";
+	name = "Internal Access"
+	},
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1381;
+	master_tag = "shuttle3_shuttle";
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	name = "interior access button";
 	pixel_y = -26;
 	frequency = 1380;
@@ -11645,13 +11677,19 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "shuttle3_pump"
 	},
 /obj/machinery/airlock_sensor{
+<<<<<<< HEAD
 	pixel_y = 28;
 	frequency = 1380;
 	id_tag = "shuttle3_sensor"
+=======
+	frequency = 1381;
+	id_tag = "shuttle3_sensor";
+	pixel_y = 28
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	},
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/shuttle3/start)
@@ -11756,7 +11794,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "shuttle3_pump"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -11894,8 +11932,14 @@
 "kSh" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	dir = 1;
+<<<<<<< HEAD
 	pixel_y = -24;
 	frequency = 1380;
+=======
+	frequency = 1381;
+	id_tag = "escape_dock_ssouth_airlock";
+	master_tag = "d2_w1_a_airlock";
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	req_one_access = list(13);
 	id_tag = "escape_dock_ssouth_airlock";
 	master_tag = "d2_w1_a_airlock"
@@ -13722,6 +13766,12 @@
 	pump_direction = 0;
 	external_pressure_bound = 100;
 	external_pressure_bound_default = 0;
+<<<<<<< HEAD
+=======
+	frequency = 1433;
+	icon_state = "map_vent_in";
+	id_tag = "rust_cooling_out";
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	initialize_directions = 1;
 	use_power = 1
 	},
@@ -14401,12 +14451,23 @@
 /area/quartermaster/office)
 "ngd" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
+<<<<<<< HEAD
 	name = "Internal Access";
 	frequency = 1380;
+=======
+	frequency = 1381;
+	id_tag = "ursula_inner";
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	locked = 1;
 	id_tag = "ursula_inner"
 	},
 /obj/machinery/access_button{
+<<<<<<< HEAD
+=======
+	command = "cycle_interior";
+	frequency = 1381;
+	master_tag = "ursula";
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	name = "interior access button";
 	pixel_y = 26;
 	frequency = 1380;
@@ -14559,6 +14620,11 @@
 	dir = 8
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
+<<<<<<< HEAD
+=======
+	frequency = 1381;
+	id_tag = "cargo_bay";
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	name = "cargo bay hatch controller";
 	pixel_x = 30;
 	frequency = 1380;
@@ -16159,8 +16225,12 @@
 /obj/machinery/atmospherics/unary/outlet_injector{
 	name = "Coolant Injector";
 	dir = 1;
+<<<<<<< HEAD
 	pixel_y = 1;
 	frequency = 1438;
+=======
+	frequency = 1433;
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	id = "rust_cooling_in";
 	volume_rate = 700;
 	power_rating = 30000;
@@ -18278,7 +18348,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_pump"
 	},
 /turf/simulated/shuttle/plating,
@@ -18322,6 +18392,12 @@
 /area/surface/outpost/main/dorms/dorm_3/upstairs)
 "qma" = (
 /obj/machinery/access_button{
+<<<<<<< HEAD
+=======
+	command = "cycle_exterior";
+	frequency = 1381;
+	master_tag = "ursula";
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	name = "exterior access button";
 	pixel_y = 26;
 	frequency = 1380;
@@ -18329,8 +18405,13 @@
 	master_tag = "ursula"
 	},
 /obj/machinery/door/airlock/voidcraft/vertical{
+<<<<<<< HEAD
 	name = "External Access";
 	frequency = 1380;
+=======
+	frequency = 1381;
+	id_tag = "ursula_outer";
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	locked = 1;
 	id_tag = "ursula_outer"
 	},
@@ -18757,7 +18838,7 @@
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_pump"
 	},
 /turf/simulated/shuttle/plating,
@@ -22987,9 +23068,15 @@
 	c_tag = "CIV - Hangar Pad 3 Southwest"
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
+<<<<<<< HEAD
 	pixel_x = -26;
 	frequency = 1380;
 	id_tag = "ursula_dock"
+=======
+	frequency = 1381;
+	id_tag = "ursula_dock";
+	pixel_x = -26
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -23204,8 +23291,12 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
+<<<<<<< HEAD
 	pixel_y = 26;
 	frequency = 1380;
+=======
+	frequency = 1381;
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	id_tag = "hangar_3";
 	tag_door = "hangar_3_door"
 	},
@@ -24402,8 +24493,12 @@
 	dir = 9
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
+<<<<<<< HEAD
 	pixel_y = 26;
 	frequency = 1380;
+=======
+	frequency = 1381;
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	id_tag = "ursula";
 	tag_exterior_door = "ursula_outer";
 	tag_interior_door = "ursula_inner";
@@ -26125,9 +26220,15 @@
 	dir = 6
 	},
 /obj/machinery/air_sensor{
+<<<<<<< HEAD
 	frequency = 1438;
 	output = 63;
 	id_tag = "rustengine_sensor"
+=======
+	frequency = 1433;
+	id_tag = "rustengine_sensor";
+	output = 63
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/engineering/engine_room)
