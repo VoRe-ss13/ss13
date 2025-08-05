@@ -84,8 +84,15 @@ var/list/wrapped_species_by_ref = list()
 	var/list/valid_hairstyles = list()
 	var/list/valid_facialhairstyles = list()
 	var/list/valid_gradstyles = GLOB.hair_gradients
+<<<<<<< HEAD
 	for(var/hairstyle in hair_styles_list)
 		var/datum/sprite_accessory/S = hair_styles_list[hairstyle]
+=======
+	for(var/hairstyle in GLOB.hair_styles_list)
+		var/datum/sprite_accessory/S = GLOB.hair_styles_list[hairstyle]
+		if(S.name == DEVELOPER_WARNING_NAME)
+			continue
+>>>>>>> a766d74477 ([MIRROR] Hide illegal cosmetics from selection (#11321))
 		if(gender == MALE && S.gender == FEMALE)
 			continue
 		if(gender == FEMALE && S.gender == MALE)
@@ -93,8 +100,15 @@ var/list/wrapped_species_by_ref = list()
 		if(!(species.get_bodytype(src) in S.species_allowed))
 			continue
 		valid_hairstyles += hairstyle
+<<<<<<< HEAD
 	for(var/facialhairstyle in facial_hair_styles_list)
 		var/datum/sprite_accessory/S = facial_hair_styles_list[facialhairstyle]
+=======
+	for(var/facialhairstyle in GLOB.facial_hair_styles_list)
+		var/datum/sprite_accessory/S = GLOB.facial_hair_styles_list[facialhairstyle]
+		if(S.name == DEVELOPER_WARNING_NAME)
+			continue
+>>>>>>> a766d74477 ([MIRROR] Hide illegal cosmetics from selection (#11321))
 		if(gender == MALE && S.gender == FEMALE)
 			continue
 		if(gender == FEMALE && S.gender == MALE)
