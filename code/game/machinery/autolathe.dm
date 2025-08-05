@@ -79,11 +79,13 @@
 	data["recipes"] = recipes
 	data["categories"] = categories
 
+	data += rmat.mat_container.tgui_static_data(user)
+
 	return data
 
 /obj/machinery/autolathe/ui_assets(mob/user)
 	return list(
-		get_asset_datum(/datum/asset/spritesheet/sheetmaterials)
+		get_asset_datum(/datum/asset/spritesheet_batched/sheetmaterials)
 	)
 
 /obj/machinery/autolathe/tgui_data(mob/user, datum/tgui/ui, datum/tgui_state/state)
@@ -160,20 +162,23 @@
 			if(making.hidden && !hacked)
 				return
 
+<<<<<<< HEAD
 			var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 
 			var/list/materials_used = list()
 
+=======
+>>>>>>> ac77b94d4b ([MIRROR] Techweb Fixes (#11299))
 			var/multiplier = (params["multiplier"] || 1)
 
 			if(making.is_stack)
 				var/max_sheets
 				for(var/material in making.resources)
 					var/coeff = (making.no_scale ? 1 : mat_efficiency) //stacks are unaffected by production coefficient
-					var/sheets = round(materials.get_material_amount(material) / round(making.resources[material] * coeff))
+					var/sheets = round(rmat.mat_container.get_material_amount(material) / round(making.resources[material] * coeff))
 					if(isnull(max_sheets) || max_sheets > sheets)
 						max_sheets = sheets
-					if(!isnull(materials.get_material_amount(material)) && materials.get_material_amount(material) < round(making.resources[material] * coeff))
+					if(!isnull(rmat.mat_container.get_material_amount(material)) && rmat.mat_container.get_material_amount(material) < round(making.resources[material] * coeff))
 						max_sheets = 0
 				//Build list of multipliers for sheets.
 				multiplier = tgui_input_number(ui.user, "How many do you want to print? (0-[max_sheets])", null, null, max_sheets, 0)
@@ -183,12 +188,20 @@
 			//Check if we still have the materials.
 			var/coeff = (making.no_scale ? 1 : mat_efficiency) //stacks are unaffected by production coefficient
 
+<<<<<<< HEAD
 			for(var/datum/material/used_material as anything in making.resources)
 				var/amount_needed = making.resources[used_material] * coeff * multiplier
 				materials_used[used_material] = amount_needed
 
 			if(LAZYLEN(materials_used))
 				if(!materials.has_materials(materials_used))
+=======
+			if(!rmat.can_use_resource())
+				return
+
+			if(LAZYLEN(making.resources))
+				if(!rmat.mat_container.has_materials(making.resources, coeff, multiplier))
+>>>>>>> ac77b94d4b ([MIRROR] Techweb Fixes (#11299))
 					return
 
 				materials.use_materials(materials_used)

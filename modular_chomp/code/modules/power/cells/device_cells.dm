@@ -1,82 +1,4 @@
 /*
- * Device
- */
-/obj/item/cell/device
-	name = "device power cell"
-	desc = "A small power cell designed to power handheld devices."
-	icon = 'modular_chomp/icons/obj/power_cells.dmi'
-	icon_state = "m_st"
-	item_state = "egg6"
-	w_class = ITEMSIZE_SMALL
-	force = 0
-	throw_speed = 5
-	throw_range = 7
-	charge = 480
-	maxcharge = 480
-	charge_amount = 5
-	matter = list(MAT_STEEL = 350, MAT_GLASS = 50)
-	preserve_item = 1
-
-/obj/item/cell/device/empty
-	charge = 0
-
-/*
- * EMP Proof Device
- */
-/obj/item/cell/device/empproof
-	name = "shielded device power cell"
-	desc = "A small power cell designed to power handheld devices. Shielded from EMPs."
-	icon_state = "s_st"
-	matter = list(MAT_STEEL = 400, MAT_GLASS = 60)
-	emp_proof = TRUE
-	origin_tech = list(TECH_POWER = 3)
-
-/obj/item/cell/device/empproof/empty
-	charge = 0
-
-/*
- * Weapon
- */
-/obj/item/cell/device/weapon
-	name = "advanced device power cell" //This was a yawn change. I quite like this, makes more sense.
-	desc = "A small upgraded power cell designed to power handheld devices."
-	icon_state = "m_sup"
-	charge = 2400
-	maxcharge = 2400
-	charge_amount = 20
-	origin_tech = list(TECH_POWER = 2)
-
-/obj/item/cell/device/weapon/empty
-	charge = 0
-
-/obj/item/cell/device/super
-	name = "super device power cell"
-	desc = "A small upgraded power cell designed to power handheld devices."
-	icon_state = "m_hy"
-	charge = 3600
-	maxcharge = 3600
-	charge_amount = 20
-	origin_tech = list(TECH_POWER = 3)
-
-/obj/item/cell/device/super/empty
-	charge = 0
-
-/*
- * Hyper
- */
-/obj/item/cell/device/hyper
-	name = "hyper device power cell"
-	desc = "A small upgraded power cell designed to hold much more power for handheld devices."
-	icon_state = "meb_m_st"
-	charge = 4800
-	maxcharge = 4800
-	charge_amount = 20
-	origin_tech = list(TECH_POWER = 4)
-
-/obj/item/cell/device/hyper/empty
-	charge = 0
-
-/*
  * Giga
  */
 /obj/item/cell/device/giga
@@ -91,23 +13,19 @@
 /obj/item/cell/device/giga/empty
 	charge = 0
 
-/*
- * EMP Proof Weapon
- */
-/obj/item/cell/device/weapon/empproof
-	name = "shielded weapon power cell"
-	desc = "A small power cell designed to power handheld weaponry. Shielded from EMPs."
-	icon_state = "s_hi"
-	charge = 2400
-	maxcharge = 2400
+/obj/item/cell/device/super
+	name = "super device power cell"
+	desc = "A small upgraded power cell designed to power handheld devices."
+	icon_state = "m_hy"
+	charge = 3600
+	maxcharge = 3600
 	charge_amount = 20
-	matter = list(MAT_STEEL = 400, MAT_GLASS = 60)
-	emp_proof = TRUE
-	origin_tech = list(TECH_POWER = 4)
+	origin_tech = list(TECH_POWER = 3)
 
-/obj/item/cell/device/weapon/empproof/empty
+/obj/item/cell/device/super/empty
 	charge = 0
 
+<<<<<<< HEAD
 /*
  * Self-charging Weapon
  */
@@ -209,13 +127,13 @@
 	icon_state = "cellb"
 	swaps_to = /obj/item/cell/void/hybrid
 
+=======
+>>>>>>> ac77b94d4b ([MIRROR] Techweb Fixes (#11299))
 /obj/item/cell/void/hybrid
 	icon = 'icons/obj/power_vr.dmi'
 	icon_state = "cellb"
 	swaps_to = /obj/item/cell/device/weapon/recharge/alien/hybrid
 
-
-//YAWN Addtion
 /obj/item/cell/device/weapon/recharge/alien/omni
 	name = "omni weapon power cell"
 	desc = "A mix between alien technology and phoron-based tech. Not quite as good as a true void cell though."
