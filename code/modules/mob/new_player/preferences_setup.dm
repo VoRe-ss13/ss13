@@ -276,9 +276,17 @@
 
 /datum/preferences/proc/get_valid_hairstyles(mob/user)
 	var/list/valid_hairstyles = list()
+<<<<<<< HEAD
 	for(var/hairstyle in hair_styles_list)
 		var/datum/sprite_accessory/S = hair_styles_list[hairstyle]
 		if(!(species in S.species_allowed) && (!custom_base || !(custom_base in S.species_allowed))) //VOREStation Edit - Custom species base species allowance
+=======
+	for(var/hairstyle in GLOB.hair_styles_list)
+		var/datum/sprite_accessory/S = GLOB.hair_styles_list[hairstyle]
+		if(S.name == DEVELOPER_WARNING_NAME)
+			continue
+		if(!(species in S.species_allowed) && (!custom_base || !(custom_base in S.species_allowed)))
+>>>>>>> a766d74477 ([MIRROR] Hide illegal cosmetics from selection (#11321))
 			continue
 		if((!S.ckeys_allowed) || (user.ckey in S.ckeys_allowed)) //VOREStation Edit, allows ckey locked hairstyles.
 			valid_hairstyles[S.name] = hairstyle //VOREStation Edit, allows ckey locked hairstyles.
@@ -289,8 +297,15 @@
 
 /datum/preferences/proc/get_valid_facialhairstyles()
 	var/list/valid_facialhairstyles = list()
+<<<<<<< HEAD
 	for(var/facialhairstyle in facial_hair_styles_list)
 		var/datum/sprite_accessory/S = facial_hair_styles_list[facialhairstyle]
+=======
+	for(var/facialhairstyle in GLOB.facial_hair_styles_list)
+		var/datum/sprite_accessory/S = GLOB.facial_hair_styles_list[facialhairstyle]
+		if(S.name == DEVELOPER_WARNING_NAME)
+			continue
+>>>>>>> a766d74477 ([MIRROR] Hide illegal cosmetics from selection (#11321))
 		if(biological_gender == MALE && S.gender == FEMALE)
 			continue
 		if(biological_gender == FEMALE && S.gender == MALE)
