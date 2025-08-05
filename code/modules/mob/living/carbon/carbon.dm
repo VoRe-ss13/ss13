@@ -424,7 +424,7 @@
 	return !(species.flags & NO_PAIN)
 
 /mob/living/carbon/needs_to_breathe()
-	if(does_not_breathe)
+	if(does_not_breathe || (mNobreath in mutations))
 		return FALSE
 	return ..()
 
