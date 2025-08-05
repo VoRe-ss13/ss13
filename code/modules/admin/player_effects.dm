@@ -575,6 +575,39 @@
 				return
 			add_verb(Tar, /mob/living/proc/toggle_active_cloaking)
 
+<<<<<<< HEAD
+=======
+		if("colormate")
+			if(istype(target,/mob/living/simple_mob))
+				var/mob/living/simple_mob/Tar = target
+				add_verb(Tar, /mob/living/simple_mob/proc/ColorMate)
+			if(istype(target,/mob/living/silicon/robot))
+				var/mob/living/silicon/robot/Tar = target
+				add_verb(Tar, /mob/living/silicon/robot/proc/ColorMate)
+
+		if("be_event_invis")
+			var/mob/living/Tar = target
+			if(!istype(Tar)) //Technically does not need this restriction, but prevents ghosts accidentally being placed in mob layer
+				return
+			if(Tar.plane != PLANE_INVIS_EVENT)
+				Tar.plane = PLANE_INVIS_EVENT
+				if(!(VIS_EVENT_INVIS in Tar.vis_enabled))
+					Tar.plane_holder.set_vis(VIS_EVENT_INVIS,TRUE)
+					Tar.vis_enabled += VIS_EVENT_INVIS
+			else
+				Tar.plane = MOB_LAYER
+				if(VIS_EVENT_INVIS in Tar.vis_enabled)
+					Tar.plane_holder.set_vis(VIS_EVENT_INVIS,FALSE)
+					Tar.vis_enabled -= VIS_EVENT_INVIS
+
+		if("see_event_invis")
+			if(!(VIS_EVENT_INVIS in target.vis_enabled))
+				target.plane_holder.set_vis(VIS_EVENT_INVIS,TRUE)
+				target.vis_enabled += VIS_EVENT_INVIS
+			else if(VIS_EVENT_INVIS in target.vis_enabled)
+				target.plane_holder.set_vis(VIS_EVENT_INVIS,FALSE)
+				target.vis_enabled -= VIS_EVENT_INVIS
+>>>>>>> 399e4948e8 ([MIRROR] Invisibility GM tool and Glamour Mob (#11296))
 
 		////////INVENTORY//////////////
 
