@@ -73,7 +73,8 @@
 		//CHOMPEdit Start - Let borg grippers put stuff on.
 		if(is_robot_module(held) && istype(held, /obj/item/gripper))
 			var/obj/item/gripper/G = held
-			if(istype(G.wrapped))
+			var/obj/item/wrapped = G.get_current_pocket()
+			if(istype(wrapped))
 				stripping = FALSE
 		//CHOMPEdit End
 	else
@@ -100,11 +101,16 @@
 	//CHOMPEdit Start - Let borg grippers put stuff on.
 	else
 		var/obj/item/gripper/G = held
-		if(slot_to_strip == slot_wear_mask && istype(G.wrapped, /obj/item/grenade))
-			visible_message(span_danger("\The [user] is trying to put \a [G.wrapped] in \the [src]'s mouth!"))
+		var/obj/item/wrapped = G.get_current_pocket()
+		if(slot_to_strip == slot_wear_mask && istype(wrapped, /obj/item/grenade))
+			visible_message(span_danger("\The [user] is trying to put \a [wrapped] in \the [src]'s mouth!"))
 		else
+<<<<<<< HEAD
 			visible_message(span_danger("\The [user] is trying to put \a [G.wrapped] on \the [src]!"))
 	//CHOMPEdit End
+=======
+			visible_message(span_danger("\The [user] is trying to put \a [wrapped] on \the [src]!"))
+>>>>>>> 4239f5ab7c ([MIRROR] Gripper update (#11330))
 
 	if(!do_after(user,HUMAN_STRIP_DELAY,src))
 		return
@@ -123,11 +129,18 @@
 	//CHOMPEdit Start - Let borg grippers put stuff on.
 	else if(is_robot_module(held) && istype(held, /obj/item/gripper))
 		var/obj/item/gripper/G = held
-		var/obj/item/wrapped = G.wrapped
+		var/obj/item/wrapped = G.get_current_pocket()
 		if(istype(wrapped))
+<<<<<<< HEAD
 			G.drop_item_nm()
 			equip_to_slot_if_possible(wrapped, text2num(slot_to_strip), 0, 1, 1)
 	//CHOMPEdit End
+=======
+			if(equip_to_slot_if_possible(wrapped, text2num(slot_to_strip), 0, 1, 1))
+				wrapped = null
+				G.generate_icons()
+				G.current_pocket = pick(G.pockets)
+>>>>>>> 4239f5ab7c ([MIRROR] Gripper update (#11330))
 	else if(user.unEquip(held))
 		equip_to_slot_if_possible(held, text2num(slot_to_strip), 0, 1, 1)
 		if(held.loc != src)
