@@ -1098,6 +1098,7 @@ SUBSYSTEM_DEF(internal_wiki)
 		data["addictive"] = (R.id in fast_addictives) ? 2 : 1
 	data["industrial_use"] = R.industrial_use
 	data["supply_points"] = R.supply_conversion_value ? R.supply_conversion_value : 0
+	data["cooling_mod"] = R.coolant_modifier
 	var/value = R.supply_conversion_value * REAGENTS_PER_SHEET * SSsupply.points_per_money
 	value = FLOOR(value * 100,1) / 100 // Truncate decimals
 	data["market_price"] = value
@@ -1132,8 +1133,14 @@ SUBSYSTEM_DEF(internal_wiki)
 				body += "<b>Sintering Results: DO NOT EVER</b><br>"
 			else
 				var/datum/material/C = get_material_by_name(data["sintering"])
+<<<<<<< HEAD
 				body += "<b>Sintering Results: [C.display_name] [C.sheet_plural_name]</b><br>"
 	*/
+=======
+				if(C)
+					body += "<b>Sintering Results: [C.display_name] [C.sheet_plural_name]</b><br>"
+	body += "<b>Coolant Factor: </b>[data["cooling_mod"]]x<br>"
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 	if(data["overdose"] > 0)
 		body += "<b>Overdose: </b>[data["overdose"]]u<br>"
 	body += "<b>Flavor: </b>[data["flavor"]]<br>"

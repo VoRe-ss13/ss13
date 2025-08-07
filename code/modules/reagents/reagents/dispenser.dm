@@ -65,6 +65,12 @@
 	taste_description = "pool water"
 	reagent_state = GAS
 	color = "#808080"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_RAW
+	coolant_modifier = 0.15
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/chlorine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.take_organ_damage(1*REM, 0)
@@ -105,6 +111,12 @@
 
 	affects_robots = 1 //kiss my shiny metal ass
 	wiki_flag = WIKI_DRINK
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+	coolant_modifier = 1.15
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/ethanol/touch_mob(var/mob/living/L, var/amount)
 	..()
@@ -251,6 +263,12 @@
 	taste_description = "metal"
 	reagent_state = SOLID
 	color = "#808080"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
+	coolant_modifier = 0.15
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/lithium/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien != IS_DIONA)
@@ -282,6 +300,12 @@
 	taste_mult = 0 //no taste
 	reagent_state = GAS
 	color = "#808080"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_RAW
+	coolant_modifier = 0.25
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/oxygen
 	name = REAGENT_OXYGEN
@@ -290,6 +314,12 @@
 	taste_mult = 0
 	reagent_state = GAS
 	color = "#808080"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_RAW
+	coolant_modifier = 0.25
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/oxygen/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_VOX)
@@ -497,6 +527,12 @@
 	taste_description = "salty metal"
 	reagent_state = SOLID
 	color = "#808080"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_RAW
+	coolant_modifier = 0.25
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/sugar
 	name = REAGENT_SUGAR
@@ -511,6 +547,13 @@
 	glass_desc = "The organic compound commonly known as table sugar and sometimes called saccharose. This white, odorless, crystalline powder has a pleasing, sweet taste."
 	glass_icon = DRINK_ICON_NOISY
 
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+	coolant_modifier = -0.25
+
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 /datum/reagent/sugar/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.adjust_nutrition(removed * 3)
 
@@ -539,6 +582,12 @@
 	taste_description = "old eggs"
 	reagent_state = SOLID
 	color = "#BF8C00"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_RAW
+	coolant_modifier = -0.25
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/tungsten
 	name = REAGENT_TUNGSTEN
