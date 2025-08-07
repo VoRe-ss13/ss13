@@ -55,6 +55,7 @@ export type ReagentData = {
   supply_points?: number;
   market_price?: number;
   sintering?: string | null;
+  cooling_mod: number;
   overdose: number;
   flavor: string | null;
   allergen: string[] | null;
@@ -141,14 +142,14 @@ export type DistilledReactions = DistillComponent | DistillComponent[] | null;
 
 export type DistillComponent =
   | (ReactionComponent &
-      Partial<{
-        temp_min: number;
-        temp_max: number;
-        xgm_min: number;
-        xgm_max: number;
-        require_xgm_gas: string;
-        rejects_xgm_gas: string;
-      }>)
+    Partial<{
+      temp_min: number;
+      temp_max: number;
+      xgm_min: number;
+      xgm_max: number;
+      require_xgm_gas: string;
+      rejects_xgm_gas: string;
+    }>)
   | null;
 
 export type ReactionComponent = {

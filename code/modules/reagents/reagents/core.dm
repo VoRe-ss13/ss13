@@ -15,6 +15,14 @@
 	glass_name = "tomato juice"
 	glass_desc = "Are you sure this is tomato juice?"
 
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_BIOHAZARD
+	coolant_modifier = 0.25
+
+
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 /datum/reagent/blood/initialize_data(var/newdata)
 	..()
 	if(data && data["blood_colour"])
@@ -181,6 +189,7 @@
 	id = REAGENT_ID_SYNTHBLOOD
 	color = "#999966"
 	volume_mod = 2
+	coolant_modifier = 0.25
 
 /datum/reagent/blood/synthblood/initialize_data(var/newdata)
 	..()
@@ -195,6 +204,7 @@
 	id = REAGENT_ID_SYNTHBLOOD_DILUTE
 	color = "#cacaaf"
 	volume_mod = 1.2
+	coolant_modifier = 0.5
 
 // pure concentrated antibodies
 /datum/reagent/antibodies
@@ -226,6 +236,13 @@
 	glass_name = REAGENT_ID_WATER
 	glass_desc = "The father of all refreshments."
 
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_NO
+	industrial_use = REFINERYEXPORT_REASON_RAW
+	coolant_modifier = 1 // Water!
+
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 /datum/reagent/water/touch_turf(var/turf/simulated/T)
 	if(!istype(T))
 		return
@@ -323,6 +340,13 @@
 	glass_name = "welder fuel"
 	glass_desc = "Unless you are an industrial tool, this is probably not safe for consumption."
 
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_RAW
+	coolant_modifier = 0.15
+
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 /datum/reagent/fuel/touch_turf(var/turf/T, var/amount)
 	..()
 	new /obj/effect/decal/cleanable/liquid_fuel(T, amount, FALSE)
