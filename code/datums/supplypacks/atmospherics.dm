@@ -57,6 +57,15 @@
 	cost = 15
 	contains = list(/obj/machinery/portable_atmospherics/canister/carbon_dioxide)
 
+<<<<<<< HEAD
+=======
+/datum/supply_pack/atmos/coolant_tank
+	name = "Coolant Tank"
+	desc = "A large tank full of liquid coolant."
+	cost = 15
+	contains = list(/obj/structure/reagent_dispensers/coolanttank)
+
+>>>>>>> 44c9d55f97 ([MIRROR] fixes coolant tank name (#11346))
 /datum/supply_pack/atmos/air_dispenser
 	contains = list(/obj/machinery/pipedispenser/orderable)
 	name = "Pipe Dispenser"
