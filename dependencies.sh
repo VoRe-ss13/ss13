@@ -5,7 +5,11 @@
 
 # byond version
 export BYOND_MAJOR=516
+<<<<<<< HEAD
 export BYOND_MINOR=1662
+=======
+export BYOND_MINOR=1667
+>>>>>>> 774e2a6825 ([MIRROR] byond to 1667 (#11348))
 
 # Macro Count
 export MACRO_COUNT=8
