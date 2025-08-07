@@ -48,6 +48,7 @@ var/global/list/semirandom_mob_spawner_decisions = list()
 		list(/mob/living/simple_mob/animal/passive/lizard),
 		list(/mob/living/simple_mob/animal/passive/mouse),
 		list(/mob/living/simple_mob/animal/passive/mouse/jerboa),
+		list(/mob/living/simple_mob/animal/passive/mothroach),
 		list(/mob/living/simple_mob/animal/passive/opossum),
 		list(/mob/living/simple_mob/animal/passive/pillbug),
 		list(/mob/living/simple_mob/animal/passive/snake),
