@@ -381,6 +381,53 @@
 #define COMSIG_LIVING_LIFE "living_life"
 ///From /living/handle_disabilities().
 #define COMSIG_HANDLE_DISABILITIES "handle_disabilities"
+<<<<<<< HEAD
+=======
+///From /living/handle_allergens().
+#define COMSIG_HANDLE_ALLERGENS "handle_allergens"
+///From /mob/living/proc/updatehealth().
+#define COMSIG_UPDATE_HEALTH "update_health"
+	#define COMSIG_UPDATE_HEALTH_GOD_MODE (1<<0) //If this will set health to 100 and stat to conscious.
+
+// Damage specific signals for /mob/living
+///from /mob/living/proc/adjustBrainLoss(amount) and /mob/living/proc/setBrainLoss(amount)
+#define COMSIG_TAKING_BRAIN_DAMAGE "taking_brain_damage"
+///Return this in response if you don't want brain damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_BRAIN_DAMAGE (1<<0)
+///from /mob/living/proc/adjustOxyLoss(amount) and /mob/living/proc/setOxyLoss(amount)
+#define COMSIG_TAKING_OXY_DAMAGE "taking_oxy_damage"
+///Return this in response if you don't want brain damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_OXY_DAMAGE (1<<0)
+///from /mob/living/proc/adjustToxLoss(amount) and /mob/living/proc/setToxLoss(amount)
+#define COMSIG_TAKING_TOX_DAMAGE "taking_tox_damage"
+///Return this in response if you don't want tox damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_TOX_DAMAGE (1<<0)
+///from /mob/living/proc/adjustCloneLoss(amount) and /mob/living/proc/setCloneLoss(amount)
+#define COMSIG_TAKING_CLONE_DAMAGE "taking_clone_damage"
+///Return this in response if you don't want clone damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_CLONE_DAMAGE (1<<0)
+///from /mob/living/proc/adjustFireLoss(amount, include_robo)
+#define COMSIG_TAKING_FIRE_DAMAGE "taking_fire_damage"
+///Return this in response if you don't want fire damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_FIRE_DAMAGE (1<<0)
+///from /mob/living/proc/adjustBruteLoss(amount, include_robo) and /mob/living/carbon/human/adjustBruteLoss(amount, include_robo)
+#define COMSIG_TAKING_BRUTE_DAMAGE "taking_brute_damage"
+///Return this in response if you don't want brute damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_BRUTE_DAMAGE (1<<0)
+///from /mob/living/proc/adjustHalLoss(amount)
+#define COMSIG_TAKING_HALO_DAMAGE "taking_halo_damage"
+///Return this in response if you don't want halo damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_HALO_DAMAGE (1<<0)
+///from /mob/living/proc/apply_effect(effect, effecttype, blocked, check_protection)
+#define COMSIG_TAKING_APPLY_EFFECT "applying_effect"
+///Return this in response if you don't want the effect to be applied
+	#define COMSIG_CANCEL_EFFECT (1<<0)
+
+///Misc signal for checking for godmode. Used by /datum/element/godmode
+#define COMSIG_CHECK_FOR_GODMODE "check_for_godmode"
+///Returned by /datum/element/godmode if the target is in godmode and whatever we're checking we want to cancel
+	#define COMSIG_GODMODE_CANCEL (1<<0)
+>>>>>>> f94efe06a4 ([MIRROR] Allergic Reaction Element (And direct_say proc) (#11359))
 
 //ALL OF THESE DO NOT TAKE INTO ACCOUNT WHETHER AMOUNT IS 0 OR LOWER AND ARE SENT REGARDLESS!
 
