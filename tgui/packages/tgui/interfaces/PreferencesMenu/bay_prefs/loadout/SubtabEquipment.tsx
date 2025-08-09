@@ -54,7 +54,7 @@ export const SubtabEquipment = (props: {
                     })
                   }
                 >
-                  {/* eslint-disable-next-line react/no-danger */}
+                  {/** biome-ignore lint/security/noDangerouslySetInnerHtml: Gear */}
                   <div dangerouslySetInnerHTML={{ __html: tweak.contents }} />
                 </Button>
               ))}
