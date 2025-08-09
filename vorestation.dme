@@ -149,6 +149,7 @@
 #include "code\__defines\soulcatcher.dm"
 #include "code\__defines\sound.dm"
 #include "code\__defines\span.dm"
+#include "code\__defines\species_flags.dm"
 #include "code\__defines\species_languages.dm"
 #include "code\__defines\species_languages_vr.dm"
 #include "code\__defines\species_languages_YW.dm"
@@ -543,6 +544,7 @@
 #include "code\datums\components\disabilities\epilepsy.dm"
 #include "code\datums\components\disabilities\gibbing.dm"
 #include "code\datums\components\disabilities\nervousness.dm"
+#include "code\datums\components\disabilities\pollen.dm"
 #include "code\datums\components\disabilities\rotting.dm"
 #include "code\datums\components\disabilities\tourettes.dm"
 #include "code\datums\components\species\shadekin.dm"
@@ -601,6 +603,12 @@
 #include "code\datums\diseases\advance\symptoms\weight.dm"
 #include "code\datums\diseases\advance\symptoms\youth.dm"
 #include "code\datums\elements\_element.dm"
+<<<<<<< HEAD
+=======
+#include "code\datums\elements\allergy.dm"
+#include "code\datums\elements\cleaning.dm"
+#include "code\datums\elements\climbable.dm"
+>>>>>>> f94efe06a4 ([MIRROR] Allergic Reaction Element (And direct_say proc) (#11359))
 #include "code\datums\elements\conflict_checking.dm"
 #include "code\datums\elements\footstep.dm"
 #include "code\datums\elements\footstep_override.dm"
