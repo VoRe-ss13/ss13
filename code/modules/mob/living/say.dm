@@ -438,6 +438,49 @@ var/list/channel_to_radio_key = new
 		log_say(message, src)
 	return 1
 
+<<<<<<< HEAD
+=======
+/*************************************************************************/
+/* HEAVILY SIMPLIFIED VARIANT OF BLOOPERS FROM Citadel                   */
+// https://github.com/Citadel-Station-13/Citadel-Station-13/pull/15677   */
+/*********************(***************************************************/
+#define BLOOPER_SPEED 6
+#define BLOOPER_SPEED_BASELINE 4
+#define BLOOPER_MAX_BLOOPERS 24
+#define BLOOPER_MAX_TIME (1.5 SECONDS)
+
+/mob/living/proc/blooper(extrarange = 0, volume, sound_preference = /datum/preference/toggle/bloop_sounds)
+	playsound(\
+		src,\
+		pick(voice_sounds_list),\
+		volume,\
+		vary = TRUE,\
+		extrarange = extrarange,\
+		falloff = 1,\
+		is_global = TRUE,\
+		frequency = voice_freq > 0 ? voice_freq : null,\
+		ignore_walls = TRUE,\
+		preference = sound_preference,
+	) //CHOMPEDIT - Ignore_walls set to TRUE
+
+/mob/living/proc/blooploop(message, extrarange = 0, volume, sound_preference = /datum/preference/toggle/say_sounds, bloop_preference = /datum/preference/toggle/bloop_sounds)
+	var/bloopers = min(round((LAZYLEN(message) / BLOOPER_SPEED)) + 1, BLOOPER_MAX_BLOOPERS)
+	var/total_delay
+	playsound(src, pick(voice_sounds_list), volume, TRUE, extrarange = extrarange, falloff = 1 , is_global = TRUE, frequency = voice_freq > 0 ? voice_freq : null, ignore_walls = FALSE, preference = sound_preference)
+	for(var/i in 1 to bloopers)
+		if(total_delay > BLOOPER_MAX_TIME)
+			break
+		addtimer(CALLBACK(src, PROC_REF(blooper), extrarange, volume, bloop_preference), total_delay)
+		total_delay += rand(\
+			DS2TICKS(BLOOPER_SPEED / BLOOPER_SPEED_BASELINE), \
+			DS2TICKS(BLOOPER_SPEED / BLOOPER_SPEED_BASELINE) + DS2TICKS(BLOOPER_SPEED / BLOOPER_SPEED_BASELINE)) TICKS
+
+#undef BLOOPER_SPEED
+#undef BLOOPER_SPEED_BASELINE
+#undef BLOOPER_MAX_BLOOPERS
+#undef BLOOPER_MAX_TIME
+
+>>>>>>> 757d2b8941 ([MIRROR] Makes first say sound follow volume argument (#11364))
 /mob/living/proc/say_signlang(var/message, var/verb="gestures", var/verb_understood="gestures", var/datum/language/language, var/type = 1)
 	var/turf/T = get_turf(src)
 	//We're in something, gesture to people inside the same thing
