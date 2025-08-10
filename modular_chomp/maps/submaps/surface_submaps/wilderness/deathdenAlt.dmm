@@ -155,6 +155,7 @@
 	oxygen = 0
 	},
 /area/submap/DeathDen)
+<<<<<<< HEAD
 "mR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/food/snacks/candy_corn{
@@ -164,6 +165,8 @@
 /obj/effect/map_helper/no_phaseshift/area,
 /turf/simulated/floor/wood/sif,
 /area/submap/DeathDen)
+=======
+>>>>>>> d093fcc74f (Various Map Things (#11375))
 "nl" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/sif/broken,
@@ -635,11 +638,14 @@
 	},
 /turf/simulated/floor/wood/sif,
 /area/submap/DeathDen)
+<<<<<<< HEAD
 "Yr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/map_helper/no_phaseshift,
 /turf/simulated/floor/wood/sif,
 /area/submap/DeathDen)
+=======
+>>>>>>> d093fcc74f (Various Map Things (#11375))
 "YA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/sif,
@@ -823,7 +829,7 @@ Sf
 Ps
 JE
 ex
-mR
+Ps
 GU
 YA
 MV
@@ -838,8 +844,13 @@ Is
 "}
 (10,1,1) = {"
 Is
+<<<<<<< HEAD
 rn
 Yr
+=======
+aa
+YA
+>>>>>>> d093fcc74f (Various Map Things (#11375))
 Ps
 Xy
 Ps
