@@ -22,7 +22,13 @@
 		return
 	if(!prob(drip_chance))
 		return
+<<<<<<< HEAD
 	if(owner.stat == DEAD)
+=======
+	if(isbelly(living_guy.loc))
+		return
+	if(living_guy.stat == DEAD)
+>>>>>>> d3ae054a3e ([MIRROR] Fixes dripping through your pred (#11379))
 		return
 	var/turf/T = get_turf(owner.loc)
 	if(!isturf(T))
