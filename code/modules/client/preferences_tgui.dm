@@ -136,8 +136,16 @@
 	switch(action)
 		// Basic actions
 		if("load")
+<<<<<<< HEAD
 			if(!IsGuestKey(usr.key))
 				open_load_dialog(usr)
+=======
+			if(!isnewplayer(ui.user))
+				to_chat(ui.user, span_userdanger("You can't change your character slot while being in round."))
+				return FALSE
+			if(!IsGuestKey(ui.user.key))
+				open_load_dialog(ui.user)
+>>>>>>> ae778b99ee ([MIRROR] Fix multiple pref issues (#11373))
 			. = TRUE
 		if("save")
 			save_character()
@@ -152,7 +160,13 @@
 			sanitize_preferences()
 			. = TRUE
 		if("resetslot")
+<<<<<<< HEAD
 			if("Yes" != tgui_alert(usr, "This will reset the current slot. Continue?", "Reset current slot?", list("No", "Yes")))
+=======
+			if(!isnewplayer(ui.user))
+				to_chat(ui.user, span_userdanger("You can't change your character slot while being in round."))
+			if("Yes" != tgui_alert(ui.user, "This will reset the current slot. Continue?", "Reset current slot?", list("No", "Yes")))
+>>>>>>> ae778b99ee ([MIRROR] Fix multiple pref issues (#11373))
 				return
 			if("Yes" != tgui_alert(usr, "Are you completely sure that you want to reset this character slot?", "Reset current slot?", list("No", "Yes")))
 				return
@@ -160,8 +174,15 @@
 			sanitize_preferences()
 			. = TRUE
 		if("copy")
+<<<<<<< HEAD
 			if(!IsGuestKey(usr.key))
 				open_copy_dialog(usr)
+=======
+			if(!isnewplayer(ui.user))
+				to_chat(ui.user, span_userdanger("You can't change your character slot while being in round."))
+			if(!IsGuestKey(ui.user.key))
+				open_copy_dialog(ui.user)
+>>>>>>> ae778b99ee ([MIRROR] Fix multiple pref issues (#11373))
 			. = TRUE
 		// More specific stuff
 		if("switch_category")
@@ -192,7 +213,11 @@
 	PMH.screen_loc = LAZYACCESS(preview_screen_locs, "PMH")
 
 /datum/preferences/tgui_close(mob/user)
+<<<<<<< HEAD
 	save_character()
+=======
+	load_character()
+>>>>>>> ae778b99ee ([MIRROR] Fix multiple pref issues (#11373))
 	save_preferences()
 
 /datum/preferences/proc/create_character_profiles()
