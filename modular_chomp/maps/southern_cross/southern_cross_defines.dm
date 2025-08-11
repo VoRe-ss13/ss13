@@ -171,6 +171,7 @@ but they don't actually change anything about the load order
 	// First, place a bunch of submaps. This comes before tunnel/forest generation as to not interfere with the submap.(This controls POI limit generation, increase or lower its values to have more or less POI's)
 
 	// Cave submaps are first.
+<<<<<<< HEAD
 	seed_submaps(list(Z_LEVEL_SURFACE_MINE), 140, /area/surface/cave/unexplored/normal, /datum/map_template/surface/mountains/normal)  //CHOMPEdit bumped up from 60 to 80
 	seed_submaps(list(Z_LEVEL_SURFACE_MINE), 140, /area/surface/cave/unexplored/deep, /datum/map_template/surface/mountains/deep)  //CHOMPEdit bumped up from 60 to 80
 	// Plains to make them less plain.
@@ -178,6 +179,20 @@ but they don't actually change anything about the load order
 	// Wilderness is next.
 	seed_submaps(list(Z_LEVEL_SURFACE_WILD), 240, /area/surface/outside/wilderness/normal, /datum/map_template/surface/wilderness/normal)  //CHOMPEdit bumped up from 60 to 150
 	seed_submaps(list(Z_LEVEL_SURFACE_WILD), 240, /area/surface/outside/wilderness/deep, /datum/map_template/surface/wilderness/deep)  //CHOMPEdit bumped up from 60 to 150
+=======
+	var/surface_mine_z = GLOB.map_templates_loaded[Z_NAME_ALIAS_SURFACE_MINES]
+	seed_submaps(list(surface_mine_z), 140, /area/surface/cave/unexplored/normal, /datum/map_template/surface/mountain_ch/normal)  //CHOMPEdit bumped up from 60 to 80
+	seed_submaps(list(surface_mine_z), 140, /area/surface/cave/unexplored/deep, /datum/map_template/surface/mountain_ch/deep)  //CHOMPEdit bumped up from 60 to 80
+
+	// Plains to make them less plain.
+	var/surface_z = GLOB.map_templates_loaded[Z_NAME_ALIAS_SURFACE]
+	seed_submaps(list(surface_z), 220, /area/surface/outside/plains/normal, /datum/map_template/surface/plains_ch) // Center area is WIP until map editing settles down.  //CHOMPEdit bumped up from 80 to 140
+
+	// Wilderness is next.
+	var/surface_wild_z = GLOB.map_templates_loaded[Z_NAME_ALIAS_SURFACE_WILDS]
+	seed_submaps(list(surface_wild_z), 240, /area/surface/outside/wilderness/normal, /datum/map_template/surface/wilderness_ch/normal)  //CHOMPEdit bumped up from 60 to 150
+	seed_submaps(list(surface_wild_z), 240, /area/surface/outside/wilderness/deep, /datum/map_template/surface/wilderness_ch/deep)  //CHOMPEdit bumped up from 60 to 150
+>>>>>>> 4c05ed7aaf (ensure only our POIs are loaded (#11394))
 	// If Space submaps are made, add a line to make them here as well.
 
 	// Now for the tunnels. (This decides the load order of ore generation and cave generation. Check Random_Map to see % )
