@@ -48,6 +48,7 @@ export const VoreUserPreferences = (props: {
     allow_spontaneous_tf,
     allow_mind_transfer,
     eating_privacy_global,
+    vore_death_privacy,
     allow_mimicry,
     strip_mechanics_active,
     autotransferable,
@@ -523,6 +524,19 @@ export const VoreUserPreferences = (props: {
       content: {
         enabled: 'Global Vore Privacy: Subtle',
         disabled: 'Global Vore Privacy: Loud',
+      },
+    },
+    vore_death_privacy: {
+      action: 'toggle_death_privacy',
+      test: vore_death_privacy,
+      tooltip: {
+        main: 'Sets whether your vore deaths are announced to ghosts',
+        enable: ' Click here to prevent announcing vore deaths',
+        disable: ' Click here to allow announcing vore deaths',
+      },
+      content: {
+        enabled: 'Vore Death Privacy: Unannonced',
+        disabled: 'Vore Death Privacy: Announced',
       },
     },
     allow_mimicry: {
