@@ -93,7 +93,11 @@ export const VoreUserPreferencesMechanical = (props: {
         </Stack.Item>
         <Stack.Item basis="32%">
           <VoreUserPreferenceItem
+<<<<<<< HEAD
             spec={preferences.vore_fx}
+=======
+            spec={preferences.vore_death_privacy}
+>>>>>>> 8f16d351a2 ([MIRROR] Vore death privacy pref (#11392))
             tooltipPosition="right"
           />
         </Stack.Item>
