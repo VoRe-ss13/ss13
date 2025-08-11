@@ -128,19 +128,28 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	return L
 
 //Reassociate still open ticket if one exists
-/datum/tickets/proc/ClientLogin(client/C)
+/datum/tickets/proc/ClientLogin(client/C, only_alert = FALSE)
 	C.current_ticket = CKey2ActiveTicket(C.ckey)
 	if(C.current_ticket)
-		C.current_ticket.AddInteraction("Client reconnected.")
+		if(!only_alert)
+			C.current_ticket.AddInteraction("Client reconnected.")
 		C.current_ticket.initiator = C
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets.dm
 		// C.current_ticket.initiator.mob.throw_alert("open ticket", /obj/screen/alert/open_ticket) // Uncomment this line to enable player-side ticket ui
+=======
+		C.current_ticket.initiator.mob?.throw_alert("open ticket", /obj/screen/alert/open_ticket)
+>>>>>>> 354766375a ([MIRROR] sort cyborg modules (#11390)):code/modules/tickets/tickets.dm
 
 //Dissasociate ticket
 /datum/tickets/proc/ClientLogout(client/C)
 	if(C.current_ticket)
 		var/datum/ticket/T = C.current_ticket
 		T.AddInteraction("Client disconnected.")
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets.dm
 		// T.initiator.mob.clear_alert("open ticket") // Uncomment this line to enable player-side ticket ui
+=======
+		T.initiator?.mob?.clear_alert("open ticket")
+>>>>>>> 354766375a ([MIRROR] sort cyborg modules (#11390)):code/modules/tickets/tickets.dm
 		T.initiator = null
 		T = null
 

@@ -417,8 +417,15 @@
 
 
 //////////////////// Cyborg Modules ////////////////////
+<<<<<<< HEAD:code/modules/research/prosfab_designs.dm
 /datum/design/item/prosfab/robot_upgrade
 	category = list("Cyborg Modules")
+=======
+/datum/design_techweb/prosfab/robot_upgrade
+	category = list(
+		RND_CATEGORY_MECHFAB_CYBORG_MODULES + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_UTILITY
+	)
+>>>>>>> 354766375a ([MIRROR] sort cyborg modules (#11390)):code/modules/research/tg/designs/prosfab_designs.dm
 	build_type = PROSFAB
 	time = 12
 	materials = list(MAT_STEEL = 7500)
@@ -445,6 +452,10 @@
 	build_path = /obj/item/borg/upgrade/utility/restart
 
 // Section for basic upgrades for all cyborgs
+/datum/design_techweb/prosfab/robot_upgrade/basic
+	category = list(
+		RND_CATEGORY_MECHFAB_CYBORG_MODULES + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_BASIC
+	)
 
 /datum/design/item/prosfab/robot_upgrade/basic/sizeshift
 	name = "Size Alteration Module"
@@ -477,6 +488,10 @@
 	build_path = /obj/item/borg/upgrade/basic/language
 
 // Section for advanced upgrades for all cyborgs
+/datum/design_techweb/prosfab/robot_upgrade/advanced
+	category = list(
+		RND_CATEGORY_MECHFAB_CYBORG_MODULES + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_ADVANCED
+	)
 
 /datum/design/item/prosfab/robot_upgrade/advanced/bellysizeupgrade
 	name = "Robohound Capacity Expansion Module"
@@ -509,6 +524,10 @@
 /*
 	Some job related borg upgrade modules, adding useful items for puppers.
 */
+/datum/design_techweb/prosfab/robot_upgrade/restricted
+	category = list(
+		RND_CATEGORY_MECHFAB_CYBORG_MODULES + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_RESTRICTED
+	)
 
 /datum/design/item/prosfab/robot_upgrade/restricted/bellycapupgrade
 	name = "Robohound Capability Expansion Module"
@@ -517,7 +536,14 @@
 	materials = list(MAT_STEEL = 8000, MAT_GLASS = 6000)
 	build_path = /obj/item/borg/upgrade/restricted/bellycapupgrade
 
+<<<<<<< HEAD:code/modules/research/prosfab_designs.dm
 /datum/design/item/prosfab/robot_upgrade/restricted/advrped
+=======
+/datum/design_techweb/prosfab/robot_upgrade/restricted/advrped
+	category = list(
+		RND_CATEGORY_MECHFAB_CYBORG_MODULES + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_RESTRICTED + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_SCIENCE
+	)
+>>>>>>> 354766375a ([MIRROR] sort cyborg modules (#11390)):code/modules/research/tg/designs/prosfab_designs.dm
 	name = "Advanced Rapid Part Exchange Device"
 	desc = "Exactly the same as a standard Advanced RPED, but this one has mounting hardware for a Science Borg."
 	id = "borg_advrped_module"
@@ -525,7 +551,14 @@
 	materials = list(MAT_STEEL = 30000, MAT_GLASS = 10000)
 	build_path = /obj/item/borg/upgrade/restricted/advrped
 
+<<<<<<< HEAD:code/modules/research/prosfab_designs.dm
 /datum/design/item/prosfab/robot_upgrade/restricted/diamonddrill
+=======
+/datum/design_techweb/prosfab/robot_upgrade/restricted/diamonddrill
+	category = list(
+		RND_CATEGORY_MECHFAB_CYBORG_MODULES + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_RESTRICTED + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_MINING
+	)
+>>>>>>> 354766375a ([MIRROR] sort cyborg modules (#11390)):code/modules/research/tg/designs/prosfab_designs.dm
 	name = "Diamond Drill"
 	desc = "A mining drill with a diamond tip, made for use by Mining Borgs."
 	id = "borg_ddrill_module"
@@ -533,7 +566,14 @@
 	materials = list(MAT_STEEL = 3000, MAT_GLASS = 1000, MAT_DIAMOND = 2000)
 	build_path = /obj/item/borg/upgrade/restricted/diamonddrill
 
+<<<<<<< HEAD:code/modules/research/prosfab_designs.dm
 /datum/design/item/prosfab/robot_upgrade/restricted/pka
+=======
+/datum/design_techweb/prosfab/robot_upgrade/restricted/pka
+	category = list(
+		RND_CATEGORY_MECHFAB_CYBORG_MODULES + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_RESTRICTED + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_MINING
+	)
+>>>>>>> 354766375a ([MIRROR] sort cyborg modules (#11390)):code/modules/research/tg/designs/prosfab_designs.dm
 	name = "Proto-Kinetic Accelerator"
 	desc = "A mining weapon designed for clearing rocks and hostile wildlife. This model is equiped with a self upgrade system, allowing it to attach modules hands free."
 	id = "borg_pka_module"
@@ -541,7 +581,14 @@
 	materials = list(MAT_PLASTEEL = 5000, MAT_GLASS = 1000, MAT_URANIUM = 500, MAT_PLATINUM = 350)
 	build_path = /obj/item/borg/upgrade/restricted/pka
 
+<<<<<<< HEAD:code/modules/research/prosfab_designs.dm
 /datum/design/item/prosfab/robot_upgrade/restricted/tasercooler
+=======
+/datum/design_techweb/prosfab/robot_upgrade/restricted/tasercooler
+	category = list(
+		RND_CATEGORY_MECHFAB_CYBORG_MODULES + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_RESTRICTED + RND_SUBCATEGORY_MECHFAB_CYBORG_MODULES_SECURITY
+	)
+>>>>>>> 354766375a ([MIRROR] sort cyborg modules (#11390)):code/modules/research/tg/designs/prosfab_designs.dm
 	name = "Rapid Taser Cooling Module"
 	desc = "Used to cool a mounted taser, increasing the potential current in it and thus its recharge rate."
 	id = "borg_taser_module"
