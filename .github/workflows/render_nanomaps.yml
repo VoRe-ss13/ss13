@@ -22,8 +22,13 @@ jobs:
     name: 'Generate NanoMaps'
     runs-on: ubuntu-24.04
     steps:
+<<<<<<< HEAD
     - name: Clone
       uses: actions/checkout@v4
+=======
+      - name: Clone
+        uses: actions/checkout@v5
+>>>>>>> 7987fca6ee (Bump actions/checkout from 4 to 5 (#11402))
 
     - name: Branch
       run: |
