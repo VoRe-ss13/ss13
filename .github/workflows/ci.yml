@@ -16,7 +16,7 @@ jobs:
       group: run_linters-${{ github.head_ref || github.run_id }}
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
             fetch-depth: 0
       # Caches
@@ -70,7 +70,7 @@ jobs:
     name: DreamChecker
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Restore SpacemanDMM Cache
         uses: actions/cache@v4
@@ -101,7 +101,7 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 9
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: robinraju/release-downloader@v1.12
         with:
           repository: "OpenDreamProject/OpenDream"
@@ -121,7 +121,7 @@ jobs:
     # needs: ['run_linters', 'dreamchecker']
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Ensure +x on CI directory
         run: |
           chmod -R +x ./tools/ci
