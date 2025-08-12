@@ -858,6 +858,6 @@
 #define COMSIG_XENOCHIMERA_COMPONENT "xenochimera_component"
 
 //Unittest data update
-#ifdef UNIT_TEST
+#ifdef UNIT_TESTS
 #define COMSIG_UNITTEST_DATA "unittest_send_data"
 #endif

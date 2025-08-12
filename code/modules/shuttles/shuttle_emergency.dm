@@ -4,6 +4,10 @@
 
 /datum/shuttle/autodock/ferry/emergency/New()
 	..()
+<<<<<<< HEAD
+=======
+	radio_connection = SSradio.add_object(src, frequency, null)
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 	if(emergency_shuttle.shuttle)
 		CRASH("An emergency shuttle has already been defined.")
 	emergency_shuttle.shuttle = src

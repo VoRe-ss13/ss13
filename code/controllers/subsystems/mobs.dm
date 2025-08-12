@@ -12,6 +12,12 @@ SUBSYSTEM_DEF(mobs)
 	flags = SS_KEEP_TIMING|SS_NO_INIT
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 
+	dependencies = list(
+		/datum/controller/subsystem/atoms,
+		/datum/controller/subsystem/points_of_interest,
+		/datum/controller/subsystem/shuttles
+	)
+
 	var/list/currentrun = list()
 	var/log_extensively = FALSE
 	var/list/timelog = list()
@@ -90,6 +96,7 @@ SUBSYSTEM_DEF(mobs)
 	log_game(msg)
 	log_world(msg)
 
+<<<<<<< HEAD
 /datum/controller/subsystem/mobs/fail()
 	..()
 	log_recent()
@@ -97,3 +104,38 @@ SUBSYSTEM_DEF(mobs)
 /datum/controller/subsystem/mobs/critfail()
 	..()
 	log_recent()
+=======
+/datum/controller/subsystem/mobs/proc/report_death(var/mob/living/L)
+	if(!L)
+		return
+	if(!L.key || !L.mind)
+		return
+	if(!SSticker || !SSticker.mode)
+		return
+	SSticker.mode.check_win()
+
+	// Don't bother with the rest if we've not got a DB to do anything with
+	if(!CONFIG_GET(flag/enable_stat_tracking) || !CONFIG_GET(flag/sql_enabled))
+		return
+
+	var/area/placeofdeath = get_area(L)
+	var/podname = placeofdeath ? placeofdeath.name : "Unknown area"
+
+	var/list/data = list(
+	"name" = "[L.real_name]",
+	"byondkey" = "[L.key]",
+	"job" = "[L.mind.assigned_role]",
+	"special" = "[L.mind.special_role]",
+	"pod" = podname,
+	"tod" = time2text(world.realtime, "YYYY-MM-DD hh:mm:ss"),
+	"laname" = L.lastattacker ? L.lastattacker:real_name : "",
+	"lakey" = L.lastattacker ? L.lastattacker:key : "",
+	"gender" = L.gender,
+	"bruteloss" = L.getBruteLoss(),
+	"fireloss" = L.getFireLoss(),
+	"brainloss" = L.brainloss,
+	"oxyloss" = L.getOxyLoss(),
+	"coord" = "[L.x], [L.y], [L.z]"
+	)
+	death_list += list(data)
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))

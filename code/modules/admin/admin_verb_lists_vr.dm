@@ -36,6 +36,7 @@ var/list/admin_verbs_admin = list(
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
 	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
 	/client/proc/admin_ghost,			//allows us to ghost/reenter body at will,
+<<<<<<< HEAD
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags, //VOREStation Add,
 	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels, //VOREStation Add,
 	/client/proc/player_panel,			//VOREStation Add,
@@ -44,6 +45,13 @@ var/list/admin_verbs_admin = list(
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify, //VOREStation Add,
 	/client/proc/mark_datum_mapview,	//VOREStation Add,
 	/client/proc/cmd_check_new_players,	//allows us to see every new player, //VOREStation Add,
+=======
+	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels,
+	/client/proc/player_panel,
+	/client/proc/hide_verbs,			//hides all our adminverbs,
+	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
+	/client/proc/cmd_check_new_players,	//allows us to see every new player,
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 	/client/proc/toggle_view_range,		//changes how far we can see,
 	/client/proc/cmd_admin_pm_context,	//right-click adminPM interface,
 	/client/proc/cmd_admin_pm_panel,	//admin-pm list,
@@ -152,7 +160,6 @@ var/list/admin_verbs_fun = list(
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
 	/client/proc/everyone_random,
-	/client/proc/cinematic,
 	/datum/admins/proc/toggle_aliens,
 	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/cmd_admin_add_freeform_ai_law,
@@ -209,13 +216,11 @@ var/list/admin_verbs_server = list(
 	/client/proc/Set_Holiday,
 	/client/proc/ToRban,
 	/datum/admins/proc/startnow,
-	/datum/admins/proc/restart,
 	/datum/admins/proc/delay,
 	/datum/admins/proc/toggleaban,
 	/datum/admins/proc/togglepersistence,
 	/client/proc/cmd_mod_say,
 	/client/proc/toggle_log_hrefs,
-	/datum/admins/proc/immreboot,
 	/client/proc/everyone_random,
 	/datum/admins/proc/toggleAI,
 	/client/proc/cmd_admin_delete,		//delete an instance/object/mob/etc,
@@ -254,8 +259,11 @@ var/list/admin_verbs_debug = list(
 	/client/proc/air_report,
 	/client/proc/reload_admins,
 	/client/proc/reload_eventMs,
+<<<<<<< HEAD
 	/client/proc/restart_controller,
 	/datum/admins/proc/restart,
+=======
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 	/client/proc/print_random_map,
 	/client/proc/create_random_map,
 	/client/proc/apply_random_map,
@@ -271,6 +279,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/jumptocoord,
 	/client/proc/dsay,
 	/client/proc/admin_ghost,			//allows us to ghost/reenter body at will,
+<<<<<<< HEAD
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags, //VOREStation Add,
 	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels, //VOREStation Add,
 	/client/proc/player_panel,			//VOREStation Add,
@@ -279,6 +288,13 @@ var/list/admin_verbs_debug = list(
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify, //VOREStation Add,
 	/client/proc/mark_datum_mapview,	//VOREStation Add,
 	/client/proc/cmd_check_new_players,	//allows us to see every new player, //VOREStation Add,
+=======
+	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels,
+	/client/proc/player_panel,
+	/client/proc/hide_verbs,			//hides all our adminverbs,
+	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
+	/client/proc/cmd_check_new_players,	//allows us to see every new player,
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 	/datum/admins/proc/view_runtimes,
 	// /client/proc/show_gm_status, // VOREStation Edit - We don't use SSgame_master yet.
 	/datum/admins/proc/set_uplink, //VOREStation Add,
@@ -345,7 +361,6 @@ var/list/admin_verbs_hideable = list(
 	/datum/admins/proc/cmd_admin_dress,
 	/client/proc/cmd_admin_gib_self,
 	/client/proc/drop_bomb,
-	/client/proc/cinematic,
 	/datum/admins/proc/toggle_aliens,
 	/datum/admins/proc/toggle_space_ninja,
 	/client/proc/cmd_admin_add_freeform_ai_law,
@@ -357,11 +372,9 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/Set_Holiday,
 	/client/proc/ToRban,
 	/datum/admins/proc/startnow,
-	/datum/admins/proc/restart,
 	/datum/admins/proc/delay,
 	/datum/admins/proc/toggleaban,
 	/client/proc/toggle_log_hrefs,
-	/datum/admins/proc/immreboot,
 	/client/proc/everyone_random,
 	/datum/admins/proc/toggleAI,
 	/datum/admins/proc/adrev,
@@ -396,9 +409,9 @@ var/list/admin_verbs_hideable = list(
 var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_pm_context,	//right-click adminPM interface,
 	/client/proc/cmd_admin_pm_panel,	//admin-pm list,
-	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game.,
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,			//allows us to ghost/reenter body at will,
+<<<<<<< HEAD
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags, //VOREStation Add,
 	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels, //VOREStation Add,
 	/client/proc/player_panel,			//VOREStation Add,
@@ -409,6 +422,13 @@ var/list/admin_verbs_mod = list(
 	/client/proc/cmd_check_new_players,	//allows us to see every new player, //VOREStation Add,
 	/client/proc/cmd_mod_say,
 	/client/proc/cmd_event_say,
+=======
+	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels,
+	/client/proc/player_panel,
+	/client/proc/hide_verbs,			//hides all our adminverbs,
+	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
+	/client/proc/cmd_check_new_players,	//allows us to see every new player,
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 	/datum/admins/proc/show_player_info,
 	/datum/admins/proc/show_traitor_panel,
 	/client/proc/player_panel_new,
@@ -437,6 +457,7 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/cmd_admin_pm_context,
 	/client/proc/cmd_admin_pm_panel,
 	/client/proc/admin_ghost,
+<<<<<<< HEAD
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags, //VOREStation Add,
 	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels, //VOREStation Add,
 	/client/proc/player_panel,			//VOREStation Add,
@@ -445,10 +466,16 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify, //VOREStation Add,
 	/client/proc/mark_datum_mapview,	//VOREStation Add,
 	/client/proc/cmd_check_new_players,	//allows us to see every new player, //VOREStation Add,
+=======
+	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels,
+	/client/proc/player_panel,
+	/client/proc/hide_verbs,			//hides all our adminverbs,
+	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
+	/client/proc/cmd_check_new_players,	//allows us to see every new player,
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 	/datum/admins/proc/show_player_info,
 	/client/proc/dsay,
 	/client/proc/cmd_admin_subtle_message,
-	/client/proc/debug_variables,
 	/client/proc/check_antagonists,
 	/client/proc/aooc,
 	/datum/admins/proc/paralyze_mob,
@@ -566,10 +593,12 @@ var/list/admin_verbs_event_manager = list(
 	/datum/admins/proc/capture_map,
 	/client/proc/Set_Holiday,
 	/datum/admins/proc/startnow,
-	/datum/admins/proc/restart,
 	/datum/admins/proc/delay,
+<<<<<<< HEAD
 	/client/proc/cmd_mod_say,
 	/datum/admins/proc/immreboot,
+=======
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 	/client/proc/everyone_random,
 	/client/proc/cmd_admin_delete,		//delete an instance/object/mob/etc,
 	/client/proc/cmd_debug_del_all,

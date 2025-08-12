@@ -21,9 +21,13 @@
 	skybox_pixel_y = 0
 
 /obj/effect/overmap/visitable/sector/virgo2/Initialize(mapload)
-	for(var/obj/effect/overmap/visitable/ship/stellar_delight/sd in world)
-		docking_codes = sd.docking_codes
 	. = ..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/effect/overmap/visitable/sector/virgo2/LateInitialize()
+	for(var/obj/effect/overmap/visitable/ship/stellar_delight/sd in GLOB.all_stellar_delights)
+		docking_codes = sd.docking_codes
+		return
 
 // -- Datums -- //
 

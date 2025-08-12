@@ -83,6 +83,7 @@
 		SSatoms.initialized = previous_initialized_value;\
 	}\
 }
+<<<<<<< HEAD
 //CHOMPEdit End
 // SS runlevels
 
@@ -96,6 +97,8 @@
 
 var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_GAME, RUNLEVEL_POSTGAME)
 #define RUNLEVEL_FLAG_TO_INDEX(flag) (log(2, flag) + 1)	// Convert from the runlevel bitfield constants to index in runlevel_flags list
+=======
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 
 //! ### SS initialization hints
 /**
@@ -115,6 +118,7 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 /// If your system doesn't need to be initialized (by being disabled or something)
 #define SS_INIT_NO_NEED 3
 
+<<<<<<< HEAD
 //! ### SS initialization load orders
 // Subsystem init_order, from highest priority to lowest priority
 // Subsystems shutdown in the reverse of the order they initialize in
@@ -166,6 +170,10 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 #define INIT_ORDER_ATC				-70
 #define INIT_ORDER_STATPANELS		-98
 #define INIT_ORDER_CHAT				-100 //Should be last to ensure chat remains smooth during init.
+=======
+/// Successfully initialized, BUT do not announce it to players (generally to hide game mechanics it would otherwise spoil)
+#define SS_INIT_NO_MESSAGE 4
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 
 // Subsystem fire priority, from lowest to highest priority
 // If the subsystem isn't listed here it's either DEFAULT or PROCESS (if it's a processing subsystem child)
@@ -186,6 +194,7 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 #define FIRE_PRIORITY_AI			10
 #define FIRE_PRIORITY_STARMOVER		11
 #define FIRE_PRIORITY_GARBAGE		15
+#define FIRE_PRIORITY_DATABASE		16
 #define FIRE_PRIORITY_ASSETS 		20
 #define FIRE_PRIORITY_POIS	 		20
 #define FIRE_PRIORITY_ALARM			20
@@ -209,6 +218,36 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 #define FIRE_PRIORITY_DELAYED_VERBS 950
 #define FIRE_PRIORITY_INPUT			1000 // This must always always be the max highest priority. Player input must never be lost.
 
+
+// SS runlevels
+
+#define RUNLEVEL_LOBBY (1<<0)
+#define RUNLEVEL_SETUP (1<<1)
+#define RUNLEVEL_GAME (1<<2)
+#define RUNLEVEL_POSTGAME (1<<3)
+
+#define RUNLEVELS_DEFAULT (RUNLEVEL_SETUP | RUNLEVEL_GAME | RUNLEVEL_POSTGAME)
+
+//SSticker.current_state values
+/// Game is loading
+#define GAME_STATE_STARTUP 0
+/// Game is loaded and in pregame lobby
+#define GAME_STATE_PREGAME 1
+/// Game is attempting to start the round
+#define GAME_STATE_SETTING_UP 2
+/// Game has round in progress
+#define GAME_STATE_PLAYING 3
+/// Game has round finished
+#define GAME_STATE_FINISHED 4
+
+// Used for SSticker.force_ending
+/// Default, round is not being forced to end.
+#define END_ROUND_AS_NORMAL 0
+/// End the round now as normal
+#define FORCE_END_ROUND 1
+/// For admin forcing roundend, can be used to distinguish the two
+#define ADMIN_FORCE_END_ROUND 2
+
 /**
 	Create a new timer and add it to the queue.
 	* Arguments:
@@ -218,6 +257,9 @@ var/global/list/runlevel_flags = list(RUNLEVEL_LOBBY, RUNLEVEL_SETUP, RUNLEVEL_G
 	* * timer_subsystem the subsystem to insert this timer into
 */
 #define addtimer(args...) _addtimer(args, file = __FILE__, line = __LINE__)
+
+// The change in the world's time from the subsystem's last fire in seconds.
+#define DELTA_WORLD_TIME(ss) ((world.time - ss.last_fire) * 0.1)
 
 /// The timer key used to know how long subsystem initialization takes
 #define SS_INIT_TIMER_KEY "ss_init"

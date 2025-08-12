@@ -1,7 +1,9 @@
 SUBSYSTEM_DEF(lighting)
 	name = "Lighting"
+	dependencies = list(
+		/datum/controller/subsystem/machines
+	)
 	wait = 1
-	init_order = INIT_ORDER_LIGHTING
 	flags = SS_TICKER
 	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY // Do some work during lobby waiting period. May as well.
 	var/sun_mult = 1.0
@@ -19,6 +21,7 @@ SUBSYSTEM_DEF(lighting)
 
 
 /datum/controller/subsystem/lighting/Initialize()
+<<<<<<< HEAD
 	if(!subsystem_initialized)
 		if (CONFIG_GET(flag/starlight))
 			for(var/area/A in world)
@@ -26,6 +29,10 @@ SUBSYSTEM_DEF(lighting)
 					A.luminosity = 0
 
 		subsystem_initialized = TRUE
+=======
+	if(!initialized)
+		initialized = TRUE
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 		create_all_lighting_objects()
 
 	for(var/datum/planet/planet in SSplanets.planets)
@@ -182,5 +189,5 @@ SUBSYSTEM_DEF(lighting)
 /datum/controller/subsystem/lighting
 
 /datum/controller/subsystem/lighting/Recover()
-	subsystem_initialized = SSlighting.subsystem_initialized
+	initialized = SSlighting.initialized
 	..()

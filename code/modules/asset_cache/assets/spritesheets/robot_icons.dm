@@ -1,5 +1,92 @@
 /datum/asset/spritesheet_batched/robot_icons
+	_abstract = /datum/asset/spritesheet_batched/robot_icons
 	name = "robot_icons"
+<<<<<<< HEAD
+=======
+	var/module_type
+
+/datum/asset/spritesheet_batched/robot_icons/standard
+	name = "robot_icons_standard"
+	module_type = "Standard"
+
+/datum/asset/spritesheet_batched/robot_icons/service
+	name = "robot_icons_service"
+	module_type = "Service"
+
+/datum/asset/spritesheet_batched/robot_icons/clerical
+	name = "robot_icons_clerical"
+	module_type = "Clerical"
+
+/datum/asset/spritesheet_batched/robot_icons/clown
+	name = "robot_icons_clown"
+	module_type = "Clown"
+
+/datum/asset/spritesheet_batched/robot_icons/command
+	name = "robot_icons_command"
+	module_type = "Command"
+
+/datum/asset/spritesheet_batched/robot_icons/research
+	name = "robot_icons_research"
+	module_type = "Research"
+
+/datum/asset/spritesheet_batched/robot_icons/miner
+	name = "robot_icons_miner"
+	module_type = "Miner"
+
+/datum/asset/spritesheet_batched/robot_icons/crisis
+	name = "robot_icons_crisis"
+	module_type = "Crisis"
+
+/* Modul not in use
+/datum/asset/spritesheet_batched/robot_icons/surgeon
+	name = "robot_icons_surgeon"
+	module_type = "Surgeon"
+*/
+
+/datum/asset/spritesheet_batched/robot_icons/security
+	name = "robot_icons_security"
+	module_type = "Security"
+
+/datum/asset/spritesheet_batched/robot_icons/combat
+	name = "robot_icons_combat"
+	module_type = "Combat"
+
+/datum/asset/spritesheet_batched/robot_icons/exploration
+	name = "robot_icons_exploration"
+	module_type = "Exploration"
+
+/datum/asset/spritesheet_batched/robot_icons/engineering
+	name = "robot_icons_engineering"
+	module_type = "Engineering"
+
+/datum/asset/spritesheet_batched/robot_icons/janitor
+	name = "robot_icons_janitor"
+	module_type = "Janitor"
+
+/datum/asset/spritesheet_batched/robot_icons/gravekeeper
+	name = "robot_icons_gravekeeper"
+	module_type = "Gravekeeper"
+
+/datum/asset/spritesheet_batched/robot_icons/lost
+	name = "robot_icons_lost"
+	module_type = "Lost"
+
+/datum/asset/spritesheet_batched/robot_icons/protector
+	name = "robot_icons_protector"
+	module_type = "Protector"
+
+/datum/asset/spritesheet_batched/robot_icons/mechanist
+	name = "robot_icons_mechanist"
+	module_type = "Mechanist"
+
+/datum/asset/spritesheet_batched/robot_icons/combat_medic
+	name = "robot_icons_combat_medic"
+	module_type = "Combat Medic"
+
+/datum/asset/spritesheet_batched/robot_icons/ninja
+	name = "robot_icons_ninja"
+	module_type = "Ninja"
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 
 /datum/asset/spritesheet_batched/robot_icons/create_spritesheets()
 	for(var/datum/robot_sprite/S as anything in typesof(/datum/robot_sprite))
