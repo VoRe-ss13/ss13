@@ -13,8 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
+<<<<<<< HEAD
     - name: Checkout
       uses: actions/checkout@v4
+=======
+      - name: Checkout
+        uses: actions/checkout@v5
+>>>>>>> 7987fca6ee (Bump actions/checkout from 4 to 5 (#11402))
 
     - name: Generate App Token
       id: app-token-generation
