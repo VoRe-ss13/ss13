@@ -138,6 +138,23 @@
 /obj/screen/fullscreen/fear
 	icon_state = "fear"
 
+<<<<<<< HEAD
+=======
+/obj/screen/fullscreen/scrolls
+	icon_state = "scrolls"
+	show_when_dead = TRUE
+	plane = PLANE_PLAYER_HUD_ABOVE
+
+/obj/screen/fullscreen/cinematic_backdrop
+	icon = 'icons/hud/screen_gen.dmi'
+	screen_loc = "WEST,SOUTH to EAST,NORTH"
+	icon_state = "flash"
+	plane = SPLASHSCREEN_PLANE
+	layer = CINEMATIC_LAYER
+	color = COLOR_BLACK
+	show_when_dead = TRUE
+
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 /obj/screen/fullscreen/lighting_backdrop
 	icon = 'icons/mob/screen_gen.dmi'
 	icon_state = "flash"

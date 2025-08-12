@@ -79,3 +79,10 @@
 
 /// NaN isn't a number, damn it. Infinity is a problem too.
 #define isnum_safe(x) ( isnum((x)) && !isnan((x)) && !isinf((x)) )
+<<<<<<< HEAD
+=======
+
+#define ismopable(A) (A && (A.plane <= OBJ_PLANE)) //If something can be cleaned by floor-cleaning devices such as mops or clean bots
+
+#define isfloorturf(A) (istype(A, /turf/simulated/floor))
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))

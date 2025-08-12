@@ -1,58 +1,88 @@
-//
-// Ticker controls the state of the game, being responsible for round start, game mode, and round end.
-//
 SUBSYSTEM_DEF(ticker)
-	name = "Gameticker"
-	wait = 2 SECONDS
-	init_order = INIT_ORDER_TICKER
+	name = "Ticker"
 	priority = FIRE_PRIORITY_TICKER
-	flags = SS_NO_TICK_CHECK | SS_KEEP_TIMING
-	runlevels = RUNLEVEL_LOBBY | RUNLEVEL_SETUP | RUNLEVEL_GAME | RUNLEVEL_POSTGAME // Every runlevel!
+	flags = SS_KEEP_TIMING
+	runlevels = RUNLEVEL_LOBBY | RUNLEVEL_SETUP | RUNLEVEL_GAME
 
-	var/const/restart_timeout = 4 MINUTES	// Default time to wait before rebooting in desiseconds.
-	var/current_state = GAME_STATE_INIT	// We aren't even at pregame yet // TODO replace with CURRENT_GAME_STATE
+	/// state of current round (used by process()) Use the defines GAME_STATE_* !
+	var/current_state = GAME_STATE_STARTUP
+	/// Boolean to track if round should be forcibly ended next ticker tick.
+	/// Set by admin intervention ([ADMIN_FORCE_END_ROUND])
+	/// or a "round-ending" event, like summoning Nar'Sie, a blob victory, the nuke going off, etc. ([FORCE_END_ROUND])
+	var/force_ending = END_ROUND_AS_NORMAL
+	/// If TRUE, there is no lobby phase, the game starts immediately.
+	var/start_immediately = FALSE
+	/// Boolean to track and check if our subsystem setup is done.
+	var/setup_done = FALSE
 
-	/* Relies upon the following globals (TODO move those in here) */
-	// var/GLOB.master_mode = "extended"		//The underlying game mode (so "secret" or the voted mode).
-										// Set by SSvote when VOTE_GAMEMODE finishes.
-	// var/round_progressing = 1		//Whether the lobby clock is ticking down.
+	var/hide_mode = FALSE
+	var/datum/game_mode/mode = null
 
-	var/pregame_timeleft = 0			// Time remaining until game starts in seconds. Set by config
-	var/start_immediately = FALSE		// If true there is no lobby phase, the game starts immediately.
+	var/login_music //music played in pregame lobby
+	var/round_end_sound //music/jingle played when the world reboots
+	var/round_end_sound_sent = TRUE //If all clients have loaded it
 
-	var/hide_mode = FALSE 				// If the true game mode should be hidden (because we chose "secret")
-	var/datum/game_mode/mode = null		// The actual gamemode, if selected.
+	var/list/datum/mind/minds = list() //The characters in the game. Used for objective tracking.
 
-	var/end_game_state = END_GAME_NOT_OVER	// Track where we are ending game/round
-	var/restart_timeleft				// Time remaining until restart in desiseconds
-	var/last_restart_notify				// world.time of last restart warning.
-	var/delay_end = FALSE               // If set, the round will not restart on its own.
+	var/delay_end = FALSE //if set true, the round will not restart on it's own
+	var/admin_delay_notice = "" //a message to display to anyone who tries to restart the world after a delay
+	var/ready_for_reboot = FALSE //all roundend preparation done with, all that's left is reboot
 
-	// var/login_music					// music played in pregame lobby // VOREStation Edit - We do music differently
+	var/tipped = FALSE //Did we broadcast the tip of the day yet?
+	var/selected_tip // What will be the tip of the day?
 
-	var/list/datum/mind/minds = list()	// The people in the game. Used for objective tracking.
+	var/timeLeft //pregame timer
+	var/start_at
 
-	var/random_players = FALSE	// If set to nonzero, ALL players who latejoin or declare-ready join will have random appearances/genders
+	var/gametime_offset = 432000 //Deciseconds to add to world.time for station time.
+	var/station_time_rate_multiplier = 12 //factor of station time progressal vs real time.
 
-	// TODO - Should this go here or in the job subsystem?
-	var/triai = FALSE // Global flag for Triumvirate AI being enabled
+	/// Num of players, used for pregame stats on statpanel
+	var/totalPlayers = 0
+	/// Num of ready players, used for pregame stats on statpanel (only viewable by admins)
+	var/totalPlayersReady = 0
+	/// Num of ready admins, used for pregame stats on statpanel (only viewable by admins)
+	var/total_admins_ready = 0
 
-	//station_explosion used to be a variable for every mob's hud. Which was a waste!
-	//Now we have a general cinematic centrally held within the gameticker....far more efficient!
-	var/obj/screen/cinematic = null
+	var/queue_delay = 0
+	var/list/queued_players = list() //used for join queues when the server exceeds the hard population cap
+
+	/// What is going to be reported to other stations at end of round?
+	var/news_report
+
+
+	var/roundend_check_paused = FALSE
 
 	var/round_start_time = 0
+<<<<<<< HEAD
+=======
+	var/list/round_start_events
+	var/list/round_end_events
+	var/mode_result = "undefined"
+	var/end_state = "undefined"
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 
+	/// People who have been commended and will receive a heart
+	var/list/hearts
 
+	/// Why an emergency shuttle was called
+	var/emergency_reason
 
-// This global variable exists for legacy support so we don't have to rename every 'ticker' to 'SSticker' yet.
-var/global/datum/controller/subsystem/ticker/ticker
-/datum/controller/subsystem/ticker/PreInit()
-	global.ticker = src // TODO - Remove this! Change everything to point at SSticker intead
+	/// ID of round reboot timer, if it exists
+	var/reboot_timer = null
+
+	/// ### LEGACY VARS ###
+	/// Default time to wait before rebooting in desiseconds.
+	var/const/restart_timeout = 4 MINUTES
+	/// Track where we are ending game/round
+	var/end_game_state = END_GAME_NOT_OVER
+	/// Time remaining until restart in desiseconds
+	var/restart_timeleft
+	/// world.time of last restart warning.
+	var/last_restart_notify
 
 /datum/controller/subsystem/ticker/Initialize()
-	pregame_timeleft = CONFIG_GET(number/pregame_time)
-	send2mainirc("Server lobby is loaded and open at byond://[CONFIG_GET(string/serverurl) ? CONFIG_GET(string/serverurl) : (CONFIG_GET(string/server) ? CONFIG_GET(string/server) : "[world.address]:[world.port]")]")
+	start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
 	SSwebhooks.send(
 		WEBHOOK_ROUNDPREP,
 		list(
@@ -60,38 +90,112 @@ var/global/datum/controller/subsystem/ticker/ticker
 			"url" = get_world_url()
 		)
 	)
-	GLOB.autospeaker = new (null, FALSE, null, null, TRUE) //Set up Global Announcer
+
 	return SS_INIT_SUCCESS
 
 /datum/controller/subsystem/ticker/fire(resumed = FALSE)
 	switch(current_state)
-		if(GAME_STATE_INIT)
-			pregame_welcome()
+		if(GAME_STATE_STARTUP)
+			if(Master.initializations_finished_with_no_players_logged_in)
+				start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
+			for(var/client/C in GLOB.clients)
+				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
+			to_chat(world, span_notice("<b>Welcome to [station_name()]!</b>"))
 			current_state = GAME_STATE_PREGAME
+			SEND_SIGNAL(src, COMSIG_TICKER_ENTER_PREGAME)
+
+			fire()
 		if(GAME_STATE_PREGAME)
-			pregame_tick()
+			//lobby stats for statpanels
+			if(isnull(timeLeft))
+				timeLeft = max(0,start_at - world.time)
+			totalPlayers = LAZYLEN(GLOB.new_player_list)
+			totalPlayersReady = 0
+			total_admins_ready = 0
+			for(var/mob/new_player/player as anything in GLOB.new_player_list)
+				if(player.ready == PLAYER_READY_TO_PLAY)
+					++totalPlayersReady
+					if(player.client?.holder)
+						++total_admins_ready
+
+			if(start_immediately)
+				timeLeft = 0
+
+			//countdown
+			if(timeLeft < 0)
+				return
+			timeLeft -= wait
+
+			//if(timeLeft <= 300 && !tipped)
+			//	send_tip_of_the_round(world, selected_tip)
+			//	tipped = TRUE
+
+			if(timeLeft <= 0)
+				SEND_SIGNAL(src, COMSIG_TICKER_ENTER_SETTING_UP)
+				current_state = GAME_STATE_SETTING_UP
+				Master.SetRunLevel(RUNLEVEL_SETUP)
+				if(start_immediately)
+					fire()
+
 		if(GAME_STATE_SETTING_UP)
-			setup_tick()
+			if(!setup())
+				//setup failed
+				current_state = GAME_STATE_STARTUP
+				start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
+				timeLeft = null
+				Master.SetRunLevel(RUNLEVEL_LOBBY)
+				SEND_SIGNAL(src, COMSIG_TICKER_ERROR_SETTING_UP)
+
 		if(GAME_STATE_PLAYING)
-			playing_tick()
+			mode.process() // So THIS is where we run mode.process() huh? Okay
+
+			if(mode.explosion_in_progress)
+				return // wait until explosion is done.
+
+			if(force_ending)
+				current_state = GAME_STATE_FINISHED
+				declare_completion(force_ending)
+				Master.SetRunLevel(RUNLEVEL_POSTGAME)
+			else
+				// Calculate if game and/or mode are finished (Complicated by the continuous_rounds config option)
+				var/game_finished = FALSE
+				var/mode_finished = FALSE
+				if (CONFIG_GET(flag/continuous_rounds)) // Game keeps going after mode ends.
+					game_finished = (emergency_shuttle.returned() || mode.station_was_nuked)
+					mode_finished = ((end_game_state >= END_GAME_MODE_FINISHED) || mode.check_finished()) // Short circuit if already finished.
+				else // Game ends when mode does
+					game_finished = (mode.check_finished() || (emergency_shuttle.returned() && emergency_shuttle.evac == 1)) || GLOB.universe_has_ended
+					mode_finished = game_finished
+
+				if(game_finished && mode_finished)
+					end_game_state = END_GAME_READY_TO_END
+					current_state = GAME_STATE_FINISHED
+					Master.SetRunLevel(RUNLEVEL_POSTGAME)
+					INVOKE_ASYNC(src, PROC_REF(declare_completion))
+				else if (mode_finished && (end_game_state < END_GAME_MODE_FINISHED))
+					end_game_state = END_GAME_MODE_FINISHED // Only do this cleanup once!
+					mode.cleanup()
+					//call a transfer shuttle vote
+					to_world(span_boldannounce("The round has ended!"))
+					SSvote.start_vote(new /datum/vote/crew_transfer)
+
+		// FIXME: IMPROVE THIS LATER!
 		if(GAME_STATE_FINISHED)
 			post_game_tick()
 
-/datum/controller/subsystem/ticker/proc/pregame_welcome()
-	to_world(span_boldannounce(span_notice("<em>Welcome to the pregame lobby!</em>")))
-	to_world(span_boldannounce(span_notice("Please set up your character and select ready. The round will start in [pregame_timeleft] seconds.")))
-	world << sound('sound/misc/server-ready.ogg', volume = 100)
+			if (world.time - last_restart_notify >= 1 MINUTE && !delay_end)
+				to_world(span_boldannounce("Restarting in [round(restart_timeleft/600, 1)] minute\s."))
+				last_restart_notify = world.time
 
-// Called during GAME_STATE_PREGAME (RUNLEVEL_LOBBY)
-/datum/controller/subsystem/ticker/proc/pregame_tick()
-	if(GLOB.round_progressing && last_fire)
-		pregame_timeleft -= (world.time - last_fire) / (1 SECOND)
+/datum/controller/subsystem/ticker/proc/setup()
+	to_chat(world, span_boldannounce("Starting game..."))
+	var/init_start = world.timeofday
 
-	if(start_immediately)
-		pregame_timeleft = 0
-	else if(SSvote.active_vote)
-		return // vote still going, wait for it.
+	CHECK_TICK
+	setup_choose_gamemode()
+	// TODO
 
+<<<<<<< HEAD
 	// Time to start the game!
 	if(pregame_timeleft <= 0)
 		//Fops edit Start
@@ -103,24 +207,80 @@ var/global/datum/controller/subsystem/ticker/ticker
 		if(start_immediately)
 			fire() // Don't wait for next tick, do it now!
 		return
+=======
+	CHECK_TICK
+	setup_economy()
+	create_characters() //Create player characters
+	collect_minds()
+	equip_characters()
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 
-	//if(pregame_timeleft <= CONFIG_GET(number/vote_autogamemode_timeleft) && !SSvote.gamemode_vote_called) //CHOMPEdit
-		//SSvote.autogamemode() // Start the game mode vote (if we haven't had one already) //CHOMPEdit
+	//	data_core.manifest()
 
-// Called during GAME_STATE_SETTING_UP (RUNLEVEL_SETUP)
-/datum/controller/subsystem/ticker/proc/setup_tick(resumed = FALSE)
-	round_start_time = world.time // otherwise round_start_time would be 0 for the signals
-	if(!setup_choose_gamemode())
-		// It failed, go back to lobby state and re-send the welcome message
-		pregame_timeleft = CONFIG_GET(number/pregame_time)
-		// SSvote.gamemode_vote_called = FALSE // Allow another autogamemode vote
-		current_state = GAME_STATE_PREGAME
-		Master.SetRunLevel(RUNLEVEL_LOBBY)
-		pregame_welcome()
-		return
-	// If we got this far we succeeded in picking a game mode.  Punch it!
-	setup_startgame()
-	return
+	for(var/I in round_start_events)
+		var/datum/callback/cb = I
+		cb.InvokeAsync()
+	LAZYCLEARLIST(round_start_events)
+
+	round_start_time = world.time //otherwise round_start_time would be 0 for the signals
+	SEND_SIGNAL(src, COMSIG_TICKER_ROUND_STARTING, world.time)
+	callHook("roundstart")
+
+	log_world("Game start took [(world.timeofday - init_start)/10]s")
+	INVOKE_ASYNC(SSdbcore, TYPE_PROC_REF(/datum/controller/subsystem/dbcore,SetRoundStart))
+
+	to_chat(world, span_notice(span_bold("Welcome to [station_name()], enjoy your stay!")))
+	world << sound('sound/AI/welcome.ogg') // Skie
+	//SEND_SOUND(world, sound(SSstation.announcer.get_rand_welcome_sound()))
+
+	current_state = GAME_STATE_PLAYING
+	Master.SetRunLevel(RUNLEVEL_GAME)
+
+	//Holiday Round-start stuff	~Carn
+	Holiday_Game_Start()
+
+	// TODO END
+
+	PostSetup()
+
+	return TRUE
+
+/datum/controller/subsystem/ticker/proc/PostSetup()
+	set waitfor = FALSE
+	mode.post_setup()
+	// TODO
+
+	var/list/adm = get_admin_counts()
+	var/list/allmins = adm["present"]
+	// TODO: IMPLEMENT: send2adminchat("Server", "Round [GLOB.round_id ? "#[GLOB.round_id]" : ""] has started[allmins.len ? ".":" with no active admins online!"]")
+	if(!allmins.len)
+		send2adminirc("A round has started with no admins online.")
+
+	setup_done = TRUE
+	// TODO START
+
+	// TODO END
+	for(var/obj/effect/landmark/start/S in GLOB.landmarks_list)
+		//Deleting Startpoints but we need the ai point to AI-ize people later
+		if (S.name != "AI")
+			qdel(S)
+
+	if(CONFIG_GET(flag/sql_enabled))
+		statistic_cycle() // Polls population totals regularly and stores them in an SQL DB -- TLE
+
+//These callbacks will fire after roundstart key transfer
+/datum/controller/subsystem/ticker/proc/OnRoundstart(datum/callback/cb)
+	if(!HasRoundStarted())
+		LAZYADD(round_start_events, cb)
+	else
+		cb.InvokeAsync()
+
+//These callbacks will fire before roundend report
+/datum/controller/subsystem/ticker/proc/OnRoundend(datum/callback/cb)
+	if(current_state >= GAME_STATE_FINISHED)
+		cb.InvokeAsync()
+	else
+		LAZYADD(round_end_events, cb)
 
 // Formerly the first half of setup() - The part that chooses the game mode.
 // Returns 0 if failed to pick a mode, otherwise 1
@@ -173,6 +333,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 		src.mode.announce()
 	return 1
 
+<<<<<<< HEAD
 // Formerly the second half of setup() - The part that actually initializes everything and starts the game.
 /datum/controller/subsystem/ticker/proc/setup_startgame()
 	setup_economy()
@@ -237,6 +398,8 @@ var/global/datum/controller/subsystem/ticker/ticker
 		to_world(span_boldannounce("The round has ended!"))
 		SSvote.start_vote(new /datum/vote/crew_transfer)
 
+=======
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 // Called during GAME_STATE_FINISHED (RUNLEVEL_POSTGAME)
 /datum/controller/subsystem/ticker/proc/post_game_tick()
 	switch(end_game_state)
@@ -258,6 +421,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 
 			end_game_state = END_GAME_ENDING
 			return
+<<<<<<< HEAD
 		if(END_GAME_ENDING)
 			restart_timeleft -= (world.time - last_fire)
 			if(delay_end)
@@ -400,6 +564,8 @@ var/global/datum/controller/subsystem/ticker/ticker
 	if(temp_buckle)	qdel(temp_buckle)	//release everybody
 	return
 
+=======
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 
 /datum/controller/subsystem/ticker/proc/create_characters()
 	for(var/mob/new_player/player in player_list)
@@ -430,12 +596,13 @@ var/global/datum/controller/subsystem/ticker/ticker
 			// If they're a carbon, they can get manifested
 			if(J?.mob_type & JOB_CARBON)
 				GLOB.data_core.manifest_inject(new_char)
+		CHECK_TICK
 
 /datum/controller/subsystem/ticker/proc/collect_minds()
 	for(var/mob/living/player in player_list)
 		if(player.mind)
 			minds += player.mind
-
+		CHECK_TICK
 
 /datum/controller/subsystem/ticker/proc/equip_characters()
 	var/captainless=1
@@ -456,12 +623,17 @@ var/global/datum/controller/subsystem/ticker/ticker
 				if(imp.handle_implant(player,player.zone_sel.selecting))
 					imp.post_implant(player)
 		//VOREStation Addition End
+		CHECK_TICK
 	if(captainless)
 		for(var/mob/M in player_list)
 			if(!isnewplayer(M))
 				to_chat(M, span_notice("Site Management is not forced on anyone."))
 
+///Whether the game has started, including roundend.
+/datum/controller/subsystem/ticker/proc/HasRoundStarted()
+	return current_state >= GAME_STATE_PLAYING
 
+<<<<<<< HEAD
 /datum/controller/subsystem/ticker/proc/declare_completion()
 	to_world(span_filter_system("<br><br><br><H1>A round of [mode.name] has ended!</H1>"))
 	for(var/mob/Player in player_list)
@@ -575,20 +747,102 @@ var/global/datum/controller/subsystem/ticker/ticker
 				else
 					msg = "ENDGAME ERROR:[end_game_state]"
 	return ..()
+=======
+///Whether the game is currently in progress, excluding roundend
+/datum/controller/subsystem/ticker/proc/IsRoundInProgress()
+	return current_state == GAME_STATE_PLAYING
+
+///Whether the game is currently in progress, excluding roundend
+/datum/controller/subsystem/ticker/proc/IsPostgame()
+	return current_state == GAME_STATE_FINISHED
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
 
 /datum/controller/subsystem/ticker/Recover()
-	flags |= SS_NO_INIT // Don't initialize again
-
 	current_state = SSticker.current_state
-	mode = SSticker.mode
-	pregame_timeleft = SSticker.pregame_timeleft
+	force_ending = SSticker.force_ending
 
-	end_game_state = SSticker.end_game_state
-	delay_end = SSticker.delay_end
-	restart_timeleft = SSticker.restart_timeleft
+	login_music = SSticker.login_music
+	round_end_sound = SSticker.round_end_sound
 
 	minds = SSticker.minds
 
-	random_players = SSticker.random_players
+	delay_end = SSticker.delay_end
 
+	tipped = SSticker.tipped
+	selected_tip = SSticker.selected_tip
+
+	timeLeft = SSticker.timeLeft
+
+	totalPlayers = SSticker.totalPlayers
+	totalPlayersReady = SSticker.totalPlayersReady
+	total_admins_ready = SSticker.total_admins_ready
+
+	queue_delay = SSticker.queue_delay
+	queued_players = SSticker.queued_players
 	round_start_time = SSticker.round_start_time
+<<<<<<< HEAD
+=======
+
+	queue_delay = SSticker.queue_delay
+	queued_players = SSticker.queued_players
+
+	if (Master) //Set Masters run level if it exists
+		switch (current_state)
+			if(GAME_STATE_SETTING_UP)
+				Master.SetRunLevel(RUNLEVEL_SETUP)
+			if(GAME_STATE_PLAYING)
+				Master.SetRunLevel(RUNLEVEL_GAME)
+			if(GAME_STATE_FINISHED)
+				Master.SetRunLevel(RUNLEVEL_POSTGAME)
+
+/datum/controller/subsystem/ticker/proc/Reboot(reason, end_string, delay)
+	set waitfor = FALSE
+	if(usr && !check_rights(R_SERVER, TRUE))
+		return
+
+	if(!delay)
+		delay = CONFIG_GET(number/round_end_countdown) * 10
+
+	var/skip_delay = check_rights()
+	if(delay_end && !skip_delay)
+		to_chat(world, span_boldannounce("An admin has delayed the round end."))
+		return
+
+	to_chat(world, span_boldannounce("Rebooting World in [DisplayTimeText(delay)]. [reason]"))
+
+	// We dont have those
+	//var/statspage = CONFIG_GET(string/roundstatsurl)
+	//var/gamelogloc = CONFIG_GET(string/gamelogurl)
+	//if(statspage)
+	//	to_chat(world, span_info("Round statistics and logs can be viewed <a href=\"[statspage][GLOB.round_id]\">at this website!</a>"))
+	//else if(gamelogloc)
+	//	to_chat(world, span_info("Round logs can be located <a href=\"[gamelogloc]\">at this website!</a>"))
+
+	var/start_wait = world.time
+	UNTIL(round_end_sound_sent || (world.time - start_wait) > (delay * 2)) //don't wait forever
+	reboot_timer = addtimer(CALLBACK(src, PROC_REF(reboot_callback), reason, end_string), delay - (world.time - start_wait), TIMER_STOPPABLE)
+
+
+/datum/controller/subsystem/ticker/proc/reboot_callback(reason, end_string)
+	if(end_string)
+		end_state = end_string
+
+	log_game(span_boldannounce("Rebooting World. [reason]"))
+
+	world.Reboot()
+
+/**
+ * Deletes the current reboot timer and nulls the var
+ *
+ * Arguments:
+ * * user - the user that cancelled the reboot, may be null
+ */
+/datum/controller/subsystem/ticker/proc/cancel_reboot(mob/user)
+	if(!reboot_timer)
+		to_chat(user, span_warning("There is no pending reboot!"))
+		return FALSE
+	to_chat(world, span_boldannounce("An admin has delayed the round end."))
+	deltimer(reboot_timer)
+	reboot_timer = null
+	return TRUE
+>>>>>>> 386c4f6756 ([MIRROR] Unit Test rework & Master/Ticker update (#11372))
