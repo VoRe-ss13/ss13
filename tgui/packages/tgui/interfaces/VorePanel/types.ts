@@ -88,6 +88,7 @@ export type selectedData = {
   digest_clone: number;
   bulge_size: number;
   save_digest_mode: BooleanLike;
+<<<<<<< HEAD
   display_absorbed_examine: BooleanLike;
   shrink_grow_size: number;
   emote_time: number;
@@ -95,6 +96,37 @@ export type selectedData = {
   selective_preference: string;
   nutrition_ex: BooleanLike;
   weight_ex: BooleanLike;
+=======
+  eating_privacy_local: string;
+  vore_death_privacy: string;
+  vorespawn_blacklist: BooleanLike;
+  vorespawn_whitelist: string[];
+  vorespawn_absorbed: number;
+  private_struggle: BooleanLike;
+  absorbedrename_enabled: BooleanLike;
+  absorbedrename_name: string;
+  absorbedrename_name_max: number;
+  absorbedrename_name_min: number;
+  drainmode_options: string[];
+  drainmode: string;
+};
+
+export type bellySoundData = {
+  is_wet: BooleanLike;
+  wet_loop: BooleanLike;
+  fancy: BooleanLike;
+  sound: string;
+  release_sound: string;
+  sound_volume: number;
+  noise_freq: number;
+  min_voice_freq: number;
+  max_voice_freq: number;
+  vore_sound_list: Record<string, string>;
+  release_sound_list: Record<string, string>;
+};
+
+export type bellyVisualData = {
+>>>>>>> b0f1c1a115 ([MIRROR] Absorb Prey Names (#11411))
   belly_fullscreen: string;
   eating_privacy_local: string;
   silicon_belly_overlay_preference: string;
