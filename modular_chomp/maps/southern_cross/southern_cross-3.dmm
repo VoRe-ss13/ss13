@@ -1132,6 +1132,36 @@
 /obj/item/stack/rods,
 /turf/space,
 /area/space)
+<<<<<<< HEAD
+=======
+"abY" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/research_medical)
+"abZ" = (
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/research_medical)
+"aca" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/engineering)
+"acb" = (
+/turf/simulated/wall,
+/area/crew_quarters/coffee_shop/lib)
+"acc" = (
+/obj/item/organ/internal/appendix{
+	pixel_x = -3;
+	pixel_y = 6
+	},
+/obj/effect/gibspawner/human,
+/obj/item/reagent_containers/glass/beaker/vial/culture/macrophages{
+	pixel_x = 8;
+	pixel_y = -6
+	},
+/turf/simulated/floor/plating,
+/area/medical/virology)
+>>>>>>> 47746c14de (Southern Cross update (#11404))
 "ack" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -4227,6 +4257,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
 	icon_state = "1-2"
+	},
+/obj/item/book/manual/chem_refinery{
+	pixel_x = 6;
+	pixel_y = 5
 	},
 /turf/simulated/floor/carpet,
 /area/engineering/break_room)
@@ -21629,7 +21663,8 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/glass_security{
 	name = "Briefing Room";
-	req_access = list(1)
+	req_access = list(63);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/main)
@@ -35739,6 +35774,9 @@
 	name = "Station Intercom (General)";
 	pixel_y = -20
 	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 5
+	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/seconddeck/artgallery)
 "cmE" = (
@@ -39049,6 +39087,11 @@
 	dir = 4;
 	pixel_x = 11
 	},
+/obj/item/radio/intercom{
+	dir = 4;
+	name = "Station Intercom (General)";
+	pixel_x = 21
+	},
 /turf/simulated/floor/tiled,
 /area/janitor)
 "cxQ" = (
@@ -39796,10 +39839,7 @@
 "cAc" = (
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/corner/purple/bordercorner,
-/obj/structure/janitorialcart,
-/obj/item/reagent_containers/glass/bucket,
-/obj/structure/mopbucket,
-/obj/item/mop,
+/obj/vehicle/train/engine/janicart,
 /turf/simulated/floor/tiled,
 /area/janitor)
 "cAq" = (
@@ -39809,24 +39849,30 @@
 "cAu" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/purple/border,
+<<<<<<< HEAD
 /obj/machinery/r_n_d/protolathe/service,
+=======
+/obj/structure/janitorialcart,
+/obj/structure/mopbucket,
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
+>>>>>>> 47746c14de (Southern Cross update (#11404))
 /turf/simulated/floor/tiled,
 /area/janitor)
 "cAv" = (
-/obj/item/radio/intercom{
-	dir = 4;
-	name = "Station Intercom (General)";
-	pixel_x = 21
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 6
 	},
+<<<<<<< HEAD
 /obj/machinery/computer/rdconsole/service{
 	dir = 1
 	},
+=======
+/obj/machinery/rnd/production/protolathe/department/service,
+>>>>>>> 47746c14de (Southern Cross update (#11404))
 /turf/simulated/floor/tiled,
 /area/janitor)
 "cAw" = (
@@ -50610,12 +50656,15 @@
 /obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
+<<<<<<< HEAD
 "hyq" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/wingrille_spawn/reinforced,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/plating,
 /area/medical/distillery)
+=======
+>>>>>>> 47746c14de (Southern Cross update (#11404))
 "hzq" = (
 /obj/structure/cable/green{
 	icon_state = "2-8"
@@ -53506,8 +53555,12 @@
 /turf/simulated/floor/tiled/white,
 /area/assembly/robotics)
 "iYD" = (
+<<<<<<< HEAD
 /obj/machinery/r_n_d/circuit_imprinter,
 /obj/item/reagent_containers/glass/beaker/large,
+=======
+/obj/machinery/rnd/production/circuit_imprinter,
+>>>>>>> 47746c14de (Southern Cross update (#11404))
 /obj/item/radio/intercom{
 	dir = 1;
 	name = "Station Intercom (General)";
@@ -53551,7 +53604,7 @@
 	pixel_x = 12;
 	pixel_y = 25
 	},
-/mob/living/simple_mob/animal/passive/mouse/white/virology,
+/obj/structure/closet/l3closet/virology,
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "iYZ" = (
@@ -57019,9 +57072,6 @@
 "kQH" = (
 /obj/machinery/r_n_d/protolathe,
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/reagent_dispensers/acid{
-	pixel_x = -30
-	},
 /turf/simulated/floor/tiled,
 /area/rnd/lab)
 "kQV" = (
@@ -58381,10 +58431,15 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/kitchen)
 "lMf" = (
-/obj/machinery/door/firedoor/border_only,
 /obj/effect/wingrille_spawn/reinforced,
+<<<<<<< HEAD
 /turf/simulated/wall/r_wall,
 /area/medical/distillery)
+=======
+/obj/machinery/door/firedoor/border_only,
+/turf/simulated/floor/plating,
+/area/medical/Distillery)
+>>>>>>> 47746c14de (Southern Cross update (#11404))
 "lMn" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
@@ -58461,8 +58516,12 @@
 /turf/simulated/floor/plating,
 /area/maintenance/research)
 "lOW" = (
+<<<<<<< HEAD
 /obj/machinery/r_n_d/circuit_imprinter,
 /obj/item/reagent_containers/glass/beaker/sulphuric,
+=======
+/obj/machinery/rnd/production/circuit_imprinter,
+>>>>>>> 47746c14de (Southern Cross update (#11404))
 /obj/machinery/light{
 	dir = 8
 	},
@@ -58623,7 +58682,6 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/medical_lockerroom)
 "lRO" = (
-/obj/structure/table/marble,
 /obj/effect/floor_decal/corner/grey/diagonal{
 	dir = 4
 	},
@@ -58633,9 +58691,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/structure/disposalpipe/junction{
-	dir = 4
+/obj/structure/disposalpipe/sortjunction{
+	dir = 4;
+	name = "Cafeteria";
+	sortType = "Hydroponics"
 	},
+/obj/structure/table/marble,
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/cafeteria)
 "lSA" = (
@@ -59867,14 +59928,6 @@
 /obj/effect/wingrille_spawn/reinforced,
 /turf/simulated/floor/plating,
 /area/medical/chemistry)
-"mEJ" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/airlock/maintenance{
-	name = "Central Maintenance Access";
-	req_one_access = list(12,19)
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/central)
 "mEM" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/borderfloorwhite,
@@ -60314,6 +60367,10 @@
 	},
 /obj/effect/floor_decal/corner/purple/bordercorner{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/white,
 /area/rnd/research_foyer)
@@ -61291,6 +61348,10 @@
 	pixel_x = -12;
 	id = "sc-ChimeMed";
 	name = "Medbay Doorbell"
+	},
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 24
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/foyer)
@@ -63662,9 +63723,6 @@
 /area/quartermaster/warehouse)
 "oTP" = (
 /obj/structure/table/standard,
-/obj/structure/reagent_dispensers/acid{
-	pixel_y = -30
-	},
 /obj/machinery/recharger,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/mechanical,
@@ -67288,7 +67346,20 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 10
 	},
-/obj/structure/closet/l3closet/virology,
+/obj/structure/dogbed{
+	name = "\improper Fleming's bed"
+	},
+/mob/living/simple_mob/animal/passive/mouse/white/virology,
+/obj/machinery/door/window/eastright,
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8;
+	health = 1e+006
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	health = 1e+06
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/virology)
 "qZn" = (
@@ -69130,19 +69201,19 @@
 	pixel_y = 37;
 	dir = 2
 	},
-/obj/machinery/button/remote/airlock{
-	desc = "A remote control switch for the medbay foyer.";
+/obj/machinery/button/remote/blast_door{
+	desc = "A remote control-switch for shutters.";
 	id = "chemcounter";
 	name = "Chemistry Counter";
-	pixel_y = 24;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 28
 	},
-/obj/machinery/button/remote/airlock{
-	desc = "A remote control switch for the medbay foyer.";
+/obj/machinery/button/remote/blast_door{
+	desc = "A remote control-switch for shutters.";
 	id = "chemwindow";
-	name = "Chemistry Windows";
-	pixel_y = 24;
-	pixel_x = -5
+	name = "Desk Privacy Shutter";
+	pixel_x = -5;
+	pixel_y = 28
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
@@ -70348,23 +70419,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/starboard)
-"sSp" = (
-/obj/structure/table/reinforced,
-/obj/item/reagent_containers/dropper,
-/obj/item/clothing/glasses/science{
-	pixel_y = 6
-	},
-/obj/machinery/injector_maker{
-	pixel_y = 24
-	},
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/beige/border{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/chemistry)
 "sTb" = (
 /obj/effect/floor_decal/borderfloorwhite,
 /obj/effect/floor_decal/corner/lime/border,
@@ -74169,6 +74223,11 @@
 	},
 /obj/machinery/ai_status_display{
 	pixel_y = 32
+	},
+/obj/item/gene_scanner,
+/obj/item/gene_scanner{
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/genetics)
@@ -109742,7 +109801,7 @@ qkK
 bdc
 bIq
 bIq
-mEJ
+abB
 bmX
 bmX
 wRC
@@ -123422,7 +123481,7 @@ wrf
 xhM
 tUA
 eCW
-sSp
+ehT
 bCJ
 rHH
 rHH
@@ -126266,7 +126325,7 @@ vGd
 cEH
 rra
 hPS
-hyq
+lMf
 wmE
 thu
 lNS
@@ -128326,7 +128385,7 @@ gyD
 jjH
 jjH
 jjH
-hBo
+acc
 aIr
 mFN
 hai
