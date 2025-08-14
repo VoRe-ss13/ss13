@@ -131,6 +131,7 @@ export const TicketsPanel = (props) => {
     <Window width={1000} height={600}>
       <Window.Content>
         <Stack fill>
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/TicketsPanel.tsx
           <Stack.Item shrink>
             <Section title="Filter">
               <Dropdown
@@ -190,6 +191,91 @@ export const TicketsPanel = (props) => {
                 ))}
               </Tabs>
             </Section>
+=======
+          <Stack.Item basis="25%">
+            <Stack vertical fill>
+              <Stack.Item>
+                <Section title="Filter">
+                  <Dropdown
+                    options={Object.values(State)}
+                    selected={State[stateFilter]}
+                    onSelected={(val) =>
+                      setStateFilter(
+                        Object.keys(State)[Object.values(State).indexOf(val)],
+                      )
+                    }
+                  />
+                  <Divider />
+                  <Dropdown
+                    options={Object.values(availableLevel)}
+                    selected={availableLevel[levelFilter]}
+                    onSelected={(val) =>
+                      setLevelFilter(Object.values(availableLevel).indexOf(val))
+                    }
+                  />
+                </Section>
+              </Stack.Item>
+              <Stack.Item grow>
+                <Section title="Tickets" scrollable fill>
+                  <Tabs vertical>
+                    <Tabs.Tab onClick={() => act('new_ticket')}>
+                      New Ticket
+                      <Icon name="plus" ml={0.5} />
+                    </Tabs.Tab>
+                    <Divider />
+                    {filtered_tickets.map((ticket) => (
+                      <Tabs.Tab
+                        key={ticket.id}
+                        selected={ticket.id === selected_ticket?.id}
+                        onClick={() =>
+                          act('pick_ticket', { ticket_id: ticket.id })
+                        }
+                      >
+                        <Stack vertical>
+                          <Stack.Item>
+                            <Stack align="center">
+                              <Stack.Item>
+                                {!ticket.ishandled &&
+                                ticket.state === State.open ? (
+                                  <Blink>
+                                    <Box
+                                      textColor="white"
+                                      className="TicketPanel__Label"
+                                      backgroundColor={LevelColor[ticket.level]}
+                                    >
+                                      {availableLevel[ticket.level]}
+                                    </Box>
+                                  </Blink>
+                                ) : (
+                                  <Box
+                                    textColor="white"
+                                    className="TicketPanel__Label"
+                                    backgroundColor={LevelColor[ticket.level]}
+                                  >
+                                    {availableLevel[ticket.level]}
+                                  </Box>
+                                )}
+                              </Stack.Item>
+                              <Stack.Item>{ticket.name}</Stack.Item>
+                            </Stack>
+                          </Stack.Item>
+                          <Stack.Item>
+                            <Box
+                              fontSize={0.9}
+                              textColor={StateColor[ticket.state]}
+                            >
+                              State: {State[ticket.state]} | Assignee:
+                              {ticket.handler}
+                            </Box>
+                          </Stack.Item>
+                        </Stack>
+                      </Tabs.Tab>
+                    ))}
+                  </Tabs>
+                </Section>
+              </Stack.Item>
+            </Stack>
+>>>>>>> b0f1c1a115 ([MIRROR] Absorb Prey Names (#11411)):tgui/packages/tgui/interfaces/TicketsPanel.tsx
           </Stack.Item>
           <Stack.Item grow>
             {(selected_ticket && (

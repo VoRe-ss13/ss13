@@ -1,6 +1,10 @@
 /mob/living/carbon/human/GetAltName()
 	if(ability_flags & AB_PHASE_SHIFTED)
 		return ""
+	if(absorbed && isbelly(loc))
+		var/obj/belly/B = loc
+		if(B.absorbedrename_enabled)
+			return "" // Don't use alt name if under absorbed rename.
 	if(name != GetVoice())
 		return " (as [get_id_name("Unknown")])"
 
@@ -105,6 +109,14 @@
 		return mind.changeling.mimicing
 	if(GetSpecialVoice())
 		return GetSpecialVoice()
+	if(absorbed && isbelly(loc)) // If absorbed in a belly, check and apply absorbed rename if applicable.
+		var/obj/belly/B = loc
+		if(B.absorbedrename_enabled)
+			var/formatted_name = B.absorbedrename_name
+			formatted_name = replacetext(formatted_name,"%pred",B.owner)
+			formatted_name = replacetext(formatted_name,"%belly",B.name)
+			formatted_name = replacetext(formatted_name,"%prey",name)
+			return formatted_name
 	return real_name
 
 /mob/living/carbon/human/proc/SetSpecialVoice(var/new_voice)
