@@ -31,7 +31,11 @@ const connectionsMatch = (a: Client, b: Client) =>
 export const telemetryMiddleware = (store) => {
   let telemetry: Telemetry;
   let wasRequestedWithPayload: Telemetry | null;
+<<<<<<< HEAD
   let firstMutate: boolean = true;
+=======
+  let firstMutate = true;
+>>>>>>> 0d438b04aa ([MIRROR] somehow dm doesn't like it otherwise (#11408))
   return (next) => (action) => {
     const { type, payload } = action;
     // Handle telemetry requests
@@ -88,7 +92,11 @@ export const telemetryMiddleware = (store) => {
             telemetry.connections.pop();
           }
         }
+<<<<<<< HEAD
         if (firstMutate) {
+=======
+        if (firstMutate || telemetryMutated) {
+>>>>>>> 0d438b04aa ([MIRROR] somehow dm doesn't like it otherwise (#11408))
           firstMutate = false;
           store.dispatch(
             getChatData({ ckey: client.ckey, token: client.chatlog_token }),
@@ -100,8 +108,13 @@ export const telemetryMiddleware = (store) => {
             }),
           );
         }
+<<<<<<< HEAD
         // Save telemetry
         if (telemetryMutated) {
+=======
+          // Save telemetry
+          if (telemetryMutated) {
+>>>>>>> 0d438b04aa ([MIRROR] somehow dm doesn't like it otherwise (#11408))
           logger.debug('saving telemetry to storage', telemetry);
           storage.set('telemetry', telemetry);
         }
