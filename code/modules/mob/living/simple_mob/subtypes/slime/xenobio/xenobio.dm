@@ -148,10 +148,36 @@
 			mood = ":3"
 	else
 		mood = ":3"
+<<<<<<< HEAD
+=======
+		pacified = TRUE
+	if(obedient < 5)
+		pacified = FALSE //We are not obedient enough to be considered pacified.
+
+	if(!client) //Only update if we don't have a client.
+		if(faction != initial(faction)) //We have had a loyalty potion used on us.
+			update_allowed_vore_types(TRUE)
+		else if(old_mood == "angry") //We were recently angry, so we're still upset and won't let you eat us no matter what! (Unless we had a docility potion put on us, making us harmless)
+			update_allowed_vore_types(FALSE, harmless)
+		else
+			update_allowed_vore_types(pacified, harmless)
+>>>>>>> 3ce0470a4e ([MIRROR] Slime vorefix (#11407))
 
 	if(old_mood != mood)
 		update_icon()
 
+<<<<<<< HEAD
+=======
+/mob/living/simple_mob/slime/proc/update_allowed_vore_types(allowed, harmless)
+	if(harmless) // If we're harmless, we should always be able to be eaten.
+		allowed = TRUE
+	can_be_drop_prey = allowed
+	stumble_vore = allowed
+	slip_vore = allowed
+	drop_vore = allowed
+	throw_vore = allowed
+
+>>>>>>> 3ce0470a4e ([MIRROR] Slime vorefix (#11407))
 /mob/living/simple_mob/slime/xenobio/proc/enrage()
 	if(harmless)
 		return
