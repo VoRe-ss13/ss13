@@ -317,10 +317,23 @@ GLOBAL_LIST_INIT(preference_entries_by_key, init_preference_entries_by_key())
 	return client?.prefs?.read_preference(preference_type)
 
 /// Write a /datum/preference type and return its value directly to the json.
+<<<<<<< HEAD
 /mob/proc/write_preference_directly(preference_type, preference_value)
 	var/success = client?.prefs?.write_preference_by_type(preference_type, preference_value)
+=======
+/// Please use SScharacter_setup.queue_preferences_save(prefs) when you edit multiple at once and set direct_write to WRITE_PREF_MANUAL
+/// Additionally, if you want something to be changed IN ROUND and change a pref for THAT CHARACTER'S SAVESLOT, ensure save_to_played_slot = TRUE!
+/mob/proc/write_preference_directly(preference_type, preference_value, write_mode = WRITE_PREF_INSTANT, save_to_played_slot)
+	var/remembered_default
+	if(save_to_played_slot && (mind.loaded_from_slot != client?.prefs?.default_slot))
+		remembered_default = client?.prefs?.default_slot
+		client?.prefs?.load_character(mind.loaded_from_slot)
+	var/success = client?.prefs?.write_preference_by_type(preference_type, preference_value, write_mode)
+>>>>>>> 4d3de029e3 ([MIRROR] Fixes savefile corruption bug and allows character swapping (#11406))
 	if(success)
 		client?.prefs?.value_cache[preference_type] = preference_value
+	if(remembered_default)
+		client?.prefs?.return_to_character_slot(src, remembered_default)
 	return success
 
 /// Set a /datum/preference entry.

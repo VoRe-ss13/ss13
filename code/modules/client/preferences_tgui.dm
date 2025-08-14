@@ -136,8 +136,13 @@
 	switch(action)
 		// Basic actions
 		if("load")
+<<<<<<< HEAD
 			if(!IsGuestKey(usr.key))
 				open_load_dialog(usr)
+=======
+			if(!IsGuestKey(ui.user.key))
+				open_load_dialog(ui.user)
+>>>>>>> 4d3de029e3 ([MIRROR] Fixes savefile corruption bug and allows character swapping (#11406))
 			. = TRUE
 		if("save")
 			save_character()
