@@ -37,8 +37,12 @@
 		var/newSpecies = chosen_dna.speciesName
 		H.set_species(newSpecies)
 
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/transform.dm
 	qdel_swap(src.dna, chosen_dna.dna.Clone())
 	src.dna.b_type = "AB+" //This is needed to avoid blood rejection bugs.  The fact that the blood type might not match up w/ records could be a *FEATURE* too.
+=======
+	QDEL_SWAP(src.dna, chosen_dna.dna.Clone())
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414)):code/datums/components/antags/changeling/powers/transform.dm
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
 		H.b_type = "AB+" //For some reason we have two blood types on the mob.

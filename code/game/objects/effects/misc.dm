@@ -147,6 +147,6 @@
 		return QDEL_HINT_LETMELIVE
 
 	vis_contents.Cut()
-	qdel_null(light_spot)
+	QDEL_NULL(light_spot)
 
 	return ..()

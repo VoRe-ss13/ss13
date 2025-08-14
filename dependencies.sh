@@ -8,15 +8,25 @@ export BYOND_MAJOR=516
 export BYOND_MINOR=1662
 
 # Macro Count
+<<<<<<< HEAD
 export MACRO_COUNT=8
+=======
+export MACRO_COUNT=6
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 
 #rust_g git tag
 export RUST_G_VERSION=3.8.0
 
 #node version
 export NODE_VERSION_LTS=22.14.0
+<<<<<<< HEAD
 # compatiblility mode MUST work with windows 7
 export NODE_VERSION_COMPAT=20.2.0
+=======
+
+# Bun version
+export BUN_VERSION=1.2.20
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 
 # SpacemanDMM git tag
 export SPACEMAN_DMM_VERSION=suite-1.10

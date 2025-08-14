@@ -138,7 +138,11 @@ fi;
 
 part "changelog"
 #Checking for a change to html/changelogs/example.yml
+<<<<<<< HEAD:tools/ci/validate_files.sh
 md5sum -c - <<< "0c56937110d88f750a32d9075ddaab8b *html/changelogs_ch/example.yml" # CHOMPedit - Better changelogs
+=======
+md5sum -c - <<< "0c56937110d88f750a32d9075ddaab8b *html/changelogs/example.yml"
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414)):tools/ci/check_grep.sh
 retVal=$?
 if [ $retVal -ne 0 ]; then
 	echo -e "${RED}Do not modify the example.yml changelog file.${NC}"
@@ -147,7 +151,7 @@ fi;
 
 part "color macros"
 #Checking for color macros
-(num=`$grep -n '\\\\(red|blue|green|black|b|i[^mnct])' $code_files | wc -l`; echo "$num escapes (expecting ${MACRO_COUNT} or less)"; [ $num -le ${MACRO_COUNT} ]) # CHOMPEdit, we alos need to ignore item paths
+(num=`$grep -n '\\\\(red|blue|green|black|b|i[^mnct])' $code_files | wc -l`; echo "$num escapes (expecting ${MACRO_COUNT} or less)"; [ $num -le ${MACRO_COUNT} ])
 retVal=$?
 if [ $retVal -ne 0 ]; then
 	echo -e "${RED}Do not use any byond color macros (such as \blue), they are deprecated.${NC}"

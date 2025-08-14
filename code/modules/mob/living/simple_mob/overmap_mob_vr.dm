@@ -54,7 +54,12 @@
 
 /obj/effect/overmap/visitable/simplemob/Destroy()
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
+<<<<<<< HEAD
 	qdel_null(parent)
+=======
+	if(!QDELETED(parent))
+		QDEL_NULL(parent)
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 	return ..()
 
 /obj/effect/overmap/visitable/simplemob/get_scan_data(mob/user)
@@ -147,7 +152,12 @@
 		child_om_marker = C
 
 /mob/living/simple_mob/vore/overmap/Destroy()
+<<<<<<< HEAD
 	qdel_null(child_om_marker)
+=======
+	if(!QDELETED(child_om_marker))
+		QDEL_NULL(child_om_marker)
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 	return ..()
 
 //SHIP
@@ -189,7 +199,7 @@
 
 /obj/effect/overmap/visitable/ship/simplemob/Destroy()
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
-	qdel_null(parent)
+	QDEL_NULL(parent)
 	return ..()
 
 /obj/effect/overmap/visitable/ship/simplemob/get_scan_data(mob/user)
