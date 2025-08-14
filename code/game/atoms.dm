@@ -197,11 +197,25 @@
 		else
 			f_name += "oil-stained [name][infix]."
 
+<<<<<<< HEAD:code/game/atoms.dm
 	var/examine_text = replacetext(get_examine_desc(), "||", "")
 	var/list/output = list("[icon2html(src,user.client)] That's [f_name] [suffix]", examine_text)
 
 	if(user.client?.prefs.examine_text_mode == EXAMINE_MODE_INCLUDE_USAGE)
 		output += description_info
+=======
+	var/borg = "" // Borg grippers say if the item can be gripped
+	if(isrobot(user) && isitem(src))
+		borg = "None of your grippers can hold this."
+		var/mob/living/silicon/robot/R = user
+		if(R.module?.modules)
+			for(var/obj/item/gripper/G in R.module.modules)
+				if(is_type_in_list(src,G.can_hold))
+					borg = span_boldnotice("\The [G]") + span_notice(" can hold this.")
+					break
+
+	var/list/output = list("[icon2html(src,user.client)] That's [f_name] [suffix] [borg]", get_examine_desc())
+>>>>>>> 7aba7be802 ([MIRROR] move the spoiler (#11417)):code/game/atom/_atom.dm
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, output)
 	return output
