@@ -1,6 +1,12 @@
 SUBSYSTEM_DEF(events)
-	name = "Events"	// VOREStation Edit - This is still the main events subsystem for us.
+	name = "Events"
 	wait = 2 SECONDS
+<<<<<<< HEAD
+=======
+	dependencies = list(
+		/datum/controller/subsystem/atoms
+	)
+>>>>>>> f7bbeb6239 ([MIRROR] reoder some subsystems not to load with ticker active (#11415))
 
 	var/tmp/list/currentrun = null
 

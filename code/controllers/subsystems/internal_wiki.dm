@@ -6,7 +6,14 @@
 SUBSYSTEM_DEF(internal_wiki)
 	name = "Wiki"
 	wait = 1
+<<<<<<< HEAD
 	init_order = INIT_ORDER_WIKI
+=======
+	dependencies = list(
+		/datum/controller/subsystem/atoms,
+		/datum/controller/subsystem/supply
+	)
+>>>>>>> f7bbeb6239 ([MIRROR] reoder some subsystems not to load with ticker active (#11415))
 	flags = SS_NO_FIRE
 
 	VAR_PRIVATE/list/pages = list()

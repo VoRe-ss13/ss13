@@ -16,6 +16,12 @@ SUBSYSTEM_DEF(xenoarch)
 	name = "Xenoarch"
 	init_order = INIT_ORDER_XENOARCH
 	flags = SS_NO_FIRE
+<<<<<<< HEAD
+=======
+	dependencies = list(
+		/datum/controller/subsystem/atoms
+	)
+>>>>>>> f7bbeb6239 ([MIRROR] reoder some subsystems not to load with ticker active (#11415))
 	var/list/artifact_spawning_turfs = list()
 	var/list/digsite_spawning_turfs = list()
 

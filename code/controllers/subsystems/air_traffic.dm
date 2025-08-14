@@ -6,7 +6,10 @@ SUBSYSTEM_DEF(atc)
 	priority = FIRE_PRIORITY_ATC
 	runlevels = RUNLEVEL_GAME
 	wait = 2 SECONDS
+<<<<<<< HEAD
 	init_order = INIT_ORDER_ATC
+=======
+>>>>>>> f7bbeb6239 ([MIRROR] reoder some subsystems not to load with ticker active (#11415))
 	flags = SS_BACKGROUND
 
 	VAR_PRIVATE/next_tick = 0
