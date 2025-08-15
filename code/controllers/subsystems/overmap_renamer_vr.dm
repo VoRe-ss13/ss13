@@ -4,8 +4,17 @@ Readme at code\modules\awaymissions\overmap_renamer\readme.md
 
 SUBSYSTEM_DEF(overmap_renamer)
 	name = "Overmap Renamer"
+<<<<<<< HEAD
 	init_order = INIT_ORDER_MAPRENAME //Loaded very late in initializations. Must come before mapping and objs. Uses both as inputs.
 	runlevels = RUNLEVEL_INIT
+=======
+	//Loaded very late in initializations. Must come before mapping and objs. Uses both as inputs.
+	init_stage = INITSTAGE_LAST
+	dependencies = list(
+		/datum/controller/subsystem/atoms
+	)
+	runlevels = RUNLEVEL_SETUP
+>>>>>>> f7bbeb6239 ([MIRROR] reoder some subsystems not to load with ticker active (#11415))
 	flags = SS_NO_FIRE
 
 
