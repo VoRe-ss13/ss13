@@ -83,6 +83,59 @@
 	to_chat(src, final_string)
 	update_examine_panel(A)
 
+<<<<<<< HEAD
+=======
+/mob/proc/embedded_info(var/atom/A)
+	. = ""
+	if(!(client?.prefs?.read_preference(/datum/preference/choiced/examine_mode) == EXAMINE_MODE_VERBOSE))
+		return
+	if(!client?.prefs?.read_preference(/datum/preference/toggle/vchat_enable))
+		return //sorry oldchat
+
+	//do pref check here
+	var/desc_info_temp = A.get_description_info()
+	if(desc_info_temp)
+		. += span_details("ℹ️ | Information", desc_info_temp)
+	var/fluff_info_temp = A.get_description_fluff()
+	if(fluff_info_temp && fluff_info_temp != "")
+		var/title = "🪐 | Flavor Information"
+		var/examine_text = splittext(fluff_info_temp, "||")
+		var/index = 0
+		var/rendered_text = ""
+		for(var/part in examine_text)
+			if(index % 2)
+				rendered_text += span_spoiler("[part]")
+			else
+				rendered_text += "[part]"
+			index++
+		if(isliving(A)) //ehhh
+			var/mob/living/B = A
+			if(B.flavor_text)
+				title = "🔍 | Flavor Text"
+
+		. += span_details(title, rendered_text)
+	var/is_antagish = antag_check()
+	var/antag_info_temp = A.get_description_antag()
+	if(is_antagish && antag_info_temp)
+		. += span_details("🏴‍☠️ | Antag Information", antag_info_temp)
+	var/list/interaction_info = A.get_description_interaction()
+	if(LAZYLEN(interaction_info))
+		var/temp = ""
+		for(var/a in interaction_info)
+			temp += a + "\n"
+		. += span_details("🛠️ | Interaction Information",temp)
+
+/mob/proc/antag_check()
+	if(mind && (mind.special_role || mind.antag_holder.is_antag())) //We're a /mob and have a mind and antag status.
+		return TRUE
+	if(isobserver(src)) //We're an observer. We always are able to see stuff antags see.
+		return TRUE
+	var/datum/component/antag/comp = GetComponent(/datum/component/antag)
+	if(comp)
+		return TRUE
+	return FALSE
+
+>>>>>>> ece6e8b28a ([MIRROR] Fixes runtimes (#11421))
 /mob/proc/update_examine_panel(var/atom/A)
 	if(client)
 		var/is_antag = ((mind && mind.special_role) || isobserver(src)) //ghosts don't have minds
