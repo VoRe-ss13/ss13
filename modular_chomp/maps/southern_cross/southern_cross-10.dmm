@@ -38,9 +38,6 @@
 "an" = (
 /turf/simulated/floor/water/deep,
 /area/surface/outside/river/svartan)
-"ao" = (
-/turf/simulated/floor/outdoors/dirt,
-/area/surface/outside/path/wilderness)
 "ap" = (
 /turf/simulated/floor/outdoors/dirt/sif/planetuse,
 /area/surface/outside/wilderness/normal)
@@ -48,7 +45,7 @@
 /turf/simulated/floor/plating/sif/planetuse,
 /area/surface/outside/path/wilderness)
 "as" = (
-/turf/simulated/wall/wood,
+/turf/simulated/wall/wood/turfpack/sif,
 /area/surface/outside/path/wilderness)
 "at" = (
 /turf/simulated/floor/outdoors/grass/sif/forest/planetuse,
@@ -98,7 +95,7 @@
 	icon_state = "wilderness2";
 	pixel_y = -5
 	},
-/turf/simulated/wall/wood,
+/turf/simulated/wall/wood/turfpack/sif,
 /area/surface/outside/path/wilderness)
 "aD" = (
 /obj/effect/zone_divider,
@@ -124,9 +121,6 @@
 "aH" = (
 /obj/effect/zone_divider,
 /turf/simulated/floor/outdoors/grass/sif/planetuse,
-/area/surface/outside/wilderness/normal)
-"aI" = (
-/turf/simulated/floor/outdoors/dirt,
 /area/surface/outside/wilderness/normal)
 "aJ" = (
 /turf/simulated/floor/outdoors/rocks/sif/planetuse,
@@ -159,12 +153,7 @@
 /turf/simulated/floor/water,
 /area/surface/outside/river/svartan)
 "aS" = (
-/turf/simulated/floor/wood{
-	nitrogen = 93.7835;
-	outdoors = 1;
-	oxygen = 20.7263;
-	temperature = 243.15
-	},
+/turf/simulated/floor/wood/turfpack/sif,
 /area/surface/outside/path/wilderness)
 "aT" = (
 /turf/simulated/floor/outdoors/dirt/sif/planetuse,
@@ -868,10 +857,6 @@
 /obj/effect/zone_divider,
 /turf/simulated/floor/outdoors/dirt/sif/planetuse,
 /area/surface/outside/path/wilderness)
-"qT" = (
-/obj/effect/zone_divider,
-/turf/simulated/floor/outdoors/dirt,
-/area/surface/outside/landing/wilderness)
 "qW" = (
 /turf/unsimulated/wall/planetary/sif,
 /area/surface/outside/wilderness/mountains)
@@ -1065,10 +1050,6 @@
 	},
 /turf/simulated/floor/wood/sif,
 /area/surface/outpost/shelter)
-"xt" = (
-/obj/effect/zone_divider,
-/turf/simulated/floor/outdoors/dirt,
-/area/surface/outside/path/wilderness)
 "xA" = (
 /obj/machinery/light/bigfloorlamp,
 /turf/simulated/floor/outdoors/grass/sif/planetuse,
@@ -1137,12 +1118,7 @@
 /turf/simulated/floor/wood/sif,
 /area/surface/outpost/shelter/utilityroom)
 "As" = (
-/turf/simulated/floor/wood{
-	nitrogen = 93.7835;
-	outdoors = 1;
-	oxygen = 20.7263;
-	temperature = 243.15
-	},
+/turf/simulated/floor/wood/turfpack/sif,
 /area/surface/outside/river/svartan)
 "AB" = (
 /obj/effect/zone_divider,
@@ -1416,12 +1392,7 @@
 /area/surface/outpost/shelter/dorms)
 "LI" = (
 /obj/structure/boulder,
-/turf/simulated/floor/wood{
-	nitrogen = 93.7835;
-	outdoors = 1;
-	oxygen = 20.7263;
-	temperature = 243.15
-	},
+/turf/simulated/floor/wood/turfpack/sif,
 /area/surface/outside/river/svartan)
 "Mg" = (
 /turf/simulated/wall/solidrock,
@@ -1592,11 +1563,8 @@
 /area/surface/outpost/shelter/utilityroom)
 "ST" = (
 /obj/effect/zone_divider,
-/turf/simulated/wall/wood,
+/turf/simulated/wall/wood/turfpack/sif,
 /area/surface/outside/path/wilderness)
-"Ud" = (
-/turf/simulated/floor/outdoors/dirt,
-/area/surface/outside/landing/wilderness)
 "Uj" = (
 /obj/structure/table/sifwooden_reinforced,
 /obj/item/radio/off{
@@ -1822,7 +1790,7 @@
 	pixel_y = -5
 	},
 /obj/effect/zone_divider,
-/turf/simulated/wall/wood,
+/turf/simulated/wall/wood/turfpack/sif,
 /area/surface/outside/path/wilderness)
 "ZO" = (
 /obj/effect/zone_divider,
@@ -17193,8 +17161,8 @@ ae
 ae
 ae
 ae
-ao
-ao
+aW
+aW
 ae
 am
 an
@@ -17451,7 +17419,7 @@ ae
 ae
 ae
 ae
-ao
+aW
 aq
 au
 au
@@ -17707,9 +17675,9 @@ ae
 ae
 ae
 ae
-ai
+ah
 ae
-ao
+aW
 aS
 aS
 aS
@@ -17718,8 +17686,8 @@ aB
 aS
 aS
 aS
-ao
-ao
+aW
+aW
 at
 at
 at
@@ -17977,9 +17945,9 @@ aS
 aS
 aS
 at
-ao
-ao
-ao
+aW
+aW
+aW
 at
 at
 at
@@ -27657,7 +27625,7 @@ Ih
 Ih
 Gq
 Gq
-Ud
+Ih
 Gq
 Gq
 Gq
@@ -33070,7 +33038,7 @@ Gq
 kd
 kd
 kd
-Ud
+Ih
 Ih
 Ih
 kd
@@ -33328,7 +33296,7 @@ Gq
 kd
 kd
 kd
-Ud
+Ih
 Ih
 Ih
 kd
@@ -33844,7 +33812,7 @@ Gq
 Gq
 Gq
 Gq
-Ud
+Ih
 Ih
 Ih
 Gq
@@ -34102,8 +34070,8 @@ Gq
 Gq
 Gq
 Gq
-Ud
-Ud
+Ih
+Ih
 Gq
 Gq
 Gq
@@ -34360,8 +34328,8 @@ Gq
 Gq
 Gq
 Gq
-Ud
-Ud
+Ih
+Ih
 Gq
 Gq
 Gq
@@ -34618,8 +34586,8 @@ dD
 dD
 dD
 dD
-qT
-qT
+ZO
+ZO
 dD
 dD
 dD
@@ -34876,9 +34844,9 @@ Gq
 Gq
 Gq
 Gq
-Ud
-Ud
-Ud
+Ih
+Ih
+Ih
 Gq
 Gq
 Gq
@@ -35136,7 +35104,7 @@ ae
 ae
 ae
 ae
-ai
+ah
 ae
 ae
 ae
@@ -37973,7 +37941,7 @@ ae
 ae
 ae
 ae
-ai
+ah
 ae
 ae
 ae
@@ -38231,8 +38199,8 @@ ae
 ae
 ae
 ae
-ai
-ai
+ah
+ah
 ae
 ae
 ae
@@ -38484,13 +38452,13 @@ ae
 ae
 ae
 ae
-ai
-ai
-ai
-ai
-ai
-ai
-ai
+ah
+ah
+ah
+ah
+ah
+ah
+ah
 ae
 ae
 ae
@@ -38744,11 +38712,11 @@ ae
 ae
 ae
 ae
-ai
-ai
-ai
-ai
-ai
+ah
+ah
+ah
+ah
+ah
 ae
 ae
 ae
@@ -39003,11 +38971,11 @@ ae
 ae
 ae
 ae
-ai
-ai
-ai
-ai
-ai
+ah
+ah
+ah
+ah
+ah
 ae
 ae
 ae
@@ -39262,10 +39230,10 @@ ae
 ae
 ae
 ae
-ai
-ai
-ai
-ai
+ah
+ah
+ah
+ah
 ae
 ae
 ae
@@ -39522,8 +39490,8 @@ ae
 ae
 ae
 ae
-ai
-ai
+ah
+ah
 ae
 ae
 ae
@@ -40812,7 +40780,7 @@ ae
 ae
 ah
 ah
-ai
+ah
 ae
 ae
 ae
@@ -52025,10 +51993,10 @@ aj
 aj
 aj
 aj
-ai
+ah
 aj
 aj
-ai
+ah
 aj
 aj
 aj
@@ -52249,8 +52217,8 @@ ae
 ae
 ae
 ae
-ai
-ai
+ah
+ah
 ae
 ae
 ae
@@ -52289,11 +52257,11 @@ aj
 aj
 aj
 aj
-ao
+aW
 aj
 aj
-ao
-ao
+aW
+aW
 aS
 aS
 aS
@@ -52303,8 +52271,8 @@ aS
 aS
 aS
 aS
-ao
-xt
+aW
+qr
 aG
 aG
 aG
@@ -52507,11 +52475,11 @@ ae
 ae
 ae
 ae
-ai
-ai
-ai
-ai
-ai
+ah
+ah
+ah
+ah
+ah
 ae
 ae
 ae
@@ -52547,11 +52515,11 @@ aj
 aj
 aj
 aj
-ao
+aW
 aj
 aj
-ao
-ao
+aW
+aW
 aS
 aS
 aS
@@ -52561,11 +52529,11 @@ aS
 aS
 aS
 aS
-ao
-xt
-ao
-ao
-ao
+aW
+qr
+aW
+aW
+aW
 aG
 aG
 aG
@@ -52767,12 +52735,12 @@ ae
 ae
 ae
 ae
-ai
-ai
-ai
+ah
+ah
+ah
 ae
 ae
-ai
+ah
 ae
 ae
 aj
@@ -52821,12 +52789,12 @@ av
 as
 aG
 aH
-ao
-ao
-ao
+aW
+aW
+aW
 aG
 aG
-aI
+ap
 aG
 aG
 aG
@@ -53087,7 +53055,7 @@ aG
 aG
 aG
 aG
-aI
+ap
 aG
 aG
 aG
@@ -53607,7 +53575,7 @@ aG
 aG
 aG
 aG
-aI
+ap
 aG
 aG
 aG
