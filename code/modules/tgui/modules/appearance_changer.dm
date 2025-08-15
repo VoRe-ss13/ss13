@@ -616,7 +616,7 @@
 			if(!owner.resleeve_lock && can_change(owner, APPEARANCE_RACE))
 				// Create it from the mob
 				if(DC.disk.stored)
-					qdel_null(DC.disk.stored)
+					QDEL_NULL(DC.disk.stored)
 				to_chat(ui.user,span_notice("\The [owner]'s bodyrecord was saved to the disk."))
 				DC.disk.stored = new /datum/transhuman/body_record(owner, FALSE, FALSE) // Saves a COPY!
 				DC.disk.stored.locked = FALSE // remove lock
@@ -1084,7 +1084,7 @@
 	// checks for monkey to tell if on the menu
 	if(owner)
 		UnregisterSignal(owner, COMSIG_OBSERVER_MOVED)
-		qdel_null(owner)
+		QDEL_NULL(owner)
 	owner = new(src)
 	owner.set_species(SPECIES_LLEILL)
 	owner.species.produceCopy(owner.species.traits.Copy(),owner,null,FALSE)
@@ -1096,6 +1096,7 @@
 /datum/tgui_module/appearance_changer/body_designer/proc/load_record_to_body(var/datum/transhuman/body_record/current_project)
 	if(owner)
 		UnregisterSignal(owner, COMSIG_OBSERVER_MOVED)
+<<<<<<< HEAD
 		qdel_null(owner)
 	//Get the DNA and generate a new mob
 	var/datum/dna2/record/R = current_project.mydna
@@ -1143,6 +1144,13 @@
 	owner.dna.blood_reagents = R.dna.blood_reagents
 	owner.dna.blood_color = R.dna.blood_color
 	owner.regenerate_icons()
+=======
+		QDEL_NULL(owner)
+	owner = current_project.produce_human_mob(src,FALSE,FALSE,"Designer [rand(999)]")
+	// Update some specifics from the current record
+	owner.dna.blood_reagents = current_project.mydna.dna.blood_reagents
+	owner.dna.blood_color = current_project.mydna.dna.blood_color
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 	owner.flavor_texts = current_project.mydna.flavor.Copy()
 	owner.resize(current_project.sizemult, FALSE)
 	owner.appearance_flags = current_project.aflags

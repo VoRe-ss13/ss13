@@ -46,7 +46,7 @@
 
 /obj/item/flashlight/Destroy()
 	STOP_PROCESSING(SSobj, src)
-	qdel_null(cell)
+	QDEL_NULL(cell)
 	return ..()
 
 /obj/item/flashlight/get_cell()

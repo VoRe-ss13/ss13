@@ -36,8 +36,13 @@
 		return 0
 	add_attack_logs(src,T,"Transformation sting (changeling)")
 	T.visible_message(span_warning("[T] transforms!"))
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/transform_sting.dm
 	qdel_swap(T.dna, chosen_dna.Clone())
 	T.real_name = chosen_dna.real_name
+=======
+	QDEL_SWAP(T.dna, chosen_dna.dna.Clone())
+	T.real_name = chosen_dna.dna.real_name
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414)):code/datums/components/antags/changeling/powers/transform_sting.dm
 	T.UpdateAppearance()
 	domutcheck(T, null)
 	feedback_add_details("changeling_powers","TS")

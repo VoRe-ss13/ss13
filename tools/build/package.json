@@ -1,4 +1,12 @@
 {
+<<<<<<< HEAD
   "private": true,
   "type": "module"
+=======
+	"private": true,
+	"type": "module",
+	"devDependencies": {
+		"@types/bun": "^1.2.20"
+	}
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 }

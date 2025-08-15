@@ -18,6 +18,20 @@
 	var/list/prize_list //Generated during Initialize
 	var/dirty_items = FALSE // Used to refresh the static/redundant data in case the machine gets VV'd
 
+<<<<<<< HEAD
+=======
+/obj/machinery/mineral/equipment_vendor/Destroy()
+	if(inserted_id)
+		var/turf/T = get_turf(src)
+		if(T)
+			inserted_id.forceMove(T)
+			inserted_id = null
+		else
+			QDEL_NULL(inserted_id)
+	QDEL_NULL_LIST(prize_list)
+	. = ..()
+
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 /datum/data/mining_equipment
 	var/equipment_name = "generic"
 	var/equipment_path = null

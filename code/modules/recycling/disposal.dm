@@ -1320,6 +1320,13 @@
 	else
 		name = initial(name)
 
+<<<<<<< HEAD
+=======
+/obj/structure/disposalpipe/sortjunction/Destroy()
+	QDEL_NULL(wires)
+	. = ..()
+
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 /obj/structure/disposalpipe/sortjunction/proc/updatedir()
 	posdir = dir
 	negdir = turn(posdir, 180)

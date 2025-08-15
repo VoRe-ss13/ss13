@@ -22,9 +22,23 @@
 /datum/component/xenochimera/Destroy(force)
 	UnregisterSignal(owner, COMSIG_XENOCHIMERA_COMPONENT)
 	remove_verb(owner, /mob/living/carbon/human/proc/reconstitute_form)
+<<<<<<< HEAD
 	owner = null
 	. = ..()
 
+=======
+	QDEL_NULL(revival_record)
+	owner = null
+	. = ..()
+
+/datum/component/xenochimera/proc/handle_record()
+	SIGNAL_HANDLER
+	if(QDELETED(owner))
+		return
+	QDEL_NULL(revival_record)
+	revival_record = new(owner)
+
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 /datum/component/xenochimera/proc/handle_comp()
 	if(QDELETED(owner))
 		return

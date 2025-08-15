@@ -174,7 +174,12 @@ You can also set the stat of a NIF to NIF_TEMPFAIL without any issues to disable
 	if(H)
 		remove_verb(H, /mob/living/carbon/human/proc/set_nif_examine)
 		H.nif = null
+<<<<<<< HEAD
 	qdel_null(menu)
+=======
+	QDEL_NULL(menu)
+	unregister_human()
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 	human = null
 	install_done = null
 	update_icon()

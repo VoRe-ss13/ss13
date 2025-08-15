@@ -72,7 +72,7 @@
 	update_icon()
 
 /obj/structure/closet/Destroy()
-	qdel_null(door_obj)
+	QDEL_NULL(door_obj)
 	closet_appearance = null
 	return ..()
 
