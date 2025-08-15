@@ -789,8 +789,12 @@
 /area/submap/DeathDen)
 "UR" = (
 /obj/item/stool/padded,
+<<<<<<< HEAD
 /obj/item/clothing/suit/storage/fluff/techpriestrobes,
 /turf/simulated/floor/wood/sif,
+=======
+/turf/simulated/floor/wood/sif/turfpack/sif,
+>>>>>>> 8c88b437bf (Cleanup of unused / unobtainable items [IDB IGNORE] [MDB IGNORE] (#11369))
 /area/submap/DeathDen)
 "WH" = (
 /obj/effect/gibspawner/human,
