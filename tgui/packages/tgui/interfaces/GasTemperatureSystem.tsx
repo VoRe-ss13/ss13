@@ -6,6 +6,10 @@ import {
   Knob,
   LabeledControls,
   LabeledList,
+<<<<<<< HEAD
+=======
+  RoundGauge,
+>>>>>>> 25a8a1f773 ([MIRROR] Cleans up some tgui styling (#11416))
   Section,
   Slider,
 } from 'tgui-core/components';
@@ -66,6 +70,26 @@ export const GasTemperatureSystem = (props) => {
             <LabeledControls.Item label="Gas Pressure">
               {gasPressure} kPa
             </LabeledControls.Item>
+<<<<<<< HEAD
+=======
+            <LabeledControls.Item label="Coolant Reserve">
+              {toFixed((reagentVolume / reagentMaximum) * 100)} %
+            </LabeledControls.Item>
+            <RoundGauge
+              size={2}
+              value={reagentPower}
+              ranges={{
+                bad: [-3, 0.5],
+                average: [0.5, 1.5],
+                good: [1.5, 5],
+              }}
+              format={(value) => {
+                return `${toFixed(value, 1)} x`;
+              }}
+              minValue={-3}
+              maxValue={5}
+            />
+>>>>>>> 25a8a1f773 ([MIRROR] Cleans up some tgui styling (#11416))
           </LabeledControls>
         </Section>
         <Section title="Gas Temperature">

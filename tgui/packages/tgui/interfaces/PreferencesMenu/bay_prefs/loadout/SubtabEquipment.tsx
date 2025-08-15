@@ -69,6 +69,10 @@ export const SubtabEquipment = (props: {
             <Button onClick={() => act('set_ringtone')}>
               {ringtone || 'None'}
             </Button>
+<<<<<<< HEAD
+=======
+            <Button icon="volume-high" onClick={() => act('test_ringtone')} />
+>>>>>>> 25a8a1f773 ([MIRROR] Cleans up some tgui styling (#11416))
           </LabeledList.Item>
           {/* <LabeledList.Item label="Spawn With Shoes">
             <Button onClick={() => act('toggle_shoes')}>
