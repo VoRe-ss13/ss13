@@ -3,7 +3,7 @@ SUBSYSTEM_DEF(lobby_monitor)
 	init_order = INIT_ORDER_LOBBY
 	// init_stage = INITSTAGE_EARLY
 	flags = SS_NO_INIT
-	wait = 1 SECOND
+	wait = 2 SECONDS
 	runlevels = ALL
 
 	/// The clients who we've waited a [wait] duration to start working. If they haven't, we reboot them
@@ -21,7 +21,11 @@ SUBSYSTEM_DEF(lobby_monitor)
 			continue
 
 		log_tgui(player, "Reinitialized [player.client.ckey]'s lobby window: [ui ? "ui" : "no ui"], status: [player.lobby_window?.status].", "lobby_monitor/Fire")
+<<<<<<< HEAD
 		INVOKE_ASYNC(player, TYPE_PROC_REF(/mob/new_player, initialize_lobby_screen))
+=======
+		do_reinit(player)
+>>>>>>> 77a99a4531 ([MIRROR] Login screen init change (#11431))
 
 	var/initialize_queue = list()
 	for(var/mob/new_player/player as anything in new_players)
