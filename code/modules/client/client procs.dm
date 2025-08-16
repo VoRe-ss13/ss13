@@ -112,6 +112,7 @@
 		cmd_mentor_pm(C, null)
 		return
 
+<<<<<<< HEAD
 	if(href_list["irc_msg"])
 		if(!holder && received_irc_pm < world.time - 6000) //Worse they can do is spam IRC for 10 minutes
 			to_chat(src, span_warning("You are no longer able to use this, it's been more than 10 minutes since an admin on IRC has responded to you"))
@@ -122,6 +123,8 @@
 		send2adminirc(href_list["irc_msg"])
 		return
 
+=======
+>>>>>>> f7bef32db9 ([MIRROR] Cleans up some unticked dm files (#11438))
 	//VOREStation Add
 	if(href_list["discord_reg"])
 		var/their_id = html_decode(href_list["discord_reg"])
