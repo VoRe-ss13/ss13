@@ -325,3 +325,159 @@ but they don't actually change anything about the load order
 	. +=  "Though Vir is typically peaceful, the system has seen its fair share of conflict in the face of technological extremists, rogue drone intelligence, and worse.<br>"
 	. +=  "As an employee of NanoTrasen, operators of the Southern Cross and one of the galaxy's largest research corporations, you're probably just here to do a job."
 	return jointext(., "<br>")
+<<<<<<< HEAD
+=======
+
+// Skybox Settings
+/datum/skybox_settings/southern_cross
+	icon_state = "dyable"
+	random_color = TRUE
+
+// Lateload handling
+/datum/map_template/southern_cross_lateload
+	allow_duplicates = FALSE
+	var/associated_map_datum
+
+/datum/map_template/southern_cross_lateload/on_map_loaded(z)
+	if(!associated_map_datum || !ispath(associated_map_datum))
+		log_game("Extra z-level [src] has no associated map datum")
+		return
+
+	new associated_map_datum(using_map, z)
+	return ..()
+
+/datum/map_z_level/southern_cross_lateload/New(datum/map/map, mapZ)
+	z = mapZ
+	return ..(map)
+
+// For making the 6-in-1 holomap, we calculate some offsets
+#define SOUTHERN_CROSS_MAP_SIZE 160 // Width and height of compiled in Southern Cross z levels.
+#define SOUTHERN_CROSS_HOLOMAP_CENTER_GUTTER 40 // 40px central gutter between columns
+#define SOUTHERN_CROSS_HOLOMAP_MARGIN_X ((HOLOMAP_ICON_SIZE - (2*SOUTHERN_CROSS_MAP_SIZE) - SOUTHERN_CROSS_HOLOMAP_CENTER_GUTTER) / 2) // 100
+#define SOUTHERN_CROSS_HOLOMAP_MARGIN_Y ((HOLOMAP_ICON_SIZE - (3*SOUTHERN_CROSS_MAP_SIZE)) / 2) // 60
+
+// Station Z-Levels
+/datum/map_z_level/southern_cross/station
+	flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_CONSOLES|MAP_LEVEL_VORESPAWN
+	holomap_legend_x = 220
+	holomap_legend_y = 160
+
+/datum/map_z_level/southern_cross/station/station_maintenance
+	z = Z_LEVEL_SC_STATION_MAINTS
+	name = "Maintenance Deck"
+	transit_chance = 15
+	base_turf = /turf/space
+	holomap_offset_x = HOLOMAP_ICON_SIZE - SOUTHERN_CROSS_HOLOMAP_MARGIN_X - SOUTHERN_CROSS_MAP_SIZE - 40
+	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y //+ SOUTHERN_CROSS_MAP_SIZE*0
+
+/datum/map_z_level/southern_cross/station/station_one
+	z = Z_LEVEL_SC_STATION_ONE
+	name = "Deck 1"
+	base_turf = /turf/simulated/open
+	transit_chance = 15
+	holomap_offset_x = SOUTHERN_CROSS_HOLOMAP_MARGIN_X - 40
+	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y //+ SOUTHERN_CROSS_MAP_SIZE*0
+
+/datum/map_z_level/southern_cross/station/station_two
+	z = Z_LEVEL_SC_STATION_TWO
+	name = "Deck 2"
+	base_turf = /turf/simulated/open
+	transit_chance = 15
+	holomap_offset_x = SOUTHERN_CROSS_HOLOMAP_MARGIN_X - 40
+	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE
+
+/datum/map_z_level/southern_cross/station/station_three
+	z = Z_LEVEL_SC_STATION_THREE
+	name = "Deck 3"
+	base_turf = /turf/simulated/open
+	transit_chance = 15
+	holomap_offset_x = HOLOMAP_ICON_SIZE - SOUTHERN_CROSS_HOLOMAP_MARGIN_X - SOUTHERN_CROSS_MAP_SIZE - 40
+	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE
+
+// Surface Z-Level
+/datum/map_z_level/southern_cross_lateload/surface
+	name = Z_NAME_SC_SURFACE
+	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONSOLES|MAP_LEVEL_VORESPAWN
+	base_turf = /turf/simulated/floor/outdoors/rocks
+
+/datum/map_template/southern_cross_lateload/surface
+	name = Z_NAME_SC_SURFACE
+	name_alias = Z_NAME_ALIAS_SURFACE
+	mappath = "modular_chomp/maps/southern_cross/southern_cross-5.dmm"
+	associated_map_datum = /datum/map_z_level/southern_cross_lateload/surface
+
+// Surface Mines Z-Level
+/datum/map_z_level/southern_cross_lateload/surface_mine
+	name = Z_NAME_SC_SURFACE_MINE
+	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONSOLES
+	base_turf = /turf/simulated/floor/outdoors/rocks
+
+/datum/map_template/southern_cross_lateload/surface_mine
+	name = Z_NAME_SC_SURFACE_MINE
+	name_alias = Z_NAME_ALIAS_SURFACE_MINES
+	mappath = "modular_chomp/maps/southern_cross/southern_cross-6.dmm"
+	associated_map_datum = /datum/map_z_level/southern_cross_lateload/surface_mine
+
+// Surface Wilds Z-Level
+/datum/map_z_level/southern_cross_lateload/surface_wild
+	name = Z_NAME_SC_SURFACE_WILD
+	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONTACT|MAP_LEVEL_CONSOLES
+	base_turf = /turf/simulated/floor/outdoors/rocks
+
+/datum/map_template/southern_cross_lateload/surface_wild
+	name = Z_NAME_SC_SURFACE_WILD
+	name_alias = Z_NAME_ALIAS_SURFACE_WILDS
+	mappath = "modular_chomp/maps/southern_cross/southern_cross-10.dmm"
+	associated_map_datum = /datum/map_z_level/southern_cross_lateload/surface_wild
+
+// Misc Z-Level
+/datum/map_z_level/southern_cross_lateload/misc
+	name = Z_NAME_SC_MISC
+	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_VORESPAWN
+	transit_chance = 15
+
+/datum/map_template/southern_cross_lateload/misc
+	name = Z_NAME_SC_MISC
+	name_alias = Z_NAME_ALIAS_MISC
+	mappath = "modular_chomp/maps/southern_cross/southern_cross-7.dmm"
+	associated_map_datum = /datum/map_z_level/southern_cross_lateload/misc
+
+// Centcom Z-Level
+/datum/map_z_level/southern_cross_lateload/centcom
+	name = Z_NAME_SC_CENTCOM
+	flags = MAP_LEVEL_ADMIN|MAP_LEVEL_CONTACT
+
+/datum/map_template/southern_cross_lateload/centcom
+	name = Z_NAME_SC_CENTCOM
+	name_alias = Z_NAME_ALIAS_CENTCOM
+	mappath = "modular_chomp/maps/southern_cross/southern_cross-8.dmm"
+	associated_map_datum = /datum/map_z_level/southern_cross_lateload/centcom
+
+// Transit Z-Level
+/datum/map_z_level/southern_cross_lateload/transit
+	name = Z_NAME_SC_TRANSIT
+	flags = MAP_LEVEL_ADMIN|MAP_LEVEL_SEALED|MAP_LEVEL_PLAYER|MAP_LEVEL_CONTACT
+
+/datum/map_template/southern_cross_lateload/transit
+	name = Z_NAME_SC_TRANSIT
+	mappath = "modular_chomp/maps/southern_cross/southern_cross-9.dmm"
+	associated_map_datum = /datum/map_z_level/southern_cross_lateload/transit
+
+//Thor Z-Level
+/datum/map_z_level/southern_cross_lateload/thor
+	name = Z_NAME_PLANET_THOR_CH
+	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED
+	base_turf = /turf/simulated/floor/outdoors/rocks
+
+/datum/map_template/common_lateload/thor
+	associated_map_datum = /datum/map_z_level/southern_cross_lateload/thor
+
+// Tyr Z-Level
+/datum/map_z_level/southern_cross_lateload/valley
+	name = Z_NAME_PLANET_TYR_CH
+	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED
+	base_turf = /turf/simulated/floor/outdoors/rocks
+
+/datum/map_template/common_lateload/tyr
+	associated_map_datum = /datum/map_z_level/southern_cross_lateload/valley
+>>>>>>> 83cda4d9e2 (fixes drop (#11426))
