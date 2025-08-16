@@ -1,10 +1,14 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aj" = (
 /obj/item/stool/padded,
+<<<<<<< HEAD
 /obj/item/clothing/suit/storage/fluff/techpriestrobes,
 /turf/simulated/floor/wood/sif{
 	oxygen = 0
 	},
+=======
+/turf/simulated/floor/wood/sif/turfpack/sif,
+>>>>>>> 8c88b437bf (Cleanup of unused / unobtainable items [IDB IGNORE] [MDB IGNORE] (#11369))
 /area/submap/DeathDen)
 "as" = (
 /obj/structure/table/bench/wooden,
