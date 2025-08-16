@@ -107,6 +107,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 	//if(pregame_timeleft <= CONFIG_GET(number/vote_autogamemode_timeleft) && !SSvote.gamemode_vote_called) //CHOMPEdit
 		//SSvote.autogamemode() // Start the game mode vote (if we haven't had one already) //CHOMPEdit
 
+<<<<<<< HEAD
 // Called during GAME_STATE_SETTING_UP (RUNLEVEL_SETUP)
 /datum/controller/subsystem/ticker/proc/setup_tick(resumed = FALSE)
 	round_start_time = world.time // otherwise round_start_time would be 0 for the signals
@@ -121,6 +122,70 @@ var/global/datum/controller/subsystem/ticker/ticker
 	// If we got this far we succeeded in picking a game mode.  Punch it!
 	setup_startgame()
 	return
+=======
+	for(var/I in round_start_events)
+		var/datum/callback/cb = I
+		cb.InvokeAsync()
+	LAZYCLEARLIST(round_start_events)
+
+	round_start_time = world.time //otherwise round_start_time would be 0 for the signals
+	SEND_SIGNAL(src, COMSIG_TICKER_ROUND_STARTING, world.time)
+	callHook("roundstart")
+
+	log_world("Game start took [(world.timeofday - init_start)/10]s")
+	INVOKE_ASYNC(SSdbcore, TYPE_PROC_REF(/datum/controller/subsystem/dbcore,SetRoundStart))
+
+	to_chat(world, span_notice(span_bold("Welcome to [station_name()], enjoy your stay!")))
+	world << sound('sound/AI/welcome.ogg') // Skie
+	//SEND_SOUND(world, sound(SSstation.announcer.get_rand_welcome_sound()))
+
+	current_state = GAME_STATE_PLAYING
+	Master.SetRunLevel(RUNLEVEL_GAME)
+
+	//Holiday Round-start stuff	~Carn
+	Holiday_Game_Start()
+
+	// TODO END
+
+	PostSetup()
+
+	return TRUE
+
+/datum/controller/subsystem/ticker/proc/PostSetup()
+	set waitfor = FALSE
+	mode.post_setup()
+	// TODO
+
+	var/list/adm = get_admin_counts()
+	var/list/allmins = adm["present"]
+	send2adminchat("Server", "Round [GLOB.round_id ? "#[GLOB.round_id]" : ""] has started[allmins.len ? ".":" with no active admins online!"]")
+
+	setup_done = TRUE
+	// TODO START
+
+	// TODO END
+	for(var/obj/effect/landmark/start/S in GLOB.landmarks_list)
+		//Deleting Startpoints but we need the ai point to AI-ize people later
+		if (S.name != "AI")
+			qdel(S)
+
+	if(CONFIG_GET(flag/sql_enabled))
+		statistic_cycle() // Polls population totals regularly and stores them in an SQL DB -- TLE
+
+//These callbacks will fire after roundstart key transfer
+/datum/controller/subsystem/ticker/proc/OnRoundstart(datum/callback/cb)
+	if(!HasRoundStarted())
+		LAZYADD(round_start_events, cb)
+	else
+		cb.InvokeAsync()
+
+//These callbacks will fire before roundend report
+/datum/controller/subsystem/ticker/proc/OnRoundend(datum/callback/cb)
+	if(current_state >= GAME_STATE_FINISHED)
+		cb.InvokeAsync()
+	else
+		LAZYADD(round_end_events, cb)
+>>>>>>> f7bef32db9 ([MIRROR] Cleans up some unticked dm files (#11438))
 
 // Formerly the first half of setup() - The part that chooses the game mode.
 // Returns 0 if failed to pick a mode, otherwise 1
