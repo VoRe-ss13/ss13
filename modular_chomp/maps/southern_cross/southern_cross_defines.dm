@@ -133,11 +133,20 @@ but they don't actually change anything about the load order
 
 	//CHOMPStation Addition End
 	lateload_gateway = list(
+<<<<<<< HEAD
 		list("Snow Field"),
 		list("Maddness Lab"),
 		list("Abandoned City"),
 		list("Skyscraper")
 		) //CHOMPedit: Gateway maps. For now nothing fancy, just some already existing maps while we make our own.
+=======
+		list(Z_NAME_GATEWAY_SNOW_FIELD_CH),
+		list(Z_NAME_GATEWAY_MADNESS_LAB_CH),
+		list(Z_NAME_GATEWAY_ABANDONED_CITY_CH),
+		list(Z_NAME_GATEWAY_SKYSCRAPER_CH),
+		list(Z_NAME_GATEWAY_HIDDEN_ECLIPSE_CH)
+		)
+>>>>>>> 2a53c4c30e (Base Neon Moving (#11429))
 
 	lateload_gateway = null
 
