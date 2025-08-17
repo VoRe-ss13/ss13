@@ -50,7 +50,11 @@
 /obj/item/cell/high
 	name = "high-capacity power cell"
 	origin_tech = list(TECH_POWER = 2)
+<<<<<<< HEAD
 	icon_state = "high"
+=======
+	icon_state = "b_hi"
+>>>>>>> 9576eefb34 ([MIRROR] New batteries (#11448))
 	charge = 10000
 	maxcharge = 10000
 	matter = list(MAT_STEEL = 700, MAT_GLASS = 60)
@@ -65,7 +69,11 @@
 /obj/item/cell/super
 	name = "super-capacity power cell"
 	origin_tech = list(TECH_POWER = 5)
+<<<<<<< HEAD
 	icon_state = "super"
+=======
+	icon_state = "b_sup"
+>>>>>>> 9576eefb34 ([MIRROR] New batteries (#11448))
 	charge = 20000
 	maxcharge = 20000
 	matter = list(MAT_STEEL = 700, MAT_GLASS = 70)
@@ -80,7 +88,11 @@
 /obj/item/cell/robot_syndi
 	name = "syndicate robot power cell"
 	description_fluff = "Almost as good as a hyper."
+<<<<<<< HEAD
 	icon_state = "super" //We don't want roboticists confuse it with a low standard cell
+=======
+	icon_state = "b_sup" //We don't want roboticists confuse it with a low standard cell
+>>>>>>> 9576eefb34 ([MIRROR] New batteries (#11448))
 	charge = 25000
 	maxcharge = 25000
 	robot_durability = 65
@@ -91,7 +103,11 @@
 /obj/item/cell/hyper
 	name = "hyper-capacity power cell"
 	origin_tech = list(TECH_POWER = 6)
+<<<<<<< HEAD
 	icon_state = "hyper"
+=======
+	icon_state = "b_hy"
+>>>>>>> 9576eefb34 ([MIRROR] New batteries (#11448))
 	charge = 30000
 	maxcharge = 30000
 	matter = list(MAT_STEEL = 700, MAT_GLASS = 80)
@@ -105,7 +121,11 @@
  */
 /obj/item/cell/mech
 	name = "mecha power cell"
+<<<<<<< HEAD
 	icon_state = "mech"
+=======
+	icon_state = "exs_s"
+>>>>>>> 9576eefb34 ([MIRROR] New batteries (#11448))
 	connector_type = "mech"
 	charge = 15000
 	maxcharge = 15000
@@ -126,7 +146,11 @@
 /obj/item/cell/mech/high
 	name = "high-capacity mecha power cell"
 	origin_tech = list(TECH_POWER = 3)
+<<<<<<< HEAD
 	icon_state = "blue"
+=======
+	icon_state = "exs_m"
+>>>>>>> 9576eefb34 ([MIRROR] New batteries (#11448))
 	charge = 20000
 	maxcharge = 20000
 	matter = list(MAT_STEEL = 800, MAT_GLASS = 80)
@@ -134,7 +158,11 @@
 /obj/item/cell/mech/super
 	name = "super-capacity mecha power cell"
 	origin_tech = list(TECH_POWER = 6)
+<<<<<<< HEAD
 	icon_state = "white"
+=======
+	icon_state = "exs_l"
+>>>>>>> 9576eefb34 ([MIRROR] New batteries (#11448))
 	charge = 25000
 	maxcharge = 25000
 	matter = list(MAT_STEEL = 800, MAT_GLASS = 100)
@@ -144,7 +172,11 @@
  */
 /obj/item/cell/infinite
 	name = "infinite-capacity power cell!"
+<<<<<<< HEAD
 	icon_state = "infinity"
+=======
+	icon_state = "infinite_b"
+>>>>>>> 9576eefb34 ([MIRROR] New batteries (#11448))
 	origin_tech =  null
 	charge = 30000
 	maxcharge = 30000 //determines how badly mobs get shocked
@@ -180,9 +212,16 @@
 	icon = 'icons/mob/slimes.dmi' //'icons/obj/harvest.dmi'
 	icon_state = "yellow slime extract" //"potato_battery"
 	connector_type = "slime"
+<<<<<<< HEAD
 	description_info = "This 'cell' holds a max charge of 10k and self recharges over time."
 	charge = 10000
 	maxcharge = 10000
+=======
+	description_info = "This 'cell' holds a max charge of 20k and self recharges over time."
+	charge = 20000
+	maxcharge = 20000
+	charge_amount = 500 // 2.5%.
+>>>>>>> 9576eefb34 ([MIRROR] New batteries (#11448))
 	matter = null
 	self_recharge = TRUE
 	standard_overlays = FALSE
@@ -258,9 +297,15 @@
 	origin_tech = list(TECH_POWER = 8, TECH_ENGINEERING = 6)
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "cell"
+<<<<<<< HEAD
 	charge = 4800
 	maxcharge = 4800 //10x the device version
 	charge_amount = 1200 //10x the device version
+=======
+	charge = 10000
+	maxcharge = 10000
+	charge_amount = 500
+>>>>>>> 9576eefb34 ([MIRROR] New batteries (#11448))
 	self_recharge = TRUE
 	charge_delay = 50
 	matter = null
@@ -282,3 +327,31 @@
 	icon = 'icons/obj/power_vr.dmi'
 	icon_state = "cellb"
 	swaps_to = /obj/item/cell/device/weapon/recharge/alien/hybrid
+
+/*
+ * Security Borg
+ */
+/obj/item/cell/secborg
+	name = "security borg rechargable D battery"
+	origin_tech = list(TECH_POWER = 0)
+	icon_state = "secborg"
+	charge = 2400
+	maxcharge = 2400
+	matter = list(MAT_STEEL = 700, MAT_GLASS = 40)
+
+/obj/item/cell/secborg/empty
+	charge = 0
+
+/*
+ * Giga
+ */
+/obj/item/cell/giga
+	name = "giga-capacity power cell"
+	origin_tech = list(TECH_POWER = 8)
+	icon_state = "meb_b_hi"
+	charge = 40000
+	maxcharge = 40000
+	matter = list(MAT_STEEL = 1000, MAT_GLASS = 100)
+
+/obj/item/cell/giga/empty
+	charge = 0
