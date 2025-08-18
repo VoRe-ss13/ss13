@@ -16,7 +16,7 @@
 var/global/list/obj/machinery/telecomms/telecomms_list = list()
 
 /obj/machinery/telecomms
-	icon = 'icons/obj/stationobjs_vr.dmi' //VOREStation Add
+	icon = 'icons/obj/stationobjs.dmi'
 	unacidable = TRUE
 	var/list/links = list() // list of machines this machine is linked to
 	var/traffic = 0 // value increases as traffic increases

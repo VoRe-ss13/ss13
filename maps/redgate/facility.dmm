@@ -2958,7 +2958,11 @@
 /turf/simulated/floor/tiled/white,
 /area/redgate/facility/office8)
 "eku" = (
+<<<<<<< HEAD
 /obj/machinery/telecomms/allinone,
+=======
+/obj/structure/prop/machine/core/allinone,
+>>>>>>> bb70ca1093 ([MIRROR] Icon Fixup [IDB IGNORE] (#11451))
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/redgate/facility/lab3)
 "ekR" = (
@@ -14359,6 +14363,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
+<<<<<<< HEAD
+=======
+/obj/structure/prop/machine/core/bus,
+>>>>>>> bb70ca1093 ([MIRROR] Icon Fixup [IDB IGNORE] (#11451))
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/redgate/facility/lab3)
 "ulv" = (
@@ -14747,7 +14755,11 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/redgate/facility/cell9)
 "uMg" = (
+<<<<<<< HEAD
 /obj/machinery/telecomms/server,
+=======
+/obj/structure/prop/machine/core/comm_server,
+>>>>>>> bb70ca1093 ([MIRROR] Icon Fixup [IDB IGNORE] (#11451))
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/redgate/facility/lab3)
 "uMq" = (

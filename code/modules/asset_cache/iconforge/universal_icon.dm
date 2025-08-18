@@ -218,6 +218,7 @@
 /proc/get_display_icon_for(atom/A)
 	if (!ispath(A, /atom))
 		return FALSE
+<<<<<<< HEAD
 	var/icon_file = initial(A.icon)
 	var/icon_state = initial(A.icon_state)
 	// if(ispath(A, /obj/item))
@@ -227,3 +228,226 @@
 	// 	if(initial(I.greyscale_config) && initial(I.greyscale_colors))
 	// 		return gags_to_universal_icon(I)
 	return uni_icon(icon_file, icon_state, color=initial(A.color))
+=======
+	var/icon_file = atom_path::icon
+	var/icon_state = atom_path::icon_state
+	/*
+	if(atom_path::greyscale_config && atom_path::greyscale_colors)
+		return gags_to_universal_icon(atom_path)
+	if(ispath(atom_path, /obj))
+		var/obj/obj_path = atom_path
+		if(obj_path::icon_state_preview)
+			icon_state = obj_path::icon_state_preview
+	*/
+	return uni_icon(icon_file, icon_state, color=atom_path::color)
+
+/// getFlatIcon for [/datum/universal_icon]s
+/// Still fairly slow for complex appearances due to filesystem operations. Try to avoid using it
+/proc/get_flat_uni_icon(image/appearance, defdir, deficon, defstate, defblend, start = TRUE, parentcolor)
+	// Loop through the underlays, then overlays, sorting them into the layers list
+	#define PROCESS_OVERLAYS_OR_UNDERLAYS(flat, process, base_layer) \
+		for (var/i in 1 to process.len) { \
+			var/image/current = process[i]; \
+			if (!current) { \
+				continue; \
+			} \
+			if (current.plane != FLOAT_PLANE && current.plane != appearance.plane) { \
+				continue; \
+			} \
+			var/current_layer = current.layer; \
+			if (current_layer < 0) { \
+				if (current_layer <= -1000) { \
+					return flat; \
+				} \
+				current_layer = base_layer + appearance.layer + current_layer / 1000; \
+			} \
+			/* If we are using topdown rendering, chop that part off so things layer together as expected */ \
+			if((current_layer >= TOPDOWN_LAYER && current_layer < EFFECTS_LAYER) || current_layer > TOPDOWN_LAYER + EFFECTS_LAYER) { \
+				current_layer -= TOPDOWN_LAYER; \
+			} \
+			for (var/index_to_compare_to in 1 to layers.len) { \
+				var/compare_to = layers[index_to_compare_to]; \
+				if (current_layer < layers[compare_to]) { \
+					layers.Insert(index_to_compare_to, current); \
+					break; \
+				} \
+			} \
+			layers[current] = current_layer; \
+		}
+
+	var/datum/universal_icon/flat = uni_icon('icons/system/blank_32x32.dmi', "nothing")
+
+	if(!appearance || appearance.alpha <= 0)
+		return flat
+
+	if(start)
+		if(!deficon)
+			deficon = appearance.icon
+		if(!defstate)
+			defstate = appearance.icon_state
+		if(!defblend)
+			defblend = appearance.blend_mode
+
+	var/should_display = TRUE
+	var/curicon = appearance.icon || deficon
+	var/string_curicon = "[curicon]"
+	var/curstate = appearance.icon_state || defstate
+	// Filter out 'runtime' icons (server-generated RSC cache icons)
+	// Write the icon to the filesystem so it can be used by iconforge
+	if(!isfile(curicon) || !length(string_curicon))
+		var/file_path_tmp = "tmp/uni_icon-tmp-[rand(1, 999)].dmi" // this filename is temporary.
+		fcopy(curicon, file_path_tmp)
+		var/file_hash = rustg_hash_file(RUSTG_HASH_MD5, file_path_tmp)
+		// Use the hash as its new filename - this allows the uni_icon to be smart cached, because the filename will be consistent between runs if the content is the same
+		var/file_path = "tmp/uni_icon-[file_hash].dmi"
+		fcopy(file_path_tmp, file_path)
+		fdel(file_path_tmp) // delete the old one
+		curicon = file(file_path)
+
+	if(!icon_exists(curicon, curstate))
+		if("" in icon_states_fast(curicon)) // BYOND defaulting functionality
+			curstate = ""
+		else
+			should_display = FALSE
+
+	var/curdir = (!appearance.dir || appearance.dir == SOUTH) ? defdir : appearance.dir
+	var/base_icon_dir //We'll use this to get the icon state to display if not null BUT NOT pass it to overlays as the dir we have
+
+	if(should_display)
+		//Determines if there're directionals.
+		if (curdir != SOUTH)
+			// icon states either have 1, 4 or 8 dirs. We only have to check
+			// one of NORTH, EAST or WEST to know that this isn't a 1-dir icon_state since they just have SOUTH.
+			var/list/metadata = icon_metadata(curicon)
+			if(islist(metadata))
+				for(var/list/state_data as anything in metadata["states"])
+					var/name = state_data["name"]
+					if(name != curstate)
+						continue
+					var/dir_count = state_data["dirs"]
+					if(dir_count == 1)
+						base_icon_dir = SOUTH
+			else if(!length(icon_states(icon(curicon, curstate, NORTH))))
+				base_icon_dir = SOUTH
+
+		var/list/icon_dimensions = get_icon_dimensions(curicon)
+		var/icon_width = icon_dimensions["width"]
+		var/icon_height = icon_dimensions["height"]
+		if(icon_width != 32 || icon_height != 32)
+			flat.scale(icon_width, icon_height)
+
+	if(!base_icon_dir)
+		base_icon_dir = curdir
+
+	var/curblend = appearance.blend_mode || defblend
+
+
+	if(appearance.overlays.len || appearance.underlays.len)
+		// Layers will be a sorted list of icons/overlays, based on the order in which they are displayed
+		var/list/layers = list()
+		var/image/copy
+		if(should_display)
+			// Add the atom's icon itself, without pixel_x/y offsets.
+			copy = image(icon=curicon, icon_state=curstate, layer=appearance.layer, dir=base_icon_dir)
+			copy.color = appearance.color
+			copy.alpha = appearance.alpha
+			copy.blend_mode = curblend
+			layers[copy] = appearance.layer
+
+		PROCESS_OVERLAYS_OR_UNDERLAYS(flat, appearance.underlays, 0)
+		PROCESS_OVERLAYS_OR_UNDERLAYS(flat, appearance.overlays, 1)
+
+		var/datum/universal_icon/add // Icon of overlay being added
+
+		var/list/flat_dimensions = get_icon_dimensions(flat)
+		var/flatX1 = 1
+		var/flatX2 = flat_dimensions["width"]
+		var/flatY1 = 1
+		var/flatY2 = flat_dimensions["height"]
+
+		var/addX1 = 0
+		var/addX2 = 0
+		var/addY1 = 0
+		var/addY2 = 0
+
+		if(appearance.color)
+			if(islist(appearance.color))
+				flat.map_colors_inferred(appearance.color)
+			else
+				flat.blend_color(appearance.color, ICON_MULTIPLY)
+
+		if(parentcolor && !(appearance.appearance_flags & RESET_COLOR))
+			if(islist(parentcolor))
+				flat.map_colors_inferred(parentcolor)
+			else
+				flat.blend_color(parentcolor, ICON_MULTIPLY)
+
+		var/next_parentcolor = appearance.color || parentcolor
+
+		for(var/image/layer_image as anything in layers)
+			if(layer_image.alpha == 0)
+				continue
+
+			if(layer_image == copy && length("[layer_image.icon]")) // 'layer_image' is an /image based on the object being flattened, and isn't a 'runtime' icon.
+				curblend = BLEND_OVERLAY
+				add = uni_icon(layer_image.icon, layer_image.icon_state, base_icon_dir)
+				if(appearance.color)
+					if(islist(appearance.color))
+						add.map_colors_inferred(appearance.color)
+					else
+						add.blend_color(appearance.color, ICON_MULTIPLY)
+			else // 'layer_image' is an appearance object.
+				add = get_flat_uni_icon(layer_image, curdir, curicon, curstate, curblend, FALSE, next_parentcolor)
+			if(!add || !length(add.icon_file))
+				continue
+
+			// Find the new dimensions of the flat icon to fit the added overlay
+			var/list/add_dimensions = get_icon_dimensions(add)
+			addX1 = min(flatX1, layer_image.pixel_x + layer_image.pixel_w + 1)
+			addX2 = max(flatX2, layer_image.pixel_x + layer_image.pixel_w + add_dimensions["width"]) // assuming 32x32
+			addY1 = min(flatY1, layer_image.pixel_y + layer_image.pixel_z + 1)
+			addY2 = max(flatY2, layer_image.pixel_y + layer_image.pixel_z + add_dimensions["height"])
+
+			if (
+				addX1 != flatX1 \
+				&& addX2 != flatX2 \
+				&& addY1 != flatY1 \
+				&& addY2 != flatY2 \
+			)
+				// Resize the flattened icon so the new icon fits
+				flat.crop(
+					addX1 - flatX1 + 1,
+					addY1 - flatY1 + 1,
+					addX2 - flatX1 + 1,
+					addY2 - flatY1 + 1
+				)
+
+				flatX1 = addX1
+				flatX2 = addY1
+				flatY1 = addX2
+				flatY2 = addY2
+
+			// Blend the overlay into the flattened icon
+			flat.blend_icon(add, blendMode2iconMode(curblend), layer_image.pixel_x + layer_image.pixel_w + 2 - flatX1, layer_image.pixel_y + layer_image.pixel_z + 2 - flatY1)
+
+		if(appearance.alpha < 255)
+			flat.blend_color(rgb(255, 255, 255, appearance.alpha), ICON_MULTIPLY)
+
+		return flat
+
+	else if(should_display) // There's no overlays.
+		var/datum/universal_icon/final_icon = uni_icon(curicon, curstate, base_icon_dir)
+
+		if (appearance.alpha < 255)
+			final_icon.blend_color(rgb(255,255,255, appearance.alpha), ICON_MULTIPLY)
+
+		if (appearance.color)
+			if (islist(appearance.color))
+				final_icon.map_colors_inferred(appearance.color)
+			else
+				final_icon.blend_color(appearance.color, ICON_MULTIPLY)
+
+		return final_icon
+
+	#undef PROCESS_OVERLAYS_OR_UNDERLAYS
+>>>>>>> bb70ca1093 ([MIRROR] Icon Fixup [IDB IGNORE] (#11451))
