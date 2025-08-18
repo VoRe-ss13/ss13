@@ -200,7 +200,11 @@ var/global/list/light_type_cache = list()
 // the standard tube light fixture
 /obj/machinery/light
 	name = "light fixture"
+<<<<<<< HEAD
 	icon = 'icons/obj/lighting_vr.dmi' //VOREStation Edit
+=======
+	icon = 'icons/obj/lighting.dmi'
+>>>>>>> bb70ca1093 ([MIRROR] Icon Fixup [IDB IGNORE] (#11451))
 	var/base_state = "tube"		// base description and icon_state
 	icon_state = "tube1"
 	desc = "A lighting fixture."
