@@ -1,6 +1,19 @@
 SUBSYSTEM_DEF(atoms)
 	name = "Atoms"
+<<<<<<< HEAD
 	init_order = INIT_ORDER_ATOMS
+=======
+	dependencies = list(
+		/datum/controller/subsystem/garbage,
+		/datum/controller/subsystem/mapping,
+		/datum/controller/subsystem/alarm,
+		/datum/controller/subsystem/planets,
+		/datum/controller/subsystem/transcore,
+		/datum/controller/subsystem/chemistry,
+		/datum/controller/subsystem/sounds,
+		/datum/controller/subsystem/job
+	)
+>>>>>>> f1e72810a2 ([MIRROR] fix atmos consoles (#11476))
 	flags = SS_NO_FIRE
 
 	/// A stack of list(source, desired initialized state)
