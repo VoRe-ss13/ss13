@@ -760,6 +760,7 @@ GLOBAL_LIST_EMPTY(icon_dimensions)
 		"y" = icon_height > world.icon_size /*&& pixel_y != 0*/ ? (icon_height - world.icon_size) * 0.5 : 0, // we don't have pixel_y in use
 	)
 
+<<<<<<< HEAD:code/game/atoms.dm
 /// Returns a list containing the width and height of an icon file
 /proc/get_icon_dimensions(icon_path)
 	// Icons can be a real file(), a rsc backed file(), a dynamic rsc (dyn.rsc) reference (known as a cache reference in byond docs), or an /icon which is pointing to one of those.
@@ -774,6 +775,9 @@ GLOBAL_LIST_EMPTY(icon_dimensions)
 	return GLOB.icon_dimensions[icon_path]
 
 ///Returns the src and all recursive contents as a list.
+=======
+/// Returns the src and all recursive contents as a list.
+>>>>>>> 4f205c9197 ([MIRROR] Clothing fallback (#11470)):code/game/atom/_atom.dm
 /atom/proc/get_all_contents(ignore_flag_1)
 	. = list(src)
 	var/i = 0

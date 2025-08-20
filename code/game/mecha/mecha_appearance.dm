@@ -40,7 +40,11 @@
 
 				var/icon/Cutter
 
+<<<<<<< HEAD
 				if("[initial_icon]_cutter" in icon_states(icon))
+=======
+				if(icon_exists(icon, "[initial_icon]_cutter"))
+>>>>>>> 4f205c9197 ([MIRROR] Clothing fallback (#11470))
 					Cutter = new(src.icon, "[initial_icon]_cutter")
 
 				if(Cutter)
