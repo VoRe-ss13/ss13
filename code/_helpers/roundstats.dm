@@ -21,14 +21,23 @@ GLOBAL_VAR_INIT(items_sold_shift_roundstat, 0)
 GLOBAL_VAR_INIT(disposals_flush_shift_roundstat, 0)
 GLOBAL_VAR_INIT(rocks_drilled_roundstat, 0)
 GLOBAL_VAR_INIT(mech_destroyed_roundstat, 0)
+<<<<<<< HEAD:code/datums/roundstats/roundstats.dm
 GLOBAL_VAR_INIT(prey_eaten_roundstat, 0)		//VOREStation Edit - Obviously
 GLOBAL_VAR_INIT(prey_absorbed_roundstat, 0)		//VOREStation Edit - Obviously
 GLOBAL_VAR_INIT(prey_digested_roundstat, 0)		//VOREStation Edit - Obviously
 GLOBAL_VAR_INIT(items_digested_roundstat, 0)	//VOREStation Edit - Obviously
 GLOBAL_LIST_EMPTY(security_printer_tickets)		//VOREStation Edit
 
+=======
+GLOBAL_VAR_INIT(prey_eaten_roundstat, 0)
+GLOBAL_VAR_INIT(prey_absorbed_roundstat, 0)
+GLOBAL_VAR_INIT(prey_digested_roundstat, 0)
+GLOBAL_VAR_INIT(items_digested_roundstat, 0)
+GLOBAL_LIST_EMPTY(security_printer_tickets)
+GLOBAL_LIST_EMPTY(refined_chems_sold)
+>>>>>>> 495c373e69 ([MIRROR] ticker followup (#11474)):code/_helpers/roundstats.dm
 
-/hook/roundend/proc/RoundTrivia()//bazinga
+/datum/controller/subsystem/ticker/proc/RoundTrivia()//bazinga
 	var/list/valid_stats_list = list() //This is to be populated with the good shit
 
 	if(GLOB.lost_limbs_shift_roundstat > 1)
@@ -56,7 +65,6 @@ GLOBAL_LIST_EMPTY(security_printer_tickets)		//VOREStation Edit
 	else if(GLOB.disposals_flush_shift_roundstat > 40)
 		valid_stats_list.Add("The disposal system flushed a whole [GLOB.disposals_flush_shift_roundstat] times for this shift. We should really invest in waste treatement.")
 
-	//VOREStation add Start - Ticket time!
 	if(GLOB.security_printer_tickets.len)
 		valid_stats_list.Add(span_danger("[GLOB.security_printer_tickets.len] unique security tickets were issued today!") + "<br>Examples include:")
 		var/good_num = 5
@@ -74,7 +82,7 @@ GLOBAL_LIST_EMPTY(security_printer_tickets)		//VOREStation Edit
 
 	//VOREStation Add Start - Vore stats lets gooooo
 	if(GLOB.prey_eaten_roundstat > 0)
-		valid_stats_list.Add("Individuals were eaten a total of [GLOB.prey_eaten_roundstat] times today!") //CHOMPEdit
+		valid_stats_list.Add("Individuals were eaten a total of [GLOB.prey_eaten_roundstat] times today!")
 	if(GLOB.prey_digested_roundstat > 0)
 		valid_stats_list.Add("A total of [GLOB.prey_digested_roundstat] individuals were digested today!")
 	if(GLOB.prey_absorbed_roundstat > 0)
@@ -84,7 +92,7 @@ GLOBAL_LIST_EMPTY(security_printer_tickets)		//VOREStation Edit
 	//VOREStation Add End
 
 	if(LAZYLEN(valid_stats_list))
-		to_world(span_world("Shift trivia!"))
+		to_chat(world, span_world("Shift trivia!"))
 
 		for(var/body in valid_stats_list)
-			to_world(span_filter_system("[body]"))
+			to_chat(world, span_filter_system("[body]"))

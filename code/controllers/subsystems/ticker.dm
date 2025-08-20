@@ -592,3 +592,81 @@ var/global/datum/controller/subsystem/ticker/ticker
 	random_players = SSticker.random_players
 
 	round_start_time = SSticker.round_start_time
+<<<<<<< HEAD
+=======
+
+	queue_delay = SSticker.queue_delay
+	queued_players = SSticker.queued_players
+
+	if (Master) //Set Masters run level if it exists
+		switch (current_state)
+			if(GAME_STATE_SETTING_UP)
+				Master.SetRunLevel(RUNLEVEL_SETUP)
+			if(GAME_STATE_PLAYING)
+				Master.SetRunLevel(RUNLEVEL_GAME)
+			if(GAME_STATE_FINISHED)
+				Master.SetRunLevel(RUNLEVEL_POSTGAME)
+
+/datum/controller/subsystem/ticker/proc/Reboot(reason, end_string, delay)
+	set waitfor = FALSE
+	if(usr && !check_rights(R_SERVER, TRUE))
+		return
+
+	if(!delay)
+		delay = CONFIG_GET(number/round_end_countdown) SECONDS
+		if(delay >= 60 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(announce_countodwn), delay), 60 SECONDS)
+
+	var/skip_delay = check_rights()
+	if(delay_end && !skip_delay)
+		to_chat(world, span_boldannounce("An admin has delayed the round end."))
+		return
+
+	to_chat(world, span_boldannounce("Rebooting World in [DisplayTimeText(delay)]. [reason]"))
+
+	// We dont have those
+	//var/statspage = CONFIG_GET(string/roundstatsurl)
+	//var/gamelogloc = CONFIG_GET(string/gamelogurl)
+	//if(statspage)
+	//	to_chat(world, span_info("Round statistics and logs can be viewed <a href=\"[statspage][GLOB.round_id]\">at this website!</a>"))
+	//else if(gamelogloc)
+	//	to_chat(world, span_info("Round logs can be located <a href=\"[gamelogloc]\">at this website!</a>"))
+
+	var/start_wait = world.time
+	UNTIL(round_end_sound_sent || (world.time - start_wait) > (delay * 2)) //don't wait forever
+	reboot_timer = addtimer(CALLBACK(src, PROC_REF(reboot_callback), reason, end_string), delay - (world.time - start_wait), TIMER_STOPPABLE)
+
+/datum/controller/subsystem/ticker/proc/announce_countodwn(remaining_time)
+	if(remaining_time >= 60 SECONDS)
+		remaining_time -= 60 SECONDS
+		to_chat(world, span_boldannounce("Rebooting World in [DisplayTimeText(remaining_time)]."))
+		addtimer(CALLBACK(src, PROC_REF(announce_countodwn), remaining_time), 60 SECONDS)
+		return
+	if(remaining_time > 0)
+		addtimer(CALLBACK(src, PROC_REF(announce_countodwn), 0), remaining_time)
+		return
+	to_chat(world, span_boldannounce("Rebooting World."))
+
+/datum/controller/subsystem/ticker/proc/reboot_callback(reason, end_string)
+	if(end_string)
+		end_state = end_string
+
+	log_game(span_boldannounce("Rebooting World. [reason]"))
+
+	world.Reboot()
+
+/**
+ * Deletes the current reboot timer and nulls the var
+ *
+ * Arguments:
+ * * user - the user that cancelled the reboot, may be null
+ */
+/datum/controller/subsystem/ticker/proc/cancel_reboot(mob/user)
+	if(!reboot_timer)
+		to_chat(user, span_warning("There is no pending reboot!"))
+		return FALSE
+	to_chat(world, span_boldannounce("An admin has delayed the round end."))
+	deltimer(reboot_timer)
+	reboot_timer = null
+	return TRUE
+>>>>>>> 495c373e69 ([MIRROR] ticker followup (#11474))

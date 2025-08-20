@@ -16,6 +16,7 @@
 /datum/browser/New(nuser, nwindow_id, ntitle = 0, nwidth = 0, nheight = 0, atom/nref = null)
 	user = nuser
 	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(user_deleted))
+<<<<<<< HEAD
 	window_id = nwindow_id
 	if (ntitle)
 		title = format_text(ntitle)
@@ -25,6 +26,17 @@
 		height = nheight
 	if (nref)
 		ref = WEAKREF(nref)
+=======
+	src.window_id = window_id
+	if (title)
+		src.title = strip_improper(title)
+	if (width)
+		src.width = width
+	if (height)
+		src.height = height
+	if (source)
+		src.source_ref = WEAKREF(source)
+>>>>>>> 495c373e69 ([MIRROR] ticker followup (#11474))
 
 /datum/browser/proc/user_deleted(datum/source)
 	SIGNAL_HANDLER
