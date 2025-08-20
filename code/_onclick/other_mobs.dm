@@ -43,9 +43,22 @@
 	else if(istype(G) && G.Touch(A,0)) // for magic gloves
 		return
 
+<<<<<<< HEAD
 	else if(TK in mutations)
 		A.attack_tk(src)
 
+=======
+	else if(has_telegrip())
+		if(istype(gloves,/obj/item/clothing/gloves/telekinetic))
+			var/obj/item/clothing/gloves/telekinetic/TKG = gloves
+			TKG.use_grip_power(src,TRUE)
+		if(client.eye != src) // Extremely bad exploits if allowed to TK while remote viewing
+			to_chat(src, TK_DENIED_MESSAGE)
+		else if(get_dist(src, A) > tk_maxrange)
+			to_chat(src, TK_OUTRANGED_MESSAGE)
+		else
+			A.attack_tk(src)
+>>>>>>> bf6ae72dee ([MIRROR] TK exploits (#11463))
 	else if(spitting) //Only used by xenos right now, can be expanded.
 		Spit(A)
 
