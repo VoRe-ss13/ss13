@@ -68,7 +68,9 @@ export class AudioPlayer {
 
     audio.play();
 
-    this.onPlaySubscribers.forEach((subscriber) => subscriber());
+    this.onPlaySubscribers.forEach((subscriber) => {
+      subscriber();
+    });
   }
 
   stop() {
@@ -79,7 +81,9 @@ export class AudioPlayer {
     this.element.pause();
     this.element = null;
 
-    this.onStopSubscribers.forEach((subscriber) => subscriber());
+    this.onStopSubscribers.forEach((subscriber) => {
+      subscriber();
+    });
   }
 
   setVolume(volume: number): void {
