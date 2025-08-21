@@ -22,7 +22,7 @@ export NODE_VERSION_COMPAT=20.2.0
 export SPACEMAN_DMM_VERSION=suite-1.10
 
 # Python version for mapmerge and other tools
-export PYTHON_VERSION=3.11.9
+export PYTHON_VERSION=3.12.3
 
 #dreamluau repo
 export DREAMLUAU_REPO="tgstation/dreamluau"
