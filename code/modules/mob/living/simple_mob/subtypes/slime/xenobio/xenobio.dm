@@ -148,6 +148,20 @@
 			mood = ":3"
 	else
 		mood = ":3"
+<<<<<<< HEAD
+=======
+		pacified = TRUE
+	if(obedient < 5)
+		pacified = FALSE //We are not obedient enough to be considered pacified.
+
+	if(!client) //Only update if we don't have a client.
+		if(faction != FACTION_SLIME) //We have had a loyalty potion used on us.
+			update_allowed_vore_types(TRUE)
+		else if(old_mood == "angry") //We were recently angry, so we're still upset and won't let you eat us no matter what! (Unless we had a docility potion put on us, making us harmless)
+			update_allowed_vore_types(FALSE, harmless)
+		else
+			update_allowed_vore_types(pacified, harmless)
+>>>>>>> 125b576a01 ([MIRROR] Makes loyalty potions work better on slimes (#11481))
 
 	if(old_mood != mood)
 		update_icon()
