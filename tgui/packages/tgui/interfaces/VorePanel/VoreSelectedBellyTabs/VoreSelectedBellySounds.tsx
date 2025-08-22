@@ -1,7 +1,14 @@
 import { useBackend } from 'tgui/backend';
 import { Button, LabeledList, Stack } from 'tgui-core/components';
+<<<<<<< HEAD
 
 import type { selectedData } from '../types';
+=======
+import type { bellySoundData, DropdownEntry } from '../types';
+import { VorePanelEditDropdown } from '../VorePanelElements/VorePanelEditDropdown';
+import { VorePanelEditNumber } from '../VorePanelElements/VorePanelEditNumber';
+import { VorePanelEditSwitch } from '../VorePanelElements/VorePanelEditSwitch';
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
 
 export const VoreSelectedBellySounds = (props: { belly: selectedData }) => {
   const { act } = useBackend();

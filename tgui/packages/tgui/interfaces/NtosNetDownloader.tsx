@@ -10,7 +10,6 @@ import {
   Section,
   Stack,
 } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 import type { BooleanLike } from 'tgui-core/react';
 
 type Data = {
@@ -119,8 +118,13 @@ const Program = (props: { program: program }) => {
               maxValue={downloadsize}
               value={downloadcompletion!}
             >
+<<<<<<< HEAD
               {toFixed((downloadcompletion! / downloadsize!) * 100, 1)}%&nbsp;
               {'(' + downloadspeed + 'GQ/s)'}
+=======
+              {((downloadcompletion! / downloadsize!) * 100).toFixed(1)}%&nbsp;
+              {`(${downloadspeed}GQ/s)`}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
             </ProgressBar>
           )) ||
             (downloads_queue.indexOf(program.filename) !== -1 && (

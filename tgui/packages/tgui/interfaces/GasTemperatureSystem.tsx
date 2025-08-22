@@ -9,7 +9,6 @@ import {
   Section,
   Slider,
 } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 import type { BooleanLike } from 'tgui-core/react';
 
 type Data = {
@@ -55,7 +54,7 @@ export const GasTemperatureSystem = (props) => {
           <LabeledControls>
             <LabeledControls.Item label="Power Level">
               <Knob
-                format={(value) => toFixed(value)}
+                format={(value) => value.toFixed()}
                 minValue={0}
                 maxValue={100}
                 stepPixelSize={1}
@@ -66,6 +65,26 @@ export const GasTemperatureSystem = (props) => {
             <LabeledControls.Item label="Gas Pressure">
               {gasPressure} kPa
             </LabeledControls.Item>
+<<<<<<< HEAD
+=======
+            <LabeledControls.Item label="Coolant Reserve">
+              {((reagentVolume / reagentMaximum) * 100).toFixed()} %
+            </LabeledControls.Item>
+            <RoundGauge
+              size={2}
+              value={reagentPower}
+              ranges={{
+                bad: [-3, 0.5],
+                average: [0.5, 1.5],
+                good: [1.5, 5],
+              }}
+              format={(value) => {
+                return `${value.toFixed(1)} x`;
+              }}
+              minValue={-3}
+              maxValue={5}
+            />
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
           </LabeledControls>
         </Section>
         <Section title="Gas Temperature">
@@ -84,7 +103,11 @@ export const GasTemperatureSystem = (props) => {
             maxValue={maxGasTemperature}
             fillValue={gasTemperature}
             value={targetGasTemperature}
+<<<<<<< HEAD
             format={(value) => gasTemperature + ' / ' + toFixed(value)}
+=======
+            format={(value) => `${gasTemperature} / ${value.toFixed()}`}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
             unit="K"
             color={gasTemperatureClass}
             onChange={(e, val) => act('setGasTemperature', { temp: val })}

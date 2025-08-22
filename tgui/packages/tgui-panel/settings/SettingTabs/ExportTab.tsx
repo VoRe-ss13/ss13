@@ -11,7 +11,6 @@ import {
   Section,
   Stack,
 } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 
 import {
   clearChat,
@@ -100,8 +99,13 @@ export const ExportTab = (props) => {
                 minValue={1}
                 maxValue={8}
                 value={logRetainRounds}
+<<<<<<< HEAD
                 format={(value) => toFixed(value)}
                 onDrag={(value) =>
+=======
+                format={(value) => value.toFixed()}
+                onChange={(value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                   dispatch(
                     updateSettings({
                       logRetainRounds: value,
@@ -124,8 +128,13 @@ export const ExportTab = (props) => {
                 minValue={0}
                 maxValue={50000}
                 value={logLimit}
+<<<<<<< HEAD
                 format={(value) => toFixed(value)}
                 onDrag={(value) =>
+=======
+                format={(value) => value.toFixed()}
+                onChange={(value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                   dispatch(
                     updateSettings({
                       logLimit: value,
@@ -210,8 +219,13 @@ export const ExportTab = (props) => {
                     minValue={0}
                     maxValue={exportEnd === 0 ? 0 : exportEnd - 1}
                     value={exportStart}
+<<<<<<< HEAD
                     format={(value) => toFixed(value)}
                     onDrag={(value) =>
+=======
+                    format={(value) => value.toFixed()}
+                    onChange={(value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                       dispatch(
                         updateSettings({
                           exportStart: value,
@@ -228,8 +242,13 @@ export const ExportTab = (props) => {
                     minValue={exportStart === 0 ? 0 : exportStart + 1}
                     maxValue={storedRounds}
                     value={exportEnd}
+<<<<<<< HEAD
                     format={(value) => toFixed(value)}
                     onDrag={(value) =>
+=======
+                    format={(value) => value.toFixed()}
+                    onChange={(value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                       dispatch(
                         updateSettings({
                           exportEnd: value,
@@ -262,8 +281,13 @@ export const ExportTab = (props) => {
             minValue={0}
             maxValue={50000}
             value={logLineCount}
+<<<<<<< HEAD
             format={(value) => toFixed(value)}
             onDrag={(value) =>
+=======
+            format={(value) => value.toFixed()}
+            onChange={(value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               dispatch(
                 updateSettings({
                   logLineCount: value,

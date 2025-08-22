@@ -10,7 +10,6 @@ import {
   Section,
   Stack,
 } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 
 import type { Data } from './types';
 
@@ -110,7 +109,11 @@ export const CloningConsoleMain = (props) => {
                   }}
                   mt="0.5rem"
                 >
+<<<<<<< HEAD
                   <Box textAlign="center">{toFixed(pod.progress) + '%'}</Box>
+=======
+                  <Box textAlign="center">{`${pod.progress.toFixed()}%`}</Box>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                 </ProgressBar>
               );
             } else if (pod.status === 'mess') {

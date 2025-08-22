@@ -12,7 +12,6 @@ import {
   Section,
   Stack,
 } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 
 import { useSettings } from '../settings';
 import { selectAudio } from './selectors';
@@ -105,8 +104,13 @@ export const NowPlayingWidget = (props) => {
           value={settings.adminMusicVolume}
           step={0.0025}
           stepPixelSize={1}
+<<<<<<< HEAD
           format={(value) => toFixed(value * 100) + '%'}
           onDrag={(e, value) =>
+=======
+          format={(value) => `${(value * 100).toFixed()}%`}
+          onChange={(e, value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
             settings.update({
               adminMusicVolume: value,
             })
