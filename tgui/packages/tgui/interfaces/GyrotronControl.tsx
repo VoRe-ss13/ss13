@@ -1,7 +1,6 @@
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
 import { Button, Knob, Section, Table } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 import type { BooleanLike } from 'tgui-core/react';
 
 export const GyrotronControl = () => (
@@ -72,7 +71,12 @@ export const GyrotronControlContent = (props) => {
             </Table.Cell>
             <Table.Cell>
               <Knob
+<<<<<<< HEAD
                 format={(value) => toFixed(value)}
+=======
+                tickWhileDragging
+                format={(value) => value.toFixed()}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                 size={1.25}
                 color={!!gyro.active && 'yellow'}
                 value={gyro.fire_delay}
@@ -90,7 +94,12 @@ export const GyrotronControlContent = (props) => {
             </Table.Cell>
             <Table.Cell>
               <Knob
+<<<<<<< HEAD
                 format={(value) => toFixed(value)}
+=======
+                tickWhileDragging
+                format={(value) => value.toFixed()}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                 size={1.25}
                 color={!!gyro.active && 'yellow'}
                 value={gyro.strength}

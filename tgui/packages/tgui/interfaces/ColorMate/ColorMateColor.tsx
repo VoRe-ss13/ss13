@@ -1,6 +1,5 @@
 import { useBackend } from 'tgui/backend';
 import { Button, Slider, Table } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 
 import type { Data } from './types';
 
@@ -28,8 +27,13 @@ export const ColorMateHSV = (props) => {
             maxValue={360}
             step={1}
             value={buildhue}
+<<<<<<< HEAD
             format={(value: number) => toFixed(value)}
             onDrag={(e, value: number) =>
+=======
+            format={(value: number) => value.toFixed()}
+            onChange={(e, value: number) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               act('set_hue', {
                 buildhue: value,
               })
@@ -45,8 +49,13 @@ export const ColorMateHSV = (props) => {
             maxValue={10}
             step={0.01}
             value={buildsat}
+<<<<<<< HEAD
             format={(value: number) => toFixed(value, 2)}
             onDrag={(e, value: number) =>
+=======
+            format={(value: number) => value.toFixed(2)}
+            onChange={(e, value: number) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               act('set_sat', {
                 buildsat: value,
               })
@@ -62,8 +71,13 @@ export const ColorMateHSV = (props) => {
             maxValue={10}
             step={0.01}
             value={buildval}
+<<<<<<< HEAD
             format={(value: number) => toFixed(value, 2)}
             onDrag={(e, value: number) =>
+=======
+            format={(value: number) => value.toFixed(2)}
+            onChange={(e, value: number) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               act('set_val', {
                 buildval: value,
               })

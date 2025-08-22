@@ -11,7 +11,6 @@ import {
   Table,
 } from 'tgui-core/components';
 import { flow } from 'tgui-core/fp';
-import { toFixed } from 'tgui-core/math';
 
 import { PEAK_DRAW } from './constants';
 import { powerRank } from './functions';
@@ -103,7 +102,11 @@ export const PowerMonitorFocus = (props: { focus: sensor }) => {
                   maxValue={maxValue}
                   color="teal"
                 >
+<<<<<<< HEAD
                   {toFixed(supply / 1000) + ' kW'}
+=======
+                  {`${(supply / 1000).toFixed()} kW`}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                 </ProgressBar>
               </LabeledList.Item>
               <LabeledList.Item label="Draw">
@@ -113,7 +116,11 @@ export const PowerMonitorFocus = (props: { focus: sensor }) => {
                   maxValue={maxValue}
                   color="pink"
                 >
+<<<<<<< HEAD
                   {toFixed(demand / 1000) + ' kW'}
+=======
+                  {`${(demand / 1000).toFixed()} kW`}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                 </ProgressBar>
               </LabeledList.Item>
             </LabeledList>

@@ -9,7 +9,6 @@ import {
   Section,
   Stack,
 } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 import type { BooleanLike } from 'tgui-core/react';
 import { toTitleCase } from 'tgui-core/string';
 
@@ -137,7 +136,11 @@ const SupermatterMonitorActive = (props) => {
             }
           >
             <AnimatedNumber
+<<<<<<< HEAD
               format={(val) => toFixed(val, 2) + ' MeV/cm³'}
+=======
+              format={(val) => `${val.toFixed(2)} MeV/cm³`}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               value={SM_power}
             />
           </Box>
@@ -151,7 +154,11 @@ const SupermatterMonitorActive = (props) => {
             }
           >
             <AnimatedNumber
+<<<<<<< HEAD
               format={(val) => toFixed(val, 2) + ' K'}
+=======
+              format={(val) => `${(val).toFixed(2)} K`}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               value={SM_ambienttemp}
             />
           </Box>
@@ -165,7 +172,11 @@ const SupermatterMonitorActive = (props) => {
             }
           >
             <AnimatedNumber
+<<<<<<< HEAD
               format={(val) => toFixed(val, 2) + ' kPa'}
+=======
+              format={(val) => `${(val).toFixed(2)} kPa`}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               value={SM_ambientpressure}
             />
           </Box>
@@ -174,7 +185,7 @@ const SupermatterMonitorActive = (props) => {
           <Box
             color={(SM_EPR > 4 && 'bad') || (SM_EPR > 1 && 'average') || 'good'}
           >
-            <AnimatedNumber format={(val) => toFixed(val, 2)} value={SM_EPR} />
+            <AnimatedNumber format={(val) => val.toFixed(2)} value={SM_EPR} />
           </Box>
         </LabeledList.Item>
         <LabeledList.Item label="Gas Composition">

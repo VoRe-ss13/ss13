@@ -13,7 +13,6 @@ import {
   Tooltip,
 } from 'tgui-core/components';
 import { formatSiUnit } from 'tgui-core/format';
-import { toFixed } from 'tgui-core/math';
 import type { BooleanLike } from 'tgui-core/react';
 
 type Data = {
@@ -68,7 +67,11 @@ export const Canister = (props) => {
                 }}
                 format={(value) => {
                   if (value < 10000) {
+<<<<<<< HEAD
                     return toFixed(value) + ' kPa';
+=======
+                    return `${(value).toFixed()} kPa`;
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                   }
                   return formatSiUnit(value * 1000, 1, 'Pa');
                 }}
@@ -79,7 +82,12 @@ export const Canister = (props) => {
             <LabeledControls.Item label="Regulator">
               <Box position="relative" left="-8px">
                 <Knob
+<<<<<<< HEAD
                   format={(value) => toFixed(value, 2)}
+=======
+                  tickWhileDragging
+                  format={(value) => value.toFixed(2)}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                   size={1.25}
                   color={!!valveOpen && 'yellow'}
                   value={releasePressure}

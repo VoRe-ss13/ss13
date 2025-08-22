@@ -13,7 +13,6 @@ import {
   Table,
   Tabs,
 } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 import type { BooleanLike } from 'tgui-core/react';
 
 type Data = {
@@ -108,7 +107,7 @@ const NtosEmailClientDownloading = (props) => {
               '/' +
               down_size +
               ' (' +
-              toFixed((down_progress! / down_size!) * 100, 1) +
+              ((down_progress! / down_size!) * 100).toFixed(1) +
               '%)'}
           </ProgressBar>
         </LabeledList.Item>
