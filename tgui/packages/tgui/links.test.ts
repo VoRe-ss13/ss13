@@ -31,8 +31,13 @@ describe('captureExternalLinks', () => {
       getAttribute: () => 'https://example.com',
       parentElement: document.body,
     };
+<<<<<<< HEAD
     const byond = { sendMessage: vi.fn() };
     // @ts-ignore
+=======
+    const byond = { sendMessage: mock() };
+    // @ts-expect-error
+>>>>>>> cce52199f3 ([MIRROR] allow to clear chat highlight settings (#11483))
     global.Byond = byond;
 
     const evt = { target: externalLink, preventDefault: vi.fn() };
@@ -53,8 +58,13 @@ describe('captureExternalLinks', () => {
       getAttribute: () => 'byond://server-address',
       parentElement: document.body,
     };
+<<<<<<< HEAD
     const byond = { sendMessage: vi.fn() };
     // @ts-ignore
+=======
+    const byond = { sendMessage: mock() };
+    // @ts-expect-error
+>>>>>>> cce52199f3 ([MIRROR] allow to clear chat highlight settings (#11483))
     global.Byond = byond;
 
     const evt = { target: byondLink, preventDefault: vi.fn() };
@@ -70,8 +80,13 @@ describe('captureExternalLinks', () => {
       getAttribute: () => 'www.example.com',
       parentElement: document.body,
     };
+<<<<<<< HEAD
     const byond = { sendMessage: vi.fn() };
     // @ts-ignore
+=======
+    const byond = { sendMessage: mock() };
+    // @ts-expect-error
+>>>>>>> cce52199f3 ([MIRROR] allow to clear chat highlight settings (#11483))
     global.Byond = byond;
 
     const evt = { target: wwwLink, preventDefault: vi.fn() };

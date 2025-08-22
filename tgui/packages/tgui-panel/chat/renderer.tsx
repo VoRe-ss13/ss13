@@ -331,7 +331,7 @@ class ChatRenderer {
       let highlightRegex;
       // Nothing to match, reset highlighting
       if (lines.length === 0) {
-        return;
+        return undefined;
       }
       const blacklistLines = String(blacklist)
         .split(',')
@@ -429,6 +429,7 @@ class ChatRenderer {
         highlightBlacklist,
         blacklistregex,
       });
+      return undefined;
     });
   }
 
@@ -682,6 +683,7 @@ class ChatRenderer {
                 node.className += ' ChatMessage--highlighted';
               }
             }
+            return undefined;
           });
         }
         // Linkify text
