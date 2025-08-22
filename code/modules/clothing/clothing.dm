@@ -87,8 +87,23 @@
 				if(!(H.species.get_bodytype(H) in species_restricted))
 					wearable = 1
 			else
+<<<<<<< HEAD
 				if(H.species.get_bodytype(H) in species_restricted)
 					wearable = 1
+=======
+				if(our_species in species_restricted)
+					wearable = TRUE
+
+				///Prevent us from wearing clothing that is restricted to vox, werebeast, or teshari. This generally means it's custom designed for them and them only.
+				else if((((SPECIES_VOX in species_restricted) && our_species != SPECIES_VOX) || ((SPECIES_WEREBEAST in species_restricted) && our_species != SPECIES_WEREBEAST) || ((SPECIES_TESHARI in species_restricted) && our_species != SPECIES_TESHARI)))
+					wearable = FALSE
+
+				///Prevent us from from wearing clothing if we ARE a teshari or werebeast. This is due to these two having different anatomy that don't fix most clothing.
+				else if((our_species == SPECIES_TESHARI || our_species == SPECIES_WEREBEAST) && !sprite_sheets[our_species]) //teshari and werebeasts must have their own sprites. Vox can get away...somewhat
+					wearable = FALSE
+				else
+					wearable = TRUE
+>>>>>>> c1fffe13f3 ([MIRROR] Fixes species not being able to wear clothing if a vox can wear it (#11493))
 
 			if(!wearable && !(slot in list(slot_l_store, slot_r_store, slot_s_store)))
 				to_chat(H, span_danger("Your species cannot wear [src]."))
