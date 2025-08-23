@@ -1162,10 +1162,6 @@
 /mob/proc/is_muzzled()
 	return 0
 
-//Exploitable Info Update
-/obj
-	var/datum/weakref/exploit_for //if this obj is an exploit for somebody, this points to them
-
 /mob/proc/amend_exploitable(var/obj/item/I)
 	if(istype(I))
 		exploit_addons |= I
@@ -1174,8 +1170,7 @@
 		I.exploit_for = WEAKREF(src)
 
 
-/obj/Destroy()
-	// CHOMPEdit Start
+/obj/item/Destroy()
 	if(exploit_for)
 		var/mob/exploited = exploit_for.resolve()
 		exploited?.exploit_addons -= src

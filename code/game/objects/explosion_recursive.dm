@@ -3,6 +3,7 @@
 	var/turf/T = get_turf(src.mob)
 	explosion_rec(T, power)
 
+<<<<<<< HEAD
 /obj
 	var/explosion_resistance
 
@@ -58,6 +59,8 @@
 
 	explosion_in_progress = 0
 
+=======
+>>>>>>> 938e760841 ([MIRROR] Gets rid of hasvar usage and moves up some vars (#11484))
 /turf
 	var/explosion_resistance
 

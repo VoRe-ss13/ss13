@@ -249,8 +249,12 @@
 				return
 
 			remove_points(inserted_id, prize.cost)
+<<<<<<< HEAD
 			//VOREStation Edit Start
 			var/obj/I = new prize.equipment_path(loc)
+=======
+			var/obj/item/I = new prize.equipment_path(loc)
+>>>>>>> 938e760841 ([MIRROR] Gets rid of hasvar usage and moves up some vars (#11484))
 			I.persist_storable = FALSE
 			//VOREStation Edit End
 			flick(icon_vend, src) //VOREStation Add
