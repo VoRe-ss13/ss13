@@ -1801,10 +1801,7 @@
 /area/vr/powered/space/whiteship)
 "bDm" = (
 /obj/structure/sign/chemdiamond,
-/turf/unsimulated/wall/concrete/turfpack/station{
-	color = "#ebcd7c";
-	icon = 'icons/turf/wall_masks.dmi'
-	},
+/turf/unsimulated/wall/concrete/turfpack/station/yellow,
 /area/vr/powered/mall/backrooms)
 "bDC" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -2424,12 +2421,7 @@
 /turf/simulated/floor/carpet/brown,
 /area/vr/powered/mall)
 "cdu" = (
-/obj/machinery/smartfridge/survival_pod{
-	icon = 'icons/obj/vending.dmi';
-	icon_base = "fridge_sci";
-	icon_contents = "chem";
-	icon_state = "fridge_sci";
-	name = "Advanced storage";
+/obj/machinery/smartfridge/survival_pod/scifridge{
 	pixel_y = 0
 	},
 /obj/item/grenade/spawnergrenade/casino/armadillo,
@@ -4355,14 +4347,7 @@
 /obj/structure/window/reinforced/survival_pod{
 	opacity = 1
 	},
-/obj/machinery/smartfridge/survival_pod{
-	desc = "A mysterious machine which can fabricate many tools for acquiring test subjects.";
-	dir = 4;
-	icon = 'icons/obj/abductor_vr.dmi';
-	icon_base = "dispenser_2way";
-	icon_state = "dispenser_2way";
-	name = "Implant-Co"
-	},
+/obj/machinery/smartfridge/survival_pod/abductor,
 /obj/effect/floor_decal/techfloor{
 	dir = 10
 	},
@@ -4472,10 +4457,7 @@
 /area/vr/powered/mall)
 "dQA" = (
 /obj/structure/sign/warning/falling,
-/turf/unsimulated/wall/concrete/turfpack/station{
-	color = "#ebcd7c";
-	icon = 'icons/turf/wall_masks.dmi'
-	},
+/turf/unsimulated/wall/concrete/turfpack/station/yellow,
 /area/vr/powered/mall/backrooms)
 "dQM" = (
 /obj/structure/table/marble,
@@ -5521,12 +5503,8 @@
 /turf/simulated/floor/plating,
 /area/vr/powered/material)
 "eEr" = (
-/obj/machinery/smartfridge/survival_pod{
-	desc = "A mysterious machine which can fabricate many tools for acquiring test subjects.";
-	icon = 'icons/obj/abductor_vr.dmi';
-	icon_base = "dispenser_2way";
-	icon_state = "dispenser_2way";
-	name = "Implant-Co"
+/obj/machinery/smartfridge/survival_pod/abductor{
+	dir = 2
 	},
 /obj/item/implanter,
 /obj/item/implanter,
@@ -6912,12 +6890,7 @@
 /obj/structure/sign/department/drones{
 	pixel_y = 32
 	},
-/obj/machinery/smartfridge/survival_pod{
-	icon = 'icons/obj/vending.dmi';
-	icon_base = "fridge_sci";
-	icon_contents = "chem";
-	icon_state = "fridge_sci";
-	name = "Advanced storage";
+/obj/machinery/smartfridge/survival_pod/scifridge{
 	pixel_y = 0
 	},
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/xray,
@@ -9579,12 +9552,7 @@
 /turf/simulated/floor/carpet/oracarpet,
 /area/vr/powered/mall/dorms/dorms3)
 "ifF" = (
-/obj/machinery/smartfridge/survival_pod{
-	icon = 'icons/obj/vending.dmi';
-	icon_base = "fridge_sci";
-	icon_contents = "chem";
-	icon_state = "fridge_sci";
-	name = "Advanced storage";
+/obj/machinery/smartfridge/survival_pod/scifridge{
 	pixel_y = 0
 	},
 /obj/item/stock_parts/micro_laser/ultra,
@@ -11828,12 +11796,7 @@
 /obj/structure/sign/department/drones{
 	pixel_y = 32
 	},
-/obj/machinery/smartfridge/survival_pod{
-	icon = 'icons/obj/vending.dmi';
-	icon_base = "fridge_sci";
-	icon_contents = "chem";
-	icon_state = "fridge_sci";
-	name = "Advanced storage";
+/obj/machinery/smartfridge/survival_pod/scifridge{
 	pixel_y = 0
 	},
 /obj/item/mecha_parts/mecha_equipment/tool/hydraulic_clamp,
@@ -14029,11 +13992,7 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/smartfridge/survival_pod{
-	icon = 'icons/obj/vending.dmi';
-	icon_base = "fridge_sci";
-	icon_contents = "chem";
-	icon_state = "fridge_sci";
+/obj/machinery/smartfridge/survival_pod/scifridge{
 	name = "Armors R Us";
 	pixel_y = 0
 	},
@@ -15218,12 +15177,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 4
 	},
-/obj/machinery/smartfridge/survival_pod{
-	icon = 'icons/obj/vending.dmi';
-	icon_base = "fridge_sci";
-	icon_contents = "chem";
-	icon_state = "fridge_sci";
-	name = "Advanced storage";
+/obj/machinery/smartfridge/survival_pod/scifridge{
 	pixel_y = 0
 	},
 /obj/item/disk/limb/bishop,
@@ -15666,13 +15620,7 @@
 /turf/simulated/floor/wood,
 /area/vr/powered/shop)
 "naF" = (
-/obj/machinery/smartfridge/survival_pod{
-	desc = "A mysterious machine which can fabricate many tools for acquiring test subjects.";
-	icon = 'icons/obj/abductor.dmi';
-	icon_state = "dispenser";
-	name = "Drug-Dispenser";
-	req_access = list(777)
-	},
+/obj/machinery/smartfridge/survival_pod/dispenser1,
 /obj/item/reagent_containers/hypospray/autoinjector/biginjector/soporific,
 /obj/item/reagent_containers/hypospray/autoinjector/biginjector/soporific,
 /obj/item/reagent_containers/hypospray/autoinjector/biginjector/soporific,
@@ -16405,11 +16353,7 @@
 /turf/simulated/floor/tiled/yellow,
 /area/vr/powered/mall)
 "nGZ" = (
-/obj/machinery/smartfridge/survival_pod{
-	icon = 'icons/obj/vending.dmi';
-	icon_base = "fridge_sci";
-	icon_contents = "chem";
-	icon_state = "fridge_sci";
+/obj/machinery/smartfridge/survival_pod/scifridge{
 	pixel_y = 0
 	},
 /obj/item/stack/material/durasteel{
@@ -17876,10 +17820,7 @@
 /area/vr/powered)
 "oCa" = (
 /obj/structure/sign/chemistry,
-/turf/unsimulated/wall/concrete/turfpack/station{
-	color = "#ebcd7c";
-	icon = 'icons/turf/wall_masks.dmi'
-	},
+/turf/unsimulated/wall/concrete/turfpack/station/yellow,
 /area/vr/powered/mall/backrooms)
 "oCA" = (
 /obj/structure/bed/pillowpile/yellow,
@@ -18170,12 +18111,7 @@
 /turf/simulated/floor/tiled/asteroid_steel/turfpack/station,
 /area/vr/powered/space/mechfactory)
 "oOv" = (
-/obj/effect/simple_portal/linked{
-	icon = 'icons/turf/flooring/weird_vr.dmi';
-	icon_state = "dark";
-	light_on = 0;
-	portal_id = 6690
-	},
+/obj/effect/simple_portal/linked/weird_dark,
 /turf/simulated/floor/weird_things/dark,
 /area/vr/powered/mall/backrooms)
 "oOF" = (
@@ -19332,11 +19268,7 @@
 /turf/unsimulated/wall/seperator,
 /area/vr/space)
 "pNg" = (
-/turf/simulated/shuttle/wall/no_join{
-	base_state = "orange";
-	icon = 'icons/turf/shuttle_orange.dmi';
-	icon_state = "orange"
-	},
+/turf/simulated/shuttle/wall/no_join/orange,
 /area/vr/powered/space/whiteship)
 "pNl" = (
 /obj/effect/floor_decal/techfloor{
@@ -21057,12 +20989,8 @@
 /obj/structure/window/reinforced/survival_pod{
 	opacity = 1
 	},
-/obj/machinery/smartfridge/survival_pod{
-	desc = "A mysterious machine which can fabricate many tools for acquiring test subjects.";
-	icon = 'icons/obj/abductor_vr.dmi';
-	icon_base = "dispenser_2way";
-	icon_state = "dispenser_2way";
-	name = "Implant-Co"
+/obj/machinery/smartfridge/survival_pod/abductor{
+	dir = 2
 	},
 /obj/effect/floor_decal/techfloor{
 	dir = 6
@@ -21299,11 +21227,7 @@
 	teleport_x = 185;
 	teleport_y = 157
 	},
-/obj/effect/simple_portal/coords{
-	density = 0;
-	icon = 'icons/obj/machines/gateway_vr.dmi';
-	icon_state = "offcenter"
-	},
+/obj/effect/simple_portal/coords/offcenter,
 /obj/effect/map_effect/perma_light/gateway,
 /turf/unsimulated/floor/lino/turfpack/station{
 	color = "#ffe9ab"
@@ -22644,10 +22568,7 @@
 /area/vr/space)
 "szB" = (
 /obj/structure/sign/warning/lava,
-/turf/unsimulated/wall/concrete/turfpack/station{
-	color = "#ebcd7c";
-	icon = 'icons/turf/wall_masks.dmi'
-	},
+/turf/unsimulated/wall/concrete/turfpack/station/yellow,
 /area/vr/powered/mall/backrooms)
 "szE" = (
 /obj/machinery/sleeper{
@@ -24523,13 +24444,8 @@
 /obj/item/clothing/shoes/dress,
 /obj/item/clothing/shoes/dress,
 /obj/item/clothing/shoes/dress,
-/obj/machinery/smartfridge/survival_pod{
-	desc = "A mysterious machine which can fabricate many tools for acquiring test subjects.";
-	icon = 'icons/obj/abductor.dmi';
-	icon_state = "dispenser";
-	name = "Garmentier";
-	pixel_y = 0;
-	req_access = list(777)
+/obj/machinery/smartfridge/survival_pod/dispenser1/garmentier{
+	pixel_y = 0
 	},
 /obj/item/clothing/head/headband/maid,
 /obj/item/clothing/head/headband/maid,
@@ -26095,10 +26011,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/vr/powered/cult)
 "vrG" = (
-/turf/unsimulated/wall/concrete/turfpack/station{
-	color = "#ebcd7c";
-	icon = 'icons/turf/wall_masks.dmi'
-	},
+/turf/unsimulated/wall/concrete/turfpack/station/yellow,
 /area/vr/powered/mall/backrooms)
 "vrM" = (
 /obj/structure/table/rack/shelf/steel,
@@ -27221,10 +27134,7 @@
 /area/vr/powered/mall/dorms/dorms4)
 "woV" = (
 /obj/structure/sign/explosive,
-/turf/unsimulated/wall/concrete/turfpack/station{
-	color = "#ebcd7c";
-	icon = 'icons/turf/wall_masks.dmi'
-	},
+/turf/unsimulated/wall/concrete/turfpack/station/yellow,
 /area/vr/powered/mall/backrooms)
 "wpn" = (
 /obj/machinery/computer/arcade,

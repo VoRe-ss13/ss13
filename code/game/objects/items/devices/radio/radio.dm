@@ -26,7 +26,7 @@ var/global/list/default_medbay_channels = list(
 )
 
 /obj/item/radio
-	icon = 'icons/obj/radio_vr.dmi'
+	icon = 'icons/obj/radio.dmi'
 	name = "shortwave radio"
 	desc = "Used to talk to people when headsets don't function. Range is limited."
 	suffix = "\[3\]"
@@ -756,7 +756,6 @@ GLOBAL_DATUM(autospeaker, /mob/living/silicon/ai/announcer)
 
 /obj/item/radio/phone
 	broadcasting = 0
-	icon = 'icons/obj/items.dmi'
 	icon_state = "red_phone"
 	listening = 1
 	name = "phone"

@@ -4875,7 +4875,11 @@
 #include "modular_chomp\code\game\mecha\mecha_parts.dm"
 #include "modular_chomp\code\game\mecha\secert\hades.dm"
 #include "modular_chomp\code\game\objects\items.dm"
+<<<<<<< HEAD
 #include "modular_chomp\code\game\objects\mob_spawner.dm"
+=======
+#include "modular_chomp\code\game\objects\map_bs.dm"
+>>>>>>> 8fa48e2a3e ([MIRROR] Fixes map issues found in #18285 [MDB IGNORE] [IDB IGNORE] (#11485))
 #include "modular_chomp\code\game\objects\trash_eating.dm"
 #include "modular_chomp\code\game\objects\effects\dark_growth.dm"
 #include "modular_chomp\code\game\objects\effects\explosion.dm"
