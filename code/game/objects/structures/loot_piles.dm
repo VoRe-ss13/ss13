@@ -594,7 +594,15 @@ Loot piles can be depleted, if loot_depleted is turned on.  Note that players wh
 		/obj/item/gun/launcher/crossbow
 	)
 
+<<<<<<< HEAD
 // Subtype for mecha and mecha accessories. These might not always be on the surface.
+=======
+/obj/structure/loot_pile/surface/drone/large
+	//icon = 'icons/mob/animal_vr64x64.dmi' //This file doesn't exist anymore.
+	icon_state = "drone"
+
+// Mechaparts loot piles
+>>>>>>> 8fa48e2a3e ([MIRROR] Fixes map issues found in #18285 [MDB IGNORE] [IDB IGNORE] (#11485))
 /obj/structure/loot_pile/mecha
 	name = "pod wreckage"
 	desc = "The ruins of some unfortunate pod. Perhaps something is salvageable."
