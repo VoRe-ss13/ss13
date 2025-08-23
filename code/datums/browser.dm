@@ -13,6 +13,7 @@
 	var/head_content = ""
 	var/content = ""
 
+<<<<<<< HEAD
 /datum/browser/New(nuser, nwindow_id, ntitle = 0, nwidth = 0, nheight = 0, atom/nref = null)
 	user = nuser
 	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(user_deleted))
@@ -25,6 +26,23 @@
 		height = nheight
 	if (nref)
 		ref = WEAKREF(nref)
+=======
+/datum/browser/New(mob/user, window_id, title = "", width = 0, height = 0, atom/source = null)
+	if(IS_CLIENT_OR_MOCK(user))
+		var/client/client_user = user
+		user = client_user.mob
+	src.user = user
+	RegisterSignal(user, COMSIG_QDELETING, PROC_REF(user_deleted))
+	src.window_id = window_id
+	if (title)
+		src.title = strip_improper(title)
+	if (width)
+		src.width = width
+	if (height)
+		src.height = height
+	if (source)
+		src.source_ref = WEAKREF(source)
+>>>>>>> f85a202d80 ([MIRROR] Refactors do_after w/ TG's do_after (#11486))
 
 /datum/browser/proc/user_deleted(datum/source)
 	SIGNAL_HANDLER
