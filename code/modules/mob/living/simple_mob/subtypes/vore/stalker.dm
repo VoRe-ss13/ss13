@@ -7,7 +7,11 @@
 	icon_dead = "stalker-dead"
 	icon_living = "stalker"
 	icon_state = "stalker"
+<<<<<<< HEAD
 	icon_rest = "stalker-rest"
+=======
+	icon_rest = "stalker_rest"
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 	faction = FACTION_STALKER
 	old_x = -16
 	old_y = 0

@@ -1,3 +1,35 @@
+<<<<<<< HEAD
+=======
+/obj/structure/loot_pile/mecha/ripley/pirate
+	icon = 'icons/mob/pirates.dmi'
+	icon_state = "pirate-broken"
+
+/obj/structure/loot_pile/maint/technical
+	density = FALSE
+
+/obj/structure/loot_pile/maint/boxfort
+	density = FALSE
+
+//Eclipse mecha
+/obj/structure/loot_pile/mecha/odd_gygax
+	name = "\improper mecha wreckage"
+	icon = 'modular_chomp/icons/mob/eclipse.dmi'
+	icon_state = "orb-broken"
+	density = TRUE
+	anchored = FALSE
+
+	loot_element_path = /datum/element/lootable/mecha/odd_gygax
+
+/obj/structure/loot_pile/mecha/odd_ripley
+	name = "\improper mecha wreckage"
+	icon = 'modular_chomp/icons/mob/eclipse.dmi'
+	icon_state = "mine-broken"
+	density = TRUE
+	anchored = FALSE
+
+	loot_element_path = /datum/element/lootable/mecha/odd_riplay
+
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 /obj/structure/loot_pile/christmas_tree
 	name = "festive tree"
 	desc = "Happy Holidays!"

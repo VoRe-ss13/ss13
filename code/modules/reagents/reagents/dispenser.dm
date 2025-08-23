@@ -548,3 +548,51 @@
 	taste_mult = 0 //no taste
 	reagent_state = SOLID
 	color = "#DCDCDC"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
+
+/datum/reagent/titanium_dioxide
+	name = REAGENT_TITANIUMDIOX
+	id = REAGENT_ID_TITANIUMDIOX
+	description = "A crumbly white powder, often used in dyes."
+	taste_description = "metal"
+	taste_mult = 0 //no taste
+	reagent_state = SOLID
+	color = "#cadcef"
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_COSMETIC
+
+/datum/reagent/titanium
+	name = REAGENT_TITANIUM
+	id = REAGENT_ID_TITANIUM
+	description = "A chemical element, lightweight and biologically inert."
+	taste_description = "metal"
+	taste_mult = 0 //no taste
+	reagent_state = SOLID
+	color = "#cadcef"
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_INDUSTRY
+
+/datum/reagent/tin
+	name = REAGENT_TIN
+	id = REAGENT_ID_TIN
+	description = "A chemical element, soft and highly flexible."
+	taste_description = "metal"
+	taste_mult = 0 //no taste
+	reagent_state = SOLID
+	color = "#efe9ca"
+	supply_conversion_value = 0.5 SHEET_TO_REAGENT_EQUIVILENT // has sheet value
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
+
+/datum/reagent/miasma
+	name = REAGENT_MIASMA
+	id = REAGENT_ID_MIASMA
+	description = "Not necessarily a gas, miasma refers to biological pollutants found in the atmosphere."
+	reagent_state = GAS
+	taste_description = "indescribable"
+	color = "#808000"
+	supply_conversion_value = REFINERYEXPORT_VALUE_NO
+	industrial_use = REFINERYEXPORT_REASON_BIOHAZARD
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))

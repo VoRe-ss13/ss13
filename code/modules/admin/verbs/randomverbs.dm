@@ -142,7 +142,7 @@ GLOBAL_VAR_INIT(global_vantag_hud, 0)
 	if(!M)
 		return
 
-	var/msg = tgui_input_text(usr, "Message:", text("Enter the text you wish to appear to your target:"))
+	var/msg = tgui_input_text(usr, "Message:", text("Enter the text you wish to appear to your target:"), encode = FALSE)
 	if(msg && !(msg[1] == "<" && msg[length(msg)] == ">")) //You can use HTML but only if the whole thing is HTML. Tries to prevent admin 'accidents'.
 		msg = sanitize(msg)
 

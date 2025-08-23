@@ -231,10 +231,17 @@ GLOBAL_VAR_INIT(floorIsLava, 0)
 		if(!(L.flags & INNATE))
 			if(!f) body += " | "
 			else f = 0
+<<<<<<< HEAD
 			if(L in M.languages)
 				body += "<a href='byond://?src=\ref[src];[HrefToken()];toglang=\ref[M];lang=[html_encode(k)]' style='color:#006600'>[k]</a>"
 			else
 				body += "<a href='byond://?src=\ref[src];[HrefToken()];toglang=\ref[M];lang=[html_encode(k)]' style='color:#ff0000'>[k]</a>"
+=======
+			if(L in player.languages)
+				body += "<a href='byond://?_src_=holder;[HrefToken()];toglang=\ref[player];lang=[html_encode(k)]'>[span_green(k)]</a>"
+			else
+				body += "<a href='byond://?_src_=holder;[HrefToken()];toglang=\ref[player];lang=[html_encode(k)]'>[span_red(k)]</a>"
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 
 	body += {"<br>
 		</body></html>

@@ -753,3 +753,17 @@
 	taste_description = "a mixture of thick, sweet, salty, salty and spicy flavours that all blend together to not be very nice at all"
 	reagent_state = LIQUID
 	color = "#e8e2b0"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
+
+/datum/reagent/nutriment/pitcher_nectar //Pitcher plant reagent, doubles plant growth speed.
+	name = REAGENT_ID_PITCHERNECTAR
+	id = REAGENT_ID_PITCHERNECTAR
+	description = "An odd, sticky slurry which promotes rapid plant growth."
+	taste_description = "pineapple"
+	reagent_state = LIQUID
+	nutriment_factor = 60
+	color = "#a839a2"
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
