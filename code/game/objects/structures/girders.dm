@@ -248,7 +248,11 @@
 
 	to_chat(user, span_notice("You begin adding the plating..."))
 
+<<<<<<< HEAD
 	if(!do_after(user,40) || !S.use(amount_to_use))
+=======
+	if(!do_after(user,time_to_reinforce) || !S.use(amount_to_use))
+>>>>>>> f85a202d80 ([MIRROR] Refactors do_after w/ TG's do_after (#11486))
 		return TRUE //once we've gotten this far don't call parent attackby()
 
 	if(anchored)

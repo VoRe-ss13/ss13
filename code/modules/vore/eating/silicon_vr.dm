@@ -73,6 +73,7 @@
 
 	hologram.visible_message("[hologram] starts engulfing [prey] in hardlight holograms!")
 	to_chat(src, span_vnotice("You begin engulfing [prey] in hardlight holograms.")) //Can't be part of the above, because the above is from the hologram.
+<<<<<<< HEAD
 	if(do_after(user=eyeobj,delay=50,target=prey,needhand=0) && holo && hologram && !hologram.bellied) //Didn't move and still projecting and effect exists and no other bellied people
 		hologram.get_prey(prey, src)
 
@@ -84,6 +85,10 @@
 
 	A.examine(src)
 */
+=======
+	if(do_after(user = eyeobj,delay = 50,target = prey) && holo && hologram) //Didn't move and still projecting and effect exists and no other bellied people
+		feed_grabbed_to_self(src, prey)
+>>>>>>> f85a202d80 ([MIRROR] Refactors do_after w/ TG's do_after (#11486))
 
 /mob/living/AIShiftClick(var/mob/user) //Shift-click as AI overridden on mobs to examine.
 	if(user.client)
