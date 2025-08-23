@@ -1,4 +1,5 @@
 //Vore/kink reagents go here.
+<<<<<<< HEAD
 
 /datum/reagent/aphrodisiac
 	name = REAGENT_APHRODISIAC
@@ -15,6 +16,8 @@
 	if(prob(3))
 		M.emote(pick("blush", "moan", "moan", "giggle"))
 
+=======
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 /datum/reagent/sorbitol
 	name = REAGENT_SORBITOL
 	id = REAGENT_ID_SORBITOL

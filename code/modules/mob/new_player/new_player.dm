@@ -46,7 +46,11 @@
 		. += "Time To Start: Server Initializing"
 
 	else if(SSticker.current_state == GAME_STATE_PREGAME)
+<<<<<<< HEAD
 		. += "Time To Start: [round(SSticker.pregame_timeleft,1)][GLOB.round_progressing ? "" : " (DELAYED)"]"
+=======
+		. += "Time To Start: [round(SSticker.timeLeft / 10, 1)][GLOB.round_progressing ? "" : " (DELAYED)"]"
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 		. += "Players: [totalPlayers]"
 		. += "Players Ready: [totalPlayersReady]"
 		totalPlayers = 0

@@ -1962,7 +1962,7 @@
 					to_chat(usr, span_filter_adminlog("Failed to remove language '[lang2toggle]' from \the [M]!"))
 			else
 				if(!M.add_language(lang2toggle))
-					to_chat(usr, span_filter_adminlog("Failed to add language '[lang2toggle]' from \the [M]!"))
+					to_chat(usr, span_filter_adminlog("Failed to add language '[lang2toggle]' to \the [M]!"))
 
 			show_player_panel(M)
 
