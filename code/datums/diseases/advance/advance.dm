@@ -297,7 +297,6 @@ GLOBAL_LIST_INIT(advance_cures, list(
 		var/s = safepick(symptoms)
 		if(s)
 			NeuterSymptom(s)
-			Refresh(TRUE)
 
 // Name the disease.
 /datum/disease/advance/proc/AssignName(new_name = "Unknown")
