@@ -131,6 +131,7 @@
 		src.visible_message(span_red("\The [src] moves a little!"))
 		to_chat(user, span_red("You throw yourself against the inside of \the [src]!"))
 
+<<<<<<< HEAD
 //Mask
 /obj/item/clothing/mask
 	name = "mask"
@@ -188,6 +189,8 @@
 			sensor_mode = pick(0,1,2,3)
 			log_debug("Invalid switch for suit sensors, defaulting to random. [sensorpref] chosen")
 
+=======
+>>>>>>> 61c81032dc ([MIRROR] clothing _vr dmi cleanup: undersuits [IDB IGNORE] (#11506))
 /obj/item/clothing/head
 	sprite_sheets = list(
 		SPECIES_TESHARI = 'icons/inventory/head/mob_teshari.dmi',
