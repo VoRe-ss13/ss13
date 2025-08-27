@@ -14,11 +14,27 @@
 
 	var/datum/changeling/changeling = changeling_power(40)
 	if(!changeling)
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/transform_sting.dm
 		return 0
 
 	var/list/names = list()
 	for(var/datum/dna/DNA in changeling.absorbed_dna)
 		names += "[DNA.real_name]"
+=======
+		return FALSE
+
+	var/list/names = list()
+	for(var/datum/absorbed_dna/DNA in changeling.absorbed_dna)
+		names += "[DNA.name]"
+	if(!LAZYLEN(names))
+		to_chat(src, "We have no DNA to select from!)")
+		return FALSE
+	var/S
+	if(LAZYLEN(names) > 1)
+		tgui_input_list(src, "Select the target DNA:", "Target DNA", names)
+	else
+		S = names[1]
+>>>>>>> 398539e00a ([MIRROR] clears up debugs (#11507)):code/datums/components/antags/changeling/powers/transform_sting.dm
 
 	var/S = tgui_input_list(src, "Select the target DNA:", "Target DNA", names)
 	if(!S)
@@ -30,7 +46,11 @@
 
 	var/mob/living/carbon/T = changeling_sting(40,/mob/proc/changeling_transformation_sting)
 	if(!T)
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/transform_sting.dm
 		return 0
+=======
+		return FALSE
+>>>>>>> 398539e00a ([MIRROR] clears up debugs (#11507)):code/datums/components/antags/changeling/powers/transform_sting.dm
 	if((HUSK in T.mutations) || (!ishuman(T) && !issmall(T)))
 		to_chat(src, span_warning("Our sting appears ineffective against its DNA."))
 		return 0
