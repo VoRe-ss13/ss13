@@ -29,6 +29,28 @@
 	return incoming
 
 /obj/machinery/bodyscanner/update_icon()
+<<<<<<< HEAD
+=======
+	cut_overlays()
+
+	if(!occupant)
+		icon_state = "scanner_open"
+		set_light(0)
+		if(console)
+			console.update_icon(0)
+		return
+
+	// base image
+	icon_state = "new_scanner_off"
+
+	// Determine gradient state
+	var/state
+	var/scan = TRUE
+	var/h_ratio = occupant.health / occupant.getMaxHealth()
+	if(console)
+		console.update_icon(h_ratio)
+
+>>>>>>> 9a892f2bda ([MIRROR] Fixes the body scanner console light  (#11513))
 	if(stat & (NOPOWER|BROKEN))
 		icon_state = "scanner_off"
 		set_light(0)
