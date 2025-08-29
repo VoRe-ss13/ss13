@@ -26,6 +26,7 @@
 		if (!islist)
 			type = D.type
 
+<<<<<<< HEAD
 		if(istype(D, /atom))
 			var/atom/AT = D
 			if(AT.icon && AT.icon_state)
@@ -65,6 +66,18 @@
 				// "Show VV To Player" = "?_src_=vars;[HrefToken()];[VV_HK_EXPOSE]=TRUE;target=[refid]" // TODO - Not yet implemented for lists
 				)
 			autoconvert_dropdown = TRUE
+=======
+	var/cord_line
+	if(isatom(thing))
+		var/atom/AT = thing
+		cord_line = "<A href='byond://?_src_=holder;[HrefToken()];jumpto=\ref[thing]'>x:[AT.x] y:[AT.y] z:[AT.z]</A> "
+		if(use_gfi)
+			sprite = getFlatIcon(thing)
+			if(!sprite)
+				no_icon = TRUE
+		else if(AT.icon && AT.icon_state)
+			sprite = new /icon(AT.icon, AT.icon_state)
+>>>>>>> a272557ccd ([MIRROR] sane stacks (#11533))
 		else
 			dropdownoptions = D.vv_get_dropdown()
 		var/list/dropdownoptions_html = list()
@@ -260,7 +273,17 @@
 				<tr>
 					<td width='20%'>
 						<div align='center'>
+<<<<<<< HEAD
 							<b>Search:</b>
+=======
+							<b><font size='1'>[formatted_type]</font></b>
+							<br><b><font size='1'>[ref_line]</font></b>
+							<span id='marked'>[marked_line]</span>
+							<span id='tagged'>[tagged_line]</span>
+							<span id='varedited'>[varedited_line]</span>
+							<span id='deleted'>[deleted_line]</span>
+							<br><font size='1'>[cord_line]</font>
+>>>>>>> a272557ccd ([MIRROR] sane stacks (#11533))
 						</div>
 					</td>
 					<td width='80%'>
