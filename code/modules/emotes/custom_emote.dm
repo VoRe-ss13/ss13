@@ -65,6 +65,17 @@
 /mob/proc/build_the_emote(m_type, message, input, range, runemessage)
 	if(client)
 		message = span_emote(span_bold("[src]") + " [input]")
+<<<<<<< HEAD
+=======
+		if(src.absorbed && isbelly(src.loc))
+			var/obj/belly/B = src.loc
+			if(B.absorbedrename_enabled)
+				var/formatted_name = B.absorbedrename_name
+				formatted_name = replacetext(formatted_name,"%pred", B.owner)
+				formatted_name = replacetext(formatted_name,"%belly", B.get_belly_name())
+				formatted_name = replacetext(formatted_name,"%prey", name)
+				message = span_emote(span_bold("[formatted_name]") + " [input]")
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 	else
 		message = span_npc_emote(span_bold("[src]") + " [input]")
 

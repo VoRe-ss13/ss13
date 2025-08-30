@@ -193,7 +193,7 @@ GLOBAL_LIST_INIT(vore_words_snake, list("snake","serpent","reptilian","noodle","
 	else
 		. = "[message]"
 
-	. = replacetext(., "%belly", lowertext(name))
+	. = replacetext(., "%belly", get_belly_name())
 	. = replacetext(., "%pred", owner)
 	. = replacetext(., "%prey", prey)
 
@@ -417,16 +417,23 @@ GLOBAL_LIST_INIT(vore_words_snake, list("snake","serpent","reptilian","noodle","
 		raw_list = splittext(html_encode(raw_text), delim)
 	else
 		raw_list = list(raw_text)
+<<<<<<< HEAD
 	for(var/i = 1, i <= raw_list.len, i++)
+=======
+
+	for(var/i = 1, i <= LAZYLEN(raw_list), i++)
+		raw_list[i] = html_encode(raw_list[i])
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 		if(!length(raw_list[i]))
 			raw_list.Cut(i, i + 1)
 			i--
-	if(raw_list.len > 10)
+
+	if(LAZYLEN(raw_list) > 10)
 		raw_list.Cut(11)
 		log_debug("[owner] tried to set [lowertext(name)] with 11+ messages")
 
 	var/realIndex = 0
-	for(var/i = 1, i <= raw_list.len, i++)
+	for(var/i = 1, i <= LAZYLEN(raw_list), i++)
 		realIndex++
 		raw_list[i] = readd_quotes(raw_list[i])
 		//Also fix % sign for var replacement
@@ -439,7 +446,12 @@ GLOBAL_LIST_INIT(vore_words_snake, list("snake","serpent","reptilian","noodle","
 			raw_list.Cut(i, i + 1)
 			i--
 
-	ASSERT(raw_list.len <= 10) //Sanity
+	var/final_length = LAZYLEN(raw_list)
+	if(!final_length && !(type in OPTIONAL_BELLY_MESSSAGES))
+		to_chat(owner, span_warning("At least one message needs to be set for: [type]"))
+		return
+
+	ASSERT(final_length <= 10) //Sanity
 
 	switch(type)
 		if(STRUGGLE_OUTSIDE)
