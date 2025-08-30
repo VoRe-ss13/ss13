@@ -254,7 +254,7 @@
 	desc = "Soft substance produced by bees. Used to make candles."
 	icon = 'icons/obj/beekeeping.dmi'
 	icon_state = "wax"
-	default_type = "wax"
+	default_type = MAT_WAX
 	pass_color = TRUE
 	strict_color_stacking = TRUE
 
@@ -263,7 +263,7 @@
 	recipes = wax_recipes
 
 /datum/material/wax
-	name = "wax"
+	name = MAT_WAX
 	stack_type = /obj/item/stack/material/wax
 	icon_colour = "#fff343"
 	melting_point = T0C+300
