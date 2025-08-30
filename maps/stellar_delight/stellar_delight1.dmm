@@ -1419,6 +1419,10 @@
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 6
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
 "cJ" = (
@@ -3109,6 +3113,9 @@
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 5
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
 "fT" = (
@@ -3843,6 +3850,9 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
 "hu" = (
@@ -4275,6 +4285,12 @@
 /obj/random/snack,
 /turf/simulated/floor,
 /area/maintenance/security_port)
+"ij" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/stellardelight/deck1/aft)
 "ik" = (
 /obj/structure/cable/white{
 	icon_state = "0-4"
@@ -5099,12 +5115,12 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/assembly/robotics)
 "jR" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
+/obj/structure/disposalpipe/junction{
+	dir = 1;
+	icon_state = "pipe-j2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -5120,6 +5136,9 @@
 	dir = 1
 	},
 /obj/effect/landmark/vines,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
 "jU" = (
@@ -6437,6 +6456,9 @@
 /obj/machinery/door/firedoor/glass/hidden/steel{
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
 "mJ" = (
@@ -7209,6 +7231,9 @@
 "os" = (
 /obj/structure/sign/department/miner_dock{
 	pixel_y = -32
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
@@ -8739,6 +8764,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
 "rH" = (
@@ -9223,6 +9251,7 @@
 	name = "Shuttle Bay";
 	stripe_color = "#5a19a8"
 	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/stellardelight/deck1/exploration)
 "sD" = (
@@ -11710,6 +11739,7 @@
 /area/stellardelight/deck1/starboard)
 "yj" = (
 /obj/machinery/atmospherics/unary/vent_pump/on,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/milspec,
 /area/stellardelight/deck1/exploration)
 "yk" = (
@@ -13999,7 +14029,10 @@
 /turf/simulated/floor/carpet/purcarpet,
 /area/stellardelight/deck1/dorms/dorm3)
 "Dd" = (
-/obj/structure/disposalpipe/segment,
+/obj/structure/disposalpipe/junction{
+	dir = 1;
+	icon_state = "pipe-j2"
+	},
 /obj/effect/floor_decal/milspec/color/emerald/half{
 	dir = 6
 	},
@@ -17547,6 +17580,9 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
 "KY" = (
@@ -18985,6 +19021,9 @@
 	dir = 9
 	},
 /obj/effect/floor_decal/milspec/color/emerald/half,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
 "Ob" = (
@@ -19063,6 +19102,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
@@ -21251,6 +21293,9 @@
 /obj/structure/sign/directions/shuttle_bay{
 	pixel_y = -32
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
 "SP" = (
@@ -22000,6 +22045,9 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals3{
 	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
@@ -23711,6 +23759,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
 "XG" = (
@@ -23859,6 +23910,9 @@
 "XY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/stellardelight/deck1/aft)
@@ -34034,7 +34088,7 @@ RT
 CG
 CG
 yO
-hg
+ij
 dl
 sR
 pV
@@ -34176,7 +34230,7 @@ pA
 hv
 CG
 ZB
-hg
+ij
 dl
 ZC
 YQ
@@ -34318,7 +34372,7 @@ ir
 ip
 CG
 cA
-hg
+ij
 dl
 Nm
 on
@@ -34886,7 +34940,7 @@ MM
 QO
 ta
 Ie
-hg
+ij
 gQ
 Ps
 Ps
@@ -35028,7 +35082,7 @@ VA
 qD
 qD
 sM
-hg
+ij
 gQ
 xD
 pw
@@ -35170,7 +35224,7 @@ Df
 zn
 qD
 lt
-hg
+ij
 gQ
 dO
 sZ
@@ -35312,7 +35366,7 @@ tv
 Ol
 qD
 YN
-hg
+ij
 gQ
 cQ
 gQ
@@ -35454,7 +35508,7 @@ yu
 EM
 qD
 bR
-hg
+ij
 gQ
 WP
 Ps
