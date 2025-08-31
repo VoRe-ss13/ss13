@@ -88,8 +88,11 @@
 				break
 		if(!new_belly && length(host.vore_organs) < BELLIES_MAX)
 			new_belly = new(host)
-			new_belly.name = belly_data["name"]
+			new_belly.name = html_encode(belly_data["name"])
 		if(!new_belly) continue
+
+		if(istext(belly_data["display_name"]))
+			new_belly.display_name = html_encode(belly_data["display_name"])
 
 		// Controls
 		if(istext(belly_data["mode"]))
@@ -424,6 +427,10 @@
 			var/new_emotes_unabsorb = sanitize(jointext(belly_data["emotes_unabsorb"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
 			if(new_emotes_unabsorb)
 				new_belly.set_messages(new_emotes_unabsorb,BELLY_MODE_UNABSORB, limit = MAX_MESSAGE_LEN / 4)
+
+		if(isnum(belly_data["displayed_message_flags"]))
+			new_belly.displayed_message_flags = NONE
+			new_belly.toggle_displayed_message_flags(belly_data["displayed_message_flags"])
 
 		// Options
 		if(isnum(belly_data["can_taste"]))

@@ -1,4 +1,9 @@
-import { ItemModeSpan, ModeSpan } from './constants';
+import {
+  ItemModeSpan,
+  ModeSpan,
+  STRUGGLE_OUTSIDE_ABSORBED_MESSAGE,
+  STRUGGLE_OUTSIDE_MESSAGE,
+} from './constants';
 import type { Belly } from './types';
 import {
   GetAddons,
@@ -12,6 +17,7 @@ export const generateBellyString = (belly: Belly, index: number) => {
     // General Information
     name,
     desc,
+    display_name,
     message_mode,
     absorbed_desc,
     vore_verb,
@@ -96,6 +102,7 @@ export const generateBellyString = (belly: Belly, index: number) => {
     examine_messages_absorbed,
     trash_eater_in,
     trash_eater_out,
+    displayed_message_flags,
     // emote_list,
     emotes_digest,
     emotes_hold,
@@ -254,6 +261,7 @@ export const generateBellyString = (belly: Belly, index: number) => {
   result += '<div role="messagesTabpanel">'; // Start Div messagesTabpanel
   result += '<div class="row"><div class="col-4">';
   result += '<div class="list-group" id="messagesList" role="messagesTablist">';
+<<<<<<< HEAD
   result += '<a class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#escapeAttemptMessagesOwner' + index + '" role="tab">Escape Attempt Messages (Owner)</a>';
   result += '<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeAttemptMessagesPrey' + index + '" role="tab">Escape Attempt Messages (Prey)</a>';
   result += '<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeMessagesOwner' + index + '" role="tab">Escape Message (Owner)</a>';
@@ -293,6 +301,55 @@ export const generateBellyString = (belly: Belly, index: number) => {
   result += '<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#examineMessagesAbsorbed' + index + '" role="tab">Examine Messages (Absorbed)</a>';
   result += '<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#trash_eater_in' + index + '" role="tab">Trash Eater Ingest Messages</a>';
   result += '<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#trash_eater_out' + index + '" role="tab">Item Expel Messages</a>';
+=======
+  result += `<a class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#escapeAttemptMessagesOwner${index}" role="tab">Escape Attempt Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeAttemptMessagesPrey${index}" role="tab">Escape Attempt Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeMessagesOwner${index}" role="tab">Escape Message (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeMessagesPrey${index}" role="tab">Escape Message (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeMessagesOutside${index}" role="tab">Escape Message (Outside)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeItemMessagesOwner${index}" role="tab">Escape Item Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeItemMessagesPrey${index}" role="tab">Escape Item Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeItemMessagesOutside${index}" role="tab">Escape Item Messages (Outside)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeFailMessagesOwner${index}" role="tab">Escape Fail Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#esccapeFailMessagesPrey${index}" role="tab">Escape Fail Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeAttemptAbsorbedMessagesOwner${index}" role="tab">Escape Attempt Absorbed Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeAttemptAbsorbedMessagesPrey${index}" role="tab">Escape Attempt Absorbed Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeAbsorbedMessagesOwner${index}" role="tab">Escape Absorbed Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeAbsorbedMessagesPrey${index}" role="tab">Escape Absorbed Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeAbsorbedMessagesOutside${index}" role="tab">Escape Absorbed Messages (Outside)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeFailAbsorbedMessagesOwner${index}" role="tab">Escape Fail Absorbed Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeFailAbsorbedMessagesPrey${index}" role="tab">Escape Fail Absorbed Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#primaryTransferMessagesOwner${index}" role="tab">Primary Transfer Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#primaryTransferMessagesPrey${index}" role="tab">Primary Transfer Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#secondaryTransferMessagesOwner${index}" role="tab">Secondary Transfer Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#secondaryTransferMessagesPrey${index}" role="tab">Secondary Transfer Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#digestChanceMessagesOwner${index}" role="tab">Digest Chance Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#digestChanceMessagesPrey${index}" role="tab">Digest Chance Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#absorbChanceMessagesOwner${index}" role="tab">Absorb Chance Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#absorbChanceMessagesPrey${index}" role="tab">Absorb Chance Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#struggleMessagesOutside${index}" role="tab">Struggle Messages (Outside) (${
+    displayed_message_flags & STRUGGLE_OUTSIDE_MESSAGE
+      ? '<span style="color: green;">On'
+      : '<span style="color: red;">Off'
+  }</span>)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#struggleMessagesInside${index}" role="tab">Struggle Messages (Inside)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#absorbedStruggleOutside${index}" role="tab">Absorbed Struggle Messages (Outside) (${
+    displayed_message_flags & STRUGGLE_OUTSIDE_ABSORBED_MESSAGE
+      ? '<span style="color: green;">On'
+      : '<span style="color: red;">Off'
+  }</span>)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#absorbedStruggleInside${index}" role="tab">Absorbed Struggle Messages (Inside)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#digestMessagesOwner${index}" role="tab">Digest Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#digestMessagesPrey${index}" role="tab">Digest Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#absorbMessagesOwner${index}" role="tab">Absorb Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#absorbMessagesPrey${index}" role="tab">Absorb Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#unabsorbMessagesOwner${index}" role="tab">Unabsorb Messages (Owner)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#unabsorbMessagesPrey${index}" role="tab">Unabsorb Messages (Prey)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#examineMessages${index}" role="tab">Examine Messages</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#examineMessagesAbsorbed${index}" role="tab">Examine Messages (Absorbed)</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#trash_eater_in${index}" role="tab">Trash Eater Ingest Messages</a>`;
+  result += `<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#trash_eater_out${index}" role="tab">Item Expel Messages</a>`;
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
   result += '</div></div>';
 
   result += '<div class="col-8">';
@@ -488,7 +545,6 @@ export const generateBellyString = (belly: Belly, index: number) => {
   absorbed_struggle_messages_outside?.forEach((msg) => {
     result += msg + '<br>';
   });
-  result += '</div>';
 
   result += '<div class="tab-pane fade" id="absorbedStruggleInside' + index + '" role="messagesTabpanel">';
   absorbed_struggle_messages_inside?.forEach((msg) => {

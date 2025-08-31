@@ -83,4 +83,29 @@
 										type == SECONDARY_AUTO_TRANSFER_OWNER || type == DIGEST_CHANCE_PREY || type == DIGEST_CHANCE_OWNER || type == ABSORB_CHANCE_PREY || type == ABSORB_CHANCE_OWNER || type == DIGEST_OWNER ||\
 										type == DIGEST_PREY || type == ABSORB_OWNER || type == ABSORB_PREY || type == UNABSORBS_OWNER || type == UNABSORBS_PREY || type == EXAMINES || type == EXAMINES_ABSORBED ||\
 										type == BELLY_MODE_DIGEST || type == BELLY_MODE_HOLD || type == BELLY_MODE_HOLD_ABSORB || type == BELLY_MODE_ABSORB || type == BELLY_MODE_HEAL || type == BELLY_MODE_DRAIN ||\
+<<<<<<< HEAD
 										type == BELLY_MODE_STEAL || type == BELLY_MODE_EGG || type == BELLY_MODE_SHRINK || type == BELLY_MODE_GROW || type == BELLY_MODE_UNABSORB || type == BELLY_TRASH_EATER_IN || type==BELLY_TRASH_EATER_OUT)
+=======
+										type == BELLY_MODE_STEAL || type == BELLY_MODE_EGG || type == BELLY_MODE_SHRINK || type == BELLY_MODE_GROW || type == BELLY_MODE_UNABSORB || type == BELLY_TRASH_EATER_IN || type==BELLY_TRASH_EATER_OUT ||\
+										type == BELLY_LIQUID_MESSAGE1 || type == BELLY_LIQUID_MESSAGE2 || type == BELLY_LIQUID_MESSAGE3 || type == BELLY_LIQUID_MESSAGE4 || type == BELLY_LIQUID_MESSAGE5)
+
+#define OPTIONAL_BELLY_MESSSAGES list(EXAMINES, EXAMINES_ABSORBED, BELLY_MODE_DIGEST, BELLY_MODE_HOLD, BELLY_MODE_HOLD_ABSORB, BELLY_MODE_ABSORB, BELLY_MODE_HEAL, BELLY_MODE_DRAIN, BELLY_MODE_STEAL, BELLY_MODE_EGG, BELLY_MODE_SHRINK, BELLY_MODE_GROW, BELLY_MODE_UNABSORB)
+
+// Soulcatcher Message Options
+#define SC_INTERIOR_MESSAGE "sc_int"
+#define SC_CAPTURE_MEESAGE "sc_cap"
+#define SC_TRANSIT_MESSAGE "sc_transit"
+#define SC_RELEASE_MESSAGE "sc_rel"
+#define SC_TRANSFERE_MESSAGE "sc_transfer"
+#define SC_DELETE_MESSAGE "sc_del"
+
+// General Message Options
+#define TASTE_FLAVOR "setflavor"
+#define SMELL_FLAVOR "setsmell"
+
+// General Examine Messages
+#define GENERAL_EXAMINE_NUTRI "en"
+#define GENERAL_EXAMINE_WEIGHT "ew"
+
+#define VPPREF_MESSAGE_SANITY(type) ASSERT(type == GENERAL_EXAMINE_NUTRI || type == GENERAL_EXAMINE_WEIGHT)
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))

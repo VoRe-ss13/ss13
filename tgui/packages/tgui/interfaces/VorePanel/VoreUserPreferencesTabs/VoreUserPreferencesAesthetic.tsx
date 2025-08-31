@@ -9,8 +9,37 @@ export const VoreUserPreferencesAesthetic = (props: {
   selected: selectedData | null;
   preferences: localPrefs;
 }) => {
+<<<<<<< HEAD
   const { act } = useBackend();
   const { belly_rub_target, selected, preferences } = props;
+=======
+  const {
+    editMode,
+    persist_edit_mode,
+    toggleEditMode,
+    active_belly,
+    belly_rub_target,
+    our_bellies,
+    vore_sprite_color,
+    vore_sprite_multiply,
+    vore_icon_options,
+    aestethicMessages,
+  } = props;
+
+  const sanitizeCorruption = fixCorruptedData(aestethicMessages.active_message);
+
+  const getBellies = our_bellies.map((belly) => {
+    return belly.display_name ? belly.display_name : belly.name;
+  });
+
+  const locationNames = [...getBellies, 'Current Selected'];
+
+  const capitalizedName = active_belly && capitalize(active_belly);
+
+  const possibleIconOptions = vore_icon_options.filter(
+    (entry) => !!vore_sprite_color[entry],
+  );
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 
   return (
     <Section title="Aesthetic Preferences">

@@ -218,8 +218,13 @@
 		var/formatted_message
 		var/raw_message = pick(fullness1_messages)
 
+<<<<<<< HEAD
 		formatted_message = replacetext(raw_message,"%belly",lowertext(name))
 		formatted_message = replacetext(formatted_message,"%pred",owner)
+=======
+	formatted_message = replacetext(raw_message,"%belly", get_belly_name())
+	formatted_message = replacetext(formatted_message, "%pred", owner)
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 
 		return(span_red("[formatted_message]<BR>"))
 
@@ -228,8 +233,13 @@
 		var/formatted_message
 		var/raw_message = pick(fullness2_messages)
 
+<<<<<<< HEAD
 		formatted_message = replacetext(raw_message,"%belly",lowertext(name))
 		formatted_message = replacetext(formatted_message,"%pred",owner)
+=======
+	formatted_message = replacetext(raw_message,"%belly", get_belly_name())
+	formatted_message = replacetext(formatted_message, "%pred", owner)
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 
 		return(span_red("[formatted_message]<BR>"))
 
@@ -238,8 +248,13 @@
 		var/formatted_message
 		var/raw_message = pick(fullness3_messages)
 
+<<<<<<< HEAD
 		formatted_message = replacetext(raw_message,"%belly",lowertext(name))
 		formatted_message = replacetext(formatted_message,"%pred",owner)
+=======
+	formatted_message = replacetext(raw_message,"%belly", get_belly_name())
+	formatted_message = replacetext(formatted_message, "%pred", owner)
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 
 		return(span_red("[formatted_message]<BR>"))
 
@@ -248,8 +263,13 @@
 		var/formatted_message
 		var/raw_message = pick(fullness4_messages)
 
+<<<<<<< HEAD
 		formatted_message = replacetext(raw_message,"%belly",lowertext(name))
 		formatted_message = replacetext(formatted_message,"%pred",owner)
+=======
+	formatted_message = replacetext(raw_message,"%belly", get_belly_name())
+	formatted_message = replacetext(formatted_message, "%pred", owner)
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 
 		return(span_red("[formatted_message]<BR>"))
 
@@ -258,8 +278,13 @@
 		var/formatted_message
 		var/raw_message = pick(fullness5_messages)
 
+<<<<<<< HEAD
 		formatted_message = replacetext(raw_message,"%belly",lowertext(name))
 		formatted_message = replacetext(formatted_message,"%pred",owner)
+=======
+	formatted_message = replacetext(raw_message,"%belly", get_belly_name())
+	formatted_message = replacetext(formatted_message, "%pred", owner)
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 
 		return(span_red("[formatted_message]<BR>"))
 

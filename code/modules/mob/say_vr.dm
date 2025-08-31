@@ -76,6 +76,17 @@
 	if(input)
 		log_subtle(message,src)
 		message = span_emote_subtle(span_bold("[src]") + " " + span_italics("[input]"))
+<<<<<<< HEAD
+=======
+		if(src.absorbed && isbelly(src.loc))
+			var/obj/belly/B = src.loc
+			if(B.absorbedrename_enabled)
+				var/formatted_name = B.absorbedrename_name
+				formatted_name = replacetext(formatted_name,"%pred", B.owner)
+				formatted_name = replacetext(formatted_name,"%belly", B.get_belly_name())
+				formatted_name = replacetext(formatted_name,"%prey", name)
+				message = span_emote_subtle(span_bold("[formatted_name]") + " " + span_italics("[input]"))
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 		if(!(subtle_mode == "Adjacent Turfs (Default)"))
 			message = span_bold("(T) ") + message
 	else
@@ -292,7 +303,19 @@
 			f = TRUE
 	else if(M.absorbed && isbelly(M.loc))
 		pb = M.loc.loc
+<<<<<<< HEAD
 		to_chat(pb, span_psay("\The [M] thinks, \"[message]\""))	//To our pred if absorbed
+=======
+		var/obj/belly/B = M.loc
+		if(B.absorbedrename_enabled)
+			formatted_name = B.absorbedrename_name
+			formatted_name = replacetext(formatted_name,"%pred", B.owner)
+			formatted_name = replacetext(formatted_name,"%belly", B.get_belly_name())
+			formatted_name = replacetext(formatted_name,"%prey", "\The [M]")
+			to_chat(pb, span_psay("[formatted_name] thinks, \"[message]\""))
+		else
+			to_chat(pb, span_psay("\The [M] thinks, \"[message]\""))	//To our pred if absorbed
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 		if(pb.read_preference(/datum/preference/toggle/subtle_sounds))
 			if(voice_sounds_list)	//CHOMPEdit, changes subtle emote sound to use mob voice instead
 				pb << sound(pick(voice_sounds_list), volume = 25)
@@ -397,7 +420,19 @@
 
 	else if(M.absorbed && isbelly(M.loc))
 		pb = M.loc.loc
+<<<<<<< HEAD
 		to_chat(pb, span_pemote("\The [M] [message]"))	//To our pred if absorbed
+=======
+		var/obj/belly/B = M.loc
+		if(B.absorbedrename_enabled)
+			formatted_name = B.absorbedrename_name
+			formatted_name = replacetext(formatted_name,"%pred", B.owner)
+			formatted_name = replacetext(formatted_name,"%belly", B.get_belly_name())
+			formatted_name = replacetext(formatted_name,"%prey", "\The [M]")
+			to_chat(pb, span_pemote("[formatted_name] [message]"))
+		else
+			to_chat(pb, span_pemote("\The [M] [message]"))	//To our pred if absorbed
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 		if(pb.read_preference(/datum/preference/toggle/subtle_sounds))
 			if(voice_sounds_list)	//CHOMPEdit, changes subtle emote sound to use mob voice instead
 				pb << sound(pick(voice_sounds_list), volume = 25)

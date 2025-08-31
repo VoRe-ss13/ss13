@@ -105,6 +105,17 @@
 		return mind.changeling.mimicing
 	if(GetSpecialVoice())
 		return GetSpecialVoice()
+<<<<<<< HEAD
+=======
+	if(absorbed && isbelly(loc)) // If absorbed in a belly, check and apply absorbed rename if applicable.
+		var/obj/belly/B = loc
+		if(B.absorbedrename_enabled)
+			var/formatted_name = B.absorbedrename_name
+			formatted_name = replacetext(formatted_name,"%pred", B.owner)
+			formatted_name = replacetext(formatted_name,"%belly", B.get_belly_name())
+			formatted_name = replacetext(formatted_name,"%prey", name)
+			return formatted_name
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 	return real_name
 
 /mob/living/carbon/human/proc/SetSpecialVoice(var/new_voice)

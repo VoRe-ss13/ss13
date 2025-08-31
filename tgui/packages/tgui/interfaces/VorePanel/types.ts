@@ -52,6 +52,7 @@ export type contentData = {
 export type bellyData = {
   selected: BooleanLike;
   name: string;
+  display_name: string;
   ref: string;
   digest_mode: string;
   contents: number;
@@ -165,8 +166,31 @@ export type selectedData = {
   contents: contentData[];
   show_liq: BooleanLike;
   liq_interacts: liqInteractData;
+<<<<<<< HEAD
   show_liq_fullness: BooleanLike;
   liq_messages: liqMessageData;
+=======
+};
+
+export type siliconeBellyControls = {
+  silicon_belly_overlay_preference: string;
+  belly_sprite_option_shown: BooleanLike;
+  belly_sprite_to_affect: string;
+};
+
+export type selectedData = {
+  belly_name: string;
+  display_name: string;
+  belly_mode_data?: bellyModeData;
+  belly_description_data?: bellyDescriptionData;
+  belly_option_data?: bellyOptionData;
+  belly_sound_data?: bellySoundData;
+  belly_visual_data?: bellyVisualData;
+  belly_interaction_data?: bellyInteractionData;
+  contents?: contentData[] | null;
+  content_length: number;
+  belly_liquid_data?: bellyLiquidData;
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 };
 
 export type interactData = {
