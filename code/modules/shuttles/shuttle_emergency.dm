@@ -1,6 +1,11 @@
 // Formerly /datum/shuttle/ferry/emergency
 /datum/shuttle/autodock/ferry/emergency
 	category = /datum/shuttle/autodock/ferry/emergency
+<<<<<<< HEAD
+=======
+	var/frequency = AUTODOCK_FREQ // Why this frequency? BECAUSE! Thats what someone decided once.
+	var/datum/radio_frequency/radio_connection
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 /datum/shuttle/autodock/ferry/emergency/New()
 	..()
@@ -149,7 +154,7 @@
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 0)
 		return 0
 
-	if (!(access_heads in access))
+	if (!(ACCESS_HEADS in access))
 		src.visible_message("\The [src] buzzes, rejecting [ident].")
 		playsound(src, 'sound/machines/deniedbeep.ogg', 50, 0)
 		return 0

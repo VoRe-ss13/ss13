@@ -1,6 +1,6 @@
 /obj/machinery/computer/shuttle_control/multi/ert
 	name = "response shuttle control console"
-	req_access = list(access_cent_specops)
+	req_access = list(ACCESS_CENT_SPECOPS)
 	shuttle_tag = "Response Operations Shuttle"
 
 /datum/shuttle/autodock/multi/ert

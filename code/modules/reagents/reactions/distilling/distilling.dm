@@ -30,21 +30,74 @@
 	if(!istype(holder, /datum/reagents/distilling) || !istype(holder.my_atom, /obj/machinery/portable_atmospherics/powered/reagent_distillery))
 		return FALSE
 
+<<<<<<< HEAD
 	// Super special temperature check.
 	var/obj/machinery/portable_atmospherics/powered/reagent_distillery/RD = holder.my_atom
 	if(RD.current_temp < temp_range[1] || RD.current_temp > temp_range[2])
 		return FALSE
+=======
+	// return_air() will get the current turf for most things unless overriden to use a tank or such!
+	var/datum/gas_mixture/GM = holder.my_atom.return_air()
+	if(require_xgm_gas || rejects_xgm_gas || minimum_xgm_pressure || maximum_xgm_pressure)
+		if(!GM)
+			return
+		if(require_xgm_gas && GM.gas[require_xgm_gas] <= 10) // If have required gas to react
+			return
+		if(rejects_xgm_gas && GM.gas[rejects_xgm_gas] >= 1) // If blocked by a gas it doesn't like
+			return
+		if(minimum_xgm_pressure && GM.return_pressure() < minimum_xgm_pressure)
+			return
+		if(maximum_xgm_pressure && GM.return_pressure() > maximum_xgm_pressure)
+			return
+
+	// Special distilling conditions must be met, each object has different vars to meet it though.
+	if(istype(holder.my_atom,/obj/distilling_tester))
+		// Unit test needs some special handholding
+		var/obj/distilling_tester/distillery_tester = holder.my_atom
+		if(distillery_tester.current_temp < temp_range[1] || distillery_tester.current_temp > temp_range[2])
+			return FALSE
+	else if(istype(holder.my_atom,/obj/machinery/portable_atmospherics/powered/reagent_distillery))
+		// Super special temperature check.
+		var/obj/machinery/portable_atmospherics/powered/reagent_distillery/reagent_distillery = holder.my_atom
+		if(reagent_distillery.current_temp < temp_range[1] || reagent_distillery.current_temp > temp_range[2])
+			return FALSE
+	else if(istype(holder.my_atom, /obj/machinery/reagent_refinery/reactor))
+		// Check gas temp for refinery
+		if(!GM || GM.temperature < temp_range[1] || GM.temperature > temp_range[2])
+			return FALSE
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 	return ..()
 
 /*
 /decl/chemical_reaction/distilling/on_reaction(var/datum/reagents/holder, var/created_volume)
+<<<<<<< HEAD
 	if(istype(holder.my_atom, /obj/item/reagent_containers/glass/distilling))
 		var/obj/item/reagent_containers/glass/distilling/D = holder.my_atom
 		var/obj/machinery/portable_atmospherics/powered/reagent_distillery/RD = D.Master
 		RD.current_temp += temp_shift
 	return
 */
+=======
+	// Handle gas consumption
+	var/datum/gas_mixture/GM = holder.my_atom.return_air()
+	if(consumes_xgm_gas != 0 && GM)
+		GM.adjust_gas(require_xgm_gas,-consumes_xgm_gas, TRUE)
+
+	// Distilling can change gas temps, handle it here.
+	if(temp_shift != 0)
+		if(istype(holder.my_atom,/obj/distilling_tester))
+			return
+		// Special handling for this
+		if(istype(holder.my_atom,/obj/machinery/portable_atmospherics/powered/reagent_distillery))
+			var/obj/machinery/portable_atmospherics/powered/reagent_distillery/reagent_distillery = holder.my_atom
+			reagent_distillery.current_temp += temp_shift
+			return
+		// Change gas temps
+		if(!GM)
+			return
+		GM.add_thermal_energy(temp_shift * 1000)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 // Subtypes //
 

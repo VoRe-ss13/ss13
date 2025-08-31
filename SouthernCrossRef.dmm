@@ -48141,7 +48141,7 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay)
 "hEx" = (
-/obj/structure/closet/secure_closet/CMO,
+/obj/structure/closet/secure_closet/chief_medical_officer,
 /obj/machinery/ai_status_display{
 	pixel_x = -32
 	},
@@ -71601,7 +71601,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/aft)
 "lsu" = (
-/obj/structure/closet/secure_closet/RD,
+/obj/structure/closet/secure_closet/research_director,
 /obj/machinery/firealarm{
 	pixel_y = 24
 	},

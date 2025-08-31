@@ -1,11 +1,4 @@
 /*
-	Telekinesis
-
-	This needs more thinking out, but I might as well.
-*/
-var/const/tk_maxrange = 15
-
-/*
 	Telekinetic attack:
 
 	By default, emulate the user's unarmed attack
@@ -110,8 +103,13 @@ var/const/tk_maxrange = 15
 	var/d = get_dist(user, target)
 	if(focus)
 		d = max(d, get_dist(user, focus)) // whichever is further
+<<<<<<< HEAD
 	if(d > tk_maxrange)
 		to_chat(user, span_notice("Your mind won't reach that far."))
+=======
+	if(d > TK_MAXRANGE)
+		to_chat(user, TK_OUTRANGED_MESSAGE)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 		return
 
 	if(!focus)

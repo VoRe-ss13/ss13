@@ -221,8 +221,14 @@
 	if(!mutations.len) return
 	if((LASER in mutations) && a_intent == I_HURT)
 		LaserEyes(A) // moved into a proc below
+<<<<<<< HEAD
 	else if(TK in mutations)
 		if(get_dist(src, A) > tk_maxrange)
+=======
+	else if(has_telegrip())
+		if(get_dist(src, A) > TK_MAXRANGE)
+			to_chat(src, TK_OUTRANGED_MESSAGE)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 			return
 		A.attack_tk(src)
 /*
