@@ -10,7 +10,7 @@
 	secured = TRUE
 
 	var/code = 30
-	var/frequency = 1457
+	var/frequency = RSD_FREQ
 	var/delay = 0
 	var/airlock_wire = null
 	var/datum/wires/connected = null
@@ -164,7 +164,13 @@
 //CHOMPedit end
 
 /obj/item/assembly/signaler/Destroy()
+<<<<<<< HEAD
 	if(radio_controller)
 		radio_controller.remove_object(src,frequency)
 	frequency = 0
+=======
+	if(SSradio)
+		SSradio.remove_object(src,frequency)
+	frequency = ZERO_FREQ
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 	. = ..()

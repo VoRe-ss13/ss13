@@ -24,6 +24,7 @@
 	move_time = SHUTTLE_TRANSIT_DURATION_RETURN
 	move_direction = EAST
 
+<<<<<<< HEAD
 //////////////////////////////////////////////////////////////
 // Supply shuttle
 /datum/shuttle/autodock/ferry/supply/cargo
@@ -36,6 +37,12 @@
 	docking_controller_tag = "supply_shuttle"
 	flags = SHUTTLE_FLAGS_PROCESS|SHUTTLE_FLAGS_SUPPLY
 	move_direction = NORTH
+=======
+/obj/machinery/computer/shuttle_control/multi/mercenary
+	name = "vessel control console"
+	shuttle_tag = "Mercenary"
+	req_one_access = list(ACCESS_SYNDICATE)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 //////////////////////////////////////////////////////////////
 // Trade Ship
@@ -56,6 +63,7 @@
 	defer_initialisation = TRUE
 	move_direction = WEST
 
+<<<<<<< HEAD
 //////////////////////////////////////////////////////////////
 // Tether Shuttle
 /datum/shuttle/autodock/ferry/tether_backup
@@ -129,6 +137,23 @@
 	departure_message = "Attention. A unregistered vessel is now leaving Virgo-3B."
 	defer_initialisation = TRUE
 	move_direction = NORTH
+=======
+/obj/machinery/computer/shuttle_control/multi/specops
+	name = "vessel control console"
+	shuttle_tag = "NDV Phantom"
+	req_one_access = list(ACCESS_CENT_SPECOPS)
+
+/obj/machinery/computer/shuttle_control/multi/trade
+	name = "vessel control console"
+	shuttle_tag = "Trade"
+	req_one_access = list(ACCESS_TRADER)
+
+/obj/machinery/computer/shuttle_control/surface_mining_outpost
+	name = "surface mining outpost shuttle control console"
+	shuttle_tag = "Mining Outpost"
+	req_one_access = list(ACCESS_MINING)
+	ai_control = TRUE
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 //////////////////////////////////////////////////////////////
 // Skipjack
@@ -161,6 +186,7 @@
 	defer_initialisation = TRUE
 	move_direction = NORTH
 
+<<<<<<< HEAD
 //////////////////////////////////////////////////////////////
 // ERT Shuttle
 /datum/shuttle/autodock/multi/specialops
@@ -230,6 +256,12 @@
 	name = "Virgo Flyer control console"
 	shuttle_tag = "Virgo Flyer"
 	req_one_access = list(access_pilot)
+=======
+/obj/machinery/computer/shuttle_control/explore/excursion
+	name = "short jump console"
+	shuttle_tag = "Excursion Shuttle"
+	req_one_access = list(ACCESS_PILOT)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 /obj/effect/overmap/visitable/ship/landable/ccboat
 	name = "NTV Virgo Flyer"
@@ -239,6 +271,7 @@
 	shuttle = "Virgo Flyer"
 	known = TRUE
 
+<<<<<<< HEAD
 // A shuttle lateloader landmark
 /obj/effect/shuttle_landmark/shuttle_initializer/ccboat
 	name = "Central Command Shuttlepad"
@@ -247,6 +280,12 @@
 	landmark_tag = "cc_shuttlepad"
 	docking_controller = "cc_landing_pad"
 	shuttle_type = /datum/shuttle/autodock/overmap/ccboat
+=======
+/obj/machinery/computer/shuttle_control/explore/tourbus
+	name = "short jump console"
+	shuttle_tag = "Tour Bus"
+	req_one_access = list(ACCESS_PILOT)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 /datum/shuttle/autodock/overmap/ccboat
 	name = "Virgo Flyer"

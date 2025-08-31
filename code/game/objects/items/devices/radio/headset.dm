@@ -99,7 +99,11 @@
 
 
 			for(var/ch_name in channels)
+<<<<<<< HEAD
 				radio_controller.remove_object(src, radiochannels[ch_name])
+=======
+				SSradio.remove_object(src, GLOB.radiochannels[ch_name])
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 				secure_radio_connections[ch_name] = null
 
 
@@ -195,7 +199,11 @@
 		return
 
 	for (var/ch_name in channels)
+<<<<<<< HEAD
 		secure_radio_connections[ch_name] = radio_controller.add_object(src, radiochannels[ch_name],  RADIO_CHAT)
+=======
+		secure_radio_connections[ch_name] = SSradio.add_object(src, GLOB.radiochannels[ch_name],  RADIO_CHAT)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 	if(setDescription)
 		setupRadioDescription()

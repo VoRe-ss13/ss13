@@ -542,6 +542,7 @@
 /area/groundbase/mining/explored
 	icon_state = "blublacir"
 
+<<<<<<< HEAD
 // Exclude some more areas from the atmos leak event since its outside.
 /datum/event/atmos_leak/setup()
 	excluded |= /area/groundbase/level1/centsquare
@@ -574,3 +575,14 @@
 	excluded |= /area/groundbase/level3/sw/open
 	excluded |= /area/groundbase/level3/escapepad
 	..()
+=======
+/area/gb_mine/
+	ambience = list('sound/ambience/ambimine.ogg', 'sound/ambience/song_game.ogg')
+	base_turf = /turf/simulated/mineral/floor
+/area/gb_mine/unexplored
+	name = "Virgo 3c Underground"
+	icon_state = "unexplored"
+/area/gb_mine/explored
+	name = "Virgo 3c Underground"
+	icon_state = "explored"
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))

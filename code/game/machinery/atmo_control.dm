@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+#define SENSOR_PRESSURE		(1<<0)
+#define SENSOR_TEMPERATURE	(1<<1)
+#define SENSOR_O2			(1<<2)
+#define SENSOR_PHORON		(1<<3)
+#define SENSOR_N2			(1<<4)
+#define SENSOR_CO2			(1<<5)
+#define SENSOR_N2O			(1<<6)
+
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 /obj/machinery/air_sensor
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "gsensor1"
@@ -8,7 +19,7 @@
 	var/state = 0
 
 	var/id_tag
-	var/frequency = 1439
+	var/frequency = PUMPS_FREQ
 
 	var/on = 1
 	var/output = 3
@@ -74,12 +85,84 @@
 		radio_controller.remove_object(src,frequency)
 	. = ..()
 
+<<<<<<< HEAD
+=======
+/obj/machinery/air_sensor/attackby(obj/item/W, mob/user)
+	if(W.has_tool_quality(TOOL_WRENCH))
+		return wrench_act(user, W)
+
+	if(W.has_tool_quality(TOOL_MULTITOOL))
+		return multitool_act(user, W)
+
+	return ..()
+
+/obj/machinery/air_sensor/proc/wrench_act(var/mob/living/user, var/obj/item/tool/wrench/W)
+	playsound(src, W.usesound, 50, 1)
+	user.visible_message("[user] unfastens \the [src].", span_notice("You have unfastened \the [src]."), "You hear ratcheting.")
+	var/obj/item/pipe_gsensor/gsensor = new /obj/item/pipe_gsensor(loc)
+	gsensor.id_tag = id_tag
+	gsensor.output = output
+	qdel(src)
+	playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
+
+#define ONOFF_TOGGLE(flag) "\[[(output & flag) ? "YES" : "NO"]]"
+/obj/machinery/air_sensor/proc/multitool_act(mob/living/user, obj/item/multitool/tool)
+	var/list/options = list(
+		"Pressure: [ONOFF_TOGGLE(SENSOR_PRESSURE)]" = SENSOR_PRESSURE,
+		"Temperature: [ONOFF_TOGGLE(SENSOR_TEMPERATURE)]" = SENSOR_TEMPERATURE,
+		"Oxygen: [ONOFF_TOGGLE(SENSOR_O2)]" = SENSOR_O2,
+		"Toxins: [ONOFF_TOGGLE(SENSOR_PHORON)]" = SENSOR_PHORON,
+		"Nitrogen: [ONOFF_TOGGLE(SENSOR_N2)]" = SENSOR_N2,
+		"Carbon Dioxide: [ONOFF_TOGGLE(SENSOR_CO2)]" = SENSOR_CO2,
+		"Nitrous Oxide: [ONOFF_TOGGLE(SENSOR_N2O)]" = SENSOR_N2O,
+		"-SAVE TO BUFFER-" = "multitool"
+	)
+
+	var/answer = tgui_input_list(user, "[src] has an ID of \"[id_tag]\" and a frequency of [frequency]. What would you like to change?", "Options!", options)
+
+	if(!(src in view(5, user)))
+		return TRUE
+
+	if(answer in options) // Null will break us out
+		switch(options[answer])
+			if(SENSOR_PRESSURE)
+				output ^= SENSOR_PRESSURE
+			if(SENSOR_TEMPERATURE)
+				output ^= SENSOR_TEMPERATURE
+			if(SENSOR_O2)
+				output ^= SENSOR_O2
+			if(SENSOR_PHORON)
+				output ^= SENSOR_PHORON
+			if(SENSOR_N2)
+				output ^= SENSOR_N2
+			if(SENSOR_CO2)
+				output ^= SENSOR_CO2
+			if(SENSOR_N2O)
+				output ^= SENSOR_N2O
+			if("frequency")
+				var/new_frequency = tgui_input_number(user, "[src] has a frequency of [frequency]. What would you like it to be?", "[src] frequency", frequency, RADIO_HIGH_FREQ, RADIO_LOW_FREQ)
+				if(new_frequency)
+					new_frequency = sanitize_frequency(new_frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
+					set_frequency(new_frequency)
+			if("multitool")
+				id_tag = tgui_input_text(user, "Please insert an ID tag for [src], example 'burn_chamber'.", "Set ID Tag", id_tag, MAX_NAME_LEN, FALSE)
+				if(!id_tag || !Adjacent(user))
+					return
+
+				var/obj/item/multitool/M = tool
+				M.connectable = src
+				to_chat(user, span_notice("You save [src] into [M]'s buffer."))
+
+	return TRUE
+#undef ONOFF_TOGGLE
+
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 /obj/machinery/computer/general_air_control
 	icon_keyboard = "atmos_key"
 	icon_screen = "tank"
 	name = "Computer"
 	desc = "Control atmospheric systems, remotely."
-	var/frequency = 1439
+	var/frequency = PUMPS_FREQ
 	var/list/sensors = list()
 	var/list/sensor_information = list()
 	var/datum/radio_frequency/radio_connection
@@ -137,7 +220,13 @@
 
 /obj/machinery/computer/general_air_control/large_tank_control
 	icon = 'icons/obj/computer.dmi'
+<<<<<<< HEAD
 	frequency = 1441
+=======
+	frequency = PUBLIC_LOW_FREQ
+	name = "Large Tank Computer"
+	desc = "Controls various devices for managing a gas tank."
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 	var/input_tag
 	var/output_tag
 	var/list/input_info
@@ -236,7 +325,11 @@
 
 /obj/machinery/computer/general_air_control/supermatter_core
 	icon = 'icons/obj/computer.dmi'
+<<<<<<< HEAD
 	frequency = 1438
+=======
+	frequency = ENGINE_FREQ
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 	var/input_tag
 	var/output_tag
 	var/list/input_info
@@ -453,3 +546,14 @@
 
 			radio_connection.post_signal(src, signal, radio_filter = RADIO_ATMOSIA)
 			. = TRUE
+<<<<<<< HEAD
+=======
+
+#undef SENSOR_PRESSURE
+#undef SENSOR_TEMPERATURE
+#undef SENSOR_O2
+#undef SENSOR_PHORON
+#undef SENSOR_N2
+#undef SENSOR_CO2
+#undef SENSOR_N2O
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))

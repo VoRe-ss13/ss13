@@ -357,7 +357,7 @@
 	power_draw_idle = 5
 	power_draw_per_use = 40
 
-	var/frequency = 1457
+	var/frequency = RSD_FREQ
 	var/code = 30
 	var/datum/radio_frequency/radio_connection
 
@@ -368,9 +368,15 @@
 	addtimer(CALLBACK(src, PROC_REF(set_frequency), frequency), 40)
 
 /obj/item/integrated_circuit/input/signaler/Destroy()
+<<<<<<< HEAD
 	if(radio_controller)
 		radio_controller.remove_object(src,frequency)
 	frequency = 0
+=======
+	if(SSradio)
+		SSradio.remove_object(src,frequency)
+	frequency = ZERO_FREQ
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 	. = ..()
 
 /obj/item/integrated_circuit/input/signaler/on_data_written()
@@ -745,13 +751,13 @@
 	complexity = 9
 	inputs = list()
 	outputs = list(
-		"pressure"       = IC_PINTYPE_NUMBER,
-		"temperature" = IC_PINTYPE_NUMBER,
-		GAS_O2         = IC_PINTYPE_NUMBER,
-		GAS_N2          = IC_PINTYPE_NUMBER,
-		"carbon dioxide"           = IC_PINTYPE_NUMBER,
-		GAS_PHORON           = IC_PINTYPE_NUMBER,
-		"other"           = IC_PINTYPE_NUMBER
+		"pressure"		= IC_PINTYPE_NUMBER,
+		"temperature"	= IC_PINTYPE_NUMBER,
+		GAS_O2			= IC_PINTYPE_NUMBER,
+		GAS_N2			= IC_PINTYPE_NUMBER,
+		GAS_CO2			= IC_PINTYPE_NUMBER,
+		GAS_PHORON		= IC_PINTYPE_NUMBER,
+		"other"			= IC_PINTYPE_NUMBER
 	)
 	activators = list("scan" = IC_PINTYPE_PULSE_IN, "on scanned" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_RESEARCH

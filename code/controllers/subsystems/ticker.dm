@@ -65,11 +65,57 @@ var/global/datum/controller/subsystem/ticker/ticker
 
 /datum/controller/subsystem/ticker/fire(resumed = FALSE)
 	switch(current_state)
+<<<<<<< HEAD
 		if(GAME_STATE_INIT)
 			pregame_welcome()
+=======
+		if(GAME_STATE_STARTUP)
+			// if(Master.initializations_finished_with_no_players_logged_in) // We want to wait the full time after the startup finished
+			start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
+			for(var/client/C in GLOB.clients)
+				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
+			to_chat(world, span_boldnotice("Welcome to [station_name()]!"))
+			//for(var/channel_tag in CONFIG_GET(str_list/channel_announce_new_game))
+			//	send2chat(new /datum/tgs_message_content("New round starting on [SSmapping.current_map.map_name]!"), channel_tag)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 			current_state = GAME_STATE_PREGAME
 		if(GAME_STATE_PREGAME)
+<<<<<<< HEAD
 			pregame_tick()
+=======
+			//lobby stats for statpanels
+			if(isnull(timeLeft))
+				timeLeft = max(0,start_at - world.time)
+				to_chat(world, span_notice("Round starting in [round(timeLeft / 10)] Seonds!"))
+			totalPlayers = LAZYLEN(GLOB.new_player_list)
+			totalPlayersReady = 0
+			total_admins_ready = 0
+			for(var/mob/new_player/player as anything in GLOB.new_player_list)
+				if(player.ready == PLAYER_READY_TO_PLAY)
+					++totalPlayersReady
+					if(player.client?.holder)
+						++total_admins_ready
+
+			if(start_immediately)
+				timeLeft = 0
+
+			//countdown
+			if(timeLeft < 0)
+				return
+			timeLeft -= wait
+
+			//if(timeLeft <= 300 && !tipped)
+			//	send_tip_of_the_round(world, selected_tip)
+			//	tipped = TRUE
+
+			if(timeLeft <= 0)
+				SEND_SIGNAL(src, COMSIG_TICKER_ENTER_SETTING_UP)
+				current_state = GAME_STATE_SETTING_UP
+				Master.SetRunLevel(RUNLEVEL_SETUP)
+				if(start_immediately)
+					fire()
+
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 		if(GAME_STATE_SETTING_UP)
 			setup_tick()
 		if(GAME_STATE_PLAYING)

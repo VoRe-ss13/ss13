@@ -2,7 +2,11 @@
 
 Note that these have to be in the same /area that the controller is in for them to function.
 You still need to set the controller's "id_tag" to something unique.
+<<<<<<< HEAD
 Any frequency works, it's self-setting, but it seems like people have decided 1380 for airlocks so maybe set that on the controller too.
+=======
+Any frequency works, it's self-setting, but it seems like people have decided AUTODOCK_FREQ for airlocks so maybe set that on the controller too.
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 */
 
