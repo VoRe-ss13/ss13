@@ -183,8 +183,13 @@
 /mob/living/simple_mob/animal/space/carp/large/huge
 	name = "great white carp"
 	desc = "A very rare breed of carp- and a very aggressive one."
+<<<<<<< HEAD
 	icon = 'icons/mob/64x64.dmi'
 	icon_dead = "megacarp_dead"
+=======
+	icon = 'icons/mob/vore64x64.dmi'
+	icon_dead = "megacarp-dead"
+>>>>>>> b2e77954f4 ([MIRROR] Fixes mega carp turning into failsnek on death (#11553))
 	icon_living = "megacarp"
 	icon_state = "megacarp"
 	vore_icons = FALSE
