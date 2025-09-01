@@ -4,10 +4,14 @@
   "version": "1.0.0",
   "dependencies": {
     "common": "workspace:*",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "tgui": "workspace:*",
+<<<<<<< HEAD
     "tgui-core": "^3.2.0"
+=======
+    "tgui-core": "^5.2.0"
+>>>>>>> 7fe1535ad2 ([MIRROR] tgui core 5.2.0 (#11559))
   },
   "devDependencies": {
     "@types/react": "^19.1.0",

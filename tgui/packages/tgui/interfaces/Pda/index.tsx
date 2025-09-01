@@ -65,6 +65,8 @@ export const Pda = (props) => {
 
   const { app, owner, useRetro } = data;
 
+  const [settingsMode, setSettingsMode] = useState<BooleanLike>(false);
+
   if (!owner) {
     return (
       <Window>
@@ -79,12 +81,15 @@ export const Pda = (props) => {
 
   const App = getPdaApp(app.template);
 
+<<<<<<< HEAD
   const [settingsMode, setSettingsMode] = useState<BooleanLike>(false);
 
   function handleSettingsMode(value: BooleanLike) {
     setSettingsMode(value);
   }
 
+=======
+>>>>>>> 7fe1535ad2 ([MIRROR] tgui core 5.2.0 (#11559))
   return (
     <Window width={580} height={670} theme={useRetro ? 'pda_retro' : undefined}>
       <Window.Content scrollable>
