@@ -110,8 +110,12 @@
 /obj/item/storage/box/dosimeter
 	name = "dosimeter case"
 	desc = "This case can only hold the Dosimeter, a few films and a manual."
+<<<<<<< HEAD
 	icon = 'icons/inventory/accessory/item_vr.dmi'
 	icon_override = 'icons/inventory/accessory/item_vr.dmi'
+=======
+	icon = 'icons/inventory/accessory/item.dmi'
+>>>>>>> 1c271fcdc1 ([MIRROR] Missing Icon Fixes (#11548))
 	icon_state = "dosimeter_case"
 	item_state_slots = list(slot_r_hand_str = "syringe_kit", slot_l_hand_str = "syringe_kit")
 	storage_slots = 5
