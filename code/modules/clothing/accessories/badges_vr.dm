@@ -83,8 +83,12 @@
 	name = "dosimeter film"
 	desc = "These films can be inserted into dosimeters. It turns from white to black, depending on how much radiation it endured."
 	w_class = ITEMSIZE_SMALL
+<<<<<<< HEAD
 	icon = 'icons/inventory/accessory/item_vr.dmi'
 	icon_override = 'icons/inventory/accessory/item_vr.dmi'
+=======
+	icon = 'icons/inventory/accessory/item.dmi'
+>>>>>>> d819e4de93 ([MIRROR] Fixes Dosimeter film having a missing icon (#11554))
 	icon_state = "dosimeter_film0"
 	var/state = 0 //0 - White, 1 - Darker, 2 - Black (same as iconstates)
 
