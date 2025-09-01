@@ -219,6 +219,7 @@
 			playsound(src, 'sound/machines/kitchen/candymaker/candymaker-mid1.ogg', auto_setting * 20, 1, -1)
 			user.visible_message(span_filter_notice("[user] vacuums up \the [target.name]."), span_notice("You vacuum up \the [target.name]..."))
 			I.SpinAnimation(5,1)
+<<<<<<< HEAD:modular_chomp/code/game/objects/items/devices/vacpack.dm
 			spawn(5)
 				if(!I.Adjacent(user) || src.loc != user || vac_power < 2) //Cancel if moved/unpowered/dropped
 					return
@@ -227,6 +228,12 @@
 				playsound(src, 'sound/rakshasa/corrosion3.ogg', auto_setting * 15, 1, -1)
 				I.forceMove(output_dest)
 	else if(istype(target,/obj/effect/decal/cleanable))
+=======
+			addtimer(CALLBACK(src, PROC_REF(handle_consumption), I, user, auto_setting), 0.5 SECONDS)
+			return
+
+	if(istype(target,/obj/effect/decal/cleanable))
+>>>>>>> 58b6bd9113 ([MIRROR] sdmm up (#11550)):code/game/objects/items/devices/vacpack.dm
 		playsound(src, 'sound/machines/kitchen/candymaker/candymaker-mid1.ogg', auto_setting * 20, 1, -1)
 		user.visible_message(span_filter_notice("[user] vacuums up \the [target.name]."), span_notice("You vacuum up \the [target.name]..."))
 		qdel(target)
