@@ -8,6 +8,7 @@ jobs:
   remove_guide_comments:
     runs-on: ubuntu-latest
     steps:
+<<<<<<< HEAD
     - name: Checkout
       uses: actions/checkout@v4
     - name: Remove guide comments
@@ -16,3 +17,13 @@ jobs:
         script: |
           const { removeGuideComments } = await import('${{ github.workspace }}/tools/pull_request_hooks/removeGuideComments.js')
           await removeGuideComments({ github, context })
+=======
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Remove guide comments
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { removeGuideComments } = await import('${{ github.workspace }}/tools/pull_request_hooks/removeGuideComments.js')
+            await removeGuideComments({ github, context })
+>>>>>>> 2cf7b5e7f4 (Bump actions/github-script from 7 to 8 (#11567))
