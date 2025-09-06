@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+#define SENSOR_PRESSURE		(1<<0)
+#define SENSOR_TEMPERATURE	(1<<1)
+#define SENSOR_O2			(1<<2)
+#define SENSOR_PHORON		(1<<3)
+#define SENSOR_N2			(1<<4)
+#define SENSOR_CO2			(1<<5)
+#define SENSOR_N2O			(1<<6)
+#define SENSOR_CH4			(1<<7)
+
+>>>>>>> 9a5ca42e91 ([MIRROR] Methane Atmogas (#11574))
 /obj/machinery/air_sensor
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "gsensor1"
@@ -51,11 +63,14 @@
 					signal.data[GAS_N2] = round(100*air_sample.gas[GAS_N2]/total_moles,0.1)
 				if(output&32)
 					signal.data[GAS_CO2] = round(100*air_sample.gas[GAS_CO2]/total_moles,0.1)
+				if(output&64)
+					signal.data[GAS_CH4] = round(100*air_sample.gas[GAS_CH4]/total_moles,0.1)
 			else
 				signal.data[GAS_O2] = 0
 				signal.data[GAS_PHORON] = 0
 				signal.data[GAS_N2] = 0
 				signal.data[GAS_CO2] = 0
+				signal.data[GAS_CH4] = 0
 		signal.data["sigtype"]="status"
 		radio_connection.post_signal(src, signal, radio_filter = RADIO_ATMOSIA)
 
@@ -74,6 +89,81 @@
 		radio_controller.remove_object(src,frequency)
 	. = ..()
 
+<<<<<<< HEAD
+=======
+/obj/machinery/air_sensor/attackby(obj/item/W, mob/user)
+	if(W.has_tool_quality(TOOL_WRENCH))
+		return wrench_act(user, W)
+
+	if(W.has_tool_quality(TOOL_MULTITOOL))
+		return multitool_act(user, W)
+
+	return ..()
+
+/obj/machinery/air_sensor/proc/wrench_act(var/mob/living/user, var/obj/item/tool/wrench/W)
+	playsound(src, W.usesound, 50, 1)
+	user.visible_message("[user] unfastens \the [src].", span_notice("You have unfastened \the [src]."), "You hear ratcheting.")
+	var/obj/item/pipe_gsensor/gsensor = new /obj/item/pipe_gsensor(loc)
+	gsensor.id_tag = id_tag
+	gsensor.output = output
+	qdel(src)
+	playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
+
+#define ONOFF_TOGGLE(flag) "\[[(output & flag) ? "YES" : "NO"]]"
+/obj/machinery/air_sensor/proc/multitool_act(mob/living/user, obj/item/multitool/tool)
+	var/list/options = list(
+		"Pressure: [ONOFF_TOGGLE(SENSOR_PRESSURE)]" 		= SENSOR_PRESSURE,
+		"Temperature: [ONOFF_TOGGLE(SENSOR_TEMPERATURE)]" 	= SENSOR_TEMPERATURE,
+		"[GASNAME_O2]: [ONOFF_TOGGLE(SENSOR_O2)]" 			= SENSOR_O2,
+		"[GASNAME_PHORON]: [ONOFF_TOGGLE(SENSOR_PHORON)]" 	= SENSOR_PHORON,
+		"[GASNAME_N2]: [ONOFF_TOGGLE(SENSOR_N2)]" 			= SENSOR_N2,
+		"[GASNAME_CO2]: [ONOFF_TOGGLE(SENSOR_CO2)]" 		= SENSOR_CO2,
+		"[GASNAME_N2O]: [ONOFF_TOGGLE(SENSOR_N2O)]" 		= SENSOR_N2O,
+		"[GASNAME_CH4]: [ONOFF_TOGGLE(SENSOR_CH4)]" 		= SENSOR_CH4,
+		"-SAVE TO BUFFER-" = "multitool"
+	)
+
+	var/answer = tgui_input_list(user, "[src] has an ID of \"[id_tag]\" and a frequency of [frequency]. What would you like to change?", "Options!", options)
+
+	if(!(src in view(5, user)))
+		return TRUE
+
+	if(answer in options) // Null will break us out
+		switch(options[answer])
+			if(SENSOR_PRESSURE)
+				output ^= SENSOR_PRESSURE
+			if(SENSOR_TEMPERATURE)
+				output ^= SENSOR_TEMPERATURE
+			if(SENSOR_O2)
+				output ^= SENSOR_O2
+			if(SENSOR_PHORON)
+				output ^= SENSOR_PHORON
+			if(SENSOR_N2)
+				output ^= SENSOR_N2
+			if(SENSOR_CO2)
+				output ^= SENSOR_CO2
+			if(SENSOR_N2O)
+				output ^= SENSOR_N2O
+			if(SENSOR_CH4)
+				output ^= SENSOR_CH4
+			if("frequency")
+				var/new_frequency = tgui_input_number(user, "[src] has a frequency of [frequency]. What would you like it to be?", "[src] frequency", frequency, RADIO_HIGH_FREQ, RADIO_LOW_FREQ)
+				if(new_frequency)
+					new_frequency = sanitize_frequency(new_frequency, RADIO_LOW_FREQ, RADIO_HIGH_FREQ)
+					set_frequency(new_frequency)
+			if("multitool")
+				id_tag = tgui_input_text(user, "Please insert an ID tag for [src], example 'burn_chamber'.", "Set ID Tag", id_tag, MAX_NAME_LEN, FALSE)
+				if(!id_tag || !Adjacent(user))
+					return
+
+				var/obj/item/multitool/M = tool
+				M.connectable = src
+				to_chat(user, span_notice("You save [src] into [M]'s buffer."))
+
+	return TRUE
+#undef ONOFF_TOGGLE
+
+>>>>>>> 9a5ca42e91 ([MIRROR] Methane Atmogas (#11574))
 /obj/machinery/computer/general_air_control
 	icon_keyboard = "atmos_key"
 	icon_screen = "tank"
@@ -453,3 +543,15 @@
 
 			radio_connection.post_signal(src, signal, radio_filter = RADIO_ATMOSIA)
 			. = TRUE
+<<<<<<< HEAD
+=======
+
+#undef SENSOR_PRESSURE
+#undef SENSOR_TEMPERATURE
+#undef SENSOR_O2
+#undef SENSOR_PHORON
+#undef SENSOR_N2
+#undef SENSOR_CO2
+#undef SENSOR_N2O
+#undef SENSOR_CH4
+>>>>>>> 9a5ca42e91 ([MIRROR] Methane Atmogas (#11574))
