@@ -141,6 +141,7 @@
 	for(var/obj/machinery/door/blast/M in GLOB.machines)
 		if(M.id == id)
 			if(M.density)
+<<<<<<< HEAD
 				spawn(0)
 					M.open()
 					return
@@ -148,6 +149,11 @@
 				spawn(0)
 					M.close()
 					return
+=======
+				M.open()
+			else
+				M.close()
+>>>>>>> 2b286f1040 ([MIRROR] multiple IDs should work (#11578))
 
 //CHOMP Add start
 /obj/machinery/button/remote/blast_door/bear
@@ -194,9 +200,13 @@
 /obj/machinery/button/remote/emitter/trigger(mob/user as mob)
 	for(var/obj/machinery/power/emitter/E in GLOB.machines)
 		if(E.id == id)
+<<<<<<< HEAD
 			spawn(0)
 				E.activate(user)
 				return
+=======
+			E.activate(user)
+>>>>>>> 2b286f1040 ([MIRROR] multiple IDs should work (#11578))
 
 /*
 	Mass driver remote control
@@ -213,11 +223,16 @@
 
 	for(var/obj/machinery/door/blast/M in GLOB.machines)
 		if(M.id == id)
+<<<<<<< HEAD
 			spawn(0)
 				M.open()
 				return
 
 	sleep(20)
+=======
+			M.open()
+	addtimer(CALLBACK(src, PROC_REF(trigger_step_one)), 2 SECONDS, TIMER_DELETE_ME|TIMER_UNIQUE)
+>>>>>>> 2b286f1040 ([MIRROR] multiple IDs should work (#11578))
 
 	for(var/obj/machinery/mass_driver/M in GLOB.machines)
 		if(M.id == id)
@@ -227,9 +242,13 @@
 
 	for(var/obj/machinery/door/blast/M in GLOB.machines)
 		if(M.id == id)
+<<<<<<< HEAD
 			spawn(0)
 				M.close()
 				return
+=======
+			M.close()
+>>>>>>> 2b286f1040 ([MIRROR] multiple IDs should work (#11578))
 
 	icon_state = "launcherbtt"
 	update_icon()

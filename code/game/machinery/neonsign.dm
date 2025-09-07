@@ -67,8 +67,12 @@
 
 	for(var/obj/machinery/neonsign/M in GLOB.machines)
 		if(M.id == id)
+<<<<<<< HEAD
 			spawn(0)
 				M.toggle()
 				return
 
 	return
+=======
+			M.toggle()
+>>>>>>> 2b286f1040 ([MIRROR] multiple IDs should work (#11578))

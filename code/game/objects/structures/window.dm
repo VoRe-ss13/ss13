@@ -659,9 +659,13 @@
 
 	for(var/obj/structure/window/reinforced/polarized/W in range(src,range))
 		if (W.id == src.id || !W.id)
+<<<<<<< HEAD
 			spawn(0)
 				W.toggle()
 				return
+=======
+			W.toggle()
+>>>>>>> 2b286f1040 ([MIRROR] multiple IDs should work (#11578))
 
 /obj/machinery/button/windowtint/power_change()
 	..()
