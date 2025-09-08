@@ -116,7 +116,11 @@
 	if(O.has_tool_quality(TOOL_WRENCH))
 		if(finished)
 			to_chat(user, span_notice("You start breaking down \the [src]."))
+<<<<<<< HEAD
 			if(do_after(user, 10 SECONDS, src, exclusive = TASK_ALL_EXCLUSIVE))
+=======
+			if(do_after(user, 10 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 				new /obj/item/stack/material/plasteel(loc, 10)
 				playsound(user, O.usesound, 50, 1)
 				qdel(src)

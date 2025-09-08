@@ -87,7 +87,11 @@
 		span_warning("You attempt to unbuckle yourself. (This will take around 2 minutes and you need to stand still)")
 		)
 
+<<<<<<< HEAD
 	if(do_after(src, 2 MINUTES, incapacitation_flags = INCAPACITATION_DEFAULT & ~(INCAPACITATION_RESTRAINED | INCAPACITATION_BUCKLED_FULLY)))
+=======
+	if(do_after(src, 2 MINUTES, target = src, timed_action_flags = IGNORE_INCAPACITATED))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		if(!buckled)
 			return
 		visible_message(span_danger("[src] manages to unbuckle themself!"),

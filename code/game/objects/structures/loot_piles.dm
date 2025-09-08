@@ -58,6 +58,7 @@ Loot piles can be depleted, if loot_depleted is turned on.  Note that players wh
 
 		//Do the searching
 		busy = TRUE
+<<<<<<< HEAD
 		if(do_after(user,rand(4 SECONDS,6 SECONDS),src))
 			// The loot's all gone.
 			if(loot_depletion && loot_left <= 0)
@@ -120,6 +121,10 @@ Loot piles can be depleted, if loot_depleted is turned on.  Note that players wh
 						if(delete_on_depletion)
 							qdel(src)
 
+=======
+		if(do_after(user, rand(4 SECONDS,6 SECONDS), target = src))
+			SEND_SIGNAL(src,COMSIG_LOOT_REWARD,L,searchedby)
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		busy = FALSE
 	else
 		return ..()

@@ -246,7 +246,11 @@
 			escape_time = 0.5 * base_escape_time
 		else
 			escape_time = base_escape_time //Admeme size scale
+<<<<<<< HEAD:code/modules/mob/living/simple_mob/subtypes/vore/slug_ch.dm
 	if(do_after(user, escape_time, src, incapacitation_flags = INCAPACITATION_DEFAULT & ~(INCAPACITATION_RESTRAINED | INCAPACITATION_BUCKLED_FULLY)))
+=======
+	if(do_after(user, escape_time, target = src, timed_action_flags = IGNORE_INCAPACITATED))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582)):code/modules/mob/living/simple_mob/subtypes/vore/slug.dm
 		if(!has_buckled_mobs())
 			return
 		to_chat(user, "You tug free of the tacky, rubbery strands!")

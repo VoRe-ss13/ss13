@@ -121,7 +121,11 @@
 /obj/effect/energy_net/user_unbuckle_mob(mob/living/buckled_mob, mob/user)
 	user.setClickCooldown(user.get_attack_speed())
 	visible_message(span_danger("[user] begins to tear at \the [src]!"))
+<<<<<<< HEAD
 	if(do_after(user, escape_time, src, incapacitation_flags = INCAPACITATION_DEFAULT & ~(INCAPACITATION_RESTRAINED | INCAPACITATION_BUCKLED_FULLY)))
+=======
+	if(do_after(user, escape_time, target = src, timed_action_flags = IGNORE_INCAPACITATED))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		if(!has_buckled_mobs())
 			return
 		visible_message(span_danger("[user] manages to tear \the [src] apart!"))

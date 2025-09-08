@@ -173,7 +173,13 @@
 
 	if (recipe.time)
 		to_chat(user, span_notice("Building [recipe.title] ..."))
+<<<<<<< HEAD
 		if (!do_after(user, recipe.time))
+=======
+		is_building = TRUE
+		if (!do_after(user, recipe.time, target = src))
+			is_building = FALSE
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 			return
 
 	if (use(required))

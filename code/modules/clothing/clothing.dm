@@ -771,6 +771,48 @@
 		var/mob/M = src.loc
 		M.update_inv_shoes()
 
+<<<<<<< HEAD
+=======
+/obj/item/clothing/shoes/attack_self(var/mob/user)
+	for(var/mob/M in src)
+		if(isvoice(M)) //Don't knock voices out!
+			continue
+		M.forceMove(get_turf(user))
+		to_chat(M, span_warning("[user] shakes you out of \the [src]!"))
+		to_chat(user, span_notice("You shake [M] out of \the [src]!"))
+
+	..()
+
+/obj/item/clothing/shoes/container_resist(mob/living/micro)
+	var/mob/living/carbon/human/macro = loc
+	if(isvoice(micro)) //Voices shouldn't be able to resist but we have this here just in case.
+		return
+	if(!istype(macro))
+		to_chat(micro, span_notice("You start to climb out of [src]!"))
+		if(do_after(micro, 5 SECONDS, target = src))
+			to_chat(micro, span_notice("You climb out of [src]!"))
+			micro.forceMove(loc)
+		return
+
+	var/escape_message_micro = "You start to climb out of [src]!"
+	var/escape_message_macro = "Something is trying to climb out of your [src]!"
+	var/escape_time = 60
+
+	if(macro.shoes == src)
+		escape_message_micro = "You start to climb around the larger creature's feet and ankles!"
+		escape_time = 100
+
+	to_chat(micro, span_notice("[escape_message_micro]"))
+	to_chat(macro, span_danger("[escape_message_macro]"))
+	if(!do_after(micro, escape_time, target = macro))
+		to_chat(micro, span_danger("You're pinned underfoot!"))
+		to_chat(macro, span_danger("You pin the escapee underfoot!"))
+		return
+
+	to_chat(micro, span_notice("You manage to escape [src]!"))
+	to_chat(macro, span_danger("Someone has climbed out of your [src]!"))
+	micro.forceMove(macro.loc)
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 
 ///////////////////////////////////////////////////////////////////////
 //Suit

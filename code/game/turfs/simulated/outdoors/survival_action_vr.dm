@@ -9,7 +9,11 @@ var/static/list/has_rocks = list("dirt5", "dirt6", "dirt7", "dirt8", "dirt9")
 		return ..()
 	if(icon_state in has_rocks)
 		user.visible_message("[user] loosens rocks from \the [src]...", "You loosen rocks from \the [src]...")
+<<<<<<< HEAD
 		if(do_after(user, 5 SECONDS, exclusive = TASK_USER_EXCLUSIVE))
+=======
+		if(do_after(user, 5 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 			var/obj/item/stack/material/flint/R = new(get_turf(src), rand(1,4))
 			R.pixel_x = rand(-6,6)
 			R.pixel_y = rand(-6,6)
@@ -23,7 +27,11 @@ var/static/list/has_rocks = list("dirt5", "dirt6", "dirt7", "dirt8", "dirt9")
 		if(!choice||choice=="No")
 			return
 		user.visible_message("[user] starts piling up \the [src]...", "You start piling up \the [src]...")
+<<<<<<< HEAD
 		if(do_after(user, 5 SECONDS, exclusive = TASK_USER_EXCLUSIVE))
+=======
+		if(do_after(user, 5 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 			new /obj/machinery/portable_atmospherics/hydroponics/soil(src)
 
 /turf/simulated/floor/outdoors
@@ -34,7 +42,11 @@ var/static/list/has_rocks = list("dirt5", "dirt6", "dirt7", "dirt8", "dirt9")
 		to_chat(user, span_notice("The [name] isn't clear."))
 		return
 	user.visible_message("[user] starts digging around in \the [src]...", "You start digging around in \the [src]...")
+<<<<<<< HEAD
 	if(do_after(user, 5 SECONDS, exclusive = TASK_USER_EXCLUSIVE))
+=======
+	if(do_after(user, 5 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		if(prob(rock_chance))
 			var/obj/item/stack/material/flint/R = new(get_turf(src), rand(1,4))
 			to_chat(user, span_notice("You found some [R]"))
@@ -73,7 +85,11 @@ var/static/list/has_rocks = list("dirt5", "dirt6", "dirt7", "dirt8", "dirt9")
 /obj/structure/flora/tree/attack_hand(mob/user)
 	if(sticks)
 		user.visible_message("[user] searches \the [src] for loose sticks...", "You search \the [src] for loose sticks...")
+<<<<<<< HEAD
 		if(do_after(user, 5 SECONDS, exclusive = TASK_USER_EXCLUSIVE))
+=======
+		if(do_after(user, 5 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 			var/obj/item/stack/material/stick/S = new(get_turf(user), rand(1,3))
 			S.pixel_x = rand(-6,6)
 			S.pixel_y = rand(-6,6)

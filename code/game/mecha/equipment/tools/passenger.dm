@@ -26,7 +26,11 @@
 	if (chassis)
 		chassis.visible_message(span_notice("[user] starts to climb into [chassis]."))
 
+<<<<<<< HEAD
 	if(do_after(user, 40, needhand=0))
+=======
+	if(do_after(user, 4 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		if(!src.occupant)
 			user.forceMove(src)
 			occupant = user

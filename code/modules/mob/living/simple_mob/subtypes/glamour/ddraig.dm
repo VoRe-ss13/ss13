@@ -449,7 +449,11 @@
 		return
 
 	visible_message("<b>\The [src]</b> begins significantly shifting their form.")
+<<<<<<< HEAD
 	if(!do_after(src, 10 SECONDS, src, exclusive = TASK_USER_EXCLUSIVE))
+=======
+	if(!do_after(src, 10 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		visible_message("<b>\The [src]</b> ceases shifting their form.")
 		return 0
 

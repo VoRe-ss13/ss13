@@ -105,7 +105,11 @@
 		return
 
 	visible_message(span_warning("[src] begins chargin' their lazor!"))
+<<<<<<< HEAD
 	if(!do_after(src, 5 SECONDS, chosen_target, exclusive = TASK_USER_EXCLUSIVE))
+=======
+	if(!do_after(src, 5 SECONDS, target = chosen_target))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		return
 	if(chosen_target.z != src.z || get_dist(src,chosen_target) > 7)
 		return

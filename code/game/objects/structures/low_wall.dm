@@ -95,7 +95,7 @@
 				return
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 100, 1)
 		to_chat(user, span_notice("Now disassembling the low wall..."))
-		if(do_after(user, 40, src))
+		if(do_after(user, 4 SECONDS, target = src))
 			to_chat(user, span_notice("You dissasembled the low wall!"))
 			dismantle()
 			return
@@ -172,7 +172,11 @@
 		to_chat(user, span_warning("You need at least two rods to do this."))
 		return
 	to_chat(user, span_notice("Assembling grille..."))
+<<<<<<< HEAD
 	if(!do_after(user, 1 SECONDS, R, exclusive = TASK_ALL_EXCLUSIVE))
+=======
+	if(!do_after(user, 1 SECONDS, target = R))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		return
 	if(!R.use(2))
 		return
@@ -192,7 +196,11 @@
 		to_chat(user, span_warning("You need at least four sheets of glass to do this."))
 		return
 	to_chat(user, span_notice("Assembling window..."))
+<<<<<<< HEAD
 	if(!do_after(user, 4 SECONDS, G, exclusive = TASK_ALL_EXCLUSIVE))
+=======
+	if(!do_after(user, 4 SECONDS, target = G))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		return
 	if(!G.use(4))
 		return
