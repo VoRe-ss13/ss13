@@ -156,7 +156,11 @@ var/SMALLSIZEBLOCK     = 0
 #define DNA_UI_WING_ALPHA  61
 #define DNA_UI_LENGTH      61 // VOREStation Edit - Needs to match the highest number above.
 
+<<<<<<< HEAD
 #define DNA_SE_LENGTH 90 // Traitgenes (Expanded from 49 to 84, there have been a considerable expansion of genes.
+=======
+#define DNA_SE_LENGTH 92 // Traitgenes (Expanded from 49 to 84, there have been a considerable expansion of genes. //CHOMPEdit: Upped to 91. NOTE: Ensure it's increased when there is a conflict here! Thanks!
+>>>>>>> e9457f429a ([MIRROR] Temperature adapt tweaks (#11584))
 // This leaves room for future expansion. This can be arbitrarily raised without worry if genes start to get crowded.
 // Should have more than 10 empty genes after setup. - Willbird)
 
