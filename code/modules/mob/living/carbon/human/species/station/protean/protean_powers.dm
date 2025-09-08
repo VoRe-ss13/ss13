@@ -53,7 +53,11 @@
 		else
 			blob = temporary_form
 		active_regen = 1
+<<<<<<< HEAD
 		if(do_after(blob,50,exclusive = TASK_ALL_EXCLUSIVE))
+=======
+		if(do_after(blob, 5 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 			var/list/limblist = species.has_limbs[choice]
 			var/limbpath = limblist["path"]
 			var/obj/item/organ/external/new_eo = new limbpath(src)
@@ -106,7 +110,11 @@
 		var/obj/item/organ/internal/nano/refactory/refactory = nano_get_refactory()
 		if(refactory.get_stored_material(MAT_STEEL) >= 10000)
 			to_chat(protie, span_notify("You begin to rebuild. You will need to remain still."))
+<<<<<<< HEAD
 			if(do_after(protie, 400,exclusive = TASK_ALL_EXCLUSIVE))
+=======
+			if(do_after(protie, 40 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 				if(species?:OurRig)	//Unsafe, but we should only ever be using this with a Protean
 					species?:OurRig?:make_alive(src,1)	//Re-using this proc
 					refactory.use_stored_material(MAT_STEEL,refactory.get_stored_material(MAT_STEEL))	//Use all of our steel
@@ -129,7 +137,11 @@
 			oocnotes = 1
 		to_chat(protie, span_notify("You begin to reassemble. You will need to remain still."))
 		protie.visible_message(span_notify("[protie] rapidly contorts and shifts!"), span_danger("You begin to reassemble."))
+<<<<<<< HEAD
 		if(do_after(protie, 40,exclusive = TASK_ALL_EXCLUSIVE))
+=======
+		if(do_after(protie, 4 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 			if(protie.client.prefs)	//Make sure we didn't d/c
 				var/obj/item/rig/protean/Rig = species?:OurRig
 				protie.client.prefs.vanity_copy_to(src, FALSE, flavour, oocnotes, TRUE)
@@ -191,7 +203,11 @@
 
 	to_chat(protie, span_notify("You begin to reassemble into [victim]. You will need to remain still."))
 	protie.visible_message(span_notify("[protie] rapidly contorts and shifts!"), span_danger("You begin to reassemble into [victim]."))
+<<<<<<< HEAD
 	if(do_after(protie, 40,exclusive = TASK_ALL_EXCLUSIVE))
+=======
+	if(do_after(protie, 4 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		checking = FALSE
 		for(var/obj/item/grab/G in protie)
 			if(G.affecting == victim && G.state >= GRAB_AGGRESSIVE)
@@ -327,7 +343,11 @@
 		to_chat(protie, span_warning("You need to be repaired first before you can act!"))
 		return
 	to_chat(protie, span_notice("You rapidly condense into your module."))
+<<<<<<< HEAD
 	if(forced || do_after(protie,20,exclusive = TASK_ALL_EXCLUSIVE))
+=======
+	if(forced || do_after(protie, 2 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		if(!temporary_form)	//If you're human, force you into blob form before rig'ing
 			nano_blobform(forced)
 		spawn(2)
@@ -702,7 +722,11 @@
 				return
 			if(G.loc == protie && G.state >= GRAB_AGGRESSIVE)
 				protie.visible_message(span_warning("[protie] is attempting to latch onto [target]!"), span_danger("You attempt to latch onto [target]!"))
+<<<<<<< HEAD
 				if(do_after(protie, 50, target,exclusive = TASK_ALL_EXCLUSIVE))
+=======
+				if(do_after(protie, 5 SECONDS, target))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 					if(G.loc == protie && G.state >= GRAB_AGGRESSIVE)
 						target.drop_from_inventory(target.back)
 						protie.visible_message(span_danger("[protie] latched onto [target]!"), span_danger("You latch yourself onto [target]!"))

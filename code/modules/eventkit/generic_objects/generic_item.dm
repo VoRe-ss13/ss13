@@ -21,7 +21,11 @@
 	if(activatable_hand)
 		if(!on)
 			if(delay_time)
+<<<<<<< HEAD
 				if(!do_after(user, delay_time, src, exclusive = TASK_USER_EXCLUSIVE))
+=======
+				if(!do_after(user, delay_time, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 					return 0
 			on = 1
 			if(icon_on)
@@ -76,7 +80,11 @@
 				playsound(src, sound_activated, 50, 1)
 		else if(togglable)
 			if(delay_time)
+<<<<<<< HEAD
 				if(!do_after(user, delay_time, src, exclusive = TASK_USER_EXCLUSIVE))
+=======
+				if(!do_after(user, delay_time, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 					return 0
 			on = 0
 			icon_state = icon_state_off

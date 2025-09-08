@@ -86,8 +86,12 @@
 	set category = "Object"
 	set src in usr.loc
 
+<<<<<<< HEAD
 	sleep(20)
 	if(state in list(1,3,6))
+=======
+	if((state in list(1,3,6)) && do_after(usr, 2 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		usr.loc = src.loc
 
 /obj/machinery/washing_machine/update_icon()

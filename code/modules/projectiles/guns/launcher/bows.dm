@@ -95,7 +95,11 @@
 
 	current_user = user
 	user.visible_message(span_infoplain(span_bold("[user]") + " begins to draw back the string of [src]."),span_notice("You begin to draw back the string of [src]."))
+<<<<<<< HEAD
 	if(do_after(user, 25, src, exclusive = TASK_ALL_EXCLUSIVE))
+=======
+	if(do_after(user, 25, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		drawn = TRUE
 		user.visible_message(span_infoplain(span_bold("[user]") + "draws the string on [src] back fully!"), span_infoplain("You draw the string on [src] back fully!"))
 	update_icon()

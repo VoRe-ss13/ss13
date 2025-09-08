@@ -591,7 +591,11 @@ var/list/wrapped_species_by_ref = list()
 			oocnotes = 1
 		to_chat(character, span_notify("You begin to reform. You will need to remain still."))
 		character.visible_message(span_notify("[character] rapidly contorts and shifts!"), span_danger("You begin to reform."))
+<<<<<<< HEAD
 		if(do_after(character, 40,exclusive = TASK_ALL_EXCLUSIVE))
+=======
+		if(do_after(character, 4 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 			if(character.client.prefs)	//Make sure we didn't d/c
 				character.client.prefs.vanity_copy_to(src, FALSE, flavour, oocnotes, FALSE)
 				character.visible_message(span_notify("[character] adopts a new form!"), span_danger("You have reformed."))
@@ -649,7 +653,11 @@ var/list/wrapped_species_by_ref = list()
 
 	to_chat(character, span_notify("You begin to reassemble into [victim]. You will need to remain still."))
 	character.visible_message(span_notify("[character] rapidly contorts and shifts!"), span_danger("You begin to reassemble into [victim]."))
+<<<<<<< HEAD
 	if(do_after(character, 40,exclusive = TASK_ALL_EXCLUSIVE))
+=======
+	if(do_after(character, 4 SECONDS, target = victim))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		checking = FALSE
 		for(var/obj/item/grab/G in character)
 			if(G.affecting == victim && G.state >= GRAB_AGGRESSIVE)

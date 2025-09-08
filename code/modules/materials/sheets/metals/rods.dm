@@ -97,7 +97,7 @@ var/global/list/datum/stack_recipe/rods_recipes = list( \
 			return
 		to_chat(user, span_notice("Assembling grille..."))
 		in_use = 1
-		if (!do_after(user, 10))
+		if (!do_after(user, 1 SECOND, target = src))
 			in_use = 0
 			return
 		var/obj/structure/grille/F = new /obj/structure/grille/ ( user.loc )

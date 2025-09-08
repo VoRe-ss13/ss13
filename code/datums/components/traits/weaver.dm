@@ -115,7 +115,11 @@
 		to_chat(owner, span_warning("You can't weave here!"))
 		return
 
+<<<<<<< HEAD
 	if(do_after(owner, desired_result.time, exclusive = TASK_USER_EXCLUSIVE))
+=======
+	if(do_after(owner, desired_result.time, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		if(desired_result.cost > silk_reserve)
 			to_chat(owner, span_warning("You don't have enough silk to weave that!"))
 			return
@@ -168,7 +172,11 @@
 		to_chat(owner, span_warning("You can't weave here!"))
 		return
 
+<<<<<<< HEAD
 	if(do_after(owner, desired_result.time, exclusive = TASK_USER_EXCLUSIVE))
+=======
+	if(do_after(owner, desired_result.time, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		if(desired_result.cost > silk_reserve)
 			to_chat(owner, span_warning("You don't have enough silk to weave that!"))
 			return

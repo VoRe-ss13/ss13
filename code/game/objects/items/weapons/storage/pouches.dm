@@ -23,7 +23,11 @@
 	if(user.get_active_hand() == src || user.get_inactive_hand() == src)
 		return TRUE // Skip delay
 
+<<<<<<< HEAD
 	if(insert_delay && !do_after(user, insert_delay, src, needhand = TRUE, exclusive = TASK_USER_EXCLUSIVE))
+=======
+	if(insert_delay && !do_after(user, insert_delay, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		return FALSE // Moved while there is a delay
 
 	return TRUE //Now we're allowed to put the item in the pouch
@@ -33,7 +37,11 @@
 	if(user.get_active_hand() == src || user.get_inactive_hand() == src)
 		return TRUE // Skip delay
 
+<<<<<<< HEAD
 	if(remove_delay && !do_after(user, remove_delay, src, needhand = TRUE, exclusive = TASK_USER_EXCLUSIVE))
+=======
+	if(remove_delay && !do_after(user, remove_delay, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		return FALSE // Moved while there is a delay
 
 	if(W in src)

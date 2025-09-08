@@ -19,7 +19,11 @@
 		var/obj/belly/bellychoice = tgui_input_list(L, "Which belly?","Select A Belly", L.vore_organs)
 		if(bellychoice)
 			L.visible_message(span_warning("[L] is trying to stuff \the [src] into [L.gender == MALE ? "his" : L.gender == FEMALE ? "her" : "their"] [bellychoice]!"),span_notice("You begin putting \the [src] into your [bellychoice]!"))
+<<<<<<< HEAD
 			if(do_after(L, 5 SECONDS, src, exclusive = TASK_ALL_EXCLUSIVE))
+=======
+			if(do_after(L, 5 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 				forceMove(bellychoice)
 				SSskybox.rebuild_skyboxes(map_z)
 				L.visible_message(span_warning("[L] eats a spaceship! This is totally normal."),"You eat the the spaceship! Yum, metal.")

@@ -135,9 +135,14 @@
 			to_chat(hider,span_warning("[user] is searching the trash pile you're in!"))
 
 		//Do the searching
+<<<<<<< HEAD
 		if(do_after(user,rand(4 SECONDS,6 SECONDS),src))
 
 			//If there was a hider, chance to reveal them
+=======
+		busy = TRUE
+		if(do_after(user, rand(4 SECONDS,6 SECONDS), target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 			if(hider && prob(50))
 				to_chat(hider,span_danger("You've been discovered!"))
 				hider.forceMove(get_turf(src))

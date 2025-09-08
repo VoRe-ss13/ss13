@@ -104,7 +104,11 @@
 	// Service begins, delay
 	visible_message(span_bold("\The [src]") + " scans [user] thoroughly!")
 	flick("kiosk_active", src)
+<<<<<<< HEAD
 	if(!do_after(user, 5 SECONDS, src, exclusive = TASK_ALL_EXCLUSIVE) || inoperable())
+=======
+	if(!do_after(user, 5 SECONDS, target = src) || inoperable())
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		suspend()
 		return
 
