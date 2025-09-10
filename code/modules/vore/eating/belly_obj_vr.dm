@@ -260,6 +260,12 @@
 	var/belchchance = 0						// % Chance of pred belching on prey struggle
 
 	var/list/belly_surrounding = list()		// A list of living mobs surrounded by this belly, including inside containers, food, on mobs, etc. Exclusing inside other bellies.
+<<<<<<< HEAD
+=======
+	var/bellytemperature = T20C				// Temperature applied to humans in the belly.
+	var/temperature_damage = FALSE			// Does temperature damage prey?
+	flags = NOREACT							// We dont want bellies to start bubling nonstop due to people mixing when transfering and making different reagents
+>>>>>>> 6fcd225bfa ([MIRROR] fixes stack memleaks (#11598))
 
 //For serialization, keep this updated, required for bellies to save correctly.
 /obj/belly/vars_to_save()
@@ -475,7 +481,7 @@
 	//If not, we're probably just in a prefs list or something.
 	if(ismob(loc))
 		owner = loc
-		owner.vore_organs |= src
+		owner.vore_organs += src
 		if(isliving(loc))
 			if(mode_flags & DM_FLAG_TURBOMODE)
 				START_PROCESSING(SSobj, src)
@@ -483,7 +489,6 @@
 				START_PROCESSING(SSbellies, src)
 
 	create_reagents(300)	// So we can have some liquids in bellies
-	flags |= NOREACT		// We dont want bellies to start bubling nonstop due to people mixing when transfering and making different reagents
 
 /obj/belly/Destroy()
 	if(mode_flags & DM_FLAG_TURBOMODE)

@@ -65,6 +65,22 @@
 		QDEL_NULL(reagents)
 	if(light)
 		QDEL_NULL(light)
+<<<<<<< HEAD:code/game/atoms.dm
+=======
+	if(forensic_data)
+		QDEL_NULL(forensic_data)
+	// Checking length(overlays) before cutting has significant speed benefits
+	if (length(overlays))
+		overlays.Cut()
+	if (length(our_overlays))
+		our_overlays.Cut()
+	if (length(priority_overlays))
+		priority_overlays.Cut()
+	if (length(managed_vis_overlays))
+		managed_vis_overlays.Cut()
+	if (length(original_atom))
+		original_atom.Cut()
+>>>>>>> 6fcd225bfa ([MIRROR] fixes stack memleaks (#11598)):code/game/atom/_atom.dm
 	return ..()
 
 /atom/proc/reveal_blood()
