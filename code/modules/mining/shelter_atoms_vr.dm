@@ -147,6 +147,95 @@ GLOBAL_LIST_EMPTY(unique_deployable)
 	template_id = "shelter_phi"
 	unique_id = "shelter_a"
 
+<<<<<<< HEAD
+=======
+/obj/item/survivalcapsule/holly
+	name = "vaguely festive surfluid shelter capsule"
+	desc = "A \"homemade\" luxury suite crammed into a capsule. There's a license for use printed on the bottom. For some reason, the license's text is written in festive colors."
+	template_id = "shelter_chi"
+	unique_id = "shelter_h"
+
+//Stupid
+/obj/item/survivalcapsule/loss_1
+	name = "clinical surfluid shelter capsule"
+	desc = "A strange-looking shelter capsule. It looks rather crudely thrown together..."
+	template_id = "shelter_loss1"
+
+/obj/item/survivalcapsule/loss_2
+	name = "clinical surfluid shelter capsule"
+	desc = "A strange-looking shelter capsule. It looks rather crudely thrown together..."
+	template_id = "shelter_loss2"
+
+/obj/item/survivalcapsule/loss_3
+	name = "clinical surfluid shelter capsule"
+	desc = "A strange-looking shelter capsule. It looks rather crudely thrown together..."
+	template_id = "shelter_loss3"
+
+/obj/item/survivalcapsule/loss_4
+	name = "clinical surfluid shelter capsule"
+	desc = "A strange-looking shelter capsule. It looks rather crudely thrown together..."
+	template_id = "shelter_loss4"
+
+//Redspace Capsule
+//Spawns a randomized shelter from a curated selection of possibilities
+/obj/item/survivalcapsule/randomized
+	name = "redspace shelter capsule"
+	desc = "A strange-looking shelter capsule. Should the surfluid inside it be bubbling like that? There's a license for use printed on the bottom, as well as a warning about the unpredictable nature of redspace."
+	template_id = "placeholder_id_do_not_change"
+	admin_log_verb = "activated a redspace capsule"
+	var/possible_shelter_ids = list(
+		// "Normal" map table - Most common table.
+		// Meant to be actually inhabitable spots with neat things in them.
+		list(
+			"shelter_pizza_kitchen",
+			"shelter_nerd_dungeon_good",
+			"shelter_gallery",
+			"shelter_garden",
+			"shelter_off_color",
+			"shelter_living_room",
+			"shelter_candlelit_dinner",
+		) = 65, // 65% chance
+
+		// "Weird" map table - Less common.
+		// Here, we get a little silly with it. Not dangerous, but weird, kinda like redgates.
+		list(
+			"shelter_nerd_dungeon_evil",
+			"shelter_tiny_space",
+			"shelter_christmas",
+			"shelter_blacksmith",
+		) = 30, // 30% chance
+
+		// "Dangerous" map table - Least common by far, and for good reason.
+		// Places that have dangerous/illegal stuff in them.
+		list(
+			"shelter_dangerous_pool",
+			"shelter_methlab",
+			"shelter_mimic_hell",
+		) = 5, // 5% chance
+	)
+
+/obj/item/survivalcapsule/randomized/get_template_id()
+	// Choose which table of maps we're gonna be choosing from, then pick a map in those
+	return pick(pickweight(possible_shelter_ids))
+
+/obj/item/survivalcapsule/randomized/get_template_info()
+	var/ret = "It has a chaotic redspace bubble inside. The label reads:\n"
+	ret += "(7x7) This capsule utilizes experimental technology to replicate copies of redspace pockets within realspace. " + span_underline("The contents of this capsule are prone to change upon activation") + ", and are highly unlikely to remain the same as when previously used. Efforts have been made to ensure *likely* safety when using these capsules. However, due to the unpredictable nature of redspace, that safety cannot be fully guaranteed. " + span_underline("Use at your own risk!")
+	return ret
+
+// TERRIBLE AWFUL CAPSULE DO NOT MAKE THIS PLAYER ACCESSIBLE, I made this for a BIT -Ryumi
+/obj/item/survivalcapsule/tesla
+	name = "tesla in a shelter capsule"
+	desc = "This is a terrible, terrible idea."
+	template_id = "shelter_tesla"
+	admin_log_verb = "activated a TESLA capsule"
+
+/obj/item/survivalcapsule/tesla/get_template_info()
+	var/ret = ..()
+	ret += ("\n" + span_boldwarning("Do not."))
+	return ret
+
+>>>>>>> 3f982ca8a3 ([MIRROR] Incredibly minor capsule fixes (#11608))
 //Pod objects
 //Walls
 /turf/simulated/shuttle/wall/voidcraft/survival
