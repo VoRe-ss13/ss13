@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /obj/structure/bigDelivery
 	desc = "A big wrapped package."
 	name = "large parcel"
@@ -386,19 +387,15 @@
 			currTag = new_tag
 			. = TRUE
 
+=======
+>>>>>>> d61e55c023 ([MIRROR] Disposal Connector Component (#11616))
 /obj/machinery/disposal/deliveryChute
 	name = "Delivery chute"
 	desc = "A chute for big and small packages alike!"
 	density = TRUE
 	icon_state = "intake"
-
-	var/c_mode = 0
-
-/obj/machinery/disposal/deliveryChute/Initialize(mapload)
-	. = ..()
-	trunk = locate() in src.loc
-	if(trunk)
-		trunk.linked = src	// link the pipe trunk to self
+	stat_tracking = FALSE
+	var/c_mode = FALSE
 
 /obj/machinery/disposal/deliveryChute/interact()
 	return
@@ -418,13 +415,9 @@
 		if(WEST)
 			if(AM.loc.x != src.loc.x-1) return
 
-	if(istype(AM, /obj))
-		var/obj/O = AM
-		O.loc = src
-	else if(istype(AM, /mob))
-		var/mob/M = AM
-		M.loc = src
-	src.flush()
+	if(isobj(AM) || ismob(AM))
+		AM.forceMove(src)
+	flush()
 
 //Chompadd: Autocatch for stuff being thrown into disposal chutes..
 /obj/machinery/disposal/deliveryChute/hitby(atom/movable/AM)
@@ -439,6 +432,7 @@
 			if(WEST)
 				if(AM.loc.x != src.loc.x-1) return ..()
 		AM.forceMove(src)
+<<<<<<< HEAD
 		src.flush()
 //Chompadd end
 
@@ -463,6 +457,9 @@
 		mode = 1	// switch to charging
 	update()
 	return
+=======
+		flush()
+>>>>>>> d61e55c023 ([MIRROR] Disposal Connector Component (#11616))
 
 /obj/machinery/disposal/deliveryChute/attackby(var/obj/item/I, var/mob/user)
 	if(!I || !user)
@@ -473,7 +470,7 @@
 		playsound(src, I.usesound, 50, 1)
 		to_chat(user, "You [c_mode ? "remove" : "attach"] the screws around the power connection.")
 		return
-	if(I.has_tool_quality(TOOL_WELDER) && c_mode==1)
+	if(I.has_tool_quality(TOOL_WELDER) && c_mode == TRUE)
 		var/obj/item/weldingtool/W = I.get_welder()
 		if(!W.remove_fuel(0,user))
 			to_chat(user, "You need more welding fuel to complete this task.")
@@ -490,8 +487,3 @@
 			C.density = TRUE
 			qdel(src)
 		return
-
-/obj/machinery/disposal/deliveryChute/Destroy()
-	if(trunk)
-		trunk.linked = null
-	. = ..()
