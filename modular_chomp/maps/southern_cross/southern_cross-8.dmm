@@ -5791,11 +5791,7 @@
 	},
 /area/skipjack_station)
 "ePR" = (
-/obj/effect/forcefield{
-	desc = "You can't get in. Heh.";
-	layer = 1;
-	name = "Blocker"
-	},
+/obj/effect/blocker,
 /obj/effect/wingrille_spawn/reinforced/crescent,
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -5851,11 +5847,7 @@
 /turf/simulated/floor/carpet/retro_red,
 /area/shadekin)
 "eRa" = (
-/obj/effect/forcefield{
-	desc = "You can't get in. Heh.";
-	layer = 1;
-	name = "Blocker"
-	},
+/obj/effect/blocker,
 /obj/effect/wingrille_spawn/reinforced/crescent,
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
@@ -14034,11 +14026,7 @@
 	icon_state = "door_locked";
 	locked = 1
 	},
-/obj/effect/forcefield{
-	desc = "You can't get in. Heh.";
-	layer = 1;
-	name = "Blocker"
-	},
+/obj/effect/blocker,
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -21307,12 +21295,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/shadekin)
 "tMa" = (
-/obj/effect/forcefield{
-	desc = "You can't get in. Heh.";
-	invisibility = 60;
-	layer = 1;
-	name = "Blocker"
-	},
+/obj/effect/blocker,
 /turf/simulated/shuttle/floor/white,
 /area/centcom/main_hall)
 "tMh" = (
@@ -22144,12 +22127,7 @@
 /turf/simulated/shuttle/floor,
 /area/shuttle/escape/centcom)
 "uEH" = (
-/obj/effect/forcefield{
-	desc = "You can't get in. Heh.";
-	invisibility = 60;
-	layer = 1;
-	name = "Blocker"
-	},
+/obj/effect/blocker,
 /obj/machinery/light,
 /turf/simulated/shuttle/floor/white,
 /area/centcom/main_hall)
