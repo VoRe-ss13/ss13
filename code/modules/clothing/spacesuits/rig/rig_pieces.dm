@@ -8,11 +8,28 @@
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|BLOCKHAIR
 	light_range = 4
 	sprite_sheets = list(
+<<<<<<< HEAD
 		SPECIES_TAJARAN = 'icons/inventory/head/mob_tajaran.dmi',
 		SPECIES_SKRELL = 'icons/inventory/head/mob_skrell.dmi',
 		SPECIES_UNATHI = 'icons/inventory/head/mob_unathi.dmi',
 		SPECIES_VOX = 'icons/inventory/head/mob_vox.dmi',
 		SPECIES_TESHARI = 'icons/inventory/head/mob_teshari.dmi'
+=======
+		SPECIES_TAJARAN 		= 'icons/inventory/head/mob_tajaran.dmi',
+		SPECIES_SKRELL 			= 'icons/inventory/head/mob_skrell.dmi',
+		SPECIES_UNATHI 			= 'icons/inventory/head/mob_unathi.dmi',
+		SPECIES_XENOHYBRID 		= 'icons/inventory/head/mob_unathi.dmi',
+		SPECIES_AKULA 			= 'icons/inventory/head/mob_akula.dmi',
+		SPECIES_SERGAL			= 'icons/inventory/head/mob_sergal.dmi',
+		SPECIES_NEVREAN			= 'icons/inventory/head/mob_sergal.dmi',
+		SPECIES_VULPKANIN 		= 'icons/inventory/head/mob_vulpkanin.dmi',
+		SPECIES_ZORREN_HIGH 	= 'icons/inventory/head/mob_vulpkanin.dmi',
+		SPECIES_FENNEC 			= 'icons/inventory/head/mob_vulpkanin.dmi',
+		SPECIES_PROMETHEAN		= 'icons/inventory/head/mob_skrell.dmi',
+		SPECIES_VOX 			= 'icons/inventory/head/mob_vox.dmi',
+		SPECIES_TESHARI 		= 'icons/inventory/head/mob_teshari.dmi',
+		SPECIES_ALTEVIAN 		= 'icons/inventory/head/mob_altevian.dmi'
+>>>>>>> 5ad53107e4 ([MIRROR] clothing _vr dmi cleanup: hats and headwear [IDB IGNORE] (#11611))
 		)
 	species_restricted = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJARAN, SPECIES_UNATHI, SPECIES_PROMETHEAN, SPECIES_TESHARI) //vox, diona, and zaddat can't use hardsuits not designed for them
 	max_pressure_protection = null

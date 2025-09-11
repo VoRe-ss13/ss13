@@ -31,8 +31,6 @@
 	icon_state = "rig0-odst"
 	item_state = "rig0-odst"
 	item_state_slots = null
-	icon = 'icons/inventory/head/item_vr.dmi'
-	icon_override = 'icons/inventory/head/mob_vr.dmi'
 	light_overlay = "helmet_light_dual"
 	species_restricted = null
 
@@ -50,8 +48,11 @@
 	icon_state = "odst"
 	item_state = "odst"
 	item_state_slots = null
+<<<<<<< HEAD
 	icon = 'icons/inventory/suit/item_vr.dmi'
 	icon_override = 'icons/inventory/suit/mob_vr.dmi'
+=======
+>>>>>>> 5ad53107e4 ([MIRROR] clothing _vr dmi cleanup: hats and headwear [IDB IGNORE] (#11611))
 	species_restricted = null
 	breach_threshold = 16 //Extra Thicc
 	resilience = 0.05 //Military Armor
