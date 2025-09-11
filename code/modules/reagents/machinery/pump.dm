@@ -211,3 +211,29 @@
 /turf/simulated/floor/water/contaminated/pump_reagents(var/datum/reagents/R, var/volume)
 	. = ..()
 	R.add_reagent(REAGENT_ID_VATSTABILIZER, round(volume / 2, 0.1))
+<<<<<<< HEAD
+=======
+
+/turf/simulated/mineral/pump_reagents(var/datum/reagents/R, var/volume)
+	. = ..()
+	if(density)
+		return
+	if(!sand_dug)
+		return
+	var/turf/simulated/mineral/M = pick(orange(5,src))
+	if(!istype(M))
+		return
+	// Use nearby ores as well
+	if(M.mineral && M.mineral.reagent && prob(40))
+		R.add_reagent(M.mineral.reagent, rand(0,volume / 8))
+	// Pump deep reagents from deepdrill boreholes
+	for(var/metal in GLOB.deepore_fracking_reagents)
+		if(!LAZYACCESS(M.resources,metal))
+			continue
+		var/list/ore_list = GLOB.deepore_fracking_reagents[metal]
+		if(!LAZYLEN(ore_list))
+			continue
+		var/reagent_id = pick(ore_list)
+		if(reagent_id && prob(60))
+			R.add_reagent(reagent_id, rand(0,volume / 6))
+>>>>>>> e528c9168a ([MIRROR] Fracking list runtime fix (#11621))
