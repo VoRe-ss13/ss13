@@ -431,11 +431,20 @@ var/list/channel_to_radio_key = new
 		if(do_sound && message)
 			playsound(T, pick(voice_sounds_list), 25, TRUE, extrarange = -6, falloff = 1 , is_global = TRUE, frequency = voice_freq, ignore_walls = TRUE, preference = /datum/preference/toggle/whisper_sounds)	//CHOMPEdit - Use say sound prefs
 
+<<<<<<< HEAD
 		log_whisper(message, src)
 	else
 		if(do_sound && message)
 			playsound(T, pick(voice_sounds_list), 75, TRUE, falloff = 1 , is_global = TRUE, frequency = voice_freq, ignore_walls = TRUE, preference = /datum/preference/toggle/say_sounds)	//CHOMPEdit - tiny fix
 		log_say(message, src)
+=======
+		log_talk(message, LOG_WHISPER)
+	else
+		if(do_sound && message)
+			blooploop(message, volume = 75)
+			// playsound(T, pick(voice_sounds_list), 75, TRUE, falloff = 1 , is_global = TRUE, frequency = voice_freq, ignore_walls = TRUE, preference = /datum/preference/toggle/say_sounds) //CHOMPEdit - ignore_walls = TRUE
+		log_talk(message, LOG_SAY)
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 	return 1
 
 /mob/living/proc/say_signlang(var/message, var/verb="gestures", var/verb_understood="gestures", var/datum/language/language, var/type = 1)

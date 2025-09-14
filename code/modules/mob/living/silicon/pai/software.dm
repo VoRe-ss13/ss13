@@ -24,9 +24,15 @@ var/global/list/default_pai_software = list()
 	var/r = 1 // I would use ., but it'd sacrifice runtime detection
 	for(var/type in subtypesof(/datum/pai_software))
 		var/datum/pai_software/P = new type()
+<<<<<<< HEAD
 		if(pai_software_by_key[P.id])
 			var/datum/pai_software/O = pai_software_by_key[P.id]
 			to_world(span_warning("pAI software module [P.name] has the same key as [O.name]!"))
+=======
+		if(GLOB.pai_software_by_key[P.id])
+			var/datum/pai_software/O = GLOB.pai_software_by_key[P.id]
+			to_chat(world, span_warning("pAI software module [P.name] has the same key as [O.name]!"))
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 			r = 0
 			continue
 		pai_software_by_key[P.id] = P

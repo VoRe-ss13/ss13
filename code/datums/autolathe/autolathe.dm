@@ -4,8 +4,13 @@
 	if(path)
 		I = new path()
 
+<<<<<<< HEAD
 	if(!I)	// Something has gone horribly wrong, or right.
 		log_debug("[name] created an Autolathe design without an assigned path.")
+=======
+	if(!isitem(I))	// Something has gone horribly wrong, or right.
+		log_runtime("[name] created an Autolathe design without an assigned path or illegal item. Item = [I]")
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 		return
 
 	if(I.matter && !resources)

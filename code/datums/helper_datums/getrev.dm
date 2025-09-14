@@ -32,10 +32,32 @@
 						date = unix2date(unix_time)
 				break
 
+<<<<<<< HEAD
 	to_world_log("-Revision Info-")
 	to_world_log("Branch: [branch]")
 	to_world_log("Date: [date]")
 	to_world_log("Revision: [revision]")
+=======
+/datum/getrev/proc/get_log_message()
+	var/list/msg = list()
+	msg += "Running VOREStation revision: [date]"
+	if(originmastercommit)
+		msg += "origin/master: [originmastercommit]"
+
+	for(var/line in testmerge)
+		var/datum/tgs_revision_information/test_merge/tm = line
+		msg += "Test merge active of PR #[tm.number] commit [tm.head_commit]"
+		//SSblackbox.record_feedback("associative", "testmerged_prs", 1, list("number" = "[tm.number]", "commit" = "[tm.head_commit]", "title" = "[tm.title]", "author" = "[tm.author]"))
+
+	if(commit && commit != originmastercommit)
+		msg += "HEAD: [commit]"
+	else if(!originmastercommit)
+		msg += "No commit information"
+
+	msg += "Running rust-g version [rustg_get_version()]"
+
+	return msg.Join("\n")
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 /datum/getrev/proc/GetTestMergeInfo(header = TRUE)
 	. = list()

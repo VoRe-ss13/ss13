@@ -1,6 +1,11 @@
 	////////////
 	//SECURITY//
 	////////////
+
+GLOBAL_LIST_INIT(blacklisted_builds, list(
+	"1622" = "Bug breaking rendering can lead to wallhacks.",
+	))
+
 #define UPLOAD_LIMIT		10485760	//Restricts client uploads to the server to 10MB //Boosted this thing. What's the worst that can happen?
 #define MIN_CLIENT_VERSION	0		//Just an ambiguously low version for now, I don't want to suddenly stop people playing.
 									//I would just like the code ready should it ever need to be used.
@@ -68,7 +73,8 @@
 			if (minute != topiclimiter[ADMINSWARNED_AT]) //only one admin message per-minute. (if they spam the admins can just boot/ban them)
 				topiclimiter[ADMINSWARNED_AT] = minute
 				msg += " Administrators have been informed."
-				log_and_message_admins("[key_name(src)] Has hit the per-minute topic limit of [mtl] topic calls in a given game minute", src)
+				log_game("[key_name(src)] Has hit the per-minute topic limit of [mtl] topic calls in a given game minute")
+				message_admins("[ADMIN_LOOKUPFLW(usr)] [ADMIN_KICK(usr)] Has hit the per-minute topic limit of [mtl] topic calls in a given game minute")
 			to_chat(src, span_danger("[msg]"))
 			return
 
@@ -87,7 +93,7 @@
 
 	//search the href for script injection
 	if( findtext(href,"<script",1,0) )
-		to_world_log("Attempted use of scripts within a topic call, by [src]")
+		log_world("Attempted use of scripts within a topic call, by [src]")
 		message_admins("Attempted use of scripts within a topic call, by [src]")
 		return
 
@@ -165,8 +171,7 @@
 		stat_panel.reinitialize() //CHOMPEdit
 
 	//Logs all hrefs
-	if(config && CONFIG_GET(flag/log_hrefs) && GLOB.href_logfile)
-		WRITE_LOG(GLOB.href_logfile, "[src] (usr:[usr])</small> || [hsrc ? "[hsrc] " : ""][href]")
+	log_href("[src] (usr:[usr]\[[COORD(usr)]\]) : [hsrc ? "[hsrc] " : ""][href]")
 
 	//byond bug ID:2256651
 	if (asset_cache_job && (asset_cache_job in completed_asset_jobs))
@@ -226,9 +231,12 @@
 	//CONNECT//
 	///////////
 /client/New(TopicData)
-	winset(src, null, "browser-options=[DEFAULT_CLIENT_BROWSER_OPTIONS]")
+	TopicData = null //Prevent calls to client.Topic from connect
 
-	TopicData = null							//Prevent calls to client.Topic from connect
+	if(connection != "seeker" && connection != "web")//Invalid connection type.
+		return null
+
+	winset(src, null, "browser-options=[DEFAULT_CLIENT_BROWSER_OPTIONS]")
 
 	if(!(connection in list("seeker", "web")))					//Invalid connection type.
 		return null
@@ -247,6 +255,14 @@
 	GLOB.clients += src
 	GLOB.directory[ckey] = src
 
+	//var/reconnecting = FALSE we are not using this var yet
+	if(GLOB.persistent_clients_by_ckey[ckey])
+		//reconnecting = TRUE
+		persistent_client = GLOB.persistent_clients_by_ckey[ckey]
+	else
+		persistent_client = new(ckey)
+	persistent_client.set_client(src)
+
 	if (CONFIG_GET(flag/chatlog_database_backend))
 		chatlog_token = vchatlog_generate_token(ckey)
 
@@ -261,6 +277,7 @@
 
 	GLOB.tickets.ClientLogin(src) // CHOMPedit - Tickets System
 
+<<<<<<< HEAD
 	//Admin Authorisation
 	holder = GLOB.admin_datums[ckey]
 	if(holder)
@@ -271,6 +288,8 @@
 	if (mentorholder)
 		mentorholder.associate(GLOB.directory[ckey])
 
+=======
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 	//preferences datum - also holds some persistant data for the client (because we may as well keep these datums to a minimum)
 	prefs = preferences_datums[ckey]
 	if(prefs)
@@ -283,9 +302,46 @@
 	prefs.last_ip = address				//these are gonna be used for banning
 	prefs.last_id = computer_id			//these are gonna be used for banning
 
+<<<<<<< HEAD
 	hook_vr("client_new",list(src)) //VOREStation Code. For now this only loads vore prefs, so better put before mob.Login() call but after normal prefs are loaded.
+=======
+	var/full_version = "[byond_version].[byond_build ? byond_build : "xxx"]"
+	log_access("Login: [key_name(src)] from [address ? address : "localhost"]-[computer_id] || BYOND v[full_version]")
+
+	prefs_vr = new/datum/vore_preferences(src)
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 	. = ..()	//calls mob.Login()
+
+	// Admin Verbs need the client's mob to exist. Must be after ..()
+	var/connecting_admin = FALSE //because de-admined admins connecting should be treated like admins.
+	//Admin Authorisation
+	var/datum/admins/admin_datum = GLOB.admin_datums[ckey]
+	if (!isnull(admin_datum))
+		admin_datum.associate(src)
+		connecting_admin = TRUE
+	else if(GLOB.deadmins[ckey])
+		add_verb(src, /client/proc/readmin)
+		connecting_admin = TRUE
+
+	if (byond_version >= 512)
+		if (!byond_build || byond_build < 1386)
+			message_admins(span_adminnotice("[key_name(src)] has been detected as spoofing their byond version. Connection rejected."))
+			//add_system_note("Spoofed-Byond-Version", "Detected as using a spoofed byond version.")
+			log_suspicious_login("Failed Login: [key] - Spoofed byond version")
+			qdel(src)
+
+		if (num2text(byond_build) in GLOB.blacklisted_builds)
+			log_access("Failed login: [key] - blacklisted byond version")
+			to_chat_immediate(src, span_userdanger("Your version of byond is blacklisted."))
+			to_chat_immediate(src, span_danger("Byond build [byond_build] ([byond_version].[byond_build]) has been blacklisted for the following reason: [GLOB.blacklisted_builds[num2text(byond_build)]]."))
+			to_chat_immediate(src, span_danger("Please download a new version of byond. If [byond_build] is the latest, you can go to <a href=\"https://secure.byond.com/download/build\">BYOND's website</a> to download other versions."))
+			if(connecting_admin)
+				to_chat_immediate(src, "As an admin, you are being allowed to continue using this version, but please consider changing byond versions")
+			else
+				qdel(src)
+				return
+
 	prefs.sanitize_preferences()
 	if(prefs)
 		prefs.selecting_slots = FALSE
@@ -375,7 +431,11 @@
 		gc_destroyed = world.time
 		if (!QDELING(src))
 			stack_trace("Client does not purport to be QDELING, this is going to cause bugs in other places!")
+<<<<<<< HEAD
 		GLOB.tickets.ClientLogout(src) // CHOMPedit - Tickets System
+=======
+
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 		// Yes this is the same as what's found in qdel(). Yes it does need to be here
 		// Get off my back
 		SEND_SIGNAL(src, COMSIG_PARENT_QDELETING, TRUE)
@@ -383,14 +443,23 @@
 	return ..()
 
 /client/Destroy()
+	GLOB.directory -= ckey
+	GLOB.clients -= src
+	persistent_client.set_client(null)
+
+	log_access("Logout: [key_name(src)]")
+	GLOB.tickets.ClientLogout(src)
 	if(holder)
 		holder.owner = null
 		GLOB.admins -= src
+<<<<<<< HEAD
 	if (mentorholder)
 		mentorholder.owner = null
 		GLOB.mentors -= src
 	GLOB.directory -= ckey
 	GLOB.clients -= src
+=======
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 	..()
 	return QDEL_HINT_HARDDEL_NOW
@@ -480,7 +549,7 @@
 	//Panic bunker code
 	if (isnum(player_age) && player_age == 0) //first connection
 		if (CONFIG_GET(flag/panic_bunker) && !holder && !GLOB.deadmins[key])
-			log_adminwarn("Failed Login: [key] - New account attempting to connect during panic bunker")
+			log_admin_private("Failed Login: [key] - New account attempting to connect during panic bunker")
 			message_admins(span_adminnotice("Failed Login: [key] - New account attempting to connect during panic bunker"))
 			disconnect_with_message("Sorry but the server is currently not accepting connections from never before seen players.")
 			return 0
@@ -508,7 +577,6 @@
 		else
 			log_admin("Couldn't perform IP check on [key] with [address]")
 
-	// VOREStation Edit Start - Department Hours
 	var/datum/db_query/query_hours = SSdbcore.NewQuery("SELECT department, hours, total_hours FROM vr_player_hours WHERE ckey = '[sql_ckey]'")
 	if(query_hours.Execute())
 		while(query_hours.NextRow())
@@ -516,9 +584,8 @@
 			play_hours[query_hours.item[1]] = text2num(query_hours.item[3])
 	else
 		var/error_message = query_hours.ErrorMsg() // Need this out here since the spawn below will split the stack and who knows what'll happen by the time it runs
-		log_debug("Error loading play hours for [ckey]: [error_message]")
+		log_sql("Error loading play hours for [ckey]: [error_message]")
 		tgui_alert_async(src, "The query to load your existing playtime failed. Screenshot this, give the screenshot to a developer, and reconnect, otherwise you may lose any recorded play hours (which may limit access to jobs). ERROR: [error_message]", "PROBLEMS!!")
-	// VOREStation Edit End - Department Hours
 	qdel(query_hours)
 	if(sql_id)
 		//Player already identified previously, we need to just update the 'lastseen', 'ip' and 'computer_id' variables

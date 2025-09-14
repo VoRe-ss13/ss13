@@ -9,7 +9,11 @@
 	if(!msg)
 		return
 
+<<<<<<< HEAD
 	log_adminsay(msg,src)
+=======
+	user.mob.log_talk(message, LOG_ASAY)
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 	for(var/client/C in GLOB.admins)
 		if(check_rights_for(C, R_ADMIN))
@@ -17,6 +21,7 @@
 
 	feedback_add_details("admin_verb","M") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+<<<<<<< HEAD
 /client/proc/cmd_mod_say(msg as text)
 	set category = "Admin.Chat"
 	set name = "Msay"
@@ -27,6 +32,11 @@
 
 	msg = sanitize(msg)
 	log_modsay(msg,src)
+=======
+ADMIN_VERB(cmd_mod_say, (R_ADMIN|R_MOD|R_SERVER), "Msay", "Send a message to other mod", "Admin.Chat", message as text)
+	var/msg = sanitize(message)
+	log_modsay(msg, list("speaker" = user))
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 	if (!msg)
 		return
@@ -40,6 +50,7 @@
 
 	feedback_add_details("admin_verb","MS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+<<<<<<< HEAD
 /client/proc/cmd_event_say(msg as text)
 	set category = "Admin.Chat"
 	set name = "Esay"
@@ -50,6 +61,11 @@
 
 	msg = sanitize(msg)
 	log_eventsay(msg,src)
+=======
+ADMIN_VERB(cmd_event_say, (R_ADMIN|R_MOD|R_EVENT|R_SERVER), "Esay", "Send a message to other event manager", "Admin.Chat", message as text)
+	var/msg = sanitize(message)
+	log_eventsay(msg, list("speaker" = user))
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 	if (!msg)
 		return

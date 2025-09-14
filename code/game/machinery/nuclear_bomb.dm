@@ -393,18 +393,58 @@ GLOBAL_VAR(bomb_set)
 		if(ticker.mode && ticker.mode.name == "Mercenary")
 			var/obj/machinery/computer/shuttle_control/multi/syndicate/syndie_location = locate(/obj/machinery/computer/shuttle_control/multi/syndicate)
 			if(syndie_location)
+<<<<<<< HEAD
 				ticker.mode:syndies_didnt_escape = (syndie_location.z > 1 ? 0 : 1)	//muskets will make me change this, but it will do for now
 			ticker.mode:nuke_off_station = off_station
 		ticker.station_explosion_cinematic(off_station,null)
 		if(ticker.mode)
 			ticker.mode.explosion_in_progress = 0
 			to_world(span_boldannounce("The station was destoyed by the nuclear blast!"))
+=======
+				SSticker.mode:syndies_didnt_escape = (syndie_location.z > 1 ? 0 : 1)	//muskets will make me change this, but it will do for now
+			SSticker.mode:nuke_off_station = off_station
+
+		switch(off_station)
+			if(0)
+				if(SSticker.mode.name == "mercenary")
+					play_cinematic(/datum/cinematic/nuke/ops_victory)
+				else
+					play_cinematic(/datum/cinematic/nuke/self_destruct)
+
+					// FIXME: Probably a better way
+					for(var/mob/living/M in GLOB.living_mob_list)
+						switch(M.z)
+							if(0)	//inside a crate or something
+								var/turf/T = get_turf(M)
+								if(T && (T.z in using_map.station_levels))				//we don't use M.death(0) because it calls a for(/mob) loop and
+									M.health = 0
+									M.set_stat(DEAD)
+							if(1)	//on a z-level 1 turf.
+								M.health = 0
+								M.set_stat(DEAD)
+			if(1)
+				if(SSticker.mode.name == "mercenary")
+					play_cinematic(/datum/cinematic/nuke/ops_miss)
+				else
+					play_cinematic(/datum/cinematic/nuke/self_destruct_miss)
+			if(2)
+				play_cinematic(/datum/cinematic/nuke/far_explosion)
+
+		if(SSticker.mode)
+			SSticker.mode.explosion_in_progress = 0
+			to_chat(world, span_boldannounce("The station was destoyed by the nuclear blast!"))
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 			ticker.mode.station_was_nuked = (off_station<2)	//offstation==1 is a draw. the station becomes irradiated and needs to be evacuated.
 															//kinda shit but I couldn't  get permission to do what I wanted to do.
 
+<<<<<<< HEAD
 			if(!ticker.mode.check_finished())//If the mode does not deal with the nuke going off so just reboot because everyone is stuck as is
 				to_world(span_boldannounce("Resetting in 30 seconds!"))
+=======
+			if(!SSticker.mode.check_finished())//If the mode does not deal with the nuke going off so just reboot because everyone is stuck as is
+				to_chat(world, span_boldannounce("Resetting in 30 seconds!"))
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 				feedback_set_details("end_error","nuke - unhandled ending")
 
