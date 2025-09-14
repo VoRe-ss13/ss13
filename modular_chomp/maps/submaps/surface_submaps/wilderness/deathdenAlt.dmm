@@ -617,12 +617,15 @@
 "Tm" = (
 /turf/simulated/wall/cult,
 /area/submap/DeathDen)
+<<<<<<< HEAD
 "Tx" = (
 /obj/machinery/power/supermatter/shard,
 /turf/simulated/floor/wood/sif{
 	oxygen = 0
 	},
 /area/submap/DeathDen)
+=======
+>>>>>>> 8b858ec70c (Obliterates the SM Shard from Sif (#11577))
 "Xy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/food/snacks/candy_corn{
@@ -989,7 +992,7 @@ Ct
 Ct
 Ct
 Tm
-Tx
+zd
 Tm
 Ct
 Ct
