@@ -6,6 +6,42 @@
 /obj/item/integrated_circuit/input/proc/ask_for_input(mob/user)
 	return
 
+<<<<<<< HEAD
+=======
+/obj/item/integrated_circuit/input/reference_grabber // Allows grabbing non-adjacet refs, and their coords. (relative)
+	name = "reference grabber"
+	desc = "A handheld mechanism that can be aimed to attain distant references."
+	extended_desc = "When used, it will capture the reference of the target, and output coordinates relative to the user."
+	icon_state = "video_camera"
+	complexity = 10
+	inputs = list()
+	outputs = list(
+		"clicked ref" = IC_PINTYPE_REF,
+		"X" = IC_PINTYPE_NUMBER,
+		"Y" = IC_PINTYPE_NUMBER
+	)
+	activators = list(
+		"on success" = IC_PINTYPE_PULSE_OUT,
+		"on failure" = IC_PINTYPE_PULSE_OUT
+	)
+	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
+
+/obj/item/integrated_circuit/input/reference_grabber/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	if(!assembly || user.get_active_hand() != assembly)
+		activate_pin(2) // Failure pin, not in assembly, or not held.
+		return
+
+	if(!target || get_dist(user, target) > 7 || !(target in view(user)))
+		activate_pin(2) // Failure pin, out of range or not visible.
+		return
+
+	set_pin_data(IC_OUTPUT, 1, WEAKREF(target))
+	set_pin_data(IC_OUTPUT, 2, target.x - user.x)
+	set_pin_data(IC_OUTPUT, 3, target.y - user.y)
+	push_data()
+	activate_pin(1) // Success pin
+
+>>>>>>> 1f538900aa ([MIRROR] Fix circuit complexities, and minor pathfinder circuit fix (#11634))
 /obj/item/integrated_circuit/input/button
 	name = "button"
 	desc = "This tiny button must do something, right?"
@@ -63,7 +99,7 @@
 	name = "text pad"
 	desc = "This small text pad allows someone to input a string into the system."
 	icon_state = "textpad"
-	complexity = 2
+	complexity = 1
 	can_be_asked_input = 1
 	inputs = list()
 	outputs = list("string entered" = IC_PINTYPE_STRING)
@@ -102,7 +138,7 @@
 	name = "integrated medical analyser"
 	desc = "A very small version of the common medical analyser.  This allows the machine to know how healthy someone is."
 	icon_state = "medscan"
-	complexity = 4
+	complexity = 5
 	inputs = list("target" = IC_PINTYPE_REF)
 	outputs = list(
 		"total health %" = IC_PINTYPE_NUMBER,
@@ -136,7 +172,7 @@
 
 	This type is much more precise, allowing the machine to know much more about the target than a normal analyzer."
 	icon_state = "medscan_adv"
-	complexity = 12
+	complexity = 10
 	inputs = list("target" = IC_PINTYPE_REF)
 	outputs = list(
 		"total health %"		= IC_PINTYPE_NUMBER,
@@ -192,7 +228,7 @@
 	activators = list("scan" = IC_PINTYPE_PULSE_IN, "on scanned" = IC_PINTYPE_PULSE_OUT, "not scanned" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_RESEARCH
 	origin_tech = list(TECH_ENGINEERING = 3, TECH_DATA = 3, TECH_BIO = 4)
-	power_draw_per_use = 80
+	power_draw_per_use = 40
 
 /obj/item/integrated_circuit/input/examiner/do_work()
 	var/atom/movable/H = get_pin_data_as_type(IC_INPUT, 1, /atom/movable)
@@ -225,6 +261,7 @@
 	desc = "This is needed for certain devices that demand a reference for a target to act upon.  This type only locates something \
 	that is holding the machine containing it."
 	inputs = list()
+	complexity = 3
 	outputs = list("located ref")
 	activators = list("locate" = IC_PINTYPE_PULSE_IN)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
@@ -248,6 +285,7 @@
 	random."
 	inputs = list("desired type ref")
 	outputs = list("located ref")
+	complexity = 4
 	activators = list("locate" = IC_PINTYPE_PULSE_IN,"found" = IC_PINTYPE_PULSE_OUT,
 		"not found" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
@@ -293,7 +331,7 @@
 	outputs = list("located ref")
 	activators = list("locate" = IC_PINTYPE_PULSE_IN,"found" = IC_PINTYPE_PULSE_OUT,"not found" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
-	power_draw_per_use = 30
+	power_draw_per_use = 50
 	var/radius = 1
 
 /obj/item/integrated_circuit/input/advanced_locator/on_data_written()
@@ -307,7 +345,7 @@
 	var/datum/integrated_io/O = outputs[1]
 	O.data = null
 	var/turf/T = get_turf(src)
-	var/list/nearby_things = range(radius, T) & view(T)
+	var/list/nearby_things = range(radius, T)
 	var/list/valid_things = list()
 	if(isweakref(I.data))
 		var/atom/A = I.data.resolve()
@@ -317,13 +355,45 @@
 				for(var/atom/thing in nearby_things)
 					if(thing.is_incorporeal())
 						continue
+<<<<<<< HEAD
 					if(thing.type == desired_type)
 						valid_things.Add(thing)
 	else if(istext(I.data))
+=======
+					// Skip invisible & incorporeal players.
+					if(ismob(M) && M:invisibility > 0)
+						continue
+					if(istype(thing, desired_type))
+						valid_things.Add(thing)
+	else if(istext(I.data))
+		if (length(I.data) > 2) // Ensure string is not empty.
+			if (copytext(I.data, 1, 2) == "/")
+				var/desired_type = text2path(I.data)
+				for(var/atom/thing in nearby_things)
+					var/atom/movable/M = thing
+					if(ismob(M) && M:stat == DEAD && get_pin_data(IC_INPUT, 3) == TRUE) // Ignore dead mobs if requested.
+						continue
+					if(thing.is_incorporeal())
+						continue
+					// Skip invisible & incorporeal players.
+					if(ismob(M) && M:invisibility > 0)
+						continue
+					if(istype(thing, desired_type))
+						valid_things.Add(thing)
+>>>>>>> 1f538900aa ([MIRROR] Fix circuit complexities, and minor pathfinder circuit fix (#11634))
 		var/DT = I.data
 		for(var/atom/thing in nearby_things)
 			if(thing.is_incorporeal())
 				continue
+<<<<<<< HEAD
+=======
+			var/atom/movable/M = thing
+			if(ismob(M) && M == DEAD && get_pin_data(IC_INPUT, 3) == TRUE) // Ignore dead mobs if requested.
+				continue
+			// Skip invisible & incorporeal players.
+			if(ismob(M) && M:invisibility > 0)
+				continue
+>>>>>>> 1f538900aa ([MIRROR] Fix circuit complexities, and minor pathfinder circuit fix (#11634))
 			if(findtext(addtext(thing.name," ",thing.desc), DT, 1, 0) )
 				valid_things.Add(thing)
 	if(valid_things.len)
@@ -354,7 +424,7 @@
 		"on signal received" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 2, TECH_MAGNET = 2)
-	power_draw_idle = 5
+	// power_draw_idle = 5 // Breaks recharging cells, and unnecessary for this circuit.
 	power_draw_per_use = 40
 
 	var/frequency = 1457
@@ -441,9 +511,10 @@
 	outputs = list(
 		"address received"			= IC_PINTYPE_STRING,
 		"data received"				= IC_PINTYPE_STRING,
-		"secondary text received"	= IC_PINTYPE_STRING
+		"secondary text received"	= IC_PINTYPE_STRING,
+		"self address"				= IC_PINTYPE_STRING
 		)
-	activators = list("send data" = IC_PINTYPE_PULSE_IN, "on data received" = IC_PINTYPE_PULSE_OUT)
+	activators = list("send data" = IC_PINTYPE_PULSE_IN, "on data received" = IC_PINTYPE_PULSE_OUT, "on data sent" = IC_PINTYPE_PULSE_OUT)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	origin_tech = list(TECH_ENGINEERING = 2, TECH_DATA = 2, TECH_MAGNET = 2, TECH_BLUESPACE = 2)
 	power_draw_per_use = 50
@@ -473,6 +544,7 @@
 	var/target_address = get_pin_data(IC_INPUT, 1)
 	var/message = get_pin_data(IC_INPUT, 2)
 	var/text = get_pin_data(IC_INPUT, 3)
+	set_pin_data(IC_OUTPUT, 4, exonet.address)
 
 	if(target_address && istext(target_address))
 		if(!get_connection_to_tcomms())
@@ -575,7 +647,7 @@
 	is only triggered if it sees someone speaking a language other than sign language, which it will attempt to \
 	lip-read."
 	icon_state = "video_camera"
-	complexity = 12
+	complexity = 5
 	inputs = list()
 	outputs = list(
 	"speaker ref",
@@ -640,7 +712,7 @@
 	desc = "Scans and obtains a reference for any objects or persons near you.  All you need to do is shove the machine in their face."
 	extended_desc = "If 'ignore storage' pin is set to true, the sensor will disregard scanning various storage containers such as backpacks."
 	icon_state = "recorder"
-	complexity = 12
+	complexity = 8
 	inputs = list("ignore storage" = IC_PINTYPE_BOOLEAN)
 	outputs = list("scanned" = IC_PINTYPE_REF)
 	activators = list("on scanned" = IC_PINTYPE_PULSE_OUT)
@@ -742,7 +814,7 @@
 	desc = "The same atmospheric analysis module that is integrated into every PDA.  \
 	This allows the machine to know the composition, temperature and pressure of the surrounding atmosphere."
 	icon_state = "medscan_adv"
-	complexity = 9
+	complexity = 6
 	inputs = list()
 	outputs = list(
 		"pressure"       = IC_PINTYPE_NUMBER,
