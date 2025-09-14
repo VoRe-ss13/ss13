@@ -401,6 +401,25 @@
 	for(var/obj/item/integrated_circuit/IC in contents)
 		IC.on_unanchored()
 
+<<<<<<< HEAD
+=======
+// Bump functionality, for pathfinding circuits. (Droid circuit assembly types)
+/obj/item/electronic_assembly/Bump(atom/AM)
+	..()
+	if(can_move())
+		// Check if it's an airlock or windoor. (Prevents opening blast doors and shutters)
+		if(istype(AM, /obj/machinery/door/airlock) || istype(AM, /obj/machinery/door/window))
+			var/obj/machinery/door/D = AM
+			// Only open doors that we have access to
+			if(D.check_access(src))
+				D.open()
+
+/obj/item/electronic_assembly/check_access(obj/item/I)
+	if(access_card)
+		return access_card.check_access(I)
+	return ..()  // Fall back to default behavior if no access_card
+
+>>>>>>> 1f538900aa ([MIRROR] Fix circuit complexities, and minor pathfinder circuit fix (#11634))
 // Returns TRUE if I is something that could/should have a valid interaction. Used to tell circuitclothes to hit the circuit with something instead of the clothes
 /obj/item/electronic_assembly/proc/is_valid_tool(var/obj/item/I)
 	return I.has_tool_quality(TOOL_CROWBAR) || I.has_tool_quality(TOOL_SCREWDRIVER) || istype(I, /obj/item/integrated_circuit) || istype(I, /obj/item/cell/device) || istype(I, /obj/item/integrated_electronics)
