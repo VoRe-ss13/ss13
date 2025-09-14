@@ -54,10 +54,14 @@
 	icon_state = "arm_blade"
 	w_class = ITEMSIZE_HUGE
 	force = 5
-	anchored = TRUE
 	throwforce = 0 //Just to be on the safe side
 	throw_range = 0
 	throw_speed = 0
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/armblade.dm
+=======
+	embed_chance = 0 //No embedding.
+	item_flags = DROPDEL | NOSTRIP
+>>>>>>> e97dd3d6e2 ([MIRROR] Moves destroy_on_drop to TG style and adds signal (#11640)):code/datums/components/antags/changeling/powers/armblade.dm
 	var/mob/living/creator //This is just like ninja swords, needed to make sure dumb shit that removes the sword doesn't make it stay around.
 	var/weapType = "weapon"
 	var/weapLocation = "arm"

@@ -45,6 +45,11 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define FLEXIBLEMATERIAL		(1<<4)	// At the moment, masks with this flag will not prevent eating even if they are covering your face.
 #define ALLOW_SURVIVALFOOD		(1<<5)	// Allows special survival food items to be eaten through it
 #define INFINITE_AIR			(1<<6)	// Provides an infinite air supply.
+<<<<<<< HEAD
+=======
+#define NOSTRIP					(1<<7)  // Items that should never get stripped
+#define DROPDEL 				(1<<8)  // Items that delete upon being dropped
+>>>>>>> e97dd3d6e2 ([MIRROR] Moves destroy_on_drop to TG style and adds signal (#11640))
 
 // Flags for pass_flags. - Used in /atom/var/pass_flags
 #define PASSTABLE				(1<<0)

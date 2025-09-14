@@ -103,6 +103,10 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "electric_hand"
 	show_examine = FALSE
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/bioelectrogenesis.dm
+=======
+	item_flags = DROPDEL | NOSTRIP
+>>>>>>> e97dd3d6e2 ([MIRROR] Moves destroy_on_drop to TG style and adds signal (#11640)):code/datums/components/antags/changeling/powers/bioelectrogenesis.dm
 
 	var/shock_cost = 10
 	var/agony_amount = 60

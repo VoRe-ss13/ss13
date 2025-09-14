@@ -113,6 +113,34 @@
 	var/digestable = TRUE
 	var/item_tf_spawn_allowed = FALSE
 	var/list/ckeys_allowed_itemspawn = null
+<<<<<<< HEAD
+=======
+	var/datum/weakref/exploit_for //if this obj is an exploit for somebody, this points to them
+	var/preserve_item = 0 //whether this object is preserved when its owner goes into cryo-storage, gateway, etc
+	var/persist_storable = TRUE		//If this is true, this item can be stored in the item bank.
+									//This is automatically set to false when an item is removed from storage
+
+	var/list/possessed_voice //Allows for items to be possessed/inhabited by voices.
+	var/list/warned_of_possession //Checks to see who has been informed this item is possessed.
+	var/cleaving = FALSE // Used to avoid infinite cleaving.
+	var/list/tool_qualities
+	var/obj/item/organ/my_augment = null	// Used to reference the object's host organ.
+	var/datum/identification/identity = null
+	var/identity_type = /datum/identification
+	var/init_hide_identity = FALSE // Set to true to automatically obscure the object on initialization.
+
+	//Vorestuff
+	var/trash_eatable = TRUE
+	var/digest_stage = null
+	var/d_mult_old = 1 //digest stage descriptions
+	var/d_mult = 1 //digest stage descriptions
+	var/d_stage_overlay //digest stage effects
+	var/gurgled = FALSE
+	var/oldname
+	var/cleanname
+	var/cleandesc
+	var/gurgled_color
+>>>>>>> e97dd3d6e2 ([MIRROR] Moves destroy_on_drop to TG style and adds signal (#11640))
 
 /obj/item/Initialize(mapload)
 	. = ..()
@@ -395,6 +423,14 @@
 	// Remove any item actions we temporary gave out.
 	for(var/datum/action/action_item_has as anything in actions)
 		action_item_has.Remove(user)
+
+	if((item_flags & DROPDEL) && !QDELETED(src))
+		qdel(src)
+
+	SEND_SIGNAL(src, COMSIG_ITEM_DROPPED, user)
+
+	if(my_augment && !QDELETED(src))
+		forceMove(my_augment)
 
 // called just as an item is picked up (loc is not yet changed)
 /obj/item/proc/pickup(mob/user)
