@@ -426,17 +426,23 @@
 		M.loc = src
 	src.flush()
 
+<<<<<<< HEAD
 //Chompadd: Autocatch for stuff being thrown into disposal chutes..
 /obj/machinery/disposal/deliveryChute/hitby(atom/movable/AM)
 	if((istype(AM, /obj/item) || istype(AM, /mob/living)) && !istype(AM, /obj/item/projectile))
+=======
+/obj/machinery/disposal/deliveryChute/hitby(atom/movable/source)
+	if(!QDELETED(source) || (isitem(source) || isliving(source)) && !istype(source, /obj/item/projectile))
+>>>>>>> 980ece6324 ([MIRROR] Mop do_after multi use)
 		switch(dir)
 			if(NORTH)
-				if(AM.loc.y != src.loc.y+1) return ..()
+				if(source.loc.y != src.loc.y+1) return ..()
 			if(EAST)
-				if(AM.loc.x != src.loc.x+1) return ..()
+				if(source.loc.x != src.loc.x+1) return ..()
 			if(SOUTH)
-				if(AM.loc.y != src.loc.y-1) return ..()
+				if(source.loc.y != src.loc.y-1) return ..()
 			if(WEST)
+<<<<<<< HEAD
 				if(AM.loc.x != src.loc.x-1) return ..()
 		AM.forceMove(src)
 		src.flush()
@@ -463,6 +469,11 @@
 		mode = 1	// switch to charging
 	update()
 	return
+=======
+				if(source.loc.x != src.loc.x-1) return ..()
+		source.forceMove(src)
+		flush()
+>>>>>>> 980ece6324 ([MIRROR] Mop do_after multi use)
 
 /obj/machinery/disposal/deliveryChute/attackby(var/obj/item/I, var/mob/user)
 	if(!I || !user)
