@@ -13,6 +13,14 @@
 	open_sound = 'sound/effects/crate_open.ogg'
 	close_sound = 'sound/effects/crate_close.ogg'
 
+<<<<<<< HEAD
+=======
+/obj/structure/closet/crate/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/climbable)
+	AddElement(/datum/element/rotatable)
+
+>>>>>>> d5605935a4 ([MIRROR] Rotatable Atom Element (#11639))
 /obj/structure/closet/crate/can_open()
 	return 1
 
@@ -69,6 +77,7 @@
 	update_icon()
 	return 1
 
+<<<<<<< HEAD
 /obj/structure/closet/crate/MouseDrop_T(mob/target, mob/user)
 	// Adds climbing from drag, You can't put yourself in crates with a drag anyway... Nore anyone else actually.
 	var/mob/living/H = user
@@ -97,6 +106,8 @@
 
 	src.set_dir(turn(src.dir, 90))
 
+=======
+>>>>>>> d5605935a4 ([MIRROR] Rotatable Atom Element (#11639))
 /obj/structure/closet/crate/attackby(obj/item/W as obj, mob/user as mob)
 	if(W.has_tool_quality(TOOL_WRENCH) && istype(src,/obj/structure/closet/crate/bin))
 		return ..()

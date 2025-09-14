@@ -605,6 +605,11 @@
 #include "code\datums\elements\footstep.dm"
 #include "code\datums\elements\footstep_override.dm"
 #include "code\datums\elements\light_blocking.dm"
+<<<<<<< HEAD
+=======
+#include "code\datums\elements\rotatable.dm"
+#include "code\datums\elements\sellable.dm"
+>>>>>>> d5605935a4 ([MIRROR] Rotatable Atom Element (#11639))
 #include "code\datums\elements\slosh.dm"
 #include "code\datums\elements\turf_transparency.dm"
 #include "code\datums\game_masters\_common.dm"

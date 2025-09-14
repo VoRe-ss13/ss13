@@ -20,6 +20,14 @@
 	var/obj/machinery/shield_gen/owned_gen
 	interact_offline = TRUE
 
+<<<<<<< HEAD
+=======
+/obj/machinery/shield_capacitor/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/climbable)
+	AddElement(/datum/element/rotatable)
+
+>>>>>>> d5605935a4 ([MIRROR] Rotatable Atom Element (#11639))
 /obj/machinery/shield_capacitor/advanced
 	name = "advanced shield capacitor"
 	desc = "A machine that charges a shield generator.  This version can store, input, and output more electricity."
@@ -134,28 +142,3 @@
 		icon_state = "broke"
 	else
 		..()
-
-/obj/machinery/shield_capacitor/verb/rotate_clockwise()
-	set name = "Rotate Capacitor Clockwise"
-	set category = "Object"
-	set src in oview(1)
-
-	if (src.anchored)
-		to_chat(usr, "It is fastened to the floor!")
-		return
-
-	src.set_dir(turn(src.dir, 270))
-	return
-
-//VOREstation edit: counter-clockwise rotation
-/obj/machinery/shield_capacitor/verb/rotate_counterclockwise()
-	set name = "Rotate Capacitor Counter-Clockwise"
-	set category = "Object"
-	set src in oview(1)
-
-	if (src.anchored)
-		to_chat(usr, "It is fastened to the floor!")
-		return
-
-	src.set_dir(turn(src.dir, 90))
-	return

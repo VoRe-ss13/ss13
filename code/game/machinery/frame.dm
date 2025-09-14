@@ -296,6 +296,12 @@ GLOBAL_LIST(construction_frame_floor)
 
 	update_icon()
 
+<<<<<<< HEAD
+=======
+	AddElement(/datum/element/climbable)
+	AddElement(/datum/element/rotatable)
+
+>>>>>>> d5605935a4 ([MIRROR] Rotatable Atom Element (#11639))
 /obj/structure/frame/attackby(obj/item/P as obj, mob/user as mob)
 	if(P.has_tool_quality(TOOL_WRENCH))
 		if(state == FRAME_PLACED && !anchored)
@@ -606,6 +612,7 @@ GLOBAL_LIST(construction_frame_floor)
 
 	update_icon()
 
+<<<<<<< HEAD
 /obj/structure/frame/verb/rotate_counterclockwise()
 	set name = "Rotate Frame Counter-Clockwise"
 	set category = "Object"
@@ -642,3 +649,55 @@ GLOBAL_LIST(construction_frame_floor)
 	to_chat(usr, span_notice("You rotate the [src] to face [dir2text(dir)]!"))
 
 	return
+=======
+/obj/structure/frame/proc/install_part(var/mob/user, var/obj/item/P, var/defer_feedback = FALSE)
+	var/installed_part = FALSE
+	for(var/I in req_components)
+		if(!istype(P, I) || (req_components[I] == 0))
+			continue
+
+		installed_part = TRUE
+		if(istype(P, /obj/item/stack))
+			var/obj/item/stack/ST = P
+			if(ST.get_amount() > 1)
+				var/camt = min(ST.get_amount(), req_components[I]) // amount of stack to take, idealy amount required, but limited by amount provided
+				var/obj/item/stack/NS = new ST.stacktype(src, camt)
+				NS.update_icon()
+				ST.use(camt)
+				components += NS
+				req_components[I] -= camt
+				break
+
+		if(istype(P.loc,/obj/item/storage))
+			var/obj/item/storage/holder = P.loc
+			holder.remove_from_storage(P, src)
+		else
+			user.drop_item()
+			P.forceMove(src)
+		components += P
+		req_components[I]--
+		break
+
+	if(defer_feedback)
+		return installed_part
+
+	if(installed_part)
+		playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
+		update_desc()
+		to_chat(user, desc)
+		return TRUE
+
+	to_chat(user, span_warning("You cannot add that component to the machine!"))
+	return FALSE
+
+/obj/structure/frame/proc/mass_install_parts(var/mob/user, var/obj/item/storage/S)
+	var/installed_part = FALSE
+	for(var/obj/item/P in S.contents)
+		installed_part |= install_part(user, P, TRUE)
+	if(!installed_part)
+		return FALSE
+	playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
+	update_desc()
+	to_chat(user, desc)
+	return TRUE
+>>>>>>> d5605935a4 ([MIRROR] Rotatable Atom Element (#11639))
