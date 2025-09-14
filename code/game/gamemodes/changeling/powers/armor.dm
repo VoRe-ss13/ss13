@@ -37,6 +37,10 @@
 	desc = "A huge, bulky mass of pressure and temperature-resistant organic tissue, evolved to facilitate space travel."
 	flags = 0	//Not THICKMATERIAL because it's organic tissue, so if somebody tries to inject something into it,
 				//it still ends up in your blood. (also balance but muh fluff)
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/armor.dm
+=======
+	item_flags = THICKMATERIAL | DROPDEL | NOSTRIP
+>>>>>>> e97dd3d6e2 ([MIRROR] Moves destroy_on_drop to TG style and adds signal (#11640)):code/datums/components/antags/changeling/powers/armor.dm
 	allowed = list(POCKET_GENERIC, POCKET_ALL_TANKS)
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0) //No armor at all.
 	canremove = FALSE
@@ -60,10 +64,14 @@
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	body_parts_covered = HEAD|FACE|EYES
 	canremove = FALSE
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/armor.dm
 
 /obj/item/clothing/head/helmet/space/changeling/dropped(mob/user)
 	..()
 	qdel(src)
+=======
+	item_flags = THICKMATERIAL | AIRTIGHT | ALLOW_SURVIVALFOOD | DROPDEL | NOSTRIP
+>>>>>>> e97dd3d6e2 ([MIRROR] Moves destroy_on_drop to TG style and adds signal (#11640)):code/datums/components/antags/changeling/powers/armor.dm
 
 /obj/item/clothing/shoes/magboots/changeling
 	desc = "A suction cupped mass of flesh, shaped like a foot."
@@ -71,6 +79,10 @@
 	icon_state = "lingspacesuit"
 	actions_types = list(/datum/action/item_action/toggle_grippers)
 	canremove = FALSE
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/armor.dm
+=======
+	item_flags = DROPDEL | NOSTRIP
+>>>>>>> e97dd3d6e2 ([MIRROR] Moves destroy_on_drop to TG style and adds signal (#11640)):code/datums/components/antags/changeling/powers/armor.dm
 
 /obj/item/clothing/shoes/magboots/changeling/set_slowdown()
 	slowdown = shoes? max(SHOES_SLOWDOWN, shoes.slowdown): SHOES_SLOWDOWN	//So you can't put on magboots to make you walk faster.
