@@ -121,13 +121,22 @@
 		return
 	destroy()
 
-/obj/machinery/camera/hitby(AM as mob|obj)
+/obj/machinery/camera/hitby(atom/movable/source)
 	..()
+<<<<<<< HEAD
 	if (istype(AM, /obj))
 		var/obj/O = AM
 		if (O.throwforce >= src.toughness)
 			visible_message(span_boldwarning("[src] was hit by [O]."))
 		take_damage(O.throwforce)
+=======
+	if (!isobj(source))
+		return
+	var/obj/item/O = source
+	if(O.throwforce >= src.toughness)
+		visible_message(span_boldwarning("[src] was hit by [O]."))
+	take_damage(O.throwforce)
+>>>>>>> 980ece6324 ([MIRROR] Mop do_after multi use)
 
 /obj/machinery/camera/proc/setViewRange(var/num = 7)
 	src.view_range = num

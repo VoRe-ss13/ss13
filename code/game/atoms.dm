@@ -265,9 +265,9 @@
 	return
 
 
-/atom/proc/hitby(atom/movable/AM as mob|obj)
+/atom/proc/hitby(atom/movable/source)
 	if (density)
-		AM.throwing = 0
+		source.throwing = 0
 	return
 
 /atom/proc/add_hiddenprint(mob/living/M as mob)

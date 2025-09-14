@@ -273,6 +273,7 @@
 		tail_image.layer = BODY_LAYER + ((dir in tail_lower_dirs) ? TAIL_LOWER_LAYER : tail_alt)
 		add_overlay(tail_image)
 
+<<<<<<< HEAD
 /obj/structure/gargoyle/hitby(atom/movable/AM as mob|obj,var/speed = THROWFORCE_SPEED_DIVISOR)
 	if(istype(AM,/obj/item) && gargoyle && gargoyle.vore_selected && gargoyle.trash_catching)
 		var/obj/item/I = AM
@@ -281,6 +282,19 @@
 			return
 	else if(isliving(AM) && gargoyle)
 		var/mob/living/L = AM
+=======
+/obj/structure/gargoyle/hitby(atom/movable/source ,var/speed = THROWFORCE_SPEED_DIVISOR)
+	var/mob/living/carbon/human/gargoyle = WR_gargoyle.resolve()
+	if(!gargoyle)
+		return
+	if(isitem(source) && gargoyle.vore_selected && gargoyle.trash_catching)
+		var/obj/item/I = source
+		if(gargoyle.adminbus_trash || is_type_in_list(I, GLOB.edible_trash) && I.trash_eatable && !is_type_in_list(I, GLOB.item_vore_blacklist))
+			gargoyle.hitby(source, speed)
+			return
+	else if(isliving(source))
+		var/mob/living/L = source
+>>>>>>> 980ece6324 ([MIRROR] Mop do_after multi use)
 		if(gargoyle.throw_vore && L.throw_vore && gargoyle.can_be_drop_pred && L.can_be_drop_prey)
 			var/drop_prey_temp = FALSE
 			if(gargoyle.can_be_drop_prey)

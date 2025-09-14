@@ -15,8 +15,8 @@ GLOBAL_LIST_BOILERPLATE(all_mops, /obj/item/mop)
 	w_class = ITEMSIZE_NORMAL
 	flags = NOCONDUCT
 	attack_verb = list("mopped", "bashed", "bludgeoned", "whacked")
-	var/mopping = 0
-	var/mopcount = 0
+	///How long it takes to mop a tile.
+	var/mop_time = 4 SECONDS
 
 /obj/item/mop/Initialize(mapload)
 	. = ..()
@@ -31,7 +31,11 @@ GLOBAL_LIST_BOILERPLATE(all_mops, /obj/item/mop)
 
 		user.visible_message(span_warning("[user] begins to clean \the [get_turf(A)]."))
 
+<<<<<<< HEAD
 		if(do_after(user, 40))
+=======
+		if(do_after(user, mop_time, target = src, max_interact_count = 9))
+>>>>>>> 980ece6324 ([MIRROR] Mop do_after multi use)
 			var/turf/T = get_turf(A)
 			if(T)
 				T.clean(src, user)
@@ -58,6 +62,7 @@ GLOBAL_LIST_BOILERPLATE(all_mops, /obj/item/mop)
 	w_class = ITEMSIZE_NORMAL
 	flags = NOCONDUCT
 	attack_verb = list("mopped", "bashed", "bludgeoned", "whacked")
+<<<<<<< HEAD
 
 /obj/item/mop/advanced/Initialize(mapload)
 	. = ..()
@@ -77,3 +82,6 @@ GLOBAL_LIST_BOILERPLATE(all_mops, /obj/item/mop)
 			if(T)
 				T.clean(src, user)
 			to_chat(user, span_notice("You have finished mopping!"))
+=======
+	mop_time = 2 SECONDS
+>>>>>>> 980ece6324 ([MIRROR] Mop do_after multi use)

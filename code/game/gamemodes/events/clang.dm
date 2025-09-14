@@ -11,6 +11,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 	name = "Immovable Rod"
 	desc = "What the fuck is that?"
 	icon = 'icons/obj/objects.dmi'
+	w_class = 100 //Affects how much damage it does to stuff
 	icon_state = "immrod"
 	throwforce = 100
 	density = TRUE
