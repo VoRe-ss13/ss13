@@ -625,10 +625,15 @@
 	else
 		tgui_alert_async(usr, "Invalid mob")
 
+<<<<<<< HEAD
 /datum/admins/proc/view_runtimes()
 	set category = "Debug.Investigate"
 	set name = "View Runtimes"
 	set desc = "Open the Runtime Viewer"
+=======
+ADMIN_VERB(view_runtimes, R_DEBUG, "View Runtimes", "Opens the runtime viewer.", ADMIN_CATEGORY_DEBUG_INVESTIGATE)
+	GLOB.error_cache.show_to(user)
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637))
 
 	if(!check_rights(R_DEBUG))
 		return

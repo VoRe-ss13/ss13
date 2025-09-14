@@ -2077,7 +2077,7 @@
 /obj/item/reagent_containers/food/snacks/monkeycube/wrapped
 	desc = "Still wrapped in some paper."
 	icon_state = "monkeycubewrap"
-	flags = 0
+	flags = NONE
 	wrapped = 1
 
 /obj/item/reagent_containers/food/snacks/monkeycube/farwacube
@@ -2104,6 +2104,26 @@
 	name = "neaera cube"
 	monkey_type = SPECIES_MONKEY_SKRELL
 
+<<<<<<< HEAD
+=======
+// Pet cubes!
+/obj/item/reagent_containers/food/snacks/monkeycube/pet
+	var/pet_path = null
+
+/obj/item/reagent_containers/food/snacks/monkeycube/pet/wrapped
+	desc = "Still wrapped in some paper."
+	icon_state = "monkeycubewrap"
+	flags = NONE
+	wrapped = 1
+
+/obj/item/reagent_containers/food/snacks/monkeycube/pet/Expand()
+	src.visible_message("<b>\The [src]</b> expands!")
+	if(pet_path)
+		new pet_path(get_turf(src))
+	qdel(src)
+	return 1
+
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637))
 /obj/item/reagent_containers/food/snacks/spellburger
 	name = "Spell Burger"
 	desc = "This is absolutely Ei Nath."

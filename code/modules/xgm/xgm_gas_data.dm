@@ -25,7 +25,7 @@
 	var/tile_overlay = null
 	var/overlay_limit = null
 
-	var/flags = 0
+	var/flags = NONE
 
 /hook/startup/proc/generateGasData()
 	gas_data = new
