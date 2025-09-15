@@ -11,7 +11,12 @@
 	icon_state = "null"
 	item_state = "null"
 	amount_per_transfer_from_this = 10
+<<<<<<< HEAD
 	possible_transfer_amounts = list(5,10,15,25,30,60)
+=======
+	min_transfer_amount = 1
+	max_transfer_amount = 60
+>>>>>>> 7afffda373 ([MIRROR] Drinky Tweaks (#11656))
 	volume = 60
 	w_class = ITEMSIZE_SMALL
 	flags = OPENCONTAINER | NOCONDUCT

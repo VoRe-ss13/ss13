@@ -22,7 +22,12 @@
 	center_of_mass_y = 10
 
 	amount_per_transfer_from_this = 5
+<<<<<<< HEAD
 	possible_transfer_amounts = list(5,10,15,30)
+=======
+	max_transfer_amount = 30
+	min_transfer_amount = 1
+>>>>>>> 7afffda373 ([MIRROR] Drinky Tweaks (#11656))
 	flags = OPENCONTAINER
 
 	matter = list(MAT_GLASS = 60)
