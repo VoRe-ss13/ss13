@@ -8,8 +8,13 @@
 	icon_state = null
 	item_state = "atoxinbottle"
 	amount_per_transfer_from_this = 10
+<<<<<<< HEAD
 	possible_transfer_amounts = list(5,10,15,25,30,60)
 	flags = 0
+=======
+	max_transfer_amount = 60
+	flags = NONE
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637))
 	volume = 60
 	drop_sound = 'sound/items/drop/bottle.ogg'
 	pickup_sound = 'sound/items/pickup/bottle.ogg'

@@ -101,6 +101,24 @@
 		to_chat(mob, span_filter_system(span_boldnotice("Invisimin on. You are now as invisible as a ghost.")))
 		mob.alpha = max(mob.alpha - 100, 0)
 
+<<<<<<< HEAD
+=======
+ADMIN_VERB(list_bombers, R_ADMIN, "List Bombers", "Look at all bombs and their likely culprit.", ADMIN_CATEGORY_GAME)
+	user.holder.list_bombers()
+	//BLACKBOX_LOG_ADMIN_VERB("List Bombers")
+
+ADMIN_VERB(list_signalers, R_ADMIN, "List Signalers", "View all signalers.", ADMIN_CATEGORY_GAME)
+	user.holder.list_signalers()
+	//BLACKBOX_LOG_ADMIN_VERB("List Signalers")
+
+ADMIN_VERB(list_law_changes, R_ADMIN, "List Law Changes", "View all AI law changes.", ADMIN_CATEGORY_DEBUG_INVESTIGATE)
+	user.holder.list_law_changes()
+	//BLACKBOX_LOG_ADMIN_VERB("List Law Changes")
+
+ADMIN_VERB(show_manifest, R_ADMIN, "Show Manifest", "View the shift's Manifest.", ADMIN_CATEGORY_DEBUG_GAME)
+	user.holder.show_manifest()
+	//BLACKBOX_LOG_ADMIN_VERB("Show Manifest")
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637))
 
 /client/proc/player_panel()
 	set name = "Player Panel"

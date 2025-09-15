@@ -292,10 +292,20 @@
 
 /area/stellardelight/deck1/exterior
 	name = "Deck One Exterior"
+<<<<<<< HEAD
 /area/stellardelight/deck2/exterior
 	name = "Deck Two Exterior"
 /area/stellardelight/deck3/exterior
 	name = "Deck Three Exterior"
+=======
+	flags = NONE // To allow shelter capsules to activate here specifically
+/area/stellardelight/deck2/exterior
+	name = "Deck Two Exterior"
+	flags = NONE // To allow shelter capsules to activate here specifically
+/area/stellardelight/deck3/exterior
+	name = "Deck Three Exterior"
+	flags = NONE // To allow shelter capsules to activate here specifically
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637))
 
 /area/stellardelight/deck1/entrepreneur
 	name = "\improper Shared Office"

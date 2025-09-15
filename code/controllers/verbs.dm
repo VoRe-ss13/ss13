@@ -36,6 +36,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/statclick)
 	usr.client.debug_variables(target)
 	message_admins("Admin [key_name_admin(usr)] is debugging the [target] [class].")
 
+<<<<<<< HEAD:code/controllers/verbs.dm
 
 // Debug verbs.
 /client/proc/restart_controller(controller in list("Master", "Failsafe"))
@@ -45,6 +46,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/statclick)
 
 	if(!holder)
 		return
+=======
+ADMIN_VERB(restart_controller, R_DEBUG, "Restart Controller", "Restart one of the various periodic loop controllers for the game (be careful!)", ADMIN_CATEGORY_DEBUG_GAME, controller in list("Master", "Failsafe"))
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637)):code/controllers/admin.dm
 	switch(controller)
 		if("Master")
 			Recreate_MC()
@@ -60,11 +64,16 @@ INITIALIZE_IMMEDIATE(/obj/effect/statclick)
 	set name = "Debug Antagonist"
 	set desc = "Debug an antagonist template."
 
+<<<<<<< HEAD:code/controllers/verbs.dm
+=======
+ADMIN_VERB(debug_antagonist_template, R_DEBUG, "Debug Antagonist", "Debug an antagonist template", ADMIN_CATEGORY_DEBUG_GAME, antag_type in GLOB.all_antag_types)
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637)):code/controllers/admin.dm
 	var/datum/antagonist/antag = GLOB.all_antag_types[antag_type]
 	if(antag)
 		usr.client.debug_variables(antag)
 		message_admins("Admin [key_name_admin(usr)] is debugging the [antag.role_text] template.")
 
+<<<<<<< HEAD:code/controllers/verbs.dm
 /client/proc/debug_controller()
 	set category = "Debug.Investigate"
 	set name = "Debug Controller"
@@ -72,6 +81,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/statclick)
 
 	if(!holder)
 		return
+=======
+ADMIN_VERB(debug_controller, R_DEBUG, "Debug Controller", "Debug the various periodic loop controllers for the game (be careful!)", ADMIN_CATEGORY_DEBUG_GAME)
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637)):code/controllers/admin.dm
 	var/list/options = list()
 	options["MC"] = Master
 	options["Failsafe"] = Failsafe

@@ -1,11 +1,15 @@
 /atom
 	layer = TURF_LAYER //This was here when I got here. Why though?
 	var/level = 2
+<<<<<<< HEAD:code/game/atoms.dm
 	var/flags = 0
 	var/list/fingerprints
 	var/list/fingerprintshidden
 	var/fingerprintslast = null
 	var/list/blood_DNA
+=======
+	var/flags = NONE
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637)):code/game/atom/_atom.dm
 	var/was_bloodied
 	var/blood_color
 	var/pass_flags = 0

@@ -187,6 +187,7 @@ Example: USING PROCCALL = BLOCKING, SELECT = FORCE_NULLS, PRIORITY = HIGH SELECT
 		state = SDQL2_STATE_ERROR;\
 		CRASH("SDQL2 fatal error");};
 
+<<<<<<< HEAD
 /client/proc/SDQL2_query(query_text as message)
 	set category = "Debug.Misc"
 	if(!check_rights(R_DEBUG))  //Shouldn't happen... but just to be safe.
@@ -194,6 +195,13 @@ Example: USING PROCCALL = BLOCKING, SELECT = FORCE_NULLS, PRIORITY = HIGH SELECT
 		log_admin("Non-admin [key_name(usr)] attempted to execute a SDQL query!")
 		return FALSE
 	var/list/results = world.SDQL2_query(query_text, key_name_admin(usr), "[key_name(usr)]")
+=======
+ADMIN_VERB(sdql2_query, R_DEBUG, "SDQL2 Query", "Run a SDQL2 query.", ADMIN_CATEGORY_DEBUG_GAME, query_text as message)
+	var/prompt = tgui_alert(user, "Run SDQL2 Query?", "SDQL2", list("Yes", "Cancel"))
+	if (prompt != "Yes")
+		return
+	var/list/results = world.SDQL2_query(query_text, key_name_admin(user), "[key_name(user)]")
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637))
 	if(length(results) == 3)
 		for(var/I in 1 to 3)
 			to_chat(usr, results[I])

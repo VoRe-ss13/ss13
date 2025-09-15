@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 //Merged Doohl's and the existing ticklag as they both had good elements about them ~
 //Replaces the old Ticklag verb, fps is easier to understand
 /client/proc/set_server_fps()
 	set category = "Debug.Server"
 	set name = "Set Server FPS"
 	set desc = "Sets game speed in frames-per-second. Can potentially break the game"
+=======
+ADMIN_VERB_VISIBILITY(set_server_fps, ADMIN_VERB_VISIBLITY_FLAG_MAPPING_DEBUG)
+ADMIN_VERB(set_server_fps, R_DEBUG, "Set Server FPS", "Sets game speed in frames-per-second. Can potentially break the game", ADMIN_CATEGORY_DEBUG_DANGEROUS)
+	var/cfg_fps = CONFIG_GET(number/fps)
+	var/new_fps = round(tgui_input_number(user, "Sets game frames-per-second. Can potentially break the game (default: [cfg_fps])","FPS", world.fps))
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637))
 
 	if(!check_rights(R_DEBUG))
 		return

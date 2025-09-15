@@ -64,12 +64,12 @@
 /area/vacant/vacant_restaurant_upper
 	name = "\improper Vacant Restaurant"
 	icon_state = "vacant_site"
-	flags = null
+	flags = NONE
 
 /area/vacant/vacant_restaurant_lower
 	name = "\improper Vacant Restaurant"
 	icon_state = "vacant_site"
-	flags = null
+	flags = NONE
 
 /area/engineering/engineering_airlock
 	name = "\improper Engineering Airlock"
@@ -143,6 +143,10 @@
 /area/tether/surfacebase/outside
 	name = "Outside - Surface"
 	sound_env = SOUND_ENVIRONMENT_MOUNTAINS
+<<<<<<< HEAD
+=======
+	flags = NONE // To allow shelter capsules to activate here specifically
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637))
 /area/tether/surfacebase/outside/outside1
 	icon_state = "outside1"
 /area/tether/surfacebase/outside/outside2
@@ -161,10 +165,18 @@
 /area/tether/surfacebase/temple
 	name = "Outside - Wilderness" // ToDo: Make a way to hide spoiler areas off the list of areas ghosts can jump to.
 	icon_state = "red"
+<<<<<<< HEAD
+=======
+	flags = NONE // To allow shelter capsules to activate here specifically
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637))
 
 /area/tether/surfacebase/crash
 	name = "Outside - Wilderness" // ToDo: Make a way to hide spoiler areas off the list of areas ghosts can jump to.
 	icon_state = "yellow"
+<<<<<<< HEAD
+=======
+	flags = NONE // To allow shelter capsules to activate here specifically
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637))
 
 /area/tether/surfacebase/tram
 	name = "\improper Tram Station"
@@ -238,7 +250,7 @@
 	icon_state = "dk_yellow"
 /area/vacant/vacant_site/east
 	name = "\improper East Base Vacant Site"
-	flags = null
+	flags = NONE
 /area/vacant/vacant_library
 	name = "\improper Atrium Construction Site"
 /area/vacant/vacant_bar
@@ -797,6 +809,10 @@
 /area/rnd/research/testingrange
 	name = "\improper Weapons Testing Range"
 	icon_state = "firingrange"
+<<<<<<< HEAD
+=======
+	flags = NONE // To allow shelter capsules to activate here specifically
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637))
 
 /area/rnd/research/researchdivision
 	name = "\improper Research Division"
@@ -944,7 +960,7 @@
 	flags = RAD_SHIELDED
 /area/tether/surfacebase/vacant_site
 	name = "\improper Vacant Site"
-	flags = null
+	flags = NONE
 /area/crew_quarters/freezer
 	name = "\improper Kitchen Freezer"
 /area/crew_quarters/panic_shelter

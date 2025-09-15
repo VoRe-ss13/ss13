@@ -51,8 +51,16 @@ export function retrace(stack) {
         return frame;
       }
       // Find the correct source map
+      const frameFile = path.basename(frame.file);
       const sourceMap = sourceMaps.find((sourceMap) => {
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/link/retrace.js
         return frame.file.includes(sourceMap.file);
+=======
+        const mapTargetFile = path
+          .basename(sourceMap.file)
+          .replace(/\.map$/, '');
+        return frameFile.startsWith(mapTargetFile);
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637)):tgui/packages/tgui-dev-server/link/retrace.ts
       });
       if (!sourceMap) {
         return frame;
