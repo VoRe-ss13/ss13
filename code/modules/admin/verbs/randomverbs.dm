@@ -124,7 +124,7 @@ GLOBAL_VAR_INIT(global_vantag_hud, 0)
 	if (!msg)		// We check both before and after, just in case sanitization ended us up with empty message.
 		return
 
-	to_world("[msg]")
+	to_chat(world, "[msg]")
 	log_admin("GlobalNarrate: [key_name(usr)] : [msg]")
 	message_admins(span_blue(span_bold(" GlobalNarrate: [key_name_admin(usr)] : [msg]<BR>")), 1)
 	feedback_add_details("admin_verb","GLN") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -674,7 +674,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if(confirm == "Yes")
 		command_announcement.Announce(input, customname, new_sound = 'sound/AI/commandreport.ogg', msg_sanitized = 1);
 	else
-		to_world(span_red("New [using_map.company_name] Update available at all communication consoles."))
+		to_chat(world, span_red("New [using_map.company_name] Update available at all communication consoles."))
 		world << sound('sound/AI/commandreport.ogg')
 
 	log_admin("[key_name(src)] has created a command report: [input]")
@@ -1022,7 +1022,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	message_admins("Admin [key_name_admin(usr)] has forced the players to have random appearances.", 1)
 
 	if(notifyplayers == "Yes")
-		to_world(span_boldannounce(span_blue("Admin [usr.key] has forced the players to have completely random identities!")))
+		to_chat(world, span_boldannounce(span_blue("Admin [usr.key] has forced the players to have completely random identities!")))
 
 	to_chat(usr, "<i>Remember: you can always disable the randomness by using the verb again, assuming the round hasn't started yet</i>.")
 

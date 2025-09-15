@@ -73,6 +73,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 		if(GAME_STATE_SETTING_UP)
 			setup_tick()
 		if(GAME_STATE_PLAYING)
+<<<<<<< HEAD
 			playing_tick()
 		if(GAME_STATE_FINISHED)
 			post_game_tick()
@@ -81,6 +82,47 @@ var/global/datum/controller/subsystem/ticker/ticker
 	to_world(span_boldannounce(span_notice("<em>Welcome to the pregame lobby!</em>")))
 	to_world(span_boldannounce(span_notice("Please set up your character and select ready. The round will start in [pregame_timeleft] seconds.")))
 	world << sound('sound/misc/server-ready.ogg', volume = 100)
+=======
+			mode.process() // So THIS is where we run mode.process() huh? Okay
+
+			if(mode.explosion_in_progress)
+				return // wait until explosion is done.
+
+			if(force_ending)
+				current_state = GAME_STATE_FINISHED
+				declare_completion(force_ending)
+				Master.SetRunLevel(RUNLEVEL_POSTGAME)
+			else
+				// Calculate if game and/or mode are finished (Complicated by the continuous_rounds config option)
+				var/game_finished = FALSE
+				var/mode_finished = FALSE
+				if (CONFIG_GET(flag/continuous_rounds)) // Game keeps going after mode ends.
+					game_finished = (emergency_shuttle.returned() || mode.station_was_nuked)
+					mode_finished = ((end_game_state >= END_GAME_MODE_FINISHED) || mode.check_finished()) // Short circuit if already finished.
+				else // Game ends when mode does
+					game_finished = (mode.check_finished() || (emergency_shuttle.returned() && emergency_shuttle.evac == 1)) || GLOB.universe_has_ended
+					mode_finished = game_finished
+
+				if(game_finished && mode_finished)
+					end_game_state = END_GAME_READY_TO_END
+					current_state = GAME_STATE_FINISHED
+					Master.SetRunLevel(RUNLEVEL_POSTGAME)
+					INVOKE_ASYNC(src, PROC_REF(declare_completion))
+				else if (mode_finished && (end_game_state < END_GAME_MODE_FINISHED))
+					end_game_state = END_GAME_MODE_FINISHED // Only do this cleanup once!
+					mode.cleanup()
+					//call a transfer shuttle vote
+					to_chat(world, span_boldannounce("The round has ended!"))
+					SSvote.start_vote(new /datum/vote/crew_transfer)
+
+		// FIXME: IMPROVE THIS LATER!
+		if(GAME_STATE_FINISHED)
+			post_game_tick()
+
+			if (world.time - last_restart_notify >= 1 MINUTE && !delay_end)
+				to_chat(world, span_boldannounce("Restarting in [round(restart_timeleft/600, 1)] minute\s."))
+				last_restart_notify = world.time
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 // Called during GAME_STATE_PREGAME (RUNLEVEL_LOBBY)
 /datum/controller/subsystem/ticker/proc/pregame_tick()
@@ -132,7 +174,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 	var/list/runnable_modes = config.get_runnable_modes()
 	if((GLOB.master_mode == "random") || (GLOB.master_mode == "secret"))
 		if(!runnable_modes.len)
-			to_world(span_filter_system(span_bold("Unable to choose playable game mode.") + " Reverting to pregame lobby."))
+			to_chat(world, span_filter_system(span_bold("Unable to choose playable game mode.") + " Reverting to pregame lobby."))
 			return 0
 		if(GLOB.secret_force_mode != "secret")
 			src.mode = config.pick_mode(GLOB.secret_force_mode)
@@ -145,7 +187,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 		src.mode = config.pick_mode(GLOB.master_mode)
 
 	if(!src.mode)
-		to_world(span_boldannounce("Serious error in mode setup! Reverting to pregame lobby.")) //Uses setup instead of set up due to computational context.
+		to_chat(world, span_boldannounce("Serious error in mode setup! Reverting to pregame lobby.")) //Uses setup instead of set up due to computational context.
 		return 0
 
 	job_master.ResetOccupations()
@@ -154,21 +196,21 @@ var/global/datum/controller/subsystem/ticker/ticker
 	job_master.DivideOccupations() // Apparently important for new antagonist system to register specific job antags properly.
 
 	if(!src.mode.can_start())
-		to_world(span_filter_system(span_bold("Unable to start [mode.name].") + " Not enough players readied, [CONFIG_GET(keyed_list/player_requirements)[mode.config_tag]] players needed. Reverting to pregame lobby."))
+		to_chat(world, span_filter_system(span_bold("Unable to start [mode.name].") + " Not enough players readied, [CONFIG_GET(keyed_list/player_requirements)[mode.config_tag]] players needed. Reverting to pregame lobby."))
 		mode.fail_setup()
 		mode = null
 		job_master.ResetOccupations()
 		return 0
 
 	if(hide_mode)
-		to_world(span_world(span_notice("The current game mode is - Secret!")))
+		to_chat(world, span_world(span_notice("The current game mode is - Secret!")))
 		if(runnable_modes.len)
 			var/list/tmpmodes = new
 			for (var/datum/game_mode/M in runnable_modes)
 				tmpmodes+=M.name
 			tmpmodes = sortList(tmpmodes)
 			if(tmpmodes.len)
-				to_world(span_filter_system(span_bold("Possibilities:") + " [english_list(tmpmodes, and_text= "; ", comma_text = "; ")]"))
+				to_chat(world, span_filter_system(span_bold("Possibilities:") + " [english_list(tmpmodes, and_text= "; ", comma_text = "; ")]"))
 	else
 		src.mode.announce()
 	return 1
@@ -247,7 +289,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 				feedback_set_details("end_proper", "nuke")
 				restart_timeleft = 1 MINUTE // No point waiting five minutes if everyone's dead.
 				if(!delay_end)
-					to_world(span_boldannounce("Rebooting due to destruction of [station_name()] in [round(restart_timeleft/600)] minute\s."))
+					to_chat(world, span_boldannounce("Rebooting due to destruction of [station_name()] in [round(restart_timeleft/600)] minute\s."))
 					last_restart_notify = world.time
 			else
 				feedback_set_details("end_proper", "proper completion")

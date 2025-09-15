@@ -15,7 +15,7 @@ The proc you're attemping should return nonzero values on success.
 /proc/attempt_vr(callon, procname, list/args=null)
 	try
 		if(!callon || !procname)
-			error("attempt_vr: Invalid obj/proc: [callon]/[procname]")
+			log_world("## ERROR attempt_vr: Invalid obj/proc: [callon]/[procname]")
 			return 0
 
 		var/result = call(callon,procname)(arglist(args))
@@ -23,8 +23,8 @@ The proc you're attemping should return nonzero values on success.
 		return result
 
 	catch(var/exception/e)
-		error("attempt_vr runtimed when calling [procname] on [callon].")
-		error("attempt_vr catch: [e] on [e.file]:[e.line]")
+		log_world("## ERROR attempt_vr runtimed when calling [procname] on [callon].")
+		log_world("## ERROR attempt_vr catch: [e] on [e.file]:[e.line]")
 		log_runtime(e)
 		return 0
 
@@ -46,18 +46,24 @@ The hooks you're calling should return nonzero values on success.
 	try
 		var/hook_path = text2path("/hook/[hook]")
 		if(!hook_path)
-			error("hook_vr: Invalid hook '/hook/[hook]' called.")
+			log_world("## ERROR hook_vr: Invalid hook '/hook/[hook]' called.")
 			return 0
 
 		var/hook_instance = new hook_path
 		var/status = 1
 		for(var/P in typesof("[hook_path]/proc"))
+<<<<<<< HEAD
 			if(!call(hook_instance, P)(arglist(args)))
 				error("hook_vr: Hook '[P]' failed or runtimed.")
+=======
+			if(!call(hook_instance, P)(arglist(arguments)))
+				log_world("## ERROR hook_vr: Hook '[P]' failed or runtimed.")
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 				status = 0
 
 		return status
 
 	catch(var/exception/e)
-		error("hook_vr itself failed or runtimed. Exception below.")
-		error("hook_vr catch: [e] on [e.file]:[e.line]")
+		log_world("## ERROR hook_vr itself failed or runtimed. Exception below.")
+		log_world("## ERROR hook_vr catch: [e] on [e.file]:[e.line]")
+		log_runtime(e)

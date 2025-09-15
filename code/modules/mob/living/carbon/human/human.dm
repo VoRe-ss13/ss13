@@ -982,8 +982,13 @@
 	else
 		target.show_message(span_filter_say("[span_blue("You hear a voice that seems to echo around the room: [say]")]"))
 	src.show_message(span_filter_say("[span_blue("You project your mind into [target.real_name]: [say]")]"))
+<<<<<<< HEAD
 	log_say("(TPATH to [key_name(target)]) [say]",src)
 	for(var/mob/observer/dead/G in mob_list)
+=======
+	log_talk("(TPATH to [key_name(target)]) [say]", LOG_SAY)
+	for(var/mob/observer/dead/G in GLOB.mob_list)
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 		G.show_message(span_filter_say(span_italics("Telepathic message from " + span_bold("[src]") + " to " + span_bold("[target]") + ": [say]")))
 
 /mob/living/carbon/human/proc/remoteobserve()

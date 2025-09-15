@@ -9,8 +9,13 @@
 		return
 	feedback_add_details("admin_verb","FA")
 
+<<<<<<< HEAD
 	log_and_message_admins("Full atmosphere reset initiated by [usr].")
 	to_world(span_danger("Initiating restart of atmosphere. The server may lag a bit."))
+=======
+	log_and_message_admins("Full atmosphere reset initiated by [user].")
+	to_chat(world, span_danger("Initiating restart of atmosphere. The server may lag a bit."))
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 	sleep(10)
 	var/current_time = world.timeofday
 
@@ -47,5 +52,10 @@
 
 	SSair.RebootZAS()
 
+<<<<<<< HEAD
 	to_chat(usr, "\[5/5\] - ZAS Rebooted")
 	to_world(span_danger("Atmosphere restart completed in " + span_bold("[(world.timeofday - current_time)/10]") + " seconds."))
+=======
+	to_chat(user, "\[5/5\] - ZAS Rebooted")
+	to_chat(world, span_danger("Atmosphere restart completed in " + span_bold("[(world.timeofday - current_time)/10]") + " seconds."))
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))

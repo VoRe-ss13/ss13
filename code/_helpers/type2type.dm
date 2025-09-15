@@ -8,13 +8,6 @@
  *			angle2dir
  */
 
-//Splits the text of a file at seperator and returns them in a list.
-//returns an empty list if the file doesn't exist
-/world/proc/file2list(filename, seperator="\n", trim = TRUE)
-	if (trim)
-		return splittext(trim(file2text(filename)),seperator)
-	return splittext(file2text(filename),seperator)
-
 //returns a string the last bit of a type, without the preceeding '/'
 /proc/type2top(the_type)
 	//handle the builtins manually
@@ -36,6 +29,7 @@
 		else //regex everything else (works for /proc too)
 			return lowertext(replacetext("[the_type]", "[type2parent(the_type)]/", ""))
 
+<<<<<<< HEAD
 // Returns an integer given a hexadecimal number string as input.
 /proc/hex2num(hex)
 	if (!istext(hex))
@@ -77,15 +71,20 @@
 	while (left-- > 0)
 		. = "0[.]"
 
+=======
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 /proc/text2numlist(text, delimiter="\n")
 	var/list/num_list = list()
 	for(var/x in splittext(text, delimiter))
 		num_list += text2num(x)
 	return num_list
 
-// Splits the text of a file at seperator and returns them in a list.
-/proc/file2list(filename, seperator="\n")
-	return splittext(return_file_text(filename),seperator)
+//Splits the text of a file at seperator and returns them in a list.
+//returns an empty list if the file doesn't exist
+/world/proc/file2list(filename, seperator="\n", trim = TRUE)
+	if (trim)
+		return splittext(trim(file2text(filename)),seperator)
+	return splittext(file2text(filename),seperator)
 
 // Turns a direction into text
 /proc/num2dir(direction)
@@ -95,7 +94,7 @@
 		if (4.0) return EAST
 		if (8.0) return WEST
 		else
-			to_world_log("UNKNOWN DIRECTION: [direction]")
+			log_world("UNKNOWN DIRECTION: [direction]")
 
 // Turns a direction into text
 /proc/dir2text(direction)
@@ -598,12 +597,13 @@
 		if(fexists(filename))
 			. = file2text(filename)
 			if(!. && error_on_invalid_return)
-				error("File empty ([filename])")
+				log_world("## ERROR File empty ([filename])")
 		else if(error_on_invalid_return)
-			error("File not found ([filename])")
+			log_world("## ERROR File not found ([filename])")
 	catch(var/exception/E)
 		if(error_on_invalid_return)
-			error("Exception when loading file as string: [E]")
+			log_world("## ERROR Exception when loading file as string: [E]")
+			log_runtime(E)
 
 
 /// Return html to load a url.

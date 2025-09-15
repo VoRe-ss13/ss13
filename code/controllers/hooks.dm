@@ -26,14 +26,19 @@
 /proc/callHook(hook, list/args=null)
 	var/hook_path = text2path("/hook/[hook]")
 	if(!hook_path)
-		error("Invalid hook '/hook/[hook]' called.")
+		log_world("## ERROR Invalid hook '/hook/[hook]' called.")
 		return 0
 
 	var/requester = new hook_path
 	var/status = 1
 	for(var/P in typesof("[hook_path]/proc"))
+<<<<<<< HEAD
 		if(!call(requester, P)(arglist(args)))
 			error("Hook '[P]' failed or runtimed.")
+=======
+		if(!call(requester, P)(arglist(arguments)))
+			log_world("## ERROR Hook '[P]' failed or runtimed.")
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 			status = 0
 
 	return status

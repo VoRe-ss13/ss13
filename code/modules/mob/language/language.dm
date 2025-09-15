@@ -130,7 +130,11 @@
 	return (copytext(message, length(message)) == "!") ? 2 : 1
 
 /datum/language/proc/broadcast(var/mob/living/speaker,var/message,var/speaker_mask)
+<<<<<<< HEAD
 	log_say("(HIVE) [message]", speaker)
+=======
+	speaker.log_talk("(HIVE) [message]", LOG_SAY)
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 	add_verb(speaker, /mob/proc/adjust_hive_range)
 
@@ -230,7 +234,7 @@
 /mob/proc/can_speak(datum/language/speaking)
 //Prevents someone from speaking a null language.
 	if(!speaking)
-		log_debug("[src] attempted to speak a null language.")
+		log_runtime("[src] attempted to speak a null language.")
 		return 0
 
 	if(speaking == GLOB.all_languages["Noise"])

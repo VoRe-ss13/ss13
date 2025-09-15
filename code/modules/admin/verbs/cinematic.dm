@@ -1,9 +1,20 @@
+<<<<<<< HEAD
 /client/proc/cinematic(var/cinematic as anything in list("explosion",null))
 	set name = "Cinematic"
 	set category = "Fun.Do Not"
 	set desc = "Shows a cinematic."	// Intended for testing but I thought it might be nice for events on the rare occasion Feel free to comment it out if it's not wanted.
 
 	if(!check_rights(R_FUN))
+=======
+ADMIN_VERB(cinematic, R_FUN, "Cinematic", "Show a cinematic to all players.", "Fun.Do Not")
+	var/datum/cinematic/choice = tgui_input_list(
+		user,
+		"Chose a cinematic to play to everyone in the server.",
+		"Choose Cinematic",
+		sortList(subtypesof(/datum/cinematic), GLOBAL_PROC_REF(cmp_typepaths_asc)),
+	)
+	if(!choice || !ispath(choice, /datum/cinematic))
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 		return
 
 	if(tgui_alert(usr, "Are you sure you want to run [cinematic]?","Confirmation",list("Yes","No")) != "Yes") return

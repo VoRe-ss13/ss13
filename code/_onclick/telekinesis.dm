@@ -45,7 +45,11 @@ var/const/tk_maxrange = 15
 		O.host = user
 		O.focus_object(src)
 	else
+<<<<<<< HEAD
 		warning("Strange attack_tk(): TK([TK in user.mutations]) empty hand([!user.get_active_hand()])")
+=======
+		WARNING("Strange attack_tk(): TK([user.has_telegrip()]) empty hand([!user.get_active_hand()])")
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 	return
 
 

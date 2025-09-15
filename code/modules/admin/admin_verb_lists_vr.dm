@@ -271,6 +271,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/jumptocoord,
 	/client/proc/dsay,
 	/client/proc/admin_ghost,			//allows us to ghost/reenter body at will,
+<<<<<<< HEAD
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags, //VOREStation Add,
 	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels, //VOREStation Add,
 	/client/proc/player_panel,			//VOREStation Add,
@@ -282,6 +283,15 @@ var/list/admin_verbs_debug = list(
 	/datum/admins/proc/view_runtimes,
 	// /client/proc/show_gm_status, // VOREStation Edit - We don't use SSgame_master yet.
 	/datum/admins/proc/set_uplink, //VOREStation Add,
+=======
+	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels,
+	/client/proc/player_panel,
+	/client/proc/hide_verbs,			//hides all our adminverbs,
+	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
+	/client/proc/cmd_check_new_players,	//allows us to see every new player,
+	// /client/proc/show_gm_status, //We don't use SSgame_master yet.
+	/datum/admins/proc/set_uplink,
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 	/datum/admins/proc/change_weather,
 	/datum/admins/proc/change_time,
 	/client/proc/cmd_regenerate_asset_cache,
