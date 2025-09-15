@@ -596,3 +596,12 @@ GLOBAL_LIST_INIT(all_volume_channels, list(
 
 #define WEIGHT_MIN 70
 #define WEIGHT_MAX 500
+<<<<<<< HEAD
+=======
+
+#define LADDER_CONSTRUCTION_UNANCHORED 0
+#define LADDER_CONSTRUCTION_WRENCHED 1
+#define LADDER_CONSTRUCTION_WELDED 2
+
+#define FINGERPRINT_COMPLETE 6
+>>>>>>> 9ffd5403b9 ([MIRROR] Consts (#11652))

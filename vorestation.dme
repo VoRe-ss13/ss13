@@ -19,10 +19,16 @@
 #include "code\names.dm"
 #include "code\world.dm"
 #include "code\__defines\__globals.dm"
+#include "code\__defines\_ast.dm"
 #include "code\__defines\_atoms.dm"
 #include "code\__defines\_bitfields.dm"
 #include "code\__defines\_click.dm"
 #include "code\__defines\_compile_options.dm"
+<<<<<<< HEAD
+=======
+#include "code\__defines\_drinks.dm"
+#include "code\__defines\_flags.dm"
+>>>>>>> 9ffd5403b9 ([MIRROR] Consts (#11652))
 #include "code\__defines\_fruits.dm"
 #include "code\__defines\_helpers.dm"
 #include "code\__defines\_init.dm"
