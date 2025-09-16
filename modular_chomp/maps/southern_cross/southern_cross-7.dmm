@@ -1077,9 +1077,7 @@
 /turf/simulated/floor,
 /area/expoutpost/reactorroom)
 "aEx" = (
-/obj/machinery/door/airlock/glass_centcom{
-	req_one_access = list(67)
-	},
+/obj/machinery/door/airlock/voidcraft,
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/shuttle3/start)
 "aEz" = (
@@ -2586,9 +2584,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/explobriefroom)
 "bTd" = (
-/obj/machinery/door/airlock/glass_centcom{
-	req_one_access = list(67)
-	},
+/obj/machinery/door/airlock/voidcraft,
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/stargazer)
 "bTg" = (
@@ -13461,9 +13457,7 @@
 /turf/simulated/floor/tiled,
 /area/expoutpost/hangarone)
 "lis" = (
-/obj/machinery/door/airlock/centcom{
-	req_one_access = newlist()
-	},
+/obj/machinery/door/airlock/voidcraft,
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/shuttle3/start)
 "liP" = (
@@ -14934,10 +14928,10 @@
 /turf/simulated/floor/tiled/dark,
 /area/expoutpost/staginghangar)
 "mkU" = (
-/obj/machinery/door/airlock/glass_centcom,
 /obj/structure/cable/blue{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/voidcraft,
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/stargazer)
 "mld" = (
@@ -23359,15 +23353,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor,
 /area/expoutpost/portsternairlock)
-"sWF" = (
-/obj/machinery/door/airlock/glass_centcom{
-	req_one_access = list(67)
-	},
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/milspec,
-/area/shuttle/baby_mammoth)
 "sXC" = (
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 1
@@ -28196,10 +28181,10 @@
 /turf/simulated/floor/carpet,
 /area/expoutpost/suite1)
 "wLJ" = (
-/obj/machinery/door/airlock/glass_centcom,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/voidcraft,
 /turf/simulated/floor/tiled/milspec,
 /area/shuttle/baby_mammoth)
 "wLS" = (
@@ -68223,7 +68208,7 @@ qoM
 qDn
 pmr
 dvl
-sWF
+wLJ
 qfx
 qfx
 qfx
