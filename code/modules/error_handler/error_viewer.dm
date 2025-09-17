@@ -24,6 +24,7 @@ var/global/datum/ErrorViewer/ErrorCache/error_cache = null
 /datum/ErrorViewer/
 	var/name = ""
 
+<<<<<<< HEAD
 /datum/ErrorViewer/proc/browseTo(var/user, var/html)
 	if(user)
 		var/datum/browser/popup = new(user, "error_viewer", "Runtime Viewer", 700, 500)
@@ -46,6 +47,29 @@ var/global/datum/ErrorViewer/ErrorCache/error_cache = null
 			</style>"})
 		popup.set_content(html)
 		popup.open(0)
+=======
+/datum/error_viewer/proc/browse_to(client/user, html)
+	var/datum/browser/browser = new(user.mob, "error_viewer", null, 800, 400)
+	browser.set_content(html)
+	browser.set_head_content({"
+	<style>
+	.runtime
+	{
+		background-color: #171717;
+		border: solid 1px #202020;
+		font-family: "Courier New";
+		padding-left: 10px;
+		color: #CCCCCC;
+	}
+	.runtime_line
+	{
+		margin-bottom: 10px;
+		display: inline-block;
+	}
+	</style>
+	"})
+	browser.open()
+>>>>>>> fa407a034a ([MIRROR] runtime viewer fixes (#11668))
 
 /datum/ErrorViewer/proc/buildHeader(var/datum/ErrorViewer/back_to, var/linear, var/refreshable)
 	// Common starter HTML for showTo
