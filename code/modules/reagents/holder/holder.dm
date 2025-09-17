@@ -281,11 +281,15 @@
 //not directly injected into the contents. It first calls touch, then the appropriate trans_to_*() or splash_mob().
 //If for some reason touch effects are bypassed (e.g. injecting stuff directly into a reagent container or person),
 //call the appropriate trans_to_*() proc.
+<<<<<<< HEAD
 /datum/reagents/proc/trans_to(var/atom/target, var/amount = 1, var/multiplier = 1, var/copy = 0)
 	//CHOMPEdit Start, do not splash brains!
 	if(ismob(target) && !isbrain(target))
 		return splash_mob(target, amount * multiplier, copy)
 	//CHOMPEdit End
+=======
+/datum/reagents/proc/trans_to(var/atom/target, var/amount = 1, var/multiplier = 1, var/copy = 0, var/force_open_container = FALSE)
+>>>>>>> e98cd3f486 (Fixes fire extinguishers and splash (#11669))
 	touch(target, amount * multiplier) //First, handle mere touch effects
 	if(ismob(target))
 		return splash_mob(target, amount * multiplier, copy) //Touch effects handled by splash_mob
