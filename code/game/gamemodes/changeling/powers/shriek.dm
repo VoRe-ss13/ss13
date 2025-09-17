@@ -129,6 +129,11 @@
 		src.mind.changeling.recursive_enhancement = 0
 
 	visible_message(span_notice("[src] appears to shout."))
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/shriek.dm
+=======
+	add_attack_logs(src,src,"Use dissonant shriek")
+	return TRUE
+>>>>>>> fa407a034a ([MIRROR] runtime viewer fixes (#11668)):code/datums/components/antags/changeling/powers/shriek.dm
 
 	add_attack_logs(src,null,"Use dissonant shriek")
 
