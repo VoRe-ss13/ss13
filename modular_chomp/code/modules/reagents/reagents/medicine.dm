@@ -326,7 +326,15 @@
 	M.remove_a_modifier_of_type(/datum/modifier/grievous_wounds)
 	M.remove_a_modifier_of_type(/datum/modifier/deep_wounds)
 	M.remove_a_modifier_of_type(/datum/modifier/hivebot_weaken)
+<<<<<<< HEAD
 	M.remove_a_modifier_of_type(/datum/modifier/fire)
+=======
+	M.extinguish_mob()
+	M.remove_a_modifier_of_type(/datum/modifier/berserk_exhaustion)
+	M.remove_a_modifier_of_type(/datum/modifier/entangled)
+	M.remove_a_modifier_of_type(/datum/modifier/wizfire)
+	M.remove_a_modifier_of_type(/datum/modifier/wizpoison)
+>>>>>>> 9f292671ae ([MIRROR] Port /datum/status_effect and convert wetness and fire stacks to it (#11666))
 
 //tier 3
 /datum/reagent/modapplying/liquidhealer

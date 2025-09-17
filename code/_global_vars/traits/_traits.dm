@@ -19,6 +19,15 @@ GLOBAL_LIST_INIT(radiation_levels, list(
 GLOBAL_LIST_INIT(traits_by_type, list(
 	/mob = list(
 		"TRAIT_THINKING_IN_CHARACTER" = TRAIT_THINKING_IN_CHARACTER,
+<<<<<<< HEAD
+=======
+		"TRAIT_NOFIRE" = TRAIT_NOFIRE,
+		"TRAIT_NOFIRE_SPREAD" = TRAIT_NOFIRE_SPREAD,
+		"TRAIT_NO_EXTINGUISH" = TRAIT_NO_EXTINGUISH,
+	),
+	/obj = list(
+		"TRAIT_CLIMBABLE" = TRAIT_CLIMBABLE,
+>>>>>>> 9f292671ae ([MIRROR] Port /datum/status_effect and convert wetness and fire stacks to it (#11666))
 	)
 ))
 */
