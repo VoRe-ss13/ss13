@@ -353,7 +353,7 @@
 	icon = 'icons/vore/custom_items_vr.dmi'
 	icon_state = "nehiphones"
 
-	icon_override = 'icons/vore/custom_onmob_vr.dmi'
+	default_worn_icon = 'icons/vore/custom_clothes_mob.dmi'
 	item_state = "nehiphones"
 
 //zodiacshadow: Nehi Maximus
@@ -474,7 +474,6 @@
 	flags = THICKMATERIAL
 	armor = list(melee = 40, bullet = 30, laser = 30, energy = 10, bomb = 10, bio = 0, rad = 0)
 	icon_override = 'icons/vore/custom_clothes_vr.dmi'
-	item_state = "serdyhelm_mob"
 	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	max_heat_protection_temperature = HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
 	siemens_coefficient = 0.7
@@ -627,7 +626,7 @@
 	icon = 'icons/vore/custom_items_vr.dmi'
 	icon_state = "browncane"
 	item_icons = list (slot_r_hand_str = 'icons/vore/custom_items_vr.dmi', slot_l_hand_str = 'icons/vore/custom_items_vr.dmi')
-	item_state_slots = list(slot_r_hand_str = "browncanemob_r", slot_l_hand_str = "browncanemob_l")
+	item_state_slots = list(slot_r_hand_str = "browncane_r", slot_l_hand_str = "browncane_l")
 	force = 5.0
 	throwforce = 7.0
 	w_class = ITEMSIZE_SMALL
@@ -988,7 +987,7 @@
 	icon_state = "holster_stunstaff"
 	desc = "A sturdy synthetic leather sheath with matching belt and rubberized interior."
 	slot_flags = SLOT_BACK
-	item_icons = list(slot_back_str = 'icons/vore/custom_onmob_vr.dmi', slot_l_hand_str = 'icons/vore/custom_items_left_hand_vr.dmi', slot_r_hand_str = 'icons/vore/custom_items_right_hand_vr.dmi')
+	item_icons = list(slot_back_str = 'icons/vore/custom_clothes_mob.dmi', slot_l_hand_str = 'icons/vore/custom_items_left_hand_vr.dmi', slot_r_hand_str = 'icons/vore/custom_items_right_hand_vr.dmi')
 
 	can_hold = list(/obj/item/melee/baton/fluff/stunstaff)
 
@@ -1183,7 +1182,7 @@
 	name = "weird necklace"
 	desc = "A necklace with a brilliantly blue crystal encased in protective glass."
 	icon = 'icons/vore/custom_clothes_vr.dmi'
-	icon_override = 'icons/vore/custom_onmob_vr.dmi'
+	default_worn_icon = 'icons/vore/custom_clothes_mob.dmi'
 	suit_type = "probably not magical"
 	icon_state = "nikkicape"
 	w_class = ITEMSIZE_SMALL // It is after all only a necklace
@@ -1237,7 +1236,6 @@
 	icon_state = "blindshades"
 
 	icon_override = 'icons/vore/custom_clothes_vr.dmi'
-	item_state = "blindshades_mob"
 
 //Storesund97 - Aurora
 /obj/item/clothing/accessory/solgov/department/security/aurora
@@ -1581,4 +1579,37 @@ End CHOMP Removal*/
 	icon = 'icons/vore/custom_clothes_vr.dmi'
 	icon_override = 'icons/vore/custom_clothes_vr.dmi'
 	icon_state = "kintacts"
+<<<<<<< HEAD
 	item_state = "kintacts_mob"
+=======
+
+//Bricker98: Talenya Lapushkina
+/obj/item/remote_scene_tool/tally_necklace  //A reskinned sticker for the collar, using a modified golden collar sprite
+	name = "link bell collar"
+	desc = "A collar with a seemingly simple golden bell that contains advanced bluespace tech inside, allowing it to link to, and even recall, a matching doll."
+	icon = 'icons/vore/custom_remote_scene_tools.dmi'
+	icon_override = 'icons/vore/custom_remote_scene_tools.dmi'
+	icon_state = "collar_inactive"
+	icon_root = "collar"
+	item_state = "on_mob_collar"
+	slot_flags = SLOT_MASK | SLOT_OCLOTHING
+	replacementType = /obj/item/remote_scene_tool/tally_doll
+
+/obj/item/remote_scene_tool/tally_necklace/mob_can_equip(var/mob/living/carbon/human/H, slot, disable_warning = 0)
+	if(..())
+		if(H.ckey != "bricker98")
+			if(!disable_warning)
+				to_chat(H, span_warning("The collar doesn't fit you!"))
+			return FALSE
+		return TRUE
+
+/obj/item/remote_scene_tool/tally_doll  //A reskinned sticker for the doll, using a custom sprite
+	name = "Talenya's voodoo doll"
+	desc = "A cute custom plushie made to look like Talenya! With her bell and glassy beads for eyes, all the clothing articles are removable, it is incredibly detailed!"
+	icon = 'icons/vore/custom_remote_scene_tools.dmi'
+	icon_state = "doll_inactive"
+	icon_root = "doll"
+	slot_flags = NONE
+	can_summon = FALSE
+	can_replace = FALSE
+>>>>>>> a4c92fc775 ([MIRROR] Fluff icon fixes [IDB IGNORE] (#11674))
