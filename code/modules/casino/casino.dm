@@ -19,10 +19,24 @@
 
 	var/busy = 0
 
+<<<<<<< HEAD
 /obj/structure/casino_table/attackby(obj/item/W, mob/user)
 	if(item_place)
 		user.drop_item(src.loc)
 	return
+=======
+/obj/structure/casino_table/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/climbable)
+
+/obj/structure/casino_table/attackby(obj/item/W, mob/user, hit_modifier, click_parameters)
+	if(!item_place)
+		return
+	if(user.unEquip(W, 0, loc) && user.client?.prefs?.read_preference(/datum/preference/toggle/precision_placement))
+		auto_align(W, click_parameters) // Precisely place item like this is a normal table
+		return
+	user.drop_item(loc)
+>>>>>>> b8aa26f48c ([MIRROR] allow precision item placement on casino table (#11689))
 
 /obj/structure/casino_table/roulette_table
 	name = "roulette"
