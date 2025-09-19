@@ -1035,6 +1035,24 @@
 	if(rolled_sleeves == -1)
 		verbs -= /obj/item/clothing/under/verb/rollsleeves
 
+<<<<<<< HEAD
+=======
+	if(!ishuman(loc))
+		return
+
+	var/mob/living/carbon/human/H = loc
+	sensorpref = isnull(H) ? 1 : (ishuman(H) ? H.sensorpref : 1)
+	switch(sensorpref)
+		if(1) sensor_mode = SUIT_SENSOR_OFF			//Sensors off
+		if(2) sensor_mode = SUIT_SENSOR_BINARY		//Sensors on binary
+		if(3) sensor_mode = SUIT_SENSOR_VITAL		//Sensors display vitals
+		if(4) sensor_mode = SUIT_SENSOR_TRACKING	//Sensors display vitals and enables tracking
+		if(5) sensor_mode = pick(SUIT_SENSOR_OFF, SUIT_SENSOR_BINARY, SUIT_SENSOR_VITAL, SUIT_SENSOR_TRACKING)	//Select a random setting
+		else
+			sensor_mode = pick(SUIT_SENSOR_OFF, SUIT_SENSOR_BINARY, SUIT_SENSOR_VITAL, SUIT_SENSOR_TRACKING)
+			log_runtime("Invalid switch for suit sensors, defaulting to random. [sensorpref] chosen")
+
+>>>>>>> 37a372dfed ([MIRROR] Changeling grown clothing should not have sensors (#11707))
 /obj/item/clothing/under/proc/update_rolldown_status()
 	var/mob/living/carbon/human/H
 	if(ishuman(src.loc))
@@ -1122,13 +1140,13 @@
 
 	if (src.loc == user)
 		switch(sensor_mode)
-			if(0)
+			if(SUIT_SENSOR_OFF)
 				user.visible_message("[user] adjusts their sensors.", "You disable your suit's remote sensing equipment.")
-			if(1)
+			if(SUIT_SENSOR_BINARY)
 				user.visible_message("[user] adjusts their sensors.", "Your suit will now report whether you are live or dead.")
-			if(2)
+			if(SUIT_SENSOR_VITAL)
 				user.visible_message("[user] adjusts their sensors.", "Your suit will now report your vital lifesigns.")
-			if(3)
+			if(SUIT_SENSOR_TRACKING)
 				user.visible_message("[user] adjusts their sensors.", "Your suit will now report your vital lifesigns as well as your coordinate position.")
 
 	else if (istype(src.loc, /mob))
