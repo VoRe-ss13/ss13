@@ -103,6 +103,42 @@
 	meat_type = /obj/item/reagent_containers/food/snacks/painiteant
 
 
+<<<<<<< HEAD
+=======
+/mob/living/simple_mob/animal/tyr/mineral_ants/verdantium
+	name = "green metal ant"
+	icon_state = "verdantium_ant"
+	icon_living = "verdantium_ant"
+	butchery_loot = list(\
+		/obj/item/stack/material/verdantium = 18\
+		)
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/uranium
+	name = "glowing metal ant"
+	icon_state = "rad_ant"
+	icon_living = "rad_ant"
+	butchery_loot = list(\
+		/obj/item/stack/material/uranium = 18\
+		)
+/mob/living/simple_mob/animal/tyr/mineral_ants/uranium/do_special_attack(atom/A)
+	SSradiation.radiate(src, 15)
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/tritium
+	name = "tritium ant"
+	icon_state = "tritium_ant"
+	icon_living = "tritium_ant"
+	butchery_loot = list(\
+		/obj/item/stack/material/tritium = 18\
+		)
+>>>>>>> 54aa0db1d1 (Tyr Alterations (#11702))
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/mhydro
+	name = "mhydro ant"
+	icon_state = "mhydro_ant"
+	icon_living = "mhydro_ant"
+	butchery_loot = list(\
+		/obj/item/stack/material/mhydrogen = 6\
+		)
 
 /mob/living/simple_mob/animal/tyr/mineral_ants/builder
 	icon_state = "builder_ant"
@@ -328,8 +364,18 @@ ANT STRUCTURES
 	/mob/living/simple_mob/animal/tyr/mineral_ants/copper,
 	/mob/living/simple_mob/animal/tyr/mineral_ants/quartz,
 	/mob/living/simple_mob/animal/tyr/mineral_ants/agate,
+<<<<<<< HEAD
 	/mob/living/simple_mob/animal/tyr/mineral_ants/painite)
 	faction = FACTION_TYR
+=======
+	/mob/living/simple_mob/animal/tyr/mineral_ants/painite,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/diamond,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/verdantium,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/tritium,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/uranium,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/mhydro)
+	faction = FACTION_TYR_ANT
+>>>>>>> 54aa0db1d1 (Tyr Alterations (#11702))
 
 /obj/effect/ant_structure/webbarrier
 	name = "weblike barrier"
