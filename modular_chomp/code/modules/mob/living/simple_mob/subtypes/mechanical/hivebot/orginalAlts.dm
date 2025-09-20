@@ -48,7 +48,11 @@
 /mob/living/simple_mob/mechanical/mecha/eclipse/hivebot/tyr/do_special_attack(atom/A)
 	. = TRUE // So we don't fire a bolt as well.
 	if(attackcycle == 1)
+<<<<<<< HEAD
 		addtimer(CALLBACK(src, PROC_REF(summon_janitor), A, 5, 2), 0.5 SECONDS, TIMER_DELETE_ME)
+=======
+		addtimer(CALLBACK(src, PROC_REF(bomb_lines), A, 2), 2 SECONDS, TIMER_DELETE_ME)
+>>>>>>> 54aa0db1d1 (Tyr Alterations (#11702))
 		attackcycle = 0
 	else if(attackcycle == 2)
 		say("Prepare. Area. Cleanse. Radiation.")
