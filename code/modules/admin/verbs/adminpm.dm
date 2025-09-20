@@ -101,6 +101,7 @@
 
 
 	else
+<<<<<<< HEAD
 		if(!recipient)
 			if(holder)
 				to_chat(src, span_admin_pm_warning("Error: Admin-PM: Client not found."))
@@ -109,24 +110,26 @@
 				current_ticket.MessageNoRecipient(msg)
 			return
 
+=======
+>>>>>>> 19006d64ac ([MIRROR] moves law outputs to a block (#11706))
 		//get message text, limit it's length.and clean/escape html
 		if(!msg)
 			msg = tgui_input_text(src,"Message:", "Private message to [key_name(recipient, 0, 0)]", multiline = TRUE)
 
+		//clean the message if it's not sent by a high-rank admin
+		if(!check_rights(R_SERVER|R_DEBUG, FALSE)||irc)//no sending html to the poor bots
+			msg = trim(sanitize(copytext(msg,1,MAX_MESSAGE_LEN)))
 			if(!msg)
 				return
 
-			if(prefs.muted & MUTE_ADMINHELP)
-				to_chat(src, span_admin_pm_warning("Error: Admin-PM: You are unable to use admin PM-s (muted)."))
-				return
+		if (src.handle_spam_prevention(MUTE_ADMINHELP))
+			return
 
-			if(!recipient)
-				if(holder)
-					to_chat(src, span_admin_pm_warning("Error: Admin-PM: Client not found."))
-				else
-					current_ticket.MessageNoRecipient(msg)
-				return
+		if(prefs.muted & MUTE_ADMINHELP)
+			to_chat(src, span_admin_pm_warning("Error: Admin-PM: You are unable to use admin PM-s (muted)."))
+			return
 
+<<<<<<< HEAD
 	if (src.handle_spam_prevention(msg,MUTE_ADMINHELP))
 		return
 
@@ -134,6 +137,14 @@
 	if(!check_rights(R_SERVER|R_DEBUG,0)||irc)//no sending html to the poor bots
 		msg = trim(sanitize(copytext(msg,1,MAX_MESSAGE_LEN)))
 		if(!msg)
+=======
+		if(!recipient)
+			if(holder)
+				to_chat(src, span_admin_pm_warning("Error: Admin-PM: Client not found."))
+				to_chat(src, msg)
+			else
+				current_ticket.MessageNoRecipient(msg)
+>>>>>>> 19006d64ac ([MIRROR] moves law outputs to a block (#11706))
 			return
 
 	var/rawmsg = msg
