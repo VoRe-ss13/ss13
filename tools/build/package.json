@@ -1,4 +1,12 @@
 {
+<<<<<<< HEAD
   "private": true,
   "type": "module"
+=======
+	"private": true,
+	"type": "module",
+	"devDependencies": {
+		"@types/bun": "^1.2.22"
+	}
+>>>>>>> a65d46aebe ([MIRROR] dependency up (#11718))
 }
