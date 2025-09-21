@@ -4,6 +4,20 @@ RSF
 
 */
 
+GLOBAL_LIST_INIT(robot_glass_options, list(
+		"metamorphic glass" = /obj/item/reagent_containers/food/drinks/metaglass,
+		"metamorphic pint glass" = /obj/item/reagent_containers/food/drinks/metaglass/metapint,
+		"half-pint glass" = /obj/item/reagent_containers/food/drinks/glass2/square,
+		"rocks glass" = /obj/item/reagent_containers/food/drinks/glass2/rocks,
+		"milkshake glass" = /obj/item/reagent_containers/food/drinks/glass2/shake,
+		"cocktail glass" = /obj/item/reagent_containers/food/drinks/glass2/cocktail,
+		"shot glass" = /obj/item/reagent_containers/food/drinks/glass2/shot,
+		"pint glass" = /obj/item/reagent_containers/food/drinks/glass2/pint,
+		"mug" = /obj/item/reagent_containers/food/drinks/glass2/mug,
+		"wine glass" = /obj/item/reagent_containers/food/drinks/glass2/wine,
+		"condiment bottle" = /obj/item/reagent_containers/food/condiment
+		))
+
 /obj/item/rsf
 	name = "\improper Rapid-Service-Fabricator"
 	desc = "A device used to rapidly deploy service items."
@@ -15,6 +29,7 @@ RSF
 	anchored = FALSE
 	matter = list(DEFAULT_WALL_MATERIAL = 25000)
 	var/stored_matter = 30
+<<<<<<< HEAD
 	var/mode = 1
 	var/obj/item/reagent_containers/glasstype = /obj/item/reagent_containers/food/drinks/metaglass
 
@@ -31,6 +46,10 @@ RSF
 		"wine glass" = /obj/item/reagent_containers/food/drinks/glass2/wine,
 		"condiment bottle" = /obj/item/reagent_containers/food/condiment
 		)
+=======
+	var/mode = "container"
+	var/glasstype_name = "metamorphic glass"
+>>>>>>> 5dd6b793ce ([MIRROR] Gives the borg service fabricator all radial menus (#11715))
 
 	w_class = ITEMSIZE_NORMAL
 
@@ -58,14 +77,15 @@ RSF
 	if(!Adjacent(user) || !istype(user))
 		to_chat(user,span_notice("You are too far away."))
 		return
-	var/glass_choice = tgui_input_list(user, "Please choose which type of glass you would like to produce.", "Glass Choice", container_types)
+
+	var/glass_choice = show_radial_menu(user, user, GLOB.robot_glass_options, radius = 40)
 
 	if(glass_choice)
-		glasstype = container_types[glass_choice]
-	else
-		glasstype = /obj/item/reagent_containers/food/drinks/metaglass
+		balloon_alert(user, "container chosen: [glass_choice]")
+		glasstype_name = glass_choice
 
 /obj/item/rsf/attack_self(mob/user as mob)
+<<<<<<< HEAD
 	playsound(src, 'sound/effects/pop.ogg', 50, 0)
 	if (mode == 1)
 		mode = 2
@@ -91,6 +111,23 @@ RSF
 		mode = 1
 		to_chat(user,span_notice("Changed dispensing mode to 'Cigarette'")) // YW Changes end
 		return
+=======
+	var/options = list(
+		"card deck" = image(icon = 'icons/obj/playing_cards.dmi', icon_state = "deck"),
+		"card deck (big)" = image(icon = 'icons/obj/playing_cards.dmi', icon_state = "deck"),
+		"casino chips (replica) x200" = image(icon = 'icons/obj/casino.dmi', icon_state = "spacecasinocash200"),
+		"cigarette" = image(icon = 'icons/inventory/face/item.dmi', icon_state = "cig"),
+		"container" = GLOB.robot_glass_options[glasstype_name],
+		"dice pack (d6)" = image(icon = 'icons/obj/dice.dmi', icon_state = "dicebag"),
+		"dice pack (gaming)" = image(icon = 'icons/obj/dice.dmi', icon_state = "magicdicebag"),
+		"paper" = image(icon = 'icons/obj/bureaucracy.dmi', icon_state = "paper"),
+		"pen" = image(icon = 'icons/obj/bureaucracy.dmi', icon_state = "pen"))
+	var/choice = show_radial_menu(user, user, options, radius = 40)
+	if(choice)
+		mode = choice
+		playsound(src, 'sound/effects/pop.ogg', 50, 0)
+		balloon_alert(user, "you will synthesize: [mode]")
+>>>>>>> 5dd6b793ce ([MIRROR] Gives the borg service fabricator all radial menus (#11715))
 
 /obj/item/rsf/afterattack(atom/A, mob/user as mob, proximity)
 
@@ -115,7 +152,12 @@ RSF
 		if(1)
 			product = new /obj/item/clothing/mask/smokable/cigarette()
 			used_energy = 10
+<<<<<<< HEAD
 		if(2)
+=======
+		if("container")
+			var/glasstype = GLOB.robot_glass_options[glasstype_name]
+>>>>>>> 5dd6b793ce ([MIRROR] Gives the borg service fabricator all radial menus (#11715))
 			product = new glasstype()
 			used_energy = 50
 		if(3)
@@ -127,9 +169,12 @@ RSF
 		if(5)
 			product = new /obj/item/pen()
 			used_energy = 50
+<<<<<<< HEAD
 		if(6) 																			//YW Changes end
 			product = new /obj/item/storage/pill_bottle/dice()
 			used_energy = 200
+=======
+>>>>>>> 5dd6b793ce ([MIRROR] Gives the borg service fabricator all radial menus (#11715))
 
 	to_chat(user,span_notice("Dispensing [product ? product : "product"]..."))
 	product.loc = get_turf(A)
