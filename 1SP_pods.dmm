@@ -11802,7 +11802,6 @@
 /turf/simulated/shuttle/plating,
 /area/template_noop)
 "irG" = (
-/obj/screen/alert/highpressure,
 /obj/machinery/r_n_d/destructive_analyzer,
 /turf/simulated/shuttle/floor/purple,
 /area/survivalpod/superpose/ScienceShip)
@@ -17889,10 +17888,6 @@
 	},
 /turf/simulated/floor/outdoors/grass/heavy,
 /area/survivalpod/superpose/LoneHome)
-"mEi" = (
-/obj/screen/alert/highpressure,
-/turf/simulated/shuttle/wall/hard_corner,
-/area/survivalpod/superpose/ScienceShip)
 "mEk" = (
 /obj/structure/toilet/prison{
 	name = "toilet";
@@ -19506,7 +19501,6 @@
 /turf/simulated/floor/outdoors/dirt,
 /area/survivalpod/superpose/Dinner)
 "nMu" = (
-/obj/screen/alert/highpressure,
 /obj/machinery/computer/rdconsole/core{
 	dir = 4
 	},
@@ -26141,10 +26135,6 @@
 /obj/item/storage/pill_bottle/dice,
 /turf/simulated/shuttle/floor/voidcraft,
 /area/template_noop)
-"rlL" = (
-/obj/screen/alert/highpressure,
-/turf/template_noop,
-/area/template_noop)
 "rmo" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 4
@@ -30451,10 +30441,6 @@
 /obj/item/taperoll/medical,
 /turf/simulated/mineral/floor/ignore_mapgen,
 /area/survivalpod/superpose/CrashedQurantineShip)
-"uDN" = (
-/obj/screen/alert/highpressure,
-/turf/simulated/shuttle/wall,
-/area/survivalpod/superpose/ScienceShip)
 "uDS" = (
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/template_noop)
@@ -35115,7 +35101,6 @@
 /area/survivalpod/superpose/WoodenCamp)
 "xZI" = (
 /obj/machinery/r_n_d/protolathe,
-/obj/screen/alert/highpressure,
 /turf/simulated/shuttle/floor/purple,
 /area/survivalpod/superpose/ScienceShip)
 "yaE" = (
@@ -70195,14 +70180,14 @@ ktQ
 ktQ
 ktQ
 ktQ
-rlL
-uDN
+ktQ
+bej
 xmO
 xmO
 xmO
-uDN
-rlL
-rlL
+bej
+ktQ
+ktQ
 ktQ
 ktQ
 ktQ
@@ -70453,14 +70438,14 @@ ktQ
 ktQ
 bej
 xmO
-mEi
+iLe
 xZI
 irG
 nMu
-mEi
+iLe
 xmO
-uDN
-rlL
+bej
+ktQ
 ktQ
 ktQ
 ktQ
@@ -70717,7 +70702,7 @@ qyr
 gDg
 qBE
 bej
-rlL
+ktQ
 ktQ
 ktQ
 ktQ

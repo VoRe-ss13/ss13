@@ -585,7 +585,13 @@
 			soft_ut = TRUE
 		if(istype(soft,/datum/pai_software/signaller))
 			soft_si = TRUE
+<<<<<<< HEAD
 	for(var/obj/screen/pai/button in hud_used.other)
+=======
+		if(istype(soft,/datum/pai_software/deathalarm))
+			soft_da = TRUE
+	for(var/atom/movable/screen/pai/button in hud_used.other)
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 		if(button.name == "medical records")
 			if(soft_mr)
 				button.icon_state = "[button.base_state]"

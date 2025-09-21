@@ -242,11 +242,11 @@
 		return
 	owner.LoadComponent(/datum/component/hallucinations/xenochimera)
 
-/obj/screen/xenochimera
+/atom/movable/screen/xenochimera
 	icon = 'icons/mob/chimerahud.dmi'
 	invisibility = INVISIBILITY_ABSTRACT
 
-/obj/screen/xenochimera/danger_level
+/atom/movable/screen/xenochimera/danger_level
 	name = "danger level"
 	icon_state = "danger00"		//first number is bool of whether or not we're in danger, second is whether or not we're feral
 	alpha = 200
@@ -302,9 +302,14 @@
 		to_chat(src, "You begin to reconstruct your form. You will not be able to move during this time. It should take aproximately [round(time)] seconds.")
 
 		//Scary spawnerization.
+<<<<<<< HEAD
 		xc.revive_ready = REVIVING_NOW
 		xc.revive_finished = (world.time + time SECONDS) // When do we finish reviving? Allows us to find out when we're done, called by the alert currently.
 		throw_alert("regen", /obj/screen/alert/xenochimera/reconstitution)
+=======
+		set_revival_delay(time)
+		owner.throw_alert("regen", /atom/movable/screen/alert/xenochimera/reconstitution)
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 		addtimer(CALLBACK(src, PROC_REF(chimera_regenerate_ready)), time SECONDS, TIMER_DELETE_ME)
 
 	//Clicked regen while NOT dead
@@ -312,9 +317,14 @@
 		to_chat(src, "You begin to reconstruct your form. You will not be able to move during this time. It should take aproximately [round(time)] seconds.")
 
 		//Waiting for regen after being alive
+<<<<<<< HEAD
 		xc.revive_ready = REVIVING_NOW
 		xc.revive_finished = (world.time + time SECONDS) // When do we finish reviving? Allows us to find out when we're done, called by the alert currently.
 		throw_alert("regen", /obj/screen/alert/xenochimera/reconstitution)
+=======
+		set_revival_delay(time)
+		owner.throw_alert("regen", /atom/movable/screen/alert/xenochimera/reconstitution)
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 		addtimer(CALLBACK(src, PROC_REF(chimera_regenerate_nutrition)), time SECONDS, TIMER_DELETE_ME)
 
 /mob/living/carbon/human/proc/chimera_regenerate_nutrition()
@@ -325,18 +335,28 @@
 	if(stat != DEAD || hasnutriment())
 		to_chat(src, span_notice("Consciousness begins to stir as your new body awakens, ready to hatch.."))
 	else
+<<<<<<< HEAD
 		to_chat(src, span_warning("Consciousness begins to stir as your battered body struggles to recover from its ordeal.."))
 	add_verb(src, /mob/living/carbon/human/proc/hatch)
 	xc.revive_ready = REVIVING_DONE
 	src << sound('sound/effects/mob_effects/xenochimera/hatch_notification.ogg',0,0,0,30)
 	clear_alert("regen")
 	throw_alert("hatch", /obj/screen/alert/xenochimera/readytohatch)
+=======
+		to_chat(owner, span_warning("Consciousness begins to stir as your battered body struggles to recover from its ordeal.."))
+	add_verb(owner, /mob/living/carbon/human/proc/hatch)
+	revive_ready = REVIVING_DONE
+	owner << sound('sound/effects/mob_effects/xenochimera/hatch_notification.ogg',0,0,0,30)
+	owner.clear_alert("regen")
+	owner.throw_alert("hatch", /atom/movable/screen/alert/xenochimera/readytohatch)
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 
 /mob/living/carbon/human/proc/chimera_regenerate_ready()
 	var/datum/component/xenochimera/xc = get_xenochimera_component()
 	if(!xc)
 		return
 	// check to see if they've been fixed by outside forces in the meantime such as defibbing
+<<<<<<< HEAD
 	if(stat != DEAD)
 		to_chat(src, span_notice("Your body has recovered from its ordeal, ready to regenerate itself again."))
 		xc.revive_ready = REVIVING_READY //reset their cooldown
@@ -351,6 +371,22 @@
 		src << sound('sound/effects/mob_effects/xenochimera/hatch_notification.ogg',0,0,0,30)
 		clear_alert("regen")
 		throw_alert("hatch", /obj/screen/alert/xenochimera/readytohatch)
+=======
+	if(owner.stat != DEAD)
+		to_chat(owner, span_notice("Your body has recovered from its ordeal, ready to regenerate itself again."))
+		revive_ready = REVIVING_READY //reset their cooldown
+		owner.clear_alert("regen")
+		owner.throw_alert("hatch", /atom/movable/screen/alert/xenochimera/readytohatch)
+
+	// Was dead, still dead.
+	else
+		to_chat(owner, span_notice("Consciousness begins to stir as your new body awakens, ready to hatch."))
+		add_verb(owner, /mob/living/carbon/human/proc/hatch)
+		revive_ready = REVIVING_DONE
+		owner << sound('sound/effects/mob_effects/xenochimera/hatch_notification.ogg',0,0,0,30)
+		owner.clear_alert("regen")
+		owner.throw_alert("hatch", /atom/movable/screen/alert/xenochimera/readytohatch)
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 
 /mob/living/carbon/human/proc/hatch()
 	set name = "Hatch"

@@ -154,10 +154,6 @@
 /obj/structure/shuttle/engine/router,
 /turf/simulated/shuttle/wall,
 /area/survivalpod/superpose/ScienceShip)
-"fg" = (
-/obj/screen/alert/highpressure,
-/turf/simulated/shuttle/wall,
-/area/survivalpod/superpose/ScienceShip)
 "fs" = (
 /obj/machinery/door/airlock/maintenance/common,
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -1003,8 +999,12 @@
 /turf/simulated/shuttle/plating,
 /area/survivalpod/superpose/ScienceShip)
 "Cz" = (
+<<<<<<< HEAD
 /obj/screen/alert/highpressure,
 /obj/machinery/r_n_d/destructive_analyzer,
+=======
+/obj/machinery/rnd/production/protolathe/department/science,
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 /turf/simulated/shuttle/floor/purple,
 /area/survivalpod/superpose/ScienceShip)
 "CW" = (
@@ -1027,10 +1027,6 @@
 	dir = 1
 	},
 /turf/simulated/shuttle/plating,
-/area/survivalpod/superpose/ScienceShip)
-"Dp" = (
-/obj/screen/alert/highpressure,
-/turf/simulated/shuttle/wall/hard_corner,
 /area/survivalpod/superpose/ScienceShip)
 "Ds" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -1471,10 +1467,6 @@
 /obj/random/soap,
 /turf/simulated/floor/plating,
 /area/survivalpod/superpose/ScienceShip)
-"Kx" = (
-/obj/screen/alert/highpressure,
-/turf/template_noop,
-/area/template_noop)
 "KD" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1;
@@ -1842,6 +1834,7 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/survivalpod/superpose/ScienceShip)
+<<<<<<< HEAD
 "TF" = (
 /obj/screen/alert/highpressure,
 /obj/machinery/computer/rdconsole/public{
@@ -1849,6 +1842,8 @@
 	},
 /turf/simulated/shuttle/floor/purple,
 /area/survivalpod/superpose/ScienceShip)
+=======
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 "Ug" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/structure/extinguisher_cabinet{
@@ -2223,14 +2218,14 @@ Eq
 Eq
 Eq
 Eq
-Kx
-fg
+Eq
+oX
 Bn
 Bn
 Bn
-fg
-Kx
-Kx
+oX
+Eq
+Eq
 Eq
 Eq
 Eq
@@ -2259,14 +2254,19 @@ Eq
 Eq
 oX
 Bn
+<<<<<<< HEAD
 Dp
 hb
+=======
+Ul
+ez
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 Cz
-TF
-Dp
+ez
+Ul
 Bn
-fg
-Kx
+oX
+Eq
 Eq
 Eq
 Eq
@@ -2301,7 +2301,7 @@ ez
 JG
 lu
 oX
-Kx
+Eq
 Eq
 Eq
 Eq

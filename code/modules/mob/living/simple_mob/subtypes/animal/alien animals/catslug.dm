@@ -69,7 +69,7 @@
 		/obj/machinery/camera,
 		/obj/belly,
 		/obj/soulgem,
-		/obj/screen,
+		/atom/movable/screen,
 		/atom/movable/emissive_blocker,
 		/obj/item/material,
 		/obj/item/melee,

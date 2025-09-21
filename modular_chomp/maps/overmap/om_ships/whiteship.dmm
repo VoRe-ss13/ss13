@@ -144,10 +144,6 @@
 /obj/structure/shuttle/engine/router,
 /turf/simulated/wall/thull,
 /area/shuttle/whiteshipOM)
-"fg" = (
-/obj/screen/alert/highpressure,
-/turf/simulated/wall/thull,
-/area/shuttle/whiteshipOM)
 "fs" = (
 /obj/machinery/door/airlock/maintenance/common,
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -181,8 +177,12 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shuttle/whiteshipOM)
 "hb" = (
+<<<<<<< HEAD
 /obj/machinery/r_n_d/protolathe,
 /obj/screen/alert/highpressure,
+=======
+/obj/machinery/rnd/production/protolathe/department/science,
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 /turf/simulated/shuttle/floor/purple,
 /area/shuttle/whiteshipOM)
 "hB" = (
@@ -1445,10 +1445,6 @@
 /obj/random/soap,
 /turf/simulated/floor/plating,
 /area/shuttle/whiteshipOM)
-"Kx" = (
-/obj/screen/alert/highpressure,
-/turf/template_noop,
-/area/template_noop)
 "KD" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1;
@@ -1809,6 +1805,7 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/shuttle/whiteshipOM)
+<<<<<<< HEAD
 "TF" = (
 /obj/screen/alert/highpressure,
 /obj/machinery/computer/rdconsole/public{
@@ -1816,6 +1813,8 @@
 	},
 /turf/simulated/shuttle/floor/purple,
 /area/shuttle/whiteshipOM)
+=======
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 "Ug" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/structure/extinguisher_cabinet{
@@ -2192,14 +2191,14 @@ Eq
 Eq
 Eq
 Eq
-Kx
-fg
+Eq
+sH
 Bn
 Bn
 Bn
-fg
-Kx
-Kx
+sH
+Eq
+Eq
 Eq
 Eq
 Eq
@@ -2228,14 +2227,20 @@ Eq
 Eq
 sH
 Bn
-fg
+sH
 hb
+<<<<<<< HEAD
 Cz
 TF
 fg
+=======
+ez
+ez
+sH
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 Bn
-fg
-Kx
+sH
+Eq
 Eq
 Eq
 Eq
@@ -2270,7 +2275,7 @@ ez
 JG
 lu
 sH
-Kx
+Eq
 Eq
 Eq
 Eq
