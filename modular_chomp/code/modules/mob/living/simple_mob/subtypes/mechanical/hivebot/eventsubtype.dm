@@ -148,6 +148,7 @@
 
 /mob/living/simple_mob/mechanical/mecha/eclipse/hivebot/boss/do_special_attack(atom/A)
 	. = TRUE // So we don't fire a bolt as well.
+<<<<<<< HEAD
 	switch(a_intent)
 		if(I_DISARM) // Phase 3
 			if(attackcycle == 1)
@@ -209,6 +210,46 @@
 					addtimer(CALLBACK(src, PROC_REF(miniburst_a), A, 1), 2 SECONDS, TIMER_DELETE_ME)
 				else
 					addtimer(CALLBACK(src, PROC_REF(miniburst_b), A, 1), 2 SECONDS, TIMER_DELETE_ME)
+=======
+	var/rng_cycle
+	if(attackcycle == 1)
+		specialattackprojectile = /obj/item/projectile/beam/midlaser/shortrange
+		rng_cycle = rand(1,5)
+		say("PROTOCOL: LASER. BLADE.")
+		addtimer(CALLBACK(src, PROC_REF(giant_burst), A, rng_cycle), 2 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 2)
+		specialattackprojectile = /obj/item/projectile/energy/wallbreaker/boss
+		rng_cycle = rand(1,5)
+		say("PROTOCOL: RANDOM. SWEEP")
+		addtimer(CALLBACK(src, PROC_REF(quad_random_firing), A, 12, 1, 0.5 SECONDS), 1 SECOND, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 3)
+		specialattackprojectile = /obj/item/projectile/energy/lightingspark/nanoweave
+		rng_cycle = rand(1,5)
+		say("PROTOCOL: WARP. DRIVE.")
+		addtimer(CALLBACK(src, PROC_REF(teleport_attack), A, rng_cycle, 3), 2 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 4)
+		specialattackprojectile = /obj/item/projectile/knockback
+		rng_cycle = rand(1,5)
+		say("PROTOCOL: SHOCKWAVE.")
+		addtimer(CALLBACK(src, PROC_REF(giant_burst), A, rng_cycle), 2 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 5)
+		specialattackprojectile = /obj/item/projectile/metalball
+		Beam(A, icon_state = "solar_beam", time = 0.5 SECONDS, maxdistance = INFINITY)
+		say("PROTOCOL: RESTRAIN.")
+		addtimer(CALLBACK(src, PROC_REF(singleproj), A, 6), 1 SECOND, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 6)
+		specialattackprojectile = /obj/item/projectile/beam/heavylaser
+		Beam(A, icon_state = "solar_beam", time = 0.5 SECONDS, maxdistance = INFINITY)
+		rng_cycle = rand(1,5)
+		say("PROTOCOL: DESTROY.")
+		addtimer(CALLBACK(src, PROC_REF(singleproj), A, rng_cycle), 2 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+>>>>>>> 76f927ead3 (Tyr Update Thing (#11713))
 
 		if(I_HURT) // Phase 1. Teaching the player the three funny attacks
 			if(attackcycle == 1) //metal ball
