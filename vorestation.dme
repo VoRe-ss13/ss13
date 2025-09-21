@@ -481,7 +481,11 @@
 #include "code\datums\category.dm"
 #include "code\datums\chat_message.dm"
 #include "code\datums\chat_payload.dm"
+<<<<<<< HEAD
 #include "code\datums\colormate.dm"
+=======
+#include "code\datums\cogbar.dm"
+>>>>>>> 65a5e0a614 ([MIRROR] fixes one of my first ever coding sins here (#11720))
 #include "code\datums\datacore.dm"
 #include "code\datums\datum.dm"
 #include "code\datums\datumvars.dm"
@@ -4592,6 +4596,7 @@
 #include "code\modules\tgui_input\checkboxes.dm"
 #include "code\modules\tgui_input\color.dm"
 #include "code\modules\tgui_input\list.dm"
+#include "code\modules\tgui_input\matrix.dm"
 #include "code\modules\tgui_input\number.dm"
 #include "code\modules\tgui_input\text.dm"
 #include "code\modules\tgui_input\say_modal\modal.dm"
