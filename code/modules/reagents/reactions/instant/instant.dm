@@ -440,6 +440,17 @@
 	required_reagents = list (REAGENT_ID_AMMONIA = 1, REAGENT_ID_ETHANOL = 1)
 	result_amount = 2
 
+<<<<<<< HEAD
+=======
+/decl/chemical_reaction/instant/lye
+	name = REAGENT_LYE
+	id = REAGENT_ID_LYE
+	result = REAGENT_ID_LYE
+	inhibitors = list(REAGENT_ID_CARBON = 1) // Or it blocks aphrodisiac
+	required_reagents = list(REAGENT_ID_SODIUM = 1, REAGENT_ID_HYDROGEN = 1, REAGENT_ID_OXYGEN = 1)
+	result_amount = 3
+
+>>>>>>> 83dc4c095c ([MIRROR] Even STRICTER reaction unittest (#11711))
 /decl/chemical_reaction/instant/left4zed
 	name = "Left4Zed"
 	id = REAGENT_ID_LEFT4ZED
