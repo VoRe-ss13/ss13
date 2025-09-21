@@ -1,3 +1,70 @@
+<<<<<<< HEAD
+=======
+#define DEFAULT_MAP_SIZE 15
+
+/atom/movable/screen/map_view_tg/camera
+	var/atom/movable/screen/background/cam_background
+	var/atom/movable/screen/background/cam_foreground
+	var/atom/movable/screen/skybox/local_skybox
+
+/atom/movable/screen/map_view_tg/camera/Destroy()
+	QDEL_NULL(cam_background)
+	QDEL_NULL(cam_foreground)
+	QDEL_NULL(local_skybox)
+	return ..()
+
+/atom/movable/screen/map_view_tg/camera/generate_view(map_key)
+	. = ..()
+	cam_background = new()
+	cam_background.del_on_map_removal = FALSE
+	cam_background.assigned_map = assigned_map
+
+	local_skybox = new()
+	local_skybox.del_on_map_removal = FALSE
+	local_skybox.assigned_map = assigned_map
+
+	// FG
+	cam_foreground = new
+	cam_foreground.del_on_map_removal = FALSE
+	cam_foreground.assigned_map = assigned_map
+
+	var/mutable_appearance/scanlines = mutable_appearance('icons/effects/static.dmi', "scanlines")
+	scanlines.alpha = 50
+	scanlines.layer = FULLSCREEN_LAYER
+
+	var/mutable_appearance/noise = mutable_appearance('icons/effects/static.dmi', "1 light")
+	noise.layer = FULLSCREEN_LAYER
+
+	cam_foreground.plane = PLANE_FULLSCREEN
+	cam_foreground.add_overlay(scanlines)
+	cam_foreground.add_overlay(noise)
+
+/atom/movable/screen/map_view_tg/camera/display_to_client(client/show_to)
+	show_to.register_map_obj(cam_background)
+	show_to.register_map_obj(cam_foreground)
+	show_to.register_map_obj(local_skybox)
+	. = ..()
+
+/atom/movable/screen/map_view_tg/camera/proc/show_camera(list/visible_turfs, turf/newturf, size_x, size_y)
+	vis_contents = visible_turfs
+	cam_background.icon_state = "clear"
+	cam_background.fill_rect(1, 1, size_x, size_y)
+
+	cam_foreground.fill_rect(1, 1, size_x, size_y)
+
+	local_skybox.cut_overlays()
+	local_skybox.add_overlay(SSskybox.get_skybox(get_z(newturf)))
+	local_skybox.scale_to_view(size_x)
+	local_skybox.set_position("CENTER", "CENTER", (world.maxx>>1) - newturf.x, (world.maxy>>1) - newturf.y)
+
+/atom/movable/screen/map_view_tg/camera/proc/show_camera_static()
+	vis_contents.Cut()
+	cam_background.icon_state = "scanline2"
+	cam_background.fill_rect(1, 1, DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE)
+	local_skybox.cut_overlays()
+
+
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 /datum/tgui_module/camera
 	name = "Security Cameras"
 	tgui_id = "CameraConsole"
@@ -11,6 +78,7 @@
 
 	// Stuff needed to render the map
 	var/map_name
+<<<<<<< HEAD
 	var/const/default_map_size = 15
 	var/obj/screen/map_view/cam_screen
 	/// All the plane masters that need to be applied.
@@ -18,6 +86,11 @@
 	var/obj/screen/background/cam_background
 	var/obj/screen/background/cam_foreground
 	var/obj/screen/skybox/local_skybox
+=======
+
+	var/atom/movable/screen/map_view_tg/camera/cam_screen_tg
+
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 	// Stuff for moving cameras
 	var/turf/last_camera_turf
 

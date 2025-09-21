@@ -133,7 +133,11 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	if(C.current_ticket)
 		C.current_ticket.AddInteraction("Client reconnected.")
 		C.current_ticket.initiator = C
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets.dm
 		// C.current_ticket.initiator.mob.throw_alert("open ticket", /obj/screen/alert/open_ticket) // Uncomment this line to enable player-side ticket ui
+=======
+		C.current_ticket.initiator.mob?.throw_alert("open ticket", /atom/movable/screen/alert/open_ticket)
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719)):code/modules/tickets/tickets.dm
 
 //Dissasociate ticket
 /datum/tickets/proc/ClientLogout(client/C)
@@ -308,7 +312,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/statclick/ticket_list)
 	//TC.T = src
 	//TC.tgui_interact(C.mob)
 
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets.dm
 	// C.mob.throw_alert("open ticket", /obj/screen/alert/open_ticket) // Uncomment this line to enable player-side ticket ui
+=======
+	C.mob.throw_alert("open ticket", /atom/movable/screen/alert/open_ticket)
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719)):code/modules/tickets/tickets.dm
 
 /datum/ticket/Destroy()
 	RemoveActive()
@@ -435,6 +443,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/statclick/ticket_list)
 	message_admins(msg)
 	log_admin(msg)
 	feedback_inc("ticket_reopen")
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets.dm
+=======
+	initiator.mob.throw_alert("open ticket", /atom/movable/screen/alert/open_ticket)
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719)):code/modules/tickets/tickets.dm
 	//TicketPanel()	//can only be done from here, so refresh it
 
 	SSwebhooks.send(

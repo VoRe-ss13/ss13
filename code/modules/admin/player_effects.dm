@@ -199,7 +199,7 @@
 
 		if("adspam")
 			if(target.client)
-				target.client.create_fake_ad_popup_multiple(/obj/screen/popup/default, 15)
+				target.client.create_fake_ad_popup_multiple(/atom/movable/screen/popup/default, 15)
 
 		if("peppernade")
 			var/obj/item/grenade/chem_grenade/teargas/grenade = new /obj/item/grenade/chem_grenade/teargas
@@ -325,6 +325,16 @@
 			spawned_obj.unacidable = !M.digestable
 			M.forceMove(possessed_voice)
 
+<<<<<<< HEAD
+=======
+			M.tf_into(spawned_obj, TRUE, original_name)
+
+		if("elder_smite")
+			if(!target.ckey)
+				return
+			target.overlay_fullscreen("scrolls", /atom/movable/screen/fullscreen/scrolls, 1)
+			addtimer(CALLBACK(target, TYPE_PROC_REF(/mob, clear_fullscreen), "scrolls"), 20 SECONDS)
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 
 		////////MEDICAL//////////////
 
