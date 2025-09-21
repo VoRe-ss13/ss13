@@ -1,9 +1,11 @@
+<<<<<<< HEAD
 /obj/screen/alert/open_ticket
+=======
+/atom/movable/screen/alert/open_ticket
+>>>>>>> 65a5e0a614 ([MIRROR] fixes one of my first ever coding sins here (#11720))
 	icon = 'modular_chomp/icons/logo.dmi'
-	name = "Admin Chat Request"
-	desc = "A Administrator would like to chat with you. \
-	Click here to begin."
 	icon_state = "32x32"
+<<<<<<< HEAD
 
 /obj/screen/alert/open_ticket/Click()
 	if(!usr || !usr.client) return
@@ -12,3 +14,5 @@
 	var/datum/ticket_chat/TC = new()
 	TC.T = usr.client.current_ticket
 	TC.tgui_interact(usr.client.mob)
+=======
+>>>>>>> 65a5e0a614 ([MIRROR] fixes one of my first ever coding sins here (#11720))
