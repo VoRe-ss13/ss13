@@ -888,6 +888,13 @@
 					/obj/item/toy/plushie/teshari/y_yw = 1,
 					//YawnWider Add End
 					//CHOMPStation Add Start
+<<<<<<< HEAD
+=======
+					/obj/item/toy/plushie/customizable/dragon = 10,
+					/obj/item/toy/plushie/teppi = 1,
+					/obj/item/toy/plushie/teppi/alt = 1,
+					//CHOMPStation Add End
+>>>>>>> 34510735da (Remove the old customizable plushie (#11722))
 					/obj/item/toy/plushie/dragon = 1,
 					/obj/item/toy/plushie/dragon/green = 1,
 					/obj/item/toy/plushie/dragon/red_east = 1,
@@ -949,6 +956,13 @@
 					/obj/item/toy/plushie/teshari/y_yw = 150,
 					//YawnWider Add End
 					//CHOMPStation Add Start
+<<<<<<< HEAD
+=======
+					/obj/item/toy/plushie/customizable/dragon = 50,
+					/obj/item/toy/plushie/teppi = 50,
+					/obj/item/toy/plushie/teppi/alt = 50,
+					//CHOMPStation Add End
+>>>>>>> 34510735da (Remove the old customizable plushie (#11722))
 					/obj/item/toy/plushie/dragon = 50,
 					/obj/item/toy/plushie/dragon/green = 50,
 					/obj/item/toy/plushie/dragon/red_east = 50,

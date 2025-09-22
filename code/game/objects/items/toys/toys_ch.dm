@@ -24,6 +24,7 @@
 	icon_state = "greenfox"
 	pokephrase = "Weh!"
 
+<<<<<<< HEAD
 /obj/item/toy/plushie/dragon
 	name = "dragon plushie"
 	desc = "A soft plushie in the shape of a dragon. How ferocious!"
@@ -183,6 +184,8 @@
 
 	update_icon()
 
+=======
+>>>>>>> 34510735da (Remove the old customizable plushie (#11722))
 /obj/item/toy/plushie/teppi
 	name = "teppi plushie"
 	desc = "A soft, fluffy plushie made out of real teppi fur!"
