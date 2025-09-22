@@ -836,10 +836,45 @@ GLOBAL_DATUM(autospeaker, /mob/living/silicon/ai/announcer)
 //* Bluespace Radio *//
 /obj/item/bluespaceradio/southerncross_prelinked
 	name = "bluespace radio (southerncross)"
-	handset = /obj/item/radio/bluespacehandset/linked/southerncross_prelinked
+	handset_path = /obj/item/radio/bluespacehandset/linked/southerncross_prelinked
 
 /obj/item/radio/bluespacehandset/linked/southerncross_prelinked
 	bs_tx_preload_id = "Receiver A" //Transmit to a receiver
 	bs_rx_preload_id = "Broadcaster A" //Recveive from a transmitter
 
 #undef CANBROADCAST_INNERBOX
+<<<<<<< HEAD
+=======
+
+/obj/item/radio/phone
+	subspace_transmission = TRUE
+	canhear_range = 0
+	adhoc_fallback = TRUE
+
+/obj/item/radio/emergency
+	name = "Medbay Emergency Radio Link"
+	icon_state = "med_walkietalkie"
+	frequency = MED_I_FREQ
+	subspace_transmission = TRUE
+	adhoc_fallback = TRUE
+
+/obj/item/radio/emergency/Initialize(mapload)
+	. = ..()
+	internal_channels = GLOB.default_medbay_channels.Copy()
+
+/obj/item/bluespaceradio/tether_prelinked
+	name = "bluespace radio (tether)"
+	handset_path = /obj/item/radio/bluespacehandset/linked/tether_prelinked
+
+/obj/item/radio/bluespacehandset/linked/tether_prelinked
+	bs_tx_preload_id = "tether_rx" //Transmit to a receiver
+	bs_rx_preload_id = "tether_tx" //Recveive from a transmitter
+
+/obj/item/bluespaceradio/talon_prelinked
+	name = "bluespace radio (talon)"
+	handset_path = /obj/item/radio/bluespacehandset/linked/talon_prelinked
+
+/obj/item/radio/bluespacehandset/linked/talon_prelinked
+	bs_tx_preload_id = "talon_aio" //Transmit to a receiver
+	bs_rx_preload_id = "talon_aio" //Recveive from a transmitter
+>>>>>>> ef9f5f2499 ([MIRROR] Tethered Item Component (#11723))
