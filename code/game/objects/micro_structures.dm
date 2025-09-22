@@ -9,6 +9,7 @@ GLOBAL_LIST_EMPTY(micro_tunnels)
 	anchored = TRUE
 	density = FALSE
 
+	var/random = FALSE //For random tummels- spits the micro out at a random location.
 	var/magic = FALSE	//For events and stuff, if true, this tunnel will show up in the list regardless of whether it's in valid range, of if you're in a tunnel with this var, all tunnels of the same faction will show up redardless of range
 	micro_target = TRUE
 
@@ -278,9 +279,14 @@ GLOBAL_LIST_EMPTY(micro_tunnels)
 /obj/structure/micro_tunnel/magic
 	magic = TRUE
 
+<<<<<<< HEAD
 /obj
 	var/micro_accepted_scale = 0.5
 	var/micro_target = FALSE
+=======
+/obj/structure/micro_tunnel/random
+	random = TRUE
+>>>>>>> 94900aedc0 ([MIRROR] various map related features (#11724))
 
 /obj/Initialize(mapload)
 	. = ..()

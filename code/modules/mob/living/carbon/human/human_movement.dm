@@ -203,6 +203,8 @@
 
 	if(T.movement_cost && !flying) //If you are flying you are probably not affected by the terrain on the ground.
 		var/turf_move_cost = T.movement_cost
+		if(locate(/obj/structure/catwalk) in T) //catwalks prevent turfs from slowing your
+			return 0
 		if(istype(T, /turf/simulated/floor/water))
 			if(species.water_movement)
 				turf_move_cost = 0

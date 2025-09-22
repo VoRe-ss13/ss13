@@ -279,6 +279,7 @@
 			return
 	return
 
+<<<<<<< HEAD
 // Duplicated from structures.dm, but its a bit different.
 /obj/structure/railing/do_climb(var/mob/living/user)
 	if(!can_climb(user))
@@ -330,3 +331,15 @@
 			if(S.climbable) continue
 		if(O && O.density && !(O.flags & ON_BORDER && !(turn(O.dir, 180) & dir)))
 			return O
+=======
+/obj/structure/railing/overhang/hazard
+	name = "hazardous ledge"
+	desc = "An overhang made of a steel. It's painted with vibrant hazard markings."
+	icon = 'icons/obj/railing.dmi'
+	icon_modifier = "hazard_"
+	icon_state = "hazard_railing0"
+
+/obj/structure/railing/overhang/hazard/nanite
+	icon_modifier = "inactive_"
+	icon_state = "inactive_railing0"
+>>>>>>> 94900aedc0 ([MIRROR] various map related features (#11724))
