@@ -138,8 +138,13 @@
 		if(!choice || choice == "Cancel" || !Adjacent(user) || inoperable() || panel_open)
 			busy_bank = FALSE
 			return
+<<<<<<< HEAD
 		for(var/obj/check in O.contents)
 			if(!check.persist_storable)
+=======
+		for(var/obj/item/check in O.contents)
+			if(!check.persist_storable || check.tethered_host_item)
+>>>>>>> ef9f5f2499 ([MIRROR] Tethered Item Component (#11723))
 				to_chat(user, span_warning("\The [src] buzzes. \The [O] contains [check], which cannot be stored. Please remove this item before attempting to store \the [O]. As a reminder, any contents of \the [O] will be lost if you store it with contents."))
 				busy_bank = FALSE
 				return
