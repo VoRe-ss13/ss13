@@ -26,8 +26,13 @@
 	command_announcement.Announce("It has come to our attention that \the [location_name()] passed through an ion storm.  Please monitor all electronic equipment for malfunctions.", "Anomaly Alert")
 
 /datum/event/ionstorm/start()
+<<<<<<< HEAD
 	for (var/mob/living/carbon/human/player in player_list)
 		if(	!player.mind || player_is_antag(player.mind, only_offstation_roles = 1) || player.client.inactivity > MinutesToTicks(10))
+=======
+	for (var/mob/living/carbon/human/player in GLOB.player_list)
+		if(	!player.mind || player_is_antag(player.mind, only_offstation_roles = 1) || player.client.inactivity > 10 MINUTES)
+>>>>>>> 2738c2c020 ([MIRROR] Modernizing doors (#11728))
 			continue
 		players += player.real_name
 

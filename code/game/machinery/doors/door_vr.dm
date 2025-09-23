@@ -1,22 +1,3 @@
-/turf/simulated/floor/proc/adjacent_fire_act_vr(turf/simulated/floor/adj_turf, datum/gas_mixture/adj_air, adj_temp, adj_volume)
-	for(var/obj/machinery/door/D in src) //makes doors next to fire affected by fire
-		D.fire_act(adj_air, adj_temp, adj_volume)
-
-/obj/machinery/door
-	var/reinforcing = 0	//vorestation addition
-	var/tintable = 0
-	var/icon_tinted
-	var/id_tint
-
-/obj/machinery/door/firedoor
-	heat_proof = 1
-
-/obj/machinery/door/airlock/vault
-	heat_proof = 1
-
-/obj/machinery/door/airlock/hatch
-	heat_proof = 1
-
 /obj/machinery/door/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	for(var/obj/machinery/door/blast/B in loc.contents)
 		if(B.density)
@@ -40,6 +21,7 @@
 
 	return ..()
 
+<<<<<<< HEAD
 // Returns true only if one of the actions unique to reinforcing is done, otherwise false and continuing normal attackby
 /obj/machinery/door/proc/attackby_vr(obj/item/I as obj, mob/user as mob)
 	if(istype(I, /obj/item/stack/material) && I.get_material_name() == MAT_PLASTEEL)
@@ -121,6 +103,8 @@
 /obj/machinery/door/blast/puzzle
 	heat_proof = 1 //just so repairing them doesn't try to fireproof something that never takes fire damage
 
+=======
+>>>>>>> 2738c2c020 ([MIRROR] Modernizing doors (#11728))
 /obj/machinery/door/proc/toggle()
 	if(glass)
 		icon = icon_tinted

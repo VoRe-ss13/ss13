@@ -123,7 +123,12 @@ var/bluespace_item_types = newlist(/obj/item/storage/backpack/holding,
 		var/mob/living/L = teleatom
 		if(L.buckled)
 			C = L.buckled
+<<<<<<< HEAD
 	if(attempt_vr(src,"try_televore",args)) return //VOREStation Edit - Telenoms.
+=======
+	if(try_televore())
+		return
+>>>>>>> 2738c2c020 ([MIRROR] Modernizing doors (#11728))
 	if(force_teleport)
 		teleatom.forceMove(destturf)
 		playSpecials(destturf,effectout,soundout)

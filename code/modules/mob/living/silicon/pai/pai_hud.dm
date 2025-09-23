@@ -5,9 +5,16 @@
 	icon = 'icons/mob/pai_hud.dmi'
 	var/base_state
 
+<<<<<<< HEAD
 /obj/screen/pai/Click_vr(location, control, params)
 	if(!usr)	return 1
 	if(!ispAI(usr))		return 1
+=======
+/atom/movable/pai/Click(location, control, params)
+	. = ..()
+	if(!ispAI(usr))
+		return
+>>>>>>> 2738c2c020 ([MIRROR] Modernizing doors (#11728))
 	var/mob/living/silicon/pai/p = usr
 	switch(name)
 		if("fold/unfold")
