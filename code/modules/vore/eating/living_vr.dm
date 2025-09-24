@@ -194,20 +194,38 @@
 			else
 				return TRUE //You don't get to hit someone 'later'
 
-	return FALSE
+<<<<<<< HEAD
+=======
+	// Body writing
+	else if(istype(I, /obj/item/pen))
+		if(!ishuman(src))
+			return FALSE
+		var/mob/living/carbon/human/us = src
 
-//
-// Our custom resist catches for /mob/living
-//
-/mob/living/proc/vore_process_resist()
-	//Are we resisting from inside a belly?
-	// if(isbelly(loc))
-	// 	var/obj/belly/B = loc
-	// 	B.relay_resist(src)
-	// 	return TRUE //resist() on living does this TRUE thing.
-	// Note: This is no longer required, as the refactors to resisting allow bellies to just define container_resist
+		if(!isliving(user))
+			return FALSE
+		var/mob/living/attacker = user
 
-	//Other overridden resists go here
+		if(attacker.a_intent != I_HELP)
+			return FALSE
+
+		var/hit_zone = attacker.zone_sel.selecting
+
+		var/obj/item/organ/external/affecting = get_organ(hit_zone)
+		if(!affecting || affecting.is_stump())
+			to_chat(attacker, span_danger("They are missing that limb!"))
+			return TRUE
+
+		var/message = tgui_input_text(attacker, "What would you like to write on [src]'s [affecting]? (This will replace existing writing.)", "Body Writing", "", 128, FALSE)
+		if(!message)
+			return TRUE
+
+		add_attack_logs(attacker, us, "wrote \"[message]\"")
+
+		LAZYSET(us.body_writing, affecting.organ_tag, message)
+		return TRUE
+
+>>>>>>> 2738c2c020 ([MIRROR] Modernizing doors (#11728))
 	return FALSE
 
 //
@@ -347,14 +365,14 @@
 		return
 
 	load_character(slotnum)
-	attempt_vr(user.client?.prefs_vr,"load_vore","")
+	user.client?.prefs_vr.load_vore()
 	sanitize_preferences()
 
 	return remember_default
 
 /datum/preferences/proc/return_to_character_slot(mob/user, var/remembered_default)
 	load_character(remembered_default)
-	attempt_vr(user.client?.prefs_vr,"load_vore","")
+	user.client?.prefs_vr.load_vore()
 	sanitize_preferences()
 
 //
