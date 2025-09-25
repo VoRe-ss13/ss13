@@ -20,37 +20,48 @@
 	icon_state = "deck"
 	drop_sound = 'sound/items/drop/paper.ogg'
 	pickup_sound = 'sound/items/pickup/paper.ogg'
+	var/card_icon_prefix = ""
+	var/deck_size = 1 // # of times we will generate cards within this deck
+
+/obj/item/deck/cards/proc/init_cards()
+	PROTECTED_PROC(TRUE)
+	var/datum/playingcard/pcard
+	for(var/i = 0, i < deck_size, i++)
+		for(var/suit in list("spades","clubs","diamonds","hearts"))
+			var/colour
+			switch(suit)
+				if("clubs", "spades")
+					colour = "black_"
+				else
+					colour = "red_"
+
+			for(var/number in list("ace","two","three","four","five","six","seven","eight","nine","ten"))
+				pcard = new()
+				pcard.name = "[number] of [suit]"
+				pcard.card_icon = "[card_icon_prefix][colour]num"
+				pcard.back_icon = "[card_icon_prefix]card_back"
+				cards += pcard
+
+			for(var/number in list("jack","queen","king"))
+				pcard = new()
+				pcard.name = "[number] of [suit]"
+				pcard.card_icon = "[card_icon_prefix][colour]col"
+				pcard.back_icon = "[card_icon_prefix]card_back"
+				cards += pcard // Make it so.
+
+		init_jokers()
+
+/obj/item/deck/cards/proc/init_jokers()
+	var/datum/playingcard/pcard
+	for(var/i = 0, i<2, i++)
+		pcard = new()
+		pcard.name = "joker"
+		pcard.card_icon = "joker"
+		cards += pcard
 
 /obj/item/deck/cards/Initialize(mapload)
 	. = ..()
-	var/datum/playingcard/P
-	for(var/suit in list("spades","clubs","diamonds","hearts"))
-
-		var/colour
-		if(suit == "spades" || suit == "clubs")
-			colour = "black_"
-		else
-			colour = "red_"
-
-		for(var/number in list("ace","two","three","four","five","six","seven","eight","nine","ten"))
-			P = new()
-			P.name = "[number] of [suit]"
-			P.card_icon = "[colour]num"
-			P.back_icon = "card_back"
-			cards += P
-
-		for(var/number in list("jack","queen","king"))
-			P = new()
-			P.name = "[number] of [suit]"
-			P.card_icon = "[colour]col"
-			P.back_icon = "card_back"
-			cards += P
-
-	for(var/i = 0, i<2, i++)
-		P = new()
-		P.name = "joker"
-		P.card_icon = "joker"
-		cards += P
+	init_cards()
 
 /obj/item/deck/attackby(obj/O, mob/user)
 	if(istype(O,/obj/item/hand))
@@ -273,6 +284,14 @@
 				user.put_in_hands(src)
 	return
 
+<<<<<<< HEAD
+=======
+/obj/item/deck/cards/triple
+	name = "big deck of cards"
+	desc = "A simple deck of playing cards with triple the number of cards."
+	deck_size = 3
+
+>>>>>>> a493e176e2 ([MIRROR] Luckier 7 event map content + Card deck init improvement/bugfixing (#11735))
 /obj/item/pack/
 	name = "Card Pack"
 	desc = "For those with disposible income."
