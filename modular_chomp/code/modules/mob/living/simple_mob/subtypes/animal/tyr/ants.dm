@@ -268,9 +268,15 @@ ANT STRUCTURES
 /obj/effect/ant_structure/trap/Crossed(atom/movable/AM as mob|obj)
 	if(AM.is_incorporeal())
 		return
+<<<<<<< HEAD
 	if(anchored && isliving(AM))
 		var/mob/living/L = AM
 		if(L == /mob/living/simple_mob/animal/tyr/mineral_ants)
+=======
+	if(anchored && isliving(source))
+		var/mob/living/L = source
+		if(L.faction == FACTION_TYR_ANT)
+>>>>>>> 3ad2c9d334 (Tyr Update Code Jellyfish (#11749))
 			return
 		else if(L.m_intent == I_RUN)
 			L.visible_message(
@@ -284,10 +290,6 @@ ANT STRUCTURES
 
 /obj/effect/ant_structure/trap/proc/attack_mob(mob/living/L)
 	L.add_modifier(modifiertype, 5 SECONDS)
-
-/obj/effect/ant_structure/trap/knockdown
-	icon_state = "knock_trap"
-	modifiertype = /datum/modifier/poisoned
 
 /obj/effect/ant_structure/trap/burn
 	icon_state = "burn_trap"
@@ -311,7 +313,6 @@ ANT STRUCTURES
 /obj/random/ant_building/item_to_spawn()
 	return pick(/obj/effect/ant_structure/wall,
 				/obj/effect/ant_structure/trap/burn,
-				/obj/effect/ant_structure/trap/knockdown,
 				/obj/effect/ant_structure/trap/slowdown)
 
 
