@@ -213,8 +213,16 @@
 /obj/machinery/door/attack_ai(mob/user as mob)
 	return src.attack_hand(user)
 
+<<<<<<< HEAD
 /obj/machinery/door/attack_hand(mob/user as mob)
 	return src.attackby(user, user)
+=======
+/obj/machinery/door/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
+	try_to_activate_door(user)
+>>>>>>> 4c67e13f8d ([MIRROR] Door after_attack behavior fix (#11752))
 
 /obj/machinery/door/attack_tk(mob/user as mob)
 	if(requiresID() && !allowed(null))
@@ -262,8 +270,33 @@
 	if(src.operating)
 		return
 
+<<<<<<< HEAD
 	if(src.allowed(user) && operable())
 		if(src.density)
+=======
+	//psa to whoever coded this, there are plenty of objects that need to call attack() on doors without bludgeoning them.
+	if(density && istype(I, /obj/item) && user.a_intent == I_HURT && !istype(I, /obj/item/card))
+		var/obj/item/W = I
+		user.setClickCooldown(user.get_attack_speed(W))
+		if(W.damtype == BRUTE || W.damtype == BURN)
+			user.do_attack_animation(src)
+			if(W.force < min_force)
+				user.visible_message(span_danger("\The [user] hits \the [src] with \the [W] with no visible effect."))
+			else
+				user.visible_message(span_danger("\The [user] forcefully strikes \the [src] with \the [W]!"))
+				playsound(src, hitsound, 100, 1)
+				take_damage(W.force)
+		return
+
+	try_to_activate_door(user)
+
+/obj/machinery/door/proc/try_to_activate_door(mob/user)
+	add_fingerprint(user)
+	if(operating || isrobot(user))
+		return FALSE //borgs can't attack doors open because it conflicts with their AI-like interaction with them.
+	if(allowed(user) && operable())
+		if(density)
+>>>>>>> 4c67e13f8d ([MIRROR] Door after_attack behavior fix (#11752))
 			open()
 		else
 			close()
