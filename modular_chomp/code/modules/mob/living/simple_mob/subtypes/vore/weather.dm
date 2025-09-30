@@ -198,7 +198,13 @@
 	glow_intensity = 3
 	special_attack_min_range = 1
 	special_attack_max_range = 7
+<<<<<<< HEAD
 	special_attack_cooldown = 30 SECONDS
+=======
+	special_attack_cooldown = 13 SECONDS
+	ai_holder_type = /datum/ai_holder/simple_mob/melee/evasive/jellyfish
+
+>>>>>>> 5e26d49b9a (Small Tyr Thing (#11756))
 
 	ai_holder_type = /datum/ai_holder/simple_mob/melee/evasive/jellyfish
 	//So this guy is gonna be funky. Their special attacks depend on their nutrition.
