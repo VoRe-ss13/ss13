@@ -451,8 +451,13 @@
 /turf/simulated/floor/wood/sif,
 /area/submap/DeathDen)
 "vC" = (
+<<<<<<< HEAD
 /obj/machinery/power/supermatter/shard,
 /turf/simulated/floor/wood/sif,
+=======
+/obj/item/flame/lighter/supermatter,
+/turf/simulated/floor/wood/sif/turfpack/sif,
+>>>>>>> 4bbebaf530 (Obliterates all shards on Sif for real this time (#11757))
 /area/submap/DeathDen)
 "vD" = (
 /obj/structure/table/wooden_reinforced,
