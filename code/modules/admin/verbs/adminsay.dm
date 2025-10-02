@@ -35,8 +35,13 @@
 	if(check_rights(R_ADMIN, 0))
 		sender_name = span_admin("[sender_name]")
 	for(var/client/C in GLOB.admins)
+<<<<<<< HEAD
 		if(check_rights(R_ADMIN|R_MOD|R_SERVER)) //VOREStation Edit
 			to_chat(C, span_mod_channel(create_text_tag("mod", "MOD:", C) + " " + span_name("[sender_name]") + "([admin_jump_link(mob, C.holder)]): " + span_name("[msg]") ))
+=======
+		if(check_rights_for(C, R_ADMIN|R_MOD|R_SERVER)) //VOREStation Edit
+			to_chat(C, span_mod_channel(create_text_tag("mod", "MOD:", C) + " " + span_name("[sender_name]") + "([admin_jump_link(user.mob, C.holder)]): " + span_name("[msg]") ))
+>>>>>>> af3bddd4cb ([MIRROR] check for individual clients (#11767))
 
 	feedback_add_details("admin_verb","MS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
