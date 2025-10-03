@@ -1,4 +1,12 @@
 {
+<<<<<<< HEAD
   "private": true,
   "type": "module"
+=======
+	"private": true,
+	"type": "module",
+	"devDependencies": {
+		"@types/bun": "^1.2.23"
+	}
+>>>>>>> 4f68aff1c5 ([MIRROR] react 19.2 (#11772))
 }

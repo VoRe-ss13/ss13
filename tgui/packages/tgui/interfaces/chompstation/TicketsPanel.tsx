@@ -52,7 +52,12 @@ const StateColor = {
 type Data = {
   tickets: Ticket[];
 
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/TicketsPanel.tsx
   selected_ticket: Ticket;
+=======
+  selected_ticket?: Ticket;
+  is_admin: BooleanLike;
+>>>>>>> 4f68aff1c5 ([MIRROR] react 19.2 (#11772)):tgui/packages/tgui/interfaces/TicketsPanel.tsx
 };
 
 type Ticket = {
@@ -120,7 +125,7 @@ export const TicketsPanel = (props) => {
         scroll.scrollTop = scroll.scrollHeight;
       }
     }
-  });
+  }, [selected_ticket?.log]);
 
   const filtered_tickets = getFilteredTickets(
     tickets,
