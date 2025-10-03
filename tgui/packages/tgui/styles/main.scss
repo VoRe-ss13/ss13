@@ -53,6 +53,11 @@
 @include meta.load-css('./interfaces/TinderMessaging.scss');
 @include meta.load-css('./interfaces/Turbolift.scss');
 @include meta.load-css('./interfaces/Wires.scss');
+<<<<<<< HEAD
+=======
+@include meta.load-css('./interfaces/PlushEditor.scss');
+@include meta.load-css('./interfaces/ColorMatrixEditor.scss');
+>>>>>>> 9709af12a9 ([MIRROR] colorsolver (#11773))
 
 // Layouts
 @include meta.load-css('./layouts/Layout.scss');
