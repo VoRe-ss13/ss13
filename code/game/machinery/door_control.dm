@@ -97,6 +97,7 @@
 		if(D.id_tag == id)
 			if(specialfunctions & OPEN)
 				if(D.density)
+<<<<<<< HEAD
 					spawn(0)
 						D.open()
 						return
@@ -104,6 +105,13 @@
 					spawn(0)
 						D.close()
 						return
+=======
+					D.open()
+					continue
+				D.close()
+				continue
+
+>>>>>>> 83d2abea8f ([MIRROR] fix some doors not operating in parallel (#11771))
 			if(desiredstate == 1)
 				if(specialfunctions & IDSCAN)
 					D.set_idscan(0)
@@ -113,15 +121,16 @@
 					D.electrify(-1)
 				if(specialfunctions & SAFE)
 					D.set_safeties(0)
-			else
-				if(specialfunctions & IDSCAN)
-					D.set_idscan(1)
-				if(specialfunctions & BOLTS)
-					D.unlock()
-				if(specialfunctions & SHOCK)
-					D.electrify(0)
-				if(specialfunctions & SAFE)
-					D.set_safeties(1)
+				continue
+
+			if(specialfunctions & IDSCAN)
+				D.set_idscan(1)
+			if(specialfunctions & BOLTS)
+				D.unlock()
+			if(specialfunctions & SHOCK)
+				D.electrify(0)
+			if(specialfunctions & SAFE)
+				D.set_safeties(1)
 
 #undef OPEN
 #undef IDSCAN
