@@ -71,6 +71,24 @@
 #define MAT_FOAM			"foam"
 #define MAT_FLOKIUM			"flockium"
 #define MAT_SMOLEBRICKS		"smolebricks"
+<<<<<<< HEAD
+=======
+#define MAT_WAX				"wax"
+
+//ChompEdit Begin Tyr exclusive material
+#define MAT_EAGATE			"energized agate"
+//ChompEdit End
+
+#define MAT_CULT			"cult"
+#define MAT_CULT2			"cult2"
+
+// ALien materials
+#define MAT_ALIENALLOY		"alienalloy"
+#define MAT_ALIEN_ALIUM		"alium"
+#define MAT_ALIEN_BEDROCK	"bedrock"
+#define MAT_ALIEN_DUNGEON	"dungeonium"
+#define MAT_ALIEN_ELEVAT	"elevatorium"
+>>>>>>> 117a964661 (Science Fix, and Preparing For Agate Port (#11776))
 
 // cloth materials
 #define MAT_WOOL			"wool"
