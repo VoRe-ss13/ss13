@@ -185,6 +185,11 @@
 ///from base of atom/attack_paw(): (mob/user)
 //This signal return value bitflags can be found in __DEFINES/misc.dm
 
+///from base of /obj/structure/stairs/top/use_stairs(var/atom/movable/AM, var/atom/oldloc)
+#define COMSIG_MOVED_DOWN_STAIRS "atom_moved_down_stairs"
+///from base of /obj/structure/stairs/bottom/use_stairs(var/atom/movable/AM, var/atom/oldloc)
+#define COMSIG_MOVED_UP_STAIRS "atom_moved_up_stairs"
+
 ///called for each movable in a turf contents on /turf/zImpact(): (atom/movable/A, levels)
 #define COMSIG_ATOM_INTERCEPT_Z_FALL "movable_intercept_z_impact"
 ///called on a movable (NOT living) when someone starts pulling it (atom/movable/puller, state, force)
@@ -256,6 +261,8 @@
 	#define COMPONENT_MOVABLE_IMPACT_NEVERMIND (1<<1)					//return true if you destroyed whatever it was you're impacting and there won't be anything for hitby() to run on
 ///from base of mob/living/hitby(): (mob/living/target, hit_zone)
 #define COMSIG_MOVABLE_IMPACT_ZONE "item_impact_zone"
+///from the base of mob/living/carbon/human/hitby(): (atom/movable/source, speed)
+#define COMSIG_HUMAN_ON_CATCH_THROW "human_on_catch_throw"
 ///from base of atom/movable/buckle_mob(): (mob, force)
 #define COMSIG_MOVABLE_BUCKLE "buckle"
 ///from base of atom/movable/unbuckle_mob(): (mob, force)
@@ -302,6 +309,9 @@
 ///from base of mob/AltClickOn(): (atom/A)
 #define COMSIG_MOB_ALTCLICKON "mob_altclickon"
 	#define COMSIG_MOB_CANCEL_CLICKON (1<<0)
+
+///from base of /obj/item/dice/proc/rollDice(mob/user as mob, var/silent = 0). Has the arguments of 'src, silent, result'
+#define COMSIG_MOB_ROLLED_DICE "mob_rolled_dice" //can give a return value if we want it to make the dice roll a specific number!
 
 ///from base of obj/allowed(mob/M): (/obj) returns bool, if TRUE the mob has id access to the obj
 #define COMSIG_MOB_ALLOWED "mob_allowed"
@@ -381,6 +391,55 @@
 #define COMSIG_LIVING_LIFE "living_life"
 ///From /living/handle_disabilities().
 #define COMSIG_HANDLE_DISABILITIES "handle_disabilities"
+<<<<<<< HEAD
+=======
+///From /living/handle_allergens().
+#define COMSIG_HANDLE_ALLERGENS "handle_allergens"
+///From /mob/living/proc/updatehealth().
+#define COMSIG_UPDATE_HEALTH "update_health"
+	#define COMSIG_UPDATE_HEALTH_GOD_MODE (1<<0) //If this will set health to 100 and stat to conscious.
+
+// Damage specific signals for /mob/living
+///from /mob/living/proc/adjustBrainLoss(amount) and /mob/living/proc/setBrainLoss(amount)
+#define COMSIG_TAKING_BRAIN_DAMAGE "taking_brain_damage"
+///Return this in response if you don't want brain damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_BRAIN_DAMAGE (1<<0)
+///from /mob/living/proc/adjustOxyLoss(amount) and /mob/living/proc/setOxyLoss(amount)
+#define COMSIG_TAKING_OXY_DAMAGE "taking_oxy_damage"
+///Return this in response if you don't want brain damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_OXY_DAMAGE (1<<0)
+///from /mob/living/proc/adjustToxLoss(amount) and /mob/living/proc/setToxLoss(amount)
+#define COMSIG_TAKING_TOX_DAMAGE "taking_tox_damage"
+///Return this in response if you don't want tox damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_TOX_DAMAGE (1<<0)
+///from /mob/living/proc/adjustCloneLoss(amount) and /mob/living/proc/setCloneLoss(amount)
+#define COMSIG_TAKING_CLONE_DAMAGE "taking_clone_damage"
+///Return this in response if you don't want clone damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_CLONE_DAMAGE (1<<0)
+///from /mob/living/proc/adjustFireLoss(amount, include_robo)
+#define COMSIG_TAKING_FIRE_DAMAGE "taking_fire_damage"
+///Return this in response if you don't want fire damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_FIRE_DAMAGE (1<<0)
+///from /mob/living/proc/adjustBruteLoss(amount, include_robo) and /mob/living/carbon/human/adjustBruteLoss(amount, include_robo)
+#define COMSIG_TAKING_BRUTE_DAMAGE "taking_brute_damage"
+///Return this in response if you don't want brute damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_BRUTE_DAMAGE (1<<0)
+///from /mob/living/proc/adjustHalLoss(amount)
+#define COMSIG_TAKING_HALO_DAMAGE "taking_halo_damage"
+///Return this in response if you don't want halo damage to be dealt via the normal proc.
+	#define COMSIG_CANCEL_HALO_DAMAGE (1<<0)
+///from /mob/living/proc/apply_effect(effect, effecttype, blocked, check_protection)
+#define COMSIG_TAKING_APPLY_EFFECT "applying_effect"
+///Return this in response if you don't want the effect to be applied
+	#define COMSIG_CANCEL_EFFECT (1<<0)
+///from /mob/living/proc/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone, var/used_weapon=null, var/electric = FALSE)
+#define COMSIG_STUN_EFFECT_ACT "stun_effect_act"
+
+///Misc signal for checking for godmode. Used by /datum/element/godmode
+#define COMSIG_CHECK_FOR_GODMODE "check_for_godmode"
+///Returned by /datum/element/godmode if the target is in godmode and whatever we're checking we want to cancel
+	#define COMSIG_GODMODE_CANCEL (1<<0)
+>>>>>>> b8fe8fa68d ([MIRROR] Unlucky trait (#11775))
 
 //ALL OF THESE DO NOT TAKE INTO ACCOUNT WHETHER AMOUNT IS 0 OR LOWER AND ARE SENT REGARDLESS!
 
@@ -417,8 +476,25 @@
 #define COMSIG_CARBON_EMBED_RIP "item_embed_start_rip"
 ///called when removing a given item from a mob, from mob/living/carbon/remove_embedded_object(mob/living/carbon/target, /obj/item)
 #define COMSIG_CARBON_EMBED_REMOVAL "item_embed_remove_safe"
+<<<<<<< HEAD
 
 // /obj signals
+=======
+///called when being electrocuted, from /mob/living/carbon/electrocute_act(shock_damage, source, siemens_coeff, def_zone, stun)
+#define COMSIG_BEING_ELECTROCUTED "being_electrocuted"
+	#define COMPONENT_CARBON_CANCEL_ELECTROCUTE (1<<0) //If this is set, the carbon will be not be electrocuted.
+///called when a carbon slipps, from /mob/living/carbon/slip(var/slipped_on,stun_duration=8)
+#define COMSIG_ON_CARBON_SLIP "carbon_slip"
+
+// /mob/living/silicon signals
+///called when a silicon is emp'd. from /mob/living/silicon/emp_act(severity)
+#define COMSIG_SILICON_EMP_ACT "silicon_emp_act"
+	#define COMPONENT_BLOCK_EMP (1<<0) //If this is set, the EMP will not go through. Used by other EMP acts as well.
+
+// /mob/living/silicon/robot signals
+///called when a robot is emp'd. from /mob/living/silicon/robot/emp_act(severity)
+#define COMSIG_ROBOT_EMP_ACT "robot_emp_act"
+>>>>>>> b8fe8fa68d ([MIRROR] Unlucky trait (#11775))
 
 ///from base of obj/deconstruct(): (disassembled)
 #define COMSIG_OBJ_DECONSTRUCT "obj_deconstruct"
@@ -463,6 +539,8 @@
 #define COMSIG_ITEM_DROPPED "item_drop"
 ///from base of obj/item/pickup(): (/mob/taker)
 #define COMSIG_ITEM_PICKUP "item_pickup"
+///from base of obj/item/pickup(): (/obj/item)
+#define COMSIG_PICKED_UP_ITEM "piked_up_item"
 ///from base of mob/living/carbon/attacked_by(): (mob/living/carbon/target, mob/living/user, hit_zone)
 #define COMSIG_ITEM_ATTACK_ZONE "item_attack_zone"
 ///return a truthy value to prevent ensouling, checked in /obj/effect/proc_holder/spell/targeted/lichdom/cast(): (mob/user)

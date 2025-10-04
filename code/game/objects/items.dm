@@ -398,6 +398,11 @@
 
 // called just as an item is picked up (loc is not yet changed)
 /obj/item/proc/pickup(mob/user)
+<<<<<<< HEAD
+=======
+	SEND_SIGNAL(src, COMSIG_ITEM_PICKUP, user)
+	SEND_SIGNAL(user, COMSIG_PICKED_UP_ITEM, src)
+>>>>>>> b8fe8fa68d ([MIRROR] Unlucky trait (#11775))
 	pixel_x = 0
 	pixel_y = 0
 	return

@@ -190,9 +190,14 @@
 	. = min(., 1.0)
 
 // Electricity
+<<<<<<< HEAD
 /mob/living/simple_mob/electrocute_act(var/shock_damage, var/obj/source, var/siemens_coeff = 1.0, var/def_zone = null)
 	var/zap = min((1-get_shock_protection()), siemens_coeff) //CHOMPEdit - for some reason simple mobs just never properly checked for shock resist? Whatever, take whichever is lower.
 	shock_damage *= zap
+=======
+/mob/living/simple_mob/electrocute_act(var/shock_damage, var/obj/source, var/siemens_coeff = 1.0, var/def_zone = null, var/stun = 1)
+	shock_damage *= siemens_coeff
+>>>>>>> b8fe8fa68d ([MIRROR] Unlucky trait (#11775))
 	if(shock_damage < 1)
 		return 0
 
@@ -217,7 +222,7 @@
 	. = min(., 1.0)
 
 // Shot with taser/stunvolver
-/mob/living/simple_mob/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone, var/used_weapon=null)
+/mob/living/simple_mob/stun_effect_act(var/stun_amount, var/agony_amount, var/def_zone, var/used_weapon=null, var/electric = FALSE)
 	if(taser_kill)
 		var/stunDam = 0
 		var/agonyDam = 0

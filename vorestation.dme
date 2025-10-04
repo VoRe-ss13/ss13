@@ -551,6 +551,11 @@
 #include "code\datums\components\traits\gargoyle.dm"
 #include "code\datums\components\traits\nutrition_size_change.dm"
 #include "code\datums\components\traits\photosynth.dm"
+<<<<<<< HEAD
+=======
+#include "code\datums\components\traits\unlucky.dm"
+#include "code\datums\components\traits\waddle.dm"
+>>>>>>> b8fe8fa68d ([MIRROR] Unlucky trait (#11775))
 #include "code\datums\components\traits\weaver.dm"
 #include "code\datums\diseases\_disease.dm"
 #include "code\datums\diseases\_MobProcs.dm"

@@ -15,10 +15,31 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 	throwforce = 100
 	density = TRUE
 	anchored = TRUE
+<<<<<<< HEAD
+=======
+	movement_type = UNSTOPPABLE
+	var/turf/despawn_loc = null
+	var/has_hunted_unlucky = FALSE
+
+/obj/effect/immovablerod/proc/TakeFlight(var/turf/end)
+	despawn_loc = end
+	walk_towards(src, despawn_loc, 1)
+	explosion(loc, 2, 3, 5) // start out with a bang
+
+	// Get steps needed and then await that to despawn
+	var/despawn_time = sqrt(((end.x - loc.x)**2) + ((end.y - loc.y)**2)) // distance of a line...
+	QDEL_IN(src, despawn_time + 5 SECONDS) //Give a small extra time before we disappear entirely.
+>>>>>>> b8fe8fa68d ([MIRROR] Unlucky trait (#11775))
 
 /obj/effect/immovablerod/Bump(atom/clong)
 	if(istype(clong, /turf/simulated/shuttle)) //Skip shuttles without actually deleting the rod
 		return
+<<<<<<< HEAD
+=======
+
+	if(prob(10) && !has_hunted_unlucky)
+		hunt_unlucky()
+>>>>>>> b8fe8fa68d ([MIRROR] Unlucky trait (#11775))
 
 	else if (istype(clong, /turf) && !istype(clong, /turf/unsimulated))
 		if(clong.density)
@@ -41,6 +62,13 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 	if(clong && prob(25))
 		src.loc = clong.loc
 
+<<<<<<< HEAD
+=======
+/obj/effect/immovablerod/proc/resume_path()
+	walk(src, 0)
+	walk_towards(src, despawn_loc, 1)
+
+>>>>>>> b8fe8fa68d ([MIRROR] Unlucky trait (#11775))
 /obj/effect/immovablerod/Destroy()
 	walk(src, 0) // Because we might have called walk_towards, we must stop the walk loop or BYOND keeps an internal reference to us forever.
 	return ..()
