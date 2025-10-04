@@ -1,10 +1,10 @@
 /mob/living/simple_mob/animal/tyr/mineral_ants
 	name = "metal ant"
 	desc = "A large ant."
-	icon_state = "ne_ant"
+	icon_state = "new_ant"
 	icon_dead = "dead_new"
-	maxHealth = 25 //two hits with agate sword, three with spear, one with hammer, four with bow
-	health = 25
+	maxHealth = 15
+	health = 15
 	pass_flags = PASSTABLE
 	movement_cooldown = 1
 
@@ -66,7 +66,28 @@
 	meat_amount = 3
 	meat_type = /obj/item/reagent_containers/food/snacks/bronzeant
 
+<<<<<<< HEAD
 /mob/living/simple_mob/animal/tyr/mineral_ants/copper
+=======
+/mob/living/simple_mob/animal/tyr/mineral_ants/bronze/apply_melee_effects(atom/A)
+	..()
+
+	if(isliving(A) && a_intent == I_HURT)
+		var/mob/living/L = A
+		if(L.mob_size <= MOB_MEDIUM)
+			visible_message(span_danger("\The [src] sends \the [L] flying with the impact!"))
+			playsound(src, "punch", 50, 1)
+			L.Weaken(1)
+			var/throwdir = get_dir(src, L)
+			L.throw_at(get_edge_target_turf(L, throwdir), 3, 1, src)
+		else
+			to_chat(L, span_warning("\The [src] hits you with incredible force, but you remain in place."))
+			visible_message(span_danger("\The [src] hits \the [L] with incredible force, to no visible effect!")) // CHOMPEdit: Visible/audible feedback for *resisting* the slam.
+			playsound(src, "punch", 50, 1) // CHOMPEdit: Visible/audible feedback for *resisting* the slam.
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/copper //lighting ants
+	name = "copper metal ant"
+>>>>>>> 6770c5ec4f (Update For Tyr (#11770))
 	icon_state = "copper_ant"
 	icon_living = "copper_ant"
 	butchery_loot = list(\
@@ -102,7 +123,65 @@
 	meat_amount = 3
 	meat_type = /obj/item/reagent_containers/food/snacks/painiteant
 
+<<<<<<< HEAD
 
+=======
+/mob/living/simple_mob/animal/tyr/mineral_ants/diamond //slower, tankier, more damage
+	name = "diamond metal ant"
+	icon_state = "diamond_ant"
+	icon_living = "diamond_ant"
+	maxHealth = 50
+	health = 50
+	melee_damage_lower = 24
+	melee_damage_upper = 24
+	movement_cooldown = 3
+	butchery_loot = list(\
+		/obj/item/stack/material/diamond = 18\
+		)
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/verdantium
+	name = "green metal ant"
+	icon_state = "verdantium_ant"
+	icon_living = "verdantium_ant"
+	butchery_loot = list(\
+		/obj/item/stack/material/verdantium = 18\
+		)
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/uranium //if it melees, it unleashes rads
+	name = "glowing metal ant"
+	icon_state = "rad_ant"
+	icon_living = "rad_ant"
+	butchery_loot = list(\
+		/obj/item/stack/material/uranium = 18\
+		)
+/mob/living/simple_mob/animal/tyr/mineral_ants/uranium/do_special_attack(atom/A)
+	SSradiation.radiate(src, 15)
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/tritium
+	name = "tritium ant"
+	icon_state = "tritium_ant"
+	icon_living = "tritium_ant"
+	butchery_loot = list(\
+		/obj/item/stack/material/tritium = 18\
+		)
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/mhydro //secondary spawner
+	name = "mhydro ant"
+	icon_state = "mhydro_ant"
+	icon_living = "mhydro_ant"
+	butchery_loot = list(\
+		/obj/item/stack/material/mhydrogen = 6\
+		)
+>>>>>>> 6770c5ec4f (Update For Tyr (#11770))
+
+	special_attack_min_range = 4
+	special_attack_max_range = 7
+	special_attack_cooldown = 15 SECONDS
+
+/mob/living/simple_mob/animal/tyr/mineral_ants/mydro/do_special_attack(atom/A)
+	for(var/i =1 to 3)
+		new /obj/effect/spider/spiderling/antling(src.loc)
+	new /obj/effect/spider/spiderling/antling(src.loc)
 
 /mob/living/simple_mob/animal/tyr/mineral_ants/builder
 	icon_state = "builder_ant"
@@ -147,7 +226,7 @@
 	return TRUE
 
 
-/mob/living/simple_mob/animal/tyr/mineral_ants/queen //There will only be two queens on the map, and the source of further ants. Farming dies if they die.
+/mob/living/simple_mob/animal/tyr/mineral_ants/queen //the nurses of the ants
 	name = "queen ant"
 	icon_state = "queen_ant"
 	maxHealth = 60 //four hits with agate sword, five with spear, two with hammer, eight with bow
@@ -155,7 +234,7 @@
 	butchery_loot = list(\
 		/obj/item/stack/material/valhollide = 4\
 		)
-	nutrition = 480
+	nutrition = 630
 	var/build_type = /obj/effect/spider/spiderling/antling
 
 
@@ -206,15 +285,29 @@ ANT STRUCTURES
 	spawn_delay = 10 MINUTES
 
 	spawn_types = list(
+<<<<<<< HEAD
 	/mob/living/simple_mob/animal/tyr/mineral_ants/bronze = 5,
 	/mob/living/simple_mob/animal/tyr/mineral_ants/builder = 7,
 	/mob/living/simple_mob/animal/tyr/mineral_ants/copper = 1,
 	/mob/living/simple_mob/animal/tyr/mineral_ants/quartz = 1,
 	/mob/living/simple_mob/animal/tyr/mineral_ants/agate = 1,
 	/mob/living/simple_mob/animal/tyr/mineral_ants/painite = 5
+=======
+	/mob/living/simple_mob/animal/tyr/mineral_ants/bronze = 1,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/builder = 1,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/copper = 1,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/quartz = 1,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/agate = 1,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/painite = 1,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/diamond = 1,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/verdantium = 1,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/tritium = 1,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/uranium = 1,
+	/mob/living/simple_mob/animal/tyr/mineral_ants/mhydro = 1
+>>>>>>> 6770c5ec4f (Update For Tyr (#11770))
 	)
 
-	simultaneous_spawns = 5
+	simultaneous_spawns = 3
 
 	destructible = 1
 	health = 50 //Unsure why you would want to break it but you can
