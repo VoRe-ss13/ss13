@@ -869,7 +869,7 @@ var/global/list/light_type_cache = list()
 
 // break the light and make sparks if was on
 
-/obj/machinery/light/proc/broken(var/skip_sound_and_sparks = 0)
+/obj/machinery/light/proc/broken(var/skip_sound_and_sparks = FALSE)
 	if(status == LIGHT_EMPTY)
 		return
 
