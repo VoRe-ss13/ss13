@@ -106,7 +106,11 @@
 			visible_message(span_danger("\The [user] is trying to put \a [G.wrapped] on \the [src]!"))
 	//CHOMPEdit End
 
+<<<<<<< HEAD
 	if(!do_after(user,HUMAN_STRIP_DELAY,src))
+=======
+	if(!do_after(user, HUMAN_STRIP_DELAY, target = src, max_interact_count = 15))
+>>>>>>> 7401d6fba9 ([MIRROR] Fixes Strip (#11781))
 		return
 
 	if(!stripping)
