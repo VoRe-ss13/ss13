@@ -40,7 +40,31 @@
 	wreckage = /obj/item/prop/tyrlore/reddisc
 	ai_holder_type = /datum/ai_holder/simple_mob/intentional/three_phases/nomove
 	anchored = 1
+<<<<<<< HEAD
 	armor = list(melee = 40, bullet = 40, laser = 80, energy = 80, bomb = 50, bio = 100, rad = 100)
+=======
+	armor = list(melee = 40, bullet = 40, laser = 40, energy = 40, bomb = 50, bio = 100, rad = 100)
+
+	loot_list = list(/obj/item/tool/wirecutters/hybrid/alien  = 10,
+		/obj/item/tool/wrench/hybrid/alien  = 10,
+		/obj/item/tool/crowbar/hybrid/alien  = 10,
+		/obj/item/tool/screwdriver/hybrid/alien  = 10,
+		/obj/item/pickaxe/diamonddrill/alien = 10,
+		/obj/item/melee/energy/sword/dualsaber = 10,
+		/obj/item/shield_projector/rectangle/automatic/tyrbarrier = 1,
+		/obj/item/stock_parts/scanning_module/omni = 80,
+		/obj/item/stock_parts/micro_laser/omni = 80,
+		/obj/item/stock_parts/capacitor/omni = 80,
+		/obj/item/stock_parts/manipulator/omni = 80,
+		/obj/item/stock_parts/matter_bin/omni = 80,
+		/obj/item/stock_parts/scanning_module/hyper = 80,
+		/obj/item/stock_parts/micro_laser/hyper = 80,
+		/obj/item/stock_parts/capacitor/hyper = 80,
+		/obj/item/stock_parts/manipulator/hyper = 80,
+		/obj/item/stock_parts/matter_bin/hyper = 80,
+		)
+
+>>>>>>> 860b850999 (More Printable Tyr Items (#11779))
 
 /datum/ai_holder/simple_mob/intentional/three_phases/nomove/walk_to_destination()
 	return
