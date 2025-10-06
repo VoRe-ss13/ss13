@@ -2,8 +2,8 @@
 
 /mob/living
 	var/is_slipping = FALSE
-	var/slip_vore_in_progress = FALSE
 	var/slip_protect = 1
+<<<<<<< HEAD
 
 /mob/living/proc/can_slip_vore(var/mob/living/target)
 	if(!target.is_slipping)	//Obviously they have to be slipping to get slip vored
@@ -70,3 +70,5 @@
 	if(is_slipping && !lying)
 		is_slipping = FALSE
 	return .
+=======
+>>>>>>> 11a4471110 ([MIRROR] Spontaneous Vore Element (#11785))

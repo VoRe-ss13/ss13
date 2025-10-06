@@ -265,6 +265,7 @@
 /mob/living/hitby(atom/movable/AM as mob|obj,var/speed = THROWFORCE_SPEED_DIVISOR)//Standardization and logging -Sieve
 	if(is_incorporeal())
 		return
+<<<<<<< HEAD
 	if(istype(AM,/obj/))
 		var/obj/O = AM
 		if(stat != DEAD && istype(O,/obj/item) && trash_catching && vore_selected) //ported from chompstation
@@ -274,6 +275,12 @@
 				I.throwing = 0
 				I.forceMove(vore_selected)
 				return
+=======
+	if(SEND_SIGNAL(src, COMSIG_LIVING_HIT_BY_THROWN_ENTITY, source, speed) & COMSIG_CANCEL_HITBY)
+		return
+	if(isitem(source))
+		var/obj/item/O = source
+>>>>>>> 11a4471110 ([MIRROR] Spontaneous Vore Element (#11785))
 		var/dtype = O.damtype
 		var/throw_damage = O.throwforce*(speed/THROWFORCE_SPEED_DIVISOR)
 
@@ -333,6 +340,7 @@
 					src.anchored = TRUE
 					src.pinned += O
 
+<<<<<<< HEAD
 	//VORESTATION EDIT START - Allows for thrown vore! //CHOMPEdit Start
 	//Throwing a prey into a pred takes priority. After that it checks to see if the person being thrown is a pred.
 	if(isliving(AM))
@@ -364,6 +372,8 @@
 			return
 	//VORESTATION EDIT END - Allows for thrown vore! //CHOMPEdit End
 
+=======
+>>>>>>> 11a4471110 ([MIRROR] Spontaneous Vore Element (#11785))
 /mob/living/proc/on_throw_vore_special(var/pred = TRUE, var/mob/living/target)
 	return
 
